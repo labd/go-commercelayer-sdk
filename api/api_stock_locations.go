@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEStockLocationsStockLocationId Delete a stock location
 
 Delete a stock location
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stockLocationId The resource's id
- @return StockLocationsApiDELETEStockLocationsStockLocationIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockLocationId The resource's id
+	@return StockLocationsApiDELETEStockLocationsStockLocationIdRequest
 */
 func (a *StockLocationsApiService) DELETEStockLocationsStockLocationId(ctx context.Context, stockLocationId string) StockLocationsApiDELETEStockLocationsStockLocationIdRequest {
 	return StockLocationsApiDELETEStockLocationsStockLocationIdRequest{
@@ -130,9 +130,9 @@ GETDeliveryLeadTimeIdStockLocation Retrieve the stock location associated to the
 
 Retrieve the stock location associated to the delivery lead time
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param deliveryLeadTimeId The resource's id
- @return StockLocationsApiGETDeliveryLeadTimeIdStockLocationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deliveryLeadTimeId The resource's id
+	@return StockLocationsApiGETDeliveryLeadTimeIdStockLocationRequest
 */
 func (a *StockLocationsApiService) GETDeliveryLeadTimeIdStockLocation(ctx context.Context, deliveryLeadTimeId string) StockLocationsApiGETDeliveryLeadTimeIdStockLocationRequest {
 	return StockLocationsApiGETDeliveryLeadTimeIdStockLocationRequest{
@@ -222,9 +222,9 @@ GETInventoryReturnLocationIdStockLocation Retrieve the stock location associated
 
 Retrieve the stock location associated to the inventory return location
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param inventoryReturnLocationId The resource's id
- @return StockLocationsApiGETInventoryReturnLocationIdStockLocationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param inventoryReturnLocationId The resource's id
+	@return StockLocationsApiGETInventoryReturnLocationIdStockLocationRequest
 */
 func (a *StockLocationsApiService) GETInventoryReturnLocationIdStockLocation(ctx context.Context, inventoryReturnLocationId string) StockLocationsApiGETInventoryReturnLocationIdStockLocationRequest {
 	return StockLocationsApiGETInventoryReturnLocationIdStockLocationRequest{
@@ -314,9 +314,9 @@ GETInventoryStockLocationIdStockLocation Retrieve the stock location associated 
 
 Retrieve the stock location associated to the inventory stock location
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param inventoryStockLocationId The resource's id
- @return StockLocationsApiGETInventoryStockLocationIdStockLocationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param inventoryStockLocationId The resource's id
+	@return StockLocationsApiGETInventoryStockLocationIdStockLocationRequest
 */
 func (a *StockLocationsApiService) GETInventoryStockLocationIdStockLocation(ctx context.Context, inventoryStockLocationId string) StockLocationsApiGETInventoryStockLocationIdStockLocationRequest {
 	return StockLocationsApiGETInventoryStockLocationIdStockLocationRequest{
@@ -406,9 +406,9 @@ GETPackageIdStockLocation Retrieve the stock location associated to the package
 
 Retrieve the stock location associated to the package
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param packageId The resource's id
- @return StockLocationsApiGETPackageIdStockLocationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param packageId The resource's id
+	@return StockLocationsApiGETPackageIdStockLocationRequest
 */
 func (a *StockLocationsApiService) GETPackageIdStockLocation(ctx context.Context, packageId string) StockLocationsApiGETPackageIdStockLocationRequest {
 	return StockLocationsApiGETPackageIdStockLocationRequest{
@@ -498,9 +498,9 @@ GETReturnIdStockLocation Retrieve the stock location associated to the return
 
 Retrieve the stock location associated to the return
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param returnId The resource's id
- @return StockLocationsApiGETReturnIdStockLocationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param returnId The resource's id
+	@return StockLocationsApiGETReturnIdStockLocationRequest
 */
 func (a *StockLocationsApiService) GETReturnIdStockLocation(ctx context.Context, returnId string) StockLocationsApiGETReturnIdStockLocationRequest {
 	return StockLocationsApiGETReturnIdStockLocationRequest{
@@ -590,9 +590,9 @@ GETShipmentIdStockLocation Retrieve the stock location associated to the shipmen
 
 Retrieve the stock location associated to the shipment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shipmentId The resource's id
- @return StockLocationsApiGETShipmentIdStockLocationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shipmentId The resource's id
+	@return StockLocationsApiGETShipmentIdStockLocationRequest
 */
 func (a *StockLocationsApiService) GETShipmentIdStockLocation(ctx context.Context, shipmentId string) StockLocationsApiGETShipmentIdStockLocationRequest {
 	return StockLocationsApiGETShipmentIdStockLocationRequest{
@@ -682,9 +682,9 @@ GETShippingMethodIdStockLocation Retrieve the stock location associated to the s
 
 Retrieve the stock location associated to the shipping method
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingMethodId The resource's id
- @return StockLocationsApiGETShippingMethodIdStockLocationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingMethodId The resource's id
+	@return StockLocationsApiGETShippingMethodIdStockLocationRequest
 */
 func (a *StockLocationsApiService) GETShippingMethodIdStockLocation(ctx context.Context, shippingMethodId string) StockLocationsApiGETShippingMethodIdStockLocationRequest {
 	return StockLocationsApiGETShippingMethodIdStockLocationRequest{
@@ -774,9 +774,9 @@ GETStockItemIdStockLocation Retrieve the stock location associated to the stock 
 
 Retrieve the stock location associated to the stock item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stockItemId The resource's id
- @return StockLocationsApiGETStockItemIdStockLocationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockItemId The resource's id
+	@return StockLocationsApiGETStockItemIdStockLocationRequest
 */
 func (a *StockLocationsApiService) GETStockItemIdStockLocation(ctx context.Context, stockItemId string) StockLocationsApiGETStockItemIdStockLocationRequest {
 	return StockLocationsApiGETStockItemIdStockLocationRequest{
@@ -865,8 +865,8 @@ GETStockLocations List all stock locations
 
 List all stock locations
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return StockLocationsApiGETStockLocationsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return StockLocationsApiGETStockLocationsRequest
 */
 func (a *StockLocationsApiService) GETStockLocations(ctx context.Context) StockLocationsApiGETStockLocationsRequest {
 	return StockLocationsApiGETStockLocationsRequest{
@@ -876,7 +876,8 @@ func (a *StockLocationsApiService) GETStockLocations(ctx context.Context) StockL
 }
 
 // Execute executes the request
-//  @return GETStockLocations200Response
+//
+//	@return GETStockLocations200Response
 func (a *StockLocationsApiService) GETStockLocationsExecute(r StockLocationsApiGETStockLocationsRequest) (*GETStockLocations200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -965,9 +966,9 @@ GETStockLocationsStockLocationId Retrieve a stock location
 
 Retrieve a stock location
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stockLocationId The resource's id
- @return StockLocationsApiGETStockLocationsStockLocationIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockLocationId The resource's id
+	@return StockLocationsApiGETStockLocationsStockLocationIdRequest
 */
 func (a *StockLocationsApiService) GETStockLocationsStockLocationId(ctx context.Context, stockLocationId string) StockLocationsApiGETStockLocationsStockLocationIdRequest {
 	return StockLocationsApiGETStockLocationsStockLocationIdRequest{
@@ -978,7 +979,8 @@ func (a *StockLocationsApiService) GETStockLocationsStockLocationId(ctx context.
 }
 
 // Execute executes the request
-//  @return GETStockLocationsStockLocationId200Response
+//
+//	@return GETStockLocationsStockLocationId200Response
 func (a *StockLocationsApiService) GETStockLocationsStockLocationIdExecute(r StockLocationsApiGETStockLocationsStockLocationIdRequest) (*GETStockLocationsStockLocationId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1068,9 +1070,9 @@ GETStockTransferIdDestinationStockLocation Retrieve the destination stock locati
 
 Retrieve the destination stock location associated to the stock transfer
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stockTransferId The resource's id
- @return StockLocationsApiGETStockTransferIdDestinationStockLocationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockTransferId The resource's id
+	@return StockLocationsApiGETStockTransferIdDestinationStockLocationRequest
 */
 func (a *StockLocationsApiService) GETStockTransferIdDestinationStockLocation(ctx context.Context, stockTransferId string) StockLocationsApiGETStockTransferIdDestinationStockLocationRequest {
 	return StockLocationsApiGETStockTransferIdDestinationStockLocationRequest{
@@ -1160,9 +1162,9 @@ GETStockTransferIdOriginStockLocation Retrieve the origin stock location associa
 
 Retrieve the origin stock location associated to the stock transfer
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stockTransferId The resource's id
- @return StockLocationsApiGETStockTransferIdOriginStockLocationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockTransferId The resource's id
+	@return StockLocationsApiGETStockTransferIdOriginStockLocationRequest
 */
 func (a *StockLocationsApiService) GETStockTransferIdOriginStockLocation(ctx context.Context, stockTransferId string) StockLocationsApiGETStockTransferIdOriginStockLocationRequest {
 	return StockLocationsApiGETStockTransferIdOriginStockLocationRequest{
@@ -1258,9 +1260,9 @@ PATCHStockLocationsStockLocationId Update a stock location
 
 Update a stock location
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stockLocationId The resource's id
- @return StockLocationsApiPATCHStockLocationsStockLocationIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockLocationId The resource's id
+	@return StockLocationsApiPATCHStockLocationsStockLocationIdRequest
 */
 func (a *StockLocationsApiService) PATCHStockLocationsStockLocationId(ctx context.Context, stockLocationId string) StockLocationsApiPATCHStockLocationsStockLocationIdRequest {
 	return StockLocationsApiPATCHStockLocationsStockLocationIdRequest{
@@ -1271,7 +1273,8 @@ func (a *StockLocationsApiService) PATCHStockLocationsStockLocationId(ctx contex
 }
 
 // Execute executes the request
-//  @return PATCHStockLocationsStockLocationId200Response
+//
+//	@return PATCHStockLocationsStockLocationId200Response
 func (a *StockLocationsApiService) PATCHStockLocationsStockLocationIdExecute(r StockLocationsApiPATCHStockLocationsStockLocationIdRequest) (*PATCHStockLocationsStockLocationId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -1371,8 +1374,8 @@ POSTStockLocations Create a stock location
 
 Create a stock location
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return StockLocationsApiPOSTStockLocationsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return StockLocationsApiPOSTStockLocationsRequest
 */
 func (a *StockLocationsApiService) POSTStockLocations(ctx context.Context) StockLocationsApiPOSTStockLocationsRequest {
 	return StockLocationsApiPOSTStockLocationsRequest{
@@ -1382,7 +1385,8 @@ func (a *StockLocationsApiService) POSTStockLocations(ctx context.Context) Stock
 }
 
 // Execute executes the request
-//  @return POSTStockLocations201Response
+//
+//	@return POSTStockLocations201Response
 func (a *StockLocationsApiService) POSTStockLocationsExecute(r StockLocationsApiPOSTStockLocationsRequest) (*POSTStockLocations201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

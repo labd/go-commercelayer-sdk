@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEFixedAmountPromotionsFixedAmountPromotionId Delete a fixed amount promotio
 
 Delete a fixed amount promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fixedAmountPromotionId The resource's id
- @return FixedAmountPromotionsApiDELETEFixedAmountPromotionsFixedAmountPromotionIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fixedAmountPromotionId The resource's id
+	@return FixedAmountPromotionsApiDELETEFixedAmountPromotionsFixedAmountPromotionIdRequest
 */
 func (a *FixedAmountPromotionsApiService) DELETEFixedAmountPromotionsFixedAmountPromotionId(ctx context.Context, fixedAmountPromotionId string) FixedAmountPromotionsApiDELETEFixedAmountPromotionsFixedAmountPromotionIdRequest {
 	return FixedAmountPromotionsApiDELETEFixedAmountPromotionsFixedAmountPromotionIdRequest{
@@ -129,8 +129,8 @@ GETFixedAmountPromotions List all fixed amount promotions
 
 List all fixed amount promotions
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return FixedAmountPromotionsApiGETFixedAmountPromotionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return FixedAmountPromotionsApiGETFixedAmountPromotionsRequest
 */
 func (a *FixedAmountPromotionsApiService) GETFixedAmountPromotions(ctx context.Context) FixedAmountPromotionsApiGETFixedAmountPromotionsRequest {
 	return FixedAmountPromotionsApiGETFixedAmountPromotionsRequest{
@@ -140,7 +140,8 @@ func (a *FixedAmountPromotionsApiService) GETFixedAmountPromotions(ctx context.C
 }
 
 // Execute executes the request
-//  @return GETFixedAmountPromotions200Response
+//
+//	@return GETFixedAmountPromotions200Response
 func (a *FixedAmountPromotionsApiService) GETFixedAmountPromotionsExecute(r FixedAmountPromotionsApiGETFixedAmountPromotionsRequest) (*GETFixedAmountPromotions200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -229,9 +230,9 @@ GETFixedAmountPromotionsFixedAmountPromotionId Retrieve a fixed amount promotion
 
 Retrieve a fixed amount promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fixedAmountPromotionId The resource's id
- @return FixedAmountPromotionsApiGETFixedAmountPromotionsFixedAmountPromotionIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fixedAmountPromotionId The resource's id
+	@return FixedAmountPromotionsApiGETFixedAmountPromotionsFixedAmountPromotionIdRequest
 */
 func (a *FixedAmountPromotionsApiService) GETFixedAmountPromotionsFixedAmountPromotionId(ctx context.Context, fixedAmountPromotionId string) FixedAmountPromotionsApiGETFixedAmountPromotionsFixedAmountPromotionIdRequest {
 	return FixedAmountPromotionsApiGETFixedAmountPromotionsFixedAmountPromotionIdRequest{
@@ -242,7 +243,8 @@ func (a *FixedAmountPromotionsApiService) GETFixedAmountPromotionsFixedAmountPro
 }
 
 // Execute executes the request
-//  @return GETFixedAmountPromotionsFixedAmountPromotionId200Response
+//
+//	@return GETFixedAmountPromotionsFixedAmountPromotionId200Response
 func (a *FixedAmountPromotionsApiService) GETFixedAmountPromotionsFixedAmountPromotionIdExecute(r FixedAmountPromotionsApiGETFixedAmountPromotionsFixedAmountPromotionIdRequest) (*GETFixedAmountPromotionsFixedAmountPromotionId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -338,9 +340,9 @@ PATCHFixedAmountPromotionsFixedAmountPromotionId Update a fixed amount promotion
 
 Update a fixed amount promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fixedAmountPromotionId The resource's id
- @return FixedAmountPromotionsApiPATCHFixedAmountPromotionsFixedAmountPromotionIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fixedAmountPromotionId The resource's id
+	@return FixedAmountPromotionsApiPATCHFixedAmountPromotionsFixedAmountPromotionIdRequest
 */
 func (a *FixedAmountPromotionsApiService) PATCHFixedAmountPromotionsFixedAmountPromotionId(ctx context.Context, fixedAmountPromotionId string) FixedAmountPromotionsApiPATCHFixedAmountPromotionsFixedAmountPromotionIdRequest {
 	return FixedAmountPromotionsApiPATCHFixedAmountPromotionsFixedAmountPromotionIdRequest{
@@ -351,7 +353,8 @@ func (a *FixedAmountPromotionsApiService) PATCHFixedAmountPromotionsFixedAmountP
 }
 
 // Execute executes the request
-//  @return PATCHFixedAmountPromotionsFixedAmountPromotionId200Response
+//
+//	@return PATCHFixedAmountPromotionsFixedAmountPromotionId200Response
 func (a *FixedAmountPromotionsApiService) PATCHFixedAmountPromotionsFixedAmountPromotionIdExecute(r FixedAmountPromotionsApiPATCHFixedAmountPromotionsFixedAmountPromotionIdRequest) (*PATCHFixedAmountPromotionsFixedAmountPromotionId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -451,8 +454,8 @@ POSTFixedAmountPromotions Create a fixed amount promotion
 
 Create a fixed amount promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return FixedAmountPromotionsApiPOSTFixedAmountPromotionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return FixedAmountPromotionsApiPOSTFixedAmountPromotionsRequest
 */
 func (a *FixedAmountPromotionsApiService) POSTFixedAmountPromotions(ctx context.Context) FixedAmountPromotionsApiPOSTFixedAmountPromotionsRequest {
 	return FixedAmountPromotionsApiPOSTFixedAmountPromotionsRequest{
@@ -462,7 +465,8 @@ func (a *FixedAmountPromotionsApiService) POSTFixedAmountPromotions(ctx context.
 }
 
 // Execute executes the request
-//  @return POSTFixedAmountPromotions201Response
+//
+//	@return POSTFixedAmountPromotions201Response
 func (a *FixedAmountPromotionsApiService) POSTFixedAmountPromotionsExecute(r FixedAmountPromotionsApiPOSTFixedAmountPromotionsRequest) (*POSTFixedAmountPromotions201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

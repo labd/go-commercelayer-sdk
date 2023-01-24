@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -37,8 +37,8 @@ GETTransactions List all transactions
 
 List all transactions
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return TransactionsApiGETTransactionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return TransactionsApiGETTransactionsRequest
 */
 func (a *TransactionsApiService) GETTransactions(ctx context.Context) TransactionsApiGETTransactionsRequest {
 	return TransactionsApiGETTransactionsRequest{
@@ -48,7 +48,8 @@ func (a *TransactionsApiService) GETTransactions(ctx context.Context) Transactio
 }
 
 // Execute executes the request
-//  @return GETTransactions200Response
+//
+//	@return GETTransactions200Response
 func (a *TransactionsApiService) GETTransactionsExecute(r TransactionsApiGETTransactionsRequest) (*GETTransactions200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -137,9 +138,9 @@ GETTransactionsTransactionId Retrieve a transaction
 
 Retrieve a transaction
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param transactionId The resource's id
- @return TransactionsApiGETTransactionsTransactionIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param transactionId The resource's id
+	@return TransactionsApiGETTransactionsTransactionIdRequest
 */
 func (a *TransactionsApiService) GETTransactionsTransactionId(ctx context.Context, transactionId string) TransactionsApiGETTransactionsTransactionIdRequest {
 	return TransactionsApiGETTransactionsTransactionIdRequest{
@@ -150,7 +151,8 @@ func (a *TransactionsApiService) GETTransactionsTransactionId(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return GETTransactionsTransactionId200Response
+//
+//	@return GETTransactionsTransactionId200Response
 func (a *TransactionsApiService) GETTransactionsTransactionIdExecute(r TransactionsApiGETTransactionsTransactionIdRequest) (*GETTransactionsTransactionId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

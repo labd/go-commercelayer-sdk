@@ -28,7 +28,6 @@ Name | Type | Description | Notes
 **MapUrl** | Pointer to **string** | The map url of the geocoded address (if geocoded) | [optional] 
 **StaticMapUrl** | Pointer to **string** | The static map image url of the geocoded address (if geocoded) | [optional] 
 **BillingInfo** | Pointer to **string** | Customer&#39;s billing information (i.e. VAT number, codice fiscale) | [optional] 
-**Id** | Pointer to **string** | Unique identifier for the resource (hash). | [optional] 
 **CreatedAt** | Pointer to **string** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **string** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **string** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
@@ -653,31 +652,6 @@ SetBillingInfo sets BillingInfo field to given value.
 `func (o *GETAddresses200ResponseDataInnerAttributes) HasBillingInfo() bool`
 
 HasBillingInfo returns a boolean if a field has been set.
-
-### GetId
-
-`func (o *GETAddresses200ResponseDataInnerAttributes) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GETAddresses200ResponseDataInnerAttributes) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GETAddresses200ResponseDataInnerAttributes) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *GETAddresses200ResponseDataInnerAttributes) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

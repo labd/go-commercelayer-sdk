@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,14 +17,14 @@ import (
 
 // OrderAmountPromotionRuleCreateDataRelationships struct for OrderAmountPromotionRuleCreateDataRelationships
 type OrderAmountPromotionRuleCreateDataRelationships struct {
-	Promotion CouponCodesPromotionRuleDataRelationshipsPromotion `json:"promotion"`
+	Promotion CouponCodesPromotionRuleCreateDataRelationshipsPromotion `json:"promotion"`
 }
 
 // NewOrderAmountPromotionRuleCreateDataRelationships instantiates a new OrderAmountPromotionRuleCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrderAmountPromotionRuleCreateDataRelationships(promotion CouponCodesPromotionRuleDataRelationshipsPromotion) *OrderAmountPromotionRuleCreateDataRelationships {
+func NewOrderAmountPromotionRuleCreateDataRelationships(promotion CouponCodesPromotionRuleCreateDataRelationshipsPromotion) *OrderAmountPromotionRuleCreateDataRelationships {
 	this := OrderAmountPromotionRuleCreateDataRelationships{}
 	this.Promotion = promotion
 	return &this
@@ -39,9 +39,9 @@ func NewOrderAmountPromotionRuleCreateDataRelationshipsWithDefaults() *OrderAmou
 }
 
 // GetPromotion returns the Promotion field value
-func (o *OrderAmountPromotionRuleCreateDataRelationships) GetPromotion() CouponCodesPromotionRuleDataRelationshipsPromotion {
+func (o *OrderAmountPromotionRuleCreateDataRelationships) GetPromotion() CouponCodesPromotionRuleCreateDataRelationshipsPromotion {
 	if o == nil {
-		var ret CouponCodesPromotionRuleDataRelationshipsPromotion
+		var ret CouponCodesPromotionRuleCreateDataRelationshipsPromotion
 		return ret
 	}
 
@@ -50,7 +50,7 @@ func (o *OrderAmountPromotionRuleCreateDataRelationships) GetPromotion() CouponC
 
 // GetPromotionOk returns a tuple with the Promotion field value
 // and a boolean to check if the value has been set.
-func (o *OrderAmountPromotionRuleCreateDataRelationships) GetPromotionOk() (*CouponCodesPromotionRuleDataRelationshipsPromotion, bool) {
+func (o *OrderAmountPromotionRuleCreateDataRelationships) GetPromotionOk() (*CouponCodesPromotionRuleCreateDataRelationshipsPromotion, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,7 +58,7 @@ func (o *OrderAmountPromotionRuleCreateDataRelationships) GetPromotionOk() (*Cou
 }
 
 // SetPromotion sets field value
-func (o *OrderAmountPromotionRuleCreateDataRelationships) SetPromotion(v CouponCodesPromotionRuleDataRelationshipsPromotion) {
+func (o *OrderAmountPromotionRuleCreateDataRelationships) SetPromotion(v CouponCodesPromotionRuleCreateDataRelationshipsPromotion) {
 	o.Promotion = v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -19,7 +19,7 @@ import (
 type RefundDataRelationships struct {
 	Order            *AdyenPaymentDataRelationshipsOrder     `json:"order,omitempty"`
 	ReferenceCapture *AuthorizationDataRelationshipsCaptures `json:"reference_capture,omitempty"`
-	Events           *CustomerAddressDataRelationshipsEvents `json:"events,omitempty"`
+	Events           *CleanupDataRelationshipsEvents         `json:"events,omitempty"`
 }
 
 // NewRefundDataRelationships instantiates a new RefundDataRelationships object
@@ -104,9 +104,9 @@ func (o *RefundDataRelationships) SetReferenceCapture(v AuthorizationDataRelatio
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *RefundDataRelationships) GetEvents() CustomerAddressDataRelationshipsEvents {
+func (o *RefundDataRelationships) GetEvents() CleanupDataRelationshipsEvents {
 	if o == nil || o.Events == nil {
-		var ret CustomerAddressDataRelationshipsEvents
+		var ret CleanupDataRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -114,7 +114,7 @@ func (o *RefundDataRelationships) GetEvents() CustomerAddressDataRelationshipsEv
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *RefundDataRelationships) GetEventsOk() (*CustomerAddressDataRelationshipsEvents, bool) {
+func (o *RefundDataRelationships) GetEventsOk() (*CleanupDataRelationshipsEvents, bool) {
 	if o == nil || o.Events == nil {
 		return nil, false
 	}
@@ -130,8 +130,8 @@ func (o *RefundDataRelationships) HasEvents() bool {
 	return false
 }
 
-// SetEvents gets a reference to the given CustomerAddressDataRelationshipsEvents and assigns it to the Events field.
-func (o *RefundDataRelationships) SetEvents(v CustomerAddressDataRelationshipsEvents) {
+// SetEvents gets a reference to the given CleanupDataRelationshipsEvents and assigns it to the Events field.
+func (o *RefundDataRelationships) SetEvents(v CleanupDataRelationshipsEvents) {
 	o.Events = &v
 }
 

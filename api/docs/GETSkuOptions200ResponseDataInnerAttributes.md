@@ -13,7 +13,6 @@ Name | Type | Description | Notes
 **DelayHours** | Pointer to **int32** | The delay time (in hours) that should be added to the delivery lead time when this option is purchased. | [optional] 
 **DelayDays** | Pointer to **int32** | The delay time, in days (rounded) | [optional] 
 **SkuCodeRegex** | Pointer to **string** | The regex that will be evaluated to match the SKU codes. | [optional] 
-**Id** | Pointer to **string** | Unique identifier for the resource (hash). | [optional] 
 **CreatedAt** | Pointer to **string** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **string** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **string** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
@@ -263,31 +262,6 @@ SetSkuCodeRegex sets SkuCodeRegex field to given value.
 `func (o *GETSkuOptions200ResponseDataInnerAttributes) HasSkuCodeRegex() bool`
 
 HasSkuCodeRegex returns a boolean if a field has been set.
-
-### GetId
-
-`func (o *GETSkuOptions200ResponseDataInnerAttributes) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GETSkuOptions200ResponseDataInnerAttributes) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GETSkuOptions200ResponseDataInnerAttributes) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *GETSkuOptions200ResponseDataInnerAttributes) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

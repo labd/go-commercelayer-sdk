@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETLineItems200ResponseDataInnerRelationshipsShipmentLineItems struct for GETLineItems200ResponseDataInnerRelationshipsShipmentLineItems
 type GETLineItems200ResponseDataInnerRelationshipsShipmentLineItems struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks               `json:"links,omitempty"`
-	Data  []GETLineItems200ResponseDataInnerRelationshipsShipmentLineItemsDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks         `json:"links,omitempty"`
+	Data  *GETLineItems200ResponseDataInnerRelationshipsShipmentLineItemsData `json:"data,omitempty"`
 }
 
 // NewGETLineItems200ResponseDataInnerRelationshipsShipmentLineItems instantiates a new GETLineItems200ResponseDataInnerRelationshipsShipmentLineItems object
@@ -71,17 +71,17 @@ func (o *GETLineItems200ResponseDataInnerRelationshipsShipmentLineItems) SetLink
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETLineItems200ResponseDataInnerRelationshipsShipmentLineItems) GetData() []GETLineItems200ResponseDataInnerRelationshipsShipmentLineItemsDataInner {
+func (o *GETLineItems200ResponseDataInnerRelationshipsShipmentLineItems) GetData() GETLineItems200ResponseDataInnerRelationshipsShipmentLineItemsData {
 	if o == nil || o.Data == nil {
-		var ret []GETLineItems200ResponseDataInnerRelationshipsShipmentLineItemsDataInner
+		var ret GETLineItems200ResponseDataInnerRelationshipsShipmentLineItemsData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETLineItems200ResponseDataInnerRelationshipsShipmentLineItems) GetDataOk() ([]GETLineItems200ResponseDataInnerRelationshipsShipmentLineItemsDataInner, bool) {
+func (o *GETLineItems200ResponseDataInnerRelationshipsShipmentLineItems) GetDataOk() (*GETLineItems200ResponseDataInnerRelationshipsShipmentLineItemsData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETLineItems200ResponseDataInnerRelationshipsShipmentLineItems) HasData
 	return false
 }
 
-// SetData gets a reference to the given []GETLineItems200ResponseDataInnerRelationshipsShipmentLineItemsDataInner and assigns it to the Data field.
-func (o *GETLineItems200ResponseDataInnerRelationshipsShipmentLineItems) SetData(v []GETLineItems200ResponseDataInnerRelationshipsShipmentLineItemsDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETLineItems200ResponseDataInnerRelationshipsShipmentLineItemsData and assigns it to the Data field.
+func (o *GETLineItems200ResponseDataInnerRelationshipsShipmentLineItems) SetData(v GETLineItems200ResponseDataInnerRelationshipsShipmentLineItemsData) {
+	o.Data = &v
 }
 
 func (o GETLineItems200ResponseDataInnerRelationshipsShipmentLineItems) MarshalJSON() ([]byte, error) {

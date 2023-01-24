@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETBingGeocoders200ResponseDataInnerRelationshipsAddresses struct for GETBingGeocoders200ResponseDataInnerRelationshipsAddresses
 type GETBingGeocoders200ResponseDataInnerRelationshipsAddresses struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks           `json:"links,omitempty"`
-	Data  []GETBingGeocoders200ResponseDataInnerRelationshipsAddressesDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks     `json:"links,omitempty"`
+	Data  *GETBingGeocoders200ResponseDataInnerRelationshipsAddressesData `json:"data,omitempty"`
 }
 
 // NewGETBingGeocoders200ResponseDataInnerRelationshipsAddresses instantiates a new GETBingGeocoders200ResponseDataInnerRelationshipsAddresses object
@@ -71,17 +71,17 @@ func (o *GETBingGeocoders200ResponseDataInnerRelationshipsAddresses) SetLinks(v 
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETBingGeocoders200ResponseDataInnerRelationshipsAddresses) GetData() []GETBingGeocoders200ResponseDataInnerRelationshipsAddressesDataInner {
+func (o *GETBingGeocoders200ResponseDataInnerRelationshipsAddresses) GetData() GETBingGeocoders200ResponseDataInnerRelationshipsAddressesData {
 	if o == nil || o.Data == nil {
-		var ret []GETBingGeocoders200ResponseDataInnerRelationshipsAddressesDataInner
+		var ret GETBingGeocoders200ResponseDataInnerRelationshipsAddressesData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETBingGeocoders200ResponseDataInnerRelationshipsAddresses) GetDataOk() ([]GETBingGeocoders200ResponseDataInnerRelationshipsAddressesDataInner, bool) {
+func (o *GETBingGeocoders200ResponseDataInnerRelationshipsAddresses) GetDataOk() (*GETBingGeocoders200ResponseDataInnerRelationshipsAddressesData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETBingGeocoders200ResponseDataInnerRelationshipsAddresses) HasData() b
 	return false
 }
 
-// SetData gets a reference to the given []GETBingGeocoders200ResponseDataInnerRelationshipsAddressesDataInner and assigns it to the Data field.
-func (o *GETBingGeocoders200ResponseDataInnerRelationshipsAddresses) SetData(v []GETBingGeocoders200ResponseDataInnerRelationshipsAddressesDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETBingGeocoders200ResponseDataInnerRelationshipsAddressesData and assigns it to the Data field.
+func (o *GETBingGeocoders200ResponseDataInnerRelationshipsAddresses) SetData(v GETBingGeocoders200ResponseDataInnerRelationshipsAddressesData) {
+	o.Data = &v
 }
 
 func (o GETBingGeocoders200ResponseDataInnerRelationshipsAddresses) MarshalJSON() ([]byte, error) {

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StockLocation** | Pointer to [**DeliveryLeadTimeDataRelationshipsStockLocation**](DeliveryLeadTimeDataRelationshipsStockLocation.md) |  | [optional] 
-**Sku** | Pointer to [**BundleDataRelationshipsSkus**](BundleDataRelationshipsSkus.md) |  | [optional] 
+**StockLocation** | Pointer to [**DeliveryLeadTimeCreateDataRelationshipsStockLocation**](DeliveryLeadTimeCreateDataRelationshipsStockLocation.md) |  | [optional] 
+**Sku** | Pointer to [**InStockSubscriptionCreateDataRelationshipsSku**](InStockSubscriptionCreateDataRelationshipsSku.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetStockLocation
 
-`func (o *StockItemUpdateDataRelationships) GetStockLocation() DeliveryLeadTimeDataRelationshipsStockLocation`
+`func (o *StockItemUpdateDataRelationships) GetStockLocation() DeliveryLeadTimeCreateDataRelationshipsStockLocation`
 
 GetStockLocation returns the StockLocation field if non-nil, zero value otherwise.
 
 ### GetStockLocationOk
 
-`func (o *StockItemUpdateDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeDataRelationshipsStockLocation, bool)`
+`func (o *StockItemUpdateDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeCreateDataRelationshipsStockLocation, bool)`
 
 GetStockLocationOk returns a tuple with the StockLocation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStockLocation
 
-`func (o *StockItemUpdateDataRelationships) SetStockLocation(v DeliveryLeadTimeDataRelationshipsStockLocation)`
+`func (o *StockItemUpdateDataRelationships) SetStockLocation(v DeliveryLeadTimeCreateDataRelationshipsStockLocation)`
 
 SetStockLocation sets StockLocation field to given value.
 
@@ -53,20 +53,20 @@ HasStockLocation returns a boolean if a field has been set.
 
 ### GetSku
 
-`func (o *StockItemUpdateDataRelationships) GetSku() BundleDataRelationshipsSkus`
+`func (o *StockItemUpdateDataRelationships) GetSku() InStockSubscriptionCreateDataRelationshipsSku`
 
 GetSku returns the Sku field if non-nil, zero value otherwise.
 
 ### GetSkuOk
 
-`func (o *StockItemUpdateDataRelationships) GetSkuOk() (*BundleDataRelationshipsSkus, bool)`
+`func (o *StockItemUpdateDataRelationships) GetSkuOk() (*InStockSubscriptionCreateDataRelationshipsSku, bool)`
 
 GetSkuOk returns a tuple with the Sku field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSku
 
-`func (o *StockItemUpdateDataRelationships) SetSku(v BundleDataRelationshipsSkus)`
+`func (o *StockItemUpdateDataRelationships) SetSku(v InStockSubscriptionCreateDataRelationshipsSku)`
 
 SetSku sets Sku field to given value.
 

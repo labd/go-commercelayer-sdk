@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEOrderCopiesOrderCopyId Delete an order copy
 
 Delete an order copy
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderCopyId The resource's id
- @return OrderCopiesApiDELETEOrderCopiesOrderCopyIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderCopyId The resource's id
+	@return OrderCopiesApiDELETEOrderCopiesOrderCopyIdRequest
 */
 func (a *OrderCopiesApiService) DELETEOrderCopiesOrderCopyId(ctx context.Context, orderCopyId string) OrderCopiesApiDELETEOrderCopiesOrderCopyIdRequest {
 	return OrderCopiesApiDELETEOrderCopiesOrderCopyIdRequest{
@@ -129,8 +129,8 @@ GETOrderCopies List all order copies
 
 List all order copies
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return OrderCopiesApiGETOrderCopiesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return OrderCopiesApiGETOrderCopiesRequest
 */
 func (a *OrderCopiesApiService) GETOrderCopies(ctx context.Context) OrderCopiesApiGETOrderCopiesRequest {
 	return OrderCopiesApiGETOrderCopiesRequest{
@@ -140,7 +140,8 @@ func (a *OrderCopiesApiService) GETOrderCopies(ctx context.Context) OrderCopiesA
 }
 
 // Execute executes the request
-//  @return GETOrderCopies200Response
+//
+//	@return GETOrderCopies200Response
 func (a *OrderCopiesApiService) GETOrderCopiesExecute(r OrderCopiesApiGETOrderCopiesRequest) (*GETOrderCopies200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -229,9 +230,9 @@ GETOrderCopiesOrderCopyId Retrieve an order copy
 
 Retrieve an order copy
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderCopyId The resource's id
- @return OrderCopiesApiGETOrderCopiesOrderCopyIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderCopyId The resource's id
+	@return OrderCopiesApiGETOrderCopiesOrderCopyIdRequest
 */
 func (a *OrderCopiesApiService) GETOrderCopiesOrderCopyId(ctx context.Context, orderCopyId string) OrderCopiesApiGETOrderCopiesOrderCopyIdRequest {
 	return OrderCopiesApiGETOrderCopiesOrderCopyIdRequest{
@@ -242,7 +243,8 @@ func (a *OrderCopiesApiService) GETOrderCopiesOrderCopyId(ctx context.Context, o
 }
 
 // Execute executes the request
-//  @return GETOrderCopiesOrderCopyId200Response
+//
+//	@return GETOrderCopiesOrderCopyId200Response
 func (a *OrderCopiesApiService) GETOrderCopiesOrderCopyIdExecute(r OrderCopiesApiGETOrderCopiesOrderCopyIdRequest) (*GETOrderCopiesOrderCopyId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -332,9 +334,9 @@ GETOrderIdOrderCopies Retrieve the order copies associated to the order
 
 Retrieve the order copies associated to the order
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderId The resource's id
- @return OrderCopiesApiGETOrderIdOrderCopiesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return OrderCopiesApiGETOrderIdOrderCopiesRequest
 */
 func (a *OrderCopiesApiService) GETOrderIdOrderCopies(ctx context.Context, orderId string) OrderCopiesApiGETOrderIdOrderCopiesRequest {
 	return OrderCopiesApiGETOrderIdOrderCopiesRequest{
@@ -424,9 +426,9 @@ GETOrderSubscriptionIdOrderCopies Retrieve the order copies associated to the or
 
 Retrieve the order copies associated to the order subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderSubscriptionId The resource's id
- @return OrderCopiesApiGETOrderSubscriptionIdOrderCopiesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderSubscriptionId The resource's id
+	@return OrderCopiesApiGETOrderSubscriptionIdOrderCopiesRequest
 */
 func (a *OrderCopiesApiService) GETOrderSubscriptionIdOrderCopies(ctx context.Context, orderSubscriptionId string) OrderCopiesApiGETOrderSubscriptionIdOrderCopiesRequest {
 	return OrderCopiesApiGETOrderSubscriptionIdOrderCopiesRequest{
@@ -521,8 +523,8 @@ POSTOrderCopies Create an order copy
 
 Create an order copy
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return OrderCopiesApiPOSTOrderCopiesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return OrderCopiesApiPOSTOrderCopiesRequest
 */
 func (a *OrderCopiesApiService) POSTOrderCopies(ctx context.Context) OrderCopiesApiPOSTOrderCopiesRequest {
 	return OrderCopiesApiPOSTOrderCopiesRequest{
@@ -532,7 +534,8 @@ func (a *OrderCopiesApiService) POSTOrderCopies(ctx context.Context) OrderCopies
 }
 
 // Execute executes the request
-//  @return POSTOrderCopies201Response
+//
+//	@return POSTOrderCopies201Response
 func (a *OrderCopiesApiService) POSTOrderCopiesExecute(r OrderCopiesApiPOSTOrderCopiesRequest) (*POSTOrderCopies201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

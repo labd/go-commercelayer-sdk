@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,7 +17,7 @@ import (
 
 // LineItemOptionUpdateDataRelationships struct for LineItemOptionUpdateDataRelationships
 type LineItemOptionUpdateDataRelationships struct {
-	SkuOption *LineItemOptionDataRelationshipsSkuOption `json:"sku_option,omitempty"`
+	SkuOption *LineItemOptionCreateDataRelationshipsSkuOption `json:"sku_option,omitempty"`
 }
 
 // NewLineItemOptionUpdateDataRelationships instantiates a new LineItemOptionUpdateDataRelationships object
@@ -38,9 +38,9 @@ func NewLineItemOptionUpdateDataRelationshipsWithDefaults() *LineItemOptionUpdat
 }
 
 // GetSkuOption returns the SkuOption field value if set, zero value otherwise.
-func (o *LineItemOptionUpdateDataRelationships) GetSkuOption() LineItemOptionDataRelationshipsSkuOption {
+func (o *LineItemOptionUpdateDataRelationships) GetSkuOption() LineItemOptionCreateDataRelationshipsSkuOption {
 	if o == nil || o.SkuOption == nil {
-		var ret LineItemOptionDataRelationshipsSkuOption
+		var ret LineItemOptionCreateDataRelationshipsSkuOption
 		return ret
 	}
 	return *o.SkuOption
@@ -48,7 +48,7 @@ func (o *LineItemOptionUpdateDataRelationships) GetSkuOption() LineItemOptionDat
 
 // GetSkuOptionOk returns a tuple with the SkuOption field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LineItemOptionUpdateDataRelationships) GetSkuOptionOk() (*LineItemOptionDataRelationshipsSkuOption, bool) {
+func (o *LineItemOptionUpdateDataRelationships) GetSkuOptionOk() (*LineItemOptionCreateDataRelationshipsSkuOption, bool) {
 	if o == nil || o.SkuOption == nil {
 		return nil, false
 	}
@@ -64,8 +64,8 @@ func (o *LineItemOptionUpdateDataRelationships) HasSkuOption() bool {
 	return false
 }
 
-// SetSkuOption gets a reference to the given LineItemOptionDataRelationshipsSkuOption and assigns it to the SkuOption field.
-func (o *LineItemOptionUpdateDataRelationships) SetSkuOption(v LineItemOptionDataRelationshipsSkuOption) {
+// SetSkuOption gets a reference to the given LineItemOptionCreateDataRelationshipsSkuOption and assigns it to the SkuOption field.
+func (o *LineItemOptionUpdateDataRelationships) SetSkuOption(v LineItemOptionCreateDataRelationshipsSkuOption) {
 	o.SkuOption = &v
 }
 

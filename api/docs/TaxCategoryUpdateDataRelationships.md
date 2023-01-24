@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Sku** | Pointer to [**BundleDataRelationshipsSkus**](BundleDataRelationshipsSkus.md) |  | [optional] 
+**Sku** | Pointer to [**InStockSubscriptionCreateDataRelationshipsSku**](InStockSubscriptionCreateDataRelationshipsSku.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSku
 
-`func (o *TaxCategoryUpdateDataRelationships) GetSku() BundleDataRelationshipsSkus`
+`func (o *TaxCategoryUpdateDataRelationships) GetSku() InStockSubscriptionCreateDataRelationshipsSku`
 
 GetSku returns the Sku field if non-nil, zero value otherwise.
 
 ### GetSkuOk
 
-`func (o *TaxCategoryUpdateDataRelationships) GetSkuOk() (*BundleDataRelationshipsSkus, bool)`
+`func (o *TaxCategoryUpdateDataRelationships) GetSkuOk() (*InStockSubscriptionCreateDataRelationshipsSku, bool)`
 
 GetSkuOk returns a tuple with the Sku field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSku
 
-`func (o *TaxCategoryUpdateDataRelationships) SetSku(v BundleDataRelationshipsSkus)`
+`func (o *TaxCategoryUpdateDataRelationships) SetSku(v InStockSubscriptionCreateDataRelationshipsSku)`
 
 SetSku sets Sku field to given value.
 

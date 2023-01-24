@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,10 +17,9 @@ import (
 
 // ManualTaxCalculatorDataRelationships struct for ManualTaxCalculatorDataRelationships
 type ManualTaxCalculatorDataRelationships struct {
-	TaxCategories *AvalaraAccountDataRelationshipsTaxCategories `json:"tax_categories,omitempty"`
-	Markets       *AvalaraAccountDataRelationshipsMarkets       `json:"markets,omitempty"`
-	Attachments   *AvalaraAccountDataRelationshipsAttachments   `json:"attachments,omitempty"`
-	TaxRules      *ManualTaxCalculatorDataRelationshipsTaxRules `json:"tax_rules,omitempty"`
+	Markets     *AvalaraAccountDataRelationshipsMarkets       `json:"markets,omitempty"`
+	Attachments *AvalaraAccountDataRelationshipsAttachments   `json:"attachments,omitempty"`
+	TaxRules    *ManualTaxCalculatorDataRelationshipsTaxRules `json:"tax_rules,omitempty"`
 }
 
 // NewManualTaxCalculatorDataRelationships instantiates a new ManualTaxCalculatorDataRelationships object
@@ -38,38 +37,6 @@ func NewManualTaxCalculatorDataRelationships() *ManualTaxCalculatorDataRelations
 func NewManualTaxCalculatorDataRelationshipsWithDefaults() *ManualTaxCalculatorDataRelationships {
 	this := ManualTaxCalculatorDataRelationships{}
 	return &this
-}
-
-// GetTaxCategories returns the TaxCategories field value if set, zero value otherwise.
-func (o *ManualTaxCalculatorDataRelationships) GetTaxCategories() AvalaraAccountDataRelationshipsTaxCategories {
-	if o == nil || o.TaxCategories == nil {
-		var ret AvalaraAccountDataRelationshipsTaxCategories
-		return ret
-	}
-	return *o.TaxCategories
-}
-
-// GetTaxCategoriesOk returns a tuple with the TaxCategories field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *ManualTaxCalculatorDataRelationships) GetTaxCategoriesOk() (*AvalaraAccountDataRelationshipsTaxCategories, bool) {
-	if o == nil || o.TaxCategories == nil {
-		return nil, false
-	}
-	return o.TaxCategories, true
-}
-
-// HasTaxCategories returns a boolean if a field has been set.
-func (o *ManualTaxCalculatorDataRelationships) HasTaxCategories() bool {
-	if o != nil && o.TaxCategories != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetTaxCategories gets a reference to the given AvalaraAccountDataRelationshipsTaxCategories and assigns it to the TaxCategories field.
-func (o *ManualTaxCalculatorDataRelationships) SetTaxCategories(v AvalaraAccountDataRelationshipsTaxCategories) {
-	o.TaxCategories = &v
 }
 
 // GetMarkets returns the Markets field value if set, zero value otherwise.
@@ -170,9 +137,6 @@ func (o *ManualTaxCalculatorDataRelationships) SetTaxRules(v ManualTaxCalculator
 
 func (o ManualTaxCalculatorDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if o.TaxCategories != nil {
-		toSerialize["tax_categories"] = o.TaxCategories
-	}
 	if o.Markets != nil {
 		toSerialize["markets"] = o.Markets
 	}

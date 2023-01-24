@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,7 +17,7 @@ import (
 
 // PackageUpdateDataRelationships struct for PackageUpdateDataRelationships
 type PackageUpdateDataRelationships struct {
-	StockLocation *DeliveryLeadTimeDataRelationshipsStockLocation `json:"stock_location,omitempty"`
+	StockLocation *DeliveryLeadTimeCreateDataRelationshipsStockLocation `json:"stock_location,omitempty"`
 }
 
 // NewPackageUpdateDataRelationships instantiates a new PackageUpdateDataRelationships object
@@ -38,9 +38,9 @@ func NewPackageUpdateDataRelationshipsWithDefaults() *PackageUpdateDataRelations
 }
 
 // GetStockLocation returns the StockLocation field value if set, zero value otherwise.
-func (o *PackageUpdateDataRelationships) GetStockLocation() DeliveryLeadTimeDataRelationshipsStockLocation {
+func (o *PackageUpdateDataRelationships) GetStockLocation() DeliveryLeadTimeCreateDataRelationshipsStockLocation {
 	if o == nil || o.StockLocation == nil {
-		var ret DeliveryLeadTimeDataRelationshipsStockLocation
+		var ret DeliveryLeadTimeCreateDataRelationshipsStockLocation
 		return ret
 	}
 	return *o.StockLocation
@@ -48,7 +48,7 @@ func (o *PackageUpdateDataRelationships) GetStockLocation() DeliveryLeadTimeData
 
 // GetStockLocationOk returns a tuple with the StockLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PackageUpdateDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeDataRelationshipsStockLocation, bool) {
+func (o *PackageUpdateDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeCreateDataRelationshipsStockLocation, bool) {
 	if o == nil || o.StockLocation == nil {
 		return nil, false
 	}
@@ -64,8 +64,8 @@ func (o *PackageUpdateDataRelationships) HasStockLocation() bool {
 	return false
 }
 
-// SetStockLocation gets a reference to the given DeliveryLeadTimeDataRelationshipsStockLocation and assigns it to the StockLocation field.
-func (o *PackageUpdateDataRelationships) SetStockLocation(v DeliveryLeadTimeDataRelationshipsStockLocation) {
+// SetStockLocation gets a reference to the given DeliveryLeadTimeCreateDataRelationshipsStockLocation and assigns it to the StockLocation field.
+func (o *PackageUpdateDataRelationships) SetStockLocation(v DeliveryLeadTimeCreateDataRelationshipsStockLocation) {
 	o.StockLocation = &v
 }
 

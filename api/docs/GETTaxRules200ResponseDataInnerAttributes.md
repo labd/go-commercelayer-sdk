@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | Pointer to **string** | The tax rule internal name. | [optional] 
-**TaxRate** | Pointer to **float32** | The tax rate for this ruke. | [optional] 
+**TaxRate** | Pointer to **float32** | The tax rate for this rule. | [optional] 
 **CountryCodeRegex** | Pointer to **string** | The regex that will be evaluated to match the shipping address country code. | [optional] 
 **NotCountryCodeRegex** | Pointer to **string** | The regex that will be evaluated as negative match for the shipping address country code. | [optional] 
 **StateCodeRegex** | Pointer to **string** | The regex that will be evaluated to match the shipping address state code. | [optional] 
@@ -17,7 +17,6 @@ Name | Type | Description | Notes
 **GiftCardTaxable** | Pointer to **bool** | Indicates if gift cards are taxable. | [optional] 
 **AdjustmentTaxable** | Pointer to **bool** | Indicates if adjustemnts are taxable. | [optional] 
 **Breakdown** | Pointer to **map[string]interface{}** | The breakdown for this tax rule (if calculated). | [optional] 
-**Id** | Pointer to **string** | Unique identifier for the resource (hash). | [optional] 
 **CreatedAt** | Pointer to **string** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **string** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **string** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
@@ -367,31 +366,6 @@ SetBreakdown sets Breakdown field to given value.
 `func (o *GETTaxRules200ResponseDataInnerAttributes) HasBreakdown() bool`
 
 HasBreakdown returns a boolean if a field has been set.
-
-### GetId
-
-`func (o *GETTaxRules200ResponseDataInnerAttributes) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GETTaxRules200ResponseDataInnerAttributes) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GETTaxRules200ResponseDataInnerAttributes) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *GETTaxRules200ResponseDataInnerAttributes) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

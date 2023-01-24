@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEPriceVolumeTiersPriceVolumeTierId Delete a price volume tier
 
 Delete a price volume tier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param priceVolumeTierId The resource's id
- @return PriceVolumeTiersApiDELETEPriceVolumeTiersPriceVolumeTierIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceVolumeTierId The resource's id
+	@return PriceVolumeTiersApiDELETEPriceVolumeTiersPriceVolumeTierIdRequest
 */
 func (a *PriceVolumeTiersApiService) DELETEPriceVolumeTiersPriceVolumeTierId(ctx context.Context, priceVolumeTierId string) PriceVolumeTiersApiDELETEPriceVolumeTiersPriceVolumeTierIdRequest {
 	return PriceVolumeTiersApiDELETEPriceVolumeTiersPriceVolumeTierIdRequest{
@@ -130,9 +130,9 @@ GETPriceIdPriceVolumeTiers Retrieve the price volume tiers associated to the pri
 
 Retrieve the price volume tiers associated to the price
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param priceId The resource's id
- @return PriceVolumeTiersApiGETPriceIdPriceVolumeTiersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceId The resource's id
+	@return PriceVolumeTiersApiGETPriceIdPriceVolumeTiersRequest
 */
 func (a *PriceVolumeTiersApiService) GETPriceIdPriceVolumeTiers(ctx context.Context, priceId string) PriceVolumeTiersApiGETPriceIdPriceVolumeTiersRequest {
 	return PriceVolumeTiersApiGETPriceIdPriceVolumeTiersRequest{
@@ -221,8 +221,8 @@ GETPriceVolumeTiers List all price volume tiers
 
 List all price volume tiers
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return PriceVolumeTiersApiGETPriceVolumeTiersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return PriceVolumeTiersApiGETPriceVolumeTiersRequest
 */
 func (a *PriceVolumeTiersApiService) GETPriceVolumeTiers(ctx context.Context) PriceVolumeTiersApiGETPriceVolumeTiersRequest {
 	return PriceVolumeTiersApiGETPriceVolumeTiersRequest{
@@ -232,7 +232,8 @@ func (a *PriceVolumeTiersApiService) GETPriceVolumeTiers(ctx context.Context) Pr
 }
 
 // Execute executes the request
-//  @return GETPriceVolumeTiers200Response
+//
+//	@return GETPriceVolumeTiers200Response
 func (a *PriceVolumeTiersApiService) GETPriceVolumeTiersExecute(r PriceVolumeTiersApiGETPriceVolumeTiersRequest) (*GETPriceVolumeTiers200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -321,9 +322,9 @@ GETPriceVolumeTiersPriceVolumeTierId Retrieve a price volume tier
 
 Retrieve a price volume tier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param priceVolumeTierId The resource's id
- @return PriceVolumeTiersApiGETPriceVolumeTiersPriceVolumeTierIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceVolumeTierId The resource's id
+	@return PriceVolumeTiersApiGETPriceVolumeTiersPriceVolumeTierIdRequest
 */
 func (a *PriceVolumeTiersApiService) GETPriceVolumeTiersPriceVolumeTierId(ctx context.Context, priceVolumeTierId string) PriceVolumeTiersApiGETPriceVolumeTiersPriceVolumeTierIdRequest {
 	return PriceVolumeTiersApiGETPriceVolumeTiersPriceVolumeTierIdRequest{
@@ -334,7 +335,8 @@ func (a *PriceVolumeTiersApiService) GETPriceVolumeTiersPriceVolumeTierId(ctx co
 }
 
 // Execute executes the request
-//  @return GETPriceVolumeTiersPriceVolumeTierId200Response
+//
+//	@return GETPriceVolumeTiersPriceVolumeTierId200Response
 func (a *PriceVolumeTiersApiService) GETPriceVolumeTiersPriceVolumeTierIdExecute(r PriceVolumeTiersApiGETPriceVolumeTiersPriceVolumeTierIdRequest) (*GETPriceVolumeTiersPriceVolumeTierId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -430,9 +432,9 @@ PATCHPriceVolumeTiersPriceVolumeTierId Update a price volume tier
 
 Update a price volume tier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param priceVolumeTierId The resource's id
- @return PriceVolumeTiersApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceVolumeTierId The resource's id
+	@return PriceVolumeTiersApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest
 */
 func (a *PriceVolumeTiersApiService) PATCHPriceVolumeTiersPriceVolumeTierId(ctx context.Context, priceVolumeTierId string) PriceVolumeTiersApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest {
 	return PriceVolumeTiersApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest{
@@ -443,7 +445,8 @@ func (a *PriceVolumeTiersApiService) PATCHPriceVolumeTiersPriceVolumeTierId(ctx 
 }
 
 // Execute executes the request
-//  @return PATCHPriceVolumeTiersPriceVolumeTierId200Response
+//
+//	@return PATCHPriceVolumeTiersPriceVolumeTierId200Response
 func (a *PriceVolumeTiersApiService) PATCHPriceVolumeTiersPriceVolumeTierIdExecute(r PriceVolumeTiersApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest) (*PATCHPriceVolumeTiersPriceVolumeTierId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -543,8 +546,8 @@ POSTPriceVolumeTiers Create a price volume tier
 
 Create a price volume tier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return PriceVolumeTiersApiPOSTPriceVolumeTiersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return PriceVolumeTiersApiPOSTPriceVolumeTiersRequest
 */
 func (a *PriceVolumeTiersApiService) POSTPriceVolumeTiers(ctx context.Context) PriceVolumeTiersApiPOSTPriceVolumeTiersRequest {
 	return PriceVolumeTiersApiPOSTPriceVolumeTiersRequest{
@@ -554,7 +557,8 @@ func (a *PriceVolumeTiersApiService) POSTPriceVolumeTiers(ctx context.Context) P
 }
 
 // Execute executes the request
-//  @return POSTPriceVolumeTiers201Response
+//
+//	@return POSTPriceVolumeTiers201Response
 func (a *PriceVolumeTiersApiService) POSTPriceVolumeTiersExecute(r PriceVolumeTiersApiPOSTPriceVolumeTiersRequest) (*POSTPriceVolumeTiers201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

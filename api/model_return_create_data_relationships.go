@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,15 +17,15 @@ import (
 
 // ReturnCreateDataRelationships struct for ReturnCreateDataRelationships
 type ReturnCreateDataRelationships struct {
-	Order         AdyenPaymentDataRelationshipsOrder              `json:"order"`
-	StockLocation *DeliveryLeadTimeDataRelationshipsStockLocation `json:"stock_location,omitempty"`
+	Order         AdyenPaymentCreateDataRelationshipsOrder              `json:"order"`
+	StockLocation *DeliveryLeadTimeCreateDataRelationshipsStockLocation `json:"stock_location,omitempty"`
 }
 
 // NewReturnCreateDataRelationships instantiates a new ReturnCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewReturnCreateDataRelationships(order AdyenPaymentDataRelationshipsOrder) *ReturnCreateDataRelationships {
+func NewReturnCreateDataRelationships(order AdyenPaymentCreateDataRelationshipsOrder) *ReturnCreateDataRelationships {
 	this := ReturnCreateDataRelationships{}
 	this.Order = order
 	return &this
@@ -40,9 +40,9 @@ func NewReturnCreateDataRelationshipsWithDefaults() *ReturnCreateDataRelationshi
 }
 
 // GetOrder returns the Order field value
-func (o *ReturnCreateDataRelationships) GetOrder() AdyenPaymentDataRelationshipsOrder {
+func (o *ReturnCreateDataRelationships) GetOrder() AdyenPaymentCreateDataRelationshipsOrder {
 	if o == nil {
-		var ret AdyenPaymentDataRelationshipsOrder
+		var ret AdyenPaymentCreateDataRelationshipsOrder
 		return ret
 	}
 
@@ -51,7 +51,7 @@ func (o *ReturnCreateDataRelationships) GetOrder() AdyenPaymentDataRelationships
 
 // GetOrderOk returns a tuple with the Order field value
 // and a boolean to check if the value has been set.
-func (o *ReturnCreateDataRelationships) GetOrderOk() (*AdyenPaymentDataRelationshipsOrder, bool) {
+func (o *ReturnCreateDataRelationships) GetOrderOk() (*AdyenPaymentCreateDataRelationshipsOrder, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -59,14 +59,14 @@ func (o *ReturnCreateDataRelationships) GetOrderOk() (*AdyenPaymentDataRelations
 }
 
 // SetOrder sets field value
-func (o *ReturnCreateDataRelationships) SetOrder(v AdyenPaymentDataRelationshipsOrder) {
+func (o *ReturnCreateDataRelationships) SetOrder(v AdyenPaymentCreateDataRelationshipsOrder) {
 	o.Order = v
 }
 
 // GetStockLocation returns the StockLocation field value if set, zero value otherwise.
-func (o *ReturnCreateDataRelationships) GetStockLocation() DeliveryLeadTimeDataRelationshipsStockLocation {
+func (o *ReturnCreateDataRelationships) GetStockLocation() DeliveryLeadTimeCreateDataRelationshipsStockLocation {
 	if o == nil || o.StockLocation == nil {
-		var ret DeliveryLeadTimeDataRelationshipsStockLocation
+		var ret DeliveryLeadTimeCreateDataRelationshipsStockLocation
 		return ret
 	}
 	return *o.StockLocation
@@ -74,7 +74,7 @@ func (o *ReturnCreateDataRelationships) GetStockLocation() DeliveryLeadTimeDataR
 
 // GetStockLocationOk returns a tuple with the StockLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ReturnCreateDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeDataRelationshipsStockLocation, bool) {
+func (o *ReturnCreateDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeCreateDataRelationshipsStockLocation, bool) {
 	if o == nil || o.StockLocation == nil {
 		return nil, false
 	}
@@ -90,8 +90,8 @@ func (o *ReturnCreateDataRelationships) HasStockLocation() bool {
 	return false
 }
 
-// SetStockLocation gets a reference to the given DeliveryLeadTimeDataRelationshipsStockLocation and assigns it to the StockLocation field.
-func (o *ReturnCreateDataRelationships) SetStockLocation(v DeliveryLeadTimeDataRelationshipsStockLocation) {
+// SetStockLocation gets a reference to the given DeliveryLeadTimeCreateDataRelationshipsStockLocation and assigns it to the StockLocation field.
+func (o *ReturnCreateDataRelationships) SetStockLocation(v DeliveryLeadTimeCreateDataRelationshipsStockLocation) {
 	o.StockLocation = &v
 }
 

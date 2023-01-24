@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**LineItemOptionDataRelationshipsLineItemData**](LineItemOptionDataRelationshipsLineItemData.md) |  | 
+**Data** | Pointer to [**LineItemOptionDataRelationshipsLineItemData**](LineItemOptionDataRelationshipsLineItemData.md) |  | [optional] 
 
 ## Methods
 
 ### NewLineItemOptionDataRelationshipsLineItem
 
-`func NewLineItemOptionDataRelationshipsLineItem(data LineItemOptionDataRelationshipsLineItemData, ) *LineItemOptionDataRelationshipsLineItem`
+`func NewLineItemOptionDataRelationshipsLineItem() *LineItemOptionDataRelationshipsLineItem`
 
 NewLineItemOptionDataRelationshipsLineItem instantiates a new LineItemOptionDataRelationshipsLineItem object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *LineItemOptionDataRelationshipsLineItem) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ GETAuthorizationIdCaptures Retrieve the captures associated to the authorization
 
 Retrieve the captures associated to the authorization
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param authorizationId The resource's id
- @return CapturesApiGETAuthorizationIdCapturesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param authorizationId The resource's id
+	@return CapturesApiGETAuthorizationIdCapturesRequest
 */
 func (a *CapturesApiService) GETAuthorizationIdCaptures(ctx context.Context, authorizationId string) CapturesApiGETAuthorizationIdCapturesRequest {
 	return CapturesApiGETAuthorizationIdCapturesRequest{
@@ -129,8 +129,8 @@ GETCaptures List all captures
 
 List all captures
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return CapturesApiGETCapturesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return CapturesApiGETCapturesRequest
 */
 func (a *CapturesApiService) GETCaptures(ctx context.Context) CapturesApiGETCapturesRequest {
 	return CapturesApiGETCapturesRequest{
@@ -140,7 +140,8 @@ func (a *CapturesApiService) GETCaptures(ctx context.Context) CapturesApiGETCapt
 }
 
 // Execute executes the request
-//  @return GETCaptures200Response
+//
+//	@return GETCaptures200Response
 func (a *CapturesApiService) GETCapturesExecute(r CapturesApiGETCapturesRequest) (*GETCaptures200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -229,9 +230,9 @@ GETCapturesCaptureId Retrieve a capture
 
 Retrieve a capture
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param captureId The resource's id
- @return CapturesApiGETCapturesCaptureIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param captureId The resource's id
+	@return CapturesApiGETCapturesCaptureIdRequest
 */
 func (a *CapturesApiService) GETCapturesCaptureId(ctx context.Context, captureId string) CapturesApiGETCapturesCaptureIdRequest {
 	return CapturesApiGETCapturesCaptureIdRequest{
@@ -242,7 +243,8 @@ func (a *CapturesApiService) GETCapturesCaptureId(ctx context.Context, captureId
 }
 
 // Execute executes the request
-//  @return GETCapturesCaptureId200Response
+//
+//	@return GETCapturesCaptureId200Response
 func (a *CapturesApiService) GETCapturesCaptureIdExecute(r CapturesApiGETCapturesCaptureIdRequest) (*GETCapturesCaptureId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -332,9 +334,9 @@ GETOrderIdCaptures Retrieve the captures associated to the order
 
 Retrieve the captures associated to the order
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderId The resource's id
- @return CapturesApiGETOrderIdCapturesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return CapturesApiGETOrderIdCapturesRequest
 */
 func (a *CapturesApiService) GETOrderIdCaptures(ctx context.Context, orderId string) CapturesApiGETOrderIdCapturesRequest {
 	return CapturesApiGETOrderIdCapturesRequest{
@@ -424,9 +426,9 @@ GETRefundIdReferenceCapture Retrieve the reference capture associated to the ref
 
 Retrieve the reference capture associated to the refund
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param refundId The resource's id
- @return CapturesApiGETRefundIdReferenceCaptureRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param refundId The resource's id
+	@return CapturesApiGETRefundIdReferenceCaptureRequest
 */
 func (a *CapturesApiService) GETRefundIdReferenceCapture(ctx context.Context, refundId string) CapturesApiGETRefundIdReferenceCaptureRequest {
 	return CapturesApiGETRefundIdReferenceCaptureRequest{
@@ -522,9 +524,9 @@ PATCHCapturesCaptureId Update a capture
 
 Update a capture
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param captureId The resource's id
- @return CapturesApiPATCHCapturesCaptureIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param captureId The resource's id
+	@return CapturesApiPATCHCapturesCaptureIdRequest
 */
 func (a *CapturesApiService) PATCHCapturesCaptureId(ctx context.Context, captureId string) CapturesApiPATCHCapturesCaptureIdRequest {
 	return CapturesApiPATCHCapturesCaptureIdRequest{
@@ -535,7 +537,8 @@ func (a *CapturesApiService) PATCHCapturesCaptureId(ctx context.Context, capture
 }
 
 // Execute executes the request
-//  @return PATCHCapturesCaptureId200Response
+//
+//	@return PATCHCapturesCaptureId200Response
 func (a *CapturesApiService) PATCHCapturesCaptureIdExecute(r CapturesApiPATCHCapturesCaptureIdRequest) (*PATCHCapturesCaptureId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch

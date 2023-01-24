@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,15 +17,15 @@ import (
 
 // InventoryReturnLocationCreateDataRelationships struct for InventoryReturnLocationCreateDataRelationships
 type InventoryReturnLocationCreateDataRelationships struct {
-	StockLocation  DeliveryLeadTimeDataRelationshipsStockLocation         `json:"stock_location"`
-	InventoryModel InventoryReturnLocationDataRelationshipsInventoryModel `json:"inventory_model"`
+	StockLocation  DeliveryLeadTimeCreateDataRelationshipsStockLocation         `json:"stock_location"`
+	InventoryModel InventoryReturnLocationCreateDataRelationshipsInventoryModel `json:"inventory_model"`
 }
 
 // NewInventoryReturnLocationCreateDataRelationships instantiates a new InventoryReturnLocationCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInventoryReturnLocationCreateDataRelationships(stockLocation DeliveryLeadTimeDataRelationshipsStockLocation, inventoryModel InventoryReturnLocationDataRelationshipsInventoryModel) *InventoryReturnLocationCreateDataRelationships {
+func NewInventoryReturnLocationCreateDataRelationships(stockLocation DeliveryLeadTimeCreateDataRelationshipsStockLocation, inventoryModel InventoryReturnLocationCreateDataRelationshipsInventoryModel) *InventoryReturnLocationCreateDataRelationships {
 	this := InventoryReturnLocationCreateDataRelationships{}
 	this.StockLocation = stockLocation
 	this.InventoryModel = inventoryModel
@@ -41,9 +41,9 @@ func NewInventoryReturnLocationCreateDataRelationshipsWithDefaults() *InventoryR
 }
 
 // GetStockLocation returns the StockLocation field value
-func (o *InventoryReturnLocationCreateDataRelationships) GetStockLocation() DeliveryLeadTimeDataRelationshipsStockLocation {
+func (o *InventoryReturnLocationCreateDataRelationships) GetStockLocation() DeliveryLeadTimeCreateDataRelationshipsStockLocation {
 	if o == nil {
-		var ret DeliveryLeadTimeDataRelationshipsStockLocation
+		var ret DeliveryLeadTimeCreateDataRelationshipsStockLocation
 		return ret
 	}
 
@@ -52,7 +52,7 @@ func (o *InventoryReturnLocationCreateDataRelationships) GetStockLocation() Deli
 
 // GetStockLocationOk returns a tuple with the StockLocation field value
 // and a boolean to check if the value has been set.
-func (o *InventoryReturnLocationCreateDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeDataRelationshipsStockLocation, bool) {
+func (o *InventoryReturnLocationCreateDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeCreateDataRelationshipsStockLocation, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -60,14 +60,14 @@ func (o *InventoryReturnLocationCreateDataRelationships) GetStockLocationOk() (*
 }
 
 // SetStockLocation sets field value
-func (o *InventoryReturnLocationCreateDataRelationships) SetStockLocation(v DeliveryLeadTimeDataRelationshipsStockLocation) {
+func (o *InventoryReturnLocationCreateDataRelationships) SetStockLocation(v DeliveryLeadTimeCreateDataRelationshipsStockLocation) {
 	o.StockLocation = v
 }
 
 // GetInventoryModel returns the InventoryModel field value
-func (o *InventoryReturnLocationCreateDataRelationships) GetInventoryModel() InventoryReturnLocationDataRelationshipsInventoryModel {
+func (o *InventoryReturnLocationCreateDataRelationships) GetInventoryModel() InventoryReturnLocationCreateDataRelationshipsInventoryModel {
 	if o == nil {
-		var ret InventoryReturnLocationDataRelationshipsInventoryModel
+		var ret InventoryReturnLocationCreateDataRelationshipsInventoryModel
 		return ret
 	}
 
@@ -76,7 +76,7 @@ func (o *InventoryReturnLocationCreateDataRelationships) GetInventoryModel() Inv
 
 // GetInventoryModelOk returns a tuple with the InventoryModel field value
 // and a boolean to check if the value has been set.
-func (o *InventoryReturnLocationCreateDataRelationships) GetInventoryModelOk() (*InventoryReturnLocationDataRelationshipsInventoryModel, bool) {
+func (o *InventoryReturnLocationCreateDataRelationships) GetInventoryModelOk() (*InventoryReturnLocationCreateDataRelationshipsInventoryModel, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -84,7 +84,7 @@ func (o *InventoryReturnLocationCreateDataRelationships) GetInventoryModelOk() (
 }
 
 // SetInventoryModel sets field value
-func (o *InventoryReturnLocationCreateDataRelationships) SetInventoryModel(v InventoryReturnLocationDataRelationshipsInventoryModel) {
+func (o *InventoryReturnLocationCreateDataRelationships) SetInventoryModel(v InventoryReturnLocationCreateDataRelationshipsInventoryModel) {
 	o.InventoryModel = v
 }
 

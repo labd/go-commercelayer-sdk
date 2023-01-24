@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**TaxCalculatorData**](TaxCalculatorData.md) |  | 
+**Data** | Pointer to [**TaxCalculatorData**](TaxCalculatorData.md) |  | [optional] 
 
 ## Methods
 
 ### NewTaxCalculator
 
-`func NewTaxCalculator(data TaxCalculatorData, ) *TaxCalculator`
+`func NewTaxCalculator() *TaxCalculator`
 
 NewTaxCalculator instantiates a new TaxCalculator object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *TaxCalculator) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

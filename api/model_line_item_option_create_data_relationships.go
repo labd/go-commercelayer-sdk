@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,15 +17,15 @@ import (
 
 // LineItemOptionCreateDataRelationships struct for LineItemOptionCreateDataRelationships
 type LineItemOptionCreateDataRelationships struct {
-	LineItem  LineItemOptionDataRelationshipsLineItem  `json:"line_item"`
-	SkuOption LineItemOptionDataRelationshipsSkuOption `json:"sku_option"`
+	LineItem  LineItemOptionCreateDataRelationshipsLineItem  `json:"line_item"`
+	SkuOption LineItemOptionCreateDataRelationshipsSkuOption `json:"sku_option"`
 }
 
 // NewLineItemOptionCreateDataRelationships instantiates a new LineItemOptionCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLineItemOptionCreateDataRelationships(lineItem LineItemOptionDataRelationshipsLineItem, skuOption LineItemOptionDataRelationshipsSkuOption) *LineItemOptionCreateDataRelationships {
+func NewLineItemOptionCreateDataRelationships(lineItem LineItemOptionCreateDataRelationshipsLineItem, skuOption LineItemOptionCreateDataRelationshipsSkuOption) *LineItemOptionCreateDataRelationships {
 	this := LineItemOptionCreateDataRelationships{}
 	this.LineItem = lineItem
 	this.SkuOption = skuOption
@@ -41,9 +41,9 @@ func NewLineItemOptionCreateDataRelationshipsWithDefaults() *LineItemOptionCreat
 }
 
 // GetLineItem returns the LineItem field value
-func (o *LineItemOptionCreateDataRelationships) GetLineItem() LineItemOptionDataRelationshipsLineItem {
+func (o *LineItemOptionCreateDataRelationships) GetLineItem() LineItemOptionCreateDataRelationshipsLineItem {
 	if o == nil {
-		var ret LineItemOptionDataRelationshipsLineItem
+		var ret LineItemOptionCreateDataRelationshipsLineItem
 		return ret
 	}
 
@@ -52,7 +52,7 @@ func (o *LineItemOptionCreateDataRelationships) GetLineItem() LineItemOptionData
 
 // GetLineItemOk returns a tuple with the LineItem field value
 // and a boolean to check if the value has been set.
-func (o *LineItemOptionCreateDataRelationships) GetLineItemOk() (*LineItemOptionDataRelationshipsLineItem, bool) {
+func (o *LineItemOptionCreateDataRelationships) GetLineItemOk() (*LineItemOptionCreateDataRelationshipsLineItem, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -60,14 +60,14 @@ func (o *LineItemOptionCreateDataRelationships) GetLineItemOk() (*LineItemOption
 }
 
 // SetLineItem sets field value
-func (o *LineItemOptionCreateDataRelationships) SetLineItem(v LineItemOptionDataRelationshipsLineItem) {
+func (o *LineItemOptionCreateDataRelationships) SetLineItem(v LineItemOptionCreateDataRelationshipsLineItem) {
 	o.LineItem = v
 }
 
 // GetSkuOption returns the SkuOption field value
-func (o *LineItemOptionCreateDataRelationships) GetSkuOption() LineItemOptionDataRelationshipsSkuOption {
+func (o *LineItemOptionCreateDataRelationships) GetSkuOption() LineItemOptionCreateDataRelationshipsSkuOption {
 	if o == nil {
-		var ret LineItemOptionDataRelationshipsSkuOption
+		var ret LineItemOptionCreateDataRelationshipsSkuOption
 		return ret
 	}
 
@@ -76,7 +76,7 @@ func (o *LineItemOptionCreateDataRelationships) GetSkuOption() LineItemOptionDat
 
 // GetSkuOptionOk returns a tuple with the SkuOption field value
 // and a boolean to check if the value has been set.
-func (o *LineItemOptionCreateDataRelationships) GetSkuOptionOk() (*LineItemOptionDataRelationshipsSkuOption, bool) {
+func (o *LineItemOptionCreateDataRelationships) GetSkuOptionOk() (*LineItemOptionCreateDataRelationshipsSkuOption, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -84,7 +84,7 @@ func (o *LineItemOptionCreateDataRelationships) GetSkuOptionOk() (*LineItemOptio
 }
 
 // SetSkuOption sets field value
-func (o *LineItemOptionCreateDataRelationships) SetSkuOption(v LineItemOptionDataRelationshipsSkuOption) {
+func (o *LineItemOptionCreateDataRelationships) SetSkuOption(v LineItemOptionCreateDataRelationshipsSkuOption) {
 	o.SkuOption = v
 }
 

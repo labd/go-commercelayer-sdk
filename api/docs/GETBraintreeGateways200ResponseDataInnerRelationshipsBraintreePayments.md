@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks**](GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks.md) |  | [optional] 
-**Data** | Pointer to [**[]GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePaymentsDataInner**](GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePaymentsDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePaymentsData**](GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePaymentsData.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments) GetData() []GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePaymentsDataInner`
+`func (o *GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments) GetData() GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePaymentsData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments) GetDataOk() (*[]GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePaymentsDataInner, bool)`
+`func (o *GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments) GetDataOk() (*GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePaymentsData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments) SetData(v []GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePaymentsDataInner)`
+`func (o *GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePayments) SetData(v GETBraintreeGateways200ResponseDataInnerRelationshipsBraintreePaymentsData)`
 
 SetData sets Data field to given value.
 

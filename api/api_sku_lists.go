@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETESkuListsSkuListId Delete a SKU list
 
 Delete a SKU list
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param skuListId The resource's id
- @return SkuListsApiDELETESkuListsSkuListIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuListId The resource's id
+	@return SkuListsApiDELETESkuListsSkuListIdRequest
 */
 func (a *SkuListsApiService) DELETESkuListsSkuListId(ctx context.Context, skuListId string) SkuListsApiDELETESkuListsSkuListIdRequest {
 	return SkuListsApiDELETESkuListsSkuListIdRequest{
@@ -130,9 +130,9 @@ GETBundleIdSkuList Retrieve the sku list associated to the bundle
 
 Retrieve the sku list associated to the bundle
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bundleId The resource's id
- @return SkuListsApiGETBundleIdSkuListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param bundleId The resource's id
+	@return SkuListsApiGETBundleIdSkuListRequest
 */
 func (a *SkuListsApiService) GETBundleIdSkuList(ctx context.Context, bundleId string) SkuListsApiGETBundleIdSkuListRequest {
 	return SkuListsApiGETBundleIdSkuListRequest{
@@ -222,9 +222,9 @@ GETCustomerIdSkuLists Retrieve the sku lists associated to the customer
 
 Retrieve the sku lists associated to the customer
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerId The resource's id
- @return SkuListsApiGETCustomerIdSkuListsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerId The resource's id
+	@return SkuListsApiGETCustomerIdSkuListsRequest
 */
 func (a *SkuListsApiService) GETCustomerIdSkuLists(ctx context.Context, customerId string) SkuListsApiGETCustomerIdSkuListsRequest {
 	return SkuListsApiGETCustomerIdSkuListsRequest{
@@ -314,9 +314,9 @@ GETFixedPricePromotionIdSkuList Retrieve the sku list associated to the fixed pr
 
 Retrieve the sku list associated to the fixed price promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fixedPricePromotionId The resource's id
- @return SkuListsApiGETFixedPricePromotionIdSkuListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fixedPricePromotionId The resource's id
+	@return SkuListsApiGETFixedPricePromotionIdSkuListRequest
 */
 func (a *SkuListsApiService) GETFixedPricePromotionIdSkuList(ctx context.Context, fixedPricePromotionId string) SkuListsApiGETFixedPricePromotionIdSkuListRequest {
 	return SkuListsApiGETFixedPricePromotionIdSkuListRequest{
@@ -406,9 +406,9 @@ GETFreeGiftPromotionIdSkuList Retrieve the sku list associated to the free gift 
 
 Retrieve the sku list associated to the free gift promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param freeGiftPromotionId The resource's id
- @return SkuListsApiGETFreeGiftPromotionIdSkuListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param freeGiftPromotionId The resource's id
+	@return SkuListsApiGETFreeGiftPromotionIdSkuListRequest
 */
 func (a *SkuListsApiService) GETFreeGiftPromotionIdSkuList(ctx context.Context, freeGiftPromotionId string) SkuListsApiGETFreeGiftPromotionIdSkuListRequest {
 	return SkuListsApiGETFreeGiftPromotionIdSkuListRequest{
@@ -498,9 +498,9 @@ GETPercentageDiscountPromotionIdSkuList Retrieve the sku list associated to the 
 
 Retrieve the sku list associated to the percentage discount promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param percentageDiscountPromotionId The resource's id
- @return SkuListsApiGETPercentageDiscountPromotionIdSkuListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param percentageDiscountPromotionId The resource's id
+	@return SkuListsApiGETPercentageDiscountPromotionIdSkuListRequest
 */
 func (a *SkuListsApiService) GETPercentageDiscountPromotionIdSkuList(ctx context.Context, percentageDiscountPromotionId string) SkuListsApiGETPercentageDiscountPromotionIdSkuListRequest {
 	return SkuListsApiGETPercentageDiscountPromotionIdSkuListRequest{
@@ -590,9 +590,9 @@ GETSkuListItemIdSkuList Retrieve the sku list associated to the SKU list item
 
 Retrieve the sku list associated to the SKU list item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param skuListItemId The resource's id
- @return SkuListsApiGETSkuListItemIdSkuListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuListItemId The resource's id
+	@return SkuListsApiGETSkuListItemIdSkuListRequest
 */
 func (a *SkuListsApiService) GETSkuListItemIdSkuList(ctx context.Context, skuListItemId string) SkuListsApiGETSkuListItemIdSkuListRequest {
 	return SkuListsApiGETSkuListItemIdSkuListRequest{
@@ -682,9 +682,9 @@ GETSkuListPromotionRuleIdSkuList Retrieve the sku list associated to the SKU lis
 
 Retrieve the sku list associated to the SKU list promotion rule
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param skuListPromotionRuleId The resource's id
- @return SkuListsApiGETSkuListPromotionRuleIdSkuListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuListPromotionRuleId The resource's id
+	@return SkuListsApiGETSkuListPromotionRuleIdSkuListRequest
 */
 func (a *SkuListsApiService) GETSkuListPromotionRuleIdSkuList(ctx context.Context, skuListPromotionRuleId string) SkuListsApiGETSkuListPromotionRuleIdSkuListRequest {
 	return SkuListsApiGETSkuListPromotionRuleIdSkuListRequest{
@@ -773,8 +773,8 @@ GETSkuLists List all SKU lists
 
 List all SKU lists
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return SkuListsApiGETSkuListsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return SkuListsApiGETSkuListsRequest
 */
 func (a *SkuListsApiService) GETSkuLists(ctx context.Context) SkuListsApiGETSkuListsRequest {
 	return SkuListsApiGETSkuListsRequest{
@@ -784,7 +784,8 @@ func (a *SkuListsApiService) GETSkuLists(ctx context.Context) SkuListsApiGETSkuL
 }
 
 // Execute executes the request
-//  @return GETSkuLists200Response
+//
+//	@return GETSkuLists200Response
 func (a *SkuListsApiService) GETSkuListsExecute(r SkuListsApiGETSkuListsRequest) (*GETSkuLists200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -873,9 +874,9 @@ GETSkuListsSkuListId Retrieve a SKU list
 
 Retrieve a SKU list
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param skuListId The resource's id
- @return SkuListsApiGETSkuListsSkuListIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuListId The resource's id
+	@return SkuListsApiGETSkuListsSkuListIdRequest
 */
 func (a *SkuListsApiService) GETSkuListsSkuListId(ctx context.Context, skuListId string) SkuListsApiGETSkuListsSkuListIdRequest {
 	return SkuListsApiGETSkuListsSkuListIdRequest{
@@ -886,7 +887,8 @@ func (a *SkuListsApiService) GETSkuListsSkuListId(ctx context.Context, skuListId
 }
 
 // Execute executes the request
-//  @return GETSkuListsSkuListId200Response
+//
+//	@return GETSkuListsSkuListId200Response
 func (a *SkuListsApiService) GETSkuListsSkuListIdExecute(r SkuListsApiGETSkuListsSkuListIdRequest) (*GETSkuListsSkuListId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -982,9 +984,9 @@ PATCHSkuListsSkuListId Update a SKU list
 
 Update a SKU list
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param skuListId The resource's id
- @return SkuListsApiPATCHSkuListsSkuListIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuListId The resource's id
+	@return SkuListsApiPATCHSkuListsSkuListIdRequest
 */
 func (a *SkuListsApiService) PATCHSkuListsSkuListId(ctx context.Context, skuListId string) SkuListsApiPATCHSkuListsSkuListIdRequest {
 	return SkuListsApiPATCHSkuListsSkuListIdRequest{
@@ -995,7 +997,8 @@ func (a *SkuListsApiService) PATCHSkuListsSkuListId(ctx context.Context, skuList
 }
 
 // Execute executes the request
-//  @return PATCHSkuListsSkuListId200Response
+//
+//	@return PATCHSkuListsSkuListId200Response
 func (a *SkuListsApiService) PATCHSkuListsSkuListIdExecute(r SkuListsApiPATCHSkuListsSkuListIdRequest) (*PATCHSkuListsSkuListId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -1095,8 +1098,8 @@ POSTSkuLists Create a SKU list
 
 Create a SKU list
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return SkuListsApiPOSTSkuListsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return SkuListsApiPOSTSkuListsRequest
 */
 func (a *SkuListsApiService) POSTSkuLists(ctx context.Context) SkuListsApiPOSTSkuListsRequest {
 	return SkuListsApiPOSTSkuListsRequest{
@@ -1106,7 +1109,8 @@ func (a *SkuListsApiService) POSTSkuLists(ctx context.Context) SkuListsApiPOSTSk
 }
 
 // Execute executes the request
-//  @return POSTSkuLists201Response
+//
+//	@return POSTSkuLists201Response
 func (a *SkuListsApiService) POSTSkuListsExecute(r SkuListsApiPOSTSkuListsRequest) (*POSTSkuLists201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

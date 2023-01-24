@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -36,8 +36,8 @@ GETApplicationApplicationId Retrieve the application
 
 Retrieve the application
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return SingletonApiGETApplicationApplicationIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return SingletonApiGETApplicationApplicationIdRequest
 */
 func (a *SingletonApiService) GETApplicationApplicationId(ctx context.Context) SingletonApiGETApplicationApplicationIdRequest {
 	return SingletonApiGETApplicationApplicationIdRequest{
@@ -47,7 +47,8 @@ func (a *SingletonApiService) GETApplicationApplicationId(ctx context.Context) S
 }
 
 // Execute executes the request
-//  @return GETApplicationApplicationId200Response
+//
+//	@return GETApplicationApplicationId200Response
 func (a *SingletonApiService) GETApplicationApplicationIdExecute(r SingletonApiGETApplicationApplicationIdRequest) (*GETApplicationApplicationId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -135,8 +136,8 @@ GETOrganizationOrganizationId Retrieve the organization
 
 Retrieve the organization
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return SingletonApiGETOrganizationOrganizationIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return SingletonApiGETOrganizationOrganizationIdRequest
 */
 func (a *SingletonApiService) GETOrganizationOrganizationId(ctx context.Context) SingletonApiGETOrganizationOrganizationIdRequest {
 	return SingletonApiGETOrganizationOrganizationIdRequest{
@@ -146,7 +147,8 @@ func (a *SingletonApiService) GETOrganizationOrganizationId(ctx context.Context)
 }
 
 // Execute executes the request
-//  @return GETOrganizationOrganizationId200Response
+//
+//	@return GETOrganizationOrganizationId200Response
 func (a *SingletonApiService) GETOrganizationOrganizationIdExecute(r SingletonApiGETOrganizationOrganizationIdRequest) (*GETOrganizationOrganizationId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

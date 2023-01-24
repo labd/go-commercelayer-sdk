@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -213,8 +213,6 @@ type GETOrders200ResponseDataInnerAttributes struct {
 	ArchivedAt *string `json:"archived_at,omitempty"`
 	// Time at which an order is marked for cleanup. Any order will start with a default expire time of 2 months. Expiration is reset once a line item is added to the order.
 	ExpiresAt *string `json:"expires_at,omitempty"`
-	// Unique identifier for the resource (hash).
-	Id *string `json:"id,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt *string `json:"created_at,omitempty"`
 	// Time at which the resource was last updated.
@@ -3380,38 +3378,6 @@ func (o *GETOrders200ResponseDataInnerAttributes) SetExpiresAt(v string) {
 	o.ExpiresAt = &v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GETOrders200ResponseDataInnerAttributes) GetId() string {
-	if o == nil || o.Id == nil {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GETOrders200ResponseDataInnerAttributes) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *GETOrders200ResponseDataInnerAttributes) HasId() bool {
-	if o != nil && o.Id != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *GETOrders200ResponseDataInnerAttributes) SetId(v string) {
-	o.Id = &v
-}
-
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
 func (o *GETOrders200ResponseDataInnerAttributes) GetCreatedAt() string {
 	if o == nil || o.CreatedAt == nil {
@@ -3867,9 +3833,6 @@ func (o GETOrders200ResponseDataInnerAttributes) MarshalJSON() ([]byte, error) {
 	}
 	if o.ExpiresAt != nil {
 		toSerialize["expires_at"] = o.ExpiresAt
-	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
 	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt

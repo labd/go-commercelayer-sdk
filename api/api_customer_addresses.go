@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETECustomerAddressesCustomerAddressId Delete a customer address
 
 Delete a customer address
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerAddressId The resource's id
- @return CustomerAddressesApiDELETECustomerAddressesCustomerAddressIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerAddressId The resource's id
+	@return CustomerAddressesApiDELETECustomerAddressesCustomerAddressIdRequest
 */
 func (a *CustomerAddressesApiService) DELETECustomerAddressesCustomerAddressId(ctx context.Context, customerAddressId string) CustomerAddressesApiDELETECustomerAddressesCustomerAddressIdRequest {
 	return CustomerAddressesApiDELETECustomerAddressesCustomerAddressIdRequest{
@@ -129,8 +129,8 @@ GETCustomerAddresses List all customer addresses
 
 List all customer addresses
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return CustomerAddressesApiGETCustomerAddressesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return CustomerAddressesApiGETCustomerAddressesRequest
 */
 func (a *CustomerAddressesApiService) GETCustomerAddresses(ctx context.Context) CustomerAddressesApiGETCustomerAddressesRequest {
 	return CustomerAddressesApiGETCustomerAddressesRequest{
@@ -140,7 +140,8 @@ func (a *CustomerAddressesApiService) GETCustomerAddresses(ctx context.Context) 
 }
 
 // Execute executes the request
-//  @return GETCustomerAddresses200Response
+//
+//	@return GETCustomerAddresses200Response
 func (a *CustomerAddressesApiService) GETCustomerAddressesExecute(r CustomerAddressesApiGETCustomerAddressesRequest) (*GETCustomerAddresses200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -229,9 +230,9 @@ GETCustomerAddressesCustomerAddressId Retrieve a customer address
 
 Retrieve a customer address
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerAddressId The resource's id
- @return CustomerAddressesApiGETCustomerAddressesCustomerAddressIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerAddressId The resource's id
+	@return CustomerAddressesApiGETCustomerAddressesCustomerAddressIdRequest
 */
 func (a *CustomerAddressesApiService) GETCustomerAddressesCustomerAddressId(ctx context.Context, customerAddressId string) CustomerAddressesApiGETCustomerAddressesCustomerAddressIdRequest {
 	return CustomerAddressesApiGETCustomerAddressesCustomerAddressIdRequest{
@@ -242,7 +243,8 @@ func (a *CustomerAddressesApiService) GETCustomerAddressesCustomerAddressId(ctx 
 }
 
 // Execute executes the request
-//  @return GETCustomerAddressesCustomerAddressId200Response
+//
+//	@return GETCustomerAddressesCustomerAddressId200Response
 func (a *CustomerAddressesApiService) GETCustomerAddressesCustomerAddressIdExecute(r CustomerAddressesApiGETCustomerAddressesCustomerAddressIdRequest) (*GETCustomerAddressesCustomerAddressId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -332,9 +334,9 @@ GETCustomerIdCustomerAddresses Retrieve the customer addresses associated to the
 
 Retrieve the customer addresses associated to the customer
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerId The resource's id
- @return CustomerAddressesApiGETCustomerIdCustomerAddressesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerId The resource's id
+	@return CustomerAddressesApiGETCustomerIdCustomerAddressesRequest
 */
 func (a *CustomerAddressesApiService) GETCustomerIdCustomerAddresses(ctx context.Context, customerId string) CustomerAddressesApiGETCustomerIdCustomerAddressesRequest {
 	return CustomerAddressesApiGETCustomerIdCustomerAddressesRequest{
@@ -430,9 +432,9 @@ PATCHCustomerAddressesCustomerAddressId Update a customer address
 
 Update a customer address
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerAddressId The resource's id
- @return CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerAddressId The resource's id
+	@return CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest
 */
 func (a *CustomerAddressesApiService) PATCHCustomerAddressesCustomerAddressId(ctx context.Context, customerAddressId string) CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest {
 	return CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest{
@@ -443,7 +445,8 @@ func (a *CustomerAddressesApiService) PATCHCustomerAddressesCustomerAddressId(ct
 }
 
 // Execute executes the request
-//  @return POSTCustomerAddresses201Response
+//
+//	@return POSTCustomerAddresses201Response
 func (a *CustomerAddressesApiService) PATCHCustomerAddressesCustomerAddressIdExecute(r CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest) (*POSTCustomerAddresses201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -543,8 +546,8 @@ POSTCustomerAddresses Create a customer address
 
 Create a customer address
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return CustomerAddressesApiPOSTCustomerAddressesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return CustomerAddressesApiPOSTCustomerAddressesRequest
 */
 func (a *CustomerAddressesApiService) POSTCustomerAddresses(ctx context.Context) CustomerAddressesApiPOSTCustomerAddressesRequest {
 	return CustomerAddressesApiPOSTCustomerAddressesRequest{
@@ -554,7 +557,8 @@ func (a *CustomerAddressesApiService) POSTCustomerAddresses(ctx context.Context)
 }
 
 // Execute executes the request
-//  @return POSTCustomerAddresses201Response
+//
+//	@return POSTCustomerAddresses201Response
 func (a *CustomerAddressesApiService) POSTCustomerAddressesExecute(r CustomerAddressesApiPOSTCustomerAddressesRequest) (*POSTCustomerAddresses201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

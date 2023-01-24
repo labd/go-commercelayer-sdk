@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETOrders200ResponseDataInnerRelationshipsAvailableFreeBundles struct for GETOrders200ResponseDataInnerRelationshipsAvailableFreeBundles
 type GETOrders200ResponseDataInnerRelationshipsAvailableFreeBundles struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks               `json:"links,omitempty"`
-	Data  []GETOrders200ResponseDataInnerRelationshipsAvailableFreeBundlesDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks         `json:"links,omitempty"`
+	Data  *GETOrders200ResponseDataInnerRelationshipsAvailableFreeBundlesData `json:"data,omitempty"`
 }
 
 // NewGETOrders200ResponseDataInnerRelationshipsAvailableFreeBundles instantiates a new GETOrders200ResponseDataInnerRelationshipsAvailableFreeBundles object
@@ -71,17 +71,17 @@ func (o *GETOrders200ResponseDataInnerRelationshipsAvailableFreeBundles) SetLink
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETOrders200ResponseDataInnerRelationshipsAvailableFreeBundles) GetData() []GETOrders200ResponseDataInnerRelationshipsAvailableFreeBundlesDataInner {
+func (o *GETOrders200ResponseDataInnerRelationshipsAvailableFreeBundles) GetData() GETOrders200ResponseDataInnerRelationshipsAvailableFreeBundlesData {
 	if o == nil || o.Data == nil {
-		var ret []GETOrders200ResponseDataInnerRelationshipsAvailableFreeBundlesDataInner
+		var ret GETOrders200ResponseDataInnerRelationshipsAvailableFreeBundlesData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETOrders200ResponseDataInnerRelationshipsAvailableFreeBundles) GetDataOk() ([]GETOrders200ResponseDataInnerRelationshipsAvailableFreeBundlesDataInner, bool) {
+func (o *GETOrders200ResponseDataInnerRelationshipsAvailableFreeBundles) GetDataOk() (*GETOrders200ResponseDataInnerRelationshipsAvailableFreeBundlesData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETOrders200ResponseDataInnerRelationshipsAvailableFreeBundles) HasData
 	return false
 }
 
-// SetData gets a reference to the given []GETOrders200ResponseDataInnerRelationshipsAvailableFreeBundlesDataInner and assigns it to the Data field.
-func (o *GETOrders200ResponseDataInnerRelationshipsAvailableFreeBundles) SetData(v []GETOrders200ResponseDataInnerRelationshipsAvailableFreeBundlesDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETOrders200ResponseDataInnerRelationshipsAvailableFreeBundlesData and assigns it to the Data field.
+func (o *GETOrders200ResponseDataInnerRelationshipsAvailableFreeBundles) SetData(v GETOrders200ResponseDataInnerRelationshipsAvailableFreeBundlesData) {
+	o.Data = &v
 }
 
 func (o GETOrders200ResponseDataInnerRelationshipsAvailableFreeBundles) MarshalJSON() ([]byte, error) {

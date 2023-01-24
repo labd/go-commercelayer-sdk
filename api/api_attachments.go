@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEAttachmentsAttachmentId Delete an attachment
 
 Delete an attachment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param attachmentId The resource's id
- @return AttachmentsApiDELETEAttachmentsAttachmentIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param attachmentId The resource's id
+	@return AttachmentsApiDELETEAttachmentsAttachmentIdRequest
 */
 func (a *AttachmentsApiService) DELETEAttachmentsAttachmentId(ctx context.Context, attachmentId string) AttachmentsApiDELETEAttachmentsAttachmentIdRequest {
 	return AttachmentsApiDELETEAttachmentsAttachmentIdRequest{
@@ -129,8 +129,8 @@ GETAttachments List all attachments
 
 List all attachments
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return AttachmentsApiGETAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return AttachmentsApiGETAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETAttachments(ctx context.Context) AttachmentsApiGETAttachmentsRequest {
 	return AttachmentsApiGETAttachmentsRequest{
@@ -140,7 +140,8 @@ func (a *AttachmentsApiService) GETAttachments(ctx context.Context) AttachmentsA
 }
 
 // Execute executes the request
-//  @return GETAttachments200Response
+//
+//	@return GETAttachments200Response
 func (a *AttachmentsApiService) GETAttachmentsExecute(r AttachmentsApiGETAttachmentsRequest) (*GETAttachments200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -229,9 +230,9 @@ GETAttachmentsAttachmentId Retrieve an attachment
 
 Retrieve an attachment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param attachmentId The resource's id
- @return AttachmentsApiGETAttachmentsAttachmentIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param attachmentId The resource's id
+	@return AttachmentsApiGETAttachmentsAttachmentIdRequest
 */
 func (a *AttachmentsApiService) GETAttachmentsAttachmentId(ctx context.Context, attachmentId string) AttachmentsApiGETAttachmentsAttachmentIdRequest {
 	return AttachmentsApiGETAttachmentsAttachmentIdRequest{
@@ -242,7 +243,8 @@ func (a *AttachmentsApiService) GETAttachmentsAttachmentId(ctx context.Context, 
 }
 
 // Execute executes the request
-//  @return GETAttachmentsAttachmentId200Response
+//
+//	@return GETAttachmentsAttachmentId200Response
 func (a *AttachmentsApiService) GETAttachmentsAttachmentIdExecute(r AttachmentsApiGETAttachmentsAttachmentIdRequest) (*GETAttachmentsAttachmentId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -332,9 +334,9 @@ GETAvalaraAccountIdAttachments Retrieve the attachments associated to the avalar
 
 Retrieve the attachments associated to the avalara account
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param avalaraAccountId The resource's id
- @return AttachmentsApiGETAvalaraAccountIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param avalaraAccountId The resource's id
+	@return AttachmentsApiGETAvalaraAccountIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETAvalaraAccountIdAttachments(ctx context.Context, avalaraAccountId string) AttachmentsApiGETAvalaraAccountIdAttachmentsRequest {
 	return AttachmentsApiGETAvalaraAccountIdAttachmentsRequest{
@@ -424,9 +426,9 @@ GETBingGeocoderIdAttachments Retrieve the attachments associated to the bing geo
 
 Retrieve the attachments associated to the bing geocoder
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bingGeocoderId The resource's id
- @return AttachmentsApiGETBingGeocoderIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param bingGeocoderId The resource's id
+	@return AttachmentsApiGETBingGeocoderIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETBingGeocoderIdAttachments(ctx context.Context, bingGeocoderId string) AttachmentsApiGETBingGeocoderIdAttachmentsRequest {
 	return AttachmentsApiGETBingGeocoderIdAttachmentsRequest{
@@ -516,9 +518,9 @@ GETBundleIdAttachments Retrieve the attachments associated to the bundle
 
 Retrieve the attachments associated to the bundle
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bundleId The resource's id
- @return AttachmentsApiGETBundleIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param bundleId The resource's id
+	@return AttachmentsApiGETBundleIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETBundleIdAttachments(ctx context.Context, bundleId string) AttachmentsApiGETBundleIdAttachmentsRequest {
 	return AttachmentsApiGETBundleIdAttachmentsRequest{
@@ -608,9 +610,9 @@ GETCarrierAccountIdAttachments Retrieve the attachments associated to the carrie
 
 Retrieve the attachments associated to the carrier account
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param carrierAccountId The resource's id
- @return AttachmentsApiGETCarrierAccountIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param carrierAccountId The resource's id
+	@return AttachmentsApiGETCarrierAccountIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETCarrierAccountIdAttachments(ctx context.Context, carrierAccountId string) AttachmentsApiGETCarrierAccountIdAttachmentsRequest {
 	return AttachmentsApiGETCarrierAccountIdAttachmentsRequest{
@@ -700,9 +702,9 @@ GETCouponRecipientIdAttachments Retrieve the attachments associated to the coupo
 
 Retrieve the attachments associated to the coupon recipient
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param couponRecipientId The resource's id
- @return AttachmentsApiGETCouponRecipientIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param couponRecipientId The resource's id
+	@return AttachmentsApiGETCouponRecipientIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETCouponRecipientIdAttachments(ctx context.Context, couponRecipientId string) AttachmentsApiGETCouponRecipientIdAttachmentsRequest {
 	return AttachmentsApiGETCouponRecipientIdAttachmentsRequest{
@@ -792,9 +794,9 @@ GETCustomerGroupIdAttachments Retrieve the attachments associated to the custome
 
 Retrieve the attachments associated to the customer group
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerGroupId The resource's id
- @return AttachmentsApiGETCustomerGroupIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerGroupId The resource's id
+	@return AttachmentsApiGETCustomerGroupIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETCustomerGroupIdAttachments(ctx context.Context, customerGroupId string) AttachmentsApiGETCustomerGroupIdAttachmentsRequest {
 	return AttachmentsApiGETCustomerGroupIdAttachmentsRequest{
@@ -884,9 +886,9 @@ GETCustomerIdAttachments Retrieve the attachments associated to the customer
 
 Retrieve the attachments associated to the customer
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerId The resource's id
- @return AttachmentsApiGETCustomerIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerId The resource's id
+	@return AttachmentsApiGETCustomerIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETCustomerIdAttachments(ctx context.Context, customerId string) AttachmentsApiGETCustomerIdAttachmentsRequest {
 	return AttachmentsApiGETCustomerIdAttachmentsRequest{
@@ -976,9 +978,9 @@ GETDeliveryLeadTimeIdAttachments Retrieve the attachments associated to the deli
 
 Retrieve the attachments associated to the delivery lead time
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param deliveryLeadTimeId The resource's id
- @return AttachmentsApiGETDeliveryLeadTimeIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deliveryLeadTimeId The resource's id
+	@return AttachmentsApiGETDeliveryLeadTimeIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETDeliveryLeadTimeIdAttachments(ctx context.Context, deliveryLeadTimeId string) AttachmentsApiGETDeliveryLeadTimeIdAttachmentsRequest {
 	return AttachmentsApiGETDeliveryLeadTimeIdAttachmentsRequest{
@@ -1068,9 +1070,9 @@ GETExternalPromotionIdAttachments Retrieve the attachments associated to the ext
 
 Retrieve the attachments associated to the external promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalPromotionId The resource's id
- @return AttachmentsApiGETExternalPromotionIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalPromotionId The resource's id
+	@return AttachmentsApiGETExternalPromotionIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETExternalPromotionIdAttachments(ctx context.Context, externalPromotionId string) AttachmentsApiGETExternalPromotionIdAttachmentsRequest {
 	return AttachmentsApiGETExternalPromotionIdAttachmentsRequest{
@@ -1160,9 +1162,9 @@ GETExternalTaxCalculatorIdAttachments Retrieve the attachments associated to the
 
 Retrieve the attachments associated to the external tax calculator
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalTaxCalculatorId The resource's id
- @return AttachmentsApiGETExternalTaxCalculatorIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalTaxCalculatorId The resource's id
+	@return AttachmentsApiGETExternalTaxCalculatorIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETExternalTaxCalculatorIdAttachments(ctx context.Context, externalTaxCalculatorId string) AttachmentsApiGETExternalTaxCalculatorIdAttachmentsRequest {
 	return AttachmentsApiGETExternalTaxCalculatorIdAttachmentsRequest{
@@ -1252,9 +1254,9 @@ GETFixedAmountPromotionIdAttachments Retrieve the attachments associated to the 
 
 Retrieve the attachments associated to the fixed amount promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fixedAmountPromotionId The resource's id
- @return AttachmentsApiGETFixedAmountPromotionIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fixedAmountPromotionId The resource's id
+	@return AttachmentsApiGETFixedAmountPromotionIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETFixedAmountPromotionIdAttachments(ctx context.Context, fixedAmountPromotionId string) AttachmentsApiGETFixedAmountPromotionIdAttachmentsRequest {
 	return AttachmentsApiGETFixedAmountPromotionIdAttachmentsRequest{
@@ -1344,9 +1346,9 @@ GETFixedPricePromotionIdAttachments Retrieve the attachments associated to the f
 
 Retrieve the attachments associated to the fixed price promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fixedPricePromotionId The resource's id
- @return AttachmentsApiGETFixedPricePromotionIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fixedPricePromotionId The resource's id
+	@return AttachmentsApiGETFixedPricePromotionIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETFixedPricePromotionIdAttachments(ctx context.Context, fixedPricePromotionId string) AttachmentsApiGETFixedPricePromotionIdAttachmentsRequest {
 	return AttachmentsApiGETFixedPricePromotionIdAttachmentsRequest{
@@ -1436,9 +1438,9 @@ GETFreeGiftPromotionIdAttachments Retrieve the attachments associated to the fre
 
 Retrieve the attachments associated to the free gift promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param freeGiftPromotionId The resource's id
- @return AttachmentsApiGETFreeGiftPromotionIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param freeGiftPromotionId The resource's id
+	@return AttachmentsApiGETFreeGiftPromotionIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETFreeGiftPromotionIdAttachments(ctx context.Context, freeGiftPromotionId string) AttachmentsApiGETFreeGiftPromotionIdAttachmentsRequest {
 	return AttachmentsApiGETFreeGiftPromotionIdAttachmentsRequest{
@@ -1528,9 +1530,9 @@ GETFreeShippingPromotionIdAttachments Retrieve the attachments associated to the
 
 Retrieve the attachments associated to the free shipping promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param freeShippingPromotionId The resource's id
- @return AttachmentsApiGETFreeShippingPromotionIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param freeShippingPromotionId The resource's id
+	@return AttachmentsApiGETFreeShippingPromotionIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETFreeShippingPromotionIdAttachments(ctx context.Context, freeShippingPromotionId string) AttachmentsApiGETFreeShippingPromotionIdAttachmentsRequest {
 	return AttachmentsApiGETFreeShippingPromotionIdAttachmentsRequest{
@@ -1620,9 +1622,9 @@ GETGeocoderIdAttachments Retrieve the attachments associated to the geocoder
 
 Retrieve the attachments associated to the geocoder
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param geocoderId The resource's id
- @return AttachmentsApiGETGeocoderIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param geocoderId The resource's id
+	@return AttachmentsApiGETGeocoderIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETGeocoderIdAttachments(ctx context.Context, geocoderId string) AttachmentsApiGETGeocoderIdAttachmentsRequest {
 	return AttachmentsApiGETGeocoderIdAttachmentsRequest{
@@ -1712,9 +1714,9 @@ GETGiftCardIdAttachments Retrieve the attachments associated to the gift card
 
 Retrieve the attachments associated to the gift card
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param giftCardId The resource's id
- @return AttachmentsApiGETGiftCardIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param giftCardId The resource's id
+	@return AttachmentsApiGETGiftCardIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETGiftCardIdAttachments(ctx context.Context, giftCardId string) AttachmentsApiGETGiftCardIdAttachmentsRequest {
 	return AttachmentsApiGETGiftCardIdAttachmentsRequest{
@@ -1804,9 +1806,9 @@ GETGiftCardRecipientIdAttachments Retrieve the attachments associated to the gif
 
 Retrieve the attachments associated to the gift card recipient
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param giftCardRecipientId The resource's id
- @return AttachmentsApiGETGiftCardRecipientIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param giftCardRecipientId The resource's id
+	@return AttachmentsApiGETGiftCardRecipientIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETGiftCardRecipientIdAttachments(ctx context.Context, giftCardRecipientId string) AttachmentsApiGETGiftCardRecipientIdAttachmentsRequest {
 	return AttachmentsApiGETGiftCardRecipientIdAttachmentsRequest{
@@ -1896,9 +1898,9 @@ GETGoogleGeocoderIdAttachments Retrieve the attachments associated to the google
 
 Retrieve the attachments associated to the google geocoder
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param googleGeocoderId The resource's id
- @return AttachmentsApiGETGoogleGeocoderIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param googleGeocoderId The resource's id
+	@return AttachmentsApiGETGoogleGeocoderIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETGoogleGeocoderIdAttachments(ctx context.Context, googleGeocoderId string) AttachmentsApiGETGoogleGeocoderIdAttachmentsRequest {
 	return AttachmentsApiGETGoogleGeocoderIdAttachmentsRequest{
@@ -1988,9 +1990,9 @@ GETInventoryModelIdAttachments Retrieve the attachments associated to the invent
 
 Retrieve the attachments associated to the inventory model
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param inventoryModelId The resource's id
- @return AttachmentsApiGETInventoryModelIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param inventoryModelId The resource's id
+	@return AttachmentsApiGETInventoryModelIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETInventoryModelIdAttachments(ctx context.Context, inventoryModelId string) AttachmentsApiGETInventoryModelIdAttachmentsRequest {
 	return AttachmentsApiGETInventoryModelIdAttachmentsRequest{
@@ -2080,9 +2082,9 @@ GETManualTaxCalculatorIdAttachments Retrieve the attachments associated to the m
 
 Retrieve the attachments associated to the manual tax calculator
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param manualTaxCalculatorId The resource's id
- @return AttachmentsApiGETManualTaxCalculatorIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param manualTaxCalculatorId The resource's id
+	@return AttachmentsApiGETManualTaxCalculatorIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETManualTaxCalculatorIdAttachments(ctx context.Context, manualTaxCalculatorId string) AttachmentsApiGETManualTaxCalculatorIdAttachmentsRequest {
 	return AttachmentsApiGETManualTaxCalculatorIdAttachmentsRequest{
@@ -2172,9 +2174,9 @@ GETMarketIdAttachments Retrieve the attachments associated to the market
 
 Retrieve the attachments associated to the market
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param marketId The resource's id
- @return AttachmentsApiGETMarketIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param marketId The resource's id
+	@return AttachmentsApiGETMarketIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETMarketIdAttachments(ctx context.Context, marketId string) AttachmentsApiGETMarketIdAttachmentsRequest {
 	return AttachmentsApiGETMarketIdAttachmentsRequest{
@@ -2264,9 +2266,9 @@ GETMerchantIdAttachments Retrieve the attachments associated to the merchant
 
 Retrieve the attachments associated to the merchant
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param merchantId The resource's id
- @return AttachmentsApiGETMerchantIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param merchantId The resource's id
+	@return AttachmentsApiGETMerchantIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETMerchantIdAttachments(ctx context.Context, merchantId string) AttachmentsApiGETMerchantIdAttachmentsRequest {
 	return AttachmentsApiGETMerchantIdAttachmentsRequest{
@@ -2356,9 +2358,9 @@ GETOrderIdAttachments Retrieve the attachments associated to the order
 
 Retrieve the attachments associated to the order
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderId The resource's id
- @return AttachmentsApiGETOrderIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return AttachmentsApiGETOrderIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETOrderIdAttachments(ctx context.Context, orderId string) AttachmentsApiGETOrderIdAttachmentsRequest {
 	return AttachmentsApiGETOrderIdAttachmentsRequest{
@@ -2448,9 +2450,9 @@ GETPackageIdAttachments Retrieve the attachments associated to the package
 
 Retrieve the attachments associated to the package
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param packageId The resource's id
- @return AttachmentsApiGETPackageIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param packageId The resource's id
+	@return AttachmentsApiGETPackageIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETPackageIdAttachments(ctx context.Context, packageId string) AttachmentsApiGETPackageIdAttachmentsRequest {
 	return AttachmentsApiGETPackageIdAttachmentsRequest{
@@ -2540,9 +2542,9 @@ GETParcelIdAttachments Retrieve the attachments associated to the parcel
 
 Retrieve the attachments associated to the parcel
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param parcelId The resource's id
- @return AttachmentsApiGETParcelIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param parcelId The resource's id
+	@return AttachmentsApiGETParcelIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETParcelIdAttachments(ctx context.Context, parcelId string) AttachmentsApiGETParcelIdAttachmentsRequest {
 	return AttachmentsApiGETParcelIdAttachmentsRequest{
@@ -2632,9 +2634,9 @@ GETPaymentMethodIdAttachments Retrieve the attachments associated to the payment
 
 Retrieve the attachments associated to the payment method
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param paymentMethodId The resource's id
- @return AttachmentsApiGETPaymentMethodIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param paymentMethodId The resource's id
+	@return AttachmentsApiGETPaymentMethodIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETPaymentMethodIdAttachments(ctx context.Context, paymentMethodId string) AttachmentsApiGETPaymentMethodIdAttachmentsRequest {
 	return AttachmentsApiGETPaymentMethodIdAttachmentsRequest{
@@ -2724,9 +2726,9 @@ GETPercentageDiscountPromotionIdAttachments Retrieve the attachments associated 
 
 Retrieve the attachments associated to the percentage discount promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param percentageDiscountPromotionId The resource's id
- @return AttachmentsApiGETPercentageDiscountPromotionIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param percentageDiscountPromotionId The resource's id
+	@return AttachmentsApiGETPercentageDiscountPromotionIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETPercentageDiscountPromotionIdAttachments(ctx context.Context, percentageDiscountPromotionId string) AttachmentsApiGETPercentageDiscountPromotionIdAttachmentsRequest {
 	return AttachmentsApiGETPercentageDiscountPromotionIdAttachmentsRequest{
@@ -2816,9 +2818,9 @@ GETPriceIdAttachments Retrieve the attachments associated to the price
 
 Retrieve the attachments associated to the price
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param priceId The resource's id
- @return AttachmentsApiGETPriceIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceId The resource's id
+	@return AttachmentsApiGETPriceIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETPriceIdAttachments(ctx context.Context, priceId string) AttachmentsApiGETPriceIdAttachmentsRequest {
 	return AttachmentsApiGETPriceIdAttachmentsRequest{
@@ -2908,9 +2910,9 @@ GETPriceListIdAttachments Retrieve the attachments associated to the price list
 
 Retrieve the attachments associated to the price list
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param priceListId The resource's id
- @return AttachmentsApiGETPriceListIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceListId The resource's id
+	@return AttachmentsApiGETPriceListIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETPriceListIdAttachments(ctx context.Context, priceListId string) AttachmentsApiGETPriceListIdAttachmentsRequest {
 	return AttachmentsApiGETPriceListIdAttachmentsRequest{
@@ -3000,9 +3002,9 @@ GETPriceTierIdAttachments Retrieve the attachments associated to the price tier
 
 Retrieve the attachments associated to the price tier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param priceTierId The resource's id
- @return AttachmentsApiGETPriceTierIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceTierId The resource's id
+	@return AttachmentsApiGETPriceTierIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETPriceTierIdAttachments(ctx context.Context, priceTierId string) AttachmentsApiGETPriceTierIdAttachmentsRequest {
 	return AttachmentsApiGETPriceTierIdAttachmentsRequest{
@@ -3092,9 +3094,9 @@ GETPriceVolumeTierIdAttachments Retrieve the attachments associated to the price
 
 Retrieve the attachments associated to the price volume tier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param priceVolumeTierId The resource's id
- @return AttachmentsApiGETPriceVolumeTierIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceVolumeTierId The resource's id
+	@return AttachmentsApiGETPriceVolumeTierIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETPriceVolumeTierIdAttachments(ctx context.Context, priceVolumeTierId string) AttachmentsApiGETPriceVolumeTierIdAttachmentsRequest {
 	return AttachmentsApiGETPriceVolumeTierIdAttachmentsRequest{
@@ -3184,9 +3186,9 @@ GETPromotionIdAttachments Retrieve the attachments associated to the promotion
 
 Retrieve the attachments associated to the promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param promotionId The resource's id
- @return AttachmentsApiGETPromotionIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param promotionId The resource's id
+	@return AttachmentsApiGETPromotionIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETPromotionIdAttachments(ctx context.Context, promotionId string) AttachmentsApiGETPromotionIdAttachmentsRequest {
 	return AttachmentsApiGETPromotionIdAttachmentsRequest{
@@ -3276,9 +3278,9 @@ GETReturnIdAttachments Retrieve the attachments associated to the return
 
 Retrieve the attachments associated to the return
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param returnId The resource's id
- @return AttachmentsApiGETReturnIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param returnId The resource's id
+	@return AttachmentsApiGETReturnIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETReturnIdAttachments(ctx context.Context, returnId string) AttachmentsApiGETReturnIdAttachmentsRequest {
 	return AttachmentsApiGETReturnIdAttachmentsRequest{
@@ -3368,9 +3370,9 @@ GETShipmentIdAttachments Retrieve the attachments associated to the shipment
 
 Retrieve the attachments associated to the shipment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shipmentId The resource's id
- @return AttachmentsApiGETShipmentIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shipmentId The resource's id
+	@return AttachmentsApiGETShipmentIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETShipmentIdAttachments(ctx context.Context, shipmentId string) AttachmentsApiGETShipmentIdAttachmentsRequest {
 	return AttachmentsApiGETShipmentIdAttachmentsRequest{
@@ -3460,9 +3462,9 @@ GETShippingCategoryIdAttachments Retrieve the attachments associated to the ship
 
 Retrieve the attachments associated to the shipping category
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingCategoryId The resource's id
- @return AttachmentsApiGETShippingCategoryIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingCategoryId The resource's id
+	@return AttachmentsApiGETShippingCategoryIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETShippingCategoryIdAttachments(ctx context.Context, shippingCategoryId string) AttachmentsApiGETShippingCategoryIdAttachmentsRequest {
 	return AttachmentsApiGETShippingCategoryIdAttachmentsRequest{
@@ -3552,9 +3554,9 @@ GETShippingMethodIdAttachments Retrieve the attachments associated to the shippi
 
 Retrieve the attachments associated to the shipping method
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingMethodId The resource's id
- @return AttachmentsApiGETShippingMethodIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingMethodId The resource's id
+	@return AttachmentsApiGETShippingMethodIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETShippingMethodIdAttachments(ctx context.Context, shippingMethodId string) AttachmentsApiGETShippingMethodIdAttachmentsRequest {
 	return AttachmentsApiGETShippingMethodIdAttachmentsRequest{
@@ -3644,9 +3646,9 @@ GETShippingMethodTierIdAttachments Retrieve the attachments associated to the sh
 
 Retrieve the attachments associated to the shipping method tier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingMethodTierId The resource's id
- @return AttachmentsApiGETShippingMethodTierIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingMethodTierId The resource's id
+	@return AttachmentsApiGETShippingMethodTierIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETShippingMethodTierIdAttachments(ctx context.Context, shippingMethodTierId string) AttachmentsApiGETShippingMethodTierIdAttachmentsRequest {
 	return AttachmentsApiGETShippingMethodTierIdAttachmentsRequest{
@@ -3736,9 +3738,9 @@ GETShippingWeightTierIdAttachments Retrieve the attachments associated to the sh
 
 Retrieve the attachments associated to the shipping weight tier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingWeightTierId The resource's id
- @return AttachmentsApiGETShippingWeightTierIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingWeightTierId The resource's id
+	@return AttachmentsApiGETShippingWeightTierIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETShippingWeightTierIdAttachments(ctx context.Context, shippingWeightTierId string) AttachmentsApiGETShippingWeightTierIdAttachmentsRequest {
 	return AttachmentsApiGETShippingWeightTierIdAttachmentsRequest{
@@ -3828,9 +3830,9 @@ GETShippingZoneIdAttachments Retrieve the attachments associated to the shipping
 
 Retrieve the attachments associated to the shipping zone
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingZoneId The resource's id
- @return AttachmentsApiGETShippingZoneIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingZoneId The resource's id
+	@return AttachmentsApiGETShippingZoneIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETShippingZoneIdAttachments(ctx context.Context, shippingZoneId string) AttachmentsApiGETShippingZoneIdAttachmentsRequest {
 	return AttachmentsApiGETShippingZoneIdAttachmentsRequest{
@@ -3920,9 +3922,9 @@ GETSkuIdAttachments Retrieve the attachments associated to the SKU
 
 Retrieve the attachments associated to the SKU
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param skuId The resource's id
- @return AttachmentsApiGETSkuIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuId The resource's id
+	@return AttachmentsApiGETSkuIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETSkuIdAttachments(ctx context.Context, skuId string) AttachmentsApiGETSkuIdAttachmentsRequest {
 	return AttachmentsApiGETSkuIdAttachmentsRequest{
@@ -3997,6 +3999,98 @@ func (a *AttachmentsApiService) GETSkuIdAttachmentsExecute(r AttachmentsApiGETSk
 	return localVarHTTPResponse, nil
 }
 
+type AttachmentsApiGETSkuListIdAttachmentsRequest struct {
+	ctx        context.Context
+	ApiService *AttachmentsApiService
+	skuListId  string
+}
+
+func (r AttachmentsApiGETSkuListIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSkuListIdAttachmentsExecute(r)
+}
+
+/*
+GETSkuListIdAttachments Retrieve the attachments associated to the SKU list
+
+Retrieve the attachments associated to the SKU list
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuListId The resource's id
+	@return AttachmentsApiGETSkuListIdAttachmentsRequest
+*/
+func (a *AttachmentsApiService) GETSkuListIdAttachments(ctx context.Context, skuListId string) AttachmentsApiGETSkuListIdAttachmentsRequest {
+	return AttachmentsApiGETSkuListIdAttachmentsRequest{
+		ApiService: a,
+		ctx:        ctx,
+		skuListId:  skuListId,
+	}
+}
+
+// Execute executes the request
+func (a *AttachmentsApiService) GETSkuListIdAttachmentsExecute(r AttachmentsApiGETSkuListIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETSkuListIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/sku_lists/{skuListId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListId"+"}", url.PathEscape(parameterToString(r.skuListId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
 type AttachmentsApiGETSkuOptionIdAttachmentsRequest struct {
 	ctx         context.Context
 	ApiService  *AttachmentsApiService
@@ -4012,9 +4106,9 @@ GETSkuOptionIdAttachments Retrieve the attachments associated to the SKU option
 
 Retrieve the attachments associated to the SKU option
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param skuOptionId The resource's id
- @return AttachmentsApiGETSkuOptionIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuOptionId The resource's id
+	@return AttachmentsApiGETSkuOptionIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETSkuOptionIdAttachments(ctx context.Context, skuOptionId string) AttachmentsApiGETSkuOptionIdAttachmentsRequest {
 	return AttachmentsApiGETSkuOptionIdAttachmentsRequest{
@@ -4104,9 +4198,9 @@ GETStockItemIdAttachments Retrieve the attachments associated to the stock item
 
 Retrieve the attachments associated to the stock item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stockItemId The resource's id
- @return AttachmentsApiGETStockItemIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockItemId The resource's id
+	@return AttachmentsApiGETStockItemIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETStockItemIdAttachments(ctx context.Context, stockItemId string) AttachmentsApiGETStockItemIdAttachmentsRequest {
 	return AttachmentsApiGETStockItemIdAttachmentsRequest{
@@ -4196,9 +4290,9 @@ GETStockLocationIdAttachments Retrieve the attachments associated to the stock l
 
 Retrieve the attachments associated to the stock location
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stockLocationId The resource's id
- @return AttachmentsApiGETStockLocationIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockLocationId The resource's id
+	@return AttachmentsApiGETStockLocationIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETStockLocationIdAttachments(ctx context.Context, stockLocationId string) AttachmentsApiGETStockLocationIdAttachmentsRequest {
 	return AttachmentsApiGETStockLocationIdAttachmentsRequest{
@@ -4288,9 +4382,9 @@ GETTaxCalculatorIdAttachments Retrieve the attachments associated to the tax cal
 
 Retrieve the attachments associated to the tax calculator
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param taxCalculatorId The resource's id
- @return AttachmentsApiGETTaxCalculatorIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param taxCalculatorId The resource's id
+	@return AttachmentsApiGETTaxCalculatorIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETTaxCalculatorIdAttachments(ctx context.Context, taxCalculatorId string) AttachmentsApiGETTaxCalculatorIdAttachmentsRequest {
 	return AttachmentsApiGETTaxCalculatorIdAttachmentsRequest{
@@ -4380,9 +4474,9 @@ GETTaxCategoryIdAttachments Retrieve the attachments associated to the tax categ
 
 Retrieve the attachments associated to the tax category
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param taxCategoryId The resource's id
- @return AttachmentsApiGETTaxCategoryIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param taxCategoryId The resource's id
+	@return AttachmentsApiGETTaxCategoryIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETTaxCategoryIdAttachments(ctx context.Context, taxCategoryId string) AttachmentsApiGETTaxCategoryIdAttachmentsRequest {
 	return AttachmentsApiGETTaxCategoryIdAttachmentsRequest{
@@ -4472,9 +4566,9 @@ GETTaxjarAccountIdAttachments Retrieve the attachments associated to the taxjar 
 
 Retrieve the attachments associated to the taxjar account
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param taxjarAccountId The resource's id
- @return AttachmentsApiGETTaxjarAccountIdAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param taxjarAccountId The resource's id
+	@return AttachmentsApiGETTaxjarAccountIdAttachmentsRequest
 */
 func (a *AttachmentsApiService) GETTaxjarAccountIdAttachments(ctx context.Context, taxjarAccountId string) AttachmentsApiGETTaxjarAccountIdAttachmentsRequest {
 	return AttachmentsApiGETTaxjarAccountIdAttachmentsRequest{
@@ -4570,9 +4664,9 @@ PATCHAttachmentsAttachmentId Update an attachment
 
 Update an attachment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param attachmentId The resource's id
- @return AttachmentsApiPATCHAttachmentsAttachmentIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param attachmentId The resource's id
+	@return AttachmentsApiPATCHAttachmentsAttachmentIdRequest
 */
 func (a *AttachmentsApiService) PATCHAttachmentsAttachmentId(ctx context.Context, attachmentId string) AttachmentsApiPATCHAttachmentsAttachmentIdRequest {
 	return AttachmentsApiPATCHAttachmentsAttachmentIdRequest{
@@ -4583,7 +4677,8 @@ func (a *AttachmentsApiService) PATCHAttachmentsAttachmentId(ctx context.Context
 }
 
 // Execute executes the request
-//  @return PATCHAttachmentsAttachmentId200Response
+//
+//	@return PATCHAttachmentsAttachmentId200Response
 func (a *AttachmentsApiService) PATCHAttachmentsAttachmentIdExecute(r AttachmentsApiPATCHAttachmentsAttachmentIdRequest) (*PATCHAttachmentsAttachmentId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -4683,8 +4778,8 @@ POSTAttachments Create an attachment
 
 Create an attachment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return AttachmentsApiPOSTAttachmentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return AttachmentsApiPOSTAttachmentsRequest
 */
 func (a *AttachmentsApiService) POSTAttachments(ctx context.Context) AttachmentsApiPOSTAttachmentsRequest {
 	return AttachmentsApiPOSTAttachmentsRequest{
@@ -4694,7 +4789,8 @@ func (a *AttachmentsApiService) POSTAttachments(ctx context.Context) Attachments
 }
 
 // Execute executes the request
-//  @return POSTAttachments201Response
+//
+//	@return POSTAttachments201Response
 func (a *AttachmentsApiService) POSTAttachmentsExecute(r AttachmentsApiPOSTAttachmentsRequest) (*POSTAttachments201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

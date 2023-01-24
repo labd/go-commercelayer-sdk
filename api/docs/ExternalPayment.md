@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**ExternalPaymentData**](ExternalPaymentData.md) |  | 
+**Data** | Pointer to [**ExternalPaymentData**](ExternalPaymentData.md) |  | [optional] 
 
 ## Methods
 
 ### NewExternalPayment
 
-`func NewExternalPayment(data ExternalPaymentData, ) *ExternalPayment`
+`func NewExternalPayment() *ExternalPayment`
 
 NewExternalPayment instantiates a new ExternalPayment object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *ExternalPayment) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

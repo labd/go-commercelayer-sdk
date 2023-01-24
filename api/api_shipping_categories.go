@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEShippingCategoriesShippingCategoryId Delete a shipping category
 
 Delete a shipping category
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingCategoryId The resource's id
- @return ShippingCategoriesApiDELETEShippingCategoriesShippingCategoryIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingCategoryId The resource's id
+	@return ShippingCategoriesApiDELETEShippingCategoriesShippingCategoryIdRequest
 */
 func (a *ShippingCategoriesApiService) DELETEShippingCategoriesShippingCategoryId(ctx context.Context, shippingCategoryId string) ShippingCategoriesApiDELETEShippingCategoriesShippingCategoryIdRequest {
 	return ShippingCategoriesApiDELETEShippingCategoriesShippingCategoryIdRequest{
@@ -130,9 +130,9 @@ GETShipmentIdShippingCategory Retrieve the shipping category associated to the s
 
 Retrieve the shipping category associated to the shipment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shipmentId The resource's id
- @return ShippingCategoriesApiGETShipmentIdShippingCategoryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shipmentId The resource's id
+	@return ShippingCategoriesApiGETShipmentIdShippingCategoryRequest
 */
 func (a *ShippingCategoriesApiService) GETShipmentIdShippingCategory(ctx context.Context, shipmentId string) ShippingCategoriesApiGETShipmentIdShippingCategoryRequest {
 	return ShippingCategoriesApiGETShipmentIdShippingCategoryRequest{
@@ -221,8 +221,8 @@ GETShippingCategories List all shipping categories
 
 List all shipping categories
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ShippingCategoriesApiGETShippingCategoriesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ShippingCategoriesApiGETShippingCategoriesRequest
 */
 func (a *ShippingCategoriesApiService) GETShippingCategories(ctx context.Context) ShippingCategoriesApiGETShippingCategoriesRequest {
 	return ShippingCategoriesApiGETShippingCategoriesRequest{
@@ -232,7 +232,8 @@ func (a *ShippingCategoriesApiService) GETShippingCategories(ctx context.Context
 }
 
 // Execute executes the request
-//  @return GETShippingCategories200Response
+//
+//	@return GETShippingCategories200Response
 func (a *ShippingCategoriesApiService) GETShippingCategoriesExecute(r ShippingCategoriesApiGETShippingCategoriesRequest) (*GETShippingCategories200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -321,9 +322,9 @@ GETShippingCategoriesShippingCategoryId Retrieve a shipping category
 
 Retrieve a shipping category
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingCategoryId The resource's id
- @return ShippingCategoriesApiGETShippingCategoriesShippingCategoryIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingCategoryId The resource's id
+	@return ShippingCategoriesApiGETShippingCategoriesShippingCategoryIdRequest
 */
 func (a *ShippingCategoriesApiService) GETShippingCategoriesShippingCategoryId(ctx context.Context, shippingCategoryId string) ShippingCategoriesApiGETShippingCategoriesShippingCategoryIdRequest {
 	return ShippingCategoriesApiGETShippingCategoriesShippingCategoryIdRequest{
@@ -334,7 +335,8 @@ func (a *ShippingCategoriesApiService) GETShippingCategoriesShippingCategoryId(c
 }
 
 // Execute executes the request
-//  @return GETShippingCategoriesShippingCategoryId200Response
+//
+//	@return GETShippingCategoriesShippingCategoryId200Response
 func (a *ShippingCategoriesApiService) GETShippingCategoriesShippingCategoryIdExecute(r ShippingCategoriesApiGETShippingCategoriesShippingCategoryIdRequest) (*GETShippingCategoriesShippingCategoryId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -424,9 +426,9 @@ GETShippingMethodIdShippingCategory Retrieve the shipping category associated to
 
 Retrieve the shipping category associated to the shipping method
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingMethodId The resource's id
- @return ShippingCategoriesApiGETShippingMethodIdShippingCategoryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingMethodId The resource's id
+	@return ShippingCategoriesApiGETShippingMethodIdShippingCategoryRequest
 */
 func (a *ShippingCategoriesApiService) GETShippingMethodIdShippingCategory(ctx context.Context, shippingMethodId string) ShippingCategoriesApiGETShippingMethodIdShippingCategoryRequest {
 	return ShippingCategoriesApiGETShippingMethodIdShippingCategoryRequest{
@@ -516,9 +518,9 @@ GETSkuIdShippingCategory Retrieve the shipping category associated to the SKU
 
 Retrieve the shipping category associated to the SKU
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param skuId The resource's id
- @return ShippingCategoriesApiGETSkuIdShippingCategoryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuId The resource's id
+	@return ShippingCategoriesApiGETSkuIdShippingCategoryRequest
 */
 func (a *ShippingCategoriesApiService) GETSkuIdShippingCategory(ctx context.Context, skuId string) ShippingCategoriesApiGETSkuIdShippingCategoryRequest {
 	return ShippingCategoriesApiGETSkuIdShippingCategoryRequest{
@@ -614,9 +616,9 @@ PATCHShippingCategoriesShippingCategoryId Update a shipping category
 
 Update a shipping category
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingCategoryId The resource's id
- @return ShippingCategoriesApiPATCHShippingCategoriesShippingCategoryIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingCategoryId The resource's id
+	@return ShippingCategoriesApiPATCHShippingCategoriesShippingCategoryIdRequest
 */
 func (a *ShippingCategoriesApiService) PATCHShippingCategoriesShippingCategoryId(ctx context.Context, shippingCategoryId string) ShippingCategoriesApiPATCHShippingCategoriesShippingCategoryIdRequest {
 	return ShippingCategoriesApiPATCHShippingCategoriesShippingCategoryIdRequest{
@@ -627,7 +629,8 @@ func (a *ShippingCategoriesApiService) PATCHShippingCategoriesShippingCategoryId
 }
 
 // Execute executes the request
-//  @return PATCHShippingCategoriesShippingCategoryId200Response
+//
+//	@return PATCHShippingCategoriesShippingCategoryId200Response
 func (a *ShippingCategoriesApiService) PATCHShippingCategoriesShippingCategoryIdExecute(r ShippingCategoriesApiPATCHShippingCategoriesShippingCategoryIdRequest) (*PATCHShippingCategoriesShippingCategoryId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -727,8 +730,8 @@ POSTShippingCategories Create a shipping category
 
 Create a shipping category
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ShippingCategoriesApiPOSTShippingCategoriesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ShippingCategoriesApiPOSTShippingCategoriesRequest
 */
 func (a *ShippingCategoriesApiService) POSTShippingCategories(ctx context.Context) ShippingCategoriesApiPOSTShippingCategoriesRequest {
 	return ShippingCategoriesApiPOSTShippingCategoriesRequest{
@@ -738,7 +741,8 @@ func (a *ShippingCategoriesApiService) POSTShippingCategories(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return POSTShippingCategories201Response
+//
+//	@return POSTShippingCategories201Response
 func (a *ShippingCategoriesApiService) POSTShippingCategoriesExecute(r ShippingCategoriesApiPOSTShippingCategoriesRequest) (*POSTShippingCategories201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

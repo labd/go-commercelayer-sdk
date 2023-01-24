@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks**](GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks.md) |  | [optional] 
-**Data** | Pointer to [**[]GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPaymentsDataInner**](GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPaymentsDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPaymentsData**](GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPaymentsData.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments) GetData() []GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPaymentsDataInner`
+`func (o *GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments) GetData() GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPaymentsData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments) GetDataOk() (*[]GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPaymentsDataInner, bool)`
+`func (o *GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments) GetDataOk() (*GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPaymentsData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments) SetData(v []GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPaymentsDataInner)`
+`func (o *GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPayments) SetData(v GETCheckoutComGateways200ResponseDataInnerRelationshipsCheckoutComPaymentsData)`
 
 SetData sets Data field to given value.
 

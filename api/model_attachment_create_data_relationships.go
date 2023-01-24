@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,14 +17,14 @@ import (
 
 // AttachmentCreateDataRelationships struct for AttachmentCreateDataRelationships
 type AttachmentCreateDataRelationships struct {
-	Attachable AttachmentDataRelationshipsAttachable `json:"attachable"`
+	Attachable AttachmentCreateDataRelationshipsAttachable `json:"attachable"`
 }
 
 // NewAttachmentCreateDataRelationships instantiates a new AttachmentCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAttachmentCreateDataRelationships(attachable AttachmentDataRelationshipsAttachable) *AttachmentCreateDataRelationships {
+func NewAttachmentCreateDataRelationships(attachable AttachmentCreateDataRelationshipsAttachable) *AttachmentCreateDataRelationships {
 	this := AttachmentCreateDataRelationships{}
 	this.Attachable = attachable
 	return &this
@@ -39,9 +39,9 @@ func NewAttachmentCreateDataRelationshipsWithDefaults() *AttachmentCreateDataRel
 }
 
 // GetAttachable returns the Attachable field value
-func (o *AttachmentCreateDataRelationships) GetAttachable() AttachmentDataRelationshipsAttachable {
+func (o *AttachmentCreateDataRelationships) GetAttachable() AttachmentCreateDataRelationshipsAttachable {
 	if o == nil {
-		var ret AttachmentDataRelationshipsAttachable
+		var ret AttachmentCreateDataRelationshipsAttachable
 		return ret
 	}
 
@@ -50,7 +50,7 @@ func (o *AttachmentCreateDataRelationships) GetAttachable() AttachmentDataRelati
 
 // GetAttachableOk returns a tuple with the Attachable field value
 // and a boolean to check if the value has been set.
-func (o *AttachmentCreateDataRelationships) GetAttachableOk() (*AttachmentDataRelationshipsAttachable, bool) {
+func (o *AttachmentCreateDataRelationships) GetAttachableOk() (*AttachmentCreateDataRelationshipsAttachable, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,7 +58,7 @@ func (o *AttachmentCreateDataRelationships) GetAttachableOk() (*AttachmentDataRe
 }
 
 // SetAttachable sets field value
-func (o *AttachmentCreateDataRelationships) SetAttachable(v AttachmentDataRelationshipsAttachable) {
+func (o *AttachmentCreateDataRelationships) SetAttachable(v AttachmentCreateDataRelationshipsAttachable) {
 	o.Attachable = v
 }
 

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**InventoryModelData**](InventoryModelData.md) |  | 
+**Data** | Pointer to [**InventoryModelData**](InventoryModelData.md) |  | [optional] 
 
 ## Methods
 
 ### NewInventoryModel
 
-`func NewInventoryModel(data InventoryModelData, ) *InventoryModel`
+`func NewInventoryModel() *InventoryModel`
 
 NewInventoryModel instantiates a new InventoryModel object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *InventoryModel) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

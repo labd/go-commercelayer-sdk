@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEStockTransfersStockTransferId Delete a stock transfer
 
 Delete a stock transfer
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stockTransferId The resource's id
- @return StockTransfersApiDELETEStockTransfersStockTransferIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockTransferId The resource's id
+	@return StockTransfersApiDELETEStockTransfersStockTransferIdRequest
 */
 func (a *StockTransfersApiService) DELETEStockTransfersStockTransferId(ctx context.Context, stockTransferId string) StockTransfersApiDELETEStockTransfersStockTransferIdRequest {
 	return StockTransfersApiDELETEStockTransfersStockTransferIdRequest{
@@ -130,9 +130,9 @@ GETLineItemIdStockTransfers Retrieve the stock transfers associated to the line 
 
 Retrieve the stock transfers associated to the line item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param lineItemId The resource's id
- @return StockTransfersApiGETLineItemIdStockTransfersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param lineItemId The resource's id
+	@return StockTransfersApiGETLineItemIdStockTransfersRequest
 */
 func (a *StockTransfersApiService) GETLineItemIdStockTransfers(ctx context.Context, lineItemId string) StockTransfersApiGETLineItemIdStockTransfersRequest {
 	return StockTransfersApiGETLineItemIdStockTransfersRequest{
@@ -222,9 +222,9 @@ GETShipmentIdStockTransfers Retrieve the stock transfers associated to the shipm
 
 Retrieve the stock transfers associated to the shipment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shipmentId The resource's id
- @return StockTransfersApiGETShipmentIdStockTransfersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shipmentId The resource's id
+	@return StockTransfersApiGETShipmentIdStockTransfersRequest
 */
 func (a *StockTransfersApiService) GETShipmentIdStockTransfers(ctx context.Context, shipmentId string) StockTransfersApiGETShipmentIdStockTransfersRequest {
 	return StockTransfersApiGETShipmentIdStockTransfersRequest{
@@ -314,9 +314,9 @@ GETStockLocationIdStockTransfers Retrieve the stock transfers associated to the 
 
 Retrieve the stock transfers associated to the stock location
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stockLocationId The resource's id
- @return StockTransfersApiGETStockLocationIdStockTransfersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockLocationId The resource's id
+	@return StockTransfersApiGETStockLocationIdStockTransfersRequest
 */
 func (a *StockTransfersApiService) GETStockLocationIdStockTransfers(ctx context.Context, stockLocationId string) StockTransfersApiGETStockLocationIdStockTransfersRequest {
 	return StockTransfersApiGETStockLocationIdStockTransfersRequest{
@@ -405,8 +405,8 @@ GETStockTransfers List all stock transfers
 
 List all stock transfers
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return StockTransfersApiGETStockTransfersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return StockTransfersApiGETStockTransfersRequest
 */
 func (a *StockTransfersApiService) GETStockTransfers(ctx context.Context) StockTransfersApiGETStockTransfersRequest {
 	return StockTransfersApiGETStockTransfersRequest{
@@ -416,7 +416,8 @@ func (a *StockTransfersApiService) GETStockTransfers(ctx context.Context) StockT
 }
 
 // Execute executes the request
-//  @return GETStockTransfers200Response
+//
+//	@return GETStockTransfers200Response
 func (a *StockTransfersApiService) GETStockTransfersExecute(r StockTransfersApiGETStockTransfersRequest) (*GETStockTransfers200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -505,9 +506,9 @@ GETStockTransfersStockTransferId Retrieve a stock transfer
 
 Retrieve a stock transfer
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stockTransferId The resource's id
- @return StockTransfersApiGETStockTransfersStockTransferIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockTransferId The resource's id
+	@return StockTransfersApiGETStockTransfersStockTransferIdRequest
 */
 func (a *StockTransfersApiService) GETStockTransfersStockTransferId(ctx context.Context, stockTransferId string) StockTransfersApiGETStockTransfersStockTransferIdRequest {
 	return StockTransfersApiGETStockTransfersStockTransferIdRequest{
@@ -518,7 +519,8 @@ func (a *StockTransfersApiService) GETStockTransfersStockTransferId(ctx context.
 }
 
 // Execute executes the request
-//  @return GETStockTransfersStockTransferId200Response
+//
+//	@return GETStockTransfersStockTransferId200Response
 func (a *StockTransfersApiService) GETStockTransfersStockTransferIdExecute(r StockTransfersApiGETStockTransfersStockTransferIdRequest) (*GETStockTransfersStockTransferId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -614,9 +616,9 @@ PATCHStockTransfersStockTransferId Update a stock transfer
 
 Update a stock transfer
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stockTransferId The resource's id
- @return StockTransfersApiPATCHStockTransfersStockTransferIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockTransferId The resource's id
+	@return StockTransfersApiPATCHStockTransfersStockTransferIdRequest
 */
 func (a *StockTransfersApiService) PATCHStockTransfersStockTransferId(ctx context.Context, stockTransferId string) StockTransfersApiPATCHStockTransfersStockTransferIdRequest {
 	return StockTransfersApiPATCHStockTransfersStockTransferIdRequest{
@@ -627,7 +629,8 @@ func (a *StockTransfersApiService) PATCHStockTransfersStockTransferId(ctx contex
 }
 
 // Execute executes the request
-//  @return PATCHStockTransfersStockTransferId200Response
+//
+//	@return PATCHStockTransfersStockTransferId200Response
 func (a *StockTransfersApiService) PATCHStockTransfersStockTransferIdExecute(r StockTransfersApiPATCHStockTransfersStockTransferIdRequest) (*PATCHStockTransfersStockTransferId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -727,8 +730,8 @@ POSTStockTransfers Create a stock transfer
 
 Create a stock transfer
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return StockTransfersApiPOSTStockTransfersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return StockTransfersApiPOSTStockTransfersRequest
 */
 func (a *StockTransfersApiService) POSTStockTransfers(ctx context.Context) StockTransfersApiPOSTStockTransfersRequest {
 	return StockTransfersApiPOSTStockTransfersRequest{
@@ -738,7 +741,8 @@ func (a *StockTransfersApiService) POSTStockTransfers(ctx context.Context) Stock
 }
 
 // Execute executes the request
-//  @return POSTStockTransfers201Response
+//
+//	@return POSTStockTransfers201Response
 func (a *StockTransfersApiService) POSTStockTransfersExecute(r StockTransfersApiPOSTStockTransfersRequest) (*POSTStockTransfers201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

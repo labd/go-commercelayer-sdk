@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**ShipmentData**](ShipmentData.md) |  | 
+**Data** | Pointer to [**ShipmentData**](ShipmentData.md) |  | [optional] 
 
 ## Methods
 
 ### NewShipment
 
-`func NewShipment(data ShipmentData, ) *Shipment`
+`func NewShipment() *Shipment`
 
 NewShipment instantiates a new Shipment object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *Shipment) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,15 +17,15 @@ import (
 
 // OrderSubscriptionCreateDataRelationships struct for OrderSubscriptionCreateDataRelationships
 type OrderSubscriptionCreateDataRelationships struct {
-	Market      *AvalaraAccountDataRelationshipsMarkets `json:"market,omitempty"`
-	SourceOrder AdyenPaymentDataRelationshipsOrder      `json:"source_order"`
+	Market      *BillingInfoValidationRuleCreateDataRelationshipsMarket `json:"market,omitempty"`
+	SourceOrder AdyenPaymentCreateDataRelationshipsOrder                `json:"source_order"`
 }
 
 // NewOrderSubscriptionCreateDataRelationships instantiates a new OrderSubscriptionCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrderSubscriptionCreateDataRelationships(sourceOrder AdyenPaymentDataRelationshipsOrder) *OrderSubscriptionCreateDataRelationships {
+func NewOrderSubscriptionCreateDataRelationships(sourceOrder AdyenPaymentCreateDataRelationshipsOrder) *OrderSubscriptionCreateDataRelationships {
 	this := OrderSubscriptionCreateDataRelationships{}
 	this.SourceOrder = sourceOrder
 	return &this
@@ -40,9 +40,9 @@ func NewOrderSubscriptionCreateDataRelationshipsWithDefaults() *OrderSubscriptio
 }
 
 // GetMarket returns the Market field value if set, zero value otherwise.
-func (o *OrderSubscriptionCreateDataRelationships) GetMarket() AvalaraAccountDataRelationshipsMarkets {
+func (o *OrderSubscriptionCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket {
 	if o == nil || o.Market == nil {
-		var ret AvalaraAccountDataRelationshipsMarkets
+		var ret BillingInfoValidationRuleCreateDataRelationshipsMarket
 		return ret
 	}
 	return *o.Market
@@ -50,7 +50,7 @@ func (o *OrderSubscriptionCreateDataRelationships) GetMarket() AvalaraAccountDat
 
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderSubscriptionCreateDataRelationships) GetMarketOk() (*AvalaraAccountDataRelationshipsMarkets, bool) {
+func (o *OrderSubscriptionCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool) {
 	if o == nil || o.Market == nil {
 		return nil, false
 	}
@@ -66,15 +66,15 @@ func (o *OrderSubscriptionCreateDataRelationships) HasMarket() bool {
 	return false
 }
 
-// SetMarket gets a reference to the given AvalaraAccountDataRelationshipsMarkets and assigns it to the Market field.
-func (o *OrderSubscriptionCreateDataRelationships) SetMarket(v AvalaraAccountDataRelationshipsMarkets) {
+// SetMarket gets a reference to the given BillingInfoValidationRuleCreateDataRelationshipsMarket and assigns it to the Market field.
+func (o *OrderSubscriptionCreateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket) {
 	o.Market = &v
 }
 
 // GetSourceOrder returns the SourceOrder field value
-func (o *OrderSubscriptionCreateDataRelationships) GetSourceOrder() AdyenPaymentDataRelationshipsOrder {
+func (o *OrderSubscriptionCreateDataRelationships) GetSourceOrder() AdyenPaymentCreateDataRelationshipsOrder {
 	if o == nil {
-		var ret AdyenPaymentDataRelationshipsOrder
+		var ret AdyenPaymentCreateDataRelationshipsOrder
 		return ret
 	}
 
@@ -83,7 +83,7 @@ func (o *OrderSubscriptionCreateDataRelationships) GetSourceOrder() AdyenPayment
 
 // GetSourceOrderOk returns a tuple with the SourceOrder field value
 // and a boolean to check if the value has been set.
-func (o *OrderSubscriptionCreateDataRelationships) GetSourceOrderOk() (*AdyenPaymentDataRelationshipsOrder, bool) {
+func (o *OrderSubscriptionCreateDataRelationships) GetSourceOrderOk() (*AdyenPaymentCreateDataRelationshipsOrder, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,7 +91,7 @@ func (o *OrderSubscriptionCreateDataRelationships) GetSourceOrderOk() (*AdyenPay
 }
 
 // SetSourceOrder sets field value
-func (o *OrderSubscriptionCreateDataRelationships) SetSourceOrder(v AdyenPaymentDataRelationshipsOrder) {
+func (o *OrderSubscriptionCreateDataRelationships) SetSourceOrder(v AdyenPaymentCreateDataRelationshipsOrder) {
 	o.SourceOrder = v
 }
 

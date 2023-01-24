@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks**](GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks.md) |  | [optional] 
-**Data** | Pointer to [**[]GETOrderSubscriptions200ResponseDataInnerRelationshipsOrderCopiesDataInner**](GETOrderSubscriptions200ResponseDataInnerRelationshipsOrderCopiesDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETOrderSubscriptions200ResponseDataInnerRelationshipsOrderCopiesData**](GETOrderSubscriptions200ResponseDataInnerRelationshipsOrderCopiesData.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *GETOrderSubscriptions200ResponseDataInnerRelationshipsOrderCopies) GetData() []GETOrderSubscriptions200ResponseDataInnerRelationshipsOrderCopiesDataInner`
+`func (o *GETOrderSubscriptions200ResponseDataInnerRelationshipsOrderCopies) GetData() GETOrderSubscriptions200ResponseDataInnerRelationshipsOrderCopiesData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETOrderSubscriptions200ResponseDataInnerRelationshipsOrderCopies) GetDataOk() (*[]GETOrderSubscriptions200ResponseDataInnerRelationshipsOrderCopiesDataInner, bool)`
+`func (o *GETOrderSubscriptions200ResponseDataInnerRelationshipsOrderCopies) GetDataOk() (*GETOrderSubscriptions200ResponseDataInnerRelationshipsOrderCopiesData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETOrderSubscriptions200ResponseDataInnerRelationshipsOrderCopies) SetData(v []GETOrderSubscriptions200ResponseDataInnerRelationshipsOrderCopiesDataInner)`
+`func (o *GETOrderSubscriptions200ResponseDataInnerRelationshipsOrderCopies) SetData(v GETOrderSubscriptions200ResponseDataInnerRelationshipsOrderCopiesData)`
 
 SetData sets Data field to given value.
 

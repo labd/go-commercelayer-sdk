@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**AdjustmentData**](AdjustmentData.md) |  | 
+**Data** | Pointer to [**AdjustmentData**](AdjustmentData.md) |  | [optional] 
 
 ## Methods
 
 ### NewAdjustment
 
-`func NewAdjustment(data AdjustmentData, ) *Adjustment`
+`func NewAdjustment() *Adjustment`
 
 NewAdjustment instantiates a new Adjustment object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *Adjustment) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

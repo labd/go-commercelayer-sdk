@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -36,8 +36,8 @@ GETApplicationApplicationId Retrieve the application
 
 Retrieve the application
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ApplicationApiGETApplicationApplicationIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ApplicationApiGETApplicationApplicationIdRequest
 */
 func (a *ApplicationApiService) GETApplicationApplicationId(ctx context.Context) ApplicationApiGETApplicationApplicationIdRequest {
 	return ApplicationApiGETApplicationApplicationIdRequest{
@@ -47,7 +47,8 @@ func (a *ApplicationApiService) GETApplicationApplicationId(ctx context.Context)
 }
 
 // Execute executes the request
-//  @return GETApplicationApplicationId200Response
+//
+//	@return GETApplicationApplicationId200Response
 func (a *ApplicationApiService) GETApplicationApplicationIdExecute(r ApplicationApiGETApplicationApplicationIdRequest) (*GETApplicationApplicationId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

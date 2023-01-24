@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -67,8 +67,6 @@ type GETLineItems200ResponseDataInnerAttributes struct {
 	TaxBreakdown map[string]interface{} `json:"tax_breakdown,omitempty"`
 	// The type of the associate item. Can be one of 'sku', 'bundle', 'shipment', 'payment_method', 'adjustment', 'gift_card', or a valid promotion type.
 	ItemType *string `json:"item_type,omitempty"`
-	// Unique identifier for the resource (hash).
-	Id *string `json:"id,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt *string `json:"created_at,omitempty"`
 	// Time at which the resource was last updated.
@@ -898,38 +896,6 @@ func (o *GETLineItems200ResponseDataInnerAttributes) SetItemType(v string) {
 	o.ItemType = &v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GETLineItems200ResponseDataInnerAttributes) GetId() string {
-	if o == nil || o.Id == nil {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GETLineItems200ResponseDataInnerAttributes) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *GETLineItems200ResponseDataInnerAttributes) HasId() bool {
-	if o != nil && o.Id != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *GETLineItems200ResponseDataInnerAttributes) SetId(v string) {
-	o.Id = &v
-}
-
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
 func (o *GETLineItems200ResponseDataInnerAttributes) GetCreatedAt() string {
 	if o == nil || o.CreatedAt == nil {
@@ -1166,9 +1132,6 @@ func (o GETLineItems200ResponseDataInnerAttributes) MarshalJSON() ([]byte, error
 	}
 	if o.ItemType != nil {
 		toSerialize["item_type"] = o.ItemType
-	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
 	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt

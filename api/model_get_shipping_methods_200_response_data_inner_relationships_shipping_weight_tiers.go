@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiers struct for GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiers
 type GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiers struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks                       `json:"links,omitempty"`
-	Data  []GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiersDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks                 `json:"links,omitempty"`
+	Data  *GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiersData `json:"data,omitempty"`
 }
 
 // NewGETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiers instantiates a new GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiers object
@@ -71,17 +71,17 @@ func (o *GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiers)
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiers) GetData() []GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiersDataInner {
+func (o *GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiers) GetData() GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiersData {
 	if o == nil || o.Data == nil {
-		var ret []GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiersDataInner
+		var ret GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiersData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiers) GetDataOk() ([]GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiersDataInner, bool) {
+func (o *GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiers) GetDataOk() (*GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiersData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiers)
 	return false
 }
 
-// SetData gets a reference to the given []GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiersDataInner and assigns it to the Data field.
-func (o *GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiers) SetData(v []GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiersDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiersData and assigns it to the Data field.
+func (o *GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiers) SetData(v GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiersData) {
+	o.Data = &v
 }
 
 func (o GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiers) MarshalJSON() ([]byte, error) {

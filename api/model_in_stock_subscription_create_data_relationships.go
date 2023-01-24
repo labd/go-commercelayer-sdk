@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,16 +17,16 @@ import (
 
 // InStockSubscriptionCreateDataRelationships struct for InStockSubscriptionCreateDataRelationships
 type InStockSubscriptionCreateDataRelationships struct {
-	Market   AvalaraAccountDataRelationshipsMarkets   `json:"market"`
-	Customer CouponRecipientDataRelationshipsCustomer `json:"customer"`
-	Sku      BundleDataRelationshipsSkus              `json:"sku"`
+	Market   BillingInfoValidationRuleCreateDataRelationshipsMarket `json:"market"`
+	Customer CouponRecipientCreateDataRelationshipsCustomer         `json:"customer"`
+	Sku      InStockSubscriptionCreateDataRelationshipsSku          `json:"sku"`
 }
 
 // NewInStockSubscriptionCreateDataRelationships instantiates a new InStockSubscriptionCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInStockSubscriptionCreateDataRelationships(market AvalaraAccountDataRelationshipsMarkets, customer CouponRecipientDataRelationshipsCustomer, sku BundleDataRelationshipsSkus) *InStockSubscriptionCreateDataRelationships {
+func NewInStockSubscriptionCreateDataRelationships(market BillingInfoValidationRuleCreateDataRelationshipsMarket, customer CouponRecipientCreateDataRelationshipsCustomer, sku InStockSubscriptionCreateDataRelationshipsSku) *InStockSubscriptionCreateDataRelationships {
 	this := InStockSubscriptionCreateDataRelationships{}
 	this.Market = market
 	this.Customer = customer
@@ -43,9 +43,9 @@ func NewInStockSubscriptionCreateDataRelationshipsWithDefaults() *InStockSubscri
 }
 
 // GetMarket returns the Market field value
-func (o *InStockSubscriptionCreateDataRelationships) GetMarket() AvalaraAccountDataRelationshipsMarkets {
+func (o *InStockSubscriptionCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket {
 	if o == nil {
-		var ret AvalaraAccountDataRelationshipsMarkets
+		var ret BillingInfoValidationRuleCreateDataRelationshipsMarket
 		return ret
 	}
 
@@ -54,7 +54,7 @@ func (o *InStockSubscriptionCreateDataRelationships) GetMarket() AvalaraAccountD
 
 // GetMarketOk returns a tuple with the Market field value
 // and a boolean to check if the value has been set.
-func (o *InStockSubscriptionCreateDataRelationships) GetMarketOk() (*AvalaraAccountDataRelationshipsMarkets, bool) {
+func (o *InStockSubscriptionCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -62,14 +62,14 @@ func (o *InStockSubscriptionCreateDataRelationships) GetMarketOk() (*AvalaraAcco
 }
 
 // SetMarket sets field value
-func (o *InStockSubscriptionCreateDataRelationships) SetMarket(v AvalaraAccountDataRelationshipsMarkets) {
+func (o *InStockSubscriptionCreateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket) {
 	o.Market = v
 }
 
 // GetCustomer returns the Customer field value
-func (o *InStockSubscriptionCreateDataRelationships) GetCustomer() CouponRecipientDataRelationshipsCustomer {
+func (o *InStockSubscriptionCreateDataRelationships) GetCustomer() CouponRecipientCreateDataRelationshipsCustomer {
 	if o == nil {
-		var ret CouponRecipientDataRelationshipsCustomer
+		var ret CouponRecipientCreateDataRelationshipsCustomer
 		return ret
 	}
 
@@ -78,7 +78,7 @@ func (o *InStockSubscriptionCreateDataRelationships) GetCustomer() CouponRecipie
 
 // GetCustomerOk returns a tuple with the Customer field value
 // and a boolean to check if the value has been set.
-func (o *InStockSubscriptionCreateDataRelationships) GetCustomerOk() (*CouponRecipientDataRelationshipsCustomer, bool) {
+func (o *InStockSubscriptionCreateDataRelationships) GetCustomerOk() (*CouponRecipientCreateDataRelationshipsCustomer, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,14 +86,14 @@ func (o *InStockSubscriptionCreateDataRelationships) GetCustomerOk() (*CouponRec
 }
 
 // SetCustomer sets field value
-func (o *InStockSubscriptionCreateDataRelationships) SetCustomer(v CouponRecipientDataRelationshipsCustomer) {
+func (o *InStockSubscriptionCreateDataRelationships) SetCustomer(v CouponRecipientCreateDataRelationshipsCustomer) {
 	o.Customer = v
 }
 
 // GetSku returns the Sku field value
-func (o *InStockSubscriptionCreateDataRelationships) GetSku() BundleDataRelationshipsSkus {
+func (o *InStockSubscriptionCreateDataRelationships) GetSku() InStockSubscriptionCreateDataRelationshipsSku {
 	if o == nil {
-		var ret BundleDataRelationshipsSkus
+		var ret InStockSubscriptionCreateDataRelationshipsSku
 		return ret
 	}
 
@@ -102,7 +102,7 @@ func (o *InStockSubscriptionCreateDataRelationships) GetSku() BundleDataRelation
 
 // GetSkuOk returns a tuple with the Sku field value
 // and a boolean to check if the value has been set.
-func (o *InStockSubscriptionCreateDataRelationships) GetSkuOk() (*BundleDataRelationshipsSkus, bool) {
+func (o *InStockSubscriptionCreateDataRelationships) GetSkuOk() (*InStockSubscriptionCreateDataRelationshipsSku, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -110,7 +110,7 @@ func (o *InStockSubscriptionCreateDataRelationships) GetSkuOk() (*BundleDataRela
 }
 
 // SetSku sets field value
-func (o *InStockSubscriptionCreateDataRelationships) SetSku(v BundleDataRelationshipsSkus) {
+func (o *InStockSubscriptionCreateDataRelationships) SetSku(v InStockSubscriptionCreateDataRelationshipsSku) {
 	o.Sku = v
 }
 

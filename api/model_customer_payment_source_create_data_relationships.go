@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,15 +17,15 @@ import (
 
 // CustomerPaymentSourceCreateDataRelationships struct for CustomerPaymentSourceCreateDataRelationships
 type CustomerPaymentSourceCreateDataRelationships struct {
-	Customer      CouponRecipientDataRelationshipsCustomer            `json:"customer"`
-	PaymentSource CustomerPaymentSourceDataRelationshipsPaymentSource `json:"payment_source"`
+	Customer      CouponRecipientCreateDataRelationshipsCustomer            `json:"customer"`
+	PaymentSource CustomerPaymentSourceCreateDataRelationshipsPaymentSource `json:"payment_source"`
 }
 
 // NewCustomerPaymentSourceCreateDataRelationships instantiates a new CustomerPaymentSourceCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerPaymentSourceCreateDataRelationships(customer CouponRecipientDataRelationshipsCustomer, paymentSource CustomerPaymentSourceDataRelationshipsPaymentSource) *CustomerPaymentSourceCreateDataRelationships {
+func NewCustomerPaymentSourceCreateDataRelationships(customer CouponRecipientCreateDataRelationshipsCustomer, paymentSource CustomerPaymentSourceCreateDataRelationshipsPaymentSource) *CustomerPaymentSourceCreateDataRelationships {
 	this := CustomerPaymentSourceCreateDataRelationships{}
 	this.Customer = customer
 	this.PaymentSource = paymentSource
@@ -41,9 +41,9 @@ func NewCustomerPaymentSourceCreateDataRelationshipsWithDefaults() *CustomerPaym
 }
 
 // GetCustomer returns the Customer field value
-func (o *CustomerPaymentSourceCreateDataRelationships) GetCustomer() CouponRecipientDataRelationshipsCustomer {
+func (o *CustomerPaymentSourceCreateDataRelationships) GetCustomer() CouponRecipientCreateDataRelationshipsCustomer {
 	if o == nil {
-		var ret CouponRecipientDataRelationshipsCustomer
+		var ret CouponRecipientCreateDataRelationshipsCustomer
 		return ret
 	}
 
@@ -52,7 +52,7 @@ func (o *CustomerPaymentSourceCreateDataRelationships) GetCustomer() CouponRecip
 
 // GetCustomerOk returns a tuple with the Customer field value
 // and a boolean to check if the value has been set.
-func (o *CustomerPaymentSourceCreateDataRelationships) GetCustomerOk() (*CouponRecipientDataRelationshipsCustomer, bool) {
+func (o *CustomerPaymentSourceCreateDataRelationships) GetCustomerOk() (*CouponRecipientCreateDataRelationshipsCustomer, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -60,14 +60,14 @@ func (o *CustomerPaymentSourceCreateDataRelationships) GetCustomerOk() (*CouponR
 }
 
 // SetCustomer sets field value
-func (o *CustomerPaymentSourceCreateDataRelationships) SetCustomer(v CouponRecipientDataRelationshipsCustomer) {
+func (o *CustomerPaymentSourceCreateDataRelationships) SetCustomer(v CouponRecipientCreateDataRelationshipsCustomer) {
 	o.Customer = v
 }
 
 // GetPaymentSource returns the PaymentSource field value
-func (o *CustomerPaymentSourceCreateDataRelationships) GetPaymentSource() CustomerPaymentSourceDataRelationshipsPaymentSource {
+func (o *CustomerPaymentSourceCreateDataRelationships) GetPaymentSource() CustomerPaymentSourceCreateDataRelationshipsPaymentSource {
 	if o == nil {
-		var ret CustomerPaymentSourceDataRelationshipsPaymentSource
+		var ret CustomerPaymentSourceCreateDataRelationshipsPaymentSource
 		return ret
 	}
 
@@ -76,7 +76,7 @@ func (o *CustomerPaymentSourceCreateDataRelationships) GetPaymentSource() Custom
 
 // GetPaymentSourceOk returns a tuple with the PaymentSource field value
 // and a boolean to check if the value has been set.
-func (o *CustomerPaymentSourceCreateDataRelationships) GetPaymentSourceOk() (*CustomerPaymentSourceDataRelationshipsPaymentSource, bool) {
+func (o *CustomerPaymentSourceCreateDataRelationships) GetPaymentSourceOk() (*CustomerPaymentSourceCreateDataRelationshipsPaymentSource, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -84,7 +84,7 @@ func (o *CustomerPaymentSourceCreateDataRelationships) GetPaymentSourceOk() (*Cu
 }
 
 // SetPaymentSource sets field value
-func (o *CustomerPaymentSourceCreateDataRelationships) SetPaymentSource(v CustomerPaymentSourceDataRelationshipsPaymentSource) {
+func (o *CustomerPaymentSourceCreateDataRelationships) SetPaymentSource(v CustomerPaymentSourceCreateDataRelationshipsPaymentSource) {
 	o.PaymentSource = v
 }
 

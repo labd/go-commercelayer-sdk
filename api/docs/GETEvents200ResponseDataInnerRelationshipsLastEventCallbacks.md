@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks**](GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks.md) |  | [optional] 
-**Data** | Pointer to [**[]GETEvents200ResponseDataInnerRelationshipsLastEventCallbacksDataInner**](GETEvents200ResponseDataInnerRelationshipsLastEventCallbacksDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETEvents200ResponseDataInnerRelationshipsLastEventCallbacksData**](GETEvents200ResponseDataInnerRelationshipsLastEventCallbacksData.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks) GetData() []GETEvents200ResponseDataInnerRelationshipsLastEventCallbacksDataInner`
+`func (o *GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks) GetData() GETEvents200ResponseDataInnerRelationshipsLastEventCallbacksData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks) GetDataOk() (*[]GETEvents200ResponseDataInnerRelationshipsLastEventCallbacksDataInner, bool)`
+`func (o *GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks) GetDataOk() (*GETEvents200ResponseDataInnerRelationshipsLastEventCallbacksData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks) SetData(v []GETEvents200ResponseDataInnerRelationshipsLastEventCallbacksDataInner)`
+`func (o *GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks) SetData(v GETEvents200ResponseDataInnerRelationshipsLastEventCallbacksData)`
 
 SetData sets Data field to given value.
 

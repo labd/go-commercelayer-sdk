@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,14 +17,14 @@ import (
 
 // OrderCopyCreateDataRelationships struct for OrderCopyCreateDataRelationships
 type OrderCopyCreateDataRelationships struct {
-	SourceOrder AdyenPaymentDataRelationshipsOrder `json:"source_order"`
+	SourceOrder AdyenPaymentCreateDataRelationshipsOrder `json:"source_order"`
 }
 
 // NewOrderCopyCreateDataRelationships instantiates a new OrderCopyCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrderCopyCreateDataRelationships(sourceOrder AdyenPaymentDataRelationshipsOrder) *OrderCopyCreateDataRelationships {
+func NewOrderCopyCreateDataRelationships(sourceOrder AdyenPaymentCreateDataRelationshipsOrder) *OrderCopyCreateDataRelationships {
 	this := OrderCopyCreateDataRelationships{}
 	this.SourceOrder = sourceOrder
 	return &this
@@ -39,9 +39,9 @@ func NewOrderCopyCreateDataRelationshipsWithDefaults() *OrderCopyCreateDataRelat
 }
 
 // GetSourceOrder returns the SourceOrder field value
-func (o *OrderCopyCreateDataRelationships) GetSourceOrder() AdyenPaymentDataRelationshipsOrder {
+func (o *OrderCopyCreateDataRelationships) GetSourceOrder() AdyenPaymentCreateDataRelationshipsOrder {
 	if o == nil {
-		var ret AdyenPaymentDataRelationshipsOrder
+		var ret AdyenPaymentCreateDataRelationshipsOrder
 		return ret
 	}
 
@@ -50,7 +50,7 @@ func (o *OrderCopyCreateDataRelationships) GetSourceOrder() AdyenPaymentDataRela
 
 // GetSourceOrderOk returns a tuple with the SourceOrder field value
 // and a boolean to check if the value has been set.
-func (o *OrderCopyCreateDataRelationships) GetSourceOrderOk() (*AdyenPaymentDataRelationshipsOrder, bool) {
+func (o *OrderCopyCreateDataRelationships) GetSourceOrderOk() (*AdyenPaymentCreateDataRelationshipsOrder, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,7 +58,7 @@ func (o *OrderCopyCreateDataRelationships) GetSourceOrderOk() (*AdyenPaymentData
 }
 
 // SetSourceOrder sets field value
-func (o *OrderCopyCreateDataRelationships) SetSourceOrder(v AdyenPaymentDataRelationshipsOrder) {
+func (o *OrderCopyCreateDataRelationships) SetSourceOrder(v AdyenPaymentCreateDataRelationshipsOrder) {
 	o.SourceOrder = v
 }
 

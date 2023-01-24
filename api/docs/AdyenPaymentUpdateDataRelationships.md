@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Order** | Pointer to [**AdyenPaymentDataRelationshipsOrder**](AdyenPaymentDataRelationshipsOrder.md) |  | [optional] 
+**Order** | Pointer to [**AdyenPaymentCreateDataRelationshipsOrder**](AdyenPaymentCreateDataRelationshipsOrder.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetOrder
 
-`func (o *AdyenPaymentUpdateDataRelationships) GetOrder() AdyenPaymentDataRelationshipsOrder`
+`func (o *AdyenPaymentUpdateDataRelationships) GetOrder() AdyenPaymentCreateDataRelationshipsOrder`
 
 GetOrder returns the Order field if non-nil, zero value otherwise.
 
 ### GetOrderOk
 
-`func (o *AdyenPaymentUpdateDataRelationships) GetOrderOk() (*AdyenPaymentDataRelationshipsOrder, bool)`
+`func (o *AdyenPaymentUpdateDataRelationships) GetOrderOk() (*AdyenPaymentCreateDataRelationshipsOrder, bool)`
 
 GetOrderOk returns a tuple with the Order field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOrder
 
-`func (o *AdyenPaymentUpdateDataRelationships) SetOrder(v AdyenPaymentDataRelationshipsOrder)`
+`func (o *AdyenPaymentUpdateDataRelationships) SetOrder(v AdyenPaymentCreateDataRelationshipsOrder)`
 
 SetOrder sets Order field to given value.
 

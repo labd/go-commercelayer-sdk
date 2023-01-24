@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETELineItemOptionsLineItemOptionId Delete a line item option
 
 Delete a line item option
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param lineItemOptionId The resource's id
- @return LineItemOptionsApiDELETELineItemOptionsLineItemOptionIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param lineItemOptionId The resource's id
+	@return LineItemOptionsApiDELETELineItemOptionsLineItemOptionIdRequest
 */
 func (a *LineItemOptionsApiService) DELETELineItemOptionsLineItemOptionId(ctx context.Context, lineItemOptionId string) LineItemOptionsApiDELETELineItemOptionsLineItemOptionIdRequest {
 	return LineItemOptionsApiDELETELineItemOptionsLineItemOptionIdRequest{
@@ -130,9 +130,9 @@ GETLineItemIdLineItemOptions Retrieve the line item options associated to the li
 
 Retrieve the line item options associated to the line item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param lineItemId The resource's id
- @return LineItemOptionsApiGETLineItemIdLineItemOptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param lineItemId The resource's id
+	@return LineItemOptionsApiGETLineItemIdLineItemOptionsRequest
 */
 func (a *LineItemOptionsApiService) GETLineItemIdLineItemOptions(ctx context.Context, lineItemId string) LineItemOptionsApiGETLineItemIdLineItemOptionsRequest {
 	return LineItemOptionsApiGETLineItemIdLineItemOptionsRequest{
@@ -221,8 +221,8 @@ GETLineItemOptions List all line item options
 
 List all line item options
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return LineItemOptionsApiGETLineItemOptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return LineItemOptionsApiGETLineItemOptionsRequest
 */
 func (a *LineItemOptionsApiService) GETLineItemOptions(ctx context.Context) LineItemOptionsApiGETLineItemOptionsRequest {
 	return LineItemOptionsApiGETLineItemOptionsRequest{
@@ -232,7 +232,8 @@ func (a *LineItemOptionsApiService) GETLineItemOptions(ctx context.Context) Line
 }
 
 // Execute executes the request
-//  @return GETLineItemOptions200Response
+//
+//	@return GETLineItemOptions200Response
 func (a *LineItemOptionsApiService) GETLineItemOptionsExecute(r LineItemOptionsApiGETLineItemOptionsRequest) (*GETLineItemOptions200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -321,9 +322,9 @@ GETLineItemOptionsLineItemOptionId Retrieve a line item option
 
 Retrieve a line item option
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param lineItemOptionId The resource's id
- @return LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param lineItemOptionId The resource's id
+	@return LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest
 */
 func (a *LineItemOptionsApiService) GETLineItemOptionsLineItemOptionId(ctx context.Context, lineItemOptionId string) LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest {
 	return LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest{
@@ -334,7 +335,8 @@ func (a *LineItemOptionsApiService) GETLineItemOptionsLineItemOptionId(ctx conte
 }
 
 // Execute executes the request
-//  @return GETLineItemOptionsLineItemOptionId200Response
+//
+//	@return GETLineItemOptionsLineItemOptionId200Response
 func (a *LineItemOptionsApiService) GETLineItemOptionsLineItemOptionIdExecute(r LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest) (*GETLineItemOptionsLineItemOptionId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -430,9 +432,9 @@ PATCHLineItemOptionsLineItemOptionId Update a line item option
 
 Update a line item option
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param lineItemOptionId The resource's id
- @return LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param lineItemOptionId The resource's id
+	@return LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest
 */
 func (a *LineItemOptionsApiService) PATCHLineItemOptionsLineItemOptionId(ctx context.Context, lineItemOptionId string) LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest {
 	return LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest{
@@ -443,7 +445,8 @@ func (a *LineItemOptionsApiService) PATCHLineItemOptionsLineItemOptionId(ctx con
 }
 
 // Execute executes the request
-//  @return PATCHLineItemOptionsLineItemOptionId200Response
+//
+//	@return PATCHLineItemOptionsLineItemOptionId200Response
 func (a *LineItemOptionsApiService) PATCHLineItemOptionsLineItemOptionIdExecute(r LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest) (*PATCHLineItemOptionsLineItemOptionId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -543,8 +546,8 @@ POSTLineItemOptions Create a line item option
 
 Create a line item option
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return LineItemOptionsApiPOSTLineItemOptionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return LineItemOptionsApiPOSTLineItemOptionsRequest
 */
 func (a *LineItemOptionsApiService) POSTLineItemOptions(ctx context.Context) LineItemOptionsApiPOSTLineItemOptionsRequest {
 	return LineItemOptionsApiPOSTLineItemOptionsRequest{
@@ -554,7 +557,8 @@ func (a *LineItemOptionsApiService) POSTLineItemOptions(ctx context.Context) Lin
 }
 
 // Execute executes the request
-//  @return POSTLineItemOptions201Response
+//
+//	@return POSTLineItemOptions201Response
 func (a *LineItemOptionsApiService) POSTLineItemOptionsExecute(r LineItemOptionsApiPOSTLineItemOptionsRequest) (*POSTLineItemOptions201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

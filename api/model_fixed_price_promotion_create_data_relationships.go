@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,19 +17,19 @@ import (
 
 // FixedPricePromotionCreateDataRelationships struct for FixedPricePromotionCreateDataRelationships
 type FixedPricePromotionCreateDataRelationships struct {
-	Market                   *AvalaraAccountDataRelationshipsMarkets                     `json:"market,omitempty"`
-	PromotionRules           *ExternalPromotionDataRelationshipsPromotionRules           `json:"promotion_rules,omitempty"`
-	OrderAmountPromotionRule *ExternalPromotionDataRelationshipsOrderAmountPromotionRule `json:"order_amount_promotion_rule,omitempty"`
-	SkuListPromotionRule     *ExternalPromotionDataRelationshipsSkuListPromotionRule     `json:"sku_list_promotion_rule,omitempty"`
-	CouponCodesPromotionRule *CouponDataRelationshipsPromotionRule                       `json:"coupon_codes_promotion_rule,omitempty"`
-	SkuList                  BundleDataRelationshipsSkuList                              `json:"sku_list"`
+	Market                   *BillingInfoValidationRuleCreateDataRelationshipsMarket           `json:"market,omitempty"`
+	PromotionRules           *ExternalPromotionCreateDataRelationshipsPromotionRules           `json:"promotion_rules,omitempty"`
+	OrderAmountPromotionRule *ExternalPromotionCreateDataRelationshipsOrderAmountPromotionRule `json:"order_amount_promotion_rule,omitempty"`
+	SkuListPromotionRule     *ExternalPromotionCreateDataRelationshipsSkuListPromotionRule     `json:"sku_list_promotion_rule,omitempty"`
+	CouponCodesPromotionRule *CouponCreateDataRelationshipsPromotionRule                       `json:"coupon_codes_promotion_rule,omitempty"`
+	SkuList                  BundleCreateDataRelationshipsSkuList                              `json:"sku_list"`
 }
 
 // NewFixedPricePromotionCreateDataRelationships instantiates a new FixedPricePromotionCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFixedPricePromotionCreateDataRelationships(skuList BundleDataRelationshipsSkuList) *FixedPricePromotionCreateDataRelationships {
+func NewFixedPricePromotionCreateDataRelationships(skuList BundleCreateDataRelationshipsSkuList) *FixedPricePromotionCreateDataRelationships {
 	this := FixedPricePromotionCreateDataRelationships{}
 	this.SkuList = skuList
 	return &this
@@ -44,9 +44,9 @@ func NewFixedPricePromotionCreateDataRelationshipsWithDefaults() *FixedPriceProm
 }
 
 // GetMarket returns the Market field value if set, zero value otherwise.
-func (o *FixedPricePromotionCreateDataRelationships) GetMarket() AvalaraAccountDataRelationshipsMarkets {
+func (o *FixedPricePromotionCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket {
 	if o == nil || o.Market == nil {
-		var ret AvalaraAccountDataRelationshipsMarkets
+		var ret BillingInfoValidationRuleCreateDataRelationshipsMarket
 		return ret
 	}
 	return *o.Market
@@ -54,7 +54,7 @@ func (o *FixedPricePromotionCreateDataRelationships) GetMarket() AvalaraAccountD
 
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FixedPricePromotionCreateDataRelationships) GetMarketOk() (*AvalaraAccountDataRelationshipsMarkets, bool) {
+func (o *FixedPricePromotionCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool) {
 	if o == nil || o.Market == nil {
 		return nil, false
 	}
@@ -70,15 +70,15 @@ func (o *FixedPricePromotionCreateDataRelationships) HasMarket() bool {
 	return false
 }
 
-// SetMarket gets a reference to the given AvalaraAccountDataRelationshipsMarkets and assigns it to the Market field.
-func (o *FixedPricePromotionCreateDataRelationships) SetMarket(v AvalaraAccountDataRelationshipsMarkets) {
+// SetMarket gets a reference to the given BillingInfoValidationRuleCreateDataRelationshipsMarket and assigns it to the Market field.
+func (o *FixedPricePromotionCreateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket) {
 	o.Market = &v
 }
 
 // GetPromotionRules returns the PromotionRules field value if set, zero value otherwise.
-func (o *FixedPricePromotionCreateDataRelationships) GetPromotionRules() ExternalPromotionDataRelationshipsPromotionRules {
+func (o *FixedPricePromotionCreateDataRelationships) GetPromotionRules() ExternalPromotionCreateDataRelationshipsPromotionRules {
 	if o == nil || o.PromotionRules == nil {
-		var ret ExternalPromotionDataRelationshipsPromotionRules
+		var ret ExternalPromotionCreateDataRelationshipsPromotionRules
 		return ret
 	}
 	return *o.PromotionRules
@@ -86,7 +86,7 @@ func (o *FixedPricePromotionCreateDataRelationships) GetPromotionRules() Externa
 
 // GetPromotionRulesOk returns a tuple with the PromotionRules field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FixedPricePromotionCreateDataRelationships) GetPromotionRulesOk() (*ExternalPromotionDataRelationshipsPromotionRules, bool) {
+func (o *FixedPricePromotionCreateDataRelationships) GetPromotionRulesOk() (*ExternalPromotionCreateDataRelationshipsPromotionRules, bool) {
 	if o == nil || o.PromotionRules == nil {
 		return nil, false
 	}
@@ -102,15 +102,15 @@ func (o *FixedPricePromotionCreateDataRelationships) HasPromotionRules() bool {
 	return false
 }
 
-// SetPromotionRules gets a reference to the given ExternalPromotionDataRelationshipsPromotionRules and assigns it to the PromotionRules field.
-func (o *FixedPricePromotionCreateDataRelationships) SetPromotionRules(v ExternalPromotionDataRelationshipsPromotionRules) {
+// SetPromotionRules gets a reference to the given ExternalPromotionCreateDataRelationshipsPromotionRules and assigns it to the PromotionRules field.
+func (o *FixedPricePromotionCreateDataRelationships) SetPromotionRules(v ExternalPromotionCreateDataRelationshipsPromotionRules) {
 	o.PromotionRules = &v
 }
 
 // GetOrderAmountPromotionRule returns the OrderAmountPromotionRule field value if set, zero value otherwise.
-func (o *FixedPricePromotionCreateDataRelationships) GetOrderAmountPromotionRule() ExternalPromotionDataRelationshipsOrderAmountPromotionRule {
+func (o *FixedPricePromotionCreateDataRelationships) GetOrderAmountPromotionRule() ExternalPromotionCreateDataRelationshipsOrderAmountPromotionRule {
 	if o == nil || o.OrderAmountPromotionRule == nil {
-		var ret ExternalPromotionDataRelationshipsOrderAmountPromotionRule
+		var ret ExternalPromotionCreateDataRelationshipsOrderAmountPromotionRule
 		return ret
 	}
 	return *o.OrderAmountPromotionRule
@@ -118,7 +118,7 @@ func (o *FixedPricePromotionCreateDataRelationships) GetOrderAmountPromotionRule
 
 // GetOrderAmountPromotionRuleOk returns a tuple with the OrderAmountPromotionRule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FixedPricePromotionCreateDataRelationships) GetOrderAmountPromotionRuleOk() (*ExternalPromotionDataRelationshipsOrderAmountPromotionRule, bool) {
+func (o *FixedPricePromotionCreateDataRelationships) GetOrderAmountPromotionRuleOk() (*ExternalPromotionCreateDataRelationshipsOrderAmountPromotionRule, bool) {
 	if o == nil || o.OrderAmountPromotionRule == nil {
 		return nil, false
 	}
@@ -134,15 +134,15 @@ func (o *FixedPricePromotionCreateDataRelationships) HasOrderAmountPromotionRule
 	return false
 }
 
-// SetOrderAmountPromotionRule gets a reference to the given ExternalPromotionDataRelationshipsOrderAmountPromotionRule and assigns it to the OrderAmountPromotionRule field.
-func (o *FixedPricePromotionCreateDataRelationships) SetOrderAmountPromotionRule(v ExternalPromotionDataRelationshipsOrderAmountPromotionRule) {
+// SetOrderAmountPromotionRule gets a reference to the given ExternalPromotionCreateDataRelationshipsOrderAmountPromotionRule and assigns it to the OrderAmountPromotionRule field.
+func (o *FixedPricePromotionCreateDataRelationships) SetOrderAmountPromotionRule(v ExternalPromotionCreateDataRelationshipsOrderAmountPromotionRule) {
 	o.OrderAmountPromotionRule = &v
 }
 
 // GetSkuListPromotionRule returns the SkuListPromotionRule field value if set, zero value otherwise.
-func (o *FixedPricePromotionCreateDataRelationships) GetSkuListPromotionRule() ExternalPromotionDataRelationshipsSkuListPromotionRule {
+func (o *FixedPricePromotionCreateDataRelationships) GetSkuListPromotionRule() ExternalPromotionCreateDataRelationshipsSkuListPromotionRule {
 	if o == nil || o.SkuListPromotionRule == nil {
-		var ret ExternalPromotionDataRelationshipsSkuListPromotionRule
+		var ret ExternalPromotionCreateDataRelationshipsSkuListPromotionRule
 		return ret
 	}
 	return *o.SkuListPromotionRule
@@ -150,7 +150,7 @@ func (o *FixedPricePromotionCreateDataRelationships) GetSkuListPromotionRule() E
 
 // GetSkuListPromotionRuleOk returns a tuple with the SkuListPromotionRule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FixedPricePromotionCreateDataRelationships) GetSkuListPromotionRuleOk() (*ExternalPromotionDataRelationshipsSkuListPromotionRule, bool) {
+func (o *FixedPricePromotionCreateDataRelationships) GetSkuListPromotionRuleOk() (*ExternalPromotionCreateDataRelationshipsSkuListPromotionRule, bool) {
 	if o == nil || o.SkuListPromotionRule == nil {
 		return nil, false
 	}
@@ -166,15 +166,15 @@ func (o *FixedPricePromotionCreateDataRelationships) HasSkuListPromotionRule() b
 	return false
 }
 
-// SetSkuListPromotionRule gets a reference to the given ExternalPromotionDataRelationshipsSkuListPromotionRule and assigns it to the SkuListPromotionRule field.
-func (o *FixedPricePromotionCreateDataRelationships) SetSkuListPromotionRule(v ExternalPromotionDataRelationshipsSkuListPromotionRule) {
+// SetSkuListPromotionRule gets a reference to the given ExternalPromotionCreateDataRelationshipsSkuListPromotionRule and assigns it to the SkuListPromotionRule field.
+func (o *FixedPricePromotionCreateDataRelationships) SetSkuListPromotionRule(v ExternalPromotionCreateDataRelationshipsSkuListPromotionRule) {
 	o.SkuListPromotionRule = &v
 }
 
 // GetCouponCodesPromotionRule returns the CouponCodesPromotionRule field value if set, zero value otherwise.
-func (o *FixedPricePromotionCreateDataRelationships) GetCouponCodesPromotionRule() CouponDataRelationshipsPromotionRule {
+func (o *FixedPricePromotionCreateDataRelationships) GetCouponCodesPromotionRule() CouponCreateDataRelationshipsPromotionRule {
 	if o == nil || o.CouponCodesPromotionRule == nil {
-		var ret CouponDataRelationshipsPromotionRule
+		var ret CouponCreateDataRelationshipsPromotionRule
 		return ret
 	}
 	return *o.CouponCodesPromotionRule
@@ -182,7 +182,7 @@ func (o *FixedPricePromotionCreateDataRelationships) GetCouponCodesPromotionRule
 
 // GetCouponCodesPromotionRuleOk returns a tuple with the CouponCodesPromotionRule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FixedPricePromotionCreateDataRelationships) GetCouponCodesPromotionRuleOk() (*CouponDataRelationshipsPromotionRule, bool) {
+func (o *FixedPricePromotionCreateDataRelationships) GetCouponCodesPromotionRuleOk() (*CouponCreateDataRelationshipsPromotionRule, bool) {
 	if o == nil || o.CouponCodesPromotionRule == nil {
 		return nil, false
 	}
@@ -198,15 +198,15 @@ func (o *FixedPricePromotionCreateDataRelationships) HasCouponCodesPromotionRule
 	return false
 }
 
-// SetCouponCodesPromotionRule gets a reference to the given CouponDataRelationshipsPromotionRule and assigns it to the CouponCodesPromotionRule field.
-func (o *FixedPricePromotionCreateDataRelationships) SetCouponCodesPromotionRule(v CouponDataRelationshipsPromotionRule) {
+// SetCouponCodesPromotionRule gets a reference to the given CouponCreateDataRelationshipsPromotionRule and assigns it to the CouponCodesPromotionRule field.
+func (o *FixedPricePromotionCreateDataRelationships) SetCouponCodesPromotionRule(v CouponCreateDataRelationshipsPromotionRule) {
 	o.CouponCodesPromotionRule = &v
 }
 
 // GetSkuList returns the SkuList field value
-func (o *FixedPricePromotionCreateDataRelationships) GetSkuList() BundleDataRelationshipsSkuList {
+func (o *FixedPricePromotionCreateDataRelationships) GetSkuList() BundleCreateDataRelationshipsSkuList {
 	if o == nil {
-		var ret BundleDataRelationshipsSkuList
+		var ret BundleCreateDataRelationshipsSkuList
 		return ret
 	}
 
@@ -215,7 +215,7 @@ func (o *FixedPricePromotionCreateDataRelationships) GetSkuList() BundleDataRela
 
 // GetSkuListOk returns a tuple with the SkuList field value
 // and a boolean to check if the value has been set.
-func (o *FixedPricePromotionCreateDataRelationships) GetSkuListOk() (*BundleDataRelationshipsSkuList, bool) {
+func (o *FixedPricePromotionCreateDataRelationships) GetSkuListOk() (*BundleCreateDataRelationshipsSkuList, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -223,7 +223,7 @@ func (o *FixedPricePromotionCreateDataRelationships) GetSkuListOk() (*BundleData
 }
 
 // SetSkuList sets field value
-func (o *FixedPricePromotionCreateDataRelationships) SetSkuList(v BundleDataRelationshipsSkuList) {
+func (o *FixedPricePromotionCreateDataRelationships) SetSkuList(v BundleCreateDataRelationshipsSkuList) {
 	o.SkuList = v
 }
 

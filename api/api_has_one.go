@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ GETAddressIdGeocoder Retrieve the geocoder associated to the address
 
 Retrieve the geocoder associated to the address
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param addressId The resource's id
- @return HasOneApiGETAddressIdGeocoderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param addressId The resource's id
+	@return HasOneApiGETAddressIdGeocoderRequest
 */
 func (a *HasOneApiService) GETAddressIdGeocoder(ctx context.Context, addressId string) HasOneApiGETAddressIdGeocoderRequest {
 	return HasOneApiGETAddressIdGeocoderRequest{
@@ -130,9 +130,9 @@ GETAdyenPaymentIdOrder Retrieve the order associated to the adyen payment
 
 Retrieve the order associated to the adyen payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param adyenPaymentId The resource's id
- @return HasOneApiGETAdyenPaymentIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param adyenPaymentId The resource's id
+	@return HasOneApiGETAdyenPaymentIdOrderRequest
 */
 func (a *HasOneApiService) GETAdyenPaymentIdOrder(ctx context.Context, adyenPaymentId string) HasOneApiGETAdyenPaymentIdOrderRequest {
 	return HasOneApiGETAdyenPaymentIdOrderRequest{
@@ -222,9 +222,9 @@ GETAdyenPaymentIdPaymentGateway Retrieve the payment gateway associated to the a
 
 Retrieve the payment gateway associated to the adyen payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param adyenPaymentId The resource's id
- @return HasOneApiGETAdyenPaymentIdPaymentGatewayRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param adyenPaymentId The resource's id
+	@return HasOneApiGETAdyenPaymentIdPaymentGatewayRequest
 */
 func (a *HasOneApiService) GETAdyenPaymentIdPaymentGateway(ctx context.Context, adyenPaymentId string) HasOneApiGETAdyenPaymentIdPaymentGatewayRequest {
 	return HasOneApiGETAdyenPaymentIdPaymentGatewayRequest{
@@ -314,9 +314,9 @@ GETAuthorizationIdOrder Retrieve the order associated to the authorization
 
 Retrieve the order associated to the authorization
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param authorizationId The resource's id
- @return HasOneApiGETAuthorizationIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param authorizationId The resource's id
+	@return HasOneApiGETAuthorizationIdOrderRequest
 */
 func (a *HasOneApiService) GETAuthorizationIdOrder(ctx context.Context, authorizationId string) HasOneApiGETAuthorizationIdOrderRequest {
 	return HasOneApiGETAuthorizationIdOrderRequest{
@@ -406,9 +406,9 @@ GETBillingInfoValidationRuleIdMarket Retrieve the market associated to the billi
 
 Retrieve the market associated to the billing info validation rule
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param billingInfoValidationRuleId The resource's id
- @return HasOneApiGETBillingInfoValidationRuleIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param billingInfoValidationRuleId The resource's id
+	@return HasOneApiGETBillingInfoValidationRuleIdMarketRequest
 */
 func (a *HasOneApiService) GETBillingInfoValidationRuleIdMarket(ctx context.Context, billingInfoValidationRuleId string) HasOneApiGETBillingInfoValidationRuleIdMarketRequest {
 	return HasOneApiGETBillingInfoValidationRuleIdMarketRequest{
@@ -498,9 +498,9 @@ GETBraintreePaymentIdOrder Retrieve the order associated to the braintree paymen
 
 Retrieve the order associated to the braintree payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param braintreePaymentId The resource's id
- @return HasOneApiGETBraintreePaymentIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param braintreePaymentId The resource's id
+	@return HasOneApiGETBraintreePaymentIdOrderRequest
 */
 func (a *HasOneApiService) GETBraintreePaymentIdOrder(ctx context.Context, braintreePaymentId string) HasOneApiGETBraintreePaymentIdOrderRequest {
 	return HasOneApiGETBraintreePaymentIdOrderRequest{
@@ -590,9 +590,9 @@ GETBraintreePaymentIdPaymentGateway Retrieve the payment gateway associated to t
 
 Retrieve the payment gateway associated to the braintree payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param braintreePaymentId The resource's id
- @return HasOneApiGETBraintreePaymentIdPaymentGatewayRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param braintreePaymentId The resource's id
+	@return HasOneApiGETBraintreePaymentIdPaymentGatewayRequest
 */
 func (a *HasOneApiService) GETBraintreePaymentIdPaymentGateway(ctx context.Context, braintreePaymentId string) HasOneApiGETBraintreePaymentIdPaymentGatewayRequest {
 	return HasOneApiGETBraintreePaymentIdPaymentGatewayRequest{
@@ -682,9 +682,9 @@ GETBundleIdMarket Retrieve the market associated to the bundle
 
 Retrieve the market associated to the bundle
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bundleId The resource's id
- @return HasOneApiGETBundleIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param bundleId The resource's id
+	@return HasOneApiGETBundleIdMarketRequest
 */
 func (a *HasOneApiService) GETBundleIdMarket(ctx context.Context, bundleId string) HasOneApiGETBundleIdMarketRequest {
 	return HasOneApiGETBundleIdMarketRequest{
@@ -774,9 +774,9 @@ GETBundleIdSkuList Retrieve the sku list associated to the bundle
 
 Retrieve the sku list associated to the bundle
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bundleId The resource's id
- @return HasOneApiGETBundleIdSkuListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param bundleId The resource's id
+	@return HasOneApiGETBundleIdSkuListRequest
 */
 func (a *HasOneApiService) GETBundleIdSkuList(ctx context.Context, bundleId string) HasOneApiGETBundleIdSkuListRequest {
 	return HasOneApiGETBundleIdSkuListRequest{
@@ -866,9 +866,9 @@ GETCaptureIdOrder Retrieve the order associated to the capture
 
 Retrieve the order associated to the capture
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param captureId The resource's id
- @return HasOneApiGETCaptureIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param captureId The resource's id
+	@return HasOneApiGETCaptureIdOrderRequest
 */
 func (a *HasOneApiService) GETCaptureIdOrder(ctx context.Context, captureId string) HasOneApiGETCaptureIdOrderRequest {
 	return HasOneApiGETCaptureIdOrderRequest{
@@ -958,9 +958,9 @@ GETCaptureIdReferenceAuthorization Retrieve the reference authorization associat
 
 Retrieve the reference authorization associated to the capture
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param captureId The resource's id
- @return HasOneApiGETCaptureIdReferenceAuthorizationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param captureId The resource's id
+	@return HasOneApiGETCaptureIdReferenceAuthorizationRequest
 */
 func (a *HasOneApiService) GETCaptureIdReferenceAuthorization(ctx context.Context, captureId string) HasOneApiGETCaptureIdReferenceAuthorizationRequest {
 	return HasOneApiGETCaptureIdReferenceAuthorizationRequest{
@@ -1050,9 +1050,9 @@ GETCarrierAccountIdMarket Retrieve the market associated to the carrier account
 
 Retrieve the market associated to the carrier account
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param carrierAccountId The resource's id
- @return HasOneApiGETCarrierAccountIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param carrierAccountId The resource's id
+	@return HasOneApiGETCarrierAccountIdMarketRequest
 */
 func (a *HasOneApiService) GETCarrierAccountIdMarket(ctx context.Context, carrierAccountId string) HasOneApiGETCarrierAccountIdMarketRequest {
 	return HasOneApiGETCarrierAccountIdMarketRequest{
@@ -1142,9 +1142,9 @@ GETCheckoutComPaymentIdOrder Retrieve the order associated to the checkout.com p
 
 Retrieve the order associated to the checkout.com payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param checkoutComPaymentId The resource's id
- @return HasOneApiGETCheckoutComPaymentIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param checkoutComPaymentId The resource's id
+	@return HasOneApiGETCheckoutComPaymentIdOrderRequest
 */
 func (a *HasOneApiService) GETCheckoutComPaymentIdOrder(ctx context.Context, checkoutComPaymentId string) HasOneApiGETCheckoutComPaymentIdOrderRequest {
 	return HasOneApiGETCheckoutComPaymentIdOrderRequest{
@@ -1234,9 +1234,9 @@ GETCheckoutComPaymentIdPaymentGateway Retrieve the payment gateway associated to
 
 Retrieve the payment gateway associated to the checkout.com payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param checkoutComPaymentId The resource's id
- @return HasOneApiGETCheckoutComPaymentIdPaymentGatewayRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param checkoutComPaymentId The resource's id
+	@return HasOneApiGETCheckoutComPaymentIdPaymentGatewayRequest
 */
 func (a *HasOneApiService) GETCheckoutComPaymentIdPaymentGateway(ctx context.Context, checkoutComPaymentId string) HasOneApiGETCheckoutComPaymentIdPaymentGatewayRequest {
 	return HasOneApiGETCheckoutComPaymentIdPaymentGatewayRequest{
@@ -1326,9 +1326,9 @@ GETCouponIdPromotionRule Retrieve the promotion rule associated to the coupon
 
 Retrieve the promotion rule associated to the coupon
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param couponId The resource's id
- @return HasOneApiGETCouponIdPromotionRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param couponId The resource's id
+	@return HasOneApiGETCouponIdPromotionRuleRequest
 */
 func (a *HasOneApiService) GETCouponIdPromotionRule(ctx context.Context, couponId string) HasOneApiGETCouponIdPromotionRuleRequest {
 	return HasOneApiGETCouponIdPromotionRuleRequest{
@@ -1418,9 +1418,9 @@ GETCouponRecipientIdCustomer Retrieve the customer associated to the coupon reci
 
 Retrieve the customer associated to the coupon recipient
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param couponRecipientId The resource's id
- @return HasOneApiGETCouponRecipientIdCustomerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param couponRecipientId The resource's id
+	@return HasOneApiGETCouponRecipientIdCustomerRequest
 */
 func (a *HasOneApiService) GETCouponRecipientIdCustomer(ctx context.Context, couponRecipientId string) HasOneApiGETCouponRecipientIdCustomerRequest {
 	return HasOneApiGETCouponRecipientIdCustomerRequest{
@@ -1510,9 +1510,9 @@ GETCustomerAddressIdAddress Retrieve the address associated to the customer addr
 
 Retrieve the address associated to the customer address
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerAddressId The resource's id
- @return HasOneApiGETCustomerAddressIdAddressRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerAddressId The resource's id
+	@return HasOneApiGETCustomerAddressIdAddressRequest
 */
 func (a *HasOneApiService) GETCustomerAddressIdAddress(ctx context.Context, customerAddressId string) HasOneApiGETCustomerAddressIdAddressRequest {
 	return HasOneApiGETCustomerAddressIdAddressRequest{
@@ -1602,9 +1602,9 @@ GETCustomerAddressIdCustomer Retrieve the customer associated to the customer ad
 
 Retrieve the customer associated to the customer address
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerAddressId The resource's id
- @return HasOneApiGETCustomerAddressIdCustomerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerAddressId The resource's id
+	@return HasOneApiGETCustomerAddressIdCustomerRequest
 */
 func (a *HasOneApiService) GETCustomerAddressIdCustomer(ctx context.Context, customerAddressId string) HasOneApiGETCustomerAddressIdCustomerRequest {
 	return HasOneApiGETCustomerAddressIdCustomerRequest{
@@ -1694,9 +1694,9 @@ GETCustomerIdCustomerGroup Retrieve the customer group associated to the custome
 
 Retrieve the customer group associated to the customer
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerId The resource's id
- @return HasOneApiGETCustomerIdCustomerGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerId The resource's id
+	@return HasOneApiGETCustomerIdCustomerGroupRequest
 */
 func (a *HasOneApiService) GETCustomerIdCustomerGroup(ctx context.Context, customerId string) HasOneApiGETCustomerIdCustomerGroupRequest {
 	return HasOneApiGETCustomerIdCustomerGroupRequest{
@@ -1786,9 +1786,9 @@ GETCustomerPasswordResetIdCustomer Retrieve the customer associated to the custo
 
 Retrieve the customer associated to the customer password reset
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerPasswordResetId The resource's id
- @return HasOneApiGETCustomerPasswordResetIdCustomerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerPasswordResetId The resource's id
+	@return HasOneApiGETCustomerPasswordResetIdCustomerRequest
 */
 func (a *HasOneApiService) GETCustomerPasswordResetIdCustomer(ctx context.Context, customerPasswordResetId string) HasOneApiGETCustomerPasswordResetIdCustomerRequest {
 	return HasOneApiGETCustomerPasswordResetIdCustomerRequest{
@@ -1878,9 +1878,9 @@ GETCustomerPaymentSourceIdCustomer Retrieve the customer associated to the custo
 
 Retrieve the customer associated to the customer payment source
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerPaymentSourceId The resource's id
- @return HasOneApiGETCustomerPaymentSourceIdCustomerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerPaymentSourceId The resource's id
+	@return HasOneApiGETCustomerPaymentSourceIdCustomerRequest
 */
 func (a *HasOneApiService) GETCustomerPaymentSourceIdCustomer(ctx context.Context, customerPaymentSourceId string) HasOneApiGETCustomerPaymentSourceIdCustomerRequest {
 	return HasOneApiGETCustomerPaymentSourceIdCustomerRequest{
@@ -1970,9 +1970,9 @@ GETCustomerSubscriptionIdCustomer Retrieve the customer associated to the custom
 
 Retrieve the customer associated to the customer subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerSubscriptionId The resource's id
- @return HasOneApiGETCustomerSubscriptionIdCustomerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerSubscriptionId The resource's id
+	@return HasOneApiGETCustomerSubscriptionIdCustomerRequest
 */
 func (a *HasOneApiService) GETCustomerSubscriptionIdCustomer(ctx context.Context, customerSubscriptionId string) HasOneApiGETCustomerSubscriptionIdCustomerRequest {
 	return HasOneApiGETCustomerSubscriptionIdCustomerRequest{
@@ -2062,9 +2062,9 @@ GETDeliveryLeadTimeIdShippingMethod Retrieve the shipping method associated to t
 
 Retrieve the shipping method associated to the delivery lead time
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param deliveryLeadTimeId The resource's id
- @return HasOneApiGETDeliveryLeadTimeIdShippingMethodRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deliveryLeadTimeId The resource's id
+	@return HasOneApiGETDeliveryLeadTimeIdShippingMethodRequest
 */
 func (a *HasOneApiService) GETDeliveryLeadTimeIdShippingMethod(ctx context.Context, deliveryLeadTimeId string) HasOneApiGETDeliveryLeadTimeIdShippingMethodRequest {
 	return HasOneApiGETDeliveryLeadTimeIdShippingMethodRequest{
@@ -2154,9 +2154,9 @@ GETDeliveryLeadTimeIdStockLocation Retrieve the stock location associated to the
 
 Retrieve the stock location associated to the delivery lead time
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param deliveryLeadTimeId The resource's id
- @return HasOneApiGETDeliveryLeadTimeIdStockLocationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deliveryLeadTimeId The resource's id
+	@return HasOneApiGETDeliveryLeadTimeIdStockLocationRequest
 */
 func (a *HasOneApiService) GETDeliveryLeadTimeIdStockLocation(ctx context.Context, deliveryLeadTimeId string) HasOneApiGETDeliveryLeadTimeIdStockLocationRequest {
 	return HasOneApiGETDeliveryLeadTimeIdStockLocationRequest{
@@ -2246,9 +2246,9 @@ GETEventCallbackIdWebhook Retrieve the webhook associated to the event callback
 
 Retrieve the webhook associated to the event callback
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param eventCallbackId The resource's id
- @return HasOneApiGETEventCallbackIdWebhookRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param eventCallbackId The resource's id
+	@return HasOneApiGETEventCallbackIdWebhookRequest
 */
 func (a *HasOneApiService) GETEventCallbackIdWebhook(ctx context.Context, eventCallbackId string) HasOneApiGETEventCallbackIdWebhookRequest {
 	return HasOneApiGETEventCallbackIdWebhookRequest{
@@ -2338,9 +2338,9 @@ GETExternalPaymentIdOrder Retrieve the order associated to the external payment
 
 Retrieve the order associated to the external payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalPaymentId The resource's id
- @return HasOneApiGETExternalPaymentIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalPaymentId The resource's id
+	@return HasOneApiGETExternalPaymentIdOrderRequest
 */
 func (a *HasOneApiService) GETExternalPaymentIdOrder(ctx context.Context, externalPaymentId string) HasOneApiGETExternalPaymentIdOrderRequest {
 	return HasOneApiGETExternalPaymentIdOrderRequest{
@@ -2430,9 +2430,9 @@ GETExternalPaymentIdPaymentGateway Retrieve the payment gateway associated to th
 
 Retrieve the payment gateway associated to the external payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalPaymentId The resource's id
- @return HasOneApiGETExternalPaymentIdPaymentGatewayRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalPaymentId The resource's id
+	@return HasOneApiGETExternalPaymentIdPaymentGatewayRequest
 */
 func (a *HasOneApiService) GETExternalPaymentIdPaymentGateway(ctx context.Context, externalPaymentId string) HasOneApiGETExternalPaymentIdPaymentGatewayRequest {
 	return HasOneApiGETExternalPaymentIdPaymentGatewayRequest{
@@ -2522,9 +2522,9 @@ GETExternalPaymentIdWallet Retrieve the wallet associated to the external paymen
 
 Retrieve the wallet associated to the external payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalPaymentId The resource's id
- @return HasOneApiGETExternalPaymentIdWalletRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalPaymentId The resource's id
+	@return HasOneApiGETExternalPaymentIdWalletRequest
 */
 func (a *HasOneApiService) GETExternalPaymentIdWallet(ctx context.Context, externalPaymentId string) HasOneApiGETExternalPaymentIdWalletRequest {
 	return HasOneApiGETExternalPaymentIdWalletRequest{
@@ -2614,9 +2614,9 @@ GETExternalPromotionIdCouponCodesPromotionRule Retrieve the coupon codes promoti
 
 Retrieve the coupon codes promotion rule associated to the external promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalPromotionId The resource's id
- @return HasOneApiGETExternalPromotionIdCouponCodesPromotionRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalPromotionId The resource's id
+	@return HasOneApiGETExternalPromotionIdCouponCodesPromotionRuleRequest
 */
 func (a *HasOneApiService) GETExternalPromotionIdCouponCodesPromotionRule(ctx context.Context, externalPromotionId string) HasOneApiGETExternalPromotionIdCouponCodesPromotionRuleRequest {
 	return HasOneApiGETExternalPromotionIdCouponCodesPromotionRuleRequest{
@@ -2706,9 +2706,9 @@ GETExternalPromotionIdMarket Retrieve the market associated to the external prom
 
 Retrieve the market associated to the external promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalPromotionId The resource's id
- @return HasOneApiGETExternalPromotionIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalPromotionId The resource's id
+	@return HasOneApiGETExternalPromotionIdMarketRequest
 */
 func (a *HasOneApiService) GETExternalPromotionIdMarket(ctx context.Context, externalPromotionId string) HasOneApiGETExternalPromotionIdMarketRequest {
 	return HasOneApiGETExternalPromotionIdMarketRequest{
@@ -2798,9 +2798,9 @@ GETExternalPromotionIdOrderAmountPromotionRule Retrieve the order amount promoti
 
 Retrieve the order amount promotion rule associated to the external promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalPromotionId The resource's id
- @return HasOneApiGETExternalPromotionIdOrderAmountPromotionRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalPromotionId The resource's id
+	@return HasOneApiGETExternalPromotionIdOrderAmountPromotionRuleRequest
 */
 func (a *HasOneApiService) GETExternalPromotionIdOrderAmountPromotionRule(ctx context.Context, externalPromotionId string) HasOneApiGETExternalPromotionIdOrderAmountPromotionRuleRequest {
 	return HasOneApiGETExternalPromotionIdOrderAmountPromotionRuleRequest{
@@ -2890,9 +2890,9 @@ GETExternalPromotionIdSkuListPromotionRule Retrieve the sku list promotion rule 
 
 Retrieve the sku list promotion rule associated to the external promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalPromotionId The resource's id
- @return HasOneApiGETExternalPromotionIdSkuListPromotionRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalPromotionId The resource's id
+	@return HasOneApiGETExternalPromotionIdSkuListPromotionRuleRequest
 */
 func (a *HasOneApiService) GETExternalPromotionIdSkuListPromotionRule(ctx context.Context, externalPromotionId string) HasOneApiGETExternalPromotionIdSkuListPromotionRuleRequest {
 	return HasOneApiGETExternalPromotionIdSkuListPromotionRuleRequest{
@@ -2982,9 +2982,9 @@ GETFixedAmountPromotionIdCouponCodesPromotionRule Retrieve the coupon codes prom
 
 Retrieve the coupon codes promotion rule associated to the fixed amount promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fixedAmountPromotionId The resource's id
- @return HasOneApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fixedAmountPromotionId The resource's id
+	@return HasOneApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest
 */
 func (a *HasOneApiService) GETFixedAmountPromotionIdCouponCodesPromotionRule(ctx context.Context, fixedAmountPromotionId string) HasOneApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest {
 	return HasOneApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest{
@@ -3074,9 +3074,9 @@ GETFixedAmountPromotionIdMarket Retrieve the market associated to the fixed amou
 
 Retrieve the market associated to the fixed amount promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fixedAmountPromotionId The resource's id
- @return HasOneApiGETFixedAmountPromotionIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fixedAmountPromotionId The resource's id
+	@return HasOneApiGETFixedAmountPromotionIdMarketRequest
 */
 func (a *HasOneApiService) GETFixedAmountPromotionIdMarket(ctx context.Context, fixedAmountPromotionId string) HasOneApiGETFixedAmountPromotionIdMarketRequest {
 	return HasOneApiGETFixedAmountPromotionIdMarketRequest{
@@ -3166,9 +3166,9 @@ GETFixedAmountPromotionIdOrderAmountPromotionRule Retrieve the order amount prom
 
 Retrieve the order amount promotion rule associated to the fixed amount promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fixedAmountPromotionId The resource's id
- @return HasOneApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fixedAmountPromotionId The resource's id
+	@return HasOneApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest
 */
 func (a *HasOneApiService) GETFixedAmountPromotionIdOrderAmountPromotionRule(ctx context.Context, fixedAmountPromotionId string) HasOneApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest {
 	return HasOneApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest{
@@ -3258,9 +3258,9 @@ GETFixedAmountPromotionIdSkuListPromotionRule Retrieve the sku list promotion ru
 
 Retrieve the sku list promotion rule associated to the fixed amount promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fixedAmountPromotionId The resource's id
- @return HasOneApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fixedAmountPromotionId The resource's id
+	@return HasOneApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest
 */
 func (a *HasOneApiService) GETFixedAmountPromotionIdSkuListPromotionRule(ctx context.Context, fixedAmountPromotionId string) HasOneApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest {
 	return HasOneApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest{
@@ -3350,9 +3350,9 @@ GETFixedPricePromotionIdCouponCodesPromotionRule Retrieve the coupon codes promo
 
 Retrieve the coupon codes promotion rule associated to the fixed price promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fixedPricePromotionId The resource's id
- @return HasOneApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fixedPricePromotionId The resource's id
+	@return HasOneApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest
 */
 func (a *HasOneApiService) GETFixedPricePromotionIdCouponCodesPromotionRule(ctx context.Context, fixedPricePromotionId string) HasOneApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest {
 	return HasOneApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest{
@@ -3442,9 +3442,9 @@ GETFixedPricePromotionIdMarket Retrieve the market associated to the fixed price
 
 Retrieve the market associated to the fixed price promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fixedPricePromotionId The resource's id
- @return HasOneApiGETFixedPricePromotionIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fixedPricePromotionId The resource's id
+	@return HasOneApiGETFixedPricePromotionIdMarketRequest
 */
 func (a *HasOneApiService) GETFixedPricePromotionIdMarket(ctx context.Context, fixedPricePromotionId string) HasOneApiGETFixedPricePromotionIdMarketRequest {
 	return HasOneApiGETFixedPricePromotionIdMarketRequest{
@@ -3534,9 +3534,9 @@ GETFixedPricePromotionIdOrderAmountPromotionRule Retrieve the order amount promo
 
 Retrieve the order amount promotion rule associated to the fixed price promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fixedPricePromotionId The resource's id
- @return HasOneApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fixedPricePromotionId The resource's id
+	@return HasOneApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest
 */
 func (a *HasOneApiService) GETFixedPricePromotionIdOrderAmountPromotionRule(ctx context.Context, fixedPricePromotionId string) HasOneApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest {
 	return HasOneApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest{
@@ -3626,9 +3626,9 @@ GETFixedPricePromotionIdSkuList Retrieve the sku list associated to the fixed pr
 
 Retrieve the sku list associated to the fixed price promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fixedPricePromotionId The resource's id
- @return HasOneApiGETFixedPricePromotionIdSkuListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fixedPricePromotionId The resource's id
+	@return HasOneApiGETFixedPricePromotionIdSkuListRequest
 */
 func (a *HasOneApiService) GETFixedPricePromotionIdSkuList(ctx context.Context, fixedPricePromotionId string) HasOneApiGETFixedPricePromotionIdSkuListRequest {
 	return HasOneApiGETFixedPricePromotionIdSkuListRequest{
@@ -3718,9 +3718,9 @@ GETFixedPricePromotionIdSkuListPromotionRule Retrieve the sku list promotion rul
 
 Retrieve the sku list promotion rule associated to the fixed price promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fixedPricePromotionId The resource's id
- @return HasOneApiGETFixedPricePromotionIdSkuListPromotionRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fixedPricePromotionId The resource's id
+	@return HasOneApiGETFixedPricePromotionIdSkuListPromotionRuleRequest
 */
 func (a *HasOneApiService) GETFixedPricePromotionIdSkuListPromotionRule(ctx context.Context, fixedPricePromotionId string) HasOneApiGETFixedPricePromotionIdSkuListPromotionRuleRequest {
 	return HasOneApiGETFixedPricePromotionIdSkuListPromotionRuleRequest{
@@ -3810,9 +3810,9 @@ GETFreeGiftPromotionIdCouponCodesPromotionRule Retrieve the coupon codes promoti
 
 Retrieve the coupon codes promotion rule associated to the free gift promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param freeGiftPromotionId The resource's id
- @return HasOneApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param freeGiftPromotionId The resource's id
+	@return HasOneApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest
 */
 func (a *HasOneApiService) GETFreeGiftPromotionIdCouponCodesPromotionRule(ctx context.Context, freeGiftPromotionId string) HasOneApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest {
 	return HasOneApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest{
@@ -3902,9 +3902,9 @@ GETFreeGiftPromotionIdMarket Retrieve the market associated to the free gift pro
 
 Retrieve the market associated to the free gift promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param freeGiftPromotionId The resource's id
- @return HasOneApiGETFreeGiftPromotionIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param freeGiftPromotionId The resource's id
+	@return HasOneApiGETFreeGiftPromotionIdMarketRequest
 */
 func (a *HasOneApiService) GETFreeGiftPromotionIdMarket(ctx context.Context, freeGiftPromotionId string) HasOneApiGETFreeGiftPromotionIdMarketRequest {
 	return HasOneApiGETFreeGiftPromotionIdMarketRequest{
@@ -3994,9 +3994,9 @@ GETFreeGiftPromotionIdOrderAmountPromotionRule Retrieve the order amount promoti
 
 Retrieve the order amount promotion rule associated to the free gift promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param freeGiftPromotionId The resource's id
- @return HasOneApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param freeGiftPromotionId The resource's id
+	@return HasOneApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest
 */
 func (a *HasOneApiService) GETFreeGiftPromotionIdOrderAmountPromotionRule(ctx context.Context, freeGiftPromotionId string) HasOneApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest {
 	return HasOneApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest{
@@ -4086,9 +4086,9 @@ GETFreeGiftPromotionIdSkuList Retrieve the sku list associated to the free gift 
 
 Retrieve the sku list associated to the free gift promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param freeGiftPromotionId The resource's id
- @return HasOneApiGETFreeGiftPromotionIdSkuListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param freeGiftPromotionId The resource's id
+	@return HasOneApiGETFreeGiftPromotionIdSkuListRequest
 */
 func (a *HasOneApiService) GETFreeGiftPromotionIdSkuList(ctx context.Context, freeGiftPromotionId string) HasOneApiGETFreeGiftPromotionIdSkuListRequest {
 	return HasOneApiGETFreeGiftPromotionIdSkuListRequest{
@@ -4178,9 +4178,9 @@ GETFreeGiftPromotionIdSkuListPromotionRule Retrieve the sku list promotion rule 
 
 Retrieve the sku list promotion rule associated to the free gift promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param freeGiftPromotionId The resource's id
- @return HasOneApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param freeGiftPromotionId The resource's id
+	@return HasOneApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest
 */
 func (a *HasOneApiService) GETFreeGiftPromotionIdSkuListPromotionRule(ctx context.Context, freeGiftPromotionId string) HasOneApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest {
 	return HasOneApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest{
@@ -4270,9 +4270,9 @@ GETFreeShippingPromotionIdCouponCodesPromotionRule Retrieve the coupon codes pro
 
 Retrieve the coupon codes promotion rule associated to the free shipping promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param freeShippingPromotionId The resource's id
- @return HasOneApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param freeShippingPromotionId The resource's id
+	@return HasOneApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest
 */
 func (a *HasOneApiService) GETFreeShippingPromotionIdCouponCodesPromotionRule(ctx context.Context, freeShippingPromotionId string) HasOneApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest {
 	return HasOneApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest{
@@ -4362,9 +4362,9 @@ GETFreeShippingPromotionIdMarket Retrieve the market associated to the free ship
 
 Retrieve the market associated to the free shipping promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param freeShippingPromotionId The resource's id
- @return HasOneApiGETFreeShippingPromotionIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param freeShippingPromotionId The resource's id
+	@return HasOneApiGETFreeShippingPromotionIdMarketRequest
 */
 func (a *HasOneApiService) GETFreeShippingPromotionIdMarket(ctx context.Context, freeShippingPromotionId string) HasOneApiGETFreeShippingPromotionIdMarketRequest {
 	return HasOneApiGETFreeShippingPromotionIdMarketRequest{
@@ -4454,9 +4454,9 @@ GETFreeShippingPromotionIdOrderAmountPromotionRule Retrieve the order amount pro
 
 Retrieve the order amount promotion rule associated to the free shipping promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param freeShippingPromotionId The resource's id
- @return HasOneApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param freeShippingPromotionId The resource's id
+	@return HasOneApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest
 */
 func (a *HasOneApiService) GETFreeShippingPromotionIdOrderAmountPromotionRule(ctx context.Context, freeShippingPromotionId string) HasOneApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest {
 	return HasOneApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest{
@@ -4546,9 +4546,9 @@ GETFreeShippingPromotionIdSkuListPromotionRule Retrieve the sku list promotion r
 
 Retrieve the sku list promotion rule associated to the free shipping promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param freeShippingPromotionId The resource's id
- @return HasOneApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param freeShippingPromotionId The resource's id
+	@return HasOneApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest
 */
 func (a *HasOneApiService) GETFreeShippingPromotionIdSkuListPromotionRule(ctx context.Context, freeShippingPromotionId string) HasOneApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest {
 	return HasOneApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest{
@@ -4638,9 +4638,9 @@ GETGiftCardIdGiftCardRecipient Retrieve the gift card recipient associated to th
 
 Retrieve the gift card recipient associated to the gift card
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param giftCardId The resource's id
- @return HasOneApiGETGiftCardIdGiftCardRecipientRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param giftCardId The resource's id
+	@return HasOneApiGETGiftCardIdGiftCardRecipientRequest
 */
 func (a *HasOneApiService) GETGiftCardIdGiftCardRecipient(ctx context.Context, giftCardId string) HasOneApiGETGiftCardIdGiftCardRecipientRequest {
 	return HasOneApiGETGiftCardIdGiftCardRecipientRequest{
@@ -4730,9 +4730,9 @@ GETGiftCardIdMarket Retrieve the market associated to the gift card
 
 Retrieve the market associated to the gift card
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param giftCardId The resource's id
- @return HasOneApiGETGiftCardIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param giftCardId The resource's id
+	@return HasOneApiGETGiftCardIdMarketRequest
 */
 func (a *HasOneApiService) GETGiftCardIdMarket(ctx context.Context, giftCardId string) HasOneApiGETGiftCardIdMarketRequest {
 	return HasOneApiGETGiftCardIdMarketRequest{
@@ -4822,9 +4822,9 @@ GETGiftCardRecipientIdCustomer Retrieve the customer associated to the gift card
 
 Retrieve the customer associated to the gift card recipient
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param giftCardRecipientId The resource's id
- @return HasOneApiGETGiftCardRecipientIdCustomerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param giftCardRecipientId The resource's id
+	@return HasOneApiGETGiftCardRecipientIdCustomerRequest
 */
 func (a *HasOneApiService) GETGiftCardRecipientIdCustomer(ctx context.Context, giftCardRecipientId string) HasOneApiGETGiftCardRecipientIdCustomerRequest {
 	return HasOneApiGETGiftCardRecipientIdCustomerRequest{
@@ -4914,9 +4914,9 @@ GETInStockSubscriptionIdCustomer Retrieve the customer associated to the in stoc
 
 Retrieve the customer associated to the in stock subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param inStockSubscriptionId The resource's id
- @return HasOneApiGETInStockSubscriptionIdCustomerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param inStockSubscriptionId The resource's id
+	@return HasOneApiGETInStockSubscriptionIdCustomerRequest
 */
 func (a *HasOneApiService) GETInStockSubscriptionIdCustomer(ctx context.Context, inStockSubscriptionId string) HasOneApiGETInStockSubscriptionIdCustomerRequest {
 	return HasOneApiGETInStockSubscriptionIdCustomerRequest{
@@ -5006,9 +5006,9 @@ GETInStockSubscriptionIdMarket Retrieve the market associated to the in stock su
 
 Retrieve the market associated to the in stock subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param inStockSubscriptionId The resource's id
- @return HasOneApiGETInStockSubscriptionIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param inStockSubscriptionId The resource's id
+	@return HasOneApiGETInStockSubscriptionIdMarketRequest
 */
 func (a *HasOneApiService) GETInStockSubscriptionIdMarket(ctx context.Context, inStockSubscriptionId string) HasOneApiGETInStockSubscriptionIdMarketRequest {
 	return HasOneApiGETInStockSubscriptionIdMarketRequest{
@@ -5098,9 +5098,9 @@ GETInStockSubscriptionIdSku Retrieve the sku associated to the in stock subscrip
 
 Retrieve the sku associated to the in stock subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param inStockSubscriptionId The resource's id
- @return HasOneApiGETInStockSubscriptionIdSkuRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param inStockSubscriptionId The resource's id
+	@return HasOneApiGETInStockSubscriptionIdSkuRequest
 */
 func (a *HasOneApiService) GETInStockSubscriptionIdSku(ctx context.Context, inStockSubscriptionId string) HasOneApiGETInStockSubscriptionIdSkuRequest {
 	return HasOneApiGETInStockSubscriptionIdSkuRequest{
@@ -5190,9 +5190,9 @@ GETInventoryReturnLocationIdInventoryModel Retrieve the inventory model associat
 
 Retrieve the inventory model associated to the inventory return location
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param inventoryReturnLocationId The resource's id
- @return HasOneApiGETInventoryReturnLocationIdInventoryModelRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param inventoryReturnLocationId The resource's id
+	@return HasOneApiGETInventoryReturnLocationIdInventoryModelRequest
 */
 func (a *HasOneApiService) GETInventoryReturnLocationIdInventoryModel(ctx context.Context, inventoryReturnLocationId string) HasOneApiGETInventoryReturnLocationIdInventoryModelRequest {
 	return HasOneApiGETInventoryReturnLocationIdInventoryModelRequest{
@@ -5282,9 +5282,9 @@ GETInventoryReturnLocationIdStockLocation Retrieve the stock location associated
 
 Retrieve the stock location associated to the inventory return location
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param inventoryReturnLocationId The resource's id
- @return HasOneApiGETInventoryReturnLocationIdStockLocationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param inventoryReturnLocationId The resource's id
+	@return HasOneApiGETInventoryReturnLocationIdStockLocationRequest
 */
 func (a *HasOneApiService) GETInventoryReturnLocationIdStockLocation(ctx context.Context, inventoryReturnLocationId string) HasOneApiGETInventoryReturnLocationIdStockLocationRequest {
 	return HasOneApiGETInventoryReturnLocationIdStockLocationRequest{
@@ -5374,9 +5374,9 @@ GETInventoryStockLocationIdInventoryModel Retrieve the inventory model associate
 
 Retrieve the inventory model associated to the inventory stock location
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param inventoryStockLocationId The resource's id
- @return HasOneApiGETInventoryStockLocationIdInventoryModelRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param inventoryStockLocationId The resource's id
+	@return HasOneApiGETInventoryStockLocationIdInventoryModelRequest
 */
 func (a *HasOneApiService) GETInventoryStockLocationIdInventoryModel(ctx context.Context, inventoryStockLocationId string) HasOneApiGETInventoryStockLocationIdInventoryModelRequest {
 	return HasOneApiGETInventoryStockLocationIdInventoryModelRequest{
@@ -5466,9 +5466,9 @@ GETInventoryStockLocationIdStockLocation Retrieve the stock location associated 
 
 Retrieve the stock location associated to the inventory stock location
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param inventoryStockLocationId The resource's id
- @return HasOneApiGETInventoryStockLocationIdStockLocationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param inventoryStockLocationId The resource's id
+	@return HasOneApiGETInventoryStockLocationIdStockLocationRequest
 */
 func (a *HasOneApiService) GETInventoryStockLocationIdStockLocation(ctx context.Context, inventoryStockLocationId string) HasOneApiGETInventoryStockLocationIdStockLocationRequest {
 	return HasOneApiGETInventoryStockLocationIdStockLocationRequest{
@@ -5558,9 +5558,9 @@ GETKlarnaPaymentIdOrder Retrieve the order associated to the klarna payment
 
 Retrieve the order associated to the klarna payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param klarnaPaymentId The resource's id
- @return HasOneApiGETKlarnaPaymentIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param klarnaPaymentId The resource's id
+	@return HasOneApiGETKlarnaPaymentIdOrderRequest
 */
 func (a *HasOneApiService) GETKlarnaPaymentIdOrder(ctx context.Context, klarnaPaymentId string) HasOneApiGETKlarnaPaymentIdOrderRequest {
 	return HasOneApiGETKlarnaPaymentIdOrderRequest{
@@ -5650,9 +5650,9 @@ GETKlarnaPaymentIdPaymentGateway Retrieve the payment gateway associated to the 
 
 Retrieve the payment gateway associated to the klarna payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param klarnaPaymentId The resource's id
- @return HasOneApiGETKlarnaPaymentIdPaymentGatewayRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param klarnaPaymentId The resource's id
+	@return HasOneApiGETKlarnaPaymentIdPaymentGatewayRequest
 */
 func (a *HasOneApiService) GETKlarnaPaymentIdPaymentGateway(ctx context.Context, klarnaPaymentId string) HasOneApiGETKlarnaPaymentIdPaymentGatewayRequest {
 	return HasOneApiGETKlarnaPaymentIdPaymentGatewayRequest{
@@ -5742,9 +5742,9 @@ GETLineItemIdOrder Retrieve the order associated to the line item
 
 Retrieve the order associated to the line item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param lineItemId The resource's id
- @return HasOneApiGETLineItemIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param lineItemId The resource's id
+	@return HasOneApiGETLineItemIdOrderRequest
 */
 func (a *HasOneApiService) GETLineItemIdOrder(ctx context.Context, lineItemId string) HasOneApiGETLineItemIdOrderRequest {
 	return HasOneApiGETLineItemIdOrderRequest{
@@ -5834,9 +5834,9 @@ GETLineItemOptionIdLineItem Retrieve the line item associated to the line item o
 
 Retrieve the line item associated to the line item option
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param lineItemOptionId The resource's id
- @return HasOneApiGETLineItemOptionIdLineItemRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param lineItemOptionId The resource's id
+	@return HasOneApiGETLineItemOptionIdLineItemRequest
 */
 func (a *HasOneApiService) GETLineItemOptionIdLineItem(ctx context.Context, lineItemOptionId string) HasOneApiGETLineItemOptionIdLineItemRequest {
 	return HasOneApiGETLineItemOptionIdLineItemRequest{
@@ -5926,9 +5926,9 @@ GETLineItemOptionIdSkuOption Retrieve the sku option associated to the line item
 
 Retrieve the sku option associated to the line item option
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param lineItemOptionId The resource's id
- @return HasOneApiGETLineItemOptionIdSkuOptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param lineItemOptionId The resource's id
+	@return HasOneApiGETLineItemOptionIdSkuOptionRequest
 */
 func (a *HasOneApiService) GETLineItemOptionIdSkuOption(ctx context.Context, lineItemOptionId string) HasOneApiGETLineItemOptionIdSkuOptionRequest {
 	return HasOneApiGETLineItemOptionIdSkuOptionRequest{
@@ -6018,9 +6018,9 @@ GETMarketIdCustomerGroup Retrieve the customer group associated to the market
 
 Retrieve the customer group associated to the market
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param marketId The resource's id
- @return HasOneApiGETMarketIdCustomerGroupRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param marketId The resource's id
+	@return HasOneApiGETMarketIdCustomerGroupRequest
 */
 func (a *HasOneApiService) GETMarketIdCustomerGroup(ctx context.Context, marketId string) HasOneApiGETMarketIdCustomerGroupRequest {
 	return HasOneApiGETMarketIdCustomerGroupRequest{
@@ -6110,9 +6110,9 @@ GETMarketIdInventoryModel Retrieve the inventory model associated to the market
 
 Retrieve the inventory model associated to the market
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param marketId The resource's id
- @return HasOneApiGETMarketIdInventoryModelRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param marketId The resource's id
+	@return HasOneApiGETMarketIdInventoryModelRequest
 */
 func (a *HasOneApiService) GETMarketIdInventoryModel(ctx context.Context, marketId string) HasOneApiGETMarketIdInventoryModelRequest {
 	return HasOneApiGETMarketIdInventoryModelRequest{
@@ -6202,9 +6202,9 @@ GETMarketIdMerchant Retrieve the merchant associated to the market
 
 Retrieve the merchant associated to the market
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param marketId The resource's id
- @return HasOneApiGETMarketIdMerchantRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param marketId The resource's id
+	@return HasOneApiGETMarketIdMerchantRequest
 */
 func (a *HasOneApiService) GETMarketIdMerchant(ctx context.Context, marketId string) HasOneApiGETMarketIdMerchantRequest {
 	return HasOneApiGETMarketIdMerchantRequest{
@@ -6294,9 +6294,9 @@ GETMarketIdPriceList Retrieve the price list associated to the market
 
 Retrieve the price list associated to the market
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param marketId The resource's id
- @return HasOneApiGETMarketIdPriceListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param marketId The resource's id
+	@return HasOneApiGETMarketIdPriceListRequest
 */
 func (a *HasOneApiService) GETMarketIdPriceList(ctx context.Context, marketId string) HasOneApiGETMarketIdPriceListRequest {
 	return HasOneApiGETMarketIdPriceListRequest{
@@ -6386,9 +6386,9 @@ GETMarketIdTaxCalculator Retrieve the tax calculator associated to the market
 
 Retrieve the tax calculator associated to the market
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param marketId The resource's id
- @return HasOneApiGETMarketIdTaxCalculatorRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param marketId The resource's id
+	@return HasOneApiGETMarketIdTaxCalculatorRequest
 */
 func (a *HasOneApiService) GETMarketIdTaxCalculator(ctx context.Context, marketId string) HasOneApiGETMarketIdTaxCalculatorRequest {
 	return HasOneApiGETMarketIdTaxCalculatorRequest{
@@ -6478,9 +6478,9 @@ GETMerchantIdAddress Retrieve the address associated to the merchant
 
 Retrieve the address associated to the merchant
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param merchantId The resource's id
- @return HasOneApiGETMerchantIdAddressRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param merchantId The resource's id
+	@return HasOneApiGETMerchantIdAddressRequest
 */
 func (a *HasOneApiService) GETMerchantIdAddress(ctx context.Context, merchantId string) HasOneApiGETMerchantIdAddressRequest {
 	return HasOneApiGETMerchantIdAddressRequest{
@@ -6570,9 +6570,9 @@ GETOrderCopyIdOrderSubscription Retrieve the order subscription associated to th
 
 Retrieve the order subscription associated to the order copy
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderCopyId The resource's id
- @return HasOneApiGETOrderCopyIdOrderSubscriptionRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderCopyId The resource's id
+	@return HasOneApiGETOrderCopyIdOrderSubscriptionRequest
 */
 func (a *HasOneApiService) GETOrderCopyIdOrderSubscription(ctx context.Context, orderCopyId string) HasOneApiGETOrderCopyIdOrderSubscriptionRequest {
 	return HasOneApiGETOrderCopyIdOrderSubscriptionRequest{
@@ -6662,9 +6662,9 @@ GETOrderCopyIdSourceOrder Retrieve the source order associated to the order copy
 
 Retrieve the source order associated to the order copy
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderCopyId The resource's id
- @return HasOneApiGETOrderCopyIdSourceOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderCopyId The resource's id
+	@return HasOneApiGETOrderCopyIdSourceOrderRequest
 */
 func (a *HasOneApiService) GETOrderCopyIdSourceOrder(ctx context.Context, orderCopyId string) HasOneApiGETOrderCopyIdSourceOrderRequest {
 	return HasOneApiGETOrderCopyIdSourceOrderRequest{
@@ -6754,9 +6754,9 @@ GETOrderCopyIdTargetOrder Retrieve the target order associated to the order copy
 
 Retrieve the target order associated to the order copy
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderCopyId The resource's id
- @return HasOneApiGETOrderCopyIdTargetOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderCopyId The resource's id
+	@return HasOneApiGETOrderCopyIdTargetOrderRequest
 */
 func (a *HasOneApiService) GETOrderCopyIdTargetOrder(ctx context.Context, orderCopyId string) HasOneApiGETOrderCopyIdTargetOrderRequest {
 	return HasOneApiGETOrderCopyIdTargetOrderRequest{
@@ -6846,9 +6846,9 @@ GETOrderIdBillingAddress Retrieve the billing address associated to the order
 
 Retrieve the billing address associated to the order
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderId The resource's id
- @return HasOneApiGETOrderIdBillingAddressRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return HasOneApiGETOrderIdBillingAddressRequest
 */
 func (a *HasOneApiService) GETOrderIdBillingAddress(ctx context.Context, orderId string) HasOneApiGETOrderIdBillingAddressRequest {
 	return HasOneApiGETOrderIdBillingAddressRequest{
@@ -6938,9 +6938,9 @@ GETOrderIdCustomer Retrieve the customer associated to the order
 
 Retrieve the customer associated to the order
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderId The resource's id
- @return HasOneApiGETOrderIdCustomerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return HasOneApiGETOrderIdCustomerRequest
 */
 func (a *HasOneApiService) GETOrderIdCustomer(ctx context.Context, orderId string) HasOneApiGETOrderIdCustomerRequest {
 	return HasOneApiGETOrderIdCustomerRequest{
@@ -7030,9 +7030,9 @@ GETOrderIdMarket Retrieve the market associated to the order
 
 Retrieve the market associated to the order
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderId The resource's id
- @return HasOneApiGETOrderIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return HasOneApiGETOrderIdMarketRequest
 */
 func (a *HasOneApiService) GETOrderIdMarket(ctx context.Context, orderId string) HasOneApiGETOrderIdMarketRequest {
 	return HasOneApiGETOrderIdMarketRequest{
@@ -7122,9 +7122,9 @@ GETOrderIdPaymentMethod Retrieve the payment method associated to the order
 
 Retrieve the payment method associated to the order
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderId The resource's id
- @return HasOneApiGETOrderIdPaymentMethodRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return HasOneApiGETOrderIdPaymentMethodRequest
 */
 func (a *HasOneApiService) GETOrderIdPaymentMethod(ctx context.Context, orderId string) HasOneApiGETOrderIdPaymentMethodRequest {
 	return HasOneApiGETOrderIdPaymentMethodRequest{
@@ -7214,9 +7214,9 @@ GETOrderIdShippingAddress Retrieve the shipping address associated to the order
 
 Retrieve the shipping address associated to the order
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderId The resource's id
- @return HasOneApiGETOrderIdShippingAddressRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return HasOneApiGETOrderIdShippingAddressRequest
 */
 func (a *HasOneApiService) GETOrderIdShippingAddress(ctx context.Context, orderId string) HasOneApiGETOrderIdShippingAddressRequest {
 	return HasOneApiGETOrderIdShippingAddressRequest{
@@ -7306,9 +7306,9 @@ GETOrderSubscriptionIdCustomer Retrieve the customer associated to the order sub
 
 Retrieve the customer associated to the order subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderSubscriptionId The resource's id
- @return HasOneApiGETOrderSubscriptionIdCustomerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderSubscriptionId The resource's id
+	@return HasOneApiGETOrderSubscriptionIdCustomerRequest
 */
 func (a *HasOneApiService) GETOrderSubscriptionIdCustomer(ctx context.Context, orderSubscriptionId string) HasOneApiGETOrderSubscriptionIdCustomerRequest {
 	return HasOneApiGETOrderSubscriptionIdCustomerRequest{
@@ -7398,9 +7398,9 @@ GETOrderSubscriptionIdMarket Retrieve the market associated to the order subscri
 
 Retrieve the market associated to the order subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderSubscriptionId The resource's id
- @return HasOneApiGETOrderSubscriptionIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderSubscriptionId The resource's id
+	@return HasOneApiGETOrderSubscriptionIdMarketRequest
 */
 func (a *HasOneApiService) GETOrderSubscriptionIdMarket(ctx context.Context, orderSubscriptionId string) HasOneApiGETOrderSubscriptionIdMarketRequest {
 	return HasOneApiGETOrderSubscriptionIdMarketRequest{
@@ -7490,9 +7490,9 @@ GETOrderSubscriptionIdSourceOrder Retrieve the source order associated to the or
 
 Retrieve the source order associated to the order subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderSubscriptionId The resource's id
- @return HasOneApiGETOrderSubscriptionIdSourceOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderSubscriptionId The resource's id
+	@return HasOneApiGETOrderSubscriptionIdSourceOrderRequest
 */
 func (a *HasOneApiService) GETOrderSubscriptionIdSourceOrder(ctx context.Context, orderSubscriptionId string) HasOneApiGETOrderSubscriptionIdSourceOrderRequest {
 	return HasOneApiGETOrderSubscriptionIdSourceOrderRequest{
@@ -7582,9 +7582,9 @@ GETOrderValidationRuleIdMarket Retrieve the market associated to the order valid
 
 Retrieve the market associated to the order validation rule
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderValidationRuleId The resource's id
- @return HasOneApiGETOrderValidationRuleIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderValidationRuleId The resource's id
+	@return HasOneApiGETOrderValidationRuleIdMarketRequest
 */
 func (a *HasOneApiService) GETOrderValidationRuleIdMarket(ctx context.Context, orderValidationRuleId string) HasOneApiGETOrderValidationRuleIdMarketRequest {
 	return HasOneApiGETOrderValidationRuleIdMarketRequest{
@@ -7674,9 +7674,9 @@ GETPackageIdStockLocation Retrieve the stock location associated to the package
 
 Retrieve the stock location associated to the package
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param packageId The resource's id
- @return HasOneApiGETPackageIdStockLocationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param packageId The resource's id
+	@return HasOneApiGETPackageIdStockLocationRequest
 */
 func (a *HasOneApiService) GETPackageIdStockLocation(ctx context.Context, packageId string) HasOneApiGETPackageIdStockLocationRequest {
 	return HasOneApiGETPackageIdStockLocationRequest{
@@ -7766,9 +7766,9 @@ GETParcelIdPackage Retrieve the package associated to the parcel
 
 Retrieve the package associated to the parcel
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param parcelId The resource's id
- @return HasOneApiGETParcelIdPackageRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param parcelId The resource's id
+	@return HasOneApiGETParcelIdPackageRequest
 */
 func (a *HasOneApiService) GETParcelIdPackage(ctx context.Context, parcelId string) HasOneApiGETParcelIdPackageRequest {
 	return HasOneApiGETParcelIdPackageRequest{
@@ -7858,9 +7858,9 @@ GETParcelIdShipment Retrieve the shipment associated to the parcel
 
 Retrieve the shipment associated to the parcel
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param parcelId The resource's id
- @return HasOneApiGETParcelIdShipmentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param parcelId The resource's id
+	@return HasOneApiGETParcelIdShipmentRequest
 */
 func (a *HasOneApiService) GETParcelIdShipment(ctx context.Context, parcelId string) HasOneApiGETParcelIdShipmentRequest {
 	return HasOneApiGETParcelIdShipmentRequest{
@@ -7950,9 +7950,9 @@ GETParcelLineItemIdParcel Retrieve the parcel associated to the parcel line item
 
 Retrieve the parcel associated to the parcel line item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param parcelLineItemId The resource's id
- @return HasOneApiGETParcelLineItemIdParcelRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param parcelLineItemId The resource's id
+	@return HasOneApiGETParcelLineItemIdParcelRequest
 */
 func (a *HasOneApiService) GETParcelLineItemIdParcel(ctx context.Context, parcelLineItemId string) HasOneApiGETParcelLineItemIdParcelRequest {
 	return HasOneApiGETParcelLineItemIdParcelRequest{
@@ -8042,9 +8042,9 @@ GETParcelLineItemIdStockLineItem Retrieve the stock line item associated to the 
 
 Retrieve the stock line item associated to the parcel line item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param parcelLineItemId The resource's id
- @return HasOneApiGETParcelLineItemIdStockLineItemRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param parcelLineItemId The resource's id
+	@return HasOneApiGETParcelLineItemIdStockLineItemRequest
 */
 func (a *HasOneApiService) GETParcelLineItemIdStockLineItem(ctx context.Context, parcelLineItemId string) HasOneApiGETParcelLineItemIdStockLineItemRequest {
 	return HasOneApiGETParcelLineItemIdStockLineItemRequest{
@@ -8134,9 +8134,9 @@ GETPaymentMethodIdMarket Retrieve the market associated to the payment method
 
 Retrieve the market associated to the payment method
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param paymentMethodId The resource's id
- @return HasOneApiGETPaymentMethodIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param paymentMethodId The resource's id
+	@return HasOneApiGETPaymentMethodIdMarketRequest
 */
 func (a *HasOneApiService) GETPaymentMethodIdMarket(ctx context.Context, paymentMethodId string) HasOneApiGETPaymentMethodIdMarketRequest {
 	return HasOneApiGETPaymentMethodIdMarketRequest{
@@ -8226,9 +8226,9 @@ GETPaymentMethodIdPaymentGateway Retrieve the payment gateway associated to the 
 
 Retrieve the payment gateway associated to the payment method
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param paymentMethodId The resource's id
- @return HasOneApiGETPaymentMethodIdPaymentGatewayRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param paymentMethodId The resource's id
+	@return HasOneApiGETPaymentMethodIdPaymentGatewayRequest
 */
 func (a *HasOneApiService) GETPaymentMethodIdPaymentGateway(ctx context.Context, paymentMethodId string) HasOneApiGETPaymentMethodIdPaymentGatewayRequest {
 	return HasOneApiGETPaymentMethodIdPaymentGatewayRequest{
@@ -8318,9 +8318,9 @@ GETPaypalPaymentIdOrder Retrieve the order associated to the paypal payment
 
 Retrieve the order associated to the paypal payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param paypalPaymentId The resource's id
- @return HasOneApiGETPaypalPaymentIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param paypalPaymentId The resource's id
+	@return HasOneApiGETPaypalPaymentIdOrderRequest
 */
 func (a *HasOneApiService) GETPaypalPaymentIdOrder(ctx context.Context, paypalPaymentId string) HasOneApiGETPaypalPaymentIdOrderRequest {
 	return HasOneApiGETPaypalPaymentIdOrderRequest{
@@ -8410,9 +8410,9 @@ GETPaypalPaymentIdPaymentGateway Retrieve the payment gateway associated to the 
 
 Retrieve the payment gateway associated to the paypal payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param paypalPaymentId The resource's id
- @return HasOneApiGETPaypalPaymentIdPaymentGatewayRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param paypalPaymentId The resource's id
+	@return HasOneApiGETPaypalPaymentIdPaymentGatewayRequest
 */
 func (a *HasOneApiService) GETPaypalPaymentIdPaymentGateway(ctx context.Context, paypalPaymentId string) HasOneApiGETPaypalPaymentIdPaymentGatewayRequest {
 	return HasOneApiGETPaypalPaymentIdPaymentGatewayRequest{
@@ -8502,9 +8502,9 @@ GETPercentageDiscountPromotionIdCouponCodesPromotionRule Retrieve the coupon cod
 
 Retrieve the coupon codes promotion rule associated to the percentage discount promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param percentageDiscountPromotionId The resource's id
- @return HasOneApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param percentageDiscountPromotionId The resource's id
+	@return HasOneApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest
 */
 func (a *HasOneApiService) GETPercentageDiscountPromotionIdCouponCodesPromotionRule(ctx context.Context, percentageDiscountPromotionId string) HasOneApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest {
 	return HasOneApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest{
@@ -8594,9 +8594,9 @@ GETPercentageDiscountPromotionIdMarket Retrieve the market associated to the per
 
 Retrieve the market associated to the percentage discount promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param percentageDiscountPromotionId The resource's id
- @return HasOneApiGETPercentageDiscountPromotionIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param percentageDiscountPromotionId The resource's id
+	@return HasOneApiGETPercentageDiscountPromotionIdMarketRequest
 */
 func (a *HasOneApiService) GETPercentageDiscountPromotionIdMarket(ctx context.Context, percentageDiscountPromotionId string) HasOneApiGETPercentageDiscountPromotionIdMarketRequest {
 	return HasOneApiGETPercentageDiscountPromotionIdMarketRequest{
@@ -8686,9 +8686,9 @@ GETPercentageDiscountPromotionIdOrderAmountPromotionRule Retrieve the order amou
 
 Retrieve the order amount promotion rule associated to the percentage discount promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param percentageDiscountPromotionId The resource's id
- @return HasOneApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param percentageDiscountPromotionId The resource's id
+	@return HasOneApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest
 */
 func (a *HasOneApiService) GETPercentageDiscountPromotionIdOrderAmountPromotionRule(ctx context.Context, percentageDiscountPromotionId string) HasOneApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest {
 	return HasOneApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest{
@@ -8778,9 +8778,9 @@ GETPercentageDiscountPromotionIdSkuList Retrieve the sku list associated to the 
 
 Retrieve the sku list associated to the percentage discount promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param percentageDiscountPromotionId The resource's id
- @return HasOneApiGETPercentageDiscountPromotionIdSkuListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param percentageDiscountPromotionId The resource's id
+	@return HasOneApiGETPercentageDiscountPromotionIdSkuListRequest
 */
 func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuList(ctx context.Context, percentageDiscountPromotionId string) HasOneApiGETPercentageDiscountPromotionIdSkuListRequest {
 	return HasOneApiGETPercentageDiscountPromotionIdSkuListRequest{
@@ -8870,9 +8870,9 @@ GETPercentageDiscountPromotionIdSkuListPromotionRule Retrieve the sku list promo
 
 Retrieve the sku list promotion rule associated to the percentage discount promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param percentageDiscountPromotionId The resource's id
- @return HasOneApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param percentageDiscountPromotionId The resource's id
+	@return HasOneApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest
 */
 func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuListPromotionRule(ctx context.Context, percentageDiscountPromotionId string) HasOneApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest {
 	return HasOneApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest{
@@ -8962,9 +8962,9 @@ GETPriceIdPriceList Retrieve the price list associated to the price
 
 Retrieve the price list associated to the price
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param priceId The resource's id
- @return HasOneApiGETPriceIdPriceListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceId The resource's id
+	@return HasOneApiGETPriceIdPriceListRequest
 */
 func (a *HasOneApiService) GETPriceIdPriceList(ctx context.Context, priceId string) HasOneApiGETPriceIdPriceListRequest {
 	return HasOneApiGETPriceIdPriceListRequest{
@@ -9054,9 +9054,9 @@ GETPriceIdSku Retrieve the sku associated to the price
 
 Retrieve the sku associated to the price
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param priceId The resource's id
- @return HasOneApiGETPriceIdSkuRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceId The resource's id
+	@return HasOneApiGETPriceIdSkuRequest
 */
 func (a *HasOneApiService) GETPriceIdSku(ctx context.Context, priceId string) HasOneApiGETPriceIdSkuRequest {
 	return HasOneApiGETPriceIdSkuRequest{
@@ -9146,9 +9146,9 @@ GETPriceTierIdPrice Retrieve the price associated to the price tier
 
 Retrieve the price associated to the price tier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param priceTierId The resource's id
- @return HasOneApiGETPriceTierIdPriceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceTierId The resource's id
+	@return HasOneApiGETPriceTierIdPriceRequest
 */
 func (a *HasOneApiService) GETPriceTierIdPrice(ctx context.Context, priceTierId string) HasOneApiGETPriceTierIdPriceRequest {
 	return HasOneApiGETPriceTierIdPriceRequest{
@@ -9238,9 +9238,9 @@ GETPriceVolumeTierIdPrice Retrieve the price associated to the price volume tier
 
 Retrieve the price associated to the price volume tier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param priceVolumeTierId The resource's id
- @return HasOneApiGETPriceVolumeTierIdPriceRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceVolumeTierId The resource's id
+	@return HasOneApiGETPriceVolumeTierIdPriceRequest
 */
 func (a *HasOneApiService) GETPriceVolumeTierIdPrice(ctx context.Context, priceVolumeTierId string) HasOneApiGETPriceVolumeTierIdPriceRequest {
 	return HasOneApiGETPriceVolumeTierIdPriceRequest{
@@ -9330,9 +9330,9 @@ GETPromotionIdCouponCodesPromotionRule Retrieve the coupon codes promotion rule 
 
 Retrieve the coupon codes promotion rule associated to the promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param promotionId The resource's id
- @return HasOneApiGETPromotionIdCouponCodesPromotionRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param promotionId The resource's id
+	@return HasOneApiGETPromotionIdCouponCodesPromotionRuleRequest
 */
 func (a *HasOneApiService) GETPromotionIdCouponCodesPromotionRule(ctx context.Context, promotionId string) HasOneApiGETPromotionIdCouponCodesPromotionRuleRequest {
 	return HasOneApiGETPromotionIdCouponCodesPromotionRuleRequest{
@@ -9422,9 +9422,9 @@ GETPromotionIdMarket Retrieve the market associated to the promotion
 
 Retrieve the market associated to the promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param promotionId The resource's id
- @return HasOneApiGETPromotionIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param promotionId The resource's id
+	@return HasOneApiGETPromotionIdMarketRequest
 */
 func (a *HasOneApiService) GETPromotionIdMarket(ctx context.Context, promotionId string) HasOneApiGETPromotionIdMarketRequest {
 	return HasOneApiGETPromotionIdMarketRequest{
@@ -9514,9 +9514,9 @@ GETPromotionIdOrderAmountPromotionRule Retrieve the order amount promotion rule 
 
 Retrieve the order amount promotion rule associated to the promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param promotionId The resource's id
- @return HasOneApiGETPromotionIdOrderAmountPromotionRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param promotionId The resource's id
+	@return HasOneApiGETPromotionIdOrderAmountPromotionRuleRequest
 */
 func (a *HasOneApiService) GETPromotionIdOrderAmountPromotionRule(ctx context.Context, promotionId string) HasOneApiGETPromotionIdOrderAmountPromotionRuleRequest {
 	return HasOneApiGETPromotionIdOrderAmountPromotionRuleRequest{
@@ -9606,9 +9606,9 @@ GETPromotionIdSkuListPromotionRule Retrieve the sku list promotion rule associat
 
 Retrieve the sku list promotion rule associated to the promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param promotionId The resource's id
- @return HasOneApiGETPromotionIdSkuListPromotionRuleRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param promotionId The resource's id
+	@return HasOneApiGETPromotionIdSkuListPromotionRuleRequest
 */
 func (a *HasOneApiService) GETPromotionIdSkuListPromotionRule(ctx context.Context, promotionId string) HasOneApiGETPromotionIdSkuListPromotionRuleRequest {
 	return HasOneApiGETPromotionIdSkuListPromotionRuleRequest{
@@ -9698,9 +9698,9 @@ GETRefundIdOrder Retrieve the order associated to the refund
 
 Retrieve the order associated to the refund
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param refundId The resource's id
- @return HasOneApiGETRefundIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param refundId The resource's id
+	@return HasOneApiGETRefundIdOrderRequest
 */
 func (a *HasOneApiService) GETRefundIdOrder(ctx context.Context, refundId string) HasOneApiGETRefundIdOrderRequest {
 	return HasOneApiGETRefundIdOrderRequest{
@@ -9790,9 +9790,9 @@ GETRefundIdReferenceCapture Retrieve the reference capture associated to the ref
 
 Retrieve the reference capture associated to the refund
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param refundId The resource's id
- @return HasOneApiGETRefundIdReferenceCaptureRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param refundId The resource's id
+	@return HasOneApiGETRefundIdReferenceCaptureRequest
 */
 func (a *HasOneApiService) GETRefundIdReferenceCapture(ctx context.Context, refundId string) HasOneApiGETRefundIdReferenceCaptureRequest {
 	return HasOneApiGETRefundIdReferenceCaptureRequest{
@@ -9882,9 +9882,9 @@ GETReturnIdCustomer Retrieve the customer associated to the return
 
 Retrieve the customer associated to the return
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param returnId The resource's id
- @return HasOneApiGETReturnIdCustomerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param returnId The resource's id
+	@return HasOneApiGETReturnIdCustomerRequest
 */
 func (a *HasOneApiService) GETReturnIdCustomer(ctx context.Context, returnId string) HasOneApiGETReturnIdCustomerRequest {
 	return HasOneApiGETReturnIdCustomerRequest{
@@ -9974,9 +9974,9 @@ GETReturnIdDestinationAddress Retrieve the destination address associated to the
 
 Retrieve the destination address associated to the return
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param returnId The resource's id
- @return HasOneApiGETReturnIdDestinationAddressRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param returnId The resource's id
+	@return HasOneApiGETReturnIdDestinationAddressRequest
 */
 func (a *HasOneApiService) GETReturnIdDestinationAddress(ctx context.Context, returnId string) HasOneApiGETReturnIdDestinationAddressRequest {
 	return HasOneApiGETReturnIdDestinationAddressRequest{
@@ -10066,9 +10066,9 @@ GETReturnIdOrder Retrieve the order associated to the return
 
 Retrieve the order associated to the return
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param returnId The resource's id
- @return HasOneApiGETReturnIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param returnId The resource's id
+	@return HasOneApiGETReturnIdOrderRequest
 */
 func (a *HasOneApiService) GETReturnIdOrder(ctx context.Context, returnId string) HasOneApiGETReturnIdOrderRequest {
 	return HasOneApiGETReturnIdOrderRequest{
@@ -10158,9 +10158,9 @@ GETReturnIdOriginAddress Retrieve the origin address associated to the return
 
 Retrieve the origin address associated to the return
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param returnId The resource's id
- @return HasOneApiGETReturnIdOriginAddressRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param returnId The resource's id
+	@return HasOneApiGETReturnIdOriginAddressRequest
 */
 func (a *HasOneApiService) GETReturnIdOriginAddress(ctx context.Context, returnId string) HasOneApiGETReturnIdOriginAddressRequest {
 	return HasOneApiGETReturnIdOriginAddressRequest{
@@ -10250,9 +10250,9 @@ GETReturnIdStockLocation Retrieve the stock location associated to the return
 
 Retrieve the stock location associated to the return
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param returnId The resource's id
- @return HasOneApiGETReturnIdStockLocationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param returnId The resource's id
+	@return HasOneApiGETReturnIdStockLocationRequest
 */
 func (a *HasOneApiService) GETReturnIdStockLocation(ctx context.Context, returnId string) HasOneApiGETReturnIdStockLocationRequest {
 	return HasOneApiGETReturnIdStockLocationRequest{
@@ -10342,9 +10342,9 @@ GETReturnLineItemIdLineItem Retrieve the line item associated to the return line
 
 Retrieve the line item associated to the return line item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param returnLineItemId The resource's id
- @return HasOneApiGETReturnLineItemIdLineItemRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param returnLineItemId The resource's id
+	@return HasOneApiGETReturnLineItemIdLineItemRequest
 */
 func (a *HasOneApiService) GETReturnLineItemIdLineItem(ctx context.Context, returnLineItemId string) HasOneApiGETReturnLineItemIdLineItemRequest {
 	return HasOneApiGETReturnLineItemIdLineItemRequest{
@@ -10434,9 +10434,9 @@ GETReturnLineItemIdReturn Retrieve the return associated to the return line item
 
 Retrieve the return associated to the return line item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param returnLineItemId The resource's id
- @return HasOneApiGETReturnLineItemIdReturnRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param returnLineItemId The resource's id
+	@return HasOneApiGETReturnLineItemIdReturnRequest
 */
 func (a *HasOneApiService) GETReturnLineItemIdReturn(ctx context.Context, returnLineItemId string) HasOneApiGETReturnLineItemIdReturnRequest {
 	return HasOneApiGETReturnLineItemIdReturnRequest{
@@ -10526,9 +10526,9 @@ GETShipmentIdDeliveryLeadTime Retrieve the delivery lead time associated to the 
 
 Retrieve the delivery lead time associated to the shipment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shipmentId The resource's id
- @return HasOneApiGETShipmentIdDeliveryLeadTimeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shipmentId The resource's id
+	@return HasOneApiGETShipmentIdDeliveryLeadTimeRequest
 */
 func (a *HasOneApiService) GETShipmentIdDeliveryLeadTime(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdDeliveryLeadTimeRequest {
 	return HasOneApiGETShipmentIdDeliveryLeadTimeRequest{
@@ -10618,9 +10618,9 @@ GETShipmentIdOrder Retrieve the order associated to the shipment
 
 Retrieve the order associated to the shipment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shipmentId The resource's id
- @return HasOneApiGETShipmentIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shipmentId The resource's id
+	@return HasOneApiGETShipmentIdOrderRequest
 */
 func (a *HasOneApiService) GETShipmentIdOrder(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdOrderRequest {
 	return HasOneApiGETShipmentIdOrderRequest{
@@ -10710,9 +10710,9 @@ GETShipmentIdOriginAddress Retrieve the origin address associated to the shipmen
 
 Retrieve the origin address associated to the shipment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shipmentId The resource's id
- @return HasOneApiGETShipmentIdOriginAddressRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shipmentId The resource's id
+	@return HasOneApiGETShipmentIdOriginAddressRequest
 */
 func (a *HasOneApiService) GETShipmentIdOriginAddress(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdOriginAddressRequest {
 	return HasOneApiGETShipmentIdOriginAddressRequest{
@@ -10802,9 +10802,9 @@ GETShipmentIdShippingAddress Retrieve the shipping address associated to the shi
 
 Retrieve the shipping address associated to the shipment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shipmentId The resource's id
- @return HasOneApiGETShipmentIdShippingAddressRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shipmentId The resource's id
+	@return HasOneApiGETShipmentIdShippingAddressRequest
 */
 func (a *HasOneApiService) GETShipmentIdShippingAddress(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdShippingAddressRequest {
 	return HasOneApiGETShipmentIdShippingAddressRequest{
@@ -10894,9 +10894,9 @@ GETShipmentIdShippingCategory Retrieve the shipping category associated to the s
 
 Retrieve the shipping category associated to the shipment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shipmentId The resource's id
- @return HasOneApiGETShipmentIdShippingCategoryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shipmentId The resource's id
+	@return HasOneApiGETShipmentIdShippingCategoryRequest
 */
 func (a *HasOneApiService) GETShipmentIdShippingCategory(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdShippingCategoryRequest {
 	return HasOneApiGETShipmentIdShippingCategoryRequest{
@@ -10986,9 +10986,9 @@ GETShipmentIdShippingMethod Retrieve the shipping method associated to the shipm
 
 Retrieve the shipping method associated to the shipment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shipmentId The resource's id
- @return HasOneApiGETShipmentIdShippingMethodRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shipmentId The resource's id
+	@return HasOneApiGETShipmentIdShippingMethodRequest
 */
 func (a *HasOneApiService) GETShipmentIdShippingMethod(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdShippingMethodRequest {
 	return HasOneApiGETShipmentIdShippingMethodRequest{
@@ -11078,9 +11078,9 @@ GETShipmentIdStockLocation Retrieve the stock location associated to the shipmen
 
 Retrieve the stock location associated to the shipment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shipmentId The resource's id
- @return HasOneApiGETShipmentIdStockLocationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shipmentId The resource's id
+	@return HasOneApiGETShipmentIdStockLocationRequest
 */
 func (a *HasOneApiService) GETShipmentIdStockLocation(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdStockLocationRequest {
 	return HasOneApiGETShipmentIdStockLocationRequest{
@@ -11170,9 +11170,9 @@ GETShippingMethodIdDeliveryLeadTimeForShipment Retrieve the delivery lead time f
 
 Retrieve the delivery lead time for shipment associated to the shipping method
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingMethodId The resource's id
- @return HasOneApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingMethodId The resource's id
+	@return HasOneApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest
 */
 func (a *HasOneApiService) GETShippingMethodIdDeliveryLeadTimeForShipment(ctx context.Context, shippingMethodId string) HasOneApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest {
 	return HasOneApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest{
@@ -11262,9 +11262,9 @@ GETShippingMethodIdMarket Retrieve the market associated to the shipping method
 
 Retrieve the market associated to the shipping method
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingMethodId The resource's id
- @return HasOneApiGETShippingMethodIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingMethodId The resource's id
+	@return HasOneApiGETShippingMethodIdMarketRequest
 */
 func (a *HasOneApiService) GETShippingMethodIdMarket(ctx context.Context, shippingMethodId string) HasOneApiGETShippingMethodIdMarketRequest {
 	return HasOneApiGETShippingMethodIdMarketRequest{
@@ -11354,9 +11354,9 @@ GETShippingMethodIdShippingCategory Retrieve the shipping category associated to
 
 Retrieve the shipping category associated to the shipping method
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingMethodId The resource's id
- @return HasOneApiGETShippingMethodIdShippingCategoryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingMethodId The resource's id
+	@return HasOneApiGETShippingMethodIdShippingCategoryRequest
 */
 func (a *HasOneApiService) GETShippingMethodIdShippingCategory(ctx context.Context, shippingMethodId string) HasOneApiGETShippingMethodIdShippingCategoryRequest {
 	return HasOneApiGETShippingMethodIdShippingCategoryRequest{
@@ -11446,9 +11446,9 @@ GETShippingMethodIdShippingZone Retrieve the shipping zone associated to the shi
 
 Retrieve the shipping zone associated to the shipping method
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingMethodId The resource's id
- @return HasOneApiGETShippingMethodIdShippingZoneRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingMethodId The resource's id
+	@return HasOneApiGETShippingMethodIdShippingZoneRequest
 */
 func (a *HasOneApiService) GETShippingMethodIdShippingZone(ctx context.Context, shippingMethodId string) HasOneApiGETShippingMethodIdShippingZoneRequest {
 	return HasOneApiGETShippingMethodIdShippingZoneRequest{
@@ -11538,9 +11538,9 @@ GETShippingMethodIdStockLocation Retrieve the stock location associated to the s
 
 Retrieve the stock location associated to the shipping method
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingMethodId The resource's id
- @return HasOneApiGETShippingMethodIdStockLocationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingMethodId The resource's id
+	@return HasOneApiGETShippingMethodIdStockLocationRequest
 */
 func (a *HasOneApiService) GETShippingMethodIdStockLocation(ctx context.Context, shippingMethodId string) HasOneApiGETShippingMethodIdStockLocationRequest {
 	return HasOneApiGETShippingMethodIdStockLocationRequest{
@@ -11630,9 +11630,9 @@ GETShippingMethodTierIdShippingMethod Retrieve the shipping method associated to
 
 Retrieve the shipping method associated to the shipping method tier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingMethodTierId The resource's id
- @return HasOneApiGETShippingMethodTierIdShippingMethodRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingMethodTierId The resource's id
+	@return HasOneApiGETShippingMethodTierIdShippingMethodRequest
 */
 func (a *HasOneApiService) GETShippingMethodTierIdShippingMethod(ctx context.Context, shippingMethodTierId string) HasOneApiGETShippingMethodTierIdShippingMethodRequest {
 	return HasOneApiGETShippingMethodTierIdShippingMethodRequest{
@@ -11722,9 +11722,9 @@ GETShippingWeightTierIdShippingMethod Retrieve the shipping method associated to
 
 Retrieve the shipping method associated to the shipping weight tier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingWeightTierId The resource's id
- @return HasOneApiGETShippingWeightTierIdShippingMethodRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingWeightTierId The resource's id
+	@return HasOneApiGETShippingWeightTierIdShippingMethodRequest
 */
 func (a *HasOneApiService) GETShippingWeightTierIdShippingMethod(ctx context.Context, shippingWeightTierId string) HasOneApiGETShippingWeightTierIdShippingMethodRequest {
 	return HasOneApiGETShippingWeightTierIdShippingMethodRequest{
@@ -11814,9 +11814,9 @@ GETSkuIdShippingCategory Retrieve the shipping category associated to the SKU
 
 Retrieve the shipping category associated to the SKU
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param skuId The resource's id
- @return HasOneApiGETSkuIdShippingCategoryRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuId The resource's id
+	@return HasOneApiGETSkuIdShippingCategoryRequest
 */
 func (a *HasOneApiService) GETSkuIdShippingCategory(ctx context.Context, skuId string) HasOneApiGETSkuIdShippingCategoryRequest {
 	return HasOneApiGETSkuIdShippingCategoryRequest{
@@ -11906,9 +11906,9 @@ GETSkuListIdCustomer Retrieve the customer associated to the SKU list
 
 Retrieve the customer associated to the SKU list
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param skuListId The resource's id
- @return HasOneApiGETSkuListIdCustomerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuListId The resource's id
+	@return HasOneApiGETSkuListIdCustomerRequest
 */
 func (a *HasOneApiService) GETSkuListIdCustomer(ctx context.Context, skuListId string) HasOneApiGETSkuListIdCustomerRequest {
 	return HasOneApiGETSkuListIdCustomerRequest{
@@ -11998,9 +11998,9 @@ GETSkuListItemIdSku Retrieve the sku associated to the SKU list item
 
 Retrieve the sku associated to the SKU list item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param skuListItemId The resource's id
- @return HasOneApiGETSkuListItemIdSkuRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuListItemId The resource's id
+	@return HasOneApiGETSkuListItemIdSkuRequest
 */
 func (a *HasOneApiService) GETSkuListItemIdSku(ctx context.Context, skuListItemId string) HasOneApiGETSkuListItemIdSkuRequest {
 	return HasOneApiGETSkuListItemIdSkuRequest{
@@ -12090,9 +12090,9 @@ GETSkuListItemIdSkuList Retrieve the sku list associated to the SKU list item
 
 Retrieve the sku list associated to the SKU list item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param skuListItemId The resource's id
- @return HasOneApiGETSkuListItemIdSkuListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuListItemId The resource's id
+	@return HasOneApiGETSkuListItemIdSkuListRequest
 */
 func (a *HasOneApiService) GETSkuListItemIdSkuList(ctx context.Context, skuListItemId string) HasOneApiGETSkuListItemIdSkuListRequest {
 	return HasOneApiGETSkuListItemIdSkuListRequest{
@@ -12182,9 +12182,9 @@ GETSkuListPromotionRuleIdSkuList Retrieve the sku list associated to the SKU lis
 
 Retrieve the sku list associated to the SKU list promotion rule
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param skuListPromotionRuleId The resource's id
- @return HasOneApiGETSkuListPromotionRuleIdSkuListRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuListPromotionRuleId The resource's id
+	@return HasOneApiGETSkuListPromotionRuleIdSkuListRequest
 */
 func (a *HasOneApiService) GETSkuListPromotionRuleIdSkuList(ctx context.Context, skuListPromotionRuleId string) HasOneApiGETSkuListPromotionRuleIdSkuListRequest {
 	return HasOneApiGETSkuListPromotionRuleIdSkuListRequest{
@@ -12274,9 +12274,9 @@ GETSkuOptionIdMarket Retrieve the market associated to the SKU option
 
 Retrieve the market associated to the SKU option
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param skuOptionId The resource's id
- @return HasOneApiGETSkuOptionIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuOptionId The resource's id
+	@return HasOneApiGETSkuOptionIdMarketRequest
 */
 func (a *HasOneApiService) GETSkuOptionIdMarket(ctx context.Context, skuOptionId string) HasOneApiGETSkuOptionIdMarketRequest {
 	return HasOneApiGETSkuOptionIdMarketRequest{
@@ -12366,9 +12366,9 @@ GETStockItemIdSku Retrieve the sku associated to the stock item
 
 Retrieve the sku associated to the stock item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stockItemId The resource's id
- @return HasOneApiGETStockItemIdSkuRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockItemId The resource's id
+	@return HasOneApiGETStockItemIdSkuRequest
 */
 func (a *HasOneApiService) GETStockItemIdSku(ctx context.Context, stockItemId string) HasOneApiGETStockItemIdSkuRequest {
 	return HasOneApiGETStockItemIdSkuRequest{
@@ -12458,9 +12458,9 @@ GETStockItemIdStockLocation Retrieve the stock location associated to the stock 
 
 Retrieve the stock location associated to the stock item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stockItemId The resource's id
- @return HasOneApiGETStockItemIdStockLocationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockItemId The resource's id
+	@return HasOneApiGETStockItemIdStockLocationRequest
 */
 func (a *HasOneApiService) GETStockItemIdStockLocation(ctx context.Context, stockItemId string) HasOneApiGETStockItemIdStockLocationRequest {
 	return HasOneApiGETStockItemIdStockLocationRequest{
@@ -12550,9 +12550,9 @@ GETStockLineItemIdLineItem Retrieve the line item associated to the stock line i
 
 Retrieve the line item associated to the stock line item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stockLineItemId The resource's id
- @return HasOneApiGETStockLineItemIdLineItemRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockLineItemId The resource's id
+	@return HasOneApiGETStockLineItemIdLineItemRequest
 */
 func (a *HasOneApiService) GETStockLineItemIdLineItem(ctx context.Context, stockLineItemId string) HasOneApiGETStockLineItemIdLineItemRequest {
 	return HasOneApiGETStockLineItemIdLineItemRequest{
@@ -12642,9 +12642,9 @@ GETStockLineItemIdShipment Retrieve the shipment associated to the stock line it
 
 Retrieve the shipment associated to the stock line item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stockLineItemId The resource's id
- @return HasOneApiGETStockLineItemIdShipmentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockLineItemId The resource's id
+	@return HasOneApiGETStockLineItemIdShipmentRequest
 */
 func (a *HasOneApiService) GETStockLineItemIdShipment(ctx context.Context, stockLineItemId string) HasOneApiGETStockLineItemIdShipmentRequest {
 	return HasOneApiGETStockLineItemIdShipmentRequest{
@@ -12734,9 +12734,9 @@ GETStockLineItemIdStockItem Retrieve the stock item associated to the stock line
 
 Retrieve the stock item associated to the stock line item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stockLineItemId The resource's id
- @return HasOneApiGETStockLineItemIdStockItemRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockLineItemId The resource's id
+	@return HasOneApiGETStockLineItemIdStockItemRequest
 */
 func (a *HasOneApiService) GETStockLineItemIdStockItem(ctx context.Context, stockLineItemId string) HasOneApiGETStockLineItemIdStockItemRequest {
 	return HasOneApiGETStockLineItemIdStockItemRequest{
@@ -12826,9 +12826,9 @@ GETStockLocationIdAddress Retrieve the address associated to the stock location
 
 Retrieve the address associated to the stock location
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stockLocationId The resource's id
- @return HasOneApiGETStockLocationIdAddressRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockLocationId The resource's id
+	@return HasOneApiGETStockLocationIdAddressRequest
 */
 func (a *HasOneApiService) GETStockLocationIdAddress(ctx context.Context, stockLocationId string) HasOneApiGETStockLocationIdAddressRequest {
 	return HasOneApiGETStockLocationIdAddressRequest{
@@ -12918,9 +12918,9 @@ GETStockTransferIdDestinationStockLocation Retrieve the destination stock locati
 
 Retrieve the destination stock location associated to the stock transfer
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stockTransferId The resource's id
- @return HasOneApiGETStockTransferIdDestinationStockLocationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockTransferId The resource's id
+	@return HasOneApiGETStockTransferIdDestinationStockLocationRequest
 */
 func (a *HasOneApiService) GETStockTransferIdDestinationStockLocation(ctx context.Context, stockTransferId string) HasOneApiGETStockTransferIdDestinationStockLocationRequest {
 	return HasOneApiGETStockTransferIdDestinationStockLocationRequest{
@@ -13010,9 +13010,9 @@ GETStockTransferIdLineItem Retrieve the line item associated to the stock transf
 
 Retrieve the line item associated to the stock transfer
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stockTransferId The resource's id
- @return HasOneApiGETStockTransferIdLineItemRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockTransferId The resource's id
+	@return HasOneApiGETStockTransferIdLineItemRequest
 */
 func (a *HasOneApiService) GETStockTransferIdLineItem(ctx context.Context, stockTransferId string) HasOneApiGETStockTransferIdLineItemRequest {
 	return HasOneApiGETStockTransferIdLineItemRequest{
@@ -13102,9 +13102,9 @@ GETStockTransferIdOriginStockLocation Retrieve the origin stock location associa
 
 Retrieve the origin stock location associated to the stock transfer
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stockTransferId The resource's id
- @return HasOneApiGETStockTransferIdOriginStockLocationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockTransferId The resource's id
+	@return HasOneApiGETStockTransferIdOriginStockLocationRequest
 */
 func (a *HasOneApiService) GETStockTransferIdOriginStockLocation(ctx context.Context, stockTransferId string) HasOneApiGETStockTransferIdOriginStockLocationRequest {
 	return HasOneApiGETStockTransferIdOriginStockLocationRequest{
@@ -13194,9 +13194,9 @@ GETStockTransferIdShipment Retrieve the shipment associated to the stock transfe
 
 Retrieve the shipment associated to the stock transfer
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stockTransferId The resource's id
- @return HasOneApiGETStockTransferIdShipmentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockTransferId The resource's id
+	@return HasOneApiGETStockTransferIdShipmentRequest
 */
 func (a *HasOneApiService) GETStockTransferIdShipment(ctx context.Context, stockTransferId string) HasOneApiGETStockTransferIdShipmentRequest {
 	return HasOneApiGETStockTransferIdShipmentRequest{
@@ -13286,9 +13286,9 @@ GETStockTransferIdSku Retrieve the sku associated to the stock transfer
 
 Retrieve the sku associated to the stock transfer
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stockTransferId The resource's id
- @return HasOneApiGETStockTransferIdSkuRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stockTransferId The resource's id
+	@return HasOneApiGETStockTransferIdSkuRequest
 */
 func (a *HasOneApiService) GETStockTransferIdSku(ctx context.Context, stockTransferId string) HasOneApiGETStockTransferIdSkuRequest {
 	return HasOneApiGETStockTransferIdSkuRequest{
@@ -13378,9 +13378,9 @@ GETStripePaymentIdOrder Retrieve the order associated to the stripe payment
 
 Retrieve the order associated to the stripe payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stripePaymentId The resource's id
- @return HasOneApiGETStripePaymentIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stripePaymentId The resource's id
+	@return HasOneApiGETStripePaymentIdOrderRequest
 */
 func (a *HasOneApiService) GETStripePaymentIdOrder(ctx context.Context, stripePaymentId string) HasOneApiGETStripePaymentIdOrderRequest {
 	return HasOneApiGETStripePaymentIdOrderRequest{
@@ -13470,9 +13470,9 @@ GETStripePaymentIdPaymentGateway Retrieve the payment gateway associated to the 
 
 Retrieve the payment gateway associated to the stripe payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stripePaymentId The resource's id
- @return HasOneApiGETStripePaymentIdPaymentGatewayRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stripePaymentId The resource's id
+	@return HasOneApiGETStripePaymentIdPaymentGatewayRequest
 */
 func (a *HasOneApiService) GETStripePaymentIdPaymentGateway(ctx context.Context, stripePaymentId string) HasOneApiGETStripePaymentIdPaymentGatewayRequest {
 	return HasOneApiGETStripePaymentIdPaymentGatewayRequest{
@@ -13562,9 +13562,9 @@ GETTaxCategoryIdSku Retrieve the sku associated to the tax category
 
 Retrieve the sku associated to the tax category
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param taxCategoryId The resource's id
- @return HasOneApiGETTaxCategoryIdSkuRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param taxCategoryId The resource's id
+	@return HasOneApiGETTaxCategoryIdSkuRequest
 */
 func (a *HasOneApiService) GETTaxCategoryIdSku(ctx context.Context, taxCategoryId string) HasOneApiGETTaxCategoryIdSkuRequest {
 	return HasOneApiGETTaxCategoryIdSkuRequest{
@@ -13654,9 +13654,9 @@ GETTaxRuleIdManualTaxCalculator Retrieve the manual tax calculator associated to
 
 Retrieve the manual tax calculator associated to the tax rule
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param taxRuleId The resource's id
- @return HasOneApiGETTaxRuleIdManualTaxCalculatorRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param taxRuleId The resource's id
+	@return HasOneApiGETTaxRuleIdManualTaxCalculatorRequest
 */
 func (a *HasOneApiService) GETTaxRuleIdManualTaxCalculator(ctx context.Context, taxRuleId string) HasOneApiGETTaxRuleIdManualTaxCalculatorRequest {
 	return HasOneApiGETTaxRuleIdManualTaxCalculatorRequest{
@@ -13746,9 +13746,9 @@ GETTransactionIdOrder Retrieve the order associated to the transaction
 
 Retrieve the order associated to the transaction
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param transactionId The resource's id
- @return HasOneApiGETTransactionIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param transactionId The resource's id
+	@return HasOneApiGETTransactionIdOrderRequest
 */
 func (a *HasOneApiService) GETTransactionIdOrder(ctx context.Context, transactionId string) HasOneApiGETTransactionIdOrderRequest {
 	return HasOneApiGETTransactionIdOrderRequest{
@@ -13838,9 +13838,9 @@ GETVoidIdOrder Retrieve the order associated to the void
 
 Retrieve the order associated to the void
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param voidId The resource's id
- @return HasOneApiGETVoidIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param voidId The resource's id
+	@return HasOneApiGETVoidIdOrderRequest
 */
 func (a *HasOneApiService) GETVoidIdOrder(ctx context.Context, voidId string) HasOneApiGETVoidIdOrderRequest {
 	return HasOneApiGETVoidIdOrderRequest{
@@ -13930,9 +13930,9 @@ GETVoidIdReferenceAuthorization Retrieve the reference authorization associated 
 
 Retrieve the reference authorization associated to the void
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param voidId The resource's id
- @return HasOneApiGETVoidIdReferenceAuthorizationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param voidId The resource's id
+	@return HasOneApiGETVoidIdReferenceAuthorizationRequest
 */
 func (a *HasOneApiService) GETVoidIdReferenceAuthorization(ctx context.Context, voidId string) HasOneApiGETVoidIdReferenceAuthorizationRequest {
 	return HasOneApiGETVoidIdReferenceAuthorizationRequest{
@@ -14022,9 +14022,9 @@ GETWireTransferIdOrder Retrieve the order associated to the wire transfer
 
 Retrieve the order associated to the wire transfer
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param wireTransferId The resource's id
- @return HasOneApiGETWireTransferIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param wireTransferId The resource's id
+	@return HasOneApiGETWireTransferIdOrderRequest
 */
 func (a *HasOneApiService) GETWireTransferIdOrder(ctx context.Context, wireTransferId string) HasOneApiGETWireTransferIdOrderRequest {
 	return HasOneApiGETWireTransferIdOrderRequest{

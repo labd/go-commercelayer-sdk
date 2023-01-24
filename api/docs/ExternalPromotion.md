@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**ExternalPromotionData**](ExternalPromotionData.md) |  | 
+**Data** | Pointer to [**ExternalPromotionData**](ExternalPromotionData.md) |  | [optional] 
 
 ## Methods
 
 ### NewExternalPromotion
 
-`func NewExternalPromotion(data ExternalPromotionData, ) *ExternalPromotion`
+`func NewExternalPromotion() *ExternalPromotion`
 
 NewExternalPromotion instantiates a new ExternalPromotion object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *ExternalPromotion) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

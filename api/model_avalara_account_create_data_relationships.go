@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,7 +17,7 @@ import (
 
 // AvalaraAccountCreateDataRelationships struct for AvalaraAccountCreateDataRelationships
 type AvalaraAccountCreateDataRelationships struct {
-	TaxCategories *AvalaraAccountDataRelationshipsTaxCategories `json:"tax_categories,omitempty"`
+	TaxCategories *AvalaraAccountCreateDataRelationshipsTaxCategories `json:"tax_categories,omitempty"`
 }
 
 // NewAvalaraAccountCreateDataRelationships instantiates a new AvalaraAccountCreateDataRelationships object
@@ -38,9 +38,9 @@ func NewAvalaraAccountCreateDataRelationshipsWithDefaults() *AvalaraAccountCreat
 }
 
 // GetTaxCategories returns the TaxCategories field value if set, zero value otherwise.
-func (o *AvalaraAccountCreateDataRelationships) GetTaxCategories() AvalaraAccountDataRelationshipsTaxCategories {
+func (o *AvalaraAccountCreateDataRelationships) GetTaxCategories() AvalaraAccountCreateDataRelationshipsTaxCategories {
 	if o == nil || o.TaxCategories == nil {
-		var ret AvalaraAccountDataRelationshipsTaxCategories
+		var ret AvalaraAccountCreateDataRelationshipsTaxCategories
 		return ret
 	}
 	return *o.TaxCategories
@@ -48,7 +48,7 @@ func (o *AvalaraAccountCreateDataRelationships) GetTaxCategories() AvalaraAccoun
 
 // GetTaxCategoriesOk returns a tuple with the TaxCategories field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AvalaraAccountCreateDataRelationships) GetTaxCategoriesOk() (*AvalaraAccountDataRelationshipsTaxCategories, bool) {
+func (o *AvalaraAccountCreateDataRelationships) GetTaxCategoriesOk() (*AvalaraAccountCreateDataRelationshipsTaxCategories, bool) {
 	if o == nil || o.TaxCategories == nil {
 		return nil, false
 	}
@@ -64,8 +64,8 @@ func (o *AvalaraAccountCreateDataRelationships) HasTaxCategories() bool {
 	return false
 }
 
-// SetTaxCategories gets a reference to the given AvalaraAccountDataRelationshipsTaxCategories and assigns it to the TaxCategories field.
-func (o *AvalaraAccountCreateDataRelationships) SetTaxCategories(v AvalaraAccountDataRelationshipsTaxCategories) {
+// SetTaxCategories gets a reference to the given AvalaraAccountCreateDataRelationshipsTaxCategories and assigns it to the TaxCategories field.
+func (o *AvalaraAccountCreateDataRelationships) SetTaxCategories(v AvalaraAccountCreateDataRelationshipsTaxCategories) {
 	o.TaxCategories = &v
 }
 

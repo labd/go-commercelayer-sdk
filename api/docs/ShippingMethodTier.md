@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**ShippingMethodTierData**](ShippingMethodTierData.md) |  | 
+**Data** | Pointer to [**ShippingMethodTierData**](ShippingMethodTierData.md) |  | [optional] 
 
 ## Methods
 
 ### NewShippingMethodTier
 
-`func NewShippingMethodTier(data ShippingMethodTierData, ) *ShippingMethodTier`
+`func NewShippingMethodTier() *ShippingMethodTier`
 
 NewShippingMethodTier instantiates a new ShippingMethodTier object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *ShippingMethodTier) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

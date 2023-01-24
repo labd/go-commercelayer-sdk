@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks**](GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks.md) |  | [optional] 
-**Data** | Pointer to [**[]GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPaymentsDataInner**](GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPaymentsDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPaymentsData**](GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPaymentsData.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments) GetData() []GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPaymentsDataInner`
+`func (o *GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments) GetData() GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPaymentsData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments) GetDataOk() (*[]GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPaymentsDataInner, bool)`
+`func (o *GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments) GetDataOk() (*GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPaymentsData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments) SetData(v []GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPaymentsDataInner)`
+`func (o *GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments) SetData(v GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPaymentsData)`
 
 SetData sets Data field to given value.
 

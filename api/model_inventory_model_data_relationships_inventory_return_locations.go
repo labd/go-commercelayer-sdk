@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,16 +17,15 @@ import (
 
 // InventoryModelDataRelationshipsInventoryReturnLocations struct for InventoryModelDataRelationshipsInventoryReturnLocations
 type InventoryModelDataRelationshipsInventoryReturnLocations struct {
-	Data InventoryModelDataRelationshipsInventoryReturnLocationsData `json:"data"`
+	Data *InventoryModelDataRelationshipsInventoryReturnLocationsData `json:"data,omitempty"`
 }
 
 // NewInventoryModelDataRelationshipsInventoryReturnLocations instantiates a new InventoryModelDataRelationshipsInventoryReturnLocations object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInventoryModelDataRelationshipsInventoryReturnLocations(data InventoryModelDataRelationshipsInventoryReturnLocationsData) *InventoryModelDataRelationshipsInventoryReturnLocations {
+func NewInventoryModelDataRelationshipsInventoryReturnLocations() *InventoryModelDataRelationshipsInventoryReturnLocations {
 	this := InventoryModelDataRelationshipsInventoryReturnLocations{}
-	this.Data = data
 	return &this
 }
 
@@ -38,33 +37,41 @@ func NewInventoryModelDataRelationshipsInventoryReturnLocationsWithDefaults() *I
 	return &this
 }
 
-// GetData returns the Data field value
+// GetData returns the Data field value if set, zero value otherwise.
 func (o *InventoryModelDataRelationshipsInventoryReturnLocations) GetData() InventoryModelDataRelationshipsInventoryReturnLocationsData {
-	if o == nil {
+	if o == nil || o.Data == nil {
 		var ret InventoryModelDataRelationshipsInventoryReturnLocationsData
 		return ret
 	}
-
-	return o.Data
+	return *o.Data
 }
 
-// GetDataOk returns a tuple with the Data field value
+// GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InventoryModelDataRelationshipsInventoryReturnLocations) GetDataOk() (*InventoryModelDataRelationshipsInventoryReturnLocationsData, bool) {
-	if o == nil {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
-	return &o.Data, true
+	return o.Data, true
 }
 
-// SetData sets field value
+// HasData returns a boolean if a field has been set.
+func (o *InventoryModelDataRelationshipsInventoryReturnLocations) HasData() bool {
+	if o != nil && o.Data != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetData gets a reference to the given InventoryModelDataRelationshipsInventoryReturnLocationsData and assigns it to the Data field.
 func (o *InventoryModelDataRelationshipsInventoryReturnLocations) SetData(v InventoryModelDataRelationshipsInventoryReturnLocationsData) {
-	o.Data = v
+	o.Data = &v
 }
 
 func (o InventoryModelDataRelationshipsInventoryReturnLocations) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)

@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Market** | Pointer to [**AvalaraAccountDataRelationshipsMarkets**](AvalaraAccountDataRelationshipsMarkets.md) |  | [optional] 
-**SkuList** | [**BundleDataRelationshipsSkuList**](BundleDataRelationshipsSkuList.md) |  | 
+**Market** | Pointer to [**BillingInfoValidationRuleCreateDataRelationshipsMarket**](BillingInfoValidationRuleCreateDataRelationshipsMarket.md) |  | [optional] 
+**SkuList** | [**BundleCreateDataRelationshipsSkuList**](BundleCreateDataRelationshipsSkuList.md) |  | 
 
 ## Methods
 
 ### NewBundleCreateDataRelationships
 
-`func NewBundleCreateDataRelationships(skuList BundleDataRelationshipsSkuList, ) *BundleCreateDataRelationships`
+`func NewBundleCreateDataRelationships(skuList BundleCreateDataRelationshipsSkuList, ) *BundleCreateDataRelationships`
 
 NewBundleCreateDataRelationships instantiates a new BundleCreateDataRelationships object
 This constructor will assign default values to properties that have it defined,
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMarket
 
-`func (o *BundleCreateDataRelationships) GetMarket() AvalaraAccountDataRelationshipsMarkets`
+`func (o *BundleCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket`
 
 GetMarket returns the Market field if non-nil, zero value otherwise.
 
 ### GetMarketOk
 
-`func (o *BundleCreateDataRelationships) GetMarketOk() (*AvalaraAccountDataRelationshipsMarkets, bool)`
+`func (o *BundleCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool)`
 
 GetMarketOk returns a tuple with the Market field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMarket
 
-`func (o *BundleCreateDataRelationships) SetMarket(v AvalaraAccountDataRelationshipsMarkets)`
+`func (o *BundleCreateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket)`
 
 SetMarket sets Market field to given value.
 
@@ -53,20 +53,20 @@ HasMarket returns a boolean if a field has been set.
 
 ### GetSkuList
 
-`func (o *BundleCreateDataRelationships) GetSkuList() BundleDataRelationshipsSkuList`
+`func (o *BundleCreateDataRelationships) GetSkuList() BundleCreateDataRelationshipsSkuList`
 
 GetSkuList returns the SkuList field if non-nil, zero value otherwise.
 
 ### GetSkuListOk
 
-`func (o *BundleCreateDataRelationships) GetSkuListOk() (*BundleDataRelationshipsSkuList, bool)`
+`func (o *BundleCreateDataRelationships) GetSkuListOk() (*BundleCreateDataRelationshipsSkuList, bool)`
 
 GetSkuListOk returns a tuple with the SkuList field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSkuList
 
-`func (o *BundleCreateDataRelationships) SetSkuList(v BundleDataRelationshipsSkuList)`
+`func (o *BundleCreateDataRelationships) SetSkuList(v BundleCreateDataRelationshipsSkuList)`
 
 SetSkuList sets SkuList field to given value.
 

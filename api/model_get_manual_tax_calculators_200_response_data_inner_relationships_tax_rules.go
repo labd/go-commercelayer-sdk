@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRules struct for GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRules
 type GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRules struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks                 `json:"links,omitempty"`
-	Data  []GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRulesDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks           `json:"links,omitempty"`
+	Data  *GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRulesData `json:"data,omitempty"`
 }
 
 // NewGETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRules instantiates a new GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRules object
@@ -71,17 +71,17 @@ func (o *GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRules) SetLi
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRules) GetData() []GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRulesDataInner {
+func (o *GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRules) GetData() GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRulesData {
 	if o == nil || o.Data == nil {
-		var ret []GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRulesDataInner
+		var ret GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRulesData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRules) GetDataOk() ([]GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRulesDataInner, bool) {
+func (o *GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRules) GetDataOk() (*GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRulesData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRules) HasDa
 	return false
 }
 
-// SetData gets a reference to the given []GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRulesDataInner and assigns it to the Data field.
-func (o *GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRules) SetData(v []GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRulesDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRulesData and assigns it to the Data field.
+func (o *GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRules) SetData(v GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRulesData) {
+	o.Data = &v
 }
 
 func (o GETManualTaxCalculators200ResponseDataInnerRelationshipsTaxRules) MarshalJSON() ([]byte, error) {

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -21,8 +21,6 @@ type GETTaxCategories200ResponseDataInnerAttributes struct {
 	Code *string `json:"code,omitempty"`
 	// The code of the associated SKU.
 	SkuCode *string `json:"sku_code,omitempty"`
-	// Unique identifier for the resource (hash).
-	Id *string `json:"id,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt *string `json:"created_at,omitempty"`
 	// Time at which the resource was last updated.
@@ -114,38 +112,6 @@ func (o *GETTaxCategories200ResponseDataInnerAttributes) HasSkuCode() bool {
 // SetSkuCode gets a reference to the given string and assigns it to the SkuCode field.
 func (o *GETTaxCategories200ResponseDataInnerAttributes) SetSkuCode(v string) {
 	o.SkuCode = &v
-}
-
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GETTaxCategories200ResponseDataInnerAttributes) GetId() string {
-	if o == nil || o.Id == nil {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GETTaxCategories200ResponseDataInnerAttributes) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *GETTaxCategories200ResponseDataInnerAttributes) HasId() bool {
-	if o != nil && o.Id != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *GETTaxCategories200ResponseDataInnerAttributes) SetId(v string) {
-	o.Id = &v
 }
 
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
@@ -315,9 +281,6 @@ func (o GETTaxCategories200ResponseDataInnerAttributes) MarshalJSON() ([]byte, e
 	}
 	if o.SkuCode != nil {
 		toSerialize["sku_code"] = o.SkuCode
-	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
 	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt

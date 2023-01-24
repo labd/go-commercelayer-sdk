@@ -8,10 +8,11 @@ Name | Type | Description | Notes
 **Name** | Pointer to **string** | The market&#39;s internal name | [optional] 
 **FacebookPixelId** | Pointer to **string** | The Facebook Pixed ID | [optional] 
 **CheckoutUrl** | Pointer to **string** | The checkout URL for this market | [optional] 
-**ExternalPricesUrl** | Pointer to **string** | The URL used to fetch prices from an external source | [optional] 
+**ExternalPricesUrl** | Pointer to **string** | The URL used to overwrite prices by an external source. | [optional] 
+**ExternalOrderValidationUrl** | Pointer to **string** | The URL used to validate orders by an external source. | [optional] 
+**SharedSecret** | Pointer to **string** | The shared secret used to sign the external requests payload. | [optional] 
 **Private** | Pointer to **bool** | Indicates if market belongs to a customer_group. | [optional] 
 **DisabledAt** | Pointer to **string** | Time at which the market was disabled. | [optional] 
-**Id** | Pointer to **string** | Unique identifier for the resource (hash). | [optional] 
 **CreatedAt** | Pointer to **string** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **string** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **string** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
@@ -162,6 +163,56 @@ SetExternalPricesUrl sets ExternalPricesUrl field to given value.
 
 HasExternalPricesUrl returns a boolean if a field has been set.
 
+### GetExternalOrderValidationUrl
+
+`func (o *GETMarkets200ResponseDataInnerAttributes) GetExternalOrderValidationUrl() string`
+
+GetExternalOrderValidationUrl returns the ExternalOrderValidationUrl field if non-nil, zero value otherwise.
+
+### GetExternalOrderValidationUrlOk
+
+`func (o *GETMarkets200ResponseDataInnerAttributes) GetExternalOrderValidationUrlOk() (*string, bool)`
+
+GetExternalOrderValidationUrlOk returns a tuple with the ExternalOrderValidationUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetExternalOrderValidationUrl
+
+`func (o *GETMarkets200ResponseDataInnerAttributes) SetExternalOrderValidationUrl(v string)`
+
+SetExternalOrderValidationUrl sets ExternalOrderValidationUrl field to given value.
+
+### HasExternalOrderValidationUrl
+
+`func (o *GETMarkets200ResponseDataInnerAttributes) HasExternalOrderValidationUrl() bool`
+
+HasExternalOrderValidationUrl returns a boolean if a field has been set.
+
+### GetSharedSecret
+
+`func (o *GETMarkets200ResponseDataInnerAttributes) GetSharedSecret() string`
+
+GetSharedSecret returns the SharedSecret field if non-nil, zero value otherwise.
+
+### GetSharedSecretOk
+
+`func (o *GETMarkets200ResponseDataInnerAttributes) GetSharedSecretOk() (*string, bool)`
+
+GetSharedSecretOk returns a tuple with the SharedSecret field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSharedSecret
+
+`func (o *GETMarkets200ResponseDataInnerAttributes) SetSharedSecret(v string)`
+
+SetSharedSecret sets SharedSecret field to given value.
+
+### HasSharedSecret
+
+`func (o *GETMarkets200ResponseDataInnerAttributes) HasSharedSecret() bool`
+
+HasSharedSecret returns a boolean if a field has been set.
+
 ### GetPrivate
 
 `func (o *GETMarkets200ResponseDataInnerAttributes) GetPrivate() bool`
@@ -211,31 +262,6 @@ SetDisabledAt sets DisabledAt field to given value.
 `func (o *GETMarkets200ResponseDataInnerAttributes) HasDisabledAt() bool`
 
 HasDisabledAt returns a boolean if a field has been set.
-
-### GetId
-
-`func (o *GETMarkets200ResponseDataInnerAttributes) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GETMarkets200ResponseDataInnerAttributes) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GETMarkets200ResponseDataInnerAttributes) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *GETMarkets200ResponseDataInnerAttributes) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,16 +17,15 @@ import (
 
 // EventCallback struct for EventCallback
 type EventCallback struct {
-	Data EventCallbackData `json:"data"`
+	Data *EventCallbackData `json:"data,omitempty"`
 }
 
 // NewEventCallback instantiates a new EventCallback object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEventCallback(data EventCallbackData) *EventCallback {
+func NewEventCallback() *EventCallback {
 	this := EventCallback{}
-	this.Data = data
 	return &this
 }
 
@@ -38,33 +37,41 @@ func NewEventCallbackWithDefaults() *EventCallback {
 	return &this
 }
 
-// GetData returns the Data field value
+// GetData returns the Data field value if set, zero value otherwise.
 func (o *EventCallback) GetData() EventCallbackData {
-	if o == nil {
+	if o == nil || o.Data == nil {
 		var ret EventCallbackData
 		return ret
 	}
-
-	return o.Data
+	return *o.Data
 }
 
-// GetDataOk returns a tuple with the Data field value
+// GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventCallback) GetDataOk() (*EventCallbackData, bool) {
-	if o == nil {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
-	return &o.Data, true
+	return o.Data, true
 }
 
-// SetData sets field value
+// HasData returns a boolean if a field has been set.
+func (o *EventCallback) HasData() bool {
+	if o != nil && o.Data != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetData gets a reference to the given EventCallbackData and assigns it to the Data field.
 func (o *EventCallback) SetData(v EventCallbackData) {
-	o.Data = v
+	o.Data = &v
 }
 
 func (o EventCallback) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)

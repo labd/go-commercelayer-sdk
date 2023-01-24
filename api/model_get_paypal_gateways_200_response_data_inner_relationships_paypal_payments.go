@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments struct for GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments
 type GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks                 `json:"links,omitempty"`
-	Data  []GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPaymentsDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks           `json:"links,omitempty"`
+	Data  *GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPaymentsData `json:"data,omitempty"`
 }
 
 // NewGETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments instantiates a new GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments object
@@ -71,17 +71,17 @@ func (o *GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments) SetLi
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments) GetData() []GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPaymentsDataInner {
+func (o *GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments) GetData() GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPaymentsData {
 	if o == nil || o.Data == nil {
-		var ret []GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPaymentsDataInner
+		var ret GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPaymentsData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments) GetDataOk() ([]GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPaymentsDataInner, bool) {
+func (o *GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments) GetDataOk() (*GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPaymentsData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments) HasDa
 	return false
 }
 
-// SetData gets a reference to the given []GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPaymentsDataInner and assigns it to the Data field.
-func (o *GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments) SetData(v []GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPaymentsDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPaymentsData and assigns it to the Data field.
+func (o *GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments) SetData(v GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPaymentsData) {
+	o.Data = &v
 }
 
 func (o GETPaypalGateways200ResponseDataInnerRelationshipsPaypalPayments) MarshalJSON() ([]byte, error) {

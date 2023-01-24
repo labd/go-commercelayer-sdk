@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEBundlesBundleId Delete a bundle
 
 Delete a bundle
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bundleId The resource's id
- @return BundlesApiDELETEBundlesBundleIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param bundleId The resource's id
+	@return BundlesApiDELETEBundlesBundleIdRequest
 */
 func (a *BundlesApiService) DELETEBundlesBundleId(ctx context.Context, bundleId string) BundlesApiDELETEBundlesBundleIdRequest {
 	return BundlesApiDELETEBundlesBundleIdRequest{
@@ -129,8 +129,8 @@ GETBundles List all bundles
 
 List all bundles
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return BundlesApiGETBundlesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return BundlesApiGETBundlesRequest
 */
 func (a *BundlesApiService) GETBundles(ctx context.Context) BundlesApiGETBundlesRequest {
 	return BundlesApiGETBundlesRequest{
@@ -140,7 +140,8 @@ func (a *BundlesApiService) GETBundles(ctx context.Context) BundlesApiGETBundles
 }
 
 // Execute executes the request
-//  @return GETBundles200Response
+//
+//	@return GETBundles200Response
 func (a *BundlesApiService) GETBundlesExecute(r BundlesApiGETBundlesRequest) (*GETBundles200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -229,9 +230,9 @@ GETBundlesBundleId Retrieve a bundle
 
 Retrieve a bundle
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bundleId The resource's id
- @return BundlesApiGETBundlesBundleIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param bundleId The resource's id
+	@return BundlesApiGETBundlesBundleIdRequest
 */
 func (a *BundlesApiService) GETBundlesBundleId(ctx context.Context, bundleId string) BundlesApiGETBundlesBundleIdRequest {
 	return BundlesApiGETBundlesBundleIdRequest{
@@ -242,7 +243,8 @@ func (a *BundlesApiService) GETBundlesBundleId(ctx context.Context, bundleId str
 }
 
 // Execute executes the request
-//  @return GETBundlesBundleId200Response
+//
+//	@return GETBundlesBundleId200Response
 func (a *BundlesApiService) GETBundlesBundleIdExecute(r BundlesApiGETBundlesBundleIdRequest) (*GETBundlesBundleId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -332,9 +334,9 @@ GETOrderIdAvailableFreeBundles Retrieve the available free bundles associated to
 
 Retrieve the available free bundles associated to the order
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderId The resource's id
- @return BundlesApiGETOrderIdAvailableFreeBundlesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return BundlesApiGETOrderIdAvailableFreeBundlesRequest
 */
 func (a *BundlesApiService) GETOrderIdAvailableFreeBundles(ctx context.Context, orderId string) BundlesApiGETOrderIdAvailableFreeBundlesRequest {
 	return BundlesApiGETOrderIdAvailableFreeBundlesRequest{
@@ -424,9 +426,9 @@ GETSkuListIdBundles Retrieve the bundles associated to the SKU list
 
 Retrieve the bundles associated to the SKU list
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param skuListId The resource's id
- @return BundlesApiGETSkuListIdBundlesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuListId The resource's id
+	@return BundlesApiGETSkuListIdBundlesRequest
 */
 func (a *BundlesApiService) GETSkuListIdBundles(ctx context.Context, skuListId string) BundlesApiGETSkuListIdBundlesRequest {
 	return BundlesApiGETSkuListIdBundlesRequest{
@@ -522,9 +524,9 @@ PATCHBundlesBundleId Update a bundle
 
 Update a bundle
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bundleId The resource's id
- @return BundlesApiPATCHBundlesBundleIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param bundleId The resource's id
+	@return BundlesApiPATCHBundlesBundleIdRequest
 */
 func (a *BundlesApiService) PATCHBundlesBundleId(ctx context.Context, bundleId string) BundlesApiPATCHBundlesBundleIdRequest {
 	return BundlesApiPATCHBundlesBundleIdRequest{
@@ -535,7 +537,8 @@ func (a *BundlesApiService) PATCHBundlesBundleId(ctx context.Context, bundleId s
 }
 
 // Execute executes the request
-//  @return PATCHBundlesBundleId200Response
+//
+//	@return PATCHBundlesBundleId200Response
 func (a *BundlesApiService) PATCHBundlesBundleIdExecute(r BundlesApiPATCHBundlesBundleIdRequest) (*PATCHBundlesBundleId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -635,8 +638,8 @@ POSTBundles Create a bundle
 
 Create a bundle
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return BundlesApiPOSTBundlesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return BundlesApiPOSTBundlesRequest
 */
 func (a *BundlesApiService) POSTBundles(ctx context.Context) BundlesApiPOSTBundlesRequest {
 	return BundlesApiPOSTBundlesRequest{
@@ -646,7 +649,8 @@ func (a *BundlesApiService) POSTBundles(ctx context.Context) BundlesApiPOSTBundl
 }
 
 // Execute executes the request
-//  @return POSTBundles201Response
+//
+//	@return POSTBundles201Response
 func (a *BundlesApiService) POSTBundlesExecute(r BundlesApiPOSTBundlesRequest) (*POSTBundles201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

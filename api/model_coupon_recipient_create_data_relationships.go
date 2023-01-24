@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,7 +17,7 @@ import (
 
 // CouponRecipientCreateDataRelationships struct for CouponRecipientCreateDataRelationships
 type CouponRecipientCreateDataRelationships struct {
-	Customer *CouponRecipientDataRelationshipsCustomer `json:"customer,omitempty"`
+	Customer *CouponRecipientCreateDataRelationshipsCustomer `json:"customer,omitempty"`
 }
 
 // NewCouponRecipientCreateDataRelationships instantiates a new CouponRecipientCreateDataRelationships object
@@ -38,9 +38,9 @@ func NewCouponRecipientCreateDataRelationshipsWithDefaults() *CouponRecipientCre
 }
 
 // GetCustomer returns the Customer field value if set, zero value otherwise.
-func (o *CouponRecipientCreateDataRelationships) GetCustomer() CouponRecipientDataRelationshipsCustomer {
+func (o *CouponRecipientCreateDataRelationships) GetCustomer() CouponRecipientCreateDataRelationshipsCustomer {
 	if o == nil || o.Customer == nil {
-		var ret CouponRecipientDataRelationshipsCustomer
+		var ret CouponRecipientCreateDataRelationshipsCustomer
 		return ret
 	}
 	return *o.Customer
@@ -48,7 +48,7 @@ func (o *CouponRecipientCreateDataRelationships) GetCustomer() CouponRecipientDa
 
 // GetCustomerOk returns a tuple with the Customer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CouponRecipientCreateDataRelationships) GetCustomerOk() (*CouponRecipientDataRelationshipsCustomer, bool) {
+func (o *CouponRecipientCreateDataRelationships) GetCustomerOk() (*CouponRecipientCreateDataRelationshipsCustomer, bool) {
 	if o == nil || o.Customer == nil {
 		return nil, false
 	}
@@ -64,8 +64,8 @@ func (o *CouponRecipientCreateDataRelationships) HasCustomer() bool {
 	return false
 }
 
-// SetCustomer gets a reference to the given CouponRecipientDataRelationshipsCustomer and assigns it to the Customer field.
-func (o *CouponRecipientCreateDataRelationships) SetCustomer(v CouponRecipientDataRelationshipsCustomer) {
+// SetCustomer gets a reference to the given CouponRecipientCreateDataRelationshipsCustomer and assigns it to the Customer field.
+func (o *CouponRecipientCreateDataRelationships) SetCustomer(v CouponRecipientCreateDataRelationshipsCustomer) {
 	o.Customer = &v
 }
 

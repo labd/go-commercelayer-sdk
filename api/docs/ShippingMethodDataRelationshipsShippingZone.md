@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**ShippingMethodDataRelationshipsShippingZoneData**](ShippingMethodDataRelationshipsShippingZoneData.md) |  | 
+**Data** | Pointer to [**ShippingMethodDataRelationshipsShippingZoneData**](ShippingMethodDataRelationshipsShippingZoneData.md) |  | [optional] 
 
 ## Methods
 
 ### NewShippingMethodDataRelationshipsShippingZone
 
-`func NewShippingMethodDataRelationshipsShippingZone(data ShippingMethodDataRelationshipsShippingZoneData, ) *ShippingMethodDataRelationshipsShippingZone`
+`func NewShippingMethodDataRelationshipsShippingZone() *ShippingMethodDataRelationshipsShippingZone`
 
 NewShippingMethodDataRelationshipsShippingZone instantiates a new ShippingMethodDataRelationshipsShippingZone object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *ShippingMethodDataRelationshipsShippingZone) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

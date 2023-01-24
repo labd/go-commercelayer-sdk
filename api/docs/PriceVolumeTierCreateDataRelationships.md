@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Price** | [**PriceListDataRelationshipsPrices**](PriceListDataRelationshipsPrices.md) |  | 
+**Price** | [**PriceVolumeTierCreateDataRelationshipsPrice**](PriceVolumeTierCreateDataRelationshipsPrice.md) |  | 
 
 ## Methods
 
 ### NewPriceVolumeTierCreateDataRelationships
 
-`func NewPriceVolumeTierCreateDataRelationships(price PriceListDataRelationshipsPrices, ) *PriceVolumeTierCreateDataRelationships`
+`func NewPriceVolumeTierCreateDataRelationships(price PriceVolumeTierCreateDataRelationshipsPrice, ) *PriceVolumeTierCreateDataRelationships`
 
 NewPriceVolumeTierCreateDataRelationships instantiates a new PriceVolumeTierCreateDataRelationships object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPrice
 
-`func (o *PriceVolumeTierCreateDataRelationships) GetPrice() PriceListDataRelationshipsPrices`
+`func (o *PriceVolumeTierCreateDataRelationships) GetPrice() PriceVolumeTierCreateDataRelationshipsPrice`
 
 GetPrice returns the Price field if non-nil, zero value otherwise.
 
 ### GetPriceOk
 
-`func (o *PriceVolumeTierCreateDataRelationships) GetPriceOk() (*PriceListDataRelationshipsPrices, bool)`
+`func (o *PriceVolumeTierCreateDataRelationships) GetPriceOk() (*PriceVolumeTierCreateDataRelationshipsPrice, bool)`
 
 GetPriceOk returns a tuple with the Price field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrice
 
-`func (o *PriceVolumeTierCreateDataRelationships) SetPrice(v PriceListDataRelationshipsPrices)`
+`func (o *PriceVolumeTierCreateDataRelationships) SetPrice(v PriceVolumeTierCreateDataRelationshipsPrice)`
 
 SetPrice sets Price field to given value.
 

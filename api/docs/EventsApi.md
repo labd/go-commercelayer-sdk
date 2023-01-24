@@ -4,6 +4,7 @@ All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**GETCleanupIdEvents**](EventsApi.md#GETCleanupIdEvents) | **Get** /cleanups/{cleanupId}/events | Retrieve the events associated to the cleanup
 [**GETCustomerAddressIdEvents**](EventsApi.md#GETCustomerAddressIdEvents) | **Get** /customer_addresses/{customerAddressId}/events | Retrieve the events associated to the customer address
 [**GETCustomerIdEvents**](EventsApi.md#GETCustomerIdEvents) | **Get** /customers/{customerId}/events | Retrieve the events associated to the customer
 [**GETCustomerPasswordResetIdEvents**](EventsApi.md#GETCustomerPasswordResetIdEvents) | **Get** /customer_password_resets/{customerPasswordResetId}/events | Retrieve the events associated to the customer password reset
@@ -23,6 +24,74 @@ Method | HTTP request | Description
 [**GETShipmentIdEvents**](EventsApi.md#GETShipmentIdEvents) | **Get** /shipments/{shipmentId}/events | Retrieve the events associated to the shipment
 [**GETStockTransferIdEvents**](EventsApi.md#GETStockTransferIdEvents) | **Get** /stock_transfers/{stockTransferId}/events | Retrieve the events associated to the stock transfer
 
+
+
+## GETCleanupIdEvents
+
+> GETCleanupIdEvents(ctx, cleanupId).Execute()
+
+Retrieve the events associated to the cleanup
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    cleanupId := "cleanupId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.EventsApi.GETCleanupIdEvents(context.Background(), cleanupId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETCleanupIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**cleanupId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETCleanupIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## GETCustomerAddressIdEvents

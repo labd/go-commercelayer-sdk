@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,15 +17,15 @@ import (
 
 // ParcelCreateDataRelationships struct for ParcelCreateDataRelationships
 type ParcelCreateDataRelationships struct {
-	Shipment OrderDataRelationshipsShipments `json:"shipment"`
-	Package  ParcelDataRelationshipsPackage  `json:"package"`
+	Shipment ParcelCreateDataRelationshipsShipment `json:"shipment"`
+	Package  ParcelCreateDataRelationshipsPackage  `json:"package"`
 }
 
 // NewParcelCreateDataRelationships instantiates a new ParcelCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewParcelCreateDataRelationships(shipment OrderDataRelationshipsShipments, package_ ParcelDataRelationshipsPackage) *ParcelCreateDataRelationships {
+func NewParcelCreateDataRelationships(shipment ParcelCreateDataRelationshipsShipment, package_ ParcelCreateDataRelationshipsPackage) *ParcelCreateDataRelationships {
 	this := ParcelCreateDataRelationships{}
 	this.Shipment = shipment
 	this.Package = package_
@@ -41,9 +41,9 @@ func NewParcelCreateDataRelationshipsWithDefaults() *ParcelCreateDataRelationshi
 }
 
 // GetShipment returns the Shipment field value
-func (o *ParcelCreateDataRelationships) GetShipment() OrderDataRelationshipsShipments {
+func (o *ParcelCreateDataRelationships) GetShipment() ParcelCreateDataRelationshipsShipment {
 	if o == nil {
-		var ret OrderDataRelationshipsShipments
+		var ret ParcelCreateDataRelationshipsShipment
 		return ret
 	}
 
@@ -52,7 +52,7 @@ func (o *ParcelCreateDataRelationships) GetShipment() OrderDataRelationshipsShip
 
 // GetShipmentOk returns a tuple with the Shipment field value
 // and a boolean to check if the value has been set.
-func (o *ParcelCreateDataRelationships) GetShipmentOk() (*OrderDataRelationshipsShipments, bool) {
+func (o *ParcelCreateDataRelationships) GetShipmentOk() (*ParcelCreateDataRelationshipsShipment, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -60,14 +60,14 @@ func (o *ParcelCreateDataRelationships) GetShipmentOk() (*OrderDataRelationships
 }
 
 // SetShipment sets field value
-func (o *ParcelCreateDataRelationships) SetShipment(v OrderDataRelationshipsShipments) {
+func (o *ParcelCreateDataRelationships) SetShipment(v ParcelCreateDataRelationshipsShipment) {
 	o.Shipment = v
 }
 
 // GetPackage returns the Package field value
-func (o *ParcelCreateDataRelationships) GetPackage() ParcelDataRelationshipsPackage {
+func (o *ParcelCreateDataRelationships) GetPackage() ParcelCreateDataRelationshipsPackage {
 	if o == nil {
-		var ret ParcelDataRelationshipsPackage
+		var ret ParcelCreateDataRelationshipsPackage
 		return ret
 	}
 
@@ -76,7 +76,7 @@ func (o *ParcelCreateDataRelationships) GetPackage() ParcelDataRelationshipsPack
 
 // GetPackageOk returns a tuple with the Package field value
 // and a boolean to check if the value has been set.
-func (o *ParcelCreateDataRelationships) GetPackageOk() (*ParcelDataRelationshipsPackage, bool) {
+func (o *ParcelCreateDataRelationships) GetPackageOk() (*ParcelCreateDataRelationshipsPackage, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -84,7 +84,7 @@ func (o *ParcelCreateDataRelationships) GetPackageOk() (*ParcelDataRelationships
 }
 
 // SetPackage sets field value
-func (o *ParcelCreateDataRelationships) SetPackage(v ParcelDataRelationshipsPackage) {
+func (o *ParcelCreateDataRelationships) SetPackage(v ParcelCreateDataRelationshipsPackage) {
 	o.Package = v
 }
 

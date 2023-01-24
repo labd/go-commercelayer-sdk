@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETParcels200ResponseDataInnerRelationshipsParcelLineItems struct for GETParcels200ResponseDataInnerRelationshipsParcelLineItems
 type GETParcels200ResponseDataInnerRelationshipsParcelLineItems struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks           `json:"links,omitempty"`
-	Data  []GETParcels200ResponseDataInnerRelationshipsParcelLineItemsDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks     `json:"links,omitempty"`
+	Data  *GETParcels200ResponseDataInnerRelationshipsParcelLineItemsData `json:"data,omitempty"`
 }
 
 // NewGETParcels200ResponseDataInnerRelationshipsParcelLineItems instantiates a new GETParcels200ResponseDataInnerRelationshipsParcelLineItems object
@@ -71,17 +71,17 @@ func (o *GETParcels200ResponseDataInnerRelationshipsParcelLineItems) SetLinks(v 
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETParcels200ResponseDataInnerRelationshipsParcelLineItems) GetData() []GETParcels200ResponseDataInnerRelationshipsParcelLineItemsDataInner {
+func (o *GETParcels200ResponseDataInnerRelationshipsParcelLineItems) GetData() GETParcels200ResponseDataInnerRelationshipsParcelLineItemsData {
 	if o == nil || o.Data == nil {
-		var ret []GETParcels200ResponseDataInnerRelationshipsParcelLineItemsDataInner
+		var ret GETParcels200ResponseDataInnerRelationshipsParcelLineItemsData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETParcels200ResponseDataInnerRelationshipsParcelLineItems) GetDataOk() ([]GETParcels200ResponseDataInnerRelationshipsParcelLineItemsDataInner, bool) {
+func (o *GETParcels200ResponseDataInnerRelationshipsParcelLineItems) GetDataOk() (*GETParcels200ResponseDataInnerRelationshipsParcelLineItemsData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETParcels200ResponseDataInnerRelationshipsParcelLineItems) HasData() b
 	return false
 }
 
-// SetData gets a reference to the given []GETParcels200ResponseDataInnerRelationshipsParcelLineItemsDataInner and assigns it to the Data field.
-func (o *GETParcels200ResponseDataInnerRelationshipsParcelLineItems) SetData(v []GETParcels200ResponseDataInnerRelationshipsParcelLineItemsDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETParcels200ResponseDataInnerRelationshipsParcelLineItemsData and assigns it to the Data field.
+func (o *GETParcels200ResponseDataInnerRelationshipsParcelLineItems) SetData(v GETParcels200ResponseDataInnerRelationshipsParcelLineItemsData) {
+	o.Data = &v
 }
 
 func (o GETParcels200ResponseDataInnerRelationshipsParcelLineItems) MarshalJSON() ([]byte, error) {

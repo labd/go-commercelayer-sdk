@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -21,6 +21,7 @@ type SkuListDataRelationships struct {
 	Skus         *BundleDataRelationshipsSkus                `json:"skus,omitempty"`
 	SkuListItems *SkuListDataRelationshipsSkuListItems       `json:"sku_list_items,omitempty"`
 	Bundles      *OrderDataRelationshipsAvailableFreeBundles `json:"bundles,omitempty"`
+	Attachments  *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
 }
 
 // NewSkuListDataRelationships instantiates a new SkuListDataRelationships object
@@ -168,6 +169,38 @@ func (o *SkuListDataRelationships) SetBundles(v OrderDataRelationshipsAvailableF
 	o.Bundles = &v
 }
 
+// GetAttachments returns the Attachments field value if set, zero value otherwise.
+func (o *SkuListDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
+	if o == nil || o.Attachments == nil {
+		var ret AvalaraAccountDataRelationshipsAttachments
+		return ret
+	}
+	return *o.Attachments
+}
+
+// GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *SkuListDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
+	if o == nil || o.Attachments == nil {
+		return nil, false
+	}
+	return o.Attachments, true
+}
+
+// HasAttachments returns a boolean if a field has been set.
+func (o *SkuListDataRelationships) HasAttachments() bool {
+	if o != nil && o.Attachments != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAttachments gets a reference to the given AvalaraAccountDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *SkuListDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments) {
+	o.Attachments = &v
+}
+
 func (o SkuListDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Customer != nil {
@@ -181,6 +214,9 @@ func (o SkuListDataRelationships) MarshalJSON() ([]byte, error) {
 	}
 	if o.Bundles != nil {
 		toSerialize["bundles"] = o.Bundles
+	}
+	if o.Attachments != nil {
+		toSerialize["attachments"] = o.Attachments
 	}
 	return json.Marshal(toSerialize)
 }

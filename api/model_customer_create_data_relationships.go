@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,7 +17,7 @@ import (
 
 // CustomerCreateDataRelationships struct for CustomerCreateDataRelationships
 type CustomerCreateDataRelationships struct {
-	CustomerGroup *CustomerDataRelationshipsCustomerGroup `json:"customer_group,omitempty"`
+	CustomerGroup *CustomerCreateDataRelationshipsCustomerGroup `json:"customer_group,omitempty"`
 }
 
 // NewCustomerCreateDataRelationships instantiates a new CustomerCreateDataRelationships object
@@ -38,9 +38,9 @@ func NewCustomerCreateDataRelationshipsWithDefaults() *CustomerCreateDataRelatio
 }
 
 // GetCustomerGroup returns the CustomerGroup field value if set, zero value otherwise.
-func (o *CustomerCreateDataRelationships) GetCustomerGroup() CustomerDataRelationshipsCustomerGroup {
+func (o *CustomerCreateDataRelationships) GetCustomerGroup() CustomerCreateDataRelationshipsCustomerGroup {
 	if o == nil || o.CustomerGroup == nil {
-		var ret CustomerDataRelationshipsCustomerGroup
+		var ret CustomerCreateDataRelationshipsCustomerGroup
 		return ret
 	}
 	return *o.CustomerGroup
@@ -48,7 +48,7 @@ func (o *CustomerCreateDataRelationships) GetCustomerGroup() CustomerDataRelatio
 
 // GetCustomerGroupOk returns a tuple with the CustomerGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerCreateDataRelationships) GetCustomerGroupOk() (*CustomerDataRelationshipsCustomerGroup, bool) {
+func (o *CustomerCreateDataRelationships) GetCustomerGroupOk() (*CustomerCreateDataRelationshipsCustomerGroup, bool) {
 	if o == nil || o.CustomerGroup == nil {
 		return nil, false
 	}
@@ -64,8 +64,8 @@ func (o *CustomerCreateDataRelationships) HasCustomerGroup() bool {
 	return false
 }
 
-// SetCustomerGroup gets a reference to the given CustomerDataRelationshipsCustomerGroup and assigns it to the CustomerGroup field.
-func (o *CustomerCreateDataRelationships) SetCustomerGroup(v CustomerDataRelationshipsCustomerGroup) {
+// SetCustomerGroup gets a reference to the given CustomerCreateDataRelationshipsCustomerGroup and assigns it to the CustomerGroup field.
+func (o *CustomerCreateDataRelationships) SetCustomerGroup(v CustomerCreateDataRelationshipsCustomerGroup) {
 	o.CustomerGroup = &v
 }
 

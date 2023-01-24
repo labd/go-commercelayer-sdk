@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -33,8 +33,6 @@ type GETPaymentMethods200ResponseDataInnerAttributes struct {
 	PriceAmountFloat *float32 `json:"price_amount_float,omitempty"`
 	// The payment method's price, formatted
 	FormattedPriceAmount *string `json:"formatted_price_amount,omitempty"`
-	// Unique identifier for the resource (hash).
-	Id *string `json:"id,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt *string `json:"created_at,omitempty"`
 	// Time at which the resource was last updated.
@@ -320,38 +318,6 @@ func (o *GETPaymentMethods200ResponseDataInnerAttributes) SetFormattedPriceAmoun
 	o.FormattedPriceAmount = &v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GETPaymentMethods200ResponseDataInnerAttributes) GetId() string {
-	if o == nil || o.Id == nil {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GETPaymentMethods200ResponseDataInnerAttributes) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *GETPaymentMethods200ResponseDataInnerAttributes) HasId() bool {
-	if o != nil && o.Id != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *GETPaymentMethods200ResponseDataInnerAttributes) SetId(v string) {
-	o.Id = &v
-}
-
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
 func (o *GETPaymentMethods200ResponseDataInnerAttributes) GetCreatedAt() string {
 	if o == nil || o.CreatedAt == nil {
@@ -537,9 +503,6 @@ func (o GETPaymentMethods200ResponseDataInnerAttributes) MarshalJSON() ([]byte, 
 	}
 	if o.FormattedPriceAmount != nil {
 		toSerialize["formatted_price_amount"] = o.FormattedPriceAmount
-	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
 	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt

@@ -11,7 +11,6 @@ Name | Type | Description | Notes
 **CircuitState** | Pointer to **string** | The circuit breaker state, by default it is &#39;closed&#39;. It can become &#39;open&#39; once the number of consecutive failures overlaps the specified threshold, in such case no further calls to the failing callback are made. | [optional] 
 **CircuitFailureCount** | Pointer to **int32** | The number of consecutive failures recorded by the circuit breaker associated to this webhook, will be reset on first successful call to callback. | [optional] 
 **SharedSecret** | Pointer to **string** | The shared secret used to sign the external request payload. | [optional] 
-**Id** | Pointer to **string** | Unique identifier for the resource (hash). | [optional] 
 **CreatedAt** | Pointer to **string** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **string** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **string** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
@@ -211,31 +210,6 @@ SetSharedSecret sets SharedSecret field to given value.
 `func (o *GETWebhooks200ResponseDataInnerAttributes) HasSharedSecret() bool`
 
 HasSharedSecret returns a boolean if a field has been set.
-
-### GetId
-
-`func (o *GETWebhooks200ResponseDataInnerAttributes) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GETWebhooks200ResponseDataInnerAttributes) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GETWebhooks200ResponseDataInnerAttributes) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *GETWebhooks200ResponseDataInnerAttributes) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

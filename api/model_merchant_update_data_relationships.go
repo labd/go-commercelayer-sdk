@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,7 +17,7 @@ import (
 
 // MerchantUpdateDataRelationships struct for MerchantUpdateDataRelationships
 type MerchantUpdateDataRelationships struct {
-	Address *BingGeocoderDataRelationshipsAddresses `json:"address,omitempty"`
+	Address *CustomerAddressCreateDataRelationshipsAddress `json:"address,omitempty"`
 }
 
 // NewMerchantUpdateDataRelationships instantiates a new MerchantUpdateDataRelationships object
@@ -38,9 +38,9 @@ func NewMerchantUpdateDataRelationshipsWithDefaults() *MerchantUpdateDataRelatio
 }
 
 // GetAddress returns the Address field value if set, zero value otherwise.
-func (o *MerchantUpdateDataRelationships) GetAddress() BingGeocoderDataRelationshipsAddresses {
+func (o *MerchantUpdateDataRelationships) GetAddress() CustomerAddressCreateDataRelationshipsAddress {
 	if o == nil || o.Address == nil {
-		var ret BingGeocoderDataRelationshipsAddresses
+		var ret CustomerAddressCreateDataRelationshipsAddress
 		return ret
 	}
 	return *o.Address
@@ -48,7 +48,7 @@ func (o *MerchantUpdateDataRelationships) GetAddress() BingGeocoderDataRelations
 
 // GetAddressOk returns a tuple with the Address field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MerchantUpdateDataRelationships) GetAddressOk() (*BingGeocoderDataRelationshipsAddresses, bool) {
+func (o *MerchantUpdateDataRelationships) GetAddressOk() (*CustomerAddressCreateDataRelationshipsAddress, bool) {
 	if o == nil || o.Address == nil {
 		return nil, false
 	}
@@ -64,8 +64,8 @@ func (o *MerchantUpdateDataRelationships) HasAddress() bool {
 	return false
 }
 
-// SetAddress gets a reference to the given BingGeocoderDataRelationshipsAddresses and assigns it to the Address field.
-func (o *MerchantUpdateDataRelationships) SetAddress(v BingGeocoderDataRelationshipsAddresses) {
+// SetAddress gets a reference to the given CustomerAddressCreateDataRelationshipsAddress and assigns it to the Address field.
+func (o *MerchantUpdateDataRelationships) SetAddress(v CustomerAddressCreateDataRelationshipsAddress) {
 	o.Address = &v
 }
 

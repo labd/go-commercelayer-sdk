@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks struct for GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks
 type GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks             `json:"links,omitempty"`
-	Data  []GETEvents200ResponseDataInnerRelationshipsLastEventCallbacksDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks       `json:"links,omitempty"`
+	Data  *GETEvents200ResponseDataInnerRelationshipsLastEventCallbacksData `json:"data,omitempty"`
 }
 
 // NewGETEvents200ResponseDataInnerRelationshipsLastEventCallbacks instantiates a new GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks object
@@ -71,17 +71,17 @@ func (o *GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks) SetLinks(
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks) GetData() []GETEvents200ResponseDataInnerRelationshipsLastEventCallbacksDataInner {
+func (o *GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks) GetData() GETEvents200ResponseDataInnerRelationshipsLastEventCallbacksData {
 	if o == nil || o.Data == nil {
-		var ret []GETEvents200ResponseDataInnerRelationshipsLastEventCallbacksDataInner
+		var ret GETEvents200ResponseDataInnerRelationshipsLastEventCallbacksData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks) GetDataOk() ([]GETEvents200ResponseDataInnerRelationshipsLastEventCallbacksDataInner, bool) {
+func (o *GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks) GetDataOk() (*GETEvents200ResponseDataInnerRelationshipsLastEventCallbacksData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks) HasData()
 	return false
 }
 
-// SetData gets a reference to the given []GETEvents200ResponseDataInnerRelationshipsLastEventCallbacksDataInner and assigns it to the Data field.
-func (o *GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks) SetData(v []GETEvents200ResponseDataInnerRelationshipsLastEventCallbacksDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETEvents200ResponseDataInnerRelationshipsLastEventCallbacksData and assigns it to the Data field.
+func (o *GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks) SetData(v GETEvents200ResponseDataInnerRelationshipsLastEventCallbacksData) {
+	o.Data = &v
 }
 
 func (o GETEvents200ResponseDataInnerRelationshipsLastEventCallbacks) MarshalJSON() ([]byte, error) {

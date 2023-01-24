@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**KlarnaGatewayData**](KlarnaGatewayData.md) |  | 
+**Data** | Pointer to [**KlarnaGatewayData**](KlarnaGatewayData.md) |  | [optional] 
 
 ## Methods
 
 ### NewKlarnaGateway
 
-`func NewKlarnaGateway(data KlarnaGatewayData, ) *KlarnaGateway`
+`func NewKlarnaGateway() *KlarnaGateway`
 
 NewKlarnaGateway instantiates a new KlarnaGateway object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *KlarnaGateway) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

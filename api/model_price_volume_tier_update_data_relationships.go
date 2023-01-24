@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,7 +17,7 @@ import (
 
 // PriceVolumeTierUpdateDataRelationships struct for PriceVolumeTierUpdateDataRelationships
 type PriceVolumeTierUpdateDataRelationships struct {
-	Price *PriceListDataRelationshipsPrices `json:"price,omitempty"`
+	Price *PriceVolumeTierCreateDataRelationshipsPrice `json:"price,omitempty"`
 }
 
 // NewPriceVolumeTierUpdateDataRelationships instantiates a new PriceVolumeTierUpdateDataRelationships object
@@ -38,9 +38,9 @@ func NewPriceVolumeTierUpdateDataRelationshipsWithDefaults() *PriceVolumeTierUpd
 }
 
 // GetPrice returns the Price field value if set, zero value otherwise.
-func (o *PriceVolumeTierUpdateDataRelationships) GetPrice() PriceListDataRelationshipsPrices {
+func (o *PriceVolumeTierUpdateDataRelationships) GetPrice() PriceVolumeTierCreateDataRelationshipsPrice {
 	if o == nil || o.Price == nil {
-		var ret PriceListDataRelationshipsPrices
+		var ret PriceVolumeTierCreateDataRelationshipsPrice
 		return ret
 	}
 	return *o.Price
@@ -48,7 +48,7 @@ func (o *PriceVolumeTierUpdateDataRelationships) GetPrice() PriceListDataRelatio
 
 // GetPriceOk returns a tuple with the Price field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PriceVolumeTierUpdateDataRelationships) GetPriceOk() (*PriceListDataRelationshipsPrices, bool) {
+func (o *PriceVolumeTierUpdateDataRelationships) GetPriceOk() (*PriceVolumeTierCreateDataRelationshipsPrice, bool) {
 	if o == nil || o.Price == nil {
 		return nil, false
 	}
@@ -64,8 +64,8 @@ func (o *PriceVolumeTierUpdateDataRelationships) HasPrice() bool {
 	return false
 }
 
-// SetPrice gets a reference to the given PriceListDataRelationshipsPrices and assigns it to the Price field.
-func (o *PriceVolumeTierUpdateDataRelationships) SetPrice(v PriceListDataRelationshipsPrices) {
+// SetPrice gets a reference to the given PriceVolumeTierCreateDataRelationshipsPrice and assigns it to the Price field.
+func (o *PriceVolumeTierUpdateDataRelationships) SetPrice(v PriceVolumeTierCreateDataRelationshipsPrice) {
 	o.Price = &v
 }
 

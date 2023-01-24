@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEImportsImportId Delete an import
 
 Delete an import
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param importId The resource's id
- @return ImportsApiDELETEImportsImportIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param importId The resource's id
+	@return ImportsApiDELETEImportsImportIdRequest
 */
 func (a *ImportsApiService) DELETEImportsImportId(ctx context.Context, importId string) ImportsApiDELETEImportsImportIdRequest {
 	return ImportsApiDELETEImportsImportIdRequest{
@@ -129,8 +129,8 @@ GETImports List all imports
 
 List all imports
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ImportsApiGETImportsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ImportsApiGETImportsRequest
 */
 func (a *ImportsApiService) GETImports(ctx context.Context) ImportsApiGETImportsRequest {
 	return ImportsApiGETImportsRequest{
@@ -140,7 +140,8 @@ func (a *ImportsApiService) GETImports(ctx context.Context) ImportsApiGETImports
 }
 
 // Execute executes the request
-//  @return GETImports200Response
+//
+//	@return GETImports200Response
 func (a *ImportsApiService) GETImportsExecute(r ImportsApiGETImportsRequest) (*GETImports200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -229,9 +230,9 @@ GETImportsImportId Retrieve an import
 
 Retrieve an import
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param importId The resource's id
- @return ImportsApiGETImportsImportIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param importId The resource's id
+	@return ImportsApiGETImportsImportIdRequest
 */
 func (a *ImportsApiService) GETImportsImportId(ctx context.Context, importId string) ImportsApiGETImportsImportIdRequest {
 	return ImportsApiGETImportsImportIdRequest{
@@ -242,7 +243,8 @@ func (a *ImportsApiService) GETImportsImportId(ctx context.Context, importId str
 }
 
 // Execute executes the request
-//  @return GETImportsImportId200Response
+//
+//	@return GETImportsImportId200Response
 func (a *ImportsApiService) GETImportsImportIdExecute(r ImportsApiGETImportsImportIdRequest) (*GETImportsImportId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -337,8 +339,8 @@ POSTImports Create an import
 
 Create an import
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ImportsApiPOSTImportsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ImportsApiPOSTImportsRequest
 */
 func (a *ImportsApiService) POSTImports(ctx context.Context) ImportsApiPOSTImportsRequest {
 	return ImportsApiPOSTImportsRequest{
@@ -348,7 +350,8 @@ func (a *ImportsApiService) POSTImports(ctx context.Context) ImportsApiPOSTImpor
 }
 
 // Execute executes the request
-//  @return POSTImports201Response
+//
+//	@return POSTImports201Response
 func (a *ImportsApiService) POSTImportsExecute(r ImportsApiPOSTImportsRequest) (*POSTImports201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

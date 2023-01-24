@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEGoogleGeocodersGoogleGeocoderId Delete a google geocoder
 
 Delete a google geocoder
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param googleGeocoderId The resource's id
- @return GoogleGeocodersApiDELETEGoogleGeocodersGoogleGeocoderIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param googleGeocoderId The resource's id
+	@return GoogleGeocodersApiDELETEGoogleGeocodersGoogleGeocoderIdRequest
 */
 func (a *GoogleGeocodersApiService) DELETEGoogleGeocodersGoogleGeocoderId(ctx context.Context, googleGeocoderId string) GoogleGeocodersApiDELETEGoogleGeocodersGoogleGeocoderIdRequest {
 	return GoogleGeocodersApiDELETEGoogleGeocodersGoogleGeocoderIdRequest{
@@ -129,8 +129,8 @@ GETGoogleGeocoders List all google geocoders
 
 List all google geocoders
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return GoogleGeocodersApiGETGoogleGeocodersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return GoogleGeocodersApiGETGoogleGeocodersRequest
 */
 func (a *GoogleGeocodersApiService) GETGoogleGeocoders(ctx context.Context) GoogleGeocodersApiGETGoogleGeocodersRequest {
 	return GoogleGeocodersApiGETGoogleGeocodersRequest{
@@ -140,7 +140,8 @@ func (a *GoogleGeocodersApiService) GETGoogleGeocoders(ctx context.Context) Goog
 }
 
 // Execute executes the request
-//  @return GETGoogleGeocoders200Response
+//
+//	@return GETGoogleGeocoders200Response
 func (a *GoogleGeocodersApiService) GETGoogleGeocodersExecute(r GoogleGeocodersApiGETGoogleGeocodersRequest) (*GETGoogleGeocoders200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -229,9 +230,9 @@ GETGoogleGeocodersGoogleGeocoderId Retrieve a google geocoder
 
 Retrieve a google geocoder
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param googleGeocoderId The resource's id
- @return GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param googleGeocoderId The resource's id
+	@return GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest
 */
 func (a *GoogleGeocodersApiService) GETGoogleGeocodersGoogleGeocoderId(ctx context.Context, googleGeocoderId string) GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest {
 	return GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest{
@@ -242,7 +243,8 @@ func (a *GoogleGeocodersApiService) GETGoogleGeocodersGoogleGeocoderId(ctx conte
 }
 
 // Execute executes the request
-//  @return GETGoogleGeocodersGoogleGeocoderId200Response
+//
+//	@return GETGoogleGeocodersGoogleGeocoderId200Response
 func (a *GoogleGeocodersApiService) GETGoogleGeocodersGoogleGeocoderIdExecute(r GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest) (*GETGoogleGeocodersGoogleGeocoderId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -338,9 +340,9 @@ PATCHGoogleGeocodersGoogleGeocoderId Update a google geocoder
 
 Update a google geocoder
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param googleGeocoderId The resource's id
- @return GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param googleGeocoderId The resource's id
+	@return GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest
 */
 func (a *GoogleGeocodersApiService) PATCHGoogleGeocodersGoogleGeocoderId(ctx context.Context, googleGeocoderId string) GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest {
 	return GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest{
@@ -351,7 +353,8 @@ func (a *GoogleGeocodersApiService) PATCHGoogleGeocodersGoogleGeocoderId(ctx con
 }
 
 // Execute executes the request
-//  @return PATCHGoogleGeocodersGoogleGeocoderId200Response
+//
+//	@return PATCHGoogleGeocodersGoogleGeocoderId200Response
 func (a *GoogleGeocodersApiService) PATCHGoogleGeocodersGoogleGeocoderIdExecute(r GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest) (*PATCHGoogleGeocodersGoogleGeocoderId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -451,8 +454,8 @@ POSTGoogleGeocoders Create a google geocoder
 
 Create a google geocoder
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return GoogleGeocodersApiPOSTGoogleGeocodersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return GoogleGeocodersApiPOSTGoogleGeocodersRequest
 */
 func (a *GoogleGeocodersApiService) POSTGoogleGeocoders(ctx context.Context) GoogleGeocodersApiPOSTGoogleGeocodersRequest {
 	return GoogleGeocodersApiPOSTGoogleGeocodersRequest{
@@ -462,7 +465,8 @@ func (a *GoogleGeocodersApiService) POSTGoogleGeocoders(ctx context.Context) Goo
 }
 
 // Execute executes the request
-//  @return POSTGoogleGeocoders201Response
+//
+//	@return POSTGoogleGeocoders201Response
 func (a *GoogleGeocodersApiService) POSTGoogleGeocodersExecute(r GoogleGeocodersApiPOSTGoogleGeocodersRequest) (*POSTGoogleGeocoders201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

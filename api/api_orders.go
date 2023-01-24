@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEOrdersOrderId Delete an order
 
 Delete an order
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderId The resource's id
- @return OrdersApiDELETEOrdersOrderIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return OrdersApiDELETEOrdersOrderIdRequest
 */
 func (a *OrdersApiService) DELETEOrdersOrderId(ctx context.Context, orderId string) OrdersApiDELETEOrdersOrderIdRequest {
 	return OrdersApiDELETEOrdersOrderIdRequest{
@@ -130,9 +130,9 @@ GETAdyenPaymentIdOrder Retrieve the order associated to the adyen payment
 
 Retrieve the order associated to the adyen payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param adyenPaymentId The resource's id
- @return OrdersApiGETAdyenPaymentIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param adyenPaymentId The resource's id
+	@return OrdersApiGETAdyenPaymentIdOrderRequest
 */
 func (a *OrdersApiService) GETAdyenPaymentIdOrder(ctx context.Context, adyenPaymentId string) OrdersApiGETAdyenPaymentIdOrderRequest {
 	return OrdersApiGETAdyenPaymentIdOrderRequest{
@@ -222,9 +222,9 @@ GETAuthorizationIdOrder Retrieve the order associated to the authorization
 
 Retrieve the order associated to the authorization
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param authorizationId The resource's id
- @return OrdersApiGETAuthorizationIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param authorizationId The resource's id
+	@return OrdersApiGETAuthorizationIdOrderRequest
 */
 func (a *OrdersApiService) GETAuthorizationIdOrder(ctx context.Context, authorizationId string) OrdersApiGETAuthorizationIdOrderRequest {
 	return OrdersApiGETAuthorizationIdOrderRequest{
@@ -314,9 +314,9 @@ GETBraintreePaymentIdOrder Retrieve the order associated to the braintree paymen
 
 Retrieve the order associated to the braintree payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param braintreePaymentId The resource's id
- @return OrdersApiGETBraintreePaymentIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param braintreePaymentId The resource's id
+	@return OrdersApiGETBraintreePaymentIdOrderRequest
 */
 func (a *OrdersApiService) GETBraintreePaymentIdOrder(ctx context.Context, braintreePaymentId string) OrdersApiGETBraintreePaymentIdOrderRequest {
 	return OrdersApiGETBraintreePaymentIdOrderRequest{
@@ -406,9 +406,9 @@ GETCaptureIdOrder Retrieve the order associated to the capture
 
 Retrieve the order associated to the capture
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param captureId The resource's id
- @return OrdersApiGETCaptureIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param captureId The resource's id
+	@return OrdersApiGETCaptureIdOrderRequest
 */
 func (a *OrdersApiService) GETCaptureIdOrder(ctx context.Context, captureId string) OrdersApiGETCaptureIdOrderRequest {
 	return OrdersApiGETCaptureIdOrderRequest{
@@ -498,9 +498,9 @@ GETCheckoutComPaymentIdOrder Retrieve the order associated to the checkout.com p
 
 Retrieve the order associated to the checkout.com payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param checkoutComPaymentId The resource's id
- @return OrdersApiGETCheckoutComPaymentIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param checkoutComPaymentId The resource's id
+	@return OrdersApiGETCheckoutComPaymentIdOrderRequest
 */
 func (a *OrdersApiService) GETCheckoutComPaymentIdOrder(ctx context.Context, checkoutComPaymentId string) OrdersApiGETCheckoutComPaymentIdOrderRequest {
 	return OrdersApiGETCheckoutComPaymentIdOrderRequest{
@@ -590,9 +590,9 @@ GETCustomerIdOrders Retrieve the orders associated to the customer
 
 Retrieve the orders associated to the customer
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerId The resource's id
- @return OrdersApiGETCustomerIdOrdersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerId The resource's id
+	@return OrdersApiGETCustomerIdOrdersRequest
 */
 func (a *OrdersApiService) GETCustomerIdOrders(ctx context.Context, customerId string) OrdersApiGETCustomerIdOrdersRequest {
 	return OrdersApiGETCustomerIdOrdersRequest{
@@ -682,9 +682,9 @@ GETExternalPaymentIdOrder Retrieve the order associated to the external payment
 
 Retrieve the order associated to the external payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalPaymentId The resource's id
- @return OrdersApiGETExternalPaymentIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalPaymentId The resource's id
+	@return OrdersApiGETExternalPaymentIdOrderRequest
 */
 func (a *OrdersApiService) GETExternalPaymentIdOrder(ctx context.Context, externalPaymentId string) OrdersApiGETExternalPaymentIdOrderRequest {
 	return OrdersApiGETExternalPaymentIdOrderRequest{
@@ -774,9 +774,9 @@ GETKlarnaPaymentIdOrder Retrieve the order associated to the klarna payment
 
 Retrieve the order associated to the klarna payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param klarnaPaymentId The resource's id
- @return OrdersApiGETKlarnaPaymentIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param klarnaPaymentId The resource's id
+	@return OrdersApiGETKlarnaPaymentIdOrderRequest
 */
 func (a *OrdersApiService) GETKlarnaPaymentIdOrder(ctx context.Context, klarnaPaymentId string) OrdersApiGETKlarnaPaymentIdOrderRequest {
 	return OrdersApiGETKlarnaPaymentIdOrderRequest{
@@ -866,9 +866,9 @@ GETLineItemIdOrder Retrieve the order associated to the line item
 
 Retrieve the order associated to the line item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param lineItemId The resource's id
- @return OrdersApiGETLineItemIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param lineItemId The resource's id
+	@return OrdersApiGETLineItemIdOrderRequest
 */
 func (a *OrdersApiService) GETLineItemIdOrder(ctx context.Context, lineItemId string) OrdersApiGETLineItemIdOrderRequest {
 	return OrdersApiGETLineItemIdOrderRequest{
@@ -958,9 +958,9 @@ GETOrderCopyIdSourceOrder Retrieve the source order associated to the order copy
 
 Retrieve the source order associated to the order copy
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderCopyId The resource's id
- @return OrdersApiGETOrderCopyIdSourceOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderCopyId The resource's id
+	@return OrdersApiGETOrderCopyIdSourceOrderRequest
 */
 func (a *OrdersApiService) GETOrderCopyIdSourceOrder(ctx context.Context, orderCopyId string) OrdersApiGETOrderCopyIdSourceOrderRequest {
 	return OrdersApiGETOrderCopyIdSourceOrderRequest{
@@ -1050,9 +1050,9 @@ GETOrderCopyIdTargetOrder Retrieve the target order associated to the order copy
 
 Retrieve the target order associated to the order copy
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderCopyId The resource's id
- @return OrdersApiGETOrderCopyIdTargetOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderCopyId The resource's id
+	@return OrdersApiGETOrderCopyIdTargetOrderRequest
 */
 func (a *OrdersApiService) GETOrderCopyIdTargetOrder(ctx context.Context, orderCopyId string) OrdersApiGETOrderCopyIdTargetOrderRequest {
 	return OrdersApiGETOrderCopyIdTargetOrderRequest{
@@ -1142,9 +1142,9 @@ GETOrderSubscriptionIdOrders Retrieve the orders associated to the order subscri
 
 Retrieve the orders associated to the order subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderSubscriptionId The resource's id
- @return OrdersApiGETOrderSubscriptionIdOrdersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderSubscriptionId The resource's id
+	@return OrdersApiGETOrderSubscriptionIdOrdersRequest
 */
 func (a *OrdersApiService) GETOrderSubscriptionIdOrders(ctx context.Context, orderSubscriptionId string) OrdersApiGETOrderSubscriptionIdOrdersRequest {
 	return OrdersApiGETOrderSubscriptionIdOrdersRequest{
@@ -1234,9 +1234,9 @@ GETOrderSubscriptionIdSourceOrder Retrieve the source order associated to the or
 
 Retrieve the source order associated to the order subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderSubscriptionId The resource's id
- @return OrdersApiGETOrderSubscriptionIdSourceOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderSubscriptionId The resource's id
+	@return OrdersApiGETOrderSubscriptionIdSourceOrderRequest
 */
 func (a *OrdersApiService) GETOrderSubscriptionIdSourceOrder(ctx context.Context, orderSubscriptionId string) OrdersApiGETOrderSubscriptionIdSourceOrderRequest {
 	return OrdersApiGETOrderSubscriptionIdSourceOrderRequest{
@@ -1325,8 +1325,8 @@ GETOrders List all orders
 
 List all orders
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return OrdersApiGETOrdersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return OrdersApiGETOrdersRequest
 */
 func (a *OrdersApiService) GETOrders(ctx context.Context) OrdersApiGETOrdersRequest {
 	return OrdersApiGETOrdersRequest{
@@ -1336,7 +1336,8 @@ func (a *OrdersApiService) GETOrders(ctx context.Context) OrdersApiGETOrdersRequ
 }
 
 // Execute executes the request
-//  @return GETOrders200Response
+//
+//	@return GETOrders200Response
 func (a *OrdersApiService) GETOrdersExecute(r OrdersApiGETOrdersRequest) (*GETOrders200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1425,9 +1426,9 @@ GETOrdersOrderId Retrieve an order
 
 Retrieve an order
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderId The resource's id
- @return OrdersApiGETOrdersOrderIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return OrdersApiGETOrdersOrderIdRequest
 */
 func (a *OrdersApiService) GETOrdersOrderId(ctx context.Context, orderId string) OrdersApiGETOrdersOrderIdRequest {
 	return OrdersApiGETOrdersOrderIdRequest{
@@ -1438,7 +1439,8 @@ func (a *OrdersApiService) GETOrdersOrderId(ctx context.Context, orderId string)
 }
 
 // Execute executes the request
-//  @return GETOrdersOrderId200Response
+//
+//	@return GETOrdersOrderId200Response
 func (a *OrdersApiService) GETOrdersOrderIdExecute(r OrdersApiGETOrdersOrderIdRequest) (*GETOrdersOrderId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1528,9 +1530,9 @@ GETPaypalPaymentIdOrder Retrieve the order associated to the paypal payment
 
 Retrieve the order associated to the paypal payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param paypalPaymentId The resource's id
- @return OrdersApiGETPaypalPaymentIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param paypalPaymentId The resource's id
+	@return OrdersApiGETPaypalPaymentIdOrderRequest
 */
 func (a *OrdersApiService) GETPaypalPaymentIdOrder(ctx context.Context, paypalPaymentId string) OrdersApiGETPaypalPaymentIdOrderRequest {
 	return OrdersApiGETPaypalPaymentIdOrderRequest{
@@ -1620,9 +1622,9 @@ GETRefundIdOrder Retrieve the order associated to the refund
 
 Retrieve the order associated to the refund
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param refundId The resource's id
- @return OrdersApiGETRefundIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param refundId The resource's id
+	@return OrdersApiGETRefundIdOrderRequest
 */
 func (a *OrdersApiService) GETRefundIdOrder(ctx context.Context, refundId string) OrdersApiGETRefundIdOrderRequest {
 	return OrdersApiGETRefundIdOrderRequest{
@@ -1712,9 +1714,9 @@ GETReturnIdOrder Retrieve the order associated to the return
 
 Retrieve the order associated to the return
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param returnId The resource's id
- @return OrdersApiGETReturnIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param returnId The resource's id
+	@return OrdersApiGETReturnIdOrderRequest
 */
 func (a *OrdersApiService) GETReturnIdOrder(ctx context.Context, returnId string) OrdersApiGETReturnIdOrderRequest {
 	return OrdersApiGETReturnIdOrderRequest{
@@ -1804,9 +1806,9 @@ GETShipmentIdOrder Retrieve the order associated to the shipment
 
 Retrieve the order associated to the shipment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shipmentId The resource's id
- @return OrdersApiGETShipmentIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shipmentId The resource's id
+	@return OrdersApiGETShipmentIdOrderRequest
 */
 func (a *OrdersApiService) GETShipmentIdOrder(ctx context.Context, shipmentId string) OrdersApiGETShipmentIdOrderRequest {
 	return OrdersApiGETShipmentIdOrderRequest{
@@ -1896,9 +1898,9 @@ GETStripePaymentIdOrder Retrieve the order associated to the stripe payment
 
 Retrieve the order associated to the stripe payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param stripePaymentId The resource's id
- @return OrdersApiGETStripePaymentIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param stripePaymentId The resource's id
+	@return OrdersApiGETStripePaymentIdOrderRequest
 */
 func (a *OrdersApiService) GETStripePaymentIdOrder(ctx context.Context, stripePaymentId string) OrdersApiGETStripePaymentIdOrderRequest {
 	return OrdersApiGETStripePaymentIdOrderRequest{
@@ -1988,9 +1990,9 @@ GETTransactionIdOrder Retrieve the order associated to the transaction
 
 Retrieve the order associated to the transaction
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param transactionId The resource's id
- @return OrdersApiGETTransactionIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param transactionId The resource's id
+	@return OrdersApiGETTransactionIdOrderRequest
 */
 func (a *OrdersApiService) GETTransactionIdOrder(ctx context.Context, transactionId string) OrdersApiGETTransactionIdOrderRequest {
 	return OrdersApiGETTransactionIdOrderRequest{
@@ -2080,9 +2082,9 @@ GETVoidIdOrder Retrieve the order associated to the void
 
 Retrieve the order associated to the void
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param voidId The resource's id
- @return OrdersApiGETVoidIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param voidId The resource's id
+	@return OrdersApiGETVoidIdOrderRequest
 */
 func (a *OrdersApiService) GETVoidIdOrder(ctx context.Context, voidId string) OrdersApiGETVoidIdOrderRequest {
 	return OrdersApiGETVoidIdOrderRequest{
@@ -2172,9 +2174,9 @@ GETWireTransferIdOrder Retrieve the order associated to the wire transfer
 
 Retrieve the order associated to the wire transfer
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param wireTransferId The resource's id
- @return OrdersApiGETWireTransferIdOrderRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param wireTransferId The resource's id
+	@return OrdersApiGETWireTransferIdOrderRequest
 */
 func (a *OrdersApiService) GETWireTransferIdOrder(ctx context.Context, wireTransferId string) OrdersApiGETWireTransferIdOrderRequest {
 	return OrdersApiGETWireTransferIdOrderRequest{
@@ -2270,9 +2272,9 @@ PATCHOrdersOrderId Update an order
 
 Update an order
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderId The resource's id
- @return OrdersApiPATCHOrdersOrderIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return OrdersApiPATCHOrdersOrderIdRequest
 */
 func (a *OrdersApiService) PATCHOrdersOrderId(ctx context.Context, orderId string) OrdersApiPATCHOrdersOrderIdRequest {
 	return OrdersApiPATCHOrdersOrderIdRequest{
@@ -2283,7 +2285,8 @@ func (a *OrdersApiService) PATCHOrdersOrderId(ctx context.Context, orderId strin
 }
 
 // Execute executes the request
-//  @return PATCHOrdersOrderId200Response
+//
+//	@return PATCHOrdersOrderId200Response
 func (a *OrdersApiService) PATCHOrdersOrderIdExecute(r OrdersApiPATCHOrdersOrderIdRequest) (*PATCHOrdersOrderId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -2383,8 +2386,8 @@ POSTOrders Create an order
 
 Create an order
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return OrdersApiPOSTOrdersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return OrdersApiPOSTOrdersRequest
 */
 func (a *OrdersApiService) POSTOrders(ctx context.Context) OrdersApiPOSTOrdersRequest {
 	return OrdersApiPOSTOrdersRequest{
@@ -2394,7 +2397,8 @@ func (a *OrdersApiService) POSTOrders(ctx context.Context) OrdersApiPOSTOrdersRe
 }
 
 // Execute executes the request
-//  @return POSTOrders201Response
+//
+//	@return POSTOrders201Response
 func (a *OrdersApiService) POSTOrdersExecute(r OrdersApiPOSTOrdersRequest) (*POSTOrders201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

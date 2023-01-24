@@ -29,7 +29,6 @@ Name | Type | Description | Notes
 **TaxRate** | Pointer to **float32** | The tax rate for this line item (if calculated). | [optional] 
 **TaxBreakdown** | Pointer to **map[string]interface{}** | The tax breakdown for this line item (if calculated). | [optional] 
 **ItemType** | Pointer to **string** | The type of the associate item. Can be one of &#39;sku&#39;, &#39;bundle&#39;, &#39;shipment&#39;, &#39;payment_method&#39;, &#39;adjustment&#39;, &#39;gift_card&#39;, or a valid promotion type. | [optional] 
-**Id** | Pointer to **string** | Unique identifier for the resource (hash). | [optional] 
 **CreatedAt** | Pointer to **string** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **string** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **string** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
@@ -679,31 +678,6 @@ SetItemType sets ItemType field to given value.
 `func (o *GETLineItems200ResponseDataInnerAttributes) HasItemType() bool`
 
 HasItemType returns a boolean if a field has been set.
-
-### GetId
-
-`func (o *GETLineItems200ResponseDataInnerAttributes) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GETLineItems200ResponseDataInnerAttributes) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GETLineItems200ResponseDataInnerAttributes) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *GETLineItems200ResponseDataInnerAttributes) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

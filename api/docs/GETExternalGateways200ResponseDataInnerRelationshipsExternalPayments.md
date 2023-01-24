@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks**](GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks.md) |  | [optional] 
-**Data** | Pointer to [**[]GETExternalGateways200ResponseDataInnerRelationshipsExternalPaymentsDataInner**](GETExternalGateways200ResponseDataInnerRelationshipsExternalPaymentsDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETExternalGateways200ResponseDataInnerRelationshipsExternalPaymentsData**](GETExternalGateways200ResponseDataInnerRelationshipsExternalPaymentsData.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments) GetData() []GETExternalGateways200ResponseDataInnerRelationshipsExternalPaymentsDataInner`
+`func (o *GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments) GetData() GETExternalGateways200ResponseDataInnerRelationshipsExternalPaymentsData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments) GetDataOk() (*[]GETExternalGateways200ResponseDataInnerRelationshipsExternalPaymentsDataInner, bool)`
+`func (o *GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments) GetDataOk() (*GETExternalGateways200ResponseDataInnerRelationshipsExternalPaymentsData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments) SetData(v []GETExternalGateways200ResponseDataInnerRelationshipsExternalPaymentsDataInner)`
+`func (o *GETExternalGateways200ResponseDataInnerRelationshipsExternalPayments) SetData(v GETExternalGateways200ResponseDataInnerRelationshipsExternalPaymentsData)`
 
 SetData sets Data field to given value.
 

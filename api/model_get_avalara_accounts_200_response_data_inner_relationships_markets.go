@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets struct for GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets
 type GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks           `json:"links,omitempty"`
-	Data  []GETAvalaraAccounts200ResponseDataInnerRelationshipsMarketsDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks     `json:"links,omitempty"`
+	Data  *GETAvalaraAccounts200ResponseDataInnerRelationshipsMarketsData `json:"data,omitempty"`
 }
 
 // NewGETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets instantiates a new GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets object
@@ -71,17 +71,17 @@ func (o *GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets) SetLinks(v 
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets) GetData() []GETAvalaraAccounts200ResponseDataInnerRelationshipsMarketsDataInner {
+func (o *GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets) GetData() GETAvalaraAccounts200ResponseDataInnerRelationshipsMarketsData {
 	if o == nil || o.Data == nil {
-		var ret []GETAvalaraAccounts200ResponseDataInnerRelationshipsMarketsDataInner
+		var ret GETAvalaraAccounts200ResponseDataInnerRelationshipsMarketsData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets) GetDataOk() ([]GETAvalaraAccounts200ResponseDataInnerRelationshipsMarketsDataInner, bool) {
+func (o *GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets) GetDataOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsMarketsData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets) HasData() b
 	return false
 }
 
-// SetData gets a reference to the given []GETAvalaraAccounts200ResponseDataInnerRelationshipsMarketsDataInner and assigns it to the Data field.
-func (o *GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets) SetData(v []GETAvalaraAccounts200ResponseDataInnerRelationshipsMarketsDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETAvalaraAccounts200ResponseDataInnerRelationshipsMarketsData and assigns it to the Data field.
+func (o *GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets) SetData(v GETAvalaraAccounts200ResponseDataInnerRelationshipsMarketsData) {
+	o.Data = &v
 }
 
 func (o GETAvalaraAccounts200ResponseDataInnerRelationshipsMarkets) MarshalJSON() ([]byte, error) {

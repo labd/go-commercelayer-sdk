@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEShippingZonesShippingZoneId Delete a shipping zone
 
 Delete a shipping zone
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingZoneId The resource's id
- @return ShippingZonesApiDELETEShippingZonesShippingZoneIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingZoneId The resource's id
+	@return ShippingZonesApiDELETEShippingZonesShippingZoneIdRequest
 */
 func (a *ShippingZonesApiService) DELETEShippingZonesShippingZoneId(ctx context.Context, shippingZoneId string) ShippingZonesApiDELETEShippingZonesShippingZoneIdRequest {
 	return ShippingZonesApiDELETEShippingZonesShippingZoneIdRequest{
@@ -130,9 +130,9 @@ GETShippingMethodIdShippingZone Retrieve the shipping zone associated to the shi
 
 Retrieve the shipping zone associated to the shipping method
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingMethodId The resource's id
- @return ShippingZonesApiGETShippingMethodIdShippingZoneRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingMethodId The resource's id
+	@return ShippingZonesApiGETShippingMethodIdShippingZoneRequest
 */
 func (a *ShippingZonesApiService) GETShippingMethodIdShippingZone(ctx context.Context, shippingMethodId string) ShippingZonesApiGETShippingMethodIdShippingZoneRequest {
 	return ShippingZonesApiGETShippingMethodIdShippingZoneRequest{
@@ -221,8 +221,8 @@ GETShippingZones List all shipping zones
 
 List all shipping zones
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ShippingZonesApiGETShippingZonesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ShippingZonesApiGETShippingZonesRequest
 */
 func (a *ShippingZonesApiService) GETShippingZones(ctx context.Context) ShippingZonesApiGETShippingZonesRequest {
 	return ShippingZonesApiGETShippingZonesRequest{
@@ -232,7 +232,8 @@ func (a *ShippingZonesApiService) GETShippingZones(ctx context.Context) Shipping
 }
 
 // Execute executes the request
-//  @return GETShippingZones200Response
+//
+//	@return GETShippingZones200Response
 func (a *ShippingZonesApiService) GETShippingZonesExecute(r ShippingZonesApiGETShippingZonesRequest) (*GETShippingZones200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -321,9 +322,9 @@ GETShippingZonesShippingZoneId Retrieve a shipping zone
 
 Retrieve a shipping zone
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingZoneId The resource's id
- @return ShippingZonesApiGETShippingZonesShippingZoneIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingZoneId The resource's id
+	@return ShippingZonesApiGETShippingZonesShippingZoneIdRequest
 */
 func (a *ShippingZonesApiService) GETShippingZonesShippingZoneId(ctx context.Context, shippingZoneId string) ShippingZonesApiGETShippingZonesShippingZoneIdRequest {
 	return ShippingZonesApiGETShippingZonesShippingZoneIdRequest{
@@ -334,7 +335,8 @@ func (a *ShippingZonesApiService) GETShippingZonesShippingZoneId(ctx context.Con
 }
 
 // Execute executes the request
-//  @return GETShippingZonesShippingZoneId200Response
+//
+//	@return GETShippingZonesShippingZoneId200Response
 func (a *ShippingZonesApiService) GETShippingZonesShippingZoneIdExecute(r ShippingZonesApiGETShippingZonesShippingZoneIdRequest) (*GETShippingZonesShippingZoneId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -430,9 +432,9 @@ PATCHShippingZonesShippingZoneId Update a shipping zone
 
 Update a shipping zone
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingZoneId The resource's id
- @return ShippingZonesApiPATCHShippingZonesShippingZoneIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingZoneId The resource's id
+	@return ShippingZonesApiPATCHShippingZonesShippingZoneIdRequest
 */
 func (a *ShippingZonesApiService) PATCHShippingZonesShippingZoneId(ctx context.Context, shippingZoneId string) ShippingZonesApiPATCHShippingZonesShippingZoneIdRequest {
 	return ShippingZonesApiPATCHShippingZonesShippingZoneIdRequest{
@@ -443,7 +445,8 @@ func (a *ShippingZonesApiService) PATCHShippingZonesShippingZoneId(ctx context.C
 }
 
 // Execute executes the request
-//  @return PATCHShippingZonesShippingZoneId200Response
+//
+//	@return PATCHShippingZonesShippingZoneId200Response
 func (a *ShippingZonesApiService) PATCHShippingZonesShippingZoneIdExecute(r ShippingZonesApiPATCHShippingZonesShippingZoneIdRequest) (*PATCHShippingZonesShippingZoneId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -543,8 +546,8 @@ POSTShippingZones Create a shipping zone
 
 Create a shipping zone
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ShippingZonesApiPOSTShippingZonesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ShippingZonesApiPOSTShippingZonesRequest
 */
 func (a *ShippingZonesApiService) POSTShippingZones(ctx context.Context) ShippingZonesApiPOSTShippingZonesRequest {
 	return ShippingZonesApiPOSTShippingZonesRequest{
@@ -554,7 +557,8 @@ func (a *ShippingZonesApiService) POSTShippingZones(ctx context.Context) Shippin
 }
 
 // Execute executes the request
-//  @return POSTShippingZones201Response
+//
+//	@return POSTShippingZones201Response
 func (a *ShippingZonesApiService) POSTShippingZonesExecute(r ShippingZonesApiPOSTShippingZonesRequest) (*POSTShippingZones201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

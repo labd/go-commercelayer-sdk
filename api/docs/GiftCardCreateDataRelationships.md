@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Market** | Pointer to [**AvalaraAccountDataRelationshipsMarkets**](AvalaraAccountDataRelationshipsMarkets.md) |  | [optional] 
-**GiftCardRecipient** | Pointer to [**GiftCardDataRelationshipsGiftCardRecipient**](GiftCardDataRelationshipsGiftCardRecipient.md) |  | [optional] 
+**Market** | Pointer to [**BillingInfoValidationRuleCreateDataRelationshipsMarket**](BillingInfoValidationRuleCreateDataRelationshipsMarket.md) |  | [optional] 
+**GiftCardRecipient** | Pointer to [**GiftCardCreateDataRelationshipsGiftCardRecipient**](GiftCardCreateDataRelationshipsGiftCardRecipient.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMarket
 
-`func (o *GiftCardCreateDataRelationships) GetMarket() AvalaraAccountDataRelationshipsMarkets`
+`func (o *GiftCardCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket`
 
 GetMarket returns the Market field if non-nil, zero value otherwise.
 
 ### GetMarketOk
 
-`func (o *GiftCardCreateDataRelationships) GetMarketOk() (*AvalaraAccountDataRelationshipsMarkets, bool)`
+`func (o *GiftCardCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool)`
 
 GetMarketOk returns a tuple with the Market field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMarket
 
-`func (o *GiftCardCreateDataRelationships) SetMarket(v AvalaraAccountDataRelationshipsMarkets)`
+`func (o *GiftCardCreateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket)`
 
 SetMarket sets Market field to given value.
 
@@ -53,20 +53,20 @@ HasMarket returns a boolean if a field has been set.
 
 ### GetGiftCardRecipient
 
-`func (o *GiftCardCreateDataRelationships) GetGiftCardRecipient() GiftCardDataRelationshipsGiftCardRecipient`
+`func (o *GiftCardCreateDataRelationships) GetGiftCardRecipient() GiftCardCreateDataRelationshipsGiftCardRecipient`
 
 GetGiftCardRecipient returns the GiftCardRecipient field if non-nil, zero value otherwise.
 
 ### GetGiftCardRecipientOk
 
-`func (o *GiftCardCreateDataRelationships) GetGiftCardRecipientOk() (*GiftCardDataRelationshipsGiftCardRecipient, bool)`
+`func (o *GiftCardCreateDataRelationships) GetGiftCardRecipientOk() (*GiftCardCreateDataRelationshipsGiftCardRecipient, bool)`
 
 GetGiftCardRecipientOk returns a tuple with the GiftCardRecipient field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetGiftCardRecipient
 
-`func (o *GiftCardCreateDataRelationships) SetGiftCardRecipient(v GiftCardDataRelationshipsGiftCardRecipient)`
+`func (o *GiftCardCreateDataRelationships) SetGiftCardRecipient(v GiftCardCreateDataRelationshipsGiftCardRecipient)`
 
 SetGiftCardRecipient sets GiftCardRecipient field to given value.
 

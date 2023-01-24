@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -22,7 +22,7 @@ type AttachmentUpdateData struct {
 	// The resource's id
 	Id            string                                                `json:"id"`
 	Attributes    PATCHAttachmentsAttachmentId200ResponseDataAttributes `json:"attributes"`
-	Relationships *AttachmentDataRelationships                          `json:"relationships,omitempty"`
+	Relationships *AttachmentUpdateDataRelationships                    `json:"relationships,omitempty"`
 }
 
 // NewAttachmentUpdateData instantiates a new AttachmentUpdateData object
@@ -118,9 +118,9 @@ func (o *AttachmentUpdateData) SetAttributes(v PATCHAttachmentsAttachmentId200Re
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *AttachmentUpdateData) GetRelationships() AttachmentDataRelationships {
+func (o *AttachmentUpdateData) GetRelationships() AttachmentUpdateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret AttachmentDataRelationships
+		var ret AttachmentUpdateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -128,7 +128,7 @@ func (o *AttachmentUpdateData) GetRelationships() AttachmentDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AttachmentUpdateData) GetRelationshipsOk() (*AttachmentDataRelationships, bool) {
+func (o *AttachmentUpdateData) GetRelationshipsOk() (*AttachmentUpdateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -144,8 +144,8 @@ func (o *AttachmentUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given AttachmentDataRelationships and assigns it to the Relationships field.
-func (o *AttachmentUpdateData) SetRelationships(v AttachmentDataRelationships) {
+// SetRelationships gets a reference to the given AttachmentUpdateDataRelationships and assigns it to the Relationships field.
+func (o *AttachmentUpdateData) SetRelationships(v AttachmentUpdateDataRelationships) {
 	o.Relationships = &v
 }
 

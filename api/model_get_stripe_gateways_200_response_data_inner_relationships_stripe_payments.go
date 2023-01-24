@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETStripeGateways200ResponseDataInnerRelationshipsStripePayments struct for GETStripeGateways200ResponseDataInnerRelationshipsStripePayments
 type GETStripeGateways200ResponseDataInnerRelationshipsStripePayments struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks                 `json:"links,omitempty"`
-	Data  []GETStripeGateways200ResponseDataInnerRelationshipsStripePaymentsDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks           `json:"links,omitempty"`
+	Data  *GETStripeGateways200ResponseDataInnerRelationshipsStripePaymentsData `json:"data,omitempty"`
 }
 
 // NewGETStripeGateways200ResponseDataInnerRelationshipsStripePayments instantiates a new GETStripeGateways200ResponseDataInnerRelationshipsStripePayments object
@@ -71,17 +71,17 @@ func (o *GETStripeGateways200ResponseDataInnerRelationshipsStripePayments) SetLi
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETStripeGateways200ResponseDataInnerRelationshipsStripePayments) GetData() []GETStripeGateways200ResponseDataInnerRelationshipsStripePaymentsDataInner {
+func (o *GETStripeGateways200ResponseDataInnerRelationshipsStripePayments) GetData() GETStripeGateways200ResponseDataInnerRelationshipsStripePaymentsData {
 	if o == nil || o.Data == nil {
-		var ret []GETStripeGateways200ResponseDataInnerRelationshipsStripePaymentsDataInner
+		var ret GETStripeGateways200ResponseDataInnerRelationshipsStripePaymentsData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETStripeGateways200ResponseDataInnerRelationshipsStripePayments) GetDataOk() ([]GETStripeGateways200ResponseDataInnerRelationshipsStripePaymentsDataInner, bool) {
+func (o *GETStripeGateways200ResponseDataInnerRelationshipsStripePayments) GetDataOk() (*GETStripeGateways200ResponseDataInnerRelationshipsStripePaymentsData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETStripeGateways200ResponseDataInnerRelationshipsStripePayments) HasDa
 	return false
 }
 
-// SetData gets a reference to the given []GETStripeGateways200ResponseDataInnerRelationshipsStripePaymentsDataInner and assigns it to the Data field.
-func (o *GETStripeGateways200ResponseDataInnerRelationshipsStripePayments) SetData(v []GETStripeGateways200ResponseDataInnerRelationshipsStripePaymentsDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETStripeGateways200ResponseDataInnerRelationshipsStripePaymentsData and assigns it to the Data field.
+func (o *GETStripeGateways200ResponseDataInnerRelationshipsStripePayments) SetData(v GETStripeGateways200ResponseDataInnerRelationshipsStripePaymentsData) {
+	o.Data = &v
 }
 
 func (o GETStripeGateways200ResponseDataInnerRelationshipsStripePayments) MarshalJSON() ([]byte, error) {

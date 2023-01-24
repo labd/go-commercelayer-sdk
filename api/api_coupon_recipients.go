@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETECouponRecipientsCouponRecipientId Delete a coupon recipient
 
 Delete a coupon recipient
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param couponRecipientId The resource's id
- @return CouponRecipientsApiDELETECouponRecipientsCouponRecipientIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param couponRecipientId The resource's id
+	@return CouponRecipientsApiDELETECouponRecipientsCouponRecipientIdRequest
 */
 func (a *CouponRecipientsApiService) DELETECouponRecipientsCouponRecipientId(ctx context.Context, couponRecipientId string) CouponRecipientsApiDELETECouponRecipientsCouponRecipientIdRequest {
 	return CouponRecipientsApiDELETECouponRecipientsCouponRecipientIdRequest{
@@ -129,8 +129,8 @@ GETCouponRecipients List all coupon recipients
 
 List all coupon recipients
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return CouponRecipientsApiGETCouponRecipientsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return CouponRecipientsApiGETCouponRecipientsRequest
 */
 func (a *CouponRecipientsApiService) GETCouponRecipients(ctx context.Context) CouponRecipientsApiGETCouponRecipientsRequest {
 	return CouponRecipientsApiGETCouponRecipientsRequest{
@@ -140,7 +140,8 @@ func (a *CouponRecipientsApiService) GETCouponRecipients(ctx context.Context) Co
 }
 
 // Execute executes the request
-//  @return GETCouponRecipients200Response
+//
+//	@return GETCouponRecipients200Response
 func (a *CouponRecipientsApiService) GETCouponRecipientsExecute(r CouponRecipientsApiGETCouponRecipientsRequest) (*GETCouponRecipients200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -229,9 +230,9 @@ GETCouponRecipientsCouponRecipientId Retrieve a coupon recipient
 
 Retrieve a coupon recipient
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param couponRecipientId The resource's id
- @return CouponRecipientsApiGETCouponRecipientsCouponRecipientIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param couponRecipientId The resource's id
+	@return CouponRecipientsApiGETCouponRecipientsCouponRecipientIdRequest
 */
 func (a *CouponRecipientsApiService) GETCouponRecipientsCouponRecipientId(ctx context.Context, couponRecipientId string) CouponRecipientsApiGETCouponRecipientsCouponRecipientIdRequest {
 	return CouponRecipientsApiGETCouponRecipientsCouponRecipientIdRequest{
@@ -242,7 +243,8 @@ func (a *CouponRecipientsApiService) GETCouponRecipientsCouponRecipientId(ctx co
 }
 
 // Execute executes the request
-//  @return GETCouponRecipientsCouponRecipientId200Response
+//
+//	@return GETCouponRecipientsCouponRecipientId200Response
 func (a *CouponRecipientsApiService) GETCouponRecipientsCouponRecipientIdExecute(r CouponRecipientsApiGETCouponRecipientsCouponRecipientIdRequest) (*GETCouponRecipientsCouponRecipientId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -338,9 +340,9 @@ PATCHCouponRecipientsCouponRecipientId Update a coupon recipient
 
 Update a coupon recipient
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param couponRecipientId The resource's id
- @return CouponRecipientsApiPATCHCouponRecipientsCouponRecipientIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param couponRecipientId The resource's id
+	@return CouponRecipientsApiPATCHCouponRecipientsCouponRecipientIdRequest
 */
 func (a *CouponRecipientsApiService) PATCHCouponRecipientsCouponRecipientId(ctx context.Context, couponRecipientId string) CouponRecipientsApiPATCHCouponRecipientsCouponRecipientIdRequest {
 	return CouponRecipientsApiPATCHCouponRecipientsCouponRecipientIdRequest{
@@ -351,7 +353,8 @@ func (a *CouponRecipientsApiService) PATCHCouponRecipientsCouponRecipientId(ctx 
 }
 
 // Execute executes the request
-//  @return PATCHCouponRecipientsCouponRecipientId200Response
+//
+//	@return PATCHCouponRecipientsCouponRecipientId200Response
 func (a *CouponRecipientsApiService) PATCHCouponRecipientsCouponRecipientIdExecute(r CouponRecipientsApiPATCHCouponRecipientsCouponRecipientIdRequest) (*PATCHCouponRecipientsCouponRecipientId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -451,8 +454,8 @@ POSTCouponRecipients Create a coupon recipient
 
 Create a coupon recipient
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return CouponRecipientsApiPOSTCouponRecipientsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return CouponRecipientsApiPOSTCouponRecipientsRequest
 */
 func (a *CouponRecipientsApiService) POSTCouponRecipients(ctx context.Context) CouponRecipientsApiPOSTCouponRecipientsRequest {
 	return CouponRecipientsApiPOSTCouponRecipientsRequest{
@@ -462,7 +465,8 @@ func (a *CouponRecipientsApiService) POSTCouponRecipients(ctx context.Context) C
 }
 
 // Execute executes the request
-//  @return POSTCouponRecipients201Response
+//
+//	@return POSTCouponRecipients201Response
 func (a *CouponRecipientsApiService) POSTCouponRecipientsExecute(r CouponRecipientsApiPOSTCouponRecipientsRequest) (*POSTCouponRecipients201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

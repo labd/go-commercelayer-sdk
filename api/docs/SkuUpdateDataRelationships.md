@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ShippingCategory** | Pointer to [**ShipmentDataRelationshipsShippingCategory**](ShipmentDataRelationshipsShippingCategory.md) |  | [optional] 
+**ShippingCategory** | Pointer to [**ShippingMethodCreateDataRelationshipsShippingCategory**](ShippingMethodCreateDataRelationshipsShippingCategory.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetShippingCategory
 
-`func (o *SkuUpdateDataRelationships) GetShippingCategory() ShipmentDataRelationshipsShippingCategory`
+`func (o *SkuUpdateDataRelationships) GetShippingCategory() ShippingMethodCreateDataRelationshipsShippingCategory`
 
 GetShippingCategory returns the ShippingCategory field if non-nil, zero value otherwise.
 
 ### GetShippingCategoryOk
 
-`func (o *SkuUpdateDataRelationships) GetShippingCategoryOk() (*ShipmentDataRelationshipsShippingCategory, bool)`
+`func (o *SkuUpdateDataRelationships) GetShippingCategoryOk() (*ShippingMethodCreateDataRelationshipsShippingCategory, bool)`
 
 GetShippingCategoryOk returns a tuple with the ShippingCategory field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetShippingCategory
 
-`func (o *SkuUpdateDataRelationships) SetShippingCategory(v ShipmentDataRelationshipsShippingCategory)`
+`func (o *SkuUpdateDataRelationships) SetShippingCategory(v ShippingMethodCreateDataRelationshipsShippingCategory)`
 
 SetShippingCategory sets ShippingCategory field to given value.
 

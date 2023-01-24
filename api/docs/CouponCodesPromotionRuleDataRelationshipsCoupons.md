@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**CouponCodesPromotionRuleDataRelationshipsCouponsData**](CouponCodesPromotionRuleDataRelationshipsCouponsData.md) |  | 
+**Data** | Pointer to [**CouponCodesPromotionRuleDataRelationshipsCouponsData**](CouponCodesPromotionRuleDataRelationshipsCouponsData.md) |  | [optional] 
 
 ## Methods
 
 ### NewCouponCodesPromotionRuleDataRelationshipsCoupons
 
-`func NewCouponCodesPromotionRuleDataRelationshipsCoupons(data CouponCodesPromotionRuleDataRelationshipsCouponsData, ) *CouponCodesPromotionRuleDataRelationshipsCoupons`
+`func NewCouponCodesPromotionRuleDataRelationshipsCoupons() *CouponCodesPromotionRuleDataRelationshipsCoupons`
 
 NewCouponCodesPromotionRuleDataRelationshipsCoupons instantiates a new CouponCodesPromotionRuleDataRelationshipsCoupons object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *CouponCodesPromotionRuleDataRelationshipsCoupons) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

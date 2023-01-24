@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Address** | [**BingGeocoderDataRelationshipsAddresses**](BingGeocoderDataRelationshipsAddresses.md) |  | 
+**Address** | [**CustomerAddressCreateDataRelationshipsAddress**](CustomerAddressCreateDataRelationshipsAddress.md) |  | 
 
 ## Methods
 
 ### NewMerchantCreateDataRelationships
 
-`func NewMerchantCreateDataRelationships(address BingGeocoderDataRelationshipsAddresses, ) *MerchantCreateDataRelationships`
+`func NewMerchantCreateDataRelationships(address CustomerAddressCreateDataRelationshipsAddress, ) *MerchantCreateDataRelationships`
 
 NewMerchantCreateDataRelationships instantiates a new MerchantCreateDataRelationships object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAddress
 
-`func (o *MerchantCreateDataRelationships) GetAddress() BingGeocoderDataRelationshipsAddresses`
+`func (o *MerchantCreateDataRelationships) GetAddress() CustomerAddressCreateDataRelationshipsAddress`
 
 GetAddress returns the Address field if non-nil, zero value otherwise.
 
 ### GetAddressOk
 
-`func (o *MerchantCreateDataRelationships) GetAddressOk() (*BingGeocoderDataRelationshipsAddresses, bool)`
+`func (o *MerchantCreateDataRelationships) GetAddressOk() (*CustomerAddressCreateDataRelationshipsAddress, bool)`
 
 GetAddressOk returns a tuple with the Address field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAddress
 
-`func (o *MerchantCreateDataRelationships) SetAddress(v BingGeocoderDataRelationshipsAddresses)`
+`func (o *MerchantCreateDataRelationships) SetAddress(v CustomerAddressCreateDataRelationshipsAddress)`
 
 SetAddress sets Address field to given value.
 

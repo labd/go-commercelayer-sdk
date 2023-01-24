@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,16 +17,15 @@ import (
 
 // ExternalPromotionDataRelationshipsOrderAmountPromotionRule struct for ExternalPromotionDataRelationshipsOrderAmountPromotionRule
 type ExternalPromotionDataRelationshipsOrderAmountPromotionRule struct {
-	Data ExternalPromotionDataRelationshipsOrderAmountPromotionRuleData `json:"data"`
+	Data *ExternalPromotionDataRelationshipsOrderAmountPromotionRuleData `json:"data,omitempty"`
 }
 
 // NewExternalPromotionDataRelationshipsOrderAmountPromotionRule instantiates a new ExternalPromotionDataRelationshipsOrderAmountPromotionRule object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalPromotionDataRelationshipsOrderAmountPromotionRule(data ExternalPromotionDataRelationshipsOrderAmountPromotionRuleData) *ExternalPromotionDataRelationshipsOrderAmountPromotionRule {
+func NewExternalPromotionDataRelationshipsOrderAmountPromotionRule() *ExternalPromotionDataRelationshipsOrderAmountPromotionRule {
 	this := ExternalPromotionDataRelationshipsOrderAmountPromotionRule{}
-	this.Data = data
 	return &this
 }
 
@@ -38,33 +37,41 @@ func NewExternalPromotionDataRelationshipsOrderAmountPromotionRuleWithDefaults()
 	return &this
 }
 
-// GetData returns the Data field value
+// GetData returns the Data field value if set, zero value otherwise.
 func (o *ExternalPromotionDataRelationshipsOrderAmountPromotionRule) GetData() ExternalPromotionDataRelationshipsOrderAmountPromotionRuleData {
-	if o == nil {
+	if o == nil || o.Data == nil {
 		var ret ExternalPromotionDataRelationshipsOrderAmountPromotionRuleData
 		return ret
 	}
-
-	return o.Data
+	return *o.Data
 }
 
-// GetDataOk returns a tuple with the Data field value
+// GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalPromotionDataRelationshipsOrderAmountPromotionRule) GetDataOk() (*ExternalPromotionDataRelationshipsOrderAmountPromotionRuleData, bool) {
-	if o == nil {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
-	return &o.Data, true
+	return o.Data, true
 }
 
-// SetData sets field value
+// HasData returns a boolean if a field has been set.
+func (o *ExternalPromotionDataRelationshipsOrderAmountPromotionRule) HasData() bool {
+	if o != nil && o.Data != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetData gets a reference to the given ExternalPromotionDataRelationshipsOrderAmountPromotionRuleData and assigns it to the Data field.
 func (o *ExternalPromotionDataRelationshipsOrderAmountPromotionRule) SetData(v ExternalPromotionDataRelationshipsOrderAmountPromotionRuleData) {
-	o.Data = v
+	o.Data = &v
 }
 
 func (o ExternalPromotionDataRelationshipsOrderAmountPromotionRule) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)

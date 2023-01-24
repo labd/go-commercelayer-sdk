@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEMarketsMarketId Delete a market
 
 Delete a market
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param marketId The resource's id
- @return MarketsApiDELETEMarketsMarketIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param marketId The resource's id
+	@return MarketsApiDELETEMarketsMarketIdRequest
 */
 func (a *MarketsApiService) DELETEMarketsMarketId(ctx context.Context, marketId string) MarketsApiDELETEMarketsMarketIdRequest {
 	return MarketsApiDELETEMarketsMarketIdRequest{
@@ -130,9 +130,9 @@ GETAvalaraAccountIdMarkets Retrieve the markets associated to the avalara accoun
 
 Retrieve the markets associated to the avalara account
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param avalaraAccountId The resource's id
- @return MarketsApiGETAvalaraAccountIdMarketsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param avalaraAccountId The resource's id
+	@return MarketsApiGETAvalaraAccountIdMarketsRequest
 */
 func (a *MarketsApiService) GETAvalaraAccountIdMarkets(ctx context.Context, avalaraAccountId string) MarketsApiGETAvalaraAccountIdMarketsRequest {
 	return MarketsApiGETAvalaraAccountIdMarketsRequest{
@@ -222,9 +222,9 @@ GETBillingInfoValidationRuleIdMarket Retrieve the market associated to the billi
 
 Retrieve the market associated to the billing info validation rule
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param billingInfoValidationRuleId The resource's id
- @return MarketsApiGETBillingInfoValidationRuleIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param billingInfoValidationRuleId The resource's id
+	@return MarketsApiGETBillingInfoValidationRuleIdMarketRequest
 */
 func (a *MarketsApiService) GETBillingInfoValidationRuleIdMarket(ctx context.Context, billingInfoValidationRuleId string) MarketsApiGETBillingInfoValidationRuleIdMarketRequest {
 	return MarketsApiGETBillingInfoValidationRuleIdMarketRequest{
@@ -314,9 +314,9 @@ GETBundleIdMarket Retrieve the market associated to the bundle
 
 Retrieve the market associated to the bundle
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param bundleId The resource's id
- @return MarketsApiGETBundleIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param bundleId The resource's id
+	@return MarketsApiGETBundleIdMarketRequest
 */
 func (a *MarketsApiService) GETBundleIdMarket(ctx context.Context, bundleId string) MarketsApiGETBundleIdMarketRequest {
 	return MarketsApiGETBundleIdMarketRequest{
@@ -406,9 +406,9 @@ GETCarrierAccountIdMarket Retrieve the market associated to the carrier account
 
 Retrieve the market associated to the carrier account
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param carrierAccountId The resource's id
- @return MarketsApiGETCarrierAccountIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param carrierAccountId The resource's id
+	@return MarketsApiGETCarrierAccountIdMarketRequest
 */
 func (a *MarketsApiService) GETCarrierAccountIdMarket(ctx context.Context, carrierAccountId string) MarketsApiGETCarrierAccountIdMarketRequest {
 	return MarketsApiGETCarrierAccountIdMarketRequest{
@@ -498,9 +498,9 @@ GETCustomerGroupIdMarkets Retrieve the markets associated to the customer group
 
 Retrieve the markets associated to the customer group
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerGroupId The resource's id
- @return MarketsApiGETCustomerGroupIdMarketsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerGroupId The resource's id
+	@return MarketsApiGETCustomerGroupIdMarketsRequest
 */
 func (a *MarketsApiService) GETCustomerGroupIdMarkets(ctx context.Context, customerGroupId string) MarketsApiGETCustomerGroupIdMarketsRequest {
 	return MarketsApiGETCustomerGroupIdMarketsRequest{
@@ -590,9 +590,9 @@ GETExternalPromotionIdMarket Retrieve the market associated to the external prom
 
 Retrieve the market associated to the external promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalPromotionId The resource's id
- @return MarketsApiGETExternalPromotionIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalPromotionId The resource's id
+	@return MarketsApiGETExternalPromotionIdMarketRequest
 */
 func (a *MarketsApiService) GETExternalPromotionIdMarket(ctx context.Context, externalPromotionId string) MarketsApiGETExternalPromotionIdMarketRequest {
 	return MarketsApiGETExternalPromotionIdMarketRequest{
@@ -682,9 +682,9 @@ GETExternalTaxCalculatorIdMarkets Retrieve the markets associated to the externa
 
 Retrieve the markets associated to the external tax calculator
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalTaxCalculatorId The resource's id
- @return MarketsApiGETExternalTaxCalculatorIdMarketsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalTaxCalculatorId The resource's id
+	@return MarketsApiGETExternalTaxCalculatorIdMarketsRequest
 */
 func (a *MarketsApiService) GETExternalTaxCalculatorIdMarkets(ctx context.Context, externalTaxCalculatorId string) MarketsApiGETExternalTaxCalculatorIdMarketsRequest {
 	return MarketsApiGETExternalTaxCalculatorIdMarketsRequest{
@@ -774,9 +774,9 @@ GETFixedAmountPromotionIdMarket Retrieve the market associated to the fixed amou
 
 Retrieve the market associated to the fixed amount promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fixedAmountPromotionId The resource's id
- @return MarketsApiGETFixedAmountPromotionIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fixedAmountPromotionId The resource's id
+	@return MarketsApiGETFixedAmountPromotionIdMarketRequest
 */
 func (a *MarketsApiService) GETFixedAmountPromotionIdMarket(ctx context.Context, fixedAmountPromotionId string) MarketsApiGETFixedAmountPromotionIdMarketRequest {
 	return MarketsApiGETFixedAmountPromotionIdMarketRequest{
@@ -866,9 +866,9 @@ GETFixedPricePromotionIdMarket Retrieve the market associated to the fixed price
 
 Retrieve the market associated to the fixed price promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param fixedPricePromotionId The resource's id
- @return MarketsApiGETFixedPricePromotionIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param fixedPricePromotionId The resource's id
+	@return MarketsApiGETFixedPricePromotionIdMarketRequest
 */
 func (a *MarketsApiService) GETFixedPricePromotionIdMarket(ctx context.Context, fixedPricePromotionId string) MarketsApiGETFixedPricePromotionIdMarketRequest {
 	return MarketsApiGETFixedPricePromotionIdMarketRequest{
@@ -958,9 +958,9 @@ GETFreeGiftPromotionIdMarket Retrieve the market associated to the free gift pro
 
 Retrieve the market associated to the free gift promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param freeGiftPromotionId The resource's id
- @return MarketsApiGETFreeGiftPromotionIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param freeGiftPromotionId The resource's id
+	@return MarketsApiGETFreeGiftPromotionIdMarketRequest
 */
 func (a *MarketsApiService) GETFreeGiftPromotionIdMarket(ctx context.Context, freeGiftPromotionId string) MarketsApiGETFreeGiftPromotionIdMarketRequest {
 	return MarketsApiGETFreeGiftPromotionIdMarketRequest{
@@ -1050,9 +1050,9 @@ GETFreeShippingPromotionIdMarket Retrieve the market associated to the free ship
 
 Retrieve the market associated to the free shipping promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param freeShippingPromotionId The resource's id
- @return MarketsApiGETFreeShippingPromotionIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param freeShippingPromotionId The resource's id
+	@return MarketsApiGETFreeShippingPromotionIdMarketRequest
 */
 func (a *MarketsApiService) GETFreeShippingPromotionIdMarket(ctx context.Context, freeShippingPromotionId string) MarketsApiGETFreeShippingPromotionIdMarketRequest {
 	return MarketsApiGETFreeShippingPromotionIdMarketRequest{
@@ -1142,9 +1142,9 @@ GETGiftCardIdMarket Retrieve the market associated to the gift card
 
 Retrieve the market associated to the gift card
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param giftCardId The resource's id
- @return MarketsApiGETGiftCardIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param giftCardId The resource's id
+	@return MarketsApiGETGiftCardIdMarketRequest
 */
 func (a *MarketsApiService) GETGiftCardIdMarket(ctx context.Context, giftCardId string) MarketsApiGETGiftCardIdMarketRequest {
 	return MarketsApiGETGiftCardIdMarketRequest{
@@ -1234,9 +1234,9 @@ GETInStockSubscriptionIdMarket Retrieve the market associated to the in stock su
 
 Retrieve the market associated to the in stock subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param inStockSubscriptionId The resource's id
- @return MarketsApiGETInStockSubscriptionIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param inStockSubscriptionId The resource's id
+	@return MarketsApiGETInStockSubscriptionIdMarketRequest
 */
 func (a *MarketsApiService) GETInStockSubscriptionIdMarket(ctx context.Context, inStockSubscriptionId string) MarketsApiGETInStockSubscriptionIdMarketRequest {
 	return MarketsApiGETInStockSubscriptionIdMarketRequest{
@@ -1326,9 +1326,9 @@ GETManualTaxCalculatorIdMarkets Retrieve the markets associated to the manual ta
 
 Retrieve the markets associated to the manual tax calculator
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param manualTaxCalculatorId The resource's id
- @return MarketsApiGETManualTaxCalculatorIdMarketsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param manualTaxCalculatorId The resource's id
+	@return MarketsApiGETManualTaxCalculatorIdMarketsRequest
 */
 func (a *MarketsApiService) GETManualTaxCalculatorIdMarkets(ctx context.Context, manualTaxCalculatorId string) MarketsApiGETManualTaxCalculatorIdMarketsRequest {
 	return MarketsApiGETManualTaxCalculatorIdMarketsRequest{
@@ -1417,8 +1417,8 @@ GETMarkets List all markets
 
 List all markets
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MarketsApiGETMarketsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return MarketsApiGETMarketsRequest
 */
 func (a *MarketsApiService) GETMarkets(ctx context.Context) MarketsApiGETMarketsRequest {
 	return MarketsApiGETMarketsRequest{
@@ -1428,7 +1428,8 @@ func (a *MarketsApiService) GETMarkets(ctx context.Context) MarketsApiGETMarkets
 }
 
 // Execute executes the request
-//  @return GETMarkets200Response
+//
+//	@return GETMarkets200Response
 func (a *MarketsApiService) GETMarketsExecute(r MarketsApiGETMarketsRequest) (*GETMarkets200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1517,9 +1518,9 @@ GETMarketsMarketId Retrieve a market
 
 Retrieve a market
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param marketId The resource's id
- @return MarketsApiGETMarketsMarketIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param marketId The resource's id
+	@return MarketsApiGETMarketsMarketIdRequest
 */
 func (a *MarketsApiService) GETMarketsMarketId(ctx context.Context, marketId string) MarketsApiGETMarketsMarketIdRequest {
 	return MarketsApiGETMarketsMarketIdRequest{
@@ -1530,7 +1531,8 @@ func (a *MarketsApiService) GETMarketsMarketId(ctx context.Context, marketId str
 }
 
 // Execute executes the request
-//  @return GETMarketsMarketId200Response
+//
+//	@return GETMarketsMarketId200Response
 func (a *MarketsApiService) GETMarketsMarketIdExecute(r MarketsApiGETMarketsMarketIdRequest) (*GETMarketsMarketId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -1620,9 +1622,9 @@ GETOrderIdMarket Retrieve the market associated to the order
 
 Retrieve the market associated to the order
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderId The resource's id
- @return MarketsApiGETOrderIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return MarketsApiGETOrderIdMarketRequest
 */
 func (a *MarketsApiService) GETOrderIdMarket(ctx context.Context, orderId string) MarketsApiGETOrderIdMarketRequest {
 	return MarketsApiGETOrderIdMarketRequest{
@@ -1712,9 +1714,9 @@ GETOrderSubscriptionIdMarket Retrieve the market associated to the order subscri
 
 Retrieve the market associated to the order subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderSubscriptionId The resource's id
- @return MarketsApiGETOrderSubscriptionIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderSubscriptionId The resource's id
+	@return MarketsApiGETOrderSubscriptionIdMarketRequest
 */
 func (a *MarketsApiService) GETOrderSubscriptionIdMarket(ctx context.Context, orderSubscriptionId string) MarketsApiGETOrderSubscriptionIdMarketRequest {
 	return MarketsApiGETOrderSubscriptionIdMarketRequest{
@@ -1804,9 +1806,9 @@ GETOrderValidationRuleIdMarket Retrieve the market associated to the order valid
 
 Retrieve the market associated to the order validation rule
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderValidationRuleId The resource's id
- @return MarketsApiGETOrderValidationRuleIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderValidationRuleId The resource's id
+	@return MarketsApiGETOrderValidationRuleIdMarketRequest
 */
 func (a *MarketsApiService) GETOrderValidationRuleIdMarket(ctx context.Context, orderValidationRuleId string) MarketsApiGETOrderValidationRuleIdMarketRequest {
 	return MarketsApiGETOrderValidationRuleIdMarketRequest{
@@ -1896,9 +1898,9 @@ GETPaymentMethodIdMarket Retrieve the market associated to the payment method
 
 Retrieve the market associated to the payment method
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param paymentMethodId The resource's id
- @return MarketsApiGETPaymentMethodIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param paymentMethodId The resource's id
+	@return MarketsApiGETPaymentMethodIdMarketRequest
 */
 func (a *MarketsApiService) GETPaymentMethodIdMarket(ctx context.Context, paymentMethodId string) MarketsApiGETPaymentMethodIdMarketRequest {
 	return MarketsApiGETPaymentMethodIdMarketRequest{
@@ -1988,9 +1990,9 @@ GETPercentageDiscountPromotionIdMarket Retrieve the market associated to the per
 
 Retrieve the market associated to the percentage discount promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param percentageDiscountPromotionId The resource's id
- @return MarketsApiGETPercentageDiscountPromotionIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param percentageDiscountPromotionId The resource's id
+	@return MarketsApiGETPercentageDiscountPromotionIdMarketRequest
 */
 func (a *MarketsApiService) GETPercentageDiscountPromotionIdMarket(ctx context.Context, percentageDiscountPromotionId string) MarketsApiGETPercentageDiscountPromotionIdMarketRequest {
 	return MarketsApiGETPercentageDiscountPromotionIdMarketRequest{
@@ -2080,9 +2082,9 @@ GETPromotionIdMarket Retrieve the market associated to the promotion
 
 Retrieve the market associated to the promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param promotionId The resource's id
- @return MarketsApiGETPromotionIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param promotionId The resource's id
+	@return MarketsApiGETPromotionIdMarketRequest
 */
 func (a *MarketsApiService) GETPromotionIdMarket(ctx context.Context, promotionId string) MarketsApiGETPromotionIdMarketRequest {
 	return MarketsApiGETPromotionIdMarketRequest{
@@ -2172,9 +2174,9 @@ GETShippingMethodIdMarket Retrieve the market associated to the shipping method
 
 Retrieve the market associated to the shipping method
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingMethodId The resource's id
- @return MarketsApiGETShippingMethodIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingMethodId The resource's id
+	@return MarketsApiGETShippingMethodIdMarketRequest
 */
 func (a *MarketsApiService) GETShippingMethodIdMarket(ctx context.Context, shippingMethodId string) MarketsApiGETShippingMethodIdMarketRequest {
 	return MarketsApiGETShippingMethodIdMarketRequest{
@@ -2264,9 +2266,9 @@ GETSkuOptionIdMarket Retrieve the market associated to the SKU option
 
 Retrieve the market associated to the SKU option
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param skuOptionId The resource's id
- @return MarketsApiGETSkuOptionIdMarketRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuOptionId The resource's id
+	@return MarketsApiGETSkuOptionIdMarketRequest
 */
 func (a *MarketsApiService) GETSkuOptionIdMarket(ctx context.Context, skuOptionId string) MarketsApiGETSkuOptionIdMarketRequest {
 	return MarketsApiGETSkuOptionIdMarketRequest{
@@ -2356,9 +2358,9 @@ GETTaxCalculatorIdMarkets Retrieve the markets associated to the tax calculator
 
 Retrieve the markets associated to the tax calculator
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param taxCalculatorId The resource's id
- @return MarketsApiGETTaxCalculatorIdMarketsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param taxCalculatorId The resource's id
+	@return MarketsApiGETTaxCalculatorIdMarketsRequest
 */
 func (a *MarketsApiService) GETTaxCalculatorIdMarkets(ctx context.Context, taxCalculatorId string) MarketsApiGETTaxCalculatorIdMarketsRequest {
 	return MarketsApiGETTaxCalculatorIdMarketsRequest{
@@ -2448,9 +2450,9 @@ GETTaxjarAccountIdMarkets Retrieve the markets associated to the taxjar account
 
 Retrieve the markets associated to the taxjar account
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param taxjarAccountId The resource's id
- @return MarketsApiGETTaxjarAccountIdMarketsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param taxjarAccountId The resource's id
+	@return MarketsApiGETTaxjarAccountIdMarketsRequest
 */
 func (a *MarketsApiService) GETTaxjarAccountIdMarkets(ctx context.Context, taxjarAccountId string) MarketsApiGETTaxjarAccountIdMarketsRequest {
 	return MarketsApiGETTaxjarAccountIdMarketsRequest{
@@ -2546,9 +2548,9 @@ PATCHMarketsMarketId Update a market
 
 Update a market
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param marketId The resource's id
- @return MarketsApiPATCHMarketsMarketIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param marketId The resource's id
+	@return MarketsApiPATCHMarketsMarketIdRequest
 */
 func (a *MarketsApiService) PATCHMarketsMarketId(ctx context.Context, marketId string) MarketsApiPATCHMarketsMarketIdRequest {
 	return MarketsApiPATCHMarketsMarketIdRequest{
@@ -2559,7 +2561,8 @@ func (a *MarketsApiService) PATCHMarketsMarketId(ctx context.Context, marketId s
 }
 
 // Execute executes the request
-//  @return PATCHMarketsMarketId200Response
+//
+//	@return PATCHMarketsMarketId200Response
 func (a *MarketsApiService) PATCHMarketsMarketIdExecute(r MarketsApiPATCHMarketsMarketIdRequest) (*PATCHMarketsMarketId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -2659,8 +2662,8 @@ POSTMarkets Create a market
 
 Create a market
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return MarketsApiPOSTMarketsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return MarketsApiPOSTMarketsRequest
 */
 func (a *MarketsApiService) POSTMarkets(ctx context.Context) MarketsApiPOSTMarketsRequest {
 	return MarketsApiPOSTMarketsRequest{
@@ -2670,7 +2673,8 @@ func (a *MarketsApiService) POSTMarkets(ctx context.Context) MarketsApiPOSTMarke
 }
 
 // Execute executes the request
-//  @return POSTMarkets201Response
+//
+//	@return POSTMarkets201Response
 func (a *MarketsApiService) POSTMarketsExecute(r MarketsApiPOSTMarketsRequest) (*POSTMarkets201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

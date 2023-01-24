@@ -40,6 +40,7 @@ Name | Type | Description | Notes
 **SaveShippingAddressToCustomerAddressBook** | Pointer to **bool** | Send this attribute if you want the order&#39;s shipping address to be saved in the customer&#39;s address book as a customer address. | [optional] 
 **SaveBillingAddressToCustomerAddressBook** | Pointer to **bool** | Send this attribute if you want the order&#39;s billing address to be saved in the customer&#39;s address book as a customer address. | [optional] 
 **Refresh** | Pointer to **bool** | Send this attribute if you want to manually refresh the order. | [optional] 
+**Validate** | Pointer to **bool** | Send this attribute if you want to trigger the external validation for the order. | [optional] 
 **Reference** | Pointer to **string** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
 **ReferenceOrigin** | Pointer to **string** | Any identifier of the third party system that defines the reference code | [optional] 
 **Metadata** | Pointer to **map[string]interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
@@ -962,6 +963,31 @@ SetRefresh sets Refresh field to given value.
 `func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasRefresh() bool`
 
 HasRefresh returns a boolean if a field has been set.
+
+### GetValidate
+
+`func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetValidate() bool`
+
+GetValidate returns the Validate field if non-nil, zero value otherwise.
+
+### GetValidateOk
+
+`func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetValidateOk() (*bool, bool)`
+
+GetValidateOk returns a tuple with the Validate field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetValidate
+
+`func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetValidate(v bool)`
+
+SetValidate sets Validate field to given value.
+
+### HasValidate
+
+`func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasValidate() bool`
+
+HasValidate returns a boolean if a field has been set.
 
 ### GetReference
 

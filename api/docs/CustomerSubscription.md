@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**CustomerSubscriptionData**](CustomerSubscriptionData.md) |  | 
+**Data** | Pointer to [**CustomerSubscriptionData**](CustomerSubscriptionData.md) |  | [optional] 
 
 ## Methods
 
 ### NewCustomerSubscription
 
-`func NewCustomerSubscription(data CustomerSubscriptionData, ) *CustomerSubscription`
+`func NewCustomerSubscription() *CustomerSubscription`
 
 NewCustomerSubscription instantiates a new CustomerSubscription object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *CustomerSubscription) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

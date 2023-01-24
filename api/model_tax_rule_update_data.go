@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -22,7 +22,7 @@ type TaxRuleUpdateData struct {
 	// The resource's id
 	Id            string                                          `json:"id"`
 	Attributes    PATCHTaxRulesTaxRuleId200ResponseDataAttributes `json:"attributes"`
-	Relationships *TaxRuleDataRelationships                       `json:"relationships,omitempty"`
+	Relationships *TaxRuleUpdateDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewTaxRuleUpdateData instantiates a new TaxRuleUpdateData object
@@ -118,9 +118,9 @@ func (o *TaxRuleUpdateData) SetAttributes(v PATCHTaxRulesTaxRuleId200ResponseDat
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *TaxRuleUpdateData) GetRelationships() TaxRuleDataRelationships {
+func (o *TaxRuleUpdateData) GetRelationships() TaxRuleUpdateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret TaxRuleDataRelationships
+		var ret TaxRuleUpdateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -128,7 +128,7 @@ func (o *TaxRuleUpdateData) GetRelationships() TaxRuleDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaxRuleUpdateData) GetRelationshipsOk() (*TaxRuleDataRelationships, bool) {
+func (o *TaxRuleUpdateData) GetRelationshipsOk() (*TaxRuleUpdateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -144,8 +144,8 @@ func (o *TaxRuleUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given TaxRuleDataRelationships and assigns it to the Relationships field.
-func (o *TaxRuleUpdateData) SetRelationships(v TaxRuleDataRelationships) {
+// SetRelationships gets a reference to the given TaxRuleUpdateDataRelationships and assigns it to the Relationships field.
+func (o *TaxRuleUpdateData) SetRelationships(v TaxRuleUpdateDataRelationships) {
 	o.Relationships = &v
 }
 

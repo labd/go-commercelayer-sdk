@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETETaxRulesTaxRuleId Delete a tax rule
 
 Delete a tax rule
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param taxRuleId The resource's id
- @return TaxRulesApiDELETETaxRulesTaxRuleIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param taxRuleId The resource's id
+	@return TaxRulesApiDELETETaxRulesTaxRuleIdRequest
 */
 func (a *TaxRulesApiService) DELETETaxRulesTaxRuleId(ctx context.Context, taxRuleId string) TaxRulesApiDELETETaxRulesTaxRuleIdRequest {
 	return TaxRulesApiDELETETaxRulesTaxRuleIdRequest{
@@ -130,9 +130,9 @@ GETManualTaxCalculatorIdTaxRules Retrieve the tax rules associated to the manual
 
 Retrieve the tax rules associated to the manual tax calculator
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param manualTaxCalculatorId The resource's id
- @return TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param manualTaxCalculatorId The resource's id
+	@return TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest
 */
 func (a *TaxRulesApiService) GETManualTaxCalculatorIdTaxRules(ctx context.Context, manualTaxCalculatorId string) TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest {
 	return TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest{
@@ -221,8 +221,8 @@ GETTaxRules List all tax rules
 
 List all tax rules
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return TaxRulesApiGETTaxRulesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return TaxRulesApiGETTaxRulesRequest
 */
 func (a *TaxRulesApiService) GETTaxRules(ctx context.Context) TaxRulesApiGETTaxRulesRequest {
 	return TaxRulesApiGETTaxRulesRequest{
@@ -232,7 +232,8 @@ func (a *TaxRulesApiService) GETTaxRules(ctx context.Context) TaxRulesApiGETTaxR
 }
 
 // Execute executes the request
-//  @return GETTaxRules200Response
+//
+//	@return GETTaxRules200Response
 func (a *TaxRulesApiService) GETTaxRulesExecute(r TaxRulesApiGETTaxRulesRequest) (*GETTaxRules200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -321,9 +322,9 @@ GETTaxRulesTaxRuleId Retrieve a tax rule
 
 Retrieve a tax rule
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param taxRuleId The resource's id
- @return TaxRulesApiGETTaxRulesTaxRuleIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param taxRuleId The resource's id
+	@return TaxRulesApiGETTaxRulesTaxRuleIdRequest
 */
 func (a *TaxRulesApiService) GETTaxRulesTaxRuleId(ctx context.Context, taxRuleId string) TaxRulesApiGETTaxRulesTaxRuleIdRequest {
 	return TaxRulesApiGETTaxRulesTaxRuleIdRequest{
@@ -334,7 +335,8 @@ func (a *TaxRulesApiService) GETTaxRulesTaxRuleId(ctx context.Context, taxRuleId
 }
 
 // Execute executes the request
-//  @return GETTaxRulesTaxRuleId200Response
+//
+//	@return GETTaxRulesTaxRuleId200Response
 func (a *TaxRulesApiService) GETTaxRulesTaxRuleIdExecute(r TaxRulesApiGETTaxRulesTaxRuleIdRequest) (*GETTaxRulesTaxRuleId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -430,9 +432,9 @@ PATCHTaxRulesTaxRuleId Update a tax rule
 
 Update a tax rule
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param taxRuleId The resource's id
- @return TaxRulesApiPATCHTaxRulesTaxRuleIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param taxRuleId The resource's id
+	@return TaxRulesApiPATCHTaxRulesTaxRuleIdRequest
 */
 func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleId(ctx context.Context, taxRuleId string) TaxRulesApiPATCHTaxRulesTaxRuleIdRequest {
 	return TaxRulesApiPATCHTaxRulesTaxRuleIdRequest{
@@ -443,7 +445,8 @@ func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleId(ctx context.Context, taxRule
 }
 
 // Execute executes the request
-//  @return PATCHTaxRulesTaxRuleId200Response
+//
+//	@return PATCHTaxRulesTaxRuleId200Response
 func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleIdExecute(r TaxRulesApiPATCHTaxRulesTaxRuleIdRequest) (*PATCHTaxRulesTaxRuleId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -543,8 +546,8 @@ POSTTaxRules Create a tax rule
 
 Create a tax rule
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return TaxRulesApiPOSTTaxRulesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return TaxRulesApiPOSTTaxRulesRequest
 */
 func (a *TaxRulesApiService) POSTTaxRules(ctx context.Context) TaxRulesApiPOSTTaxRulesRequest {
 	return TaxRulesApiPOSTTaxRulesRequest{
@@ -554,7 +557,8 @@ func (a *TaxRulesApiService) POSTTaxRules(ctx context.Context) TaxRulesApiPOSTTa
 }
 
 // Execute executes the request
-//  @return POSTTaxRules201Response
+//
+//	@return POSTTaxRules201Response
 func (a *TaxRulesApiService) POSTTaxRulesExecute(r TaxRulesApiPOSTTaxRulesRequest) (*POSTTaxRules201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -19,7 +19,7 @@ import (
 type GETTaxRules200ResponseDataInnerAttributes struct {
 	// The tax rule internal name.
 	Name *string `json:"name,omitempty"`
-	// The tax rate for this ruke.
+	// The tax rate for this rule.
 	TaxRate *float32 `json:"tax_rate,omitempty"`
 	// The regex that will be evaluated to match the shipping address country code.
 	CountryCodeRegex *string `json:"country_code_regex,omitempty"`
@@ -43,8 +43,6 @@ type GETTaxRules200ResponseDataInnerAttributes struct {
 	AdjustmentTaxable *bool `json:"adjustment_taxable,omitempty"`
 	// The breakdown for this tax rule (if calculated).
 	Breakdown map[string]interface{} `json:"breakdown,omitempty"`
-	// Unique identifier for the resource (hash).
-	Id *string `json:"id,omitempty"`
 	// Time at which the resource was created.
 	CreatedAt *string `json:"created_at,omitempty"`
 	// Time at which the resource was last updated.
@@ -490,38 +488,6 @@ func (o *GETTaxRules200ResponseDataInnerAttributes) SetBreakdown(v map[string]in
 	o.Breakdown = v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *GETTaxRules200ResponseDataInnerAttributes) GetId() string {
-	if o == nil || o.Id == nil {
-		var ret string
-		return ret
-	}
-	return *o.Id
-}
-
-// GetIdOk returns a tuple with the Id field value if set, nil otherwise
-// and a boolean to check if the value has been set.
-func (o *GETTaxRules200ResponseDataInnerAttributes) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
-		return nil, false
-	}
-	return o.Id, true
-}
-
-// HasId returns a boolean if a field has been set.
-func (o *GETTaxRules200ResponseDataInnerAttributes) HasId() bool {
-	if o != nil && o.Id != nil {
-		return true
-	}
-
-	return false
-}
-
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *GETTaxRules200ResponseDataInnerAttributes) SetId(v string) {
-	o.Id = &v
-}
-
 // GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
 func (o *GETTaxRules200ResponseDataInnerAttributes) GetCreatedAt() string {
 	if o == nil || o.CreatedAt == nil {
@@ -722,9 +688,6 @@ func (o GETTaxRules200ResponseDataInnerAttributes) MarshalJSON() ([]byte, error)
 	}
 	if o.Breakdown != nil {
 		toSerialize["breakdown"] = o.Breakdown
-	}
-	if o.Id != nil {
-		toSerialize["id"] = o.Id
 	}
 	if o.CreatedAt != nil {
 		toSerialize["created_at"] = o.CreatedAt

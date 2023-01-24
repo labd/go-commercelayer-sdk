@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETECustomersCustomerId Delete a customer
 
 Delete a customer
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerId The resource's id
- @return CustomersApiDELETECustomersCustomerIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerId The resource's id
+	@return CustomersApiDELETECustomersCustomerIdRequest
 */
 func (a *CustomersApiService) DELETECustomersCustomerId(ctx context.Context, customerId string) CustomersApiDELETECustomersCustomerIdRequest {
 	return CustomersApiDELETECustomersCustomerIdRequest{
@@ -130,9 +130,9 @@ GETCouponRecipientIdCustomer Retrieve the customer associated to the coupon reci
 
 Retrieve the customer associated to the coupon recipient
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param couponRecipientId The resource's id
- @return CustomersApiGETCouponRecipientIdCustomerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param couponRecipientId The resource's id
+	@return CustomersApiGETCouponRecipientIdCustomerRequest
 */
 func (a *CustomersApiService) GETCouponRecipientIdCustomer(ctx context.Context, couponRecipientId string) CustomersApiGETCouponRecipientIdCustomerRequest {
 	return CustomersApiGETCouponRecipientIdCustomerRequest{
@@ -222,9 +222,9 @@ GETCustomerAddressIdCustomer Retrieve the customer associated to the customer ad
 
 Retrieve the customer associated to the customer address
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerAddressId The resource's id
- @return CustomersApiGETCustomerAddressIdCustomerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerAddressId The resource's id
+	@return CustomersApiGETCustomerAddressIdCustomerRequest
 */
 func (a *CustomersApiService) GETCustomerAddressIdCustomer(ctx context.Context, customerAddressId string) CustomersApiGETCustomerAddressIdCustomerRequest {
 	return CustomersApiGETCustomerAddressIdCustomerRequest{
@@ -314,9 +314,9 @@ GETCustomerGroupIdCustomers Retrieve the customers associated to the customer gr
 
 Retrieve the customers associated to the customer group
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerGroupId The resource's id
- @return CustomersApiGETCustomerGroupIdCustomersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerGroupId The resource's id
+	@return CustomersApiGETCustomerGroupIdCustomersRequest
 */
 func (a *CustomersApiService) GETCustomerGroupIdCustomers(ctx context.Context, customerGroupId string) CustomersApiGETCustomerGroupIdCustomersRequest {
 	return CustomersApiGETCustomerGroupIdCustomersRequest{
@@ -406,9 +406,9 @@ GETCustomerPasswordResetIdCustomer Retrieve the customer associated to the custo
 
 Retrieve the customer associated to the customer password reset
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerPasswordResetId The resource's id
- @return CustomersApiGETCustomerPasswordResetIdCustomerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerPasswordResetId The resource's id
+	@return CustomersApiGETCustomerPasswordResetIdCustomerRequest
 */
 func (a *CustomersApiService) GETCustomerPasswordResetIdCustomer(ctx context.Context, customerPasswordResetId string) CustomersApiGETCustomerPasswordResetIdCustomerRequest {
 	return CustomersApiGETCustomerPasswordResetIdCustomerRequest{
@@ -498,9 +498,9 @@ GETCustomerPaymentSourceIdCustomer Retrieve the customer associated to the custo
 
 Retrieve the customer associated to the customer payment source
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerPaymentSourceId The resource's id
- @return CustomersApiGETCustomerPaymentSourceIdCustomerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerPaymentSourceId The resource's id
+	@return CustomersApiGETCustomerPaymentSourceIdCustomerRequest
 */
 func (a *CustomersApiService) GETCustomerPaymentSourceIdCustomer(ctx context.Context, customerPaymentSourceId string) CustomersApiGETCustomerPaymentSourceIdCustomerRequest {
 	return CustomersApiGETCustomerPaymentSourceIdCustomerRequest{
@@ -590,9 +590,9 @@ GETCustomerSubscriptionIdCustomer Retrieve the customer associated to the custom
 
 Retrieve the customer associated to the customer subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerSubscriptionId The resource's id
- @return CustomersApiGETCustomerSubscriptionIdCustomerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerSubscriptionId The resource's id
+	@return CustomersApiGETCustomerSubscriptionIdCustomerRequest
 */
 func (a *CustomersApiService) GETCustomerSubscriptionIdCustomer(ctx context.Context, customerSubscriptionId string) CustomersApiGETCustomerSubscriptionIdCustomerRequest {
 	return CustomersApiGETCustomerSubscriptionIdCustomerRequest{
@@ -681,8 +681,8 @@ GETCustomers List all customers
 
 List all customers
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return CustomersApiGETCustomersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return CustomersApiGETCustomersRequest
 */
 func (a *CustomersApiService) GETCustomers(ctx context.Context) CustomersApiGETCustomersRequest {
 	return CustomersApiGETCustomersRequest{
@@ -692,7 +692,8 @@ func (a *CustomersApiService) GETCustomers(ctx context.Context) CustomersApiGETC
 }
 
 // Execute executes the request
-//  @return GETCustomers200Response
+//
+//	@return GETCustomers200Response
 func (a *CustomersApiService) GETCustomersExecute(r CustomersApiGETCustomersRequest) (*GETCustomers200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -781,9 +782,9 @@ GETCustomersCustomerId Retrieve a customer
 
 Retrieve a customer
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerId The resource's id
- @return CustomersApiGETCustomersCustomerIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerId The resource's id
+	@return CustomersApiGETCustomersCustomerIdRequest
 */
 func (a *CustomersApiService) GETCustomersCustomerId(ctx context.Context, customerId string) CustomersApiGETCustomersCustomerIdRequest {
 	return CustomersApiGETCustomersCustomerIdRequest{
@@ -794,7 +795,8 @@ func (a *CustomersApiService) GETCustomersCustomerId(ctx context.Context, custom
 }
 
 // Execute executes the request
-//  @return GETCustomersCustomerId200Response
+//
+//	@return GETCustomersCustomerId200Response
 func (a *CustomersApiService) GETCustomersCustomerIdExecute(r CustomersApiGETCustomersCustomerIdRequest) (*GETCustomersCustomerId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -884,9 +886,9 @@ GETGiftCardRecipientIdCustomer Retrieve the customer associated to the gift card
 
 Retrieve the customer associated to the gift card recipient
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param giftCardRecipientId The resource's id
- @return CustomersApiGETGiftCardRecipientIdCustomerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param giftCardRecipientId The resource's id
+	@return CustomersApiGETGiftCardRecipientIdCustomerRequest
 */
 func (a *CustomersApiService) GETGiftCardRecipientIdCustomer(ctx context.Context, giftCardRecipientId string) CustomersApiGETGiftCardRecipientIdCustomerRequest {
 	return CustomersApiGETGiftCardRecipientIdCustomerRequest{
@@ -976,9 +978,9 @@ GETInStockSubscriptionIdCustomer Retrieve the customer associated to the in stoc
 
 Retrieve the customer associated to the in stock subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param inStockSubscriptionId The resource's id
- @return CustomersApiGETInStockSubscriptionIdCustomerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param inStockSubscriptionId The resource's id
+	@return CustomersApiGETInStockSubscriptionIdCustomerRequest
 */
 func (a *CustomersApiService) GETInStockSubscriptionIdCustomer(ctx context.Context, inStockSubscriptionId string) CustomersApiGETInStockSubscriptionIdCustomerRequest {
 	return CustomersApiGETInStockSubscriptionIdCustomerRequest{
@@ -1068,9 +1070,9 @@ GETOrderIdCustomer Retrieve the customer associated to the order
 
 Retrieve the customer associated to the order
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderId The resource's id
- @return CustomersApiGETOrderIdCustomerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return CustomersApiGETOrderIdCustomerRequest
 */
 func (a *CustomersApiService) GETOrderIdCustomer(ctx context.Context, orderId string) CustomersApiGETOrderIdCustomerRequest {
 	return CustomersApiGETOrderIdCustomerRequest{
@@ -1160,9 +1162,9 @@ GETOrderSubscriptionIdCustomer Retrieve the customer associated to the order sub
 
 Retrieve the customer associated to the order subscription
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderSubscriptionId The resource's id
- @return CustomersApiGETOrderSubscriptionIdCustomerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderSubscriptionId The resource's id
+	@return CustomersApiGETOrderSubscriptionIdCustomerRequest
 */
 func (a *CustomersApiService) GETOrderSubscriptionIdCustomer(ctx context.Context, orderSubscriptionId string) CustomersApiGETOrderSubscriptionIdCustomerRequest {
 	return CustomersApiGETOrderSubscriptionIdCustomerRequest{
@@ -1252,9 +1254,9 @@ GETReturnIdCustomer Retrieve the customer associated to the return
 
 Retrieve the customer associated to the return
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param returnId The resource's id
- @return CustomersApiGETReturnIdCustomerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param returnId The resource's id
+	@return CustomersApiGETReturnIdCustomerRequest
 */
 func (a *CustomersApiService) GETReturnIdCustomer(ctx context.Context, returnId string) CustomersApiGETReturnIdCustomerRequest {
 	return CustomersApiGETReturnIdCustomerRequest{
@@ -1344,9 +1346,9 @@ GETSkuListIdCustomer Retrieve the customer associated to the SKU list
 
 Retrieve the customer associated to the SKU list
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param skuListId The resource's id
- @return CustomersApiGETSkuListIdCustomerRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuListId The resource's id
+	@return CustomersApiGETSkuListIdCustomerRequest
 */
 func (a *CustomersApiService) GETSkuListIdCustomer(ctx context.Context, skuListId string) CustomersApiGETSkuListIdCustomerRequest {
 	return CustomersApiGETSkuListIdCustomerRequest{
@@ -1442,9 +1444,9 @@ PATCHCustomersCustomerId Update a customer
 
 Update a customer
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param customerId The resource's id
- @return CustomersApiPATCHCustomersCustomerIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param customerId The resource's id
+	@return CustomersApiPATCHCustomersCustomerIdRequest
 */
 func (a *CustomersApiService) PATCHCustomersCustomerId(ctx context.Context, customerId string) CustomersApiPATCHCustomersCustomerIdRequest {
 	return CustomersApiPATCHCustomersCustomerIdRequest{
@@ -1455,7 +1457,8 @@ func (a *CustomersApiService) PATCHCustomersCustomerId(ctx context.Context, cust
 }
 
 // Execute executes the request
-//  @return PATCHCustomersCustomerId200Response
+//
+//	@return PATCHCustomersCustomerId200Response
 func (a *CustomersApiService) PATCHCustomersCustomerIdExecute(r CustomersApiPATCHCustomersCustomerIdRequest) (*PATCHCustomersCustomerId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -1555,8 +1558,8 @@ POSTCustomers Create a customer
 
 Create a customer
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return CustomersApiPOSTCustomersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return CustomersApiPOSTCustomersRequest
 */
 func (a *CustomersApiService) POSTCustomers(ctx context.Context) CustomersApiPOSTCustomersRequest {
 	return CustomersApiPOSTCustomersRequest{
@@ -1566,7 +1569,8 @@ func (a *CustomersApiService) POSTCustomers(ctx context.Context) CustomersApiPOS
 }
 
 // Execute executes the request
-//  @return POSTCustomers201Response
+//
+//	@return POSTCustomers201Response
 func (a *CustomersApiService) POSTCustomersExecute(r CustomersApiPOSTCustomersRequest) (*POSTCustomers201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**DeliveryLeadTimeDataRelationshipsShippingMethodData**](DeliveryLeadTimeDataRelationshipsShippingMethodData.md) |  | 
+**Data** | Pointer to [**DeliveryLeadTimeDataRelationshipsShippingMethodData**](DeliveryLeadTimeDataRelationshipsShippingMethodData.md) |  | [optional] 
 
 ## Methods
 
 ### NewDeliveryLeadTimeDataRelationshipsShippingMethod
 
-`func NewDeliveryLeadTimeDataRelationshipsShippingMethod(data DeliveryLeadTimeDataRelationshipsShippingMethodData, ) *DeliveryLeadTimeDataRelationshipsShippingMethod`
+`func NewDeliveryLeadTimeDataRelationshipsShippingMethod() *DeliveryLeadTimeDataRelationshipsShippingMethod`
 
 NewDeliveryLeadTimeDataRelationshipsShippingMethod instantiates a new DeliveryLeadTimeDataRelationshipsShippingMethod object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *DeliveryLeadTimeDataRelationshipsShippingMethod) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

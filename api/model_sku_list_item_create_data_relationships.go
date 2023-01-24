@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,15 +17,15 @@ import (
 
 // SkuListItemCreateDataRelationships struct for SkuListItemCreateDataRelationships
 type SkuListItemCreateDataRelationships struct {
-	SkuList BundleDataRelationshipsSkuList `json:"sku_list"`
-	Sku     BundleDataRelationshipsSkus    `json:"sku"`
+	SkuList BundleCreateDataRelationshipsSkuList          `json:"sku_list"`
+	Sku     InStockSubscriptionCreateDataRelationshipsSku `json:"sku"`
 }
 
 // NewSkuListItemCreateDataRelationships instantiates a new SkuListItemCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuListItemCreateDataRelationships(skuList BundleDataRelationshipsSkuList, sku BundleDataRelationshipsSkus) *SkuListItemCreateDataRelationships {
+func NewSkuListItemCreateDataRelationships(skuList BundleCreateDataRelationshipsSkuList, sku InStockSubscriptionCreateDataRelationshipsSku) *SkuListItemCreateDataRelationships {
 	this := SkuListItemCreateDataRelationships{}
 	this.SkuList = skuList
 	this.Sku = sku
@@ -41,9 +41,9 @@ func NewSkuListItemCreateDataRelationshipsWithDefaults() *SkuListItemCreateDataR
 }
 
 // GetSkuList returns the SkuList field value
-func (o *SkuListItemCreateDataRelationships) GetSkuList() BundleDataRelationshipsSkuList {
+func (o *SkuListItemCreateDataRelationships) GetSkuList() BundleCreateDataRelationshipsSkuList {
 	if o == nil {
-		var ret BundleDataRelationshipsSkuList
+		var ret BundleCreateDataRelationshipsSkuList
 		return ret
 	}
 
@@ -52,7 +52,7 @@ func (o *SkuListItemCreateDataRelationships) GetSkuList() BundleDataRelationship
 
 // GetSkuListOk returns a tuple with the SkuList field value
 // and a boolean to check if the value has been set.
-func (o *SkuListItemCreateDataRelationships) GetSkuListOk() (*BundleDataRelationshipsSkuList, bool) {
+func (o *SkuListItemCreateDataRelationships) GetSkuListOk() (*BundleCreateDataRelationshipsSkuList, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -60,14 +60,14 @@ func (o *SkuListItemCreateDataRelationships) GetSkuListOk() (*BundleDataRelation
 }
 
 // SetSkuList sets field value
-func (o *SkuListItemCreateDataRelationships) SetSkuList(v BundleDataRelationshipsSkuList) {
+func (o *SkuListItemCreateDataRelationships) SetSkuList(v BundleCreateDataRelationshipsSkuList) {
 	o.SkuList = v
 }
 
 // GetSku returns the Sku field value
-func (o *SkuListItemCreateDataRelationships) GetSku() BundleDataRelationshipsSkus {
+func (o *SkuListItemCreateDataRelationships) GetSku() InStockSubscriptionCreateDataRelationshipsSku {
 	if o == nil {
-		var ret BundleDataRelationshipsSkus
+		var ret InStockSubscriptionCreateDataRelationshipsSku
 		return ret
 	}
 
@@ -76,7 +76,7 @@ func (o *SkuListItemCreateDataRelationships) GetSku() BundleDataRelationshipsSku
 
 // GetSkuOk returns a tuple with the Sku field value
 // and a boolean to check if the value has been set.
-func (o *SkuListItemCreateDataRelationships) GetSkuOk() (*BundleDataRelationshipsSkus, bool) {
+func (o *SkuListItemCreateDataRelationships) GetSkuOk() (*InStockSubscriptionCreateDataRelationshipsSku, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -84,7 +84,7 @@ func (o *SkuListItemCreateDataRelationships) GetSkuOk() (*BundleDataRelationship
 }
 
 // SetSku sets field value
-func (o *SkuListItemCreateDataRelationships) SetSku(v BundleDataRelationshipsSkus) {
+func (o *SkuListItemCreateDataRelationships) SetSku(v InStockSubscriptionCreateDataRelationshipsSku) {
 	o.Sku = v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -37,8 +37,8 @@ GETPromotions List all promotions
 
 List all promotions
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return PromotionsApiGETPromotionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return PromotionsApiGETPromotionsRequest
 */
 func (a *PromotionsApiService) GETPromotions(ctx context.Context) PromotionsApiGETPromotionsRequest {
 	return PromotionsApiGETPromotionsRequest{
@@ -48,7 +48,8 @@ func (a *PromotionsApiService) GETPromotions(ctx context.Context) PromotionsApiG
 }
 
 // Execute executes the request
-//  @return GETPromotions200Response
+//
+//	@return GETPromotions200Response
 func (a *PromotionsApiService) GETPromotionsExecute(r PromotionsApiGETPromotionsRequest) (*GETPromotions200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -137,9 +138,9 @@ GETPromotionsPromotionId Retrieve a promotion
 
 Retrieve a promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param promotionId The resource's id
- @return PromotionsApiGETPromotionsPromotionIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param promotionId The resource's id
+	@return PromotionsApiGETPromotionsPromotionIdRequest
 */
 func (a *PromotionsApiService) GETPromotionsPromotionId(ctx context.Context, promotionId string) PromotionsApiGETPromotionsPromotionIdRequest {
 	return PromotionsApiGETPromotionsPromotionIdRequest{
@@ -150,7 +151,8 @@ func (a *PromotionsApiService) GETPromotionsPromotionId(ctx context.Context, pro
 }
 
 // Execute executes the request
-//  @return GETPromotionsPromotionId200Response
+//
+//	@return GETPromotionsPromotionId200Response
 func (a *PromotionsApiService) GETPromotionsPromotionIdExecute(r PromotionsApiGETPromotionsPromotionIdRequest) (*GETPromotionsPromotionId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

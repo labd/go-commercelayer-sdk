@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEBillingInfoValidationRulesBillingInfoValidationRuleId Delete a billing inf
 
 Delete a billing info validation rule
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param billingInfoValidationRuleId The resource's id
- @return BillingInfoValidationRulesApiDELETEBillingInfoValidationRulesBillingInfoValidationRuleIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param billingInfoValidationRuleId The resource's id
+	@return BillingInfoValidationRulesApiDELETEBillingInfoValidationRulesBillingInfoValidationRuleIdRequest
 */
 func (a *BillingInfoValidationRulesApiService) DELETEBillingInfoValidationRulesBillingInfoValidationRuleId(ctx context.Context, billingInfoValidationRuleId string) BillingInfoValidationRulesApiDELETEBillingInfoValidationRulesBillingInfoValidationRuleIdRequest {
 	return BillingInfoValidationRulesApiDELETEBillingInfoValidationRulesBillingInfoValidationRuleIdRequest{
@@ -129,8 +129,8 @@ GETBillingInfoValidationRules List all billing info validation rules
 
 List all billing info validation rules
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return BillingInfoValidationRulesApiGETBillingInfoValidationRulesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return BillingInfoValidationRulesApiGETBillingInfoValidationRulesRequest
 */
 func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRules(ctx context.Context) BillingInfoValidationRulesApiGETBillingInfoValidationRulesRequest {
 	return BillingInfoValidationRulesApiGETBillingInfoValidationRulesRequest{
@@ -140,7 +140,8 @@ func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRules(ctx
 }
 
 // Execute executes the request
-//  @return GETBillingInfoValidationRules200Response
+//
+//	@return GETBillingInfoValidationRules200Response
 func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesExecute(r BillingInfoValidationRulesApiGETBillingInfoValidationRulesRequest) (*GETBillingInfoValidationRules200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -229,9 +230,9 @@ GETBillingInfoValidationRulesBillingInfoValidationRuleId Retrieve a billing info
 
 Retrieve a billing info validation rule
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param billingInfoValidationRuleId The resource's id
- @return BillingInfoValidationRulesApiGETBillingInfoValidationRulesBillingInfoValidationRuleIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param billingInfoValidationRuleId The resource's id
+	@return BillingInfoValidationRulesApiGETBillingInfoValidationRulesBillingInfoValidationRuleIdRequest
 */
 func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesBillingInfoValidationRuleId(ctx context.Context, billingInfoValidationRuleId string) BillingInfoValidationRulesApiGETBillingInfoValidationRulesBillingInfoValidationRuleIdRequest {
 	return BillingInfoValidationRulesApiGETBillingInfoValidationRulesBillingInfoValidationRuleIdRequest{
@@ -242,7 +243,8 @@ func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesBill
 }
 
 // Execute executes the request
-//  @return GETBillingInfoValidationRulesBillingInfoValidationRuleId200Response
+//
+//	@return GETBillingInfoValidationRulesBillingInfoValidationRuleId200Response
 func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesBillingInfoValidationRuleIdExecute(r BillingInfoValidationRulesApiGETBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) (*GETBillingInfoValidationRulesBillingInfoValidationRuleId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -338,9 +340,9 @@ PATCHBillingInfoValidationRulesBillingInfoValidationRuleId Update a billing info
 
 Update a billing info validation rule
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param billingInfoValidationRuleId The resource's id
- @return BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param billingInfoValidationRuleId The resource's id
+	@return BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest
 */
 func (a *BillingInfoValidationRulesApiService) PATCHBillingInfoValidationRulesBillingInfoValidationRuleId(ctx context.Context, billingInfoValidationRuleId string) BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest {
 	return BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest{
@@ -351,7 +353,8 @@ func (a *BillingInfoValidationRulesApiService) PATCHBillingInfoValidationRulesBi
 }
 
 // Execute executes the request
-//  @return POSTBillingInfoValidationRules201Response
+//
+//	@return POSTBillingInfoValidationRules201Response
 func (a *BillingInfoValidationRulesApiService) PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdExecute(r BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) (*POSTBillingInfoValidationRules201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -451,8 +454,8 @@ POSTBillingInfoValidationRules Create a billing info validation rule
 
 Create a billing info validation rule
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return BillingInfoValidationRulesApiPOSTBillingInfoValidationRulesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return BillingInfoValidationRulesApiPOSTBillingInfoValidationRulesRequest
 */
 func (a *BillingInfoValidationRulesApiService) POSTBillingInfoValidationRules(ctx context.Context) BillingInfoValidationRulesApiPOSTBillingInfoValidationRulesRequest {
 	return BillingInfoValidationRulesApiPOSTBillingInfoValidationRulesRequest{
@@ -462,7 +465,8 @@ func (a *BillingInfoValidationRulesApiService) POSTBillingInfoValidationRules(ct
 }
 
 // Execute executes the request
-//  @return POSTBillingInfoValidationRules201Response
+//
+//	@return POSTBillingInfoValidationRules201Response
 func (a *BillingInfoValidationRulesApiService) POSTBillingInfoValidationRulesExecute(r BillingInfoValidationRulesApiPOSTBillingInfoValidationRulesRequest) (*POSTBillingInfoValidationRules201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

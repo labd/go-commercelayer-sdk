@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**CustomerDataRelationshipsReturnsData**](CustomerDataRelationshipsReturnsData.md) |  | 
+**Data** | Pointer to [**CustomerDataRelationshipsReturnsData**](CustomerDataRelationshipsReturnsData.md) |  | [optional] 
 
 ## Methods
 
 ### NewCustomerDataRelationshipsReturns
 
-`func NewCustomerDataRelationshipsReturns(data CustomerDataRelationshipsReturnsData, ) *CustomerDataRelationshipsReturns`
+`func NewCustomerDataRelationshipsReturns() *CustomerDataRelationshipsReturns`
 
 NewCustomerDataRelationshipsReturns instantiates a new CustomerDataRelationshipsReturns object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *CustomerDataRelationshipsReturns) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

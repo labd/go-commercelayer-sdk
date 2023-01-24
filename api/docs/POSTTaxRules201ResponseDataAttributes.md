@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Name** | **string** | The tax rule internal name. | 
-**TaxRate** | Pointer to **float32** | The tax rate for this ruke. | [optional] 
+**TaxRate** | Pointer to **float32** | The tax rate for this rule. | [optional] 
 **CountryCodeRegex** | Pointer to **string** | The regex that will be evaluated to match the shipping address country code. | [optional] 
 **NotCountryCodeRegex** | Pointer to **string** | The regex that will be evaluated as negative match for the shipping address country code. | [optional] 
 **StateCodeRegex** | Pointer to **string** | The regex that will be evaluated to match the shipping address state code. | [optional] 

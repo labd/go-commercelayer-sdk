@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**ShippingCategory** | [**ShipmentDataRelationshipsShippingCategory**](ShipmentDataRelationshipsShippingCategory.md) |  | 
+**ShippingCategory** | [**ShippingMethodCreateDataRelationshipsShippingCategory**](ShippingMethodCreateDataRelationshipsShippingCategory.md) |  | 
 
 ## Methods
 
 ### NewSkuCreateDataRelationships
 
-`func NewSkuCreateDataRelationships(shippingCategory ShipmentDataRelationshipsShippingCategory, ) *SkuCreateDataRelationships`
+`func NewSkuCreateDataRelationships(shippingCategory ShippingMethodCreateDataRelationshipsShippingCategory, ) *SkuCreateDataRelationships`
 
 NewSkuCreateDataRelationships instantiates a new SkuCreateDataRelationships object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetShippingCategory
 
-`func (o *SkuCreateDataRelationships) GetShippingCategory() ShipmentDataRelationshipsShippingCategory`
+`func (o *SkuCreateDataRelationships) GetShippingCategory() ShippingMethodCreateDataRelationshipsShippingCategory`
 
 GetShippingCategory returns the ShippingCategory field if non-nil, zero value otherwise.
 
 ### GetShippingCategoryOk
 
-`func (o *SkuCreateDataRelationships) GetShippingCategoryOk() (*ShipmentDataRelationshipsShippingCategory, bool)`
+`func (o *SkuCreateDataRelationships) GetShippingCategoryOk() (*ShippingMethodCreateDataRelationshipsShippingCategory, bool)`
 
 GetShippingCategoryOk returns a tuple with the ShippingCategory field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetShippingCategory
 
-`func (o *SkuCreateDataRelationships) SetShippingCategory(v ShipmentDataRelationshipsShippingCategory)`
+`func (o *SkuCreateDataRelationships) SetShippingCategory(v ShippingMethodCreateDataRelationshipsShippingCategory)`
 
 SetShippingCategory sets ShippingCategory field to given value.
 

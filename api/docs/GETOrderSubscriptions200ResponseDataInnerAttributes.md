@@ -16,7 +16,6 @@ Name | Type | Description | Notes
 **ErrorsCount** | Pointer to **int32** | Indicates the number of subscription errors, if any. | [optional] 
 **SucceededOnLastRun** | Pointer to **bool** | Indicates if the subscription has succeeded on its last run. | [optional] 
 **Options** | Pointer to **map[string]interface{}** | The subscription options used to create the order copy (check order_copies for more information). For subscriptions the &#x60;place_target_order&#x60; is enabled by default, specify custom options to overwrite it. | [optional] 
-**Id** | Pointer to **string** | Unique identifier for the resource (hash). | [optional] 
 **CreatedAt** | Pointer to **string** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **string** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **string** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
@@ -341,31 +340,6 @@ SetOptions sets Options field to given value.
 `func (o *GETOrderSubscriptions200ResponseDataInnerAttributes) HasOptions() bool`
 
 HasOptions returns a boolean if a field has been set.
-
-### GetId
-
-`func (o *GETOrderSubscriptions200ResponseDataInnerAttributes) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GETOrderSubscriptions200ResponseDataInnerAttributes) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GETOrderSubscriptions200ResponseDataInnerAttributes) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *GETOrderSubscriptions200ResponseDataInnerAttributes) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**OrderData**](OrderData.md) |  | 
+**Data** | Pointer to [**OrderData**](OrderData.md) |  | [optional] 
 
 ## Methods
 
 ### NewOrder
 
-`func NewOrder(data OrderData, ) *Order`
+`func NewOrder() *Order`
 
 NewOrder instantiates a new Order object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *Order) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

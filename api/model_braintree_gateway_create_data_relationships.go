@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,7 +17,7 @@ import (
 
 // BraintreeGatewayCreateDataRelationships struct for BraintreeGatewayCreateDataRelationships
 type BraintreeGatewayCreateDataRelationships struct {
-	BraintreePayments *BraintreeGatewayDataRelationshipsBraintreePayments `json:"braintree_payments,omitempty"`
+	BraintreePayments *BraintreeGatewayCreateDataRelationshipsBraintreePayments `json:"braintree_payments,omitempty"`
 }
 
 // NewBraintreeGatewayCreateDataRelationships instantiates a new BraintreeGatewayCreateDataRelationships object
@@ -38,9 +38,9 @@ func NewBraintreeGatewayCreateDataRelationshipsWithDefaults() *BraintreeGatewayC
 }
 
 // GetBraintreePayments returns the BraintreePayments field value if set, zero value otherwise.
-func (o *BraintreeGatewayCreateDataRelationships) GetBraintreePayments() BraintreeGatewayDataRelationshipsBraintreePayments {
+func (o *BraintreeGatewayCreateDataRelationships) GetBraintreePayments() BraintreeGatewayCreateDataRelationshipsBraintreePayments {
 	if o == nil || o.BraintreePayments == nil {
-		var ret BraintreeGatewayDataRelationshipsBraintreePayments
+		var ret BraintreeGatewayCreateDataRelationshipsBraintreePayments
 		return ret
 	}
 	return *o.BraintreePayments
@@ -48,7 +48,7 @@ func (o *BraintreeGatewayCreateDataRelationships) GetBraintreePayments() Braintr
 
 // GetBraintreePaymentsOk returns a tuple with the BraintreePayments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BraintreeGatewayCreateDataRelationships) GetBraintreePaymentsOk() (*BraintreeGatewayDataRelationshipsBraintreePayments, bool) {
+func (o *BraintreeGatewayCreateDataRelationships) GetBraintreePaymentsOk() (*BraintreeGatewayCreateDataRelationshipsBraintreePayments, bool) {
 	if o == nil || o.BraintreePayments == nil {
 		return nil, false
 	}
@@ -64,8 +64,8 @@ func (o *BraintreeGatewayCreateDataRelationships) HasBraintreePayments() bool {
 	return false
 }
 
-// SetBraintreePayments gets a reference to the given BraintreeGatewayDataRelationshipsBraintreePayments and assigns it to the BraintreePayments field.
-func (o *BraintreeGatewayCreateDataRelationships) SetBraintreePayments(v BraintreeGatewayDataRelationshipsBraintreePayments) {
+// SetBraintreePayments gets a reference to the given BraintreeGatewayCreateDataRelationshipsBraintreePayments and assigns it to the BraintreePayments field.
+func (o *BraintreeGatewayCreateDataRelationships) SetBraintreePayments(v BraintreeGatewayCreateDataRelationshipsBraintreePayments) {
 	o.BraintreePayments = &v
 }
 

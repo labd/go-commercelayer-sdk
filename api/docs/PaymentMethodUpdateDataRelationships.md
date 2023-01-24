@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Market** | Pointer to [**AvalaraAccountDataRelationshipsMarkets**](AvalaraAccountDataRelationshipsMarkets.md) |  | [optional] 
-**PaymentGateway** | Pointer to [**AdyenPaymentDataRelationshipsPaymentGateway**](AdyenPaymentDataRelationshipsPaymentGateway.md) |  | [optional] 
+**Market** | Pointer to [**BillingInfoValidationRuleCreateDataRelationshipsMarket**](BillingInfoValidationRuleCreateDataRelationshipsMarket.md) |  | [optional] 
+**PaymentGateway** | Pointer to [**PaymentMethodCreateDataRelationshipsPaymentGateway**](PaymentMethodCreateDataRelationshipsPaymentGateway.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMarket
 
-`func (o *PaymentMethodUpdateDataRelationships) GetMarket() AvalaraAccountDataRelationshipsMarkets`
+`func (o *PaymentMethodUpdateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket`
 
 GetMarket returns the Market field if non-nil, zero value otherwise.
 
 ### GetMarketOk
 
-`func (o *PaymentMethodUpdateDataRelationships) GetMarketOk() (*AvalaraAccountDataRelationshipsMarkets, bool)`
+`func (o *PaymentMethodUpdateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool)`
 
 GetMarketOk returns a tuple with the Market field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMarket
 
-`func (o *PaymentMethodUpdateDataRelationships) SetMarket(v AvalaraAccountDataRelationshipsMarkets)`
+`func (o *PaymentMethodUpdateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket)`
 
 SetMarket sets Market field to given value.
 
@@ -53,20 +53,20 @@ HasMarket returns a boolean if a field has been set.
 
 ### GetPaymentGateway
 
-`func (o *PaymentMethodUpdateDataRelationships) GetPaymentGateway() AdyenPaymentDataRelationshipsPaymentGateway`
+`func (o *PaymentMethodUpdateDataRelationships) GetPaymentGateway() PaymentMethodCreateDataRelationshipsPaymentGateway`
 
 GetPaymentGateway returns the PaymentGateway field if non-nil, zero value otherwise.
 
 ### GetPaymentGatewayOk
 
-`func (o *PaymentMethodUpdateDataRelationships) GetPaymentGatewayOk() (*AdyenPaymentDataRelationshipsPaymentGateway, bool)`
+`func (o *PaymentMethodUpdateDataRelationships) GetPaymentGatewayOk() (*PaymentMethodCreateDataRelationshipsPaymentGateway, bool)`
 
 GetPaymentGatewayOk returns a tuple with the PaymentGateway field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPaymentGateway
 
-`func (o *PaymentMethodUpdateDataRelationships) SetPaymentGateway(v AdyenPaymentDataRelationshipsPaymentGateway)`
+`func (o *PaymentMethodUpdateDataRelationships) SetPaymentGateway(v PaymentMethodCreateDataRelationshipsPaymentGateway)`
 
 SetPaymentGateway sets PaymentGateway field to given value.
 

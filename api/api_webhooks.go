@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEWebhooksWebhookId Delete a webhook
 
 Delete a webhook
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param webhookId The resource's id
- @return WebhooksApiDELETEWebhooksWebhookIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param webhookId The resource's id
+	@return WebhooksApiDELETEWebhooksWebhookIdRequest
 */
 func (a *WebhooksApiService) DELETEWebhooksWebhookId(ctx context.Context, webhookId string) WebhooksApiDELETEWebhooksWebhookIdRequest {
 	return WebhooksApiDELETEWebhooksWebhookIdRequest{
@@ -130,9 +130,9 @@ GETEventCallbackIdWebhook Retrieve the webhook associated to the event callback
 
 Retrieve the webhook associated to the event callback
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param eventCallbackId The resource's id
- @return WebhooksApiGETEventCallbackIdWebhookRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param eventCallbackId The resource's id
+	@return WebhooksApiGETEventCallbackIdWebhookRequest
 */
 func (a *WebhooksApiService) GETEventCallbackIdWebhook(ctx context.Context, eventCallbackId string) WebhooksApiGETEventCallbackIdWebhookRequest {
 	return WebhooksApiGETEventCallbackIdWebhookRequest{
@@ -222,9 +222,9 @@ GETEventIdWebhooks Retrieve the webhooks associated to the event
 
 Retrieve the webhooks associated to the event
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param eventId The resource's id
- @return WebhooksApiGETEventIdWebhooksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param eventId The resource's id
+	@return WebhooksApiGETEventIdWebhooksRequest
 */
 func (a *WebhooksApiService) GETEventIdWebhooks(ctx context.Context, eventId string) WebhooksApiGETEventIdWebhooksRequest {
 	return WebhooksApiGETEventIdWebhooksRequest{
@@ -313,8 +313,8 @@ GETWebhooks List all webhooks
 
 List all webhooks
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return WebhooksApiGETWebhooksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return WebhooksApiGETWebhooksRequest
 */
 func (a *WebhooksApiService) GETWebhooks(ctx context.Context) WebhooksApiGETWebhooksRequest {
 	return WebhooksApiGETWebhooksRequest{
@@ -324,7 +324,8 @@ func (a *WebhooksApiService) GETWebhooks(ctx context.Context) WebhooksApiGETWebh
 }
 
 // Execute executes the request
-//  @return GETWebhooks200Response
+//
+//	@return GETWebhooks200Response
 func (a *WebhooksApiService) GETWebhooksExecute(r WebhooksApiGETWebhooksRequest) (*GETWebhooks200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -413,9 +414,9 @@ GETWebhooksWebhookId Retrieve a webhook
 
 Retrieve a webhook
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param webhookId The resource's id
- @return WebhooksApiGETWebhooksWebhookIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param webhookId The resource's id
+	@return WebhooksApiGETWebhooksWebhookIdRequest
 */
 func (a *WebhooksApiService) GETWebhooksWebhookId(ctx context.Context, webhookId string) WebhooksApiGETWebhooksWebhookIdRequest {
 	return WebhooksApiGETWebhooksWebhookIdRequest{
@@ -426,7 +427,8 @@ func (a *WebhooksApiService) GETWebhooksWebhookId(ctx context.Context, webhookId
 }
 
 // Execute executes the request
-//  @return GETWebhooksWebhookId200Response
+//
+//	@return GETWebhooksWebhookId200Response
 func (a *WebhooksApiService) GETWebhooksWebhookIdExecute(r WebhooksApiGETWebhooksWebhookIdRequest) (*GETWebhooksWebhookId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -522,9 +524,9 @@ PATCHWebhooksWebhookId Update a webhook
 
 Update a webhook
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param webhookId The resource's id
- @return WebhooksApiPATCHWebhooksWebhookIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param webhookId The resource's id
+	@return WebhooksApiPATCHWebhooksWebhookIdRequest
 */
 func (a *WebhooksApiService) PATCHWebhooksWebhookId(ctx context.Context, webhookId string) WebhooksApiPATCHWebhooksWebhookIdRequest {
 	return WebhooksApiPATCHWebhooksWebhookIdRequest{
@@ -535,7 +537,8 @@ func (a *WebhooksApiService) PATCHWebhooksWebhookId(ctx context.Context, webhook
 }
 
 // Execute executes the request
-//  @return PATCHWebhooksWebhookId200Response
+//
+//	@return PATCHWebhooksWebhookId200Response
 func (a *WebhooksApiService) PATCHWebhooksWebhookIdExecute(r WebhooksApiPATCHWebhooksWebhookIdRequest) (*PATCHWebhooksWebhookId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -635,8 +638,8 @@ POSTWebhooks Create a webhook
 
 Create a webhook
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return WebhooksApiPOSTWebhooksRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return WebhooksApiPOSTWebhooksRequest
 */
 func (a *WebhooksApiService) POSTWebhooks(ctx context.Context) WebhooksApiPOSTWebhooksRequest {
 	return WebhooksApiPOSTWebhooksRequest{
@@ -646,7 +649,8 @@ func (a *WebhooksApiService) POSTWebhooks(ctx context.Context) WebhooksApiPOSTWe
 }
 
 // Execute executes the request
-//  @return POSTWebhooks201Response
+//
+//	@return POSTWebhooks201Response
 func (a *WebhooksApiService) POSTWebhooksExecute(r WebhooksApiPOSTWebhooksRequest) (*POSTWebhooks201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

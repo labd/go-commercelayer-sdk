@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,12 +17,12 @@ import (
 
 // OrderCreateDataRelationships struct for OrderCreateDataRelationships
 type OrderCreateDataRelationships struct {
-	Market          *AvalaraAccountDataRelationshipsMarkets              `json:"market,omitempty"`
-	Customer        *CouponRecipientDataRelationshipsCustomer            `json:"customer,omitempty"`
-	ShippingAddress *BingGeocoderDataRelationshipsAddresses              `json:"shipping_address,omitempty"`
-	BillingAddress  *BingGeocoderDataRelationshipsAddresses              `json:"billing_address,omitempty"`
-	PaymentMethod   *AdyenGatewayDataRelationshipsPaymentMethods         `json:"payment_method,omitempty"`
-	PaymentSource   *CustomerPaymentSourceDataRelationshipsPaymentSource `json:"payment_source,omitempty"`
+	Market          *BillingInfoValidationRuleCreateDataRelationshipsMarket    `json:"market,omitempty"`
+	Customer        *CouponRecipientCreateDataRelationshipsCustomer            `json:"customer,omitempty"`
+	ShippingAddress *CustomerAddressCreateDataRelationshipsAddress             `json:"shipping_address,omitempty"`
+	BillingAddress  *CustomerAddressCreateDataRelationshipsAddress             `json:"billing_address,omitempty"`
+	PaymentMethod   *OrderCreateDataRelationshipsPaymentMethod                 `json:"payment_method,omitempty"`
+	PaymentSource   *CustomerPaymentSourceCreateDataRelationshipsPaymentSource `json:"payment_source,omitempty"`
 }
 
 // NewOrderCreateDataRelationships instantiates a new OrderCreateDataRelationships object
@@ -43,9 +43,9 @@ func NewOrderCreateDataRelationshipsWithDefaults() *OrderCreateDataRelationships
 }
 
 // GetMarket returns the Market field value if set, zero value otherwise.
-func (o *OrderCreateDataRelationships) GetMarket() AvalaraAccountDataRelationshipsMarkets {
+func (o *OrderCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket {
 	if o == nil || o.Market == nil {
-		var ret AvalaraAccountDataRelationshipsMarkets
+		var ret BillingInfoValidationRuleCreateDataRelationshipsMarket
 		return ret
 	}
 	return *o.Market
@@ -53,7 +53,7 @@ func (o *OrderCreateDataRelationships) GetMarket() AvalaraAccountDataRelationshi
 
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderCreateDataRelationships) GetMarketOk() (*AvalaraAccountDataRelationshipsMarkets, bool) {
+func (o *OrderCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool) {
 	if o == nil || o.Market == nil {
 		return nil, false
 	}
@@ -69,15 +69,15 @@ func (o *OrderCreateDataRelationships) HasMarket() bool {
 	return false
 }
 
-// SetMarket gets a reference to the given AvalaraAccountDataRelationshipsMarkets and assigns it to the Market field.
-func (o *OrderCreateDataRelationships) SetMarket(v AvalaraAccountDataRelationshipsMarkets) {
+// SetMarket gets a reference to the given BillingInfoValidationRuleCreateDataRelationshipsMarket and assigns it to the Market field.
+func (o *OrderCreateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket) {
 	o.Market = &v
 }
 
 // GetCustomer returns the Customer field value if set, zero value otherwise.
-func (o *OrderCreateDataRelationships) GetCustomer() CouponRecipientDataRelationshipsCustomer {
+func (o *OrderCreateDataRelationships) GetCustomer() CouponRecipientCreateDataRelationshipsCustomer {
 	if o == nil || o.Customer == nil {
-		var ret CouponRecipientDataRelationshipsCustomer
+		var ret CouponRecipientCreateDataRelationshipsCustomer
 		return ret
 	}
 	return *o.Customer
@@ -85,7 +85,7 @@ func (o *OrderCreateDataRelationships) GetCustomer() CouponRecipientDataRelation
 
 // GetCustomerOk returns a tuple with the Customer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderCreateDataRelationships) GetCustomerOk() (*CouponRecipientDataRelationshipsCustomer, bool) {
+func (o *OrderCreateDataRelationships) GetCustomerOk() (*CouponRecipientCreateDataRelationshipsCustomer, bool) {
 	if o == nil || o.Customer == nil {
 		return nil, false
 	}
@@ -101,15 +101,15 @@ func (o *OrderCreateDataRelationships) HasCustomer() bool {
 	return false
 }
 
-// SetCustomer gets a reference to the given CouponRecipientDataRelationshipsCustomer and assigns it to the Customer field.
-func (o *OrderCreateDataRelationships) SetCustomer(v CouponRecipientDataRelationshipsCustomer) {
+// SetCustomer gets a reference to the given CouponRecipientCreateDataRelationshipsCustomer and assigns it to the Customer field.
+func (o *OrderCreateDataRelationships) SetCustomer(v CouponRecipientCreateDataRelationshipsCustomer) {
 	o.Customer = &v
 }
 
 // GetShippingAddress returns the ShippingAddress field value if set, zero value otherwise.
-func (o *OrderCreateDataRelationships) GetShippingAddress() BingGeocoderDataRelationshipsAddresses {
+func (o *OrderCreateDataRelationships) GetShippingAddress() CustomerAddressCreateDataRelationshipsAddress {
 	if o == nil || o.ShippingAddress == nil {
-		var ret BingGeocoderDataRelationshipsAddresses
+		var ret CustomerAddressCreateDataRelationshipsAddress
 		return ret
 	}
 	return *o.ShippingAddress
@@ -117,7 +117,7 @@ func (o *OrderCreateDataRelationships) GetShippingAddress() BingGeocoderDataRela
 
 // GetShippingAddressOk returns a tuple with the ShippingAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderCreateDataRelationships) GetShippingAddressOk() (*BingGeocoderDataRelationshipsAddresses, bool) {
+func (o *OrderCreateDataRelationships) GetShippingAddressOk() (*CustomerAddressCreateDataRelationshipsAddress, bool) {
 	if o == nil || o.ShippingAddress == nil {
 		return nil, false
 	}
@@ -133,15 +133,15 @@ func (o *OrderCreateDataRelationships) HasShippingAddress() bool {
 	return false
 }
 
-// SetShippingAddress gets a reference to the given BingGeocoderDataRelationshipsAddresses and assigns it to the ShippingAddress field.
-func (o *OrderCreateDataRelationships) SetShippingAddress(v BingGeocoderDataRelationshipsAddresses) {
+// SetShippingAddress gets a reference to the given CustomerAddressCreateDataRelationshipsAddress and assigns it to the ShippingAddress field.
+func (o *OrderCreateDataRelationships) SetShippingAddress(v CustomerAddressCreateDataRelationshipsAddress) {
 	o.ShippingAddress = &v
 }
 
 // GetBillingAddress returns the BillingAddress field value if set, zero value otherwise.
-func (o *OrderCreateDataRelationships) GetBillingAddress() BingGeocoderDataRelationshipsAddresses {
+func (o *OrderCreateDataRelationships) GetBillingAddress() CustomerAddressCreateDataRelationshipsAddress {
 	if o == nil || o.BillingAddress == nil {
-		var ret BingGeocoderDataRelationshipsAddresses
+		var ret CustomerAddressCreateDataRelationshipsAddress
 		return ret
 	}
 	return *o.BillingAddress
@@ -149,7 +149,7 @@ func (o *OrderCreateDataRelationships) GetBillingAddress() BingGeocoderDataRelat
 
 // GetBillingAddressOk returns a tuple with the BillingAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderCreateDataRelationships) GetBillingAddressOk() (*BingGeocoderDataRelationshipsAddresses, bool) {
+func (o *OrderCreateDataRelationships) GetBillingAddressOk() (*CustomerAddressCreateDataRelationshipsAddress, bool) {
 	if o == nil || o.BillingAddress == nil {
 		return nil, false
 	}
@@ -165,15 +165,15 @@ func (o *OrderCreateDataRelationships) HasBillingAddress() bool {
 	return false
 }
 
-// SetBillingAddress gets a reference to the given BingGeocoderDataRelationshipsAddresses and assigns it to the BillingAddress field.
-func (o *OrderCreateDataRelationships) SetBillingAddress(v BingGeocoderDataRelationshipsAddresses) {
+// SetBillingAddress gets a reference to the given CustomerAddressCreateDataRelationshipsAddress and assigns it to the BillingAddress field.
+func (o *OrderCreateDataRelationships) SetBillingAddress(v CustomerAddressCreateDataRelationshipsAddress) {
 	o.BillingAddress = &v
 }
 
 // GetPaymentMethod returns the PaymentMethod field value if set, zero value otherwise.
-func (o *OrderCreateDataRelationships) GetPaymentMethod() AdyenGatewayDataRelationshipsPaymentMethods {
+func (o *OrderCreateDataRelationships) GetPaymentMethod() OrderCreateDataRelationshipsPaymentMethod {
 	if o == nil || o.PaymentMethod == nil {
-		var ret AdyenGatewayDataRelationshipsPaymentMethods
+		var ret OrderCreateDataRelationshipsPaymentMethod
 		return ret
 	}
 	return *o.PaymentMethod
@@ -181,7 +181,7 @@ func (o *OrderCreateDataRelationships) GetPaymentMethod() AdyenGatewayDataRelati
 
 // GetPaymentMethodOk returns a tuple with the PaymentMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderCreateDataRelationships) GetPaymentMethodOk() (*AdyenGatewayDataRelationshipsPaymentMethods, bool) {
+func (o *OrderCreateDataRelationships) GetPaymentMethodOk() (*OrderCreateDataRelationshipsPaymentMethod, bool) {
 	if o == nil || o.PaymentMethod == nil {
 		return nil, false
 	}
@@ -197,15 +197,15 @@ func (o *OrderCreateDataRelationships) HasPaymentMethod() bool {
 	return false
 }
 
-// SetPaymentMethod gets a reference to the given AdyenGatewayDataRelationshipsPaymentMethods and assigns it to the PaymentMethod field.
-func (o *OrderCreateDataRelationships) SetPaymentMethod(v AdyenGatewayDataRelationshipsPaymentMethods) {
+// SetPaymentMethod gets a reference to the given OrderCreateDataRelationshipsPaymentMethod and assigns it to the PaymentMethod field.
+func (o *OrderCreateDataRelationships) SetPaymentMethod(v OrderCreateDataRelationshipsPaymentMethod) {
 	o.PaymentMethod = &v
 }
 
 // GetPaymentSource returns the PaymentSource field value if set, zero value otherwise.
-func (o *OrderCreateDataRelationships) GetPaymentSource() CustomerPaymentSourceDataRelationshipsPaymentSource {
+func (o *OrderCreateDataRelationships) GetPaymentSource() CustomerPaymentSourceCreateDataRelationshipsPaymentSource {
 	if o == nil || o.PaymentSource == nil {
-		var ret CustomerPaymentSourceDataRelationshipsPaymentSource
+		var ret CustomerPaymentSourceCreateDataRelationshipsPaymentSource
 		return ret
 	}
 	return *o.PaymentSource
@@ -213,7 +213,7 @@ func (o *OrderCreateDataRelationships) GetPaymentSource() CustomerPaymentSourceD
 
 // GetPaymentSourceOk returns a tuple with the PaymentSource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderCreateDataRelationships) GetPaymentSourceOk() (*CustomerPaymentSourceDataRelationshipsPaymentSource, bool) {
+func (o *OrderCreateDataRelationships) GetPaymentSourceOk() (*CustomerPaymentSourceCreateDataRelationshipsPaymentSource, bool) {
 	if o == nil || o.PaymentSource == nil {
 		return nil, false
 	}
@@ -229,8 +229,8 @@ func (o *OrderCreateDataRelationships) HasPaymentSource() bool {
 	return false
 }
 
-// SetPaymentSource gets a reference to the given CustomerPaymentSourceDataRelationshipsPaymentSource and assigns it to the PaymentSource field.
-func (o *OrderCreateDataRelationships) SetPaymentSource(v CustomerPaymentSourceDataRelationshipsPaymentSource) {
+// SetPaymentSource gets a reference to the given CustomerPaymentSourceCreateDataRelationshipsPaymentSource and assigns it to the PaymentSource field.
+func (o *OrderCreateDataRelationships) SetPaymentSource(v CustomerPaymentSourceCreateDataRelationshipsPaymentSource) {
 	o.PaymentSource = &v
 }
 

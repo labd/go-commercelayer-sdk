@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**StockLocation** | [**DeliveryLeadTimeDataRelationshipsStockLocation**](DeliveryLeadTimeDataRelationshipsStockLocation.md) |  | 
-**ShippingMethod** | [**DeliveryLeadTimeDataRelationshipsShippingMethod**](DeliveryLeadTimeDataRelationshipsShippingMethod.md) |  | 
+**StockLocation** | [**DeliveryLeadTimeCreateDataRelationshipsStockLocation**](DeliveryLeadTimeCreateDataRelationshipsStockLocation.md) |  | 
+**ShippingMethod** | [**DeliveryLeadTimeCreateDataRelationshipsShippingMethod**](DeliveryLeadTimeCreateDataRelationshipsShippingMethod.md) |  | 
 
 ## Methods
 
 ### NewDeliveryLeadTimeCreateDataRelationships
 
-`func NewDeliveryLeadTimeCreateDataRelationships(stockLocation DeliveryLeadTimeDataRelationshipsStockLocation, shippingMethod DeliveryLeadTimeDataRelationshipsShippingMethod, ) *DeliveryLeadTimeCreateDataRelationships`
+`func NewDeliveryLeadTimeCreateDataRelationships(stockLocation DeliveryLeadTimeCreateDataRelationshipsStockLocation, shippingMethod DeliveryLeadTimeCreateDataRelationshipsShippingMethod, ) *DeliveryLeadTimeCreateDataRelationships`
 
 NewDeliveryLeadTimeCreateDataRelationships instantiates a new DeliveryLeadTimeCreateDataRelationships object
 This constructor will assign default values to properties that have it defined,
@@ -28,40 +28,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetStockLocation
 
-`func (o *DeliveryLeadTimeCreateDataRelationships) GetStockLocation() DeliveryLeadTimeDataRelationshipsStockLocation`
+`func (o *DeliveryLeadTimeCreateDataRelationships) GetStockLocation() DeliveryLeadTimeCreateDataRelationshipsStockLocation`
 
 GetStockLocation returns the StockLocation field if non-nil, zero value otherwise.
 
 ### GetStockLocationOk
 
-`func (o *DeliveryLeadTimeCreateDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeDataRelationshipsStockLocation, bool)`
+`func (o *DeliveryLeadTimeCreateDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeCreateDataRelationshipsStockLocation, bool)`
 
 GetStockLocationOk returns a tuple with the StockLocation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStockLocation
 
-`func (o *DeliveryLeadTimeCreateDataRelationships) SetStockLocation(v DeliveryLeadTimeDataRelationshipsStockLocation)`
+`func (o *DeliveryLeadTimeCreateDataRelationships) SetStockLocation(v DeliveryLeadTimeCreateDataRelationshipsStockLocation)`
 
 SetStockLocation sets StockLocation field to given value.
 
 
 ### GetShippingMethod
 
-`func (o *DeliveryLeadTimeCreateDataRelationships) GetShippingMethod() DeliveryLeadTimeDataRelationshipsShippingMethod`
+`func (o *DeliveryLeadTimeCreateDataRelationships) GetShippingMethod() DeliveryLeadTimeCreateDataRelationshipsShippingMethod`
 
 GetShippingMethod returns the ShippingMethod field if non-nil, zero value otherwise.
 
 ### GetShippingMethodOk
 
-`func (o *DeliveryLeadTimeCreateDataRelationships) GetShippingMethodOk() (*DeliveryLeadTimeDataRelationshipsShippingMethod, bool)`
+`func (o *DeliveryLeadTimeCreateDataRelationships) GetShippingMethodOk() (*DeliveryLeadTimeCreateDataRelationshipsShippingMethod, bool)`
 
 GetShippingMethodOk returns a tuple with the ShippingMethod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetShippingMethod
 
-`func (o *DeliveryLeadTimeCreateDataRelationships) SetShippingMethod(v DeliveryLeadTimeDataRelationshipsShippingMethod)`
+`func (o *DeliveryLeadTimeCreateDataRelationships) SetShippingMethod(v DeliveryLeadTimeCreateDataRelationshipsShippingMethod)`
 
 SetShippingMethod sets ShippingMethod field to given value.
 

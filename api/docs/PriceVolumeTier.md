@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PriceVolumeTierData**](PriceVolumeTierData.md) |  | 
+**Data** | Pointer to [**PriceVolumeTierData**](PriceVolumeTierData.md) |  | [optional] 
 
 ## Methods
 
 ### NewPriceVolumeTier
 
-`func NewPriceVolumeTier(data PriceVolumeTierData, ) *PriceVolumeTier`
+`func NewPriceVolumeTier() *PriceVolumeTier`
 
 NewPriceVolumeTier instantiates a new PriceVolumeTier object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *PriceVolumeTier) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

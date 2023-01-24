@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks**](GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks.md) |  | [optional] 
-**Data** | Pointer to [**[]GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiersDataInner**](GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiersDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiersData**](GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiersData.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiers) GetData() []GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiersDataInner`
+`func (o *GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiers) GetData() GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiersData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiers) GetDataOk() (*[]GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiersDataInner, bool)`
+`func (o *GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiers) GetDataOk() (*GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiersData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiers) SetData(v []GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiersDataInner)`
+`func (o *GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiers) SetData(v GETShippingMethods200ResponseDataInnerRelationshipsShippingWeightTiersData)`
 
 SetData sets Data field to given value.
 

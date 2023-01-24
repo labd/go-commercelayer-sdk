@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -19,7 +19,7 @@ import (
 type CustomerAddressDataRelationships struct {
 	Customer *CouponRecipientDataRelationshipsCustomer `json:"customer,omitempty"`
 	Address  *BingGeocoderDataRelationshipsAddresses   `json:"address,omitempty"`
-	Events   *CustomerAddressDataRelationshipsEvents   `json:"events,omitempty"`
+	Events   *CleanupDataRelationshipsEvents           `json:"events,omitempty"`
 }
 
 // NewCustomerAddressDataRelationships instantiates a new CustomerAddressDataRelationships object
@@ -104,9 +104,9 @@ func (o *CustomerAddressDataRelationships) SetAddress(v BingGeocoderDataRelation
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *CustomerAddressDataRelationships) GetEvents() CustomerAddressDataRelationshipsEvents {
+func (o *CustomerAddressDataRelationships) GetEvents() CleanupDataRelationshipsEvents {
 	if o == nil || o.Events == nil {
-		var ret CustomerAddressDataRelationshipsEvents
+		var ret CleanupDataRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -114,7 +114,7 @@ func (o *CustomerAddressDataRelationships) GetEvents() CustomerAddressDataRelati
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerAddressDataRelationships) GetEventsOk() (*CustomerAddressDataRelationshipsEvents, bool) {
+func (o *CustomerAddressDataRelationships) GetEventsOk() (*CleanupDataRelationshipsEvents, bool) {
 	if o == nil || o.Events == nil {
 		return nil, false
 	}
@@ -130,8 +130,8 @@ func (o *CustomerAddressDataRelationships) HasEvents() bool {
 	return false
 }
 
-// SetEvents gets a reference to the given CustomerAddressDataRelationshipsEvents and assigns it to the Events field.
-func (o *CustomerAddressDataRelationships) SetEvents(v CustomerAddressDataRelationshipsEvents) {
+// SetEvents gets a reference to the given CleanupDataRelationshipsEvents and assigns it to the Events field.
+func (o *CustomerAddressDataRelationships) SetEvents(v CleanupDataRelationshipsEvents) {
 	o.Events = &v
 }
 

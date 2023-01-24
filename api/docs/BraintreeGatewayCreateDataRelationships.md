@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**BraintreePayments** | Pointer to [**BraintreeGatewayDataRelationshipsBraintreePayments**](BraintreeGatewayDataRelationshipsBraintreePayments.md) |  | [optional] 
+**BraintreePayments** | Pointer to [**BraintreeGatewayCreateDataRelationshipsBraintreePayments**](BraintreeGatewayCreateDataRelationshipsBraintreePayments.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetBraintreePayments
 
-`func (o *BraintreeGatewayCreateDataRelationships) GetBraintreePayments() BraintreeGatewayDataRelationshipsBraintreePayments`
+`func (o *BraintreeGatewayCreateDataRelationships) GetBraintreePayments() BraintreeGatewayCreateDataRelationshipsBraintreePayments`
 
 GetBraintreePayments returns the BraintreePayments field if non-nil, zero value otherwise.
 
 ### GetBraintreePaymentsOk
 
-`func (o *BraintreeGatewayCreateDataRelationships) GetBraintreePaymentsOk() (*BraintreeGatewayDataRelationshipsBraintreePayments, bool)`
+`func (o *BraintreeGatewayCreateDataRelationships) GetBraintreePaymentsOk() (*BraintreeGatewayCreateDataRelationshipsBraintreePayments, bool)`
 
 GetBraintreePaymentsOk returns a tuple with the BraintreePayments field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBraintreePayments
 
-`func (o *BraintreeGatewayCreateDataRelationships) SetBraintreePayments(v BraintreeGatewayDataRelationshipsBraintreePayments)`
+`func (o *BraintreeGatewayCreateDataRelationships) SetBraintreePayments(v BraintreeGatewayCreateDataRelationshipsBraintreePayments)`
 
 SetBraintreePayments sets BraintreePayments field to given value.
 

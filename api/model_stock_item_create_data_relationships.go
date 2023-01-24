@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,15 +17,15 @@ import (
 
 // StockItemCreateDataRelationships struct for StockItemCreateDataRelationships
 type StockItemCreateDataRelationships struct {
-	StockLocation DeliveryLeadTimeDataRelationshipsStockLocation `json:"stock_location"`
-	Sku           *BundleDataRelationshipsSkus                   `json:"sku,omitempty"`
+	StockLocation DeliveryLeadTimeCreateDataRelationshipsStockLocation `json:"stock_location"`
+	Sku           *InStockSubscriptionCreateDataRelationshipsSku       `json:"sku,omitempty"`
 }
 
 // NewStockItemCreateDataRelationships instantiates a new StockItemCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStockItemCreateDataRelationships(stockLocation DeliveryLeadTimeDataRelationshipsStockLocation) *StockItemCreateDataRelationships {
+func NewStockItemCreateDataRelationships(stockLocation DeliveryLeadTimeCreateDataRelationshipsStockLocation) *StockItemCreateDataRelationships {
 	this := StockItemCreateDataRelationships{}
 	this.StockLocation = stockLocation
 	return &this
@@ -40,9 +40,9 @@ func NewStockItemCreateDataRelationshipsWithDefaults() *StockItemCreateDataRelat
 }
 
 // GetStockLocation returns the StockLocation field value
-func (o *StockItemCreateDataRelationships) GetStockLocation() DeliveryLeadTimeDataRelationshipsStockLocation {
+func (o *StockItemCreateDataRelationships) GetStockLocation() DeliveryLeadTimeCreateDataRelationshipsStockLocation {
 	if o == nil {
-		var ret DeliveryLeadTimeDataRelationshipsStockLocation
+		var ret DeliveryLeadTimeCreateDataRelationshipsStockLocation
 		return ret
 	}
 
@@ -51,7 +51,7 @@ func (o *StockItemCreateDataRelationships) GetStockLocation() DeliveryLeadTimeDa
 
 // GetStockLocationOk returns a tuple with the StockLocation field value
 // and a boolean to check if the value has been set.
-func (o *StockItemCreateDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeDataRelationshipsStockLocation, bool) {
+func (o *StockItemCreateDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeCreateDataRelationshipsStockLocation, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -59,14 +59,14 @@ func (o *StockItemCreateDataRelationships) GetStockLocationOk() (*DeliveryLeadTi
 }
 
 // SetStockLocation sets field value
-func (o *StockItemCreateDataRelationships) SetStockLocation(v DeliveryLeadTimeDataRelationshipsStockLocation) {
+func (o *StockItemCreateDataRelationships) SetStockLocation(v DeliveryLeadTimeCreateDataRelationshipsStockLocation) {
 	o.StockLocation = v
 }
 
 // GetSku returns the Sku field value if set, zero value otherwise.
-func (o *StockItemCreateDataRelationships) GetSku() BundleDataRelationshipsSkus {
+func (o *StockItemCreateDataRelationships) GetSku() InStockSubscriptionCreateDataRelationshipsSku {
 	if o == nil || o.Sku == nil {
-		var ret BundleDataRelationshipsSkus
+		var ret InStockSubscriptionCreateDataRelationshipsSku
 		return ret
 	}
 	return *o.Sku
@@ -74,7 +74,7 @@ func (o *StockItemCreateDataRelationships) GetSku() BundleDataRelationshipsSkus 
 
 // GetSkuOk returns a tuple with the Sku field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *StockItemCreateDataRelationships) GetSkuOk() (*BundleDataRelationshipsSkus, bool) {
+func (o *StockItemCreateDataRelationships) GetSkuOk() (*InStockSubscriptionCreateDataRelationshipsSku, bool) {
 	if o == nil || o.Sku == nil {
 		return nil, false
 	}
@@ -90,8 +90,8 @@ func (o *StockItemCreateDataRelationships) HasSku() bool {
 	return false
 }
 
-// SetSku gets a reference to the given BundleDataRelationshipsSkus and assigns it to the Sku field.
-func (o *StockItemCreateDataRelationships) SetSku(v BundleDataRelationshipsSkus) {
+// SetSku gets a reference to the given InStockSubscriptionCreateDataRelationshipsSku and assigns it to the Sku field.
+func (o *StockItemCreateDataRelationships) SetSku(v InStockSubscriptionCreateDataRelationshipsSku) {
 	o.Sku = &v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -20,7 +20,7 @@ type WireTransferData struct {
 	// The resource's type
 	Type          string                                                      `json:"type"`
 	Attributes    GETBillingInfoValidationRules200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *AdyenPaymentUpdateDataRelationships                        `json:"relationships,omitempty"`
+	Relationships *TransactionDataRelationships                               `json:"relationships,omitempty"`
 }
 
 // NewWireTransferData instantiates a new WireTransferData object
@@ -91,9 +91,9 @@ func (o *WireTransferData) SetAttributes(v GETBillingInfoValidationRules200Respo
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *WireTransferData) GetRelationships() AdyenPaymentUpdateDataRelationships {
+func (o *WireTransferData) GetRelationships() TransactionDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret AdyenPaymentUpdateDataRelationships
+		var ret TransactionDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -101,7 +101,7 @@ func (o *WireTransferData) GetRelationships() AdyenPaymentUpdateDataRelationship
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *WireTransferData) GetRelationshipsOk() (*AdyenPaymentUpdateDataRelationships, bool) {
+func (o *WireTransferData) GetRelationshipsOk() (*TransactionDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -117,8 +117,8 @@ func (o *WireTransferData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given AdyenPaymentUpdateDataRelationships and assigns it to the Relationships field.
-func (o *WireTransferData) SetRelationships(v AdyenPaymentUpdateDataRelationships) {
+// SetRelationships gets a reference to the given TransactionDataRelationships and assigns it to the Relationships field.
+func (o *WireTransferData) SetRelationships(v TransactionDataRelationships) {
 	o.Relationships = &v
 }
 

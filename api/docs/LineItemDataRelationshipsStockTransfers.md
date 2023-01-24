@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**LineItemDataRelationshipsStockTransfersData**](LineItemDataRelationshipsStockTransfersData.md) |  | 
+**Data** | Pointer to [**LineItemDataRelationshipsStockTransfersData**](LineItemDataRelationshipsStockTransfersData.md) |  | [optional] 
 
 ## Methods
 
 ### NewLineItemDataRelationshipsStockTransfers
 
-`func NewLineItemDataRelationshipsStockTransfers(data LineItemDataRelationshipsStockTransfersData, ) *LineItemDataRelationshipsStockTransfers`
+`func NewLineItemDataRelationshipsStockTransfers() *LineItemDataRelationshipsStockTransfers`
 
 NewLineItemDataRelationshipsStockTransfers instantiates a new LineItemDataRelationshipsStockTransfers object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *LineItemDataRelationshipsStockTransfers) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Sku** | [**BundleDataRelationshipsSkus**](BundleDataRelationshipsSkus.md) |  | 
-**OriginStockLocation** | [**DeliveryLeadTimeDataRelationshipsStockLocation**](DeliveryLeadTimeDataRelationshipsStockLocation.md) |  | 
-**DestinationStockLocation** | [**DeliveryLeadTimeDataRelationshipsStockLocation**](DeliveryLeadTimeDataRelationshipsStockLocation.md) |  | 
-**Shipment** | Pointer to [**OrderDataRelationshipsShipments**](OrderDataRelationshipsShipments.md) |  | [optional] 
-**LineItem** | Pointer to [**LineItemOptionDataRelationshipsLineItem**](LineItemOptionDataRelationshipsLineItem.md) |  | [optional] 
+**Sku** | [**InStockSubscriptionCreateDataRelationshipsSku**](InStockSubscriptionCreateDataRelationshipsSku.md) |  | 
+**OriginStockLocation** | [**DeliveryLeadTimeCreateDataRelationshipsStockLocation**](DeliveryLeadTimeCreateDataRelationshipsStockLocation.md) |  | 
+**DestinationStockLocation** | [**DeliveryLeadTimeCreateDataRelationshipsStockLocation**](DeliveryLeadTimeCreateDataRelationshipsStockLocation.md) |  | 
+**Shipment** | Pointer to [**ParcelCreateDataRelationshipsShipment**](ParcelCreateDataRelationshipsShipment.md) |  | [optional] 
+**LineItem** | Pointer to [**LineItemOptionCreateDataRelationshipsLineItem**](LineItemOptionCreateDataRelationshipsLineItem.md) |  | [optional] 
 
 ## Methods
 
 ### NewStockTransferCreateDataRelationships
 
-`func NewStockTransferCreateDataRelationships(sku BundleDataRelationshipsSkus, originStockLocation DeliveryLeadTimeDataRelationshipsStockLocation, destinationStockLocation DeliveryLeadTimeDataRelationshipsStockLocation, ) *StockTransferCreateDataRelationships`
+`func NewStockTransferCreateDataRelationships(sku InStockSubscriptionCreateDataRelationshipsSku, originStockLocation DeliveryLeadTimeCreateDataRelationshipsStockLocation, destinationStockLocation DeliveryLeadTimeCreateDataRelationshipsStockLocation, ) *StockTransferCreateDataRelationships`
 
 NewStockTransferCreateDataRelationships instantiates a new StockTransferCreateDataRelationships object
 This constructor will assign default values to properties that have it defined,
@@ -31,80 +31,80 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSku
 
-`func (o *StockTransferCreateDataRelationships) GetSku() BundleDataRelationshipsSkus`
+`func (o *StockTransferCreateDataRelationships) GetSku() InStockSubscriptionCreateDataRelationshipsSku`
 
 GetSku returns the Sku field if non-nil, zero value otherwise.
 
 ### GetSkuOk
 
-`func (o *StockTransferCreateDataRelationships) GetSkuOk() (*BundleDataRelationshipsSkus, bool)`
+`func (o *StockTransferCreateDataRelationships) GetSkuOk() (*InStockSubscriptionCreateDataRelationshipsSku, bool)`
 
 GetSkuOk returns a tuple with the Sku field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSku
 
-`func (o *StockTransferCreateDataRelationships) SetSku(v BundleDataRelationshipsSkus)`
+`func (o *StockTransferCreateDataRelationships) SetSku(v InStockSubscriptionCreateDataRelationshipsSku)`
 
 SetSku sets Sku field to given value.
 
 
 ### GetOriginStockLocation
 
-`func (o *StockTransferCreateDataRelationships) GetOriginStockLocation() DeliveryLeadTimeDataRelationshipsStockLocation`
+`func (o *StockTransferCreateDataRelationships) GetOriginStockLocation() DeliveryLeadTimeCreateDataRelationshipsStockLocation`
 
 GetOriginStockLocation returns the OriginStockLocation field if non-nil, zero value otherwise.
 
 ### GetOriginStockLocationOk
 
-`func (o *StockTransferCreateDataRelationships) GetOriginStockLocationOk() (*DeliveryLeadTimeDataRelationshipsStockLocation, bool)`
+`func (o *StockTransferCreateDataRelationships) GetOriginStockLocationOk() (*DeliveryLeadTimeCreateDataRelationshipsStockLocation, bool)`
 
 GetOriginStockLocationOk returns a tuple with the OriginStockLocation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOriginStockLocation
 
-`func (o *StockTransferCreateDataRelationships) SetOriginStockLocation(v DeliveryLeadTimeDataRelationshipsStockLocation)`
+`func (o *StockTransferCreateDataRelationships) SetOriginStockLocation(v DeliveryLeadTimeCreateDataRelationshipsStockLocation)`
 
 SetOriginStockLocation sets OriginStockLocation field to given value.
 
 
 ### GetDestinationStockLocation
 
-`func (o *StockTransferCreateDataRelationships) GetDestinationStockLocation() DeliveryLeadTimeDataRelationshipsStockLocation`
+`func (o *StockTransferCreateDataRelationships) GetDestinationStockLocation() DeliveryLeadTimeCreateDataRelationshipsStockLocation`
 
 GetDestinationStockLocation returns the DestinationStockLocation field if non-nil, zero value otherwise.
 
 ### GetDestinationStockLocationOk
 
-`func (o *StockTransferCreateDataRelationships) GetDestinationStockLocationOk() (*DeliveryLeadTimeDataRelationshipsStockLocation, bool)`
+`func (o *StockTransferCreateDataRelationships) GetDestinationStockLocationOk() (*DeliveryLeadTimeCreateDataRelationshipsStockLocation, bool)`
 
 GetDestinationStockLocationOk returns a tuple with the DestinationStockLocation field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetDestinationStockLocation
 
-`func (o *StockTransferCreateDataRelationships) SetDestinationStockLocation(v DeliveryLeadTimeDataRelationshipsStockLocation)`
+`func (o *StockTransferCreateDataRelationships) SetDestinationStockLocation(v DeliveryLeadTimeCreateDataRelationshipsStockLocation)`
 
 SetDestinationStockLocation sets DestinationStockLocation field to given value.
 
 
 ### GetShipment
 
-`func (o *StockTransferCreateDataRelationships) GetShipment() OrderDataRelationshipsShipments`
+`func (o *StockTransferCreateDataRelationships) GetShipment() ParcelCreateDataRelationshipsShipment`
 
 GetShipment returns the Shipment field if non-nil, zero value otherwise.
 
 ### GetShipmentOk
 
-`func (o *StockTransferCreateDataRelationships) GetShipmentOk() (*OrderDataRelationshipsShipments, bool)`
+`func (o *StockTransferCreateDataRelationships) GetShipmentOk() (*ParcelCreateDataRelationshipsShipment, bool)`
 
 GetShipmentOk returns a tuple with the Shipment field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetShipment
 
-`func (o *StockTransferCreateDataRelationships) SetShipment(v OrderDataRelationshipsShipments)`
+`func (o *StockTransferCreateDataRelationships) SetShipment(v ParcelCreateDataRelationshipsShipment)`
 
 SetShipment sets Shipment field to given value.
 
@@ -116,20 +116,20 @@ HasShipment returns a boolean if a field has been set.
 
 ### GetLineItem
 
-`func (o *StockTransferCreateDataRelationships) GetLineItem() LineItemOptionDataRelationshipsLineItem`
+`func (o *StockTransferCreateDataRelationships) GetLineItem() LineItemOptionCreateDataRelationshipsLineItem`
 
 GetLineItem returns the LineItem field if non-nil, zero value otherwise.
 
 ### GetLineItemOk
 
-`func (o *StockTransferCreateDataRelationships) GetLineItemOk() (*LineItemOptionDataRelationshipsLineItem, bool)`
+`func (o *StockTransferCreateDataRelationships) GetLineItemOk() (*LineItemOptionCreateDataRelationshipsLineItem, bool)`
 
 GetLineItemOk returns a tuple with the LineItem field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLineItem
 
-`func (o *StockTransferCreateDataRelationships) SetLineItem(v LineItemOptionDataRelationshipsLineItem)`
+`func (o *StockTransferCreateDataRelationships) SetLineItem(v LineItemOptionCreateDataRelationshipsLineItem)`
 
 SetLineItem sets LineItem field to given value.
 

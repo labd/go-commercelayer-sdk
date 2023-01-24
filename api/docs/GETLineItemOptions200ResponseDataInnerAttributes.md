@@ -16,7 +16,6 @@ Name | Type | Description | Notes
 **DelayHours** | Pointer to **int32** | The shipping delay that the customer can expect when adding this option (hours). Inherited from the associated SKU option. | [optional] 
 **DelayDays** | Pointer to **int32** | The shipping delay that the customer can expect when adding this option (days, rounded). | [optional] 
 **Options** | Pointer to **map[string]interface{}** | Set of key-value pairs that represent the selected options. | [optional] 
-**Id** | Pointer to **string** | Unique identifier for the resource (hash). | [optional] 
 **CreatedAt** | Pointer to **string** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **string** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **string** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
@@ -341,31 +340,6 @@ SetOptions sets Options field to given value.
 `func (o *GETLineItemOptions200ResponseDataInnerAttributes) HasOptions() bool`
 
 HasOptions returns a boolean if a field has been set.
-
-### GetId
-
-`func (o *GETLineItemOptions200ResponseDataInnerAttributes) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GETLineItemOptions200ResponseDataInnerAttributes) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GETLineItemOptions200ResponseDataInnerAttributes) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *GETLineItemOptions200ResponseDataInnerAttributes) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

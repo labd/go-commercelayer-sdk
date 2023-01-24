@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,15 +17,15 @@ import (
 
 // SkuListPromotionRuleCreateDataRelationships struct for SkuListPromotionRuleCreateDataRelationships
 type SkuListPromotionRuleCreateDataRelationships struct {
-	Promotion CouponCodesPromotionRuleDataRelationshipsPromotion `json:"promotion"`
-	SkuList   *BundleDataRelationshipsSkuList                    `json:"sku_list,omitempty"`
+	Promotion CouponCodesPromotionRuleCreateDataRelationshipsPromotion `json:"promotion"`
+	SkuList   *BundleCreateDataRelationshipsSkuList                    `json:"sku_list,omitempty"`
 }
 
 // NewSkuListPromotionRuleCreateDataRelationships instantiates a new SkuListPromotionRuleCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuListPromotionRuleCreateDataRelationships(promotion CouponCodesPromotionRuleDataRelationshipsPromotion) *SkuListPromotionRuleCreateDataRelationships {
+func NewSkuListPromotionRuleCreateDataRelationships(promotion CouponCodesPromotionRuleCreateDataRelationshipsPromotion) *SkuListPromotionRuleCreateDataRelationships {
 	this := SkuListPromotionRuleCreateDataRelationships{}
 	this.Promotion = promotion
 	return &this
@@ -40,9 +40,9 @@ func NewSkuListPromotionRuleCreateDataRelationshipsWithDefaults() *SkuListPromot
 }
 
 // GetPromotion returns the Promotion field value
-func (o *SkuListPromotionRuleCreateDataRelationships) GetPromotion() CouponCodesPromotionRuleDataRelationshipsPromotion {
+func (o *SkuListPromotionRuleCreateDataRelationships) GetPromotion() CouponCodesPromotionRuleCreateDataRelationshipsPromotion {
 	if o == nil {
-		var ret CouponCodesPromotionRuleDataRelationshipsPromotion
+		var ret CouponCodesPromotionRuleCreateDataRelationshipsPromotion
 		return ret
 	}
 
@@ -51,7 +51,7 @@ func (o *SkuListPromotionRuleCreateDataRelationships) GetPromotion() CouponCodes
 
 // GetPromotionOk returns a tuple with the Promotion field value
 // and a boolean to check if the value has been set.
-func (o *SkuListPromotionRuleCreateDataRelationships) GetPromotionOk() (*CouponCodesPromotionRuleDataRelationshipsPromotion, bool) {
+func (o *SkuListPromotionRuleCreateDataRelationships) GetPromotionOk() (*CouponCodesPromotionRuleCreateDataRelationshipsPromotion, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -59,14 +59,14 @@ func (o *SkuListPromotionRuleCreateDataRelationships) GetPromotionOk() (*CouponC
 }
 
 // SetPromotion sets field value
-func (o *SkuListPromotionRuleCreateDataRelationships) SetPromotion(v CouponCodesPromotionRuleDataRelationshipsPromotion) {
+func (o *SkuListPromotionRuleCreateDataRelationships) SetPromotion(v CouponCodesPromotionRuleCreateDataRelationshipsPromotion) {
 	o.Promotion = v
 }
 
 // GetSkuList returns the SkuList field value if set, zero value otherwise.
-func (o *SkuListPromotionRuleCreateDataRelationships) GetSkuList() BundleDataRelationshipsSkuList {
+func (o *SkuListPromotionRuleCreateDataRelationships) GetSkuList() BundleCreateDataRelationshipsSkuList {
 	if o == nil || o.SkuList == nil {
-		var ret BundleDataRelationshipsSkuList
+		var ret BundleCreateDataRelationshipsSkuList
 		return ret
 	}
 	return *o.SkuList
@@ -74,7 +74,7 @@ func (o *SkuListPromotionRuleCreateDataRelationships) GetSkuList() BundleDataRel
 
 // GetSkuListOk returns a tuple with the SkuList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SkuListPromotionRuleCreateDataRelationships) GetSkuListOk() (*BundleDataRelationshipsSkuList, bool) {
+func (o *SkuListPromotionRuleCreateDataRelationships) GetSkuListOk() (*BundleCreateDataRelationshipsSkuList, bool) {
 	if o == nil || o.SkuList == nil {
 		return nil, false
 	}
@@ -90,8 +90,8 @@ func (o *SkuListPromotionRuleCreateDataRelationships) HasSkuList() bool {
 	return false
 }
 
-// SetSkuList gets a reference to the given BundleDataRelationshipsSkuList and assigns it to the SkuList field.
-func (o *SkuListPromotionRuleCreateDataRelationships) SetSkuList(v BundleDataRelationshipsSkuList) {
+// SetSkuList gets a reference to the given BundleCreateDataRelationshipsSkuList and assigns it to the SkuList field.
+func (o *SkuListPromotionRuleCreateDataRelationships) SetSkuList(v BundleCreateDataRelationshipsSkuList) {
 	o.SkuList = &v
 }
 

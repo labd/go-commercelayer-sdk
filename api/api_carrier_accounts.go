@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -37,8 +37,8 @@ GETCarrierAccounts List all carrier accounts
 
 List all carrier accounts
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return CarrierAccountsApiGETCarrierAccountsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return CarrierAccountsApiGETCarrierAccountsRequest
 */
 func (a *CarrierAccountsApiService) GETCarrierAccounts(ctx context.Context) CarrierAccountsApiGETCarrierAccountsRequest {
 	return CarrierAccountsApiGETCarrierAccountsRequest{
@@ -48,7 +48,8 @@ func (a *CarrierAccountsApiService) GETCarrierAccounts(ctx context.Context) Carr
 }
 
 // Execute executes the request
-//  @return GETCarrierAccounts200Response
+//
+//	@return GETCarrierAccounts200Response
 func (a *CarrierAccountsApiService) GETCarrierAccountsExecute(r CarrierAccountsApiGETCarrierAccountsRequest) (*GETCarrierAccounts200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -137,9 +138,9 @@ GETCarrierAccountsCarrierAccountId Retrieve a carrier account
 
 Retrieve a carrier account
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param carrierAccountId The resource's id
- @return CarrierAccountsApiGETCarrierAccountsCarrierAccountIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param carrierAccountId The resource's id
+	@return CarrierAccountsApiGETCarrierAccountsCarrierAccountIdRequest
 */
 func (a *CarrierAccountsApiService) GETCarrierAccountsCarrierAccountId(ctx context.Context, carrierAccountId string) CarrierAccountsApiGETCarrierAccountsCarrierAccountIdRequest {
 	return CarrierAccountsApiGETCarrierAccountsCarrierAccountIdRequest{
@@ -150,7 +151,8 @@ func (a *CarrierAccountsApiService) GETCarrierAccountsCarrierAccountId(ctx conte
 }
 
 // Execute executes the request
-//  @return GETCarrierAccountsCarrierAccountId200Response
+//
+//	@return GETCarrierAccountsCarrierAccountId200Response
 func (a *CarrierAccountsApiService) GETCarrierAccountsCarrierAccountIdExecute(r CarrierAccountsApiGETCarrierAccountsCarrierAccountIdRequest) (*GETCarrierAccountsCarrierAccountId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -240,9 +242,9 @@ GETShipmentIdCarrierAccounts Retrieve the carrier accounts associated to the shi
 
 Retrieve the carrier accounts associated to the shipment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shipmentId The resource's id
- @return CarrierAccountsApiGETShipmentIdCarrierAccountsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shipmentId The resource's id
+	@return CarrierAccountsApiGETShipmentIdCarrierAccountsRequest
 */
 func (a *CarrierAccountsApiService) GETShipmentIdCarrierAccounts(ctx context.Context, shipmentId string) CarrierAccountsApiGETShipmentIdCarrierAccountsRequest {
 	return CarrierAccountsApiGETShipmentIdCarrierAccountsRequest{

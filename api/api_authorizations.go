@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -37,8 +37,8 @@ GETAuthorizations List all authorizations
 
 List all authorizations
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return AuthorizationsApiGETAuthorizationsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return AuthorizationsApiGETAuthorizationsRequest
 */
 func (a *AuthorizationsApiService) GETAuthorizations(ctx context.Context) AuthorizationsApiGETAuthorizationsRequest {
 	return AuthorizationsApiGETAuthorizationsRequest{
@@ -48,7 +48,8 @@ func (a *AuthorizationsApiService) GETAuthorizations(ctx context.Context) Author
 }
 
 // Execute executes the request
-//  @return GETAuthorizations200Response
+//
+//	@return GETAuthorizations200Response
 func (a *AuthorizationsApiService) GETAuthorizationsExecute(r AuthorizationsApiGETAuthorizationsRequest) (*GETAuthorizations200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -137,9 +138,9 @@ GETAuthorizationsAuthorizationId Retrieve an authorization
 
 Retrieve an authorization
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param authorizationId The resource's id
- @return AuthorizationsApiGETAuthorizationsAuthorizationIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param authorizationId The resource's id
+	@return AuthorizationsApiGETAuthorizationsAuthorizationIdRequest
 */
 func (a *AuthorizationsApiService) GETAuthorizationsAuthorizationId(ctx context.Context, authorizationId string) AuthorizationsApiGETAuthorizationsAuthorizationIdRequest {
 	return AuthorizationsApiGETAuthorizationsAuthorizationIdRequest{
@@ -150,7 +151,8 @@ func (a *AuthorizationsApiService) GETAuthorizationsAuthorizationId(ctx context.
 }
 
 // Execute executes the request
-//  @return GETAuthorizationsAuthorizationId200Response
+//
+//	@return GETAuthorizationsAuthorizationId200Response
 func (a *AuthorizationsApiService) GETAuthorizationsAuthorizationIdExecute(r AuthorizationsApiGETAuthorizationsAuthorizationIdRequest) (*GETAuthorizationsAuthorizationId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -240,9 +242,9 @@ GETCaptureIdReferenceAuthorization Retrieve the reference authorization associat
 
 Retrieve the reference authorization associated to the capture
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param captureId The resource's id
- @return AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param captureId The resource's id
+	@return AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest
 */
 func (a *AuthorizationsApiService) GETCaptureIdReferenceAuthorization(ctx context.Context, captureId string) AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest {
 	return AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest{
@@ -332,9 +334,9 @@ GETOrderIdAuthorizations Retrieve the authorizations associated to the order
 
 Retrieve the authorizations associated to the order
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderId The resource's id
- @return AuthorizationsApiGETOrderIdAuthorizationsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return AuthorizationsApiGETOrderIdAuthorizationsRequest
 */
 func (a *AuthorizationsApiService) GETOrderIdAuthorizations(ctx context.Context, orderId string) AuthorizationsApiGETOrderIdAuthorizationsRequest {
 	return AuthorizationsApiGETOrderIdAuthorizationsRequest{
@@ -424,9 +426,9 @@ GETVoidIdReferenceAuthorization Retrieve the reference authorization associated 
 
 Retrieve the reference authorization associated to the void
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param voidId The resource's id
- @return AuthorizationsApiGETVoidIdReferenceAuthorizationRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param voidId The resource's id
+	@return AuthorizationsApiGETVoidIdReferenceAuthorizationRequest
 */
 func (a *AuthorizationsApiService) GETVoidIdReferenceAuthorization(ctx context.Context, voidId string) AuthorizationsApiGETVoidIdReferenceAuthorizationRequest {
 	return AuthorizationsApiGETVoidIdReferenceAuthorizationRequest{
@@ -522,9 +524,9 @@ PATCHAuthorizationsAuthorizationId Update an authorization
 
 Update an authorization
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param authorizationId The resource's id
- @return AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param authorizationId The resource's id
+	@return AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest
 */
 func (a *AuthorizationsApiService) PATCHAuthorizationsAuthorizationId(ctx context.Context, authorizationId string) AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest {
 	return AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest{
@@ -535,7 +537,8 @@ func (a *AuthorizationsApiService) PATCHAuthorizationsAuthorizationId(ctx contex
 }
 
 // Execute executes the request
-//  @return PATCHAuthorizationsAuthorizationId200Response
+//
+//	@return PATCHAuthorizationsAuthorizationId200Response
 func (a *AuthorizationsApiService) PATCHAuthorizationsAuthorizationIdExecute(r AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest) (*PATCHAuthorizationsAuthorizationId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch

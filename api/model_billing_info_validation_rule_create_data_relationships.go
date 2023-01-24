@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,14 +17,14 @@ import (
 
 // BillingInfoValidationRuleCreateDataRelationships struct for BillingInfoValidationRuleCreateDataRelationships
 type BillingInfoValidationRuleCreateDataRelationships struct {
-	Market AvalaraAccountDataRelationshipsMarkets `json:"market"`
+	Market BillingInfoValidationRuleCreateDataRelationshipsMarket `json:"market"`
 }
 
 // NewBillingInfoValidationRuleCreateDataRelationships instantiates a new BillingInfoValidationRuleCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBillingInfoValidationRuleCreateDataRelationships(market AvalaraAccountDataRelationshipsMarkets) *BillingInfoValidationRuleCreateDataRelationships {
+func NewBillingInfoValidationRuleCreateDataRelationships(market BillingInfoValidationRuleCreateDataRelationshipsMarket) *BillingInfoValidationRuleCreateDataRelationships {
 	this := BillingInfoValidationRuleCreateDataRelationships{}
 	this.Market = market
 	return &this
@@ -39,9 +39,9 @@ func NewBillingInfoValidationRuleCreateDataRelationshipsWithDefaults() *BillingI
 }
 
 // GetMarket returns the Market field value
-func (o *BillingInfoValidationRuleCreateDataRelationships) GetMarket() AvalaraAccountDataRelationshipsMarkets {
+func (o *BillingInfoValidationRuleCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket {
 	if o == nil {
-		var ret AvalaraAccountDataRelationshipsMarkets
+		var ret BillingInfoValidationRuleCreateDataRelationshipsMarket
 		return ret
 	}
 
@@ -50,7 +50,7 @@ func (o *BillingInfoValidationRuleCreateDataRelationships) GetMarket() AvalaraAc
 
 // GetMarketOk returns a tuple with the Market field value
 // and a boolean to check if the value has been set.
-func (o *BillingInfoValidationRuleCreateDataRelationships) GetMarketOk() (*AvalaraAccountDataRelationshipsMarkets, bool) {
+func (o *BillingInfoValidationRuleCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,7 +58,7 @@ func (o *BillingInfoValidationRuleCreateDataRelationships) GetMarketOk() (*Avala
 }
 
 // SetMarket sets field value
-func (o *BillingInfoValidationRuleCreateDataRelationships) SetMarket(v AvalaraAccountDataRelationshipsMarkets) {
+func (o *BillingInfoValidationRuleCreateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket) {
 	o.Market = v
 }
 

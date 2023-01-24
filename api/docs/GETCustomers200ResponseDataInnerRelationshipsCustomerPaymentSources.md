@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks**](GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks.md) |  | [optional] 
-**Data** | Pointer to [**[]GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSourcesDataInner**](GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSourcesDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSourcesData**](GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSourcesData.md) |  | [optional] 
 
 ## Methods
 
@@ -53,20 +53,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetData
 
-`func (o *GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources) GetData() []GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSourcesDataInner`
+`func (o *GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources) GetData() GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSourcesData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources) GetDataOk() (*[]GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSourcesDataInner, bool)`
+`func (o *GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources) GetDataOk() (*GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSourcesData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources) SetData(v []GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSourcesDataInner)`
+`func (o *GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSources) SetData(v GETCustomers200ResponseDataInnerRelationshipsCustomerPaymentSourcesData)`
 
 SetData sets Data field to given value.
 

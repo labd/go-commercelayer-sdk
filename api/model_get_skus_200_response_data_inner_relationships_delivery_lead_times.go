@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETSkus200ResponseDataInnerRelationshipsDeliveryLeadTimes struct for GETSkus200ResponseDataInnerRelationshipsDeliveryLeadTimes
 type GETSkus200ResponseDataInnerRelationshipsDeliveryLeadTimes struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks          `json:"links,omitempty"`
-	Data  []GETSkus200ResponseDataInnerRelationshipsDeliveryLeadTimesDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks    `json:"links,omitempty"`
+	Data  *GETSkus200ResponseDataInnerRelationshipsDeliveryLeadTimesData `json:"data,omitempty"`
 }
 
 // NewGETSkus200ResponseDataInnerRelationshipsDeliveryLeadTimes instantiates a new GETSkus200ResponseDataInnerRelationshipsDeliveryLeadTimes object
@@ -71,17 +71,17 @@ func (o *GETSkus200ResponseDataInnerRelationshipsDeliveryLeadTimes) SetLinks(v G
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETSkus200ResponseDataInnerRelationshipsDeliveryLeadTimes) GetData() []GETSkus200ResponseDataInnerRelationshipsDeliveryLeadTimesDataInner {
+func (o *GETSkus200ResponseDataInnerRelationshipsDeliveryLeadTimes) GetData() GETSkus200ResponseDataInnerRelationshipsDeliveryLeadTimesData {
 	if o == nil || o.Data == nil {
-		var ret []GETSkus200ResponseDataInnerRelationshipsDeliveryLeadTimesDataInner
+		var ret GETSkus200ResponseDataInnerRelationshipsDeliveryLeadTimesData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETSkus200ResponseDataInnerRelationshipsDeliveryLeadTimes) GetDataOk() ([]GETSkus200ResponseDataInnerRelationshipsDeliveryLeadTimesDataInner, bool) {
+func (o *GETSkus200ResponseDataInnerRelationshipsDeliveryLeadTimes) GetDataOk() (*GETSkus200ResponseDataInnerRelationshipsDeliveryLeadTimesData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETSkus200ResponseDataInnerRelationshipsDeliveryLeadTimes) HasData() bo
 	return false
 }
 
-// SetData gets a reference to the given []GETSkus200ResponseDataInnerRelationshipsDeliveryLeadTimesDataInner and assigns it to the Data field.
-func (o *GETSkus200ResponseDataInnerRelationshipsDeliveryLeadTimes) SetData(v []GETSkus200ResponseDataInnerRelationshipsDeliveryLeadTimesDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETSkus200ResponseDataInnerRelationshipsDeliveryLeadTimesData and assigns it to the Data field.
+func (o *GETSkus200ResponseDataInnerRelationshipsDeliveryLeadTimes) SetData(v GETSkus200ResponseDataInnerRelationshipsDeliveryLeadTimesData) {
+	o.Data = &v
 }
 
 func (o GETSkus200ResponseDataInnerRelationshipsDeliveryLeadTimes) MarshalJSON() ([]byte, error) {

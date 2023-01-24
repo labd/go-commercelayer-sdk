@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,8 +17,8 @@ import (
 
 // GETSkuLists200ResponseDataInnerRelationshipsBundles struct for GETSkuLists200ResponseDataInnerRelationshipsBundles
 type GETSkuLists200ResponseDataInnerRelationshipsBundles struct {
-	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks    `json:"links,omitempty"`
-	Data  []GETSkuLists200ResponseDataInnerRelationshipsBundlesDataInner `json:"data,omitempty"`
+	Links *GETAddresses200ResponseDataInnerRelationshipsGeocoderLinks `json:"links,omitempty"`
+	Data  *GETSkuLists200ResponseDataInnerRelationshipsBundlesData    `json:"data,omitempty"`
 }
 
 // NewGETSkuLists200ResponseDataInnerRelationshipsBundles instantiates a new GETSkuLists200ResponseDataInnerRelationshipsBundles object
@@ -71,17 +71,17 @@ func (o *GETSkuLists200ResponseDataInnerRelationshipsBundles) SetLinks(v GETAddr
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETSkuLists200ResponseDataInnerRelationshipsBundles) GetData() []GETSkuLists200ResponseDataInnerRelationshipsBundlesDataInner {
+func (o *GETSkuLists200ResponseDataInnerRelationshipsBundles) GetData() GETSkuLists200ResponseDataInnerRelationshipsBundlesData {
 	if o == nil || o.Data == nil {
-		var ret []GETSkuLists200ResponseDataInnerRelationshipsBundlesDataInner
+		var ret GETSkuLists200ResponseDataInnerRelationshipsBundlesData
 		return ret
 	}
-	return o.Data
+	return *o.Data
 }
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETSkuLists200ResponseDataInnerRelationshipsBundles) GetDataOk() ([]GETSkuLists200ResponseDataInnerRelationshipsBundlesDataInner, bool) {
+func (o *GETSkuLists200ResponseDataInnerRelationshipsBundles) GetDataOk() (*GETSkuLists200ResponseDataInnerRelationshipsBundlesData, bool) {
 	if o == nil || o.Data == nil {
 		return nil, false
 	}
@@ -97,9 +97,9 @@ func (o *GETSkuLists200ResponseDataInnerRelationshipsBundles) HasData() bool {
 	return false
 }
 
-// SetData gets a reference to the given []GETSkuLists200ResponseDataInnerRelationshipsBundlesDataInner and assigns it to the Data field.
-func (o *GETSkuLists200ResponseDataInnerRelationshipsBundles) SetData(v []GETSkuLists200ResponseDataInnerRelationshipsBundlesDataInner) {
-	o.Data = v
+// SetData gets a reference to the given GETSkuLists200ResponseDataInnerRelationshipsBundlesData and assigns it to the Data field.
+func (o *GETSkuLists200ResponseDataInnerRelationshipsBundles) SetData(v GETSkuLists200ResponseDataInnerRelationshipsBundlesData) {
+	o.Data = &v
 }
 
 func (o GETSkuLists200ResponseDataInnerRelationshipsBundles) MarshalJSON() ([]byte, error) {

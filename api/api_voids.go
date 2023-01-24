@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ GETAuthorizationIdVoids Retrieve the voids associated to the authorization
 
 Retrieve the voids associated to the authorization
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param authorizationId The resource's id
- @return VoidsApiGETAuthorizationIdVoidsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param authorizationId The resource's id
+	@return VoidsApiGETAuthorizationIdVoidsRequest
 */
 func (a *VoidsApiService) GETAuthorizationIdVoids(ctx context.Context, authorizationId string) VoidsApiGETAuthorizationIdVoidsRequest {
 	return VoidsApiGETAuthorizationIdVoidsRequest{
@@ -130,9 +130,9 @@ GETOrderIdVoids Retrieve the voids associated to the order
 
 Retrieve the voids associated to the order
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param orderId The resource's id
- @return VoidsApiGETOrderIdVoidsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return VoidsApiGETOrderIdVoidsRequest
 */
 func (a *VoidsApiService) GETOrderIdVoids(ctx context.Context, orderId string) VoidsApiGETOrderIdVoidsRequest {
 	return VoidsApiGETOrderIdVoidsRequest{
@@ -221,8 +221,8 @@ GETVoids List all voids
 
 List all voids
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return VoidsApiGETVoidsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return VoidsApiGETVoidsRequest
 */
 func (a *VoidsApiService) GETVoids(ctx context.Context) VoidsApiGETVoidsRequest {
 	return VoidsApiGETVoidsRequest{
@@ -232,7 +232,8 @@ func (a *VoidsApiService) GETVoids(ctx context.Context) VoidsApiGETVoidsRequest 
 }
 
 // Execute executes the request
-//  @return GETVoids200Response
+//
+//	@return GETVoids200Response
 func (a *VoidsApiService) GETVoidsExecute(r VoidsApiGETVoidsRequest) (*GETVoids200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -321,9 +322,9 @@ GETVoidsVoidId Retrieve a void
 
 Retrieve a void
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param voidId The resource's id
- @return VoidsApiGETVoidsVoidIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param voidId The resource's id
+	@return VoidsApiGETVoidsVoidIdRequest
 */
 func (a *VoidsApiService) GETVoidsVoidId(ctx context.Context, voidId string) VoidsApiGETVoidsVoidIdRequest {
 	return VoidsApiGETVoidsVoidIdRequest{
@@ -334,7 +335,8 @@ func (a *VoidsApiService) GETVoidsVoidId(ctx context.Context, voidId string) Voi
 }
 
 // Execute executes the request
-//  @return GETVoidsVoidId200Response
+//
+//	@return GETVoidsVoidId200Response
 func (a *VoidsApiService) GETVoidsVoidIdExecute(r VoidsApiGETVoidsVoidIdRequest) (*GETVoidsVoidId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

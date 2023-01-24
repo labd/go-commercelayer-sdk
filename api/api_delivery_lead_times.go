@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEDeliveryLeadTimesDeliveryLeadTimeId Delete a delivery lead time
 
 Delete a delivery lead time
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param deliveryLeadTimeId The resource's id
- @return DeliveryLeadTimesApiDELETEDeliveryLeadTimesDeliveryLeadTimeIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deliveryLeadTimeId The resource's id
+	@return DeliveryLeadTimesApiDELETEDeliveryLeadTimesDeliveryLeadTimeIdRequest
 */
 func (a *DeliveryLeadTimesApiService) DELETEDeliveryLeadTimesDeliveryLeadTimeId(ctx context.Context, deliveryLeadTimeId string) DeliveryLeadTimesApiDELETEDeliveryLeadTimesDeliveryLeadTimeIdRequest {
 	return DeliveryLeadTimesApiDELETEDeliveryLeadTimesDeliveryLeadTimeIdRequest{
@@ -129,8 +129,8 @@ GETDeliveryLeadTimes List all delivery lead times
 
 List all delivery lead times
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return DeliveryLeadTimesApiGETDeliveryLeadTimesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return DeliveryLeadTimesApiGETDeliveryLeadTimesRequest
 */
 func (a *DeliveryLeadTimesApiService) GETDeliveryLeadTimes(ctx context.Context) DeliveryLeadTimesApiGETDeliveryLeadTimesRequest {
 	return DeliveryLeadTimesApiGETDeliveryLeadTimesRequest{
@@ -140,7 +140,8 @@ func (a *DeliveryLeadTimesApiService) GETDeliveryLeadTimes(ctx context.Context) 
 }
 
 // Execute executes the request
-//  @return GETDeliveryLeadTimes200Response
+//
+//	@return GETDeliveryLeadTimes200Response
 func (a *DeliveryLeadTimesApiService) GETDeliveryLeadTimesExecute(r DeliveryLeadTimesApiGETDeliveryLeadTimesRequest) (*GETDeliveryLeadTimes200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -229,9 +230,9 @@ GETDeliveryLeadTimesDeliveryLeadTimeId Retrieve a delivery lead time
 
 Retrieve a delivery lead time
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param deliveryLeadTimeId The resource's id
- @return DeliveryLeadTimesApiGETDeliveryLeadTimesDeliveryLeadTimeIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deliveryLeadTimeId The resource's id
+	@return DeliveryLeadTimesApiGETDeliveryLeadTimesDeliveryLeadTimeIdRequest
 */
 func (a *DeliveryLeadTimesApiService) GETDeliveryLeadTimesDeliveryLeadTimeId(ctx context.Context, deliveryLeadTimeId string) DeliveryLeadTimesApiGETDeliveryLeadTimesDeliveryLeadTimeIdRequest {
 	return DeliveryLeadTimesApiGETDeliveryLeadTimesDeliveryLeadTimeIdRequest{
@@ -242,7 +243,8 @@ func (a *DeliveryLeadTimesApiService) GETDeliveryLeadTimesDeliveryLeadTimeId(ctx
 }
 
 // Execute executes the request
-//  @return GETDeliveryLeadTimesDeliveryLeadTimeId200Response
+//
+//	@return GETDeliveryLeadTimesDeliveryLeadTimeId200Response
 func (a *DeliveryLeadTimesApiService) GETDeliveryLeadTimesDeliveryLeadTimeIdExecute(r DeliveryLeadTimesApiGETDeliveryLeadTimesDeliveryLeadTimeIdRequest) (*GETDeliveryLeadTimesDeliveryLeadTimeId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -332,9 +334,9 @@ GETShipmentIdDeliveryLeadTime Retrieve the delivery lead time associated to the 
 
 Retrieve the delivery lead time associated to the shipment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shipmentId The resource's id
- @return DeliveryLeadTimesApiGETShipmentIdDeliveryLeadTimeRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shipmentId The resource's id
+	@return DeliveryLeadTimesApiGETShipmentIdDeliveryLeadTimeRequest
 */
 func (a *DeliveryLeadTimesApiService) GETShipmentIdDeliveryLeadTime(ctx context.Context, shipmentId string) DeliveryLeadTimesApiGETShipmentIdDeliveryLeadTimeRequest {
 	return DeliveryLeadTimesApiGETShipmentIdDeliveryLeadTimeRequest{
@@ -424,9 +426,9 @@ GETShippingMethodIdDeliveryLeadTimeForShipment Retrieve the delivery lead time f
 
 Retrieve the delivery lead time for shipment associated to the shipping method
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingMethodId The resource's id
- @return DeliveryLeadTimesApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingMethodId The resource's id
+	@return DeliveryLeadTimesApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest
 */
 func (a *DeliveryLeadTimesApiService) GETShippingMethodIdDeliveryLeadTimeForShipment(ctx context.Context, shippingMethodId string) DeliveryLeadTimesApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest {
 	return DeliveryLeadTimesApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest{
@@ -516,9 +518,9 @@ GETSkuIdDeliveryLeadTimes Retrieve the delivery lead times associated to the SKU
 
 Retrieve the delivery lead times associated to the SKU
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param skuId The resource's id
- @return DeliveryLeadTimesApiGETSkuIdDeliveryLeadTimesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuId The resource's id
+	@return DeliveryLeadTimesApiGETSkuIdDeliveryLeadTimesRequest
 */
 func (a *DeliveryLeadTimesApiService) GETSkuIdDeliveryLeadTimes(ctx context.Context, skuId string) DeliveryLeadTimesApiGETSkuIdDeliveryLeadTimesRequest {
 	return DeliveryLeadTimesApiGETSkuIdDeliveryLeadTimesRequest{
@@ -614,9 +616,9 @@ PATCHDeliveryLeadTimesDeliveryLeadTimeId Update a delivery lead time
 
 Update a delivery lead time
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param deliveryLeadTimeId The resource's id
- @return DeliveryLeadTimesApiPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param deliveryLeadTimeId The resource's id
+	@return DeliveryLeadTimesApiPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest
 */
 func (a *DeliveryLeadTimesApiService) PATCHDeliveryLeadTimesDeliveryLeadTimeId(ctx context.Context, deliveryLeadTimeId string) DeliveryLeadTimesApiPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest {
 	return DeliveryLeadTimesApiPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest{
@@ -627,7 +629,8 @@ func (a *DeliveryLeadTimesApiService) PATCHDeliveryLeadTimesDeliveryLeadTimeId(c
 }
 
 // Execute executes the request
-//  @return PATCHDeliveryLeadTimesDeliveryLeadTimeId200Response
+//
+//	@return PATCHDeliveryLeadTimesDeliveryLeadTimeId200Response
 func (a *DeliveryLeadTimesApiService) PATCHDeliveryLeadTimesDeliveryLeadTimeIdExecute(r DeliveryLeadTimesApiPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest) (*PATCHDeliveryLeadTimesDeliveryLeadTimeId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -727,8 +730,8 @@ POSTDeliveryLeadTimes Create a delivery lead time
 
 Create a delivery lead time
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return DeliveryLeadTimesApiPOSTDeliveryLeadTimesRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return DeliveryLeadTimesApiPOSTDeliveryLeadTimesRequest
 */
 func (a *DeliveryLeadTimesApiService) POSTDeliveryLeadTimes(ctx context.Context) DeliveryLeadTimesApiPOSTDeliveryLeadTimesRequest {
 	return DeliveryLeadTimesApiPOSTDeliveryLeadTimesRequest{
@@ -738,7 +741,8 @@ func (a *DeliveryLeadTimesApiService) POSTDeliveryLeadTimes(ctx context.Context)
 }
 
 // Execute executes the request
-//  @return POSTDeliveryLeadTimes201Response
+//
+//	@return POSTDeliveryLeadTimes201Response
 func (a *DeliveryLeadTimesApiService) POSTDeliveryLeadTimesExecute(r DeliveryLeadTimesApiPOSTDeliveryLeadTimesRequest) (*POSTDeliveryLeadTimes201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

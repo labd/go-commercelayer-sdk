@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ GETShippingMethodIdShippingMethodTiers Retrieve the shipping method tiers associ
 
 Retrieve the shipping method tiers associated to the shipping method
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingMethodId The resource's id
- @return ShippingMethodTiersApiGETShippingMethodIdShippingMethodTiersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingMethodId The resource's id
+	@return ShippingMethodTiersApiGETShippingMethodIdShippingMethodTiersRequest
 */
 func (a *ShippingMethodTiersApiService) GETShippingMethodIdShippingMethodTiers(ctx context.Context, shippingMethodId string) ShippingMethodTiersApiGETShippingMethodIdShippingMethodTiersRequest {
 	return ShippingMethodTiersApiGETShippingMethodIdShippingMethodTiersRequest{
@@ -129,8 +129,8 @@ GETShippingMethodTiers List all shipping method tiers
 
 List all shipping method tiers
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ShippingMethodTiersApiGETShippingMethodTiersRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ShippingMethodTiersApiGETShippingMethodTiersRequest
 */
 func (a *ShippingMethodTiersApiService) GETShippingMethodTiers(ctx context.Context) ShippingMethodTiersApiGETShippingMethodTiersRequest {
 	return ShippingMethodTiersApiGETShippingMethodTiersRequest{
@@ -140,7 +140,8 @@ func (a *ShippingMethodTiersApiService) GETShippingMethodTiers(ctx context.Conte
 }
 
 // Execute executes the request
-//  @return GETShippingMethodTiers200Response
+//
+//	@return GETShippingMethodTiers200Response
 func (a *ShippingMethodTiersApiService) GETShippingMethodTiersExecute(r ShippingMethodTiersApiGETShippingMethodTiersRequest) (*GETShippingMethodTiers200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -229,9 +230,9 @@ GETShippingMethodTiersShippingMethodTierId Retrieve a shipping method tier
 
 Retrieve a shipping method tier
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param shippingMethodTierId The resource's id
- @return ShippingMethodTiersApiGETShippingMethodTiersShippingMethodTierIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param shippingMethodTierId The resource's id
+	@return ShippingMethodTiersApiGETShippingMethodTiersShippingMethodTierIdRequest
 */
 func (a *ShippingMethodTiersApiService) GETShippingMethodTiersShippingMethodTierId(ctx context.Context, shippingMethodTierId string) ShippingMethodTiersApiGETShippingMethodTiersShippingMethodTierIdRequest {
 	return ShippingMethodTiersApiGETShippingMethodTiersShippingMethodTierIdRequest{
@@ -242,7 +243,8 @@ func (a *ShippingMethodTiersApiService) GETShippingMethodTiersShippingMethodTier
 }
 
 // Execute executes the request
-//  @return GETShippingMethodTiersShippingMethodTierId200Response
+//
+//	@return GETShippingMethodTiersShippingMethodTierId200Response
 func (a *ShippingMethodTiersApiService) GETShippingMethodTiersShippingMethodTierIdExecute(r ShippingMethodTiersApiGETShippingMethodTiersShippingMethodTierIdRequest) (*GETShippingMethodTiersShippingMethodTierId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

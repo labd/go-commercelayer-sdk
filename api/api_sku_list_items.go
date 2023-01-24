@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETESkuListItemsSkuListItemId Delete a SKU list item
 
 Delete a SKU list item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param skuListItemId The resource's id
- @return SkuListItemsApiDELETESkuListItemsSkuListItemIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuListItemId The resource's id
+	@return SkuListItemsApiDELETESkuListItemsSkuListItemIdRequest
 */
 func (a *SkuListItemsApiService) DELETESkuListItemsSkuListItemId(ctx context.Context, skuListItemId string) SkuListItemsApiDELETESkuListItemsSkuListItemIdRequest {
 	return SkuListItemsApiDELETESkuListItemsSkuListItemIdRequest{
@@ -130,9 +130,9 @@ GETSkuListIdSkuListItems Retrieve the sku list items associated to the SKU list
 
 Retrieve the sku list items associated to the SKU list
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param skuListId The resource's id
- @return SkuListItemsApiGETSkuListIdSkuListItemsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuListId The resource's id
+	@return SkuListItemsApiGETSkuListIdSkuListItemsRequest
 */
 func (a *SkuListItemsApiService) GETSkuListIdSkuListItems(ctx context.Context, skuListId string) SkuListItemsApiGETSkuListIdSkuListItemsRequest {
 	return SkuListItemsApiGETSkuListIdSkuListItemsRequest{
@@ -221,8 +221,8 @@ GETSkuListItems List all SKU list items
 
 List all SKU list items
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return SkuListItemsApiGETSkuListItemsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return SkuListItemsApiGETSkuListItemsRequest
 */
 func (a *SkuListItemsApiService) GETSkuListItems(ctx context.Context) SkuListItemsApiGETSkuListItemsRequest {
 	return SkuListItemsApiGETSkuListItemsRequest{
@@ -232,7 +232,8 @@ func (a *SkuListItemsApiService) GETSkuListItems(ctx context.Context) SkuListIte
 }
 
 // Execute executes the request
-//  @return GETSkuListItems200Response
+//
+//	@return GETSkuListItems200Response
 func (a *SkuListItemsApiService) GETSkuListItemsExecute(r SkuListItemsApiGETSkuListItemsRequest) (*GETSkuListItems200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -321,9 +322,9 @@ GETSkuListItemsSkuListItemId Retrieve a SKU list item
 
 Retrieve a SKU list item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param skuListItemId The resource's id
- @return SkuListItemsApiGETSkuListItemsSkuListItemIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuListItemId The resource's id
+	@return SkuListItemsApiGETSkuListItemsSkuListItemIdRequest
 */
 func (a *SkuListItemsApiService) GETSkuListItemsSkuListItemId(ctx context.Context, skuListItemId string) SkuListItemsApiGETSkuListItemsSkuListItemIdRequest {
 	return SkuListItemsApiGETSkuListItemsSkuListItemIdRequest{
@@ -334,7 +335,8 @@ func (a *SkuListItemsApiService) GETSkuListItemsSkuListItemId(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return GETSkuListItemsSkuListItemId200Response
+//
+//	@return GETSkuListItemsSkuListItemId200Response
 func (a *SkuListItemsApiService) GETSkuListItemsSkuListItemIdExecute(r SkuListItemsApiGETSkuListItemsSkuListItemIdRequest) (*GETSkuListItemsSkuListItemId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -430,9 +432,9 @@ PATCHSkuListItemsSkuListItemId Update a SKU list item
 
 Update a SKU list item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param skuListItemId The resource's id
- @return SkuListItemsApiPATCHSkuListItemsSkuListItemIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param skuListItemId The resource's id
+	@return SkuListItemsApiPATCHSkuListItemsSkuListItemIdRequest
 */
 func (a *SkuListItemsApiService) PATCHSkuListItemsSkuListItemId(ctx context.Context, skuListItemId string) SkuListItemsApiPATCHSkuListItemsSkuListItemIdRequest {
 	return SkuListItemsApiPATCHSkuListItemsSkuListItemIdRequest{
@@ -443,7 +445,8 @@ func (a *SkuListItemsApiService) PATCHSkuListItemsSkuListItemId(ctx context.Cont
 }
 
 // Execute executes the request
-//  @return POSTSkuListItems201Response
+//
+//	@return POSTSkuListItems201Response
 func (a *SkuListItemsApiService) PATCHSkuListItemsSkuListItemIdExecute(r SkuListItemsApiPATCHSkuListItemsSkuListItemIdRequest) (*POSTSkuListItems201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -543,8 +546,8 @@ POSTSkuListItems Create a SKU list item
 
 Create a SKU list item
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return SkuListItemsApiPOSTSkuListItemsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return SkuListItemsApiPOSTSkuListItemsRequest
 */
 func (a *SkuListItemsApiService) POSTSkuListItems(ctx context.Context) SkuListItemsApiPOSTSkuListItemsRequest {
 	return SkuListItemsApiPOSTSkuListItemsRequest{
@@ -554,7 +557,8 @@ func (a *SkuListItemsApiService) POSTSkuListItems(ctx context.Context) SkuListIt
 }
 
 // Execute executes the request
-//  @return POSTSkuListItems201Response
+//
+//	@return POSTSkuListItems201Response
 func (a *SkuListItemsApiService) POSTSkuListItemsExecute(r SkuListItemsApiPOSTSkuListItemsRequest) (*POSTSkuListItems201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

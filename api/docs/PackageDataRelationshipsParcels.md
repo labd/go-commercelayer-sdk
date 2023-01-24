@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PackageDataRelationshipsParcelsData**](PackageDataRelationshipsParcelsData.md) |  | 
+**Data** | Pointer to [**PackageDataRelationshipsParcelsData**](PackageDataRelationshipsParcelsData.md) |  | [optional] 
 
 ## Methods
 
 ### NewPackageDataRelationshipsParcels
 
-`func NewPackageDataRelationshipsParcels(data PackageDataRelationshipsParcelsData, ) *PackageDataRelationshipsParcels`
+`func NewPackageDataRelationshipsParcels() *PackageDataRelationshipsParcels`
 
 NewPackageDataRelationshipsParcels instantiates a new PackageDataRelationshipsParcels object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *PackageDataRelationshipsParcels) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

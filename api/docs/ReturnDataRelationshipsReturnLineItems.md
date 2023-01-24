@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**ReturnDataRelationshipsReturnLineItemsData**](ReturnDataRelationshipsReturnLineItemsData.md) |  | 
+**Data** | Pointer to [**ReturnDataRelationshipsReturnLineItemsData**](ReturnDataRelationshipsReturnLineItemsData.md) |  | [optional] 
 
 ## Methods
 
 ### NewReturnDataRelationshipsReturnLineItems
 
-`func NewReturnDataRelationshipsReturnLineItems(data ReturnDataRelationshipsReturnLineItemsData, ) *ReturnDataRelationshipsReturnLineItems`
+`func NewReturnDataRelationshipsReturnLineItems() *ReturnDataRelationshipsReturnLineItems`
 
 NewReturnDataRelationshipsReturnLineItems instantiates a new ReturnDataRelationshipsReturnLineItems object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *ReturnDataRelationshipsReturnLineItems) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

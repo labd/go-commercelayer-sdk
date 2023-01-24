@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**InventoryModelDataRelationshipsInventoryStockLocationsData**](InventoryModelDataRelationshipsInventoryStockLocationsData.md) |  | 
+**Data** | Pointer to [**InventoryModelDataRelationshipsInventoryStockLocationsData**](InventoryModelDataRelationshipsInventoryStockLocationsData.md) |  | [optional] 
 
 ## Methods
 
 ### NewInventoryModelDataRelationshipsInventoryStockLocations
 
-`func NewInventoryModelDataRelationshipsInventoryStockLocations(data InventoryModelDataRelationshipsInventoryStockLocationsData, ) *InventoryModelDataRelationshipsInventoryStockLocations`
+`func NewInventoryModelDataRelationshipsInventoryStockLocations() *InventoryModelDataRelationshipsInventoryStockLocations`
 
 NewInventoryModelDataRelationshipsInventoryStockLocations instantiates a new InventoryModelDataRelationshipsInventoryStockLocations object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *InventoryModelDataRelationshipsInventoryStockLocations) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

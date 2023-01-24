@@ -12,7 +12,6 @@ Name | Type | Description | Notes
 **IntentAmountCents** | Pointer to **int32** | The amount of the associated payment intent, in cents. | [optional] 
 **IntentAmountFloat** | Pointer to **float32** | The amount of the associated payment intent, float. | [optional] 
 **FormattedIntentAmount** | Pointer to **string** | The amount of the associated payment intent, formatted. | [optional] 
-**Id** | Pointer to **string** | Unique identifier for the resource (hash). | [optional] 
 **CreatedAt** | Pointer to **string** | Time at which the resource was created. | [optional] 
 **UpdatedAt** | Pointer to **string** | Time at which the resource was last updated. | [optional] 
 **Reference** | Pointer to **string** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
@@ -237,31 +236,6 @@ SetFormattedIntentAmount sets FormattedIntentAmount field to given value.
 `func (o *GETStripePayments200ResponseDataInnerAttributes) HasFormattedIntentAmount() bool`
 
 HasFormattedIntentAmount returns a boolean if a field has been set.
-
-### GetId
-
-`func (o *GETStripePayments200ResponseDataInnerAttributes) GetId() string`
-
-GetId returns the Id field if non-nil, zero value otherwise.
-
-### GetIdOk
-
-`func (o *GETStripePayments200ResponseDataInnerAttributes) GetIdOk() (*string, bool)`
-
-GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetId
-
-`func (o *GETStripePayments200ResponseDataInnerAttributes) SetId(v string)`
-
-SetId sets Id field to given value.
-
-### HasId
-
-`func (o *GETStripePayments200ResponseDataInnerAttributes) HasId() bool`
-
-HasId returns a boolean if a field has been set.
 
 ### GetCreatedAt
 

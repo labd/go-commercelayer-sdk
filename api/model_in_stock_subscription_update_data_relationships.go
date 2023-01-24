@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,9 +17,9 @@ import (
 
 // InStockSubscriptionUpdateDataRelationships struct for InStockSubscriptionUpdateDataRelationships
 type InStockSubscriptionUpdateDataRelationships struct {
-	Market   *AvalaraAccountDataRelationshipsMarkets   `json:"market,omitempty"`
-	Customer *CouponRecipientDataRelationshipsCustomer `json:"customer,omitempty"`
-	Sku      *BundleDataRelationshipsSkus              `json:"sku,omitempty"`
+	Market   *BillingInfoValidationRuleCreateDataRelationshipsMarket `json:"market,omitempty"`
+	Customer *CouponRecipientCreateDataRelationshipsCustomer         `json:"customer,omitempty"`
+	Sku      *InStockSubscriptionCreateDataRelationshipsSku          `json:"sku,omitempty"`
 }
 
 // NewInStockSubscriptionUpdateDataRelationships instantiates a new InStockSubscriptionUpdateDataRelationships object
@@ -40,9 +40,9 @@ func NewInStockSubscriptionUpdateDataRelationshipsWithDefaults() *InStockSubscri
 }
 
 // GetMarket returns the Market field value if set, zero value otherwise.
-func (o *InStockSubscriptionUpdateDataRelationships) GetMarket() AvalaraAccountDataRelationshipsMarkets {
+func (o *InStockSubscriptionUpdateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket {
 	if o == nil || o.Market == nil {
-		var ret AvalaraAccountDataRelationshipsMarkets
+		var ret BillingInfoValidationRuleCreateDataRelationshipsMarket
 		return ret
 	}
 	return *o.Market
@@ -50,7 +50,7 @@ func (o *InStockSubscriptionUpdateDataRelationships) GetMarket() AvalaraAccountD
 
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InStockSubscriptionUpdateDataRelationships) GetMarketOk() (*AvalaraAccountDataRelationshipsMarkets, bool) {
+func (o *InStockSubscriptionUpdateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool) {
 	if o == nil || o.Market == nil {
 		return nil, false
 	}
@@ -66,15 +66,15 @@ func (o *InStockSubscriptionUpdateDataRelationships) HasMarket() bool {
 	return false
 }
 
-// SetMarket gets a reference to the given AvalaraAccountDataRelationshipsMarkets and assigns it to the Market field.
-func (o *InStockSubscriptionUpdateDataRelationships) SetMarket(v AvalaraAccountDataRelationshipsMarkets) {
+// SetMarket gets a reference to the given BillingInfoValidationRuleCreateDataRelationshipsMarket and assigns it to the Market field.
+func (o *InStockSubscriptionUpdateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket) {
 	o.Market = &v
 }
 
 // GetCustomer returns the Customer field value if set, zero value otherwise.
-func (o *InStockSubscriptionUpdateDataRelationships) GetCustomer() CouponRecipientDataRelationshipsCustomer {
+func (o *InStockSubscriptionUpdateDataRelationships) GetCustomer() CouponRecipientCreateDataRelationshipsCustomer {
 	if o == nil || o.Customer == nil {
-		var ret CouponRecipientDataRelationshipsCustomer
+		var ret CouponRecipientCreateDataRelationshipsCustomer
 		return ret
 	}
 	return *o.Customer
@@ -82,7 +82,7 @@ func (o *InStockSubscriptionUpdateDataRelationships) GetCustomer() CouponRecipie
 
 // GetCustomerOk returns a tuple with the Customer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InStockSubscriptionUpdateDataRelationships) GetCustomerOk() (*CouponRecipientDataRelationshipsCustomer, bool) {
+func (o *InStockSubscriptionUpdateDataRelationships) GetCustomerOk() (*CouponRecipientCreateDataRelationshipsCustomer, bool) {
 	if o == nil || o.Customer == nil {
 		return nil, false
 	}
@@ -98,15 +98,15 @@ func (o *InStockSubscriptionUpdateDataRelationships) HasCustomer() bool {
 	return false
 }
 
-// SetCustomer gets a reference to the given CouponRecipientDataRelationshipsCustomer and assigns it to the Customer field.
-func (o *InStockSubscriptionUpdateDataRelationships) SetCustomer(v CouponRecipientDataRelationshipsCustomer) {
+// SetCustomer gets a reference to the given CouponRecipientCreateDataRelationshipsCustomer and assigns it to the Customer field.
+func (o *InStockSubscriptionUpdateDataRelationships) SetCustomer(v CouponRecipientCreateDataRelationshipsCustomer) {
 	o.Customer = &v
 }
 
 // GetSku returns the Sku field value if set, zero value otherwise.
-func (o *InStockSubscriptionUpdateDataRelationships) GetSku() BundleDataRelationshipsSkus {
+func (o *InStockSubscriptionUpdateDataRelationships) GetSku() InStockSubscriptionCreateDataRelationshipsSku {
 	if o == nil || o.Sku == nil {
-		var ret BundleDataRelationshipsSkus
+		var ret InStockSubscriptionCreateDataRelationshipsSku
 		return ret
 	}
 	return *o.Sku
@@ -114,7 +114,7 @@ func (o *InStockSubscriptionUpdateDataRelationships) GetSku() BundleDataRelation
 
 // GetSkuOk returns a tuple with the Sku field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InStockSubscriptionUpdateDataRelationships) GetSkuOk() (*BundleDataRelationshipsSkus, bool) {
+func (o *InStockSubscriptionUpdateDataRelationships) GetSkuOk() (*InStockSubscriptionCreateDataRelationshipsSku, bool) {
 	if o == nil || o.Sku == nil {
 		return nil, false
 	}
@@ -130,8 +130,8 @@ func (o *InStockSubscriptionUpdateDataRelationships) HasSku() bool {
 	return false
 }
 
-// SetSku gets a reference to the given BundleDataRelationshipsSkus and assigns it to the Sku field.
-func (o *InStockSubscriptionUpdateDataRelationships) SetSku(v BundleDataRelationshipsSkus) {
+// SetSku gets a reference to the given InStockSubscriptionCreateDataRelationshipsSku and assigns it to the Sku field.
+func (o *InStockSubscriptionUpdateDataRelationships) SetSku(v InStockSubscriptionCreateDataRelationshipsSku) {
 	o.Sku = &v
 }
 

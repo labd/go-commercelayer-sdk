@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **SkuCode** | Pointer to **string** | The code of the associated SKU. | [optional] 
 **BundleCode** | Pointer to **string** | The code of the associated bundle. | [optional] 
 **Quantity** | **int32** | The line item quantity. | 
-**ExternalPrice** | Pointer to **bool** | When creating a new line item, set this attribute to &#39;1&#39; if you want to inject the unit_amount_cents price from an external source. | [optional] 
+**ExternalPrice** | Pointer to **bool** | When creating or updating a new line item, set this attribute to &#39;1&#39; if you want to inject the unit_amount_cents price from an external source. | [optional] 
 **UpdateQuantity** | Pointer to **bool** | When creating a new line item, set this attribute to &#39;1&#39; if you want to update the line item quantity (if present) instead of creating a new line item for the same SKU. | [optional] 
 **UnitAmountCents** | Pointer to **int32** | The unit amount of the line item, in cents. Can be specified without an item, otherwise is automatically populated from the price list associated to the order&#39;s market. | [optional] 
 **Name** | Pointer to **string** | The name of the line item. When blank, it gets populated with the name of the associated item (if present). | [optional] 

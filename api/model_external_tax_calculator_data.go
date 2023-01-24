@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -20,7 +20,7 @@ type ExternalTaxCalculatorData struct {
 	// The resource's type
 	Type          string                                                  `json:"type"`
 	Attributes    GETExternalTaxCalculators200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *AvalaraAccountDataRelationships                        `json:"relationships,omitempty"`
+	Relationships *ExternalTaxCalculatorDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewExternalTaxCalculatorData instantiates a new ExternalTaxCalculatorData object
@@ -91,9 +91,9 @@ func (o *ExternalTaxCalculatorData) SetAttributes(v GETExternalTaxCalculators200
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *ExternalTaxCalculatorData) GetRelationships() AvalaraAccountDataRelationships {
+func (o *ExternalTaxCalculatorData) GetRelationships() ExternalTaxCalculatorDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret AvalaraAccountDataRelationships
+		var ret ExternalTaxCalculatorDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -101,7 +101,7 @@ func (o *ExternalTaxCalculatorData) GetRelationships() AvalaraAccountDataRelatio
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ExternalTaxCalculatorData) GetRelationshipsOk() (*AvalaraAccountDataRelationships, bool) {
+func (o *ExternalTaxCalculatorData) GetRelationshipsOk() (*ExternalTaxCalculatorDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -117,8 +117,8 @@ func (o *ExternalTaxCalculatorData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given AvalaraAccountDataRelationships and assigns it to the Relationships field.
-func (o *ExternalTaxCalculatorData) SetRelationships(v AvalaraAccountDataRelationships) {
+// SetRelationships gets a reference to the given ExternalTaxCalculatorDataRelationships and assigns it to the Relationships field.
+func (o *ExternalTaxCalculatorData) SetRelationships(v ExternalTaxCalculatorDataRelationships) {
 	o.Relationships = &v
 }
 

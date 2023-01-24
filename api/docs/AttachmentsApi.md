@@ -47,6 +47,7 @@ Method | HTTP request | Description
 [**GETShippingWeightTierIdAttachments**](AttachmentsApi.md#GETShippingWeightTierIdAttachments) | **Get** /shipping_weight_tiers/{shippingWeightTierId}/attachments | Retrieve the attachments associated to the shipping weight tier
 [**GETShippingZoneIdAttachments**](AttachmentsApi.md#GETShippingZoneIdAttachments) | **Get** /shipping_zones/{shippingZoneId}/attachments | Retrieve the attachments associated to the shipping zone
 [**GETSkuIdAttachments**](AttachmentsApi.md#GETSkuIdAttachments) | **Get** /skus/{skuId}/attachments | Retrieve the attachments associated to the SKU
+[**GETSkuListIdAttachments**](AttachmentsApi.md#GETSkuListIdAttachments) | **Get** /sku_lists/{skuListId}/attachments | Retrieve the attachments associated to the SKU list
 [**GETSkuOptionIdAttachments**](AttachmentsApi.md#GETSkuOptionIdAttachments) | **Get** /sku_options/{skuOptionId}/attachments | Retrieve the attachments associated to the SKU option
 [**GETStockItemIdAttachments**](AttachmentsApi.md#GETStockItemIdAttachments) | **Get** /stock_items/{stockItemId}/attachments | Retrieve the attachments associated to the stock item
 [**GETStockLocationIdAttachments**](AttachmentsApi.md#GETStockLocationIdAttachments) | **Get** /stock_locations/{stockLocationId}/attachments | Retrieve the attachments associated to the stock location
@@ -2953,6 +2954,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETSkuIdAttachmentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETSkuListIdAttachments
+
+> GETSkuListIdAttachments(ctx, skuListId).Execute()
+
+Retrieve the attachments associated to the SKU list
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    skuListId := "skuListId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.AttachmentsApi.GETSkuListIdAttachments(context.Background(), skuListId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETSkuListIdAttachments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**skuListId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETSkuListIdAttachmentsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

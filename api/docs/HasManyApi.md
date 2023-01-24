@@ -21,6 +21,7 @@ Method | HTTP request | Description
 [**GETCarrierAccountIdAttachments**](HasManyApi.md#GETCarrierAccountIdAttachments) | **Get** /carrier_accounts/{carrierAccountId}/attachments | Retrieve the attachments associated to the carrier account
 [**GETCheckoutComGatewayIdCheckoutComPayments**](HasManyApi.md#GETCheckoutComGatewayIdCheckoutComPayments) | **Get** /checkout_com_gateways/{checkoutComGatewayId}/checkout_com_payments | Retrieve the checkout com payments associated to the checkout.com gateway
 [**GETCheckoutComGatewayIdPaymentMethods**](HasManyApi.md#GETCheckoutComGatewayIdPaymentMethods) | **Get** /checkout_com_gateways/{checkoutComGatewayId}/payment_methods | Retrieve the payment methods associated to the checkout.com gateway
+[**GETCleanupIdEvents**](HasManyApi.md#GETCleanupIdEvents) | **Get** /cleanups/{cleanupId}/events | Retrieve the events associated to the cleanup
 [**GETCouponCodesPromotionRuleIdCoupons**](HasManyApi.md#GETCouponCodesPromotionRuleIdCoupons) | **Get** /coupon_codes_promotion_rules/{couponCodesPromotionRuleId}/coupons | Retrieve the coupons associated to the coupon codes promotion rule
 [**GETCouponRecipientIdAttachments**](HasManyApi.md#GETCouponRecipientIdAttachments) | **Get** /coupon_recipients/{couponRecipientId}/attachments | Retrieve the attachments associated to the coupon recipient
 [**GETCustomerAddressIdEvents**](HasManyApi.md#GETCustomerAddressIdEvents) | **Get** /customer_addresses/{customerAddressId}/events | Retrieve the events associated to the customer address
@@ -47,7 +48,6 @@ Method | HTTP request | Description
 [**GETExternalPromotionIdAttachments**](HasManyApi.md#GETExternalPromotionIdAttachments) | **Get** /external_promotions/{externalPromotionId}/attachments | Retrieve the attachments associated to the external promotion
 [**GETExternalTaxCalculatorIdAttachments**](HasManyApi.md#GETExternalTaxCalculatorIdAttachments) | **Get** /external_tax_calculators/{externalTaxCalculatorId}/attachments | Retrieve the attachments associated to the external tax calculator
 [**GETExternalTaxCalculatorIdMarkets**](HasManyApi.md#GETExternalTaxCalculatorIdMarkets) | **Get** /external_tax_calculators/{externalTaxCalculatorId}/markets | Retrieve the markets associated to the external tax calculator
-[**GETExternalTaxCalculatorIdTaxCategories**](HasManyApi.md#GETExternalTaxCalculatorIdTaxCategories) | **Get** /external_tax_calculators/{externalTaxCalculatorId}/tax_categories | Retrieve the tax categories associated to the external tax calculator
 [**GETFixedAmountPromotionIdAttachments**](HasManyApi.md#GETFixedAmountPromotionIdAttachments) | **Get** /fixed_amount_promotions/{fixedAmountPromotionId}/attachments | Retrieve the attachments associated to the fixed amount promotion
 [**GETFixedPricePromotionIdAttachments**](HasManyApi.md#GETFixedPricePromotionIdAttachments) | **Get** /fixed_price_promotions/{fixedPricePromotionId}/attachments | Retrieve the attachments associated to the fixed price promotion
 [**GETFixedPricePromotionIdSkus**](HasManyApi.md#GETFixedPricePromotionIdSkus) | **Get** /fixed_price_promotions/{fixedPricePromotionId}/skus | Retrieve the skus associated to the fixed price promotion
@@ -74,7 +74,6 @@ Method | HTTP request | Description
 [**GETManualGatewayIdPaymentMethods**](HasManyApi.md#GETManualGatewayIdPaymentMethods) | **Get** /manual_gateways/{manualGatewayId}/payment_methods | Retrieve the payment methods associated to the manual gateway
 [**GETManualTaxCalculatorIdAttachments**](HasManyApi.md#GETManualTaxCalculatorIdAttachments) | **Get** /manual_tax_calculators/{manualTaxCalculatorId}/attachments | Retrieve the attachments associated to the manual tax calculator
 [**GETManualTaxCalculatorIdMarkets**](HasManyApi.md#GETManualTaxCalculatorIdMarkets) | **Get** /manual_tax_calculators/{manualTaxCalculatorId}/markets | Retrieve the markets associated to the manual tax calculator
-[**GETManualTaxCalculatorIdTaxCategories**](HasManyApi.md#GETManualTaxCalculatorIdTaxCategories) | **Get** /manual_tax_calculators/{manualTaxCalculatorId}/tax_categories | Retrieve the tax categories associated to the manual tax calculator
 [**GETManualTaxCalculatorIdTaxRules**](HasManyApi.md#GETManualTaxCalculatorIdTaxRules) | **Get** /manual_tax_calculators/{manualTaxCalculatorId}/tax_rules | Retrieve the tax rules associated to the manual tax calculator
 [**GETMarketIdAttachments**](HasManyApi.md#GETMarketIdAttachments) | **Get** /markets/{marketId}/attachments | Retrieve the attachments associated to the market
 [**GETMerchantIdAttachments**](HasManyApi.md#GETMerchantIdAttachments) | **Get** /merchants/{merchantId}/attachments | Retrieve the attachments associated to the merchant
@@ -139,6 +138,7 @@ Method | HTTP request | Description
 [**GETSkuIdPrices**](HasManyApi.md#GETSkuIdPrices) | **Get** /skus/{skuId}/prices | Retrieve the prices associated to the SKU
 [**GETSkuIdSkuOptions**](HasManyApi.md#GETSkuIdSkuOptions) | **Get** /skus/{skuId}/sku_options | Retrieve the sku options associated to the SKU
 [**GETSkuIdStockItems**](HasManyApi.md#GETSkuIdStockItems) | **Get** /skus/{skuId}/stock_items | Retrieve the stock items associated to the SKU
+[**GETSkuListIdAttachments**](HasManyApi.md#GETSkuListIdAttachments) | **Get** /sku_lists/{skuListId}/attachments | Retrieve the attachments associated to the SKU list
 [**GETSkuListIdBundles**](HasManyApi.md#GETSkuListIdBundles) | **Get** /sku_lists/{skuListId}/bundles | Retrieve the bundles associated to the SKU list
 [**GETSkuListIdSkuListItems**](HasManyApi.md#GETSkuListIdSkuListItems) | **Get** /sku_lists/{skuListId}/sku_list_items | Retrieve the sku list items associated to the SKU list
 [**GETSkuListIdSkus**](HasManyApi.md#GETSkuListIdSkus) | **Get** /sku_lists/{skuListId}/skus | Retrieve the skus associated to the SKU list
@@ -155,7 +155,6 @@ Method | HTTP request | Description
 [**GETStripeGatewayIdStripePayments**](HasManyApi.md#GETStripeGatewayIdStripePayments) | **Get** /stripe_gateways/{stripeGatewayId}/stripe_payments | Retrieve the stripe payments associated to the stripe gateway
 [**GETTaxCalculatorIdAttachments**](HasManyApi.md#GETTaxCalculatorIdAttachments) | **Get** /tax_calculators/{taxCalculatorId}/attachments | Retrieve the attachments associated to the tax calculator
 [**GETTaxCalculatorIdMarkets**](HasManyApi.md#GETTaxCalculatorIdMarkets) | **Get** /tax_calculators/{taxCalculatorId}/markets | Retrieve the markets associated to the tax calculator
-[**GETTaxCalculatorIdTaxCategories**](HasManyApi.md#GETTaxCalculatorIdTaxCategories) | **Get** /tax_calculators/{taxCalculatorId}/tax_categories | Retrieve the tax categories associated to the tax calculator
 [**GETTaxCategoryIdAttachments**](HasManyApi.md#GETTaxCategoryIdAttachments) | **Get** /tax_categories/{taxCategoryId}/attachments | Retrieve the attachments associated to the tax category
 [**GETTaxjarAccountIdAttachments**](HasManyApi.md#GETTaxjarAccountIdAttachments) | **Get** /taxjar_accounts/{taxjarAccountId}/attachments | Retrieve the attachments associated to the taxjar account
 [**GETTaxjarAccountIdMarkets**](HasManyApi.md#GETTaxjarAccountIdMarkets) | **Get** /taxjar_accounts/{taxjarAccountId}/markets | Retrieve the markets associated to the taxjar account
@@ -1296,6 +1295,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETCheckoutComGatewayIdPaymentMethodsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETCleanupIdEvents
+
+> GETCleanupIdEvents(ctx, cleanupId).Execute()
+
+Retrieve the events associated to the cleanup
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    cleanupId := "cleanupId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETCleanupIdEvents(context.Background(), cleanupId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCleanupIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**cleanupId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETCleanupIdEventsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -3088,74 +3155,6 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GETExternalTaxCalculatorIdTaxCategories
-
-> GETExternalTaxCalculatorIdTaxCategories(ctx, externalTaxCalculatorId).Execute()
-
-Retrieve the tax categories associated to the external tax calculator
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    externalTaxCalculatorId := "externalTaxCalculatorId_example" // string | The resource's id
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HasManyApi.GETExternalTaxCalculatorIdTaxCategories(context.Background(), externalTaxCalculatorId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETExternalTaxCalculatorIdTaxCategories``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**externalTaxCalculatorId** | **string** | The resource&#39;s id | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGETExternalTaxCalculatorIdTaxCategoriesRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
 ## GETFixedAmountPromotionIdAttachments
 
 > GETFixedAmountPromotionIdAttachments(ctx, fixedAmountPromotionId).Execute()
@@ -4900,74 +4899,6 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETManualTaxCalculatorIdMarketsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GETManualTaxCalculatorIdTaxCategories
-
-> GETManualTaxCalculatorIdTaxCategories(ctx, manualTaxCalculatorId).Execute()
-
-Retrieve the tax categories associated to the manual tax calculator
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    manualTaxCalculatorId := "manualTaxCalculatorId_example" // string | The resource's id
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HasManyApi.GETManualTaxCalculatorIdTaxCategories(context.Background(), manualTaxCalculatorId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETManualTaxCalculatorIdTaxCategories``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**manualTaxCalculatorId** | **string** | The resource&#39;s id | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGETManualTaxCalculatorIdTaxCategoriesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -9344,6 +9275,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETSkuListIdAttachments
+
+> GETSkuListIdAttachments(ctx, skuListId).Execute()
+
+Retrieve the attachments associated to the SKU list
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    skuListId := "skuListId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.HasManyApi.GETSkuListIdAttachments(context.Background(), skuListId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETSkuListIdAttachments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**skuListId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETSkuListIdAttachmentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETSkuListIdBundles
 
 > GETSkuListIdBundles(ctx, skuListId).Execute()
@@ -10408,74 +10407,6 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETTaxCalculatorIdMarketsRequest struct via the builder pattern
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-
-
-### Return type
-
- (empty response body)
-
-### Authorization
-
-[bearerAuth](../README.md#bearerAuth)
-
-### HTTP request headers
-
-- **Content-Type**: Not defined
-- **Accept**: Not defined
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
-[[Back to Model list]](../README.md#documentation-for-models)
-[[Back to README]](../README.md)
-
-
-## GETTaxCalculatorIdTaxCategories
-
-> GETTaxCalculatorIdTaxCategories(ctx, taxCalculatorId).Execute()
-
-Retrieve the tax categories associated to the tax calculator
-
-
-
-### Example
-
-```go
-package main
-
-import (
-    "context"
-    "fmt"
-    "os"
-    openapiclient "./openapi"
-)
-
-func main() {
-    taxCalculatorId := "taxCalculatorId_example" // string | The resource's id
-
-    configuration := openapiclient.NewConfiguration()
-    apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.HasManyApi.GETTaxCalculatorIdTaxCategories(context.Background(), taxCalculatorId).Execute()
-    if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETTaxCalculatorIdTaxCategories``: %v\n", err)
-        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
-    }
-}
-```
-
-### Path Parameters
-
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
-**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**taxCalculatorId** | **string** | The resource&#39;s id | 
-
-### Other Parameters
-
-Other parameters are passed through a pointer to a apiGETTaxCalculatorIdTaxCategoriesRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

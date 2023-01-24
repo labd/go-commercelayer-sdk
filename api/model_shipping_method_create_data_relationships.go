@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,11 +17,11 @@ import (
 
 // ShippingMethodCreateDataRelationships struct for ShippingMethodCreateDataRelationships
 type ShippingMethodCreateDataRelationships struct {
-	Market              *AvalaraAccountDataRelationshipsMarkets             `json:"market,omitempty"`
-	ShippingZone        *ShippingMethodDataRelationshipsShippingZone        `json:"shipping_zone,omitempty"`
-	ShippingCategory    *ShipmentDataRelationshipsShippingCategory          `json:"shipping_category,omitempty"`
-	StockLocation       *DeliveryLeadTimeDataRelationshipsStockLocation     `json:"stock_location,omitempty"`
-	ShippingMethodTiers *ShippingMethodDataRelationshipsShippingMethodTiers `json:"shipping_method_tiers,omitempty"`
+	Market              *BillingInfoValidationRuleCreateDataRelationshipsMarket   `json:"market,omitempty"`
+	ShippingZone        *ShippingMethodCreateDataRelationshipsShippingZone        `json:"shipping_zone,omitempty"`
+	ShippingCategory    *ShippingMethodCreateDataRelationshipsShippingCategory    `json:"shipping_category,omitempty"`
+	StockLocation       *DeliveryLeadTimeCreateDataRelationshipsStockLocation     `json:"stock_location,omitempty"`
+	ShippingMethodTiers *ShippingMethodCreateDataRelationshipsShippingMethodTiers `json:"shipping_method_tiers,omitempty"`
 }
 
 // NewShippingMethodCreateDataRelationships instantiates a new ShippingMethodCreateDataRelationships object
@@ -42,9 +42,9 @@ func NewShippingMethodCreateDataRelationshipsWithDefaults() *ShippingMethodCreat
 }
 
 // GetMarket returns the Market field value if set, zero value otherwise.
-func (o *ShippingMethodCreateDataRelationships) GetMarket() AvalaraAccountDataRelationshipsMarkets {
+func (o *ShippingMethodCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket {
 	if o == nil || o.Market == nil {
-		var ret AvalaraAccountDataRelationshipsMarkets
+		var ret BillingInfoValidationRuleCreateDataRelationshipsMarket
 		return ret
 	}
 	return *o.Market
@@ -52,7 +52,7 @@ func (o *ShippingMethodCreateDataRelationships) GetMarket() AvalaraAccountDataRe
 
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ShippingMethodCreateDataRelationships) GetMarketOk() (*AvalaraAccountDataRelationshipsMarkets, bool) {
+func (o *ShippingMethodCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool) {
 	if o == nil || o.Market == nil {
 		return nil, false
 	}
@@ -68,15 +68,15 @@ func (o *ShippingMethodCreateDataRelationships) HasMarket() bool {
 	return false
 }
 
-// SetMarket gets a reference to the given AvalaraAccountDataRelationshipsMarkets and assigns it to the Market field.
-func (o *ShippingMethodCreateDataRelationships) SetMarket(v AvalaraAccountDataRelationshipsMarkets) {
+// SetMarket gets a reference to the given BillingInfoValidationRuleCreateDataRelationshipsMarket and assigns it to the Market field.
+func (o *ShippingMethodCreateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket) {
 	o.Market = &v
 }
 
 // GetShippingZone returns the ShippingZone field value if set, zero value otherwise.
-func (o *ShippingMethodCreateDataRelationships) GetShippingZone() ShippingMethodDataRelationshipsShippingZone {
+func (o *ShippingMethodCreateDataRelationships) GetShippingZone() ShippingMethodCreateDataRelationshipsShippingZone {
 	if o == nil || o.ShippingZone == nil {
-		var ret ShippingMethodDataRelationshipsShippingZone
+		var ret ShippingMethodCreateDataRelationshipsShippingZone
 		return ret
 	}
 	return *o.ShippingZone
@@ -84,7 +84,7 @@ func (o *ShippingMethodCreateDataRelationships) GetShippingZone() ShippingMethod
 
 // GetShippingZoneOk returns a tuple with the ShippingZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ShippingMethodCreateDataRelationships) GetShippingZoneOk() (*ShippingMethodDataRelationshipsShippingZone, bool) {
+func (o *ShippingMethodCreateDataRelationships) GetShippingZoneOk() (*ShippingMethodCreateDataRelationshipsShippingZone, bool) {
 	if o == nil || o.ShippingZone == nil {
 		return nil, false
 	}
@@ -100,15 +100,15 @@ func (o *ShippingMethodCreateDataRelationships) HasShippingZone() bool {
 	return false
 }
 
-// SetShippingZone gets a reference to the given ShippingMethodDataRelationshipsShippingZone and assigns it to the ShippingZone field.
-func (o *ShippingMethodCreateDataRelationships) SetShippingZone(v ShippingMethodDataRelationshipsShippingZone) {
+// SetShippingZone gets a reference to the given ShippingMethodCreateDataRelationshipsShippingZone and assigns it to the ShippingZone field.
+func (o *ShippingMethodCreateDataRelationships) SetShippingZone(v ShippingMethodCreateDataRelationshipsShippingZone) {
 	o.ShippingZone = &v
 }
 
 // GetShippingCategory returns the ShippingCategory field value if set, zero value otherwise.
-func (o *ShippingMethodCreateDataRelationships) GetShippingCategory() ShipmentDataRelationshipsShippingCategory {
+func (o *ShippingMethodCreateDataRelationships) GetShippingCategory() ShippingMethodCreateDataRelationshipsShippingCategory {
 	if o == nil || o.ShippingCategory == nil {
-		var ret ShipmentDataRelationshipsShippingCategory
+		var ret ShippingMethodCreateDataRelationshipsShippingCategory
 		return ret
 	}
 	return *o.ShippingCategory
@@ -116,7 +116,7 @@ func (o *ShippingMethodCreateDataRelationships) GetShippingCategory() ShipmentDa
 
 // GetShippingCategoryOk returns a tuple with the ShippingCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ShippingMethodCreateDataRelationships) GetShippingCategoryOk() (*ShipmentDataRelationshipsShippingCategory, bool) {
+func (o *ShippingMethodCreateDataRelationships) GetShippingCategoryOk() (*ShippingMethodCreateDataRelationshipsShippingCategory, bool) {
 	if o == nil || o.ShippingCategory == nil {
 		return nil, false
 	}
@@ -132,15 +132,15 @@ func (o *ShippingMethodCreateDataRelationships) HasShippingCategory() bool {
 	return false
 }
 
-// SetShippingCategory gets a reference to the given ShipmentDataRelationshipsShippingCategory and assigns it to the ShippingCategory field.
-func (o *ShippingMethodCreateDataRelationships) SetShippingCategory(v ShipmentDataRelationshipsShippingCategory) {
+// SetShippingCategory gets a reference to the given ShippingMethodCreateDataRelationshipsShippingCategory and assigns it to the ShippingCategory field.
+func (o *ShippingMethodCreateDataRelationships) SetShippingCategory(v ShippingMethodCreateDataRelationshipsShippingCategory) {
 	o.ShippingCategory = &v
 }
 
 // GetStockLocation returns the StockLocation field value if set, zero value otherwise.
-func (o *ShippingMethodCreateDataRelationships) GetStockLocation() DeliveryLeadTimeDataRelationshipsStockLocation {
+func (o *ShippingMethodCreateDataRelationships) GetStockLocation() DeliveryLeadTimeCreateDataRelationshipsStockLocation {
 	if o == nil || o.StockLocation == nil {
-		var ret DeliveryLeadTimeDataRelationshipsStockLocation
+		var ret DeliveryLeadTimeCreateDataRelationshipsStockLocation
 		return ret
 	}
 	return *o.StockLocation
@@ -148,7 +148,7 @@ func (o *ShippingMethodCreateDataRelationships) GetStockLocation() DeliveryLeadT
 
 // GetStockLocationOk returns a tuple with the StockLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ShippingMethodCreateDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeDataRelationshipsStockLocation, bool) {
+func (o *ShippingMethodCreateDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeCreateDataRelationshipsStockLocation, bool) {
 	if o == nil || o.StockLocation == nil {
 		return nil, false
 	}
@@ -164,15 +164,15 @@ func (o *ShippingMethodCreateDataRelationships) HasStockLocation() bool {
 	return false
 }
 
-// SetStockLocation gets a reference to the given DeliveryLeadTimeDataRelationshipsStockLocation and assigns it to the StockLocation field.
-func (o *ShippingMethodCreateDataRelationships) SetStockLocation(v DeliveryLeadTimeDataRelationshipsStockLocation) {
+// SetStockLocation gets a reference to the given DeliveryLeadTimeCreateDataRelationshipsStockLocation and assigns it to the StockLocation field.
+func (o *ShippingMethodCreateDataRelationships) SetStockLocation(v DeliveryLeadTimeCreateDataRelationshipsStockLocation) {
 	o.StockLocation = &v
 }
 
 // GetShippingMethodTiers returns the ShippingMethodTiers field value if set, zero value otherwise.
-func (o *ShippingMethodCreateDataRelationships) GetShippingMethodTiers() ShippingMethodDataRelationshipsShippingMethodTiers {
+func (o *ShippingMethodCreateDataRelationships) GetShippingMethodTiers() ShippingMethodCreateDataRelationshipsShippingMethodTiers {
 	if o == nil || o.ShippingMethodTiers == nil {
-		var ret ShippingMethodDataRelationshipsShippingMethodTiers
+		var ret ShippingMethodCreateDataRelationshipsShippingMethodTiers
 		return ret
 	}
 	return *o.ShippingMethodTiers
@@ -180,7 +180,7 @@ func (o *ShippingMethodCreateDataRelationships) GetShippingMethodTiers() Shippin
 
 // GetShippingMethodTiersOk returns a tuple with the ShippingMethodTiers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ShippingMethodCreateDataRelationships) GetShippingMethodTiersOk() (*ShippingMethodDataRelationshipsShippingMethodTiers, bool) {
+func (o *ShippingMethodCreateDataRelationships) GetShippingMethodTiersOk() (*ShippingMethodCreateDataRelationshipsShippingMethodTiers, bool) {
 	if o == nil || o.ShippingMethodTiers == nil {
 		return nil, false
 	}
@@ -196,8 +196,8 @@ func (o *ShippingMethodCreateDataRelationships) HasShippingMethodTiers() bool {
 	return false
 }
 
-// SetShippingMethodTiers gets a reference to the given ShippingMethodDataRelationshipsShippingMethodTiers and assigns it to the ShippingMethodTiers field.
-func (o *ShippingMethodCreateDataRelationships) SetShippingMethodTiers(v ShippingMethodDataRelationshipsShippingMethodTiers) {
+// SetShippingMethodTiers gets a reference to the given ShippingMethodCreateDataRelationshipsShippingMethodTiers and assigns it to the ShippingMethodTiers field.
+func (o *ShippingMethodCreateDataRelationships) SetShippingMethodTiers(v ShippingMethodCreateDataRelationshipsShippingMethodTiers) {
 	o.ShippingMethodTiers = &v
 }
 

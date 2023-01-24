@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEExternalPromotionsExternalPromotionId Delete an external promotion
 
 Delete an external promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalPromotionId The resource's id
- @return ExternalPromotionsApiDELETEExternalPromotionsExternalPromotionIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalPromotionId The resource's id
+	@return ExternalPromotionsApiDELETEExternalPromotionsExternalPromotionIdRequest
 */
 func (a *ExternalPromotionsApiService) DELETEExternalPromotionsExternalPromotionId(ctx context.Context, externalPromotionId string) ExternalPromotionsApiDELETEExternalPromotionsExternalPromotionIdRequest {
 	return ExternalPromotionsApiDELETEExternalPromotionsExternalPromotionIdRequest{
@@ -129,8 +129,8 @@ GETExternalPromotions List all external promotions
 
 List all external promotions
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ExternalPromotionsApiGETExternalPromotionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ExternalPromotionsApiGETExternalPromotionsRequest
 */
 func (a *ExternalPromotionsApiService) GETExternalPromotions(ctx context.Context) ExternalPromotionsApiGETExternalPromotionsRequest {
 	return ExternalPromotionsApiGETExternalPromotionsRequest{
@@ -140,7 +140,8 @@ func (a *ExternalPromotionsApiService) GETExternalPromotions(ctx context.Context
 }
 
 // Execute executes the request
-//  @return GETExternalPromotions200Response
+//
+//	@return GETExternalPromotions200Response
 func (a *ExternalPromotionsApiService) GETExternalPromotionsExecute(r ExternalPromotionsApiGETExternalPromotionsRequest) (*GETExternalPromotions200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -229,9 +230,9 @@ GETExternalPromotionsExternalPromotionId Retrieve an external promotion
 
 Retrieve an external promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalPromotionId The resource's id
- @return ExternalPromotionsApiGETExternalPromotionsExternalPromotionIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalPromotionId The resource's id
+	@return ExternalPromotionsApiGETExternalPromotionsExternalPromotionIdRequest
 */
 func (a *ExternalPromotionsApiService) GETExternalPromotionsExternalPromotionId(ctx context.Context, externalPromotionId string) ExternalPromotionsApiGETExternalPromotionsExternalPromotionIdRequest {
 	return ExternalPromotionsApiGETExternalPromotionsExternalPromotionIdRequest{
@@ -242,7 +243,8 @@ func (a *ExternalPromotionsApiService) GETExternalPromotionsExternalPromotionId(
 }
 
 // Execute executes the request
-//  @return GETExternalPromotionsExternalPromotionId200Response
+//
+//	@return GETExternalPromotionsExternalPromotionId200Response
 func (a *ExternalPromotionsApiService) GETExternalPromotionsExternalPromotionIdExecute(r ExternalPromotionsApiGETExternalPromotionsExternalPromotionIdRequest) (*GETExternalPromotionsExternalPromotionId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -338,9 +340,9 @@ PATCHExternalPromotionsExternalPromotionId Update an external promotion
 
 Update an external promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param externalPromotionId The resource's id
- @return ExternalPromotionsApiPATCHExternalPromotionsExternalPromotionIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param externalPromotionId The resource's id
+	@return ExternalPromotionsApiPATCHExternalPromotionsExternalPromotionIdRequest
 */
 func (a *ExternalPromotionsApiService) PATCHExternalPromotionsExternalPromotionId(ctx context.Context, externalPromotionId string) ExternalPromotionsApiPATCHExternalPromotionsExternalPromotionIdRequest {
 	return ExternalPromotionsApiPATCHExternalPromotionsExternalPromotionIdRequest{
@@ -351,7 +353,8 @@ func (a *ExternalPromotionsApiService) PATCHExternalPromotionsExternalPromotionI
 }
 
 // Execute executes the request
-//  @return PATCHExternalPromotionsExternalPromotionId200Response
+//
+//	@return PATCHExternalPromotionsExternalPromotionId200Response
 func (a *ExternalPromotionsApiService) PATCHExternalPromotionsExternalPromotionIdExecute(r ExternalPromotionsApiPATCHExternalPromotionsExternalPromotionIdRequest) (*PATCHExternalPromotionsExternalPromotionId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -451,8 +454,8 @@ POSTExternalPromotions Create an external promotion
 
 Create an external promotion
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return ExternalPromotionsApiPOSTExternalPromotionsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return ExternalPromotionsApiPOSTExternalPromotionsRequest
 */
 func (a *ExternalPromotionsApiService) POSTExternalPromotions(ctx context.Context) ExternalPromotionsApiPOSTExternalPromotionsRequest {
 	return ExternalPromotionsApiPOSTExternalPromotionsRequest{
@@ -462,7 +465,8 @@ func (a *ExternalPromotionsApiService) POSTExternalPromotions(ctx context.Contex
 }
 
 // Execute executes the request
-//  @return POSTExternalPromotions201Response
+//
+//	@return POSTExternalPromotions201Response
 func (a *ExternalPromotionsApiService) POSTExternalPromotionsExecute(r ExternalPromotionsApiPOSTExternalPromotionsRequest) (*POSTExternalPromotions201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

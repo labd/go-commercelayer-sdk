@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**BundleData**](BundleData.md) |  | 
+**Data** | Pointer to [**BundleData**](BundleData.md) |  | [optional] 
 
 ## Methods
 
 ### NewBundle
 
-`func NewBundle(data BundleData, ) *Bundle`
+`func NewBundle() *Bundle`
 
 NewBundle instantiates a new Bundle object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *Bundle) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

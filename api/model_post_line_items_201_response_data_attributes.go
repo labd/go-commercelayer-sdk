@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -23,7 +23,7 @@ type POSTLineItems201ResponseDataAttributes struct {
 	BundleCode *string `json:"bundle_code,omitempty"`
 	// The line item quantity.
 	Quantity int32 `json:"quantity"`
-	// When creating a new line item, set this attribute to '1' if you want to inject the unit_amount_cents price from an external source.
+	// When creating or updating a new line item, set this attribute to '1' if you want to inject the unit_amount_cents price from an external source.
 	ExternalPrice *bool `json:"_external_price,omitempty"`
 	// When creating a new line item, set this attribute to '1' if you want to update the line item quantity (if present) instead of creating a new line item for the same SKU.
 	UpdateQuantity *bool `json:"_update_quantity,omitempty"`

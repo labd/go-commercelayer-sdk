@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -22,7 +22,7 @@ type OrderAmountPromotionRuleUpdateData struct {
 	// The resource's id
 	Id            string                                                 `json:"id"`
 	Attributes    POSTOrderAmountPromotionRules201ResponseDataAttributes `json:"attributes"`
-	Relationships *OrderAmountPromotionRuleDataRelationships             `json:"relationships,omitempty"`
+	Relationships *OrderAmountPromotionRuleUpdateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewOrderAmountPromotionRuleUpdateData instantiates a new OrderAmountPromotionRuleUpdateData object
@@ -118,9 +118,9 @@ func (o *OrderAmountPromotionRuleUpdateData) SetAttributes(v POSTOrderAmountProm
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *OrderAmountPromotionRuleUpdateData) GetRelationships() OrderAmountPromotionRuleDataRelationships {
+func (o *OrderAmountPromotionRuleUpdateData) GetRelationships() OrderAmountPromotionRuleUpdateDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret OrderAmountPromotionRuleDataRelationships
+		var ret OrderAmountPromotionRuleUpdateDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -128,7 +128,7 @@ func (o *OrderAmountPromotionRuleUpdateData) GetRelationships() OrderAmountPromo
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderAmountPromotionRuleUpdateData) GetRelationshipsOk() (*OrderAmountPromotionRuleDataRelationships, bool) {
+func (o *OrderAmountPromotionRuleUpdateData) GetRelationshipsOk() (*OrderAmountPromotionRuleUpdateDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -144,8 +144,8 @@ func (o *OrderAmountPromotionRuleUpdateData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given OrderAmountPromotionRuleDataRelationships and assigns it to the Relationships field.
-func (o *OrderAmountPromotionRuleUpdateData) SetRelationships(v OrderAmountPromotionRuleDataRelationships) {
+// SetRelationships gets a reference to the given OrderAmountPromotionRuleUpdateDataRelationships and assigns it to the Relationships field.
+func (o *OrderAmountPromotionRuleUpdateData) SetRelationships(v OrderAmountPromotionRuleUpdateDataRelationships) {
 	o.Relationships = &v
 }
 

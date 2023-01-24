@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**VoidData**](VoidData.md) |  | 
+**Data** | Pointer to [**VoidData**](VoidData.md) |  | [optional] 
 
 ## Methods
 
 ### NewVoid
 
-`func NewVoid(data VoidData, ) *Void`
+`func NewVoid() *Void`
 
 NewVoid instantiates a new Void object
 This constructor will assign default values to properties that have it defined,
@@ -44,6 +44,11 @@ and a boolean to check if the value has been set.
 
 SetData sets Data field to given value.
 
+### HasData
+
+`func (o *Void) HasData() bool`
+
+HasData returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

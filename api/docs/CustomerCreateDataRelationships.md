@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**CustomerGroup** | Pointer to [**CustomerDataRelationshipsCustomerGroup**](CustomerDataRelationshipsCustomerGroup.md) |  | [optional] 
+**CustomerGroup** | Pointer to [**CustomerCreateDataRelationshipsCustomerGroup**](CustomerCreateDataRelationshipsCustomerGroup.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCustomerGroup
 
-`func (o *CustomerCreateDataRelationships) GetCustomerGroup() CustomerDataRelationshipsCustomerGroup`
+`func (o *CustomerCreateDataRelationships) GetCustomerGroup() CustomerCreateDataRelationshipsCustomerGroup`
 
 GetCustomerGroup returns the CustomerGroup field if non-nil, zero value otherwise.
 
 ### GetCustomerGroupOk
 
-`func (o *CustomerCreateDataRelationships) GetCustomerGroupOk() (*CustomerDataRelationshipsCustomerGroup, bool)`
+`func (o *CustomerCreateDataRelationships) GetCustomerGroupOk() (*CustomerCreateDataRelationshipsCustomerGroup, bool)`
 
 GetCustomerGroupOk returns a tuple with the CustomerGroup field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomerGroup
 
-`func (o *CustomerCreateDataRelationships) SetCustomerGroup(v CustomerDataRelationshipsCustomerGroup)`
+`func (o *CustomerCreateDataRelationships) SetCustomerGroup(v CustomerCreateDataRelationshipsCustomerGroup)`
 
 SetCustomerGroup sets CustomerGroup field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ DELETEPaypalPaymentsPaypalPaymentId Delete a paypal payment
 
 Delete a paypal payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param paypalPaymentId The resource's id
- @return PaypalPaymentsApiDELETEPaypalPaymentsPaypalPaymentIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param paypalPaymentId The resource's id
+	@return PaypalPaymentsApiDELETEPaypalPaymentsPaypalPaymentIdRequest
 */
 func (a *PaypalPaymentsApiService) DELETEPaypalPaymentsPaypalPaymentId(ctx context.Context, paypalPaymentId string) PaypalPaymentsApiDELETEPaypalPaymentsPaypalPaymentIdRequest {
 	return PaypalPaymentsApiDELETEPaypalPaymentsPaypalPaymentIdRequest{
@@ -130,9 +130,9 @@ GETPaypalGatewayIdPaypalPayments Retrieve the paypal payments associated to the 
 
 Retrieve the paypal payments associated to the paypal gateway
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param paypalGatewayId The resource's id
- @return PaypalPaymentsApiGETPaypalGatewayIdPaypalPaymentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param paypalGatewayId The resource's id
+	@return PaypalPaymentsApiGETPaypalGatewayIdPaypalPaymentsRequest
 */
 func (a *PaypalPaymentsApiService) GETPaypalGatewayIdPaypalPayments(ctx context.Context, paypalGatewayId string) PaypalPaymentsApiGETPaypalGatewayIdPaypalPaymentsRequest {
 	return PaypalPaymentsApiGETPaypalGatewayIdPaypalPaymentsRequest{
@@ -221,8 +221,8 @@ GETPaypalPayments List all paypal payments
 
 List all paypal payments
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return PaypalPaymentsApiGETPaypalPaymentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return PaypalPaymentsApiGETPaypalPaymentsRequest
 */
 func (a *PaypalPaymentsApiService) GETPaypalPayments(ctx context.Context) PaypalPaymentsApiGETPaypalPaymentsRequest {
 	return PaypalPaymentsApiGETPaypalPaymentsRequest{
@@ -232,7 +232,8 @@ func (a *PaypalPaymentsApiService) GETPaypalPayments(ctx context.Context) Paypal
 }
 
 // Execute executes the request
-//  @return GETPaypalPayments200Response
+//
+//	@return GETPaypalPayments200Response
 func (a *PaypalPaymentsApiService) GETPaypalPaymentsExecute(r PaypalPaymentsApiGETPaypalPaymentsRequest) (*GETPaypalPayments200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -321,9 +322,9 @@ GETPaypalPaymentsPaypalPaymentId Retrieve a paypal payment
 
 Retrieve a paypal payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param paypalPaymentId The resource's id
- @return PaypalPaymentsApiGETPaypalPaymentsPaypalPaymentIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param paypalPaymentId The resource's id
+	@return PaypalPaymentsApiGETPaypalPaymentsPaypalPaymentIdRequest
 */
 func (a *PaypalPaymentsApiService) GETPaypalPaymentsPaypalPaymentId(ctx context.Context, paypalPaymentId string) PaypalPaymentsApiGETPaypalPaymentsPaypalPaymentIdRequest {
 	return PaypalPaymentsApiGETPaypalPaymentsPaypalPaymentIdRequest{
@@ -334,7 +335,8 @@ func (a *PaypalPaymentsApiService) GETPaypalPaymentsPaypalPaymentId(ctx context.
 }
 
 // Execute executes the request
-//  @return GETPaypalPaymentsPaypalPaymentId200Response
+//
+//	@return GETPaypalPaymentsPaypalPaymentId200Response
 func (a *PaypalPaymentsApiService) GETPaypalPaymentsPaypalPaymentIdExecute(r PaypalPaymentsApiGETPaypalPaymentsPaypalPaymentIdRequest) (*GETPaypalPaymentsPaypalPaymentId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -430,9 +432,9 @@ PATCHPaypalPaymentsPaypalPaymentId Update a paypal payment
 
 Update a paypal payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param paypalPaymentId The resource's id
- @return PaypalPaymentsApiPATCHPaypalPaymentsPaypalPaymentIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param paypalPaymentId The resource's id
+	@return PaypalPaymentsApiPATCHPaypalPaymentsPaypalPaymentIdRequest
 */
 func (a *PaypalPaymentsApiService) PATCHPaypalPaymentsPaypalPaymentId(ctx context.Context, paypalPaymentId string) PaypalPaymentsApiPATCHPaypalPaymentsPaypalPaymentIdRequest {
 	return PaypalPaymentsApiPATCHPaypalPaymentsPaypalPaymentIdRequest{
@@ -443,7 +445,8 @@ func (a *PaypalPaymentsApiService) PATCHPaypalPaymentsPaypalPaymentId(ctx contex
 }
 
 // Execute executes the request
-//  @return PATCHPaypalPaymentsPaypalPaymentId200Response
+//
+//	@return PATCHPaypalPaymentsPaypalPaymentId200Response
 func (a *PaypalPaymentsApiService) PATCHPaypalPaymentsPaypalPaymentIdExecute(r PaypalPaymentsApiPATCHPaypalPaymentsPaypalPaymentIdRequest) (*PATCHPaypalPaymentsPaypalPaymentId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
@@ -543,8 +546,8 @@ POSTPaypalPayments Create a paypal payment
 
 Create a paypal payment
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return PaypalPaymentsApiPOSTPaypalPaymentsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return PaypalPaymentsApiPOSTPaypalPaymentsRequest
 */
 func (a *PaypalPaymentsApiService) POSTPaypalPayments(ctx context.Context) PaypalPaymentsApiPOSTPaypalPaymentsRequest {
 	return PaypalPaymentsApiPOSTPaypalPaymentsRequest{
@@ -554,7 +557,8 @@ func (a *PaypalPaymentsApiService) POSTPaypalPayments(ctx context.Context) Paypa
 }
 
 // Execute executes the request
-//  @return POSTPaypalPayments201Response
+//
+//	@return POSTPaypalPayments201Response
 func (a *PaypalPaymentsApiService) POSTPaypalPaymentsExecute(r PaypalPaymentsApiPOSTPaypalPaymentsRequest) (*POSTPaypalPayments201Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPost

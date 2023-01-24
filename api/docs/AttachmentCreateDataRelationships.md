@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Attachable** | [**AttachmentDataRelationshipsAttachable**](AttachmentDataRelationshipsAttachable.md) |  | 
+**Attachable** | [**AttachmentCreateDataRelationshipsAttachable**](AttachmentCreateDataRelationshipsAttachable.md) |  | 
 
 ## Methods
 
 ### NewAttachmentCreateDataRelationships
 
-`func NewAttachmentCreateDataRelationships(attachable AttachmentDataRelationshipsAttachable, ) *AttachmentCreateDataRelationships`
+`func NewAttachmentCreateDataRelationships(attachable AttachmentCreateDataRelationshipsAttachable, ) *AttachmentCreateDataRelationships`
 
 NewAttachmentCreateDataRelationships instantiates a new AttachmentCreateDataRelationships object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetAttachable
 
-`func (o *AttachmentCreateDataRelationships) GetAttachable() AttachmentDataRelationshipsAttachable`
+`func (o *AttachmentCreateDataRelationships) GetAttachable() AttachmentCreateDataRelationshipsAttachable`
 
 GetAttachable returns the Attachable field if non-nil, zero value otherwise.
 
 ### GetAttachableOk
 
-`func (o *AttachmentCreateDataRelationships) GetAttachableOk() (*AttachmentDataRelationshipsAttachable, bool)`
+`func (o *AttachmentCreateDataRelationships) GetAttachableOk() (*AttachmentCreateDataRelationshipsAttachable, bool)`
 
 GetAttachableOk returns a tuple with the Attachable field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttachable
 
-`func (o *AttachmentCreateDataRelationships) SetAttachable(v AttachmentDataRelationshipsAttachable)`
+`func (o *AttachmentCreateDataRelationships) SetAttachable(v AttachmentCreateDataRelationshipsAttachable)`
 
 SetAttachable sets Attachable field to given value.
 

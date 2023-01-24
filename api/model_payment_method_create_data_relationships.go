@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,15 +17,15 @@ import (
 
 // PaymentMethodCreateDataRelationships struct for PaymentMethodCreateDataRelationships
 type PaymentMethodCreateDataRelationships struct {
-	Market         *AvalaraAccountDataRelationshipsMarkets     `json:"market,omitempty"`
-	PaymentGateway AdyenPaymentDataRelationshipsPaymentGateway `json:"payment_gateway"`
+	Market         *BillingInfoValidationRuleCreateDataRelationshipsMarket `json:"market,omitempty"`
+	PaymentGateway PaymentMethodCreateDataRelationshipsPaymentGateway      `json:"payment_gateway"`
 }
 
 // NewPaymentMethodCreateDataRelationships instantiates a new PaymentMethodCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaymentMethodCreateDataRelationships(paymentGateway AdyenPaymentDataRelationshipsPaymentGateway) *PaymentMethodCreateDataRelationships {
+func NewPaymentMethodCreateDataRelationships(paymentGateway PaymentMethodCreateDataRelationshipsPaymentGateway) *PaymentMethodCreateDataRelationships {
 	this := PaymentMethodCreateDataRelationships{}
 	this.PaymentGateway = paymentGateway
 	return &this
@@ -40,9 +40,9 @@ func NewPaymentMethodCreateDataRelationshipsWithDefaults() *PaymentMethodCreateD
 }
 
 // GetMarket returns the Market field value if set, zero value otherwise.
-func (o *PaymentMethodCreateDataRelationships) GetMarket() AvalaraAccountDataRelationshipsMarkets {
+func (o *PaymentMethodCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket {
 	if o == nil || o.Market == nil {
-		var ret AvalaraAccountDataRelationshipsMarkets
+		var ret BillingInfoValidationRuleCreateDataRelationshipsMarket
 		return ret
 	}
 	return *o.Market
@@ -50,7 +50,7 @@ func (o *PaymentMethodCreateDataRelationships) GetMarket() AvalaraAccountDataRel
 
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PaymentMethodCreateDataRelationships) GetMarketOk() (*AvalaraAccountDataRelationshipsMarkets, bool) {
+func (o *PaymentMethodCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool) {
 	if o == nil || o.Market == nil {
 		return nil, false
 	}
@@ -66,15 +66,15 @@ func (o *PaymentMethodCreateDataRelationships) HasMarket() bool {
 	return false
 }
 
-// SetMarket gets a reference to the given AvalaraAccountDataRelationshipsMarkets and assigns it to the Market field.
-func (o *PaymentMethodCreateDataRelationships) SetMarket(v AvalaraAccountDataRelationshipsMarkets) {
+// SetMarket gets a reference to the given BillingInfoValidationRuleCreateDataRelationshipsMarket and assigns it to the Market field.
+func (o *PaymentMethodCreateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket) {
 	o.Market = &v
 }
 
 // GetPaymentGateway returns the PaymentGateway field value
-func (o *PaymentMethodCreateDataRelationships) GetPaymentGateway() AdyenPaymentDataRelationshipsPaymentGateway {
+func (o *PaymentMethodCreateDataRelationships) GetPaymentGateway() PaymentMethodCreateDataRelationshipsPaymentGateway {
 	if o == nil {
-		var ret AdyenPaymentDataRelationshipsPaymentGateway
+		var ret PaymentMethodCreateDataRelationshipsPaymentGateway
 		return ret
 	}
 
@@ -83,7 +83,7 @@ func (o *PaymentMethodCreateDataRelationships) GetPaymentGateway() AdyenPaymentD
 
 // GetPaymentGatewayOk returns a tuple with the PaymentGateway field value
 // and a boolean to check if the value has been set.
-func (o *PaymentMethodCreateDataRelationships) GetPaymentGatewayOk() (*AdyenPaymentDataRelationshipsPaymentGateway, bool) {
+func (o *PaymentMethodCreateDataRelationships) GetPaymentGatewayOk() (*PaymentMethodCreateDataRelationshipsPaymentGateway, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,7 +91,7 @@ func (o *PaymentMethodCreateDataRelationships) GetPaymentGatewayOk() (*AdyenPaym
 }
 
 // SetPaymentGateway sets field value
-func (o *PaymentMethodCreateDataRelationships) SetPaymentGateway(v AdyenPaymentDataRelationshipsPaymentGateway) {
+func (o *PaymentMethodCreateDataRelationships) SetPaymentGateway(v PaymentMethodCreateDataRelationshipsPaymentGateway) {
 	o.PaymentGateway = v
 }
 

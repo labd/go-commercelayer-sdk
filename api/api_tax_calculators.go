@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -38,9 +38,9 @@ GETMarketIdTaxCalculator Retrieve the tax calculator associated to the market
 
 Retrieve the tax calculator associated to the market
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param marketId The resource's id
- @return TaxCalculatorsApiGETMarketIdTaxCalculatorRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param marketId The resource's id
+	@return TaxCalculatorsApiGETMarketIdTaxCalculatorRequest
 */
 func (a *TaxCalculatorsApiService) GETMarketIdTaxCalculator(ctx context.Context, marketId string) TaxCalculatorsApiGETMarketIdTaxCalculatorRequest {
 	return TaxCalculatorsApiGETMarketIdTaxCalculatorRequest{
@@ -129,8 +129,8 @@ GETTaxCalculators List all tax calculators
 
 List all tax calculators
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @return TaxCalculatorsApiGETTaxCalculatorsRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@return TaxCalculatorsApiGETTaxCalculatorsRequest
 */
 func (a *TaxCalculatorsApiService) GETTaxCalculators(ctx context.Context) TaxCalculatorsApiGETTaxCalculatorsRequest {
 	return TaxCalculatorsApiGETTaxCalculatorsRequest{
@@ -140,7 +140,8 @@ func (a *TaxCalculatorsApiService) GETTaxCalculators(ctx context.Context) TaxCal
 }
 
 // Execute executes the request
-//  @return GETTaxCalculators200Response
+//
+//	@return GETTaxCalculators200Response
 func (a *TaxCalculatorsApiService) GETTaxCalculatorsExecute(r TaxCalculatorsApiGETTaxCalculatorsRequest) (*GETTaxCalculators200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet
@@ -229,9 +230,9 @@ GETTaxCalculatorsTaxCalculatorId Retrieve a tax calculator
 
 Retrieve a tax calculator
 
- @param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
- @param taxCalculatorId The resource's id
- @return TaxCalculatorsApiGETTaxCalculatorsTaxCalculatorIdRequest
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param taxCalculatorId The resource's id
+	@return TaxCalculatorsApiGETTaxCalculatorsTaxCalculatorIdRequest
 */
 func (a *TaxCalculatorsApiService) GETTaxCalculatorsTaxCalculatorId(ctx context.Context, taxCalculatorId string) TaxCalculatorsApiGETTaxCalculatorsTaxCalculatorIdRequest {
 	return TaxCalculatorsApiGETTaxCalculatorsTaxCalculatorIdRequest{
@@ -242,7 +243,8 @@ func (a *TaxCalculatorsApiService) GETTaxCalculatorsTaxCalculatorId(ctx context.
 }
 
 // Execute executes the request
-//  @return GETTaxCalculatorsTaxCalculatorId200Response
+//
+//	@return GETTaxCalculatorsTaxCalculatorId200Response
 func (a *TaxCalculatorsApiService) GETTaxCalculatorsTaxCalculatorIdExecute(r TaxCalculatorsApiGETTaxCalculatorsTaxCalculatorIdRequest) (*GETTaxCalculatorsTaxCalculatorId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodGet

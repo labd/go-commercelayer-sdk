@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.0.2
+API version: 3.2.0
 Contact: support@commercelayer.io
 */
 
@@ -17,7 +17,7 @@ import (
 
 // SkuUpdateDataRelationships struct for SkuUpdateDataRelationships
 type SkuUpdateDataRelationships struct {
-	ShippingCategory *ShipmentDataRelationshipsShippingCategory `json:"shipping_category,omitempty"`
+	ShippingCategory *ShippingMethodCreateDataRelationshipsShippingCategory `json:"shipping_category,omitempty"`
 }
 
 // NewSkuUpdateDataRelationships instantiates a new SkuUpdateDataRelationships object
@@ -38,9 +38,9 @@ func NewSkuUpdateDataRelationshipsWithDefaults() *SkuUpdateDataRelationships {
 }
 
 // GetShippingCategory returns the ShippingCategory field value if set, zero value otherwise.
-func (o *SkuUpdateDataRelationships) GetShippingCategory() ShipmentDataRelationshipsShippingCategory {
+func (o *SkuUpdateDataRelationships) GetShippingCategory() ShippingMethodCreateDataRelationshipsShippingCategory {
 	if o == nil || o.ShippingCategory == nil {
-		var ret ShipmentDataRelationshipsShippingCategory
+		var ret ShippingMethodCreateDataRelationshipsShippingCategory
 		return ret
 	}
 	return *o.ShippingCategory
@@ -48,7 +48,7 @@ func (o *SkuUpdateDataRelationships) GetShippingCategory() ShipmentDataRelations
 
 // GetShippingCategoryOk returns a tuple with the ShippingCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SkuUpdateDataRelationships) GetShippingCategoryOk() (*ShipmentDataRelationshipsShippingCategory, bool) {
+func (o *SkuUpdateDataRelationships) GetShippingCategoryOk() (*ShippingMethodCreateDataRelationshipsShippingCategory, bool) {
 	if o == nil || o.ShippingCategory == nil {
 		return nil, false
 	}
@@ -64,8 +64,8 @@ func (o *SkuUpdateDataRelationships) HasShippingCategory() bool {
 	return false
 }
 
-// SetShippingCategory gets a reference to the given ShipmentDataRelationshipsShippingCategory and assigns it to the ShippingCategory field.
-func (o *SkuUpdateDataRelationships) SetShippingCategory(v ShipmentDataRelationshipsShippingCategory) {
+// SetShippingCategory gets a reference to the given ShippingMethodCreateDataRelationshipsShippingCategory and assigns it to the ShippingCategory field.
+func (o *SkuUpdateDataRelationships) SetShippingCategory(v ShippingMethodCreateDataRelationshipsShippingCategory) {
 	o.ShippingCategory = &v
 }
 
