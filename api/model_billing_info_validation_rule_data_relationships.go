@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.2.0
+API version: 3.4.0
 Contact: support@commercelayer.io
 */
 
@@ -17,7 +17,8 @@ import (
 
 // BillingInfoValidationRuleDataRelationships struct for BillingInfoValidationRuleDataRelationships
 type BillingInfoValidationRuleDataRelationships struct {
-	Market *AvalaraAccountDataRelationshipsMarkets `json:"market,omitempty"`
+	Market      *AvalaraAccountDataRelationshipsMarkets     `json:"market,omitempty"`
+	Attachments *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
 }
 
 // NewBillingInfoValidationRuleDataRelationships instantiates a new BillingInfoValidationRuleDataRelationships object
@@ -69,10 +70,45 @@ func (o *BillingInfoValidationRuleDataRelationships) SetMarket(v AvalaraAccountD
 	o.Market = &v
 }
 
+// GetAttachments returns the Attachments field value if set, zero value otherwise.
+func (o *BillingInfoValidationRuleDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
+	if o == nil || o.Attachments == nil {
+		var ret AvalaraAccountDataRelationshipsAttachments
+		return ret
+	}
+	return *o.Attachments
+}
+
+// GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *BillingInfoValidationRuleDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
+	if o == nil || o.Attachments == nil {
+		return nil, false
+	}
+	return o.Attachments, true
+}
+
+// HasAttachments returns a boolean if a field has been set.
+func (o *BillingInfoValidationRuleDataRelationships) HasAttachments() bool {
+	if o != nil && o.Attachments != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAttachments gets a reference to the given AvalaraAccountDataRelationshipsAttachments and assigns it to the Attachments field.
+func (o *BillingInfoValidationRuleDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsAttachments) {
+	o.Attachments = &v
+}
+
 func (o BillingInfoValidationRuleDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Market != nil {
 		toSerialize["market"] = o.Market
+	}
+	if o.Attachments != nil {
+		toSerialize["attachments"] = o.Attachments
 	}
 	return json.Marshal(toSerialize)
 }

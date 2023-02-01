@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.2.0
+API version: 3.4.0
 Contact: support@commercelayer.io
 */
 
@@ -361,6 +361,98 @@ func (a *AttachmentsApiService) GETAvalaraAccountIdAttachmentsExecute(r Attachme
 
 	localVarPath := localBasePath + "/avalara_accounts/{avalaraAccountId}/attachments"
 	localVarPath = strings.Replace(localVarPath, "{"+"avalaraAccountId"+"}", url.PathEscape(parameterToString(r.avalaraAccountId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type AttachmentsApiGETBillingInfoValidationRuleIdAttachmentsRequest struct {
+	ctx                         context.Context
+	ApiService                  *AttachmentsApiService
+	billingInfoValidationRuleId string
+}
+
+func (r AttachmentsApiGETBillingInfoValidationRuleIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETBillingInfoValidationRuleIdAttachmentsExecute(r)
+}
+
+/*
+GETBillingInfoValidationRuleIdAttachments Retrieve the attachments associated to the billing info validation rule
+
+Retrieve the attachments associated to the billing info validation rule
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param billingInfoValidationRuleId The resource's id
+	@return AttachmentsApiGETBillingInfoValidationRuleIdAttachmentsRequest
+*/
+func (a *AttachmentsApiService) GETBillingInfoValidationRuleIdAttachments(ctx context.Context, billingInfoValidationRuleId string) AttachmentsApiGETBillingInfoValidationRuleIdAttachmentsRequest {
+	return AttachmentsApiGETBillingInfoValidationRuleIdAttachmentsRequest{
+		ApiService:                  a,
+		ctx:                         ctx,
+		billingInfoValidationRuleId: billingInfoValidationRuleId,
+	}
+}
+
+// Execute executes the request
+func (a *AttachmentsApiService) GETBillingInfoValidationRuleIdAttachmentsExecute(r AttachmentsApiGETBillingInfoValidationRuleIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETBillingInfoValidationRuleIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/billing_info_validation_rules/{billingInfoValidationRuleId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterToString(r.billingInfoValidationRuleId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2385,6 +2477,98 @@ func (a *AttachmentsApiService) GETOrderIdAttachmentsExecute(r AttachmentsApiGET
 
 	localVarPath := localBasePath + "/orders/{orderId}/attachments"
 	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type AttachmentsApiGETOrderValidationRuleIdAttachmentsRequest struct {
+	ctx                   context.Context
+	ApiService            *AttachmentsApiService
+	orderValidationRuleId string
+}
+
+func (r AttachmentsApiGETOrderValidationRuleIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderValidationRuleIdAttachmentsExecute(r)
+}
+
+/*
+GETOrderValidationRuleIdAttachments Retrieve the attachments associated to the order validation rule
+
+Retrieve the attachments associated to the order validation rule
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderValidationRuleId The resource's id
+	@return AttachmentsApiGETOrderValidationRuleIdAttachmentsRequest
+*/
+func (a *AttachmentsApiService) GETOrderValidationRuleIdAttachments(ctx context.Context, orderValidationRuleId string) AttachmentsApiGETOrderValidationRuleIdAttachmentsRequest {
+	return AttachmentsApiGETOrderValidationRuleIdAttachmentsRequest{
+		ApiService:            a,
+		ctx:                   ctx,
+		orderValidationRuleId: orderValidationRuleId,
+	}
+}
+
+// Execute executes the request
+func (a *AttachmentsApiService) GETOrderValidationRuleIdAttachmentsExecute(r AttachmentsApiGETOrderValidationRuleIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETOrderValidationRuleIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/order_validation_rules/{orderValidationRuleId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderValidationRuleId"+"}", url.PathEscape(parameterToString(r.orderValidationRuleId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

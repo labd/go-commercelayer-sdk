@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.2.0
+API version: 3.4.0
 Contact: support@commercelayer.io
 */
 
@@ -18,7 +18,7 @@ import (
 // CustomerPasswordResetDataRelationships struct for CustomerPasswordResetDataRelationships
 type CustomerPasswordResetDataRelationships struct {
 	Customer *CouponRecipientDataRelationshipsCustomer `json:"customer,omitempty"`
-	Events   *CleanupDataRelationshipsEvents           `json:"events,omitempty"`
+	Events   *AuthorizationDataRelationshipsEvents     `json:"events,omitempty"`
 }
 
 // NewCustomerPasswordResetDataRelationships instantiates a new CustomerPasswordResetDataRelationships object
@@ -71,9 +71,9 @@ func (o *CustomerPasswordResetDataRelationships) SetCustomer(v CouponRecipientDa
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *CustomerPasswordResetDataRelationships) GetEvents() CleanupDataRelationshipsEvents {
+func (o *CustomerPasswordResetDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
 	if o == nil || o.Events == nil {
-		var ret CleanupDataRelationshipsEvents
+		var ret AuthorizationDataRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -81,7 +81,7 @@ func (o *CustomerPasswordResetDataRelationships) GetEvents() CleanupDataRelation
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerPasswordResetDataRelationships) GetEventsOk() (*CleanupDataRelationshipsEvents, bool) {
+func (o *CustomerPasswordResetDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
 	if o == nil || o.Events == nil {
 		return nil, false
 	}
@@ -97,8 +97,8 @@ func (o *CustomerPasswordResetDataRelationships) HasEvents() bool {
 	return false
 }
 
-// SetEvents gets a reference to the given CleanupDataRelationshipsEvents and assigns it to the Events field.
-func (o *CustomerPasswordResetDataRelationships) SetEvents(v CleanupDataRelationshipsEvents) {
+// SetEvents gets a reference to the given AuthorizationDataRelationshipsEvents and assigns it to the Events field.
+func (o *CustomerPasswordResetDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents) {
 	o.Events = &v
 }
 

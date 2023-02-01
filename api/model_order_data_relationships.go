@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.2.0
+API version: 3.4.0
 Contact: support@commercelayer.io
 */
 
@@ -34,10 +34,11 @@ type OrderDataRelationships struct {
 	Captures                        *AuthorizationDataRelationshipsCaptures              `json:"captures,omitempty"`
 	Voids                           *AuthorizationDataRelationshipsVoids                 `json:"voids,omitempty"`
 	Refunds                         *CaptureDataRelationshipsRefunds                     `json:"refunds,omitempty"`
+	Returns                         *CustomerDataRelationshipsReturns                    `json:"returns,omitempty"`
 	OrderSubscriptions              *CustomerDataRelationshipsOrderSubscriptions         `json:"order_subscriptions,omitempty"`
 	OrderCopies                     *OrderSubscriptionDataRelationshipsOrderCopies       `json:"order_copies,omitempty"`
 	Attachments                     *AvalaraAccountDataRelationshipsAttachments          `json:"attachments,omitempty"`
-	Events                          *CleanupDataRelationshipsEvents                      `json:"events,omitempty"`
+	Events                          *AuthorizationDataRelationshipsEvents                `json:"events,omitempty"`
 }
 
 // NewOrderDataRelationships instantiates a new OrderDataRelationships object
@@ -601,6 +602,38 @@ func (o *OrderDataRelationships) SetRefunds(v CaptureDataRelationshipsRefunds) {
 	o.Refunds = &v
 }
 
+// GetReturns returns the Returns field value if set, zero value otherwise.
+func (o *OrderDataRelationships) GetReturns() CustomerDataRelationshipsReturns {
+	if o == nil || o.Returns == nil {
+		var ret CustomerDataRelationshipsReturns
+		return ret
+	}
+	return *o.Returns
+}
+
+// GetReturnsOk returns a tuple with the Returns field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderDataRelationships) GetReturnsOk() (*CustomerDataRelationshipsReturns, bool) {
+	if o == nil || o.Returns == nil {
+		return nil, false
+	}
+	return o.Returns, true
+}
+
+// HasReturns returns a boolean if a field has been set.
+func (o *OrderDataRelationships) HasReturns() bool {
+	if o != nil && o.Returns != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetReturns gets a reference to the given CustomerDataRelationshipsReturns and assigns it to the Returns field.
+func (o *OrderDataRelationships) SetReturns(v CustomerDataRelationshipsReturns) {
+	o.Returns = &v
+}
+
 // GetOrderSubscriptions returns the OrderSubscriptions field value if set, zero value otherwise.
 func (o *OrderDataRelationships) GetOrderSubscriptions() CustomerDataRelationshipsOrderSubscriptions {
 	if o == nil || o.OrderSubscriptions == nil {
@@ -698,9 +731,9 @@ func (o *OrderDataRelationships) SetAttachments(v AvalaraAccountDataRelationship
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *OrderDataRelationships) GetEvents() CleanupDataRelationshipsEvents {
+func (o *OrderDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
 	if o == nil || o.Events == nil {
-		var ret CleanupDataRelationshipsEvents
+		var ret AuthorizationDataRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -708,7 +741,7 @@ func (o *OrderDataRelationships) GetEvents() CleanupDataRelationshipsEvents {
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderDataRelationships) GetEventsOk() (*CleanupDataRelationshipsEvents, bool) {
+func (o *OrderDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
 	if o == nil || o.Events == nil {
 		return nil, false
 	}
@@ -724,8 +757,8 @@ func (o *OrderDataRelationships) HasEvents() bool {
 	return false
 }
 
-// SetEvents gets a reference to the given CleanupDataRelationshipsEvents and assigns it to the Events field.
-func (o *OrderDataRelationships) SetEvents(v CleanupDataRelationshipsEvents) {
+// SetEvents gets a reference to the given AuthorizationDataRelationshipsEvents and assigns it to the Events field.
+func (o *OrderDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents) {
 	o.Events = &v
 }
 
@@ -781,6 +814,9 @@ func (o OrderDataRelationships) MarshalJSON() ([]byte, error) {
 	}
 	if o.Refunds != nil {
 		toSerialize["refunds"] = o.Refunds
+	}
+	if o.Returns != nil {
+		toSerialize["returns"] = o.Returns
 	}
 	if o.OrderSubscriptions != nil {
 		toSerialize["order_subscriptions"] = o.OrderSubscriptions

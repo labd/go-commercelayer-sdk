@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Metadata** | Pointer to **map[string]interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 **Login** | **string** | The gateway login. | 
 **PublishableKey** | Pointer to **string** | The gateway publishable API key. | [optional] 
+**AutoPayments** | Pointer to **bool** | Indicates if the gateway will accept payment methods enabled in the Stripe dashboard. | [optional] 
 
 ## Methods
 
@@ -169,6 +170,31 @@ SetPublishableKey sets PublishableKey field to given value.
 `func (o *POSTStripeGateways201ResponseDataAttributes) HasPublishableKey() bool`
 
 HasPublishableKey returns a boolean if a field has been set.
+
+### GetAutoPayments
+
+`func (o *POSTStripeGateways201ResponseDataAttributes) GetAutoPayments() bool`
+
+GetAutoPayments returns the AutoPayments field if non-nil, zero value otherwise.
+
+### GetAutoPaymentsOk
+
+`func (o *POSTStripeGateways201ResponseDataAttributes) GetAutoPaymentsOk() (*bool, bool)`
+
+GetAutoPaymentsOk returns a tuple with the AutoPayments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoPayments
+
+`func (o *POSTStripeGateways201ResponseDataAttributes) SetAutoPayments(v bool)`
+
+SetAutoPayments sets AutoPayments field to given value.
+
+### HasAutoPayments
+
+`func (o *POSTStripeGateways201ResponseDataAttributes) HasAutoPayments() bool`
+
+HasAutoPayments returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

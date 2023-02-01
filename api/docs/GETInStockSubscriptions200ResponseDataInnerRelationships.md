@@ -7,7 +7,7 @@ Name | Type | Description | Notes
 **Market** | Pointer to [**GETBillingInfoValidationRules200ResponseDataInnerRelationshipsMarket**](GETBillingInfoValidationRules200ResponseDataInnerRelationshipsMarket.md) |  | [optional] 
 **Customer** | Pointer to [**GETCouponRecipients200ResponseDataInnerRelationshipsCustomer**](GETCouponRecipients200ResponseDataInnerRelationshipsCustomer.md) |  | [optional] 
 **Sku** | Pointer to [**GETInStockSubscriptions200ResponseDataInnerRelationshipsSku**](GETInStockSubscriptions200ResponseDataInnerRelationshipsSku.md) |  | [optional] 
-**Events** | Pointer to [**GETCleanups200ResponseDataInnerRelationshipsEvents**](GETCleanups200ResponseDataInnerRelationshipsEvents.md) |  | [optional] 
+**Events** | Pointer to [**GETAuthorizations200ResponseDataInnerRelationshipsEvents**](GETAuthorizations200ResponseDataInnerRelationshipsEvents.md) |  | [optional] 
 
 ## Methods
 
@@ -105,20 +105,20 @@ HasSku returns a boolean if a field has been set.
 
 ### GetEvents
 
-`func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) GetEvents() GETCleanups200ResponseDataInnerRelationshipsEvents`
+`func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) GetEvents() GETAuthorizations200ResponseDataInnerRelationshipsEvents`
 
 GetEvents returns the Events field if non-nil, zero value otherwise.
 
 ### GetEventsOk
 
-`func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) GetEventsOk() (*GETCleanups200ResponseDataInnerRelationshipsEvents, bool)`
+`func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) GetEventsOk() (*GETAuthorizations200ResponseDataInnerRelationshipsEvents, bool)`
 
 GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvents
 
-`func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) SetEvents(v GETCleanups200ResponseDataInnerRelationshipsEvents)`
+`func (o *GETInStockSubscriptions200ResponseDataInnerRelationships) SetEvents(v GETAuthorizations200ResponseDataInnerRelationshipsEvents)`
 
 SetEvents sets Events field to given value.
 

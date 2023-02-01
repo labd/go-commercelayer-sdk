@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **Reference** | Pointer to **string** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
 **ReferenceOrigin** | Pointer to **string** | Any identifier of the third party system that defines the reference code | [optional] 
 **Metadata** | Pointer to **map[string]interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
+**AutoPayments** | Pointer to **bool** | Indicates if the gateway will accept payment methods enabled in the Stripe dashboard. | [optional] 
 **WebhookEndpointId** | Pointer to **string** | The gateway webhook endpoint ID, generated automatically. | [optional] 
 **WebhookEndpointSecret** | Pointer to **string** | The gateway webhook endpoint secret, generated automatically. | [optional] 
 **WebhookEndpointUrl** | Pointer to **string** | The gateway webhook URL, generated automatically. | [optional] 
@@ -182,6 +183,31 @@ SetMetadata sets Metadata field to given value.
 `func (o *GETStripeGateways200ResponseDataInnerAttributes) HasMetadata() bool`
 
 HasMetadata returns a boolean if a field has been set.
+
+### GetAutoPayments
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) GetAutoPayments() bool`
+
+GetAutoPayments returns the AutoPayments field if non-nil, zero value otherwise.
+
+### GetAutoPaymentsOk
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) GetAutoPaymentsOk() (*bool, bool)`
+
+GetAutoPaymentsOk returns a tuple with the AutoPayments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoPayments
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) SetAutoPayments(v bool)`
+
+SetAutoPayments sets AutoPayments field to given value.
+
+### HasAutoPayments
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) HasAutoPayments() bool`
+
+HasAutoPayments returns a boolean if a field has been set.
 
 ### GetWebhookEndpointId
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.2.0
+API version: 3.4.0
 Contact: support@commercelayer.io
 */
 
@@ -25,6 +25,7 @@ type GETFixedPricePromotions200ResponseDataInnerRelationships struct {
 	Attachments              *GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments                 `json:"attachments,omitempty"`
 	SkuList                  *GETBundles200ResponseDataInnerRelationshipsSkuList                             `json:"sku_list,omitempty"`
 	Skus                     *GETBundles200ResponseDataInnerRelationshipsSkus                                `json:"skus,omitempty"`
+	Events                   *GETAuthorizations200ResponseDataInnerRelationshipsEvents                       `json:"events,omitempty"`
 }
 
 // NewGETFixedPricePromotions200ResponseDataInnerRelationships instantiates a new GETFixedPricePromotions200ResponseDataInnerRelationships object
@@ -300,6 +301,38 @@ func (o *GETFixedPricePromotions200ResponseDataInnerRelationships) SetSkus(v GET
 	o.Skus = &v
 }
 
+// GetEvents returns the Events field value if set, zero value otherwise.
+func (o *GETFixedPricePromotions200ResponseDataInnerRelationships) GetEvents() GETAuthorizations200ResponseDataInnerRelationshipsEvents {
+	if o == nil || o.Events == nil {
+		var ret GETAuthorizations200ResponseDataInnerRelationshipsEvents
+		return ret
+	}
+	return *o.Events
+}
+
+// GetEventsOk returns a tuple with the Events field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GETFixedPricePromotions200ResponseDataInnerRelationships) GetEventsOk() (*GETAuthorizations200ResponseDataInnerRelationshipsEvents, bool) {
+	if o == nil || o.Events == nil {
+		return nil, false
+	}
+	return o.Events, true
+}
+
+// HasEvents returns a boolean if a field has been set.
+func (o *GETFixedPricePromotions200ResponseDataInnerRelationships) HasEvents() bool {
+	if o != nil && o.Events != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEvents gets a reference to the given GETAuthorizations200ResponseDataInnerRelationshipsEvents and assigns it to the Events field.
+func (o *GETFixedPricePromotions200ResponseDataInnerRelationships) SetEvents(v GETAuthorizations200ResponseDataInnerRelationshipsEvents) {
+	o.Events = &v
+}
+
 func (o GETFixedPricePromotions200ResponseDataInnerRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Market != nil {
@@ -325,6 +358,9 @@ func (o GETFixedPricePromotions200ResponseDataInnerRelationships) MarshalJSON() 
 	}
 	if o.Skus != nil {
 		toSerialize["skus"] = o.Skus
+	}
+	if o.Events != nil {
+		toSerialize["events"] = o.Events
 	}
 	return json.Marshal(toSerialize)
 }

@@ -8,7 +8,7 @@ Name | Type | Description | Notes
 **Type** | Pointer to **string** | The resource&#39;s type | [optional] 
 **Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**GETCarrierAccounts200ResponseDataInnerAttributes**](GETCarrierAccounts200ResponseDataInnerAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**GETCarrierAccounts200ResponseDataInnerRelationships**](GETCarrierAccounts200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**GETBillingInfoValidationRules200ResponseDataInnerRelationships**](GETBillingInfoValidationRules200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -131,20 +131,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *GETCarrierAccounts200ResponseDataInner) GetRelationships() GETCarrierAccounts200ResponseDataInnerRelationships`
+`func (o *GETCarrierAccounts200ResponseDataInner) GetRelationships() GETBillingInfoValidationRules200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *GETCarrierAccounts200ResponseDataInner) GetRelationshipsOk() (*GETCarrierAccounts200ResponseDataInnerRelationships, bool)`
+`func (o *GETCarrierAccounts200ResponseDataInner) GetRelationshipsOk() (*GETBillingInfoValidationRules200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *GETCarrierAccounts200ResponseDataInner) SetRelationships(v GETCarrierAccounts200ResponseDataInnerRelationships)`
+`func (o *GETCarrierAccounts200ResponseDataInner) SetRelationships(v GETBillingInfoValidationRules200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

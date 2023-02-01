@@ -6,7 +6,7 @@ info:
     url: https://commercelayer.io
   description: Headless Commerce for Global Brands.
   title: Commerce Layer API
-  version: 3.2.0
+  version: 3.4.0
 servers:
 - description: API
   url: "https://{{your-organization-slug}}.commercelayer.io/api"
@@ -982,6 +982,26 @@ paths:
       tags:
       - has_many
       - voids
+  /authorizations/{authorizationId}/events:
+    get:
+      description: Retrieve the events associated to the authorization
+      operationId: GET/authorizationId/events
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: authorizationId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The events associated to the authorization
+      summary: Retrieve the events associated to the authorization
+      tags:
+      - has_many
+      - events
   /avalara_accounts:
     get:
       description: List all avalara accounts
@@ -1266,6 +1286,28 @@ paths:
       tags:
       - has_one
       - markets
+  /billing_info_validation_rules/{billingInfoValidationRuleId}/attachments:
+    get:
+      description: Retrieve the attachments associated to the billing info validation
+        rule
+      operationId: GET/billingInfoValidationRuleId/attachments
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: billingInfoValidationRuleId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The attachments associated to the billing info validation rule
+      summary: Retrieve the attachments associated to the billing info validation
+        rule
+      tags:
+      - has_many
+      - attachments
   /bing_geocoders:
     get:
       description: List all bing geocoders
@@ -1999,6 +2041,26 @@ paths:
       tags:
       - has_many
       - refunds
+  /captures/{captureId}/events:
+    get:
+      description: Retrieve the events associated to the capture
+      operationId: GET/captureId/events
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: captureId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The events associated to the capture
+      summary: Retrieve the events associated to the capture
+      tags:
+      - has_many
+      - events
   /carrier_accounts:
     get:
       description: List all carrier accounts
@@ -4776,6 +4838,26 @@ paths:
       tags:
       - has_many
       - attachments
+  /external_promotions/{externalPromotionId}/events:
+    get:
+      description: Retrieve the events associated to the external promotion
+      operationId: GET/externalPromotionId/events
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: externalPromotionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The events associated to the external promotion
+      summary: Retrieve the events associated to the external promotion
+      tags:
+      - has_many
+      - events
   /external_tax_calculators:
     get:
       description: List all external tax calculators
@@ -5129,6 +5211,26 @@ paths:
       tags:
       - has_many
       - attachments
+  /fixed_amount_promotions/{fixedAmountPromotionId}/events:
+    get:
+      description: Retrieve the events associated to the fixed amount promotion
+      operationId: GET/fixedAmountPromotionId/events
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: fixedAmountPromotionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The events associated to the fixed amount promotion
+      summary: Retrieve the events associated to the fixed amount promotion
+      tags:
+      - has_many
+      - events
   /fixed_price_promotions:
     get:
       description: List all fixed price promotions
@@ -5379,6 +5481,26 @@ paths:
       tags:
       - has_many
       - skus
+  /fixed_price_promotions/{fixedPricePromotionId}/events:
+    get:
+      description: Retrieve the events associated to the fixed price promotion
+      operationId: GET/fixedPricePromotionId/events
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: fixedPricePromotionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The events associated to the fixed price promotion
+      summary: Retrieve the events associated to the fixed price promotion
+      tags:
+      - has_many
+      - events
   /free_gift_promotions:
     get:
       description: List all free gift promotions
@@ -5628,6 +5750,26 @@ paths:
       tags:
       - has_many
       - skus
+  /free_gift_promotions/{freeGiftPromotionId}/events:
+    get:
+      description: Retrieve the events associated to the free gift promotion
+      operationId: GET/freeGiftPromotionId/events
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: freeGiftPromotionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The events associated to the free gift promotion
+      summary: Retrieve the events associated to the free gift promotion
+      tags:
+      - has_many
+      - events
   /free_shipping_promotions:
     get:
       description: List all free shipping promotions
@@ -8903,6 +9045,26 @@ paths:
       tags:
       - has_one
       - markets
+  /order_validation_rules/{orderValidationRuleId}/attachments:
+    get:
+      description: Retrieve the attachments associated to the order validation rule
+      operationId: GET/orderValidationRuleId/attachments
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: orderValidationRuleId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The attachments associated to the order validation rule
+      summary: Retrieve the attachments associated to the order validation rule
+      tags:
+      - has_many
+      - attachments
   /orders:
     get:
       description: List all orders
@@ -9306,6 +9468,26 @@ paths:
       tags:
       - has_many
       - refunds
+  /orders/{orderId}/returns:
+    get:
+      description: Retrieve the returns associated to the order
+      operationId: GET/orderId/returns
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: orderId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The returns associated to the order
+      summary: Retrieve the returns associated to the order
+      tags:
+      - has_many
+      - returns
   /orders/{orderId}/order_subscriptions:
     get:
       description: Retrieve the order subscriptions associated to the order
@@ -10662,6 +10844,26 @@ paths:
       tags:
       - has_many
       - skus
+  /percentage_discount_promotions/{percentageDiscountPromotionId}/events:
+    get:
+      description: Retrieve the events associated to the percentage discount promotion
+      operationId: GET/percentageDiscountPromotionId/events
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: percentageDiscountPromotionId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The events associated to the percentage discount promotion
+      summary: Retrieve the events associated to the percentage discount promotion
+      tags:
+      - has_many
+      - events
   /price_lists:
     get:
       description: List all price lists
@@ -15472,6 +15674,26 @@ paths:
       tags:
       - has_one
       - authorizations
+  /voids/{voidId}/events:
+    get:
+      description: Retrieve the events associated to the void
+      operationId: GET/voidId/events
+      parameters:
+      - description: The resource's id
+        explode: false
+        in: path
+        name: voidId
+        required: true
+        schema:
+          type: string
+        style: simple
+      responses:
+        "200":
+          description: The events associated to the void
+      summary: Retrieve the events associated to the void
+      tags:
+      - has_many
+      - events
   /webhooks:
     get:
       description: List all webhooks
@@ -18094,6 +18316,10 @@ components:
             \ area."
           example: xxxx-yyyy-zzzz
           type: string
+        webhook_endpoint_url:
+          description: "The gateway webhook URL, generated automatically."
+          example: https://core.commercelayer.co/webhook_callbacks/adyen_gateways/xxxxx
+          type: string
       type: object
     GET_adyen_gateways_200_response_data_inner_relationships_payment_methods_data:
       properties:
@@ -18204,8 +18430,8 @@ components:
           example: 1797a841fbb37ca7-AdyenDemo
           type: string
         api_version:
-          description: "The checkout API version, valid range is 66 to 68, default\
-            \ to 68 if not specified."
+          description: "The checkout API version, supported range is from 66 to 68,\
+            \ default is 68."
           example: "68"
           type: string
         async_api:
@@ -18293,8 +18519,8 @@ components:
           example: 1797a841fbb37ca7-AdyenDemo
           type: string
         api_version:
-          description: "The checkout API version, valid range is 66 to 68, default\
-            \ to 68 if not specified."
+          description: "The checkout API version, supported range is from 66 to 68,\
+            \ default is 68."
           example: "68"
           type: string
         async_api:
@@ -19027,6 +19253,24 @@ components:
         data:
           $ref: '#/components/schemas/GET_authorizations_200_response_data_inner_relationships_voids_data'
       type: object
+    GET_authorizations_200_response_data_inner_relationships_events_data:
+      properties:
+        type:
+          description: The resource's type
+          enum:
+          - events
+          type: string
+        id:
+          description: The resource ID
+          type: string
+      type: object
+    GET_authorizations_200_response_data_inner_relationships_events:
+      properties:
+        links:
+          $ref: '#/components/schemas/GET_addresses_200_response_data_inner_relationships_geocoder_links'
+        data:
+          $ref: '#/components/schemas/GET_authorizations_200_response_data_inner_relationships_events_data'
+      type: object
     GET_authorizations_200_response_data_inner_relationships:
       properties:
         order:
@@ -19035,6 +19279,8 @@ components:
           $ref: '#/components/schemas/GET_authorizations_200_response_data_inner_relationships_captures'
         voids:
           $ref: '#/components/schemas/GET_authorizations_200_response_data_inner_relationships_voids'
+        events:
+          $ref: '#/components/schemas/GET_authorizations_200_response_data_inner_relationships_events'
       type: object
     GET_authorizations_200_response_data_inner:
       properties:
@@ -19463,6 +19709,8 @@ components:
       properties:
         market:
           $ref: '#/components/schemas/GET_billing_info_validation_rules_200_response_data_inner_relationships_market'
+        attachments:
+          $ref: '#/components/schemas/GET_avalara_accounts_200_response_data_inner_relationships_attachments'
       type: object
     GET_billing_info_validation_rules_200_response_data_inner:
       properties:
@@ -20685,6 +20933,8 @@ components:
           $ref: '#/components/schemas/GET_captures_200_response_data_inner_relationships_reference_authorization'
         refunds:
           $ref: '#/components/schemas/GET_captures_200_response_data_inner_relationships_refunds'
+        events:
+          $ref: '#/components/schemas/GET_authorizations_200_response_data_inner_relationships_events'
       type: object
     GET_captures_200_response_data_inner:
       properties:
@@ -20810,13 +21060,6 @@ components:
             foo: bar
           type: object
       type: object
-    GET_carrier_accounts_200_response_data_inner_relationships:
-      properties:
-        market:
-          $ref: '#/components/schemas/GET_billing_info_validation_rules_200_response_data_inner_relationships_market'
-        attachments:
-          $ref: '#/components/schemas/GET_avalara_accounts_200_response_data_inner_relationships_attachments'
-      type: object
     GET_carrier_accounts_200_response_data_inner:
       properties:
         id:
@@ -20833,7 +21076,7 @@ components:
         attributes:
           $ref: '#/components/schemas/GET_carrier_accounts_200_response_data_inner_attributes'
         relationships:
-          $ref: '#/components/schemas/GET_carrier_accounts_200_response_data_inner_relationships'
+          $ref: '#/components/schemas/GET_billing_info_validation_rules_200_response_data_inner_relationships'
       type: object
     GET_carrier_accounts_200_response:
       properties:
@@ -21387,28 +21630,10 @@ components:
             foo: bar
           type: object
       type: object
-    GET_cleanups_200_response_data_inner_relationships_events_data:
-      properties:
-        type:
-          description: The resource's type
-          enum:
-          - events
-          type: string
-        id:
-          description: The resource ID
-          type: string
-      type: object
-    GET_cleanups_200_response_data_inner_relationships_events:
-      properties:
-        links:
-          $ref: '#/components/schemas/GET_addresses_200_response_data_inner_relationships_geocoder_links'
-        data:
-          $ref: '#/components/schemas/GET_cleanups_200_response_data_inner_relationships_events_data'
-      type: object
     GET_cleanups_200_response_data_inner_relationships:
       properties:
         events:
-          $ref: '#/components/schemas/GET_cleanups_200_response_data_inner_relationships_events'
+          $ref: '#/components/schemas/GET_authorizations_200_response_data_inner_relationships_events'
       type: object
     GET_cleanups_200_response_data_inner:
       properties:
@@ -22094,7 +22319,7 @@ components:
         address:
           $ref: '#/components/schemas/GET_customer_addresses_200_response_data_inner_relationships_address'
         events:
-          $ref: '#/components/schemas/GET_cleanups_200_response_data_inner_relationships_events'
+          $ref: '#/components/schemas/GET_authorizations_200_response_data_inner_relationships_events'
       type: object
     GET_customer_addresses_200_response_data_inner:
       properties:
@@ -22384,7 +22609,7 @@ components:
         customer:
           $ref: '#/components/schemas/GET_coupon_recipients_200_response_data_inner_relationships_customer'
         events:
-          $ref: '#/components/schemas/GET_cleanups_200_response_data_inner_relationships_events'
+          $ref: '#/components/schemas/GET_authorizations_200_response_data_inner_relationships_events'
       type: object
     GET_customer_password_resets_200_response_data_inner:
       properties:
@@ -22981,7 +23206,7 @@ components:
         attachments:
           $ref: '#/components/schemas/GET_avalara_accounts_200_response_data_inner_relationships_attachments'
         events:
-          $ref: '#/components/schemas/GET_cleanups_200_response_data_inner_relationships_events'
+          $ref: '#/components/schemas/GET_authorizations_200_response_data_inner_relationships_events'
       type: object
     GET_customers_200_response_data_inner:
       properties:
@@ -24352,6 +24577,8 @@ components:
           $ref: '#/components/schemas/GET_external_promotions_200_response_data_inner_relationships_coupon_codes_promotion_rule'
         attachments:
           $ref: '#/components/schemas/GET_avalara_accounts_200_response_data_inner_relationships_attachments'
+        events:
+          $ref: '#/components/schemas/GET_authorizations_200_response_data_inner_relationships_events'
       type: object
     GET_external_promotions_200_response_data_inner:
       properties:
@@ -25045,6 +25272,8 @@ components:
           $ref: '#/components/schemas/GET_bundles_200_response_data_inner_relationships_sku_list'
         skus:
           $ref: '#/components/schemas/GET_bundles_200_response_data_inner_relationships_skus'
+        events:
+          $ref: '#/components/schemas/GET_authorizations_200_response_data_inner_relationships_events'
       type: object
     GET_fixed_price_promotions_200_response_data_inner:
       properties:
@@ -25518,6 +25747,21 @@ components:
             foo: bar
           type: object
       type: object
+    GET_free_shipping_promotions_200_response_data_inner_relationships:
+      properties:
+        market:
+          $ref: '#/components/schemas/GET_billing_info_validation_rules_200_response_data_inner_relationships_market'
+        promotion_rules:
+          $ref: '#/components/schemas/GET_external_promotions_200_response_data_inner_relationships_promotion_rules'
+        order_amount_promotion_rule:
+          $ref: '#/components/schemas/GET_external_promotions_200_response_data_inner_relationships_order_amount_promotion_rule'
+        sku_list_promotion_rule:
+          $ref: '#/components/schemas/GET_external_promotions_200_response_data_inner_relationships_sku_list_promotion_rule'
+        coupon_codes_promotion_rule:
+          $ref: '#/components/schemas/GET_external_promotions_200_response_data_inner_relationships_coupon_codes_promotion_rule'
+        attachments:
+          $ref: '#/components/schemas/GET_avalara_accounts_200_response_data_inner_relationships_attachments'
+      type: object
     GET_free_shipping_promotions_200_response_data_inner:
       properties:
         id:
@@ -25534,7 +25778,7 @@ components:
         attributes:
           $ref: '#/components/schemas/GET_free_shipping_promotions_200_response_data_inner_attributes'
         relationships:
-          $ref: '#/components/schemas/GET_external_promotions_200_response_data_inner_relationships'
+          $ref: '#/components/schemas/GET_free_shipping_promotions_200_response_data_inner_relationships'
       type: object
     GET_free_shipping_promotions_200_response:
       properties:
@@ -25606,7 +25850,7 @@ components:
         attributes:
           $ref: '#/components/schemas/POST_free_shipping_promotions_201_response_data_attributes'
         relationships:
-          $ref: '#/components/schemas/GET_external_promotions_200_response_data_inner_relationships'
+          $ref: '#/components/schemas/GET_free_shipping_promotions_200_response_data_inner_relationships'
       type: object
     POST_free_shipping_promotions_201_response:
       properties:
@@ -25676,7 +25920,7 @@ components:
         attributes:
           $ref: '#/components/schemas/PATCH_free_shipping_promotions_freeShippingPromotionId_200_response_data_attributes'
         relationships:
-          $ref: '#/components/schemas/GET_external_promotions_200_response_data_inner_relationships'
+          $ref: '#/components/schemas/GET_free_shipping_promotions_200_response_data_inner_relationships'
       type: object
     PATCH_free_shipping_promotions_freeShippingPromotionId_200_response:
       properties:
@@ -25927,7 +26171,7 @@ components:
         attachments:
           $ref: '#/components/schemas/GET_avalara_accounts_200_response_data_inner_relationships_attachments'
         events:
-          $ref: '#/components/schemas/GET_cleanups_200_response_data_inner_relationships_events'
+          $ref: '#/components/schemas/GET_authorizations_200_response_data_inner_relationships_events'
       type: object
     GET_gift_cards_200_response_data_inner:
       properties:
@@ -26571,7 +26815,7 @@ components:
         sku:
           $ref: '#/components/schemas/GET_in_stock_subscriptions_200_response_data_inner_relationships_sku'
         events:
-          $ref: '#/components/schemas/GET_cleanups_200_response_data_inner_relationships_events'
+          $ref: '#/components/schemas/GET_authorizations_200_response_data_inner_relationships_events'
       type: object
     GET_in_stock_subscriptions_200_response_data_inner:
       properties:
@@ -29561,7 +29805,7 @@ components:
         order_subscription:
           $ref: '#/components/schemas/GET_order_copies_200_response_data_inner_relationships_order_subscription'
         events:
-          $ref: '#/components/schemas/GET_cleanups_200_response_data_inner_relationships_events'
+          $ref: '#/components/schemas/GET_authorizations_200_response_data_inner_relationships_events'
       type: object
     GET_order_copies_200_response_data_inner:
       properties:
@@ -29767,7 +30011,7 @@ components:
         orders:
           $ref: '#/components/schemas/GET_customers_200_response_data_inner_relationships_orders'
         events:
-          $ref: '#/components/schemas/GET_cleanups_200_response_data_inner_relationships_events'
+          $ref: '#/components/schemas/GET_authorizations_200_response_data_inner_relationships_events'
       type: object
     GET_order_subscriptions_200_response_data_inner:
       properties:
@@ -30668,6 +30912,8 @@ components:
           $ref: '#/components/schemas/GET_authorizations_200_response_data_inner_relationships_voids'
         refunds:
           $ref: '#/components/schemas/GET_captures_200_response_data_inner_relationships_refunds'
+        returns:
+          $ref: '#/components/schemas/GET_customers_200_response_data_inner_relationships_returns'
         order_subscriptions:
           $ref: '#/components/schemas/GET_customers_200_response_data_inner_relationships_order_subscriptions'
         order_copies:
@@ -30675,7 +30921,7 @@ components:
         attachments:
           $ref: '#/components/schemas/GET_avalara_accounts_200_response_data_inner_relationships_attachments'
         events:
-          $ref: '#/components/schemas/GET_cleanups_200_response_data_inner_relationships_events'
+          $ref: '#/components/schemas/GET_authorizations_200_response_data_inner_relationships_events'
       type: object
     GET_orders_200_response_data_inner:
       properties:
@@ -31855,7 +32101,7 @@ components:
         attachments:
           $ref: '#/components/schemas/GET_avalara_accounts_200_response_data_inner_relationships_attachments'
         events:
-          $ref: '#/components/schemas/GET_cleanups_200_response_data_inner_relationships_events'
+          $ref: '#/components/schemas/GET_authorizations_200_response_data_inner_relationships_events'
       type: object
     GET_parcels_200_response_data_inner:
       properties:
@@ -33879,7 +34125,7 @@ components:
         attributes:
           $ref: '#/components/schemas/GET_free_shipping_promotions_200_response_data_inner_attributes'
         relationships:
-          $ref: '#/components/schemas/GET_external_promotions_200_response_data_inner_relationships'
+          $ref: '#/components/schemas/GET_free_shipping_promotions_200_response_data_inner_relationships'
       type: object
     GET_promotions_200_response:
       properties:
@@ -33994,7 +34240,7 @@ components:
         reference_capture:
           $ref: '#/components/schemas/GET_refunds_200_response_data_inner_relationships_reference_capture'
         events:
-          $ref: '#/components/schemas/GET_cleanups_200_response_data_inner_relationships_events'
+          $ref: '#/components/schemas/GET_authorizations_200_response_data_inner_relationships_events'
       type: object
     GET_refunds_200_response_data_inner:
       properties:
@@ -34392,7 +34638,7 @@ components:
         attachments:
           $ref: '#/components/schemas/GET_avalara_accounts_200_response_data_inner_relationships_attachments'
         events:
-          $ref: '#/components/schemas/GET_cleanups_200_response_data_inner_relationships_events'
+          $ref: '#/components/schemas/GET_authorizations_200_response_data_inner_relationships_events'
       type: object
     GET_returns_200_response_data_inner:
       properties:
@@ -34745,7 +34991,7 @@ components:
         attachments:
           $ref: '#/components/schemas/GET_avalara_accounts_200_response_data_inner_relationships_attachments'
         events:
-          $ref: '#/components/schemas/GET_cleanups_200_response_data_inner_relationships_events'
+          $ref: '#/components/schemas/GET_authorizations_200_response_data_inner_relationships_events'
       type: object
     GET_shipments_200_response_data_inner:
       properties:
@@ -36521,7 +36767,7 @@ components:
         attributes:
           $ref: '#/components/schemas/GET_sku_options_200_response_data_inner_attributes'
         relationships:
-          $ref: '#/components/schemas/GET_carrier_accounts_200_response_data_inner_relationships'
+          $ref: '#/components/schemas/GET_billing_info_validation_rules_200_response_data_inner_relationships'
       type: object
     GET_sku_options_200_response:
       properties:
@@ -36596,7 +36842,7 @@ components:
         attributes:
           $ref: '#/components/schemas/POST_sku_options_201_response_data_attributes'
         relationships:
-          $ref: '#/components/schemas/GET_carrier_accounts_200_response_data_inner_relationships'
+          $ref: '#/components/schemas/GET_billing_info_validation_rules_200_response_data_inner_relationships'
       type: object
     POST_sku_options_201_response:
       properties:
@@ -36672,7 +36918,7 @@ components:
         attributes:
           $ref: '#/components/schemas/PATCH_sku_options_skuOptionId_200_response_data_attributes'
         relationships:
-          $ref: '#/components/schemas/GET_carrier_accounts_200_response_data_inner_relationships'
+          $ref: '#/components/schemas/GET_billing_info_validation_rules_200_response_data_inner_relationships'
       type: object
     PATCH_sku_options_skuOptionId_200_response:
       properties:
@@ -37687,7 +37933,7 @@ components:
         line_item:
           $ref: '#/components/schemas/GET_line_item_options_200_response_data_inner_relationships_line_item'
         events:
-          $ref: '#/components/schemas/GET_cleanups_200_response_data_inner_relationships_events'
+          $ref: '#/components/schemas/GET_authorizations_200_response_data_inner_relationships_events'
       type: object
     GET_stock_transfers_200_response_data_inner:
       properties:
@@ -37877,6 +38123,11 @@ components:
           example:
             foo: bar
           type: object
+        auto_payments:
+          description: Indicates if the gateway will accept payment methods enabled
+            in the Stripe dashboard.
+          example: true
+          type: boolean
         webhook_endpoint_id:
           description: "The gateway webhook endpoint ID, generated automatically."
           example: xxxx-yyyy-zzzz
@@ -37972,6 +38223,11 @@ components:
           description: The gateway publishable API key.
           example: pk_live_xxxx-yyyy-zzzz
           type: string
+        auto_payments:
+          description: Indicates if the gateway will accept payment methods enabled
+            in the Stripe dashboard.
+          example: true
+          type: boolean
       required:
       - login
       - name
@@ -38028,6 +38284,11 @@ components:
           example:
             foo: bar
           type: object
+        auto_payments:
+          description: Indicates if the gateway will accept payment methods enabled
+            in the Stripe dashboard.
+          example: true
+          type: boolean
       type: object
     PATCH_stripe_gateways_stripeGatewayId_200_response_data:
       properties:
@@ -38989,6 +39250,8 @@ components:
           $ref: '#/components/schemas/GET_adyen_payments_200_response_data_inner_relationships_order'
         reference_authorization:
           $ref: '#/components/schemas/GET_captures_200_response_data_inner_relationships_reference_authorization'
+        events:
+          $ref: '#/components/schemas/GET_authorizations_200_response_data_inner_relationships_events'
       type: object
     GET_voids_200_response_data_inner:
       properties:
@@ -39904,6 +40167,23 @@ components:
         data:
           $ref: '#/components/schemas/authorization_data_relationships_voids_data'
       type: object
+    authorization_data_relationships_events_data:
+      properties:
+        type:
+          description: The resource's type
+          enum:
+          - events
+          type: string
+        id:
+          description: The resource's id
+          example: XGZwpOSrWL
+          type: string
+      type: object
+    authorization_data_relationships_events:
+      properties:
+        data:
+          $ref: '#/components/schemas/authorization_data_relationships_events_data'
+      type: object
     authorization_data_relationships:
       properties:
         order:
@@ -39912,6 +40192,8 @@ components:
           $ref: '#/components/schemas/authorization_data_relationships_captures'
         voids:
           $ref: '#/components/schemas/authorization_data_relationships_voids'
+        events:
+          $ref: '#/components/schemas/authorization_data_relationships_events'
       type: object
     authorization_data:
       properties:
@@ -40075,6 +40357,8 @@ components:
       properties:
         market:
           $ref: '#/components/schemas/avalaraAccount_data_relationships_markets'
+        attachments:
+          $ref: '#/components/schemas/avalaraAccount_data_relationships_attachments'
       type: object
     billingInfoValidationRule_data:
       properties:
@@ -40511,6 +40795,8 @@ components:
           $ref: '#/components/schemas/capture_data_relationships_reference_authorization'
         refunds:
           $ref: '#/components/schemas/capture_data_relationships_refunds'
+        events:
+          $ref: '#/components/schemas/authorization_data_relationships_events'
       type: object
     capture_data:
       properties:
@@ -40548,13 +40834,6 @@ components:
       - id
       - type
       type: object
-    carrierAccount_data_relationships:
-      properties:
-        market:
-          $ref: '#/components/schemas/avalaraAccount_data_relationships_markets'
-        attachments:
-          $ref: '#/components/schemas/avalaraAccount_data_relationships_attachments'
-      type: object
     carrierAccount_data:
       properties:
         type:
@@ -40565,7 +40844,7 @@ components:
         attributes:
           $ref: '#/components/schemas/GET_carrier_accounts_200_response_data_inner_attributes'
         relationships:
-          $ref: '#/components/schemas/carrierAccount_data_relationships'
+          $ref: '#/components/schemas/billingInfoValidationRule_data_relationships'
       required:
       - attributes
       - type
@@ -40706,27 +40985,10 @@ components:
       - id
       - type
       type: object
-    cleanup_data_relationships_events_data:
-      properties:
-        type:
-          description: The resource's type
-          enum:
-          - events
-          type: string
-        id:
-          description: The resource's id
-          example: XGZwpOSrWL
-          type: string
-      type: object
-    cleanup_data_relationships_events:
-      properties:
-        data:
-          $ref: '#/components/schemas/cleanup_data_relationships_events_data'
-      type: object
     cleanup_data_relationships:
       properties:
         events:
-          $ref: '#/components/schemas/cleanup_data_relationships_events'
+          $ref: '#/components/schemas/authorization_data_relationships_events'
       type: object
     cleanup_data:
       properties:
@@ -40766,10 +41028,10 @@ components:
           enum:
           - percentage_discount_promotions
           - free_shipping_promotions
-          - fixed_amount_promotions
           - free_gift_promotions
           - fixed_price_promotions
           - external_promotions
+          - fixed_amount_promotions
           type: string
         id:
           description: The resource's id
@@ -40780,10 +41042,10 @@ components:
       oneOf:
       - $ref: '#/components/schemas/percentageDiscountPromotion'
       - $ref: '#/components/schemas/freeShippingPromotion'
-      - $ref: '#/components/schemas/fixedAmountPromotion'
       - $ref: '#/components/schemas/freeGiftPromotion'
       - $ref: '#/components/schemas/fixedPricePromotion'
       - $ref: '#/components/schemas/externalPromotion'
+      - $ref: '#/components/schemas/fixedAmountPromotion'
       properties:
         data:
           $ref: '#/components/schemas/couponCodesPromotionRule_data_relationships_promotion_data'
@@ -40831,10 +41093,10 @@ components:
       oneOf:
       - $ref: '#/components/schemas/percentageDiscountPromotion'
       - $ref: '#/components/schemas/freeShippingPromotion'
-      - $ref: '#/components/schemas/fixedAmountPromotion'
       - $ref: '#/components/schemas/freeGiftPromotion'
       - $ref: '#/components/schemas/fixedPricePromotion'
       - $ref: '#/components/schemas/externalPromotion'
+      - $ref: '#/components/schemas/fixedAmountPromotion'
       properties:
         data:
           $ref: '#/components/schemas/couponCodesPromotionRule_data_relationships_promotion_data'
@@ -41083,7 +41345,7 @@ components:
         address:
           $ref: '#/components/schemas/bingGeocoder_data_relationships_addresses'
         events:
-          $ref: '#/components/schemas/cleanup_data_relationships_events'
+          $ref: '#/components/schemas/authorization_data_relationships_events'
       type: object
     customerAddress_data:
       properties:
@@ -41225,7 +41487,7 @@ components:
         customer:
           $ref: '#/components/schemas/couponRecipient_data_relationships_customer'
         events:
-          $ref: '#/components/schemas/cleanup_data_relationships_events'
+          $ref: '#/components/schemas/authorization_data_relationships_events'
       type: object
     customerPasswordReset_data:
       properties:
@@ -41577,7 +41839,7 @@ components:
         attachments:
           $ref: '#/components/schemas/avalaraAccount_data_relationships_attachments'
         events:
-          $ref: '#/components/schemas/cleanup_data_relationships_events'
+          $ref: '#/components/schemas/authorization_data_relationships_events'
       type: object
     customer_data:
       properties:
@@ -42072,6 +42334,8 @@ components:
           $ref: '#/components/schemas/coupon_data_relationships_promotion_rule'
         attachments:
           $ref: '#/components/schemas/avalaraAccount_data_relationships_attachments'
+        events:
+          $ref: '#/components/schemas/authorization_data_relationships_events'
       type: object
     externalPromotion_data:
       properties:
@@ -42284,6 +42548,8 @@ components:
           $ref: '#/components/schemas/bundle_data_relationships_sku_list'
         skus:
           $ref: '#/components/schemas/bundle_data_relationships_skus'
+        events:
+          $ref: '#/components/schemas/authorization_data_relationships_events'
       type: object
     fixedPricePromotion_data:
       properties:
@@ -42417,6 +42683,21 @@ components:
       - id
       - type
       type: object
+    freeShippingPromotion_data_relationships:
+      properties:
+        market:
+          $ref: '#/components/schemas/avalaraAccount_data_relationships_markets'
+        promotion_rules:
+          $ref: '#/components/schemas/externalPromotion_data_relationships_promotion_rules'
+        order_amount_promotion_rule:
+          $ref: '#/components/schemas/externalPromotion_data_relationships_order_amount_promotion_rule'
+        sku_list_promotion_rule:
+          $ref: '#/components/schemas/externalPromotion_data_relationships_sku_list_promotion_rule'
+        coupon_codes_promotion_rule:
+          $ref: '#/components/schemas/coupon_data_relationships_promotion_rule'
+        attachments:
+          $ref: '#/components/schemas/avalaraAccount_data_relationships_attachments'
+      type: object
     freeShippingPromotion_data:
       properties:
         type:
@@ -42427,7 +42708,7 @@ components:
         attributes:
           $ref: '#/components/schemas/GET_free_shipping_promotions_200_response_data_inner_attributes'
         relationships:
-          $ref: '#/components/schemas/externalPromotion_data_relationships'
+          $ref: '#/components/schemas/freeShippingPromotion_data_relationships'
       required:
       - attributes
       - type
@@ -42558,7 +42839,7 @@ components:
         attachments:
           $ref: '#/components/schemas/avalaraAccount_data_relationships_attachments'
         events:
-          $ref: '#/components/schemas/cleanup_data_relationships_events'
+          $ref: '#/components/schemas/authorization_data_relationships_events'
       type: object
     giftCard_data:
       properties:
@@ -42716,7 +42997,7 @@ components:
         sku:
           $ref: '#/components/schemas/bundle_data_relationships_skus'
         events:
-          $ref: '#/components/schemas/cleanup_data_relationships_events'
+          $ref: '#/components/schemas/authorization_data_relationships_events'
       type: object
     inStockSubscription_data:
       properties:
@@ -43952,7 +44233,7 @@ components:
         order_subscription:
           $ref: '#/components/schemas/customer_data_relationships_order_subscriptions'
         events:
-          $ref: '#/components/schemas/cleanup_data_relationships_events'
+          $ref: '#/components/schemas/authorization_data_relationships_events'
       type: object
     orderCopy_data:
       properties:
@@ -44021,7 +44302,7 @@ components:
         orders:
           $ref: '#/components/schemas/adyenPayment_data_relationships_order'
         events:
-          $ref: '#/components/schemas/cleanup_data_relationships_events'
+          $ref: '#/components/schemas/authorization_data_relationships_events'
       type: object
     orderSubscription_data:
       properties:
@@ -44193,6 +44474,8 @@ components:
           $ref: '#/components/schemas/authorization_data_relationships_voids'
         refunds:
           $ref: '#/components/schemas/capture_data_relationships_refunds'
+        returns:
+          $ref: '#/components/schemas/customer_data_relationships_returns'
         order_subscriptions:
           $ref: '#/components/schemas/customer_data_relationships_order_subscriptions'
         order_copies:
@@ -44200,7 +44483,7 @@ components:
         attachments:
           $ref: '#/components/schemas/avalaraAccount_data_relationships_attachments'
         events:
-          $ref: '#/components/schemas/cleanup_data_relationships_events'
+          $ref: '#/components/schemas/authorization_data_relationships_events'
       type: object
     order_data:
       properties:
@@ -44517,7 +44800,7 @@ components:
         attachments:
           $ref: '#/components/schemas/avalaraAccount_data_relationships_attachments'
         events:
-          $ref: '#/components/schemas/cleanup_data_relationships_events'
+          $ref: '#/components/schemas/authorization_data_relationships_events'
       type: object
     parcel_data:
       properties:
@@ -45190,7 +45473,7 @@ components:
         attributes:
           $ref: '#/components/schemas/GET_free_shipping_promotions_200_response_data_inner_attributes'
         relationships:
-          $ref: '#/components/schemas/externalPromotion_data_relationships'
+          $ref: '#/components/schemas/freeShippingPromotion_data_relationships'
       required:
       - attributes
       - type
@@ -45202,7 +45485,7 @@ components:
         reference_capture:
           $ref: '#/components/schemas/authorization_data_relationships_captures'
         events:
-          $ref: '#/components/schemas/cleanup_data_relationships_events'
+          $ref: '#/components/schemas/authorization_data_relationships_events'
       type: object
     refund_data:
       properties:
@@ -45328,7 +45611,7 @@ components:
         attachments:
           $ref: '#/components/schemas/avalaraAccount_data_relationships_attachments'
         events:
-          $ref: '#/components/schemas/cleanup_data_relationships_events'
+          $ref: '#/components/schemas/authorization_data_relationships_events'
       type: object
     return_data:
       properties:
@@ -45471,7 +45754,7 @@ components:
         attachments:
           $ref: '#/components/schemas/avalaraAccount_data_relationships_attachments'
         events:
-          $ref: '#/components/schemas/cleanup_data_relationships_events'
+          $ref: '#/components/schemas/authorization_data_relationships_events'
       type: object
     shipment_data:
       properties:
@@ -46095,7 +46378,7 @@ components:
         attributes:
           $ref: '#/components/schemas/GET_sku_options_200_response_data_inner_attributes'
         relationships:
-          $ref: '#/components/schemas/carrierAccount_data_relationships'
+          $ref: '#/components/schemas/billingInfoValidationRule_data_relationships'
       required:
       - attributes
       - type
@@ -46406,7 +46689,7 @@ components:
         line_item:
           $ref: '#/components/schemas/lineItemOption_data_relationships_line_item'
         events:
-          $ref: '#/components/schemas/cleanup_data_relationships_events'
+          $ref: '#/components/schemas/authorization_data_relationships_events'
       type: object
     stockTransfer_data:
       properties:
@@ -46903,6 +47186,8 @@ components:
           $ref: '#/components/schemas/adyenPayment_data_relationships_order'
         reference_authorization:
           $ref: '#/components/schemas/capture_data_relationships_reference_authorization'
+        events:
+          $ref: '#/components/schemas/authorization_data_relationships_events'
       type: object
     void_data:
       properties:

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.2.0
+API version: 3.4.0
 Contact: support@commercelayer.io
 */
 
@@ -25,6 +25,8 @@ type PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes struct {
 	ReferenceOrigin *string `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	// Indicates if the gateway will accept payment methods enabled in the Stripe dashboard.
+	AutoPayments *bool `json:"auto_payments,omitempty"`
 }
 
 // NewPATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes instantiates a new PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes object
@@ -172,6 +174,38 @@ func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) SetMetadat
 	o.Metadata = v
 }
 
+// GetAutoPayments returns the AutoPayments field value if set, zero value otherwise.
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetAutoPayments() bool {
+	if o == nil || o.AutoPayments == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AutoPayments
+}
+
+// GetAutoPaymentsOk returns a tuple with the AutoPayments field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetAutoPaymentsOk() (*bool, bool) {
+	if o == nil || o.AutoPayments == nil {
+		return nil, false
+	}
+	return o.AutoPayments, true
+}
+
+// HasAutoPayments returns a boolean if a field has been set.
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) HasAutoPayments() bool {
+	if o != nil && o.AutoPayments != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAutoPayments gets a reference to the given bool and assigns it to the AutoPayments field.
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) SetAutoPayments(v bool) {
+	o.AutoPayments = &v
+}
+
 func (o PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
@@ -185,6 +219,9 @@ func (o PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) MarshalJSON
 	}
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
+	}
+	if o.AutoPayments != nil {
+		toSerialize["auto_payments"] = o.AutoPayments
 	}
 	return json.Marshal(toSerialize)
 }

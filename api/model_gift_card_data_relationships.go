@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.2.0
+API version: 3.4.0
 Contact: support@commercelayer.io
 */
 
@@ -20,7 +20,7 @@ type GiftCardDataRelationships struct {
 	Market            *AvalaraAccountDataRelationshipsMarkets     `json:"market,omitempty"`
 	GiftCardRecipient *GiftCardDataRelationshipsGiftCardRecipient `json:"gift_card_recipient,omitempty"`
 	Attachments       *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
-	Events            *CleanupDataRelationshipsEvents             `json:"events,omitempty"`
+	Events            *AuthorizationDataRelationshipsEvents       `json:"events,omitempty"`
 }
 
 // NewGiftCardDataRelationships instantiates a new GiftCardDataRelationships object
@@ -137,9 +137,9 @@ func (o *GiftCardDataRelationships) SetAttachments(v AvalaraAccountDataRelations
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *GiftCardDataRelationships) GetEvents() CleanupDataRelationshipsEvents {
+func (o *GiftCardDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
 	if o == nil || o.Events == nil {
-		var ret CleanupDataRelationshipsEvents
+		var ret AuthorizationDataRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -147,7 +147,7 @@ func (o *GiftCardDataRelationships) GetEvents() CleanupDataRelationshipsEvents {
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GiftCardDataRelationships) GetEventsOk() (*CleanupDataRelationshipsEvents, bool) {
+func (o *GiftCardDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
 	if o == nil || o.Events == nil {
 		return nil, false
 	}
@@ -163,8 +163,8 @@ func (o *GiftCardDataRelationships) HasEvents() bool {
 	return false
 }
 
-// SetEvents gets a reference to the given CleanupDataRelationshipsEvents and assigns it to the Events field.
-func (o *GiftCardDataRelationships) SetEvents(v CleanupDataRelationshipsEvents) {
+// SetEvents gets a reference to the given AuthorizationDataRelationshipsEvents and assigns it to the Events field.
+func (o *GiftCardDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents) {
 	o.Events = &v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.2.0
+API version: 3.4.0
 Contact: support@commercelayer.io
 */
 
@@ -17,7 +17,8 @@ import (
 
 // GETBillingInfoValidationRules200ResponseDataInnerRelationships struct for GETBillingInfoValidationRules200ResponseDataInnerRelationships
 type GETBillingInfoValidationRules200ResponseDataInnerRelationships struct {
-	Market *GETBillingInfoValidationRules200ResponseDataInnerRelationshipsMarket `json:"market,omitempty"`
+	Market      *GETBillingInfoValidationRules200ResponseDataInnerRelationshipsMarket `json:"market,omitempty"`
+	Attachments *GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments       `json:"attachments,omitempty"`
 }
 
 // NewGETBillingInfoValidationRules200ResponseDataInnerRelationships instantiates a new GETBillingInfoValidationRules200ResponseDataInnerRelationships object
@@ -69,10 +70,45 @@ func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) SetMark
 	o.Market = &v
 }
 
+// GetAttachments returns the Attachments field value if set, zero value otherwise.
+func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) GetAttachments() GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments {
+	if o == nil || o.Attachments == nil {
+		var ret GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments
+		return ret
+	}
+	return *o.Attachments
+}
+
+// GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments, bool) {
+	if o == nil || o.Attachments == nil {
+		return nil, false
+	}
+	return o.Attachments, true
+}
+
+// HasAttachments returns a boolean if a field has been set.
+func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) HasAttachments() bool {
+	if o != nil && o.Attachments != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAttachments gets a reference to the given GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments and assigns it to the Attachments field.
+func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) SetAttachments(v GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments) {
+	o.Attachments = &v
+}
+
 func (o GETBillingInfoValidationRules200ResponseDataInnerRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Market != nil {
 		toSerialize["market"] = o.Market
+	}
+	if o.Attachments != nil {
+		toSerialize["attachments"] = o.Attachments
 	}
 	return json.Marshal(toSerialize)
 }

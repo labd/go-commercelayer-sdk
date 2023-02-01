@@ -21,10 +21,11 @@ Name | Type | Description | Notes
 **Captures** | Pointer to [**AuthorizationDataRelationshipsCaptures**](AuthorizationDataRelationshipsCaptures.md) |  | [optional] 
 **Voids** | Pointer to [**AuthorizationDataRelationshipsVoids**](AuthorizationDataRelationshipsVoids.md) |  | [optional] 
 **Refunds** | Pointer to [**CaptureDataRelationshipsRefunds**](CaptureDataRelationshipsRefunds.md) |  | [optional] 
+**Returns** | Pointer to [**CustomerDataRelationshipsReturns**](CustomerDataRelationshipsReturns.md) |  | [optional] 
 **OrderSubscriptions** | Pointer to [**CustomerDataRelationshipsOrderSubscriptions**](CustomerDataRelationshipsOrderSubscriptions.md) |  | [optional] 
 **OrderCopies** | Pointer to [**OrderSubscriptionDataRelationshipsOrderCopies**](OrderSubscriptionDataRelationshipsOrderCopies.md) |  | [optional] 
 **Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
-**Events** | Pointer to [**CleanupDataRelationshipsEvents**](CleanupDataRelationshipsEvents.md) |  | [optional] 
+**Events** | Pointer to [**AuthorizationDataRelationshipsEvents**](AuthorizationDataRelationshipsEvents.md) |  | [optional] 
 
 ## Methods
 
@@ -470,6 +471,31 @@ SetRefunds sets Refunds field to given value.
 
 HasRefunds returns a boolean if a field has been set.
 
+### GetReturns
+
+`func (o *OrderDataRelationships) GetReturns() CustomerDataRelationshipsReturns`
+
+GetReturns returns the Returns field if non-nil, zero value otherwise.
+
+### GetReturnsOk
+
+`func (o *OrderDataRelationships) GetReturnsOk() (*CustomerDataRelationshipsReturns, bool)`
+
+GetReturnsOk returns a tuple with the Returns field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReturns
+
+`func (o *OrderDataRelationships) SetReturns(v CustomerDataRelationshipsReturns)`
+
+SetReturns sets Returns field to given value.
+
+### HasReturns
+
+`func (o *OrderDataRelationships) HasReturns() bool`
+
+HasReturns returns a boolean if a field has been set.
+
 ### GetOrderSubscriptions
 
 `func (o *OrderDataRelationships) GetOrderSubscriptions() CustomerDataRelationshipsOrderSubscriptions`
@@ -547,20 +573,20 @@ HasAttachments returns a boolean if a field has been set.
 
 ### GetEvents
 
-`func (o *OrderDataRelationships) GetEvents() CleanupDataRelationshipsEvents`
+`func (o *OrderDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents`
 
 GetEvents returns the Events field if non-nil, zero value otherwise.
 
 ### GetEventsOk
 
-`func (o *OrderDataRelationships) GetEventsOk() (*CleanupDataRelationshipsEvents, bool)`
+`func (o *OrderDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool)`
 
 GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvents
 
-`func (o *OrderDataRelationships) SetEvents(v CleanupDataRelationshipsEvents)`
+`func (o *OrderDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents)`
 
 SetEvents sets Events field to given value.
 

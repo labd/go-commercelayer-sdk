@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.2.0
+API version: 3.4.0
 Contact: support@commercelayer.io
 */
 
@@ -29,6 +29,8 @@ type POSTStripeGateways201ResponseDataAttributes struct {
 	Login string `json:"login"`
 	// The gateway publishable API key.
 	PublishableKey *string `json:"publishable_key,omitempty"`
+	// Indicates if the gateway will accept payment methods enabled in the Stripe dashboard.
+	AutoPayments *bool `json:"auto_payments,omitempty"`
 }
 
 // NewPOSTStripeGateways201ResponseDataAttributes instantiates a new POSTStripeGateways201ResponseDataAttributes object
@@ -226,6 +228,38 @@ func (o *POSTStripeGateways201ResponseDataAttributes) SetPublishableKey(v string
 	o.PublishableKey = &v
 }
 
+// GetAutoPayments returns the AutoPayments field value if set, zero value otherwise.
+func (o *POSTStripeGateways201ResponseDataAttributes) GetAutoPayments() bool {
+	if o == nil || o.AutoPayments == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AutoPayments
+}
+
+// GetAutoPaymentsOk returns a tuple with the AutoPayments field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *POSTStripeGateways201ResponseDataAttributes) GetAutoPaymentsOk() (*bool, bool) {
+	if o == nil || o.AutoPayments == nil {
+		return nil, false
+	}
+	return o.AutoPayments, true
+}
+
+// HasAutoPayments returns a boolean if a field has been set.
+func (o *POSTStripeGateways201ResponseDataAttributes) HasAutoPayments() bool {
+	if o != nil && o.AutoPayments != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAutoPayments gets a reference to the given bool and assigns it to the AutoPayments field.
+func (o *POSTStripeGateways201ResponseDataAttributes) SetAutoPayments(v bool) {
+	o.AutoPayments = &v
+}
+
 func (o POSTStripeGateways201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if true {
@@ -245,6 +279,9 @@ func (o POSTStripeGateways201ResponseDataAttributes) MarshalJSON() ([]byte, erro
 	}
 	if o.PublishableKey != nil {
 		toSerialize["publishable_key"] = o.PublishableKey
+	}
+	if o.AutoPayments != nil {
+		toSerialize["auto_payments"] = o.AutoPayments
 	}
 	return json.Marshal(toSerialize)
 }
