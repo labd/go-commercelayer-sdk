@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.2.0
+API version: 3.4.0
 Contact: support@commercelayer.io
 */
 
@@ -20,10 +20,10 @@ type PATCHSkuOptionsSkuOptionId200ResponseData struct {
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                              `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks               `json:"links,omitempty"`
-	Attributes    *PATCHSkuOptionsSkuOptionId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETCarrierAccounts200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          *string                                                         `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                          `json:"links,omitempty"`
+	Attributes    *PATCHSkuOptionsSkuOptionId200ResponseDataAttributes            `json:"attributes,omitempty"`
+	Relationships *GETBillingInfoValidationRules200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPATCHSkuOptionsSkuOptionId200ResponseData instantiates a new PATCHSkuOptionsSkuOptionId200ResponseData object
@@ -172,9 +172,9 @@ func (o *PATCHSkuOptionsSkuOptionId200ResponseData) SetAttributes(v PATCHSkuOpti
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHSkuOptionsSkuOptionId200ResponseData) GetRelationships() GETCarrierAccounts200ResponseDataInnerRelationships {
+func (o *PATCHSkuOptionsSkuOptionId200ResponseData) GetRelationships() GETBillingInfoValidationRules200ResponseDataInnerRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret GETCarrierAccounts200ResponseDataInnerRelationships
+		var ret GETBillingInfoValidationRules200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -182,7 +182,7 @@ func (o *PATCHSkuOptionsSkuOptionId200ResponseData) GetRelationships() GETCarrie
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHSkuOptionsSkuOptionId200ResponseData) GetRelationshipsOk() (*GETCarrierAccounts200ResponseDataInnerRelationships, bool) {
+func (o *PATCHSkuOptionsSkuOptionId200ResponseData) GetRelationshipsOk() (*GETBillingInfoValidationRules200ResponseDataInnerRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -198,8 +198,8 @@ func (o *PATCHSkuOptionsSkuOptionId200ResponseData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given GETCarrierAccounts200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *PATCHSkuOptionsSkuOptionId200ResponseData) SetRelationships(v GETCarrierAccounts200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given GETBillingInfoValidationRules200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *PATCHSkuOptionsSkuOptionId200ResponseData) SetRelationships(v GETBillingInfoValidationRules200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 

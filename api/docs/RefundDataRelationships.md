@@ -6,7 +6,7 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Order** | Pointer to [**AdyenPaymentDataRelationshipsOrder**](AdyenPaymentDataRelationshipsOrder.md) |  | [optional] 
 **ReferenceCapture** | Pointer to [**AuthorizationDataRelationshipsCaptures**](AuthorizationDataRelationshipsCaptures.md) |  | [optional] 
-**Events** | Pointer to [**CleanupDataRelationshipsEvents**](CleanupDataRelationshipsEvents.md) |  | [optional] 
+**Events** | Pointer to [**AuthorizationDataRelationshipsEvents**](AuthorizationDataRelationshipsEvents.md) |  | [optional] 
 
 ## Methods
 
@@ -79,20 +79,20 @@ HasReferenceCapture returns a boolean if a field has been set.
 
 ### GetEvents
 
-`func (o *RefundDataRelationships) GetEvents() CleanupDataRelationshipsEvents`
+`func (o *RefundDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents`
 
 GetEvents returns the Events field if non-nil, zero value otherwise.
 
 ### GetEventsOk
 
-`func (o *RefundDataRelationships) GetEventsOk() (*CleanupDataRelationshipsEvents, bool)`
+`func (o *RefundDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool)`
 
 GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvents
 
-`func (o *RefundDataRelationships) SetEvents(v CleanupDataRelationshipsEvents)`
+`func (o *RefundDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents)`
 
 SetEvents sets Events field to given value.
 

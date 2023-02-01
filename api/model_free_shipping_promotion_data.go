@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.2.0
+API version: 3.4.0
 Contact: support@commercelayer.io
 */
 
@@ -20,7 +20,7 @@ type FreeShippingPromotionData struct {
 	// The resource's type
 	Type          string                                                  `json:"type"`
 	Attributes    GETFreeShippingPromotions200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *ExternalPromotionDataRelationships                     `json:"relationships,omitempty"`
+	Relationships *FreeShippingPromotionDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewFreeShippingPromotionData instantiates a new FreeShippingPromotionData object
@@ -91,9 +91,9 @@ func (o *FreeShippingPromotionData) SetAttributes(v GETFreeShippingPromotions200
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *FreeShippingPromotionData) GetRelationships() ExternalPromotionDataRelationships {
+func (o *FreeShippingPromotionData) GetRelationships() FreeShippingPromotionDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret ExternalPromotionDataRelationships
+		var ret FreeShippingPromotionDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -101,7 +101,7 @@ func (o *FreeShippingPromotionData) GetRelationships() ExternalPromotionDataRela
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FreeShippingPromotionData) GetRelationshipsOk() (*ExternalPromotionDataRelationships, bool) {
+func (o *FreeShippingPromotionData) GetRelationshipsOk() (*FreeShippingPromotionDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -117,8 +117,8 @@ func (o *FreeShippingPromotionData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given ExternalPromotionDataRelationships and assigns it to the Relationships field.
-func (o *FreeShippingPromotionData) SetRelationships(v ExternalPromotionDataRelationships) {
+// SetRelationships gets a reference to the given FreeShippingPromotionDataRelationships and assigns it to the Relationships field.
+func (o *FreeShippingPromotionData) SetRelationships(v FreeShippingPromotionDataRelationships) {
 	o.Relationships = &v
 }
 

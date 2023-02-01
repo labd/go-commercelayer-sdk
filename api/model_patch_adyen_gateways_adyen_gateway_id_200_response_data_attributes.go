@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.2.0
+API version: 3.4.0
 Contact: support@commercelayer.io
 */
 
@@ -33,7 +33,7 @@ type PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes struct {
 	PublicKey *string `json:"public_key,omitempty"`
 	// The prefix of the endpoint used for live transactions.
 	LiveUrlPrefix *string `json:"live_url_prefix,omitempty"`
-	// The checkout API version, valid range is 66 to 68, default to 68 if not specified.
+	// The checkout API version, supported range is from 66 to 68, default is 68.
 	ApiVersion *string `json:"api_version,omitempty"`
 	// Indicates if the gateway will leverage on the Adyen notification webhooks.
 	AsyncApi *bool `json:"async_api,omitempty"`

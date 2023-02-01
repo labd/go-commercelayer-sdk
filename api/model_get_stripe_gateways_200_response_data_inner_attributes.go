@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.2.0
+API version: 3.4.0
 Contact: support@commercelayer.io
 */
 
@@ -29,6 +29,8 @@ type GETStripeGateways200ResponseDataInnerAttributes struct {
 	ReferenceOrigin *string `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
 	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	// Indicates if the gateway will accept payment methods enabled in the Stripe dashboard.
+	AutoPayments *bool `json:"auto_payments,omitempty"`
 	// The gateway webhook endpoint ID, generated automatically.
 	WebhookEndpointId *string `json:"webhook_endpoint_id,omitempty"`
 	// The gateway webhook endpoint secret, generated automatically.
@@ -246,6 +248,38 @@ func (o *GETStripeGateways200ResponseDataInnerAttributes) SetMetadata(v map[stri
 	o.Metadata = v
 }
 
+// GetAutoPayments returns the AutoPayments field value if set, zero value otherwise.
+func (o *GETStripeGateways200ResponseDataInnerAttributes) GetAutoPayments() bool {
+	if o == nil || o.AutoPayments == nil {
+		var ret bool
+		return ret
+	}
+	return *o.AutoPayments
+}
+
+// GetAutoPaymentsOk returns a tuple with the AutoPayments field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GETStripeGateways200ResponseDataInnerAttributes) GetAutoPaymentsOk() (*bool, bool) {
+	if o == nil || o.AutoPayments == nil {
+		return nil, false
+	}
+	return o.AutoPayments, true
+}
+
+// HasAutoPayments returns a boolean if a field has been set.
+func (o *GETStripeGateways200ResponseDataInnerAttributes) HasAutoPayments() bool {
+	if o != nil && o.AutoPayments != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetAutoPayments gets a reference to the given bool and assigns it to the AutoPayments field.
+func (o *GETStripeGateways200ResponseDataInnerAttributes) SetAutoPayments(v bool) {
+	o.AutoPayments = &v
+}
+
 // GetWebhookEndpointId returns the WebhookEndpointId field value if set, zero value otherwise.
 func (o *GETStripeGateways200ResponseDataInnerAttributes) GetWebhookEndpointId() string {
 	if o == nil || o.WebhookEndpointId == nil {
@@ -361,6 +395,9 @@ func (o GETStripeGateways200ResponseDataInnerAttributes) MarshalJSON() ([]byte, 
 	}
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
+	}
+	if o.AutoPayments != nil {
+		toSerialize["auto_payments"] = o.AutoPayments
 	}
 	if o.WebhookEndpointId != nil {
 		toSerialize["webhook_endpoint_id"] = o.WebhookEndpointId

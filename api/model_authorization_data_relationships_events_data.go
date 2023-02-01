@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.2.0
+API version: 3.4.0
 Contact: support@commercelayer.io
 */
 
@@ -15,33 +15,33 @@ import (
 	"encoding/json"
 )
 
-// CleanupDataRelationshipsEventsData struct for CleanupDataRelationshipsEventsData
-type CleanupDataRelationshipsEventsData struct {
+// AuthorizationDataRelationshipsEventsData struct for AuthorizationDataRelationshipsEventsData
+type AuthorizationDataRelationshipsEventsData struct {
 	// The resource's type
 	Type *string `json:"type,omitempty"`
 	// The resource's id
 	Id *string `json:"id,omitempty"`
 }
 
-// NewCleanupDataRelationshipsEventsData instantiates a new CleanupDataRelationshipsEventsData object
+// NewAuthorizationDataRelationshipsEventsData instantiates a new AuthorizationDataRelationshipsEventsData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCleanupDataRelationshipsEventsData() *CleanupDataRelationshipsEventsData {
-	this := CleanupDataRelationshipsEventsData{}
+func NewAuthorizationDataRelationshipsEventsData() *AuthorizationDataRelationshipsEventsData {
+	this := AuthorizationDataRelationshipsEventsData{}
 	return &this
 }
 
-// NewCleanupDataRelationshipsEventsDataWithDefaults instantiates a new CleanupDataRelationshipsEventsData object
+// NewAuthorizationDataRelationshipsEventsDataWithDefaults instantiates a new AuthorizationDataRelationshipsEventsData object
 // This constructor will only assign default values to properties that have it defined,
 // but it doesn't guarantee that properties required by API are set
-func NewCleanupDataRelationshipsEventsDataWithDefaults() *CleanupDataRelationshipsEventsData {
-	this := CleanupDataRelationshipsEventsData{}
+func NewAuthorizationDataRelationshipsEventsDataWithDefaults() *AuthorizationDataRelationshipsEventsData {
+	this := AuthorizationDataRelationshipsEventsData{}
 	return &this
 }
 
 // GetType returns the Type field value if set, zero value otherwise.
-func (o *CleanupDataRelationshipsEventsData) GetType() string {
+func (o *AuthorizationDataRelationshipsEventsData) GetType() string {
 	if o == nil || o.Type == nil {
 		var ret string
 		return ret
@@ -51,7 +51,7 @@ func (o *CleanupDataRelationshipsEventsData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CleanupDataRelationshipsEventsData) GetTypeOk() (*string, bool) {
+func (o *AuthorizationDataRelationshipsEventsData) GetTypeOk() (*string, bool) {
 	if o == nil || o.Type == nil {
 		return nil, false
 	}
@@ -59,7 +59,7 @@ func (o *CleanupDataRelationshipsEventsData) GetTypeOk() (*string, bool) {
 }
 
 // HasType returns a boolean if a field has been set.
-func (o *CleanupDataRelationshipsEventsData) HasType() bool {
+func (o *AuthorizationDataRelationshipsEventsData) HasType() bool {
 	if o != nil && o.Type != nil {
 		return true
 	}
@@ -68,12 +68,12 @@ func (o *CleanupDataRelationshipsEventsData) HasType() bool {
 }
 
 // SetType gets a reference to the given string and assigns it to the Type field.
-func (o *CleanupDataRelationshipsEventsData) SetType(v string) {
+func (o *AuthorizationDataRelationshipsEventsData) SetType(v string) {
 	o.Type = &v
 }
 
 // GetId returns the Id field value if set, zero value otherwise.
-func (o *CleanupDataRelationshipsEventsData) GetId() string {
+func (o *AuthorizationDataRelationshipsEventsData) GetId() string {
 	if o == nil || o.Id == nil {
 		var ret string
 		return ret
@@ -83,7 +83,7 @@ func (o *CleanupDataRelationshipsEventsData) GetId() string {
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CleanupDataRelationshipsEventsData) GetIdOk() (*string, bool) {
+func (o *AuthorizationDataRelationshipsEventsData) GetIdOk() (*string, bool) {
 	if o == nil || o.Id == nil {
 		return nil, false
 	}
@@ -91,7 +91,7 @@ func (o *CleanupDataRelationshipsEventsData) GetIdOk() (*string, bool) {
 }
 
 // HasId returns a boolean if a field has been set.
-func (o *CleanupDataRelationshipsEventsData) HasId() bool {
+func (o *AuthorizationDataRelationshipsEventsData) HasId() bool {
 	if o != nil && o.Id != nil {
 		return true
 	}
@@ -100,11 +100,11 @@ func (o *CleanupDataRelationshipsEventsData) HasId() bool {
 }
 
 // SetId gets a reference to the given string and assigns it to the Id field.
-func (o *CleanupDataRelationshipsEventsData) SetId(v string) {
+func (o *AuthorizationDataRelationshipsEventsData) SetId(v string) {
 	o.Id = &v
 }
 
-func (o CleanupDataRelationshipsEventsData) MarshalJSON() ([]byte, error) {
+func (o AuthorizationDataRelationshipsEventsData) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
@@ -115,38 +115,38 @@ func (o CleanupDataRelationshipsEventsData) MarshalJSON() ([]byte, error) {
 	return json.Marshal(toSerialize)
 }
 
-type NullableCleanupDataRelationshipsEventsData struct {
-	value *CleanupDataRelationshipsEventsData
+type NullableAuthorizationDataRelationshipsEventsData struct {
+	value *AuthorizationDataRelationshipsEventsData
 	isSet bool
 }
 
-func (v NullableCleanupDataRelationshipsEventsData) Get() *CleanupDataRelationshipsEventsData {
+func (v NullableAuthorizationDataRelationshipsEventsData) Get() *AuthorizationDataRelationshipsEventsData {
 	return v.value
 }
 
-func (v *NullableCleanupDataRelationshipsEventsData) Set(val *CleanupDataRelationshipsEventsData) {
+func (v *NullableAuthorizationDataRelationshipsEventsData) Set(val *AuthorizationDataRelationshipsEventsData) {
 	v.value = val
 	v.isSet = true
 }
 
-func (v NullableCleanupDataRelationshipsEventsData) IsSet() bool {
+func (v NullableAuthorizationDataRelationshipsEventsData) IsSet() bool {
 	return v.isSet
 }
 
-func (v *NullableCleanupDataRelationshipsEventsData) Unset() {
+func (v *NullableAuthorizationDataRelationshipsEventsData) Unset() {
 	v.value = nil
 	v.isSet = false
 }
 
-func NewNullableCleanupDataRelationshipsEventsData(val *CleanupDataRelationshipsEventsData) *NullableCleanupDataRelationshipsEventsData {
-	return &NullableCleanupDataRelationshipsEventsData{value: val, isSet: true}
+func NewNullableAuthorizationDataRelationshipsEventsData(val *AuthorizationDataRelationshipsEventsData) *NullableAuthorizationDataRelationshipsEventsData {
+	return &NullableAuthorizationDataRelationshipsEventsData{value: val, isSet: true}
 }
 
-func (v NullableCleanupDataRelationshipsEventsData) MarshalJSON() ([]byte, error) {
+func (v NullableAuthorizationDataRelationshipsEventsData) MarshalJSON() ([]byte, error) {
 	return json.Marshal(v.value)
 }
 
-func (v *NullableCleanupDataRelationshipsEventsData) UnmarshalJSON(src []byte) error {
+func (v *NullableAuthorizationDataRelationshipsEventsData) UnmarshalJSON(src []byte) error {
 	v.isSet = true
 	return json.Unmarshal(src, &v.value)
 }

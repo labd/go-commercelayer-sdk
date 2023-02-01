@@ -10,6 +10,7 @@ Name | Type | Description | Notes
 **SkuListPromotionRule** | Pointer to [**ExternalPromotionDataRelationshipsSkuListPromotionRule**](ExternalPromotionDataRelationshipsSkuListPromotionRule.md) |  | [optional] 
 **CouponCodesPromotionRule** | Pointer to [**CouponDataRelationshipsPromotionRule**](CouponDataRelationshipsPromotionRule.md) |  | [optional] 
 **Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
+**Events** | Pointer to [**AuthorizationDataRelationshipsEvents**](AuthorizationDataRelationshipsEvents.md) |  | [optional] 
 
 ## Methods
 
@@ -179,6 +180,31 @@ SetAttachments sets Attachments field to given value.
 `func (o *ExternalPromotionDataRelationships) HasAttachments() bool`
 
 HasAttachments returns a boolean if a field has been set.
+
+### GetEvents
+
+`func (o *ExternalPromotionDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents`
+
+GetEvents returns the Events field if non-nil, zero value otherwise.
+
+### GetEventsOk
+
+`func (o *ExternalPromotionDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool)`
+
+GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEvents
+
+`func (o *ExternalPromotionDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents)`
+
+SetEvents sets Events field to given value.
+
+### HasEvents
+
+`func (o *ExternalPromotionDataRelationships) HasEvents() bool`
+
+HasEvents returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

@@ -21,10 +21,11 @@ Name | Type | Description | Notes
 **Captures** | Pointer to [**GETAuthorizations200ResponseDataInnerRelationshipsCaptures**](GETAuthorizations200ResponseDataInnerRelationshipsCaptures.md) |  | [optional] 
 **Voids** | Pointer to [**GETAuthorizations200ResponseDataInnerRelationshipsVoids**](GETAuthorizations200ResponseDataInnerRelationshipsVoids.md) |  | [optional] 
 **Refunds** | Pointer to [**GETCaptures200ResponseDataInnerRelationshipsRefunds**](GETCaptures200ResponseDataInnerRelationshipsRefunds.md) |  | [optional] 
+**Returns** | Pointer to [**GETCustomers200ResponseDataInnerRelationshipsReturns**](GETCustomers200ResponseDataInnerRelationshipsReturns.md) |  | [optional] 
 **OrderSubscriptions** | Pointer to [**GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptions**](GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptions.md) |  | [optional] 
 **OrderCopies** | Pointer to [**GETOrderSubscriptions200ResponseDataInnerRelationshipsOrderCopies**](GETOrderSubscriptions200ResponseDataInnerRelationshipsOrderCopies.md) |  | [optional] 
 **Attachments** | Pointer to [**GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments**](GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments.md) |  | [optional] 
-**Events** | Pointer to [**GETCleanups200ResponseDataInnerRelationshipsEvents**](GETCleanups200ResponseDataInnerRelationshipsEvents.md) |  | [optional] 
+**Events** | Pointer to [**GETAuthorizations200ResponseDataInnerRelationshipsEvents**](GETAuthorizations200ResponseDataInnerRelationshipsEvents.md) |  | [optional] 
 
 ## Methods
 
@@ -470,6 +471,31 @@ SetRefunds sets Refunds field to given value.
 
 HasRefunds returns a boolean if a field has been set.
 
+### GetReturns
+
+`func (o *GETOrders200ResponseDataInnerRelationships) GetReturns() GETCustomers200ResponseDataInnerRelationshipsReturns`
+
+GetReturns returns the Returns field if non-nil, zero value otherwise.
+
+### GetReturnsOk
+
+`func (o *GETOrders200ResponseDataInnerRelationships) GetReturnsOk() (*GETCustomers200ResponseDataInnerRelationshipsReturns, bool)`
+
+GetReturnsOk returns a tuple with the Returns field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReturns
+
+`func (o *GETOrders200ResponseDataInnerRelationships) SetReturns(v GETCustomers200ResponseDataInnerRelationshipsReturns)`
+
+SetReturns sets Returns field to given value.
+
+### HasReturns
+
+`func (o *GETOrders200ResponseDataInnerRelationships) HasReturns() bool`
+
+HasReturns returns a boolean if a field has been set.
+
 ### GetOrderSubscriptions
 
 `func (o *GETOrders200ResponseDataInnerRelationships) GetOrderSubscriptions() GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptions`
@@ -547,20 +573,20 @@ HasAttachments returns a boolean if a field has been set.
 
 ### GetEvents
 
-`func (o *GETOrders200ResponseDataInnerRelationships) GetEvents() GETCleanups200ResponseDataInnerRelationshipsEvents`
+`func (o *GETOrders200ResponseDataInnerRelationships) GetEvents() GETAuthorizations200ResponseDataInnerRelationshipsEvents`
 
 GetEvents returns the Events field if non-nil, zero value otherwise.
 
 ### GetEventsOk
 
-`func (o *GETOrders200ResponseDataInnerRelationships) GetEventsOk() (*GETCleanups200ResponseDataInnerRelationshipsEvents, bool)`
+`func (o *GETOrders200ResponseDataInnerRelationships) GetEventsOk() (*GETAuthorizations200ResponseDataInnerRelationshipsEvents, bool)`
 
 GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvents
 
-`func (o *GETOrders200ResponseDataInnerRelationships) SetEvents(v GETCleanups200ResponseDataInnerRelationshipsEvents)`
+`func (o *GETOrders200ResponseDataInnerRelationships) SetEvents(v GETAuthorizations200ResponseDataInnerRelationshipsEvents)`
 
 SetEvents sets Events field to given value.
 

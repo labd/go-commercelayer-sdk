@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.2.0
+API version: 3.4.0
 Contact: support@commercelayer.io
 */
 
@@ -26,7 +26,7 @@ type GETCustomers200ResponseDataInnerRelationships struct {
 	Returns                *GETCustomers200ResponseDataInnerRelationshipsReturns                `json:"returns,omitempty"`
 	SkuLists               *GETCustomers200ResponseDataInnerRelationshipsSkuLists               `json:"sku_lists,omitempty"`
 	Attachments            *GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments      `json:"attachments,omitempty"`
-	Events                 *GETCleanups200ResponseDataInnerRelationshipsEvents                  `json:"events,omitempty"`
+	Events                 *GETAuthorizations200ResponseDataInnerRelationshipsEvents            `json:"events,omitempty"`
 }
 
 // NewGETCustomers200ResponseDataInnerRelationships instantiates a new GETCustomers200ResponseDataInnerRelationships object
@@ -335,9 +335,9 @@ func (o *GETCustomers200ResponseDataInnerRelationships) SetAttachments(v GETAval
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *GETCustomers200ResponseDataInnerRelationships) GetEvents() GETCleanups200ResponseDataInnerRelationshipsEvents {
+func (o *GETCustomers200ResponseDataInnerRelationships) GetEvents() GETAuthorizations200ResponseDataInnerRelationshipsEvents {
 	if o == nil || o.Events == nil {
-		var ret GETCleanups200ResponseDataInnerRelationshipsEvents
+		var ret GETAuthorizations200ResponseDataInnerRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -345,7 +345,7 @@ func (o *GETCustomers200ResponseDataInnerRelationships) GetEvents() GETCleanups2
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCustomers200ResponseDataInnerRelationships) GetEventsOk() (*GETCleanups200ResponseDataInnerRelationshipsEvents, bool) {
+func (o *GETCustomers200ResponseDataInnerRelationships) GetEventsOk() (*GETAuthorizations200ResponseDataInnerRelationshipsEvents, bool) {
 	if o == nil || o.Events == nil {
 		return nil, false
 	}
@@ -361,8 +361,8 @@ func (o *GETCustomers200ResponseDataInnerRelationships) HasEvents() bool {
 	return false
 }
 
-// SetEvents gets a reference to the given GETCleanups200ResponseDataInnerRelationshipsEvents and assigns it to the Events field.
-func (o *GETCustomers200ResponseDataInnerRelationships) SetEvents(v GETCleanups200ResponseDataInnerRelationshipsEvents) {
+// SetEvents gets a reference to the given GETAuthorizations200ResponseDataInnerRelationshipsEvents and assigns it to the Events field.
+func (o *GETCustomers200ResponseDataInnerRelationships) SetEvents(v GETAuthorizations200ResponseDataInnerRelationshipsEvents) {
 	o.Events = &v
 }
 

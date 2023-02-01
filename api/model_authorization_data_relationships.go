@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.2.0
+API version: 3.4.0
 Contact: support@commercelayer.io
 */
 
@@ -20,6 +20,7 @@ type AuthorizationDataRelationships struct {
 	Order    *AdyenPaymentDataRelationshipsOrder     `json:"order,omitempty"`
 	Captures *AuthorizationDataRelationshipsCaptures `json:"captures,omitempty"`
 	Voids    *AuthorizationDataRelationshipsVoids    `json:"voids,omitempty"`
+	Events   *AuthorizationDataRelationshipsEvents   `json:"events,omitempty"`
 }
 
 // NewAuthorizationDataRelationships instantiates a new AuthorizationDataRelationships object
@@ -135,6 +136,38 @@ func (o *AuthorizationDataRelationships) SetVoids(v AuthorizationDataRelationshi
 	o.Voids = &v
 }
 
+// GetEvents returns the Events field value if set, zero value otherwise.
+func (o *AuthorizationDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
+	if o == nil || o.Events == nil {
+		var ret AuthorizationDataRelationshipsEvents
+		return ret
+	}
+	return *o.Events
+}
+
+// GetEventsOk returns a tuple with the Events field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *AuthorizationDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
+	if o == nil || o.Events == nil {
+		return nil, false
+	}
+	return o.Events, true
+}
+
+// HasEvents returns a boolean if a field has been set.
+func (o *AuthorizationDataRelationships) HasEvents() bool {
+	if o != nil && o.Events != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEvents gets a reference to the given AuthorizationDataRelationshipsEvents and assigns it to the Events field.
+func (o *AuthorizationDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents) {
+	o.Events = &v
+}
+
 func (o AuthorizationDataRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Order != nil {
@@ -145,6 +178,9 @@ func (o AuthorizationDataRelationships) MarshalJSON() ([]byte, error) {
 	}
 	if o.Voids != nil {
 		toSerialize["voids"] = o.Voids
+	}
+	if o.Events != nil {
+		toSerialize["events"] = o.Events
 	}
 	return json.Marshal(toSerialize)
 }

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.2.0
+API version: 3.4.0
 Contact: support@commercelayer.io
 */
 
@@ -34,10 +34,11 @@ type GETOrders200ResponseDataInnerRelationships struct {
 	Captures                        *GETAuthorizations200ResponseDataInnerRelationshipsCaptures                `json:"captures,omitempty"`
 	Voids                           *GETAuthorizations200ResponseDataInnerRelationshipsVoids                   `json:"voids,omitempty"`
 	Refunds                         *GETCaptures200ResponseDataInnerRelationshipsRefunds                       `json:"refunds,omitempty"`
+	Returns                         *GETCustomers200ResponseDataInnerRelationshipsReturns                      `json:"returns,omitempty"`
 	OrderSubscriptions              *GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptions           `json:"order_subscriptions,omitempty"`
 	OrderCopies                     *GETOrderSubscriptions200ResponseDataInnerRelationshipsOrderCopies         `json:"order_copies,omitempty"`
 	Attachments                     *GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments            `json:"attachments,omitempty"`
-	Events                          *GETCleanups200ResponseDataInnerRelationshipsEvents                        `json:"events,omitempty"`
+	Events                          *GETAuthorizations200ResponseDataInnerRelationshipsEvents                  `json:"events,omitempty"`
 }
 
 // NewGETOrders200ResponseDataInnerRelationships instantiates a new GETOrders200ResponseDataInnerRelationships object
@@ -601,6 +602,38 @@ func (o *GETOrders200ResponseDataInnerRelationships) SetRefunds(v GETCaptures200
 	o.Refunds = &v
 }
 
+// GetReturns returns the Returns field value if set, zero value otherwise.
+func (o *GETOrders200ResponseDataInnerRelationships) GetReturns() GETCustomers200ResponseDataInnerRelationshipsReturns {
+	if o == nil || o.Returns == nil {
+		var ret GETCustomers200ResponseDataInnerRelationshipsReturns
+		return ret
+	}
+	return *o.Returns
+}
+
+// GetReturnsOk returns a tuple with the Returns field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GETOrders200ResponseDataInnerRelationships) GetReturnsOk() (*GETCustomers200ResponseDataInnerRelationshipsReturns, bool) {
+	if o == nil || o.Returns == nil {
+		return nil, false
+	}
+	return o.Returns, true
+}
+
+// HasReturns returns a boolean if a field has been set.
+func (o *GETOrders200ResponseDataInnerRelationships) HasReturns() bool {
+	if o != nil && o.Returns != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetReturns gets a reference to the given GETCustomers200ResponseDataInnerRelationshipsReturns and assigns it to the Returns field.
+func (o *GETOrders200ResponseDataInnerRelationships) SetReturns(v GETCustomers200ResponseDataInnerRelationshipsReturns) {
+	o.Returns = &v
+}
+
 // GetOrderSubscriptions returns the OrderSubscriptions field value if set, zero value otherwise.
 func (o *GETOrders200ResponseDataInnerRelationships) GetOrderSubscriptions() GETCustomers200ResponseDataInnerRelationshipsOrderSubscriptions {
 	if o == nil || o.OrderSubscriptions == nil {
@@ -698,9 +731,9 @@ func (o *GETOrders200ResponseDataInnerRelationships) SetAttachments(v GETAvalara
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *GETOrders200ResponseDataInnerRelationships) GetEvents() GETCleanups200ResponseDataInnerRelationshipsEvents {
+func (o *GETOrders200ResponseDataInnerRelationships) GetEvents() GETAuthorizations200ResponseDataInnerRelationshipsEvents {
 	if o == nil || o.Events == nil {
-		var ret GETCleanups200ResponseDataInnerRelationshipsEvents
+		var ret GETAuthorizations200ResponseDataInnerRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -708,7 +741,7 @@ func (o *GETOrders200ResponseDataInnerRelationships) GetEvents() GETCleanups200R
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETOrders200ResponseDataInnerRelationships) GetEventsOk() (*GETCleanups200ResponseDataInnerRelationshipsEvents, bool) {
+func (o *GETOrders200ResponseDataInnerRelationships) GetEventsOk() (*GETAuthorizations200ResponseDataInnerRelationshipsEvents, bool) {
 	if o == nil || o.Events == nil {
 		return nil, false
 	}
@@ -724,8 +757,8 @@ func (o *GETOrders200ResponseDataInnerRelationships) HasEvents() bool {
 	return false
 }
 
-// SetEvents gets a reference to the given GETCleanups200ResponseDataInnerRelationshipsEvents and assigns it to the Events field.
-func (o *GETOrders200ResponseDataInnerRelationships) SetEvents(v GETCleanups200ResponseDataInnerRelationshipsEvents) {
+// SetEvents gets a reference to the given GETAuthorizations200ResponseDataInnerRelationshipsEvents and assigns it to the Events field.
+func (o *GETOrders200ResponseDataInnerRelationships) SetEvents(v GETAuthorizations200ResponseDataInnerRelationshipsEvents) {
 	o.Events = &v
 }
 
@@ -781,6 +814,9 @@ func (o GETOrders200ResponseDataInnerRelationships) MarshalJSON() ([]byte, error
 	}
 	if o.Refunds != nil {
 		toSerialize["refunds"] = o.Refunds
+	}
+	if o.Returns != nil {
+		toSerialize["returns"] = o.Returns
 	}
 	if o.OrderSubscriptions != nil {
 		toSerialize["order_subscriptions"] = o.OrderSubscriptions

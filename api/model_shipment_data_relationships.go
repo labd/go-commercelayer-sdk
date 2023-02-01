@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.2.0
+API version: 3.4.0
 Contact: support@commercelayer.io
 */
 
@@ -32,7 +32,7 @@ type ShipmentDataRelationships struct {
 	CarrierAccounts          *ShipmentDataRelationshipsCarrierAccounts        `json:"carrier_accounts,omitempty"`
 	Parcels                  *PackageDataRelationshipsParcels                 `json:"parcels,omitempty"`
 	Attachments              *AvalaraAccountDataRelationshipsAttachments      `json:"attachments,omitempty"`
-	Events                   *CleanupDataRelationshipsEvents                  `json:"events,omitempty"`
+	Events                   *AuthorizationDataRelationshipsEvents            `json:"events,omitempty"`
 }
 
 // NewShipmentDataRelationships instantiates a new ShipmentDataRelationships object
@@ -504,9 +504,9 @@ func (o *ShipmentDataRelationships) SetAttachments(v AvalaraAccountDataRelations
 }
 
 // GetEvents returns the Events field value if set, zero value otherwise.
-func (o *ShipmentDataRelationships) GetEvents() CleanupDataRelationshipsEvents {
+func (o *ShipmentDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
 	if o == nil || o.Events == nil {
-		var ret CleanupDataRelationshipsEvents
+		var ret AuthorizationDataRelationshipsEvents
 		return ret
 	}
 	return *o.Events
@@ -514,7 +514,7 @@ func (o *ShipmentDataRelationships) GetEvents() CleanupDataRelationshipsEvents {
 
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ShipmentDataRelationships) GetEventsOk() (*CleanupDataRelationshipsEvents, bool) {
+func (o *ShipmentDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
 	if o == nil || o.Events == nil {
 		return nil, false
 	}
@@ -530,8 +530,8 @@ func (o *ShipmentDataRelationships) HasEvents() bool {
 	return false
 }
 
-// SetEvents gets a reference to the given CleanupDataRelationshipsEvents and assigns it to the Events field.
-func (o *ShipmentDataRelationships) SetEvents(v CleanupDataRelationshipsEvents) {
+// SetEvents gets a reference to the given AuthorizationDataRelationshipsEvents and assigns it to the Events field.
+func (o *ShipmentDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents) {
 	o.Events = &v
 }
 

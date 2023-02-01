@@ -4,6 +4,8 @@ All URIs are relative to *https://}.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
+[**GETAuthorizationIdEvents**](EventsApi.md#GETAuthorizationIdEvents) | **Get** /authorizations/{authorizationId}/events | Retrieve the events associated to the authorization
+[**GETCaptureIdEvents**](EventsApi.md#GETCaptureIdEvents) | **Get** /captures/{captureId}/events | Retrieve the events associated to the capture
 [**GETCleanupIdEvents**](EventsApi.md#GETCleanupIdEvents) | **Get** /cleanups/{cleanupId}/events | Retrieve the events associated to the cleanup
 [**GETCustomerAddressIdEvents**](EventsApi.md#GETCustomerAddressIdEvents) | **Get** /customer_addresses/{customerAddressId}/events | Retrieve the events associated to the customer address
 [**GETCustomerIdEvents**](EventsApi.md#GETCustomerIdEvents) | **Get** /customers/{customerId}/events | Retrieve the events associated to the customer
@@ -12,6 +14,10 @@ Method | HTTP request | Description
 [**GETEvents**](EventsApi.md#GETEvents) | **Get** /events | List all events
 [**GETEventsEventId**](EventsApi.md#GETEventsEventId) | **Get** /events/{eventId} | Retrieve an event
 [**GETExportIdEvents**](EventsApi.md#GETExportIdEvents) | **Get** /exports/{exportId}/events | Retrieve the events associated to the export
+[**GETExternalPromotionIdEvents**](EventsApi.md#GETExternalPromotionIdEvents) | **Get** /external_promotions/{externalPromotionId}/events | Retrieve the events associated to the external promotion
+[**GETFixedAmountPromotionIdEvents**](EventsApi.md#GETFixedAmountPromotionIdEvents) | **Get** /fixed_amount_promotions/{fixedAmountPromotionId}/events | Retrieve the events associated to the fixed amount promotion
+[**GETFixedPricePromotionIdEvents**](EventsApi.md#GETFixedPricePromotionIdEvents) | **Get** /fixed_price_promotions/{fixedPricePromotionId}/events | Retrieve the events associated to the fixed price promotion
+[**GETFreeGiftPromotionIdEvents**](EventsApi.md#GETFreeGiftPromotionIdEvents) | **Get** /free_gift_promotions/{freeGiftPromotionId}/events | Retrieve the events associated to the free gift promotion
 [**GETGiftCardIdEvents**](EventsApi.md#GETGiftCardIdEvents) | **Get** /gift_cards/{giftCardId}/events | Retrieve the events associated to the gift card
 [**GETImportIdEvents**](EventsApi.md#GETImportIdEvents) | **Get** /imports/{importId}/events | Retrieve the events associated to the import
 [**GETInStockSubscriptionIdEvents**](EventsApi.md#GETInStockSubscriptionIdEvents) | **Get** /in_stock_subscriptions/{inStockSubscriptionId}/events | Retrieve the events associated to the in stock subscription
@@ -19,11 +25,149 @@ Method | HTTP request | Description
 [**GETOrderIdEvents**](EventsApi.md#GETOrderIdEvents) | **Get** /orders/{orderId}/events | Retrieve the events associated to the order
 [**GETOrderSubscriptionIdEvents**](EventsApi.md#GETOrderSubscriptionIdEvents) | **Get** /order_subscriptions/{orderSubscriptionId}/events | Retrieve the events associated to the order subscription
 [**GETParcelIdEvents**](EventsApi.md#GETParcelIdEvents) | **Get** /parcels/{parcelId}/events | Retrieve the events associated to the parcel
+[**GETPercentageDiscountPromotionIdEvents**](EventsApi.md#GETPercentageDiscountPromotionIdEvents) | **Get** /percentage_discount_promotions/{percentageDiscountPromotionId}/events | Retrieve the events associated to the percentage discount promotion
 [**GETRefundIdEvents**](EventsApi.md#GETRefundIdEvents) | **Get** /refunds/{refundId}/events | Retrieve the events associated to the refund
 [**GETReturnIdEvents**](EventsApi.md#GETReturnIdEvents) | **Get** /returns/{returnId}/events | Retrieve the events associated to the return
 [**GETShipmentIdEvents**](EventsApi.md#GETShipmentIdEvents) | **Get** /shipments/{shipmentId}/events | Retrieve the events associated to the shipment
 [**GETStockTransferIdEvents**](EventsApi.md#GETStockTransferIdEvents) | **Get** /stock_transfers/{stockTransferId}/events | Retrieve the events associated to the stock transfer
+[**GETVoidIdEvents**](EventsApi.md#GETVoidIdEvents) | **Get** /voids/{voidId}/events | Retrieve the events associated to the void
 
+
+
+## GETAuthorizationIdEvents
+
+> GETAuthorizationIdEvents(ctx, authorizationId).Execute()
+
+Retrieve the events associated to the authorization
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    authorizationId := "authorizationId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.EventsApi.GETAuthorizationIdEvents(context.Background(), authorizationId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETAuthorizationIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**authorizationId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETAuthorizationIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETCaptureIdEvents
+
+> GETCaptureIdEvents(ctx, captureId).Execute()
+
+Retrieve the events associated to the capture
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    captureId := "captureId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.EventsApi.GETCaptureIdEvents(context.Background(), captureId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETCaptureIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**captureId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETCaptureIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
 
 
 ## GETCleanupIdEvents
@@ -565,6 +709,278 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETExternalPromotionIdEvents
+
+> GETExternalPromotionIdEvents(ctx, externalPromotionId).Execute()
+
+Retrieve the events associated to the external promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    externalPromotionId := "externalPromotionId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.EventsApi.GETExternalPromotionIdEvents(context.Background(), externalPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETExternalPromotionIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**externalPromotionId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETExternalPromotionIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETFixedAmountPromotionIdEvents
+
+> GETFixedAmountPromotionIdEvents(ctx, fixedAmountPromotionId).Execute()
+
+Retrieve the events associated to the fixed amount promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    fixedAmountPromotionId := "fixedAmountPromotionId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.EventsApi.GETFixedAmountPromotionIdEvents(context.Background(), fixedAmountPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETFixedAmountPromotionIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**fixedAmountPromotionId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETFixedAmountPromotionIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETFixedPricePromotionIdEvents
+
+> GETFixedPricePromotionIdEvents(ctx, fixedPricePromotionId).Execute()
+
+Retrieve the events associated to the fixed price promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    fixedPricePromotionId := "fixedPricePromotionId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.EventsApi.GETFixedPricePromotionIdEvents(context.Background(), fixedPricePromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETFixedPricePromotionIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**fixedPricePromotionId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETFixedPricePromotionIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETFreeGiftPromotionIdEvents
+
+> GETFreeGiftPromotionIdEvents(ctx, freeGiftPromotionId).Execute()
+
+Retrieve the events associated to the free gift promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    freeGiftPromotionId := "freeGiftPromotionId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.EventsApi.GETFreeGiftPromotionIdEvents(context.Background(), freeGiftPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETFreeGiftPromotionIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**freeGiftPromotionId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETFreeGiftPromotionIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETGiftCardIdEvents
 
 > GETGiftCardIdEvents(ctx, giftCardId).Execute()
@@ -1041,6 +1457,74 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETPercentageDiscountPromotionIdEvents
+
+> GETPercentageDiscountPromotionIdEvents(ctx, percentageDiscountPromotionId).Execute()
+
+Retrieve the events associated to the percentage discount promotion
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    percentageDiscountPromotionId := "percentageDiscountPromotionId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.EventsApi.GETPercentageDiscountPromotionIdEvents(context.Background(), percentageDiscountPromotionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETPercentageDiscountPromotionIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**percentageDiscountPromotionId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETPercentageDiscountPromotionIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## GETRefundIdEvents
 
 > GETRefundIdEvents(ctx, refundId).Execute()
@@ -1289,6 +1773,74 @@ Name | Type | Description  | Notes
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETStockTransferIdEventsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETVoidIdEvents
+
+> GETVoidIdEvents(ctx, voidId).Execute()
+
+Retrieve the events associated to the void
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "./openapi"
+)
+
+func main() {
+    voidId := "voidId_example" // string | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    resp, r, err := apiClient.EventsApi.GETVoidIdEvents(context.Background(), voidId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `EventsApi.GETVoidIdEvents``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**voidId** | **string** | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETVoidIdEventsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.2.0
+API version: 3.4.0
 Contact: support@commercelayer.io
 */
 
@@ -20,7 +20,7 @@ type SkuOptionData struct {
 	// The resource's type
 	Type          string                                      `json:"type"`
 	Attributes    GETSkuOptions200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *CarrierAccountDataRelationships            `json:"relationships,omitempty"`
+	Relationships *BillingInfoValidationRuleDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewSkuOptionData instantiates a new SkuOptionData object
@@ -91,9 +91,9 @@ func (o *SkuOptionData) SetAttributes(v GETSkuOptions200ResponseDataInnerAttribu
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *SkuOptionData) GetRelationships() CarrierAccountDataRelationships {
+func (o *SkuOptionData) GetRelationships() BillingInfoValidationRuleDataRelationships {
 	if o == nil || o.Relationships == nil {
-		var ret CarrierAccountDataRelationships
+		var ret BillingInfoValidationRuleDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -101,7 +101,7 @@ func (o *SkuOptionData) GetRelationships() CarrierAccountDataRelationships {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SkuOptionData) GetRelationshipsOk() (*CarrierAccountDataRelationships, bool) {
+func (o *SkuOptionData) GetRelationshipsOk() (*BillingInfoValidationRuleDataRelationships, bool) {
 	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
@@ -117,8 +117,8 @@ func (o *SkuOptionData) HasRelationships() bool {
 	return false
 }
 
-// SetRelationships gets a reference to the given CarrierAccountDataRelationships and assigns it to the Relationships field.
-func (o *SkuOptionData) SetRelationships(v CarrierAccountDataRelationships) {
+// SetRelationships gets a reference to the given BillingInfoValidationRuleDataRelationships and assigns it to the Relationships field.
+func (o *SkuOptionData) SetRelationships(v BillingInfoValidationRuleDataRelationships) {
 	o.Relationships = &v
 }
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.2.0
+API version: 3.4.0
 Contact: support@commercelayer.io
 */
 
@@ -20,6 +20,7 @@ type GETAuthorizations200ResponseDataInnerRelationships struct {
 	Order    *GETAdyenPayments200ResponseDataInnerRelationshipsOrder     `json:"order,omitempty"`
 	Captures *GETAuthorizations200ResponseDataInnerRelationshipsCaptures `json:"captures,omitempty"`
 	Voids    *GETAuthorizations200ResponseDataInnerRelationshipsVoids    `json:"voids,omitempty"`
+	Events   *GETAuthorizations200ResponseDataInnerRelationshipsEvents   `json:"events,omitempty"`
 }
 
 // NewGETAuthorizations200ResponseDataInnerRelationships instantiates a new GETAuthorizations200ResponseDataInnerRelationships object
@@ -135,6 +136,38 @@ func (o *GETAuthorizations200ResponseDataInnerRelationships) SetVoids(v GETAutho
 	o.Voids = &v
 }
 
+// GetEvents returns the Events field value if set, zero value otherwise.
+func (o *GETAuthorizations200ResponseDataInnerRelationships) GetEvents() GETAuthorizations200ResponseDataInnerRelationshipsEvents {
+	if o == nil || o.Events == nil {
+		var ret GETAuthorizations200ResponseDataInnerRelationshipsEvents
+		return ret
+	}
+	return *o.Events
+}
+
+// GetEventsOk returns a tuple with the Events field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *GETAuthorizations200ResponseDataInnerRelationships) GetEventsOk() (*GETAuthorizations200ResponseDataInnerRelationshipsEvents, bool) {
+	if o == nil || o.Events == nil {
+		return nil, false
+	}
+	return o.Events, true
+}
+
+// HasEvents returns a boolean if a field has been set.
+func (o *GETAuthorizations200ResponseDataInnerRelationships) HasEvents() bool {
+	if o != nil && o.Events != nil {
+		return true
+	}
+
+	return false
+}
+
+// SetEvents gets a reference to the given GETAuthorizations200ResponseDataInnerRelationshipsEvents and assigns it to the Events field.
+func (o *GETAuthorizations200ResponseDataInnerRelationships) SetEvents(v GETAuthorizations200ResponseDataInnerRelationshipsEvents) {
+	o.Events = &v
+}
+
 func (o GETAuthorizations200ResponseDataInnerRelationships) MarshalJSON() ([]byte, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Order != nil {
@@ -145,6 +178,9 @@ func (o GETAuthorizations200ResponseDataInnerRelationships) MarshalJSON() ([]byt
 	}
 	if o.Voids != nil {
 		toSerialize["voids"] = o.Voids
+	}
+	if o.Events != nil {
+		toSerialize["events"] = o.Events
 	}
 	return json.Marshal(toSerialize)
 }

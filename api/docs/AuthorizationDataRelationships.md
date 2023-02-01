@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Order** | Pointer to [**AdyenPaymentDataRelationshipsOrder**](AdyenPaymentDataRelationshipsOrder.md) |  | [optional] 
 **Captures** | Pointer to [**AuthorizationDataRelationshipsCaptures**](AuthorizationDataRelationshipsCaptures.md) |  | [optional] 
 **Voids** | Pointer to [**AuthorizationDataRelationshipsVoids**](AuthorizationDataRelationshipsVoids.md) |  | [optional] 
+**Events** | Pointer to [**AuthorizationDataRelationshipsEvents**](AuthorizationDataRelationshipsEvents.md) |  | [optional] 
 
 ## Methods
 
@@ -101,6 +102,31 @@ SetVoids sets Voids field to given value.
 `func (o *AuthorizationDataRelationships) HasVoids() bool`
 
 HasVoids returns a boolean if a field has been set.
+
+### GetEvents
+
+`func (o *AuthorizationDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents`
+
+GetEvents returns the Events field if non-nil, zero value otherwise.
+
+### GetEventsOk
+
+`func (o *AuthorizationDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool)`
+
+GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEvents
+
+`func (o *AuthorizationDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents)`
+
+SetEvents sets Events field to given value.
+
+### HasEvents
+
+`func (o *AuthorizationDataRelationships) HasEvents() bool`
+
+HasEvents returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

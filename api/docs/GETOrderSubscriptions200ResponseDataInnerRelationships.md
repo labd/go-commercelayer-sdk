@@ -9,7 +9,7 @@ Name | Type | Description | Notes
 **Customer** | Pointer to [**GETCouponRecipients200ResponseDataInnerRelationshipsCustomer**](GETCouponRecipients200ResponseDataInnerRelationshipsCustomer.md) |  | [optional] 
 **OrderCopies** | Pointer to [**GETOrderSubscriptions200ResponseDataInnerRelationshipsOrderCopies**](GETOrderSubscriptions200ResponseDataInnerRelationshipsOrderCopies.md) |  | [optional] 
 **Orders** | Pointer to [**GETCustomers200ResponseDataInnerRelationshipsOrders**](GETCustomers200ResponseDataInnerRelationshipsOrders.md) |  | [optional] 
-**Events** | Pointer to [**GETCleanups200ResponseDataInnerRelationshipsEvents**](GETCleanups200ResponseDataInnerRelationshipsEvents.md) |  | [optional] 
+**Events** | Pointer to [**GETAuthorizations200ResponseDataInnerRelationshipsEvents**](GETAuthorizations200ResponseDataInnerRelationshipsEvents.md) |  | [optional] 
 
 ## Methods
 
@@ -157,20 +157,20 @@ HasOrders returns a boolean if a field has been set.
 
 ### GetEvents
 
-`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetEvents() GETCleanups200ResponseDataInnerRelationshipsEvents`
+`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetEvents() GETAuthorizations200ResponseDataInnerRelationshipsEvents`
 
 GetEvents returns the Events field if non-nil, zero value otherwise.
 
 ### GetEventsOk
 
-`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetEventsOk() (*GETCleanups200ResponseDataInnerRelationshipsEvents, bool)`
+`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) GetEventsOk() (*GETAuthorizations200ResponseDataInnerRelationshipsEvents, bool)`
 
 GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvents
 
-`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) SetEvents(v GETCleanups200ResponseDataInnerRelationshipsEvents)`
+`func (o *GETOrderSubscriptions200ResponseDataInnerRelationships) SetEvents(v GETAuthorizations200ResponseDataInnerRelationshipsEvents)`
 
 SetEvents sets Events field to given value.
 

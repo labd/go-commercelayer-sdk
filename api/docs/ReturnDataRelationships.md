@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **DestinationAddress** | Pointer to [**BingGeocoderDataRelationshipsAddresses**](BingGeocoderDataRelationshipsAddresses.md) |  | [optional] 
 **ReturnLineItems** | Pointer to [**ReturnDataRelationshipsReturnLineItems**](ReturnDataRelationshipsReturnLineItems.md) |  | [optional] 
 **Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
-**Events** | Pointer to [**CleanupDataRelationshipsEvents**](CleanupDataRelationshipsEvents.md) |  | [optional] 
+**Events** | Pointer to [**AuthorizationDataRelationshipsEvents**](AuthorizationDataRelationshipsEvents.md) |  | [optional] 
 
 ## Methods
 
@@ -209,20 +209,20 @@ HasAttachments returns a boolean if a field has been set.
 
 ### GetEvents
 
-`func (o *ReturnDataRelationships) GetEvents() CleanupDataRelationshipsEvents`
+`func (o *ReturnDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents`
 
 GetEvents returns the Events field if non-nil, zero value otherwise.
 
 ### GetEventsOk
 
-`func (o *ReturnDataRelationships) GetEventsOk() (*CleanupDataRelationshipsEvents, bool)`
+`func (o *ReturnDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool)`
 
 GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEvents
 
-`func (o *ReturnDataRelationships) SetEvents(v CleanupDataRelationshipsEvents)`
+`func (o *ReturnDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents)`
 
 SetEvents sets Events field to given value.
 

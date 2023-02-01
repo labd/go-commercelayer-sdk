@@ -5,6 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Market** | Pointer to [**GETBillingInfoValidationRules200ResponseDataInnerRelationshipsMarket**](GETBillingInfoValidationRules200ResponseDataInnerRelationshipsMarket.md) |  | [optional] 
+**Attachments** | Pointer to [**GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments**](GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments.md) |  | [optional] 
 
 ## Methods
 
@@ -49,6 +50,31 @@ SetMarket sets Market field to given value.
 `func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) HasMarket() bool`
 
 HasMarket returns a boolean if a field has been set.
+
+### GetAttachments
+
+`func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) GetAttachments() GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments`
+
+GetAttachments returns the Attachments field if non-nil, zero value otherwise.
+
+### GetAttachmentsOk
+
+`func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) GetAttachmentsOk() (*GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments, bool)`
+
+GetAttachmentsOk returns a tuple with the Attachments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAttachments
+
+`func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) SetAttachments(v GETAvalaraAccounts200ResponseDataInnerRelationshipsAttachments)`
+
+SetAttachments sets Attachments field to given value.
+
+### HasAttachments
+
+`func (o *GETBillingInfoValidationRules200ResponseDataInnerRelationships) HasAttachments() bool`
+
+HasAttachments returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
