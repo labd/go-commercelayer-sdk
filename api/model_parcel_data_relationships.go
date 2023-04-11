@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the ParcelDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ParcelDataRelationships{}
-
 // ParcelDataRelationships struct for ParcelDataRelationships
 type ParcelDataRelationships struct {
 	Shipment        *OrderDataRelationshipsShipments            `json:"shipment,omitempty"`
@@ -46,7 +43,7 @@ func NewParcelDataRelationshipsWithDefaults() *ParcelDataRelationships {
 
 // GetShipment returns the Shipment field value if set, zero value otherwise.
 func (o *ParcelDataRelationships) GetShipment() OrderDataRelationshipsShipments {
-	if o == nil || IsNil(o.Shipment) {
+	if o == nil || o.Shipment == nil {
 		var ret OrderDataRelationshipsShipments
 		return ret
 	}
@@ -56,7 +53,7 @@ func (o *ParcelDataRelationships) GetShipment() OrderDataRelationshipsShipments 
 // GetShipmentOk returns a tuple with the Shipment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParcelDataRelationships) GetShipmentOk() (*OrderDataRelationshipsShipments, bool) {
-	if o == nil || IsNil(o.Shipment) {
+	if o == nil || o.Shipment == nil {
 		return nil, false
 	}
 	return o.Shipment, true
@@ -64,7 +61,7 @@ func (o *ParcelDataRelationships) GetShipmentOk() (*OrderDataRelationshipsShipme
 
 // HasShipment returns a boolean if a field has been set.
 func (o *ParcelDataRelationships) HasShipment() bool {
-	if o != nil && !IsNil(o.Shipment) {
+	if o != nil && o.Shipment != nil {
 		return true
 	}
 
@@ -78,7 +75,7 @@ func (o *ParcelDataRelationships) SetShipment(v OrderDataRelationshipsShipments)
 
 // GetPackage returns the Package field value if set, zero value otherwise.
 func (o *ParcelDataRelationships) GetPackage() ParcelDataRelationshipsPackage {
-	if o == nil || IsNil(o.Package) {
+	if o == nil || o.Package == nil {
 		var ret ParcelDataRelationshipsPackage
 		return ret
 	}
@@ -88,7 +85,7 @@ func (o *ParcelDataRelationships) GetPackage() ParcelDataRelationshipsPackage {
 // GetPackageOk returns a tuple with the Package field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParcelDataRelationships) GetPackageOk() (*ParcelDataRelationshipsPackage, bool) {
-	if o == nil || IsNil(o.Package) {
+	if o == nil || o.Package == nil {
 		return nil, false
 	}
 	return o.Package, true
@@ -96,7 +93,7 @@ func (o *ParcelDataRelationships) GetPackageOk() (*ParcelDataRelationshipsPackag
 
 // HasPackage returns a boolean if a field has been set.
 func (o *ParcelDataRelationships) HasPackage() bool {
-	if o != nil && !IsNil(o.Package) {
+	if o != nil && o.Package != nil {
 		return true
 	}
 
@@ -110,7 +107,7 @@ func (o *ParcelDataRelationships) SetPackage(v ParcelDataRelationshipsPackage) {
 
 // GetParcelLineItems returns the ParcelLineItems field value if set, zero value otherwise.
 func (o *ParcelDataRelationships) GetParcelLineItems() ParcelDataRelationshipsParcelLineItems {
-	if o == nil || IsNil(o.ParcelLineItems) {
+	if o == nil || o.ParcelLineItems == nil {
 		var ret ParcelDataRelationshipsParcelLineItems
 		return ret
 	}
@@ -120,7 +117,7 @@ func (o *ParcelDataRelationships) GetParcelLineItems() ParcelDataRelationshipsPa
 // GetParcelLineItemsOk returns a tuple with the ParcelLineItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParcelDataRelationships) GetParcelLineItemsOk() (*ParcelDataRelationshipsParcelLineItems, bool) {
-	if o == nil || IsNil(o.ParcelLineItems) {
+	if o == nil || o.ParcelLineItems == nil {
 		return nil, false
 	}
 	return o.ParcelLineItems, true
@@ -128,7 +125,7 @@ func (o *ParcelDataRelationships) GetParcelLineItemsOk() (*ParcelDataRelationshi
 
 // HasParcelLineItems returns a boolean if a field has been set.
 func (o *ParcelDataRelationships) HasParcelLineItems() bool {
-	if o != nil && !IsNil(o.ParcelLineItems) {
+	if o != nil && o.ParcelLineItems != nil {
 		return true
 	}
 
@@ -142,7 +139,7 @@ func (o *ParcelDataRelationships) SetParcelLineItems(v ParcelDataRelationshipsPa
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *ParcelDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		var ret AvalaraAccountDataRelationshipsAttachments
 		return ret
 	}
@@ -152,7 +149,7 @@ func (o *ParcelDataRelationships) GetAttachments() AvalaraAccountDataRelationshi
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParcelDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		return nil, false
 	}
 	return o.Attachments, true
@@ -160,7 +157,7 @@ func (o *ParcelDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelatio
 
 // HasAttachments returns a boolean if a field has been set.
 func (o *ParcelDataRelationships) HasAttachments() bool {
-	if o != nil && !IsNil(o.Attachments) {
+	if o != nil && o.Attachments != nil {
 		return true
 	}
 
@@ -174,7 +171,7 @@ func (o *ParcelDataRelationships) SetAttachments(v AvalaraAccountDataRelationshi
 
 // GetEvents returns the Events field value if set, zero value otherwise.
 func (o *ParcelDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || o.Events == nil {
 		var ret AuthorizationDataRelationshipsEvents
 		return ret
 	}
@@ -184,7 +181,7 @@ func (o *ParcelDataRelationships) GetEvents() AuthorizationDataRelationshipsEven
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParcelDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || o.Events == nil {
 		return nil, false
 	}
 	return o.Events, true
@@ -192,7 +189,7 @@ func (o *ParcelDataRelationships) GetEventsOk() (*AuthorizationDataRelationships
 
 // HasEvents returns a boolean if a field has been set.
 func (o *ParcelDataRelationships) HasEvents() bool {
-	if o != nil && !IsNil(o.Events) {
+	if o != nil && o.Events != nil {
 		return true
 	}
 
@@ -205,31 +202,23 @@ func (o *ParcelDataRelationships) SetEvents(v AuthorizationDataRelationshipsEven
 }
 
 func (o ParcelDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o ParcelDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Shipment) {
+	if o.Shipment != nil {
 		toSerialize["shipment"] = o.Shipment
 	}
-	if !IsNil(o.Package) {
+	if o.Package != nil {
 		toSerialize["package"] = o.Package
 	}
-	if !IsNil(o.ParcelLineItems) {
+	if o.ParcelLineItems != nil {
 		toSerialize["parcel_line_items"] = o.ParcelLineItems
 	}
-	if !IsNil(o.Attachments) {
+	if o.Attachments != nil {
 		toSerialize["attachments"] = o.Attachments
 	}
-	if !IsNil(o.Events) {
+	if o.Events != nil {
 		toSerialize["events"] = o.Events
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableParcelDataRelationships struct {

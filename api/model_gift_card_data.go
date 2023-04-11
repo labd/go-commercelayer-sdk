@@ -15,22 +15,19 @@ import (
 	"encoding/json"
 )
 
-// checks if the GiftCardData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GiftCardData{}
-
 // GiftCardData struct for GiftCardData
 type GiftCardData struct {
 	// The resource's type
-	Type          interface{}                                     `json:"type"`
-	Attributes    GETGiftCardsGiftCardId200ResponseDataAttributes `json:"attributes"`
-	Relationships *GiftCardDataRelationships                      `json:"relationships,omitempty"`
+	Type          interface{}                                `json:"type"`
+	Attributes    GETGiftCards200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *GiftCardDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewGiftCardData instantiates a new GiftCardData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGiftCardData(type_ interface{}, attributes GETGiftCardsGiftCardId200ResponseDataAttributes) *GiftCardData {
+func NewGiftCardData(type_ interface{}, attributes GETGiftCards200ResponseDataInnerAttributes) *GiftCardData {
 	this := GiftCardData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -60,7 +57,7 @@ func (o *GiftCardData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GiftCardData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -72,9 +69,9 @@ func (o *GiftCardData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *GiftCardData) GetAttributes() GETGiftCardsGiftCardId200ResponseDataAttributes {
+func (o *GiftCardData) GetAttributes() GETGiftCards200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret GETGiftCardsGiftCardId200ResponseDataAttributes
+		var ret GETGiftCards200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -83,7 +80,7 @@ func (o *GiftCardData) GetAttributes() GETGiftCardsGiftCardId200ResponseDataAttr
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *GiftCardData) GetAttributesOk() (*GETGiftCardsGiftCardId200ResponseDataAttributes, bool) {
+func (o *GiftCardData) GetAttributesOk() (*GETGiftCards200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,13 +88,13 @@ func (o *GiftCardData) GetAttributesOk() (*GETGiftCardsGiftCardId200ResponseData
 }
 
 // SetAttributes sets field value
-func (o *GiftCardData) SetAttributes(v GETGiftCardsGiftCardId200ResponseDataAttributes) {
+func (o *GiftCardData) SetAttributes(v GETGiftCards200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *GiftCardData) GetRelationships() GiftCardDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		var ret GiftCardDataRelationships
 		return ret
 	}
@@ -107,7 +104,7 @@ func (o *GiftCardData) GetRelationships() GiftCardDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GiftCardData) GetRelationshipsOk() (*GiftCardDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -115,7 +112,7 @@ func (o *GiftCardData) GetRelationshipsOk() (*GiftCardDataRelationships, bool) {
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *GiftCardData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
@@ -128,23 +125,17 @@ func (o *GiftCardData) SetRelationships(v GiftCardDataRelationships) {
 }
 
 func (o GiftCardData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GiftCardData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	toSerialize["attributes"] = o.Attributes
-	if !IsNil(o.Relationships) {
+	if true {
+		toSerialize["attributes"] = o.Attributes
+	}
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGiftCardData struct {

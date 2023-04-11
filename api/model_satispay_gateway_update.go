@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the SatispayGatewayUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &SatispayGatewayUpdate{}
-
 // SatispayGatewayUpdate struct for SatispayGatewayUpdate
 type SatispayGatewayUpdate struct {
-	Data PATCHSatispayGatewaysSatispayGatewayIdRequestData `json:"data"`
+	Data SatispayGatewayUpdateData `json:"data"`
 }
 
 // NewSatispayGatewayUpdate instantiates a new SatispayGatewayUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSatispayGatewayUpdate(data PATCHSatispayGatewaysSatispayGatewayIdRequestData) *SatispayGatewayUpdate {
+func NewSatispayGatewayUpdate(data SatispayGatewayUpdateData) *SatispayGatewayUpdate {
 	this := SatispayGatewayUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewSatispayGatewayUpdateWithDefaults() *SatispayGatewayUpdate {
 }
 
 // GetData returns the Data field value
-func (o *SatispayGatewayUpdate) GetData() PATCHSatispayGatewaysSatispayGatewayIdRequestData {
+func (o *SatispayGatewayUpdate) GetData() SatispayGatewayUpdateData {
 	if o == nil {
-		var ret PATCHSatispayGatewaysSatispayGatewayIdRequestData
+		var ret SatispayGatewayUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *SatispayGatewayUpdate) GetData() PATCHSatispayGatewaysSatispayGatewayId
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *SatispayGatewayUpdate) GetDataOk() (*PATCHSatispayGatewaysSatispayGatewayIdRequestData, bool) {
+func (o *SatispayGatewayUpdate) GetDataOk() (*SatispayGatewayUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *SatispayGatewayUpdate) GetDataOk() (*PATCHSatispayGatewaysSatispayGatew
 }
 
 // SetData sets field value
-func (o *SatispayGatewayUpdate) SetData(v PATCHSatispayGatewaysSatispayGatewayIdRequestData) {
+func (o *SatispayGatewayUpdate) SetData(v SatispayGatewayUpdateData) {
 	o.Data = v
 }
 
 func (o SatispayGatewayUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o SatispayGatewayUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableSatispayGatewayUpdate struct {

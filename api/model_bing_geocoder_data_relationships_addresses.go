@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the BingGeocoderDataRelationshipsAddresses type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &BingGeocoderDataRelationshipsAddresses{}
-
 // BingGeocoderDataRelationshipsAddresses struct for BingGeocoderDataRelationshipsAddresses
 type BingGeocoderDataRelationshipsAddresses struct {
-	Data *POSTCustomerAddressesRequestDataRelationshipsAddressData `json:"data,omitempty"`
+	Data *BingGeocoderDataRelationshipsAddressesData `json:"data,omitempty"`
 }
 
 // NewBingGeocoderDataRelationshipsAddresses instantiates a new BingGeocoderDataRelationshipsAddresses object
@@ -41,9 +38,9 @@ func NewBingGeocoderDataRelationshipsAddressesWithDefaults() *BingGeocoderDataRe
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *BingGeocoderDataRelationshipsAddresses) GetData() POSTCustomerAddressesRequestDataRelationshipsAddressData {
-	if o == nil || IsNil(o.Data) {
-		var ret POSTCustomerAddressesRequestDataRelationshipsAddressData
+func (o *BingGeocoderDataRelationshipsAddresses) GetData() BingGeocoderDataRelationshipsAddressesData {
+	if o == nil || o.Data == nil {
+		var ret BingGeocoderDataRelationshipsAddressesData
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *BingGeocoderDataRelationshipsAddresses) GetData() POSTCustomerAddresses
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BingGeocoderDataRelationshipsAddresses) GetDataOk() (*POSTCustomerAddressesRequestDataRelationshipsAddressData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *BingGeocoderDataRelationshipsAddresses) GetDataOk() (*BingGeocoderDataRelationshipsAddressesData, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *BingGeocoderDataRelationshipsAddresses) GetDataOk() (*POSTCustomerAddre
 
 // HasData returns a boolean if a field has been set.
 func (o *BingGeocoderDataRelationshipsAddresses) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given POSTCustomerAddressesRequestDataRelationshipsAddressData and assigns it to the Data field.
-func (o *BingGeocoderDataRelationshipsAddresses) SetData(v POSTCustomerAddressesRequestDataRelationshipsAddressData) {
+// SetData gets a reference to the given BingGeocoderDataRelationshipsAddressesData and assigns it to the Data field.
+func (o *BingGeocoderDataRelationshipsAddresses) SetData(v BingGeocoderDataRelationshipsAddressesData) {
 	o.Data = &v
 }
 
 func (o BingGeocoderDataRelationshipsAddresses) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o BingGeocoderDataRelationshipsAddresses) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableBingGeocoderDataRelationshipsAddresses struct {

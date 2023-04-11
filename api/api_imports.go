@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *ImportsApiService) DELETEImportsImportIdExecute(r ImportsApiDELETEImpor
 	}
 
 	localVarPath := localBasePath + "/imports/{importId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"importId"+"}", url.PathEscape(parameterValueToString(r.importId, "importId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"importId"+"}", url.PathEscape(parameterToString(r.importId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *ImportsApiService) DELETEImportsImportIdExecute(r ImportsApiDELETEImpor
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *ImportsApiService) GETImportsExecute(r ImportsApiGETImportsRequest) (*G
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *ImportsApiService) GETImportsImportIdExecute(r ImportsApiGETImportsImpo
 	}
 
 	localVarPath := localBasePath + "/imports/{importId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"importId"+"}", url.PathEscape(parameterValueToString(r.importId, "importId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"importId"+"}", url.PathEscape(parameterToString(r.importId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *ImportsApiService) GETImportsImportIdExecute(r ImportsApiGETImportsImpo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -320,13 +320,13 @@ func (a *ImportsApiService) GETImportsImportIdExecute(r ImportsApiGETImportsImpo
 }
 
 type ImportsApiPOSTImportsRequest struct {
-	ctx                context.Context
-	ApiService         *ImportsApiService
-	pOSTImportsRequest *POSTImportsRequest
+	ctx          context.Context
+	ApiService   *ImportsApiService
+	importCreate *ImportCreate
 }
 
-func (r ImportsApiPOSTImportsRequest) POSTImportsRequest(pOSTImportsRequest POSTImportsRequest) ImportsApiPOSTImportsRequest {
-	r.pOSTImportsRequest = &pOSTImportsRequest
+func (r ImportsApiPOSTImportsRequest) ImportCreate(importCreate ImportCreate) ImportsApiPOSTImportsRequest {
+	r.importCreate = &importCreate
 	return r
 }
 
@@ -370,8 +370,8 @@ func (a *ImportsApiService) POSTImportsExecute(r ImportsApiPOSTImportsRequest) (
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTImportsRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTImportsRequest is required and must be specified")
+	if r.importCreate == nil {
+		return localVarReturnValue, nil, reportError("importCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -392,7 +392,7 @@ func (a *ImportsApiService) POSTImportsExecute(r ImportsApiPOSTImportsRequest) (
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTImportsRequest
+	localVarPostBody = r.importCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -403,9 +403,9 @@ func (a *ImportsApiService) POSTImportsExecute(r ImportsApiPOSTImportsRequest) (
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

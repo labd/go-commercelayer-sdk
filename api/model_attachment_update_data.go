@@ -15,24 +15,21 @@ import (
 	"encoding/json"
 )
 
-// checks if the AttachmentUpdateData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AttachmentUpdateData{}
-
 // AttachmentUpdateData struct for AttachmentUpdateData
 type AttachmentUpdateData struct {
 	// The resource's type
 	Type interface{} `json:"type"`
 	// The resource's id
-	Id            interface{}                                       `json:"id"`
-	Attributes    PATCHAttachmentsAttachmentIdRequestDataAttributes `json:"attributes"`
-	Relationships *AttachmentUpdateDataRelationships                `json:"relationships,omitempty"`
+	Id            interface{}                                           `json:"id"`
+	Attributes    PATCHAttachmentsAttachmentId200ResponseDataAttributes `json:"attributes"`
+	Relationships *AttachmentUpdateDataRelationships                    `json:"relationships,omitempty"`
 }
 
 // NewAttachmentUpdateData instantiates a new AttachmentUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAttachmentUpdateData(type_ interface{}, id interface{}, attributes PATCHAttachmentsAttachmentIdRequestDataAttributes) *AttachmentUpdateData {
+func NewAttachmentUpdateData(type_ interface{}, id interface{}, attributes PATCHAttachmentsAttachmentId200ResponseDataAttributes) *AttachmentUpdateData {
 	this := AttachmentUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -63,7 +60,7 @@ func (o *AttachmentUpdateData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AttachmentUpdateData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -89,7 +86,7 @@ func (o *AttachmentUpdateData) GetId() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AttachmentUpdateData) GetIdOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Id) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
 	return &o.Id, true
@@ -101,9 +98,9 @@ func (o *AttachmentUpdateData) SetId(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AttachmentUpdateData) GetAttributes() PATCHAttachmentsAttachmentIdRequestDataAttributes {
+func (o *AttachmentUpdateData) GetAttributes() PATCHAttachmentsAttachmentId200ResponseDataAttributes {
 	if o == nil {
-		var ret PATCHAttachmentsAttachmentIdRequestDataAttributes
+		var ret PATCHAttachmentsAttachmentId200ResponseDataAttributes
 		return ret
 	}
 
@@ -112,7 +109,7 @@ func (o *AttachmentUpdateData) GetAttributes() PATCHAttachmentsAttachmentIdReque
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AttachmentUpdateData) GetAttributesOk() (*PATCHAttachmentsAttachmentIdRequestDataAttributes, bool) {
+func (o *AttachmentUpdateData) GetAttributesOk() (*PATCHAttachmentsAttachmentId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -120,13 +117,13 @@ func (o *AttachmentUpdateData) GetAttributesOk() (*PATCHAttachmentsAttachmentIdR
 }
 
 // SetAttributes sets field value
-func (o *AttachmentUpdateData) SetAttributes(v PATCHAttachmentsAttachmentIdRequestDataAttributes) {
+func (o *AttachmentUpdateData) SetAttributes(v PATCHAttachmentsAttachmentId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *AttachmentUpdateData) GetRelationships() AttachmentUpdateDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		var ret AttachmentUpdateDataRelationships
 		return ret
 	}
@@ -136,7 +133,7 @@ func (o *AttachmentUpdateData) GetRelationships() AttachmentUpdateDataRelationsh
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttachmentUpdateData) GetRelationshipsOk() (*AttachmentUpdateDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -144,7 +141,7 @@ func (o *AttachmentUpdateData) GetRelationshipsOk() (*AttachmentUpdateDataRelati
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *AttachmentUpdateData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
@@ -157,14 +154,6 @@ func (o *AttachmentUpdateData) SetRelationships(v AttachmentUpdateDataRelationsh
 }
 
 func (o AttachmentUpdateData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o AttachmentUpdateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
@@ -172,11 +161,13 @@ func (o AttachmentUpdateData) ToMap() (map[string]interface{}, error) {
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
-	toSerialize["attributes"] = o.Attributes
-	if !IsNil(o.Relationships) {
+	if true {
+		toSerialize["attributes"] = o.Attributes
+	}
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableAttachmentUpdateData struct {

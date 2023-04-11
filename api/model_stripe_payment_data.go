@@ -15,22 +15,19 @@ import (
 	"encoding/json"
 )
 
-// checks if the StripePaymentData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &StripePaymentData{}
-
 // StripePaymentData struct for StripePaymentData
 type StripePaymentData struct {
 	// The resource's type
-	Type          interface{}                                               `json:"type"`
-	Attributes    GETStripePaymentsStripePaymentId200ResponseDataAttributes `json:"attributes"`
-	Relationships *AdyenPaymentDataRelationships                            `json:"relationships,omitempty"`
+	Type          interface{}                                     `json:"type"`
+	Attributes    GETStripePayments200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *AdyenPaymentDataRelationships                  `json:"relationships,omitempty"`
 }
 
 // NewStripePaymentData instantiates a new StripePaymentData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStripePaymentData(type_ interface{}, attributes GETStripePaymentsStripePaymentId200ResponseDataAttributes) *StripePaymentData {
+func NewStripePaymentData(type_ interface{}, attributes GETStripePayments200ResponseDataInnerAttributes) *StripePaymentData {
 	this := StripePaymentData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -60,7 +57,7 @@ func (o *StripePaymentData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *StripePaymentData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -72,9 +69,9 @@ func (o *StripePaymentData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *StripePaymentData) GetAttributes() GETStripePaymentsStripePaymentId200ResponseDataAttributes {
+func (o *StripePaymentData) GetAttributes() GETStripePayments200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret GETStripePaymentsStripePaymentId200ResponseDataAttributes
+		var ret GETStripePayments200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -83,7 +80,7 @@ func (o *StripePaymentData) GetAttributes() GETStripePaymentsStripePaymentId200R
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *StripePaymentData) GetAttributesOk() (*GETStripePaymentsStripePaymentId200ResponseDataAttributes, bool) {
+func (o *StripePaymentData) GetAttributesOk() (*GETStripePayments200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,13 +88,13 @@ func (o *StripePaymentData) GetAttributesOk() (*GETStripePaymentsStripePaymentId
 }
 
 // SetAttributes sets field value
-func (o *StripePaymentData) SetAttributes(v GETStripePaymentsStripePaymentId200ResponseDataAttributes) {
+func (o *StripePaymentData) SetAttributes(v GETStripePayments200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *StripePaymentData) GetRelationships() AdyenPaymentDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		var ret AdyenPaymentDataRelationships
 		return ret
 	}
@@ -107,7 +104,7 @@ func (o *StripePaymentData) GetRelationships() AdyenPaymentDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StripePaymentData) GetRelationshipsOk() (*AdyenPaymentDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -115,7 +112,7 @@ func (o *StripePaymentData) GetRelationshipsOk() (*AdyenPaymentDataRelationships
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *StripePaymentData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
@@ -128,23 +125,17 @@ func (o *StripePaymentData) SetRelationships(v AdyenPaymentDataRelationships) {
 }
 
 func (o StripePaymentData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o StripePaymentData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	toSerialize["attributes"] = o.Attributes
-	if !IsNil(o.Relationships) {
+	if true {
+		toSerialize["attributes"] = o.Attributes
+	}
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableStripePaymentData struct {

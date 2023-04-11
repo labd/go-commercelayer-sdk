@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the AdyenPayment type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AdyenPayment{}
-
 // AdyenPayment struct for AdyenPayment
 type AdyenPayment struct {
 	Data *AdyenPaymentData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewAdyenPaymentWithDefaults() *AdyenPayment {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *AdyenPayment) GetData() AdyenPaymentData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret AdyenPaymentData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *AdyenPayment) GetData() AdyenPaymentData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AdyenPayment) GetDataOk() (*AdyenPaymentData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *AdyenPayment) GetDataOk() (*AdyenPaymentData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *AdyenPayment) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *AdyenPayment) SetData(v AdyenPaymentData) {
 }
 
 func (o AdyenPayment) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o AdyenPayment) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableAdyenPayment struct {

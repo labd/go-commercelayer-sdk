@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the OrderCopyUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &OrderCopyUpdate{}
-
 // OrderCopyUpdate struct for OrderCopyUpdate
 type OrderCopyUpdate struct {
-	Data PATCHOrderCopiesOrderCopyIdRequestData `json:"data"`
+	Data OrderCopyUpdateData `json:"data"`
 }
 
 // NewOrderCopyUpdate instantiates a new OrderCopyUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrderCopyUpdate(data PATCHOrderCopiesOrderCopyIdRequestData) *OrderCopyUpdate {
+func NewOrderCopyUpdate(data OrderCopyUpdateData) *OrderCopyUpdate {
 	this := OrderCopyUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewOrderCopyUpdateWithDefaults() *OrderCopyUpdate {
 }
 
 // GetData returns the Data field value
-func (o *OrderCopyUpdate) GetData() PATCHOrderCopiesOrderCopyIdRequestData {
+func (o *OrderCopyUpdate) GetData() OrderCopyUpdateData {
 	if o == nil {
-		var ret PATCHOrderCopiesOrderCopyIdRequestData
+		var ret OrderCopyUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *OrderCopyUpdate) GetData() PATCHOrderCopiesOrderCopyIdRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *OrderCopyUpdate) GetDataOk() (*PATCHOrderCopiesOrderCopyIdRequestData, bool) {
+func (o *OrderCopyUpdate) GetDataOk() (*OrderCopyUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *OrderCopyUpdate) GetDataOk() (*PATCHOrderCopiesOrderCopyIdRequestData, 
 }
 
 // SetData sets field value
-func (o *OrderCopyUpdate) SetData(v PATCHOrderCopiesOrderCopyIdRequestData) {
+func (o *OrderCopyUpdate) SetData(v OrderCopyUpdateData) {
 	o.Data = v
 }
 
 func (o OrderCopyUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o OrderCopyUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableOrderCopyUpdate struct {

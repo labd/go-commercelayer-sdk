@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the LineItemOptionCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &LineItemOptionCreate{}
-
 // LineItemOptionCreate struct for LineItemOptionCreate
 type LineItemOptionCreate struct {
-	Data POSTLineItemOptionsRequestData `json:"data"`
+	Data LineItemOptionCreateData `json:"data"`
 }
 
 // NewLineItemOptionCreate instantiates a new LineItemOptionCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLineItemOptionCreate(data POSTLineItemOptionsRequestData) *LineItemOptionCreate {
+func NewLineItemOptionCreate(data LineItemOptionCreateData) *LineItemOptionCreate {
 	this := LineItemOptionCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewLineItemOptionCreateWithDefaults() *LineItemOptionCreate {
 }
 
 // GetData returns the Data field value
-func (o *LineItemOptionCreate) GetData() POSTLineItemOptionsRequestData {
+func (o *LineItemOptionCreate) GetData() LineItemOptionCreateData {
 	if o == nil {
-		var ret POSTLineItemOptionsRequestData
+		var ret LineItemOptionCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *LineItemOptionCreate) GetData() POSTLineItemOptionsRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *LineItemOptionCreate) GetDataOk() (*POSTLineItemOptionsRequestData, bool) {
+func (o *LineItemOptionCreate) GetDataOk() (*LineItemOptionCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *LineItemOptionCreate) GetDataOk() (*POSTLineItemOptionsRequestData, boo
 }
 
 // SetData sets field value
-func (o *LineItemOptionCreate) SetData(v POSTLineItemOptionsRequestData) {
+func (o *LineItemOptionCreate) SetData(v LineItemOptionCreateData) {
 	o.Data = v
 }
 
 func (o LineItemOptionCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o LineItemOptionCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableLineItemOptionCreate struct {

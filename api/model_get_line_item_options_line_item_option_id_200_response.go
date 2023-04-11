@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETLineItemOptionsLineItemOptionId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETLineItemOptionsLineItemOptionId200Response{}
-
 // GETLineItemOptionsLineItemOptionId200Response struct for GETLineItemOptionsLineItemOptionId200Response
 type GETLineItemOptionsLineItemOptionId200Response struct {
-	Data *GETLineItemOptionsLineItemOptionId200ResponseData `json:"data,omitempty"`
+	Data *GETLineItemOptions200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETLineItemOptionsLineItemOptionId200Response instantiates a new GETLineItemOptionsLineItemOptionId200Response object
@@ -41,9 +38,9 @@ func NewGETLineItemOptionsLineItemOptionId200ResponseWithDefaults() *GETLineItem
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETLineItemOptionsLineItemOptionId200Response) GetData() GETLineItemOptionsLineItemOptionId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETLineItemOptionsLineItemOptionId200ResponseData
+func (o *GETLineItemOptionsLineItemOptionId200Response) GetData() GETLineItemOptions200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETLineItemOptions200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETLineItemOptionsLineItemOptionId200Response) GetData() GETLineItemOpt
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETLineItemOptionsLineItemOptionId200Response) GetDataOk() (*GETLineItemOptionsLineItemOptionId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETLineItemOptionsLineItemOptionId200Response) GetDataOk() (*GETLineItemOptions200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETLineItemOptionsLineItemOptionId200Response) GetDataOk() (*GETLineIte
 
 // HasData returns a boolean if a field has been set.
 func (o *GETLineItemOptionsLineItemOptionId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETLineItemOptionsLineItemOptionId200ResponseData and assigns it to the Data field.
-func (o *GETLineItemOptionsLineItemOptionId200Response) SetData(v GETLineItemOptionsLineItemOptionId200ResponseData) {
+// SetData gets a reference to the given GETLineItemOptions200ResponseDataInner and assigns it to the Data field.
+func (o *GETLineItemOptionsLineItemOptionId200Response) SetData(v GETLineItemOptions200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETLineItemOptionsLineItemOptionId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETLineItemOptionsLineItemOptionId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETLineItemOptionsLineItemOptionId200Response struct {

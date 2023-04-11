@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *SubscriptionModelsApiService) DELETESubscriptionModelsSubscriptionModel
 	}
 
 	localVarPath := localBasePath + "/subscription_models/{subscriptionModelId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"subscriptionModelId"+"}", url.PathEscape(parameterValueToString(r.subscriptionModelId, "subscriptionModelId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"subscriptionModelId"+"}", url.PathEscape(parameterToString(r.subscriptionModelId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *SubscriptionModelsApiService) DELETESubscriptionModelsSubscriptionModel
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -156,7 +156,7 @@ func (a *SubscriptionModelsApiService) GETMarketIdSubscriptionModelExecute(r Sub
 	}
 
 	localVarPath := localBasePath + "/markets/{marketId}/subscription_model"
-	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterToString(r.marketId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *SubscriptionModelsApiService) GETMarketIdSubscriptionModelExecute(r Sub
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -248,7 +248,7 @@ func (a *SubscriptionModelsApiService) GETOrderSubscriptionIdSubscriptionModelEx
 	}
 
 	localVarPath := localBasePath + "/order_subscriptions/{orderSubscriptionId}/subscription_model"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionId, "orderSubscriptionId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterToString(r.orderSubscriptionId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -281,9 +281,9 @@ func (a *SubscriptionModelsApiService) GETOrderSubscriptionIdSubscriptionModelEx
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -372,9 +372,9 @@ func (a *SubscriptionModelsApiService) GETSubscriptionModelsExecute(r Subscripti
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -443,7 +443,7 @@ func (a *SubscriptionModelsApiService) GETSubscriptionModelsSubscriptionModelIdE
 	}
 
 	localVarPath := localBasePath + "/subscription_models/{subscriptionModelId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"subscriptionModelId"+"}", url.PathEscape(parameterValueToString(r.subscriptionModelId, "subscriptionModelId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"subscriptionModelId"+"}", url.PathEscape(parameterToString(r.subscriptionModelId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -476,9 +476,9 @@ func (a *SubscriptionModelsApiService) GETSubscriptionModelsSubscriptionModelIdE
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -504,14 +504,14 @@ func (a *SubscriptionModelsApiService) GETSubscriptionModelsSubscriptionModelIdE
 }
 
 type SubscriptionModelsApiPATCHSubscriptionModelsSubscriptionModelIdRequest struct {
-	ctx                                               context.Context
-	ApiService                                        *SubscriptionModelsApiService
-	pATCHSubscriptionModelsSubscriptionModelIdRequest *PATCHSubscriptionModelsSubscriptionModelIdRequest
-	subscriptionModelId                               interface{}
+	ctx                     context.Context
+	ApiService              *SubscriptionModelsApiService
+	subscriptionModelUpdate *SubscriptionModelUpdate
+	subscriptionModelId     interface{}
 }
 
-func (r SubscriptionModelsApiPATCHSubscriptionModelsSubscriptionModelIdRequest) PATCHSubscriptionModelsSubscriptionModelIdRequest(pATCHSubscriptionModelsSubscriptionModelIdRequest PATCHSubscriptionModelsSubscriptionModelIdRequest) SubscriptionModelsApiPATCHSubscriptionModelsSubscriptionModelIdRequest {
-	r.pATCHSubscriptionModelsSubscriptionModelIdRequest = &pATCHSubscriptionModelsSubscriptionModelIdRequest
+func (r SubscriptionModelsApiPATCHSubscriptionModelsSubscriptionModelIdRequest) SubscriptionModelUpdate(subscriptionModelUpdate SubscriptionModelUpdate) SubscriptionModelsApiPATCHSubscriptionModelsSubscriptionModelIdRequest {
+	r.subscriptionModelUpdate = &subscriptionModelUpdate
 	return r
 }
 
@@ -553,13 +553,13 @@ func (a *SubscriptionModelsApiService) PATCHSubscriptionModelsSubscriptionModelI
 	}
 
 	localVarPath := localBasePath + "/subscription_models/{subscriptionModelId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"subscriptionModelId"+"}", url.PathEscape(parameterValueToString(r.subscriptionModelId, "subscriptionModelId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"subscriptionModelId"+"}", url.PathEscape(parameterToString(r.subscriptionModelId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHSubscriptionModelsSubscriptionModelIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHSubscriptionModelsSubscriptionModelIdRequest is required and must be specified")
+	if r.subscriptionModelUpdate == nil {
+		return localVarReturnValue, nil, reportError("subscriptionModelUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -580,7 +580,7 @@ func (a *SubscriptionModelsApiService) PATCHSubscriptionModelsSubscriptionModelI
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHSubscriptionModelsSubscriptionModelIdRequest
+	localVarPostBody = r.subscriptionModelUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -591,9 +591,9 @@ func (a *SubscriptionModelsApiService) PATCHSubscriptionModelsSubscriptionModelI
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -619,13 +619,13 @@ func (a *SubscriptionModelsApiService) PATCHSubscriptionModelsSubscriptionModelI
 }
 
 type SubscriptionModelsApiPOSTSubscriptionModelsRequest struct {
-	ctx                           context.Context
-	ApiService                    *SubscriptionModelsApiService
-	pOSTSubscriptionModelsRequest *POSTSubscriptionModelsRequest
+	ctx                     context.Context
+	ApiService              *SubscriptionModelsApiService
+	subscriptionModelCreate *SubscriptionModelCreate
 }
 
-func (r SubscriptionModelsApiPOSTSubscriptionModelsRequest) POSTSubscriptionModelsRequest(pOSTSubscriptionModelsRequest POSTSubscriptionModelsRequest) SubscriptionModelsApiPOSTSubscriptionModelsRequest {
-	r.pOSTSubscriptionModelsRequest = &pOSTSubscriptionModelsRequest
+func (r SubscriptionModelsApiPOSTSubscriptionModelsRequest) SubscriptionModelCreate(subscriptionModelCreate SubscriptionModelCreate) SubscriptionModelsApiPOSTSubscriptionModelsRequest {
+	r.subscriptionModelCreate = &subscriptionModelCreate
 	return r
 }
 
@@ -669,8 +669,8 @@ func (a *SubscriptionModelsApiService) POSTSubscriptionModelsExecute(r Subscript
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTSubscriptionModelsRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTSubscriptionModelsRequest is required and must be specified")
+	if r.subscriptionModelCreate == nil {
+		return localVarReturnValue, nil, reportError("subscriptionModelCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -691,7 +691,7 @@ func (a *SubscriptionModelsApiService) POSTSubscriptionModelsExecute(r Subscript
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTSubscriptionModelsRequest
+	localVarPostBody = r.subscriptionModelCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -702,9 +702,9 @@ func (a *SubscriptionModelsApiService) POSTSubscriptionModelsExecute(r Subscript
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

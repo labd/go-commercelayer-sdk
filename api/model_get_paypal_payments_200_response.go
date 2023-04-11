@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETPaypalPayments200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETPaypalPayments200Response{}
-
 // GETPaypalPayments200Response struct for GETPaypalPayments200Response
 type GETPaypalPayments200Response struct {
-	Data interface{} `json:"data,omitempty"`
+	Data []GETPaypalPayments200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETPaypalPayments200Response instantiates a new GETPaypalPayments200Response object
@@ -40,10 +37,10 @@ func NewGETPaypalPayments200ResponseWithDefaults() *GETPaypalPayments200Response
 	return &this
 }
 
-// GetData returns the Data field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETPaypalPayments200Response) GetData() interface{} {
-	if o == nil {
-		var ret interface{}
+// GetData returns the Data field value if set, zero value otherwise.
+func (o *GETPaypalPayments200Response) GetData() []GETPaypalPayments200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret []GETPaypalPayments200ResponseDataInner
 		return ret
 	}
 	return o.Data
@@ -51,42 +48,33 @@ func (o *GETPaypalPayments200Response) GetData() interface{} {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETPaypalPayments200Response) GetDataOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETPaypalPayments200Response) GetDataOk() ([]GETPaypalPayments200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
-	return &o.Data, true
+	return o.Data, true
 }
 
 // HasData returns a boolean if a field has been set.
 func (o *GETPaypalPayments200Response) HasData() bool {
-	if o != nil && IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given interface{} and assigns it to the Data field.
-func (o *GETPaypalPayments200Response) SetData(v interface{}) {
+// SetData gets a reference to the given []GETPaypalPayments200ResponseDataInner and assigns it to the Data field.
+func (o *GETPaypalPayments200Response) SetData(v []GETPaypalPayments200ResponseDataInner) {
 	o.Data = v
 }
 
 func (o GETPaypalPayments200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETPaypalPayments200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETPaypalPayments200Response struct {

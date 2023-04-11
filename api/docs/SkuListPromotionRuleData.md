@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes**](GETSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**GETSkuListPromotionRules200ResponseDataInnerAttributes**](GETSkuListPromotionRules200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**SkuListPromotionRuleDataRelationships**](SkuListPromotionRuleDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewSkuListPromotionRuleData
 
-`func NewSkuListPromotionRuleData(type_ interface{}, attributes GETSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes, ) *SkuListPromotionRuleData`
+`func NewSkuListPromotionRuleData(type_ interface{}, attributes GETSkuListPromotionRules200ResponseDataInnerAttributes, ) *SkuListPromotionRuleData`
 
 NewSkuListPromotionRuleData instantiates a new SkuListPromotionRuleData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *SkuListPromotionRuleData) GetAttributes() GETSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes`
+`func (o *SkuListPromotionRuleData) GetAttributes() GETSkuListPromotionRules200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *SkuListPromotionRuleData) GetAttributesOk() (*GETSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes, bool)`
+`func (o *SkuListPromotionRuleData) GetAttributesOk() (*GETSkuListPromotionRules200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *SkuListPromotionRuleData) SetAttributes(v GETSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes)`
+`func (o *SkuListPromotionRuleData) SetAttributes(v GETSkuListPromotionRules200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

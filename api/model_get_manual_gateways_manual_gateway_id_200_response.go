@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETManualGatewaysManualGatewayId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETManualGatewaysManualGatewayId200Response{}
-
 // GETManualGatewaysManualGatewayId200Response struct for GETManualGatewaysManualGatewayId200Response
 type GETManualGatewaysManualGatewayId200Response struct {
-	Data *GETManualGatewaysManualGatewayId200ResponseData `json:"data,omitempty"`
+	Data *GETManualGateways200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETManualGatewaysManualGatewayId200Response instantiates a new GETManualGatewaysManualGatewayId200Response object
@@ -41,9 +38,9 @@ func NewGETManualGatewaysManualGatewayId200ResponseWithDefaults() *GETManualGate
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETManualGatewaysManualGatewayId200Response) GetData() GETManualGatewaysManualGatewayId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETManualGatewaysManualGatewayId200ResponseData
+func (o *GETManualGatewaysManualGatewayId200Response) GetData() GETManualGateways200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETManualGateways200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETManualGatewaysManualGatewayId200Response) GetData() GETManualGateway
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETManualGatewaysManualGatewayId200Response) GetDataOk() (*GETManualGatewaysManualGatewayId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETManualGatewaysManualGatewayId200Response) GetDataOk() (*GETManualGateways200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETManualGatewaysManualGatewayId200Response) GetDataOk() (*GETManualGat
 
 // HasData returns a boolean if a field has been set.
 func (o *GETManualGatewaysManualGatewayId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETManualGatewaysManualGatewayId200ResponseData and assigns it to the Data field.
-func (o *GETManualGatewaysManualGatewayId200Response) SetData(v GETManualGatewaysManualGatewayId200ResponseData) {
+// SetData gets a reference to the given GETManualGateways200ResponseDataInner and assigns it to the Data field.
+func (o *GETManualGatewaysManualGatewayId200Response) SetData(v GETManualGateways200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETManualGatewaysManualGatewayId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETManualGatewaysManualGatewayId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETManualGatewaysManualGatewayId200Response struct {

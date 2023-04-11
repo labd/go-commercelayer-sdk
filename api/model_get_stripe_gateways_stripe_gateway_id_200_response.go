@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETStripeGatewaysStripeGatewayId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETStripeGatewaysStripeGatewayId200Response{}
-
 // GETStripeGatewaysStripeGatewayId200Response struct for GETStripeGatewaysStripeGatewayId200Response
 type GETStripeGatewaysStripeGatewayId200Response struct {
-	Data *GETStripeGatewaysStripeGatewayId200ResponseData `json:"data,omitempty"`
+	Data *GETStripeGateways200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETStripeGatewaysStripeGatewayId200Response instantiates a new GETStripeGatewaysStripeGatewayId200Response object
@@ -41,9 +38,9 @@ func NewGETStripeGatewaysStripeGatewayId200ResponseWithDefaults() *GETStripeGate
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETStripeGatewaysStripeGatewayId200Response) GetData() GETStripeGatewaysStripeGatewayId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETStripeGatewaysStripeGatewayId200ResponseData
+func (o *GETStripeGatewaysStripeGatewayId200Response) GetData() GETStripeGateways200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETStripeGateways200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETStripeGatewaysStripeGatewayId200Response) GetData() GETStripeGateway
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETStripeGatewaysStripeGatewayId200Response) GetDataOk() (*GETStripeGatewaysStripeGatewayId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETStripeGatewaysStripeGatewayId200Response) GetDataOk() (*GETStripeGateways200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETStripeGatewaysStripeGatewayId200Response) GetDataOk() (*GETStripeGat
 
 // HasData returns a boolean if a field has been set.
 func (o *GETStripeGatewaysStripeGatewayId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETStripeGatewaysStripeGatewayId200ResponseData and assigns it to the Data field.
-func (o *GETStripeGatewaysStripeGatewayId200Response) SetData(v GETStripeGatewaysStripeGatewayId200ResponseData) {
+// SetData gets a reference to the given GETStripeGateways200ResponseDataInner and assigns it to the Data field.
+func (o *GETStripeGatewaysStripeGatewayId200Response) SetData(v GETStripeGateways200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETStripeGatewaysStripeGatewayId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETStripeGatewaysStripeGatewayId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETStripeGatewaysStripeGatewayId200Response struct {

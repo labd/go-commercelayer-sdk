@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the Webhook type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &Webhook{}
-
 // Webhook struct for Webhook
 type Webhook struct {
 	Data *WebhookData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewWebhookWithDefaults() *Webhook {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *Webhook) GetData() WebhookData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret WebhookData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *Webhook) GetData() WebhookData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Webhook) GetDataOk() (*WebhookData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *Webhook) GetDataOk() (*WebhookData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *Webhook) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *Webhook) SetData(v WebhookData) {
 }
 
 func (o Webhook) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o Webhook) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableWebhook struct {

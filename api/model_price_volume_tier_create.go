@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the PriceVolumeTierCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PriceVolumeTierCreate{}
-
 // PriceVolumeTierCreate struct for PriceVolumeTierCreate
 type PriceVolumeTierCreate struct {
-	Data POSTPriceVolumeTiersRequestData `json:"data"`
+	Data PriceVolumeTierCreateData `json:"data"`
 }
 
 // NewPriceVolumeTierCreate instantiates a new PriceVolumeTierCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPriceVolumeTierCreate(data POSTPriceVolumeTiersRequestData) *PriceVolumeTierCreate {
+func NewPriceVolumeTierCreate(data PriceVolumeTierCreateData) *PriceVolumeTierCreate {
 	this := PriceVolumeTierCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewPriceVolumeTierCreateWithDefaults() *PriceVolumeTierCreate {
 }
 
 // GetData returns the Data field value
-func (o *PriceVolumeTierCreate) GetData() POSTPriceVolumeTiersRequestData {
+func (o *PriceVolumeTierCreate) GetData() PriceVolumeTierCreateData {
 	if o == nil {
-		var ret POSTPriceVolumeTiersRequestData
+		var ret PriceVolumeTierCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *PriceVolumeTierCreate) GetData() POSTPriceVolumeTiersRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *PriceVolumeTierCreate) GetDataOk() (*POSTPriceVolumeTiersRequestData, bool) {
+func (o *PriceVolumeTierCreate) GetDataOk() (*PriceVolumeTierCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *PriceVolumeTierCreate) GetDataOk() (*POSTPriceVolumeTiersRequestData, b
 }
 
 // SetData sets field value
-func (o *PriceVolumeTierCreate) SetData(v POSTPriceVolumeTiersRequestData) {
+func (o *PriceVolumeTierCreate) SetData(v PriceVolumeTierCreateData) {
 	o.Data = v
 }
 
 func (o PriceVolumeTierCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o PriceVolumeTierCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullablePriceVolumeTierCreate struct {

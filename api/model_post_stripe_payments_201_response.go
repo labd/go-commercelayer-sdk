@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the POSTStripePayments201Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &POSTStripePayments201Response{}
-
 // POSTStripePayments201Response struct for POSTStripePayments201Response
 type POSTStripePayments201Response struct {
 	Data *POSTStripePayments201ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPOSTStripePayments201ResponseWithDefaults() *POSTStripePayments201Respon
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTStripePayments201Response) GetData() POSTStripePayments201ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret POSTStripePayments201ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *POSTStripePayments201Response) GetData() POSTStripePayments201ResponseD
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTStripePayments201Response) GetDataOk() (*POSTStripePayments201ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *POSTStripePayments201Response) GetDataOk() (*POSTStripePayments201Respo
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTStripePayments201Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *POSTStripePayments201Response) SetData(v POSTStripePayments201ResponseD
 }
 
 func (o POSTStripePayments201Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o POSTStripePayments201Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePOSTStripePayments201Response struct {

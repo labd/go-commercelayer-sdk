@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the ShippingCategoryUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ShippingCategoryUpdate{}
-
 // ShippingCategoryUpdate struct for ShippingCategoryUpdate
 type ShippingCategoryUpdate struct {
-	Data PATCHShippingCategoriesShippingCategoryIdRequestData `json:"data"`
+	Data ShippingCategoryUpdateData `json:"data"`
 }
 
 // NewShippingCategoryUpdate instantiates a new ShippingCategoryUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShippingCategoryUpdate(data PATCHShippingCategoriesShippingCategoryIdRequestData) *ShippingCategoryUpdate {
+func NewShippingCategoryUpdate(data ShippingCategoryUpdateData) *ShippingCategoryUpdate {
 	this := ShippingCategoryUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewShippingCategoryUpdateWithDefaults() *ShippingCategoryUpdate {
 }
 
 // GetData returns the Data field value
-func (o *ShippingCategoryUpdate) GetData() PATCHShippingCategoriesShippingCategoryIdRequestData {
+func (o *ShippingCategoryUpdate) GetData() ShippingCategoryUpdateData {
 	if o == nil {
-		var ret PATCHShippingCategoriesShippingCategoryIdRequestData
+		var ret ShippingCategoryUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *ShippingCategoryUpdate) GetData() PATCHShippingCategoriesShippingCatego
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ShippingCategoryUpdate) GetDataOk() (*PATCHShippingCategoriesShippingCategoryIdRequestData, bool) {
+func (o *ShippingCategoryUpdate) GetDataOk() (*ShippingCategoryUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *ShippingCategoryUpdate) GetDataOk() (*PATCHShippingCategoriesShippingCa
 }
 
 // SetData sets field value
-func (o *ShippingCategoryUpdate) SetData(v PATCHShippingCategoriesShippingCategoryIdRequestData) {
+func (o *ShippingCategoryUpdate) SetData(v ShippingCategoryUpdateData) {
 	o.Data = v
 }
 
 func (o ShippingCategoryUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o ShippingCategoryUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableShippingCategoryUpdate struct {

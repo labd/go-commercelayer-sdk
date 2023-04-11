@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the SatispayGateway type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &SatispayGateway{}
-
 // SatispayGateway struct for SatispayGateway
 type SatispayGateway struct {
 	Data *SatispayGatewayData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewSatispayGatewayWithDefaults() *SatispayGateway {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *SatispayGateway) GetData() SatispayGatewayData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret SatispayGatewayData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *SatispayGateway) GetData() SatispayGatewayData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SatispayGateway) GetDataOk() (*SatispayGatewayData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *SatispayGateway) GetDataOk() (*SatispayGatewayData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *SatispayGateway) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *SatispayGateway) SetData(v SatispayGatewayData) {
 }
 
 func (o SatispayGateway) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o SatispayGateway) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableSatispayGateway struct {

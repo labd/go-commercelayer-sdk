@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**POSTCustomerGroupsRequestData**](POSTCustomerGroupsRequestData.md) |  | 
+**Data** | [**CustomerGroupCreateData**](CustomerGroupCreateData.md) |  | 
 
 ## Methods
 
 ### NewCustomerGroupCreate
 
-`func NewCustomerGroupCreate(data POSTCustomerGroupsRequestData, ) *CustomerGroupCreate`
+`func NewCustomerGroupCreate(data CustomerGroupCreateData, ) *CustomerGroupCreate`
 
 NewCustomerGroupCreate instantiates a new CustomerGroupCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *CustomerGroupCreate) GetData() POSTCustomerGroupsRequestData`
+`func (o *CustomerGroupCreate) GetData() CustomerGroupCreateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *CustomerGroupCreate) GetDataOk() (*POSTCustomerGroupsRequestData, bool)`
+`func (o *CustomerGroupCreate) GetDataOk() (*CustomerGroupCreateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *CustomerGroupCreate) SetData(v POSTCustomerGroupsRequestData)`
+`func (o *CustomerGroupCreate) SetData(v CustomerGroupCreateData)`
 
 SetData sets Data field to given value.
 

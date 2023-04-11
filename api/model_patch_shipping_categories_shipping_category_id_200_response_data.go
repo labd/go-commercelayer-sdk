@@ -15,18 +15,15 @@ import (
 	"encoding/json"
 )
 
-// checks if the PATCHShippingCategoriesShippingCategoryId200ResponseData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PATCHShippingCategoriesShippingCategoryId200ResponseData{}
-
 // PATCHShippingCategoriesShippingCategoryId200ResponseData struct for PATCHShippingCategoriesShippingCategoryId200ResponseData
 type PATCHShippingCategoriesShippingCategoryId200ResponseData struct {
 	// The resource's id
 	Id interface{} `json:"id,omitempty"`
 	// The resource's type
-	Type          interface{}                                                     `json:"type,omitempty"`
-	Links         *POSTAddresses201ResponseDataLinks                              `json:"links,omitempty"`
-	Attributes    *PATCHShippingCategoriesShippingCategoryIdRequestDataAttributes `json:"attributes,omitempty"`
-	Relationships *POSTShippingCategories201ResponseDataRelationships             `json:"relationships,omitempty"`
+	Type          interface{}                                                         `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                              `json:"links,omitempty"`
+	Attributes    *PATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETShippingCategories200ResponseDataInnerRelationships             `json:"relationships,omitempty"`
 }
 
 // NewPATCHShippingCategoriesShippingCategoryId200ResponseData instantiates a new PATCHShippingCategoriesShippingCategoryId200ResponseData object
@@ -59,7 +56,7 @@ func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetId() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetIdOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Id) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
 	return &o.Id, true
@@ -67,7 +64,7 @@ func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetIdOk() (*i
 
 // HasId returns a boolean if a field has been set.
 func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) HasId() bool {
-	if o != nil && IsNil(o.Id) {
+	if o != nil && o.Id != nil {
 		return true
 	}
 
@@ -92,7 +89,7 @@ func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetType() int
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -100,7 +97,7 @@ func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetTypeOk() (
 
 // HasType returns a boolean if a field has been set.
 func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) HasType() bool {
-	if o != nil && IsNil(o.Type) {
+	if o != nil && o.Type != nil {
 		return true
 	}
 
@@ -113,9 +110,9 @@ func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) SetType(v int
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetLinks() POSTAddresses201ResponseDataLinks {
-	if o == nil || IsNil(o.Links) {
-		var ret POSTAddresses201ResponseDataLinks
+func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks {
+	if o == nil || o.Links == nil {
+		var ret GETAddresses200ResponseDataInnerLinks
 		return ret
 	}
 	return *o.Links
@@ -123,8 +120,8 @@ func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetLinks() PO
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool) {
-	if o == nil || IsNil(o.Links) {
+func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool) {
+	if o == nil || o.Links == nil {
 		return nil, false
 	}
 	return o.Links, true
@@ -132,22 +129,22 @@ func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetLinksOk() 
 
 // HasLinks returns a boolean if a field has been set.
 func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) HasLinks() bool {
-	if o != nil && !IsNil(o.Links) {
+	if o != nil && o.Links != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetLinks gets a reference to the given POSTAddresses201ResponseDataLinks and assigns it to the Links field.
-func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks) {
+// SetLinks gets a reference to the given GETAddresses200ResponseDataInnerLinks and assigns it to the Links field.
+func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks) {
 	o.Links = &v
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetAttributes() PATCHShippingCategoriesShippingCategoryIdRequestDataAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret PATCHShippingCategoriesShippingCategoryIdRequestDataAttributes
+func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetAttributes() PATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes {
+	if o == nil || o.Attributes == nil {
+		var ret PATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -155,8 +152,8 @@ func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetAttributes
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetAttributesOk() (*PATCHShippingCategoriesShippingCategoryIdRequestDataAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetAttributesOk() (*PATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes, bool) {
+	if o == nil || o.Attributes == nil {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -164,22 +161,22 @@ func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetAttributes
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && o.Attributes != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given PATCHShippingCategoriesShippingCategoryIdRequestDataAttributes and assigns it to the Attributes field.
-func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) SetAttributes(v PATCHShippingCategoriesShippingCategoryIdRequestDataAttributes) {
+// SetAttributes gets a reference to the given PATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes and assigns it to the Attributes field.
+func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) SetAttributes(v PATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes) {
 	o.Attributes = &v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetRelationships() POSTShippingCategories201ResponseDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
-		var ret POSTShippingCategories201ResponseDataRelationships
+func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetRelationships() GETShippingCategories200ResponseDataInnerRelationships {
+	if o == nil || o.Relationships == nil {
+		var ret GETShippingCategories200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -187,8 +184,8 @@ func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetRelationsh
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetRelationshipsOk() (*POSTShippingCategories201ResponseDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetRelationshipsOk() (*GETShippingCategories200ResponseDataInnerRelationships, bool) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -196,27 +193,19 @@ func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetRelationsh
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTShippingCategories201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) SetRelationships(v POSTShippingCategories201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given GETShippingCategories200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) SetRelationships(v GETShippingCategories200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 
 func (o PATCHShippingCategoriesShippingCategoryId200ResponseData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o PATCHShippingCategoriesShippingCategoryId200ResponseData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
@@ -224,16 +213,16 @@ func (o PATCHShippingCategoriesShippingCategoryId200ResponseData) ToMap() (map[s
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if !IsNil(o.Links) {
+	if o.Links != nil {
 		toSerialize["links"] = o.Links
 	}
-	if !IsNil(o.Attributes) {
+	if o.Attributes != nil {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !IsNil(o.Relationships) {
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePATCHShippingCategoriesShippingCategoryId200ResponseData struct {

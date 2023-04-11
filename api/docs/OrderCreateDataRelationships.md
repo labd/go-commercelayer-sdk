@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Market** | Pointer to [**POSTBillingInfoValidationRulesRequestDataRelationshipsMarket**](POSTBillingInfoValidationRulesRequestDataRelationshipsMarket.md) |  | [optional] 
-**Customer** | Pointer to [**POSTCouponRecipientsRequestDataRelationshipsCustomer**](POSTCouponRecipientsRequestDataRelationshipsCustomer.md) |  | [optional] 
-**ShippingAddress** | Pointer to [**POSTCustomerAddressesRequestDataRelationshipsAddress**](POSTCustomerAddressesRequestDataRelationshipsAddress.md) |  | [optional] 
-**BillingAddress** | Pointer to [**POSTCustomerAddressesRequestDataRelationshipsAddress**](POSTCustomerAddressesRequestDataRelationshipsAddress.md) |  | [optional] 
-**PaymentMethod** | Pointer to [**POSTOrdersRequestDataRelationshipsPaymentMethod**](POSTOrdersRequestDataRelationshipsPaymentMethod.md) |  | [optional] 
-**PaymentSource** | Pointer to [**OrderCreateDataRelationshipsPaymentSource**](OrderCreateDataRelationshipsPaymentSource.md) |  | [optional] 
+**Market** | Pointer to [**BillingInfoValidationRuleCreateDataRelationshipsMarket**](BillingInfoValidationRuleCreateDataRelationshipsMarket.md) |  | [optional] 
+**Customer** | Pointer to [**CouponRecipientCreateDataRelationshipsCustomer**](CouponRecipientCreateDataRelationshipsCustomer.md) |  | [optional] 
+**ShippingAddress** | Pointer to [**CustomerAddressCreateDataRelationshipsAddress**](CustomerAddressCreateDataRelationshipsAddress.md) |  | [optional] 
+**BillingAddress** | Pointer to [**CustomerAddressCreateDataRelationshipsAddress**](CustomerAddressCreateDataRelationshipsAddress.md) |  | [optional] 
+**PaymentMethod** | Pointer to [**OrderCreateDataRelationshipsPaymentMethod**](OrderCreateDataRelationshipsPaymentMethod.md) |  | [optional] 
+**PaymentSource** | Pointer to [**CustomerPaymentSourceCreateDataRelationshipsPaymentSource**](CustomerPaymentSourceCreateDataRelationshipsPaymentSource.md) |  | [optional] 
 
 ## Methods
 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetMarket
 
-`func (o *OrderCreateDataRelationships) GetMarket() POSTBillingInfoValidationRulesRequestDataRelationshipsMarket`
+`func (o *OrderCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket`
 
 GetMarket returns the Market field if non-nil, zero value otherwise.
 
 ### GetMarketOk
 
-`func (o *OrderCreateDataRelationships) GetMarketOk() (*POSTBillingInfoValidationRulesRequestDataRelationshipsMarket, bool)`
+`func (o *OrderCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool)`
 
 GetMarketOk returns a tuple with the Market field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMarket
 
-`func (o *OrderCreateDataRelationships) SetMarket(v POSTBillingInfoValidationRulesRequestDataRelationshipsMarket)`
+`func (o *OrderCreateDataRelationships) SetMarket(v BillingInfoValidationRuleCreateDataRelationshipsMarket)`
 
 SetMarket sets Market field to given value.
 
@@ -57,20 +57,20 @@ HasMarket returns a boolean if a field has been set.
 
 ### GetCustomer
 
-`func (o *OrderCreateDataRelationships) GetCustomer() POSTCouponRecipientsRequestDataRelationshipsCustomer`
+`func (o *OrderCreateDataRelationships) GetCustomer() CouponRecipientCreateDataRelationshipsCustomer`
 
 GetCustomer returns the Customer field if non-nil, zero value otherwise.
 
 ### GetCustomerOk
 
-`func (o *OrderCreateDataRelationships) GetCustomerOk() (*POSTCouponRecipientsRequestDataRelationshipsCustomer, bool)`
+`func (o *OrderCreateDataRelationships) GetCustomerOk() (*CouponRecipientCreateDataRelationshipsCustomer, bool)`
 
 GetCustomerOk returns a tuple with the Customer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomer
 
-`func (o *OrderCreateDataRelationships) SetCustomer(v POSTCouponRecipientsRequestDataRelationshipsCustomer)`
+`func (o *OrderCreateDataRelationships) SetCustomer(v CouponRecipientCreateDataRelationshipsCustomer)`
 
 SetCustomer sets Customer field to given value.
 
@@ -82,20 +82,20 @@ HasCustomer returns a boolean if a field has been set.
 
 ### GetShippingAddress
 
-`func (o *OrderCreateDataRelationships) GetShippingAddress() POSTCustomerAddressesRequestDataRelationshipsAddress`
+`func (o *OrderCreateDataRelationships) GetShippingAddress() CustomerAddressCreateDataRelationshipsAddress`
 
 GetShippingAddress returns the ShippingAddress field if non-nil, zero value otherwise.
 
 ### GetShippingAddressOk
 
-`func (o *OrderCreateDataRelationships) GetShippingAddressOk() (*POSTCustomerAddressesRequestDataRelationshipsAddress, bool)`
+`func (o *OrderCreateDataRelationships) GetShippingAddressOk() (*CustomerAddressCreateDataRelationshipsAddress, bool)`
 
 GetShippingAddressOk returns a tuple with the ShippingAddress field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetShippingAddress
 
-`func (o *OrderCreateDataRelationships) SetShippingAddress(v POSTCustomerAddressesRequestDataRelationshipsAddress)`
+`func (o *OrderCreateDataRelationships) SetShippingAddress(v CustomerAddressCreateDataRelationshipsAddress)`
 
 SetShippingAddress sets ShippingAddress field to given value.
 
@@ -107,20 +107,20 @@ HasShippingAddress returns a boolean if a field has been set.
 
 ### GetBillingAddress
 
-`func (o *OrderCreateDataRelationships) GetBillingAddress() POSTCustomerAddressesRequestDataRelationshipsAddress`
+`func (o *OrderCreateDataRelationships) GetBillingAddress() CustomerAddressCreateDataRelationshipsAddress`
 
 GetBillingAddress returns the BillingAddress field if non-nil, zero value otherwise.
 
 ### GetBillingAddressOk
 
-`func (o *OrderCreateDataRelationships) GetBillingAddressOk() (*POSTCustomerAddressesRequestDataRelationshipsAddress, bool)`
+`func (o *OrderCreateDataRelationships) GetBillingAddressOk() (*CustomerAddressCreateDataRelationshipsAddress, bool)`
 
 GetBillingAddressOk returns a tuple with the BillingAddress field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetBillingAddress
 
-`func (o *OrderCreateDataRelationships) SetBillingAddress(v POSTCustomerAddressesRequestDataRelationshipsAddress)`
+`func (o *OrderCreateDataRelationships) SetBillingAddress(v CustomerAddressCreateDataRelationshipsAddress)`
 
 SetBillingAddress sets BillingAddress field to given value.
 
@@ -132,20 +132,20 @@ HasBillingAddress returns a boolean if a field has been set.
 
 ### GetPaymentMethod
 
-`func (o *OrderCreateDataRelationships) GetPaymentMethod() POSTOrdersRequestDataRelationshipsPaymentMethod`
+`func (o *OrderCreateDataRelationships) GetPaymentMethod() OrderCreateDataRelationshipsPaymentMethod`
 
 GetPaymentMethod returns the PaymentMethod field if non-nil, zero value otherwise.
 
 ### GetPaymentMethodOk
 
-`func (o *OrderCreateDataRelationships) GetPaymentMethodOk() (*POSTOrdersRequestDataRelationshipsPaymentMethod, bool)`
+`func (o *OrderCreateDataRelationships) GetPaymentMethodOk() (*OrderCreateDataRelationshipsPaymentMethod, bool)`
 
 GetPaymentMethodOk returns a tuple with the PaymentMethod field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPaymentMethod
 
-`func (o *OrderCreateDataRelationships) SetPaymentMethod(v POSTOrdersRequestDataRelationshipsPaymentMethod)`
+`func (o *OrderCreateDataRelationships) SetPaymentMethod(v OrderCreateDataRelationshipsPaymentMethod)`
 
 SetPaymentMethod sets PaymentMethod field to given value.
 
@@ -157,20 +157,20 @@ HasPaymentMethod returns a boolean if a field has been set.
 
 ### GetPaymentSource
 
-`func (o *OrderCreateDataRelationships) GetPaymentSource() OrderCreateDataRelationshipsPaymentSource`
+`func (o *OrderCreateDataRelationships) GetPaymentSource() CustomerPaymentSourceCreateDataRelationshipsPaymentSource`
 
 GetPaymentSource returns the PaymentSource field if non-nil, zero value otherwise.
 
 ### GetPaymentSourceOk
 
-`func (o *OrderCreateDataRelationships) GetPaymentSourceOk() (*OrderCreateDataRelationshipsPaymentSource, bool)`
+`func (o *OrderCreateDataRelationships) GetPaymentSourceOk() (*CustomerPaymentSourceCreateDataRelationshipsPaymentSource, bool)`
 
 GetPaymentSourceOk returns a tuple with the PaymentSource field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPaymentSource
 
-`func (o *OrderCreateDataRelationships) SetPaymentSource(v OrderCreateDataRelationshipsPaymentSource)`
+`func (o *OrderCreateDataRelationships) SetPaymentSource(v CustomerPaymentSourceCreateDataRelationshipsPaymentSource)`
 
 SetPaymentSource sets PaymentSource field to given value.
 

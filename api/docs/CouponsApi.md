@@ -30,7 +30,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -38,7 +38,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CouponsApi.DELETECouponsCouponId(context.Background(), couponId).Execute()
+    resp, r, err := apiClient.CouponsApi.DELETECouponsCouponId(context.Background(), couponId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponsApi.DELETECouponsCouponId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -98,7 +98,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -106,7 +106,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CouponsApi.GETCouponCodesPromotionRuleIdCoupons(context.Background(), couponCodesPromotionRuleId).Execute()
+    resp, r, err := apiClient.CouponsApi.GETCouponCodesPromotionRuleIdCoupons(context.Background(), couponCodesPromotionRuleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponsApi.GETCouponCodesPromotionRuleIdCoupons``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -166,7 +166,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -227,7 +227,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHCouponsCouponId
 
-> PATCHCouponsCouponId200Response PATCHCouponsCouponId(ctx, couponId).PATCHCouponsCouponIdRequest(pATCHCouponsCouponIdRequest).Execute()
+> PATCHCouponsCouponId200Response PATCHCouponsCouponId(ctx, couponId).CouponUpdate(couponUpdate).Execute()
 
 Update a coupon
 
@@ -297,16 +297,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHCouponsCouponIdRequest := *openapiclient.NewPATCHCouponsCouponIdRequest(*openapiclient.NewPATCHCouponsCouponIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHCouponsCouponIdRequestDataAttributes())) // PATCHCouponsCouponIdRequest | 
+    couponUpdate := *openapiclient.NewCouponUpdate(*openapiclient.NewCouponUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHCouponsCouponId200ResponseDataAttributes())) // CouponUpdate | 
     couponId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CouponsApi.PATCHCouponsCouponId(context.Background(), couponId).PATCHCouponsCouponIdRequest(pATCHCouponsCouponIdRequest).Execute()
+    resp, r, err := apiClient.CouponsApi.PATCHCouponsCouponId(context.Background(), couponId).CouponUpdate(couponUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponsApi.PATCHCouponsCouponId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -331,7 +331,7 @@ Other parameters are passed through a pointer to a apiPATCHCouponsCouponIdReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHCouponsCouponIdRequest** | [**PATCHCouponsCouponIdRequest**](PATCHCouponsCouponIdRequest.md) |  | 
+ **couponUpdate** | [**CouponUpdate**](CouponUpdate.md) |  | 
 
 
 ### Return type
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTCoupons
 
-> POSTCoupons201Response POSTCoupons(ctx).POSTCouponsRequest(pOSTCouponsRequest).Execute()
+> POSTCoupons201Response POSTCoupons(ctx).CouponCreate(couponCreate).Execute()
 
 Create a coupon
 
@@ -369,15 +369,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTCouponsRequest := *openapiclient.NewPOSTCouponsRequest(*openapiclient.NewPOSTCouponsRequestData(interface{}(123), *openapiclient.NewPOSTCouponsRequestDataAttributes(interface{}(04371af2-70b3-48d7-8f4e-316b374224c3), interface{}(50)))) // POSTCouponsRequest | 
+    couponCreate := *openapiclient.NewCouponCreate(*openapiclient.NewCouponCreateData(interface{}(123), *openapiclient.NewPOSTCoupons201ResponseDataAttributes(interface{}(04371af2-70b3-48d7-8f4e-316b374224c3), interface{}(50)))) // CouponCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CouponsApi.POSTCoupons(context.Background()).POSTCouponsRequest(pOSTCouponsRequest).Execute()
+    resp, r, err := apiClient.CouponsApi.POSTCoupons(context.Background()).CouponCreate(couponCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponsApi.POSTCoupons``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +398,7 @@ Other parameters are passed through a pointer to a apiPOSTCouponsRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTCouponsRequest** | [**POSTCouponsRequest**](POSTCouponsRequest.md) |  | 
+ **couponCreate** | [**CouponCreate**](CouponCreate.md) |  | 
 
 ### Return type
 

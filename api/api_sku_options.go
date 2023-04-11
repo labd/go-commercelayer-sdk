@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *SkuOptionsApiService) DELETESkuOptionsSkuOptionIdExecute(r SkuOptionsAp
 	}
 
 	localVarPath := localBasePath + "/sku_options/{skuOptionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuOptionId"+"}", url.PathEscape(parameterValueToString(r.skuOptionId, "skuOptionId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuOptionId"+"}", url.PathEscape(parameterToString(r.skuOptionId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *SkuOptionsApiService) DELETESkuOptionsSkuOptionIdExecute(r SkuOptionsAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -156,7 +156,7 @@ func (a *SkuOptionsApiService) GETLineItemOptionIdSkuOptionExecute(r SkuOptionsA
 	}
 
 	localVarPath := localBasePath + "/line_item_options/{lineItemOptionId}/sku_option"
-	localVarPath = strings.Replace(localVarPath, "{"+"lineItemOptionId"+"}", url.PathEscape(parameterValueToString(r.lineItemOptionId, "lineItemOptionId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemOptionId"+"}", url.PathEscape(parameterToString(r.lineItemOptionId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *SkuOptionsApiService) GETLineItemOptionIdSkuOptionExecute(r SkuOptionsA
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -248,7 +248,7 @@ func (a *SkuOptionsApiService) GETSkuIdSkuOptionsExecute(r SkuOptionsApiGETSkuId
 	}
 
 	localVarPath := localBasePath + "/skus/{skuId}/sku_options"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterToString(r.skuId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -281,9 +281,9 @@ func (a *SkuOptionsApiService) GETSkuIdSkuOptionsExecute(r SkuOptionsApiGETSkuId
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -372,9 +372,9 @@ func (a *SkuOptionsApiService) GETSkuOptionsExecute(r SkuOptionsApiGETSkuOptions
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -443,7 +443,7 @@ func (a *SkuOptionsApiService) GETSkuOptionsSkuOptionIdExecute(r SkuOptionsApiGE
 	}
 
 	localVarPath := localBasePath + "/sku_options/{skuOptionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuOptionId"+"}", url.PathEscape(parameterValueToString(r.skuOptionId, "skuOptionId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuOptionId"+"}", url.PathEscape(parameterToString(r.skuOptionId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -476,9 +476,9 @@ func (a *SkuOptionsApiService) GETSkuOptionsSkuOptionIdExecute(r SkuOptionsApiGE
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -504,14 +504,14 @@ func (a *SkuOptionsApiService) GETSkuOptionsSkuOptionIdExecute(r SkuOptionsApiGE
 }
 
 type SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest struct {
-	ctx                               context.Context
-	ApiService                        *SkuOptionsApiService
-	pATCHSkuOptionsSkuOptionIdRequest *PATCHSkuOptionsSkuOptionIdRequest
-	skuOptionId                       interface{}
+	ctx             context.Context
+	ApiService      *SkuOptionsApiService
+	skuOptionUpdate *SkuOptionUpdate
+	skuOptionId     interface{}
 }
 
-func (r SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest) PATCHSkuOptionsSkuOptionIdRequest(pATCHSkuOptionsSkuOptionIdRequest PATCHSkuOptionsSkuOptionIdRequest) SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest {
-	r.pATCHSkuOptionsSkuOptionIdRequest = &pATCHSkuOptionsSkuOptionIdRequest
+func (r SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest) SkuOptionUpdate(skuOptionUpdate SkuOptionUpdate) SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest {
+	r.skuOptionUpdate = &skuOptionUpdate
 	return r
 }
 
@@ -553,13 +553,13 @@ func (a *SkuOptionsApiService) PATCHSkuOptionsSkuOptionIdExecute(r SkuOptionsApi
 	}
 
 	localVarPath := localBasePath + "/sku_options/{skuOptionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuOptionId"+"}", url.PathEscape(parameterValueToString(r.skuOptionId, "skuOptionId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuOptionId"+"}", url.PathEscape(parameterToString(r.skuOptionId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHSkuOptionsSkuOptionIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHSkuOptionsSkuOptionIdRequest is required and must be specified")
+	if r.skuOptionUpdate == nil {
+		return localVarReturnValue, nil, reportError("skuOptionUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -580,7 +580,7 @@ func (a *SkuOptionsApiService) PATCHSkuOptionsSkuOptionIdExecute(r SkuOptionsApi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHSkuOptionsSkuOptionIdRequest
+	localVarPostBody = r.skuOptionUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -591,9 +591,9 @@ func (a *SkuOptionsApiService) PATCHSkuOptionsSkuOptionIdExecute(r SkuOptionsApi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -619,13 +619,13 @@ func (a *SkuOptionsApiService) PATCHSkuOptionsSkuOptionIdExecute(r SkuOptionsApi
 }
 
 type SkuOptionsApiPOSTSkuOptionsRequest struct {
-	ctx                   context.Context
-	ApiService            *SkuOptionsApiService
-	pOSTSkuOptionsRequest *POSTSkuOptionsRequest
+	ctx             context.Context
+	ApiService      *SkuOptionsApiService
+	skuOptionCreate *SkuOptionCreate
 }
 
-func (r SkuOptionsApiPOSTSkuOptionsRequest) POSTSkuOptionsRequest(pOSTSkuOptionsRequest POSTSkuOptionsRequest) SkuOptionsApiPOSTSkuOptionsRequest {
-	r.pOSTSkuOptionsRequest = &pOSTSkuOptionsRequest
+func (r SkuOptionsApiPOSTSkuOptionsRequest) SkuOptionCreate(skuOptionCreate SkuOptionCreate) SkuOptionsApiPOSTSkuOptionsRequest {
+	r.skuOptionCreate = &skuOptionCreate
 	return r
 }
 
@@ -669,8 +669,8 @@ func (a *SkuOptionsApiService) POSTSkuOptionsExecute(r SkuOptionsApiPOSTSkuOptio
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTSkuOptionsRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTSkuOptionsRequest is required and must be specified")
+	if r.skuOptionCreate == nil {
+		return localVarReturnValue, nil, reportError("skuOptionCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -691,7 +691,7 @@ func (a *SkuOptionsApiService) POSTSkuOptionsExecute(r SkuOptionsApiPOSTSkuOptio
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTSkuOptionsRequest
+	localVarPostBody = r.skuOptionCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -702,9 +702,9 @@ func (a *SkuOptionsApiService) POSTSkuOptionsExecute(r SkuOptionsApiPOSTSkuOptio
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

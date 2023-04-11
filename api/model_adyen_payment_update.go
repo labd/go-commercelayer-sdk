@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the AdyenPaymentUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AdyenPaymentUpdate{}
-
 // AdyenPaymentUpdate struct for AdyenPaymentUpdate
 type AdyenPaymentUpdate struct {
-	Data PATCHAdyenPaymentsAdyenPaymentIdRequestData `json:"data"`
+	Data AdyenPaymentUpdateData `json:"data"`
 }
 
 // NewAdyenPaymentUpdate instantiates a new AdyenPaymentUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAdyenPaymentUpdate(data PATCHAdyenPaymentsAdyenPaymentIdRequestData) *AdyenPaymentUpdate {
+func NewAdyenPaymentUpdate(data AdyenPaymentUpdateData) *AdyenPaymentUpdate {
 	this := AdyenPaymentUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewAdyenPaymentUpdateWithDefaults() *AdyenPaymentUpdate {
 }
 
 // GetData returns the Data field value
-func (o *AdyenPaymentUpdate) GetData() PATCHAdyenPaymentsAdyenPaymentIdRequestData {
+func (o *AdyenPaymentUpdate) GetData() AdyenPaymentUpdateData {
 	if o == nil {
-		var ret PATCHAdyenPaymentsAdyenPaymentIdRequestData
+		var ret AdyenPaymentUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *AdyenPaymentUpdate) GetData() PATCHAdyenPaymentsAdyenPaymentIdRequestDa
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *AdyenPaymentUpdate) GetDataOk() (*PATCHAdyenPaymentsAdyenPaymentIdRequestData, bool) {
+func (o *AdyenPaymentUpdate) GetDataOk() (*AdyenPaymentUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *AdyenPaymentUpdate) GetDataOk() (*PATCHAdyenPaymentsAdyenPaymentIdReque
 }
 
 // SetData sets field value
-func (o *AdyenPaymentUpdate) SetData(v PATCHAdyenPaymentsAdyenPaymentIdRequestData) {
+func (o *AdyenPaymentUpdate) SetData(v AdyenPaymentUpdateData) {
 	o.Data = v
 }
 
 func (o AdyenPaymentUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o AdyenPaymentUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableAdyenPaymentUpdate struct {

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETBraintreePaymentsBraintreePaymentId200ResponseData**](GETBraintreePaymentsBraintreePaymentId200ResponseData.md) |  | [optional] 
+**Data** | Pointer to [**GETBraintreePayments200ResponseDataInner**](GETBraintreePayments200ResponseDataInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETBraintreePaymentsBraintreePaymentId200Response) GetData() GETBraintreePaymentsBraintreePaymentId200ResponseData`
+`func (o *GETBraintreePaymentsBraintreePaymentId200Response) GetData() GETBraintreePayments200ResponseDataInner`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETBraintreePaymentsBraintreePaymentId200Response) GetDataOk() (*GETBraintreePaymentsBraintreePaymentId200ResponseData, bool)`
+`func (o *GETBraintreePaymentsBraintreePaymentId200Response) GetDataOk() (*GETBraintreePayments200ResponseDataInner, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETBraintreePaymentsBraintreePaymentId200Response) SetData(v GETBraintreePaymentsBraintreePaymentId200ResponseData)`
+`func (o *GETBraintreePaymentsBraintreePaymentId200Response) SetData(v GETBraintreePayments200ResponseDataInner)`
 
 SetData sets Data field to given value.
 

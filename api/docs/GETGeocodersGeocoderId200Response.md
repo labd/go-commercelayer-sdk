@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETGeocodersGeocoderId200ResponseData**](GETGeocodersGeocoderId200ResponseData.md) |  | [optional] 
+**Data** | Pointer to [**GETGeocoders200ResponseDataInner**](GETGeocoders200ResponseDataInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETGeocodersGeocoderId200Response) GetData() GETGeocodersGeocoderId200ResponseData`
+`func (o *GETGeocodersGeocoderId200Response) GetData() GETGeocoders200ResponseDataInner`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETGeocodersGeocoderId200Response) GetDataOk() (*GETGeocodersGeocoderId200ResponseData, bool)`
+`func (o *GETGeocodersGeocoderId200Response) GetDataOk() (*GETGeocoders200ResponseDataInner, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETGeocodersGeocoderId200Response) SetData(v GETGeocodersGeocoderId200ResponseData)`
+`func (o *GETGeocodersGeocoderId200Response) SetData(v GETGeocoders200ResponseDataInner)`
 
 SetData sets Data field to given value.
 

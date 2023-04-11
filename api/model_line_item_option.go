@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the LineItemOption type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &LineItemOption{}
-
 // LineItemOption struct for LineItemOption
 type LineItemOption struct {
 	Data *LineItemOptionData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewLineItemOptionWithDefaults() *LineItemOption {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *LineItemOption) GetData() LineItemOptionData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret LineItemOptionData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *LineItemOption) GetData() LineItemOptionData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LineItemOption) GetDataOk() (*LineItemOptionData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *LineItemOption) GetDataOk() (*LineItemOptionData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *LineItemOption) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *LineItemOption) SetData(v LineItemOptionData) {
 }
 
 func (o LineItemOption) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o LineItemOption) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableLineItemOption struct {

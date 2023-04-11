@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the POSTCustomerSubscriptions201Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &POSTCustomerSubscriptions201Response{}
-
 // POSTCustomerSubscriptions201Response struct for POSTCustomerSubscriptions201Response
 type POSTCustomerSubscriptions201Response struct {
 	Data *POSTCustomerSubscriptions201ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPOSTCustomerSubscriptions201ResponseWithDefaults() *POSTCustomerSubscrip
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTCustomerSubscriptions201Response) GetData() POSTCustomerSubscriptions201ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret POSTCustomerSubscriptions201ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *POSTCustomerSubscriptions201Response) GetData() POSTCustomerSubscriptio
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTCustomerSubscriptions201Response) GetDataOk() (*POSTCustomerSubscriptions201ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *POSTCustomerSubscriptions201Response) GetDataOk() (*POSTCustomerSubscri
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTCustomerSubscriptions201Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *POSTCustomerSubscriptions201Response) SetData(v POSTCustomerSubscriptio
 }
 
 func (o POSTCustomerSubscriptions201Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o POSTCustomerSubscriptions201Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePOSTCustomerSubscriptions201Response struct {

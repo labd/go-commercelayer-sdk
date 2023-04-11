@@ -30,7 +30,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -38,7 +38,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SatispayPaymentsApi.DELETESatispayPaymentsSatispayPaymentId(context.Background(), satispayPaymentId).Execute()
+    resp, r, err := apiClient.SatispayPaymentsApi.DELETESatispayPaymentsSatispayPaymentId(context.Background(), satispayPaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SatispayPaymentsApi.DELETESatispayPaymentsSatispayPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -98,7 +98,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -106,7 +106,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SatispayPaymentsApi.GETSatispayGatewayIdSatispayPayments(context.Background(), satispayGatewayId).Execute()
+    resp, r, err := apiClient.SatispayPaymentsApi.GETSatispayGatewayIdSatispayPayments(context.Background(), satispayGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SatispayPaymentsApi.GETSatispayGatewayIdSatispayPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -166,7 +166,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -227,7 +227,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHSatispayPaymentsSatispayPaymentId
 
-> PATCHSatispayPaymentsSatispayPaymentId200Response PATCHSatispayPaymentsSatispayPaymentId(ctx, satispayPaymentId).PATCHSatispayPaymentsSatispayPaymentIdRequest(pATCHSatispayPaymentsSatispayPaymentIdRequest).Execute()
+> PATCHSatispayPaymentsSatispayPaymentId200Response PATCHSatispayPaymentsSatispayPaymentId(ctx, satispayPaymentId).SatispayPaymentUpdate(satispayPaymentUpdate).Execute()
 
 Update a satispay payment
 
@@ -297,16 +297,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHSatispayPaymentsSatispayPaymentIdRequest := *openapiclient.NewPATCHSatispayPaymentsSatispayPaymentIdRequest(*openapiclient.NewPATCHSatispayPaymentsSatispayPaymentIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHSatispayPaymentsSatispayPaymentIdRequestDataAttributes())) // PATCHSatispayPaymentsSatispayPaymentIdRequest | 
+    satispayPaymentUpdate := *openapiclient.NewSatispayPaymentUpdate(*openapiclient.NewSatispayPaymentUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes())) // SatispayPaymentUpdate | 
     satispayPaymentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SatispayPaymentsApi.PATCHSatispayPaymentsSatispayPaymentId(context.Background(), satispayPaymentId).PATCHSatispayPaymentsSatispayPaymentIdRequest(pATCHSatispayPaymentsSatispayPaymentIdRequest).Execute()
+    resp, r, err := apiClient.SatispayPaymentsApi.PATCHSatispayPaymentsSatispayPaymentId(context.Background(), satispayPaymentId).SatispayPaymentUpdate(satispayPaymentUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SatispayPaymentsApi.PATCHSatispayPaymentsSatispayPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -331,7 +331,7 @@ Other parameters are passed through a pointer to a apiPATCHSatispayPaymentsSatis
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHSatispayPaymentsSatispayPaymentIdRequest** | [**PATCHSatispayPaymentsSatispayPaymentIdRequest**](PATCHSatispayPaymentsSatispayPaymentIdRequest.md) |  | 
+ **satispayPaymentUpdate** | [**SatispayPaymentUpdate**](SatispayPaymentUpdate.md) |  | 
 
 
 ### Return type
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTSatispayPayments
 
-> POSTSatispayPayments201Response POSTSatispayPayments(ctx).POSTSatispayPaymentsRequest(pOSTSatispayPaymentsRequest).Execute()
+> POSTSatispayPayments201Response POSTSatispayPayments(ctx).SatispayPaymentCreate(satispayPaymentCreate).Execute()
 
 Create a satispay payment
 
@@ -369,15 +369,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTSatispayPaymentsRequest := *openapiclient.NewPOSTSatispayPaymentsRequest(*openapiclient.NewPOSTSatispayPaymentsRequestData(interface{}(123), *openapiclient.NewPOSTSatispayPaymentsRequestDataAttributes())) // POSTSatispayPaymentsRequest | 
+    satispayPaymentCreate := *openapiclient.NewSatispayPaymentCreate(*openapiclient.NewSatispayPaymentCreateData(interface{}(123), *openapiclient.NewPOSTSatispayPayments201ResponseDataAttributes())) // SatispayPaymentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SatispayPaymentsApi.POSTSatispayPayments(context.Background()).POSTSatispayPaymentsRequest(pOSTSatispayPaymentsRequest).Execute()
+    resp, r, err := apiClient.SatispayPaymentsApi.POSTSatispayPayments(context.Background()).SatispayPaymentCreate(satispayPaymentCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SatispayPaymentsApi.POSTSatispayPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +398,7 @@ Other parameters are passed through a pointer to a apiPOSTSatispayPaymentsReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTSatispayPaymentsRequest** | [**POSTSatispayPaymentsRequest**](POSTSatispayPaymentsRequest.md) |  | 
+ **satispayPaymentCreate** | [**SatispayPaymentCreate**](SatispayPaymentCreate.md) |  | 
 
 ### Return type
 

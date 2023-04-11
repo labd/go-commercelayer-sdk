@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETSkuOptionsSkuOptionId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETSkuOptionsSkuOptionId200Response{}
-
 // GETSkuOptionsSkuOptionId200Response struct for GETSkuOptionsSkuOptionId200Response
 type GETSkuOptionsSkuOptionId200Response struct {
-	Data *GETSkuOptionsSkuOptionId200ResponseData `json:"data,omitempty"`
+	Data *GETSkuOptions200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETSkuOptionsSkuOptionId200Response instantiates a new GETSkuOptionsSkuOptionId200Response object
@@ -41,9 +38,9 @@ func NewGETSkuOptionsSkuOptionId200ResponseWithDefaults() *GETSkuOptionsSkuOptio
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETSkuOptionsSkuOptionId200Response) GetData() GETSkuOptionsSkuOptionId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETSkuOptionsSkuOptionId200ResponseData
+func (o *GETSkuOptionsSkuOptionId200Response) GetData() GETSkuOptions200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETSkuOptions200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETSkuOptionsSkuOptionId200Response) GetData() GETSkuOptionsSkuOptionId
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETSkuOptionsSkuOptionId200Response) GetDataOk() (*GETSkuOptionsSkuOptionId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETSkuOptionsSkuOptionId200Response) GetDataOk() (*GETSkuOptions200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETSkuOptionsSkuOptionId200Response) GetDataOk() (*GETSkuOptionsSkuOpti
 
 // HasData returns a boolean if a field has been set.
 func (o *GETSkuOptionsSkuOptionId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETSkuOptionsSkuOptionId200ResponseData and assigns it to the Data field.
-func (o *GETSkuOptionsSkuOptionId200Response) SetData(v GETSkuOptionsSkuOptionId200ResponseData) {
+// SetData gets a reference to the given GETSkuOptions200ResponseDataInner and assigns it to the Data field.
+func (o *GETSkuOptionsSkuOptionId200Response) SetData(v GETSkuOptions200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETSkuOptionsSkuOptionId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETSkuOptionsSkuOptionId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETSkuOptionsSkuOptionId200Response struct {

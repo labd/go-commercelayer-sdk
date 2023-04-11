@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the PATCHPricesPriceId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PATCHPricesPriceId200Response{}
-
 // PATCHPricesPriceId200Response struct for PATCHPricesPriceId200Response
 type PATCHPricesPriceId200Response struct {
 	Data *PATCHPricesPriceId200ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPATCHPricesPriceId200ResponseWithDefaults() *PATCHPricesPriceId200Respon
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *PATCHPricesPriceId200Response) GetData() PATCHPricesPriceId200ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret PATCHPricesPriceId200ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *PATCHPricesPriceId200Response) GetData() PATCHPricesPriceId200ResponseD
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHPricesPriceId200Response) GetDataOk() (*PATCHPricesPriceId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *PATCHPricesPriceId200Response) GetDataOk() (*PATCHPricesPriceId200Respo
 
 // HasData returns a boolean if a field has been set.
 func (o *PATCHPricesPriceId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *PATCHPricesPriceId200Response) SetData(v PATCHPricesPriceId200ResponseD
 }
 
 func (o PATCHPricesPriceId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o PATCHPricesPriceId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePATCHPricesPriceId200Response struct {

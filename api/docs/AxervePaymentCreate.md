@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**POSTAxervePaymentsRequestData**](POSTAxervePaymentsRequestData.md) |  | 
+**Data** | [**AxervePaymentCreateData**](AxervePaymentCreateData.md) |  | 
 
 ## Methods
 
 ### NewAxervePaymentCreate
 
-`func NewAxervePaymentCreate(data POSTAxervePaymentsRequestData, ) *AxervePaymentCreate`
+`func NewAxervePaymentCreate(data AxervePaymentCreateData, ) *AxervePaymentCreate`
 
 NewAxervePaymentCreate instantiates a new AxervePaymentCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *AxervePaymentCreate) GetData() POSTAxervePaymentsRequestData`
+`func (o *AxervePaymentCreate) GetData() AxervePaymentCreateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *AxervePaymentCreate) GetDataOk() (*POSTAxervePaymentsRequestData, bool)`
+`func (o *AxervePaymentCreate) GetDataOk() (*AxervePaymentCreateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *AxervePaymentCreate) SetData(v POSTAxervePaymentsRequestData)`
+`func (o *AxervePaymentCreate) SetData(v AxervePaymentCreateData)`
 
 SetData sets Data field to given value.
 

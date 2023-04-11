@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**POSTStripeGatewaysRequestData**](POSTStripeGatewaysRequestData.md) |  | 
+**Data** | [**StripeGatewayCreateData**](StripeGatewayCreateData.md) |  | 
 
 ## Methods
 
 ### NewStripeGatewayCreate
 
-`func NewStripeGatewayCreate(data POSTStripeGatewaysRequestData, ) *StripeGatewayCreate`
+`func NewStripeGatewayCreate(data StripeGatewayCreateData, ) *StripeGatewayCreate`
 
 NewStripeGatewayCreate instantiates a new StripeGatewayCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *StripeGatewayCreate) GetData() POSTStripeGatewaysRequestData`
+`func (o *StripeGatewayCreate) GetData() StripeGatewayCreateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *StripeGatewayCreate) GetDataOk() (*POSTStripeGatewaysRequestData, bool)`
+`func (o *StripeGatewayCreate) GetDataOk() (*StripeGatewayCreateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *StripeGatewayCreate) SetData(v POSTStripeGatewaysRequestData)`
+`func (o *StripeGatewayCreate) SetData(v StripeGatewayCreateData)`
 
 SetData sets Data field to given value.
 

@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the ParcelLineItemUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ParcelLineItemUpdate{}
-
 // ParcelLineItemUpdate struct for ParcelLineItemUpdate
 type ParcelLineItemUpdate struct {
-	Data PATCHParcelLineItemsParcelLineItemIdRequestData `json:"data"`
+	Data ParcelLineItemUpdateData `json:"data"`
 }
 
 // NewParcelLineItemUpdate instantiates a new ParcelLineItemUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewParcelLineItemUpdate(data PATCHParcelLineItemsParcelLineItemIdRequestData) *ParcelLineItemUpdate {
+func NewParcelLineItemUpdate(data ParcelLineItemUpdateData) *ParcelLineItemUpdate {
 	this := ParcelLineItemUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewParcelLineItemUpdateWithDefaults() *ParcelLineItemUpdate {
 }
 
 // GetData returns the Data field value
-func (o *ParcelLineItemUpdate) GetData() PATCHParcelLineItemsParcelLineItemIdRequestData {
+func (o *ParcelLineItemUpdate) GetData() ParcelLineItemUpdateData {
 	if o == nil {
-		var ret PATCHParcelLineItemsParcelLineItemIdRequestData
+		var ret ParcelLineItemUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *ParcelLineItemUpdate) GetData() PATCHParcelLineItemsParcelLineItemIdReq
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ParcelLineItemUpdate) GetDataOk() (*PATCHParcelLineItemsParcelLineItemIdRequestData, bool) {
+func (o *ParcelLineItemUpdate) GetDataOk() (*ParcelLineItemUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *ParcelLineItemUpdate) GetDataOk() (*PATCHParcelLineItemsParcelLineItemI
 }
 
 // SetData sets field value
-func (o *ParcelLineItemUpdate) SetData(v PATCHParcelLineItemsParcelLineItemIdRequestData) {
+func (o *ParcelLineItemUpdate) SetData(v ParcelLineItemUpdateData) {
 	o.Data = v
 }
 
 func (o ParcelLineItemUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o ParcelLineItemUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableParcelLineItemUpdate struct {

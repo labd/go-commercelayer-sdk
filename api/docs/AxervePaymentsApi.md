@@ -30,7 +30,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -38,7 +38,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AxervePaymentsApi.DELETEAxervePaymentsAxervePaymentId(context.Background(), axervePaymentId).Execute()
+    resp, r, err := apiClient.AxervePaymentsApi.DELETEAxervePaymentsAxervePaymentId(context.Background(), axervePaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AxervePaymentsApi.DELETEAxervePaymentsAxervePaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -98,7 +98,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -106,7 +106,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AxervePaymentsApi.GETAxerveGatewayIdAxervePayments(context.Background(), axerveGatewayId).Execute()
+    resp, r, err := apiClient.AxervePaymentsApi.GETAxerveGatewayIdAxervePayments(context.Background(), axerveGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AxervePaymentsApi.GETAxerveGatewayIdAxervePayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -166,7 +166,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -227,7 +227,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHAxervePaymentsAxervePaymentId
 
-> PATCHAxervePaymentsAxervePaymentId200Response PATCHAxervePaymentsAxervePaymentId(ctx, axervePaymentId).PATCHAxervePaymentsAxervePaymentIdRequest(pATCHAxervePaymentsAxervePaymentIdRequest).Execute()
+> PATCHAxervePaymentsAxervePaymentId200Response PATCHAxervePaymentsAxervePaymentId(ctx, axervePaymentId).AxervePaymentUpdate(axervePaymentUpdate).Execute()
 
 Update an axerve payment
 
@@ -297,16 +297,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHAxervePaymentsAxervePaymentIdRequest := *openapiclient.NewPATCHAxervePaymentsAxervePaymentIdRequest(*openapiclient.NewPATCHAxervePaymentsAxervePaymentIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHAxervePaymentsAxervePaymentIdRequestDataAttributes())) // PATCHAxervePaymentsAxervePaymentIdRequest | 
+    axervePaymentUpdate := *openapiclient.NewAxervePaymentUpdate(*openapiclient.NewAxervePaymentUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes())) // AxervePaymentUpdate | 
     axervePaymentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AxervePaymentsApi.PATCHAxervePaymentsAxervePaymentId(context.Background(), axervePaymentId).PATCHAxervePaymentsAxervePaymentIdRequest(pATCHAxervePaymentsAxervePaymentIdRequest).Execute()
+    resp, r, err := apiClient.AxervePaymentsApi.PATCHAxervePaymentsAxervePaymentId(context.Background(), axervePaymentId).AxervePaymentUpdate(axervePaymentUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AxervePaymentsApi.PATCHAxervePaymentsAxervePaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -331,7 +331,7 @@ Other parameters are passed through a pointer to a apiPATCHAxervePaymentsAxerveP
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHAxervePaymentsAxervePaymentIdRequest** | [**PATCHAxervePaymentsAxervePaymentIdRequest**](PATCHAxervePaymentsAxervePaymentIdRequest.md) |  | 
+ **axervePaymentUpdate** | [**AxervePaymentUpdate**](AxervePaymentUpdate.md) |  | 
 
 
 ### Return type
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTAxervePayments
 
-> POSTAxervePayments201Response POSTAxervePayments(ctx).POSTAxervePaymentsRequest(pOSTAxervePaymentsRequest).Execute()
+> POSTAxervePayments201Response POSTAxervePayments(ctx).AxervePaymentCreate(axervePaymentCreate).Execute()
 
 Create an axerve payment
 
@@ -369,15 +369,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTAxervePaymentsRequest := *openapiclient.NewPOSTAxervePaymentsRequest(*openapiclient.NewPOSTAxervePaymentsRequestData(interface{}(123), *openapiclient.NewPOSTAxervePaymentsRequestDataAttributes(interface{}(https://yourdomain.com/thankyou)))) // POSTAxervePaymentsRequest | 
+    axervePaymentCreate := *openapiclient.NewAxervePaymentCreate(*openapiclient.NewAxervePaymentCreateData(interface{}(123), *openapiclient.NewPOSTAxervePayments201ResponseDataAttributes(interface{}(https://yourdomain.com/thankyou)))) // AxervePaymentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AxervePaymentsApi.POSTAxervePayments(context.Background()).POSTAxervePaymentsRequest(pOSTAxervePaymentsRequest).Execute()
+    resp, r, err := apiClient.AxervePaymentsApi.POSTAxervePayments(context.Background()).AxervePaymentCreate(axervePaymentCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AxervePaymentsApi.POSTAxervePayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +398,7 @@ Other parameters are passed through a pointer to a apiPOSTAxervePaymentsRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTAxervePaymentsRequest** | [**POSTAxervePaymentsRequest**](POSTAxervePaymentsRequest.md) |  | 
+ **axervePaymentCreate** | [**AxervePaymentCreate**](AxervePaymentCreate.md) |  | 
 
 ### Return type
 

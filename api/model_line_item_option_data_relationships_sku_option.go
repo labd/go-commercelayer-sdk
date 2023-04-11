@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the LineItemOptionDataRelationshipsSkuOption type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &LineItemOptionDataRelationshipsSkuOption{}
-
 // LineItemOptionDataRelationshipsSkuOption struct for LineItemOptionDataRelationshipsSkuOption
 type LineItemOptionDataRelationshipsSkuOption struct {
-	Data *POSTLineItemOptionsRequestDataRelationshipsSkuOptionData `json:"data,omitempty"`
+	Data *LineItemOptionDataRelationshipsSkuOptionData `json:"data,omitempty"`
 }
 
 // NewLineItemOptionDataRelationshipsSkuOption instantiates a new LineItemOptionDataRelationshipsSkuOption object
@@ -41,9 +38,9 @@ func NewLineItemOptionDataRelationshipsSkuOptionWithDefaults() *LineItemOptionDa
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *LineItemOptionDataRelationshipsSkuOption) GetData() POSTLineItemOptionsRequestDataRelationshipsSkuOptionData {
-	if o == nil || IsNil(o.Data) {
-		var ret POSTLineItemOptionsRequestDataRelationshipsSkuOptionData
+func (o *LineItemOptionDataRelationshipsSkuOption) GetData() LineItemOptionDataRelationshipsSkuOptionData {
+	if o == nil || o.Data == nil {
+		var ret LineItemOptionDataRelationshipsSkuOptionData
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *LineItemOptionDataRelationshipsSkuOption) GetData() POSTLineItemOptions
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LineItemOptionDataRelationshipsSkuOption) GetDataOk() (*POSTLineItemOptionsRequestDataRelationshipsSkuOptionData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *LineItemOptionDataRelationshipsSkuOption) GetDataOk() (*LineItemOptionDataRelationshipsSkuOptionData, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *LineItemOptionDataRelationshipsSkuOption) GetDataOk() (*POSTLineItemOpt
 
 // HasData returns a boolean if a field has been set.
 func (o *LineItemOptionDataRelationshipsSkuOption) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given POSTLineItemOptionsRequestDataRelationshipsSkuOptionData and assigns it to the Data field.
-func (o *LineItemOptionDataRelationshipsSkuOption) SetData(v POSTLineItemOptionsRequestDataRelationshipsSkuOptionData) {
+// SetData gets a reference to the given LineItemOptionDataRelationshipsSkuOptionData and assigns it to the Data field.
+func (o *LineItemOptionDataRelationshipsSkuOption) SetData(v LineItemOptionDataRelationshipsSkuOptionData) {
 	o.Data = &v
 }
 
 func (o LineItemOptionDataRelationshipsSkuOption) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o LineItemOptionDataRelationshipsSkuOption) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableLineItemOptionDataRelationshipsSkuOption struct {

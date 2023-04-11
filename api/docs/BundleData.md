@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETBundlesBundleId200ResponseDataAttributes**](GETBundlesBundleId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**GETBundles200ResponseDataInnerAttributes**](GETBundles200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**BundleDataRelationships**](BundleDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewBundleData
 
-`func NewBundleData(type_ interface{}, attributes GETBundlesBundleId200ResponseDataAttributes, ) *BundleData`
+`func NewBundleData(type_ interface{}, attributes GETBundles200ResponseDataInnerAttributes, ) *BundleData`
 
 NewBundleData instantiates a new BundleData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *BundleData) GetAttributes() GETBundlesBundleId200ResponseDataAttributes`
+`func (o *BundleData) GetAttributes() GETBundles200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *BundleData) GetAttributesOk() (*GETBundlesBundleId200ResponseDataAttributes, bool)`
+`func (o *BundleData) GetAttributesOk() (*GETBundles200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *BundleData) SetAttributes(v GETBundlesBundleId200ResponseDataAttributes)`
+`func (o *BundleData) SetAttributes(v GETBundles200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

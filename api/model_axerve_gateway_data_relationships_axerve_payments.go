@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the AxerveGatewayDataRelationshipsAxervePayments type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AxerveGatewayDataRelationshipsAxervePayments{}
-
 // AxerveGatewayDataRelationshipsAxervePayments struct for AxerveGatewayDataRelationshipsAxervePayments
 type AxerveGatewayDataRelationshipsAxervePayments struct {
-	Data *POSTAxerveGatewaysRequestDataRelationshipsAxervePaymentsData `json:"data,omitempty"`
+	Data *AxerveGatewayDataRelationshipsAxervePaymentsData `json:"data,omitempty"`
 }
 
 // NewAxerveGatewayDataRelationshipsAxervePayments instantiates a new AxerveGatewayDataRelationshipsAxervePayments object
@@ -41,9 +38,9 @@ func NewAxerveGatewayDataRelationshipsAxervePaymentsWithDefaults() *AxerveGatewa
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *AxerveGatewayDataRelationshipsAxervePayments) GetData() POSTAxerveGatewaysRequestDataRelationshipsAxervePaymentsData {
-	if o == nil || IsNil(o.Data) {
-		var ret POSTAxerveGatewaysRequestDataRelationshipsAxervePaymentsData
+func (o *AxerveGatewayDataRelationshipsAxervePayments) GetData() AxerveGatewayDataRelationshipsAxervePaymentsData {
+	if o == nil || o.Data == nil {
+		var ret AxerveGatewayDataRelationshipsAxervePaymentsData
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *AxerveGatewayDataRelationshipsAxervePayments) GetData() POSTAxerveGatew
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AxerveGatewayDataRelationshipsAxervePayments) GetDataOk() (*POSTAxerveGatewaysRequestDataRelationshipsAxervePaymentsData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *AxerveGatewayDataRelationshipsAxervePayments) GetDataOk() (*AxerveGatewayDataRelationshipsAxervePaymentsData, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *AxerveGatewayDataRelationshipsAxervePayments) GetDataOk() (*POSTAxerveG
 
 // HasData returns a boolean if a field has been set.
 func (o *AxerveGatewayDataRelationshipsAxervePayments) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given POSTAxerveGatewaysRequestDataRelationshipsAxervePaymentsData and assigns it to the Data field.
-func (o *AxerveGatewayDataRelationshipsAxervePayments) SetData(v POSTAxerveGatewaysRequestDataRelationshipsAxervePaymentsData) {
+// SetData gets a reference to the given AxerveGatewayDataRelationshipsAxervePaymentsData and assigns it to the Data field.
+func (o *AxerveGatewayDataRelationshipsAxervePayments) SetData(v AxerveGatewayDataRelationshipsAxervePaymentsData) {
 	o.Data = &v
 }
 
 func (o AxerveGatewayDataRelationshipsAxervePayments) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o AxerveGatewayDataRelationshipsAxervePayments) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableAxerveGatewayDataRelationshipsAxervePayments struct {

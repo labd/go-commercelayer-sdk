@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**POSTLineItemsRequestDataAttributes**](POSTLineItemsRequestDataAttributes.md) |  | 
+**Attributes** | [**POSTLineItems201ResponseDataAttributes**](POSTLineItems201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**LineItemCreateDataRelationships**](LineItemCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewLineItemCreateData
 
-`func NewLineItemCreateData(type_ interface{}, attributes POSTLineItemsRequestDataAttributes, ) *LineItemCreateData`
+`func NewLineItemCreateData(type_ interface{}, attributes POSTLineItems201ResponseDataAttributes, ) *LineItemCreateData`
 
 NewLineItemCreateData instantiates a new LineItemCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *LineItemCreateData) GetAttributes() POSTLineItemsRequestDataAttributes`
+`func (o *LineItemCreateData) GetAttributes() POSTLineItems201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *LineItemCreateData) GetAttributesOk() (*POSTLineItemsRequestDataAttributes, bool)`
+`func (o *LineItemCreateData) GetAttributesOk() (*POSTLineItems201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *LineItemCreateData) SetAttributes(v POSTLineItemsRequestDataAttributes)`
+`func (o *LineItemCreateData) SetAttributes(v POSTLineItems201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

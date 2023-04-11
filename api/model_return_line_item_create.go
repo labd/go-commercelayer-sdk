@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the ReturnLineItemCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ReturnLineItemCreate{}
-
 // ReturnLineItemCreate struct for ReturnLineItemCreate
 type ReturnLineItemCreate struct {
-	Data POSTReturnLineItemsRequestData `json:"data"`
+	Data ReturnLineItemCreateData `json:"data"`
 }
 
 // NewReturnLineItemCreate instantiates a new ReturnLineItemCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewReturnLineItemCreate(data POSTReturnLineItemsRequestData) *ReturnLineItemCreate {
+func NewReturnLineItemCreate(data ReturnLineItemCreateData) *ReturnLineItemCreate {
 	this := ReturnLineItemCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewReturnLineItemCreateWithDefaults() *ReturnLineItemCreate {
 }
 
 // GetData returns the Data field value
-func (o *ReturnLineItemCreate) GetData() POSTReturnLineItemsRequestData {
+func (o *ReturnLineItemCreate) GetData() ReturnLineItemCreateData {
 	if o == nil {
-		var ret POSTReturnLineItemsRequestData
+		var ret ReturnLineItemCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *ReturnLineItemCreate) GetData() POSTReturnLineItemsRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ReturnLineItemCreate) GetDataOk() (*POSTReturnLineItemsRequestData, bool) {
+func (o *ReturnLineItemCreate) GetDataOk() (*ReturnLineItemCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *ReturnLineItemCreate) GetDataOk() (*POSTReturnLineItemsRequestData, boo
 }
 
 // SetData sets field value
-func (o *ReturnLineItemCreate) SetData(v POSTReturnLineItemsRequestData) {
+func (o *ReturnLineItemCreate) SetData(v ReturnLineItemCreateData) {
 	o.Data = v
 }
 
 func (o ReturnLineItemCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o ReturnLineItemCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableReturnLineItemCreate struct {

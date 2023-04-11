@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the TaxRuleDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &TaxRuleDataRelationships{}
-
 // TaxRuleDataRelationships struct for TaxRuleDataRelationships
 type TaxRuleDataRelationships struct {
 	ManualTaxCalculator *TaxRuleDataRelationshipsManualTaxCalculator `json:"manual_tax_calculator,omitempty"`
@@ -42,7 +39,7 @@ func NewTaxRuleDataRelationshipsWithDefaults() *TaxRuleDataRelationships {
 
 // GetManualTaxCalculator returns the ManualTaxCalculator field value if set, zero value otherwise.
 func (o *TaxRuleDataRelationships) GetManualTaxCalculator() TaxRuleDataRelationshipsManualTaxCalculator {
-	if o == nil || IsNil(o.ManualTaxCalculator) {
+	if o == nil || o.ManualTaxCalculator == nil {
 		var ret TaxRuleDataRelationshipsManualTaxCalculator
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *TaxRuleDataRelationships) GetManualTaxCalculator() TaxRuleDataRelations
 // GetManualTaxCalculatorOk returns a tuple with the ManualTaxCalculator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaxRuleDataRelationships) GetManualTaxCalculatorOk() (*TaxRuleDataRelationshipsManualTaxCalculator, bool) {
-	if o == nil || IsNil(o.ManualTaxCalculator) {
+	if o == nil || o.ManualTaxCalculator == nil {
 		return nil, false
 	}
 	return o.ManualTaxCalculator, true
@@ -60,7 +57,7 @@ func (o *TaxRuleDataRelationships) GetManualTaxCalculatorOk() (*TaxRuleDataRelat
 
 // HasManualTaxCalculator returns a boolean if a field has been set.
 func (o *TaxRuleDataRelationships) HasManualTaxCalculator() bool {
-	if o != nil && !IsNil(o.ManualTaxCalculator) {
+	if o != nil && o.ManualTaxCalculator != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *TaxRuleDataRelationships) SetManualTaxCalculator(v TaxRuleDataRelations
 }
 
 func (o TaxRuleDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o TaxRuleDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ManualTaxCalculator) {
+	if o.ManualTaxCalculator != nil {
 		toSerialize["manual_tax_calculator"] = o.ManualTaxCalculator
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableTaxRuleDataRelationships struct {

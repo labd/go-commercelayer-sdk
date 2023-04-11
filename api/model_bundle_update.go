@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the BundleUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &BundleUpdate{}
-
 // BundleUpdate struct for BundleUpdate
 type BundleUpdate struct {
-	Data PATCHBundlesBundleIdRequestData `json:"data"`
+	Data BundleUpdateData `json:"data"`
 }
 
 // NewBundleUpdate instantiates a new BundleUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBundleUpdate(data PATCHBundlesBundleIdRequestData) *BundleUpdate {
+func NewBundleUpdate(data BundleUpdateData) *BundleUpdate {
 	this := BundleUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewBundleUpdateWithDefaults() *BundleUpdate {
 }
 
 // GetData returns the Data field value
-func (o *BundleUpdate) GetData() PATCHBundlesBundleIdRequestData {
+func (o *BundleUpdate) GetData() BundleUpdateData {
 	if o == nil {
-		var ret PATCHBundlesBundleIdRequestData
+		var ret BundleUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *BundleUpdate) GetData() PATCHBundlesBundleIdRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *BundleUpdate) GetDataOk() (*PATCHBundlesBundleIdRequestData, bool) {
+func (o *BundleUpdate) GetDataOk() (*BundleUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *BundleUpdate) GetDataOk() (*PATCHBundlesBundleIdRequestData, bool) {
 }
 
 // SetData sets field value
-func (o *BundleUpdate) SetData(v PATCHBundlesBundleIdRequestData) {
+func (o *BundleUpdate) SetData(v BundleUpdateData) {
 	o.Data = v
 }
 
 func (o BundleUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o BundleUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableBundleUpdate struct {

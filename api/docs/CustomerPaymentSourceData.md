@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes**](GETCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**GETCustomerPaymentSources200ResponseDataInnerAttributes**](GETCustomerPaymentSources200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**CustomerPaymentSourceDataRelationships**](CustomerPaymentSourceDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCustomerPaymentSourceData
 
-`func NewCustomerPaymentSourceData(type_ interface{}, attributes GETCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes, ) *CustomerPaymentSourceData`
+`func NewCustomerPaymentSourceData(type_ interface{}, attributes GETCustomerPaymentSources200ResponseDataInnerAttributes, ) *CustomerPaymentSourceData`
 
 NewCustomerPaymentSourceData instantiates a new CustomerPaymentSourceData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *CustomerPaymentSourceData) GetAttributes() GETCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes`
+`func (o *CustomerPaymentSourceData) GetAttributes() GETCustomerPaymentSources200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CustomerPaymentSourceData) GetAttributesOk() (*GETCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes, bool)`
+`func (o *CustomerPaymentSourceData) GetAttributesOk() (*GETCustomerPaymentSources200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CustomerPaymentSourceData) SetAttributes(v GETCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes)`
+`func (o *CustomerPaymentSourceData) SetAttributes(v GETCustomerPaymentSources200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

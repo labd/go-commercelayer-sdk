@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the AxerveGatewayDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AxerveGatewayDataRelationships{}
-
 // AxerveGatewayDataRelationships struct for AxerveGatewayDataRelationships
 type AxerveGatewayDataRelationships struct {
 	PaymentMethods *AdyenGatewayDataRelationshipsPaymentMethods  `json:"payment_methods,omitempty"`
@@ -43,7 +40,7 @@ func NewAxerveGatewayDataRelationshipsWithDefaults() *AxerveGatewayDataRelations
 
 // GetPaymentMethods returns the PaymentMethods field value if set, zero value otherwise.
 func (o *AxerveGatewayDataRelationships) GetPaymentMethods() AdyenGatewayDataRelationshipsPaymentMethods {
-	if o == nil || IsNil(o.PaymentMethods) {
+	if o == nil || o.PaymentMethods == nil {
 		var ret AdyenGatewayDataRelationshipsPaymentMethods
 		return ret
 	}
@@ -53,7 +50,7 @@ func (o *AxerveGatewayDataRelationships) GetPaymentMethods() AdyenGatewayDataRel
 // GetPaymentMethodsOk returns a tuple with the PaymentMethods field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AxerveGatewayDataRelationships) GetPaymentMethodsOk() (*AdyenGatewayDataRelationshipsPaymentMethods, bool) {
-	if o == nil || IsNil(o.PaymentMethods) {
+	if o == nil || o.PaymentMethods == nil {
 		return nil, false
 	}
 	return o.PaymentMethods, true
@@ -61,7 +58,7 @@ func (o *AxerveGatewayDataRelationships) GetPaymentMethodsOk() (*AdyenGatewayDat
 
 // HasPaymentMethods returns a boolean if a field has been set.
 func (o *AxerveGatewayDataRelationships) HasPaymentMethods() bool {
-	if o != nil && !IsNil(o.PaymentMethods) {
+	if o != nil && o.PaymentMethods != nil {
 		return true
 	}
 
@@ -75,7 +72,7 @@ func (o *AxerveGatewayDataRelationships) SetPaymentMethods(v AdyenGatewayDataRel
 
 // GetAxervePayments returns the AxervePayments field value if set, zero value otherwise.
 func (o *AxerveGatewayDataRelationships) GetAxervePayments() AxerveGatewayDataRelationshipsAxervePayments {
-	if o == nil || IsNil(o.AxervePayments) {
+	if o == nil || o.AxervePayments == nil {
 		var ret AxerveGatewayDataRelationshipsAxervePayments
 		return ret
 	}
@@ -85,7 +82,7 @@ func (o *AxerveGatewayDataRelationships) GetAxervePayments() AxerveGatewayDataRe
 // GetAxervePaymentsOk returns a tuple with the AxervePayments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AxerveGatewayDataRelationships) GetAxervePaymentsOk() (*AxerveGatewayDataRelationshipsAxervePayments, bool) {
-	if o == nil || IsNil(o.AxervePayments) {
+	if o == nil || o.AxervePayments == nil {
 		return nil, false
 	}
 	return o.AxervePayments, true
@@ -93,7 +90,7 @@ func (o *AxerveGatewayDataRelationships) GetAxervePaymentsOk() (*AxerveGatewayDa
 
 // HasAxervePayments returns a boolean if a field has been set.
 func (o *AxerveGatewayDataRelationships) HasAxervePayments() bool {
-	if o != nil && !IsNil(o.AxervePayments) {
+	if o != nil && o.AxervePayments != nil {
 		return true
 	}
 
@@ -106,22 +103,14 @@ func (o *AxerveGatewayDataRelationships) SetAxervePayments(v AxerveGatewayDataRe
 }
 
 func (o AxerveGatewayDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o AxerveGatewayDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PaymentMethods) {
+	if o.PaymentMethods != nil {
 		toSerialize["payment_methods"] = o.PaymentMethods
 	}
-	if !IsNil(o.AxervePayments) {
+	if o.AxervePayments != nil {
 		toSerialize["axerve_payments"] = o.AxervePayments
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableAxerveGatewayDataRelationships struct {

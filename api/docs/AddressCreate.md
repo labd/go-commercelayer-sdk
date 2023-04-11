@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**POSTAddressesRequestData**](POSTAddressesRequestData.md) |  | 
+**Data** | [**AddressCreateData**](AddressCreateData.md) |  | 
 
 ## Methods
 
 ### NewAddressCreate
 
-`func NewAddressCreate(data POSTAddressesRequestData, ) *AddressCreate`
+`func NewAddressCreate(data AddressCreateData, ) *AddressCreate`
 
 NewAddressCreate instantiates a new AddressCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *AddressCreate) GetData() POSTAddressesRequestData`
+`func (o *AddressCreate) GetData() AddressCreateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *AddressCreate) GetDataOk() (*POSTAddressesRequestData, bool)`
+`func (o *AddressCreate) GetDataOk() (*AddressCreateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *AddressCreate) SetData(v POSTAddressesRequestData)`
+`func (o *AddressCreate) SetData(v AddressCreateData)`
 
 SetData sets Data field to given value.
 

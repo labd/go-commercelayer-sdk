@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the SkuOption type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &SkuOption{}
-
 // SkuOption struct for SkuOption
 type SkuOption struct {
 	Data *SkuOptionData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewSkuOptionWithDefaults() *SkuOption {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *SkuOption) GetData() SkuOptionData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret SkuOptionData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *SkuOption) GetData() SkuOptionData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SkuOption) GetDataOk() (*SkuOptionData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *SkuOption) GetDataOk() (*SkuOptionData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *SkuOption) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *SkuOption) SetData(v SkuOptionData) {
 }
 
 func (o SkuOption) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o SkuOption) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableSkuOption struct {

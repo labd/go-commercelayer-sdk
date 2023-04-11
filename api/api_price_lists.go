@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *PriceListsApiService) DELETEPriceListsPriceListIdExecute(r PriceListsAp
 	}
 
 	localVarPath := localBasePath + "/price_lists/{priceListId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceListId"+"}", url.PathEscape(parameterValueToString(r.priceListId, "priceListId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceListId"+"}", url.PathEscape(parameterToString(r.priceListId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *PriceListsApiService) DELETEPriceListsPriceListIdExecute(r PriceListsAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -156,7 +156,7 @@ func (a *PriceListsApiService) GETMarketIdPriceListExecute(r PriceListsApiGETMar
 	}
 
 	localVarPath := localBasePath + "/markets/{marketId}/price_list"
-	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterToString(r.marketId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *PriceListsApiService) GETMarketIdPriceListExecute(r PriceListsApiGETMar
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -248,7 +248,7 @@ func (a *PriceListsApiService) GETPriceIdPriceListExecute(r PriceListsApiGETPric
 	}
 
 	localVarPath := localBasePath + "/prices/{priceId}/price_list"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterValueToString(r.priceId, "priceId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterToString(r.priceId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -281,9 +281,9 @@ func (a *PriceListsApiService) GETPriceIdPriceListExecute(r PriceListsApiGETPric
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -372,9 +372,9 @@ func (a *PriceListsApiService) GETPriceListsExecute(r PriceListsApiGETPriceLists
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -443,7 +443,7 @@ func (a *PriceListsApiService) GETPriceListsPriceListIdExecute(r PriceListsApiGE
 	}
 
 	localVarPath := localBasePath + "/price_lists/{priceListId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceListId"+"}", url.PathEscape(parameterValueToString(r.priceListId, "priceListId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceListId"+"}", url.PathEscape(parameterToString(r.priceListId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -476,9 +476,9 @@ func (a *PriceListsApiService) GETPriceListsPriceListIdExecute(r PriceListsApiGE
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -504,14 +504,14 @@ func (a *PriceListsApiService) GETPriceListsPriceListIdExecute(r PriceListsApiGE
 }
 
 type PriceListsApiPATCHPriceListsPriceListIdRequest struct {
-	ctx                               context.Context
-	ApiService                        *PriceListsApiService
-	pATCHPriceListsPriceListIdRequest *PATCHPriceListsPriceListIdRequest
-	priceListId                       interface{}
+	ctx             context.Context
+	ApiService      *PriceListsApiService
+	priceListUpdate *PriceListUpdate
+	priceListId     interface{}
 }
 
-func (r PriceListsApiPATCHPriceListsPriceListIdRequest) PATCHPriceListsPriceListIdRequest(pATCHPriceListsPriceListIdRequest PATCHPriceListsPriceListIdRequest) PriceListsApiPATCHPriceListsPriceListIdRequest {
-	r.pATCHPriceListsPriceListIdRequest = &pATCHPriceListsPriceListIdRequest
+func (r PriceListsApiPATCHPriceListsPriceListIdRequest) PriceListUpdate(priceListUpdate PriceListUpdate) PriceListsApiPATCHPriceListsPriceListIdRequest {
+	r.priceListUpdate = &priceListUpdate
 	return r
 }
 
@@ -553,13 +553,13 @@ func (a *PriceListsApiService) PATCHPriceListsPriceListIdExecute(r PriceListsApi
 	}
 
 	localVarPath := localBasePath + "/price_lists/{priceListId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceListId"+"}", url.PathEscape(parameterValueToString(r.priceListId, "priceListId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceListId"+"}", url.PathEscape(parameterToString(r.priceListId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHPriceListsPriceListIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHPriceListsPriceListIdRequest is required and must be specified")
+	if r.priceListUpdate == nil {
+		return localVarReturnValue, nil, reportError("priceListUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -580,7 +580,7 @@ func (a *PriceListsApiService) PATCHPriceListsPriceListIdExecute(r PriceListsApi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHPriceListsPriceListIdRequest
+	localVarPostBody = r.priceListUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -591,9 +591,9 @@ func (a *PriceListsApiService) PATCHPriceListsPriceListIdExecute(r PriceListsApi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -619,13 +619,13 @@ func (a *PriceListsApiService) PATCHPriceListsPriceListIdExecute(r PriceListsApi
 }
 
 type PriceListsApiPOSTPriceListsRequest struct {
-	ctx                   context.Context
-	ApiService            *PriceListsApiService
-	pOSTPriceListsRequest *POSTPriceListsRequest
+	ctx             context.Context
+	ApiService      *PriceListsApiService
+	priceListCreate *PriceListCreate
 }
 
-func (r PriceListsApiPOSTPriceListsRequest) POSTPriceListsRequest(pOSTPriceListsRequest POSTPriceListsRequest) PriceListsApiPOSTPriceListsRequest {
-	r.pOSTPriceListsRequest = &pOSTPriceListsRequest
+func (r PriceListsApiPOSTPriceListsRequest) PriceListCreate(priceListCreate PriceListCreate) PriceListsApiPOSTPriceListsRequest {
+	r.priceListCreate = &priceListCreate
 	return r
 }
 
@@ -669,8 +669,8 @@ func (a *PriceListsApiService) POSTPriceListsExecute(r PriceListsApiPOSTPriceLis
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTPriceListsRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTPriceListsRequest is required and must be specified")
+	if r.priceListCreate == nil {
+		return localVarReturnValue, nil, reportError("priceListCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -691,7 +691,7 @@ func (a *PriceListsApiService) POSTPriceListsExecute(r PriceListsApiPOSTPriceLis
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTPriceListsRequest
+	localVarPostBody = r.priceListCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -702,9 +702,9 @@ func (a *PriceListsApiService) POSTPriceListsExecute(r PriceListsApiPOSTPriceLis
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

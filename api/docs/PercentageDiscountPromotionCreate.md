@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**POSTPercentageDiscountPromotionsRequestData**](POSTPercentageDiscountPromotionsRequestData.md) |  | 
+**Data** | [**PercentageDiscountPromotionCreateData**](PercentageDiscountPromotionCreateData.md) |  | 
 
 ## Methods
 
 ### NewPercentageDiscountPromotionCreate
 
-`func NewPercentageDiscountPromotionCreate(data POSTPercentageDiscountPromotionsRequestData, ) *PercentageDiscountPromotionCreate`
+`func NewPercentageDiscountPromotionCreate(data PercentageDiscountPromotionCreateData, ) *PercentageDiscountPromotionCreate`
 
 NewPercentageDiscountPromotionCreate instantiates a new PercentageDiscountPromotionCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *PercentageDiscountPromotionCreate) GetData() POSTPercentageDiscountPromotionsRequestData`
+`func (o *PercentageDiscountPromotionCreate) GetData() PercentageDiscountPromotionCreateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *PercentageDiscountPromotionCreate) GetDataOk() (*POSTPercentageDiscountPromotionsRequestData, bool)`
+`func (o *PercentageDiscountPromotionCreate) GetDataOk() (*PercentageDiscountPromotionCreateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *PercentageDiscountPromotionCreate) SetData(v POSTPercentageDiscountPromotionsRequestData)`
+`func (o *PercentageDiscountPromotionCreate) SetData(v PercentageDiscountPromotionCreateData)`
 
 SetData sets Data field to given value.
 

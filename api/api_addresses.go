@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *AddressesApiService) DELETEAddressesAddressIdExecute(r AddressesApiDELE
 	}
 
 	localVarPath := localBasePath + "/addresses/{addressId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"addressId"+"}", url.PathEscape(parameterValueToString(r.addressId, "addressId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"addressId"+"}", url.PathEscape(parameterToString(r.addressId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *AddressesApiService) DELETEAddressesAddressIdExecute(r AddressesApiDELE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *AddressesApiService) GETAddressesExecute(r AddressesApiGETAddressesRequ
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *AddressesApiService) GETAddressesAddressIdExecute(r AddressesApiGETAddr
 	}
 
 	localVarPath := localBasePath + "/addresses/{addressId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"addressId"+"}", url.PathEscape(parameterValueToString(r.addressId, "addressId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"addressId"+"}", url.PathEscape(parameterToString(r.addressId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *AddressesApiService) GETAddressesAddressIdExecute(r AddressesApiGETAddr
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -360,7 +360,7 @@ func (a *AddressesApiService) GETBingGeocoderIdAddressesExecute(r AddressesApiGE
 	}
 
 	localVarPath := localBasePath + "/bing_geocoders/{bingGeocoderId}/addresses"
-	localVarPath = strings.Replace(localVarPath, "{"+"bingGeocoderId"+"}", url.PathEscape(parameterValueToString(r.bingGeocoderId, "bingGeocoderId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"bingGeocoderId"+"}", url.PathEscape(parameterToString(r.bingGeocoderId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -393,9 +393,9 @@ func (a *AddressesApiService) GETBingGeocoderIdAddressesExecute(r AddressesApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -452,7 +452,7 @@ func (a *AddressesApiService) GETCustomerAddressIdAddressExecute(r AddressesApiG
 	}
 
 	localVarPath := localBasePath + "/customer_addresses/{customerAddressId}/address"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterValueToString(r.customerAddressId, "customerAddressId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterToString(r.customerAddressId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -485,9 +485,9 @@ func (a *AddressesApiService) GETCustomerAddressIdAddressExecute(r AddressesApiG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -544,7 +544,7 @@ func (a *AddressesApiService) GETGeocoderIdAddressesExecute(r AddressesApiGETGeo
 	}
 
 	localVarPath := localBasePath + "/geocoders/{geocoderId}/addresses"
-	localVarPath = strings.Replace(localVarPath, "{"+"geocoderId"+"}", url.PathEscape(parameterValueToString(r.geocoderId, "geocoderId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"geocoderId"+"}", url.PathEscape(parameterToString(r.geocoderId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -577,9 +577,9 @@ func (a *AddressesApiService) GETGeocoderIdAddressesExecute(r AddressesApiGETGeo
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -636,7 +636,7 @@ func (a *AddressesApiService) GETGoogleGeocoderIdAddressesExecute(r AddressesApi
 	}
 
 	localVarPath := localBasePath + "/google_geocoders/{googleGeocoderId}/addresses"
-	localVarPath = strings.Replace(localVarPath, "{"+"googleGeocoderId"+"}", url.PathEscape(parameterValueToString(r.googleGeocoderId, "googleGeocoderId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"googleGeocoderId"+"}", url.PathEscape(parameterToString(r.googleGeocoderId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -669,9 +669,9 @@ func (a *AddressesApiService) GETGoogleGeocoderIdAddressesExecute(r AddressesApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -728,7 +728,7 @@ func (a *AddressesApiService) GETMerchantIdAddressExecute(r AddressesApiGETMerch
 	}
 
 	localVarPath := localBasePath + "/merchants/{merchantId}/address"
-	localVarPath = strings.Replace(localVarPath, "{"+"merchantId"+"}", url.PathEscape(parameterValueToString(r.merchantId, "merchantId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"merchantId"+"}", url.PathEscape(parameterToString(r.merchantId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -761,9 +761,9 @@ func (a *AddressesApiService) GETMerchantIdAddressExecute(r AddressesApiGETMerch
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -820,7 +820,7 @@ func (a *AddressesApiService) GETOrderIdBillingAddressExecute(r AddressesApiGETO
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/billing_address"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -853,9 +853,9 @@ func (a *AddressesApiService) GETOrderIdBillingAddressExecute(r AddressesApiGETO
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -912,7 +912,7 @@ func (a *AddressesApiService) GETOrderIdShippingAddressExecute(r AddressesApiGET
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/shipping_address"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -945,9 +945,9 @@ func (a *AddressesApiService) GETOrderIdShippingAddressExecute(r AddressesApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1004,7 +1004,7 @@ func (a *AddressesApiService) GETReturnIdDestinationAddressExecute(r AddressesAp
 	}
 
 	localVarPath := localBasePath + "/returns/{returnId}/destination_address"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterToString(r.returnId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1037,9 +1037,9 @@ func (a *AddressesApiService) GETReturnIdDestinationAddressExecute(r AddressesAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1096,7 +1096,7 @@ func (a *AddressesApiService) GETReturnIdOriginAddressExecute(r AddressesApiGETR
 	}
 
 	localVarPath := localBasePath + "/returns/{returnId}/origin_address"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterToString(r.returnId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1129,9 +1129,9 @@ func (a *AddressesApiService) GETReturnIdOriginAddressExecute(r AddressesApiGETR
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1188,7 +1188,7 @@ func (a *AddressesApiService) GETShipmentIdOriginAddressExecute(r AddressesApiGE
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/origin_address"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1221,9 +1221,9 @@ func (a *AddressesApiService) GETShipmentIdOriginAddressExecute(r AddressesApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1280,7 +1280,7 @@ func (a *AddressesApiService) GETShipmentIdShippingAddressExecute(r AddressesApi
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/shipping_address"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1313,9 +1313,9 @@ func (a *AddressesApiService) GETShipmentIdShippingAddressExecute(r AddressesApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1372,7 +1372,7 @@ func (a *AddressesApiService) GETStockLocationIdAddressExecute(r AddressesApiGET
 	}
 
 	localVarPath := localBasePath + "/stock_locations/{stockLocationId}/address"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterValueToString(r.stockLocationId, "stockLocationId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterToString(r.stockLocationId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1405,9 +1405,9 @@ func (a *AddressesApiService) GETStockLocationIdAddressExecute(r AddressesApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1424,14 +1424,14 @@ func (a *AddressesApiService) GETStockLocationIdAddressExecute(r AddressesApiGET
 }
 
 type AddressesApiPATCHAddressesAddressIdRequest struct {
-	ctx                            context.Context
-	ApiService                     *AddressesApiService
-	pATCHAddressesAddressIdRequest *PATCHAddressesAddressIdRequest
-	addressId                      interface{}
+	ctx           context.Context
+	ApiService    *AddressesApiService
+	addressUpdate *AddressUpdate
+	addressId     interface{}
 }
 
-func (r AddressesApiPATCHAddressesAddressIdRequest) PATCHAddressesAddressIdRequest(pATCHAddressesAddressIdRequest PATCHAddressesAddressIdRequest) AddressesApiPATCHAddressesAddressIdRequest {
-	r.pATCHAddressesAddressIdRequest = &pATCHAddressesAddressIdRequest
+func (r AddressesApiPATCHAddressesAddressIdRequest) AddressUpdate(addressUpdate AddressUpdate) AddressesApiPATCHAddressesAddressIdRequest {
+	r.addressUpdate = &addressUpdate
 	return r
 }
 
@@ -1473,13 +1473,13 @@ func (a *AddressesApiService) PATCHAddressesAddressIdExecute(r AddressesApiPATCH
 	}
 
 	localVarPath := localBasePath + "/addresses/{addressId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"addressId"+"}", url.PathEscape(parameterValueToString(r.addressId, "addressId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"addressId"+"}", url.PathEscape(parameterToString(r.addressId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHAddressesAddressIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHAddressesAddressIdRequest is required and must be specified")
+	if r.addressUpdate == nil {
+		return localVarReturnValue, nil, reportError("addressUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1500,7 +1500,7 @@ func (a *AddressesApiService) PATCHAddressesAddressIdExecute(r AddressesApiPATCH
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHAddressesAddressIdRequest
+	localVarPostBody = r.addressUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1511,9 +1511,9 @@ func (a *AddressesApiService) PATCHAddressesAddressIdExecute(r AddressesApiPATCH
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -1539,13 +1539,13 @@ func (a *AddressesApiService) PATCHAddressesAddressIdExecute(r AddressesApiPATCH
 }
 
 type AddressesApiPOSTAddressesRequest struct {
-	ctx                  context.Context
-	ApiService           *AddressesApiService
-	pOSTAddressesRequest *POSTAddressesRequest
+	ctx           context.Context
+	ApiService    *AddressesApiService
+	addressCreate *AddressCreate
 }
 
-func (r AddressesApiPOSTAddressesRequest) POSTAddressesRequest(pOSTAddressesRequest POSTAddressesRequest) AddressesApiPOSTAddressesRequest {
-	r.pOSTAddressesRequest = &pOSTAddressesRequest
+func (r AddressesApiPOSTAddressesRequest) AddressCreate(addressCreate AddressCreate) AddressesApiPOSTAddressesRequest {
+	r.addressCreate = &addressCreate
 	return r
 }
 
@@ -1589,8 +1589,8 @@ func (a *AddressesApiService) POSTAddressesExecute(r AddressesApiPOSTAddressesRe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTAddressesRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTAddressesRequest is required and must be specified")
+	if r.addressCreate == nil {
+		return localVarReturnValue, nil, reportError("addressCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -1611,7 +1611,7 @@ func (a *AddressesApiService) POSTAddressesExecute(r AddressesApiPOSTAddressesRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTAddressesRequest
+	localVarPostBody = r.addressCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -1622,9 +1622,9 @@ func (a *AddressesApiService) POSTAddressesExecute(r AddressesApiPOSTAddressesRe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

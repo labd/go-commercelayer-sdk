@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the ModelReturn type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ModelReturn{}
-
 // ModelReturn struct for ModelReturn
 type ModelReturn struct {
 	Data *ReturnData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewModelReturnWithDefaults() *ModelReturn {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *ModelReturn) GetData() ReturnData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret ReturnData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *ModelReturn) GetData() ReturnData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ModelReturn) GetDataOk() (*ReturnData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *ModelReturn) GetDataOk() (*ReturnData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *ModelReturn) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *ModelReturn) SetData(v ReturnData) {
 }
 
 func (o ModelReturn) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o ModelReturn) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableModelReturn struct {

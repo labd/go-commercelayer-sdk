@@ -15,24 +15,21 @@ import (
 	"encoding/json"
 )
 
-// checks if the OrderAmountPromotionRuleUpdateData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &OrderAmountPromotionRuleUpdateData{}
-
 // OrderAmountPromotionRuleUpdateData struct for OrderAmountPromotionRuleUpdateData
 type OrderAmountPromotionRuleUpdateData struct {
 	// The resource's type
 	Type interface{} `json:"type"`
 	// The resource's id
-	Id            interface{}                                                                   `json:"id"`
-	Attributes    PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequestDataAttributes `json:"attributes"`
-	Relationships *OrderAmountPromotionRuleUpdateDataRelationships                              `json:"relationships,omitempty"`
+	Id            interface{}                                                                       `json:"id"`
+	Attributes    PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes `json:"attributes"`
+	Relationships *OrderAmountPromotionRuleUpdateDataRelationships                                  `json:"relationships,omitempty"`
 }
 
 // NewOrderAmountPromotionRuleUpdateData instantiates a new OrderAmountPromotionRuleUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrderAmountPromotionRuleUpdateData(type_ interface{}, id interface{}, attributes PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequestDataAttributes) *OrderAmountPromotionRuleUpdateData {
+func NewOrderAmountPromotionRuleUpdateData(type_ interface{}, id interface{}, attributes PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes) *OrderAmountPromotionRuleUpdateData {
 	this := OrderAmountPromotionRuleUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -63,7 +60,7 @@ func (o *OrderAmountPromotionRuleUpdateData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderAmountPromotionRuleUpdateData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -89,7 +86,7 @@ func (o *OrderAmountPromotionRuleUpdateData) GetId() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderAmountPromotionRuleUpdateData) GetIdOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Id) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
 	return &o.Id, true
@@ -101,9 +98,9 @@ func (o *OrderAmountPromotionRuleUpdateData) SetId(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *OrderAmountPromotionRuleUpdateData) GetAttributes() PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequestDataAttributes {
+func (o *OrderAmountPromotionRuleUpdateData) GetAttributes() PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes {
 	if o == nil {
-		var ret PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequestDataAttributes
+		var ret PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes
 		return ret
 	}
 
@@ -112,7 +109,7 @@ func (o *OrderAmountPromotionRuleUpdateData) GetAttributes() PATCHOrderAmountPro
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *OrderAmountPromotionRuleUpdateData) GetAttributesOk() (*PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequestDataAttributes, bool) {
+func (o *OrderAmountPromotionRuleUpdateData) GetAttributesOk() (*PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -120,13 +117,13 @@ func (o *OrderAmountPromotionRuleUpdateData) GetAttributesOk() (*PATCHOrderAmoun
 }
 
 // SetAttributes sets field value
-func (o *OrderAmountPromotionRuleUpdateData) SetAttributes(v PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequestDataAttributes) {
+func (o *OrderAmountPromotionRuleUpdateData) SetAttributes(v PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *OrderAmountPromotionRuleUpdateData) GetRelationships() OrderAmountPromotionRuleUpdateDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		var ret OrderAmountPromotionRuleUpdateDataRelationships
 		return ret
 	}
@@ -136,7 +133,7 @@ func (o *OrderAmountPromotionRuleUpdateData) GetRelationships() OrderAmountPromo
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OrderAmountPromotionRuleUpdateData) GetRelationshipsOk() (*OrderAmountPromotionRuleUpdateDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -144,7 +141,7 @@ func (o *OrderAmountPromotionRuleUpdateData) GetRelationshipsOk() (*OrderAmountP
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *OrderAmountPromotionRuleUpdateData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
@@ -157,14 +154,6 @@ func (o *OrderAmountPromotionRuleUpdateData) SetRelationships(v OrderAmountPromo
 }
 
 func (o OrderAmountPromotionRuleUpdateData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o OrderAmountPromotionRuleUpdateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
@@ -172,11 +161,13 @@ func (o OrderAmountPromotionRuleUpdateData) ToMap() (map[string]interface{}, err
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
-	toSerialize["attributes"] = o.Attributes
-	if !IsNil(o.Relationships) {
+	if true {
+		toSerialize["attributes"] = o.Attributes
+	}
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableOrderAmountPromotionRuleUpdateData struct {

@@ -30,7 +30,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -38,7 +38,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.TaxRulesApi.DELETETaxRulesTaxRuleId(context.Background(), taxRuleId).Execute()
+    resp, r, err := apiClient.TaxRulesApi.DELETETaxRulesTaxRuleId(context.Background(), taxRuleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxRulesApi.DELETETaxRulesTaxRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -98,7 +98,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -106,7 +106,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.TaxRulesApi.GETManualTaxCalculatorIdTaxRules(context.Background(), manualTaxCalculatorId).Execute()
+    resp, r, err := apiClient.TaxRulesApi.GETManualTaxCalculatorIdTaxRules(context.Background(), manualTaxCalculatorId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxRulesApi.GETManualTaxCalculatorIdTaxRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -166,7 +166,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -227,7 +227,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHTaxRulesTaxRuleId
 
-> PATCHTaxRulesTaxRuleId200Response PATCHTaxRulesTaxRuleId(ctx, taxRuleId).PATCHTaxRulesTaxRuleIdRequest(pATCHTaxRulesTaxRuleIdRequest).Execute()
+> PATCHTaxRulesTaxRuleId200Response PATCHTaxRulesTaxRuleId(ctx, taxRuleId).TaxRuleUpdate(taxRuleUpdate).Execute()
 
 Update a tax rule
 
@@ -297,16 +297,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHTaxRulesTaxRuleIdRequest := *openapiclient.NewPATCHTaxRulesTaxRuleIdRequest(*openapiclient.NewPATCHTaxRulesTaxRuleIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHTaxRulesTaxRuleIdRequestDataAttributes())) // PATCHTaxRulesTaxRuleIdRequest | 
+    taxRuleUpdate := *openapiclient.NewTaxRuleUpdate(*openapiclient.NewTaxRuleUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHTaxRulesTaxRuleId200ResponseDataAttributes())) // TaxRuleUpdate | 
     taxRuleId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TaxRulesApi.PATCHTaxRulesTaxRuleId(context.Background(), taxRuleId).PATCHTaxRulesTaxRuleIdRequest(pATCHTaxRulesTaxRuleIdRequest).Execute()
+    resp, r, err := apiClient.TaxRulesApi.PATCHTaxRulesTaxRuleId(context.Background(), taxRuleId).TaxRuleUpdate(taxRuleUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxRulesApi.PATCHTaxRulesTaxRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -331,7 +331,7 @@ Other parameters are passed through a pointer to a apiPATCHTaxRulesTaxRuleIdRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHTaxRulesTaxRuleIdRequest** | [**PATCHTaxRulesTaxRuleIdRequest**](PATCHTaxRulesTaxRuleIdRequest.md) |  | 
+ **taxRuleUpdate** | [**TaxRuleUpdate**](TaxRuleUpdate.md) |  | 
 
 
 ### Return type
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTTaxRules
 
-> POSTTaxRules201Response POSTTaxRules(ctx).POSTTaxRulesRequest(pOSTTaxRulesRequest).Execute()
+> POSTTaxRules201Response POSTTaxRules(ctx).TaxRuleCreate(taxRuleCreate).Execute()
 
 Create a tax rule
 
@@ -369,15 +369,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTTaxRulesRequest := *openapiclient.NewPOSTTaxRulesRequest(*openapiclient.NewPOSTTaxRulesRequestData(interface{}(123), *openapiclient.NewPOSTTaxRulesRequestDataAttributes(interface{}(Fixed 22%)))) // POSTTaxRulesRequest | 
+    taxRuleCreate := *openapiclient.NewTaxRuleCreate(*openapiclient.NewTaxRuleCreateData(interface{}(123), *openapiclient.NewPOSTTaxRules201ResponseDataAttributes(interface{}(Fixed 22%)))) // TaxRuleCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TaxRulesApi.POSTTaxRules(context.Background()).POSTTaxRulesRequest(pOSTTaxRulesRequest).Execute()
+    resp, r, err := apiClient.TaxRulesApi.POSTTaxRules(context.Background()).TaxRuleCreate(taxRuleCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxRulesApi.POSTTaxRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +398,7 @@ Other parameters are passed through a pointer to a apiPOSTTaxRulesRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTTaxRulesRequest** | [**POSTTaxRulesRequest**](POSTTaxRulesRequest.md) |  | 
+ **taxRuleCreate** | [**TaxRuleCreate**](TaxRuleCreate.md) |  | 
 
 ### Return type
 

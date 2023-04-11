@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the POSTPackages201Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &POSTPackages201Response{}
-
 // POSTPackages201Response struct for POSTPackages201Response
 type POSTPackages201Response struct {
 	Data *POSTPackages201ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPOSTPackages201ResponseWithDefaults() *POSTPackages201Response {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTPackages201Response) GetData() POSTPackages201ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret POSTPackages201ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *POSTPackages201Response) GetData() POSTPackages201ResponseData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTPackages201Response) GetDataOk() (*POSTPackages201ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *POSTPackages201Response) GetDataOk() (*POSTPackages201ResponseData, boo
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTPackages201Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *POSTPackages201Response) SetData(v POSTPackages201ResponseData) {
 }
 
 func (o POSTPackages201Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o POSTPackages201Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePOSTPackages201Response struct {

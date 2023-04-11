@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the MerchantCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &MerchantCreate{}
-
 // MerchantCreate struct for MerchantCreate
 type MerchantCreate struct {
-	Data POSTMerchantsRequestData `json:"data"`
+	Data MerchantCreateData `json:"data"`
 }
 
 // NewMerchantCreate instantiates a new MerchantCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMerchantCreate(data POSTMerchantsRequestData) *MerchantCreate {
+func NewMerchantCreate(data MerchantCreateData) *MerchantCreate {
 	this := MerchantCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewMerchantCreateWithDefaults() *MerchantCreate {
 }
 
 // GetData returns the Data field value
-func (o *MerchantCreate) GetData() POSTMerchantsRequestData {
+func (o *MerchantCreate) GetData() MerchantCreateData {
 	if o == nil {
-		var ret POSTMerchantsRequestData
+		var ret MerchantCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *MerchantCreate) GetData() POSTMerchantsRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *MerchantCreate) GetDataOk() (*POSTMerchantsRequestData, bool) {
+func (o *MerchantCreate) GetDataOk() (*MerchantCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *MerchantCreate) GetDataOk() (*POSTMerchantsRequestData, bool) {
 }
 
 // SetData sets field value
-func (o *MerchantCreate) SetData(v POSTMerchantsRequestData) {
+func (o *MerchantCreate) SetData(v MerchantCreateData) {
 	o.Data = v
 }
 
 func (o MerchantCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o MerchantCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableMerchantCreate struct {

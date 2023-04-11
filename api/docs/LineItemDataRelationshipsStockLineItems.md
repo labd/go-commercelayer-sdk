@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**POSTParcelLineItemsRequestDataRelationshipsStockLineItemData**](POSTParcelLineItemsRequestDataRelationshipsStockLineItemData.md) |  | [optional] 
+**Data** | Pointer to [**LineItemDataRelationshipsStockLineItemsData**](LineItemDataRelationshipsStockLineItemsData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *LineItemDataRelationshipsStockLineItems) GetData() POSTParcelLineItemsRequestDataRelationshipsStockLineItemData`
+`func (o *LineItemDataRelationshipsStockLineItems) GetData() LineItemDataRelationshipsStockLineItemsData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *LineItemDataRelationshipsStockLineItems) GetDataOk() (*POSTParcelLineItemsRequestDataRelationshipsStockLineItemData, bool)`
+`func (o *LineItemDataRelationshipsStockLineItems) GetDataOk() (*LineItemDataRelationshipsStockLineItemsData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *LineItemDataRelationshipsStockLineItems) SetData(v POSTParcelLineItemsRequestDataRelationshipsStockLineItemData)`
+`func (o *LineItemDataRelationshipsStockLineItems) SetData(v LineItemDataRelationshipsStockLineItemsData)`
 
 SetData sets Data field to given value.
 

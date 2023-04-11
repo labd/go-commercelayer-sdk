@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the CouponRecipientCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CouponRecipientCreate{}
-
 // CouponRecipientCreate struct for CouponRecipientCreate
 type CouponRecipientCreate struct {
-	Data POSTCouponRecipientsRequestData `json:"data"`
+	Data CouponRecipientCreateData `json:"data"`
 }
 
 // NewCouponRecipientCreate instantiates a new CouponRecipientCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCouponRecipientCreate(data POSTCouponRecipientsRequestData) *CouponRecipientCreate {
+func NewCouponRecipientCreate(data CouponRecipientCreateData) *CouponRecipientCreate {
 	this := CouponRecipientCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewCouponRecipientCreateWithDefaults() *CouponRecipientCreate {
 }
 
 // GetData returns the Data field value
-func (o *CouponRecipientCreate) GetData() POSTCouponRecipientsRequestData {
+func (o *CouponRecipientCreate) GetData() CouponRecipientCreateData {
 	if o == nil {
-		var ret POSTCouponRecipientsRequestData
+		var ret CouponRecipientCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *CouponRecipientCreate) GetData() POSTCouponRecipientsRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CouponRecipientCreate) GetDataOk() (*POSTCouponRecipientsRequestData, bool) {
+func (o *CouponRecipientCreate) GetDataOk() (*CouponRecipientCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *CouponRecipientCreate) GetDataOk() (*POSTCouponRecipientsRequestData, b
 }
 
 // SetData sets field value
-func (o *CouponRecipientCreate) SetData(v POSTCouponRecipientsRequestData) {
+func (o *CouponRecipientCreate) SetData(v CouponRecipientCreateData) {
 	o.Data = v
 }
 
 func (o CouponRecipientCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o CouponRecipientCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableCouponRecipientCreate struct {

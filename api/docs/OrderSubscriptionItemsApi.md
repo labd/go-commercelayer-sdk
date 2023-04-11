@@ -30,7 +30,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -38,7 +38,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OrderSubscriptionItemsApi.DELETEOrderSubscriptionItemsOrderSubscriptionItemId(context.Background(), orderSubscriptionItemId).Execute()
+    resp, r, err := apiClient.OrderSubscriptionItemsApi.DELETEOrderSubscriptionItemsOrderSubscriptionItemId(context.Background(), orderSubscriptionItemId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderSubscriptionItemsApi.DELETEOrderSubscriptionItemsOrderSubscriptionItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -98,7 +98,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -106,7 +106,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OrderSubscriptionItemsApi.GETOrderSubscriptionIdOrderSubscriptionItems(context.Background(), orderSubscriptionId).Execute()
+    resp, r, err := apiClient.OrderSubscriptionItemsApi.GETOrderSubscriptionIdOrderSubscriptionItems(context.Background(), orderSubscriptionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderSubscriptionItemsApi.GETOrderSubscriptionIdOrderSubscriptionItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -166,7 +166,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -227,7 +227,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHOrderSubscriptionItemsOrderSubscriptionItemId
 
-> PATCHOrderSubscriptionItemsOrderSubscriptionItemId200Response PATCHOrderSubscriptionItemsOrderSubscriptionItemId(ctx, orderSubscriptionItemId).PATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequest(pATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequest).Execute()
+> PATCHOrderSubscriptionItemsOrderSubscriptionItemId200Response PATCHOrderSubscriptionItemsOrderSubscriptionItemId(ctx, orderSubscriptionItemId).OrderSubscriptionItemUpdate(orderSubscriptionItemUpdate).Execute()
 
 Update an order subscription item
 
@@ -297,16 +297,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequest := *openapiclient.NewPATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequest(*openapiclient.NewPATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequestDataAttributes())) // PATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequest | 
+    orderSubscriptionItemUpdate := *openapiclient.NewOrderSubscriptionItemUpdate(*openapiclient.NewOrderSubscriptionItemUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes())) // OrderSubscriptionItemUpdate | 
     orderSubscriptionItemId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrderSubscriptionItemsApi.PATCHOrderSubscriptionItemsOrderSubscriptionItemId(context.Background(), orderSubscriptionItemId).PATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequest(pATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequest).Execute()
+    resp, r, err := apiClient.OrderSubscriptionItemsApi.PATCHOrderSubscriptionItemsOrderSubscriptionItemId(context.Background(), orderSubscriptionItemId).OrderSubscriptionItemUpdate(orderSubscriptionItemUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderSubscriptionItemsApi.PATCHOrderSubscriptionItemsOrderSubscriptionItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -331,7 +331,7 @@ Other parameters are passed through a pointer to a apiPATCHOrderSubscriptionItem
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequest** | [**PATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequest**](PATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequest.md) |  | 
+ **orderSubscriptionItemUpdate** | [**OrderSubscriptionItemUpdate**](OrderSubscriptionItemUpdate.md) |  | 
 
 
 ### Return type
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTOrderSubscriptionItems
 
-> POSTOrderSubscriptionItems201Response POSTOrderSubscriptionItems(ctx).POSTOrderSubscriptionItemsRequest(pOSTOrderSubscriptionItemsRequest).Execute()
+> POSTOrderSubscriptionItems201Response POSTOrderSubscriptionItems(ctx).OrderSubscriptionItemCreate(orderSubscriptionItemCreate).Execute()
 
 Create an order subscription item
 
@@ -369,15 +369,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTOrderSubscriptionItemsRequest := *openapiclient.NewPOSTOrderSubscriptionItemsRequest(*openapiclient.NewPOSTOrderSubscriptionItemsRequestData(interface{}(123), *openapiclient.NewPOSTOrderSubscriptionItemsRequestDataAttributes(interface{}(4)))) // POSTOrderSubscriptionItemsRequest | 
+    orderSubscriptionItemCreate := *openapiclient.NewOrderSubscriptionItemCreate(*openapiclient.NewOrderSubscriptionItemCreateData(interface{}(123), *openapiclient.NewPOSTOrderSubscriptionItems201ResponseDataAttributes(interface{}(4)))) // OrderSubscriptionItemCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrderSubscriptionItemsApi.POSTOrderSubscriptionItems(context.Background()).POSTOrderSubscriptionItemsRequest(pOSTOrderSubscriptionItemsRequest).Execute()
+    resp, r, err := apiClient.OrderSubscriptionItemsApi.POSTOrderSubscriptionItems(context.Background()).OrderSubscriptionItemCreate(orderSubscriptionItemCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderSubscriptionItemsApi.POSTOrderSubscriptionItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +398,7 @@ Other parameters are passed through a pointer to a apiPOSTOrderSubscriptionItems
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTOrderSubscriptionItemsRequest** | [**POSTOrderSubscriptionItemsRequest**](POSTOrderSubscriptionItemsRequest.md) |  | 
+ **orderSubscriptionItemCreate** | [**OrderSubscriptionItemCreate**](OrderSubscriptionItemCreate.md) |  | 
 
 ### Return type
 

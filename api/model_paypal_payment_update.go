@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the PaypalPaymentUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PaypalPaymentUpdate{}
-
 // PaypalPaymentUpdate struct for PaypalPaymentUpdate
 type PaypalPaymentUpdate struct {
-	Data PATCHPaypalPaymentsPaypalPaymentIdRequestData `json:"data"`
+	Data PaypalPaymentUpdateData `json:"data"`
 }
 
 // NewPaypalPaymentUpdate instantiates a new PaypalPaymentUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaypalPaymentUpdate(data PATCHPaypalPaymentsPaypalPaymentIdRequestData) *PaypalPaymentUpdate {
+func NewPaypalPaymentUpdate(data PaypalPaymentUpdateData) *PaypalPaymentUpdate {
 	this := PaypalPaymentUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewPaypalPaymentUpdateWithDefaults() *PaypalPaymentUpdate {
 }
 
 // GetData returns the Data field value
-func (o *PaypalPaymentUpdate) GetData() PATCHPaypalPaymentsPaypalPaymentIdRequestData {
+func (o *PaypalPaymentUpdate) GetData() PaypalPaymentUpdateData {
 	if o == nil {
-		var ret PATCHPaypalPaymentsPaypalPaymentIdRequestData
+		var ret PaypalPaymentUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *PaypalPaymentUpdate) GetData() PATCHPaypalPaymentsPaypalPaymentIdReques
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *PaypalPaymentUpdate) GetDataOk() (*PATCHPaypalPaymentsPaypalPaymentIdRequestData, bool) {
+func (o *PaypalPaymentUpdate) GetDataOk() (*PaypalPaymentUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *PaypalPaymentUpdate) GetDataOk() (*PATCHPaypalPaymentsPaypalPaymentIdRe
 }
 
 // SetData sets field value
-func (o *PaypalPaymentUpdate) SetData(v PATCHPaypalPaymentsPaypalPaymentIdRequestData) {
+func (o *PaypalPaymentUpdate) SetData(v PaypalPaymentUpdateData) {
 	o.Data = v
 }
 
 func (o PaypalPaymentUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o PaypalPaymentUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullablePaypalPaymentUpdate struct {

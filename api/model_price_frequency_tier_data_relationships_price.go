@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the PriceFrequencyTierDataRelationshipsPrice type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PriceFrequencyTierDataRelationshipsPrice{}
-
 // PriceFrequencyTierDataRelationshipsPrice struct for PriceFrequencyTierDataRelationshipsPrice
 type PriceFrequencyTierDataRelationshipsPrice struct {
-	Data *POSTPriceFrequencyTiersRequestDataRelationshipsPriceData `json:"data,omitempty"`
+	Data *PriceFrequencyTierDataRelationshipsPriceData `json:"data,omitempty"`
 }
 
 // NewPriceFrequencyTierDataRelationshipsPrice instantiates a new PriceFrequencyTierDataRelationshipsPrice object
@@ -41,9 +38,9 @@ func NewPriceFrequencyTierDataRelationshipsPriceWithDefaults() *PriceFrequencyTi
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *PriceFrequencyTierDataRelationshipsPrice) GetData() POSTPriceFrequencyTiersRequestDataRelationshipsPriceData {
-	if o == nil || IsNil(o.Data) {
-		var ret POSTPriceFrequencyTiersRequestDataRelationshipsPriceData
+func (o *PriceFrequencyTierDataRelationshipsPrice) GetData() PriceFrequencyTierDataRelationshipsPriceData {
+	if o == nil || o.Data == nil {
+		var ret PriceFrequencyTierDataRelationshipsPriceData
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *PriceFrequencyTierDataRelationshipsPrice) GetData() POSTPriceFrequencyT
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PriceFrequencyTierDataRelationshipsPrice) GetDataOk() (*POSTPriceFrequencyTiersRequestDataRelationshipsPriceData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *PriceFrequencyTierDataRelationshipsPrice) GetDataOk() (*PriceFrequencyTierDataRelationshipsPriceData, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *PriceFrequencyTierDataRelationshipsPrice) GetDataOk() (*POSTPriceFreque
 
 // HasData returns a boolean if a field has been set.
 func (o *PriceFrequencyTierDataRelationshipsPrice) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given POSTPriceFrequencyTiersRequestDataRelationshipsPriceData and assigns it to the Data field.
-func (o *PriceFrequencyTierDataRelationshipsPrice) SetData(v POSTPriceFrequencyTiersRequestDataRelationshipsPriceData) {
+// SetData gets a reference to the given PriceFrequencyTierDataRelationshipsPriceData and assigns it to the Data field.
+func (o *PriceFrequencyTierDataRelationshipsPrice) SetData(v PriceFrequencyTierDataRelationshipsPriceData) {
 	o.Data = &v
 }
 
 func (o PriceFrequencyTierDataRelationshipsPrice) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o PriceFrequencyTierDataRelationshipsPrice) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePriceFrequencyTierDataRelationshipsPrice struct {

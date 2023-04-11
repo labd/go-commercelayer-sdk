@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETBingGeocodersBingGeocoderId200ResponseDataAttributes**](GETBingGeocodersBingGeocoderId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**GETBingGeocoders200ResponseDataInnerAttributes**](GETBingGeocoders200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**BingGeocoderDataRelationships**](BingGeocoderDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewGoogleGeocoderData
 
-`func NewGoogleGeocoderData(type_ interface{}, attributes GETBingGeocodersBingGeocoderId200ResponseDataAttributes, ) *GoogleGeocoderData`
+`func NewGoogleGeocoderData(type_ interface{}, attributes GETBingGeocoders200ResponseDataInnerAttributes, ) *GoogleGeocoderData`
 
 NewGoogleGeocoderData instantiates a new GoogleGeocoderData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *GoogleGeocoderData) GetAttributes() GETBingGeocodersBingGeocoderId200ResponseDataAttributes`
+`func (o *GoogleGeocoderData) GetAttributes() GETBingGeocoders200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *GoogleGeocoderData) GetAttributesOk() (*GETBingGeocodersBingGeocoderId200ResponseDataAttributes, bool)`
+`func (o *GoogleGeocoderData) GetAttributesOk() (*GETBingGeocoders200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *GoogleGeocoderData) SetAttributes(v GETBingGeocodersBingGeocoderId200ResponseDataAttributes)`
+`func (o *GoogleGeocoderData) SetAttributes(v GETBingGeocoders200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

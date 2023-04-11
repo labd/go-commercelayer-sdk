@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the POSTBillingInfoValidationRules201Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &POSTBillingInfoValidationRules201Response{}
-
 // POSTBillingInfoValidationRules201Response struct for POSTBillingInfoValidationRules201Response
 type POSTBillingInfoValidationRules201Response struct {
 	Data *POSTBillingInfoValidationRules201ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPOSTBillingInfoValidationRules201ResponseWithDefaults() *POSTBillingInfo
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTBillingInfoValidationRules201Response) GetData() POSTBillingInfoValidationRules201ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret POSTBillingInfoValidationRules201ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *POSTBillingInfoValidationRules201Response) GetData() POSTBillingInfoVal
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTBillingInfoValidationRules201Response) GetDataOk() (*POSTBillingInfoValidationRules201ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *POSTBillingInfoValidationRules201Response) GetDataOk() (*POSTBillingInf
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTBillingInfoValidationRules201Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *POSTBillingInfoValidationRules201Response) SetData(v POSTBillingInfoVal
 }
 
 func (o POSTBillingInfoValidationRules201Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o POSTBillingInfoValidationRules201Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePOSTBillingInfoValidationRules201Response struct {

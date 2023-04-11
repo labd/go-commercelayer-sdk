@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
-**Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
-**Attributes** | Pointer to [**POSTBingGeocodersRequestDataAttributes**](POSTBingGeocodersRequestDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTBingGeocoders201ResponseDataRelationships**](POSTBingGeocoders201ResponseDataRelationships.md) |  | [optional] 
+**Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
+**Attributes** | Pointer to [**POSTBingGeocoders201ResponseDataAttributes**](POSTBingGeocoders201ResponseDataAttributes.md) |  | [optional] 
+**Relationships** | Pointer to [**GETBingGeocoders200ResponseDataInnerRelationships**](GETBingGeocoders200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -101,20 +101,20 @@ HasType returns a boolean if a field has been set.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetLinks
 
-`func (o *POSTBingGeocoders201ResponseData) GetLinks() POSTAddresses201ResponseDataLinks`
+`func (o *POSTBingGeocoders201ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *POSTBingGeocoders201ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool)`
+`func (o *POSTBingGeocoders201ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *POSTBingGeocoders201ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks)`
+`func (o *POSTBingGeocoders201ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks)`
 
 SetLinks sets Links field to given value.
 
@@ -126,20 +126,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *POSTBingGeocoders201ResponseData) GetAttributes() POSTBingGeocodersRequestDataAttributes`
+`func (o *POSTBingGeocoders201ResponseData) GetAttributes() POSTBingGeocoders201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *POSTBingGeocoders201ResponseData) GetAttributesOk() (*POSTBingGeocodersRequestDataAttributes, bool)`
+`func (o *POSTBingGeocoders201ResponseData) GetAttributesOk() (*POSTBingGeocoders201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *POSTBingGeocoders201ResponseData) SetAttributes(v POSTBingGeocodersRequestDataAttributes)`
+`func (o *POSTBingGeocoders201ResponseData) SetAttributes(v POSTBingGeocoders201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
@@ -151,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *POSTBingGeocoders201ResponseData) GetRelationships() POSTBingGeocoders201ResponseDataRelationships`
+`func (o *POSTBingGeocoders201ResponseData) GetRelationships() GETBingGeocoders200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *POSTBingGeocoders201ResponseData) GetRelationshipsOk() (*POSTBingGeocoders201ResponseDataRelationships, bool)`
+`func (o *POSTBingGeocoders201ResponseData) GetRelationshipsOk() (*GETBingGeocoders200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *POSTBingGeocoders201ResponseData) SetRelationships(v POSTBingGeocoders201ResponseDataRelationships)`
+`func (o *POSTBingGeocoders201ResponseData) SetRelationships(v GETBingGeocoders200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

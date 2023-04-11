@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the OrderSubscriptionItemUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &OrderSubscriptionItemUpdate{}
-
 // OrderSubscriptionItemUpdate struct for OrderSubscriptionItemUpdate
 type OrderSubscriptionItemUpdate struct {
-	Data PATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequestData `json:"data"`
+	Data OrderSubscriptionItemUpdateData `json:"data"`
 }
 
 // NewOrderSubscriptionItemUpdate instantiates a new OrderSubscriptionItemUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrderSubscriptionItemUpdate(data PATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequestData) *OrderSubscriptionItemUpdate {
+func NewOrderSubscriptionItemUpdate(data OrderSubscriptionItemUpdateData) *OrderSubscriptionItemUpdate {
 	this := OrderSubscriptionItemUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewOrderSubscriptionItemUpdateWithDefaults() *OrderSubscriptionItemUpdate {
 }
 
 // GetData returns the Data field value
-func (o *OrderSubscriptionItemUpdate) GetData() PATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequestData {
+func (o *OrderSubscriptionItemUpdate) GetData() OrderSubscriptionItemUpdateData {
 	if o == nil {
-		var ret PATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequestData
+		var ret OrderSubscriptionItemUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *OrderSubscriptionItemUpdate) GetData() PATCHOrderSubscriptionItemsOrder
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *OrderSubscriptionItemUpdate) GetDataOk() (*PATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequestData, bool) {
+func (o *OrderSubscriptionItemUpdate) GetDataOk() (*OrderSubscriptionItemUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *OrderSubscriptionItemUpdate) GetDataOk() (*PATCHOrderSubscriptionItemsO
 }
 
 // SetData sets field value
-func (o *OrderSubscriptionItemUpdate) SetData(v PATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequestData) {
+func (o *OrderSubscriptionItemUpdate) SetData(v OrderSubscriptionItemUpdateData) {
 	o.Data = v
 }
 
 func (o OrderSubscriptionItemUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o OrderSubscriptionItemUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableOrderSubscriptionItemUpdate struct {

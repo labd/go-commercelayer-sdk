@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**POSTCustomerAddressesRequestDataRelationshipsAddressData**](POSTCustomerAddressesRequestDataRelationshipsAddressData.md) |  | [optional] 
+**Data** | Pointer to [**BingGeocoderDataRelationshipsAddressesData**](BingGeocoderDataRelationshipsAddressesData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *BingGeocoderDataRelationshipsAddresses) GetData() POSTCustomerAddressesRequestDataRelationshipsAddressData`
+`func (o *BingGeocoderDataRelationshipsAddresses) GetData() BingGeocoderDataRelationshipsAddressesData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *BingGeocoderDataRelationshipsAddresses) GetDataOk() (*POSTCustomerAddressesRequestDataRelationshipsAddressData, bool)`
+`func (o *BingGeocoderDataRelationshipsAddresses) GetDataOk() (*BingGeocoderDataRelationshipsAddressesData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *BingGeocoderDataRelationshipsAddresses) SetData(v POSTCustomerAddressesRequestDataRelationshipsAddressData)`
+`func (o *BingGeocoderDataRelationshipsAddresses) SetData(v BingGeocoderDataRelationshipsAddressesData)`
 
 SetData sets Data field to given value.
 

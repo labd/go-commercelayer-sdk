@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
-**Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
+**Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes**](GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTSubscriptionModels201ResponseDataRelationships**](POSTSubscriptionModels201ResponseDataRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**GETSubscriptionModels200ResponseDataInnerRelationships**](GETSubscriptionModels200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -101,20 +101,20 @@ HasType returns a boolean if a field has been set.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetLinks
 
-`func (o *GETSubscriptionModelsSubscriptionModelId200ResponseData) GetLinks() POSTAddresses201ResponseDataLinks`
+`func (o *GETSubscriptionModelsSubscriptionModelId200ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *GETSubscriptionModelsSubscriptionModelId200ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool)`
+`func (o *GETSubscriptionModelsSubscriptionModelId200ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *GETSubscriptionModelsSubscriptionModelId200ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks)`
+`func (o *GETSubscriptionModelsSubscriptionModelId200ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks)`
 
 SetLinks sets Links field to given value.
 
@@ -151,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *GETSubscriptionModelsSubscriptionModelId200ResponseData) GetRelationships() POSTSubscriptionModels201ResponseDataRelationships`
+`func (o *GETSubscriptionModelsSubscriptionModelId200ResponseData) GetRelationships() GETSubscriptionModels200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *GETSubscriptionModelsSubscriptionModelId200ResponseData) GetRelationshipsOk() (*POSTSubscriptionModels201ResponseDataRelationships, bool)`
+`func (o *GETSubscriptionModelsSubscriptionModelId200ResponseData) GetRelationshipsOk() (*GETSubscriptionModels200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *GETSubscriptionModelsSubscriptionModelId200ResponseData) SetRelationships(v POSTSubscriptionModels201ResponseDataRelationships)`
+`func (o *GETSubscriptionModelsSubscriptionModelId200ResponseData) SetRelationships(v GETSubscriptionModels200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

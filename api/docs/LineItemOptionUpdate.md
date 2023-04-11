@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PATCHLineItemOptionsLineItemOptionIdRequestData**](PATCHLineItemOptionsLineItemOptionIdRequestData.md) |  | 
+**Data** | [**LineItemOptionUpdateData**](LineItemOptionUpdateData.md) |  | 
 
 ## Methods
 
 ### NewLineItemOptionUpdate
 
-`func NewLineItemOptionUpdate(data PATCHLineItemOptionsLineItemOptionIdRequestData, ) *LineItemOptionUpdate`
+`func NewLineItemOptionUpdate(data LineItemOptionUpdateData, ) *LineItemOptionUpdate`
 
 NewLineItemOptionUpdate instantiates a new LineItemOptionUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *LineItemOptionUpdate) GetData() PATCHLineItemOptionsLineItemOptionIdRequestData`
+`func (o *LineItemOptionUpdate) GetData() LineItemOptionUpdateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *LineItemOptionUpdate) GetDataOk() (*PATCHLineItemOptionsLineItemOptionIdRequestData, bool)`
+`func (o *LineItemOptionUpdate) GetDataOk() (*LineItemOptionUpdateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *LineItemOptionUpdate) SetData(v PATCHLineItemOptionsLineItemOptionIdRequestData)`
+`func (o *LineItemOptionUpdate) SetData(v LineItemOptionUpdateData)`
 
 SetData sets Data field to given value.
 

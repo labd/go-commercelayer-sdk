@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *WireTransfersApiService) DELETEWireTransfersWireTransferIdExecute(r Wir
 	}
 
 	localVarPath := localBasePath + "/wire_transfers/{wireTransferId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"wireTransferId"+"}", url.PathEscape(parameterValueToString(r.wireTransferId, "wireTransferId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wireTransferId"+"}", url.PathEscape(parameterToString(r.wireTransferId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *WireTransfersApiService) DELETEWireTransfersWireTransferIdExecute(r Wir
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *WireTransfersApiService) GETWireTransfersExecute(r WireTransfersApiGETW
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *WireTransfersApiService) GETWireTransfersWireTransferIdExecute(r WireTr
 	}
 
 	localVarPath := localBasePath + "/wire_transfers/{wireTransferId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"wireTransferId"+"}", url.PathEscape(parameterValueToString(r.wireTransferId, "wireTransferId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wireTransferId"+"}", url.PathEscape(parameterToString(r.wireTransferId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *WireTransfersApiService) GETWireTransfersWireTransferIdExecute(r WireTr
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -320,14 +320,14 @@ func (a *WireTransfersApiService) GETWireTransfersWireTransferIdExecute(r WireTr
 }
 
 type WireTransfersApiPATCHWireTransfersWireTransferIdRequest struct {
-	ctx                                     context.Context
-	ApiService                              *WireTransfersApiService
-	pATCHWireTransfersWireTransferIdRequest *PATCHWireTransfersWireTransferIdRequest
-	wireTransferId                          interface{}
+	ctx                context.Context
+	ApiService         *WireTransfersApiService
+	wireTransferUpdate *WireTransferUpdate
+	wireTransferId     interface{}
 }
 
-func (r WireTransfersApiPATCHWireTransfersWireTransferIdRequest) PATCHWireTransfersWireTransferIdRequest(pATCHWireTransfersWireTransferIdRequest PATCHWireTransfersWireTransferIdRequest) WireTransfersApiPATCHWireTransfersWireTransferIdRequest {
-	r.pATCHWireTransfersWireTransferIdRequest = &pATCHWireTransfersWireTransferIdRequest
+func (r WireTransfersApiPATCHWireTransfersWireTransferIdRequest) WireTransferUpdate(wireTransferUpdate WireTransferUpdate) WireTransfersApiPATCHWireTransfersWireTransferIdRequest {
+	r.wireTransferUpdate = &wireTransferUpdate
 	return r
 }
 
@@ -369,13 +369,13 @@ func (a *WireTransfersApiService) PATCHWireTransfersWireTransferIdExecute(r Wire
 	}
 
 	localVarPath := localBasePath + "/wire_transfers/{wireTransferId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"wireTransferId"+"}", url.PathEscape(parameterValueToString(r.wireTransferId, "wireTransferId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wireTransferId"+"}", url.PathEscape(parameterToString(r.wireTransferId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHWireTransfersWireTransferIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHWireTransfersWireTransferIdRequest is required and must be specified")
+	if r.wireTransferUpdate == nil {
+		return localVarReturnValue, nil, reportError("wireTransferUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -396,7 +396,7 @@ func (a *WireTransfersApiService) PATCHWireTransfersWireTransferIdExecute(r Wire
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHWireTransfersWireTransferIdRequest
+	localVarPostBody = r.wireTransferUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -407,9 +407,9 @@ func (a *WireTransfersApiService) PATCHWireTransfersWireTransferIdExecute(r Wire
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -435,13 +435,13 @@ func (a *WireTransfersApiService) PATCHWireTransfersWireTransferIdExecute(r Wire
 }
 
 type WireTransfersApiPOSTWireTransfersRequest struct {
-	ctx                      context.Context
-	ApiService               *WireTransfersApiService
-	pOSTWireTransfersRequest *POSTWireTransfersRequest
+	ctx                context.Context
+	ApiService         *WireTransfersApiService
+	wireTransferCreate *WireTransferCreate
 }
 
-func (r WireTransfersApiPOSTWireTransfersRequest) POSTWireTransfersRequest(pOSTWireTransfersRequest POSTWireTransfersRequest) WireTransfersApiPOSTWireTransfersRequest {
-	r.pOSTWireTransfersRequest = &pOSTWireTransfersRequest
+func (r WireTransfersApiPOSTWireTransfersRequest) WireTransferCreate(wireTransferCreate WireTransferCreate) WireTransfersApiPOSTWireTransfersRequest {
+	r.wireTransferCreate = &wireTransferCreate
 	return r
 }
 
@@ -485,8 +485,8 @@ func (a *WireTransfersApiService) POSTWireTransfersExecute(r WireTransfersApiPOS
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTWireTransfersRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTWireTransfersRequest is required and must be specified")
+	if r.wireTransferCreate == nil {
+		return localVarReturnValue, nil, reportError("wireTransferCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -507,7 +507,7 @@ func (a *WireTransfersApiService) POSTWireTransfersExecute(r WireTransfersApiPOS
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTWireTransfersRequest
+	localVarPostBody = r.wireTransferCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -518,9 +518,9 @@ func (a *WireTransfersApiService) POSTWireTransfersExecute(r WireTransfersApiPOS
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

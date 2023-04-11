@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PATCHFixedAmountPromotionsFixedAmountPromotionIdRequestData**](PATCHFixedAmountPromotionsFixedAmountPromotionIdRequestData.md) |  | 
+**Data** | [**FixedAmountPromotionUpdateData**](FixedAmountPromotionUpdateData.md) |  | 
 
 ## Methods
 
 ### NewFixedAmountPromotionUpdate
 
-`func NewFixedAmountPromotionUpdate(data PATCHFixedAmountPromotionsFixedAmountPromotionIdRequestData, ) *FixedAmountPromotionUpdate`
+`func NewFixedAmountPromotionUpdate(data FixedAmountPromotionUpdateData, ) *FixedAmountPromotionUpdate`
 
 NewFixedAmountPromotionUpdate instantiates a new FixedAmountPromotionUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *FixedAmountPromotionUpdate) GetData() PATCHFixedAmountPromotionsFixedAmountPromotionIdRequestData`
+`func (o *FixedAmountPromotionUpdate) GetData() FixedAmountPromotionUpdateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *FixedAmountPromotionUpdate) GetDataOk() (*PATCHFixedAmountPromotionsFixedAmountPromotionIdRequestData, bool)`
+`func (o *FixedAmountPromotionUpdate) GetDataOk() (*FixedAmountPromotionUpdateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *FixedAmountPromotionUpdate) SetData(v PATCHFixedAmountPromotionsFixedAmountPromotionIdRequestData)`
+`func (o *FixedAmountPromotionUpdate) SetData(v FixedAmountPromotionUpdateData)`
 
 SetData sets Data field to given value.
 

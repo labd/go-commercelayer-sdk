@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the Export type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &Export{}
-
 // Export struct for Export
 type Export struct {
 	Data *ExportData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewExportWithDefaults() *Export {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *Export) GetData() ExportData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret ExportData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *Export) GetData() ExportData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Export) GetDataOk() (*ExportData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *Export) GetDataOk() (*ExportData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *Export) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *Export) SetData(v ExportData) {
 }
 
 func (o Export) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o Export) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableExport struct {

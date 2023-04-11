@@ -15,18 +15,15 @@ import (
 	"encoding/json"
 )
 
-// checks if the PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData{}
-
 // PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData struct for PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData
 type PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData struct {
 	// The resource's id
 	Id interface{} `json:"id,omitempty"`
 	// The resource's type
-	Type          interface{}                                                                `json:"type,omitempty"`
-	Links         *POSTAddresses201ResponseDataLinks                                         `json:"links,omitempty"`
-	Attributes    *PATCHInventoryStockLocationsInventoryStockLocationIdRequestDataAttributes `json:"attributes,omitempty"`
-	Relationships *POSTInventoryReturnLocations201ResponseDataRelationships                  `json:"relationships,omitempty"`
+	Type          interface{}                                                                    `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                                         `json:"links,omitempty"`
+	Attributes    *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETInventoryReturnLocations200ResponseDataInnerRelationships                  `json:"relationships,omitempty"`
 }
 
 // NewPATCHInventoryStockLocationsInventoryStockLocationId200ResponseData instantiates a new PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData object
@@ -59,7 +56,7 @@ func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) Ge
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) GetIdOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Id) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
 	return &o.Id, true
@@ -67,7 +64,7 @@ func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) Ge
 
 // HasId returns a boolean if a field has been set.
 func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) HasId() bool {
-	if o != nil && IsNil(o.Id) {
+	if o != nil && o.Id != nil {
 		return true
 	}
 
@@ -92,7 +89,7 @@ func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) Ge
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -100,7 +97,7 @@ func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) Ge
 
 // HasType returns a boolean if a field has been set.
 func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) HasType() bool {
-	if o != nil && IsNil(o.Type) {
+	if o != nil && o.Type != nil {
 		return true
 	}
 
@@ -113,9 +110,9 @@ func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) Se
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) GetLinks() POSTAddresses201ResponseDataLinks {
-	if o == nil || IsNil(o.Links) {
-		var ret POSTAddresses201ResponseDataLinks
+func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks {
+	if o == nil || o.Links == nil {
+		var ret GETAddresses200ResponseDataInnerLinks
 		return ret
 	}
 	return *o.Links
@@ -123,8 +120,8 @@ func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) Ge
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool) {
-	if o == nil || IsNil(o.Links) {
+func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool) {
+	if o == nil || o.Links == nil {
 		return nil, false
 	}
 	return o.Links, true
@@ -132,22 +129,22 @@ func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) Ge
 
 // HasLinks returns a boolean if a field has been set.
 func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) HasLinks() bool {
-	if o != nil && !IsNil(o.Links) {
+	if o != nil && o.Links != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetLinks gets a reference to the given POSTAddresses201ResponseDataLinks and assigns it to the Links field.
-func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks) {
+// SetLinks gets a reference to the given GETAddresses200ResponseDataInnerLinks and assigns it to the Links field.
+func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks) {
 	o.Links = &v
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) GetAttributes() PATCHInventoryStockLocationsInventoryStockLocationIdRequestDataAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret PATCHInventoryStockLocationsInventoryStockLocationIdRequestDataAttributes
+func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) GetAttributes() PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes {
+	if o == nil || o.Attributes == nil {
+		var ret PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -155,8 +152,8 @@ func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) Ge
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) GetAttributesOk() (*PATCHInventoryStockLocationsInventoryStockLocationIdRequestDataAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) GetAttributesOk() (*PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes, bool) {
+	if o == nil || o.Attributes == nil {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -164,22 +161,22 @@ func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) Ge
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && o.Attributes != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given PATCHInventoryStockLocationsInventoryStockLocationIdRequestDataAttributes and assigns it to the Attributes field.
-func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) SetAttributes(v PATCHInventoryStockLocationsInventoryStockLocationIdRequestDataAttributes) {
+// SetAttributes gets a reference to the given PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes and assigns it to the Attributes field.
+func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) SetAttributes(v PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes) {
 	o.Attributes = &v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) GetRelationships() POSTInventoryReturnLocations201ResponseDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
-		var ret POSTInventoryReturnLocations201ResponseDataRelationships
+func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) GetRelationships() GETInventoryReturnLocations200ResponseDataInnerRelationships {
+	if o == nil || o.Relationships == nil {
+		var ret GETInventoryReturnLocations200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -187,8 +184,8 @@ func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) Ge
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) GetRelationshipsOk() (*POSTInventoryReturnLocations201ResponseDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) GetRelationshipsOk() (*GETInventoryReturnLocations200ResponseDataInnerRelationships, bool) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -196,27 +193,19 @@ func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) Ge
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTInventoryReturnLocations201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) SetRelationships(v POSTInventoryReturnLocations201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given GETInventoryReturnLocations200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) SetRelationships(v GETInventoryReturnLocations200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 
 func (o PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
@@ -224,16 +213,16 @@ func (o PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData) ToM
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if !IsNil(o.Links) {
+	if o.Links != nil {
 		toSerialize["links"] = o.Links
 	}
-	if !IsNil(o.Attributes) {
+	if o.Attributes != nil {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !IsNil(o.Relationships) {
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePATCHInventoryStockLocationsInventoryStockLocationId200ResponseData struct {

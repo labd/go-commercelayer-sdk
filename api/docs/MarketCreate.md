@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**POSTMarketsRequestData**](POSTMarketsRequestData.md) |  | 
+**Data** | [**MarketCreateData**](MarketCreateData.md) |  | 
 
 ## Methods
 
 ### NewMarketCreate
 
-`func NewMarketCreate(data POSTMarketsRequestData, ) *MarketCreate`
+`func NewMarketCreate(data MarketCreateData, ) *MarketCreate`
 
 NewMarketCreate instantiates a new MarketCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *MarketCreate) GetData() POSTMarketsRequestData`
+`func (o *MarketCreate) GetData() MarketCreateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *MarketCreate) GetDataOk() (*POSTMarketsRequestData, bool)`
+`func (o *MarketCreate) GetDataOk() (*MarketCreateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *MarketCreate) SetData(v POSTMarketsRequestData)`
+`func (o *MarketCreate) SetData(v MarketCreateData)`
 
 SetData sets Data field to given value.
 

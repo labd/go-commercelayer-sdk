@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the AxervePaymentCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AxervePaymentCreate{}
-
 // AxervePaymentCreate struct for AxervePaymentCreate
 type AxervePaymentCreate struct {
-	Data POSTAxervePaymentsRequestData `json:"data"`
+	Data AxervePaymentCreateData `json:"data"`
 }
 
 // NewAxervePaymentCreate instantiates a new AxervePaymentCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAxervePaymentCreate(data POSTAxervePaymentsRequestData) *AxervePaymentCreate {
+func NewAxervePaymentCreate(data AxervePaymentCreateData) *AxervePaymentCreate {
 	this := AxervePaymentCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewAxervePaymentCreateWithDefaults() *AxervePaymentCreate {
 }
 
 // GetData returns the Data field value
-func (o *AxervePaymentCreate) GetData() POSTAxervePaymentsRequestData {
+func (o *AxervePaymentCreate) GetData() AxervePaymentCreateData {
 	if o == nil {
-		var ret POSTAxervePaymentsRequestData
+		var ret AxervePaymentCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *AxervePaymentCreate) GetData() POSTAxervePaymentsRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *AxervePaymentCreate) GetDataOk() (*POSTAxervePaymentsRequestData, bool) {
+func (o *AxervePaymentCreate) GetDataOk() (*AxervePaymentCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *AxervePaymentCreate) GetDataOk() (*POSTAxervePaymentsRequestData, bool)
 }
 
 // SetData sets field value
-func (o *AxervePaymentCreate) SetData(v POSTAxervePaymentsRequestData) {
+func (o *AxervePaymentCreate) SetData(v AxervePaymentCreateData) {
 	o.Data = v
 }
 
 func (o AxervePaymentCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o AxervePaymentCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableAxervePaymentCreate struct {

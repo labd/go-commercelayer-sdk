@@ -29,7 +29,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -37,7 +37,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ManualGatewaysApi.DELETEManualGatewaysManualGatewayId(context.Background(), manualGatewayId).Execute()
+    resp, r, err := apiClient.ManualGatewaysApi.DELETEManualGatewaysManualGatewayId(context.Background(), manualGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ManualGatewaysApi.DELETEManualGatewaysManualGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -158,7 +158,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHManualGatewaysManualGatewayId
 
-> PATCHManualGatewaysManualGatewayId200Response PATCHManualGatewaysManualGatewayId(ctx, manualGatewayId).PATCHManualGatewaysManualGatewayIdRequest(pATCHManualGatewaysManualGatewayIdRequest).Execute()
+> PATCHManualGatewaysManualGatewayId200Response PATCHManualGatewaysManualGatewayId(ctx, manualGatewayId).ManualGatewayUpdate(manualGatewayUpdate).Execute()
 
 Update a manual gateway
 
@@ -228,16 +228,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHManualGatewaysManualGatewayIdRequest := *openapiclient.NewPATCHManualGatewaysManualGatewayIdRequest(*openapiclient.NewPATCHManualGatewaysManualGatewayIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHManualGatewaysManualGatewayIdRequestDataAttributes())) // PATCHManualGatewaysManualGatewayIdRequest | 
+    manualGatewayUpdate := *openapiclient.NewManualGatewayUpdate(*openapiclient.NewManualGatewayUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHManualGatewaysManualGatewayId200ResponseDataAttributes())) // ManualGatewayUpdate | 
     manualGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ManualGatewaysApi.PATCHManualGatewaysManualGatewayId(context.Background(), manualGatewayId).PATCHManualGatewaysManualGatewayIdRequest(pATCHManualGatewaysManualGatewayIdRequest).Execute()
+    resp, r, err := apiClient.ManualGatewaysApi.PATCHManualGatewaysManualGatewayId(context.Background(), manualGatewayId).ManualGatewayUpdate(manualGatewayUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ManualGatewaysApi.PATCHManualGatewaysManualGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -262,7 +262,7 @@ Other parameters are passed through a pointer to a apiPATCHManualGatewaysManualG
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHManualGatewaysManualGatewayIdRequest** | [**PATCHManualGatewaysManualGatewayIdRequest**](PATCHManualGatewaysManualGatewayIdRequest.md) |  | 
+ **manualGatewayUpdate** | [**ManualGatewayUpdate**](ManualGatewayUpdate.md) |  | 
 
 
 ### Return type
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTManualGateways
 
-> POSTManualGateways201Response POSTManualGateways(ctx).POSTManualGatewaysRequest(pOSTManualGatewaysRequest).Execute()
+> POSTManualGateways201Response POSTManualGateways(ctx).ManualGatewayCreate(manualGatewayCreate).Execute()
 
 Create a manual gateway
 
@@ -300,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTManualGatewaysRequest := *openapiclient.NewPOSTManualGatewaysRequest(*openapiclient.NewPOSTManualGatewaysRequestData(interface{}(123), *openapiclient.NewPOSTManualGatewaysRequestDataAttributes(interface{}(US payment gateway)))) // POSTManualGatewaysRequest | 
+    manualGatewayCreate := *openapiclient.NewManualGatewayCreate(*openapiclient.NewManualGatewayCreateData(interface{}(123), *openapiclient.NewPOSTManualGateways201ResponseDataAttributes(interface{}(US payment gateway)))) // ManualGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ManualGatewaysApi.POSTManualGateways(context.Background()).POSTManualGatewaysRequest(pOSTManualGatewaysRequest).Execute()
+    resp, r, err := apiClient.ManualGatewaysApi.POSTManualGateways(context.Background()).ManualGatewayCreate(manualGatewayCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ManualGatewaysApi.POSTManualGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiPOSTManualGatewaysRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTManualGatewaysRequest** | [**POSTManualGatewaysRequest**](POSTManualGatewaysRequest.md) |  | 
+ **manualGatewayCreate** | [**ManualGatewayCreate**](ManualGatewayCreate.md) |  | 
 
 ### Return type
 

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PATCHBingGeocodersBingGeocoderIdRequestData**](PATCHBingGeocodersBingGeocoderIdRequestData.md) |  | 
+**Data** | [**BingGeocoderUpdateData**](BingGeocoderUpdateData.md) |  | 
 
 ## Methods
 
 ### NewBingGeocoderUpdate
 
-`func NewBingGeocoderUpdate(data PATCHBingGeocodersBingGeocoderIdRequestData, ) *BingGeocoderUpdate`
+`func NewBingGeocoderUpdate(data BingGeocoderUpdateData, ) *BingGeocoderUpdate`
 
 NewBingGeocoderUpdate instantiates a new BingGeocoderUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *BingGeocoderUpdate) GetData() PATCHBingGeocodersBingGeocoderIdRequestData`
+`func (o *BingGeocoderUpdate) GetData() BingGeocoderUpdateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *BingGeocoderUpdate) GetDataOk() (*PATCHBingGeocodersBingGeocoderIdRequestData, bool)`
+`func (o *BingGeocoderUpdate) GetDataOk() (*BingGeocoderUpdateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *BingGeocoderUpdate) SetData(v PATCHBingGeocodersBingGeocoderIdRequestData)`
+`func (o *BingGeocoderUpdate) SetData(v BingGeocoderUpdateData)`
 
 SetData sets Data field to given value.
 

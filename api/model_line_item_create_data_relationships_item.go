@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the LineItemCreateDataRelationshipsItem type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &LineItemCreateDataRelationshipsItem{}
-
 // LineItemCreateDataRelationshipsItem struct for LineItemCreateDataRelationshipsItem
 type LineItemCreateDataRelationshipsItem struct {
-	Data POSTLineItemsRequestDataRelationshipsItemData `json:"data"`
+	Data LineItemDataRelationshipsItemData `json:"data"`
 }
 
 // NewLineItemCreateDataRelationshipsItem instantiates a new LineItemCreateDataRelationshipsItem object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLineItemCreateDataRelationshipsItem(data POSTLineItemsRequestDataRelationshipsItemData) *LineItemCreateDataRelationshipsItem {
+func NewLineItemCreateDataRelationshipsItem(data LineItemDataRelationshipsItemData) *LineItemCreateDataRelationshipsItem {
 	this := LineItemCreateDataRelationshipsItem{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewLineItemCreateDataRelationshipsItemWithDefaults() *LineItemCreateDataRel
 }
 
 // GetData returns the Data field value
-func (o *LineItemCreateDataRelationshipsItem) GetData() POSTLineItemsRequestDataRelationshipsItemData {
+func (o *LineItemCreateDataRelationshipsItem) GetData() LineItemDataRelationshipsItemData {
 	if o == nil {
-		var ret POSTLineItemsRequestDataRelationshipsItemData
+		var ret LineItemDataRelationshipsItemData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *LineItemCreateDataRelationshipsItem) GetData() POSTLineItemsRequestData
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *LineItemCreateDataRelationshipsItem) GetDataOk() (*POSTLineItemsRequestDataRelationshipsItemData, bool) {
+func (o *LineItemCreateDataRelationshipsItem) GetDataOk() (*LineItemDataRelationshipsItemData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *LineItemCreateDataRelationshipsItem) GetDataOk() (*POSTLineItemsRequest
 }
 
 // SetData sets field value
-func (o *LineItemCreateDataRelationshipsItem) SetData(v POSTLineItemsRequestDataRelationshipsItemData) {
+func (o *LineItemCreateDataRelationshipsItem) SetData(v LineItemDataRelationshipsItemData) {
 	o.Data = v
 }
 
 func (o LineItemCreateDataRelationshipsItem) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o LineItemCreateDataRelationshipsItem) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableLineItemCreateDataRelationshipsItem struct {

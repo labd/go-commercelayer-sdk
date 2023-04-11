@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the ShippingMethodDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ShippingMethodDataRelationships{}
-
 // ShippingMethodDataRelationships struct for ShippingMethodDataRelationships
 type ShippingMethodDataRelationships struct {
 	Market                      *AvalaraAccountDataRelationshipsMarkets             `json:"market,omitempty"`
@@ -49,7 +46,7 @@ func NewShippingMethodDataRelationshipsWithDefaults() *ShippingMethodDataRelatio
 
 // GetMarket returns the Market field value if set, zero value otherwise.
 func (o *ShippingMethodDataRelationships) GetMarket() AvalaraAccountDataRelationshipsMarkets {
-	if o == nil || IsNil(o.Market) {
+	if o == nil || o.Market == nil {
 		var ret AvalaraAccountDataRelationshipsMarkets
 		return ret
 	}
@@ -59,7 +56,7 @@ func (o *ShippingMethodDataRelationships) GetMarket() AvalaraAccountDataRelation
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ShippingMethodDataRelationships) GetMarketOk() (*AvalaraAccountDataRelationshipsMarkets, bool) {
-	if o == nil || IsNil(o.Market) {
+	if o == nil || o.Market == nil {
 		return nil, false
 	}
 	return o.Market, true
@@ -67,7 +64,7 @@ func (o *ShippingMethodDataRelationships) GetMarketOk() (*AvalaraAccountDataRela
 
 // HasMarket returns a boolean if a field has been set.
 func (o *ShippingMethodDataRelationships) HasMarket() bool {
-	if o != nil && !IsNil(o.Market) {
+	if o != nil && o.Market != nil {
 		return true
 	}
 
@@ -81,7 +78,7 @@ func (o *ShippingMethodDataRelationships) SetMarket(v AvalaraAccountDataRelation
 
 // GetShippingZone returns the ShippingZone field value if set, zero value otherwise.
 func (o *ShippingMethodDataRelationships) GetShippingZone() ShippingMethodDataRelationshipsShippingZone {
-	if o == nil || IsNil(o.ShippingZone) {
+	if o == nil || o.ShippingZone == nil {
 		var ret ShippingMethodDataRelationshipsShippingZone
 		return ret
 	}
@@ -91,7 +88,7 @@ func (o *ShippingMethodDataRelationships) GetShippingZone() ShippingMethodDataRe
 // GetShippingZoneOk returns a tuple with the ShippingZone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ShippingMethodDataRelationships) GetShippingZoneOk() (*ShippingMethodDataRelationshipsShippingZone, bool) {
-	if o == nil || IsNil(o.ShippingZone) {
+	if o == nil || o.ShippingZone == nil {
 		return nil, false
 	}
 	return o.ShippingZone, true
@@ -99,7 +96,7 @@ func (o *ShippingMethodDataRelationships) GetShippingZoneOk() (*ShippingMethodDa
 
 // HasShippingZone returns a boolean if a field has been set.
 func (o *ShippingMethodDataRelationships) HasShippingZone() bool {
-	if o != nil && !IsNil(o.ShippingZone) {
+	if o != nil && o.ShippingZone != nil {
 		return true
 	}
 
@@ -113,7 +110,7 @@ func (o *ShippingMethodDataRelationships) SetShippingZone(v ShippingMethodDataRe
 
 // GetShippingCategory returns the ShippingCategory field value if set, zero value otherwise.
 func (o *ShippingMethodDataRelationships) GetShippingCategory() ShipmentDataRelationshipsShippingCategory {
-	if o == nil || IsNil(o.ShippingCategory) {
+	if o == nil || o.ShippingCategory == nil {
 		var ret ShipmentDataRelationshipsShippingCategory
 		return ret
 	}
@@ -123,7 +120,7 @@ func (o *ShippingMethodDataRelationships) GetShippingCategory() ShipmentDataRela
 // GetShippingCategoryOk returns a tuple with the ShippingCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ShippingMethodDataRelationships) GetShippingCategoryOk() (*ShipmentDataRelationshipsShippingCategory, bool) {
-	if o == nil || IsNil(o.ShippingCategory) {
+	if o == nil || o.ShippingCategory == nil {
 		return nil, false
 	}
 	return o.ShippingCategory, true
@@ -131,7 +128,7 @@ func (o *ShippingMethodDataRelationships) GetShippingCategoryOk() (*ShipmentData
 
 // HasShippingCategory returns a boolean if a field has been set.
 func (o *ShippingMethodDataRelationships) HasShippingCategory() bool {
-	if o != nil && !IsNil(o.ShippingCategory) {
+	if o != nil && o.ShippingCategory != nil {
 		return true
 	}
 
@@ -145,7 +142,7 @@ func (o *ShippingMethodDataRelationships) SetShippingCategory(v ShipmentDataRela
 
 // GetStockLocation returns the StockLocation field value if set, zero value otherwise.
 func (o *ShippingMethodDataRelationships) GetStockLocation() DeliveryLeadTimeDataRelationshipsStockLocation {
-	if o == nil || IsNil(o.StockLocation) {
+	if o == nil || o.StockLocation == nil {
 		var ret DeliveryLeadTimeDataRelationshipsStockLocation
 		return ret
 	}
@@ -155,7 +152,7 @@ func (o *ShippingMethodDataRelationships) GetStockLocation() DeliveryLeadTimeDat
 // GetStockLocationOk returns a tuple with the StockLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ShippingMethodDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeDataRelationshipsStockLocation, bool) {
-	if o == nil || IsNil(o.StockLocation) {
+	if o == nil || o.StockLocation == nil {
 		return nil, false
 	}
 	return o.StockLocation, true
@@ -163,7 +160,7 @@ func (o *ShippingMethodDataRelationships) GetStockLocationOk() (*DeliveryLeadTim
 
 // HasStockLocation returns a boolean if a field has been set.
 func (o *ShippingMethodDataRelationships) HasStockLocation() bool {
-	if o != nil && !IsNil(o.StockLocation) {
+	if o != nil && o.StockLocation != nil {
 		return true
 	}
 
@@ -177,7 +174,7 @@ func (o *ShippingMethodDataRelationships) SetStockLocation(v DeliveryLeadTimeDat
 
 // GetDeliveryLeadTimeForShipment returns the DeliveryLeadTimeForShipment field value if set, zero value otherwise.
 func (o *ShippingMethodDataRelationships) GetDeliveryLeadTimeForShipment() ShipmentDataRelationshipsDeliveryLeadTime {
-	if o == nil || IsNil(o.DeliveryLeadTimeForShipment) {
+	if o == nil || o.DeliveryLeadTimeForShipment == nil {
 		var ret ShipmentDataRelationshipsDeliveryLeadTime
 		return ret
 	}
@@ -187,7 +184,7 @@ func (o *ShippingMethodDataRelationships) GetDeliveryLeadTimeForShipment() Shipm
 // GetDeliveryLeadTimeForShipmentOk returns a tuple with the DeliveryLeadTimeForShipment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ShippingMethodDataRelationships) GetDeliveryLeadTimeForShipmentOk() (*ShipmentDataRelationshipsDeliveryLeadTime, bool) {
-	if o == nil || IsNil(o.DeliveryLeadTimeForShipment) {
+	if o == nil || o.DeliveryLeadTimeForShipment == nil {
 		return nil, false
 	}
 	return o.DeliveryLeadTimeForShipment, true
@@ -195,7 +192,7 @@ func (o *ShippingMethodDataRelationships) GetDeliveryLeadTimeForShipmentOk() (*S
 
 // HasDeliveryLeadTimeForShipment returns a boolean if a field has been set.
 func (o *ShippingMethodDataRelationships) HasDeliveryLeadTimeForShipment() bool {
-	if o != nil && !IsNil(o.DeliveryLeadTimeForShipment) {
+	if o != nil && o.DeliveryLeadTimeForShipment != nil {
 		return true
 	}
 
@@ -209,7 +206,7 @@ func (o *ShippingMethodDataRelationships) SetDeliveryLeadTimeForShipment(v Shipm
 
 // GetShippingMethodTiers returns the ShippingMethodTiers field value if set, zero value otherwise.
 func (o *ShippingMethodDataRelationships) GetShippingMethodTiers() ShippingMethodDataRelationshipsShippingMethodTiers {
-	if o == nil || IsNil(o.ShippingMethodTiers) {
+	if o == nil || o.ShippingMethodTiers == nil {
 		var ret ShippingMethodDataRelationshipsShippingMethodTiers
 		return ret
 	}
@@ -219,7 +216,7 @@ func (o *ShippingMethodDataRelationships) GetShippingMethodTiers() ShippingMetho
 // GetShippingMethodTiersOk returns a tuple with the ShippingMethodTiers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ShippingMethodDataRelationships) GetShippingMethodTiersOk() (*ShippingMethodDataRelationshipsShippingMethodTiers, bool) {
-	if o == nil || IsNil(o.ShippingMethodTiers) {
+	if o == nil || o.ShippingMethodTiers == nil {
 		return nil, false
 	}
 	return o.ShippingMethodTiers, true
@@ -227,7 +224,7 @@ func (o *ShippingMethodDataRelationships) GetShippingMethodTiersOk() (*ShippingM
 
 // HasShippingMethodTiers returns a boolean if a field has been set.
 func (o *ShippingMethodDataRelationships) HasShippingMethodTiers() bool {
-	if o != nil && !IsNil(o.ShippingMethodTiers) {
+	if o != nil && o.ShippingMethodTiers != nil {
 		return true
 	}
 
@@ -241,7 +238,7 @@ func (o *ShippingMethodDataRelationships) SetShippingMethodTiers(v ShippingMetho
 
 // GetShippingWeightTiers returns the ShippingWeightTiers field value if set, zero value otherwise.
 func (o *ShippingMethodDataRelationships) GetShippingWeightTiers() ShippingMethodDataRelationshipsShippingWeightTiers {
-	if o == nil || IsNil(o.ShippingWeightTiers) {
+	if o == nil || o.ShippingWeightTiers == nil {
 		var ret ShippingMethodDataRelationshipsShippingWeightTiers
 		return ret
 	}
@@ -251,7 +248,7 @@ func (o *ShippingMethodDataRelationships) GetShippingWeightTiers() ShippingMetho
 // GetShippingWeightTiersOk returns a tuple with the ShippingWeightTiers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ShippingMethodDataRelationships) GetShippingWeightTiersOk() (*ShippingMethodDataRelationshipsShippingWeightTiers, bool) {
-	if o == nil || IsNil(o.ShippingWeightTiers) {
+	if o == nil || o.ShippingWeightTiers == nil {
 		return nil, false
 	}
 	return o.ShippingWeightTiers, true
@@ -259,7 +256,7 @@ func (o *ShippingMethodDataRelationships) GetShippingWeightTiersOk() (*ShippingM
 
 // HasShippingWeightTiers returns a boolean if a field has been set.
 func (o *ShippingMethodDataRelationships) HasShippingWeightTiers() bool {
-	if o != nil && !IsNil(o.ShippingWeightTiers) {
+	if o != nil && o.ShippingWeightTiers != nil {
 		return true
 	}
 
@@ -273,7 +270,7 @@ func (o *ShippingMethodDataRelationships) SetShippingWeightTiers(v ShippingMetho
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *ShippingMethodDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		var ret AvalaraAccountDataRelationshipsAttachments
 		return ret
 	}
@@ -283,7 +280,7 @@ func (o *ShippingMethodDataRelationships) GetAttachments() AvalaraAccountDataRel
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ShippingMethodDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		return nil, false
 	}
 	return o.Attachments, true
@@ -291,7 +288,7 @@ func (o *ShippingMethodDataRelationships) GetAttachmentsOk() (*AvalaraAccountDat
 
 // HasAttachments returns a boolean if a field has been set.
 func (o *ShippingMethodDataRelationships) HasAttachments() bool {
-	if o != nil && !IsNil(o.Attachments) {
+	if o != nil && o.Attachments != nil {
 		return true
 	}
 
@@ -304,40 +301,32 @@ func (o *ShippingMethodDataRelationships) SetAttachments(v AvalaraAccountDataRel
 }
 
 func (o ShippingMethodDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o ShippingMethodDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Market) {
+	if o.Market != nil {
 		toSerialize["market"] = o.Market
 	}
-	if !IsNil(o.ShippingZone) {
+	if o.ShippingZone != nil {
 		toSerialize["shipping_zone"] = o.ShippingZone
 	}
-	if !IsNil(o.ShippingCategory) {
+	if o.ShippingCategory != nil {
 		toSerialize["shipping_category"] = o.ShippingCategory
 	}
-	if !IsNil(o.StockLocation) {
+	if o.StockLocation != nil {
 		toSerialize["stock_location"] = o.StockLocation
 	}
-	if !IsNil(o.DeliveryLeadTimeForShipment) {
+	if o.DeliveryLeadTimeForShipment != nil {
 		toSerialize["delivery_lead_time_for_shipment"] = o.DeliveryLeadTimeForShipment
 	}
-	if !IsNil(o.ShippingMethodTiers) {
+	if o.ShippingMethodTiers != nil {
 		toSerialize["shipping_method_tiers"] = o.ShippingMethodTiers
 	}
-	if !IsNil(o.ShippingWeightTiers) {
+	if o.ShippingWeightTiers != nil {
 		toSerialize["shipping_weight_tiers"] = o.ShippingWeightTiers
 	}
-	if !IsNil(o.Attachments) {
+	if o.Attachments != nil {
 		toSerialize["attachments"] = o.Attachments
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableShippingMethodDataRelationships struct {

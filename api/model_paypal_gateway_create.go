@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the PaypalGatewayCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PaypalGatewayCreate{}
-
 // PaypalGatewayCreate struct for PaypalGatewayCreate
 type PaypalGatewayCreate struct {
-	Data POSTPaypalGatewaysRequestData `json:"data"`
+	Data PaypalGatewayCreateData `json:"data"`
 }
 
 // NewPaypalGatewayCreate instantiates a new PaypalGatewayCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaypalGatewayCreate(data POSTPaypalGatewaysRequestData) *PaypalGatewayCreate {
+func NewPaypalGatewayCreate(data PaypalGatewayCreateData) *PaypalGatewayCreate {
 	this := PaypalGatewayCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewPaypalGatewayCreateWithDefaults() *PaypalGatewayCreate {
 }
 
 // GetData returns the Data field value
-func (o *PaypalGatewayCreate) GetData() POSTPaypalGatewaysRequestData {
+func (o *PaypalGatewayCreate) GetData() PaypalGatewayCreateData {
 	if o == nil {
-		var ret POSTPaypalGatewaysRequestData
+		var ret PaypalGatewayCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *PaypalGatewayCreate) GetData() POSTPaypalGatewaysRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *PaypalGatewayCreate) GetDataOk() (*POSTPaypalGatewaysRequestData, bool) {
+func (o *PaypalGatewayCreate) GetDataOk() (*PaypalGatewayCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *PaypalGatewayCreate) GetDataOk() (*POSTPaypalGatewaysRequestData, bool)
 }
 
 // SetData sets field value
-func (o *PaypalGatewayCreate) SetData(v POSTPaypalGatewaysRequestData) {
+func (o *PaypalGatewayCreate) SetData(v PaypalGatewayCreateData) {
 	o.Data = v
 }
 
 func (o PaypalGatewayCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o PaypalGatewayCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullablePaypalGatewayCreate struct {

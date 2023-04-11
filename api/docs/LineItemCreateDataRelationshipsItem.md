@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**POSTLineItemsRequestDataRelationshipsItemData**](POSTLineItemsRequestDataRelationshipsItemData.md) |  | 
+**Data** | [**LineItemDataRelationshipsItemData**](LineItemDataRelationshipsItemData.md) |  | 
 
 ## Methods
 
 ### NewLineItemCreateDataRelationshipsItem
 
-`func NewLineItemCreateDataRelationshipsItem(data POSTLineItemsRequestDataRelationshipsItemData, ) *LineItemCreateDataRelationshipsItem`
+`func NewLineItemCreateDataRelationshipsItem(data LineItemDataRelationshipsItemData, ) *LineItemCreateDataRelationshipsItem`
 
 NewLineItemCreateDataRelationshipsItem instantiates a new LineItemCreateDataRelationshipsItem object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *LineItemCreateDataRelationshipsItem) GetData() POSTLineItemsRequestDataRelationshipsItemData`
+`func (o *LineItemCreateDataRelationshipsItem) GetData() LineItemDataRelationshipsItemData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *LineItemCreateDataRelationshipsItem) GetDataOk() (*POSTLineItemsRequestDataRelationshipsItemData, bool)`
+`func (o *LineItemCreateDataRelationshipsItem) GetDataOk() (*LineItemDataRelationshipsItemData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *LineItemCreateDataRelationshipsItem) SetData(v POSTLineItemsRequestDataRelationshipsItemData)`
+`func (o *LineItemCreateDataRelationshipsItem) SetData(v LineItemDataRelationshipsItemData)`
 
 SetData sets Data field to given value.
 

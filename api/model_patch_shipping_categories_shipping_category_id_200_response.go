@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the PATCHShippingCategoriesShippingCategoryId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PATCHShippingCategoriesShippingCategoryId200Response{}
-
 // PATCHShippingCategoriesShippingCategoryId200Response struct for PATCHShippingCategoriesShippingCategoryId200Response
 type PATCHShippingCategoriesShippingCategoryId200Response struct {
 	Data *PATCHShippingCategoriesShippingCategoryId200ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPATCHShippingCategoriesShippingCategoryId200ResponseWithDefaults() *PATC
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *PATCHShippingCategoriesShippingCategoryId200Response) GetData() PATCHShippingCategoriesShippingCategoryId200ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret PATCHShippingCategoriesShippingCategoryId200ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *PATCHShippingCategoriesShippingCategoryId200Response) GetData() PATCHSh
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHShippingCategoriesShippingCategoryId200Response) GetDataOk() (*PATCHShippingCategoriesShippingCategoryId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *PATCHShippingCategoriesShippingCategoryId200Response) GetDataOk() (*PAT
 
 // HasData returns a boolean if a field has been set.
 func (o *PATCHShippingCategoriesShippingCategoryId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *PATCHShippingCategoriesShippingCategoryId200Response) SetData(v PATCHSh
 }
 
 func (o PATCHShippingCategoriesShippingCategoryId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o PATCHShippingCategoriesShippingCategoryId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePATCHShippingCategoriesShippingCategoryId200Response struct {

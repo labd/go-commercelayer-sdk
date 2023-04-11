@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETSkuListsSkuListId200ResponseDataAttributes**](GETSkuListsSkuListId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**GETSkuLists200ResponseDataInnerAttributes**](GETSkuLists200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**SkuListDataRelationships**](SkuListDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewSkuListData
 
-`func NewSkuListData(type_ interface{}, attributes GETSkuListsSkuListId200ResponseDataAttributes, ) *SkuListData`
+`func NewSkuListData(type_ interface{}, attributes GETSkuLists200ResponseDataInnerAttributes, ) *SkuListData`
 
 NewSkuListData instantiates a new SkuListData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *SkuListData) GetAttributes() GETSkuListsSkuListId200ResponseDataAttributes`
+`func (o *SkuListData) GetAttributes() GETSkuLists200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *SkuListData) GetAttributesOk() (*GETSkuListsSkuListId200ResponseDataAttributes, bool)`
+`func (o *SkuListData) GetAttributesOk() (*GETSkuLists200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *SkuListData) SetAttributes(v GETSkuListsSkuListId200ResponseDataAttributes)`
+`func (o *SkuListData) SetAttributes(v GETSkuLists200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

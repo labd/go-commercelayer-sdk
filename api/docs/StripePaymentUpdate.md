@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PATCHStripePaymentsStripePaymentIdRequestData**](PATCHStripePaymentsStripePaymentIdRequestData.md) |  | 
+**Data** | [**StripePaymentUpdateData**](StripePaymentUpdateData.md) |  | 
 
 ## Methods
 
 ### NewStripePaymentUpdate
 
-`func NewStripePaymentUpdate(data PATCHStripePaymentsStripePaymentIdRequestData, ) *StripePaymentUpdate`
+`func NewStripePaymentUpdate(data StripePaymentUpdateData, ) *StripePaymentUpdate`
 
 NewStripePaymentUpdate instantiates a new StripePaymentUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *StripePaymentUpdate) GetData() PATCHStripePaymentsStripePaymentIdRequestData`
+`func (o *StripePaymentUpdate) GetData() StripePaymentUpdateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *StripePaymentUpdate) GetDataOk() (*PATCHStripePaymentsStripePaymentIdRequestData, bool)`
+`func (o *StripePaymentUpdate) GetDataOk() (*StripePaymentUpdateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *StripePaymentUpdate) SetData(v PATCHStripePaymentsStripePaymentIdRequestData)`
+`func (o *StripePaymentUpdate) SetData(v StripePaymentUpdateData)`
 
 SetData sets Data field to given value.
 

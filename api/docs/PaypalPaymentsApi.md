@@ -30,7 +30,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -38,7 +38,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.PaypalPaymentsApi.DELETEPaypalPaymentsPaypalPaymentId(context.Background(), paypalPaymentId).Execute()
+    resp, r, err := apiClient.PaypalPaymentsApi.DELETEPaypalPaymentsPaypalPaymentId(context.Background(), paypalPaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaypalPaymentsApi.DELETEPaypalPaymentsPaypalPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -98,7 +98,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -106,7 +106,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.PaypalPaymentsApi.GETPaypalGatewayIdPaypalPayments(context.Background(), paypalGatewayId).Execute()
+    resp, r, err := apiClient.PaypalPaymentsApi.GETPaypalGatewayIdPaypalPayments(context.Background(), paypalGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaypalPaymentsApi.GETPaypalGatewayIdPaypalPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -166,7 +166,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -227,7 +227,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHPaypalPaymentsPaypalPaymentId
 
-> PATCHPaypalPaymentsPaypalPaymentId200Response PATCHPaypalPaymentsPaypalPaymentId(ctx, paypalPaymentId).PATCHPaypalPaymentsPaypalPaymentIdRequest(pATCHPaypalPaymentsPaypalPaymentIdRequest).Execute()
+> PATCHPaypalPaymentsPaypalPaymentId200Response PATCHPaypalPaymentsPaypalPaymentId(ctx, paypalPaymentId).PaypalPaymentUpdate(paypalPaymentUpdate).Execute()
 
 Update a paypal payment
 
@@ -297,16 +297,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHPaypalPaymentsPaypalPaymentIdRequest := *openapiclient.NewPATCHPaypalPaymentsPaypalPaymentIdRequest(*openapiclient.NewPATCHPaypalPaymentsPaypalPaymentIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHPaypalPaymentsPaypalPaymentIdRequestDataAttributes())) // PATCHPaypalPaymentsPaypalPaymentIdRequest | 
+    paypalPaymentUpdate := *openapiclient.NewPaypalPaymentUpdate(*openapiclient.NewPaypalPaymentUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes())) // PaypalPaymentUpdate | 
     paypalPaymentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaypalPaymentsApi.PATCHPaypalPaymentsPaypalPaymentId(context.Background(), paypalPaymentId).PATCHPaypalPaymentsPaypalPaymentIdRequest(pATCHPaypalPaymentsPaypalPaymentIdRequest).Execute()
+    resp, r, err := apiClient.PaypalPaymentsApi.PATCHPaypalPaymentsPaypalPaymentId(context.Background(), paypalPaymentId).PaypalPaymentUpdate(paypalPaymentUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaypalPaymentsApi.PATCHPaypalPaymentsPaypalPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -331,7 +331,7 @@ Other parameters are passed through a pointer to a apiPATCHPaypalPaymentsPaypalP
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHPaypalPaymentsPaypalPaymentIdRequest** | [**PATCHPaypalPaymentsPaypalPaymentIdRequest**](PATCHPaypalPaymentsPaypalPaymentIdRequest.md) |  | 
+ **paypalPaymentUpdate** | [**PaypalPaymentUpdate**](PaypalPaymentUpdate.md) |  | 
 
 
 ### Return type
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTPaypalPayments
 
-> POSTPaypalPayments201Response POSTPaypalPayments(ctx).POSTPaypalPaymentsRequest(pOSTPaypalPaymentsRequest).Execute()
+> POSTPaypalPayments201Response POSTPaypalPayments(ctx).PaypalPaymentCreate(paypalPaymentCreate).Execute()
 
 Create a paypal payment
 
@@ -369,15 +369,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTPaypalPaymentsRequest := *openapiclient.NewPOSTPaypalPaymentsRequest(*openapiclient.NewPOSTPaypalPaymentsRequestData(interface{}(123), *openapiclient.NewPOSTPaypalPaymentsRequestDataAttributes(interface{}(https://yourdomain.com/thankyou), interface{}(https://yourdomain.com/checkout/payment)))) // POSTPaypalPaymentsRequest | 
+    paypalPaymentCreate := *openapiclient.NewPaypalPaymentCreate(*openapiclient.NewPaypalPaymentCreateData(interface{}(123), *openapiclient.NewPOSTPaypalPayments201ResponseDataAttributes(interface{}(https://yourdomain.com/thankyou), interface{}(https://yourdomain.com/checkout/payment)))) // PaypalPaymentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaypalPaymentsApi.POSTPaypalPayments(context.Background()).POSTPaypalPaymentsRequest(pOSTPaypalPaymentsRequest).Execute()
+    resp, r, err := apiClient.PaypalPaymentsApi.POSTPaypalPayments(context.Background()).PaypalPaymentCreate(paypalPaymentCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaypalPaymentsApi.POSTPaypalPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +398,7 @@ Other parameters are passed through a pointer to a apiPOSTPaypalPaymentsRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTPaypalPaymentsRequest** | [**POSTPaypalPaymentsRequest**](POSTPaypalPaymentsRequest.md) |  | 
+ **paypalPaymentCreate** | [**PaypalPaymentCreate**](PaypalPaymentCreate.md) |  | 
 
 ### Return type
 

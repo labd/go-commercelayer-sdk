@@ -29,7 +29,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -37,7 +37,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.FreeShippingPromotionsApi.DELETEFreeShippingPromotionsFreeShippingPromotionId(context.Background(), freeShippingPromotionId).Execute()
+    resp, r, err := apiClient.FreeShippingPromotionsApi.DELETEFreeShippingPromotionsFreeShippingPromotionId(context.Background(), freeShippingPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `FreeShippingPromotionsApi.DELETEFreeShippingPromotionsFreeShippingPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -158,7 +158,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHFreeShippingPromotionsFreeShippingPromotionId
 
-> PATCHFreeShippingPromotionsFreeShippingPromotionId200Response PATCHFreeShippingPromotionsFreeShippingPromotionId(ctx, freeShippingPromotionId).PATCHFreeShippingPromotionsFreeShippingPromotionIdRequest(pATCHFreeShippingPromotionsFreeShippingPromotionIdRequest).Execute()
+> PATCHFreeShippingPromotionsFreeShippingPromotionId200Response PATCHFreeShippingPromotionsFreeShippingPromotionId(ctx, freeShippingPromotionId).FreeShippingPromotionUpdate(freeShippingPromotionUpdate).Execute()
 
 Update a free shipping promotion
 
@@ -228,16 +228,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHFreeShippingPromotionsFreeShippingPromotionIdRequest := *openapiclient.NewPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest(*openapiclient.NewPATCHFreeShippingPromotionsFreeShippingPromotionIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHFreeShippingPromotionsFreeShippingPromotionIdRequestDataAttributes())) // PATCHFreeShippingPromotionsFreeShippingPromotionIdRequest | 
+    freeShippingPromotionUpdate := *openapiclient.NewFreeShippingPromotionUpdate(*openapiclient.NewFreeShippingPromotionUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes())) // FreeShippingPromotionUpdate | 
     freeShippingPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.FreeShippingPromotionsApi.PATCHFreeShippingPromotionsFreeShippingPromotionId(context.Background(), freeShippingPromotionId).PATCHFreeShippingPromotionsFreeShippingPromotionIdRequest(pATCHFreeShippingPromotionsFreeShippingPromotionIdRequest).Execute()
+    resp, r, err := apiClient.FreeShippingPromotionsApi.PATCHFreeShippingPromotionsFreeShippingPromotionId(context.Background(), freeShippingPromotionId).FreeShippingPromotionUpdate(freeShippingPromotionUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `FreeShippingPromotionsApi.PATCHFreeShippingPromotionsFreeShippingPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -262,7 +262,7 @@ Other parameters are passed through a pointer to a apiPATCHFreeShippingPromotion
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHFreeShippingPromotionsFreeShippingPromotionIdRequest** | [**PATCHFreeShippingPromotionsFreeShippingPromotionIdRequest**](PATCHFreeShippingPromotionsFreeShippingPromotionIdRequest.md) |  | 
+ **freeShippingPromotionUpdate** | [**FreeShippingPromotionUpdate**](FreeShippingPromotionUpdate.md) |  | 
 
 
 ### Return type
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTFreeShippingPromotions
 
-> POSTFreeShippingPromotions201Response POSTFreeShippingPromotions(ctx).POSTFreeShippingPromotionsRequest(pOSTFreeShippingPromotionsRequest).Execute()
+> POSTFreeShippingPromotions201Response POSTFreeShippingPromotions(ctx).FreeShippingPromotionCreate(freeShippingPromotionCreate).Execute()
 
 Create a free shipping promotion
 
@@ -300,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTFreeShippingPromotionsRequest := *openapiclient.NewPOSTFreeShippingPromotionsRequest(*openapiclient.NewPOSTFreeShippingPromotionsRequestData(interface{}(123), *openapiclient.NewPOSTFreeShippingPromotionsRequestDataAttributes(interface{}(Personal promotion), interface{}(2018-01-01T12:00:00.000Z), interface{}(2018-01-02T12:00:00.000Z), interface{}(5)))) // POSTFreeShippingPromotionsRequest | 
+    freeShippingPromotionCreate := *openapiclient.NewFreeShippingPromotionCreate(*openapiclient.NewFreeShippingPromotionCreateData(interface{}(123), *openapiclient.NewPOSTFreeShippingPromotions201ResponseDataAttributes(interface{}(Personal promotion), interface{}(2018-01-01T12:00:00.000Z), interface{}(2018-01-02T12:00:00.000Z), interface{}(5)))) // FreeShippingPromotionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.FreeShippingPromotionsApi.POSTFreeShippingPromotions(context.Background()).POSTFreeShippingPromotionsRequest(pOSTFreeShippingPromotionsRequest).Execute()
+    resp, r, err := apiClient.FreeShippingPromotionsApi.POSTFreeShippingPromotions(context.Background()).FreeShippingPromotionCreate(freeShippingPromotionCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `FreeShippingPromotionsApi.POSTFreeShippingPromotions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiPOSTFreeShippingPromotions
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTFreeShippingPromotionsRequest** | [**POSTFreeShippingPromotionsRequest**](POSTFreeShippingPromotionsRequest.md) |  | 
+ **freeShippingPromotionCreate** | [**FreeShippingPromotionCreate**](FreeShippingPromotionCreate.md) |  | 
 
 ### Return type
 

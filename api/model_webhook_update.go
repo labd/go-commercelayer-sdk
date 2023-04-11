@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the WebhookUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &WebhookUpdate{}
-
 // WebhookUpdate struct for WebhookUpdate
 type WebhookUpdate struct {
-	Data PATCHWebhooksWebhookIdRequestData `json:"data"`
+	Data WebhookUpdateData `json:"data"`
 }
 
 // NewWebhookUpdate instantiates a new WebhookUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWebhookUpdate(data PATCHWebhooksWebhookIdRequestData) *WebhookUpdate {
+func NewWebhookUpdate(data WebhookUpdateData) *WebhookUpdate {
 	this := WebhookUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewWebhookUpdateWithDefaults() *WebhookUpdate {
 }
 
 // GetData returns the Data field value
-func (o *WebhookUpdate) GetData() PATCHWebhooksWebhookIdRequestData {
+func (o *WebhookUpdate) GetData() WebhookUpdateData {
 	if o == nil {
-		var ret PATCHWebhooksWebhookIdRequestData
+		var ret WebhookUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *WebhookUpdate) GetData() PATCHWebhooksWebhookIdRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *WebhookUpdate) GetDataOk() (*PATCHWebhooksWebhookIdRequestData, bool) {
+func (o *WebhookUpdate) GetDataOk() (*WebhookUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *WebhookUpdate) GetDataOk() (*PATCHWebhooksWebhookIdRequestData, bool) {
 }
 
 // SetData sets field value
-func (o *WebhookUpdate) SetData(v PATCHWebhooksWebhookIdRequestData) {
+func (o *WebhookUpdate) SetData(v WebhookUpdateData) {
 	o.Data = v
 }
 
 func (o WebhookUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o WebhookUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableWebhookUpdate struct {

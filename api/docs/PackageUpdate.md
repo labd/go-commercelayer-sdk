@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PATCHPackagesPackageIdRequestData**](PATCHPackagesPackageIdRequestData.md) |  | 
+**Data** | [**PackageUpdateData**](PackageUpdateData.md) |  | 
 
 ## Methods
 
 ### NewPackageUpdate
 
-`func NewPackageUpdate(data PATCHPackagesPackageIdRequestData, ) *PackageUpdate`
+`func NewPackageUpdate(data PackageUpdateData, ) *PackageUpdate`
 
 NewPackageUpdate instantiates a new PackageUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *PackageUpdate) GetData() PATCHPackagesPackageIdRequestData`
+`func (o *PackageUpdate) GetData() PackageUpdateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *PackageUpdate) GetDataOk() (*PATCHPackagesPackageIdRequestData, bool)`
+`func (o *PackageUpdate) GetDataOk() (*PackageUpdateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *PackageUpdate) SetData(v PATCHPackagesPackageIdRequestData)`
+`func (o *PackageUpdate) SetData(v PackageUpdateData)`
 
 SetData sets Data field to given value.
 

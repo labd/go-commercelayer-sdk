@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the SubscriptionModelData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &SubscriptionModelData{}
-
 // SubscriptionModelData struct for SubscriptionModelData
 type SubscriptionModelData struct {
 	// The resource's type
@@ -60,7 +57,7 @@ func (o *SubscriptionModelData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SubscriptionModelData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -97,7 +94,7 @@ func (o *SubscriptionModelData) SetAttributes(v GETSubscriptionModelsSubscriptio
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *SubscriptionModelData) GetRelationships() SubscriptionModelDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		var ret SubscriptionModelDataRelationships
 		return ret
 	}
@@ -107,7 +104,7 @@ func (o *SubscriptionModelData) GetRelationships() SubscriptionModelDataRelation
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionModelData) GetRelationshipsOk() (*SubscriptionModelDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -115,7 +112,7 @@ func (o *SubscriptionModelData) GetRelationshipsOk() (*SubscriptionModelDataRela
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *SubscriptionModelData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
@@ -128,23 +125,17 @@ func (o *SubscriptionModelData) SetRelationships(v SubscriptionModelDataRelation
 }
 
 func (o SubscriptionModelData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o SubscriptionModelData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	toSerialize["attributes"] = o.Attributes
-	if !IsNil(o.Relationships) {
+	if true {
+		toSerialize["attributes"] = o.Attributes
+	}
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableSubscriptionModelData struct {

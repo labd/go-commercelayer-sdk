@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **AvailableFreeSkus** | Pointer to [**BundleDataRelationshipsSkus**](BundleDataRelationshipsSkus.md) |  | [optional] 
 **AvailableFreeBundles** | Pointer to [**OrderDataRelationshipsAvailableFreeBundles**](OrderDataRelationshipsAvailableFreeBundles.md) |  | [optional] 
 **PaymentMethod** | Pointer to [**AdyenGatewayDataRelationshipsPaymentMethods**](AdyenGatewayDataRelationshipsPaymentMethods.md) |  | [optional] 
-**PaymentSource** | Pointer to [**OrderDataRelationshipsPaymentSource**](OrderDataRelationshipsPaymentSource.md) |  | [optional] 
+**PaymentSource** | Pointer to [**CustomerPaymentSourceDataRelationshipsPaymentSource**](CustomerPaymentSourceDataRelationshipsPaymentSource.md) |  | [optional] 
 **LineItems** | Pointer to [**LineItemOptionDataRelationshipsLineItem**](LineItemOptionDataRelationshipsLineItem.md) |  | [optional] 
 **Shipments** | Pointer to [**OrderDataRelationshipsShipments**](OrderDataRelationshipsShipments.md) |  | [optional] 
 **Transactions** | Pointer to [**OrderDataRelationshipsTransactions**](OrderDataRelationshipsTransactions.md) |  | [optional] 
@@ -275,20 +275,20 @@ HasPaymentMethod returns a boolean if a field has been set.
 
 ### GetPaymentSource
 
-`func (o *OrderDataRelationships) GetPaymentSource() OrderDataRelationshipsPaymentSource`
+`func (o *OrderDataRelationships) GetPaymentSource() CustomerPaymentSourceDataRelationshipsPaymentSource`
 
 GetPaymentSource returns the PaymentSource field if non-nil, zero value otherwise.
 
 ### GetPaymentSourceOk
 
-`func (o *OrderDataRelationships) GetPaymentSourceOk() (*OrderDataRelationshipsPaymentSource, bool)`
+`func (o *OrderDataRelationships) GetPaymentSourceOk() (*CustomerPaymentSourceDataRelationshipsPaymentSource, bool)`
 
 GetPaymentSourceOk returns a tuple with the PaymentSource field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPaymentSource
 
-`func (o *OrderDataRelationships) SetPaymentSource(v OrderDataRelationshipsPaymentSource)`
+`func (o *OrderDataRelationships) SetPaymentSource(v CustomerPaymentSourceDataRelationshipsPaymentSource)`
 
 SetPaymentSource sets PaymentSource field to given value.
 

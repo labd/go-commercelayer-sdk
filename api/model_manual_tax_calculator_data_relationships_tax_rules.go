@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the ManualTaxCalculatorDataRelationshipsTaxRules type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ManualTaxCalculatorDataRelationshipsTaxRules{}
-
 // ManualTaxCalculatorDataRelationshipsTaxRules struct for ManualTaxCalculatorDataRelationshipsTaxRules
 type ManualTaxCalculatorDataRelationshipsTaxRules struct {
-	Data *POSTManualTaxCalculatorsRequestDataRelationshipsTaxRulesData `json:"data,omitempty"`
+	Data *ManualTaxCalculatorDataRelationshipsTaxRulesData `json:"data,omitempty"`
 }
 
 // NewManualTaxCalculatorDataRelationshipsTaxRules instantiates a new ManualTaxCalculatorDataRelationshipsTaxRules object
@@ -41,9 +38,9 @@ func NewManualTaxCalculatorDataRelationshipsTaxRulesWithDefaults() *ManualTaxCal
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *ManualTaxCalculatorDataRelationshipsTaxRules) GetData() POSTManualTaxCalculatorsRequestDataRelationshipsTaxRulesData {
-	if o == nil || IsNil(o.Data) {
-		var ret POSTManualTaxCalculatorsRequestDataRelationshipsTaxRulesData
+func (o *ManualTaxCalculatorDataRelationshipsTaxRules) GetData() ManualTaxCalculatorDataRelationshipsTaxRulesData {
+	if o == nil || o.Data == nil {
+		var ret ManualTaxCalculatorDataRelationshipsTaxRulesData
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *ManualTaxCalculatorDataRelationshipsTaxRules) GetData() POSTManualTaxCa
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ManualTaxCalculatorDataRelationshipsTaxRules) GetDataOk() (*POSTManualTaxCalculatorsRequestDataRelationshipsTaxRulesData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *ManualTaxCalculatorDataRelationshipsTaxRules) GetDataOk() (*ManualTaxCalculatorDataRelationshipsTaxRulesData, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *ManualTaxCalculatorDataRelationshipsTaxRules) GetDataOk() (*POSTManualT
 
 // HasData returns a boolean if a field has been set.
 func (o *ManualTaxCalculatorDataRelationshipsTaxRules) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given POSTManualTaxCalculatorsRequestDataRelationshipsTaxRulesData and assigns it to the Data field.
-func (o *ManualTaxCalculatorDataRelationshipsTaxRules) SetData(v POSTManualTaxCalculatorsRequestDataRelationshipsTaxRulesData) {
+// SetData gets a reference to the given ManualTaxCalculatorDataRelationshipsTaxRulesData and assigns it to the Data field.
+func (o *ManualTaxCalculatorDataRelationshipsTaxRules) SetData(v ManualTaxCalculatorDataRelationshipsTaxRulesData) {
 	o.Data = &v
 }
 
 func (o ManualTaxCalculatorDataRelationshipsTaxRules) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o ManualTaxCalculatorDataRelationshipsTaxRules) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableManualTaxCalculatorDataRelationshipsTaxRules struct {

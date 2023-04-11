@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *AxerveGatewaysApiService) DELETEAxerveGatewaysAxerveGatewayIdExecute(r 
 	}
 
 	localVarPath := localBasePath + "/axerve_gateways/{axerveGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"axerveGatewayId"+"}", url.PathEscape(parameterValueToString(r.axerveGatewayId, "axerveGatewayId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"axerveGatewayId"+"}", url.PathEscape(parameterToString(r.axerveGatewayId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *AxerveGatewaysApiService) DELETEAxerveGatewaysAxerveGatewayIdExecute(r 
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *AxerveGatewaysApiService) GETAxerveGatewaysExecute(r AxerveGatewaysApiG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *AxerveGatewaysApiService) GETAxerveGatewaysAxerveGatewayIdExecute(r Axe
 	}
 
 	localVarPath := localBasePath + "/axerve_gateways/{axerveGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"axerveGatewayId"+"}", url.PathEscape(parameterValueToString(r.axerveGatewayId, "axerveGatewayId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"axerveGatewayId"+"}", url.PathEscape(parameterToString(r.axerveGatewayId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *AxerveGatewaysApiService) GETAxerveGatewaysAxerveGatewayIdExecute(r Axe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -320,14 +320,14 @@ func (a *AxerveGatewaysApiService) GETAxerveGatewaysAxerveGatewayIdExecute(r Axe
 }
 
 type AxerveGatewaysApiPATCHAxerveGatewaysAxerveGatewayIdRequest struct {
-	ctx                                       context.Context
-	ApiService                                *AxerveGatewaysApiService
-	pATCHAxerveGatewaysAxerveGatewayIdRequest *PATCHAxerveGatewaysAxerveGatewayIdRequest
-	axerveGatewayId                           interface{}
+	ctx                 context.Context
+	ApiService          *AxerveGatewaysApiService
+	axerveGatewayUpdate *AxerveGatewayUpdate
+	axerveGatewayId     interface{}
 }
 
-func (r AxerveGatewaysApiPATCHAxerveGatewaysAxerveGatewayIdRequest) PATCHAxerveGatewaysAxerveGatewayIdRequest(pATCHAxerveGatewaysAxerveGatewayIdRequest PATCHAxerveGatewaysAxerveGatewayIdRequest) AxerveGatewaysApiPATCHAxerveGatewaysAxerveGatewayIdRequest {
-	r.pATCHAxerveGatewaysAxerveGatewayIdRequest = &pATCHAxerveGatewaysAxerveGatewayIdRequest
+func (r AxerveGatewaysApiPATCHAxerveGatewaysAxerveGatewayIdRequest) AxerveGatewayUpdate(axerveGatewayUpdate AxerveGatewayUpdate) AxerveGatewaysApiPATCHAxerveGatewaysAxerveGatewayIdRequest {
+	r.axerveGatewayUpdate = &axerveGatewayUpdate
 	return r
 }
 
@@ -369,13 +369,13 @@ func (a *AxerveGatewaysApiService) PATCHAxerveGatewaysAxerveGatewayIdExecute(r A
 	}
 
 	localVarPath := localBasePath + "/axerve_gateways/{axerveGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"axerveGatewayId"+"}", url.PathEscape(parameterValueToString(r.axerveGatewayId, "axerveGatewayId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"axerveGatewayId"+"}", url.PathEscape(parameterToString(r.axerveGatewayId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHAxerveGatewaysAxerveGatewayIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHAxerveGatewaysAxerveGatewayIdRequest is required and must be specified")
+	if r.axerveGatewayUpdate == nil {
+		return localVarReturnValue, nil, reportError("axerveGatewayUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -396,7 +396,7 @@ func (a *AxerveGatewaysApiService) PATCHAxerveGatewaysAxerveGatewayIdExecute(r A
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHAxerveGatewaysAxerveGatewayIdRequest
+	localVarPostBody = r.axerveGatewayUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -407,9 +407,9 @@ func (a *AxerveGatewaysApiService) PATCHAxerveGatewaysAxerveGatewayIdExecute(r A
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -435,13 +435,13 @@ func (a *AxerveGatewaysApiService) PATCHAxerveGatewaysAxerveGatewayIdExecute(r A
 }
 
 type AxerveGatewaysApiPOSTAxerveGatewaysRequest struct {
-	ctx                       context.Context
-	ApiService                *AxerveGatewaysApiService
-	pOSTAxerveGatewaysRequest *POSTAxerveGatewaysRequest
+	ctx                 context.Context
+	ApiService          *AxerveGatewaysApiService
+	axerveGatewayCreate *AxerveGatewayCreate
 }
 
-func (r AxerveGatewaysApiPOSTAxerveGatewaysRequest) POSTAxerveGatewaysRequest(pOSTAxerveGatewaysRequest POSTAxerveGatewaysRequest) AxerveGatewaysApiPOSTAxerveGatewaysRequest {
-	r.pOSTAxerveGatewaysRequest = &pOSTAxerveGatewaysRequest
+func (r AxerveGatewaysApiPOSTAxerveGatewaysRequest) AxerveGatewayCreate(axerveGatewayCreate AxerveGatewayCreate) AxerveGatewaysApiPOSTAxerveGatewaysRequest {
+	r.axerveGatewayCreate = &axerveGatewayCreate
 	return r
 }
 
@@ -485,8 +485,8 @@ func (a *AxerveGatewaysApiService) POSTAxerveGatewaysExecute(r AxerveGatewaysApi
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTAxerveGatewaysRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTAxerveGatewaysRequest is required and must be specified")
+	if r.axerveGatewayCreate == nil {
+		return localVarReturnValue, nil, reportError("axerveGatewayCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -507,7 +507,7 @@ func (a *AxerveGatewaysApiService) POSTAxerveGatewaysExecute(r AxerveGatewaysApi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTAxerveGatewaysRequest
+	localVarPostBody = r.axerveGatewayCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -518,9 +518,9 @@ func (a *AxerveGatewaysApiService) POSTAxerveGatewaysExecute(r AxerveGatewaysApi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

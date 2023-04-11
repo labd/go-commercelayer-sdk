@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the AxervePaymentUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AxervePaymentUpdate{}
-
 // AxervePaymentUpdate struct for AxervePaymentUpdate
 type AxervePaymentUpdate struct {
-	Data PATCHAxervePaymentsAxervePaymentIdRequestData `json:"data"`
+	Data AxervePaymentUpdateData `json:"data"`
 }
 
 // NewAxervePaymentUpdate instantiates a new AxervePaymentUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAxervePaymentUpdate(data PATCHAxervePaymentsAxervePaymentIdRequestData) *AxervePaymentUpdate {
+func NewAxervePaymentUpdate(data AxervePaymentUpdateData) *AxervePaymentUpdate {
 	this := AxervePaymentUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewAxervePaymentUpdateWithDefaults() *AxervePaymentUpdate {
 }
 
 // GetData returns the Data field value
-func (o *AxervePaymentUpdate) GetData() PATCHAxervePaymentsAxervePaymentIdRequestData {
+func (o *AxervePaymentUpdate) GetData() AxervePaymentUpdateData {
 	if o == nil {
-		var ret PATCHAxervePaymentsAxervePaymentIdRequestData
+		var ret AxervePaymentUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *AxervePaymentUpdate) GetData() PATCHAxervePaymentsAxervePaymentIdReques
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *AxervePaymentUpdate) GetDataOk() (*PATCHAxervePaymentsAxervePaymentIdRequestData, bool) {
+func (o *AxervePaymentUpdate) GetDataOk() (*AxervePaymentUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *AxervePaymentUpdate) GetDataOk() (*PATCHAxervePaymentsAxervePaymentIdRe
 }
 
 // SetData sets field value
-func (o *AxervePaymentUpdate) SetData(v PATCHAxervePaymentsAxervePaymentIdRequestData) {
+func (o *AxervePaymentUpdate) SetData(v AxervePaymentUpdateData) {
 	o.Data = v
 }
 
 func (o AxervePaymentUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o AxervePaymentUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableAxervePaymentUpdate struct {

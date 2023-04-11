@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the CouponDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CouponDataRelationships{}
-
 // CouponDataRelationships struct for CouponDataRelationships
 type CouponDataRelationships struct {
 	PromotionRule *CouponDataRelationshipsPromotionRule `json:"promotion_rule,omitempty"`
@@ -42,7 +39,7 @@ func NewCouponDataRelationshipsWithDefaults() *CouponDataRelationships {
 
 // GetPromotionRule returns the PromotionRule field value if set, zero value otherwise.
 func (o *CouponDataRelationships) GetPromotionRule() CouponDataRelationshipsPromotionRule {
-	if o == nil || IsNil(o.PromotionRule) {
+	if o == nil || o.PromotionRule == nil {
 		var ret CouponDataRelationshipsPromotionRule
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *CouponDataRelationships) GetPromotionRule() CouponDataRelationshipsProm
 // GetPromotionRuleOk returns a tuple with the PromotionRule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CouponDataRelationships) GetPromotionRuleOk() (*CouponDataRelationshipsPromotionRule, bool) {
-	if o == nil || IsNil(o.PromotionRule) {
+	if o == nil || o.PromotionRule == nil {
 		return nil, false
 	}
 	return o.PromotionRule, true
@@ -60,7 +57,7 @@ func (o *CouponDataRelationships) GetPromotionRuleOk() (*CouponDataRelationships
 
 // HasPromotionRule returns a boolean if a field has been set.
 func (o *CouponDataRelationships) HasPromotionRule() bool {
-	if o != nil && !IsNil(o.PromotionRule) {
+	if o != nil && o.PromotionRule != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *CouponDataRelationships) SetPromotionRule(v CouponDataRelationshipsProm
 }
 
 func (o CouponDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o CouponDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PromotionRule) {
+	if o.PromotionRule != nil {
 		toSerialize["promotion_rule"] = o.PromotionRule
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableCouponDataRelationships struct {

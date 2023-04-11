@@ -31,7 +31,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -39,7 +39,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.InventoryStockLocationsApi.DELETEInventoryStockLocationsInventoryStockLocationId(context.Background(), inventoryStockLocationId).Execute()
+    resp, r, err := apiClient.InventoryStockLocationsApi.DELETEInventoryStockLocationsInventoryStockLocationId(context.Background(), inventoryStockLocationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryStockLocationsApi.DELETEInventoryStockLocationsInventoryStockLocationId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -99,7 +99,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -107,7 +107,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.InventoryStockLocationsApi.GETInventoryModelIdInventoryStockLocations(context.Background(), inventoryModelId).Execute()
+    resp, r, err := apiClient.InventoryStockLocationsApi.GETInventoryModelIdInventoryStockLocations(context.Background(), inventoryModelId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryStockLocationsApi.GETInventoryModelIdInventoryStockLocations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -167,7 +167,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -228,7 +228,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -298,7 +298,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -306,7 +306,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.InventoryStockLocationsApi.GETStockLocationIdInventoryStockLocations(context.Background(), stockLocationId).Execute()
+    resp, r, err := apiClient.InventoryStockLocationsApi.GETStockLocationIdInventoryStockLocations(context.Background(), stockLocationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryStockLocationsApi.GETStockLocationIdInventoryStockLocations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ## PATCHInventoryStockLocationsInventoryStockLocationId
 
-> PATCHInventoryStockLocationsInventoryStockLocationId200Response PATCHInventoryStockLocationsInventoryStockLocationId(ctx, inventoryStockLocationId).PATCHInventoryStockLocationsInventoryStockLocationIdRequest(pATCHInventoryStockLocationsInventoryStockLocationIdRequest).Execute()
+> PATCHInventoryStockLocationsInventoryStockLocationId200Response PATCHInventoryStockLocationsInventoryStockLocationId(ctx, inventoryStockLocationId).InventoryStockLocationUpdate(inventoryStockLocationUpdate).Execute()
 
 Update an inventory stock location
 
@@ -366,16 +366,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHInventoryStockLocationsInventoryStockLocationIdRequest := *openapiclient.NewPATCHInventoryStockLocationsInventoryStockLocationIdRequest(*openapiclient.NewPATCHInventoryStockLocationsInventoryStockLocationIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHInventoryStockLocationsInventoryStockLocationIdRequestDataAttributes())) // PATCHInventoryStockLocationsInventoryStockLocationIdRequest | 
+    inventoryStockLocationUpdate := *openapiclient.NewInventoryStockLocationUpdate(*openapiclient.NewInventoryStockLocationUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes())) // InventoryStockLocationUpdate | 
     inventoryStockLocationId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InventoryStockLocationsApi.PATCHInventoryStockLocationsInventoryStockLocationId(context.Background(), inventoryStockLocationId).PATCHInventoryStockLocationsInventoryStockLocationIdRequest(pATCHInventoryStockLocationsInventoryStockLocationIdRequest).Execute()
+    resp, r, err := apiClient.InventoryStockLocationsApi.PATCHInventoryStockLocationsInventoryStockLocationId(context.Background(), inventoryStockLocationId).InventoryStockLocationUpdate(inventoryStockLocationUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryStockLocationsApi.PATCHInventoryStockLocationsInventoryStockLocationId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -400,7 +400,7 @@ Other parameters are passed through a pointer to a apiPATCHInventoryStockLocatio
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHInventoryStockLocationsInventoryStockLocationIdRequest** | [**PATCHInventoryStockLocationsInventoryStockLocationIdRequest**](PATCHInventoryStockLocationsInventoryStockLocationIdRequest.md) |  | 
+ **inventoryStockLocationUpdate** | [**InventoryStockLocationUpdate**](InventoryStockLocationUpdate.md) |  | 
 
 
 ### Return type
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ## POSTInventoryStockLocations
 
-> POSTInventoryStockLocations201Response POSTInventoryStockLocations(ctx).POSTInventoryStockLocationsRequest(pOSTInventoryStockLocationsRequest).Execute()
+> POSTInventoryStockLocations201Response POSTInventoryStockLocations(ctx).InventoryStockLocationCreate(inventoryStockLocationCreate).Execute()
 
 Create an inventory stock location
 
@@ -438,15 +438,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTInventoryStockLocationsRequest := *openapiclient.NewPOSTInventoryStockLocationsRequest(*openapiclient.NewPOSTInventoryStockLocationsRequestData(interface{}(123), *openapiclient.NewPOSTInventoryStockLocationsRequestDataAttributes(interface{}(1)))) // POSTInventoryStockLocationsRequest | 
+    inventoryStockLocationCreate := *openapiclient.NewInventoryStockLocationCreate(*openapiclient.NewInventoryStockLocationCreateData(interface{}(123), *openapiclient.NewPOSTInventoryStockLocations201ResponseDataAttributes(interface{}(1)))) // InventoryStockLocationCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InventoryStockLocationsApi.POSTInventoryStockLocations(context.Background()).POSTInventoryStockLocationsRequest(pOSTInventoryStockLocationsRequest).Execute()
+    resp, r, err := apiClient.InventoryStockLocationsApi.POSTInventoryStockLocations(context.Background()).InventoryStockLocationCreate(inventoryStockLocationCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryStockLocationsApi.POSTInventoryStockLocations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -467,7 +467,7 @@ Other parameters are passed through a pointer to a apiPOSTInventoryStockLocation
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTInventoryStockLocationsRequest** | [**POSTInventoryStockLocationsRequest**](POSTInventoryStockLocationsRequest.md) |  | 
+ **inventoryStockLocationCreate** | [**InventoryStockLocationCreate**](InventoryStockLocationCreate.md) |  | 
 
 ### Return type
 

@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETEventCallbacksEventCallbackId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETEventCallbacksEventCallbackId200Response{}
-
 // GETEventCallbacksEventCallbackId200Response struct for GETEventCallbacksEventCallbackId200Response
 type GETEventCallbacksEventCallbackId200Response struct {
-	Data *GETEventCallbacksEventCallbackId200ResponseData `json:"data,omitempty"`
+	Data *GETEventCallbacks200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETEventCallbacksEventCallbackId200Response instantiates a new GETEventCallbacksEventCallbackId200Response object
@@ -41,9 +38,9 @@ func NewGETEventCallbacksEventCallbackId200ResponseWithDefaults() *GETEventCallb
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETEventCallbacksEventCallbackId200Response) GetData() GETEventCallbacksEventCallbackId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETEventCallbacksEventCallbackId200ResponseData
+func (o *GETEventCallbacksEventCallbackId200Response) GetData() GETEventCallbacks200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETEventCallbacks200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETEventCallbacksEventCallbackId200Response) GetData() GETEventCallback
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETEventCallbacksEventCallbackId200Response) GetDataOk() (*GETEventCallbacksEventCallbackId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETEventCallbacksEventCallbackId200Response) GetDataOk() (*GETEventCallbacks200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETEventCallbacksEventCallbackId200Response) GetDataOk() (*GETEventCall
 
 // HasData returns a boolean if a field has been set.
 func (o *GETEventCallbacksEventCallbackId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETEventCallbacksEventCallbackId200ResponseData and assigns it to the Data field.
-func (o *GETEventCallbacksEventCallbackId200Response) SetData(v GETEventCallbacksEventCallbackId200ResponseData) {
+// SetData gets a reference to the given GETEventCallbacks200ResponseDataInner and assigns it to the Data field.
+func (o *GETEventCallbacksEventCallbackId200Response) SetData(v GETEventCallbacks200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETEventCallbacksEventCallbackId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETEventCallbacksEventCallbackId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETEventCallbacksEventCallbackId200Response struct {

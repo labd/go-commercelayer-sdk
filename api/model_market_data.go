@@ -15,22 +15,19 @@ import (
 	"encoding/json"
 )
 
-// checks if the MarketData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &MarketData{}
-
 // MarketData struct for MarketData
 type MarketData struct {
 	// The resource's type
-	Type          interface{}                                 `json:"type"`
-	Attributes    GETMarketsMarketId200ResponseDataAttributes `json:"attributes"`
-	Relationships *MarketDataRelationships                    `json:"relationships,omitempty"`
+	Type          interface{}                              `json:"type"`
+	Attributes    GETMarkets200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *MarketDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewMarketData instantiates a new MarketData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMarketData(type_ interface{}, attributes GETMarketsMarketId200ResponseDataAttributes) *MarketData {
+func NewMarketData(type_ interface{}, attributes GETMarkets200ResponseDataInnerAttributes) *MarketData {
 	this := MarketData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -60,7 +57,7 @@ func (o *MarketData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MarketData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -72,9 +69,9 @@ func (o *MarketData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *MarketData) GetAttributes() GETMarketsMarketId200ResponseDataAttributes {
+func (o *MarketData) GetAttributes() GETMarkets200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret GETMarketsMarketId200ResponseDataAttributes
+		var ret GETMarkets200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -83,7 +80,7 @@ func (o *MarketData) GetAttributes() GETMarketsMarketId200ResponseDataAttributes
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *MarketData) GetAttributesOk() (*GETMarketsMarketId200ResponseDataAttributes, bool) {
+func (o *MarketData) GetAttributesOk() (*GETMarkets200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,13 +88,13 @@ func (o *MarketData) GetAttributesOk() (*GETMarketsMarketId200ResponseDataAttrib
 }
 
 // SetAttributes sets field value
-func (o *MarketData) SetAttributes(v GETMarketsMarketId200ResponseDataAttributes) {
+func (o *MarketData) SetAttributes(v GETMarkets200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *MarketData) GetRelationships() MarketDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		var ret MarketDataRelationships
 		return ret
 	}
@@ -107,7 +104,7 @@ func (o *MarketData) GetRelationships() MarketDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MarketData) GetRelationshipsOk() (*MarketDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -115,7 +112,7 @@ func (o *MarketData) GetRelationshipsOk() (*MarketDataRelationships, bool) {
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *MarketData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
@@ -128,23 +125,17 @@ func (o *MarketData) SetRelationships(v MarketDataRelationships) {
 }
 
 func (o MarketData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o MarketData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	toSerialize["attributes"] = o.Attributes
-	if !IsNil(o.Relationships) {
+	if true {
+		toSerialize["attributes"] = o.Attributes
+	}
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableMarketData struct {

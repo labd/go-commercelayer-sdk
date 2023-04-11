@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**POSTCouponRecipientsRequestDataRelationshipsCustomerData**](POSTCouponRecipientsRequestDataRelationshipsCustomerData.md) |  | [optional] 
+**Data** | Pointer to [**CouponRecipientDataRelationshipsCustomerData**](CouponRecipientDataRelationshipsCustomerData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *CouponRecipientDataRelationshipsCustomer) GetData() POSTCouponRecipientsRequestDataRelationshipsCustomerData`
+`func (o *CouponRecipientDataRelationshipsCustomer) GetData() CouponRecipientDataRelationshipsCustomerData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *CouponRecipientDataRelationshipsCustomer) GetDataOk() (*POSTCouponRecipientsRequestDataRelationshipsCustomerData, bool)`
+`func (o *CouponRecipientDataRelationshipsCustomer) GetDataOk() (*CouponRecipientDataRelationshipsCustomerData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *CouponRecipientDataRelationshipsCustomer) SetData(v POSTCouponRecipientsRequestDataRelationshipsCustomerData)`
+`func (o *CouponRecipientDataRelationshipsCustomer) SetData(v CouponRecipientDataRelationshipsCustomerData)`
 
 SetData sets Data field to given value.
 

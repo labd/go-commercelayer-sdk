@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETAvalaraAccountsAvalaraAccountId200ResponseDataAttributes**](GETAvalaraAccountsAvalaraAccountId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**GETAvalaraAccounts200ResponseDataInnerAttributes**](GETAvalaraAccounts200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**AvalaraAccountDataRelationships**](AvalaraAccountDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewAvalaraAccountData
 
-`func NewAvalaraAccountData(type_ interface{}, attributes GETAvalaraAccountsAvalaraAccountId200ResponseDataAttributes, ) *AvalaraAccountData`
+`func NewAvalaraAccountData(type_ interface{}, attributes GETAvalaraAccounts200ResponseDataInnerAttributes, ) *AvalaraAccountData`
 
 NewAvalaraAccountData instantiates a new AvalaraAccountData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *AvalaraAccountData) GetAttributes() GETAvalaraAccountsAvalaraAccountId200ResponseDataAttributes`
+`func (o *AvalaraAccountData) GetAttributes() GETAvalaraAccounts200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *AvalaraAccountData) GetAttributesOk() (*GETAvalaraAccountsAvalaraAccountId200ResponseDataAttributes, bool)`
+`func (o *AvalaraAccountData) GetAttributesOk() (*GETAvalaraAccounts200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *AvalaraAccountData) SetAttributes(v GETAvalaraAccountsAvalaraAccountId200ResponseDataAttributes)`
+`func (o *AvalaraAccountData) SetAttributes(v GETAvalaraAccounts200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

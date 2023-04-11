@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
-**Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
-**Attributes** | Pointer to [**PATCHSkusSkuIdRequestDataAttributes**](PATCHSkusSkuIdRequestDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTSkus201ResponseDataRelationships**](POSTSkus201ResponseDataRelationships.md) |  | [optional] 
+**Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
+**Attributes** | Pointer to [**PATCHSkusSkuId200ResponseDataAttributes**](PATCHSkusSkuId200ResponseDataAttributes.md) |  | [optional] 
+**Relationships** | Pointer to [**GETSkus200ResponseDataInnerRelationships**](GETSkus200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -101,20 +101,20 @@ HasType returns a boolean if a field has been set.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetLinks
 
-`func (o *PATCHSkusSkuId200ResponseData) GetLinks() POSTAddresses201ResponseDataLinks`
+`func (o *PATCHSkusSkuId200ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *PATCHSkusSkuId200ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool)`
+`func (o *PATCHSkusSkuId200ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *PATCHSkusSkuId200ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks)`
+`func (o *PATCHSkusSkuId200ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks)`
 
 SetLinks sets Links field to given value.
 
@@ -126,20 +126,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *PATCHSkusSkuId200ResponseData) GetAttributes() PATCHSkusSkuIdRequestDataAttributes`
+`func (o *PATCHSkusSkuId200ResponseData) GetAttributes() PATCHSkusSkuId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PATCHSkusSkuId200ResponseData) GetAttributesOk() (*PATCHSkusSkuIdRequestDataAttributes, bool)`
+`func (o *PATCHSkusSkuId200ResponseData) GetAttributesOk() (*PATCHSkusSkuId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PATCHSkusSkuId200ResponseData) SetAttributes(v PATCHSkusSkuIdRequestDataAttributes)`
+`func (o *PATCHSkusSkuId200ResponseData) SetAttributes(v PATCHSkusSkuId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
@@ -151,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHSkusSkuId200ResponseData) GetRelationships() POSTSkus201ResponseDataRelationships`
+`func (o *PATCHSkusSkuId200ResponseData) GetRelationships() GETSkus200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHSkusSkuId200ResponseData) GetRelationshipsOk() (*POSTSkus201ResponseDataRelationships, bool)`
+`func (o *PATCHSkusSkuId200ResponseData) GetRelationshipsOk() (*GETSkus200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHSkusSkuId200ResponseData) SetRelationships(v POSTSkus201ResponseDataRelationships)`
+`func (o *PATCHSkusSkuId200ResponseData) SetRelationships(v GETSkus200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

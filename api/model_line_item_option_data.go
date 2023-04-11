@@ -15,22 +15,19 @@ import (
 	"encoding/json"
 )
 
-// checks if the LineItemOptionData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &LineItemOptionData{}
-
 // LineItemOptionData struct for LineItemOptionData
 type LineItemOptionData struct {
 	// The resource's type
-	Type          interface{}                                                 `json:"type"`
-	Attributes    GETLineItemOptionsLineItemOptionId200ResponseDataAttributes `json:"attributes"`
-	Relationships *LineItemOptionDataRelationships                            `json:"relationships,omitempty"`
+	Type          interface{}                                      `json:"type"`
+	Attributes    GETLineItemOptions200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *LineItemOptionDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewLineItemOptionData instantiates a new LineItemOptionData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLineItemOptionData(type_ interface{}, attributes GETLineItemOptionsLineItemOptionId200ResponseDataAttributes) *LineItemOptionData {
+func NewLineItemOptionData(type_ interface{}, attributes GETLineItemOptions200ResponseDataInnerAttributes) *LineItemOptionData {
 	this := LineItemOptionData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -60,7 +57,7 @@ func (o *LineItemOptionData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LineItemOptionData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -72,9 +69,9 @@ func (o *LineItemOptionData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *LineItemOptionData) GetAttributes() GETLineItemOptionsLineItemOptionId200ResponseDataAttributes {
+func (o *LineItemOptionData) GetAttributes() GETLineItemOptions200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret GETLineItemOptionsLineItemOptionId200ResponseDataAttributes
+		var ret GETLineItemOptions200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -83,7 +80,7 @@ func (o *LineItemOptionData) GetAttributes() GETLineItemOptionsLineItemOptionId2
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *LineItemOptionData) GetAttributesOk() (*GETLineItemOptionsLineItemOptionId200ResponseDataAttributes, bool) {
+func (o *LineItemOptionData) GetAttributesOk() (*GETLineItemOptions200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,13 +88,13 @@ func (o *LineItemOptionData) GetAttributesOk() (*GETLineItemOptionsLineItemOptio
 }
 
 // SetAttributes sets field value
-func (o *LineItemOptionData) SetAttributes(v GETLineItemOptionsLineItemOptionId200ResponseDataAttributes) {
+func (o *LineItemOptionData) SetAttributes(v GETLineItemOptions200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *LineItemOptionData) GetRelationships() LineItemOptionDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		var ret LineItemOptionDataRelationships
 		return ret
 	}
@@ -107,7 +104,7 @@ func (o *LineItemOptionData) GetRelationships() LineItemOptionDataRelationships 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LineItemOptionData) GetRelationshipsOk() (*LineItemOptionDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -115,7 +112,7 @@ func (o *LineItemOptionData) GetRelationshipsOk() (*LineItemOptionDataRelationsh
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *LineItemOptionData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
@@ -128,23 +125,17 @@ func (o *LineItemOptionData) SetRelationships(v LineItemOptionDataRelationships)
 }
 
 func (o LineItemOptionData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o LineItemOptionData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	toSerialize["attributes"] = o.Attributes
-	if !IsNil(o.Relationships) {
+	if true {
+		toSerialize["attributes"] = o.Attributes
+	}
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableLineItemOptionData struct {

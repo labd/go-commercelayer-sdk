@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *InventoryStockLocationsApiService) DELETEInventoryStockLocationsInvento
 	}
 
 	localVarPath := localBasePath + "/inventory_stock_locations/{inventoryStockLocationId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"inventoryStockLocationId"+"}", url.PathEscape(parameterValueToString(r.inventoryStockLocationId, "inventoryStockLocationId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inventoryStockLocationId"+"}", url.PathEscape(parameterToString(r.inventoryStockLocationId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *InventoryStockLocationsApiService) DELETEInventoryStockLocationsInvento
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -156,7 +156,7 @@ func (a *InventoryStockLocationsApiService) GETInventoryModelIdInventoryStockLoc
 	}
 
 	localVarPath := localBasePath + "/inventory_models/{inventoryModelId}/inventory_stock_locations"
-	localVarPath = strings.Replace(localVarPath, "{"+"inventoryModelId"+"}", url.PathEscape(parameterValueToString(r.inventoryModelId, "inventoryModelId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inventoryModelId"+"}", url.PathEscape(parameterToString(r.inventoryModelId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *InventoryStockLocationsApiService) GETInventoryModelIdInventoryStockLoc
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *InventoryStockLocationsApiService) GETInventoryStockLocationsExecute(r 
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -351,7 +351,7 @@ func (a *InventoryStockLocationsApiService) GETInventoryStockLocationsInventoryS
 	}
 
 	localVarPath := localBasePath + "/inventory_stock_locations/{inventoryStockLocationId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"inventoryStockLocationId"+"}", url.PathEscape(parameterValueToString(r.inventoryStockLocationId, "inventoryStockLocationId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inventoryStockLocationId"+"}", url.PathEscape(parameterToString(r.inventoryStockLocationId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *InventoryStockLocationsApiService) GETInventoryStockLocationsInventoryS
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -452,7 +452,7 @@ func (a *InventoryStockLocationsApiService) GETStockLocationIdInventoryStockLoca
 	}
 
 	localVarPath := localBasePath + "/stock_locations/{stockLocationId}/inventory_stock_locations"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterValueToString(r.stockLocationId, "stockLocationId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterToString(r.stockLocationId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -485,9 +485,9 @@ func (a *InventoryStockLocationsApiService) GETStockLocationIdInventoryStockLoca
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -504,14 +504,14 @@ func (a *InventoryStockLocationsApiService) GETStockLocationIdInventoryStockLoca
 }
 
 type InventoryStockLocationsApiPATCHInventoryStockLocationsInventoryStockLocationIdRequest struct {
-	ctx                                                         context.Context
-	ApiService                                                  *InventoryStockLocationsApiService
-	pATCHInventoryStockLocationsInventoryStockLocationIdRequest *PATCHInventoryStockLocationsInventoryStockLocationIdRequest
-	inventoryStockLocationId                                    interface{}
+	ctx                          context.Context
+	ApiService                   *InventoryStockLocationsApiService
+	inventoryStockLocationUpdate *InventoryStockLocationUpdate
+	inventoryStockLocationId     interface{}
 }
 
-func (r InventoryStockLocationsApiPATCHInventoryStockLocationsInventoryStockLocationIdRequest) PATCHInventoryStockLocationsInventoryStockLocationIdRequest(pATCHInventoryStockLocationsInventoryStockLocationIdRequest PATCHInventoryStockLocationsInventoryStockLocationIdRequest) InventoryStockLocationsApiPATCHInventoryStockLocationsInventoryStockLocationIdRequest {
-	r.pATCHInventoryStockLocationsInventoryStockLocationIdRequest = &pATCHInventoryStockLocationsInventoryStockLocationIdRequest
+func (r InventoryStockLocationsApiPATCHInventoryStockLocationsInventoryStockLocationIdRequest) InventoryStockLocationUpdate(inventoryStockLocationUpdate InventoryStockLocationUpdate) InventoryStockLocationsApiPATCHInventoryStockLocationsInventoryStockLocationIdRequest {
+	r.inventoryStockLocationUpdate = &inventoryStockLocationUpdate
 	return r
 }
 
@@ -553,13 +553,13 @@ func (a *InventoryStockLocationsApiService) PATCHInventoryStockLocationsInventor
 	}
 
 	localVarPath := localBasePath + "/inventory_stock_locations/{inventoryStockLocationId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"inventoryStockLocationId"+"}", url.PathEscape(parameterValueToString(r.inventoryStockLocationId, "inventoryStockLocationId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inventoryStockLocationId"+"}", url.PathEscape(parameterToString(r.inventoryStockLocationId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHInventoryStockLocationsInventoryStockLocationIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHInventoryStockLocationsInventoryStockLocationIdRequest is required and must be specified")
+	if r.inventoryStockLocationUpdate == nil {
+		return localVarReturnValue, nil, reportError("inventoryStockLocationUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -580,7 +580,7 @@ func (a *InventoryStockLocationsApiService) PATCHInventoryStockLocationsInventor
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHInventoryStockLocationsInventoryStockLocationIdRequest
+	localVarPostBody = r.inventoryStockLocationUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -591,9 +591,9 @@ func (a *InventoryStockLocationsApiService) PATCHInventoryStockLocationsInventor
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -619,13 +619,13 @@ func (a *InventoryStockLocationsApiService) PATCHInventoryStockLocationsInventor
 }
 
 type InventoryStockLocationsApiPOSTInventoryStockLocationsRequest struct {
-	ctx                                context.Context
-	ApiService                         *InventoryStockLocationsApiService
-	pOSTInventoryStockLocationsRequest *POSTInventoryStockLocationsRequest
+	ctx                          context.Context
+	ApiService                   *InventoryStockLocationsApiService
+	inventoryStockLocationCreate *InventoryStockLocationCreate
 }
 
-func (r InventoryStockLocationsApiPOSTInventoryStockLocationsRequest) POSTInventoryStockLocationsRequest(pOSTInventoryStockLocationsRequest POSTInventoryStockLocationsRequest) InventoryStockLocationsApiPOSTInventoryStockLocationsRequest {
-	r.pOSTInventoryStockLocationsRequest = &pOSTInventoryStockLocationsRequest
+func (r InventoryStockLocationsApiPOSTInventoryStockLocationsRequest) InventoryStockLocationCreate(inventoryStockLocationCreate InventoryStockLocationCreate) InventoryStockLocationsApiPOSTInventoryStockLocationsRequest {
+	r.inventoryStockLocationCreate = &inventoryStockLocationCreate
 	return r
 }
 
@@ -669,8 +669,8 @@ func (a *InventoryStockLocationsApiService) POSTInventoryStockLocationsExecute(r
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTInventoryStockLocationsRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTInventoryStockLocationsRequest is required and must be specified")
+	if r.inventoryStockLocationCreate == nil {
+		return localVarReturnValue, nil, reportError("inventoryStockLocationCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -691,7 +691,7 @@ func (a *InventoryStockLocationsApiService) POSTInventoryStockLocationsExecute(r
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTInventoryStockLocationsRequest
+	localVarPostBody = r.inventoryStockLocationCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -702,9 +702,9 @@ func (a *InventoryStockLocationsApiService) POSTInventoryStockLocationsExecute(r
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

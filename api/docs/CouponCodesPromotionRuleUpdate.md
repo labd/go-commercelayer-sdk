@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequestData**](PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequestData.md) |  | 
+**Data** | [**CouponCodesPromotionRuleUpdateData**](CouponCodesPromotionRuleUpdateData.md) |  | 
 
 ## Methods
 
 ### NewCouponCodesPromotionRuleUpdate
 
-`func NewCouponCodesPromotionRuleUpdate(data PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequestData, ) *CouponCodesPromotionRuleUpdate`
+`func NewCouponCodesPromotionRuleUpdate(data CouponCodesPromotionRuleUpdateData, ) *CouponCodesPromotionRuleUpdate`
 
 NewCouponCodesPromotionRuleUpdate instantiates a new CouponCodesPromotionRuleUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *CouponCodesPromotionRuleUpdate) GetData() PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequestData`
+`func (o *CouponCodesPromotionRuleUpdate) GetData() CouponCodesPromotionRuleUpdateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *CouponCodesPromotionRuleUpdate) GetDataOk() (*PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequestData, bool)`
+`func (o *CouponCodesPromotionRuleUpdate) GetDataOk() (*CouponCodesPromotionRuleUpdateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *CouponCodesPromotionRuleUpdate) SetData(v PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequestData)`
+`func (o *CouponCodesPromotionRuleUpdate) SetData(v CouponCodesPromotionRuleUpdateData)`
 
 SetData sets Data field to given value.
 

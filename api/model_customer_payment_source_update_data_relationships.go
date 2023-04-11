@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the CustomerPaymentSourceUpdateDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CustomerPaymentSourceUpdateDataRelationships{}
-
 // CustomerPaymentSourceUpdateDataRelationships struct for CustomerPaymentSourceUpdateDataRelationships
 type CustomerPaymentSourceUpdateDataRelationships struct {
-	Customer      *POSTCouponRecipientsRequestDataRelationshipsCustomer      `json:"customer,omitempty"`
+	Customer      *CouponRecipientCreateDataRelationshipsCustomer            `json:"customer,omitempty"`
 	PaymentSource *CustomerPaymentSourceCreateDataRelationshipsPaymentSource `json:"payment_source,omitempty"`
 }
 
@@ -42,9 +39,9 @@ func NewCustomerPaymentSourceUpdateDataRelationshipsWithDefaults() *CustomerPaym
 }
 
 // GetCustomer returns the Customer field value if set, zero value otherwise.
-func (o *CustomerPaymentSourceUpdateDataRelationships) GetCustomer() POSTCouponRecipientsRequestDataRelationshipsCustomer {
-	if o == nil || IsNil(o.Customer) {
-		var ret POSTCouponRecipientsRequestDataRelationshipsCustomer
+func (o *CustomerPaymentSourceUpdateDataRelationships) GetCustomer() CouponRecipientCreateDataRelationshipsCustomer {
+	if o == nil || o.Customer == nil {
+		var ret CouponRecipientCreateDataRelationshipsCustomer
 		return ret
 	}
 	return *o.Customer
@@ -52,8 +49,8 @@ func (o *CustomerPaymentSourceUpdateDataRelationships) GetCustomer() POSTCouponR
 
 // GetCustomerOk returns a tuple with the Customer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerPaymentSourceUpdateDataRelationships) GetCustomerOk() (*POSTCouponRecipientsRequestDataRelationshipsCustomer, bool) {
-	if o == nil || IsNil(o.Customer) {
+func (o *CustomerPaymentSourceUpdateDataRelationships) GetCustomerOk() (*CouponRecipientCreateDataRelationshipsCustomer, bool) {
+	if o == nil || o.Customer == nil {
 		return nil, false
 	}
 	return o.Customer, true
@@ -61,21 +58,21 @@ func (o *CustomerPaymentSourceUpdateDataRelationships) GetCustomerOk() (*POSTCou
 
 // HasCustomer returns a boolean if a field has been set.
 func (o *CustomerPaymentSourceUpdateDataRelationships) HasCustomer() bool {
-	if o != nil && !IsNil(o.Customer) {
+	if o != nil && o.Customer != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomer gets a reference to the given POSTCouponRecipientsRequestDataRelationshipsCustomer and assigns it to the Customer field.
-func (o *CustomerPaymentSourceUpdateDataRelationships) SetCustomer(v POSTCouponRecipientsRequestDataRelationshipsCustomer) {
+// SetCustomer gets a reference to the given CouponRecipientCreateDataRelationshipsCustomer and assigns it to the Customer field.
+func (o *CustomerPaymentSourceUpdateDataRelationships) SetCustomer(v CouponRecipientCreateDataRelationshipsCustomer) {
 	o.Customer = &v
 }
 
 // GetPaymentSource returns the PaymentSource field value if set, zero value otherwise.
 func (o *CustomerPaymentSourceUpdateDataRelationships) GetPaymentSource() CustomerPaymentSourceCreateDataRelationshipsPaymentSource {
-	if o == nil || IsNil(o.PaymentSource) {
+	if o == nil || o.PaymentSource == nil {
 		var ret CustomerPaymentSourceCreateDataRelationshipsPaymentSource
 		return ret
 	}
@@ -85,7 +82,7 @@ func (o *CustomerPaymentSourceUpdateDataRelationships) GetPaymentSource() Custom
 // GetPaymentSourceOk returns a tuple with the PaymentSource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerPaymentSourceUpdateDataRelationships) GetPaymentSourceOk() (*CustomerPaymentSourceCreateDataRelationshipsPaymentSource, bool) {
-	if o == nil || IsNil(o.PaymentSource) {
+	if o == nil || o.PaymentSource == nil {
 		return nil, false
 	}
 	return o.PaymentSource, true
@@ -93,7 +90,7 @@ func (o *CustomerPaymentSourceUpdateDataRelationships) GetPaymentSourceOk() (*Cu
 
 // HasPaymentSource returns a boolean if a field has been set.
 func (o *CustomerPaymentSourceUpdateDataRelationships) HasPaymentSource() bool {
-	if o != nil && !IsNil(o.PaymentSource) {
+	if o != nil && o.PaymentSource != nil {
 		return true
 	}
 
@@ -106,22 +103,14 @@ func (o *CustomerPaymentSourceUpdateDataRelationships) SetPaymentSource(v Custom
 }
 
 func (o CustomerPaymentSourceUpdateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o CustomerPaymentSourceUpdateDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Customer) {
+	if o.Customer != nil {
 		toSerialize["customer"] = o.Customer
 	}
-	if !IsNil(o.PaymentSource) {
+	if o.PaymentSource != nil {
 		toSerialize["payment_source"] = o.PaymentSource
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableCustomerPaymentSourceUpdateDataRelationships struct {

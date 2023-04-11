@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the CaptureDataRelationshipsRefunds type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CaptureDataRelationshipsRefunds{}
-
 // CaptureDataRelationshipsRefunds struct for CaptureDataRelationshipsRefunds
 type CaptureDataRelationshipsRefunds struct {
 	Data *CaptureDataRelationshipsRefundsData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewCaptureDataRelationshipsRefundsWithDefaults() *CaptureDataRelationshipsR
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *CaptureDataRelationshipsRefunds) GetData() CaptureDataRelationshipsRefundsData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret CaptureDataRelationshipsRefundsData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *CaptureDataRelationshipsRefunds) GetData() CaptureDataRelationshipsRefu
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CaptureDataRelationshipsRefunds) GetDataOk() (*CaptureDataRelationshipsRefundsData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *CaptureDataRelationshipsRefunds) GetDataOk() (*CaptureDataRelationships
 
 // HasData returns a boolean if a field has been set.
 func (o *CaptureDataRelationshipsRefunds) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *CaptureDataRelationshipsRefunds) SetData(v CaptureDataRelationshipsRefu
 }
 
 func (o CaptureDataRelationshipsRefunds) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o CaptureDataRelationshipsRefunds) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableCaptureDataRelationshipsRefunds struct {

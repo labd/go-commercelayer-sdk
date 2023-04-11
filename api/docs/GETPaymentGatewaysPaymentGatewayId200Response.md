@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETPaymentGatewaysPaymentGatewayId200ResponseData**](GETPaymentGatewaysPaymentGatewayId200ResponseData.md) |  | [optional] 
+**Data** | Pointer to [**GETPaymentGateways200ResponseDataInner**](GETPaymentGateways200ResponseDataInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETPaymentGatewaysPaymentGatewayId200Response) GetData() GETPaymentGatewaysPaymentGatewayId200ResponseData`
+`func (o *GETPaymentGatewaysPaymentGatewayId200Response) GetData() GETPaymentGateways200ResponseDataInner`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETPaymentGatewaysPaymentGatewayId200Response) GetDataOk() (*GETPaymentGatewaysPaymentGatewayId200ResponseData, bool)`
+`func (o *GETPaymentGatewaysPaymentGatewayId200Response) GetDataOk() (*GETPaymentGateways200ResponseDataInner, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETPaymentGatewaysPaymentGatewayId200Response) SetData(v GETPaymentGatewaysPaymentGatewayId200ResponseData)`
+`func (o *GETPaymentGatewaysPaymentGatewayId200Response) SetData(v GETPaymentGateways200ResponseDataInner)`
 
 SetData sets Data field to given value.
 

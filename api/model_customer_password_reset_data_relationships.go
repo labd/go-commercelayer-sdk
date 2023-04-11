@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the CustomerPasswordResetDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CustomerPasswordResetDataRelationships{}
-
 // CustomerPasswordResetDataRelationships struct for CustomerPasswordResetDataRelationships
 type CustomerPasswordResetDataRelationships struct {
 	Customer *CouponRecipientDataRelationshipsCustomer `json:"customer,omitempty"`
@@ -43,7 +40,7 @@ func NewCustomerPasswordResetDataRelationshipsWithDefaults() *CustomerPasswordRe
 
 // GetCustomer returns the Customer field value if set, zero value otherwise.
 func (o *CustomerPasswordResetDataRelationships) GetCustomer() CouponRecipientDataRelationshipsCustomer {
-	if o == nil || IsNil(o.Customer) {
+	if o == nil || o.Customer == nil {
 		var ret CouponRecipientDataRelationshipsCustomer
 		return ret
 	}
@@ -53,7 +50,7 @@ func (o *CustomerPasswordResetDataRelationships) GetCustomer() CouponRecipientDa
 // GetCustomerOk returns a tuple with the Customer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerPasswordResetDataRelationships) GetCustomerOk() (*CouponRecipientDataRelationshipsCustomer, bool) {
-	if o == nil || IsNil(o.Customer) {
+	if o == nil || o.Customer == nil {
 		return nil, false
 	}
 	return o.Customer, true
@@ -61,7 +58,7 @@ func (o *CustomerPasswordResetDataRelationships) GetCustomerOk() (*CouponRecipie
 
 // HasCustomer returns a boolean if a field has been set.
 func (o *CustomerPasswordResetDataRelationships) HasCustomer() bool {
-	if o != nil && !IsNil(o.Customer) {
+	if o != nil && o.Customer != nil {
 		return true
 	}
 
@@ -75,7 +72,7 @@ func (o *CustomerPasswordResetDataRelationships) SetCustomer(v CouponRecipientDa
 
 // GetEvents returns the Events field value if set, zero value otherwise.
 func (o *CustomerPasswordResetDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || o.Events == nil {
 		var ret AuthorizationDataRelationshipsEvents
 		return ret
 	}
@@ -85,7 +82,7 @@ func (o *CustomerPasswordResetDataRelationships) GetEvents() AuthorizationDataRe
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerPasswordResetDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || o.Events == nil {
 		return nil, false
 	}
 	return o.Events, true
@@ -93,7 +90,7 @@ func (o *CustomerPasswordResetDataRelationships) GetEventsOk() (*AuthorizationDa
 
 // HasEvents returns a boolean if a field has been set.
 func (o *CustomerPasswordResetDataRelationships) HasEvents() bool {
-	if o != nil && !IsNil(o.Events) {
+	if o != nil && o.Events != nil {
 		return true
 	}
 
@@ -106,22 +103,14 @@ func (o *CustomerPasswordResetDataRelationships) SetEvents(v AuthorizationDataRe
 }
 
 func (o CustomerPasswordResetDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o CustomerPasswordResetDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Customer) {
+	if o.Customer != nil {
 		toSerialize["customer"] = o.Customer
 	}
-	if !IsNil(o.Events) {
+	if o.Events != nil {
 		toSerialize["events"] = o.Events
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableCustomerPasswordResetDataRelationships struct {

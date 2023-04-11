@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the AttachmentCreateDataRelationshipsAttachable type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AttachmentCreateDataRelationshipsAttachable{}
-
 // AttachmentCreateDataRelationshipsAttachable struct for AttachmentCreateDataRelationshipsAttachable
 type AttachmentCreateDataRelationshipsAttachable struct {
-	Data POSTAttachmentsRequestDataRelationshipsAttachableData `json:"data"`
+	Data AttachmentDataRelationshipsAttachableData `json:"data"`
 }
 
 // NewAttachmentCreateDataRelationshipsAttachable instantiates a new AttachmentCreateDataRelationshipsAttachable object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAttachmentCreateDataRelationshipsAttachable(data POSTAttachmentsRequestDataRelationshipsAttachableData) *AttachmentCreateDataRelationshipsAttachable {
+func NewAttachmentCreateDataRelationshipsAttachable(data AttachmentDataRelationshipsAttachableData) *AttachmentCreateDataRelationshipsAttachable {
 	this := AttachmentCreateDataRelationshipsAttachable{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewAttachmentCreateDataRelationshipsAttachableWithDefaults() *AttachmentCre
 }
 
 // GetData returns the Data field value
-func (o *AttachmentCreateDataRelationshipsAttachable) GetData() POSTAttachmentsRequestDataRelationshipsAttachableData {
+func (o *AttachmentCreateDataRelationshipsAttachable) GetData() AttachmentDataRelationshipsAttachableData {
 	if o == nil {
-		var ret POSTAttachmentsRequestDataRelationshipsAttachableData
+		var ret AttachmentDataRelationshipsAttachableData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *AttachmentCreateDataRelationshipsAttachable) GetData() POSTAttachmentsR
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *AttachmentCreateDataRelationshipsAttachable) GetDataOk() (*POSTAttachmentsRequestDataRelationshipsAttachableData, bool) {
+func (o *AttachmentCreateDataRelationshipsAttachable) GetDataOk() (*AttachmentDataRelationshipsAttachableData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *AttachmentCreateDataRelationshipsAttachable) GetDataOk() (*POSTAttachme
 }
 
 // SetData sets field value
-func (o *AttachmentCreateDataRelationshipsAttachable) SetData(v POSTAttachmentsRequestDataRelationshipsAttachableData) {
+func (o *AttachmentCreateDataRelationshipsAttachable) SetData(v AttachmentDataRelationshipsAttachableData) {
 	o.Data = v
 }
 
 func (o AttachmentCreateDataRelationshipsAttachable) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o AttachmentCreateDataRelationshipsAttachable) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableAttachmentCreateDataRelationshipsAttachable struct {

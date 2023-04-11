@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *ShippingZonesApiService) DELETEShippingZonesShippingZoneIdExecute(r Shi
 	}
 
 	localVarPath := localBasePath + "/shipping_zones/{shippingZoneId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingZoneId"+"}", url.PathEscape(parameterValueToString(r.shippingZoneId, "shippingZoneId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingZoneId"+"}", url.PathEscape(parameterToString(r.shippingZoneId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *ShippingZonesApiService) DELETEShippingZonesShippingZoneIdExecute(r Shi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -156,7 +156,7 @@ func (a *ShippingZonesApiService) GETShippingMethodIdShippingZoneExecute(r Shipp
 	}
 
 	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}/shipping_zone"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodId, "shippingMethodId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *ShippingZonesApiService) GETShippingMethodIdShippingZoneExecute(r Shipp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *ShippingZonesApiService) GETShippingZonesExecute(r ShippingZonesApiGETS
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -351,7 +351,7 @@ func (a *ShippingZonesApiService) GETShippingZonesShippingZoneIdExecute(r Shippi
 	}
 
 	localVarPath := localBasePath + "/shipping_zones/{shippingZoneId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingZoneId"+"}", url.PathEscape(parameterValueToString(r.shippingZoneId, "shippingZoneId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingZoneId"+"}", url.PathEscape(parameterToString(r.shippingZoneId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *ShippingZonesApiService) GETShippingZonesShippingZoneIdExecute(r Shippi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -412,14 +412,14 @@ func (a *ShippingZonesApiService) GETShippingZonesShippingZoneIdExecute(r Shippi
 }
 
 type ShippingZonesApiPATCHShippingZonesShippingZoneIdRequest struct {
-	ctx                                     context.Context
-	ApiService                              *ShippingZonesApiService
-	pATCHShippingZonesShippingZoneIdRequest *PATCHShippingZonesShippingZoneIdRequest
-	shippingZoneId                          interface{}
+	ctx                context.Context
+	ApiService         *ShippingZonesApiService
+	shippingZoneUpdate *ShippingZoneUpdate
+	shippingZoneId     interface{}
 }
 
-func (r ShippingZonesApiPATCHShippingZonesShippingZoneIdRequest) PATCHShippingZonesShippingZoneIdRequest(pATCHShippingZonesShippingZoneIdRequest PATCHShippingZonesShippingZoneIdRequest) ShippingZonesApiPATCHShippingZonesShippingZoneIdRequest {
-	r.pATCHShippingZonesShippingZoneIdRequest = &pATCHShippingZonesShippingZoneIdRequest
+func (r ShippingZonesApiPATCHShippingZonesShippingZoneIdRequest) ShippingZoneUpdate(shippingZoneUpdate ShippingZoneUpdate) ShippingZonesApiPATCHShippingZonesShippingZoneIdRequest {
+	r.shippingZoneUpdate = &shippingZoneUpdate
 	return r
 }
 
@@ -461,13 +461,13 @@ func (a *ShippingZonesApiService) PATCHShippingZonesShippingZoneIdExecute(r Ship
 	}
 
 	localVarPath := localBasePath + "/shipping_zones/{shippingZoneId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingZoneId"+"}", url.PathEscape(parameterValueToString(r.shippingZoneId, "shippingZoneId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingZoneId"+"}", url.PathEscape(parameterToString(r.shippingZoneId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHShippingZonesShippingZoneIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHShippingZonesShippingZoneIdRequest is required and must be specified")
+	if r.shippingZoneUpdate == nil {
+		return localVarReturnValue, nil, reportError("shippingZoneUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -488,7 +488,7 @@ func (a *ShippingZonesApiService) PATCHShippingZonesShippingZoneIdExecute(r Ship
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHShippingZonesShippingZoneIdRequest
+	localVarPostBody = r.shippingZoneUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -499,9 +499,9 @@ func (a *ShippingZonesApiService) PATCHShippingZonesShippingZoneIdExecute(r Ship
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -527,13 +527,13 @@ func (a *ShippingZonesApiService) PATCHShippingZonesShippingZoneIdExecute(r Ship
 }
 
 type ShippingZonesApiPOSTShippingZonesRequest struct {
-	ctx                      context.Context
-	ApiService               *ShippingZonesApiService
-	pOSTShippingZonesRequest *POSTShippingZonesRequest
+	ctx                context.Context
+	ApiService         *ShippingZonesApiService
+	shippingZoneCreate *ShippingZoneCreate
 }
 
-func (r ShippingZonesApiPOSTShippingZonesRequest) POSTShippingZonesRequest(pOSTShippingZonesRequest POSTShippingZonesRequest) ShippingZonesApiPOSTShippingZonesRequest {
-	r.pOSTShippingZonesRequest = &pOSTShippingZonesRequest
+func (r ShippingZonesApiPOSTShippingZonesRequest) ShippingZoneCreate(shippingZoneCreate ShippingZoneCreate) ShippingZonesApiPOSTShippingZonesRequest {
+	r.shippingZoneCreate = &shippingZoneCreate
 	return r
 }
 
@@ -577,8 +577,8 @@ func (a *ShippingZonesApiService) POSTShippingZonesExecute(r ShippingZonesApiPOS
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTShippingZonesRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTShippingZonesRequest is required and must be specified")
+	if r.shippingZoneCreate == nil {
+		return localVarReturnValue, nil, reportError("shippingZoneCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -599,7 +599,7 @@ func (a *ShippingZonesApiService) POSTShippingZonesExecute(r ShippingZonesApiPOS
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTShippingZonesRequest
+	localVarPostBody = r.shippingZoneCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -610,9 +610,9 @@ func (a *ShippingZonesApiService) POSTShippingZonesExecute(r ShippingZonesApiPOS
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

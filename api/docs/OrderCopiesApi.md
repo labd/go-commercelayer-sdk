@@ -30,7 +30,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -38,7 +38,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OrderCopiesApi.DELETEOrderCopiesOrderCopyId(context.Background(), orderCopyId).Execute()
+    resp, r, err := apiClient.OrderCopiesApi.DELETEOrderCopiesOrderCopyId(context.Background(), orderCopyId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderCopiesApi.DELETEOrderCopiesOrderCopyId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -98,7 +98,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -159,7 +159,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -229,7 +229,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -237,7 +237,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.OrderCopiesApi.GETOrderIdOrderCopies(context.Background(), orderId).Execute()
+    resp, r, err := apiClient.OrderCopiesApi.GETOrderIdOrderCopies(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderCopiesApi.GETOrderIdOrderCopies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHOrderCopiesOrderCopyId
 
-> PATCHOrderCopiesOrderCopyId200Response PATCHOrderCopiesOrderCopyId(ctx, orderCopyId).PATCHOrderCopiesOrderCopyIdRequest(pATCHOrderCopiesOrderCopyIdRequest).Execute()
+> PATCHOrderCopiesOrderCopyId200Response PATCHOrderCopiesOrderCopyId(ctx, orderCopyId).OrderCopyUpdate(orderCopyUpdate).Execute()
 
 Update an order copy
 
@@ -297,16 +297,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHOrderCopiesOrderCopyIdRequest := *openapiclient.NewPATCHOrderCopiesOrderCopyIdRequest(*openapiclient.NewPATCHOrderCopiesOrderCopyIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes())) // PATCHOrderCopiesOrderCopyIdRequest | 
+    orderCopyUpdate := *openapiclient.NewOrderCopyUpdate(*openapiclient.NewOrderCopyUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes())) // OrderCopyUpdate | 
     orderCopyId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrderCopiesApi.PATCHOrderCopiesOrderCopyId(context.Background(), orderCopyId).PATCHOrderCopiesOrderCopyIdRequest(pATCHOrderCopiesOrderCopyIdRequest).Execute()
+    resp, r, err := apiClient.OrderCopiesApi.PATCHOrderCopiesOrderCopyId(context.Background(), orderCopyId).OrderCopyUpdate(orderCopyUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderCopiesApi.PATCHOrderCopiesOrderCopyId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -331,7 +331,7 @@ Other parameters are passed through a pointer to a apiPATCHOrderCopiesOrderCopyI
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHOrderCopiesOrderCopyIdRequest** | [**PATCHOrderCopiesOrderCopyIdRequest**](PATCHOrderCopiesOrderCopyIdRequest.md) |  | 
+ **orderCopyUpdate** | [**OrderCopyUpdate**](OrderCopyUpdate.md) |  | 
 
 
 ### Return type
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTOrderCopies
 
-> POSTOrderCopies201Response POSTOrderCopies(ctx).POSTOrderCopiesRequest(pOSTOrderCopiesRequest).Execute()
+> POSTOrderCopies201Response POSTOrderCopies(ctx).OrderCopyCreate(orderCopyCreate).Execute()
 
 Create an order copy
 
@@ -369,15 +369,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTOrderCopiesRequest := *openapiclient.NewPOSTOrderCopiesRequest(*openapiclient.NewPOSTOrderCopiesRequestData(interface{}(123), *openapiclient.NewPOSTOrderCopiesRequestDataAttributes())) // POSTOrderCopiesRequest | 
+    orderCopyCreate := *openapiclient.NewOrderCopyCreate(*openapiclient.NewOrderCopyCreateData(interface{}(123), *openapiclient.NewPOSTOrderCopies201ResponseDataAttributes())) // OrderCopyCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrderCopiesApi.POSTOrderCopies(context.Background()).POSTOrderCopiesRequest(pOSTOrderCopiesRequest).Execute()
+    resp, r, err := apiClient.OrderCopiesApi.POSTOrderCopies(context.Background()).OrderCopyCreate(orderCopyCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderCopiesApi.POSTOrderCopies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +398,7 @@ Other parameters are passed through a pointer to a apiPOSTOrderCopiesRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTOrderCopiesRequest** | [**POSTOrderCopiesRequest**](POSTOrderCopiesRequest.md) |  | 
+ **orderCopyCreate** | [**OrderCopyCreate**](OrderCopyCreate.md) |  | 
 
 ### Return type
 

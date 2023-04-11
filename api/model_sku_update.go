@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the SkuUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &SkuUpdate{}
-
 // SkuUpdate struct for SkuUpdate
 type SkuUpdate struct {
-	Data PATCHSkusSkuIdRequestData `json:"data"`
+	Data SkuUpdateData `json:"data"`
 }
 
 // NewSkuUpdate instantiates a new SkuUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuUpdate(data PATCHSkusSkuIdRequestData) *SkuUpdate {
+func NewSkuUpdate(data SkuUpdateData) *SkuUpdate {
 	this := SkuUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewSkuUpdateWithDefaults() *SkuUpdate {
 }
 
 // GetData returns the Data field value
-func (o *SkuUpdate) GetData() PATCHSkusSkuIdRequestData {
+func (o *SkuUpdate) GetData() SkuUpdateData {
 	if o == nil {
-		var ret PATCHSkusSkuIdRequestData
+		var ret SkuUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *SkuUpdate) GetData() PATCHSkusSkuIdRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *SkuUpdate) GetDataOk() (*PATCHSkusSkuIdRequestData, bool) {
+func (o *SkuUpdate) GetDataOk() (*SkuUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *SkuUpdate) GetDataOk() (*PATCHSkusSkuIdRequestData, bool) {
 }
 
 // SetData sets field value
-func (o *SkuUpdate) SetData(v PATCHSkusSkuIdRequestData) {
+func (o *SkuUpdate) SetData(v SkuUpdateData) {
 	o.Data = v
 }
 
 func (o SkuUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o SkuUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableSkuUpdate struct {

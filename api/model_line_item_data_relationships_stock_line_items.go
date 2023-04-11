@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the LineItemDataRelationshipsStockLineItems type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &LineItemDataRelationshipsStockLineItems{}
-
 // LineItemDataRelationshipsStockLineItems struct for LineItemDataRelationshipsStockLineItems
 type LineItemDataRelationshipsStockLineItems struct {
-	Data *POSTParcelLineItemsRequestDataRelationshipsStockLineItemData `json:"data,omitempty"`
+	Data *LineItemDataRelationshipsStockLineItemsData `json:"data,omitempty"`
 }
 
 // NewLineItemDataRelationshipsStockLineItems instantiates a new LineItemDataRelationshipsStockLineItems object
@@ -41,9 +38,9 @@ func NewLineItemDataRelationshipsStockLineItemsWithDefaults() *LineItemDataRelat
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *LineItemDataRelationshipsStockLineItems) GetData() POSTParcelLineItemsRequestDataRelationshipsStockLineItemData {
-	if o == nil || IsNil(o.Data) {
-		var ret POSTParcelLineItemsRequestDataRelationshipsStockLineItemData
+func (o *LineItemDataRelationshipsStockLineItems) GetData() LineItemDataRelationshipsStockLineItemsData {
+	if o == nil || o.Data == nil {
+		var ret LineItemDataRelationshipsStockLineItemsData
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *LineItemDataRelationshipsStockLineItems) GetData() POSTParcelLineItemsR
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *LineItemDataRelationshipsStockLineItems) GetDataOk() (*POSTParcelLineItemsRequestDataRelationshipsStockLineItemData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *LineItemDataRelationshipsStockLineItems) GetDataOk() (*LineItemDataRelationshipsStockLineItemsData, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *LineItemDataRelationshipsStockLineItems) GetDataOk() (*POSTParcelLineIt
 
 // HasData returns a boolean if a field has been set.
 func (o *LineItemDataRelationshipsStockLineItems) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given POSTParcelLineItemsRequestDataRelationshipsStockLineItemData and assigns it to the Data field.
-func (o *LineItemDataRelationshipsStockLineItems) SetData(v POSTParcelLineItemsRequestDataRelationshipsStockLineItemData) {
+// SetData gets a reference to the given LineItemDataRelationshipsStockLineItemsData and assigns it to the Data field.
+func (o *LineItemDataRelationshipsStockLineItems) SetData(v LineItemDataRelationshipsStockLineItemsData) {
 	o.Data = &v
 }
 
 func (o LineItemDataRelationshipsStockLineItems) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o LineItemDataRelationshipsStockLineItems) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableLineItemDataRelationshipsStockLineItems struct {

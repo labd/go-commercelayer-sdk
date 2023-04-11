@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the POSTWireTransfers201Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &POSTWireTransfers201Response{}
-
 // POSTWireTransfers201Response struct for POSTWireTransfers201Response
 type POSTWireTransfers201Response struct {
 	Data *POSTWireTransfers201ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPOSTWireTransfers201ResponseWithDefaults() *POSTWireTransfers201Response
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTWireTransfers201Response) GetData() POSTWireTransfers201ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret POSTWireTransfers201ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *POSTWireTransfers201Response) GetData() POSTWireTransfers201ResponseDat
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTWireTransfers201Response) GetDataOk() (*POSTWireTransfers201ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *POSTWireTransfers201Response) GetDataOk() (*POSTWireTransfers201Respons
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTWireTransfers201Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *POSTWireTransfers201Response) SetData(v POSTWireTransfers201ResponseDat
 }
 
 func (o POSTWireTransfers201Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o POSTWireTransfers201Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePOSTWireTransfers201Response struct {

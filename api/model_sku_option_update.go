@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the SkuOptionUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &SkuOptionUpdate{}
-
 // SkuOptionUpdate struct for SkuOptionUpdate
 type SkuOptionUpdate struct {
-	Data PATCHSkuOptionsSkuOptionIdRequestData `json:"data"`
+	Data SkuOptionUpdateData `json:"data"`
 }
 
 // NewSkuOptionUpdate instantiates a new SkuOptionUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuOptionUpdate(data PATCHSkuOptionsSkuOptionIdRequestData) *SkuOptionUpdate {
+func NewSkuOptionUpdate(data SkuOptionUpdateData) *SkuOptionUpdate {
 	this := SkuOptionUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewSkuOptionUpdateWithDefaults() *SkuOptionUpdate {
 }
 
 // GetData returns the Data field value
-func (o *SkuOptionUpdate) GetData() PATCHSkuOptionsSkuOptionIdRequestData {
+func (o *SkuOptionUpdate) GetData() SkuOptionUpdateData {
 	if o == nil {
-		var ret PATCHSkuOptionsSkuOptionIdRequestData
+		var ret SkuOptionUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *SkuOptionUpdate) GetData() PATCHSkuOptionsSkuOptionIdRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *SkuOptionUpdate) GetDataOk() (*PATCHSkuOptionsSkuOptionIdRequestData, bool) {
+func (o *SkuOptionUpdate) GetDataOk() (*SkuOptionUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *SkuOptionUpdate) GetDataOk() (*PATCHSkuOptionsSkuOptionIdRequestData, b
 }
 
 // SetData sets field value
-func (o *SkuOptionUpdate) SetData(v PATCHSkuOptionsSkuOptionIdRequestData) {
+func (o *SkuOptionUpdate) SetData(v SkuOptionUpdateData) {
 	o.Data = v
 }
 
 func (o SkuOptionUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o SkuOptionUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableSkuOptionUpdate struct {

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**POSTSatispayGatewaysRequestDataRelationshipsSatispayPaymentsData**](POSTSatispayGatewaysRequestDataRelationshipsSatispayPaymentsData.md) |  | [optional] 
+**Data** | Pointer to [**SatispayGatewayDataRelationshipsSatispayPaymentsData**](SatispayGatewayDataRelationshipsSatispayPaymentsData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *SatispayGatewayDataRelationshipsSatispayPayments) GetData() POSTSatispayGatewaysRequestDataRelationshipsSatispayPaymentsData`
+`func (o *SatispayGatewayDataRelationshipsSatispayPayments) GetData() SatispayGatewayDataRelationshipsSatispayPaymentsData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *SatispayGatewayDataRelationshipsSatispayPayments) GetDataOk() (*POSTSatispayGatewaysRequestDataRelationshipsSatispayPaymentsData, bool)`
+`func (o *SatispayGatewayDataRelationshipsSatispayPayments) GetDataOk() (*SatispayGatewayDataRelationshipsSatispayPaymentsData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *SatispayGatewayDataRelationshipsSatispayPayments) SetData(v POSTSatispayGatewaysRequestDataRelationshipsSatispayPaymentsData)`
+`func (o *SatispayGatewayDataRelationshipsSatispayPayments) SetData(v SatispayGatewayDataRelationshipsSatispayPaymentsData)`
 
 SetData sets Data field to given value.
 

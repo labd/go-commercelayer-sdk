@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the PriceFrequencyTierCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PriceFrequencyTierCreate{}
-
 // PriceFrequencyTierCreate struct for PriceFrequencyTierCreate
 type PriceFrequencyTierCreate struct {
-	Data POSTPriceFrequencyTiersRequestData `json:"data"`
+	Data PriceFrequencyTierCreateData `json:"data"`
 }
 
 // NewPriceFrequencyTierCreate instantiates a new PriceFrequencyTierCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPriceFrequencyTierCreate(data POSTPriceFrequencyTiersRequestData) *PriceFrequencyTierCreate {
+func NewPriceFrequencyTierCreate(data PriceFrequencyTierCreateData) *PriceFrequencyTierCreate {
 	this := PriceFrequencyTierCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewPriceFrequencyTierCreateWithDefaults() *PriceFrequencyTierCreate {
 }
 
 // GetData returns the Data field value
-func (o *PriceFrequencyTierCreate) GetData() POSTPriceFrequencyTiersRequestData {
+func (o *PriceFrequencyTierCreate) GetData() PriceFrequencyTierCreateData {
 	if o == nil {
-		var ret POSTPriceFrequencyTiersRequestData
+		var ret PriceFrequencyTierCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *PriceFrequencyTierCreate) GetData() POSTPriceFrequencyTiersRequestData 
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *PriceFrequencyTierCreate) GetDataOk() (*POSTPriceFrequencyTiersRequestData, bool) {
+func (o *PriceFrequencyTierCreate) GetDataOk() (*PriceFrequencyTierCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *PriceFrequencyTierCreate) GetDataOk() (*POSTPriceFrequencyTiersRequestD
 }
 
 // SetData sets field value
-func (o *PriceFrequencyTierCreate) SetData(v POSTPriceFrequencyTiersRequestData) {
+func (o *PriceFrequencyTierCreate) SetData(v PriceFrequencyTierCreateData) {
 	o.Data = v
 }
 
 func (o PriceFrequencyTierCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o PriceFrequencyTierCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullablePriceFrequencyTierCreate struct {

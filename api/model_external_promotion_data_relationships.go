@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the ExternalPromotionDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ExternalPromotionDataRelationships{}
-
 // ExternalPromotionDataRelationships struct for ExternalPromotionDataRelationships
 type ExternalPromotionDataRelationships struct {
 	Market                   *AvalaraAccountDataRelationshipsMarkets                     `json:"market,omitempty"`
@@ -48,7 +45,7 @@ func NewExternalPromotionDataRelationshipsWithDefaults() *ExternalPromotionDataR
 
 // GetMarket returns the Market field value if set, zero value otherwise.
 func (o *ExternalPromotionDataRelationships) GetMarket() AvalaraAccountDataRelationshipsMarkets {
-	if o == nil || IsNil(o.Market) {
+	if o == nil || o.Market == nil {
 		var ret AvalaraAccountDataRelationshipsMarkets
 		return ret
 	}
@@ -58,7 +55,7 @@ func (o *ExternalPromotionDataRelationships) GetMarket() AvalaraAccountDataRelat
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalPromotionDataRelationships) GetMarketOk() (*AvalaraAccountDataRelationshipsMarkets, bool) {
-	if o == nil || IsNil(o.Market) {
+	if o == nil || o.Market == nil {
 		return nil, false
 	}
 	return o.Market, true
@@ -66,7 +63,7 @@ func (o *ExternalPromotionDataRelationships) GetMarketOk() (*AvalaraAccountDataR
 
 // HasMarket returns a boolean if a field has been set.
 func (o *ExternalPromotionDataRelationships) HasMarket() bool {
-	if o != nil && !IsNil(o.Market) {
+	if o != nil && o.Market != nil {
 		return true
 	}
 
@@ -80,7 +77,7 @@ func (o *ExternalPromotionDataRelationships) SetMarket(v AvalaraAccountDataRelat
 
 // GetPromotionRules returns the PromotionRules field value if set, zero value otherwise.
 func (o *ExternalPromotionDataRelationships) GetPromotionRules() ExternalPromotionDataRelationshipsPromotionRules {
-	if o == nil || IsNil(o.PromotionRules) {
+	if o == nil || o.PromotionRules == nil {
 		var ret ExternalPromotionDataRelationshipsPromotionRules
 		return ret
 	}
@@ -90,7 +87,7 @@ func (o *ExternalPromotionDataRelationships) GetPromotionRules() ExternalPromoti
 // GetPromotionRulesOk returns a tuple with the PromotionRules field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalPromotionDataRelationships) GetPromotionRulesOk() (*ExternalPromotionDataRelationshipsPromotionRules, bool) {
-	if o == nil || IsNil(o.PromotionRules) {
+	if o == nil || o.PromotionRules == nil {
 		return nil, false
 	}
 	return o.PromotionRules, true
@@ -98,7 +95,7 @@ func (o *ExternalPromotionDataRelationships) GetPromotionRulesOk() (*ExternalPro
 
 // HasPromotionRules returns a boolean if a field has been set.
 func (o *ExternalPromotionDataRelationships) HasPromotionRules() bool {
-	if o != nil && !IsNil(o.PromotionRules) {
+	if o != nil && o.PromotionRules != nil {
 		return true
 	}
 
@@ -112,7 +109,7 @@ func (o *ExternalPromotionDataRelationships) SetPromotionRules(v ExternalPromoti
 
 // GetOrderAmountPromotionRule returns the OrderAmountPromotionRule field value if set, zero value otherwise.
 func (o *ExternalPromotionDataRelationships) GetOrderAmountPromotionRule() ExternalPromotionDataRelationshipsOrderAmountPromotionRule {
-	if o == nil || IsNil(o.OrderAmountPromotionRule) {
+	if o == nil || o.OrderAmountPromotionRule == nil {
 		var ret ExternalPromotionDataRelationshipsOrderAmountPromotionRule
 		return ret
 	}
@@ -122,7 +119,7 @@ func (o *ExternalPromotionDataRelationships) GetOrderAmountPromotionRule() Exter
 // GetOrderAmountPromotionRuleOk returns a tuple with the OrderAmountPromotionRule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalPromotionDataRelationships) GetOrderAmountPromotionRuleOk() (*ExternalPromotionDataRelationshipsOrderAmountPromotionRule, bool) {
-	if o == nil || IsNil(o.OrderAmountPromotionRule) {
+	if o == nil || o.OrderAmountPromotionRule == nil {
 		return nil, false
 	}
 	return o.OrderAmountPromotionRule, true
@@ -130,7 +127,7 @@ func (o *ExternalPromotionDataRelationships) GetOrderAmountPromotionRuleOk() (*E
 
 // HasOrderAmountPromotionRule returns a boolean if a field has been set.
 func (o *ExternalPromotionDataRelationships) HasOrderAmountPromotionRule() bool {
-	if o != nil && !IsNil(o.OrderAmountPromotionRule) {
+	if o != nil && o.OrderAmountPromotionRule != nil {
 		return true
 	}
 
@@ -144,7 +141,7 @@ func (o *ExternalPromotionDataRelationships) SetOrderAmountPromotionRule(v Exter
 
 // GetSkuListPromotionRule returns the SkuListPromotionRule field value if set, zero value otherwise.
 func (o *ExternalPromotionDataRelationships) GetSkuListPromotionRule() ExternalPromotionDataRelationshipsSkuListPromotionRule {
-	if o == nil || IsNil(o.SkuListPromotionRule) {
+	if o == nil || o.SkuListPromotionRule == nil {
 		var ret ExternalPromotionDataRelationshipsSkuListPromotionRule
 		return ret
 	}
@@ -154,7 +151,7 @@ func (o *ExternalPromotionDataRelationships) GetSkuListPromotionRule() ExternalP
 // GetSkuListPromotionRuleOk returns a tuple with the SkuListPromotionRule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalPromotionDataRelationships) GetSkuListPromotionRuleOk() (*ExternalPromotionDataRelationshipsSkuListPromotionRule, bool) {
-	if o == nil || IsNil(o.SkuListPromotionRule) {
+	if o == nil || o.SkuListPromotionRule == nil {
 		return nil, false
 	}
 	return o.SkuListPromotionRule, true
@@ -162,7 +159,7 @@ func (o *ExternalPromotionDataRelationships) GetSkuListPromotionRuleOk() (*Exter
 
 // HasSkuListPromotionRule returns a boolean if a field has been set.
 func (o *ExternalPromotionDataRelationships) HasSkuListPromotionRule() bool {
-	if o != nil && !IsNil(o.SkuListPromotionRule) {
+	if o != nil && o.SkuListPromotionRule != nil {
 		return true
 	}
 
@@ -176,7 +173,7 @@ func (o *ExternalPromotionDataRelationships) SetSkuListPromotionRule(v ExternalP
 
 // GetCouponCodesPromotionRule returns the CouponCodesPromotionRule field value if set, zero value otherwise.
 func (o *ExternalPromotionDataRelationships) GetCouponCodesPromotionRule() CouponDataRelationshipsPromotionRule {
-	if o == nil || IsNil(o.CouponCodesPromotionRule) {
+	if o == nil || o.CouponCodesPromotionRule == nil {
 		var ret CouponDataRelationshipsPromotionRule
 		return ret
 	}
@@ -186,7 +183,7 @@ func (o *ExternalPromotionDataRelationships) GetCouponCodesPromotionRule() Coupo
 // GetCouponCodesPromotionRuleOk returns a tuple with the CouponCodesPromotionRule field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalPromotionDataRelationships) GetCouponCodesPromotionRuleOk() (*CouponDataRelationshipsPromotionRule, bool) {
-	if o == nil || IsNil(o.CouponCodesPromotionRule) {
+	if o == nil || o.CouponCodesPromotionRule == nil {
 		return nil, false
 	}
 	return o.CouponCodesPromotionRule, true
@@ -194,7 +191,7 @@ func (o *ExternalPromotionDataRelationships) GetCouponCodesPromotionRuleOk() (*C
 
 // HasCouponCodesPromotionRule returns a boolean if a field has been set.
 func (o *ExternalPromotionDataRelationships) HasCouponCodesPromotionRule() bool {
-	if o != nil && !IsNil(o.CouponCodesPromotionRule) {
+	if o != nil && o.CouponCodesPromotionRule != nil {
 		return true
 	}
 
@@ -208,7 +205,7 @@ func (o *ExternalPromotionDataRelationships) SetCouponCodesPromotionRule(v Coupo
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *ExternalPromotionDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		var ret AvalaraAccountDataRelationshipsAttachments
 		return ret
 	}
@@ -218,7 +215,7 @@ func (o *ExternalPromotionDataRelationships) GetAttachments() AvalaraAccountData
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalPromotionDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		return nil, false
 	}
 	return o.Attachments, true
@@ -226,7 +223,7 @@ func (o *ExternalPromotionDataRelationships) GetAttachmentsOk() (*AvalaraAccount
 
 // HasAttachments returns a boolean if a field has been set.
 func (o *ExternalPromotionDataRelationships) HasAttachments() bool {
-	if o != nil && !IsNil(o.Attachments) {
+	if o != nil && o.Attachments != nil {
 		return true
 	}
 
@@ -240,7 +237,7 @@ func (o *ExternalPromotionDataRelationships) SetAttachments(v AvalaraAccountData
 
 // GetEvents returns the Events field value if set, zero value otherwise.
 func (o *ExternalPromotionDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || o.Events == nil {
 		var ret AuthorizationDataRelationshipsEvents
 		return ret
 	}
@@ -250,7 +247,7 @@ func (o *ExternalPromotionDataRelationships) GetEvents() AuthorizationDataRelati
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalPromotionDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || o.Events == nil {
 		return nil, false
 	}
 	return o.Events, true
@@ -258,7 +255,7 @@ func (o *ExternalPromotionDataRelationships) GetEventsOk() (*AuthorizationDataRe
 
 // HasEvents returns a boolean if a field has been set.
 func (o *ExternalPromotionDataRelationships) HasEvents() bool {
-	if o != nil && !IsNil(o.Events) {
+	if o != nil && o.Events != nil {
 		return true
 	}
 
@@ -271,37 +268,29 @@ func (o *ExternalPromotionDataRelationships) SetEvents(v AuthorizationDataRelati
 }
 
 func (o ExternalPromotionDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o ExternalPromotionDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Market) {
+	if o.Market != nil {
 		toSerialize["market"] = o.Market
 	}
-	if !IsNil(o.PromotionRules) {
+	if o.PromotionRules != nil {
 		toSerialize["promotion_rules"] = o.PromotionRules
 	}
-	if !IsNil(o.OrderAmountPromotionRule) {
+	if o.OrderAmountPromotionRule != nil {
 		toSerialize["order_amount_promotion_rule"] = o.OrderAmountPromotionRule
 	}
-	if !IsNil(o.SkuListPromotionRule) {
+	if o.SkuListPromotionRule != nil {
 		toSerialize["sku_list_promotion_rule"] = o.SkuListPromotionRule
 	}
-	if !IsNil(o.CouponCodesPromotionRule) {
+	if o.CouponCodesPromotionRule != nil {
 		toSerialize["coupon_codes_promotion_rule"] = o.CouponCodesPromotionRule
 	}
-	if !IsNil(o.Attachments) {
+	if o.Attachments != nil {
 		toSerialize["attachments"] = o.Attachments
 	}
-	if !IsNil(o.Events) {
+	if o.Events != nil {
 		toSerialize["events"] = o.Events
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableExternalPromotionDataRelationships struct {

@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETTaxjarAccountsTaxjarAccountId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETTaxjarAccountsTaxjarAccountId200Response{}
-
 // GETTaxjarAccountsTaxjarAccountId200Response struct for GETTaxjarAccountsTaxjarAccountId200Response
 type GETTaxjarAccountsTaxjarAccountId200Response struct {
-	Data *GETTaxjarAccountsTaxjarAccountId200ResponseData `json:"data,omitempty"`
+	Data *GETTaxjarAccounts200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETTaxjarAccountsTaxjarAccountId200Response instantiates a new GETTaxjarAccountsTaxjarAccountId200Response object
@@ -41,9 +38,9 @@ func NewGETTaxjarAccountsTaxjarAccountId200ResponseWithDefaults() *GETTaxjarAcco
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETTaxjarAccountsTaxjarAccountId200Response) GetData() GETTaxjarAccountsTaxjarAccountId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETTaxjarAccountsTaxjarAccountId200ResponseData
+func (o *GETTaxjarAccountsTaxjarAccountId200Response) GetData() GETTaxjarAccounts200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETTaxjarAccounts200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETTaxjarAccountsTaxjarAccountId200Response) GetData() GETTaxjarAccount
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETTaxjarAccountsTaxjarAccountId200Response) GetDataOk() (*GETTaxjarAccountsTaxjarAccountId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETTaxjarAccountsTaxjarAccountId200Response) GetDataOk() (*GETTaxjarAccounts200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETTaxjarAccountsTaxjarAccountId200Response) GetDataOk() (*GETTaxjarAcc
 
 // HasData returns a boolean if a field has been set.
 func (o *GETTaxjarAccountsTaxjarAccountId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETTaxjarAccountsTaxjarAccountId200ResponseData and assigns it to the Data field.
-func (o *GETTaxjarAccountsTaxjarAccountId200Response) SetData(v GETTaxjarAccountsTaxjarAccountId200ResponseData) {
+// SetData gets a reference to the given GETTaxjarAccounts200ResponseDataInner and assigns it to the Data field.
+func (o *GETTaxjarAccountsTaxjarAccountId200Response) SetData(v GETTaxjarAccounts200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETTaxjarAccountsTaxjarAccountId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETTaxjarAccountsTaxjarAccountId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETTaxjarAccountsTaxjarAccountId200Response struct {

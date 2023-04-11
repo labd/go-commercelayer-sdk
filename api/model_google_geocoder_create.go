@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the GoogleGeocoderCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GoogleGeocoderCreate{}
-
 // GoogleGeocoderCreate struct for GoogleGeocoderCreate
 type GoogleGeocoderCreate struct {
-	Data POSTGoogleGeocodersRequestData `json:"data"`
+	Data GoogleGeocoderCreateData `json:"data"`
 }
 
 // NewGoogleGeocoderCreate instantiates a new GoogleGeocoderCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGoogleGeocoderCreate(data POSTGoogleGeocodersRequestData) *GoogleGeocoderCreate {
+func NewGoogleGeocoderCreate(data GoogleGeocoderCreateData) *GoogleGeocoderCreate {
 	this := GoogleGeocoderCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewGoogleGeocoderCreateWithDefaults() *GoogleGeocoderCreate {
 }
 
 // GetData returns the Data field value
-func (o *GoogleGeocoderCreate) GetData() POSTGoogleGeocodersRequestData {
+func (o *GoogleGeocoderCreate) GetData() GoogleGeocoderCreateData {
 	if o == nil {
-		var ret POSTGoogleGeocodersRequestData
+		var ret GoogleGeocoderCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *GoogleGeocoderCreate) GetData() POSTGoogleGeocodersRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *GoogleGeocoderCreate) GetDataOk() (*POSTGoogleGeocodersRequestData, bool) {
+func (o *GoogleGeocoderCreate) GetDataOk() (*GoogleGeocoderCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *GoogleGeocoderCreate) GetDataOk() (*POSTGoogleGeocodersRequestData, boo
 }
 
 // SetData sets field value
-func (o *GoogleGeocoderCreate) SetData(v POSTGoogleGeocodersRequestData) {
+func (o *GoogleGeocoderCreate) SetData(v GoogleGeocoderCreateData) {
 	o.Data = v
 }
 
 func (o GoogleGeocoderCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o GoogleGeocoderCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableGoogleGeocoderCreate struct {

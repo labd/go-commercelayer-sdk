@@ -29,7 +29,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -37,7 +37,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.FreeGiftPromotionsApi.DELETEFreeGiftPromotionsFreeGiftPromotionId(context.Background(), freeGiftPromotionId).Execute()
+    resp, r, err := apiClient.FreeGiftPromotionsApi.DELETEFreeGiftPromotionsFreeGiftPromotionId(context.Background(), freeGiftPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `FreeGiftPromotionsApi.DELETEFreeGiftPromotionsFreeGiftPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -158,7 +158,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHFreeGiftPromotionsFreeGiftPromotionId
 
-> PATCHFreeGiftPromotionsFreeGiftPromotionId200Response PATCHFreeGiftPromotionsFreeGiftPromotionId(ctx, freeGiftPromotionId).PATCHFreeGiftPromotionsFreeGiftPromotionIdRequest(pATCHFreeGiftPromotionsFreeGiftPromotionIdRequest).Execute()
+> PATCHFreeGiftPromotionsFreeGiftPromotionId200Response PATCHFreeGiftPromotionsFreeGiftPromotionId(ctx, freeGiftPromotionId).FreeGiftPromotionUpdate(freeGiftPromotionUpdate).Execute()
 
 Update a free gift promotion
 
@@ -228,16 +228,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHFreeGiftPromotionsFreeGiftPromotionIdRequest := *openapiclient.NewPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest(*openapiclient.NewPATCHFreeGiftPromotionsFreeGiftPromotionIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHFreeGiftPromotionsFreeGiftPromotionIdRequestDataAttributes())) // PATCHFreeGiftPromotionsFreeGiftPromotionIdRequest | 
+    freeGiftPromotionUpdate := *openapiclient.NewFreeGiftPromotionUpdate(*openapiclient.NewFreeGiftPromotionUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseDataAttributes())) // FreeGiftPromotionUpdate | 
     freeGiftPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.FreeGiftPromotionsApi.PATCHFreeGiftPromotionsFreeGiftPromotionId(context.Background(), freeGiftPromotionId).PATCHFreeGiftPromotionsFreeGiftPromotionIdRequest(pATCHFreeGiftPromotionsFreeGiftPromotionIdRequest).Execute()
+    resp, r, err := apiClient.FreeGiftPromotionsApi.PATCHFreeGiftPromotionsFreeGiftPromotionId(context.Background(), freeGiftPromotionId).FreeGiftPromotionUpdate(freeGiftPromotionUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `FreeGiftPromotionsApi.PATCHFreeGiftPromotionsFreeGiftPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -262,7 +262,7 @@ Other parameters are passed through a pointer to a apiPATCHFreeGiftPromotionsFre
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHFreeGiftPromotionsFreeGiftPromotionIdRequest** | [**PATCHFreeGiftPromotionsFreeGiftPromotionIdRequest**](PATCHFreeGiftPromotionsFreeGiftPromotionIdRequest.md) |  | 
+ **freeGiftPromotionUpdate** | [**FreeGiftPromotionUpdate**](FreeGiftPromotionUpdate.md) |  | 
 
 
 ### Return type
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTFreeGiftPromotions
 
-> POSTFreeGiftPromotions201Response POSTFreeGiftPromotions(ctx).POSTFreeGiftPromotionsRequest(pOSTFreeGiftPromotionsRequest).Execute()
+> POSTFreeGiftPromotions201Response POSTFreeGiftPromotions(ctx).FreeGiftPromotionCreate(freeGiftPromotionCreate).Execute()
 
 Create a free gift promotion
 
@@ -300,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTFreeGiftPromotionsRequest := *openapiclient.NewPOSTFreeGiftPromotionsRequest(*openapiclient.NewPOSTFreeGiftPromotionsRequestData(interface{}(123), *openapiclient.NewPOSTFreeGiftPromotionsRequestDataAttributes(interface{}(Personal promotion), interface{}(2018-01-01T12:00:00.000Z), interface{}(2018-01-02T12:00:00.000Z), interface{}(5)))) // POSTFreeGiftPromotionsRequest | 
+    freeGiftPromotionCreate := *openapiclient.NewFreeGiftPromotionCreate(*openapiclient.NewFreeGiftPromotionCreateData(interface{}(123), *openapiclient.NewPOSTFreeGiftPromotions201ResponseDataAttributes(interface{}(Personal promotion), interface{}(2018-01-01T12:00:00.000Z), interface{}(2018-01-02T12:00:00.000Z), interface{}(5)))) // FreeGiftPromotionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.FreeGiftPromotionsApi.POSTFreeGiftPromotions(context.Background()).POSTFreeGiftPromotionsRequest(pOSTFreeGiftPromotionsRequest).Execute()
+    resp, r, err := apiClient.FreeGiftPromotionsApi.POSTFreeGiftPromotions(context.Background()).FreeGiftPromotionCreate(freeGiftPromotionCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `FreeGiftPromotionsApi.POSTFreeGiftPromotions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiPOSTFreeGiftPromotionsRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTFreeGiftPromotionsRequest** | [**POSTFreeGiftPromotionsRequest**](POSTFreeGiftPromotionsRequest.md) |  | 
+ **freeGiftPromotionCreate** | [**FreeGiftPromotionCreate**](FreeGiftPromotionCreate.md) |  | 
 
 ### Return type
 

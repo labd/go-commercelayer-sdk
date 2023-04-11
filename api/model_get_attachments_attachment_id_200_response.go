@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETAttachmentsAttachmentId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETAttachmentsAttachmentId200Response{}
-
 // GETAttachmentsAttachmentId200Response struct for GETAttachmentsAttachmentId200Response
 type GETAttachmentsAttachmentId200Response struct {
-	Data *GETAttachmentsAttachmentId200ResponseData `json:"data,omitempty"`
+	Data *GETAttachments200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETAttachmentsAttachmentId200Response instantiates a new GETAttachmentsAttachmentId200Response object
@@ -41,9 +38,9 @@ func NewGETAttachmentsAttachmentId200ResponseWithDefaults() *GETAttachmentsAttac
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETAttachmentsAttachmentId200Response) GetData() GETAttachmentsAttachmentId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETAttachmentsAttachmentId200ResponseData
+func (o *GETAttachmentsAttachmentId200Response) GetData() GETAttachments200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETAttachments200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETAttachmentsAttachmentId200Response) GetData() GETAttachmentsAttachme
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETAttachmentsAttachmentId200Response) GetDataOk() (*GETAttachmentsAttachmentId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETAttachmentsAttachmentId200Response) GetDataOk() (*GETAttachments200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETAttachmentsAttachmentId200Response) GetDataOk() (*GETAttachmentsAtta
 
 // HasData returns a boolean if a field has been set.
 func (o *GETAttachmentsAttachmentId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETAttachmentsAttachmentId200ResponseData and assigns it to the Data field.
-func (o *GETAttachmentsAttachmentId200Response) SetData(v GETAttachmentsAttachmentId200ResponseData) {
+// SetData gets a reference to the given GETAttachments200ResponseDataInner and assigns it to the Data field.
+func (o *GETAttachmentsAttachmentId200Response) SetData(v GETAttachments200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETAttachmentsAttachmentId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETAttachmentsAttachmentId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETAttachmentsAttachmentId200Response struct {

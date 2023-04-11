@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the SatispayGatewayDataRelationshipsSatispayPayments type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &SatispayGatewayDataRelationshipsSatispayPayments{}
-
 // SatispayGatewayDataRelationshipsSatispayPayments struct for SatispayGatewayDataRelationshipsSatispayPayments
 type SatispayGatewayDataRelationshipsSatispayPayments struct {
-	Data *POSTSatispayGatewaysRequestDataRelationshipsSatispayPaymentsData `json:"data,omitempty"`
+	Data *SatispayGatewayDataRelationshipsSatispayPaymentsData `json:"data,omitempty"`
 }
 
 // NewSatispayGatewayDataRelationshipsSatispayPayments instantiates a new SatispayGatewayDataRelationshipsSatispayPayments object
@@ -41,9 +38,9 @@ func NewSatispayGatewayDataRelationshipsSatispayPaymentsWithDefaults() *Satispay
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *SatispayGatewayDataRelationshipsSatispayPayments) GetData() POSTSatispayGatewaysRequestDataRelationshipsSatispayPaymentsData {
-	if o == nil || IsNil(o.Data) {
-		var ret POSTSatispayGatewaysRequestDataRelationshipsSatispayPaymentsData
+func (o *SatispayGatewayDataRelationshipsSatispayPayments) GetData() SatispayGatewayDataRelationshipsSatispayPaymentsData {
+	if o == nil || o.Data == nil {
+		var ret SatispayGatewayDataRelationshipsSatispayPaymentsData
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *SatispayGatewayDataRelationshipsSatispayPayments) GetData() POSTSatispa
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SatispayGatewayDataRelationshipsSatispayPayments) GetDataOk() (*POSTSatispayGatewaysRequestDataRelationshipsSatispayPaymentsData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *SatispayGatewayDataRelationshipsSatispayPayments) GetDataOk() (*SatispayGatewayDataRelationshipsSatispayPaymentsData, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *SatispayGatewayDataRelationshipsSatispayPayments) GetDataOk() (*POSTSat
 
 // HasData returns a boolean if a field has been set.
 func (o *SatispayGatewayDataRelationshipsSatispayPayments) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given POSTSatispayGatewaysRequestDataRelationshipsSatispayPaymentsData and assigns it to the Data field.
-func (o *SatispayGatewayDataRelationshipsSatispayPayments) SetData(v POSTSatispayGatewaysRequestDataRelationshipsSatispayPaymentsData) {
+// SetData gets a reference to the given SatispayGatewayDataRelationshipsSatispayPaymentsData and assigns it to the Data field.
+func (o *SatispayGatewayDataRelationshipsSatispayPayments) SetData(v SatispayGatewayDataRelationshipsSatispayPaymentsData) {
 	o.Data = &v
 }
 
 func (o SatispayGatewayDataRelationshipsSatispayPayments) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o SatispayGatewayDataRelationshipsSatispayPayments) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableSatispayGatewayDataRelationshipsSatispayPayments struct {

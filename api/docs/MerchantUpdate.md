@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PATCHMerchantsMerchantIdRequestData**](PATCHMerchantsMerchantIdRequestData.md) |  | 
+**Data** | [**MerchantUpdateData**](MerchantUpdateData.md) |  | 
 
 ## Methods
 
 ### NewMerchantUpdate
 
-`func NewMerchantUpdate(data PATCHMerchantsMerchantIdRequestData, ) *MerchantUpdate`
+`func NewMerchantUpdate(data MerchantUpdateData, ) *MerchantUpdate`
 
 NewMerchantUpdate instantiates a new MerchantUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *MerchantUpdate) GetData() PATCHMerchantsMerchantIdRequestData`
+`func (o *MerchantUpdate) GetData() MerchantUpdateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *MerchantUpdate) GetDataOk() (*PATCHMerchantsMerchantIdRequestData, bool)`
+`func (o *MerchantUpdate) GetDataOk() (*MerchantUpdateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *MerchantUpdate) SetData(v PATCHMerchantsMerchantIdRequestData)`
+`func (o *MerchantUpdate) SetData(v MerchantUpdateData)`
 
 SetData sets Data field to given value.
 

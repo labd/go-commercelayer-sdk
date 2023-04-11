@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**POSTCleanupsRequestData**](POSTCleanupsRequestData.md) |  | 
+**Data** | [**CleanupCreateData**](CleanupCreateData.md) |  | 
 
 ## Methods
 
 ### NewCleanupCreate
 
-`func NewCleanupCreate(data POSTCleanupsRequestData, ) *CleanupCreate`
+`func NewCleanupCreate(data CleanupCreateData, ) *CleanupCreate`
 
 NewCleanupCreate instantiates a new CleanupCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *CleanupCreate) GetData() POSTCleanupsRequestData`
+`func (o *CleanupCreate) GetData() CleanupCreateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *CleanupCreate) GetDataOk() (*POSTCleanupsRequestData, bool)`
+`func (o *CleanupCreate) GetDataOk() (*CleanupCreateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *CleanupCreate) SetData(v POSTCleanupsRequestData)`
+`func (o *CleanupCreate) SetData(v CleanupCreateData)`
 
 SetData sets Data field to given value.
 

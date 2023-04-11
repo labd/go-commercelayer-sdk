@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETAdyenPaymentsAdyenPaymentId200ResponseData**](GETAdyenPaymentsAdyenPaymentId200ResponseData.md) |  | [optional] 
+**Data** | Pointer to [**GETAdyenPayments200ResponseDataInner**](GETAdyenPayments200ResponseDataInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETAdyenPaymentsAdyenPaymentId200Response) GetData() GETAdyenPaymentsAdyenPaymentId200ResponseData`
+`func (o *GETAdyenPaymentsAdyenPaymentId200Response) GetData() GETAdyenPayments200ResponseDataInner`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETAdyenPaymentsAdyenPaymentId200Response) GetDataOk() (*GETAdyenPaymentsAdyenPaymentId200ResponseData, bool)`
+`func (o *GETAdyenPaymentsAdyenPaymentId200Response) GetDataOk() (*GETAdyenPayments200ResponseDataInner, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETAdyenPaymentsAdyenPaymentId200Response) SetData(v GETAdyenPaymentsAdyenPaymentId200ResponseData)`
+`func (o *GETAdyenPaymentsAdyenPaymentId200Response) SetData(v GETAdyenPayments200ResponseDataInner)`
 
 SetData sets Data field to given value.
 

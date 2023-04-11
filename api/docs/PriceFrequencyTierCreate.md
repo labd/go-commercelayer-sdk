@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**POSTPriceFrequencyTiersRequestData**](POSTPriceFrequencyTiersRequestData.md) |  | 
+**Data** | [**PriceFrequencyTierCreateData**](PriceFrequencyTierCreateData.md) |  | 
 
 ## Methods
 
 ### NewPriceFrequencyTierCreate
 
-`func NewPriceFrequencyTierCreate(data POSTPriceFrequencyTiersRequestData, ) *PriceFrequencyTierCreate`
+`func NewPriceFrequencyTierCreate(data PriceFrequencyTierCreateData, ) *PriceFrequencyTierCreate`
 
 NewPriceFrequencyTierCreate instantiates a new PriceFrequencyTierCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *PriceFrequencyTierCreate) GetData() POSTPriceFrequencyTiersRequestData`
+`func (o *PriceFrequencyTierCreate) GetData() PriceFrequencyTierCreateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *PriceFrequencyTierCreate) GetDataOk() (*POSTPriceFrequencyTiersRequestData, bool)`
+`func (o *PriceFrequencyTierCreate) GetDataOk() (*PriceFrequencyTierCreateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *PriceFrequencyTierCreate) SetData(v POSTPriceFrequencyTiersRequestData)`
+`func (o *PriceFrequencyTierCreate) SetData(v PriceFrequencyTierCreateData)`
 
 SetData sets Data field to given value.
 

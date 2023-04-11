@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**POSTAdyenPaymentsRequestDataAttributes**](POSTAdyenPaymentsRequestDataAttributes.md) |  | 
+**Attributes** | [**POSTAdyenPayments201ResponseDataAttributes**](POSTAdyenPayments201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CustomerPaymentSourceCreateDataRelationships**](CustomerPaymentSourceCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCustomerPaymentSourceCreateData
 
-`func NewCustomerPaymentSourceCreateData(type_ interface{}, attributes POSTAdyenPaymentsRequestDataAttributes, ) *CustomerPaymentSourceCreateData`
+`func NewCustomerPaymentSourceCreateData(type_ interface{}, attributes POSTAdyenPayments201ResponseDataAttributes, ) *CustomerPaymentSourceCreateData`
 
 NewCustomerPaymentSourceCreateData instantiates a new CustomerPaymentSourceCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *CustomerPaymentSourceCreateData) GetAttributes() POSTAdyenPaymentsRequestDataAttributes`
+`func (o *CustomerPaymentSourceCreateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CustomerPaymentSourceCreateData) GetAttributesOk() (*POSTAdyenPaymentsRequestDataAttributes, bool)`
+`func (o *CustomerPaymentSourceCreateData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CustomerPaymentSourceCreateData) SetAttributes(v POSTAdyenPaymentsRequestDataAttributes)`
+`func (o *CustomerPaymentSourceCreateData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

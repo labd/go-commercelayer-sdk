@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETAuthorizationsAuthorizationId200ResponseData**](GETAuthorizationsAuthorizationId200ResponseData.md) |  | [optional] 
+**Data** | Pointer to [**GETAuthorizations200ResponseDataInner**](GETAuthorizations200ResponseDataInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETAuthorizationsAuthorizationId200Response) GetData() GETAuthorizationsAuthorizationId200ResponseData`
+`func (o *GETAuthorizationsAuthorizationId200Response) GetData() GETAuthorizations200ResponseDataInner`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETAuthorizationsAuthorizationId200Response) GetDataOk() (*GETAuthorizationsAuthorizationId200ResponseData, bool)`
+`func (o *GETAuthorizationsAuthorizationId200Response) GetDataOk() (*GETAuthorizations200ResponseDataInner, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETAuthorizationsAuthorizationId200Response) SetData(v GETAuthorizationsAuthorizationId200ResponseData)`
+`func (o *GETAuthorizationsAuthorizationId200Response) SetData(v GETAuthorizations200ResponseDataInner)`
 
 SetData sets Data field to given value.
 

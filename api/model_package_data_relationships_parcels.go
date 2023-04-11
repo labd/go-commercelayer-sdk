@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the PackageDataRelationshipsParcels type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PackageDataRelationshipsParcels{}
-
 // PackageDataRelationshipsParcels struct for PackageDataRelationshipsParcels
 type PackageDataRelationshipsParcels struct {
-	Data *POSTParcelLineItemsRequestDataRelationshipsParcelData `json:"data,omitempty"`
+	Data *PackageDataRelationshipsParcelsData `json:"data,omitempty"`
 }
 
 // NewPackageDataRelationshipsParcels instantiates a new PackageDataRelationshipsParcels object
@@ -41,9 +38,9 @@ func NewPackageDataRelationshipsParcelsWithDefaults() *PackageDataRelationshipsP
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *PackageDataRelationshipsParcels) GetData() POSTParcelLineItemsRequestDataRelationshipsParcelData {
-	if o == nil || IsNil(o.Data) {
-		var ret POSTParcelLineItemsRequestDataRelationshipsParcelData
+func (o *PackageDataRelationshipsParcels) GetData() PackageDataRelationshipsParcelsData {
+	if o == nil || o.Data == nil {
+		var ret PackageDataRelationshipsParcelsData
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *PackageDataRelationshipsParcels) GetData() POSTParcelLineItemsRequestDa
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PackageDataRelationshipsParcels) GetDataOk() (*POSTParcelLineItemsRequestDataRelationshipsParcelData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *PackageDataRelationshipsParcels) GetDataOk() (*PackageDataRelationshipsParcelsData, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *PackageDataRelationshipsParcels) GetDataOk() (*POSTParcelLineItemsReque
 
 // HasData returns a boolean if a field has been set.
 func (o *PackageDataRelationshipsParcels) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given POSTParcelLineItemsRequestDataRelationshipsParcelData and assigns it to the Data field.
-func (o *PackageDataRelationshipsParcels) SetData(v POSTParcelLineItemsRequestDataRelationshipsParcelData) {
+// SetData gets a reference to the given PackageDataRelationshipsParcelsData and assigns it to the Data field.
+func (o *PackageDataRelationshipsParcels) SetData(v PackageDataRelationshipsParcelsData) {
 	o.Data = &v
 }
 
 func (o PackageDataRelationshipsParcels) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o PackageDataRelationshipsParcels) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePackageDataRelationshipsParcels struct {

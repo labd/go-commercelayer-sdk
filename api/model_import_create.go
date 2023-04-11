@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the ImportCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ImportCreate{}
-
 // ImportCreate struct for ImportCreate
 type ImportCreate struct {
-	Data POSTImportsRequestData `json:"data"`
+	Data ImportCreateData `json:"data"`
 }
 
 // NewImportCreate instantiates a new ImportCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewImportCreate(data POSTImportsRequestData) *ImportCreate {
+func NewImportCreate(data ImportCreateData) *ImportCreate {
 	this := ImportCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewImportCreateWithDefaults() *ImportCreate {
 }
 
 // GetData returns the Data field value
-func (o *ImportCreate) GetData() POSTImportsRequestData {
+func (o *ImportCreate) GetData() ImportCreateData {
 	if o == nil {
-		var ret POSTImportsRequestData
+		var ret ImportCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *ImportCreate) GetData() POSTImportsRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ImportCreate) GetDataOk() (*POSTImportsRequestData, bool) {
+func (o *ImportCreate) GetDataOk() (*ImportCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *ImportCreate) GetDataOk() (*POSTImportsRequestData, bool) {
 }
 
 // SetData sets field value
-func (o *ImportCreate) SetData(v POSTImportsRequestData) {
+func (o *ImportCreate) SetData(v ImportCreateData) {
 	o.Data = v
 }
 
 func (o ImportCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o ImportCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableImportCreate struct {

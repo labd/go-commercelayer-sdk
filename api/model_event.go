@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the Event type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &Event{}
-
 // Event struct for Event
 type Event struct {
 	Data *EventData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewEventWithDefaults() *Event {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *Event) GetData() EventData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret EventData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *Event) GetData() EventData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Event) GetDataOk() (*EventData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *Event) GetDataOk() (*EventData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *Event) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *Event) SetData(v EventData) {
 }
 
 func (o Event) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o Event) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableEvent struct {

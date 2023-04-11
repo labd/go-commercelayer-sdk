@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
-**Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
-**Attributes** | Pointer to [**PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes**](PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTCouponCodesPromotionRules201ResponseDataRelationships**](POSTCouponCodesPromotionRules201ResponseDataRelationships.md) |  | [optional] 
+**Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
+**Attributes** | Pointer to [**PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes**](PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes.md) |  | [optional] 
+**Relationships** | Pointer to [**GETCouponCodesPromotionRules200ResponseDataInnerRelationships**](GETCouponCodesPromotionRules200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -101,20 +101,20 @@ HasType returns a boolean if a field has been set.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetLinks
 
-`func (o *PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) GetLinks() POSTAddresses201ResponseDataLinks`
+`func (o *PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool)`
+`func (o *PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks)`
+`func (o *PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks)`
 
 SetLinks sets Links field to given value.
 
@@ -126,20 +126,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) GetAttributes() PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes`
+`func (o *PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) GetAttributes() PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) GetAttributesOk() (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes, bool)`
+`func (o *PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) GetAttributesOk() (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) SetAttributes(v PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes)`
+`func (o *PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) SetAttributes(v PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
@@ -151,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) GetRelationships() POSTCouponCodesPromotionRules201ResponseDataRelationships`
+`func (o *PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) GetRelationships() GETCouponCodesPromotionRules200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) GetRelationshipsOk() (*POSTCouponCodesPromotionRules201ResponseDataRelationships, bool)`
+`func (o *PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) GetRelationshipsOk() (*GETCouponCodesPromotionRules200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) SetRelationships(v POSTCouponCodesPromotionRules201ResponseDataRelationships)`
+`func (o *PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData) SetRelationships(v GETCouponCodesPromotionRules200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

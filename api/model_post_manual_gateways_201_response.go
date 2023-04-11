@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the POSTManualGateways201Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &POSTManualGateways201Response{}
-
 // POSTManualGateways201Response struct for POSTManualGateways201Response
 type POSTManualGateways201Response struct {
 	Data *POSTManualGateways201ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPOSTManualGateways201ResponseWithDefaults() *POSTManualGateways201Respon
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTManualGateways201Response) GetData() POSTManualGateways201ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret POSTManualGateways201ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *POSTManualGateways201Response) GetData() POSTManualGateways201ResponseD
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTManualGateways201Response) GetDataOk() (*POSTManualGateways201ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *POSTManualGateways201Response) GetDataOk() (*POSTManualGateways201Respo
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTManualGateways201Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *POSTManualGateways201Response) SetData(v POSTManualGateways201ResponseD
 }
 
 func (o POSTManualGateways201Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o POSTManualGateways201Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePOSTManualGateways201Response struct {

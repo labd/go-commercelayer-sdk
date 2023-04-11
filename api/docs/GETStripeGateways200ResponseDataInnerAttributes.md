@@ -1,0 +1,390 @@
+# GETStripeGateways200ResponseDataInnerAttributes
+
+## Properties
+
+Name | Type | Description | Notes
+------------ | ------------- | ------------- | -------------
+**Name** | Pointer to **interface{}** | The payment gateway&#39;s internal name. | [optional] 
+**CreatedAt** | Pointer to **interface{}** | Time at which the resource was created. | [optional] 
+**UpdatedAt** | Pointer to **interface{}** | Time at which the resource was last updated. | [optional] 
+**Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
+**AutoPayments** | Pointer to **interface{}** | Indicates if the gateway will accept payment methods enabled in the Stripe dashboard. | [optional] 
+**WebhookEndpointId** | Pointer to **interface{}** | The gateway webhook endpoint ID, generated automatically. | [optional] 
+**WebhookEndpointSecret** | Pointer to **interface{}** | The gateway webhook endpoint secret, generated automatically. | [optional] 
+**WebhookEndpointUrl** | Pointer to **interface{}** | The gateway webhook URL, generated automatically. | [optional] 
+
+## Methods
+
+### NewGETStripeGateways200ResponseDataInnerAttributes
+
+`func NewGETStripeGateways200ResponseDataInnerAttributes() *GETStripeGateways200ResponseDataInnerAttributes`
+
+NewGETStripeGateways200ResponseDataInnerAttributes instantiates a new GETStripeGateways200ResponseDataInnerAttributes object
+This constructor will assign default values to properties that have it defined,
+and makes sure properties required by API are set, but the set of arguments
+will change when the set of required properties is changed
+
+### NewGETStripeGateways200ResponseDataInnerAttributesWithDefaults
+
+`func NewGETStripeGateways200ResponseDataInnerAttributesWithDefaults() *GETStripeGateways200ResponseDataInnerAttributes`
+
+NewGETStripeGateways200ResponseDataInnerAttributesWithDefaults instantiates a new GETStripeGateways200ResponseDataInnerAttributes object
+This constructor will only assign default values to properties that have it defined,
+but it doesn't guarantee that properties required by API are set
+
+### GetName
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) GetName() interface{}`
+
+GetName returns the Name field if non-nil, zero value otherwise.
+
+### GetNameOk
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) GetNameOk() (*interface{}, bool)`
+
+GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetName
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) SetName(v interface{})`
+
+SetName sets Name field to given value.
+
+### HasName
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) HasName() bool`
+
+HasName returns a boolean if a field has been set.
+
+### SetNameNil
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) SetNameNil(b bool)`
+
+ SetNameNil sets the value for Name to be an explicit nil
+
+### UnsetName
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) UnsetName()`
+
+UnsetName ensures that no value is present for Name, not even an explicit nil
+### GetCreatedAt
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) GetCreatedAt() interface{}`
+
+GetCreatedAt returns the CreatedAt field if non-nil, zero value otherwise.
+
+### GetCreatedAtOk
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) GetCreatedAtOk() (*interface{}, bool)`
+
+GetCreatedAtOk returns a tuple with the CreatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetCreatedAt
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) SetCreatedAt(v interface{})`
+
+SetCreatedAt sets CreatedAt field to given value.
+
+### HasCreatedAt
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) HasCreatedAt() bool`
+
+HasCreatedAt returns a boolean if a field has been set.
+
+### SetCreatedAtNil
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) SetCreatedAtNil(b bool)`
+
+ SetCreatedAtNil sets the value for CreatedAt to be an explicit nil
+
+### UnsetCreatedAt
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) UnsetCreatedAt()`
+
+UnsetCreatedAt ensures that no value is present for CreatedAt, not even an explicit nil
+### GetUpdatedAt
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) GetUpdatedAt() interface{}`
+
+GetUpdatedAt returns the UpdatedAt field if non-nil, zero value otherwise.
+
+### GetUpdatedAtOk
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) GetUpdatedAtOk() (*interface{}, bool)`
+
+GetUpdatedAtOk returns a tuple with the UpdatedAt field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetUpdatedAt
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) SetUpdatedAt(v interface{})`
+
+SetUpdatedAt sets UpdatedAt field to given value.
+
+### HasUpdatedAt
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) HasUpdatedAt() bool`
+
+HasUpdatedAt returns a boolean if a field has been set.
+
+### SetUpdatedAtNil
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) SetUpdatedAtNil(b bool)`
+
+ SetUpdatedAtNil sets the value for UpdatedAt to be an explicit nil
+
+### UnsetUpdatedAt
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) UnsetUpdatedAt()`
+
+UnsetUpdatedAt ensures that no value is present for UpdatedAt, not even an explicit nil
+### GetReference
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) GetReference() interface{}`
+
+GetReference returns the Reference field if non-nil, zero value otherwise.
+
+### GetReferenceOk
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) GetReferenceOk() (*interface{}, bool)`
+
+GetReferenceOk returns a tuple with the Reference field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReference
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) SetReference(v interface{})`
+
+SetReference sets Reference field to given value.
+
+### HasReference
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) HasReference() bool`
+
+HasReference returns a boolean if a field has been set.
+
+### SetReferenceNil
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) SetReferenceNil(b bool)`
+
+ SetReferenceNil sets the value for Reference to be an explicit nil
+
+### UnsetReference
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) UnsetReference()`
+
+UnsetReference ensures that no value is present for Reference, not even an explicit nil
+### GetReferenceOrigin
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) GetReferenceOrigin() interface{}`
+
+GetReferenceOrigin returns the ReferenceOrigin field if non-nil, zero value otherwise.
+
+### GetReferenceOriginOk
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) GetReferenceOriginOk() (*interface{}, bool)`
+
+GetReferenceOriginOk returns a tuple with the ReferenceOrigin field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetReferenceOrigin
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) SetReferenceOrigin(v interface{})`
+
+SetReferenceOrigin sets ReferenceOrigin field to given value.
+
+### HasReferenceOrigin
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) HasReferenceOrigin() bool`
+
+HasReferenceOrigin returns a boolean if a field has been set.
+
+### SetReferenceOriginNil
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) SetReferenceOriginNil(b bool)`
+
+ SetReferenceOriginNil sets the value for ReferenceOrigin to be an explicit nil
+
+### UnsetReferenceOrigin
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) UnsetReferenceOrigin()`
+
+UnsetReferenceOrigin ensures that no value is present for ReferenceOrigin, not even an explicit nil
+### GetMetadata
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) GetMetadata() interface{}`
+
+GetMetadata returns the Metadata field if non-nil, zero value otherwise.
+
+### GetMetadataOk
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) GetMetadataOk() (*interface{}, bool)`
+
+GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetMetadata
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) SetMetadata(v interface{})`
+
+SetMetadata sets Metadata field to given value.
+
+### HasMetadata
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) HasMetadata() bool`
+
+HasMetadata returns a boolean if a field has been set.
+
+### SetMetadataNil
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) SetMetadataNil(b bool)`
+
+ SetMetadataNil sets the value for Metadata to be an explicit nil
+
+### UnsetMetadata
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) UnsetMetadata()`
+
+UnsetMetadata ensures that no value is present for Metadata, not even an explicit nil
+### GetAutoPayments
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) GetAutoPayments() interface{}`
+
+GetAutoPayments returns the AutoPayments field if non-nil, zero value otherwise.
+
+### GetAutoPaymentsOk
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) GetAutoPaymentsOk() (*interface{}, bool)`
+
+GetAutoPaymentsOk returns a tuple with the AutoPayments field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetAutoPayments
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) SetAutoPayments(v interface{})`
+
+SetAutoPayments sets AutoPayments field to given value.
+
+### HasAutoPayments
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) HasAutoPayments() bool`
+
+HasAutoPayments returns a boolean if a field has been set.
+
+### SetAutoPaymentsNil
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) SetAutoPaymentsNil(b bool)`
+
+ SetAutoPaymentsNil sets the value for AutoPayments to be an explicit nil
+
+### UnsetAutoPayments
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) UnsetAutoPayments()`
+
+UnsetAutoPayments ensures that no value is present for AutoPayments, not even an explicit nil
+### GetWebhookEndpointId
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) GetWebhookEndpointId() interface{}`
+
+GetWebhookEndpointId returns the WebhookEndpointId field if non-nil, zero value otherwise.
+
+### GetWebhookEndpointIdOk
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) GetWebhookEndpointIdOk() (*interface{}, bool)`
+
+GetWebhookEndpointIdOk returns a tuple with the WebhookEndpointId field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWebhookEndpointId
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) SetWebhookEndpointId(v interface{})`
+
+SetWebhookEndpointId sets WebhookEndpointId field to given value.
+
+### HasWebhookEndpointId
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) HasWebhookEndpointId() bool`
+
+HasWebhookEndpointId returns a boolean if a field has been set.
+
+### SetWebhookEndpointIdNil
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) SetWebhookEndpointIdNil(b bool)`
+
+ SetWebhookEndpointIdNil sets the value for WebhookEndpointId to be an explicit nil
+
+### UnsetWebhookEndpointId
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) UnsetWebhookEndpointId()`
+
+UnsetWebhookEndpointId ensures that no value is present for WebhookEndpointId, not even an explicit nil
+### GetWebhookEndpointSecret
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) GetWebhookEndpointSecret() interface{}`
+
+GetWebhookEndpointSecret returns the WebhookEndpointSecret field if non-nil, zero value otherwise.
+
+### GetWebhookEndpointSecretOk
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) GetWebhookEndpointSecretOk() (*interface{}, bool)`
+
+GetWebhookEndpointSecretOk returns a tuple with the WebhookEndpointSecret field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWebhookEndpointSecret
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) SetWebhookEndpointSecret(v interface{})`
+
+SetWebhookEndpointSecret sets WebhookEndpointSecret field to given value.
+
+### HasWebhookEndpointSecret
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) HasWebhookEndpointSecret() bool`
+
+HasWebhookEndpointSecret returns a boolean if a field has been set.
+
+### SetWebhookEndpointSecretNil
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) SetWebhookEndpointSecretNil(b bool)`
+
+ SetWebhookEndpointSecretNil sets the value for WebhookEndpointSecret to be an explicit nil
+
+### UnsetWebhookEndpointSecret
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) UnsetWebhookEndpointSecret()`
+
+UnsetWebhookEndpointSecret ensures that no value is present for WebhookEndpointSecret, not even an explicit nil
+### GetWebhookEndpointUrl
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) GetWebhookEndpointUrl() interface{}`
+
+GetWebhookEndpointUrl returns the WebhookEndpointUrl field if non-nil, zero value otherwise.
+
+### GetWebhookEndpointUrlOk
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) GetWebhookEndpointUrlOk() (*interface{}, bool)`
+
+GetWebhookEndpointUrlOk returns a tuple with the WebhookEndpointUrl field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetWebhookEndpointUrl
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) SetWebhookEndpointUrl(v interface{})`
+
+SetWebhookEndpointUrl sets WebhookEndpointUrl field to given value.
+
+### HasWebhookEndpointUrl
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) HasWebhookEndpointUrl() bool`
+
+HasWebhookEndpointUrl returns a boolean if a field has been set.
+
+### SetWebhookEndpointUrlNil
+
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) SetWebhookEndpointUrlNil(b bool)`
+
+ SetWebhookEndpointUrlNil sets the value for WebhookEndpointUrl to be an explicit nil
+
+### UnsetWebhookEndpointUrl
+`func (o *GETStripeGateways200ResponseDataInnerAttributes) UnsetWebhookEndpointUrl()`
+
+UnsetWebhookEndpointUrl ensures that no value is present for WebhookEndpointUrl, not even an explicit nil
+
+[[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
+
+

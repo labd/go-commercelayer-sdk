@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the InStockSubscriptionUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &InStockSubscriptionUpdate{}
-
 // InStockSubscriptionUpdate struct for InStockSubscriptionUpdate
 type InStockSubscriptionUpdate struct {
-	Data PATCHInStockSubscriptionsInStockSubscriptionIdRequestData `json:"data"`
+	Data InStockSubscriptionUpdateData `json:"data"`
 }
 
 // NewInStockSubscriptionUpdate instantiates a new InStockSubscriptionUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInStockSubscriptionUpdate(data PATCHInStockSubscriptionsInStockSubscriptionIdRequestData) *InStockSubscriptionUpdate {
+func NewInStockSubscriptionUpdate(data InStockSubscriptionUpdateData) *InStockSubscriptionUpdate {
 	this := InStockSubscriptionUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewInStockSubscriptionUpdateWithDefaults() *InStockSubscriptionUpdate {
 }
 
 // GetData returns the Data field value
-func (o *InStockSubscriptionUpdate) GetData() PATCHInStockSubscriptionsInStockSubscriptionIdRequestData {
+func (o *InStockSubscriptionUpdate) GetData() InStockSubscriptionUpdateData {
 	if o == nil {
-		var ret PATCHInStockSubscriptionsInStockSubscriptionIdRequestData
+		var ret InStockSubscriptionUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *InStockSubscriptionUpdate) GetData() PATCHInStockSubscriptionsInStockSu
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *InStockSubscriptionUpdate) GetDataOk() (*PATCHInStockSubscriptionsInStockSubscriptionIdRequestData, bool) {
+func (o *InStockSubscriptionUpdate) GetDataOk() (*InStockSubscriptionUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *InStockSubscriptionUpdate) GetDataOk() (*PATCHInStockSubscriptionsInSto
 }
 
 // SetData sets field value
-func (o *InStockSubscriptionUpdate) SetData(v PATCHInStockSubscriptionsInStockSubscriptionIdRequestData) {
+func (o *InStockSubscriptionUpdate) SetData(v InStockSubscriptionUpdateData) {
 	o.Data = v
 }
 
 func (o InStockSubscriptionUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o InStockSubscriptionUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableInStockSubscriptionUpdate struct {

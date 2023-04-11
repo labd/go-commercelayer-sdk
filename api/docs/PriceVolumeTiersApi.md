@@ -30,7 +30,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -38,7 +38,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.PriceVolumeTiersApi.DELETEPriceVolumeTiersPriceVolumeTierId(context.Background(), priceVolumeTierId).Execute()
+    resp, r, err := apiClient.PriceVolumeTiersApi.DELETEPriceVolumeTiersPriceVolumeTierId(context.Background(), priceVolumeTierId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceVolumeTiersApi.DELETEPriceVolumeTiersPriceVolumeTierId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -98,7 +98,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -106,7 +106,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.PriceVolumeTiersApi.GETPriceIdPriceVolumeTiers(context.Background(), priceId).Execute()
+    resp, r, err := apiClient.PriceVolumeTiersApi.GETPriceIdPriceVolumeTiers(context.Background(), priceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceVolumeTiersApi.GETPriceIdPriceVolumeTiers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -166,7 +166,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -227,7 +227,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHPriceVolumeTiersPriceVolumeTierId
 
-> PATCHPriceVolumeTiersPriceVolumeTierId200Response PATCHPriceVolumeTiersPriceVolumeTierId(ctx, priceVolumeTierId).PATCHPriceVolumeTiersPriceVolumeTierIdRequest(pATCHPriceVolumeTiersPriceVolumeTierIdRequest).Execute()
+> PATCHPriceVolumeTiersPriceVolumeTierId200Response PATCHPriceVolumeTiersPriceVolumeTierId(ctx, priceVolumeTierId).PriceVolumeTierUpdate(priceVolumeTierUpdate).Execute()
 
 Update a price volume tier
 
@@ -297,16 +297,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHPriceVolumeTiersPriceVolumeTierIdRequest := *openapiclient.NewPATCHPriceVolumeTiersPriceVolumeTierIdRequest(*openapiclient.NewPATCHPriceVolumeTiersPriceVolumeTierIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHPriceVolumeTiersPriceVolumeTierIdRequestDataAttributes())) // PATCHPriceVolumeTiersPriceVolumeTierIdRequest | 
+    priceVolumeTierUpdate := *openapiclient.NewPriceVolumeTierUpdate(*openapiclient.NewPriceVolumeTierUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes())) // PriceVolumeTierUpdate | 
     priceVolumeTierId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PriceVolumeTiersApi.PATCHPriceVolumeTiersPriceVolumeTierId(context.Background(), priceVolumeTierId).PATCHPriceVolumeTiersPriceVolumeTierIdRequest(pATCHPriceVolumeTiersPriceVolumeTierIdRequest).Execute()
+    resp, r, err := apiClient.PriceVolumeTiersApi.PATCHPriceVolumeTiersPriceVolumeTierId(context.Background(), priceVolumeTierId).PriceVolumeTierUpdate(priceVolumeTierUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceVolumeTiersApi.PATCHPriceVolumeTiersPriceVolumeTierId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -331,7 +331,7 @@ Other parameters are passed through a pointer to a apiPATCHPriceVolumeTiersPrice
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHPriceVolumeTiersPriceVolumeTierIdRequest** | [**PATCHPriceVolumeTiersPriceVolumeTierIdRequest**](PATCHPriceVolumeTiersPriceVolumeTierIdRequest.md) |  | 
+ **priceVolumeTierUpdate** | [**PriceVolumeTierUpdate**](PriceVolumeTierUpdate.md) |  | 
 
 
 ### Return type
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTPriceVolumeTiers
 
-> POSTPriceVolumeTiers201Response POSTPriceVolumeTiers(ctx).POSTPriceVolumeTiersRequest(pOSTPriceVolumeTiersRequest).Execute()
+> POSTPriceVolumeTiers201Response POSTPriceVolumeTiers(ctx).PriceVolumeTierCreate(priceVolumeTierCreate).Execute()
 
 Create a price volume tier
 
@@ -369,15 +369,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTPriceVolumeTiersRequest := *openapiclient.NewPOSTPriceVolumeTiersRequest(*openapiclient.NewPOSTPriceVolumeTiersRequestData(interface{}(123), *openapiclient.NewPOSTPriceVolumeTiersRequestDataAttributes(interface{}(six pack), interface{}(1000)))) // POSTPriceVolumeTiersRequest | 
+    priceVolumeTierCreate := *openapiclient.NewPriceVolumeTierCreate(*openapiclient.NewPriceVolumeTierCreateData(interface{}(123), *openapiclient.NewPOSTPriceVolumeTiers201ResponseDataAttributes(interface{}(six pack), interface{}(1000)))) // PriceVolumeTierCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PriceVolumeTiersApi.POSTPriceVolumeTiers(context.Background()).POSTPriceVolumeTiersRequest(pOSTPriceVolumeTiersRequest).Execute()
+    resp, r, err := apiClient.PriceVolumeTiersApi.POSTPriceVolumeTiers(context.Background()).PriceVolumeTierCreate(priceVolumeTierCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceVolumeTiersApi.POSTPriceVolumeTiers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +398,7 @@ Other parameters are passed through a pointer to a apiPOSTPriceVolumeTiersReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTPriceVolumeTiersRequest** | [**POSTPriceVolumeTiersRequest**](POSTPriceVolumeTiersRequest.md) |  | 
+ **priceVolumeTierCreate** | [**PriceVolumeTierCreate**](PriceVolumeTierCreate.md) |  | 
 
 ### Return type
 

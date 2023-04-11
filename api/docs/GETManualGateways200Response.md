@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to **interface{}** |  | [optional] 
+**Data** | Pointer to [**[]GETManualGateways200ResponseDataInner**](GETManualGateways200ResponseDataInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETManualGateways200Response) GetData() interface{}`
+`func (o *GETManualGateways200Response) GetData() []GETManualGateways200ResponseDataInner`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETManualGateways200Response) GetDataOk() (*interface{}, bool)`
+`func (o *GETManualGateways200Response) GetDataOk() (*[]GETManualGateways200ResponseDataInner, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETManualGateways200Response) SetData(v interface{})`
+`func (o *GETManualGateways200Response) SetData(v []GETManualGateways200ResponseDataInner)`
 
 SetData sets Data field to given value.
 
@@ -50,16 +50,6 @@ SetData sets Data field to given value.
 
 HasData returns a boolean if a field has been set.
 
-### SetDataNil
-
-`func (o *GETManualGateways200Response) SetDataNil(b bool)`
-
- SetDataNil sets the value for Data to be an explicit nil
-
-### UnsetData
-`func (o *GETManualGateways200Response) UnsetData()`
-
-UnsetData ensures that no value is present for Data, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

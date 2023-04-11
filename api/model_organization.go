@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the Organization type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &Organization{}
-
 // Organization struct for Organization
 type Organization struct {
 	Data *OrganizationData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewOrganizationWithDefaults() *Organization {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *Organization) GetData() OrganizationData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret OrganizationData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *Organization) GetData() OrganizationData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Organization) GetDataOk() (*OrganizationData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *Organization) GetDataOk() (*OrganizationData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *Organization) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *Organization) SetData(v OrganizationData) {
 }
 
 func (o Organization) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o Organization) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableOrganization struct {

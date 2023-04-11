@@ -15,22 +15,19 @@ import (
 	"encoding/json"
 )
 
-// checks if the BraintreePaymentData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &BraintreePaymentData{}
-
 // BraintreePaymentData struct for BraintreePaymentData
 type BraintreePaymentData struct {
 	// The resource's type
-	Type          interface{}                                                     `json:"type"`
-	Attributes    GETBraintreePaymentsBraintreePaymentId200ResponseDataAttributes `json:"attributes"`
-	Relationships *AdyenPaymentDataRelationships                                  `json:"relationships,omitempty"`
+	Type          interface{}                                        `json:"type"`
+	Attributes    GETBraintreePayments200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *AdyenPaymentDataRelationships                     `json:"relationships,omitempty"`
 }
 
 // NewBraintreePaymentData instantiates a new BraintreePaymentData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBraintreePaymentData(type_ interface{}, attributes GETBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) *BraintreePaymentData {
+func NewBraintreePaymentData(type_ interface{}, attributes GETBraintreePayments200ResponseDataInnerAttributes) *BraintreePaymentData {
 	this := BraintreePaymentData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -60,7 +57,7 @@ func (o *BraintreePaymentData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BraintreePaymentData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -72,9 +69,9 @@ func (o *BraintreePaymentData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *BraintreePaymentData) GetAttributes() GETBraintreePaymentsBraintreePaymentId200ResponseDataAttributes {
+func (o *BraintreePaymentData) GetAttributes() GETBraintreePayments200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret GETBraintreePaymentsBraintreePaymentId200ResponseDataAttributes
+		var ret GETBraintreePayments200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -83,7 +80,7 @@ func (o *BraintreePaymentData) GetAttributes() GETBraintreePaymentsBraintreePaym
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *BraintreePaymentData) GetAttributesOk() (*GETBraintreePaymentsBraintreePaymentId200ResponseDataAttributes, bool) {
+func (o *BraintreePaymentData) GetAttributesOk() (*GETBraintreePayments200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,13 +88,13 @@ func (o *BraintreePaymentData) GetAttributesOk() (*GETBraintreePaymentsBraintree
 }
 
 // SetAttributes sets field value
-func (o *BraintreePaymentData) SetAttributes(v GETBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) {
+func (o *BraintreePaymentData) SetAttributes(v GETBraintreePayments200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *BraintreePaymentData) GetRelationships() AdyenPaymentDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		var ret AdyenPaymentDataRelationships
 		return ret
 	}
@@ -107,7 +104,7 @@ func (o *BraintreePaymentData) GetRelationships() AdyenPaymentDataRelationships 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BraintreePaymentData) GetRelationshipsOk() (*AdyenPaymentDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -115,7 +112,7 @@ func (o *BraintreePaymentData) GetRelationshipsOk() (*AdyenPaymentDataRelationsh
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *BraintreePaymentData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
@@ -128,23 +125,17 @@ func (o *BraintreePaymentData) SetRelationships(v AdyenPaymentDataRelationships)
 }
 
 func (o BraintreePaymentData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o BraintreePaymentData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	toSerialize["attributes"] = o.Attributes
-	if !IsNil(o.Relationships) {
+	if true {
+		toSerialize["attributes"] = o.Attributes
+	}
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableBraintreePaymentData struct {

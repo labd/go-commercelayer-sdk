@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes{}
-
 // GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes struct for GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes
 type GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes struct {
 	// The subscription model's internal name.
@@ -72,7 +69,7 @@ func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetN
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Name) {
+	if o == nil || o.Name == nil {
 		return nil, false
 	}
 	return &o.Name, true
@@ -80,7 +77,7 @@ func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetN
 
 // HasName returns a boolean if a field has been set.
 func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) HasName() bool {
-	if o != nil && IsNil(o.Name) {
+	if o != nil && o.Name != nil {
 		return true
 	}
 
@@ -105,7 +102,7 @@ func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetS
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetStrategyOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Strategy) {
+	if o == nil || o.Strategy == nil {
 		return nil, false
 	}
 	return &o.Strategy, true
@@ -113,7 +110,7 @@ func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetS
 
 // HasStrategy returns a boolean if a field has been set.
 func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) HasStrategy() bool {
-	if o != nil && IsNil(o.Strategy) {
+	if o != nil && o.Strategy != nil {
 		return true
 	}
 
@@ -138,7 +135,7 @@ func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetF
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetFrequenciesOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Frequencies) {
+	if o == nil || o.Frequencies == nil {
 		return nil, false
 	}
 	return &o.Frequencies, true
@@ -146,7 +143,7 @@ func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetF
 
 // HasFrequencies returns a boolean if a field has been set.
 func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) HasFrequencies() bool {
-	if o != nil && IsNil(o.Frequencies) {
+	if o != nil && o.Frequencies != nil {
 		return true
 	}
 
@@ -171,7 +168,7 @@ func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetA
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetAutoActivateOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.AutoActivate) {
+	if o == nil || o.AutoActivate == nil {
 		return nil, false
 	}
 	return &o.AutoActivate, true
@@ -179,7 +176,7 @@ func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetA
 
 // HasAutoActivate returns a boolean if a field has been set.
 func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) HasAutoActivate() bool {
-	if o != nil && IsNil(o.AutoActivate) {
+	if o != nil && o.AutoActivate != nil {
 		return true
 	}
 
@@ -204,7 +201,7 @@ func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetA
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetAutoCancelOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.AutoCancel) {
+	if o == nil || o.AutoCancel == nil {
 		return nil, false
 	}
 	return &o.AutoCancel, true
@@ -212,7 +209,7 @@ func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetA
 
 // HasAutoCancel returns a boolean if a field has been set.
 func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) HasAutoCancel() bool {
-	if o != nil && IsNil(o.AutoCancel) {
+	if o != nil && o.AutoCancel != nil {
 		return true
 	}
 
@@ -237,7 +234,7 @@ func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetC
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetCreatedAtOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.CreatedAt) {
+	if o == nil || o.CreatedAt == nil {
 		return nil, false
 	}
 	return &o.CreatedAt, true
@@ -245,7 +242,7 @@ func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetC
 
 // HasCreatedAt returns a boolean if a field has been set.
 func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) HasCreatedAt() bool {
-	if o != nil && IsNil(o.CreatedAt) {
+	if o != nil && o.CreatedAt != nil {
 		return true
 	}
 
@@ -270,7 +267,7 @@ func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetU
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetUpdatedAtOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.UpdatedAt) {
+	if o == nil || o.UpdatedAt == nil {
 		return nil, false
 	}
 	return &o.UpdatedAt, true
@@ -278,7 +275,7 @@ func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetU
 
 // HasUpdatedAt returns a boolean if a field has been set.
 func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) HasUpdatedAt() bool {
-	if o != nil && IsNil(o.UpdatedAt) {
+	if o != nil && o.UpdatedAt != nil {
 		return true
 	}
 
@@ -303,7 +300,7 @@ func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetR
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Reference) {
+	if o == nil || o.Reference == nil {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -311,7 +308,7 @@ func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetR
 
 // HasReference returns a boolean if a field has been set.
 func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && IsNil(o.Reference) {
+	if o != nil && o.Reference != nil {
 		return true
 	}
 
@@ -336,7 +333,7 @@ func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetR
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.ReferenceOrigin) {
+	if o == nil || o.ReferenceOrigin == nil {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -344,7 +341,7 @@ func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetR
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && IsNil(o.ReferenceOrigin) {
+	if o != nil && o.ReferenceOrigin != nil {
 		return true
 	}
 
@@ -369,7 +366,7 @@ func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetM
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Metadata) {
+	if o == nil || o.Metadata == nil {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -377,7 +374,7 @@ func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) GetM
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && IsNil(o.Metadata) {
+	if o != nil && o.Metadata != nil {
 		return true
 	}
 
@@ -390,14 +387,6 @@ func (o *GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) SetM
 }
 
 func (o GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -429,7 +418,7 @@ func (o GETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes) ToMap
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETSubscriptionModelsSubscriptionModelId200ResponseDataAttributes struct {

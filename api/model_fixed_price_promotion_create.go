@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the FixedPricePromotionCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &FixedPricePromotionCreate{}
-
 // FixedPricePromotionCreate struct for FixedPricePromotionCreate
 type FixedPricePromotionCreate struct {
-	Data POSTFixedPricePromotionsRequestData `json:"data"`
+	Data FixedPricePromotionCreateData `json:"data"`
 }
 
 // NewFixedPricePromotionCreate instantiates a new FixedPricePromotionCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFixedPricePromotionCreate(data POSTFixedPricePromotionsRequestData) *FixedPricePromotionCreate {
+func NewFixedPricePromotionCreate(data FixedPricePromotionCreateData) *FixedPricePromotionCreate {
 	this := FixedPricePromotionCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewFixedPricePromotionCreateWithDefaults() *FixedPricePromotionCreate {
 }
 
 // GetData returns the Data field value
-func (o *FixedPricePromotionCreate) GetData() POSTFixedPricePromotionsRequestData {
+func (o *FixedPricePromotionCreate) GetData() FixedPricePromotionCreateData {
 	if o == nil {
-		var ret POSTFixedPricePromotionsRequestData
+		var ret FixedPricePromotionCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *FixedPricePromotionCreate) GetData() POSTFixedPricePromotionsRequestDat
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *FixedPricePromotionCreate) GetDataOk() (*POSTFixedPricePromotionsRequestData, bool) {
+func (o *FixedPricePromotionCreate) GetDataOk() (*FixedPricePromotionCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *FixedPricePromotionCreate) GetDataOk() (*POSTFixedPricePromotionsReques
 }
 
 // SetData sets field value
-func (o *FixedPricePromotionCreate) SetData(v POSTFixedPricePromotionsRequestData) {
+func (o *FixedPricePromotionCreate) SetData(v FixedPricePromotionCreateData) {
 	o.Data = v
 }
 
 func (o FixedPricePromotionCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o FixedPricePromotionCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableFixedPricePromotionCreate struct {

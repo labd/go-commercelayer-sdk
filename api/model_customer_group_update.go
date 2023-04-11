@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the CustomerGroupUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CustomerGroupUpdate{}
-
 // CustomerGroupUpdate struct for CustomerGroupUpdate
 type CustomerGroupUpdate struct {
-	Data PATCHCustomerGroupsCustomerGroupIdRequestData `json:"data"`
+	Data CustomerGroupUpdateData `json:"data"`
 }
 
 // NewCustomerGroupUpdate instantiates a new CustomerGroupUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerGroupUpdate(data PATCHCustomerGroupsCustomerGroupIdRequestData) *CustomerGroupUpdate {
+func NewCustomerGroupUpdate(data CustomerGroupUpdateData) *CustomerGroupUpdate {
 	this := CustomerGroupUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewCustomerGroupUpdateWithDefaults() *CustomerGroupUpdate {
 }
 
 // GetData returns the Data field value
-func (o *CustomerGroupUpdate) GetData() PATCHCustomerGroupsCustomerGroupIdRequestData {
+func (o *CustomerGroupUpdate) GetData() CustomerGroupUpdateData {
 	if o == nil {
-		var ret PATCHCustomerGroupsCustomerGroupIdRequestData
+		var ret CustomerGroupUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *CustomerGroupUpdate) GetData() PATCHCustomerGroupsCustomerGroupIdReques
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CustomerGroupUpdate) GetDataOk() (*PATCHCustomerGroupsCustomerGroupIdRequestData, bool) {
+func (o *CustomerGroupUpdate) GetDataOk() (*CustomerGroupUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *CustomerGroupUpdate) GetDataOk() (*PATCHCustomerGroupsCustomerGroupIdRe
 }
 
 // SetData sets field value
-func (o *CustomerGroupUpdate) SetData(v PATCHCustomerGroupsCustomerGroupIdRequestData) {
+func (o *CustomerGroupUpdate) SetData(v CustomerGroupUpdateData) {
 	o.Data = v
 }
 
 func (o CustomerGroupUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o CustomerGroupUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableCustomerGroupUpdate struct {

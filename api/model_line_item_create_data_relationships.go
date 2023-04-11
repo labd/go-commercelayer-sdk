@@ -15,20 +15,17 @@ import (
 	"encoding/json"
 )
 
-// checks if the LineItemCreateDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &LineItemCreateDataRelationships{}
-
 // LineItemCreateDataRelationships struct for LineItemCreateDataRelationships
 type LineItemCreateDataRelationships struct {
-	Order POSTAdyenPaymentsRequestDataRelationshipsOrder `json:"order"`
-	Item  *LineItemCreateDataRelationshipsItem           `json:"item,omitempty"`
+	Order AdyenPaymentCreateDataRelationshipsOrder `json:"order"`
+	Item  *LineItemCreateDataRelationshipsItem     `json:"item,omitempty"`
 }
 
 // NewLineItemCreateDataRelationships instantiates a new LineItemCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLineItemCreateDataRelationships(order POSTAdyenPaymentsRequestDataRelationshipsOrder) *LineItemCreateDataRelationships {
+func NewLineItemCreateDataRelationships(order AdyenPaymentCreateDataRelationshipsOrder) *LineItemCreateDataRelationships {
 	this := LineItemCreateDataRelationships{}
 	this.Order = order
 	return &this
@@ -43,9 +40,9 @@ func NewLineItemCreateDataRelationshipsWithDefaults() *LineItemCreateDataRelatio
 }
 
 // GetOrder returns the Order field value
-func (o *LineItemCreateDataRelationships) GetOrder() POSTAdyenPaymentsRequestDataRelationshipsOrder {
+func (o *LineItemCreateDataRelationships) GetOrder() AdyenPaymentCreateDataRelationshipsOrder {
 	if o == nil {
-		var ret POSTAdyenPaymentsRequestDataRelationshipsOrder
+		var ret AdyenPaymentCreateDataRelationshipsOrder
 		return ret
 	}
 
@@ -54,7 +51,7 @@ func (o *LineItemCreateDataRelationships) GetOrder() POSTAdyenPaymentsRequestDat
 
 // GetOrderOk returns a tuple with the Order field value
 // and a boolean to check if the value has been set.
-func (o *LineItemCreateDataRelationships) GetOrderOk() (*POSTAdyenPaymentsRequestDataRelationshipsOrder, bool) {
+func (o *LineItemCreateDataRelationships) GetOrderOk() (*AdyenPaymentCreateDataRelationshipsOrder, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -62,13 +59,13 @@ func (o *LineItemCreateDataRelationships) GetOrderOk() (*POSTAdyenPaymentsReques
 }
 
 // SetOrder sets field value
-func (o *LineItemCreateDataRelationships) SetOrder(v POSTAdyenPaymentsRequestDataRelationshipsOrder) {
+func (o *LineItemCreateDataRelationships) SetOrder(v AdyenPaymentCreateDataRelationshipsOrder) {
 	o.Order = v
 }
 
 // GetItem returns the Item field value if set, zero value otherwise.
 func (o *LineItemCreateDataRelationships) GetItem() LineItemCreateDataRelationshipsItem {
-	if o == nil || IsNil(o.Item) {
+	if o == nil || o.Item == nil {
 		var ret LineItemCreateDataRelationshipsItem
 		return ret
 	}
@@ -78,7 +75,7 @@ func (o *LineItemCreateDataRelationships) GetItem() LineItemCreateDataRelationsh
 // GetItemOk returns a tuple with the Item field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LineItemCreateDataRelationships) GetItemOk() (*LineItemCreateDataRelationshipsItem, bool) {
-	if o == nil || IsNil(o.Item) {
+	if o == nil || o.Item == nil {
 		return nil, false
 	}
 	return o.Item, true
@@ -86,7 +83,7 @@ func (o *LineItemCreateDataRelationships) GetItemOk() (*LineItemCreateDataRelati
 
 // HasItem returns a boolean if a field has been set.
 func (o *LineItemCreateDataRelationships) HasItem() bool {
-	if o != nil && !IsNil(o.Item) {
+	if o != nil && o.Item != nil {
 		return true
 	}
 
@@ -99,20 +96,14 @@ func (o *LineItemCreateDataRelationships) SetItem(v LineItemCreateDataRelationsh
 }
 
 func (o LineItemCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o LineItemCreateDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	toSerialize["order"] = o.Order
-	if !IsNil(o.Item) {
+	if true {
+		toSerialize["order"] = o.Order
+	}
+	if o.Item != nil {
 		toSerialize["item"] = o.Item
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableLineItemCreateDataRelationships struct {

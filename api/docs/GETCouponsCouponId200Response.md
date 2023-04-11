@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETCouponsCouponId200ResponseData**](GETCouponsCouponId200ResponseData.md) |  | [optional] 
+**Data** | Pointer to [**GETCoupons200ResponseDataInner**](GETCoupons200ResponseDataInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETCouponsCouponId200Response) GetData() GETCouponsCouponId200ResponseData`
+`func (o *GETCouponsCouponId200Response) GetData() GETCoupons200ResponseDataInner`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETCouponsCouponId200Response) GetDataOk() (*GETCouponsCouponId200ResponseData, bool)`
+`func (o *GETCouponsCouponId200Response) GetDataOk() (*GETCoupons200ResponseDataInner, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETCouponsCouponId200Response) SetData(v GETCouponsCouponId200ResponseData)`
+`func (o *GETCouponsCouponId200Response) SetData(v GETCoupons200ResponseDataInner)`
 
 SetData sets Data field to given value.
 

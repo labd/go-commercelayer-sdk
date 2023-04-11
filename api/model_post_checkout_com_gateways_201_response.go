@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the POSTCheckoutComGateways201Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &POSTCheckoutComGateways201Response{}
-
 // POSTCheckoutComGateways201Response struct for POSTCheckoutComGateways201Response
 type POSTCheckoutComGateways201Response struct {
 	Data *POSTCheckoutComGateways201ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPOSTCheckoutComGateways201ResponseWithDefaults() *POSTCheckoutComGateway
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTCheckoutComGateways201Response) GetData() POSTCheckoutComGateways201ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret POSTCheckoutComGateways201ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *POSTCheckoutComGateways201Response) GetData() POSTCheckoutComGateways20
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTCheckoutComGateways201Response) GetDataOk() (*POSTCheckoutComGateways201ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *POSTCheckoutComGateways201Response) GetDataOk() (*POSTCheckoutComGatewa
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTCheckoutComGateways201Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *POSTCheckoutComGateways201Response) SetData(v POSTCheckoutComGateways20
 }
 
 func (o POSTCheckoutComGateways201Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o POSTCheckoutComGateways201Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePOSTCheckoutComGateways201Response struct {

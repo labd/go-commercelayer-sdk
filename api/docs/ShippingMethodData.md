@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETShippingMethodsShippingMethodId200ResponseDataAttributes**](GETShippingMethodsShippingMethodId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**GETShippingMethods200ResponseDataInnerAttributes**](GETShippingMethods200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**ShippingMethodDataRelationships**](ShippingMethodDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewShippingMethodData
 
-`func NewShippingMethodData(type_ interface{}, attributes GETShippingMethodsShippingMethodId200ResponseDataAttributes, ) *ShippingMethodData`
+`func NewShippingMethodData(type_ interface{}, attributes GETShippingMethods200ResponseDataInnerAttributes, ) *ShippingMethodData`
 
 NewShippingMethodData instantiates a new ShippingMethodData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *ShippingMethodData) GetAttributes() GETShippingMethodsShippingMethodId200ResponseDataAttributes`
+`func (o *ShippingMethodData) GetAttributes() GETShippingMethods200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ShippingMethodData) GetAttributesOk() (*GETShippingMethodsShippingMethodId200ResponseDataAttributes, bool)`
+`func (o *ShippingMethodData) GetAttributesOk() (*GETShippingMethods200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ShippingMethodData) SetAttributes(v GETShippingMethodsShippingMethodId200ResponseDataAttributes)`
+`func (o *ShippingMethodData) SetAttributes(v GETShippingMethods200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

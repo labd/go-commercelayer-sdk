@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PATCHCapturesCaptureIdRequestData**](PATCHCapturesCaptureIdRequestData.md) |  | 
+**Data** | [**CaptureUpdateData**](CaptureUpdateData.md) |  | 
 
 ## Methods
 
 ### NewCaptureUpdate
 
-`func NewCaptureUpdate(data PATCHCapturesCaptureIdRequestData, ) *CaptureUpdate`
+`func NewCaptureUpdate(data CaptureUpdateData, ) *CaptureUpdate`
 
 NewCaptureUpdate instantiates a new CaptureUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *CaptureUpdate) GetData() PATCHCapturesCaptureIdRequestData`
+`func (o *CaptureUpdate) GetData() CaptureUpdateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *CaptureUpdate) GetDataOk() (*PATCHCapturesCaptureIdRequestData, bool)`
+`func (o *CaptureUpdate) GetDataOk() (*CaptureUpdateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *CaptureUpdate) SetData(v PATCHCapturesCaptureIdRequestData)`
+`func (o *CaptureUpdate) SetData(v CaptureUpdateData)`
 
 SetData sets Data field to given value.
 

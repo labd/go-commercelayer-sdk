@@ -30,7 +30,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -38,7 +38,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.KlarnaPaymentsApi.DELETEKlarnaPaymentsKlarnaPaymentId(context.Background(), klarnaPaymentId).Execute()
+    resp, r, err := apiClient.KlarnaPaymentsApi.DELETEKlarnaPaymentsKlarnaPaymentId(context.Background(), klarnaPaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KlarnaPaymentsApi.DELETEKlarnaPaymentsKlarnaPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -98,7 +98,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -106,7 +106,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.KlarnaPaymentsApi.GETKlarnaGatewayIdKlarnaPayments(context.Background(), klarnaGatewayId).Execute()
+    resp, r, err := apiClient.KlarnaPaymentsApi.GETKlarnaGatewayIdKlarnaPayments(context.Background(), klarnaGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KlarnaPaymentsApi.GETKlarnaGatewayIdKlarnaPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -166,7 +166,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -227,7 +227,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHKlarnaPaymentsKlarnaPaymentId
 
-> PATCHKlarnaPaymentsKlarnaPaymentId200Response PATCHKlarnaPaymentsKlarnaPaymentId(ctx, klarnaPaymentId).PATCHKlarnaPaymentsKlarnaPaymentIdRequest(pATCHKlarnaPaymentsKlarnaPaymentIdRequest).Execute()
+> PATCHKlarnaPaymentsKlarnaPaymentId200Response PATCHKlarnaPaymentsKlarnaPaymentId(ctx, klarnaPaymentId).KlarnaPaymentUpdate(klarnaPaymentUpdate).Execute()
 
 Update a klarna payment
 
@@ -297,16 +297,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHKlarnaPaymentsKlarnaPaymentIdRequest := *openapiclient.NewPATCHKlarnaPaymentsKlarnaPaymentIdRequest(*openapiclient.NewPATCHKlarnaPaymentsKlarnaPaymentIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHKlarnaPaymentsKlarnaPaymentIdRequestDataAttributes())) // PATCHKlarnaPaymentsKlarnaPaymentIdRequest | 
+    klarnaPaymentUpdate := *openapiclient.NewKlarnaPaymentUpdate(*openapiclient.NewKlarnaPaymentUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes())) // KlarnaPaymentUpdate | 
     klarnaPaymentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KlarnaPaymentsApi.PATCHKlarnaPaymentsKlarnaPaymentId(context.Background(), klarnaPaymentId).PATCHKlarnaPaymentsKlarnaPaymentIdRequest(pATCHKlarnaPaymentsKlarnaPaymentIdRequest).Execute()
+    resp, r, err := apiClient.KlarnaPaymentsApi.PATCHKlarnaPaymentsKlarnaPaymentId(context.Background(), klarnaPaymentId).KlarnaPaymentUpdate(klarnaPaymentUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KlarnaPaymentsApi.PATCHKlarnaPaymentsKlarnaPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -331,7 +331,7 @@ Other parameters are passed through a pointer to a apiPATCHKlarnaPaymentsKlarnaP
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHKlarnaPaymentsKlarnaPaymentIdRequest** | [**PATCHKlarnaPaymentsKlarnaPaymentIdRequest**](PATCHKlarnaPaymentsKlarnaPaymentIdRequest.md) |  | 
+ **klarnaPaymentUpdate** | [**KlarnaPaymentUpdate**](KlarnaPaymentUpdate.md) |  | 
 
 
 ### Return type
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTKlarnaPayments
 
-> POSTKlarnaPayments201Response POSTKlarnaPayments(ctx).POSTKlarnaPaymentsRequest(pOSTKlarnaPaymentsRequest).Execute()
+> POSTKlarnaPayments201Response POSTKlarnaPayments(ctx).KlarnaPaymentCreate(klarnaPaymentCreate).Execute()
 
 Create a klarna payment
 
@@ -369,15 +369,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTKlarnaPaymentsRequest := *openapiclient.NewPOSTKlarnaPaymentsRequest(*openapiclient.NewPOSTKlarnaPaymentsRequestData(interface{}(123), *openapiclient.NewPOSTAdyenPaymentsRequestDataAttributes())) // POSTKlarnaPaymentsRequest | 
+    klarnaPaymentCreate := *openapiclient.NewKlarnaPaymentCreate(*openapiclient.NewKlarnaPaymentCreateData(interface{}(123), *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // KlarnaPaymentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KlarnaPaymentsApi.POSTKlarnaPayments(context.Background()).POSTKlarnaPaymentsRequest(pOSTKlarnaPaymentsRequest).Execute()
+    resp, r, err := apiClient.KlarnaPaymentsApi.POSTKlarnaPayments(context.Background()).KlarnaPaymentCreate(klarnaPaymentCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KlarnaPaymentsApi.POSTKlarnaPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +398,7 @@ Other parameters are passed through a pointer to a apiPOSTKlarnaPaymentsRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTKlarnaPaymentsRequest** | [**POSTKlarnaPaymentsRequest**](POSTKlarnaPaymentsRequest.md) |  | 
+ **klarnaPaymentCreate** | [**KlarnaPaymentCreate**](KlarnaPaymentCreate.md) |  | 
 
 ### Return type
 

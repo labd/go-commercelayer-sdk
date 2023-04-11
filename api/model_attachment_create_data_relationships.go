@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the AttachmentCreateDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AttachmentCreateDataRelationships{}
-
 // AttachmentCreateDataRelationships struct for AttachmentCreateDataRelationships
 type AttachmentCreateDataRelationships struct {
 	Attachable AttachmentCreateDataRelationshipsAttachable `json:"attachable"`
@@ -66,17 +63,11 @@ func (o *AttachmentCreateDataRelationships) SetAttachable(v AttachmentCreateData
 }
 
 func (o AttachmentCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["attachable"] = o.Attachable
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o AttachmentCreateDataRelationships) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["attachable"] = o.Attachable
-	return toSerialize, nil
 }
 
 type NullableAttachmentCreateDataRelationships struct {

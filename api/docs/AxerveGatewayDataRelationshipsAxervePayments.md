@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**POSTAxerveGatewaysRequestDataRelationshipsAxervePaymentsData**](POSTAxerveGatewaysRequestDataRelationshipsAxervePaymentsData.md) |  | [optional] 
+**Data** | Pointer to [**AxerveGatewayDataRelationshipsAxervePaymentsData**](AxerveGatewayDataRelationshipsAxervePaymentsData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *AxerveGatewayDataRelationshipsAxervePayments) GetData() POSTAxerveGatewaysRequestDataRelationshipsAxervePaymentsData`
+`func (o *AxerveGatewayDataRelationshipsAxervePayments) GetData() AxerveGatewayDataRelationshipsAxervePaymentsData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *AxerveGatewayDataRelationshipsAxervePayments) GetDataOk() (*POSTAxerveGatewaysRequestDataRelationshipsAxervePaymentsData, bool)`
+`func (o *AxerveGatewayDataRelationshipsAxervePayments) GetDataOk() (*AxerveGatewayDataRelationshipsAxervePaymentsData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *AxerveGatewayDataRelationshipsAxervePayments) SetData(v POSTAxerveGatewaysRequestDataRelationshipsAxervePaymentsData)`
+`func (o *AxerveGatewayDataRelationshipsAxervePayments) SetData(v AxerveGatewayDataRelationshipsAxervePaymentsData)`
 
 SetData sets Data field to given value.
 

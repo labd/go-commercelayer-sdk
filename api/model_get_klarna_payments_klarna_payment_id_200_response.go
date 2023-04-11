@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETKlarnaPaymentsKlarnaPaymentId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETKlarnaPaymentsKlarnaPaymentId200Response{}
-
 // GETKlarnaPaymentsKlarnaPaymentId200Response struct for GETKlarnaPaymentsKlarnaPaymentId200Response
 type GETKlarnaPaymentsKlarnaPaymentId200Response struct {
-	Data *GETKlarnaPaymentsKlarnaPaymentId200ResponseData `json:"data,omitempty"`
+	Data *GETKlarnaPayments200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETKlarnaPaymentsKlarnaPaymentId200Response instantiates a new GETKlarnaPaymentsKlarnaPaymentId200Response object
@@ -41,9 +38,9 @@ func NewGETKlarnaPaymentsKlarnaPaymentId200ResponseWithDefaults() *GETKlarnaPaym
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETKlarnaPaymentsKlarnaPaymentId200Response) GetData() GETKlarnaPaymentsKlarnaPaymentId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETKlarnaPaymentsKlarnaPaymentId200ResponseData
+func (o *GETKlarnaPaymentsKlarnaPaymentId200Response) GetData() GETKlarnaPayments200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETKlarnaPayments200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETKlarnaPaymentsKlarnaPaymentId200Response) GetData() GETKlarnaPayment
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETKlarnaPaymentsKlarnaPaymentId200Response) GetDataOk() (*GETKlarnaPaymentsKlarnaPaymentId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETKlarnaPaymentsKlarnaPaymentId200Response) GetDataOk() (*GETKlarnaPayments200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETKlarnaPaymentsKlarnaPaymentId200Response) GetDataOk() (*GETKlarnaPay
 
 // HasData returns a boolean if a field has been set.
 func (o *GETKlarnaPaymentsKlarnaPaymentId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETKlarnaPaymentsKlarnaPaymentId200ResponseData and assigns it to the Data field.
-func (o *GETKlarnaPaymentsKlarnaPaymentId200Response) SetData(v GETKlarnaPaymentsKlarnaPaymentId200ResponseData) {
+// SetData gets a reference to the given GETKlarnaPayments200ResponseDataInner and assigns it to the Data field.
+func (o *GETKlarnaPaymentsKlarnaPaymentId200Response) SetData(v GETKlarnaPayments200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETKlarnaPaymentsKlarnaPaymentId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETKlarnaPaymentsKlarnaPaymentId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETKlarnaPaymentsKlarnaPaymentId200Response struct {

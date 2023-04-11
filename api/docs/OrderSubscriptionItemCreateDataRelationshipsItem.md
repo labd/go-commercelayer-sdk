@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**POSTOrderSubscriptionItemsRequestDataRelationshipsItemData**](POSTOrderSubscriptionItemsRequestDataRelationshipsItemData.md) |  | 
+**Data** | [**OrderSubscriptionItemDataRelationshipsItemData**](OrderSubscriptionItemDataRelationshipsItemData.md) |  | 
 
 ## Methods
 
 ### NewOrderSubscriptionItemCreateDataRelationshipsItem
 
-`func NewOrderSubscriptionItemCreateDataRelationshipsItem(data POSTOrderSubscriptionItemsRequestDataRelationshipsItemData, ) *OrderSubscriptionItemCreateDataRelationshipsItem`
+`func NewOrderSubscriptionItemCreateDataRelationshipsItem(data OrderSubscriptionItemDataRelationshipsItemData, ) *OrderSubscriptionItemCreateDataRelationshipsItem`
 
 NewOrderSubscriptionItemCreateDataRelationshipsItem instantiates a new OrderSubscriptionItemCreateDataRelationshipsItem object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *OrderSubscriptionItemCreateDataRelationshipsItem) GetData() POSTOrderSubscriptionItemsRequestDataRelationshipsItemData`
+`func (o *OrderSubscriptionItemCreateDataRelationshipsItem) GetData() OrderSubscriptionItemDataRelationshipsItemData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *OrderSubscriptionItemCreateDataRelationshipsItem) GetDataOk() (*POSTOrderSubscriptionItemsRequestDataRelationshipsItemData, bool)`
+`func (o *OrderSubscriptionItemCreateDataRelationshipsItem) GetDataOk() (*OrderSubscriptionItemDataRelationshipsItemData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *OrderSubscriptionItemCreateDataRelationshipsItem) SetData(v POSTOrderSubscriptionItemsRequestDataRelationshipsItemData)`
+`func (o *OrderSubscriptionItemCreateDataRelationshipsItem) SetData(v OrderSubscriptionItemDataRelationshipsItemData)`
 
 SetData sets Data field to given value.
 

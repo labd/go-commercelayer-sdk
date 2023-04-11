@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the ApplicationData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ApplicationData{}
-
 // ApplicationData struct for ApplicationData
 type ApplicationData struct {
 	// The resource's type
@@ -60,7 +57,7 @@ func (o *ApplicationData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApplicationData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -108,7 +105,7 @@ func (o *ApplicationData) GetRelationships() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ApplicationData) GetRelationshipsOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return &o.Relationships, true
@@ -116,7 +113,7 @@ func (o *ApplicationData) GetRelationshipsOk() (*interface{}, bool) {
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *ApplicationData) HasRelationships() bool {
-	if o != nil && IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
@@ -129,23 +126,17 @@ func (o *ApplicationData) SetRelationships(v interface{}) {
 }
 
 func (o ApplicationData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o ApplicationData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	toSerialize["attributes"] = o.Attributes
+	if true {
+		toSerialize["attributes"] = o.Attributes
+	}
 	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableApplicationData struct {

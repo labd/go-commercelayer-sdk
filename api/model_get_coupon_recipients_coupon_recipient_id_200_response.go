@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETCouponRecipientsCouponRecipientId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETCouponRecipientsCouponRecipientId200Response{}
-
 // GETCouponRecipientsCouponRecipientId200Response struct for GETCouponRecipientsCouponRecipientId200Response
 type GETCouponRecipientsCouponRecipientId200Response struct {
-	Data *GETCouponRecipientsCouponRecipientId200ResponseData `json:"data,omitempty"`
+	Data *GETCouponRecipients200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETCouponRecipientsCouponRecipientId200Response instantiates a new GETCouponRecipientsCouponRecipientId200Response object
@@ -41,9 +38,9 @@ func NewGETCouponRecipientsCouponRecipientId200ResponseWithDefaults() *GETCoupon
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETCouponRecipientsCouponRecipientId200Response) GetData() GETCouponRecipientsCouponRecipientId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETCouponRecipientsCouponRecipientId200ResponseData
+func (o *GETCouponRecipientsCouponRecipientId200Response) GetData() GETCouponRecipients200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETCouponRecipients200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETCouponRecipientsCouponRecipientId200Response) GetData() GETCouponRec
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCouponRecipientsCouponRecipientId200Response) GetDataOk() (*GETCouponRecipientsCouponRecipientId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETCouponRecipientsCouponRecipientId200Response) GetDataOk() (*GETCouponRecipients200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETCouponRecipientsCouponRecipientId200Response) GetDataOk() (*GETCoupo
 
 // HasData returns a boolean if a field has been set.
 func (o *GETCouponRecipientsCouponRecipientId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETCouponRecipientsCouponRecipientId200ResponseData and assigns it to the Data field.
-func (o *GETCouponRecipientsCouponRecipientId200Response) SetData(v GETCouponRecipientsCouponRecipientId200ResponseData) {
+// SetData gets a reference to the given GETCouponRecipients200ResponseDataInner and assigns it to the Data field.
+func (o *GETCouponRecipientsCouponRecipientId200Response) SetData(v GETCouponRecipients200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETCouponRecipientsCouponRecipientId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETCouponRecipientsCouponRecipientId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETCouponRecipientsCouponRecipientId200Response struct {

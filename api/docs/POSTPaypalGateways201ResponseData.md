@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
-**Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
-**Attributes** | Pointer to [**POSTPaypalGatewaysRequestDataAttributes**](POSTPaypalGatewaysRequestDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTPaypalGateways201ResponseDataRelationships**](POSTPaypalGateways201ResponseDataRelationships.md) |  | [optional] 
+**Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
+**Attributes** | Pointer to [**POSTPaypalGateways201ResponseDataAttributes**](POSTPaypalGateways201ResponseDataAttributes.md) |  | [optional] 
+**Relationships** | Pointer to [**GETPaypalGateways200ResponseDataInnerRelationships**](GETPaypalGateways200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -101,20 +101,20 @@ HasType returns a boolean if a field has been set.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetLinks
 
-`func (o *POSTPaypalGateways201ResponseData) GetLinks() POSTAddresses201ResponseDataLinks`
+`func (o *POSTPaypalGateways201ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *POSTPaypalGateways201ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool)`
+`func (o *POSTPaypalGateways201ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *POSTPaypalGateways201ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks)`
+`func (o *POSTPaypalGateways201ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks)`
 
 SetLinks sets Links field to given value.
 
@@ -126,20 +126,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *POSTPaypalGateways201ResponseData) GetAttributes() POSTPaypalGatewaysRequestDataAttributes`
+`func (o *POSTPaypalGateways201ResponseData) GetAttributes() POSTPaypalGateways201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *POSTPaypalGateways201ResponseData) GetAttributesOk() (*POSTPaypalGatewaysRequestDataAttributes, bool)`
+`func (o *POSTPaypalGateways201ResponseData) GetAttributesOk() (*POSTPaypalGateways201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *POSTPaypalGateways201ResponseData) SetAttributes(v POSTPaypalGatewaysRequestDataAttributes)`
+`func (o *POSTPaypalGateways201ResponseData) SetAttributes(v POSTPaypalGateways201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
@@ -151,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *POSTPaypalGateways201ResponseData) GetRelationships() POSTPaypalGateways201ResponseDataRelationships`
+`func (o *POSTPaypalGateways201ResponseData) GetRelationships() GETPaypalGateways200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *POSTPaypalGateways201ResponseData) GetRelationshipsOk() (*POSTPaypalGateways201ResponseDataRelationships, bool)`
+`func (o *POSTPaypalGateways201ResponseData) GetRelationshipsOk() (*GETPaypalGateways200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *POSTPaypalGateways201ResponseData) SetRelationships(v POSTPaypalGateways201ResponseDataRelationships)`
+`func (o *POSTPaypalGateways201ResponseData) SetRelationships(v GETPaypalGateways200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the AdyenPaymentCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AdyenPaymentCreate{}
-
 // AdyenPaymentCreate struct for AdyenPaymentCreate
 type AdyenPaymentCreate struct {
-	Data POSTAdyenPaymentsRequestData `json:"data"`
+	Data AdyenPaymentCreateData `json:"data"`
 }
 
 // NewAdyenPaymentCreate instantiates a new AdyenPaymentCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAdyenPaymentCreate(data POSTAdyenPaymentsRequestData) *AdyenPaymentCreate {
+func NewAdyenPaymentCreate(data AdyenPaymentCreateData) *AdyenPaymentCreate {
 	this := AdyenPaymentCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewAdyenPaymentCreateWithDefaults() *AdyenPaymentCreate {
 }
 
 // GetData returns the Data field value
-func (o *AdyenPaymentCreate) GetData() POSTAdyenPaymentsRequestData {
+func (o *AdyenPaymentCreate) GetData() AdyenPaymentCreateData {
 	if o == nil {
-		var ret POSTAdyenPaymentsRequestData
+		var ret AdyenPaymentCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *AdyenPaymentCreate) GetData() POSTAdyenPaymentsRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *AdyenPaymentCreate) GetDataOk() (*POSTAdyenPaymentsRequestData, bool) {
+func (o *AdyenPaymentCreate) GetDataOk() (*AdyenPaymentCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *AdyenPaymentCreate) GetDataOk() (*POSTAdyenPaymentsRequestData, bool) {
 }
 
 // SetData sets field value
-func (o *AdyenPaymentCreate) SetData(v POSTAdyenPaymentsRequestData) {
+func (o *AdyenPaymentCreate) SetData(v AdyenPaymentCreateData) {
 	o.Data = v
 }
 
 func (o AdyenPaymentCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o AdyenPaymentCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableAdyenPaymentCreate struct {

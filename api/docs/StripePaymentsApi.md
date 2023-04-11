@@ -30,7 +30,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -38,7 +38,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.StripePaymentsApi.DELETEStripePaymentsStripePaymentId(context.Background(), stripePaymentId).Execute()
+    resp, r, err := apiClient.StripePaymentsApi.DELETEStripePaymentsStripePaymentId(context.Background(), stripePaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StripePaymentsApi.DELETEStripePaymentsStripePaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -98,7 +98,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -106,7 +106,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.StripePaymentsApi.GETStripeGatewayIdStripePayments(context.Background(), stripeGatewayId).Execute()
+    resp, r, err := apiClient.StripePaymentsApi.GETStripeGatewayIdStripePayments(context.Background(), stripeGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StripePaymentsApi.GETStripeGatewayIdStripePayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -166,7 +166,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -227,7 +227,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHStripePaymentsStripePaymentId
 
-> PATCHStripePaymentsStripePaymentId200Response PATCHStripePaymentsStripePaymentId(ctx, stripePaymentId).PATCHStripePaymentsStripePaymentIdRequest(pATCHStripePaymentsStripePaymentIdRequest).Execute()
+> PATCHStripePaymentsStripePaymentId200Response PATCHStripePaymentsStripePaymentId(ctx, stripePaymentId).StripePaymentUpdate(stripePaymentUpdate).Execute()
 
 Update a stripe payment
 
@@ -297,16 +297,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHStripePaymentsStripePaymentIdRequest := *openapiclient.NewPATCHStripePaymentsStripePaymentIdRequest(*openapiclient.NewPATCHStripePaymentsStripePaymentIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHStripePaymentsStripePaymentIdRequestDataAttributes())) // PATCHStripePaymentsStripePaymentIdRequest | 
+    stripePaymentUpdate := *openapiclient.NewStripePaymentUpdate(*openapiclient.NewStripePaymentUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHStripePaymentsStripePaymentId200ResponseDataAttributes())) // StripePaymentUpdate | 
     stripePaymentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.StripePaymentsApi.PATCHStripePaymentsStripePaymentId(context.Background(), stripePaymentId).PATCHStripePaymentsStripePaymentIdRequest(pATCHStripePaymentsStripePaymentIdRequest).Execute()
+    resp, r, err := apiClient.StripePaymentsApi.PATCHStripePaymentsStripePaymentId(context.Background(), stripePaymentId).StripePaymentUpdate(stripePaymentUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StripePaymentsApi.PATCHStripePaymentsStripePaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -331,7 +331,7 @@ Other parameters are passed through a pointer to a apiPATCHStripePaymentsStripeP
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHStripePaymentsStripePaymentIdRequest** | [**PATCHStripePaymentsStripePaymentIdRequest**](PATCHStripePaymentsStripePaymentIdRequest.md) |  | 
+ **stripePaymentUpdate** | [**StripePaymentUpdate**](StripePaymentUpdate.md) |  | 
 
 
 ### Return type
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTStripePayments
 
-> POSTStripePayments201Response POSTStripePayments(ctx).POSTStripePaymentsRequest(pOSTStripePaymentsRequest).Execute()
+> POSTStripePayments201Response POSTStripePayments(ctx).StripePaymentCreate(stripePaymentCreate).Execute()
 
 Create a stripe payment
 
@@ -369,15 +369,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTStripePaymentsRequest := *openapiclient.NewPOSTStripePaymentsRequest(*openapiclient.NewPOSTStripePaymentsRequestData(interface{}(123), *openapiclient.NewPOSTStripePaymentsRequestDataAttributes())) // POSTStripePaymentsRequest | 
+    stripePaymentCreate := *openapiclient.NewStripePaymentCreate(*openapiclient.NewStripePaymentCreateData(interface{}(123), *openapiclient.NewPOSTStripePayments201ResponseDataAttributes())) // StripePaymentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.StripePaymentsApi.POSTStripePayments(context.Background()).POSTStripePaymentsRequest(pOSTStripePaymentsRequest).Execute()
+    resp, r, err := apiClient.StripePaymentsApi.POSTStripePayments(context.Background()).StripePaymentCreate(stripePaymentCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StripePaymentsApi.POSTStripePayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +398,7 @@ Other parameters are passed through a pointer to a apiPOSTStripePaymentsRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTStripePaymentsRequest** | [**POSTStripePaymentsRequest**](POSTStripePaymentsRequest.md) |  | 
+ **stripePaymentCreate** | [**StripePaymentCreate**](StripePaymentCreate.md) |  | 
 
 ### Return type
 

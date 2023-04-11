@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the CustomerDataRelationshipsReturns type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CustomerDataRelationshipsReturns{}
-
 // CustomerDataRelationshipsReturns struct for CustomerDataRelationshipsReturns
 type CustomerDataRelationshipsReturns struct {
-	Data *POSTReturnLineItemsRequestDataRelationshipsReturnData `json:"data,omitempty"`
+	Data *CustomerDataRelationshipsReturnsData `json:"data,omitempty"`
 }
 
 // NewCustomerDataRelationshipsReturns instantiates a new CustomerDataRelationshipsReturns object
@@ -41,9 +38,9 @@ func NewCustomerDataRelationshipsReturnsWithDefaults() *CustomerDataRelationship
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *CustomerDataRelationshipsReturns) GetData() POSTReturnLineItemsRequestDataRelationshipsReturnData {
-	if o == nil || IsNil(o.Data) {
-		var ret POSTReturnLineItemsRequestDataRelationshipsReturnData
+func (o *CustomerDataRelationshipsReturns) GetData() CustomerDataRelationshipsReturnsData {
+	if o == nil || o.Data == nil {
+		var ret CustomerDataRelationshipsReturnsData
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *CustomerDataRelationshipsReturns) GetData() POSTReturnLineItemsRequestD
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerDataRelationshipsReturns) GetDataOk() (*POSTReturnLineItemsRequestDataRelationshipsReturnData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *CustomerDataRelationshipsReturns) GetDataOk() (*CustomerDataRelationshipsReturnsData, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *CustomerDataRelationshipsReturns) GetDataOk() (*POSTReturnLineItemsRequ
 
 // HasData returns a boolean if a field has been set.
 func (o *CustomerDataRelationshipsReturns) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given POSTReturnLineItemsRequestDataRelationshipsReturnData and assigns it to the Data field.
-func (o *CustomerDataRelationshipsReturns) SetData(v POSTReturnLineItemsRequestDataRelationshipsReturnData) {
+// SetData gets a reference to the given CustomerDataRelationshipsReturnsData and assigns it to the Data field.
+func (o *CustomerDataRelationshipsReturns) SetData(v CustomerDataRelationshipsReturnsData) {
 	o.Data = &v
 }
 
 func (o CustomerDataRelationshipsReturns) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o CustomerDataRelationshipsReturns) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableCustomerDataRelationshipsReturns struct {

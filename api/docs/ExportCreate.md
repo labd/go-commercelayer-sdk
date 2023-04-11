@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**POSTExportsRequestData**](POSTExportsRequestData.md) |  | 
+**Data** | [**ExportCreateData**](ExportCreateData.md) |  | 
 
 ## Methods
 
 ### NewExportCreate
 
-`func NewExportCreate(data POSTExportsRequestData, ) *ExportCreate`
+`func NewExportCreate(data ExportCreateData, ) *ExportCreate`
 
 NewExportCreate instantiates a new ExportCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *ExportCreate) GetData() POSTExportsRequestData`
+`func (o *ExportCreate) GetData() ExportCreateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ExportCreate) GetDataOk() (*POSTExportsRequestData, bool)`
+`func (o *ExportCreate) GetDataOk() (*ExportCreateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ExportCreate) SetData(v POSTExportsRequestData)`
+`func (o *ExportCreate) SetData(v ExportCreateData)`
 
 SetData sets Data field to given value.
 

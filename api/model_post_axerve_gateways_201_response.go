@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the POSTAxerveGateways201Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &POSTAxerveGateways201Response{}
-
 // POSTAxerveGateways201Response struct for POSTAxerveGateways201Response
 type POSTAxerveGateways201Response struct {
 	Data *POSTAxerveGateways201ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPOSTAxerveGateways201ResponseWithDefaults() *POSTAxerveGateways201Respon
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTAxerveGateways201Response) GetData() POSTAxerveGateways201ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret POSTAxerveGateways201ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *POSTAxerveGateways201Response) GetData() POSTAxerveGateways201ResponseD
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTAxerveGateways201Response) GetDataOk() (*POSTAxerveGateways201ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *POSTAxerveGateways201Response) GetDataOk() (*POSTAxerveGateways201Respo
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTAxerveGateways201Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *POSTAxerveGateways201Response) SetData(v POSTAxerveGateways201ResponseD
 }
 
 func (o POSTAxerveGateways201Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o POSTAxerveGateways201Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePOSTAxerveGateways201Response struct {

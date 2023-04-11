@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETDeliveryLeadTimesDeliveryLeadTimeId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETDeliveryLeadTimesDeliveryLeadTimeId200Response{}
-
 // GETDeliveryLeadTimesDeliveryLeadTimeId200Response struct for GETDeliveryLeadTimesDeliveryLeadTimeId200Response
 type GETDeliveryLeadTimesDeliveryLeadTimeId200Response struct {
-	Data *GETDeliveryLeadTimesDeliveryLeadTimeId200ResponseData `json:"data,omitempty"`
+	Data *GETDeliveryLeadTimes200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETDeliveryLeadTimesDeliveryLeadTimeId200Response instantiates a new GETDeliveryLeadTimesDeliveryLeadTimeId200Response object
@@ -41,9 +38,9 @@ func NewGETDeliveryLeadTimesDeliveryLeadTimeId200ResponseWithDefaults() *GETDeli
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETDeliveryLeadTimesDeliveryLeadTimeId200Response) GetData() GETDeliveryLeadTimesDeliveryLeadTimeId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETDeliveryLeadTimesDeliveryLeadTimeId200ResponseData
+func (o *GETDeliveryLeadTimesDeliveryLeadTimeId200Response) GetData() GETDeliveryLeadTimes200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETDeliveryLeadTimes200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETDeliveryLeadTimesDeliveryLeadTimeId200Response) GetData() GETDeliver
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETDeliveryLeadTimesDeliveryLeadTimeId200Response) GetDataOk() (*GETDeliveryLeadTimesDeliveryLeadTimeId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETDeliveryLeadTimesDeliveryLeadTimeId200Response) GetDataOk() (*GETDeliveryLeadTimes200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETDeliveryLeadTimesDeliveryLeadTimeId200Response) GetDataOk() (*GETDel
 
 // HasData returns a boolean if a field has been set.
 func (o *GETDeliveryLeadTimesDeliveryLeadTimeId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETDeliveryLeadTimesDeliveryLeadTimeId200ResponseData and assigns it to the Data field.
-func (o *GETDeliveryLeadTimesDeliveryLeadTimeId200Response) SetData(v GETDeliveryLeadTimesDeliveryLeadTimeId200ResponseData) {
+// SetData gets a reference to the given GETDeliveryLeadTimes200ResponseDataInner and assigns it to the Data field.
+func (o *GETDeliveryLeadTimesDeliveryLeadTimeId200Response) SetData(v GETDeliveryLeadTimes200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETDeliveryLeadTimesDeliveryLeadTimeId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETDeliveryLeadTimesDeliveryLeadTimeId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETDeliveryLeadTimesDeliveryLeadTimeId200Response struct {

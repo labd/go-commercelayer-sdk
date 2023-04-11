@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the ShippingWeightTier type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ShippingWeightTier{}
-
 // ShippingWeightTier struct for ShippingWeightTier
 type ShippingWeightTier struct {
 	Data *ShippingWeightTierData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewShippingWeightTierWithDefaults() *ShippingWeightTier {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *ShippingWeightTier) GetData() ShippingWeightTierData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret ShippingWeightTierData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *ShippingWeightTier) GetData() ShippingWeightTierData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ShippingWeightTier) GetDataOk() (*ShippingWeightTierData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *ShippingWeightTier) GetDataOk() (*ShippingWeightTierData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *ShippingWeightTier) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *ShippingWeightTier) SetData(v ShippingWeightTierData) {
 }
 
 func (o ShippingWeightTier) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o ShippingWeightTier) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableShippingWeightTier struct {

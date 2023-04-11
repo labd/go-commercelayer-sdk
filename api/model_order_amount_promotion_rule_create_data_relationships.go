@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the OrderAmountPromotionRuleCreateDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &OrderAmountPromotionRuleCreateDataRelationships{}
-
 // OrderAmountPromotionRuleCreateDataRelationships struct for OrderAmountPromotionRuleCreateDataRelationships
 type OrderAmountPromotionRuleCreateDataRelationships struct {
-	Promotion OrderAmountPromotionRuleCreateDataRelationshipsPromotion `json:"promotion"`
+	Promotion CouponCodesPromotionRuleCreateDataRelationshipsPromotion `json:"promotion"`
 }
 
 // NewOrderAmountPromotionRuleCreateDataRelationships instantiates a new OrderAmountPromotionRuleCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrderAmountPromotionRuleCreateDataRelationships(promotion OrderAmountPromotionRuleCreateDataRelationshipsPromotion) *OrderAmountPromotionRuleCreateDataRelationships {
+func NewOrderAmountPromotionRuleCreateDataRelationships(promotion CouponCodesPromotionRuleCreateDataRelationshipsPromotion) *OrderAmountPromotionRuleCreateDataRelationships {
 	this := OrderAmountPromotionRuleCreateDataRelationships{}
 	this.Promotion = promotion
 	return &this
@@ -42,9 +39,9 @@ func NewOrderAmountPromotionRuleCreateDataRelationshipsWithDefaults() *OrderAmou
 }
 
 // GetPromotion returns the Promotion field value
-func (o *OrderAmountPromotionRuleCreateDataRelationships) GetPromotion() OrderAmountPromotionRuleCreateDataRelationshipsPromotion {
+func (o *OrderAmountPromotionRuleCreateDataRelationships) GetPromotion() CouponCodesPromotionRuleCreateDataRelationshipsPromotion {
 	if o == nil {
-		var ret OrderAmountPromotionRuleCreateDataRelationshipsPromotion
+		var ret CouponCodesPromotionRuleCreateDataRelationshipsPromotion
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *OrderAmountPromotionRuleCreateDataRelationships) GetPromotion() OrderAm
 
 // GetPromotionOk returns a tuple with the Promotion field value
 // and a boolean to check if the value has been set.
-func (o *OrderAmountPromotionRuleCreateDataRelationships) GetPromotionOk() (*OrderAmountPromotionRuleCreateDataRelationshipsPromotion, bool) {
+func (o *OrderAmountPromotionRuleCreateDataRelationships) GetPromotionOk() (*CouponCodesPromotionRuleCreateDataRelationshipsPromotion, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *OrderAmountPromotionRuleCreateDataRelationships) GetPromotionOk() (*Ord
 }
 
 // SetPromotion sets field value
-func (o *OrderAmountPromotionRuleCreateDataRelationships) SetPromotion(v OrderAmountPromotionRuleCreateDataRelationshipsPromotion) {
+func (o *OrderAmountPromotionRuleCreateDataRelationships) SetPromotion(v CouponCodesPromotionRuleCreateDataRelationshipsPromotion) {
 	o.Promotion = v
 }
 
 func (o OrderAmountPromotionRuleCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["promotion"] = o.Promotion
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o OrderAmountPromotionRuleCreateDataRelationships) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["promotion"] = o.Promotion
-	return toSerialize, nil
 }
 
 type NullableOrderAmountPromotionRuleCreateDataRelationships struct {

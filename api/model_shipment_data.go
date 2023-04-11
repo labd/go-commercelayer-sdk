@@ -15,22 +15,19 @@ import (
 	"encoding/json"
 )
 
-// checks if the ShipmentData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ShipmentData{}
-
 // ShipmentData struct for ShipmentData
 type ShipmentData struct {
 	// The resource's type
-	Type          interface{}                                     `json:"type"`
-	Attributes    GETShipmentsShipmentId200ResponseDataAttributes `json:"attributes"`
-	Relationships *ShipmentDataRelationships                      `json:"relationships,omitempty"`
+	Type          interface{}                                `json:"type"`
+	Attributes    GETShipments200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *ShipmentDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewShipmentData instantiates a new ShipmentData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShipmentData(type_ interface{}, attributes GETShipmentsShipmentId200ResponseDataAttributes) *ShipmentData {
+func NewShipmentData(type_ interface{}, attributes GETShipments200ResponseDataInnerAttributes) *ShipmentData {
 	this := ShipmentData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -60,7 +57,7 @@ func (o *ShipmentData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ShipmentData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -72,9 +69,9 @@ func (o *ShipmentData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ShipmentData) GetAttributes() GETShipmentsShipmentId200ResponseDataAttributes {
+func (o *ShipmentData) GetAttributes() GETShipments200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret GETShipmentsShipmentId200ResponseDataAttributes
+		var ret GETShipments200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -83,7 +80,7 @@ func (o *ShipmentData) GetAttributes() GETShipmentsShipmentId200ResponseDataAttr
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ShipmentData) GetAttributesOk() (*GETShipmentsShipmentId200ResponseDataAttributes, bool) {
+func (o *ShipmentData) GetAttributesOk() (*GETShipments200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,13 +88,13 @@ func (o *ShipmentData) GetAttributesOk() (*GETShipmentsShipmentId200ResponseData
 }
 
 // SetAttributes sets field value
-func (o *ShipmentData) SetAttributes(v GETShipmentsShipmentId200ResponseDataAttributes) {
+func (o *ShipmentData) SetAttributes(v GETShipments200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *ShipmentData) GetRelationships() ShipmentDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		var ret ShipmentDataRelationships
 		return ret
 	}
@@ -107,7 +104,7 @@ func (o *ShipmentData) GetRelationships() ShipmentDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ShipmentData) GetRelationshipsOk() (*ShipmentDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -115,7 +112,7 @@ func (o *ShipmentData) GetRelationshipsOk() (*ShipmentDataRelationships, bool) {
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *ShipmentData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
@@ -128,23 +125,17 @@ func (o *ShipmentData) SetRelationships(v ShipmentDataRelationships) {
 }
 
 func (o ShipmentData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o ShipmentData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	toSerialize["attributes"] = o.Attributes
-	if !IsNil(o.Relationships) {
+	if true {
+		toSerialize["attributes"] = o.Attributes
+	}
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableShipmentData struct {

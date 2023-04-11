@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PATCHGiftCardRecipientsGiftCardRecipientIdRequestData**](PATCHGiftCardRecipientsGiftCardRecipientIdRequestData.md) |  | 
+**Data** | [**GiftCardRecipientUpdateData**](GiftCardRecipientUpdateData.md) |  | 
 
 ## Methods
 
 ### NewGiftCardRecipientUpdate
 
-`func NewGiftCardRecipientUpdate(data PATCHGiftCardRecipientsGiftCardRecipientIdRequestData, ) *GiftCardRecipientUpdate`
+`func NewGiftCardRecipientUpdate(data GiftCardRecipientUpdateData, ) *GiftCardRecipientUpdate`
 
 NewGiftCardRecipientUpdate instantiates a new GiftCardRecipientUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GiftCardRecipientUpdate) GetData() PATCHGiftCardRecipientsGiftCardRecipientIdRequestData`
+`func (o *GiftCardRecipientUpdate) GetData() GiftCardRecipientUpdateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GiftCardRecipientUpdate) GetDataOk() (*PATCHGiftCardRecipientsGiftCardRecipientIdRequestData, bool)`
+`func (o *GiftCardRecipientUpdate) GetDataOk() (*GiftCardRecipientUpdateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GiftCardRecipientUpdate) SetData(v PATCHGiftCardRecipientsGiftCardRecipientIdRequestData)`
+`func (o *GiftCardRecipientUpdate) SetData(v GiftCardRecipientUpdateData)`
 
 SetData sets Data field to given value.
 

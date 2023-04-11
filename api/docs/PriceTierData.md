@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETPriceTiersPriceTierId200ResponseDataAttributes**](GETPriceTiersPriceTierId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**GETPriceTiers200ResponseDataInnerAttributes**](GETPriceTiers200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**PriceTierDataRelationships**](PriceTierDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPriceTierData
 
-`func NewPriceTierData(type_ interface{}, attributes GETPriceTiersPriceTierId200ResponseDataAttributes, ) *PriceTierData`
+`func NewPriceTierData(type_ interface{}, attributes GETPriceTiers200ResponseDataInnerAttributes, ) *PriceTierData`
 
 NewPriceTierData instantiates a new PriceTierData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *PriceTierData) GetAttributes() GETPriceTiersPriceTierId200ResponseDataAttributes`
+`func (o *PriceTierData) GetAttributes() GETPriceTiers200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PriceTierData) GetAttributesOk() (*GETPriceTiersPriceTierId200ResponseDataAttributes, bool)`
+`func (o *PriceTierData) GetAttributesOk() (*GETPriceTiers200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PriceTierData) SetAttributes(v GETPriceTiersPriceTierId200ResponseDataAttributes)`
+`func (o *PriceTierData) SetAttributes(v GETPriceTiers200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

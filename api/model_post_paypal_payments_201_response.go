@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the POSTPaypalPayments201Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &POSTPaypalPayments201Response{}
-
 // POSTPaypalPayments201Response struct for POSTPaypalPayments201Response
 type POSTPaypalPayments201Response struct {
 	Data *POSTPaypalPayments201ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPOSTPaypalPayments201ResponseWithDefaults() *POSTPaypalPayments201Respon
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTPaypalPayments201Response) GetData() POSTPaypalPayments201ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret POSTPaypalPayments201ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *POSTPaypalPayments201Response) GetData() POSTPaypalPayments201ResponseD
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTPaypalPayments201Response) GetDataOk() (*POSTPaypalPayments201ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *POSTPaypalPayments201Response) GetDataOk() (*POSTPaypalPayments201Respo
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTPaypalPayments201Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *POSTPaypalPayments201Response) SetData(v POSTPaypalPayments201ResponseD
 }
 
 func (o POSTPaypalPayments201Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o POSTPaypalPayments201Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePOSTPaypalPayments201Response struct {

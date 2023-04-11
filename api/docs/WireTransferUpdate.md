@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PATCHWireTransfersWireTransferIdRequestData**](PATCHWireTransfersWireTransferIdRequestData.md) |  | 
+**Data** | [**WireTransferUpdateData**](WireTransferUpdateData.md) |  | 
 
 ## Methods
 
 ### NewWireTransferUpdate
 
-`func NewWireTransferUpdate(data PATCHWireTransfersWireTransferIdRequestData, ) *WireTransferUpdate`
+`func NewWireTransferUpdate(data WireTransferUpdateData, ) *WireTransferUpdate`
 
 NewWireTransferUpdate instantiates a new WireTransferUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *WireTransferUpdate) GetData() PATCHWireTransfersWireTransferIdRequestData`
+`func (o *WireTransferUpdate) GetData() WireTransferUpdateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *WireTransferUpdate) GetDataOk() (*PATCHWireTransfersWireTransferIdRequestData, bool)`
+`func (o *WireTransferUpdate) GetDataOk() (*WireTransferUpdateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *WireTransferUpdate) SetData(v PATCHWireTransfersWireTransferIdRequestData)`
+`func (o *WireTransferUpdate) SetData(v WireTransferUpdateData)`
 
 SetData sets Data field to given value.
 

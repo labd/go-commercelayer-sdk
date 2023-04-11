@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes**](GETCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**GETCustomerPasswordResets200ResponseDataInnerAttributes**](GETCustomerPasswordResets200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**CustomerPasswordResetDataRelationships**](CustomerPasswordResetDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCustomerPasswordResetData
 
-`func NewCustomerPasswordResetData(type_ interface{}, attributes GETCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes, ) *CustomerPasswordResetData`
+`func NewCustomerPasswordResetData(type_ interface{}, attributes GETCustomerPasswordResets200ResponseDataInnerAttributes, ) *CustomerPasswordResetData`
 
 NewCustomerPasswordResetData instantiates a new CustomerPasswordResetData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *CustomerPasswordResetData) GetAttributes() GETCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes`
+`func (o *CustomerPasswordResetData) GetAttributes() GETCustomerPasswordResets200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CustomerPasswordResetData) GetAttributesOk() (*GETCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes, bool)`
+`func (o *CustomerPasswordResetData) GetAttributesOk() (*GETCustomerPasswordResets200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CustomerPasswordResetData) SetAttributes(v GETCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes)`
+`func (o *CustomerPasswordResetData) SetAttributes(v GETCustomerPasswordResets200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

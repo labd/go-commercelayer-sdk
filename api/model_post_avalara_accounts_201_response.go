@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the POSTAvalaraAccounts201Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &POSTAvalaraAccounts201Response{}
-
 // POSTAvalaraAccounts201Response struct for POSTAvalaraAccounts201Response
 type POSTAvalaraAccounts201Response struct {
 	Data *POSTAvalaraAccounts201ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPOSTAvalaraAccounts201ResponseWithDefaults() *POSTAvalaraAccounts201Resp
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTAvalaraAccounts201Response) GetData() POSTAvalaraAccounts201ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret POSTAvalaraAccounts201ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *POSTAvalaraAccounts201Response) GetData() POSTAvalaraAccounts201Respons
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTAvalaraAccounts201Response) GetDataOk() (*POSTAvalaraAccounts201ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *POSTAvalaraAccounts201Response) GetDataOk() (*POSTAvalaraAccounts201Res
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTAvalaraAccounts201Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *POSTAvalaraAccounts201Response) SetData(v POSTAvalaraAccounts201Respons
 }
 
 func (o POSTAvalaraAccounts201Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o POSTAvalaraAccounts201Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePOSTAvalaraAccounts201Response struct {

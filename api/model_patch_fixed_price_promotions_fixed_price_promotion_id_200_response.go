@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the PATCHFixedPricePromotionsFixedPricePromotionId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PATCHFixedPricePromotionsFixedPricePromotionId200Response{}
-
 // PATCHFixedPricePromotionsFixedPricePromotionId200Response struct for PATCHFixedPricePromotionsFixedPricePromotionId200Response
 type PATCHFixedPricePromotionsFixedPricePromotionId200Response struct {
 	Data *PATCHFixedPricePromotionsFixedPricePromotionId200ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPATCHFixedPricePromotionsFixedPricePromotionId200ResponseWithDefaults() 
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *PATCHFixedPricePromotionsFixedPricePromotionId200Response) GetData() PATCHFixedPricePromotionsFixedPricePromotionId200ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret PATCHFixedPricePromotionsFixedPricePromotionId200ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *PATCHFixedPricePromotionsFixedPricePromotionId200Response) GetData() PA
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHFixedPricePromotionsFixedPricePromotionId200Response) GetDataOk() (*PATCHFixedPricePromotionsFixedPricePromotionId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *PATCHFixedPricePromotionsFixedPricePromotionId200Response) GetDataOk() 
 
 // HasData returns a boolean if a field has been set.
 func (o *PATCHFixedPricePromotionsFixedPricePromotionId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *PATCHFixedPricePromotionsFixedPricePromotionId200Response) SetData(v PA
 }
 
 func (o PATCHFixedPricePromotionsFixedPricePromotionId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o PATCHFixedPricePromotionsFixedPricePromotionId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePATCHFixedPricePromotionsFixedPricePromotionId200Response struct {

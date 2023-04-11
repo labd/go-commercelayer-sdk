@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the BraintreeGatewayCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &BraintreeGatewayCreate{}
-
 // BraintreeGatewayCreate struct for BraintreeGatewayCreate
 type BraintreeGatewayCreate struct {
-	Data POSTBraintreeGatewaysRequestData `json:"data"`
+	Data BraintreeGatewayCreateData `json:"data"`
 }
 
 // NewBraintreeGatewayCreate instantiates a new BraintreeGatewayCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBraintreeGatewayCreate(data POSTBraintreeGatewaysRequestData) *BraintreeGatewayCreate {
+func NewBraintreeGatewayCreate(data BraintreeGatewayCreateData) *BraintreeGatewayCreate {
 	this := BraintreeGatewayCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewBraintreeGatewayCreateWithDefaults() *BraintreeGatewayCreate {
 }
 
 // GetData returns the Data field value
-func (o *BraintreeGatewayCreate) GetData() POSTBraintreeGatewaysRequestData {
+func (o *BraintreeGatewayCreate) GetData() BraintreeGatewayCreateData {
 	if o == nil {
-		var ret POSTBraintreeGatewaysRequestData
+		var ret BraintreeGatewayCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *BraintreeGatewayCreate) GetData() POSTBraintreeGatewaysRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *BraintreeGatewayCreate) GetDataOk() (*POSTBraintreeGatewaysRequestData, bool) {
+func (o *BraintreeGatewayCreate) GetDataOk() (*BraintreeGatewayCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *BraintreeGatewayCreate) GetDataOk() (*POSTBraintreeGatewaysRequestData,
 }
 
 // SetData sets field value
-func (o *BraintreeGatewayCreate) SetData(v POSTBraintreeGatewaysRequestData) {
+func (o *BraintreeGatewayCreate) SetData(v BraintreeGatewayCreateData) {
 	o.Data = v
 }
 
 func (o BraintreeGatewayCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o BraintreeGatewayCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableBraintreeGatewayCreate struct {

@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETPriceFrequencyTiersPriceFrequencyTierId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETPriceFrequencyTiersPriceFrequencyTierId200Response{}
-
 // GETPriceFrequencyTiersPriceFrequencyTierId200Response struct for GETPriceFrequencyTiersPriceFrequencyTierId200Response
 type GETPriceFrequencyTiersPriceFrequencyTierId200Response struct {
-	Data *GETPriceFrequencyTiersPriceFrequencyTierId200ResponseData `json:"data,omitempty"`
+	Data *GETPriceFrequencyTiers200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETPriceFrequencyTiersPriceFrequencyTierId200Response instantiates a new GETPriceFrequencyTiersPriceFrequencyTierId200Response object
@@ -41,9 +38,9 @@ func NewGETPriceFrequencyTiersPriceFrequencyTierId200ResponseWithDefaults() *GET
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETPriceFrequencyTiersPriceFrequencyTierId200Response) GetData() GETPriceFrequencyTiersPriceFrequencyTierId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETPriceFrequencyTiersPriceFrequencyTierId200ResponseData
+func (o *GETPriceFrequencyTiersPriceFrequencyTierId200Response) GetData() GETPriceFrequencyTiers200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETPriceFrequencyTiers200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETPriceFrequencyTiersPriceFrequencyTierId200Response) GetData() GETPri
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETPriceFrequencyTiersPriceFrequencyTierId200Response) GetDataOk() (*GETPriceFrequencyTiersPriceFrequencyTierId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETPriceFrequencyTiersPriceFrequencyTierId200Response) GetDataOk() (*GETPriceFrequencyTiers200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETPriceFrequencyTiersPriceFrequencyTierId200Response) GetDataOk() (*GE
 
 // HasData returns a boolean if a field has been set.
 func (o *GETPriceFrequencyTiersPriceFrequencyTierId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETPriceFrequencyTiersPriceFrequencyTierId200ResponseData and assigns it to the Data field.
-func (o *GETPriceFrequencyTiersPriceFrequencyTierId200Response) SetData(v GETPriceFrequencyTiersPriceFrequencyTierId200ResponseData) {
+// SetData gets a reference to the given GETPriceFrequencyTiers200ResponseDataInner and assigns it to the Data field.
+func (o *GETPriceFrequencyTiersPriceFrequencyTierId200Response) SetData(v GETPriceFrequencyTiers200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETPriceFrequencyTiersPriceFrequencyTierId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETPriceFrequencyTiersPriceFrequencyTierId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETPriceFrequencyTiersPriceFrequencyTierId200Response struct {

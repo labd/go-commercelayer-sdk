@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**POSTPaypalGatewaysRequestData**](POSTPaypalGatewaysRequestData.md) |  | 
+**Data** | [**PaypalGatewayCreateData**](PaypalGatewayCreateData.md) |  | 
 
 ## Methods
 
 ### NewPaypalGatewayCreate
 
-`func NewPaypalGatewayCreate(data POSTPaypalGatewaysRequestData, ) *PaypalGatewayCreate`
+`func NewPaypalGatewayCreate(data PaypalGatewayCreateData, ) *PaypalGatewayCreate`
 
 NewPaypalGatewayCreate instantiates a new PaypalGatewayCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *PaypalGatewayCreate) GetData() POSTPaypalGatewaysRequestData`
+`func (o *PaypalGatewayCreate) GetData() PaypalGatewayCreateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *PaypalGatewayCreate) GetDataOk() (*POSTPaypalGatewaysRequestData, bool)`
+`func (o *PaypalGatewayCreate) GetDataOk() (*PaypalGatewayCreateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *PaypalGatewayCreate) SetData(v POSTPaypalGatewaysRequestData)`
+`func (o *PaypalGatewayCreate) SetData(v PaypalGatewayCreateData)`
 
 SetData sets Data field to given value.
 

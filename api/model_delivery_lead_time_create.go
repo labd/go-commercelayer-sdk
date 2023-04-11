@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the DeliveryLeadTimeCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &DeliveryLeadTimeCreate{}
-
 // DeliveryLeadTimeCreate struct for DeliveryLeadTimeCreate
 type DeliveryLeadTimeCreate struct {
-	Data POSTDeliveryLeadTimesRequestData `json:"data"`
+	Data DeliveryLeadTimeCreateData `json:"data"`
 }
 
 // NewDeliveryLeadTimeCreate instantiates a new DeliveryLeadTimeCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewDeliveryLeadTimeCreate(data POSTDeliveryLeadTimesRequestData) *DeliveryLeadTimeCreate {
+func NewDeliveryLeadTimeCreate(data DeliveryLeadTimeCreateData) *DeliveryLeadTimeCreate {
 	this := DeliveryLeadTimeCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewDeliveryLeadTimeCreateWithDefaults() *DeliveryLeadTimeCreate {
 }
 
 // GetData returns the Data field value
-func (o *DeliveryLeadTimeCreate) GetData() POSTDeliveryLeadTimesRequestData {
+func (o *DeliveryLeadTimeCreate) GetData() DeliveryLeadTimeCreateData {
 	if o == nil {
-		var ret POSTDeliveryLeadTimesRequestData
+		var ret DeliveryLeadTimeCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *DeliveryLeadTimeCreate) GetData() POSTDeliveryLeadTimesRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *DeliveryLeadTimeCreate) GetDataOk() (*POSTDeliveryLeadTimesRequestData, bool) {
+func (o *DeliveryLeadTimeCreate) GetDataOk() (*DeliveryLeadTimeCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *DeliveryLeadTimeCreate) GetDataOk() (*POSTDeliveryLeadTimesRequestData,
 }
 
 // SetData sets field value
-func (o *DeliveryLeadTimeCreate) SetData(v POSTDeliveryLeadTimesRequestData) {
+func (o *DeliveryLeadTimeCreate) SetData(v DeliveryLeadTimeCreateData) {
 	o.Data = v
 }
 
 func (o DeliveryLeadTimeCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o DeliveryLeadTimeCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableDeliveryLeadTimeCreate struct {

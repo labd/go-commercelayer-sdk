@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PATCHSatispayPaymentsSatispayPaymentIdRequestData**](PATCHSatispayPaymentsSatispayPaymentIdRequestData.md) |  | 
+**Data** | [**SatispayPaymentUpdateData**](SatispayPaymentUpdateData.md) |  | 
 
 ## Methods
 
 ### NewSatispayPaymentUpdate
 
-`func NewSatispayPaymentUpdate(data PATCHSatispayPaymentsSatispayPaymentIdRequestData, ) *SatispayPaymentUpdate`
+`func NewSatispayPaymentUpdate(data SatispayPaymentUpdateData, ) *SatispayPaymentUpdate`
 
 NewSatispayPaymentUpdate instantiates a new SatispayPaymentUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *SatispayPaymentUpdate) GetData() PATCHSatispayPaymentsSatispayPaymentIdRequestData`
+`func (o *SatispayPaymentUpdate) GetData() SatispayPaymentUpdateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *SatispayPaymentUpdate) GetDataOk() (*PATCHSatispayPaymentsSatispayPaymentIdRequestData, bool)`
+`func (o *SatispayPaymentUpdate) GetDataOk() (*SatispayPaymentUpdateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *SatispayPaymentUpdate) SetData(v PATCHSatispayPaymentsSatispayPaymentIdRequestData)`
+`func (o *SatispayPaymentUpdate) SetData(v SatispayPaymentUpdateData)`
 
 SetData sets Data field to given value.
 

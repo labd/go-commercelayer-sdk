@@ -15,22 +15,19 @@ import (
 	"encoding/json"
 )
 
-// checks if the CarrierAccountData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CarrierAccountData{}
-
 // CarrierAccountData struct for CarrierAccountData
 type CarrierAccountData struct {
 	// The resource's type
-	Type          interface{}                                                 `json:"type"`
-	Attributes    GETCarrierAccountsCarrierAccountId200ResponseDataAttributes `json:"attributes"`
-	Relationships *BillingInfoValidationRuleDataRelationships                 `json:"relationships,omitempty"`
+	Type          interface{}                                      `json:"type"`
+	Attributes    GETCarrierAccounts200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *BillingInfoValidationRuleDataRelationships      `json:"relationships,omitempty"`
 }
 
 // NewCarrierAccountData instantiates a new CarrierAccountData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCarrierAccountData(type_ interface{}, attributes GETCarrierAccountsCarrierAccountId200ResponseDataAttributes) *CarrierAccountData {
+func NewCarrierAccountData(type_ interface{}, attributes GETCarrierAccounts200ResponseDataInnerAttributes) *CarrierAccountData {
 	this := CarrierAccountData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -60,7 +57,7 @@ func (o *CarrierAccountData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CarrierAccountData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -72,9 +69,9 @@ func (o *CarrierAccountData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CarrierAccountData) GetAttributes() GETCarrierAccountsCarrierAccountId200ResponseDataAttributes {
+func (o *CarrierAccountData) GetAttributes() GETCarrierAccounts200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret GETCarrierAccountsCarrierAccountId200ResponseDataAttributes
+		var ret GETCarrierAccounts200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -83,7 +80,7 @@ func (o *CarrierAccountData) GetAttributes() GETCarrierAccountsCarrierAccountId2
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CarrierAccountData) GetAttributesOk() (*GETCarrierAccountsCarrierAccountId200ResponseDataAttributes, bool) {
+func (o *CarrierAccountData) GetAttributesOk() (*GETCarrierAccounts200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,13 +88,13 @@ func (o *CarrierAccountData) GetAttributesOk() (*GETCarrierAccountsCarrierAccoun
 }
 
 // SetAttributes sets field value
-func (o *CarrierAccountData) SetAttributes(v GETCarrierAccountsCarrierAccountId200ResponseDataAttributes) {
+func (o *CarrierAccountData) SetAttributes(v GETCarrierAccounts200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *CarrierAccountData) GetRelationships() BillingInfoValidationRuleDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		var ret BillingInfoValidationRuleDataRelationships
 		return ret
 	}
@@ -107,7 +104,7 @@ func (o *CarrierAccountData) GetRelationships() BillingInfoValidationRuleDataRel
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CarrierAccountData) GetRelationshipsOk() (*BillingInfoValidationRuleDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -115,7 +112,7 @@ func (o *CarrierAccountData) GetRelationshipsOk() (*BillingInfoValidationRuleDat
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *CarrierAccountData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
@@ -128,23 +125,17 @@ func (o *CarrierAccountData) SetRelationships(v BillingInfoValidationRuleDataRel
 }
 
 func (o CarrierAccountData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o CarrierAccountData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	toSerialize["attributes"] = o.Attributes
-	if !IsNil(o.Relationships) {
+	if true {
+		toSerialize["attributes"] = o.Attributes
+	}
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableCarrierAccountData struct {

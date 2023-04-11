@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**POSTOrdersRequestDataAttributes**](POSTOrdersRequestDataAttributes.md) |  | 
+**Attributes** | [**POSTOrders201ResponseDataAttributes**](POSTOrders201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**OrderCreateDataRelationships**](OrderCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewOrderCreateData
 
-`func NewOrderCreateData(type_ interface{}, attributes POSTOrdersRequestDataAttributes, ) *OrderCreateData`
+`func NewOrderCreateData(type_ interface{}, attributes POSTOrders201ResponseDataAttributes, ) *OrderCreateData`
 
 NewOrderCreateData instantiates a new OrderCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *OrderCreateData) GetAttributes() POSTOrdersRequestDataAttributes`
+`func (o *OrderCreateData) GetAttributes() POSTOrders201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *OrderCreateData) GetAttributesOk() (*POSTOrdersRequestDataAttributes, bool)`
+`func (o *OrderCreateData) GetAttributesOk() (*POSTOrders201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *OrderCreateData) SetAttributes(v POSTOrdersRequestDataAttributes)`
+`func (o *OrderCreateData) SetAttributes(v POSTOrders201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

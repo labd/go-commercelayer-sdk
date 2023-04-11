@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETExternalPromotionsExternalPromotionId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETExternalPromotionsExternalPromotionId200Response{}
-
 // GETExternalPromotionsExternalPromotionId200Response struct for GETExternalPromotionsExternalPromotionId200Response
 type GETExternalPromotionsExternalPromotionId200Response struct {
-	Data *GETExternalPromotionsExternalPromotionId200ResponseData `json:"data,omitempty"`
+	Data *GETExternalPromotions200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETExternalPromotionsExternalPromotionId200Response instantiates a new GETExternalPromotionsExternalPromotionId200Response object
@@ -41,9 +38,9 @@ func NewGETExternalPromotionsExternalPromotionId200ResponseWithDefaults() *GETEx
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETExternalPromotionsExternalPromotionId200Response) GetData() GETExternalPromotionsExternalPromotionId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETExternalPromotionsExternalPromotionId200ResponseData
+func (o *GETExternalPromotionsExternalPromotionId200Response) GetData() GETExternalPromotions200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETExternalPromotions200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETExternalPromotionsExternalPromotionId200Response) GetData() GETExter
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETExternalPromotionsExternalPromotionId200Response) GetDataOk() (*GETExternalPromotionsExternalPromotionId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETExternalPromotionsExternalPromotionId200Response) GetDataOk() (*GETExternalPromotions200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETExternalPromotionsExternalPromotionId200Response) GetDataOk() (*GETE
 
 // HasData returns a boolean if a field has been set.
 func (o *GETExternalPromotionsExternalPromotionId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETExternalPromotionsExternalPromotionId200ResponseData and assigns it to the Data field.
-func (o *GETExternalPromotionsExternalPromotionId200Response) SetData(v GETExternalPromotionsExternalPromotionId200ResponseData) {
+// SetData gets a reference to the given GETExternalPromotions200ResponseDataInner and assigns it to the Data field.
+func (o *GETExternalPromotionsExternalPromotionId200Response) SetData(v GETExternalPromotions200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETExternalPromotionsExternalPromotionId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETExternalPromotionsExternalPromotionId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETExternalPromotionsExternalPromotionId200Response struct {

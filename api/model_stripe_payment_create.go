@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the StripePaymentCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &StripePaymentCreate{}
-
 // StripePaymentCreate struct for StripePaymentCreate
 type StripePaymentCreate struct {
-	Data POSTStripePaymentsRequestData `json:"data"`
+	Data StripePaymentCreateData `json:"data"`
 }
 
 // NewStripePaymentCreate instantiates a new StripePaymentCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStripePaymentCreate(data POSTStripePaymentsRequestData) *StripePaymentCreate {
+func NewStripePaymentCreate(data StripePaymentCreateData) *StripePaymentCreate {
 	this := StripePaymentCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewStripePaymentCreateWithDefaults() *StripePaymentCreate {
 }
 
 // GetData returns the Data field value
-func (o *StripePaymentCreate) GetData() POSTStripePaymentsRequestData {
+func (o *StripePaymentCreate) GetData() StripePaymentCreateData {
 	if o == nil {
-		var ret POSTStripePaymentsRequestData
+		var ret StripePaymentCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *StripePaymentCreate) GetData() POSTStripePaymentsRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *StripePaymentCreate) GetDataOk() (*POSTStripePaymentsRequestData, bool) {
+func (o *StripePaymentCreate) GetDataOk() (*StripePaymentCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *StripePaymentCreate) GetDataOk() (*POSTStripePaymentsRequestData, bool)
 }
 
 // SetData sets field value
-func (o *StripePaymentCreate) SetData(v POSTStripePaymentsRequestData) {
+func (o *StripePaymentCreate) SetData(v StripePaymentCreateData) {
 	o.Data = v
 }
 
 func (o StripePaymentCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o StripePaymentCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableStripePaymentCreate struct {

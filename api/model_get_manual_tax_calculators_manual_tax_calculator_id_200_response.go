@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETManualTaxCalculatorsManualTaxCalculatorId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETManualTaxCalculatorsManualTaxCalculatorId200Response{}
-
 // GETManualTaxCalculatorsManualTaxCalculatorId200Response struct for GETManualTaxCalculatorsManualTaxCalculatorId200Response
 type GETManualTaxCalculatorsManualTaxCalculatorId200Response struct {
-	Data *GETManualTaxCalculatorsManualTaxCalculatorId200ResponseData `json:"data,omitempty"`
+	Data *GETManualTaxCalculators200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETManualTaxCalculatorsManualTaxCalculatorId200Response instantiates a new GETManualTaxCalculatorsManualTaxCalculatorId200Response object
@@ -41,9 +38,9 @@ func NewGETManualTaxCalculatorsManualTaxCalculatorId200ResponseWithDefaults() *G
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETManualTaxCalculatorsManualTaxCalculatorId200Response) GetData() GETManualTaxCalculatorsManualTaxCalculatorId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETManualTaxCalculatorsManualTaxCalculatorId200ResponseData
+func (o *GETManualTaxCalculatorsManualTaxCalculatorId200Response) GetData() GETManualTaxCalculators200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETManualTaxCalculators200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETManualTaxCalculatorsManualTaxCalculatorId200Response) GetData() GETM
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETManualTaxCalculatorsManualTaxCalculatorId200Response) GetDataOk() (*GETManualTaxCalculatorsManualTaxCalculatorId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETManualTaxCalculatorsManualTaxCalculatorId200Response) GetDataOk() (*GETManualTaxCalculators200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETManualTaxCalculatorsManualTaxCalculatorId200Response) GetDataOk() (*
 
 // HasData returns a boolean if a field has been set.
 func (o *GETManualTaxCalculatorsManualTaxCalculatorId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETManualTaxCalculatorsManualTaxCalculatorId200ResponseData and assigns it to the Data field.
-func (o *GETManualTaxCalculatorsManualTaxCalculatorId200Response) SetData(v GETManualTaxCalculatorsManualTaxCalculatorId200ResponseData) {
+// SetData gets a reference to the given GETManualTaxCalculators200ResponseDataInner and assigns it to the Data field.
+func (o *GETManualTaxCalculatorsManualTaxCalculatorId200Response) SetData(v GETManualTaxCalculators200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETManualTaxCalculatorsManualTaxCalculatorId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETManualTaxCalculatorsManualTaxCalculatorId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETManualTaxCalculatorsManualTaxCalculatorId200Response struct {

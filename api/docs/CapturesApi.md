@@ -30,7 +30,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -38,7 +38,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CapturesApi.GETAuthorizationIdCaptures(context.Background(), authorizationId).Execute()
+    resp, r, err := apiClient.CapturesApi.GETAuthorizationIdCaptures(context.Background(), authorizationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CapturesApi.GETAuthorizationIdCaptures``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -98,7 +98,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -159,7 +159,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -229,7 +229,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -237,7 +237,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CapturesApi.GETOrderIdCaptures(context.Background(), orderId).Execute()
+    resp, r, err := apiClient.CapturesApi.GETOrderIdCaptures(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CapturesApi.GETOrderIdCaptures``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -297,7 +297,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -305,7 +305,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CapturesApi.GETRefundIdReferenceCapture(context.Background(), refundId).Execute()
+    resp, r, err := apiClient.CapturesApi.GETRefundIdReferenceCapture(context.Background(), refundId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CapturesApi.GETRefundIdReferenceCapture``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 ## PATCHCapturesCaptureId
 
-> PATCHCapturesCaptureId200Response PATCHCapturesCaptureId(ctx, captureId).PATCHCapturesCaptureIdRequest(pATCHCapturesCaptureIdRequest).Execute()
+> PATCHCapturesCaptureId200Response PATCHCapturesCaptureId(ctx, captureId).CaptureUpdate(captureUpdate).Execute()
 
 Update a capture
 
@@ -365,16 +365,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHCapturesCaptureIdRequest := *openapiclient.NewPATCHCapturesCaptureIdRequest(*openapiclient.NewPATCHCapturesCaptureIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHCapturesCaptureIdRequestDataAttributes())) // PATCHCapturesCaptureIdRequest | 
+    captureUpdate := *openapiclient.NewCaptureUpdate(*openapiclient.NewCaptureUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHCapturesCaptureId200ResponseDataAttributes())) // CaptureUpdate | 
     captureId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapturesApi.PATCHCapturesCaptureId(context.Background(), captureId).PATCHCapturesCaptureIdRequest(pATCHCapturesCaptureIdRequest).Execute()
+    resp, r, err := apiClient.CapturesApi.PATCHCapturesCaptureId(context.Background(), captureId).CaptureUpdate(captureUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CapturesApi.PATCHCapturesCaptureId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -399,7 +399,7 @@ Other parameters are passed through a pointer to a apiPATCHCapturesCaptureIdRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHCapturesCaptureIdRequest** | [**PATCHCapturesCaptureIdRequest**](PATCHCapturesCaptureIdRequest.md) |  | 
+ **captureUpdate** | [**CaptureUpdate**](CaptureUpdate.md) |  | 
 
 
 ### Return type

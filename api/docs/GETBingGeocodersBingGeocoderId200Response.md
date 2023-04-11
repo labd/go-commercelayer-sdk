@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETBingGeocodersBingGeocoderId200ResponseData**](GETBingGeocodersBingGeocoderId200ResponseData.md) |  | [optional] 
+**Data** | Pointer to [**GETBingGeocoders200ResponseDataInner**](GETBingGeocoders200ResponseDataInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETBingGeocodersBingGeocoderId200Response) GetData() GETBingGeocodersBingGeocoderId200ResponseData`
+`func (o *GETBingGeocodersBingGeocoderId200Response) GetData() GETBingGeocoders200ResponseDataInner`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETBingGeocodersBingGeocoderId200Response) GetDataOk() (*GETBingGeocodersBingGeocoderId200ResponseData, bool)`
+`func (o *GETBingGeocodersBingGeocoderId200Response) GetDataOk() (*GETBingGeocoders200ResponseDataInner, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETBingGeocodersBingGeocoderId200Response) SetData(v GETBingGeocodersBingGeocoderId200ResponseData)`
+`func (o *GETBingGeocodersBingGeocoderId200Response) SetData(v GETBingGeocoders200ResponseDataInner)`
 
 SetData sets Data field to given value.
 

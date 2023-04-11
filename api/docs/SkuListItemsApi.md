@@ -30,7 +30,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -38,7 +38,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SkuListItemsApi.DELETESkuListItemsSkuListItemId(context.Background(), skuListItemId).Execute()
+    resp, r, err := apiClient.SkuListItemsApi.DELETESkuListItemsSkuListItemId(context.Background(), skuListItemId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListItemsApi.DELETESkuListItemsSkuListItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -98,7 +98,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -106,7 +106,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SkuListItemsApi.GETSkuListIdSkuListItems(context.Background(), skuListId).Execute()
+    resp, r, err := apiClient.SkuListItemsApi.GETSkuListIdSkuListItems(context.Background(), skuListId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListItemsApi.GETSkuListIdSkuListItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -166,7 +166,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -227,7 +227,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHSkuListItemsSkuListItemId
 
-> PATCHSkuListItemsSkuListItemId200Response PATCHSkuListItemsSkuListItemId(ctx, skuListItemId).PATCHSkuListItemsSkuListItemIdRequest(pATCHSkuListItemsSkuListItemIdRequest).Execute()
+> PATCHSkuListItemsSkuListItemId200Response PATCHSkuListItemsSkuListItemId(ctx, skuListItemId).SkuListItemUpdate(skuListItemUpdate).Execute()
 
 Update a SKU list item
 
@@ -297,16 +297,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHSkuListItemsSkuListItemIdRequest := *openapiclient.NewPATCHSkuListItemsSkuListItemIdRequest(*openapiclient.NewPATCHSkuListItemsSkuListItemIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHSkuListItemsSkuListItemIdRequestDataAttributes())) // PATCHSkuListItemsSkuListItemIdRequest | 
+    skuListItemUpdate := *openapiclient.NewSkuListItemUpdate(*openapiclient.NewSkuListItemUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHSkuListItemsSkuListItemId200ResponseDataAttributes())) // SkuListItemUpdate | 
     skuListItemId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListItemsApi.PATCHSkuListItemsSkuListItemId(context.Background(), skuListItemId).PATCHSkuListItemsSkuListItemIdRequest(pATCHSkuListItemsSkuListItemIdRequest).Execute()
+    resp, r, err := apiClient.SkuListItemsApi.PATCHSkuListItemsSkuListItemId(context.Background(), skuListItemId).SkuListItemUpdate(skuListItemUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListItemsApi.PATCHSkuListItemsSkuListItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -331,7 +331,7 @@ Other parameters are passed through a pointer to a apiPATCHSkuListItemsSkuListIt
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHSkuListItemsSkuListItemIdRequest** | [**PATCHSkuListItemsSkuListItemIdRequest**](PATCHSkuListItemsSkuListItemIdRequest.md) |  | 
+ **skuListItemUpdate** | [**SkuListItemUpdate**](SkuListItemUpdate.md) |  | 
 
 
 ### Return type
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTSkuListItems
 
-> POSTSkuListItems201Response POSTSkuListItems(ctx).POSTSkuListItemsRequest(pOSTSkuListItemsRequest).Execute()
+> POSTSkuListItems201Response POSTSkuListItems(ctx).SkuListItemCreate(skuListItemCreate).Execute()
 
 Create a SKU list item
 
@@ -369,15 +369,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTSkuListItemsRequest := *openapiclient.NewPOSTSkuListItemsRequest(*openapiclient.NewPOSTSkuListItemsRequestData(interface{}(123), *openapiclient.NewPOSTSkuListItemsRequestDataAttributes())) // POSTSkuListItemsRequest | 
+    skuListItemCreate := *openapiclient.NewSkuListItemCreate(*openapiclient.NewSkuListItemCreateData(interface{}(123), *openapiclient.NewPOSTSkuListItems201ResponseDataAttributes())) // SkuListItemCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListItemsApi.POSTSkuListItems(context.Background()).POSTSkuListItemsRequest(pOSTSkuListItemsRequest).Execute()
+    resp, r, err := apiClient.SkuListItemsApi.POSTSkuListItems(context.Background()).SkuListItemCreate(skuListItemCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListItemsApi.POSTSkuListItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +398,7 @@ Other parameters are passed through a pointer to a apiPOSTSkuListItemsRequest st
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTSkuListItemsRequest** | [**POSTSkuListItemsRequest**](POSTSkuListItemsRequest.md) |  | 
+ **skuListItemCreate** | [**SkuListItemCreate**](SkuListItemCreate.md) |  | 
 
 ### Return type
 

@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the PATCHSkuListItemsSkuListItemId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PATCHSkuListItemsSkuListItemId200Response{}
-
 // PATCHSkuListItemsSkuListItemId200Response struct for PATCHSkuListItemsSkuListItemId200Response
 type PATCHSkuListItemsSkuListItemId200Response struct {
 	Data *PATCHSkuListItemsSkuListItemId200ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPATCHSkuListItemsSkuListItemId200ResponseWithDefaults() *PATCHSkuListIte
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *PATCHSkuListItemsSkuListItemId200Response) GetData() PATCHSkuListItemsSkuListItemId200ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret PATCHSkuListItemsSkuListItemId200ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *PATCHSkuListItemsSkuListItemId200Response) GetData() PATCHSkuListItemsS
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHSkuListItemsSkuListItemId200Response) GetDataOk() (*PATCHSkuListItemsSkuListItemId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *PATCHSkuListItemsSkuListItemId200Response) GetDataOk() (*PATCHSkuListIt
 
 // HasData returns a boolean if a field has been set.
 func (o *PATCHSkuListItemsSkuListItemId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *PATCHSkuListItemsSkuListItemId200Response) SetData(v PATCHSkuListItemsS
 }
 
 func (o PATCHSkuListItemsSkuListItemId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o PATCHSkuListItemsSkuListItemId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePATCHSkuListItemsSkuListItemId200Response struct {

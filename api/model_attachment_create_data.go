@@ -15,22 +15,19 @@ import (
 	"encoding/json"
 )
 
-// checks if the AttachmentCreateData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AttachmentCreateData{}
-
 // AttachmentCreateData struct for AttachmentCreateData
 type AttachmentCreateData struct {
 	// The resource's type
-	Type          interface{}                          `json:"type"`
-	Attributes    POSTAttachmentsRequestDataAttributes `json:"attributes"`
-	Relationships *AttachmentCreateDataRelationships   `json:"relationships,omitempty"`
+	Type          interface{}                              `json:"type"`
+	Attributes    POSTAttachments201ResponseDataAttributes `json:"attributes"`
+	Relationships *AttachmentCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewAttachmentCreateData instantiates a new AttachmentCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAttachmentCreateData(type_ interface{}, attributes POSTAttachmentsRequestDataAttributes) *AttachmentCreateData {
+func NewAttachmentCreateData(type_ interface{}, attributes POSTAttachments201ResponseDataAttributes) *AttachmentCreateData {
 	this := AttachmentCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -60,7 +57,7 @@ func (o *AttachmentCreateData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AttachmentCreateData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -72,9 +69,9 @@ func (o *AttachmentCreateData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AttachmentCreateData) GetAttributes() POSTAttachmentsRequestDataAttributes {
+func (o *AttachmentCreateData) GetAttributes() POSTAttachments201ResponseDataAttributes {
 	if o == nil {
-		var ret POSTAttachmentsRequestDataAttributes
+		var ret POSTAttachments201ResponseDataAttributes
 		return ret
 	}
 
@@ -83,7 +80,7 @@ func (o *AttachmentCreateData) GetAttributes() POSTAttachmentsRequestDataAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AttachmentCreateData) GetAttributesOk() (*POSTAttachmentsRequestDataAttributes, bool) {
+func (o *AttachmentCreateData) GetAttributesOk() (*POSTAttachments201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,13 +88,13 @@ func (o *AttachmentCreateData) GetAttributesOk() (*POSTAttachmentsRequestDataAtt
 }
 
 // SetAttributes sets field value
-func (o *AttachmentCreateData) SetAttributes(v POSTAttachmentsRequestDataAttributes) {
+func (o *AttachmentCreateData) SetAttributes(v POSTAttachments201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *AttachmentCreateData) GetRelationships() AttachmentCreateDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		var ret AttachmentCreateDataRelationships
 		return ret
 	}
@@ -107,7 +104,7 @@ func (o *AttachmentCreateData) GetRelationships() AttachmentCreateDataRelationsh
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttachmentCreateData) GetRelationshipsOk() (*AttachmentCreateDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -115,7 +112,7 @@ func (o *AttachmentCreateData) GetRelationshipsOk() (*AttachmentCreateDataRelati
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *AttachmentCreateData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
@@ -128,23 +125,17 @@ func (o *AttachmentCreateData) SetRelationships(v AttachmentCreateDataRelationsh
 }
 
 func (o AttachmentCreateData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o AttachmentCreateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	toSerialize["attributes"] = o.Attributes
-	if !IsNil(o.Relationships) {
+	if true {
+		toSerialize["attributes"] = o.Attributes
+	}
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableAttachmentCreateData struct {

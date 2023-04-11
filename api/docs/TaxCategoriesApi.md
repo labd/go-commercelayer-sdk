@@ -31,7 +31,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -39,7 +39,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.TaxCategoriesApi.DELETETaxCategoriesTaxCategoryId(context.Background(), taxCategoryId).Execute()
+    resp, r, err := apiClient.TaxCategoriesApi.DELETETaxCategoriesTaxCategoryId(context.Background(), taxCategoryId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxCategoriesApi.DELETETaxCategoriesTaxCategoryId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -99,7 +99,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -107,7 +107,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.TaxCategoriesApi.GETAvalaraAccountIdTaxCategories(context.Background(), avalaraAccountId).Execute()
+    resp, r, err := apiClient.TaxCategoriesApi.GETAvalaraAccountIdTaxCategories(context.Background(), avalaraAccountId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxCategoriesApi.GETAvalaraAccountIdTaxCategories``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -167,7 +167,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -228,7 +228,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -298,7 +298,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -306,7 +306,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.TaxCategoriesApi.GETTaxjarAccountIdTaxCategories(context.Background(), taxjarAccountId).Execute()
+    resp, r, err := apiClient.TaxCategoriesApi.GETTaxjarAccountIdTaxCategories(context.Background(), taxjarAccountId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxCategoriesApi.GETTaxjarAccountIdTaxCategories``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ## PATCHTaxCategoriesTaxCategoryId
 
-> PATCHTaxCategoriesTaxCategoryId200Response PATCHTaxCategoriesTaxCategoryId(ctx, taxCategoryId).PATCHTaxCategoriesTaxCategoryIdRequest(pATCHTaxCategoriesTaxCategoryIdRequest).Execute()
+> PATCHTaxCategoriesTaxCategoryId200Response PATCHTaxCategoriesTaxCategoryId(ctx, taxCategoryId).TaxCategoryUpdate(taxCategoryUpdate).Execute()
 
 Update a tax category
 
@@ -366,16 +366,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHTaxCategoriesTaxCategoryIdRequest := *openapiclient.NewPATCHTaxCategoriesTaxCategoryIdRequest(*openapiclient.NewPATCHTaxCategoriesTaxCategoryIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHTaxCategoriesTaxCategoryIdRequestDataAttributes())) // PATCHTaxCategoriesTaxCategoryIdRequest | 
+    taxCategoryUpdate := *openapiclient.NewTaxCategoryUpdate(*openapiclient.NewTaxCategoryUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes())) // TaxCategoryUpdate | 
     taxCategoryId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TaxCategoriesApi.PATCHTaxCategoriesTaxCategoryId(context.Background(), taxCategoryId).PATCHTaxCategoriesTaxCategoryIdRequest(pATCHTaxCategoriesTaxCategoryIdRequest).Execute()
+    resp, r, err := apiClient.TaxCategoriesApi.PATCHTaxCategoriesTaxCategoryId(context.Background(), taxCategoryId).TaxCategoryUpdate(taxCategoryUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxCategoriesApi.PATCHTaxCategoriesTaxCategoryId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -400,7 +400,7 @@ Other parameters are passed through a pointer to a apiPATCHTaxCategoriesTaxCateg
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHTaxCategoriesTaxCategoryIdRequest** | [**PATCHTaxCategoriesTaxCategoryIdRequest**](PATCHTaxCategoriesTaxCategoryIdRequest.md) |  | 
+ **taxCategoryUpdate** | [**TaxCategoryUpdate**](TaxCategoryUpdate.md) |  | 
 
 
 ### Return type
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ## POSTTaxCategories
 
-> POSTTaxCategories201Response POSTTaxCategories(ctx).POSTTaxCategoriesRequest(pOSTTaxCategoriesRequest).Execute()
+> POSTTaxCategories201Response POSTTaxCategories(ctx).TaxCategoryCreate(taxCategoryCreate).Execute()
 
 Create a tax category
 
@@ -438,15 +438,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTTaxCategoriesRequest := *openapiclient.NewPOSTTaxCategoriesRequest(*openapiclient.NewPOSTTaxCategoriesRequestData(interface{}(123), *openapiclient.NewPOSTTaxCategoriesRequestDataAttributes(interface{}(31000)))) // POSTTaxCategoriesRequest | 
+    taxCategoryCreate := *openapiclient.NewTaxCategoryCreate(*openapiclient.NewTaxCategoryCreateData(interface{}(123), *openapiclient.NewPOSTTaxCategories201ResponseDataAttributes(interface{}(31000)))) // TaxCategoryCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TaxCategoriesApi.POSTTaxCategories(context.Background()).POSTTaxCategoriesRequest(pOSTTaxCategoriesRequest).Execute()
+    resp, r, err := apiClient.TaxCategoriesApi.POSTTaxCategories(context.Background()).TaxCategoryCreate(taxCategoryCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxCategoriesApi.POSTTaxCategories``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -467,7 +467,7 @@ Other parameters are passed through a pointer to a apiPOSTTaxCategoriesRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTTaxCategoriesRequest** | [**POSTTaxCategoriesRequest**](POSTTaxCategoriesRequest.md) |  | 
+ **taxCategoryCreate** | [**TaxCategoryCreate**](TaxCategoryCreate.md) |  | 
 
 ### Return type
 

@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the ExternalGatewayCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ExternalGatewayCreate{}
-
 // ExternalGatewayCreate struct for ExternalGatewayCreate
 type ExternalGatewayCreate struct {
-	Data POSTExternalGatewaysRequestData `json:"data"`
+	Data ExternalGatewayCreateData `json:"data"`
 }
 
 // NewExternalGatewayCreate instantiates a new ExternalGatewayCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalGatewayCreate(data POSTExternalGatewaysRequestData) *ExternalGatewayCreate {
+func NewExternalGatewayCreate(data ExternalGatewayCreateData) *ExternalGatewayCreate {
 	this := ExternalGatewayCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewExternalGatewayCreateWithDefaults() *ExternalGatewayCreate {
 }
 
 // GetData returns the Data field value
-func (o *ExternalGatewayCreate) GetData() POSTExternalGatewaysRequestData {
+func (o *ExternalGatewayCreate) GetData() ExternalGatewayCreateData {
 	if o == nil {
-		var ret POSTExternalGatewaysRequestData
+		var ret ExternalGatewayCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *ExternalGatewayCreate) GetData() POSTExternalGatewaysRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ExternalGatewayCreate) GetDataOk() (*POSTExternalGatewaysRequestData, bool) {
+func (o *ExternalGatewayCreate) GetDataOk() (*ExternalGatewayCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *ExternalGatewayCreate) GetDataOk() (*POSTExternalGatewaysRequestData, b
 }
 
 // SetData sets field value
-func (o *ExternalGatewayCreate) SetData(v POSTExternalGatewaysRequestData) {
+func (o *ExternalGatewayCreate) SetData(v ExternalGatewayCreateData) {
 	o.Data = v
 }
 
 func (o ExternalGatewayCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o ExternalGatewayCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableExternalGatewayCreate struct {

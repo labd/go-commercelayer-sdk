@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the CustomerUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CustomerUpdate{}
-
 // CustomerUpdate struct for CustomerUpdate
 type CustomerUpdate struct {
-	Data PATCHCustomersCustomerIdRequestData `json:"data"`
+	Data CustomerUpdateData `json:"data"`
 }
 
 // NewCustomerUpdate instantiates a new CustomerUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerUpdate(data PATCHCustomersCustomerIdRequestData) *CustomerUpdate {
+func NewCustomerUpdate(data CustomerUpdateData) *CustomerUpdate {
 	this := CustomerUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewCustomerUpdateWithDefaults() *CustomerUpdate {
 }
 
 // GetData returns the Data field value
-func (o *CustomerUpdate) GetData() PATCHCustomersCustomerIdRequestData {
+func (o *CustomerUpdate) GetData() CustomerUpdateData {
 	if o == nil {
-		var ret PATCHCustomersCustomerIdRequestData
+		var ret CustomerUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *CustomerUpdate) GetData() PATCHCustomersCustomerIdRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CustomerUpdate) GetDataOk() (*PATCHCustomersCustomerIdRequestData, bool) {
+func (o *CustomerUpdate) GetDataOk() (*CustomerUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *CustomerUpdate) GetDataOk() (*PATCHCustomersCustomerIdRequestData, bool
 }
 
 // SetData sets field value
-func (o *CustomerUpdate) SetData(v PATCHCustomersCustomerIdRequestData) {
+func (o *CustomerUpdate) SetData(v CustomerUpdateData) {
 	o.Data = v
 }
 
 func (o CustomerUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o CustomerUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableCustomerUpdate struct {

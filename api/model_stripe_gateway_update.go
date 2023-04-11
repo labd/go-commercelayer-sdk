@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the StripeGatewayUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &StripeGatewayUpdate{}
-
 // StripeGatewayUpdate struct for StripeGatewayUpdate
 type StripeGatewayUpdate struct {
-	Data PATCHStripeGatewaysStripeGatewayIdRequestData `json:"data"`
+	Data StripeGatewayUpdateData `json:"data"`
 }
 
 // NewStripeGatewayUpdate instantiates a new StripeGatewayUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStripeGatewayUpdate(data PATCHStripeGatewaysStripeGatewayIdRequestData) *StripeGatewayUpdate {
+func NewStripeGatewayUpdate(data StripeGatewayUpdateData) *StripeGatewayUpdate {
 	this := StripeGatewayUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewStripeGatewayUpdateWithDefaults() *StripeGatewayUpdate {
 }
 
 // GetData returns the Data field value
-func (o *StripeGatewayUpdate) GetData() PATCHStripeGatewaysStripeGatewayIdRequestData {
+func (o *StripeGatewayUpdate) GetData() StripeGatewayUpdateData {
 	if o == nil {
-		var ret PATCHStripeGatewaysStripeGatewayIdRequestData
+		var ret StripeGatewayUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *StripeGatewayUpdate) GetData() PATCHStripeGatewaysStripeGatewayIdReques
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *StripeGatewayUpdate) GetDataOk() (*PATCHStripeGatewaysStripeGatewayIdRequestData, bool) {
+func (o *StripeGatewayUpdate) GetDataOk() (*StripeGatewayUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *StripeGatewayUpdate) GetDataOk() (*PATCHStripeGatewaysStripeGatewayIdRe
 }
 
 // SetData sets field value
-func (o *StripeGatewayUpdate) SetData(v PATCHStripeGatewaysStripeGatewayIdRequestData) {
+func (o *StripeGatewayUpdate) SetData(v StripeGatewayUpdateData) {
 	o.Data = v
 }
 
 func (o StripeGatewayUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o StripeGatewayUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableStripeGatewayUpdate struct {

@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
-**Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
-**Attributes** | Pointer to [**POSTPaymentMethodsRequestDataAttributes**](POSTPaymentMethodsRequestDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTPaymentMethods201ResponseDataRelationships**](POSTPaymentMethods201ResponseDataRelationships.md) |  | [optional] 
+**Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
+**Attributes** | Pointer to [**POSTPaymentMethods201ResponseDataAttributes**](POSTPaymentMethods201ResponseDataAttributes.md) |  | [optional] 
+**Relationships** | Pointer to [**GETPaymentMethods200ResponseDataInnerRelationships**](GETPaymentMethods200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -101,20 +101,20 @@ HasType returns a boolean if a field has been set.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetLinks
 
-`func (o *POSTPaymentMethods201ResponseData) GetLinks() POSTAddresses201ResponseDataLinks`
+`func (o *POSTPaymentMethods201ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *POSTPaymentMethods201ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool)`
+`func (o *POSTPaymentMethods201ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *POSTPaymentMethods201ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks)`
+`func (o *POSTPaymentMethods201ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks)`
 
 SetLinks sets Links field to given value.
 
@@ -126,20 +126,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *POSTPaymentMethods201ResponseData) GetAttributes() POSTPaymentMethodsRequestDataAttributes`
+`func (o *POSTPaymentMethods201ResponseData) GetAttributes() POSTPaymentMethods201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *POSTPaymentMethods201ResponseData) GetAttributesOk() (*POSTPaymentMethodsRequestDataAttributes, bool)`
+`func (o *POSTPaymentMethods201ResponseData) GetAttributesOk() (*POSTPaymentMethods201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *POSTPaymentMethods201ResponseData) SetAttributes(v POSTPaymentMethodsRequestDataAttributes)`
+`func (o *POSTPaymentMethods201ResponseData) SetAttributes(v POSTPaymentMethods201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
@@ -151,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *POSTPaymentMethods201ResponseData) GetRelationships() POSTPaymentMethods201ResponseDataRelationships`
+`func (o *POSTPaymentMethods201ResponseData) GetRelationships() GETPaymentMethods200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *POSTPaymentMethods201ResponseData) GetRelationshipsOk() (*POSTPaymentMethods201ResponseDataRelationships, bool)`
+`func (o *POSTPaymentMethods201ResponseData) GetRelationshipsOk() (*GETPaymentMethods200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *POSTPaymentMethods201ResponseData) SetRelationships(v POSTPaymentMethods201ResponseDataRelationships)`
+`func (o *POSTPaymentMethods201ResponseData) SetRelationships(v GETPaymentMethods200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

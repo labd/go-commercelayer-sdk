@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**OrderSubscription** | [**POSTOrderSubscriptionItemsRequestDataRelationshipsOrderSubscription**](POSTOrderSubscriptionItemsRequestDataRelationshipsOrderSubscription.md) |  | 
+**OrderSubscription** | [**OrderSubscriptionItemCreateDataRelationshipsOrderSubscription**](OrderSubscriptionItemCreateDataRelationshipsOrderSubscription.md) |  | 
 **Item** | [**OrderSubscriptionItemCreateDataRelationshipsItem**](OrderSubscriptionItemCreateDataRelationshipsItem.md) |  | 
 
 ## Methods
 
 ### NewOrderSubscriptionItemCreateDataRelationships
 
-`func NewOrderSubscriptionItemCreateDataRelationships(orderSubscription POSTOrderSubscriptionItemsRequestDataRelationshipsOrderSubscription, item OrderSubscriptionItemCreateDataRelationshipsItem, ) *OrderSubscriptionItemCreateDataRelationships`
+`func NewOrderSubscriptionItemCreateDataRelationships(orderSubscription OrderSubscriptionItemCreateDataRelationshipsOrderSubscription, item OrderSubscriptionItemCreateDataRelationshipsItem, ) *OrderSubscriptionItemCreateDataRelationships`
 
 NewOrderSubscriptionItemCreateDataRelationships instantiates a new OrderSubscriptionItemCreateDataRelationships object
 This constructor will assign default values to properties that have it defined,
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetOrderSubscription
 
-`func (o *OrderSubscriptionItemCreateDataRelationships) GetOrderSubscription() POSTOrderSubscriptionItemsRequestDataRelationshipsOrderSubscription`
+`func (o *OrderSubscriptionItemCreateDataRelationships) GetOrderSubscription() OrderSubscriptionItemCreateDataRelationshipsOrderSubscription`
 
 GetOrderSubscription returns the OrderSubscription field if non-nil, zero value otherwise.
 
 ### GetOrderSubscriptionOk
 
-`func (o *OrderSubscriptionItemCreateDataRelationships) GetOrderSubscriptionOk() (*POSTOrderSubscriptionItemsRequestDataRelationshipsOrderSubscription, bool)`
+`func (o *OrderSubscriptionItemCreateDataRelationships) GetOrderSubscriptionOk() (*OrderSubscriptionItemCreateDataRelationshipsOrderSubscription, bool)`
 
 GetOrderSubscriptionOk returns a tuple with the OrderSubscription field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOrderSubscription
 
-`func (o *OrderSubscriptionItemCreateDataRelationships) SetOrderSubscription(v POSTOrderSubscriptionItemsRequestDataRelationshipsOrderSubscription)`
+`func (o *OrderSubscriptionItemCreateDataRelationships) SetOrderSubscription(v OrderSubscriptionItemCreateDataRelationshipsOrderSubscription)`
 
 SetOrderSubscription sets OrderSubscription field to given value.
 

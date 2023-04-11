@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETGiftCardsGiftCardId200ResponseData**](GETGiftCardsGiftCardId200ResponseData.md) |  | [optional] 
+**Data** | Pointer to [**GETGiftCards200ResponseDataInner**](GETGiftCards200ResponseDataInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETGiftCardsGiftCardId200Response) GetData() GETGiftCardsGiftCardId200ResponseData`
+`func (o *GETGiftCardsGiftCardId200Response) GetData() GETGiftCards200ResponseDataInner`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETGiftCardsGiftCardId200Response) GetDataOk() (*GETGiftCardsGiftCardId200ResponseData, bool)`
+`func (o *GETGiftCardsGiftCardId200Response) GetDataOk() (*GETGiftCards200ResponseDataInner, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETGiftCardsGiftCardId200Response) SetData(v GETGiftCardsGiftCardId200ResponseData)`
+`func (o *GETGiftCardsGiftCardId200Response) SetData(v GETGiftCards200ResponseDataInner)`
 
 SetData sets Data field to given value.
 

@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the POSTOrderCopies201Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &POSTOrderCopies201Response{}
-
 // POSTOrderCopies201Response struct for POSTOrderCopies201Response
 type POSTOrderCopies201Response struct {
 	Data *POSTOrderCopies201ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPOSTOrderCopies201ResponseWithDefaults() *POSTOrderCopies201Response {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTOrderCopies201Response) GetData() POSTOrderCopies201ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret POSTOrderCopies201ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *POSTOrderCopies201Response) GetData() POSTOrderCopies201ResponseData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTOrderCopies201Response) GetDataOk() (*POSTOrderCopies201ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *POSTOrderCopies201Response) GetDataOk() (*POSTOrderCopies201ResponseDat
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTOrderCopies201Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *POSTOrderCopies201Response) SetData(v POSTOrderCopies201ResponseData) {
 }
 
 func (o POSTOrderCopies201Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o POSTOrderCopies201Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePOSTOrderCopies201Response struct {

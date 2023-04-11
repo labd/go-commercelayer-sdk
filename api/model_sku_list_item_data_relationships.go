@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the SkuListItemDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &SkuListItemDataRelationships{}
-
 // SkuListItemDataRelationships struct for SkuListItemDataRelationships
 type SkuListItemDataRelationships struct {
 	SkuList *BundleDataRelationshipsSkuList `json:"sku_list,omitempty"`
@@ -43,7 +40,7 @@ func NewSkuListItemDataRelationshipsWithDefaults() *SkuListItemDataRelationships
 
 // GetSkuList returns the SkuList field value if set, zero value otherwise.
 func (o *SkuListItemDataRelationships) GetSkuList() BundleDataRelationshipsSkuList {
-	if o == nil || IsNil(o.SkuList) {
+	if o == nil || o.SkuList == nil {
 		var ret BundleDataRelationshipsSkuList
 		return ret
 	}
@@ -53,7 +50,7 @@ func (o *SkuListItemDataRelationships) GetSkuList() BundleDataRelationshipsSkuLi
 // GetSkuListOk returns a tuple with the SkuList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SkuListItemDataRelationships) GetSkuListOk() (*BundleDataRelationshipsSkuList, bool) {
-	if o == nil || IsNil(o.SkuList) {
+	if o == nil || o.SkuList == nil {
 		return nil, false
 	}
 	return o.SkuList, true
@@ -61,7 +58,7 @@ func (o *SkuListItemDataRelationships) GetSkuListOk() (*BundleDataRelationshipsS
 
 // HasSkuList returns a boolean if a field has been set.
 func (o *SkuListItemDataRelationships) HasSkuList() bool {
-	if o != nil && !IsNil(o.SkuList) {
+	if o != nil && o.SkuList != nil {
 		return true
 	}
 
@@ -75,7 +72,7 @@ func (o *SkuListItemDataRelationships) SetSkuList(v BundleDataRelationshipsSkuLi
 
 // GetSku returns the Sku field value if set, zero value otherwise.
 func (o *SkuListItemDataRelationships) GetSku() BundleDataRelationshipsSkus {
-	if o == nil || IsNil(o.Sku) {
+	if o == nil || o.Sku == nil {
 		var ret BundleDataRelationshipsSkus
 		return ret
 	}
@@ -85,7 +82,7 @@ func (o *SkuListItemDataRelationships) GetSku() BundleDataRelationshipsSkus {
 // GetSkuOk returns a tuple with the Sku field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SkuListItemDataRelationships) GetSkuOk() (*BundleDataRelationshipsSkus, bool) {
-	if o == nil || IsNil(o.Sku) {
+	if o == nil || o.Sku == nil {
 		return nil, false
 	}
 	return o.Sku, true
@@ -93,7 +90,7 @@ func (o *SkuListItemDataRelationships) GetSkuOk() (*BundleDataRelationshipsSkus,
 
 // HasSku returns a boolean if a field has been set.
 func (o *SkuListItemDataRelationships) HasSku() bool {
-	if o != nil && !IsNil(o.Sku) {
+	if o != nil && o.Sku != nil {
 		return true
 	}
 
@@ -106,22 +103,14 @@ func (o *SkuListItemDataRelationships) SetSku(v BundleDataRelationshipsSkus) {
 }
 
 func (o SkuListItemDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o SkuListItemDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SkuList) {
+	if o.SkuList != nil {
 		toSerialize["sku_list"] = o.SkuList
 	}
-	if !IsNil(o.Sku) {
+	if o.Sku != nil {
 		toSerialize["sku"] = o.Sku
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableSkuListItemDataRelationships struct {

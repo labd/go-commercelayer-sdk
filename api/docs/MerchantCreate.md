@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**POSTMerchantsRequestData**](POSTMerchantsRequestData.md) |  | 
+**Data** | [**MerchantCreateData**](MerchantCreateData.md) |  | 
 
 ## Methods
 
 ### NewMerchantCreate
 
-`func NewMerchantCreate(data POSTMerchantsRequestData, ) *MerchantCreate`
+`func NewMerchantCreate(data MerchantCreateData, ) *MerchantCreate`
 
 NewMerchantCreate instantiates a new MerchantCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *MerchantCreate) GetData() POSTMerchantsRequestData`
+`func (o *MerchantCreate) GetData() MerchantCreateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *MerchantCreate) GetDataOk() (*POSTMerchantsRequestData, bool)`
+`func (o *MerchantCreate) GetDataOk() (*MerchantCreateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *MerchantCreate) SetData(v POSTMerchantsRequestData)`
+`func (o *MerchantCreate) SetData(v MerchantCreateData)`
 
 SetData sets Data field to given value.
 

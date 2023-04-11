@@ -41,7 +41,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -49,7 +49,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AddressesApi.DELETEAddressesAddressId(context.Background(), addressId).Execute()
+    resp, r, err := apiClient.AddressesApi.DELETEAddressesAddressId(context.Background(), addressId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AddressesApi.DELETEAddressesAddressId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -109,7 +109,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -170,7 +170,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -240,7 +240,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -248,7 +248,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AddressesApi.GETBingGeocoderIdAddresses(context.Background(), bingGeocoderId).Execute()
+    resp, r, err := apiClient.AddressesApi.GETBingGeocoderIdAddresses(context.Background(), bingGeocoderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AddressesApi.GETBingGeocoderIdAddresses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -308,7 +308,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -316,7 +316,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AddressesApi.GETCustomerAddressIdAddress(context.Background(), customerAddressId).Execute()
+    resp, r, err := apiClient.AddressesApi.GETCustomerAddressIdAddress(context.Background(), customerAddressId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AddressesApi.GETCustomerAddressIdAddress``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -376,7 +376,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -384,7 +384,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AddressesApi.GETGeocoderIdAddresses(context.Background(), geocoderId).Execute()
+    resp, r, err := apiClient.AddressesApi.GETGeocoderIdAddresses(context.Background(), geocoderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AddressesApi.GETGeocoderIdAddresses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -444,7 +444,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -452,7 +452,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AddressesApi.GETGoogleGeocoderIdAddresses(context.Background(), googleGeocoderId).Execute()
+    resp, r, err := apiClient.AddressesApi.GETGoogleGeocoderIdAddresses(context.Background(), googleGeocoderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AddressesApi.GETGoogleGeocoderIdAddresses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -512,7 +512,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -520,7 +520,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AddressesApi.GETMerchantIdAddress(context.Background(), merchantId).Execute()
+    resp, r, err := apiClient.AddressesApi.GETMerchantIdAddress(context.Background(), merchantId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AddressesApi.GETMerchantIdAddress``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -580,7 +580,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -588,7 +588,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AddressesApi.GETOrderIdBillingAddress(context.Background(), orderId).Execute()
+    resp, r, err := apiClient.AddressesApi.GETOrderIdBillingAddress(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AddressesApi.GETOrderIdBillingAddress``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -648,7 +648,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -656,7 +656,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AddressesApi.GETOrderIdShippingAddress(context.Background(), orderId).Execute()
+    resp, r, err := apiClient.AddressesApi.GETOrderIdShippingAddress(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AddressesApi.GETOrderIdShippingAddress``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -716,7 +716,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -724,7 +724,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AddressesApi.GETReturnIdDestinationAddress(context.Background(), returnId).Execute()
+    resp, r, err := apiClient.AddressesApi.GETReturnIdDestinationAddress(context.Background(), returnId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AddressesApi.GETReturnIdDestinationAddress``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -784,7 +784,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -792,7 +792,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AddressesApi.GETReturnIdOriginAddress(context.Background(), returnId).Execute()
+    resp, r, err := apiClient.AddressesApi.GETReturnIdOriginAddress(context.Background(), returnId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AddressesApi.GETReturnIdOriginAddress``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -852,7 +852,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -860,7 +860,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AddressesApi.GETShipmentIdOriginAddress(context.Background(), shipmentId).Execute()
+    resp, r, err := apiClient.AddressesApi.GETShipmentIdOriginAddress(context.Background(), shipmentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AddressesApi.GETShipmentIdOriginAddress``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -920,7 +920,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -928,7 +928,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AddressesApi.GETShipmentIdShippingAddress(context.Background(), shipmentId).Execute()
+    resp, r, err := apiClient.AddressesApi.GETShipmentIdShippingAddress(context.Background(), shipmentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AddressesApi.GETShipmentIdShippingAddress``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -988,7 +988,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -996,7 +996,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AddressesApi.GETStockLocationIdAddress(context.Background(), stockLocationId).Execute()
+    resp, r, err := apiClient.AddressesApi.GETStockLocationIdAddress(context.Background(), stockLocationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AddressesApi.GETStockLocationIdAddress``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1041,7 +1041,7 @@ Name | Type | Description  | Notes
 
 ## PATCHAddressesAddressId
 
-> PATCHAddressesAddressId200Response PATCHAddressesAddressId(ctx, addressId).PATCHAddressesAddressIdRequest(pATCHAddressesAddressIdRequest).Execute()
+> PATCHAddressesAddressId200Response PATCHAddressesAddressId(ctx, addressId).AddressUpdate(addressUpdate).Execute()
 
 Update an address
 
@@ -1056,16 +1056,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHAddressesAddressIdRequest := *openapiclient.NewPATCHAddressesAddressIdRequest(*openapiclient.NewPATCHAddressesAddressIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHAddressesAddressIdRequestDataAttributes())) // PATCHAddressesAddressIdRequest | 
+    addressUpdate := *openapiclient.NewAddressUpdate(*openapiclient.NewAddressUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHAddressesAddressId200ResponseDataAttributes())) // AddressUpdate | 
     addressId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AddressesApi.PATCHAddressesAddressId(context.Background(), addressId).PATCHAddressesAddressIdRequest(pATCHAddressesAddressIdRequest).Execute()
+    resp, r, err := apiClient.AddressesApi.PATCHAddressesAddressId(context.Background(), addressId).AddressUpdate(addressUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AddressesApi.PATCHAddressesAddressId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1090,7 +1090,7 @@ Other parameters are passed through a pointer to a apiPATCHAddressesAddressIdReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHAddressesAddressIdRequest** | [**PATCHAddressesAddressIdRequest**](PATCHAddressesAddressIdRequest.md) |  | 
+ **addressUpdate** | [**AddressUpdate**](AddressUpdate.md) |  | 
 
 
 ### Return type
@@ -1113,7 +1113,7 @@ Name | Type | Description  | Notes
 
 ## POSTAddresses
 
-> POSTAddresses201Response POSTAddresses(ctx).POSTAddressesRequest(pOSTAddressesRequest).Execute()
+> POSTAddresses201Response POSTAddresses(ctx).AddressCreate(addressCreate).Execute()
 
 Create an address
 
@@ -1128,15 +1128,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTAddressesRequest := *openapiclient.NewPOSTAddressesRequest(*openapiclient.NewPOSTAddressesRequestData(interface{}(123), *openapiclient.NewPOSTAddressesRequestDataAttributes(interface{}(2883 Geraldine Lane), interface{}(New York), interface{}(NY), interface{}(US), interface{}((212) 646-338-1228)))) // POSTAddressesRequest | 
+    addressCreate := *openapiclient.NewAddressCreate(*openapiclient.NewAddressCreateData(interface{}(123), *openapiclient.NewPOSTAddresses201ResponseDataAttributes(interface{}(2883 Geraldine Lane), interface{}(New York), interface{}(NY), interface{}(US), interface{}((212) 646-338-1228)))) // AddressCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AddressesApi.POSTAddresses(context.Background()).POSTAddressesRequest(pOSTAddressesRequest).Execute()
+    resp, r, err := apiClient.AddressesApi.POSTAddresses(context.Background()).AddressCreate(addressCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AddressesApi.POSTAddresses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1157,7 +1157,7 @@ Other parameters are passed through a pointer to a apiPOSTAddressesRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTAddressesRequest** | [**POSTAddressesRequest**](POSTAddressesRequest.md) |  | 
+ **addressCreate** | [**AddressCreate**](AddressCreate.md) |  | 
 
 ### Return type
 

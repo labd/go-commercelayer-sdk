@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETWireTransfersWireTransferId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETWireTransfersWireTransferId200Response{}
-
 // GETWireTransfersWireTransferId200Response struct for GETWireTransfersWireTransferId200Response
 type GETWireTransfersWireTransferId200Response struct {
-	Data *GETWireTransfersWireTransferId200ResponseData `json:"data,omitempty"`
+	Data *GETWireTransfers200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETWireTransfersWireTransferId200Response instantiates a new GETWireTransfersWireTransferId200Response object
@@ -41,9 +38,9 @@ func NewGETWireTransfersWireTransferId200ResponseWithDefaults() *GETWireTransfer
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETWireTransfersWireTransferId200Response) GetData() GETWireTransfersWireTransferId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETWireTransfersWireTransferId200ResponseData
+func (o *GETWireTransfersWireTransferId200Response) GetData() GETWireTransfers200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETWireTransfers200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETWireTransfersWireTransferId200Response) GetData() GETWireTransfersWi
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETWireTransfersWireTransferId200Response) GetDataOk() (*GETWireTransfersWireTransferId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETWireTransfersWireTransferId200Response) GetDataOk() (*GETWireTransfers200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETWireTransfersWireTransferId200Response) GetDataOk() (*GETWireTransfe
 
 // HasData returns a boolean if a field has been set.
 func (o *GETWireTransfersWireTransferId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETWireTransfersWireTransferId200ResponseData and assigns it to the Data field.
-func (o *GETWireTransfersWireTransferId200Response) SetData(v GETWireTransfersWireTransferId200ResponseData) {
+// SetData gets a reference to the given GETWireTransfers200ResponseDataInner and assigns it to the Data field.
+func (o *GETWireTransfersWireTransferId200Response) SetData(v GETWireTransfers200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETWireTransfersWireTransferId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETWireTransfersWireTransferId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETWireTransfersWireTransferId200Response struct {

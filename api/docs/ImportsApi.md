@@ -28,7 +28,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -36,7 +36,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ImportsApi.DELETEImportsImportId(context.Background(), importId).Execute()
+    resp, r, err := apiClient.ImportsApi.DELETEImportsImportId(context.Background(), importId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ImportsApi.DELETEImportsImportId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -96,7 +96,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -157,7 +157,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ## POSTImports
 
-> POSTImports201Response POSTImports(ctx).POSTImportsRequest(pOSTImportsRequest).Execute()
+> POSTImports201Response POSTImports(ctx).ImportCreate(importCreate).Execute()
 
 Create an import
 
@@ -227,15 +227,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTImportsRequest := *openapiclient.NewPOSTImportsRequest(*openapiclient.NewPOSTImportsRequestData(interface{}(123), *openapiclient.NewPOSTImportsRequestDataAttributes(interface{}(skus), interface{}([{"code":"ABC","name":"Foo"},{"code":"DEF","name":"Bar"}])))) // POSTImportsRequest | 
+    importCreate := *openapiclient.NewImportCreate(*openapiclient.NewImportCreateData(interface{}(123), *openapiclient.NewPOSTImports201ResponseDataAttributes(interface{}(skus), interface{}([{code=ABC, name=Foo}, {code=DEF, name=Bar}])))) // ImportCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ImportsApi.POSTImports(context.Background()).POSTImportsRequest(pOSTImportsRequest).Execute()
+    resp, r, err := apiClient.ImportsApi.POSTImports(context.Background()).ImportCreate(importCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ImportsApi.POSTImports``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -256,7 +256,7 @@ Other parameters are passed through a pointer to a apiPOSTImportsRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTImportsRequest** | [**POSTImportsRequest**](POSTImportsRequest.md) |  | 
+ **importCreate** | [**ImportCreate**](ImportCreate.md) |  | 
 
 ### Return type
 

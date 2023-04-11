@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the PATCHBingGeocodersBingGeocoderId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PATCHBingGeocodersBingGeocoderId200Response{}
-
 // PATCHBingGeocodersBingGeocoderId200Response struct for PATCHBingGeocodersBingGeocoderId200Response
 type PATCHBingGeocodersBingGeocoderId200Response struct {
 	Data *PATCHBingGeocodersBingGeocoderId200ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPATCHBingGeocodersBingGeocoderId200ResponseWithDefaults() *PATCHBingGeoc
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *PATCHBingGeocodersBingGeocoderId200Response) GetData() PATCHBingGeocodersBingGeocoderId200ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret PATCHBingGeocodersBingGeocoderId200ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *PATCHBingGeocodersBingGeocoderId200Response) GetData() PATCHBingGeocode
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHBingGeocodersBingGeocoderId200Response) GetDataOk() (*PATCHBingGeocodersBingGeocoderId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *PATCHBingGeocodersBingGeocoderId200Response) GetDataOk() (*PATCHBingGeo
 
 // HasData returns a boolean if a field has been set.
 func (o *PATCHBingGeocodersBingGeocoderId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *PATCHBingGeocodersBingGeocoderId200Response) SetData(v PATCHBingGeocode
 }
 
 func (o PATCHBingGeocodersBingGeocoderId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o PATCHBingGeocodersBingGeocoderId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePATCHBingGeocodersBingGeocoderId200Response struct {

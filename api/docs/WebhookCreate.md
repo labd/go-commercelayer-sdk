@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**POSTWebhooksRequestData**](POSTWebhooksRequestData.md) |  | 
+**Data** | [**WebhookCreateData**](WebhookCreateData.md) |  | 
 
 ## Methods
 
 ### NewWebhookCreate
 
-`func NewWebhookCreate(data POSTWebhooksRequestData, ) *WebhookCreate`
+`func NewWebhookCreate(data WebhookCreateData, ) *WebhookCreate`
 
 NewWebhookCreate instantiates a new WebhookCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *WebhookCreate) GetData() POSTWebhooksRequestData`
+`func (o *WebhookCreate) GetData() WebhookCreateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *WebhookCreate) GetDataOk() (*POSTWebhooksRequestData, bool)`
+`func (o *WebhookCreate) GetDataOk() (*WebhookCreateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *WebhookCreate) SetData(v POSTWebhooksRequestData)`
+`func (o *WebhookCreate) SetData(v WebhookCreateData)`
 
 SetData sets Data field to given value.
 

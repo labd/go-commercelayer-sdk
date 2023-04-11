@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**POSTCheckoutComGatewaysRequestData**](POSTCheckoutComGatewaysRequestData.md) |  | 
+**Data** | [**CheckoutComGatewayCreateData**](CheckoutComGatewayCreateData.md) |  | 
 
 ## Methods
 
 ### NewCheckoutComGatewayCreate
 
-`func NewCheckoutComGatewayCreate(data POSTCheckoutComGatewaysRequestData, ) *CheckoutComGatewayCreate`
+`func NewCheckoutComGatewayCreate(data CheckoutComGatewayCreateData, ) *CheckoutComGatewayCreate`
 
 NewCheckoutComGatewayCreate instantiates a new CheckoutComGatewayCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *CheckoutComGatewayCreate) GetData() POSTCheckoutComGatewaysRequestData`
+`func (o *CheckoutComGatewayCreate) GetData() CheckoutComGatewayCreateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *CheckoutComGatewayCreate) GetDataOk() (*POSTCheckoutComGatewaysRequestData, bool)`
+`func (o *CheckoutComGatewayCreate) GetDataOk() (*CheckoutComGatewayCreateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *CheckoutComGatewayCreate) SetData(v POSTCheckoutComGatewaysRequestData)`
+`func (o *CheckoutComGatewayCreate) SetData(v CheckoutComGatewayCreateData)`
 
 SetData sets Data field to given value.
 

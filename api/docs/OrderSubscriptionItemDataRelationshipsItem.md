@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**POSTOrderSubscriptionItemsRequestDataRelationshipsItemData**](POSTOrderSubscriptionItemsRequestDataRelationshipsItemData.md) |  | [optional] 
+**Data** | Pointer to [**OrderSubscriptionItemDataRelationshipsItemData**](OrderSubscriptionItemDataRelationshipsItemData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *OrderSubscriptionItemDataRelationshipsItem) GetData() POSTOrderSubscriptionItemsRequestDataRelationshipsItemData`
+`func (o *OrderSubscriptionItemDataRelationshipsItem) GetData() OrderSubscriptionItemDataRelationshipsItemData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *OrderSubscriptionItemDataRelationshipsItem) GetDataOk() (*POSTOrderSubscriptionItemsRequestDataRelationshipsItemData, bool)`
+`func (o *OrderSubscriptionItemDataRelationshipsItem) GetDataOk() (*OrderSubscriptionItemDataRelationshipsItemData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *OrderSubscriptionItemDataRelationshipsItem) SetData(v POSTOrderSubscriptionItemsRequestDataRelationshipsItemData)`
+`func (o *OrderSubscriptionItemDataRelationshipsItem) SetData(v OrderSubscriptionItemDataRelationshipsItemData)`
 
 SetData sets Data field to given value.
 

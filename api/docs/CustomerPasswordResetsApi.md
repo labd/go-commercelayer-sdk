@@ -29,7 +29,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -37,7 +37,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CustomerPasswordResetsApi.DELETECustomerPasswordResetsCustomerPasswordResetId(context.Background(), customerPasswordResetId).Execute()
+    resp, r, err := apiClient.CustomerPasswordResetsApi.DELETECustomerPasswordResetsCustomerPasswordResetId(context.Background(), customerPasswordResetId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPasswordResetsApi.DELETECustomerPasswordResetsCustomerPasswordResetId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -158,7 +158,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHCustomerPasswordResetsCustomerPasswordResetId
 
-> PATCHCustomerPasswordResetsCustomerPasswordResetId200Response PATCHCustomerPasswordResetsCustomerPasswordResetId(ctx, customerPasswordResetId).PATCHCustomerPasswordResetsCustomerPasswordResetIdRequest(pATCHCustomerPasswordResetsCustomerPasswordResetIdRequest).Execute()
+> PATCHCustomerPasswordResetsCustomerPasswordResetId200Response PATCHCustomerPasswordResetsCustomerPasswordResetId(ctx, customerPasswordResetId).CustomerPasswordResetUpdate(customerPasswordResetUpdate).Execute()
 
 Update a customer password reset
 
@@ -228,16 +228,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHCustomerPasswordResetsCustomerPasswordResetIdRequest := *openapiclient.NewPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest(*openapiclient.NewPATCHCustomerPasswordResetsCustomerPasswordResetIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHCustomerPasswordResetsCustomerPasswordResetIdRequestDataAttributes())) // PATCHCustomerPasswordResetsCustomerPasswordResetIdRequest | 
+    customerPasswordResetUpdate := *openapiclient.NewCustomerPasswordResetUpdate(*openapiclient.NewCustomerPasswordResetUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes())) // CustomerPasswordResetUpdate | 
     customerPasswordResetId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomerPasswordResetsApi.PATCHCustomerPasswordResetsCustomerPasswordResetId(context.Background(), customerPasswordResetId).PATCHCustomerPasswordResetsCustomerPasswordResetIdRequest(pATCHCustomerPasswordResetsCustomerPasswordResetIdRequest).Execute()
+    resp, r, err := apiClient.CustomerPasswordResetsApi.PATCHCustomerPasswordResetsCustomerPasswordResetId(context.Background(), customerPasswordResetId).CustomerPasswordResetUpdate(customerPasswordResetUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPasswordResetsApi.PATCHCustomerPasswordResetsCustomerPasswordResetId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -262,7 +262,7 @@ Other parameters are passed through a pointer to a apiPATCHCustomerPasswordReset
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHCustomerPasswordResetsCustomerPasswordResetIdRequest** | [**PATCHCustomerPasswordResetsCustomerPasswordResetIdRequest**](PATCHCustomerPasswordResetsCustomerPasswordResetIdRequest.md) |  | 
+ **customerPasswordResetUpdate** | [**CustomerPasswordResetUpdate**](CustomerPasswordResetUpdate.md) |  | 
 
 
 ### Return type
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTCustomerPasswordResets
 
-> POSTCustomerPasswordResets201Response POSTCustomerPasswordResets(ctx).POSTCustomerPasswordResetsRequest(pOSTCustomerPasswordResetsRequest).Execute()
+> POSTCustomerPasswordResets201Response POSTCustomerPasswordResets(ctx).CustomerPasswordResetCreate(customerPasswordResetCreate).Execute()
 
 Create a customer password reset
 
@@ -300,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTCustomerPasswordResetsRequest := *openapiclient.NewPOSTCustomerPasswordResetsRequest(*openapiclient.NewPOSTCustomerPasswordResetsRequestData(interface{}(123), *openapiclient.NewPOSTCustomerPasswordResetsRequestDataAttributes(interface{}(john@example.com)))) // POSTCustomerPasswordResetsRequest | 
+    customerPasswordResetCreate := *openapiclient.NewCustomerPasswordResetCreate(*openapiclient.NewCustomerPasswordResetCreateData(interface{}(123), *openapiclient.NewPOSTCustomerPasswordResets201ResponseDataAttributes(interface{}(john@example.com)))) // CustomerPasswordResetCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomerPasswordResetsApi.POSTCustomerPasswordResets(context.Background()).POSTCustomerPasswordResetsRequest(pOSTCustomerPasswordResetsRequest).Execute()
+    resp, r, err := apiClient.CustomerPasswordResetsApi.POSTCustomerPasswordResets(context.Background()).CustomerPasswordResetCreate(customerPasswordResetCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPasswordResetsApi.POSTCustomerPasswordResets``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiPOSTCustomerPasswordResets
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTCustomerPasswordResetsRequest** | [**POSTCustomerPasswordResetsRequest**](POSTCustomerPasswordResetsRequest.md) |  | 
+ **customerPasswordResetCreate** | [**CustomerPasswordResetCreate**](CustomerPasswordResetCreate.md) |  | 
 
 ### Return type
 

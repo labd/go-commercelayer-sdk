@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the PATCHAxervePaymentsAxervePaymentId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PATCHAxervePaymentsAxervePaymentId200Response{}
-
 // PATCHAxervePaymentsAxervePaymentId200Response struct for PATCHAxervePaymentsAxervePaymentId200Response
 type PATCHAxervePaymentsAxervePaymentId200Response struct {
 	Data *PATCHAxervePaymentsAxervePaymentId200ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPATCHAxervePaymentsAxervePaymentId200ResponseWithDefaults() *PATCHAxerve
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *PATCHAxervePaymentsAxervePaymentId200Response) GetData() PATCHAxervePaymentsAxervePaymentId200ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret PATCHAxervePaymentsAxervePaymentId200ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *PATCHAxervePaymentsAxervePaymentId200Response) GetData() PATCHAxervePay
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHAxervePaymentsAxervePaymentId200Response) GetDataOk() (*PATCHAxervePaymentsAxervePaymentId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *PATCHAxervePaymentsAxervePaymentId200Response) GetDataOk() (*PATCHAxerv
 
 // HasData returns a boolean if a field has been set.
 func (o *PATCHAxervePaymentsAxervePaymentId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *PATCHAxervePaymentsAxervePaymentId200Response) SetData(v PATCHAxervePay
 }
 
 func (o PATCHAxervePaymentsAxervePaymentId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o PATCHAxervePaymentsAxervePaymentId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePATCHAxervePaymentsAxervePaymentId200Response struct {

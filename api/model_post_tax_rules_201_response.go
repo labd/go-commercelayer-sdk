@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the POSTTaxRules201Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &POSTTaxRules201Response{}
-
 // POSTTaxRules201Response struct for POSTTaxRules201Response
 type POSTTaxRules201Response struct {
 	Data *POSTTaxRules201ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPOSTTaxRules201ResponseWithDefaults() *POSTTaxRules201Response {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTTaxRules201Response) GetData() POSTTaxRules201ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret POSTTaxRules201ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *POSTTaxRules201Response) GetData() POSTTaxRules201ResponseData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTTaxRules201Response) GetDataOk() (*POSTTaxRules201ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *POSTTaxRules201Response) GetDataOk() (*POSTTaxRules201ResponseData, boo
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTTaxRules201Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *POSTTaxRules201Response) SetData(v POSTTaxRules201ResponseData) {
 }
 
 func (o POSTTaxRules201Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o POSTTaxRules201Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePOSTTaxRules201Response struct {

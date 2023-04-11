@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**POSTDeliveryLeadTimesRequestDataRelationshipsShippingMethodData**](POSTDeliveryLeadTimesRequestDataRelationshipsShippingMethodData.md) |  | [optional] 
+**Data** | Pointer to [**DeliveryLeadTimeDataRelationshipsShippingMethodData**](DeliveryLeadTimeDataRelationshipsShippingMethodData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *DeliveryLeadTimeDataRelationshipsShippingMethod) GetData() POSTDeliveryLeadTimesRequestDataRelationshipsShippingMethodData`
+`func (o *DeliveryLeadTimeDataRelationshipsShippingMethod) GetData() DeliveryLeadTimeDataRelationshipsShippingMethodData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *DeliveryLeadTimeDataRelationshipsShippingMethod) GetDataOk() (*POSTDeliveryLeadTimesRequestDataRelationshipsShippingMethodData, bool)`
+`func (o *DeliveryLeadTimeDataRelationshipsShippingMethod) GetDataOk() (*DeliveryLeadTimeDataRelationshipsShippingMethodData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *DeliveryLeadTimeDataRelationshipsShippingMethod) SetData(v POSTDeliveryLeadTimesRequestDataRelationshipsShippingMethodData)`
+`func (o *DeliveryLeadTimeDataRelationshipsShippingMethod) SetData(v DeliveryLeadTimeDataRelationshipsShippingMethodData)`
 
 SetData sets Data field to given value.
 

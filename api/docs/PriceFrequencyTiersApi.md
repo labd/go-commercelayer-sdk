@@ -30,7 +30,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -38,7 +38,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.PriceFrequencyTiersApi.DELETEPriceFrequencyTiersPriceFrequencyTierId(context.Background(), priceFrequencyTierId).Execute()
+    resp, r, err := apiClient.PriceFrequencyTiersApi.DELETEPriceFrequencyTiersPriceFrequencyTierId(context.Background(), priceFrequencyTierId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceFrequencyTiersApi.DELETEPriceFrequencyTiersPriceFrequencyTierId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -98,7 +98,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -159,7 +159,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -229,7 +229,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -237,7 +237,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.PriceFrequencyTiersApi.GETPriceIdPriceFrequencyTiers(context.Background(), priceId).Execute()
+    resp, r, err := apiClient.PriceFrequencyTiersApi.GETPriceIdPriceFrequencyTiers(context.Background(), priceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceFrequencyTiersApi.GETPriceIdPriceFrequencyTiers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHPriceFrequencyTiersPriceFrequencyTierId
 
-> PATCHPriceFrequencyTiersPriceFrequencyTierId200Response PATCHPriceFrequencyTiersPriceFrequencyTierId(ctx, priceFrequencyTierId).PATCHPriceFrequencyTiersPriceFrequencyTierIdRequest(pATCHPriceFrequencyTiersPriceFrequencyTierIdRequest).Execute()
+> PATCHPriceFrequencyTiersPriceFrequencyTierId200Response PATCHPriceFrequencyTiersPriceFrequencyTierId(ctx, priceFrequencyTierId).PriceFrequencyTierUpdate(priceFrequencyTierUpdate).Execute()
 
 Update a price frequency tier
 
@@ -297,16 +297,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHPriceFrequencyTiersPriceFrequencyTierIdRequest := *openapiclient.NewPATCHPriceFrequencyTiersPriceFrequencyTierIdRequest(*openapiclient.NewPATCHPriceFrequencyTiersPriceFrequencyTierIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHPriceFrequencyTiersPriceFrequencyTierIdRequestDataAttributes())) // PATCHPriceFrequencyTiersPriceFrequencyTierIdRequest | 
+    priceFrequencyTierUpdate := *openapiclient.NewPriceFrequencyTierUpdate(*openapiclient.NewPriceFrequencyTierUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHPriceFrequencyTiersPriceFrequencyTierId200ResponseDataAttributes())) // PriceFrequencyTierUpdate | 
     priceFrequencyTierId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PriceFrequencyTiersApi.PATCHPriceFrequencyTiersPriceFrequencyTierId(context.Background(), priceFrequencyTierId).PATCHPriceFrequencyTiersPriceFrequencyTierIdRequest(pATCHPriceFrequencyTiersPriceFrequencyTierIdRequest).Execute()
+    resp, r, err := apiClient.PriceFrequencyTiersApi.PATCHPriceFrequencyTiersPriceFrequencyTierId(context.Background(), priceFrequencyTierId).PriceFrequencyTierUpdate(priceFrequencyTierUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceFrequencyTiersApi.PATCHPriceFrequencyTiersPriceFrequencyTierId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -331,7 +331,7 @@ Other parameters are passed through a pointer to a apiPATCHPriceFrequencyTiersPr
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHPriceFrequencyTiersPriceFrequencyTierIdRequest** | [**PATCHPriceFrequencyTiersPriceFrequencyTierIdRequest**](PATCHPriceFrequencyTiersPriceFrequencyTierIdRequest.md) |  | 
+ **priceFrequencyTierUpdate** | [**PriceFrequencyTierUpdate**](PriceFrequencyTierUpdate.md) |  | 
 
 
 ### Return type
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTPriceFrequencyTiers
 
-> POSTPriceFrequencyTiers201Response POSTPriceFrequencyTiers(ctx).POSTPriceFrequencyTiersRequest(pOSTPriceFrequencyTiersRequest).Execute()
+> POSTPriceFrequencyTiers201Response POSTPriceFrequencyTiers(ctx).PriceFrequencyTierCreate(priceFrequencyTierCreate).Execute()
 
 Create a price frequency tier
 
@@ -369,15 +369,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTPriceFrequencyTiersRequest := *openapiclient.NewPOSTPriceFrequencyTiersRequest(*openapiclient.NewPOSTPriceFrequencyTiersRequestData(interface{}(123), *openapiclient.NewPOSTPriceFrequencyTiersRequestDataAttributes(interface{}(six pack), interface{}(1000)))) // POSTPriceFrequencyTiersRequest | 
+    priceFrequencyTierCreate := *openapiclient.NewPriceFrequencyTierCreate(*openapiclient.NewPriceFrequencyTierCreateData(interface{}(123), *openapiclient.NewPOSTPriceFrequencyTiers201ResponseDataAttributes(interface{}(six pack), interface{}(1000)))) // PriceFrequencyTierCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PriceFrequencyTiersApi.POSTPriceFrequencyTiers(context.Background()).POSTPriceFrequencyTiersRequest(pOSTPriceFrequencyTiersRequest).Execute()
+    resp, r, err := apiClient.PriceFrequencyTiersApi.POSTPriceFrequencyTiers(context.Background()).PriceFrequencyTierCreate(priceFrequencyTierCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceFrequencyTiersApi.POSTPriceFrequencyTiers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +398,7 @@ Other parameters are passed through a pointer to a apiPOSTPriceFrequencyTiersReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTPriceFrequencyTiersRequest** | [**POSTPriceFrequencyTiersRequest**](POSTPriceFrequencyTiersRequest.md) |  | 
+ **priceFrequencyTierCreate** | [**PriceFrequencyTierCreate**](PriceFrequencyTierCreate.md) |  | 
 
 ### Return type
 

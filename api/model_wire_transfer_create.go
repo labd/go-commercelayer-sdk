@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the WireTransferCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &WireTransferCreate{}
-
 // WireTransferCreate struct for WireTransferCreate
 type WireTransferCreate struct {
-	Data POSTWireTransfersRequestData `json:"data"`
+	Data WireTransferCreateData `json:"data"`
 }
 
 // NewWireTransferCreate instantiates a new WireTransferCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWireTransferCreate(data POSTWireTransfersRequestData) *WireTransferCreate {
+func NewWireTransferCreate(data WireTransferCreateData) *WireTransferCreate {
 	this := WireTransferCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewWireTransferCreateWithDefaults() *WireTransferCreate {
 }
 
 // GetData returns the Data field value
-func (o *WireTransferCreate) GetData() POSTWireTransfersRequestData {
+func (o *WireTransferCreate) GetData() WireTransferCreateData {
 	if o == nil {
-		var ret POSTWireTransfersRequestData
+		var ret WireTransferCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *WireTransferCreate) GetData() POSTWireTransfersRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *WireTransferCreate) GetDataOk() (*POSTWireTransfersRequestData, bool) {
+func (o *WireTransferCreate) GetDataOk() (*WireTransferCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *WireTransferCreate) GetDataOk() (*POSTWireTransfersRequestData, bool) {
 }
 
 // SetData sets field value
-func (o *WireTransferCreate) SetData(v POSTWireTransfersRequestData) {
+func (o *WireTransferCreate) SetData(v WireTransferCreateData) {
 	o.Data = v
 }
 
 func (o WireTransferCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o WireTransferCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableWireTransferCreate struct {

@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETAttachmentsAttachmentId200ResponseDataAttributes**](GETAttachmentsAttachmentId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**GETAttachments200ResponseDataInnerAttributes**](GETAttachments200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**AttachmentDataRelationships**](AttachmentDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewAttachmentData
 
-`func NewAttachmentData(type_ interface{}, attributes GETAttachmentsAttachmentId200ResponseDataAttributes, ) *AttachmentData`
+`func NewAttachmentData(type_ interface{}, attributes GETAttachments200ResponseDataInnerAttributes, ) *AttachmentData`
 
 NewAttachmentData instantiates a new AttachmentData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *AttachmentData) GetAttributes() GETAttachmentsAttachmentId200ResponseDataAttributes`
+`func (o *AttachmentData) GetAttributes() GETAttachments200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *AttachmentData) GetAttributesOk() (*GETAttachmentsAttachmentId200ResponseDataAttributes, bool)`
+`func (o *AttachmentData) GetAttributesOk() (*GETAttachments200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *AttachmentData) SetAttributes(v GETAttachmentsAttachmentId200ResponseDataAttributes)`
+`func (o *AttachmentData) SetAttributes(v GETAttachments200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

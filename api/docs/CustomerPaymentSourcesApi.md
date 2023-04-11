@@ -33,7 +33,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -41,7 +41,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CustomerPaymentSourcesApi.DELETECustomerPaymentSourcesCustomerPaymentSourceId(context.Background(), customerPaymentSourceId).Execute()
+    resp, r, err := apiClient.CustomerPaymentSourcesApi.DELETECustomerPaymentSourcesCustomerPaymentSourceId(context.Background(), customerPaymentSourceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPaymentSourcesApi.DELETECustomerPaymentSourcesCustomerPaymentSourceId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -101,7 +101,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -109,7 +109,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CustomerPaymentSourcesApi.GETCustomerIdCustomerPaymentSources(context.Background(), customerId).Execute()
+    resp, r, err := apiClient.CustomerPaymentSourcesApi.GETCustomerIdCustomerPaymentSources(context.Background(), customerId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPaymentSourcesApi.GETCustomerIdCustomerPaymentSources``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -169,7 +169,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -230,7 +230,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -300,7 +300,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -308,7 +308,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CustomerPaymentSourcesApi.GETExternalPaymentIdWallet(context.Background(), externalPaymentId).Execute()
+    resp, r, err := apiClient.CustomerPaymentSourcesApi.GETExternalPaymentIdWallet(context.Background(), externalPaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPaymentSourcesApi.GETExternalPaymentIdWallet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -368,7 +368,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -376,7 +376,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CustomerPaymentSourcesApi.GETOrderIdAvailableCustomerPaymentSources(context.Background(), orderId).Execute()
+    resp, r, err := apiClient.CustomerPaymentSourcesApi.GETOrderIdAvailableCustomerPaymentSources(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPaymentSourcesApi.GETOrderIdAvailableCustomerPaymentSources``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -436,7 +436,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -444,7 +444,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CustomerPaymentSourcesApi.GETOrderSubscriptionIdCustomerPaymentSource(context.Background(), orderSubscriptionId).Execute()
+    resp, r, err := apiClient.CustomerPaymentSourcesApi.GETOrderSubscriptionIdCustomerPaymentSource(context.Background(), orderSubscriptionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPaymentSourcesApi.GETOrderSubscriptionIdCustomerPaymentSource``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -489,7 +489,7 @@ Name | Type | Description  | Notes
 
 ## PATCHCustomerPaymentSourcesCustomerPaymentSourceId
 
-> PATCHCustomerPaymentSourcesCustomerPaymentSourceId200Response PATCHCustomerPaymentSourcesCustomerPaymentSourceId(ctx, customerPaymentSourceId).PATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest(pATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest).Execute()
+> PATCHCustomerPaymentSourcesCustomerPaymentSourceId200Response PATCHCustomerPaymentSourcesCustomerPaymentSourceId(ctx, customerPaymentSourceId).CustomerPaymentSourceUpdate(customerPaymentSourceUpdate).Execute()
 
 Update a customer payment source
 
@@ -504,16 +504,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest := *openapiclient.NewPATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest(*openapiclient.NewPATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes())) // PATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest | 
+    customerPaymentSourceUpdate := *openapiclient.NewCustomerPaymentSourceUpdate(*openapiclient.NewCustomerPaymentSourceUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes())) // CustomerPaymentSourceUpdate | 
     customerPaymentSourceId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomerPaymentSourcesApi.PATCHCustomerPaymentSourcesCustomerPaymentSourceId(context.Background(), customerPaymentSourceId).PATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest(pATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest).Execute()
+    resp, r, err := apiClient.CustomerPaymentSourcesApi.PATCHCustomerPaymentSourcesCustomerPaymentSourceId(context.Background(), customerPaymentSourceId).CustomerPaymentSourceUpdate(customerPaymentSourceUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPaymentSourcesApi.PATCHCustomerPaymentSourcesCustomerPaymentSourceId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -538,7 +538,7 @@ Other parameters are passed through a pointer to a apiPATCHCustomerPaymentSource
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest** | [**PATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest**](PATCHCustomerPaymentSourcesCustomerPaymentSourceIdRequest.md) |  | 
+ **customerPaymentSourceUpdate** | [**CustomerPaymentSourceUpdate**](CustomerPaymentSourceUpdate.md) |  | 
 
 
 ### Return type
@@ -561,7 +561,7 @@ Name | Type | Description  | Notes
 
 ## POSTCustomerPaymentSources
 
-> POSTCustomerPaymentSources201Response POSTCustomerPaymentSources(ctx).POSTCustomerPaymentSourcesRequest(pOSTCustomerPaymentSourcesRequest).Execute()
+> POSTCustomerPaymentSources201Response POSTCustomerPaymentSources(ctx).CustomerPaymentSourceCreate(customerPaymentSourceCreate).Execute()
 
 Create a customer payment source
 
@@ -576,15 +576,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTCustomerPaymentSourcesRequest := *openapiclient.NewPOSTCustomerPaymentSourcesRequest(*openapiclient.NewPOSTCustomerPaymentSourcesRequestData(interface{}(123), *openapiclient.NewPOSTAdyenPaymentsRequestDataAttributes())) // POSTCustomerPaymentSourcesRequest | 
+    customerPaymentSourceCreate := *openapiclient.NewCustomerPaymentSourceCreate(*openapiclient.NewCustomerPaymentSourceCreateData(interface{}(123), *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CustomerPaymentSourceCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomerPaymentSourcesApi.POSTCustomerPaymentSources(context.Background()).POSTCustomerPaymentSourcesRequest(pOSTCustomerPaymentSourcesRequest).Execute()
+    resp, r, err := apiClient.CustomerPaymentSourcesApi.POSTCustomerPaymentSources(context.Background()).CustomerPaymentSourceCreate(customerPaymentSourceCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPaymentSourcesApi.POSTCustomerPaymentSources``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -605,7 +605,7 @@ Other parameters are passed through a pointer to a apiPOSTCustomerPaymentSources
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTCustomerPaymentSourcesRequest** | [**POSTCustomerPaymentSourcesRequest**](POSTCustomerPaymentSourcesRequest.md) |  | 
+ **customerPaymentSourceCreate** | [**CustomerPaymentSourceCreate**](CustomerPaymentSourceCreate.md) |  | 
 
 ### Return type
 

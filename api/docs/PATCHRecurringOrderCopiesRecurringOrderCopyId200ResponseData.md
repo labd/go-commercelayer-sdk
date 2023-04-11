@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
-**Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
-**Attributes** | Pointer to [**PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes**](PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTOrderCopies201ResponseDataRelationships**](POSTOrderCopies201ResponseDataRelationships.md) |  | [optional] 
+**Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
+**Attributes** | Pointer to [**PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes**](PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes.md) |  | [optional] 
+**Relationships** | Pointer to [**GETOrderCopies200ResponseDataInnerRelationships**](GETOrderCopies200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -101,20 +101,20 @@ HasType returns a boolean if a field has been set.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetLinks
 
-`func (o *PATCHRecurringOrderCopiesRecurringOrderCopyId200ResponseData) GetLinks() POSTAddresses201ResponseDataLinks`
+`func (o *PATCHRecurringOrderCopiesRecurringOrderCopyId200ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *PATCHRecurringOrderCopiesRecurringOrderCopyId200ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool)`
+`func (o *PATCHRecurringOrderCopiesRecurringOrderCopyId200ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *PATCHRecurringOrderCopiesRecurringOrderCopyId200ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks)`
+`func (o *PATCHRecurringOrderCopiesRecurringOrderCopyId200ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks)`
 
 SetLinks sets Links field to given value.
 
@@ -126,20 +126,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *PATCHRecurringOrderCopiesRecurringOrderCopyId200ResponseData) GetAttributes() PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes`
+`func (o *PATCHRecurringOrderCopiesRecurringOrderCopyId200ResponseData) GetAttributes() PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PATCHRecurringOrderCopiesRecurringOrderCopyId200ResponseData) GetAttributesOk() (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes, bool)`
+`func (o *PATCHRecurringOrderCopiesRecurringOrderCopyId200ResponseData) GetAttributesOk() (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PATCHRecurringOrderCopiesRecurringOrderCopyId200ResponseData) SetAttributes(v PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes)`
+`func (o *PATCHRecurringOrderCopiesRecurringOrderCopyId200ResponseData) SetAttributes(v PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
@@ -151,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHRecurringOrderCopiesRecurringOrderCopyId200ResponseData) GetRelationships() POSTOrderCopies201ResponseDataRelationships`
+`func (o *PATCHRecurringOrderCopiesRecurringOrderCopyId200ResponseData) GetRelationships() GETOrderCopies200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHRecurringOrderCopiesRecurringOrderCopyId200ResponseData) GetRelationshipsOk() (*POSTOrderCopies201ResponseDataRelationships, bool)`
+`func (o *PATCHRecurringOrderCopiesRecurringOrderCopyId200ResponseData) GetRelationshipsOk() (*GETOrderCopies200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHRecurringOrderCopiesRecurringOrderCopyId200ResponseData) SetRelationships(v POSTOrderCopies201ResponseDataRelationships)`
+`func (o *PATCHRecurringOrderCopiesRecurringOrderCopyId200ResponseData) SetRelationships(v GETOrderCopies200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

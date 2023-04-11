@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETCheckoutComGatewaysCheckoutComGatewayId200ResponseData**](GETCheckoutComGatewaysCheckoutComGatewayId200ResponseData.md) |  | [optional] 
+**Data** | Pointer to [**GETCheckoutComGateways200ResponseDataInner**](GETCheckoutComGateways200ResponseDataInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETCheckoutComGatewaysCheckoutComGatewayId200Response) GetData() GETCheckoutComGatewaysCheckoutComGatewayId200ResponseData`
+`func (o *GETCheckoutComGatewaysCheckoutComGatewayId200Response) GetData() GETCheckoutComGateways200ResponseDataInner`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETCheckoutComGatewaysCheckoutComGatewayId200Response) GetDataOk() (*GETCheckoutComGatewaysCheckoutComGatewayId200ResponseData, bool)`
+`func (o *GETCheckoutComGatewaysCheckoutComGatewayId200Response) GetDataOk() (*GETCheckoutComGateways200ResponseDataInner, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETCheckoutComGatewaysCheckoutComGatewayId200Response) SetData(v GETCheckoutComGatewaysCheckoutComGatewayId200ResponseData)`
+`func (o *GETCheckoutComGatewaysCheckoutComGatewayId200Response) SetData(v GETCheckoutComGateways200ResponseDataInner)`
 
 SetData sets Data field to given value.
 

@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the CaptureDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CaptureDataRelationships{}
-
 // CaptureDataRelationships struct for CaptureDataRelationships
 type CaptureDataRelationships struct {
 	Order                  *AdyenPaymentDataRelationshipsOrder             `json:"order,omitempty"`
@@ -45,7 +42,7 @@ func NewCaptureDataRelationshipsWithDefaults() *CaptureDataRelationships {
 
 // GetOrder returns the Order field value if set, zero value otherwise.
 func (o *CaptureDataRelationships) GetOrder() AdyenPaymentDataRelationshipsOrder {
-	if o == nil || IsNil(o.Order) {
+	if o == nil || o.Order == nil {
 		var ret AdyenPaymentDataRelationshipsOrder
 		return ret
 	}
@@ -55,7 +52,7 @@ func (o *CaptureDataRelationships) GetOrder() AdyenPaymentDataRelationshipsOrder
 // GetOrderOk returns a tuple with the Order field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CaptureDataRelationships) GetOrderOk() (*AdyenPaymentDataRelationshipsOrder, bool) {
-	if o == nil || IsNil(o.Order) {
+	if o == nil || o.Order == nil {
 		return nil, false
 	}
 	return o.Order, true
@@ -63,7 +60,7 @@ func (o *CaptureDataRelationships) GetOrderOk() (*AdyenPaymentDataRelationshipsO
 
 // HasOrder returns a boolean if a field has been set.
 func (o *CaptureDataRelationships) HasOrder() bool {
-	if o != nil && !IsNil(o.Order) {
+	if o != nil && o.Order != nil {
 		return true
 	}
 
@@ -77,7 +74,7 @@ func (o *CaptureDataRelationships) SetOrder(v AdyenPaymentDataRelationshipsOrder
 
 // GetReferenceAuthorization returns the ReferenceAuthorization field value if set, zero value otherwise.
 func (o *CaptureDataRelationships) GetReferenceAuthorization() CaptureDataRelationshipsReferenceAuthorization {
-	if o == nil || IsNil(o.ReferenceAuthorization) {
+	if o == nil || o.ReferenceAuthorization == nil {
 		var ret CaptureDataRelationshipsReferenceAuthorization
 		return ret
 	}
@@ -87,7 +84,7 @@ func (o *CaptureDataRelationships) GetReferenceAuthorization() CaptureDataRelati
 // GetReferenceAuthorizationOk returns a tuple with the ReferenceAuthorization field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CaptureDataRelationships) GetReferenceAuthorizationOk() (*CaptureDataRelationshipsReferenceAuthorization, bool) {
-	if o == nil || IsNil(o.ReferenceAuthorization) {
+	if o == nil || o.ReferenceAuthorization == nil {
 		return nil, false
 	}
 	return o.ReferenceAuthorization, true
@@ -95,7 +92,7 @@ func (o *CaptureDataRelationships) GetReferenceAuthorizationOk() (*CaptureDataRe
 
 // HasReferenceAuthorization returns a boolean if a field has been set.
 func (o *CaptureDataRelationships) HasReferenceAuthorization() bool {
-	if o != nil && !IsNil(o.ReferenceAuthorization) {
+	if o != nil && o.ReferenceAuthorization != nil {
 		return true
 	}
 
@@ -109,7 +106,7 @@ func (o *CaptureDataRelationships) SetReferenceAuthorization(v CaptureDataRelati
 
 // GetRefunds returns the Refunds field value if set, zero value otherwise.
 func (o *CaptureDataRelationships) GetRefunds() CaptureDataRelationshipsRefunds {
-	if o == nil || IsNil(o.Refunds) {
+	if o == nil || o.Refunds == nil {
 		var ret CaptureDataRelationshipsRefunds
 		return ret
 	}
@@ -119,7 +116,7 @@ func (o *CaptureDataRelationships) GetRefunds() CaptureDataRelationshipsRefunds 
 // GetRefundsOk returns a tuple with the Refunds field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CaptureDataRelationships) GetRefundsOk() (*CaptureDataRelationshipsRefunds, bool) {
-	if o == nil || IsNil(o.Refunds) {
+	if o == nil || o.Refunds == nil {
 		return nil, false
 	}
 	return o.Refunds, true
@@ -127,7 +124,7 @@ func (o *CaptureDataRelationships) GetRefundsOk() (*CaptureDataRelationshipsRefu
 
 // HasRefunds returns a boolean if a field has been set.
 func (o *CaptureDataRelationships) HasRefunds() bool {
-	if o != nil && !IsNil(o.Refunds) {
+	if o != nil && o.Refunds != nil {
 		return true
 	}
 
@@ -141,7 +138,7 @@ func (o *CaptureDataRelationships) SetRefunds(v CaptureDataRelationshipsRefunds)
 
 // GetEvents returns the Events field value if set, zero value otherwise.
 func (o *CaptureDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || o.Events == nil {
 		var ret AuthorizationDataRelationshipsEvents
 		return ret
 	}
@@ -151,7 +148,7 @@ func (o *CaptureDataRelationships) GetEvents() AuthorizationDataRelationshipsEve
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CaptureDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || o.Events == nil {
 		return nil, false
 	}
 	return o.Events, true
@@ -159,7 +156,7 @@ func (o *CaptureDataRelationships) GetEventsOk() (*AuthorizationDataRelationship
 
 // HasEvents returns a boolean if a field has been set.
 func (o *CaptureDataRelationships) HasEvents() bool {
-	if o != nil && !IsNil(o.Events) {
+	if o != nil && o.Events != nil {
 		return true
 	}
 
@@ -172,28 +169,20 @@ func (o *CaptureDataRelationships) SetEvents(v AuthorizationDataRelationshipsEve
 }
 
 func (o CaptureDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o CaptureDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Order) {
+	if o.Order != nil {
 		toSerialize["order"] = o.Order
 	}
-	if !IsNil(o.ReferenceAuthorization) {
+	if o.ReferenceAuthorization != nil {
 		toSerialize["reference_authorization"] = o.ReferenceAuthorization
 	}
-	if !IsNil(o.Refunds) {
+	if o.Refunds != nil {
 		toSerialize["refunds"] = o.Refunds
 	}
-	if !IsNil(o.Events) {
+	if o.Events != nil {
 		toSerialize["events"] = o.Events
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableCaptureDataRelationships struct {

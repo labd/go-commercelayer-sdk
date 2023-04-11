@@ -29,7 +29,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -37,7 +37,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.BraintreeGatewaysApi.DELETEBraintreeGatewaysBraintreeGatewayId(context.Background(), braintreeGatewayId).Execute()
+    resp, r, err := apiClient.BraintreeGatewaysApi.DELETEBraintreeGatewaysBraintreeGatewayId(context.Background(), braintreeGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BraintreeGatewaysApi.DELETEBraintreeGatewaysBraintreeGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -158,7 +158,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHBraintreeGatewaysBraintreeGatewayId
 
-> PATCHBraintreeGatewaysBraintreeGatewayId200Response PATCHBraintreeGatewaysBraintreeGatewayId(ctx, braintreeGatewayId).PATCHBraintreeGatewaysBraintreeGatewayIdRequest(pATCHBraintreeGatewaysBraintreeGatewayIdRequest).Execute()
+> PATCHBraintreeGatewaysBraintreeGatewayId200Response PATCHBraintreeGatewaysBraintreeGatewayId(ctx, braintreeGatewayId).BraintreeGatewayUpdate(braintreeGatewayUpdate).Execute()
 
 Update a braintree gateway
 
@@ -228,16 +228,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHBraintreeGatewaysBraintreeGatewayIdRequest := *openapiclient.NewPATCHBraintreeGatewaysBraintreeGatewayIdRequest(*openapiclient.NewPATCHBraintreeGatewaysBraintreeGatewayIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBraintreeGatewaysBraintreeGatewayIdRequestDataAttributes())) // PATCHBraintreeGatewaysBraintreeGatewayIdRequest | 
+    braintreeGatewayUpdate := *openapiclient.NewBraintreeGatewayUpdate(*openapiclient.NewBraintreeGatewayUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes())) // BraintreeGatewayUpdate | 
     braintreeGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BraintreeGatewaysApi.PATCHBraintreeGatewaysBraintreeGatewayId(context.Background(), braintreeGatewayId).PATCHBraintreeGatewaysBraintreeGatewayIdRequest(pATCHBraintreeGatewaysBraintreeGatewayIdRequest).Execute()
+    resp, r, err := apiClient.BraintreeGatewaysApi.PATCHBraintreeGatewaysBraintreeGatewayId(context.Background(), braintreeGatewayId).BraintreeGatewayUpdate(braintreeGatewayUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BraintreeGatewaysApi.PATCHBraintreeGatewaysBraintreeGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -262,7 +262,7 @@ Other parameters are passed through a pointer to a apiPATCHBraintreeGatewaysBrai
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHBraintreeGatewaysBraintreeGatewayIdRequest** | [**PATCHBraintreeGatewaysBraintreeGatewayIdRequest**](PATCHBraintreeGatewaysBraintreeGatewayIdRequest.md) |  | 
+ **braintreeGatewayUpdate** | [**BraintreeGatewayUpdate**](BraintreeGatewayUpdate.md) |  | 
 
 
 ### Return type
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTBraintreeGateways
 
-> POSTBraintreeGateways201Response POSTBraintreeGateways(ctx).POSTBraintreeGatewaysRequest(pOSTBraintreeGatewaysRequest).Execute()
+> POSTBraintreeGateways201Response POSTBraintreeGateways(ctx).BraintreeGatewayCreate(braintreeGatewayCreate).Execute()
 
 Create a braintree gateway
 
@@ -300,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTBraintreeGatewaysRequest := *openapiclient.NewPOSTBraintreeGatewaysRequest(*openapiclient.NewPOSTBraintreeGatewaysRequestData(interface{}(123), *openapiclient.NewPOSTBraintreeGatewaysRequestDataAttributes(interface{}(US payment gateway), interface{}(xxxx-yyyy-zzzz), interface{}(xxxx-yyyy-zzzz), interface{}(xxxx-yyyy-zzzz), interface{}(xxxx-yyyy-zzzz)))) // POSTBraintreeGatewaysRequest | 
+    braintreeGatewayCreate := *openapiclient.NewBraintreeGatewayCreate(*openapiclient.NewBraintreeGatewayCreateData(interface{}(123), *openapiclient.NewPOSTBraintreeGateways201ResponseDataAttributes(interface{}(US payment gateway), interface{}(xxxx-yyyy-zzzz), interface{}(xxxx-yyyy-zzzz), interface{}(xxxx-yyyy-zzzz), interface{}(xxxx-yyyy-zzzz)))) // BraintreeGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BraintreeGatewaysApi.POSTBraintreeGateways(context.Background()).POSTBraintreeGatewaysRequest(pOSTBraintreeGatewaysRequest).Execute()
+    resp, r, err := apiClient.BraintreeGatewaysApi.POSTBraintreeGateways(context.Background()).BraintreeGatewayCreate(braintreeGatewayCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BraintreeGatewaysApi.POSTBraintreeGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiPOSTBraintreeGatewaysReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTBraintreeGatewaysRequest** | [**POSTBraintreeGatewaysRequest**](POSTBraintreeGatewaysRequest.md) |  | 
+ **braintreeGatewayCreate** | [**BraintreeGatewayCreate**](BraintreeGatewayCreate.md) |  | 
 
 ### Return type
 

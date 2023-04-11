@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the POSTShippingZones201Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &POSTShippingZones201Response{}
-
 // POSTShippingZones201Response struct for POSTShippingZones201Response
 type POSTShippingZones201Response struct {
 	Data *POSTShippingZones201ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPOSTShippingZones201ResponseWithDefaults() *POSTShippingZones201Response
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTShippingZones201Response) GetData() POSTShippingZones201ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret POSTShippingZones201ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *POSTShippingZones201Response) GetData() POSTShippingZones201ResponseDat
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTShippingZones201Response) GetDataOk() (*POSTShippingZones201ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *POSTShippingZones201Response) GetDataOk() (*POSTShippingZones201Respons
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTShippingZones201Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *POSTShippingZones201Response) SetData(v POSTShippingZones201ResponseDat
 }
 
 func (o POSTShippingZones201Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o POSTShippingZones201Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePOSTShippingZones201Response struct {

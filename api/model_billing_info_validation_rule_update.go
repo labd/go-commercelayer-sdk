@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the BillingInfoValidationRuleUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &BillingInfoValidationRuleUpdate{}
-
 // BillingInfoValidationRuleUpdate struct for BillingInfoValidationRuleUpdate
 type BillingInfoValidationRuleUpdate struct {
-	Data PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestData `json:"data"`
+	Data BillingInfoValidationRuleUpdateData `json:"data"`
 }
 
 // NewBillingInfoValidationRuleUpdate instantiates a new BillingInfoValidationRuleUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBillingInfoValidationRuleUpdate(data PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestData) *BillingInfoValidationRuleUpdate {
+func NewBillingInfoValidationRuleUpdate(data BillingInfoValidationRuleUpdateData) *BillingInfoValidationRuleUpdate {
 	this := BillingInfoValidationRuleUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewBillingInfoValidationRuleUpdateWithDefaults() *BillingInfoValidationRule
 }
 
 // GetData returns the Data field value
-func (o *BillingInfoValidationRuleUpdate) GetData() PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestData {
+func (o *BillingInfoValidationRuleUpdate) GetData() BillingInfoValidationRuleUpdateData {
 	if o == nil {
-		var ret PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestData
+		var ret BillingInfoValidationRuleUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *BillingInfoValidationRuleUpdate) GetData() PATCHBillingInfoValidationRu
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *BillingInfoValidationRuleUpdate) GetDataOk() (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestData, bool) {
+func (o *BillingInfoValidationRuleUpdate) GetDataOk() (*BillingInfoValidationRuleUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *BillingInfoValidationRuleUpdate) GetDataOk() (*PATCHBillingInfoValidati
 }
 
 // SetData sets field value
-func (o *BillingInfoValidationRuleUpdate) SetData(v PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestData) {
+func (o *BillingInfoValidationRuleUpdate) SetData(v BillingInfoValidationRuleUpdateData) {
 	o.Data = v
 }
 
 func (o BillingInfoValidationRuleUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o BillingInfoValidationRuleUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableBillingInfoValidationRuleUpdate struct {

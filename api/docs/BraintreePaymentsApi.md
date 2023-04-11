@@ -30,7 +30,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -38,7 +38,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.BraintreePaymentsApi.DELETEBraintreePaymentsBraintreePaymentId(context.Background(), braintreePaymentId).Execute()
+    resp, r, err := apiClient.BraintreePaymentsApi.DELETEBraintreePaymentsBraintreePaymentId(context.Background(), braintreePaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BraintreePaymentsApi.DELETEBraintreePaymentsBraintreePaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -98,7 +98,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -106,7 +106,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.BraintreePaymentsApi.GETBraintreeGatewayIdBraintreePayments(context.Background(), braintreeGatewayId).Execute()
+    resp, r, err := apiClient.BraintreePaymentsApi.GETBraintreeGatewayIdBraintreePayments(context.Background(), braintreeGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BraintreePaymentsApi.GETBraintreeGatewayIdBraintreePayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -166,7 +166,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -227,7 +227,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHBraintreePaymentsBraintreePaymentId
 
-> PATCHBraintreePaymentsBraintreePaymentId200Response PATCHBraintreePaymentsBraintreePaymentId(ctx, braintreePaymentId).PATCHBraintreePaymentsBraintreePaymentIdRequest(pATCHBraintreePaymentsBraintreePaymentIdRequest).Execute()
+> PATCHBraintreePaymentsBraintreePaymentId200Response PATCHBraintreePaymentsBraintreePaymentId(ctx, braintreePaymentId).BraintreePaymentUpdate(braintreePaymentUpdate).Execute()
 
 Update a braintree payment
 
@@ -297,16 +297,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHBraintreePaymentsBraintreePaymentIdRequest := *openapiclient.NewPATCHBraintreePaymentsBraintreePaymentIdRequest(*openapiclient.NewPATCHBraintreePaymentsBraintreePaymentIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBraintreePaymentsBraintreePaymentIdRequestDataAttributes())) // PATCHBraintreePaymentsBraintreePaymentIdRequest | 
+    braintreePaymentUpdate := *openapiclient.NewBraintreePaymentUpdate(*openapiclient.NewBraintreePaymentUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes())) // BraintreePaymentUpdate | 
     braintreePaymentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BraintreePaymentsApi.PATCHBraintreePaymentsBraintreePaymentId(context.Background(), braintreePaymentId).PATCHBraintreePaymentsBraintreePaymentIdRequest(pATCHBraintreePaymentsBraintreePaymentIdRequest).Execute()
+    resp, r, err := apiClient.BraintreePaymentsApi.PATCHBraintreePaymentsBraintreePaymentId(context.Background(), braintreePaymentId).BraintreePaymentUpdate(braintreePaymentUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BraintreePaymentsApi.PATCHBraintreePaymentsBraintreePaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -331,7 +331,7 @@ Other parameters are passed through a pointer to a apiPATCHBraintreePaymentsBrai
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHBraintreePaymentsBraintreePaymentIdRequest** | [**PATCHBraintreePaymentsBraintreePaymentIdRequest**](PATCHBraintreePaymentsBraintreePaymentIdRequest.md) |  | 
+ **braintreePaymentUpdate** | [**BraintreePaymentUpdate**](BraintreePaymentUpdate.md) |  | 
 
 
 ### Return type
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTBraintreePayments
 
-> POSTBraintreePayments201Response POSTBraintreePayments(ctx).POSTBraintreePaymentsRequest(pOSTBraintreePaymentsRequest).Execute()
+> POSTBraintreePayments201Response POSTBraintreePayments(ctx).BraintreePaymentCreate(braintreePaymentCreate).Execute()
 
 Create a braintree payment
 
@@ -369,15 +369,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTBraintreePaymentsRequest := *openapiclient.NewPOSTBraintreePaymentsRequest(*openapiclient.NewPOSTBraintreePaymentsRequestData(interface{}(123), *openapiclient.NewPOSTBraintreePaymentsRequestDataAttributes())) // POSTBraintreePaymentsRequest | 
+    braintreePaymentCreate := *openapiclient.NewBraintreePaymentCreate(*openapiclient.NewBraintreePaymentCreateData(interface{}(123), *openapiclient.NewPOSTBraintreePayments201ResponseDataAttributes())) // BraintreePaymentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BraintreePaymentsApi.POSTBraintreePayments(context.Background()).POSTBraintreePaymentsRequest(pOSTBraintreePaymentsRequest).Execute()
+    resp, r, err := apiClient.BraintreePaymentsApi.POSTBraintreePayments(context.Background()).BraintreePaymentCreate(braintreePaymentCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BraintreePaymentsApi.POSTBraintreePayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +398,7 @@ Other parameters are passed through a pointer to a apiPOSTBraintreePaymentsReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTBraintreePaymentsRequest** | [**POSTBraintreePaymentsRequest**](POSTBraintreePaymentsRequest.md) |  | 
+ **braintreePaymentCreate** | [**BraintreePaymentCreate**](BraintreePaymentCreate.md) |  | 
 
 ### Return type
 

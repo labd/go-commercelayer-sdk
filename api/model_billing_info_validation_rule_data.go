@@ -15,22 +15,19 @@ import (
 	"encoding/json"
 )
 
-// checks if the BillingInfoValidationRuleData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &BillingInfoValidationRuleData{}
-
 // BillingInfoValidationRuleData struct for BillingInfoValidationRuleData
 type BillingInfoValidationRuleData struct {
 	// The resource's type
-	Type          interface{}                                                                       `json:"type"`
-	Attributes    GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes `json:"attributes"`
-	Relationships *BillingInfoValidationRuleDataRelationships                                       `json:"relationships,omitempty"`
+	Type          interface{}                                                 `json:"type"`
+	Attributes    GETBillingInfoValidationRules200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *BillingInfoValidationRuleDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewBillingInfoValidationRuleData instantiates a new BillingInfoValidationRuleData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBillingInfoValidationRuleData(type_ interface{}, attributes GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) *BillingInfoValidationRuleData {
+func NewBillingInfoValidationRuleData(type_ interface{}, attributes GETBillingInfoValidationRules200ResponseDataInnerAttributes) *BillingInfoValidationRuleData {
 	this := BillingInfoValidationRuleData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -60,7 +57,7 @@ func (o *BillingInfoValidationRuleData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BillingInfoValidationRuleData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -72,9 +69,9 @@ func (o *BillingInfoValidationRuleData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *BillingInfoValidationRuleData) GetAttributes() GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes {
+func (o *BillingInfoValidationRuleData) GetAttributes() GETBillingInfoValidationRules200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes
+		var ret GETBillingInfoValidationRules200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -83,7 +80,7 @@ func (o *BillingInfoValidationRuleData) GetAttributes() GETBillingInfoValidation
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *BillingInfoValidationRuleData) GetAttributesOk() (*GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, bool) {
+func (o *BillingInfoValidationRuleData) GetAttributesOk() (*GETBillingInfoValidationRules200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,13 +88,13 @@ func (o *BillingInfoValidationRuleData) GetAttributesOk() (*GETBillingInfoValida
 }
 
 // SetAttributes sets field value
-func (o *BillingInfoValidationRuleData) SetAttributes(v GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) {
+func (o *BillingInfoValidationRuleData) SetAttributes(v GETBillingInfoValidationRules200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *BillingInfoValidationRuleData) GetRelationships() BillingInfoValidationRuleDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		var ret BillingInfoValidationRuleDataRelationships
 		return ret
 	}
@@ -107,7 +104,7 @@ func (o *BillingInfoValidationRuleData) GetRelationships() BillingInfoValidation
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BillingInfoValidationRuleData) GetRelationshipsOk() (*BillingInfoValidationRuleDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -115,7 +112,7 @@ func (o *BillingInfoValidationRuleData) GetRelationshipsOk() (*BillingInfoValida
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *BillingInfoValidationRuleData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
@@ -128,23 +125,17 @@ func (o *BillingInfoValidationRuleData) SetRelationships(v BillingInfoValidation
 }
 
 func (o BillingInfoValidationRuleData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o BillingInfoValidationRuleData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	toSerialize["attributes"] = o.Attributes
-	if !IsNil(o.Relationships) {
+	if true {
+		toSerialize["attributes"] = o.Attributes
+	}
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableBillingInfoValidationRuleData struct {

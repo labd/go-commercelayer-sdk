@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the CustomerCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CustomerCreate{}
-
 // CustomerCreate struct for CustomerCreate
 type CustomerCreate struct {
-	Data POSTCustomersRequestData `json:"data"`
+	Data CustomerCreateData `json:"data"`
 }
 
 // NewCustomerCreate instantiates a new CustomerCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerCreate(data POSTCustomersRequestData) *CustomerCreate {
+func NewCustomerCreate(data CustomerCreateData) *CustomerCreate {
 	this := CustomerCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewCustomerCreateWithDefaults() *CustomerCreate {
 }
 
 // GetData returns the Data field value
-func (o *CustomerCreate) GetData() POSTCustomersRequestData {
+func (o *CustomerCreate) GetData() CustomerCreateData {
 	if o == nil {
-		var ret POSTCustomersRequestData
+		var ret CustomerCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *CustomerCreate) GetData() POSTCustomersRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CustomerCreate) GetDataOk() (*POSTCustomersRequestData, bool) {
+func (o *CustomerCreate) GetDataOk() (*CustomerCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *CustomerCreate) GetDataOk() (*POSTCustomersRequestData, bool) {
 }
 
 // SetData sets field value
-func (o *CustomerCreate) SetData(v POSTCustomersRequestData) {
+func (o *CustomerCreate) SetData(v CustomerCreateData) {
 	o.Data = v
 }
 
 func (o CustomerCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o CustomerCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableCustomerCreate struct {

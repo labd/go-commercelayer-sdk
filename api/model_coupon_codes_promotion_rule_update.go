@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the CouponCodesPromotionRuleUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CouponCodesPromotionRuleUpdate{}
-
 // CouponCodesPromotionRuleUpdate struct for CouponCodesPromotionRuleUpdate
 type CouponCodesPromotionRuleUpdate struct {
-	Data PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequestData `json:"data"`
+	Data CouponCodesPromotionRuleUpdateData `json:"data"`
 }
 
 // NewCouponCodesPromotionRuleUpdate instantiates a new CouponCodesPromotionRuleUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCouponCodesPromotionRuleUpdate(data PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequestData) *CouponCodesPromotionRuleUpdate {
+func NewCouponCodesPromotionRuleUpdate(data CouponCodesPromotionRuleUpdateData) *CouponCodesPromotionRuleUpdate {
 	this := CouponCodesPromotionRuleUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewCouponCodesPromotionRuleUpdateWithDefaults() *CouponCodesPromotionRuleUp
 }
 
 // GetData returns the Data field value
-func (o *CouponCodesPromotionRuleUpdate) GetData() PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequestData {
+func (o *CouponCodesPromotionRuleUpdate) GetData() CouponCodesPromotionRuleUpdateData {
 	if o == nil {
-		var ret PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequestData
+		var ret CouponCodesPromotionRuleUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *CouponCodesPromotionRuleUpdate) GetData() PATCHCouponCodesPromotionRule
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CouponCodesPromotionRuleUpdate) GetDataOk() (*PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequestData, bool) {
+func (o *CouponCodesPromotionRuleUpdate) GetDataOk() (*CouponCodesPromotionRuleUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *CouponCodesPromotionRuleUpdate) GetDataOk() (*PATCHCouponCodesPromotion
 }
 
 // SetData sets field value
-func (o *CouponCodesPromotionRuleUpdate) SetData(v PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequestData) {
+func (o *CouponCodesPromotionRuleUpdate) SetData(v CouponCodesPromotionRuleUpdateData) {
 	o.Data = v
 }
 
 func (o CouponCodesPromotionRuleUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o CouponCodesPromotionRuleUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableCouponCodesPromotionRuleUpdate struct {

@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the TaxCategoryDataRelationshipsTaxCalculator type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &TaxCategoryDataRelationshipsTaxCalculator{}
-
 // TaxCategoryDataRelationshipsTaxCalculator struct for TaxCategoryDataRelationshipsTaxCalculator
 type TaxCategoryDataRelationshipsTaxCalculator struct {
-	Data *POSTTaxCategoriesRequestDataRelationshipsTaxCalculatorData `json:"data,omitempty"`
+	Data *TaxCategoryDataRelationshipsTaxCalculatorData `json:"data,omitempty"`
 }
 
 // NewTaxCategoryDataRelationshipsTaxCalculator instantiates a new TaxCategoryDataRelationshipsTaxCalculator object
@@ -41,9 +38,9 @@ func NewTaxCategoryDataRelationshipsTaxCalculatorWithDefaults() *TaxCategoryData
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *TaxCategoryDataRelationshipsTaxCalculator) GetData() POSTTaxCategoriesRequestDataRelationshipsTaxCalculatorData {
-	if o == nil || IsNil(o.Data) {
-		var ret POSTTaxCategoriesRequestDataRelationshipsTaxCalculatorData
+func (o *TaxCategoryDataRelationshipsTaxCalculator) GetData() TaxCategoryDataRelationshipsTaxCalculatorData {
+	if o == nil || o.Data == nil {
+		var ret TaxCategoryDataRelationshipsTaxCalculatorData
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *TaxCategoryDataRelationshipsTaxCalculator) GetData() POSTTaxCategoriesR
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *TaxCategoryDataRelationshipsTaxCalculator) GetDataOk() (*POSTTaxCategoriesRequestDataRelationshipsTaxCalculatorData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *TaxCategoryDataRelationshipsTaxCalculator) GetDataOk() (*TaxCategoryDataRelationshipsTaxCalculatorData, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *TaxCategoryDataRelationshipsTaxCalculator) GetDataOk() (*POSTTaxCategor
 
 // HasData returns a boolean if a field has been set.
 func (o *TaxCategoryDataRelationshipsTaxCalculator) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given POSTTaxCategoriesRequestDataRelationshipsTaxCalculatorData and assigns it to the Data field.
-func (o *TaxCategoryDataRelationshipsTaxCalculator) SetData(v POSTTaxCategoriesRequestDataRelationshipsTaxCalculatorData) {
+// SetData gets a reference to the given TaxCategoryDataRelationshipsTaxCalculatorData and assigns it to the Data field.
+func (o *TaxCategoryDataRelationshipsTaxCalculator) SetData(v TaxCategoryDataRelationshipsTaxCalculatorData) {
 	o.Data = &v
 }
 
 func (o TaxCategoryDataRelationshipsTaxCalculator) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o TaxCategoryDataRelationshipsTaxCalculator) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableTaxCategoryDataRelationshipsTaxCalculator struct {

@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the CouponRecipientUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CouponRecipientUpdate{}
-
 // CouponRecipientUpdate struct for CouponRecipientUpdate
 type CouponRecipientUpdate struct {
-	Data PATCHCouponRecipientsCouponRecipientIdRequestData `json:"data"`
+	Data CouponRecipientUpdateData `json:"data"`
 }
 
 // NewCouponRecipientUpdate instantiates a new CouponRecipientUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCouponRecipientUpdate(data PATCHCouponRecipientsCouponRecipientIdRequestData) *CouponRecipientUpdate {
+func NewCouponRecipientUpdate(data CouponRecipientUpdateData) *CouponRecipientUpdate {
 	this := CouponRecipientUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewCouponRecipientUpdateWithDefaults() *CouponRecipientUpdate {
 }
 
 // GetData returns the Data field value
-func (o *CouponRecipientUpdate) GetData() PATCHCouponRecipientsCouponRecipientIdRequestData {
+func (o *CouponRecipientUpdate) GetData() CouponRecipientUpdateData {
 	if o == nil {
-		var ret PATCHCouponRecipientsCouponRecipientIdRequestData
+		var ret CouponRecipientUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *CouponRecipientUpdate) GetData() PATCHCouponRecipientsCouponRecipientId
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CouponRecipientUpdate) GetDataOk() (*PATCHCouponRecipientsCouponRecipientIdRequestData, bool) {
+func (o *CouponRecipientUpdate) GetDataOk() (*CouponRecipientUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *CouponRecipientUpdate) GetDataOk() (*PATCHCouponRecipientsCouponRecipie
 }
 
 // SetData sets field value
-func (o *CouponRecipientUpdate) SetData(v PATCHCouponRecipientsCouponRecipientIdRequestData) {
+func (o *CouponRecipientUpdate) SetData(v CouponRecipientUpdateData) {
 	o.Data = v
 }
 
 func (o CouponRecipientUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o CouponRecipientUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableCouponRecipientUpdate struct {

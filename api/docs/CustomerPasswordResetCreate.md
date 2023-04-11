@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**POSTCustomerPasswordResetsRequestData**](POSTCustomerPasswordResetsRequestData.md) |  | 
+**Data** | [**CustomerPasswordResetCreateData**](CustomerPasswordResetCreateData.md) |  | 
 
 ## Methods
 
 ### NewCustomerPasswordResetCreate
 
-`func NewCustomerPasswordResetCreate(data POSTCustomerPasswordResetsRequestData, ) *CustomerPasswordResetCreate`
+`func NewCustomerPasswordResetCreate(data CustomerPasswordResetCreateData, ) *CustomerPasswordResetCreate`
 
 NewCustomerPasswordResetCreate instantiates a new CustomerPasswordResetCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *CustomerPasswordResetCreate) GetData() POSTCustomerPasswordResetsRequestData`
+`func (o *CustomerPasswordResetCreate) GetData() CustomerPasswordResetCreateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *CustomerPasswordResetCreate) GetDataOk() (*POSTCustomerPasswordResetsRequestData, bool)`
+`func (o *CustomerPasswordResetCreate) GetDataOk() (*CustomerPasswordResetCreateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *CustomerPasswordResetCreate) SetData(v POSTCustomerPasswordResetsRequestData)`
+`func (o *CustomerPasswordResetCreate) SetData(v CustomerPasswordResetCreateData)`
 
 SetData sets Data field to given value.
 

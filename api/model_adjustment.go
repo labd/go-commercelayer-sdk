@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the Adjustment type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &Adjustment{}
-
 // Adjustment struct for Adjustment
 type Adjustment struct {
 	Data *AdjustmentData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewAdjustmentWithDefaults() *Adjustment {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *Adjustment) GetData() AdjustmentData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret AdjustmentData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *Adjustment) GetData() AdjustmentData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Adjustment) GetDataOk() (*AdjustmentData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *Adjustment) GetDataOk() (*AdjustmentData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *Adjustment) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *Adjustment) SetData(v AdjustmentData) {
 }
 
 func (o Adjustment) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o Adjustment) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableAdjustment struct {

@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the SkuListPromotionRuleCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &SkuListPromotionRuleCreate{}
-
 // SkuListPromotionRuleCreate struct for SkuListPromotionRuleCreate
 type SkuListPromotionRuleCreate struct {
 	Data SkuListPromotionRuleCreateData `json:"data"`
@@ -66,17 +63,11 @@ func (o *SkuListPromotionRuleCreate) SetData(v SkuListPromotionRuleCreateData) {
 }
 
 func (o SkuListPromotionRuleCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o SkuListPromotionRuleCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableSkuListPromotionRuleCreate struct {

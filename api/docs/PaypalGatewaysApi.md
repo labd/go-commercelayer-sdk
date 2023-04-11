@@ -29,7 +29,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -37,7 +37,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.PaypalGatewaysApi.DELETEPaypalGatewaysPaypalGatewayId(context.Background(), paypalGatewayId).Execute()
+    resp, r, err := apiClient.PaypalGatewaysApi.DELETEPaypalGatewaysPaypalGatewayId(context.Background(), paypalGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaypalGatewaysApi.DELETEPaypalGatewaysPaypalGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -158,7 +158,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHPaypalGatewaysPaypalGatewayId
 
-> PATCHPaypalGatewaysPaypalGatewayId200Response PATCHPaypalGatewaysPaypalGatewayId(ctx, paypalGatewayId).PATCHPaypalGatewaysPaypalGatewayIdRequest(pATCHPaypalGatewaysPaypalGatewayIdRequest).Execute()
+> PATCHPaypalGatewaysPaypalGatewayId200Response PATCHPaypalGatewaysPaypalGatewayId(ctx, paypalGatewayId).PaypalGatewayUpdate(paypalGatewayUpdate).Execute()
 
 Update a paypal gateway
 
@@ -228,16 +228,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHPaypalGatewaysPaypalGatewayIdRequest := *openapiclient.NewPATCHPaypalGatewaysPaypalGatewayIdRequest(*openapiclient.NewPATCHPaypalGatewaysPaypalGatewayIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHPaypalGatewaysPaypalGatewayIdRequestDataAttributes())) // PATCHPaypalGatewaysPaypalGatewayIdRequest | 
+    paypalGatewayUpdate := *openapiclient.NewPaypalGatewayUpdate(*openapiclient.NewPaypalGatewayUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes())) // PaypalGatewayUpdate | 
     paypalGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaypalGatewaysApi.PATCHPaypalGatewaysPaypalGatewayId(context.Background(), paypalGatewayId).PATCHPaypalGatewaysPaypalGatewayIdRequest(pATCHPaypalGatewaysPaypalGatewayIdRequest).Execute()
+    resp, r, err := apiClient.PaypalGatewaysApi.PATCHPaypalGatewaysPaypalGatewayId(context.Background(), paypalGatewayId).PaypalGatewayUpdate(paypalGatewayUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaypalGatewaysApi.PATCHPaypalGatewaysPaypalGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -262,7 +262,7 @@ Other parameters are passed through a pointer to a apiPATCHPaypalGatewaysPaypalG
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHPaypalGatewaysPaypalGatewayIdRequest** | [**PATCHPaypalGatewaysPaypalGatewayIdRequest**](PATCHPaypalGatewaysPaypalGatewayIdRequest.md) |  | 
+ **paypalGatewayUpdate** | [**PaypalGatewayUpdate**](PaypalGatewayUpdate.md) |  | 
 
 
 ### Return type
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTPaypalGateways
 
-> POSTPaypalGateways201Response POSTPaypalGateways(ctx).POSTPaypalGatewaysRequest(pOSTPaypalGatewaysRequest).Execute()
+> POSTPaypalGateways201Response POSTPaypalGateways(ctx).PaypalGatewayCreate(paypalGatewayCreate).Execute()
 
 Create a paypal gateway
 
@@ -300,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTPaypalGatewaysRequest := *openapiclient.NewPOSTPaypalGatewaysRequest(*openapiclient.NewPOSTPaypalGatewaysRequestData(interface{}(123), *openapiclient.NewPOSTPaypalGatewaysRequestDataAttributes(interface{}(US payment gateway), interface{}(xxxx-yyyy-zzzz), interface{}(xxxx-yyyy-zzzz)))) // POSTPaypalGatewaysRequest | 
+    paypalGatewayCreate := *openapiclient.NewPaypalGatewayCreate(*openapiclient.NewPaypalGatewayCreateData(interface{}(123), *openapiclient.NewPOSTPaypalGateways201ResponseDataAttributes(interface{}(US payment gateway), interface{}(xxxx-yyyy-zzzz), interface{}(xxxx-yyyy-zzzz)))) // PaypalGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaypalGatewaysApi.POSTPaypalGateways(context.Background()).POSTPaypalGatewaysRequest(pOSTPaypalGatewaysRequest).Execute()
+    resp, r, err := apiClient.PaypalGatewaysApi.POSTPaypalGateways(context.Background()).PaypalGatewayCreate(paypalGatewayCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaypalGatewaysApi.POSTPaypalGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiPOSTPaypalGatewaysRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTPaypalGatewaysRequest** | [**POSTPaypalGatewaysRequest**](POSTPaypalGatewaysRequest.md) |  | 
+ **paypalGatewayCreate** | [**PaypalGatewayCreate**](PaypalGatewayCreate.md) |  | 
 
 ### Return type
 

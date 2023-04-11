@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PATCHAxerveGatewaysAxerveGatewayIdRequestData**](PATCHAxerveGatewaysAxerveGatewayIdRequestData.md) |  | 
+**Data** | [**AxerveGatewayUpdateData**](AxerveGatewayUpdateData.md) |  | 
 
 ## Methods
 
 ### NewAxerveGatewayUpdate
 
-`func NewAxerveGatewayUpdate(data PATCHAxerveGatewaysAxerveGatewayIdRequestData, ) *AxerveGatewayUpdate`
+`func NewAxerveGatewayUpdate(data AxerveGatewayUpdateData, ) *AxerveGatewayUpdate`
 
 NewAxerveGatewayUpdate instantiates a new AxerveGatewayUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *AxerveGatewayUpdate) GetData() PATCHAxerveGatewaysAxerveGatewayIdRequestData`
+`func (o *AxerveGatewayUpdate) GetData() AxerveGatewayUpdateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *AxerveGatewayUpdate) GetDataOk() (*PATCHAxerveGatewaysAxerveGatewayIdRequestData, bool)`
+`func (o *AxerveGatewayUpdate) GetDataOk() (*AxerveGatewayUpdateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *AxerveGatewayUpdate) SetData(v PATCHAxerveGatewaysAxerveGatewayIdRequestData)`
+`func (o *AxerveGatewayUpdate) SetData(v AxerveGatewayUpdateData)`
 
 SetData sets Data field to given value.
 

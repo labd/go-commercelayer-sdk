@@ -30,7 +30,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -38,7 +38,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CustomerSubscriptionsApi.DELETECustomerSubscriptionsCustomerSubscriptionId(context.Background(), customerSubscriptionId).Execute()
+    resp, r, err := apiClient.CustomerSubscriptionsApi.DELETECustomerSubscriptionsCustomerSubscriptionId(context.Background(), customerSubscriptionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerSubscriptionsApi.DELETECustomerSubscriptionsCustomerSubscriptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -98,7 +98,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -106,7 +106,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CustomerSubscriptionsApi.GETCustomerIdCustomerSubscriptions(context.Background(), customerId).Execute()
+    resp, r, err := apiClient.CustomerSubscriptionsApi.GETCustomerIdCustomerSubscriptions(context.Background(), customerId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerSubscriptionsApi.GETCustomerIdCustomerSubscriptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -166,7 +166,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -227,7 +227,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHCustomerSubscriptionsCustomerSubscriptionId
 
-> PATCHCustomerSubscriptionsCustomerSubscriptionId200Response PATCHCustomerSubscriptionsCustomerSubscriptionId(ctx, customerSubscriptionId).PATCHCustomerSubscriptionsCustomerSubscriptionIdRequest(pATCHCustomerSubscriptionsCustomerSubscriptionIdRequest).Execute()
+> PATCHCustomerSubscriptionsCustomerSubscriptionId200Response PATCHCustomerSubscriptionsCustomerSubscriptionId(ctx, customerSubscriptionId).CustomerSubscriptionUpdate(customerSubscriptionUpdate).Execute()
 
 Update a customer subscription
 
@@ -297,16 +297,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHCustomerSubscriptionsCustomerSubscriptionIdRequest := *openapiclient.NewPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest(*openapiclient.NewPATCHCustomerSubscriptionsCustomerSubscriptionIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes())) // PATCHCustomerSubscriptionsCustomerSubscriptionIdRequest | 
+    customerSubscriptionUpdate := *openapiclient.NewCustomerSubscriptionUpdate(*openapiclient.NewCustomerSubscriptionUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes())) // CustomerSubscriptionUpdate | 
     customerSubscriptionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomerSubscriptionsApi.PATCHCustomerSubscriptionsCustomerSubscriptionId(context.Background(), customerSubscriptionId).PATCHCustomerSubscriptionsCustomerSubscriptionIdRequest(pATCHCustomerSubscriptionsCustomerSubscriptionIdRequest).Execute()
+    resp, r, err := apiClient.CustomerSubscriptionsApi.PATCHCustomerSubscriptionsCustomerSubscriptionId(context.Background(), customerSubscriptionId).CustomerSubscriptionUpdate(customerSubscriptionUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerSubscriptionsApi.PATCHCustomerSubscriptionsCustomerSubscriptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -331,7 +331,7 @@ Other parameters are passed through a pointer to a apiPATCHCustomerSubscriptions
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHCustomerSubscriptionsCustomerSubscriptionIdRequest** | [**PATCHCustomerSubscriptionsCustomerSubscriptionIdRequest**](PATCHCustomerSubscriptionsCustomerSubscriptionIdRequest.md) |  | 
+ **customerSubscriptionUpdate** | [**CustomerSubscriptionUpdate**](CustomerSubscriptionUpdate.md) |  | 
 
 
 ### Return type
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTCustomerSubscriptions
 
-> POSTCustomerSubscriptions201Response POSTCustomerSubscriptions(ctx).POSTCustomerSubscriptionsRequest(pOSTCustomerSubscriptionsRequest).Execute()
+> POSTCustomerSubscriptions201Response POSTCustomerSubscriptions(ctx).CustomerSubscriptionCreate(customerSubscriptionCreate).Execute()
 
 Create a customer subscription
 
@@ -369,15 +369,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTCustomerSubscriptionsRequest := *openapiclient.NewPOSTCustomerSubscriptionsRequest(*openapiclient.NewPOSTCustomerSubscriptionsRequestData(interface{}(123), *openapiclient.NewPOSTCustomerSubscriptionsRequestDataAttributes(interface{}(john@example.com)))) // POSTCustomerSubscriptionsRequest | 
+    customerSubscriptionCreate := *openapiclient.NewCustomerSubscriptionCreate(*openapiclient.NewCustomerSubscriptionCreateData(interface{}(123), *openapiclient.NewPOSTCustomerSubscriptions201ResponseDataAttributes(interface{}(john@example.com)))) // CustomerSubscriptionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomerSubscriptionsApi.POSTCustomerSubscriptions(context.Background()).POSTCustomerSubscriptionsRequest(pOSTCustomerSubscriptionsRequest).Execute()
+    resp, r, err := apiClient.CustomerSubscriptionsApi.POSTCustomerSubscriptions(context.Background()).CustomerSubscriptionCreate(customerSubscriptionCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerSubscriptionsApi.POSTCustomerSubscriptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +398,7 @@ Other parameters are passed through a pointer to a apiPOSTCustomerSubscriptionsR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTCustomerSubscriptionsRequest** | [**POSTCustomerSubscriptionsRequest**](POSTCustomerSubscriptionsRequest.md) |  | 
+ **customerSubscriptionCreate** | [**CustomerSubscriptionCreate**](CustomerSubscriptionCreate.md) |  | 
 
 ### Return type
 

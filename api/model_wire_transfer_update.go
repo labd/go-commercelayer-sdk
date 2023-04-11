@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the WireTransferUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &WireTransferUpdate{}
-
 // WireTransferUpdate struct for WireTransferUpdate
 type WireTransferUpdate struct {
-	Data PATCHWireTransfersWireTransferIdRequestData `json:"data"`
+	Data WireTransferUpdateData `json:"data"`
 }
 
 // NewWireTransferUpdate instantiates a new WireTransferUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWireTransferUpdate(data PATCHWireTransfersWireTransferIdRequestData) *WireTransferUpdate {
+func NewWireTransferUpdate(data WireTransferUpdateData) *WireTransferUpdate {
 	this := WireTransferUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewWireTransferUpdateWithDefaults() *WireTransferUpdate {
 }
 
 // GetData returns the Data field value
-func (o *WireTransferUpdate) GetData() PATCHWireTransfersWireTransferIdRequestData {
+func (o *WireTransferUpdate) GetData() WireTransferUpdateData {
 	if o == nil {
-		var ret PATCHWireTransfersWireTransferIdRequestData
+		var ret WireTransferUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *WireTransferUpdate) GetData() PATCHWireTransfersWireTransferIdRequestDa
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *WireTransferUpdate) GetDataOk() (*PATCHWireTransfersWireTransferIdRequestData, bool) {
+func (o *WireTransferUpdate) GetDataOk() (*WireTransferUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *WireTransferUpdate) GetDataOk() (*PATCHWireTransfersWireTransferIdReque
 }
 
 // SetData sets field value
-func (o *WireTransferUpdate) SetData(v PATCHWireTransfersWireTransferIdRequestData) {
+func (o *WireTransferUpdate) SetData(v WireTransferUpdateData) {
 	o.Data = v
 }
 
 func (o WireTransferUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o WireTransferUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableWireTransferUpdate struct {

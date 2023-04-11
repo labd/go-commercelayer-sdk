@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the AdyenPaymentDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AdyenPaymentDataRelationships{}
-
 // AdyenPaymentDataRelationships struct for AdyenPaymentDataRelationships
 type AdyenPaymentDataRelationships struct {
 	Order          *AdyenPaymentDataRelationshipsOrder          `json:"order,omitempty"`
@@ -43,7 +40,7 @@ func NewAdyenPaymentDataRelationshipsWithDefaults() *AdyenPaymentDataRelationshi
 
 // GetOrder returns the Order field value if set, zero value otherwise.
 func (o *AdyenPaymentDataRelationships) GetOrder() AdyenPaymentDataRelationshipsOrder {
-	if o == nil || IsNil(o.Order) {
+	if o == nil || o.Order == nil {
 		var ret AdyenPaymentDataRelationshipsOrder
 		return ret
 	}
@@ -53,7 +50,7 @@ func (o *AdyenPaymentDataRelationships) GetOrder() AdyenPaymentDataRelationships
 // GetOrderOk returns a tuple with the Order field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AdyenPaymentDataRelationships) GetOrderOk() (*AdyenPaymentDataRelationshipsOrder, bool) {
-	if o == nil || IsNil(o.Order) {
+	if o == nil || o.Order == nil {
 		return nil, false
 	}
 	return o.Order, true
@@ -61,7 +58,7 @@ func (o *AdyenPaymentDataRelationships) GetOrderOk() (*AdyenPaymentDataRelations
 
 // HasOrder returns a boolean if a field has been set.
 func (o *AdyenPaymentDataRelationships) HasOrder() bool {
-	if o != nil && !IsNil(o.Order) {
+	if o != nil && o.Order != nil {
 		return true
 	}
 
@@ -75,7 +72,7 @@ func (o *AdyenPaymentDataRelationships) SetOrder(v AdyenPaymentDataRelationships
 
 // GetPaymentGateway returns the PaymentGateway field value if set, zero value otherwise.
 func (o *AdyenPaymentDataRelationships) GetPaymentGateway() AdyenPaymentDataRelationshipsPaymentGateway {
-	if o == nil || IsNil(o.PaymentGateway) {
+	if o == nil || o.PaymentGateway == nil {
 		var ret AdyenPaymentDataRelationshipsPaymentGateway
 		return ret
 	}
@@ -85,7 +82,7 @@ func (o *AdyenPaymentDataRelationships) GetPaymentGateway() AdyenPaymentDataRela
 // GetPaymentGatewayOk returns a tuple with the PaymentGateway field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AdyenPaymentDataRelationships) GetPaymentGatewayOk() (*AdyenPaymentDataRelationshipsPaymentGateway, bool) {
-	if o == nil || IsNil(o.PaymentGateway) {
+	if o == nil || o.PaymentGateway == nil {
 		return nil, false
 	}
 	return o.PaymentGateway, true
@@ -93,7 +90,7 @@ func (o *AdyenPaymentDataRelationships) GetPaymentGatewayOk() (*AdyenPaymentData
 
 // HasPaymentGateway returns a boolean if a field has been set.
 func (o *AdyenPaymentDataRelationships) HasPaymentGateway() bool {
-	if o != nil && !IsNil(o.PaymentGateway) {
+	if o != nil && o.PaymentGateway != nil {
 		return true
 	}
 
@@ -106,22 +103,14 @@ func (o *AdyenPaymentDataRelationships) SetPaymentGateway(v AdyenPaymentDataRela
 }
 
 func (o AdyenPaymentDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o AdyenPaymentDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Order) {
+	if o.Order != nil {
 		toSerialize["order"] = o.Order
 	}
-	if !IsNil(o.PaymentGateway) {
+	if o.PaymentGateway != nil {
 		toSerialize["payment_gateway"] = o.PaymentGateway
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableAdyenPaymentDataRelationships struct {

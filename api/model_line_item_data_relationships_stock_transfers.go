@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the LineItemDataRelationshipsStockTransfers type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &LineItemDataRelationshipsStockTransfers{}
-
 // LineItemDataRelationshipsStockTransfers struct for LineItemDataRelationshipsStockTransfers
 type LineItemDataRelationshipsStockTransfers struct {
 	Data *LineItemDataRelationshipsStockTransfersData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewLineItemDataRelationshipsStockTransfersWithDefaults() *LineItemDataRelat
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *LineItemDataRelationshipsStockTransfers) GetData() LineItemDataRelationshipsStockTransfersData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret LineItemDataRelationshipsStockTransfersData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *LineItemDataRelationshipsStockTransfers) GetData() LineItemDataRelation
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LineItemDataRelationshipsStockTransfers) GetDataOk() (*LineItemDataRelationshipsStockTransfersData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *LineItemDataRelationshipsStockTransfers) GetDataOk() (*LineItemDataRela
 
 // HasData returns a boolean if a field has been set.
 func (o *LineItemDataRelationshipsStockTransfers) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *LineItemDataRelationshipsStockTransfers) SetData(v LineItemDataRelation
 }
 
 func (o LineItemDataRelationshipsStockTransfers) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o LineItemDataRelationshipsStockTransfers) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableLineItemDataRelationshipsStockTransfers struct {

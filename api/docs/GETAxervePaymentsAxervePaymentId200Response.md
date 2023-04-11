@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETAxervePaymentsAxervePaymentId200ResponseData**](GETAxervePaymentsAxervePaymentId200ResponseData.md) |  | [optional] 
+**Data** | Pointer to [**GETAxervePayments200ResponseDataInner**](GETAxervePayments200ResponseDataInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETAxervePaymentsAxervePaymentId200Response) GetData() GETAxervePaymentsAxervePaymentId200ResponseData`
+`func (o *GETAxervePaymentsAxervePaymentId200Response) GetData() GETAxervePayments200ResponseDataInner`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETAxervePaymentsAxervePaymentId200Response) GetDataOk() (*GETAxervePaymentsAxervePaymentId200ResponseData, bool)`
+`func (o *GETAxervePaymentsAxervePaymentId200Response) GetDataOk() (*GETAxervePayments200ResponseDataInner, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETAxervePaymentsAxervePaymentId200Response) SetData(v GETAxervePaymentsAxervePaymentId200ResponseData)`
+`func (o *GETAxervePaymentsAxervePaymentId200Response) SetData(v GETAxervePayments200ResponseDataInner)`
 
 SetData sets Data field to given value.
 

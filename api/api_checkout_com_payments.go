@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *CheckoutComPaymentsApiService) DELETECheckoutComPaymentsCheckoutComPaym
 	}
 
 	localVarPath := localBasePath + "/checkout_com_payments/{checkoutComPaymentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComPaymentId"+"}", url.PathEscape(parameterValueToString(r.checkoutComPaymentId, "checkoutComPaymentId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComPaymentId"+"}", url.PathEscape(parameterToString(r.checkoutComPaymentId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *CheckoutComPaymentsApiService) DELETECheckoutComPaymentsCheckoutComPaym
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -156,7 +156,7 @@ func (a *CheckoutComPaymentsApiService) GETCheckoutComGatewayIdCheckoutComPaymen
 	}
 
 	localVarPath := localBasePath + "/checkout_com_gateways/{checkoutComGatewayId}/checkout_com_payments"
-	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComGatewayId"+"}", url.PathEscape(parameterValueToString(r.checkoutComGatewayId, "checkoutComGatewayId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComGatewayId"+"}", url.PathEscape(parameterToString(r.checkoutComGatewayId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *CheckoutComPaymentsApiService) GETCheckoutComGatewayIdCheckoutComPaymen
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *CheckoutComPaymentsApiService) GETCheckoutComPaymentsExecute(r Checkout
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -351,7 +351,7 @@ func (a *CheckoutComPaymentsApiService) GETCheckoutComPaymentsCheckoutComPayment
 	}
 
 	localVarPath := localBasePath + "/checkout_com_payments/{checkoutComPaymentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComPaymentId"+"}", url.PathEscape(parameterValueToString(r.checkoutComPaymentId, "checkoutComPaymentId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComPaymentId"+"}", url.PathEscape(parameterToString(r.checkoutComPaymentId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *CheckoutComPaymentsApiService) GETCheckoutComPaymentsCheckoutComPayment
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -412,14 +412,14 @@ func (a *CheckoutComPaymentsApiService) GETCheckoutComPaymentsCheckoutComPayment
 }
 
 type CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest struct {
-	ctx                                                 context.Context
-	ApiService                                          *CheckoutComPaymentsApiService
-	pATCHCheckoutComPaymentsCheckoutComPaymentIdRequest *PATCHCheckoutComPaymentsCheckoutComPaymentIdRequest
-	checkoutComPaymentId                                interface{}
+	ctx                      context.Context
+	ApiService               *CheckoutComPaymentsApiService
+	checkoutComPaymentUpdate *CheckoutComPaymentUpdate
+	checkoutComPaymentId     interface{}
 }
 
-func (r CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest) PATCHCheckoutComPaymentsCheckoutComPaymentIdRequest(pATCHCheckoutComPaymentsCheckoutComPaymentIdRequest PATCHCheckoutComPaymentsCheckoutComPaymentIdRequest) CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest {
-	r.pATCHCheckoutComPaymentsCheckoutComPaymentIdRequest = &pATCHCheckoutComPaymentsCheckoutComPaymentIdRequest
+func (r CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest) CheckoutComPaymentUpdate(checkoutComPaymentUpdate CheckoutComPaymentUpdate) CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest {
+	r.checkoutComPaymentUpdate = &checkoutComPaymentUpdate
 	return r
 }
 
@@ -461,13 +461,13 @@ func (a *CheckoutComPaymentsApiService) PATCHCheckoutComPaymentsCheckoutComPayme
 	}
 
 	localVarPath := localBasePath + "/checkout_com_payments/{checkoutComPaymentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComPaymentId"+"}", url.PathEscape(parameterValueToString(r.checkoutComPaymentId, "checkoutComPaymentId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComPaymentId"+"}", url.PathEscape(parameterToString(r.checkoutComPaymentId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHCheckoutComPaymentsCheckoutComPaymentIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHCheckoutComPaymentsCheckoutComPaymentIdRequest is required and must be specified")
+	if r.checkoutComPaymentUpdate == nil {
+		return localVarReturnValue, nil, reportError("checkoutComPaymentUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -488,7 +488,7 @@ func (a *CheckoutComPaymentsApiService) PATCHCheckoutComPaymentsCheckoutComPayme
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHCheckoutComPaymentsCheckoutComPaymentIdRequest
+	localVarPostBody = r.checkoutComPaymentUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -499,9 +499,9 @@ func (a *CheckoutComPaymentsApiService) PATCHCheckoutComPaymentsCheckoutComPayme
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -527,13 +527,13 @@ func (a *CheckoutComPaymentsApiService) PATCHCheckoutComPaymentsCheckoutComPayme
 }
 
 type CheckoutComPaymentsApiPOSTCheckoutComPaymentsRequest struct {
-	ctx                            context.Context
-	ApiService                     *CheckoutComPaymentsApiService
-	pOSTCheckoutComPaymentsRequest *POSTCheckoutComPaymentsRequest
+	ctx                      context.Context
+	ApiService               *CheckoutComPaymentsApiService
+	checkoutComPaymentCreate *CheckoutComPaymentCreate
 }
 
-func (r CheckoutComPaymentsApiPOSTCheckoutComPaymentsRequest) POSTCheckoutComPaymentsRequest(pOSTCheckoutComPaymentsRequest POSTCheckoutComPaymentsRequest) CheckoutComPaymentsApiPOSTCheckoutComPaymentsRequest {
-	r.pOSTCheckoutComPaymentsRequest = &pOSTCheckoutComPaymentsRequest
+func (r CheckoutComPaymentsApiPOSTCheckoutComPaymentsRequest) CheckoutComPaymentCreate(checkoutComPaymentCreate CheckoutComPaymentCreate) CheckoutComPaymentsApiPOSTCheckoutComPaymentsRequest {
+	r.checkoutComPaymentCreate = &checkoutComPaymentCreate
 	return r
 }
 
@@ -577,8 +577,8 @@ func (a *CheckoutComPaymentsApiService) POSTCheckoutComPaymentsExecute(r Checkou
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTCheckoutComPaymentsRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTCheckoutComPaymentsRequest is required and must be specified")
+	if r.checkoutComPaymentCreate == nil {
+		return localVarReturnValue, nil, reportError("checkoutComPaymentCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -599,7 +599,7 @@ func (a *CheckoutComPaymentsApiService) POSTCheckoutComPaymentsExecute(r Checkou
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTCheckoutComPaymentsRequest
+	localVarPostBody = r.checkoutComPaymentCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -610,9 +610,9 @@ func (a *CheckoutComPaymentsApiService) POSTCheckoutComPaymentsExecute(r Checkou
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

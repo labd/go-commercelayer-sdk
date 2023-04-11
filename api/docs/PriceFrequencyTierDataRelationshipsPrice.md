@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**POSTPriceFrequencyTiersRequestDataRelationshipsPriceData**](POSTPriceFrequencyTiersRequestDataRelationshipsPriceData.md) |  | [optional] 
+**Data** | Pointer to [**PriceFrequencyTierDataRelationshipsPriceData**](PriceFrequencyTierDataRelationshipsPriceData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *PriceFrequencyTierDataRelationshipsPrice) GetData() POSTPriceFrequencyTiersRequestDataRelationshipsPriceData`
+`func (o *PriceFrequencyTierDataRelationshipsPrice) GetData() PriceFrequencyTierDataRelationshipsPriceData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *PriceFrequencyTierDataRelationshipsPrice) GetDataOk() (*POSTPriceFrequencyTiersRequestDataRelationshipsPriceData, bool)`
+`func (o *PriceFrequencyTierDataRelationshipsPrice) GetDataOk() (*PriceFrequencyTierDataRelationshipsPriceData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *PriceFrequencyTierDataRelationshipsPrice) SetData(v POSTPriceFrequencyTiersRequestDataRelationshipsPriceData)`
+`func (o *PriceFrequencyTierDataRelationshipsPrice) SetData(v PriceFrequencyTierDataRelationshipsPriceData)`
 
 SetData sets Data field to given value.
 

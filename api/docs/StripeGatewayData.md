@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETStripeGatewaysStripeGatewayId200ResponseDataAttributes**](GETStripeGatewaysStripeGatewayId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**GETStripeGateways200ResponseDataInnerAttributes**](GETStripeGateways200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**StripeGatewayDataRelationships**](StripeGatewayDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewStripeGatewayData
 
-`func NewStripeGatewayData(type_ interface{}, attributes GETStripeGatewaysStripeGatewayId200ResponseDataAttributes, ) *StripeGatewayData`
+`func NewStripeGatewayData(type_ interface{}, attributes GETStripeGateways200ResponseDataInnerAttributes, ) *StripeGatewayData`
 
 NewStripeGatewayData instantiates a new StripeGatewayData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *StripeGatewayData) GetAttributes() GETStripeGatewaysStripeGatewayId200ResponseDataAttributes`
+`func (o *StripeGatewayData) GetAttributes() GETStripeGateways200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *StripeGatewayData) GetAttributesOk() (*GETStripeGatewaysStripeGatewayId200ResponseDataAttributes, bool)`
+`func (o *StripeGatewayData) GetAttributesOk() (*GETStripeGateways200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *StripeGatewayData) SetAttributes(v GETStripeGatewaysStripeGatewayId200ResponseDataAttributes)`
+`func (o *StripeGatewayData) SetAttributes(v GETStripeGateways200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

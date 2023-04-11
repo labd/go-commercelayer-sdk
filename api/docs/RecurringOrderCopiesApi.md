@@ -31,7 +31,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -39,7 +39,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.RecurringOrderCopiesApi.DELETERecurringOrderCopiesRecurringOrderCopyId(context.Background(), recurringOrderCopyId).Execute()
+    resp, r, err := apiClient.RecurringOrderCopiesApi.DELETERecurringOrderCopiesRecurringOrderCopyId(context.Background(), recurringOrderCopyId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RecurringOrderCopiesApi.DELETERecurringOrderCopiesRecurringOrderCopyId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -99,7 +99,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -107,7 +107,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.RecurringOrderCopiesApi.GETOrderIdRecurringOrderCopies(context.Background(), orderId).Execute()
+    resp, r, err := apiClient.RecurringOrderCopiesApi.GETOrderIdRecurringOrderCopies(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RecurringOrderCopiesApi.GETOrderIdRecurringOrderCopies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -167,7 +167,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -175,7 +175,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.RecurringOrderCopiesApi.GETOrderSubscriptionIdRecurringOrderCopies(context.Background(), orderSubscriptionId).Execute()
+    resp, r, err := apiClient.RecurringOrderCopiesApi.GETOrderSubscriptionIdRecurringOrderCopies(context.Background(), orderSubscriptionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RecurringOrderCopiesApi.GETOrderSubscriptionIdRecurringOrderCopies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -235,7 +235,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -296,7 +296,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ## PATCHRecurringOrderCopiesRecurringOrderCopyId
 
-> PATCHRecurringOrderCopiesRecurringOrderCopyId200Response PATCHRecurringOrderCopiesRecurringOrderCopyId(ctx, recurringOrderCopyId).PATCHRecurringOrderCopiesRecurringOrderCopyIdRequest(pATCHRecurringOrderCopiesRecurringOrderCopyIdRequest).Execute()
+> PATCHRecurringOrderCopiesRecurringOrderCopyId200Response PATCHRecurringOrderCopiesRecurringOrderCopyId(ctx, recurringOrderCopyId).RecurringOrderCopyUpdate(recurringOrderCopyUpdate).Execute()
 
 Update a recurring order copy
 
@@ -366,16 +366,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHRecurringOrderCopiesRecurringOrderCopyIdRequest := *openapiclient.NewPATCHRecurringOrderCopiesRecurringOrderCopyIdRequest(*openapiclient.NewPATCHRecurringOrderCopiesRecurringOrderCopyIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes())) // PATCHRecurringOrderCopiesRecurringOrderCopyIdRequest | 
+    recurringOrderCopyUpdate := *openapiclient.NewRecurringOrderCopyUpdate(*openapiclient.NewRecurringOrderCopyUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes())) // RecurringOrderCopyUpdate | 
     recurringOrderCopyId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RecurringOrderCopiesApi.PATCHRecurringOrderCopiesRecurringOrderCopyId(context.Background(), recurringOrderCopyId).PATCHRecurringOrderCopiesRecurringOrderCopyIdRequest(pATCHRecurringOrderCopiesRecurringOrderCopyIdRequest).Execute()
+    resp, r, err := apiClient.RecurringOrderCopiesApi.PATCHRecurringOrderCopiesRecurringOrderCopyId(context.Background(), recurringOrderCopyId).RecurringOrderCopyUpdate(recurringOrderCopyUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RecurringOrderCopiesApi.PATCHRecurringOrderCopiesRecurringOrderCopyId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -400,7 +400,7 @@ Other parameters are passed through a pointer to a apiPATCHRecurringOrderCopiesR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHRecurringOrderCopiesRecurringOrderCopyIdRequest** | [**PATCHRecurringOrderCopiesRecurringOrderCopyIdRequest**](PATCHRecurringOrderCopiesRecurringOrderCopyIdRequest.md) |  | 
+ **recurringOrderCopyUpdate** | [**RecurringOrderCopyUpdate**](RecurringOrderCopyUpdate.md) |  | 
 
 
 ### Return type
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ## POSTRecurringOrderCopies
 
-> POSTRecurringOrderCopies201Response POSTRecurringOrderCopies(ctx).POSTRecurringOrderCopiesRequest(pOSTRecurringOrderCopiesRequest).Execute()
+> POSTRecurringOrderCopies201Response POSTRecurringOrderCopies(ctx).RecurringOrderCopyCreate(recurringOrderCopyCreate).Execute()
 
 Create a recurring order copy
 
@@ -438,15 +438,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTRecurringOrderCopiesRequest := *openapiclient.NewPOSTRecurringOrderCopiesRequest(*openapiclient.NewPOSTRecurringOrderCopiesRequestData(interface{}(123), *openapiclient.NewPOSTRecurringOrderCopiesRequestDataAttributes())) // POSTRecurringOrderCopiesRequest | 
+    recurringOrderCopyCreate := *openapiclient.NewRecurringOrderCopyCreate(*openapiclient.NewRecurringOrderCopyCreateData(interface{}(123), *openapiclient.NewPOSTRecurringOrderCopies201ResponseDataAttributes())) // RecurringOrderCopyCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.RecurringOrderCopiesApi.POSTRecurringOrderCopies(context.Background()).POSTRecurringOrderCopiesRequest(pOSTRecurringOrderCopiesRequest).Execute()
+    resp, r, err := apiClient.RecurringOrderCopiesApi.POSTRecurringOrderCopies(context.Background()).RecurringOrderCopyCreate(recurringOrderCopyCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `RecurringOrderCopiesApi.POSTRecurringOrderCopies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -467,7 +467,7 @@ Other parameters are passed through a pointer to a apiPOSTRecurringOrderCopiesRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTRecurringOrderCopiesRequest** | [**POSTRecurringOrderCopiesRequest**](POSTRecurringOrderCopiesRequest.md) |  | 
+ **recurringOrderCopyCreate** | [**RecurringOrderCopyCreate**](RecurringOrderCopyCreate.md) |  | 
 
 ### Return type
 

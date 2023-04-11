@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the POSTAdjustments201Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &POSTAdjustments201Response{}
-
 // POSTAdjustments201Response struct for POSTAdjustments201Response
 type POSTAdjustments201Response struct {
 	Data *POSTAdjustments201ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPOSTAdjustments201ResponseWithDefaults() *POSTAdjustments201Response {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTAdjustments201Response) GetData() POSTAdjustments201ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret POSTAdjustments201ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *POSTAdjustments201Response) GetData() POSTAdjustments201ResponseData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTAdjustments201Response) GetDataOk() (*POSTAdjustments201ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *POSTAdjustments201Response) GetDataOk() (*POSTAdjustments201ResponseDat
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTAdjustments201Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *POSTAdjustments201Response) SetData(v POSTAdjustments201ResponseData) {
 }
 
 func (o POSTAdjustments201Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o POSTAdjustments201Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePOSTAdjustments201Response struct {

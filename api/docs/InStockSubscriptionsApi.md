@@ -29,7 +29,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -37,7 +37,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.InStockSubscriptionsApi.DELETEInStockSubscriptionsInStockSubscriptionId(context.Background(), inStockSubscriptionId).Execute()
+    resp, r, err := apiClient.InStockSubscriptionsApi.DELETEInStockSubscriptionsInStockSubscriptionId(context.Background(), inStockSubscriptionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InStockSubscriptionsApi.DELETEInStockSubscriptionsInStockSubscriptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -158,7 +158,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHInStockSubscriptionsInStockSubscriptionId
 
-> PATCHInStockSubscriptionsInStockSubscriptionId200Response PATCHInStockSubscriptionsInStockSubscriptionId(ctx, inStockSubscriptionId).PATCHInStockSubscriptionsInStockSubscriptionIdRequest(pATCHInStockSubscriptionsInStockSubscriptionIdRequest).Execute()
+> PATCHInStockSubscriptionsInStockSubscriptionId200Response PATCHInStockSubscriptionsInStockSubscriptionId(ctx, inStockSubscriptionId).InStockSubscriptionUpdate(inStockSubscriptionUpdate).Execute()
 
 Update an in stock subscription
 
@@ -228,16 +228,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHInStockSubscriptionsInStockSubscriptionIdRequest := *openapiclient.NewPATCHInStockSubscriptionsInStockSubscriptionIdRequest(*openapiclient.NewPATCHInStockSubscriptionsInStockSubscriptionIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHInStockSubscriptionsInStockSubscriptionIdRequestDataAttributes())) // PATCHInStockSubscriptionsInStockSubscriptionIdRequest | 
+    inStockSubscriptionUpdate := *openapiclient.NewInStockSubscriptionUpdate(*openapiclient.NewInStockSubscriptionUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes())) // InStockSubscriptionUpdate | 
     inStockSubscriptionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InStockSubscriptionsApi.PATCHInStockSubscriptionsInStockSubscriptionId(context.Background(), inStockSubscriptionId).PATCHInStockSubscriptionsInStockSubscriptionIdRequest(pATCHInStockSubscriptionsInStockSubscriptionIdRequest).Execute()
+    resp, r, err := apiClient.InStockSubscriptionsApi.PATCHInStockSubscriptionsInStockSubscriptionId(context.Background(), inStockSubscriptionId).InStockSubscriptionUpdate(inStockSubscriptionUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InStockSubscriptionsApi.PATCHInStockSubscriptionsInStockSubscriptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -262,7 +262,7 @@ Other parameters are passed through a pointer to a apiPATCHInStockSubscriptionsI
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHInStockSubscriptionsInStockSubscriptionIdRequest** | [**PATCHInStockSubscriptionsInStockSubscriptionIdRequest**](PATCHInStockSubscriptionsInStockSubscriptionIdRequest.md) |  | 
+ **inStockSubscriptionUpdate** | [**InStockSubscriptionUpdate**](InStockSubscriptionUpdate.md) |  | 
 
 
 ### Return type
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTInStockSubscriptions
 
-> POSTInStockSubscriptions201Response POSTInStockSubscriptions(ctx).POSTInStockSubscriptionsRequest(pOSTInStockSubscriptionsRequest).Execute()
+> POSTInStockSubscriptions201Response POSTInStockSubscriptions(ctx).InStockSubscriptionCreate(inStockSubscriptionCreate).Execute()
 
 Create an in stock subscription
 
@@ -300,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTInStockSubscriptionsRequest := *openapiclient.NewPOSTInStockSubscriptionsRequest(*openapiclient.NewPOSTInStockSubscriptionsRequestData(interface{}(123), *openapiclient.NewPOSTInStockSubscriptionsRequestDataAttributes())) // POSTInStockSubscriptionsRequest | 
+    inStockSubscriptionCreate := *openapiclient.NewInStockSubscriptionCreate(*openapiclient.NewInStockSubscriptionCreateData(interface{}(123), *openapiclient.NewPOSTInStockSubscriptions201ResponseDataAttributes())) // InStockSubscriptionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InStockSubscriptionsApi.POSTInStockSubscriptions(context.Background()).POSTInStockSubscriptionsRequest(pOSTInStockSubscriptionsRequest).Execute()
+    resp, r, err := apiClient.InStockSubscriptionsApi.POSTInStockSubscriptions(context.Background()).InStockSubscriptionCreate(inStockSubscriptionCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InStockSubscriptionsApi.POSTInStockSubscriptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiPOSTInStockSubscriptionsRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTInStockSubscriptionsRequest** | [**POSTInStockSubscriptionsRequest**](POSTInStockSubscriptionsRequest.md) |  | 
+ **inStockSubscriptionCreate** | [**InStockSubscriptionCreate**](InStockSubscriptionCreate.md) |  | 
 
 ### Return type
 

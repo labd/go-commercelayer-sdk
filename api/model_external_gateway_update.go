@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the ExternalGatewayUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ExternalGatewayUpdate{}
-
 // ExternalGatewayUpdate struct for ExternalGatewayUpdate
 type ExternalGatewayUpdate struct {
-	Data PATCHExternalGatewaysExternalGatewayIdRequestData `json:"data"`
+	Data ExternalGatewayUpdateData `json:"data"`
 }
 
 // NewExternalGatewayUpdate instantiates a new ExternalGatewayUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalGatewayUpdate(data PATCHExternalGatewaysExternalGatewayIdRequestData) *ExternalGatewayUpdate {
+func NewExternalGatewayUpdate(data ExternalGatewayUpdateData) *ExternalGatewayUpdate {
 	this := ExternalGatewayUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewExternalGatewayUpdateWithDefaults() *ExternalGatewayUpdate {
 }
 
 // GetData returns the Data field value
-func (o *ExternalGatewayUpdate) GetData() PATCHExternalGatewaysExternalGatewayIdRequestData {
+func (o *ExternalGatewayUpdate) GetData() ExternalGatewayUpdateData {
 	if o == nil {
-		var ret PATCHExternalGatewaysExternalGatewayIdRequestData
+		var ret ExternalGatewayUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *ExternalGatewayUpdate) GetData() PATCHExternalGatewaysExternalGatewayId
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ExternalGatewayUpdate) GetDataOk() (*PATCHExternalGatewaysExternalGatewayIdRequestData, bool) {
+func (o *ExternalGatewayUpdate) GetDataOk() (*ExternalGatewayUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *ExternalGatewayUpdate) GetDataOk() (*PATCHExternalGatewaysExternalGatew
 }
 
 // SetData sets field value
-func (o *ExternalGatewayUpdate) SetData(v PATCHExternalGatewaysExternalGatewayIdRequestData) {
+func (o *ExternalGatewayUpdate) SetData(v ExternalGatewayUpdateData) {
 	o.Data = v
 }
 
 func (o ExternalGatewayUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o ExternalGatewayUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableExternalGatewayUpdate struct {

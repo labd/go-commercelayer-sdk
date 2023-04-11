@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes**](GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**GETSatispayPayments200ResponseDataInnerAttributes**](GETSatispayPayments200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentDataRelationships**](AdyenPaymentDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewSatispayPaymentData
 
-`func NewSatispayPaymentData(type_ interface{}, attributes GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes, ) *SatispayPaymentData`
+`func NewSatispayPaymentData(type_ interface{}, attributes GETSatispayPayments200ResponseDataInnerAttributes, ) *SatispayPaymentData`
 
 NewSatispayPaymentData instantiates a new SatispayPaymentData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *SatispayPaymentData) GetAttributes() GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes`
+`func (o *SatispayPaymentData) GetAttributes() GETSatispayPayments200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *SatispayPaymentData) GetAttributesOk() (*GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes, bool)`
+`func (o *SatispayPaymentData) GetAttributesOk() (*GETSatispayPayments200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *SatispayPaymentData) SetAttributes(v GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes)`
+`func (o *SatispayPaymentData) SetAttributes(v GETSatispayPayments200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

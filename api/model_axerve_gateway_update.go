@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the AxerveGatewayUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AxerveGatewayUpdate{}
-
 // AxerveGatewayUpdate struct for AxerveGatewayUpdate
 type AxerveGatewayUpdate struct {
-	Data PATCHAxerveGatewaysAxerveGatewayIdRequestData `json:"data"`
+	Data AxerveGatewayUpdateData `json:"data"`
 }
 
 // NewAxerveGatewayUpdate instantiates a new AxerveGatewayUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAxerveGatewayUpdate(data PATCHAxerveGatewaysAxerveGatewayIdRequestData) *AxerveGatewayUpdate {
+func NewAxerveGatewayUpdate(data AxerveGatewayUpdateData) *AxerveGatewayUpdate {
 	this := AxerveGatewayUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewAxerveGatewayUpdateWithDefaults() *AxerveGatewayUpdate {
 }
 
 // GetData returns the Data field value
-func (o *AxerveGatewayUpdate) GetData() PATCHAxerveGatewaysAxerveGatewayIdRequestData {
+func (o *AxerveGatewayUpdate) GetData() AxerveGatewayUpdateData {
 	if o == nil {
-		var ret PATCHAxerveGatewaysAxerveGatewayIdRequestData
+		var ret AxerveGatewayUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *AxerveGatewayUpdate) GetData() PATCHAxerveGatewaysAxerveGatewayIdReques
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *AxerveGatewayUpdate) GetDataOk() (*PATCHAxerveGatewaysAxerveGatewayIdRequestData, bool) {
+func (o *AxerveGatewayUpdate) GetDataOk() (*AxerveGatewayUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *AxerveGatewayUpdate) GetDataOk() (*PATCHAxerveGatewaysAxerveGatewayIdRe
 }
 
 // SetData sets field value
-func (o *AxerveGatewayUpdate) SetData(v PATCHAxerveGatewaysAxerveGatewayIdRequestData) {
+func (o *AxerveGatewayUpdate) SetData(v AxerveGatewayUpdateData) {
 	o.Data = v
 }
 
 func (o AxerveGatewayUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o AxerveGatewayUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableAxerveGatewayUpdate struct {

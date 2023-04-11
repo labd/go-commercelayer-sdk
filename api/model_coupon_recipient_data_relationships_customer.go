@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the CouponRecipientDataRelationshipsCustomer type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CouponRecipientDataRelationshipsCustomer{}
-
 // CouponRecipientDataRelationshipsCustomer struct for CouponRecipientDataRelationshipsCustomer
 type CouponRecipientDataRelationshipsCustomer struct {
-	Data *POSTCouponRecipientsRequestDataRelationshipsCustomerData `json:"data,omitempty"`
+	Data *CouponRecipientDataRelationshipsCustomerData `json:"data,omitempty"`
 }
 
 // NewCouponRecipientDataRelationshipsCustomer instantiates a new CouponRecipientDataRelationshipsCustomer object
@@ -41,9 +38,9 @@ func NewCouponRecipientDataRelationshipsCustomerWithDefaults() *CouponRecipientD
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *CouponRecipientDataRelationshipsCustomer) GetData() POSTCouponRecipientsRequestDataRelationshipsCustomerData {
-	if o == nil || IsNil(o.Data) {
-		var ret POSTCouponRecipientsRequestDataRelationshipsCustomerData
+func (o *CouponRecipientDataRelationshipsCustomer) GetData() CouponRecipientDataRelationshipsCustomerData {
+	if o == nil || o.Data == nil {
+		var ret CouponRecipientDataRelationshipsCustomerData
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *CouponRecipientDataRelationshipsCustomer) GetData() POSTCouponRecipient
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CouponRecipientDataRelationshipsCustomer) GetDataOk() (*POSTCouponRecipientsRequestDataRelationshipsCustomerData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *CouponRecipientDataRelationshipsCustomer) GetDataOk() (*CouponRecipientDataRelationshipsCustomerData, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *CouponRecipientDataRelationshipsCustomer) GetDataOk() (*POSTCouponRecip
 
 // HasData returns a boolean if a field has been set.
 func (o *CouponRecipientDataRelationshipsCustomer) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given POSTCouponRecipientsRequestDataRelationshipsCustomerData and assigns it to the Data field.
-func (o *CouponRecipientDataRelationshipsCustomer) SetData(v POSTCouponRecipientsRequestDataRelationshipsCustomerData) {
+// SetData gets a reference to the given CouponRecipientDataRelationshipsCustomerData and assigns it to the Data field.
+func (o *CouponRecipientDataRelationshipsCustomer) SetData(v CouponRecipientDataRelationshipsCustomerData) {
 	o.Data = &v
 }
 
 func (o CouponRecipientDataRelationshipsCustomer) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o CouponRecipientDataRelationshipsCustomer) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableCouponRecipientDataRelationshipsCustomer struct {

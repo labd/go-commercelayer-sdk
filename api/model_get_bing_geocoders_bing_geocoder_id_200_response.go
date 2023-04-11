@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETBingGeocodersBingGeocoderId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETBingGeocodersBingGeocoderId200Response{}
-
 // GETBingGeocodersBingGeocoderId200Response struct for GETBingGeocodersBingGeocoderId200Response
 type GETBingGeocodersBingGeocoderId200Response struct {
-	Data *GETBingGeocodersBingGeocoderId200ResponseData `json:"data,omitempty"`
+	Data *GETBingGeocoders200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETBingGeocodersBingGeocoderId200Response instantiates a new GETBingGeocodersBingGeocoderId200Response object
@@ -41,9 +38,9 @@ func NewGETBingGeocodersBingGeocoderId200ResponseWithDefaults() *GETBingGeocoder
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETBingGeocodersBingGeocoderId200Response) GetData() GETBingGeocodersBingGeocoderId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETBingGeocodersBingGeocoderId200ResponseData
+func (o *GETBingGeocodersBingGeocoderId200Response) GetData() GETBingGeocoders200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETBingGeocoders200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETBingGeocodersBingGeocoderId200Response) GetData() GETBingGeocodersBi
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETBingGeocodersBingGeocoderId200Response) GetDataOk() (*GETBingGeocodersBingGeocoderId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETBingGeocodersBingGeocoderId200Response) GetDataOk() (*GETBingGeocoders200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETBingGeocodersBingGeocoderId200Response) GetDataOk() (*GETBingGeocode
 
 // HasData returns a boolean if a field has been set.
 func (o *GETBingGeocodersBingGeocoderId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETBingGeocodersBingGeocoderId200ResponseData and assigns it to the Data field.
-func (o *GETBingGeocodersBingGeocoderId200Response) SetData(v GETBingGeocodersBingGeocoderId200ResponseData) {
+// SetData gets a reference to the given GETBingGeocoders200ResponseDataInner and assigns it to the Data field.
+func (o *GETBingGeocodersBingGeocoderId200Response) SetData(v GETBingGeocoders200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETBingGeocodersBingGeocoderId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETBingGeocodersBingGeocoderId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETBingGeocodersBingGeocoderId200Response struct {

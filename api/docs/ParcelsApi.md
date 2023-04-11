@@ -32,7 +32,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -40,7 +40,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ParcelsApi.DELETEParcelsParcelId(context.Background(), parcelId).Execute()
+    resp, r, err := apiClient.ParcelsApi.DELETEParcelsParcelId(context.Background(), parcelId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ParcelsApi.DELETEParcelsParcelId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -100,7 +100,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -108,7 +108,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ParcelsApi.GETPackageIdParcels(context.Background(), packageId).Execute()
+    resp, r, err := apiClient.ParcelsApi.GETPackageIdParcels(context.Background(), packageId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ParcelsApi.GETPackageIdParcels``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -168,7 +168,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -176,7 +176,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ParcelsApi.GETParcelLineItemIdParcel(context.Background(), parcelLineItemId).Execute()
+    resp, r, err := apiClient.ParcelsApi.GETParcelLineItemIdParcel(context.Background(), parcelLineItemId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ParcelsApi.GETParcelLineItemIdParcel``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -236,7 +236,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -297,7 +297,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -367,7 +367,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -375,7 +375,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ParcelsApi.GETShipmentIdParcels(context.Background(), shipmentId).Execute()
+    resp, r, err := apiClient.ParcelsApi.GETShipmentIdParcels(context.Background(), shipmentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ParcelsApi.GETShipmentIdParcels``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 
 ## PATCHParcelsParcelId
 
-> PATCHParcelsParcelId200Response PATCHParcelsParcelId(ctx, parcelId).PATCHParcelsParcelIdRequest(pATCHParcelsParcelIdRequest).Execute()
+> PATCHParcelsParcelId200Response PATCHParcelsParcelId(ctx, parcelId).ParcelUpdate(parcelUpdate).Execute()
 
 Update a parcel
 
@@ -435,16 +435,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHParcelsParcelIdRequest := *openapiclient.NewPATCHParcelsParcelIdRequest(*openapiclient.NewPATCHParcelsParcelIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHParcelsParcelIdRequestDataAttributes())) // PATCHParcelsParcelIdRequest | 
+    parcelUpdate := *openapiclient.NewParcelUpdate(*openapiclient.NewParcelUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHParcelsParcelId200ResponseDataAttributes())) // ParcelUpdate | 
     parcelId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ParcelsApi.PATCHParcelsParcelId(context.Background(), parcelId).PATCHParcelsParcelIdRequest(pATCHParcelsParcelIdRequest).Execute()
+    resp, r, err := apiClient.ParcelsApi.PATCHParcelsParcelId(context.Background(), parcelId).ParcelUpdate(parcelUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ParcelsApi.PATCHParcelsParcelId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -469,7 +469,7 @@ Other parameters are passed through a pointer to a apiPATCHParcelsParcelIdReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHParcelsParcelIdRequest** | [**PATCHParcelsParcelIdRequest**](PATCHParcelsParcelIdRequest.md) |  | 
+ **parcelUpdate** | [**ParcelUpdate**](ParcelUpdate.md) |  | 
 
 
 ### Return type
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 
 ## POSTParcels
 
-> POSTParcels201Response POSTParcels(ctx).POSTParcelsRequest(pOSTParcelsRequest).Execute()
+> POSTParcels201Response POSTParcels(ctx).ParcelCreate(parcelCreate).Execute()
 
 Create a parcel
 
@@ -507,15 +507,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTParcelsRequest := *openapiclient.NewPOSTParcelsRequest(*openapiclient.NewPOSTParcelsRequestData(interface{}(123), *openapiclient.NewPOSTParcelsRequestDataAttributes(interface{}(1000), interface{}(gr)))) // POSTParcelsRequest | 
+    parcelCreate := *openapiclient.NewParcelCreate(*openapiclient.NewParcelCreateData(interface{}(123), *openapiclient.NewPOSTParcels201ResponseDataAttributes(interface{}(1000.0), interface{}(gr)))) // ParcelCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ParcelsApi.POSTParcels(context.Background()).POSTParcelsRequest(pOSTParcelsRequest).Execute()
+    resp, r, err := apiClient.ParcelsApi.POSTParcels(context.Background()).ParcelCreate(parcelCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ParcelsApi.POSTParcels``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -536,7 +536,7 @@ Other parameters are passed through a pointer to a apiPOSTParcelsRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTParcelsRequest** | [**POSTParcelsRequest**](POSTParcelsRequest.md) |  | 
+ **parcelCreate** | [**ParcelCreate**](ParcelCreate.md) |  | 
 
 ### Return type
 

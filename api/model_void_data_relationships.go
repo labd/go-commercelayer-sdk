@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the VoidDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &VoidDataRelationships{}
-
 // VoidDataRelationships struct for VoidDataRelationships
 type VoidDataRelationships struct {
 	Order                  *AdyenPaymentDataRelationshipsOrder             `json:"order,omitempty"`
@@ -44,7 +41,7 @@ func NewVoidDataRelationshipsWithDefaults() *VoidDataRelationships {
 
 // GetOrder returns the Order field value if set, zero value otherwise.
 func (o *VoidDataRelationships) GetOrder() AdyenPaymentDataRelationshipsOrder {
-	if o == nil || IsNil(o.Order) {
+	if o == nil || o.Order == nil {
 		var ret AdyenPaymentDataRelationshipsOrder
 		return ret
 	}
@@ -54,7 +51,7 @@ func (o *VoidDataRelationships) GetOrder() AdyenPaymentDataRelationshipsOrder {
 // GetOrderOk returns a tuple with the Order field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VoidDataRelationships) GetOrderOk() (*AdyenPaymentDataRelationshipsOrder, bool) {
-	if o == nil || IsNil(o.Order) {
+	if o == nil || o.Order == nil {
 		return nil, false
 	}
 	return o.Order, true
@@ -62,7 +59,7 @@ func (o *VoidDataRelationships) GetOrderOk() (*AdyenPaymentDataRelationshipsOrde
 
 // HasOrder returns a boolean if a field has been set.
 func (o *VoidDataRelationships) HasOrder() bool {
-	if o != nil && !IsNil(o.Order) {
+	if o != nil && o.Order != nil {
 		return true
 	}
 
@@ -76,7 +73,7 @@ func (o *VoidDataRelationships) SetOrder(v AdyenPaymentDataRelationshipsOrder) {
 
 // GetReferenceAuthorization returns the ReferenceAuthorization field value if set, zero value otherwise.
 func (o *VoidDataRelationships) GetReferenceAuthorization() CaptureDataRelationshipsReferenceAuthorization {
-	if o == nil || IsNil(o.ReferenceAuthorization) {
+	if o == nil || o.ReferenceAuthorization == nil {
 		var ret CaptureDataRelationshipsReferenceAuthorization
 		return ret
 	}
@@ -86,7 +83,7 @@ func (o *VoidDataRelationships) GetReferenceAuthorization() CaptureDataRelations
 // GetReferenceAuthorizationOk returns a tuple with the ReferenceAuthorization field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VoidDataRelationships) GetReferenceAuthorizationOk() (*CaptureDataRelationshipsReferenceAuthorization, bool) {
-	if o == nil || IsNil(o.ReferenceAuthorization) {
+	if o == nil || o.ReferenceAuthorization == nil {
 		return nil, false
 	}
 	return o.ReferenceAuthorization, true
@@ -94,7 +91,7 @@ func (o *VoidDataRelationships) GetReferenceAuthorizationOk() (*CaptureDataRelat
 
 // HasReferenceAuthorization returns a boolean if a field has been set.
 func (o *VoidDataRelationships) HasReferenceAuthorization() bool {
-	if o != nil && !IsNil(o.ReferenceAuthorization) {
+	if o != nil && o.ReferenceAuthorization != nil {
 		return true
 	}
 
@@ -108,7 +105,7 @@ func (o *VoidDataRelationships) SetReferenceAuthorization(v CaptureDataRelations
 
 // GetEvents returns the Events field value if set, zero value otherwise.
 func (o *VoidDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || o.Events == nil {
 		var ret AuthorizationDataRelationshipsEvents
 		return ret
 	}
@@ -118,7 +115,7 @@ func (o *VoidDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VoidDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || o.Events == nil {
 		return nil, false
 	}
 	return o.Events, true
@@ -126,7 +123,7 @@ func (o *VoidDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEv
 
 // HasEvents returns a boolean if a field has been set.
 func (o *VoidDataRelationships) HasEvents() bool {
-	if o != nil && !IsNil(o.Events) {
+	if o != nil && o.Events != nil {
 		return true
 	}
 
@@ -139,25 +136,17 @@ func (o *VoidDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents
 }
 
 func (o VoidDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o VoidDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Order) {
+	if o.Order != nil {
 		toSerialize["order"] = o.Order
 	}
-	if !IsNil(o.ReferenceAuthorization) {
+	if o.ReferenceAuthorization != nil {
 		toSerialize["reference_authorization"] = o.ReferenceAuthorization
 	}
-	if !IsNil(o.Events) {
+	if o.Events != nil {
 		toSerialize["events"] = o.Events
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableVoidDataRelationships struct {

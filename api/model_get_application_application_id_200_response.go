@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETApplicationApplicationId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETApplicationApplicationId200Response{}
-
 // GETApplicationApplicationId200Response struct for GETApplicationApplicationId200Response
 type GETApplicationApplicationId200Response struct {
 	Data *GETApplicationApplicationId200ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewGETApplicationApplicationId200ResponseWithDefaults() *GETApplicationAppl
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *GETApplicationApplicationId200Response) GetData() GETApplicationApplicationId200ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret GETApplicationApplicationId200ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *GETApplicationApplicationId200Response) GetData() GETApplicationApplica
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GETApplicationApplicationId200Response) GetDataOk() (*GETApplicationApplicationId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *GETApplicationApplicationId200Response) GetDataOk() (*GETApplicationApp
 
 // HasData returns a boolean if a field has been set.
 func (o *GETApplicationApplicationId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *GETApplicationApplicationId200Response) SetData(v GETApplicationApplica
 }
 
 func (o GETApplicationApplicationId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETApplicationApplicationId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETApplicationApplicationId200Response struct {

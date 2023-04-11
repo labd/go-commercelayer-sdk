@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETAdyenPaymentsAdyenPaymentId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETAdyenPaymentsAdyenPaymentId200Response{}
-
 // GETAdyenPaymentsAdyenPaymentId200Response struct for GETAdyenPaymentsAdyenPaymentId200Response
 type GETAdyenPaymentsAdyenPaymentId200Response struct {
-	Data *GETAdyenPaymentsAdyenPaymentId200ResponseData `json:"data,omitempty"`
+	Data *GETAdyenPayments200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETAdyenPaymentsAdyenPaymentId200Response instantiates a new GETAdyenPaymentsAdyenPaymentId200Response object
@@ -41,9 +38,9 @@ func NewGETAdyenPaymentsAdyenPaymentId200ResponseWithDefaults() *GETAdyenPayment
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETAdyenPaymentsAdyenPaymentId200Response) GetData() GETAdyenPaymentsAdyenPaymentId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETAdyenPaymentsAdyenPaymentId200ResponseData
+func (o *GETAdyenPaymentsAdyenPaymentId200Response) GetData() GETAdyenPayments200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETAdyenPayments200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETAdyenPaymentsAdyenPaymentId200Response) GetData() GETAdyenPaymentsAd
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETAdyenPaymentsAdyenPaymentId200Response) GetDataOk() (*GETAdyenPaymentsAdyenPaymentId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETAdyenPaymentsAdyenPaymentId200Response) GetDataOk() (*GETAdyenPayments200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETAdyenPaymentsAdyenPaymentId200Response) GetDataOk() (*GETAdyenPaymen
 
 // HasData returns a boolean if a field has been set.
 func (o *GETAdyenPaymentsAdyenPaymentId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETAdyenPaymentsAdyenPaymentId200ResponseData and assigns it to the Data field.
-func (o *GETAdyenPaymentsAdyenPaymentId200Response) SetData(v GETAdyenPaymentsAdyenPaymentId200ResponseData) {
+// SetData gets a reference to the given GETAdyenPayments200ResponseDataInner and assigns it to the Data field.
+func (o *GETAdyenPaymentsAdyenPaymentId200Response) SetData(v GETAdyenPayments200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETAdyenPaymentsAdyenPaymentId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETAdyenPaymentsAdyenPaymentId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETAdyenPaymentsAdyenPaymentId200Response struct {

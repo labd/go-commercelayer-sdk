@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PATCHInventoryReturnLocationsInventoryReturnLocationIdRequestData**](PATCHInventoryReturnLocationsInventoryReturnLocationIdRequestData.md) |  | 
+**Data** | [**InventoryReturnLocationUpdateData**](InventoryReturnLocationUpdateData.md) |  | 
 
 ## Methods
 
 ### NewInventoryReturnLocationUpdate
 
-`func NewInventoryReturnLocationUpdate(data PATCHInventoryReturnLocationsInventoryReturnLocationIdRequestData, ) *InventoryReturnLocationUpdate`
+`func NewInventoryReturnLocationUpdate(data InventoryReturnLocationUpdateData, ) *InventoryReturnLocationUpdate`
 
 NewInventoryReturnLocationUpdate instantiates a new InventoryReturnLocationUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *InventoryReturnLocationUpdate) GetData() PATCHInventoryReturnLocationsInventoryReturnLocationIdRequestData`
+`func (o *InventoryReturnLocationUpdate) GetData() InventoryReturnLocationUpdateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *InventoryReturnLocationUpdate) GetDataOk() (*PATCHInventoryReturnLocationsInventoryReturnLocationIdRequestData, bool)`
+`func (o *InventoryReturnLocationUpdate) GetDataOk() (*InventoryReturnLocationUpdateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *InventoryReturnLocationUpdate) SetData(v PATCHInventoryReturnLocationsInventoryReturnLocationIdRequestData)`
+`func (o *InventoryReturnLocationUpdate) SetData(v InventoryReturnLocationUpdateData)`
 
 SetData sets Data field to given value.
 

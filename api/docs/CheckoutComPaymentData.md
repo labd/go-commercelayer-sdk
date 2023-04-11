@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes**](GETCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**GETCheckoutComPayments200ResponseDataInnerAttributes**](GETCheckoutComPayments200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentDataRelationships**](AdyenPaymentDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCheckoutComPaymentData
 
-`func NewCheckoutComPaymentData(type_ interface{}, attributes GETCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes, ) *CheckoutComPaymentData`
+`func NewCheckoutComPaymentData(type_ interface{}, attributes GETCheckoutComPayments200ResponseDataInnerAttributes, ) *CheckoutComPaymentData`
 
 NewCheckoutComPaymentData instantiates a new CheckoutComPaymentData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *CheckoutComPaymentData) GetAttributes() GETCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes`
+`func (o *CheckoutComPaymentData) GetAttributes() GETCheckoutComPayments200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CheckoutComPaymentData) GetAttributesOk() (*GETCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes, bool)`
+`func (o *CheckoutComPaymentData) GetAttributesOk() (*GETCheckoutComPayments200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CheckoutComPaymentData) SetAttributes(v GETCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes)`
+`func (o *CheckoutComPaymentData) SetAttributes(v GETCheckoutComPayments200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

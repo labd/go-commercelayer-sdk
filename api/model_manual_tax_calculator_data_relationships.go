@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the ManualTaxCalculatorDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ManualTaxCalculatorDataRelationships{}
-
 // ManualTaxCalculatorDataRelationships struct for ManualTaxCalculatorDataRelationships
 type ManualTaxCalculatorDataRelationships struct {
 	Markets     *AvalaraAccountDataRelationshipsMarkets       `json:"markets,omitempty"`
@@ -44,7 +41,7 @@ func NewManualTaxCalculatorDataRelationshipsWithDefaults() *ManualTaxCalculatorD
 
 // GetMarkets returns the Markets field value if set, zero value otherwise.
 func (o *ManualTaxCalculatorDataRelationships) GetMarkets() AvalaraAccountDataRelationshipsMarkets {
-	if o == nil || IsNil(o.Markets) {
+	if o == nil || o.Markets == nil {
 		var ret AvalaraAccountDataRelationshipsMarkets
 		return ret
 	}
@@ -54,7 +51,7 @@ func (o *ManualTaxCalculatorDataRelationships) GetMarkets() AvalaraAccountDataRe
 // GetMarketsOk returns a tuple with the Markets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManualTaxCalculatorDataRelationships) GetMarketsOk() (*AvalaraAccountDataRelationshipsMarkets, bool) {
-	if o == nil || IsNil(o.Markets) {
+	if o == nil || o.Markets == nil {
 		return nil, false
 	}
 	return o.Markets, true
@@ -62,7 +59,7 @@ func (o *ManualTaxCalculatorDataRelationships) GetMarketsOk() (*AvalaraAccountDa
 
 // HasMarkets returns a boolean if a field has been set.
 func (o *ManualTaxCalculatorDataRelationships) HasMarkets() bool {
-	if o != nil && !IsNil(o.Markets) {
+	if o != nil && o.Markets != nil {
 		return true
 	}
 
@@ -76,7 +73,7 @@ func (o *ManualTaxCalculatorDataRelationships) SetMarkets(v AvalaraAccountDataRe
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *ManualTaxCalculatorDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		var ret AvalaraAccountDataRelationshipsAttachments
 		return ret
 	}
@@ -86,7 +83,7 @@ func (o *ManualTaxCalculatorDataRelationships) GetAttachments() AvalaraAccountDa
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManualTaxCalculatorDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		return nil, false
 	}
 	return o.Attachments, true
@@ -94,7 +91,7 @@ func (o *ManualTaxCalculatorDataRelationships) GetAttachmentsOk() (*AvalaraAccou
 
 // HasAttachments returns a boolean if a field has been set.
 func (o *ManualTaxCalculatorDataRelationships) HasAttachments() bool {
-	if o != nil && !IsNil(o.Attachments) {
+	if o != nil && o.Attachments != nil {
 		return true
 	}
 
@@ -108,7 +105,7 @@ func (o *ManualTaxCalculatorDataRelationships) SetAttachments(v AvalaraAccountDa
 
 // GetTaxRules returns the TaxRules field value if set, zero value otherwise.
 func (o *ManualTaxCalculatorDataRelationships) GetTaxRules() ManualTaxCalculatorDataRelationshipsTaxRules {
-	if o == nil || IsNil(o.TaxRules) {
+	if o == nil || o.TaxRules == nil {
 		var ret ManualTaxCalculatorDataRelationshipsTaxRules
 		return ret
 	}
@@ -118,7 +115,7 @@ func (o *ManualTaxCalculatorDataRelationships) GetTaxRules() ManualTaxCalculator
 // GetTaxRulesOk returns a tuple with the TaxRules field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManualTaxCalculatorDataRelationships) GetTaxRulesOk() (*ManualTaxCalculatorDataRelationshipsTaxRules, bool) {
-	if o == nil || IsNil(o.TaxRules) {
+	if o == nil || o.TaxRules == nil {
 		return nil, false
 	}
 	return o.TaxRules, true
@@ -126,7 +123,7 @@ func (o *ManualTaxCalculatorDataRelationships) GetTaxRulesOk() (*ManualTaxCalcul
 
 // HasTaxRules returns a boolean if a field has been set.
 func (o *ManualTaxCalculatorDataRelationships) HasTaxRules() bool {
-	if o != nil && !IsNil(o.TaxRules) {
+	if o != nil && o.TaxRules != nil {
 		return true
 	}
 
@@ -139,25 +136,17 @@ func (o *ManualTaxCalculatorDataRelationships) SetTaxRules(v ManualTaxCalculator
 }
 
 func (o ManualTaxCalculatorDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o ManualTaxCalculatorDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Markets) {
+	if o.Markets != nil {
 		toSerialize["markets"] = o.Markets
 	}
-	if !IsNil(o.Attachments) {
+	if o.Attachments != nil {
 		toSerialize["attachments"] = o.Attachments
 	}
-	if !IsNil(o.TaxRules) {
+	if o.TaxRules != nil {
 		toSerialize["tax_rules"] = o.TaxRules
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableManualTaxCalculatorDataRelationships struct {

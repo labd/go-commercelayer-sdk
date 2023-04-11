@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the CheckoutComPaymentCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CheckoutComPaymentCreate{}
-
 // CheckoutComPaymentCreate struct for CheckoutComPaymentCreate
 type CheckoutComPaymentCreate struct {
-	Data POSTCheckoutComPaymentsRequestData `json:"data"`
+	Data CheckoutComPaymentCreateData `json:"data"`
 }
 
 // NewCheckoutComPaymentCreate instantiates a new CheckoutComPaymentCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCheckoutComPaymentCreate(data POSTCheckoutComPaymentsRequestData) *CheckoutComPaymentCreate {
+func NewCheckoutComPaymentCreate(data CheckoutComPaymentCreateData) *CheckoutComPaymentCreate {
 	this := CheckoutComPaymentCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewCheckoutComPaymentCreateWithDefaults() *CheckoutComPaymentCreate {
 }
 
 // GetData returns the Data field value
-func (o *CheckoutComPaymentCreate) GetData() POSTCheckoutComPaymentsRequestData {
+func (o *CheckoutComPaymentCreate) GetData() CheckoutComPaymentCreateData {
 	if o == nil {
-		var ret POSTCheckoutComPaymentsRequestData
+		var ret CheckoutComPaymentCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *CheckoutComPaymentCreate) GetData() POSTCheckoutComPaymentsRequestData 
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CheckoutComPaymentCreate) GetDataOk() (*POSTCheckoutComPaymentsRequestData, bool) {
+func (o *CheckoutComPaymentCreate) GetDataOk() (*CheckoutComPaymentCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *CheckoutComPaymentCreate) GetDataOk() (*POSTCheckoutComPaymentsRequestD
 }
 
 // SetData sets field value
-func (o *CheckoutComPaymentCreate) SetData(v POSTCheckoutComPaymentsRequestData) {
+func (o *CheckoutComPaymentCreate) SetData(v CheckoutComPaymentCreateData) {
 	o.Data = v
 }
 
 func (o CheckoutComPaymentCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o CheckoutComPaymentCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableCheckoutComPaymentCreate struct {

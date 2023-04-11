@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the ManualTaxCalculator type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ManualTaxCalculator{}
-
 // ManualTaxCalculator struct for ManualTaxCalculator
 type ManualTaxCalculator struct {
 	Data *ManualTaxCalculatorData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewManualTaxCalculatorWithDefaults() *ManualTaxCalculator {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *ManualTaxCalculator) GetData() ManualTaxCalculatorData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret ManualTaxCalculatorData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *ManualTaxCalculator) GetData() ManualTaxCalculatorData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManualTaxCalculator) GetDataOk() (*ManualTaxCalculatorData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *ManualTaxCalculator) GetDataOk() (*ManualTaxCalculatorData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *ManualTaxCalculator) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *ManualTaxCalculator) SetData(v ManualTaxCalculatorData) {
 }
 
 func (o ManualTaxCalculator) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o ManualTaxCalculator) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableManualTaxCalculator struct {

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PATCHPaypalGatewaysPaypalGatewayIdRequestData**](PATCHPaypalGatewaysPaypalGatewayIdRequestData.md) |  | 
+**Data** | [**PaypalGatewayUpdateData**](PaypalGatewayUpdateData.md) |  | 
 
 ## Methods
 
 ### NewPaypalGatewayUpdate
 
-`func NewPaypalGatewayUpdate(data PATCHPaypalGatewaysPaypalGatewayIdRequestData, ) *PaypalGatewayUpdate`
+`func NewPaypalGatewayUpdate(data PaypalGatewayUpdateData, ) *PaypalGatewayUpdate`
 
 NewPaypalGatewayUpdate instantiates a new PaypalGatewayUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *PaypalGatewayUpdate) GetData() PATCHPaypalGatewaysPaypalGatewayIdRequestData`
+`func (o *PaypalGatewayUpdate) GetData() PaypalGatewayUpdateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *PaypalGatewayUpdate) GetDataOk() (*PATCHPaypalGatewaysPaypalGatewayIdRequestData, bool)`
+`func (o *PaypalGatewayUpdate) GetDataOk() (*PaypalGatewayUpdateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *PaypalGatewayUpdate) SetData(v PATCHPaypalGatewaysPaypalGatewayIdRequestData)`
+`func (o *PaypalGatewayUpdate) SetData(v PaypalGatewayUpdateData)`
 
 SetData sets Data field to given value.
 

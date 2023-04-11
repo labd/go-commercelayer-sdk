@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *OrderSubscriptionItemsApiService) DELETEOrderSubscriptionItemsOrderSubs
 	}
 
 	localVarPath := localBasePath + "/order_subscription_items/{orderSubscriptionItemId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionItemId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionItemId, "orderSubscriptionItemId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionItemId"+"}", url.PathEscape(parameterToString(r.orderSubscriptionItemId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *OrderSubscriptionItemsApiService) DELETEOrderSubscriptionItemsOrderSubs
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -156,7 +156,7 @@ func (a *OrderSubscriptionItemsApiService) GETOrderSubscriptionIdOrderSubscripti
 	}
 
 	localVarPath := localBasePath + "/order_subscriptions/{orderSubscriptionId}/order_subscription_items"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionId, "orderSubscriptionId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterToString(r.orderSubscriptionId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *OrderSubscriptionItemsApiService) GETOrderSubscriptionIdOrderSubscripti
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *OrderSubscriptionItemsApiService) GETOrderSubscriptionItemsExecute(r Or
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -351,7 +351,7 @@ func (a *OrderSubscriptionItemsApiService) GETOrderSubscriptionItemsOrderSubscri
 	}
 
 	localVarPath := localBasePath + "/order_subscription_items/{orderSubscriptionItemId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionItemId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionItemId, "orderSubscriptionItemId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionItemId"+"}", url.PathEscape(parameterToString(r.orderSubscriptionItemId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *OrderSubscriptionItemsApiService) GETOrderSubscriptionItemsOrderSubscri
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -412,14 +412,14 @@ func (a *OrderSubscriptionItemsApiService) GETOrderSubscriptionItemsOrderSubscri
 }
 
 type OrderSubscriptionItemsApiPATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequest struct {
-	ctx                                                       context.Context
-	ApiService                                                *OrderSubscriptionItemsApiService
-	pATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequest *PATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequest
-	orderSubscriptionItemId                                   interface{}
+	ctx                         context.Context
+	ApiService                  *OrderSubscriptionItemsApiService
+	orderSubscriptionItemUpdate *OrderSubscriptionItemUpdate
+	orderSubscriptionItemId     interface{}
 }
 
-func (r OrderSubscriptionItemsApiPATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequest) PATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequest(pATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequest PATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequest) OrderSubscriptionItemsApiPATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequest {
-	r.pATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequest = &pATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequest
+func (r OrderSubscriptionItemsApiPATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequest) OrderSubscriptionItemUpdate(orderSubscriptionItemUpdate OrderSubscriptionItemUpdate) OrderSubscriptionItemsApiPATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequest {
+	r.orderSubscriptionItemUpdate = &orderSubscriptionItemUpdate
 	return r
 }
 
@@ -461,13 +461,13 @@ func (a *OrderSubscriptionItemsApiService) PATCHOrderSubscriptionItemsOrderSubsc
 	}
 
 	localVarPath := localBasePath + "/order_subscription_items/{orderSubscriptionItemId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionItemId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionItemId, "orderSubscriptionItemId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionItemId"+"}", url.PathEscape(parameterToString(r.orderSubscriptionItemId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequest is required and must be specified")
+	if r.orderSubscriptionItemUpdate == nil {
+		return localVarReturnValue, nil, reportError("orderSubscriptionItemUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -488,7 +488,7 @@ func (a *OrderSubscriptionItemsApiService) PATCHOrderSubscriptionItemsOrderSubsc
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHOrderSubscriptionItemsOrderSubscriptionItemIdRequest
+	localVarPostBody = r.orderSubscriptionItemUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -499,9 +499,9 @@ func (a *OrderSubscriptionItemsApiService) PATCHOrderSubscriptionItemsOrderSubsc
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -527,13 +527,13 @@ func (a *OrderSubscriptionItemsApiService) PATCHOrderSubscriptionItemsOrderSubsc
 }
 
 type OrderSubscriptionItemsApiPOSTOrderSubscriptionItemsRequest struct {
-	ctx                               context.Context
-	ApiService                        *OrderSubscriptionItemsApiService
-	pOSTOrderSubscriptionItemsRequest *POSTOrderSubscriptionItemsRequest
+	ctx                         context.Context
+	ApiService                  *OrderSubscriptionItemsApiService
+	orderSubscriptionItemCreate *OrderSubscriptionItemCreate
 }
 
-func (r OrderSubscriptionItemsApiPOSTOrderSubscriptionItemsRequest) POSTOrderSubscriptionItemsRequest(pOSTOrderSubscriptionItemsRequest POSTOrderSubscriptionItemsRequest) OrderSubscriptionItemsApiPOSTOrderSubscriptionItemsRequest {
-	r.pOSTOrderSubscriptionItemsRequest = &pOSTOrderSubscriptionItemsRequest
+func (r OrderSubscriptionItemsApiPOSTOrderSubscriptionItemsRequest) OrderSubscriptionItemCreate(orderSubscriptionItemCreate OrderSubscriptionItemCreate) OrderSubscriptionItemsApiPOSTOrderSubscriptionItemsRequest {
+	r.orderSubscriptionItemCreate = &orderSubscriptionItemCreate
 	return r
 }
 
@@ -577,8 +577,8 @@ func (a *OrderSubscriptionItemsApiService) POSTOrderSubscriptionItemsExecute(r O
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTOrderSubscriptionItemsRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTOrderSubscriptionItemsRequest is required and must be specified")
+	if r.orderSubscriptionItemCreate == nil {
+		return localVarReturnValue, nil, reportError("orderSubscriptionItemCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -599,7 +599,7 @@ func (a *OrderSubscriptionItemsApiService) POSTOrderSubscriptionItemsExecute(r O
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTOrderSubscriptionItemsRequest
+	localVarPostBody = r.orderSubscriptionItemCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -610,9 +610,9 @@ func (a *OrderSubscriptionItemsApiService) POSTOrderSubscriptionItemsExecute(r O
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

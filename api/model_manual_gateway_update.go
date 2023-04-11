@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the ManualGatewayUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ManualGatewayUpdate{}
-
 // ManualGatewayUpdate struct for ManualGatewayUpdate
 type ManualGatewayUpdate struct {
-	Data PATCHManualGatewaysManualGatewayIdRequestData `json:"data"`
+	Data ManualGatewayUpdateData `json:"data"`
 }
 
 // NewManualGatewayUpdate instantiates a new ManualGatewayUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewManualGatewayUpdate(data PATCHManualGatewaysManualGatewayIdRequestData) *ManualGatewayUpdate {
+func NewManualGatewayUpdate(data ManualGatewayUpdateData) *ManualGatewayUpdate {
 	this := ManualGatewayUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewManualGatewayUpdateWithDefaults() *ManualGatewayUpdate {
 }
 
 // GetData returns the Data field value
-func (o *ManualGatewayUpdate) GetData() PATCHManualGatewaysManualGatewayIdRequestData {
+func (o *ManualGatewayUpdate) GetData() ManualGatewayUpdateData {
 	if o == nil {
-		var ret PATCHManualGatewaysManualGatewayIdRequestData
+		var ret ManualGatewayUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *ManualGatewayUpdate) GetData() PATCHManualGatewaysManualGatewayIdReques
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ManualGatewayUpdate) GetDataOk() (*PATCHManualGatewaysManualGatewayIdRequestData, bool) {
+func (o *ManualGatewayUpdate) GetDataOk() (*ManualGatewayUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *ManualGatewayUpdate) GetDataOk() (*PATCHManualGatewaysManualGatewayIdRe
 }
 
 // SetData sets field value
-func (o *ManualGatewayUpdate) SetData(v PATCHManualGatewaysManualGatewayIdRequestData) {
+func (o *ManualGatewayUpdate) SetData(v ManualGatewayUpdateData) {
 	o.Data = v
 }
 
 func (o ManualGatewayUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o ManualGatewayUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableManualGatewayUpdate struct {

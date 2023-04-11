@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**POSTReturnLineItemsRequestData**](POSTReturnLineItemsRequestData.md) |  | 
+**Data** | [**ReturnLineItemCreateData**](ReturnLineItemCreateData.md) |  | 
 
 ## Methods
 
 ### NewReturnLineItemCreate
 
-`func NewReturnLineItemCreate(data POSTReturnLineItemsRequestData, ) *ReturnLineItemCreate`
+`func NewReturnLineItemCreate(data ReturnLineItemCreateData, ) *ReturnLineItemCreate`
 
 NewReturnLineItemCreate instantiates a new ReturnLineItemCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *ReturnLineItemCreate) GetData() POSTReturnLineItemsRequestData`
+`func (o *ReturnLineItemCreate) GetData() ReturnLineItemCreateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ReturnLineItemCreate) GetDataOk() (*POSTReturnLineItemsRequestData, bool)`
+`func (o *ReturnLineItemCreate) GetDataOk() (*ReturnLineItemCreateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ReturnLineItemCreate) SetData(v POSTReturnLineItemsRequestData)`
+`func (o *ReturnLineItemCreate) SetData(v ReturnLineItemCreateData)`
 
 SetData sets Data field to given value.
 

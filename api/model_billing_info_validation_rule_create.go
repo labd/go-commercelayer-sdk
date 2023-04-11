@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the BillingInfoValidationRuleCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &BillingInfoValidationRuleCreate{}
-
 // BillingInfoValidationRuleCreate struct for BillingInfoValidationRuleCreate
 type BillingInfoValidationRuleCreate struct {
-	Data POSTBillingInfoValidationRulesRequestData `json:"data"`
+	Data BillingInfoValidationRuleCreateData `json:"data"`
 }
 
 // NewBillingInfoValidationRuleCreate instantiates a new BillingInfoValidationRuleCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBillingInfoValidationRuleCreate(data POSTBillingInfoValidationRulesRequestData) *BillingInfoValidationRuleCreate {
+func NewBillingInfoValidationRuleCreate(data BillingInfoValidationRuleCreateData) *BillingInfoValidationRuleCreate {
 	this := BillingInfoValidationRuleCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewBillingInfoValidationRuleCreateWithDefaults() *BillingInfoValidationRule
 }
 
 // GetData returns the Data field value
-func (o *BillingInfoValidationRuleCreate) GetData() POSTBillingInfoValidationRulesRequestData {
+func (o *BillingInfoValidationRuleCreate) GetData() BillingInfoValidationRuleCreateData {
 	if o == nil {
-		var ret POSTBillingInfoValidationRulesRequestData
+		var ret BillingInfoValidationRuleCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *BillingInfoValidationRuleCreate) GetData() POSTBillingInfoValidationRul
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *BillingInfoValidationRuleCreate) GetDataOk() (*POSTBillingInfoValidationRulesRequestData, bool) {
+func (o *BillingInfoValidationRuleCreate) GetDataOk() (*BillingInfoValidationRuleCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *BillingInfoValidationRuleCreate) GetDataOk() (*POSTBillingInfoValidatio
 }
 
 // SetData sets field value
-func (o *BillingInfoValidationRuleCreate) SetData(v POSTBillingInfoValidationRulesRequestData) {
+func (o *BillingInfoValidationRuleCreate) SetData(v BillingInfoValidationRuleCreateData) {
 	o.Data = v
 }
 
 func (o BillingInfoValidationRuleCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o BillingInfoValidationRuleCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableBillingInfoValidationRuleCreate struct {

@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the AxerveGatewayCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AxerveGatewayCreate{}
-
 // AxerveGatewayCreate struct for AxerveGatewayCreate
 type AxerveGatewayCreate struct {
-	Data POSTAxerveGatewaysRequestData `json:"data"`
+	Data AxerveGatewayCreateData `json:"data"`
 }
 
 // NewAxerveGatewayCreate instantiates a new AxerveGatewayCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAxerveGatewayCreate(data POSTAxerveGatewaysRequestData) *AxerveGatewayCreate {
+func NewAxerveGatewayCreate(data AxerveGatewayCreateData) *AxerveGatewayCreate {
 	this := AxerveGatewayCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewAxerveGatewayCreateWithDefaults() *AxerveGatewayCreate {
 }
 
 // GetData returns the Data field value
-func (o *AxerveGatewayCreate) GetData() POSTAxerveGatewaysRequestData {
+func (o *AxerveGatewayCreate) GetData() AxerveGatewayCreateData {
 	if o == nil {
-		var ret POSTAxerveGatewaysRequestData
+		var ret AxerveGatewayCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *AxerveGatewayCreate) GetData() POSTAxerveGatewaysRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *AxerveGatewayCreate) GetDataOk() (*POSTAxerveGatewaysRequestData, bool) {
+func (o *AxerveGatewayCreate) GetDataOk() (*AxerveGatewayCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *AxerveGatewayCreate) GetDataOk() (*POSTAxerveGatewaysRequestData, bool)
 }
 
 // SetData sets field value
-func (o *AxerveGatewayCreate) SetData(v POSTAxerveGatewaysRequestData) {
+func (o *AxerveGatewayCreate) SetData(v AxerveGatewayCreateData) {
 	o.Data = v
 }
 
 func (o AxerveGatewayCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o AxerveGatewayCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableAxerveGatewayCreate struct {

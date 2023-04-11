@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETCleanupsCleanupId200ResponseData**](GETCleanupsCleanupId200ResponseData.md) |  | [optional] 
+**Data** | Pointer to [**GETCleanups200ResponseDataInner**](GETCleanups200ResponseDataInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETCleanupsCleanupId200Response) GetData() GETCleanupsCleanupId200ResponseData`
+`func (o *GETCleanupsCleanupId200Response) GetData() GETCleanups200ResponseDataInner`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETCleanupsCleanupId200Response) GetDataOk() (*GETCleanupsCleanupId200ResponseData, bool)`
+`func (o *GETCleanupsCleanupId200Response) GetDataOk() (*GETCleanups200ResponseDataInner, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETCleanupsCleanupId200Response) SetData(v GETCleanupsCleanupId200ResponseData)`
+`func (o *GETCleanupsCleanupId200Response) SetData(v GETCleanups200ResponseDataInner)`
 
 SetData sets Data field to given value.
 

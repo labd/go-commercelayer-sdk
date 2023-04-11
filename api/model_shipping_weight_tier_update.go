@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the ShippingWeightTierUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ShippingWeightTierUpdate{}
-
 // ShippingWeightTierUpdate struct for ShippingWeightTierUpdate
 type ShippingWeightTierUpdate struct {
-	Data PATCHShippingWeightTiersShippingWeightTierIdRequestData `json:"data"`
+	Data ShippingWeightTierUpdateData `json:"data"`
 }
 
 // NewShippingWeightTierUpdate instantiates a new ShippingWeightTierUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShippingWeightTierUpdate(data PATCHShippingWeightTiersShippingWeightTierIdRequestData) *ShippingWeightTierUpdate {
+func NewShippingWeightTierUpdate(data ShippingWeightTierUpdateData) *ShippingWeightTierUpdate {
 	this := ShippingWeightTierUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewShippingWeightTierUpdateWithDefaults() *ShippingWeightTierUpdate {
 }
 
 // GetData returns the Data field value
-func (o *ShippingWeightTierUpdate) GetData() PATCHShippingWeightTiersShippingWeightTierIdRequestData {
+func (o *ShippingWeightTierUpdate) GetData() ShippingWeightTierUpdateData {
 	if o == nil {
-		var ret PATCHShippingWeightTiersShippingWeightTierIdRequestData
+		var ret ShippingWeightTierUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *ShippingWeightTierUpdate) GetData() PATCHShippingWeightTiersShippingWei
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ShippingWeightTierUpdate) GetDataOk() (*PATCHShippingWeightTiersShippingWeightTierIdRequestData, bool) {
+func (o *ShippingWeightTierUpdate) GetDataOk() (*ShippingWeightTierUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *ShippingWeightTierUpdate) GetDataOk() (*PATCHShippingWeightTiersShippin
 }
 
 // SetData sets field value
-func (o *ShippingWeightTierUpdate) SetData(v PATCHShippingWeightTiersShippingWeightTierIdRequestData) {
+func (o *ShippingWeightTierUpdate) SetData(v ShippingWeightTierUpdateData) {
 	o.Data = v
 }
 
 func (o ShippingWeightTierUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o ShippingWeightTierUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableShippingWeightTierUpdate struct {

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PATCHSubscriptionModelsSubscriptionModelIdRequestData**](PATCHSubscriptionModelsSubscriptionModelIdRequestData.md) |  | 
+**Data** | [**SubscriptionModelUpdateData**](SubscriptionModelUpdateData.md) |  | 
 
 ## Methods
 
 ### NewSubscriptionModelUpdate
 
-`func NewSubscriptionModelUpdate(data PATCHSubscriptionModelsSubscriptionModelIdRequestData, ) *SubscriptionModelUpdate`
+`func NewSubscriptionModelUpdate(data SubscriptionModelUpdateData, ) *SubscriptionModelUpdate`
 
 NewSubscriptionModelUpdate instantiates a new SubscriptionModelUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *SubscriptionModelUpdate) GetData() PATCHSubscriptionModelsSubscriptionModelIdRequestData`
+`func (o *SubscriptionModelUpdate) GetData() SubscriptionModelUpdateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *SubscriptionModelUpdate) GetDataOk() (*PATCHSubscriptionModelsSubscriptionModelIdRequestData, bool)`
+`func (o *SubscriptionModelUpdate) GetDataOk() (*SubscriptionModelUpdateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *SubscriptionModelUpdate) SetData(v PATCHSubscriptionModelsSubscriptionModelIdRequestData)`
+`func (o *SubscriptionModelUpdate) SetData(v SubscriptionModelUpdateData)`
 
 SetData sets Data field to given value.
 

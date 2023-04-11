@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the PriceFrequencyTierDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PriceFrequencyTierDataRelationships{}
-
 // PriceFrequencyTierDataRelationships struct for PriceFrequencyTierDataRelationships
 type PriceFrequencyTierDataRelationships struct {
 	Price       *PriceFrequencyTierDataRelationshipsPrice   `json:"price,omitempty"`
@@ -44,7 +41,7 @@ func NewPriceFrequencyTierDataRelationshipsWithDefaults() *PriceFrequencyTierDat
 
 // GetPrice returns the Price field value if set, zero value otherwise.
 func (o *PriceFrequencyTierDataRelationships) GetPrice() PriceFrequencyTierDataRelationshipsPrice {
-	if o == nil || IsNil(o.Price) {
+	if o == nil || o.Price == nil {
 		var ret PriceFrequencyTierDataRelationshipsPrice
 		return ret
 	}
@@ -54,7 +51,7 @@ func (o *PriceFrequencyTierDataRelationships) GetPrice() PriceFrequencyTierDataR
 // GetPriceOk returns a tuple with the Price field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PriceFrequencyTierDataRelationships) GetPriceOk() (*PriceFrequencyTierDataRelationshipsPrice, bool) {
-	if o == nil || IsNil(o.Price) {
+	if o == nil || o.Price == nil {
 		return nil, false
 	}
 	return o.Price, true
@@ -62,7 +59,7 @@ func (o *PriceFrequencyTierDataRelationships) GetPriceOk() (*PriceFrequencyTierD
 
 // HasPrice returns a boolean if a field has been set.
 func (o *PriceFrequencyTierDataRelationships) HasPrice() bool {
-	if o != nil && !IsNil(o.Price) {
+	if o != nil && o.Price != nil {
 		return true
 	}
 
@@ -76,7 +73,7 @@ func (o *PriceFrequencyTierDataRelationships) SetPrice(v PriceFrequencyTierDataR
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *PriceFrequencyTierDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		var ret AvalaraAccountDataRelationshipsAttachments
 		return ret
 	}
@@ -86,7 +83,7 @@ func (o *PriceFrequencyTierDataRelationships) GetAttachments() AvalaraAccountDat
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PriceFrequencyTierDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		return nil, false
 	}
 	return o.Attachments, true
@@ -94,7 +91,7 @@ func (o *PriceFrequencyTierDataRelationships) GetAttachmentsOk() (*AvalaraAccoun
 
 // HasAttachments returns a boolean if a field has been set.
 func (o *PriceFrequencyTierDataRelationships) HasAttachments() bool {
-	if o != nil && !IsNil(o.Attachments) {
+	if o != nil && o.Attachments != nil {
 		return true
 	}
 
@@ -108,7 +105,7 @@ func (o *PriceFrequencyTierDataRelationships) SetAttachments(v AvalaraAccountDat
 
 // GetEvents returns the Events field value if set, zero value otherwise.
 func (o *PriceFrequencyTierDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || o.Events == nil {
 		var ret AuthorizationDataRelationshipsEvents
 		return ret
 	}
@@ -118,7 +115,7 @@ func (o *PriceFrequencyTierDataRelationships) GetEvents() AuthorizationDataRelat
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PriceFrequencyTierDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || o.Events == nil {
 		return nil, false
 	}
 	return o.Events, true
@@ -126,7 +123,7 @@ func (o *PriceFrequencyTierDataRelationships) GetEventsOk() (*AuthorizationDataR
 
 // HasEvents returns a boolean if a field has been set.
 func (o *PriceFrequencyTierDataRelationships) HasEvents() bool {
-	if o != nil && !IsNil(o.Events) {
+	if o != nil && o.Events != nil {
 		return true
 	}
 
@@ -139,25 +136,17 @@ func (o *PriceFrequencyTierDataRelationships) SetEvents(v AuthorizationDataRelat
 }
 
 func (o PriceFrequencyTierDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o PriceFrequencyTierDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Price) {
+	if o.Price != nil {
 		toSerialize["price"] = o.Price
 	}
-	if !IsNil(o.Attachments) {
+	if o.Attachments != nil {
 		toSerialize["attachments"] = o.Attachments
 	}
-	if !IsNil(o.Events) {
+	if o.Events != nil {
 		toSerialize["events"] = o.Events
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePriceFrequencyTierDataRelationships struct {

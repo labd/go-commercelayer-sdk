@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *LineItemsApiService) DELETELineItemsLineItemIdExecute(r LineItemsApiDEL
 	}
 
 	localVarPath := localBasePath + "/line_items/{lineItemId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterValueToString(r.lineItemId, "lineItemId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterToString(r.lineItemId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *LineItemsApiService) DELETELineItemsLineItemIdExecute(r LineItemsApiDEL
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -156,7 +156,7 @@ func (a *LineItemsApiService) GETLineItemOptionIdLineItemExecute(r LineItemsApiG
 	}
 
 	localVarPath := localBasePath + "/line_item_options/{lineItemOptionId}/line_item"
-	localVarPath = strings.Replace(localVarPath, "{"+"lineItemOptionId"+"}", url.PathEscape(parameterValueToString(r.lineItemOptionId, "lineItemOptionId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemOptionId"+"}", url.PathEscape(parameterToString(r.lineItemOptionId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *LineItemsApiService) GETLineItemOptionIdLineItemExecute(r LineItemsApiG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *LineItemsApiService) GETLineItemsExecute(r LineItemsApiGETLineItemsRequ
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -351,7 +351,7 @@ func (a *LineItemsApiService) GETLineItemsLineItemIdExecute(r LineItemsApiGETLin
 	}
 
 	localVarPath := localBasePath + "/line_items/{lineItemId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterValueToString(r.lineItemId, "lineItemId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterToString(r.lineItemId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *LineItemsApiService) GETLineItemsLineItemIdExecute(r LineItemsApiGETLin
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -452,7 +452,7 @@ func (a *LineItemsApiService) GETOrderIdLineItemsExecute(r LineItemsApiGETOrderI
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/line_items"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -485,9 +485,9 @@ func (a *LineItemsApiService) GETOrderIdLineItemsExecute(r LineItemsApiGETOrderI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -544,7 +544,7 @@ func (a *LineItemsApiService) GETReturnLineItemIdLineItemExecute(r LineItemsApiG
 	}
 
 	localVarPath := localBasePath + "/return_line_items/{returnLineItemId}/line_item"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnLineItemId"+"}", url.PathEscape(parameterValueToString(r.returnLineItemId, "returnLineItemId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnLineItemId"+"}", url.PathEscape(parameterToString(r.returnLineItemId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -577,9 +577,9 @@ func (a *LineItemsApiService) GETReturnLineItemIdLineItemExecute(r LineItemsApiG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -636,7 +636,7 @@ func (a *LineItemsApiService) GETStockLineItemIdLineItemExecute(r LineItemsApiGE
 	}
 
 	localVarPath := localBasePath + "/stock_line_items/{stockLineItemId}/line_item"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockLineItemId"+"}", url.PathEscape(parameterValueToString(r.stockLineItemId, "stockLineItemId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockLineItemId"+"}", url.PathEscape(parameterToString(r.stockLineItemId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -669,9 +669,9 @@ func (a *LineItemsApiService) GETStockLineItemIdLineItemExecute(r LineItemsApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -728,7 +728,7 @@ func (a *LineItemsApiService) GETStockTransferIdLineItemExecute(r LineItemsApiGE
 	}
 
 	localVarPath := localBasePath + "/stock_transfers/{stockTransferId}/line_item"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterValueToString(r.stockTransferId, "stockTransferId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterToString(r.stockTransferId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -761,9 +761,9 @@ func (a *LineItemsApiService) GETStockTransferIdLineItemExecute(r LineItemsApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -780,14 +780,14 @@ func (a *LineItemsApiService) GETStockTransferIdLineItemExecute(r LineItemsApiGE
 }
 
 type LineItemsApiPATCHLineItemsLineItemIdRequest struct {
-	ctx                             context.Context
-	ApiService                      *LineItemsApiService
-	pATCHLineItemsLineItemIdRequest *PATCHLineItemsLineItemIdRequest
-	lineItemId                      interface{}
+	ctx            context.Context
+	ApiService     *LineItemsApiService
+	lineItemUpdate *LineItemUpdate
+	lineItemId     interface{}
 }
 
-func (r LineItemsApiPATCHLineItemsLineItemIdRequest) PATCHLineItemsLineItemIdRequest(pATCHLineItemsLineItemIdRequest PATCHLineItemsLineItemIdRequest) LineItemsApiPATCHLineItemsLineItemIdRequest {
-	r.pATCHLineItemsLineItemIdRequest = &pATCHLineItemsLineItemIdRequest
+func (r LineItemsApiPATCHLineItemsLineItemIdRequest) LineItemUpdate(lineItemUpdate LineItemUpdate) LineItemsApiPATCHLineItemsLineItemIdRequest {
+	r.lineItemUpdate = &lineItemUpdate
 	return r
 }
 
@@ -829,13 +829,13 @@ func (a *LineItemsApiService) PATCHLineItemsLineItemIdExecute(r LineItemsApiPATC
 	}
 
 	localVarPath := localBasePath + "/line_items/{lineItemId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterValueToString(r.lineItemId, "lineItemId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterToString(r.lineItemId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHLineItemsLineItemIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHLineItemsLineItemIdRequest is required and must be specified")
+	if r.lineItemUpdate == nil {
+		return localVarReturnValue, nil, reportError("lineItemUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -856,7 +856,7 @@ func (a *LineItemsApiService) PATCHLineItemsLineItemIdExecute(r LineItemsApiPATC
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHLineItemsLineItemIdRequest
+	localVarPostBody = r.lineItemUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -867,9 +867,9 @@ func (a *LineItemsApiService) PATCHLineItemsLineItemIdExecute(r LineItemsApiPATC
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -895,13 +895,13 @@ func (a *LineItemsApiService) PATCHLineItemsLineItemIdExecute(r LineItemsApiPATC
 }
 
 type LineItemsApiPOSTLineItemsRequest struct {
-	ctx                  context.Context
-	ApiService           *LineItemsApiService
-	pOSTLineItemsRequest *POSTLineItemsRequest
+	ctx            context.Context
+	ApiService     *LineItemsApiService
+	lineItemCreate *LineItemCreate
 }
 
-func (r LineItemsApiPOSTLineItemsRequest) POSTLineItemsRequest(pOSTLineItemsRequest POSTLineItemsRequest) LineItemsApiPOSTLineItemsRequest {
-	r.pOSTLineItemsRequest = &pOSTLineItemsRequest
+func (r LineItemsApiPOSTLineItemsRequest) LineItemCreate(lineItemCreate LineItemCreate) LineItemsApiPOSTLineItemsRequest {
+	r.lineItemCreate = &lineItemCreate
 	return r
 }
 
@@ -945,8 +945,8 @@ func (a *LineItemsApiService) POSTLineItemsExecute(r LineItemsApiPOSTLineItemsRe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTLineItemsRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTLineItemsRequest is required and must be specified")
+	if r.lineItemCreate == nil {
+		return localVarReturnValue, nil, reportError("lineItemCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -967,7 +967,7 @@ func (a *LineItemsApiService) POSTLineItemsExecute(r LineItemsApiPOSTLineItemsRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTLineItemsRequest
+	localVarPostBody = r.lineItemCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -978,9 +978,9 @@ func (a *LineItemsApiService) POSTLineItemsExecute(r LineItemsApiPOSTLineItemsRe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

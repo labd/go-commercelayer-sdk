@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the TaxCategoryUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &TaxCategoryUpdate{}
-
 // TaxCategoryUpdate struct for TaxCategoryUpdate
 type TaxCategoryUpdate struct {
-	Data PATCHTaxCategoriesTaxCategoryIdRequestData `json:"data"`
+	Data TaxCategoryUpdateData `json:"data"`
 }
 
 // NewTaxCategoryUpdate instantiates a new TaxCategoryUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTaxCategoryUpdate(data PATCHTaxCategoriesTaxCategoryIdRequestData) *TaxCategoryUpdate {
+func NewTaxCategoryUpdate(data TaxCategoryUpdateData) *TaxCategoryUpdate {
 	this := TaxCategoryUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewTaxCategoryUpdateWithDefaults() *TaxCategoryUpdate {
 }
 
 // GetData returns the Data field value
-func (o *TaxCategoryUpdate) GetData() PATCHTaxCategoriesTaxCategoryIdRequestData {
+func (o *TaxCategoryUpdate) GetData() TaxCategoryUpdateData {
 	if o == nil {
-		var ret PATCHTaxCategoriesTaxCategoryIdRequestData
+		var ret TaxCategoryUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *TaxCategoryUpdate) GetData() PATCHTaxCategoriesTaxCategoryIdRequestData
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *TaxCategoryUpdate) GetDataOk() (*PATCHTaxCategoriesTaxCategoryIdRequestData, bool) {
+func (o *TaxCategoryUpdate) GetDataOk() (*TaxCategoryUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *TaxCategoryUpdate) GetDataOk() (*PATCHTaxCategoriesTaxCategoryIdRequest
 }
 
 // SetData sets field value
-func (o *TaxCategoryUpdate) SetData(v PATCHTaxCategoriesTaxCategoryIdRequestData) {
+func (o *TaxCategoryUpdate) SetData(v TaxCategoryUpdateData) {
 	o.Data = v
 }
 
 func (o TaxCategoryUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o TaxCategoryUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableTaxCategoryUpdate struct {

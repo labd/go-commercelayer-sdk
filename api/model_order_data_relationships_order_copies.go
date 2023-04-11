@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the OrderDataRelationshipsOrderCopies type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &OrderDataRelationshipsOrderCopies{}
-
 // OrderDataRelationshipsOrderCopies struct for OrderDataRelationshipsOrderCopies
 type OrderDataRelationshipsOrderCopies struct {
 	Data *OrderSubscriptionDataRelationshipsOrderCopiesData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewOrderDataRelationshipsOrderCopiesWithDefaults() *OrderDataRelationshipsO
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *OrderDataRelationshipsOrderCopies) GetData() OrderSubscriptionDataRelationshipsOrderCopiesData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret OrderSubscriptionDataRelationshipsOrderCopiesData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *OrderDataRelationshipsOrderCopies) GetData() OrderSubscriptionDataRelat
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OrderDataRelationshipsOrderCopies) GetDataOk() (*OrderSubscriptionDataRelationshipsOrderCopiesData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *OrderDataRelationshipsOrderCopies) GetDataOk() (*OrderSubscriptionDataR
 
 // HasData returns a boolean if a field has been set.
 func (o *OrderDataRelationshipsOrderCopies) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *OrderDataRelationshipsOrderCopies) SetData(v OrderSubscriptionDataRelat
 }
 
 func (o OrderDataRelationshipsOrderCopies) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o OrderDataRelationshipsOrderCopies) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableOrderDataRelationshipsOrderCopies struct {

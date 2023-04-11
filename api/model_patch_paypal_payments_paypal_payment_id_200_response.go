@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the PATCHPaypalPaymentsPaypalPaymentId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PATCHPaypalPaymentsPaypalPaymentId200Response{}
-
 // PATCHPaypalPaymentsPaypalPaymentId200Response struct for PATCHPaypalPaymentsPaypalPaymentId200Response
 type PATCHPaypalPaymentsPaypalPaymentId200Response struct {
 	Data *PATCHPaypalPaymentsPaypalPaymentId200ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPATCHPaypalPaymentsPaypalPaymentId200ResponseWithDefaults() *PATCHPaypal
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *PATCHPaypalPaymentsPaypalPaymentId200Response) GetData() PATCHPaypalPaymentsPaypalPaymentId200ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret PATCHPaypalPaymentsPaypalPaymentId200ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *PATCHPaypalPaymentsPaypalPaymentId200Response) GetData() PATCHPaypalPay
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHPaypalPaymentsPaypalPaymentId200Response) GetDataOk() (*PATCHPaypalPaymentsPaypalPaymentId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *PATCHPaypalPaymentsPaypalPaymentId200Response) GetDataOk() (*PATCHPaypa
 
 // HasData returns a boolean if a field has been set.
 func (o *PATCHPaypalPaymentsPaypalPaymentId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *PATCHPaypalPaymentsPaypalPaymentId200Response) SetData(v PATCHPaypalPay
 }
 
 func (o PATCHPaypalPaymentsPaypalPaymentId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o PATCHPaypalPaymentsPaypalPaymentId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePATCHPaypalPaymentsPaypalPaymentId200Response struct {

@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETPaypalGatewaysPaypalGatewayId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETPaypalGatewaysPaypalGatewayId200Response{}
-
 // GETPaypalGatewaysPaypalGatewayId200Response struct for GETPaypalGatewaysPaypalGatewayId200Response
 type GETPaypalGatewaysPaypalGatewayId200Response struct {
-	Data *GETPaypalGatewaysPaypalGatewayId200ResponseData `json:"data,omitempty"`
+	Data *GETPaypalGateways200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETPaypalGatewaysPaypalGatewayId200Response instantiates a new GETPaypalGatewaysPaypalGatewayId200Response object
@@ -41,9 +38,9 @@ func NewGETPaypalGatewaysPaypalGatewayId200ResponseWithDefaults() *GETPaypalGate
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETPaypalGatewaysPaypalGatewayId200Response) GetData() GETPaypalGatewaysPaypalGatewayId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETPaypalGatewaysPaypalGatewayId200ResponseData
+func (o *GETPaypalGatewaysPaypalGatewayId200Response) GetData() GETPaypalGateways200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETPaypalGateways200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETPaypalGatewaysPaypalGatewayId200Response) GetData() GETPaypalGateway
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETPaypalGatewaysPaypalGatewayId200Response) GetDataOk() (*GETPaypalGatewaysPaypalGatewayId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETPaypalGatewaysPaypalGatewayId200Response) GetDataOk() (*GETPaypalGateways200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETPaypalGatewaysPaypalGatewayId200Response) GetDataOk() (*GETPaypalGat
 
 // HasData returns a boolean if a field has been set.
 func (o *GETPaypalGatewaysPaypalGatewayId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETPaypalGatewaysPaypalGatewayId200ResponseData and assigns it to the Data field.
-func (o *GETPaypalGatewaysPaypalGatewayId200Response) SetData(v GETPaypalGatewaysPaypalGatewayId200ResponseData) {
+// SetData gets a reference to the given GETPaypalGateways200ResponseDataInner and assigns it to the Data field.
+func (o *GETPaypalGatewaysPaypalGatewayId200Response) SetData(v GETPaypalGateways200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETPaypalGatewaysPaypalGatewayId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETPaypalGatewaysPaypalGatewayId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETPaypalGatewaysPaypalGatewayId200Response struct {

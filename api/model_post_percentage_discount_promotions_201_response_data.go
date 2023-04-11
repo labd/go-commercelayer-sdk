@@ -15,18 +15,15 @@ import (
 	"encoding/json"
 )
 
-// checks if the POSTPercentageDiscountPromotions201ResponseData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &POSTPercentageDiscountPromotions201ResponseData{}
-
 // POSTPercentageDiscountPromotions201ResponseData struct for POSTPercentageDiscountPromotions201ResponseData
 type POSTPercentageDiscountPromotions201ResponseData struct {
 	// The resource's id
 	Id interface{} `json:"id,omitempty"`
 	// The resource's type
-	Type          interface{}                                            `json:"type,omitempty"`
-	Links         *POSTAddresses201ResponseDataLinks                     `json:"links,omitempty"`
-	Attributes    *POSTPercentageDiscountPromotionsRequestDataAttributes `json:"attributes,omitempty"`
-	Relationships *POSTFixedPricePromotions201ResponseDataRelationships  `json:"relationships,omitempty"`
+	Type          interface{}                                                `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks                     `json:"links,omitempty"`
+	Attributes    *POSTPercentageDiscountPromotions201ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *GETFixedPricePromotions200ResponseDataInnerRelationships  `json:"relationships,omitempty"`
 }
 
 // NewPOSTPercentageDiscountPromotions201ResponseData instantiates a new POSTPercentageDiscountPromotions201ResponseData object
@@ -59,7 +56,7 @@ func (o *POSTPercentageDiscountPromotions201ResponseData) GetId() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTPercentageDiscountPromotions201ResponseData) GetIdOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Id) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
 	return &o.Id, true
@@ -67,7 +64,7 @@ func (o *POSTPercentageDiscountPromotions201ResponseData) GetIdOk() (*interface{
 
 // HasId returns a boolean if a field has been set.
 func (o *POSTPercentageDiscountPromotions201ResponseData) HasId() bool {
-	if o != nil && IsNil(o.Id) {
+	if o != nil && o.Id != nil {
 		return true
 	}
 
@@ -92,7 +89,7 @@ func (o *POSTPercentageDiscountPromotions201ResponseData) GetType() interface{} 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTPercentageDiscountPromotions201ResponseData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -100,7 +97,7 @@ func (o *POSTPercentageDiscountPromotions201ResponseData) GetTypeOk() (*interfac
 
 // HasType returns a boolean if a field has been set.
 func (o *POSTPercentageDiscountPromotions201ResponseData) HasType() bool {
-	if o != nil && IsNil(o.Type) {
+	if o != nil && o.Type != nil {
 		return true
 	}
 
@@ -113,9 +110,9 @@ func (o *POSTPercentageDiscountPromotions201ResponseData) SetType(v interface{})
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *POSTPercentageDiscountPromotions201ResponseData) GetLinks() POSTAddresses201ResponseDataLinks {
-	if o == nil || IsNil(o.Links) {
-		var ret POSTAddresses201ResponseDataLinks
+func (o *POSTPercentageDiscountPromotions201ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks {
+	if o == nil || o.Links == nil {
+		var ret GETAddresses200ResponseDataInnerLinks
 		return ret
 	}
 	return *o.Links
@@ -123,8 +120,8 @@ func (o *POSTPercentageDiscountPromotions201ResponseData) GetLinks() POSTAddress
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTPercentageDiscountPromotions201ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool) {
-	if o == nil || IsNil(o.Links) {
+func (o *POSTPercentageDiscountPromotions201ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool) {
+	if o == nil || o.Links == nil {
 		return nil, false
 	}
 	return o.Links, true
@@ -132,22 +129,22 @@ func (o *POSTPercentageDiscountPromotions201ResponseData) GetLinksOk() (*POSTAdd
 
 // HasLinks returns a boolean if a field has been set.
 func (o *POSTPercentageDiscountPromotions201ResponseData) HasLinks() bool {
-	if o != nil && !IsNil(o.Links) {
+	if o != nil && o.Links != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetLinks gets a reference to the given POSTAddresses201ResponseDataLinks and assigns it to the Links field.
-func (o *POSTPercentageDiscountPromotions201ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks) {
+// SetLinks gets a reference to the given GETAddresses200ResponseDataInnerLinks and assigns it to the Links field.
+func (o *POSTPercentageDiscountPromotions201ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks) {
 	o.Links = &v
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *POSTPercentageDiscountPromotions201ResponseData) GetAttributes() POSTPercentageDiscountPromotionsRequestDataAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret POSTPercentageDiscountPromotionsRequestDataAttributes
+func (o *POSTPercentageDiscountPromotions201ResponseData) GetAttributes() POSTPercentageDiscountPromotions201ResponseDataAttributes {
+	if o == nil || o.Attributes == nil {
+		var ret POSTPercentageDiscountPromotions201ResponseDataAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -155,8 +152,8 @@ func (o *POSTPercentageDiscountPromotions201ResponseData) GetAttributes() POSTPe
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTPercentageDiscountPromotions201ResponseData) GetAttributesOk() (*POSTPercentageDiscountPromotionsRequestDataAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *POSTPercentageDiscountPromotions201ResponseData) GetAttributesOk() (*POSTPercentageDiscountPromotions201ResponseDataAttributes, bool) {
+	if o == nil || o.Attributes == nil {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -164,22 +161,22 @@ func (o *POSTPercentageDiscountPromotions201ResponseData) GetAttributesOk() (*PO
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *POSTPercentageDiscountPromotions201ResponseData) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && o.Attributes != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given POSTPercentageDiscountPromotionsRequestDataAttributes and assigns it to the Attributes field.
-func (o *POSTPercentageDiscountPromotions201ResponseData) SetAttributes(v POSTPercentageDiscountPromotionsRequestDataAttributes) {
+// SetAttributes gets a reference to the given POSTPercentageDiscountPromotions201ResponseDataAttributes and assigns it to the Attributes field.
+func (o *POSTPercentageDiscountPromotions201ResponseData) SetAttributes(v POSTPercentageDiscountPromotions201ResponseDataAttributes) {
 	o.Attributes = &v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *POSTPercentageDiscountPromotions201ResponseData) GetRelationships() POSTFixedPricePromotions201ResponseDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
-		var ret POSTFixedPricePromotions201ResponseDataRelationships
+func (o *POSTPercentageDiscountPromotions201ResponseData) GetRelationships() GETFixedPricePromotions200ResponseDataInnerRelationships {
+	if o == nil || o.Relationships == nil {
+		var ret GETFixedPricePromotions200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -187,8 +184,8 @@ func (o *POSTPercentageDiscountPromotions201ResponseData) GetRelationships() POS
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTPercentageDiscountPromotions201ResponseData) GetRelationshipsOk() (*POSTFixedPricePromotions201ResponseDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+func (o *POSTPercentageDiscountPromotions201ResponseData) GetRelationshipsOk() (*GETFixedPricePromotions200ResponseDataInnerRelationships, bool) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -196,27 +193,19 @@ func (o *POSTPercentageDiscountPromotions201ResponseData) GetRelationshipsOk() (
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *POSTPercentageDiscountPromotions201ResponseData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTFixedPricePromotions201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *POSTPercentageDiscountPromotions201ResponseData) SetRelationships(v POSTFixedPricePromotions201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given GETFixedPricePromotions200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *POSTPercentageDiscountPromotions201ResponseData) SetRelationships(v GETFixedPricePromotions200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 
 func (o POSTPercentageDiscountPromotions201ResponseData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o POSTPercentageDiscountPromotions201ResponseData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
@@ -224,16 +213,16 @@ func (o POSTPercentageDiscountPromotions201ResponseData) ToMap() (map[string]int
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if !IsNil(o.Links) {
+	if o.Links != nil {
 		toSerialize["links"] = o.Links
 	}
-	if !IsNil(o.Attributes) {
+	if o.Attributes != nil {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !IsNil(o.Relationships) {
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePOSTPercentageDiscountPromotions201ResponseData struct {

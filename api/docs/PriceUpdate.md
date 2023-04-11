@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PATCHPricesPriceIdRequestData**](PATCHPricesPriceIdRequestData.md) |  | 
+**Data** | [**PriceUpdateData**](PriceUpdateData.md) |  | 
 
 ## Methods
 
 ### NewPriceUpdate
 
-`func NewPriceUpdate(data PATCHPricesPriceIdRequestData, ) *PriceUpdate`
+`func NewPriceUpdate(data PriceUpdateData, ) *PriceUpdate`
 
 NewPriceUpdate instantiates a new PriceUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *PriceUpdate) GetData() PATCHPricesPriceIdRequestData`
+`func (o *PriceUpdate) GetData() PriceUpdateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *PriceUpdate) GetDataOk() (*PATCHPricesPriceIdRequestData, bool)`
+`func (o *PriceUpdate) GetDataOk() (*PriceUpdateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *PriceUpdate) SetData(v PATCHPricesPriceIdRequestData)`
+`func (o *PriceUpdate) SetData(v PriceUpdateData)`
 
 SetData sets Data field to given value.
 

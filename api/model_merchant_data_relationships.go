@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the MerchantDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &MerchantDataRelationships{}
-
 // MerchantDataRelationships struct for MerchantDataRelationships
 type MerchantDataRelationships struct {
 	Address     *BingGeocoderDataRelationshipsAddresses     `json:"address,omitempty"`
@@ -43,7 +40,7 @@ func NewMerchantDataRelationshipsWithDefaults() *MerchantDataRelationships {
 
 // GetAddress returns the Address field value if set, zero value otherwise.
 func (o *MerchantDataRelationships) GetAddress() BingGeocoderDataRelationshipsAddresses {
-	if o == nil || IsNil(o.Address) {
+	if o == nil || o.Address == nil {
 		var ret BingGeocoderDataRelationshipsAddresses
 		return ret
 	}
@@ -53,7 +50,7 @@ func (o *MerchantDataRelationships) GetAddress() BingGeocoderDataRelationshipsAd
 // GetAddressOk returns a tuple with the Address field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MerchantDataRelationships) GetAddressOk() (*BingGeocoderDataRelationshipsAddresses, bool) {
-	if o == nil || IsNil(o.Address) {
+	if o == nil || o.Address == nil {
 		return nil, false
 	}
 	return o.Address, true
@@ -61,7 +58,7 @@ func (o *MerchantDataRelationships) GetAddressOk() (*BingGeocoderDataRelationshi
 
 // HasAddress returns a boolean if a field has been set.
 func (o *MerchantDataRelationships) HasAddress() bool {
-	if o != nil && !IsNil(o.Address) {
+	if o != nil && o.Address != nil {
 		return true
 	}
 
@@ -75,7 +72,7 @@ func (o *MerchantDataRelationships) SetAddress(v BingGeocoderDataRelationshipsAd
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *MerchantDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		var ret AvalaraAccountDataRelationshipsAttachments
 		return ret
 	}
@@ -85,7 +82,7 @@ func (o *MerchantDataRelationships) GetAttachments() AvalaraAccountDataRelations
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MerchantDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		return nil, false
 	}
 	return o.Attachments, true
@@ -93,7 +90,7 @@ func (o *MerchantDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelat
 
 // HasAttachments returns a boolean if a field has been set.
 func (o *MerchantDataRelationships) HasAttachments() bool {
-	if o != nil && !IsNil(o.Attachments) {
+	if o != nil && o.Attachments != nil {
 		return true
 	}
 
@@ -106,22 +103,14 @@ func (o *MerchantDataRelationships) SetAttachments(v AvalaraAccountDataRelations
 }
 
 func (o MerchantDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o MerchantDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Address) {
+	if o.Address != nil {
 		toSerialize["address"] = o.Address
 	}
-	if !IsNil(o.Attachments) {
+	if o.Attachments != nil {
 		toSerialize["attachments"] = o.Attachments
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableMerchantDataRelationships struct {

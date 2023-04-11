@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the GiftCardDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GiftCardDataRelationships{}
-
 // GiftCardDataRelationships struct for GiftCardDataRelationships
 type GiftCardDataRelationships struct {
 	Market            *AvalaraAccountDataRelationshipsMarkets     `json:"market,omitempty"`
@@ -45,7 +42,7 @@ func NewGiftCardDataRelationshipsWithDefaults() *GiftCardDataRelationships {
 
 // GetMarket returns the Market field value if set, zero value otherwise.
 func (o *GiftCardDataRelationships) GetMarket() AvalaraAccountDataRelationshipsMarkets {
-	if o == nil || IsNil(o.Market) {
+	if o == nil || o.Market == nil {
 		var ret AvalaraAccountDataRelationshipsMarkets
 		return ret
 	}
@@ -55,7 +52,7 @@ func (o *GiftCardDataRelationships) GetMarket() AvalaraAccountDataRelationshipsM
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GiftCardDataRelationships) GetMarketOk() (*AvalaraAccountDataRelationshipsMarkets, bool) {
-	if o == nil || IsNil(o.Market) {
+	if o == nil || o.Market == nil {
 		return nil, false
 	}
 	return o.Market, true
@@ -63,7 +60,7 @@ func (o *GiftCardDataRelationships) GetMarketOk() (*AvalaraAccountDataRelationsh
 
 // HasMarket returns a boolean if a field has been set.
 func (o *GiftCardDataRelationships) HasMarket() bool {
-	if o != nil && !IsNil(o.Market) {
+	if o != nil && o.Market != nil {
 		return true
 	}
 
@@ -77,7 +74,7 @@ func (o *GiftCardDataRelationships) SetMarket(v AvalaraAccountDataRelationshipsM
 
 // GetGiftCardRecipient returns the GiftCardRecipient field value if set, zero value otherwise.
 func (o *GiftCardDataRelationships) GetGiftCardRecipient() GiftCardDataRelationshipsGiftCardRecipient {
-	if o == nil || IsNil(o.GiftCardRecipient) {
+	if o == nil || o.GiftCardRecipient == nil {
 		var ret GiftCardDataRelationshipsGiftCardRecipient
 		return ret
 	}
@@ -87,7 +84,7 @@ func (o *GiftCardDataRelationships) GetGiftCardRecipient() GiftCardDataRelations
 // GetGiftCardRecipientOk returns a tuple with the GiftCardRecipient field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GiftCardDataRelationships) GetGiftCardRecipientOk() (*GiftCardDataRelationshipsGiftCardRecipient, bool) {
-	if o == nil || IsNil(o.GiftCardRecipient) {
+	if o == nil || o.GiftCardRecipient == nil {
 		return nil, false
 	}
 	return o.GiftCardRecipient, true
@@ -95,7 +92,7 @@ func (o *GiftCardDataRelationships) GetGiftCardRecipientOk() (*GiftCardDataRelat
 
 // HasGiftCardRecipient returns a boolean if a field has been set.
 func (o *GiftCardDataRelationships) HasGiftCardRecipient() bool {
-	if o != nil && !IsNil(o.GiftCardRecipient) {
+	if o != nil && o.GiftCardRecipient != nil {
 		return true
 	}
 
@@ -109,7 +106,7 @@ func (o *GiftCardDataRelationships) SetGiftCardRecipient(v GiftCardDataRelations
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *GiftCardDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		var ret AvalaraAccountDataRelationshipsAttachments
 		return ret
 	}
@@ -119,7 +116,7 @@ func (o *GiftCardDataRelationships) GetAttachments() AvalaraAccountDataRelations
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GiftCardDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		return nil, false
 	}
 	return o.Attachments, true
@@ -127,7 +124,7 @@ func (o *GiftCardDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelat
 
 // HasAttachments returns a boolean if a field has been set.
 func (o *GiftCardDataRelationships) HasAttachments() bool {
-	if o != nil && !IsNil(o.Attachments) {
+	if o != nil && o.Attachments != nil {
 		return true
 	}
 
@@ -141,7 +138,7 @@ func (o *GiftCardDataRelationships) SetAttachments(v AvalaraAccountDataRelations
 
 // GetEvents returns the Events field value if set, zero value otherwise.
 func (o *GiftCardDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || o.Events == nil {
 		var ret AuthorizationDataRelationshipsEvents
 		return ret
 	}
@@ -151,7 +148,7 @@ func (o *GiftCardDataRelationships) GetEvents() AuthorizationDataRelationshipsEv
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GiftCardDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || o.Events == nil {
 		return nil, false
 	}
 	return o.Events, true
@@ -159,7 +156,7 @@ func (o *GiftCardDataRelationships) GetEventsOk() (*AuthorizationDataRelationshi
 
 // HasEvents returns a boolean if a field has been set.
 func (o *GiftCardDataRelationships) HasEvents() bool {
-	if o != nil && !IsNil(o.Events) {
+	if o != nil && o.Events != nil {
 		return true
 	}
 
@@ -172,28 +169,20 @@ func (o *GiftCardDataRelationships) SetEvents(v AuthorizationDataRelationshipsEv
 }
 
 func (o GiftCardDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GiftCardDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Market) {
+	if o.Market != nil {
 		toSerialize["market"] = o.Market
 	}
-	if !IsNil(o.GiftCardRecipient) {
+	if o.GiftCardRecipient != nil {
 		toSerialize["gift_card_recipient"] = o.GiftCardRecipient
 	}
-	if !IsNil(o.Attachments) {
+	if o.Attachments != nil {
 		toSerialize["attachments"] = o.Attachments
 	}
-	if !IsNil(o.Events) {
+	if o.Events != nil {
 		toSerialize["events"] = o.Events
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGiftCardDataRelationships struct {

@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the CustomerAddressCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CustomerAddressCreate{}
-
 // CustomerAddressCreate struct for CustomerAddressCreate
 type CustomerAddressCreate struct {
-	Data POSTCustomerAddressesRequestData `json:"data"`
+	Data CustomerAddressCreateData `json:"data"`
 }
 
 // NewCustomerAddressCreate instantiates a new CustomerAddressCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerAddressCreate(data POSTCustomerAddressesRequestData) *CustomerAddressCreate {
+func NewCustomerAddressCreate(data CustomerAddressCreateData) *CustomerAddressCreate {
 	this := CustomerAddressCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewCustomerAddressCreateWithDefaults() *CustomerAddressCreate {
 }
 
 // GetData returns the Data field value
-func (o *CustomerAddressCreate) GetData() POSTCustomerAddressesRequestData {
+func (o *CustomerAddressCreate) GetData() CustomerAddressCreateData {
 	if o == nil {
-		var ret POSTCustomerAddressesRequestData
+		var ret CustomerAddressCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *CustomerAddressCreate) GetData() POSTCustomerAddressesRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CustomerAddressCreate) GetDataOk() (*POSTCustomerAddressesRequestData, bool) {
+func (o *CustomerAddressCreate) GetDataOk() (*CustomerAddressCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *CustomerAddressCreate) GetDataOk() (*POSTCustomerAddressesRequestData, 
 }
 
 // SetData sets field value
-func (o *CustomerAddressCreate) SetData(v POSTCustomerAddressesRequestData) {
+func (o *CustomerAddressCreate) SetData(v CustomerAddressCreateData) {
 	o.Data = v
 }
 
 func (o CustomerAddressCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o CustomerAddressCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableCustomerAddressCreate struct {

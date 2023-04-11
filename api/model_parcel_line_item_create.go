@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the ParcelLineItemCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ParcelLineItemCreate{}
-
 // ParcelLineItemCreate struct for ParcelLineItemCreate
 type ParcelLineItemCreate struct {
-	Data POSTParcelLineItemsRequestData `json:"data"`
+	Data ParcelLineItemCreateData `json:"data"`
 }
 
 // NewParcelLineItemCreate instantiates a new ParcelLineItemCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewParcelLineItemCreate(data POSTParcelLineItemsRequestData) *ParcelLineItemCreate {
+func NewParcelLineItemCreate(data ParcelLineItemCreateData) *ParcelLineItemCreate {
 	this := ParcelLineItemCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewParcelLineItemCreateWithDefaults() *ParcelLineItemCreate {
 }
 
 // GetData returns the Data field value
-func (o *ParcelLineItemCreate) GetData() POSTParcelLineItemsRequestData {
+func (o *ParcelLineItemCreate) GetData() ParcelLineItemCreateData {
 	if o == nil {
-		var ret POSTParcelLineItemsRequestData
+		var ret ParcelLineItemCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *ParcelLineItemCreate) GetData() POSTParcelLineItemsRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ParcelLineItemCreate) GetDataOk() (*POSTParcelLineItemsRequestData, bool) {
+func (o *ParcelLineItemCreate) GetDataOk() (*ParcelLineItemCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *ParcelLineItemCreate) GetDataOk() (*POSTParcelLineItemsRequestData, boo
 }
 
 // SetData sets field value
-func (o *ParcelLineItemCreate) SetData(v POSTParcelLineItemsRequestData) {
+func (o *ParcelLineItemCreate) SetData(v ParcelLineItemCreateData) {
 	o.Data = v
 }
 
 func (o ParcelLineItemCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o ParcelLineItemCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableParcelLineItemCreate struct {

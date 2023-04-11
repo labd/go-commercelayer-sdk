@@ -15,22 +15,19 @@ import (
 	"encoding/json"
 )
 
-// checks if the CouponRecipientData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CouponRecipientData{}
-
 // CouponRecipientData struct for CouponRecipientData
 type CouponRecipientData struct {
 	// The resource's type
-	Type          interface{}                                                   `json:"type"`
-	Attributes    GETCouponRecipientsCouponRecipientId200ResponseDataAttributes `json:"attributes"`
-	Relationships *CouponRecipientDataRelationships                             `json:"relationships,omitempty"`
+	Type          interface{}                                       `json:"type"`
+	Attributes    GETCouponRecipients200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *CouponRecipientDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewCouponRecipientData instantiates a new CouponRecipientData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCouponRecipientData(type_ interface{}, attributes GETCouponRecipientsCouponRecipientId200ResponseDataAttributes) *CouponRecipientData {
+func NewCouponRecipientData(type_ interface{}, attributes GETCouponRecipients200ResponseDataInnerAttributes) *CouponRecipientData {
 	this := CouponRecipientData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -60,7 +57,7 @@ func (o *CouponRecipientData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CouponRecipientData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -72,9 +69,9 @@ func (o *CouponRecipientData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CouponRecipientData) GetAttributes() GETCouponRecipientsCouponRecipientId200ResponseDataAttributes {
+func (o *CouponRecipientData) GetAttributes() GETCouponRecipients200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret GETCouponRecipientsCouponRecipientId200ResponseDataAttributes
+		var ret GETCouponRecipients200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -83,7 +80,7 @@ func (o *CouponRecipientData) GetAttributes() GETCouponRecipientsCouponRecipient
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CouponRecipientData) GetAttributesOk() (*GETCouponRecipientsCouponRecipientId200ResponseDataAttributes, bool) {
+func (o *CouponRecipientData) GetAttributesOk() (*GETCouponRecipients200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,13 +88,13 @@ func (o *CouponRecipientData) GetAttributesOk() (*GETCouponRecipientsCouponRecip
 }
 
 // SetAttributes sets field value
-func (o *CouponRecipientData) SetAttributes(v GETCouponRecipientsCouponRecipientId200ResponseDataAttributes) {
+func (o *CouponRecipientData) SetAttributes(v GETCouponRecipients200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *CouponRecipientData) GetRelationships() CouponRecipientDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		var ret CouponRecipientDataRelationships
 		return ret
 	}
@@ -107,7 +104,7 @@ func (o *CouponRecipientData) GetRelationships() CouponRecipientDataRelationship
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CouponRecipientData) GetRelationshipsOk() (*CouponRecipientDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -115,7 +112,7 @@ func (o *CouponRecipientData) GetRelationshipsOk() (*CouponRecipientDataRelation
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *CouponRecipientData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
@@ -128,23 +125,17 @@ func (o *CouponRecipientData) SetRelationships(v CouponRecipientDataRelationship
 }
 
 func (o CouponRecipientData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o CouponRecipientData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	toSerialize["attributes"] = o.Attributes
-	if !IsNil(o.Relationships) {
+	if true {
+		toSerialize["attributes"] = o.Attributes
+	}
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableCouponRecipientData struct {

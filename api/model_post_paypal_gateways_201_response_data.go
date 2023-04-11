@@ -15,18 +15,15 @@ import (
 	"encoding/json"
 )
 
-// checks if the POSTPaypalGateways201ResponseData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &POSTPaypalGateways201ResponseData{}
-
 // POSTPaypalGateways201ResponseData struct for POSTPaypalGateways201ResponseData
 type POSTPaypalGateways201ResponseData struct {
 	// The resource's id
 	Id interface{} `json:"id,omitempty"`
 	// The resource's type
-	Type          interface{}                                     `json:"type,omitempty"`
-	Links         *POSTAddresses201ResponseDataLinks              `json:"links,omitempty"`
-	Attributes    *POSTPaypalGatewaysRequestDataAttributes        `json:"attributes,omitempty"`
-	Relationships *POSTPaypalGateways201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type          interface{}                                         `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks              `json:"links,omitempty"`
+	Attributes    *POSTPaypalGateways201ResponseDataAttributes        `json:"attributes,omitempty"`
+	Relationships *GETPaypalGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPOSTPaypalGateways201ResponseData instantiates a new POSTPaypalGateways201ResponseData object
@@ -59,7 +56,7 @@ func (o *POSTPaypalGateways201ResponseData) GetId() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTPaypalGateways201ResponseData) GetIdOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Id) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
 	return &o.Id, true
@@ -67,7 +64,7 @@ func (o *POSTPaypalGateways201ResponseData) GetIdOk() (*interface{}, bool) {
 
 // HasId returns a boolean if a field has been set.
 func (o *POSTPaypalGateways201ResponseData) HasId() bool {
-	if o != nil && IsNil(o.Id) {
+	if o != nil && o.Id != nil {
 		return true
 	}
 
@@ -92,7 +89,7 @@ func (o *POSTPaypalGateways201ResponseData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTPaypalGateways201ResponseData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -100,7 +97,7 @@ func (o *POSTPaypalGateways201ResponseData) GetTypeOk() (*interface{}, bool) {
 
 // HasType returns a boolean if a field has been set.
 func (o *POSTPaypalGateways201ResponseData) HasType() bool {
-	if o != nil && IsNil(o.Type) {
+	if o != nil && o.Type != nil {
 		return true
 	}
 
@@ -113,9 +110,9 @@ func (o *POSTPaypalGateways201ResponseData) SetType(v interface{}) {
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *POSTPaypalGateways201ResponseData) GetLinks() POSTAddresses201ResponseDataLinks {
-	if o == nil || IsNil(o.Links) {
-		var ret POSTAddresses201ResponseDataLinks
+func (o *POSTPaypalGateways201ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks {
+	if o == nil || o.Links == nil {
+		var ret GETAddresses200ResponseDataInnerLinks
 		return ret
 	}
 	return *o.Links
@@ -123,8 +120,8 @@ func (o *POSTPaypalGateways201ResponseData) GetLinks() POSTAddresses201ResponseD
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTPaypalGateways201ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool) {
-	if o == nil || IsNil(o.Links) {
+func (o *POSTPaypalGateways201ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool) {
+	if o == nil || o.Links == nil {
 		return nil, false
 	}
 	return o.Links, true
@@ -132,22 +129,22 @@ func (o *POSTPaypalGateways201ResponseData) GetLinksOk() (*POSTAddresses201Respo
 
 // HasLinks returns a boolean if a field has been set.
 func (o *POSTPaypalGateways201ResponseData) HasLinks() bool {
-	if o != nil && !IsNil(o.Links) {
+	if o != nil && o.Links != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetLinks gets a reference to the given POSTAddresses201ResponseDataLinks and assigns it to the Links field.
-func (o *POSTPaypalGateways201ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks) {
+// SetLinks gets a reference to the given GETAddresses200ResponseDataInnerLinks and assigns it to the Links field.
+func (o *POSTPaypalGateways201ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks) {
 	o.Links = &v
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *POSTPaypalGateways201ResponseData) GetAttributes() POSTPaypalGatewaysRequestDataAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret POSTPaypalGatewaysRequestDataAttributes
+func (o *POSTPaypalGateways201ResponseData) GetAttributes() POSTPaypalGateways201ResponseDataAttributes {
+	if o == nil || o.Attributes == nil {
+		var ret POSTPaypalGateways201ResponseDataAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -155,8 +152,8 @@ func (o *POSTPaypalGateways201ResponseData) GetAttributes() POSTPaypalGatewaysRe
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTPaypalGateways201ResponseData) GetAttributesOk() (*POSTPaypalGatewaysRequestDataAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *POSTPaypalGateways201ResponseData) GetAttributesOk() (*POSTPaypalGateways201ResponseDataAttributes, bool) {
+	if o == nil || o.Attributes == nil {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -164,22 +161,22 @@ func (o *POSTPaypalGateways201ResponseData) GetAttributesOk() (*POSTPaypalGatewa
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *POSTPaypalGateways201ResponseData) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && o.Attributes != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given POSTPaypalGatewaysRequestDataAttributes and assigns it to the Attributes field.
-func (o *POSTPaypalGateways201ResponseData) SetAttributes(v POSTPaypalGatewaysRequestDataAttributes) {
+// SetAttributes gets a reference to the given POSTPaypalGateways201ResponseDataAttributes and assigns it to the Attributes field.
+func (o *POSTPaypalGateways201ResponseData) SetAttributes(v POSTPaypalGateways201ResponseDataAttributes) {
 	o.Attributes = &v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *POSTPaypalGateways201ResponseData) GetRelationships() POSTPaypalGateways201ResponseDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
-		var ret POSTPaypalGateways201ResponseDataRelationships
+func (o *POSTPaypalGateways201ResponseData) GetRelationships() GETPaypalGateways200ResponseDataInnerRelationships {
+	if o == nil || o.Relationships == nil {
+		var ret GETPaypalGateways200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -187,8 +184,8 @@ func (o *POSTPaypalGateways201ResponseData) GetRelationships() POSTPaypalGateway
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTPaypalGateways201ResponseData) GetRelationshipsOk() (*POSTPaypalGateways201ResponseDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+func (o *POSTPaypalGateways201ResponseData) GetRelationshipsOk() (*GETPaypalGateways200ResponseDataInnerRelationships, bool) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -196,27 +193,19 @@ func (o *POSTPaypalGateways201ResponseData) GetRelationshipsOk() (*POSTPaypalGat
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *POSTPaypalGateways201ResponseData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTPaypalGateways201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *POSTPaypalGateways201ResponseData) SetRelationships(v POSTPaypalGateways201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given GETPaypalGateways200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *POSTPaypalGateways201ResponseData) SetRelationships(v GETPaypalGateways200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 
 func (o POSTPaypalGateways201ResponseData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o POSTPaypalGateways201ResponseData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
@@ -224,16 +213,16 @@ func (o POSTPaypalGateways201ResponseData) ToMap() (map[string]interface{}, erro
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if !IsNil(o.Links) {
+	if o.Links != nil {
 		toSerialize["links"] = o.Links
 	}
-	if !IsNil(o.Attributes) {
+	if o.Attributes != nil {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !IsNil(o.Relationships) {
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePOSTPaypalGateways201ResponseData struct {

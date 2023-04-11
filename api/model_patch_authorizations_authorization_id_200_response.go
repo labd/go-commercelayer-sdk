@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the PATCHAuthorizationsAuthorizationId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PATCHAuthorizationsAuthorizationId200Response{}
-
 // PATCHAuthorizationsAuthorizationId200Response struct for PATCHAuthorizationsAuthorizationId200Response
 type PATCHAuthorizationsAuthorizationId200Response struct {
 	Data *PATCHAuthorizationsAuthorizationId200ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPATCHAuthorizationsAuthorizationId200ResponseWithDefaults() *PATCHAuthor
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *PATCHAuthorizationsAuthorizationId200Response) GetData() PATCHAuthorizationsAuthorizationId200ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret PATCHAuthorizationsAuthorizationId200ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *PATCHAuthorizationsAuthorizationId200Response) GetData() PATCHAuthoriza
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHAuthorizationsAuthorizationId200Response) GetDataOk() (*PATCHAuthorizationsAuthorizationId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *PATCHAuthorizationsAuthorizationId200Response) GetDataOk() (*PATCHAutho
 
 // HasData returns a boolean if a field has been set.
 func (o *PATCHAuthorizationsAuthorizationId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *PATCHAuthorizationsAuthorizationId200Response) SetData(v PATCHAuthoriza
 }
 
 func (o PATCHAuthorizationsAuthorizationId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o PATCHAuthorizationsAuthorizationId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePATCHAuthorizationsAuthorizationId200Response struct {

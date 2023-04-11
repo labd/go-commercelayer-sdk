@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the SkuListItemCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &SkuListItemCreate{}
-
 // SkuListItemCreate struct for SkuListItemCreate
 type SkuListItemCreate struct {
-	Data POSTSkuListItemsRequestData `json:"data"`
+	Data SkuListItemCreateData `json:"data"`
 }
 
 // NewSkuListItemCreate instantiates a new SkuListItemCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuListItemCreate(data POSTSkuListItemsRequestData) *SkuListItemCreate {
+func NewSkuListItemCreate(data SkuListItemCreateData) *SkuListItemCreate {
 	this := SkuListItemCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewSkuListItemCreateWithDefaults() *SkuListItemCreate {
 }
 
 // GetData returns the Data field value
-func (o *SkuListItemCreate) GetData() POSTSkuListItemsRequestData {
+func (o *SkuListItemCreate) GetData() SkuListItemCreateData {
 	if o == nil {
-		var ret POSTSkuListItemsRequestData
+		var ret SkuListItemCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *SkuListItemCreate) GetData() POSTSkuListItemsRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *SkuListItemCreate) GetDataOk() (*POSTSkuListItemsRequestData, bool) {
+func (o *SkuListItemCreate) GetDataOk() (*SkuListItemCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *SkuListItemCreate) GetDataOk() (*POSTSkuListItemsRequestData, bool) {
 }
 
 // SetData sets field value
-func (o *SkuListItemCreate) SetData(v POSTSkuListItemsRequestData) {
+func (o *SkuListItemCreate) SetData(v SkuListItemCreateData) {
 	o.Data = v
 }
 
 func (o SkuListItemCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o SkuListItemCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableSkuListItemCreate struct {

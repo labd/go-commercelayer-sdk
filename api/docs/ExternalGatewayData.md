@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETExternalGatewaysExternalGatewayId200ResponseDataAttributes**](GETExternalGatewaysExternalGatewayId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**GETExternalGateways200ResponseDataInnerAttributes**](GETExternalGateways200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**ExternalGatewayDataRelationships**](ExternalGatewayDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewExternalGatewayData
 
-`func NewExternalGatewayData(type_ interface{}, attributes GETExternalGatewaysExternalGatewayId200ResponseDataAttributes, ) *ExternalGatewayData`
+`func NewExternalGatewayData(type_ interface{}, attributes GETExternalGateways200ResponseDataInnerAttributes, ) *ExternalGatewayData`
 
 NewExternalGatewayData instantiates a new ExternalGatewayData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *ExternalGatewayData) GetAttributes() GETExternalGatewaysExternalGatewayId200ResponseDataAttributes`
+`func (o *ExternalGatewayData) GetAttributes() GETExternalGateways200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ExternalGatewayData) GetAttributesOk() (*GETExternalGatewaysExternalGatewayId200ResponseDataAttributes, bool)`
+`func (o *ExternalGatewayData) GetAttributesOk() (*GETExternalGateways200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ExternalGatewayData) SetAttributes(v GETExternalGatewaysExternalGatewayId200ResponseDataAttributes)`
+`func (o *ExternalGatewayData) SetAttributes(v GETExternalGateways200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *ExternalGatewaysApiService) DELETEExternalGatewaysExternalGatewayIdExec
 	}
 
 	localVarPath := localBasePath + "/external_gateways/{externalGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalGatewayId"+"}", url.PathEscape(parameterValueToString(r.externalGatewayId, "externalGatewayId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalGatewayId"+"}", url.PathEscape(parameterToString(r.externalGatewayId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *ExternalGatewaysApiService) DELETEExternalGatewaysExternalGatewayIdExec
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *ExternalGatewaysApiService) GETExternalGatewaysExecute(r ExternalGatewa
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *ExternalGatewaysApiService) GETExternalGatewaysExternalGatewayIdExecute
 	}
 
 	localVarPath := localBasePath + "/external_gateways/{externalGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalGatewayId"+"}", url.PathEscape(parameterValueToString(r.externalGatewayId, "externalGatewayId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalGatewayId"+"}", url.PathEscape(parameterToString(r.externalGatewayId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *ExternalGatewaysApiService) GETExternalGatewaysExternalGatewayIdExecute
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -320,14 +320,14 @@ func (a *ExternalGatewaysApiService) GETExternalGatewaysExternalGatewayIdExecute
 }
 
 type ExternalGatewaysApiPATCHExternalGatewaysExternalGatewayIdRequest struct {
-	ctx                                           context.Context
-	ApiService                                    *ExternalGatewaysApiService
-	pATCHExternalGatewaysExternalGatewayIdRequest *PATCHExternalGatewaysExternalGatewayIdRequest
-	externalGatewayId                             interface{}
+	ctx                   context.Context
+	ApiService            *ExternalGatewaysApiService
+	externalGatewayUpdate *ExternalGatewayUpdate
+	externalGatewayId     interface{}
 }
 
-func (r ExternalGatewaysApiPATCHExternalGatewaysExternalGatewayIdRequest) PATCHExternalGatewaysExternalGatewayIdRequest(pATCHExternalGatewaysExternalGatewayIdRequest PATCHExternalGatewaysExternalGatewayIdRequest) ExternalGatewaysApiPATCHExternalGatewaysExternalGatewayIdRequest {
-	r.pATCHExternalGatewaysExternalGatewayIdRequest = &pATCHExternalGatewaysExternalGatewayIdRequest
+func (r ExternalGatewaysApiPATCHExternalGatewaysExternalGatewayIdRequest) ExternalGatewayUpdate(externalGatewayUpdate ExternalGatewayUpdate) ExternalGatewaysApiPATCHExternalGatewaysExternalGatewayIdRequest {
+	r.externalGatewayUpdate = &externalGatewayUpdate
 	return r
 }
 
@@ -369,13 +369,13 @@ func (a *ExternalGatewaysApiService) PATCHExternalGatewaysExternalGatewayIdExecu
 	}
 
 	localVarPath := localBasePath + "/external_gateways/{externalGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalGatewayId"+"}", url.PathEscape(parameterValueToString(r.externalGatewayId, "externalGatewayId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalGatewayId"+"}", url.PathEscape(parameterToString(r.externalGatewayId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHExternalGatewaysExternalGatewayIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHExternalGatewaysExternalGatewayIdRequest is required and must be specified")
+	if r.externalGatewayUpdate == nil {
+		return localVarReturnValue, nil, reportError("externalGatewayUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -396,7 +396,7 @@ func (a *ExternalGatewaysApiService) PATCHExternalGatewaysExternalGatewayIdExecu
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHExternalGatewaysExternalGatewayIdRequest
+	localVarPostBody = r.externalGatewayUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -407,9 +407,9 @@ func (a *ExternalGatewaysApiService) PATCHExternalGatewaysExternalGatewayIdExecu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -435,13 +435,13 @@ func (a *ExternalGatewaysApiService) PATCHExternalGatewaysExternalGatewayIdExecu
 }
 
 type ExternalGatewaysApiPOSTExternalGatewaysRequest struct {
-	ctx                         context.Context
-	ApiService                  *ExternalGatewaysApiService
-	pOSTExternalGatewaysRequest *POSTExternalGatewaysRequest
+	ctx                   context.Context
+	ApiService            *ExternalGatewaysApiService
+	externalGatewayCreate *ExternalGatewayCreate
 }
 
-func (r ExternalGatewaysApiPOSTExternalGatewaysRequest) POSTExternalGatewaysRequest(pOSTExternalGatewaysRequest POSTExternalGatewaysRequest) ExternalGatewaysApiPOSTExternalGatewaysRequest {
-	r.pOSTExternalGatewaysRequest = &pOSTExternalGatewaysRequest
+func (r ExternalGatewaysApiPOSTExternalGatewaysRequest) ExternalGatewayCreate(externalGatewayCreate ExternalGatewayCreate) ExternalGatewaysApiPOSTExternalGatewaysRequest {
+	r.externalGatewayCreate = &externalGatewayCreate
 	return r
 }
 
@@ -485,8 +485,8 @@ func (a *ExternalGatewaysApiService) POSTExternalGatewaysExecute(r ExternalGatew
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTExternalGatewaysRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTExternalGatewaysRequest is required and must be specified")
+	if r.externalGatewayCreate == nil {
+		return localVarReturnValue, nil, reportError("externalGatewayCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -507,7 +507,7 @@ func (a *ExternalGatewaysApiService) POSTExternalGatewaysExecute(r ExternalGatew
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTExternalGatewaysRequest
+	localVarPostBody = r.externalGatewayCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -518,9 +518,9 @@ func (a *ExternalGatewaysApiService) POSTExternalGatewaysExecute(r ExternalGatew
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

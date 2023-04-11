@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the BillingInfoValidationRuleDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &BillingInfoValidationRuleDataRelationships{}
-
 // BillingInfoValidationRuleDataRelationships struct for BillingInfoValidationRuleDataRelationships
 type BillingInfoValidationRuleDataRelationships struct {
 	Market      *AvalaraAccountDataRelationshipsMarkets     `json:"market,omitempty"`
@@ -43,7 +40,7 @@ func NewBillingInfoValidationRuleDataRelationshipsWithDefaults() *BillingInfoVal
 
 // GetMarket returns the Market field value if set, zero value otherwise.
 func (o *BillingInfoValidationRuleDataRelationships) GetMarket() AvalaraAccountDataRelationshipsMarkets {
-	if o == nil || IsNil(o.Market) {
+	if o == nil || o.Market == nil {
 		var ret AvalaraAccountDataRelationshipsMarkets
 		return ret
 	}
@@ -53,7 +50,7 @@ func (o *BillingInfoValidationRuleDataRelationships) GetMarket() AvalaraAccountD
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BillingInfoValidationRuleDataRelationships) GetMarketOk() (*AvalaraAccountDataRelationshipsMarkets, bool) {
-	if o == nil || IsNil(o.Market) {
+	if o == nil || o.Market == nil {
 		return nil, false
 	}
 	return o.Market, true
@@ -61,7 +58,7 @@ func (o *BillingInfoValidationRuleDataRelationships) GetMarketOk() (*AvalaraAcco
 
 // HasMarket returns a boolean if a field has been set.
 func (o *BillingInfoValidationRuleDataRelationships) HasMarket() bool {
-	if o != nil && !IsNil(o.Market) {
+	if o != nil && o.Market != nil {
 		return true
 	}
 
@@ -75,7 +72,7 @@ func (o *BillingInfoValidationRuleDataRelationships) SetMarket(v AvalaraAccountD
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *BillingInfoValidationRuleDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		var ret AvalaraAccountDataRelationshipsAttachments
 		return ret
 	}
@@ -85,7 +82,7 @@ func (o *BillingInfoValidationRuleDataRelationships) GetAttachments() AvalaraAcc
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BillingInfoValidationRuleDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		return nil, false
 	}
 	return o.Attachments, true
@@ -93,7 +90,7 @@ func (o *BillingInfoValidationRuleDataRelationships) GetAttachmentsOk() (*Avalar
 
 // HasAttachments returns a boolean if a field has been set.
 func (o *BillingInfoValidationRuleDataRelationships) HasAttachments() bool {
-	if o != nil && !IsNil(o.Attachments) {
+	if o != nil && o.Attachments != nil {
 		return true
 	}
 
@@ -106,22 +103,14 @@ func (o *BillingInfoValidationRuleDataRelationships) SetAttachments(v AvalaraAcc
 }
 
 func (o BillingInfoValidationRuleDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o BillingInfoValidationRuleDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Market) {
+	if o.Market != nil {
 		toSerialize["market"] = o.Market
 	}
-	if !IsNil(o.Attachments) {
+	if o.Attachments != nil {
 		toSerialize["attachments"] = o.Attachments
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableBillingInfoValidationRuleDataRelationships struct {

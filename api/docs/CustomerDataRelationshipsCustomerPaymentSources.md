@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**PATCHOrderSubscriptionsOrderSubscriptionIdRequestDataRelationshipsCustomerPaymentSourceData**](PATCHOrderSubscriptionsOrderSubscriptionIdRequestDataRelationshipsCustomerPaymentSourceData.md) |  | [optional] 
+**Data** | Pointer to [**CustomerDataRelationshipsCustomerPaymentSourcesData**](CustomerDataRelationshipsCustomerPaymentSourcesData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *CustomerDataRelationshipsCustomerPaymentSources) GetData() PATCHOrderSubscriptionsOrderSubscriptionIdRequestDataRelationshipsCustomerPaymentSourceData`
+`func (o *CustomerDataRelationshipsCustomerPaymentSources) GetData() CustomerDataRelationshipsCustomerPaymentSourcesData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *CustomerDataRelationshipsCustomerPaymentSources) GetDataOk() (*PATCHOrderSubscriptionsOrderSubscriptionIdRequestDataRelationshipsCustomerPaymentSourceData, bool)`
+`func (o *CustomerDataRelationshipsCustomerPaymentSources) GetDataOk() (*CustomerDataRelationshipsCustomerPaymentSourcesData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *CustomerDataRelationshipsCustomerPaymentSources) SetData(v PATCHOrderSubscriptionsOrderSubscriptionIdRequestDataRelationshipsCustomerPaymentSourceData)`
+`func (o *CustomerDataRelationshipsCustomerPaymentSources) SetData(v CustomerDataRelationshipsCustomerPaymentSourcesData)`
 
 SetData sets Data field to given value.
 

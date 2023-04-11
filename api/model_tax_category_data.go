@@ -15,22 +15,19 @@ import (
 	"encoding/json"
 )
 
-// checks if the TaxCategoryData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &TaxCategoryData{}
-
 // TaxCategoryData struct for TaxCategoryData
 type TaxCategoryData struct {
 	// The resource's type
-	Type          interface{}                                            `json:"type"`
-	Attributes    GETTaxCategoriesTaxCategoryId200ResponseDataAttributes `json:"attributes"`
-	Relationships *TaxCategoryDataRelationships                          `json:"relationships,omitempty"`
+	Type          interface{}                                    `json:"type"`
+	Attributes    GETTaxCategories200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *TaxCategoryDataRelationships                  `json:"relationships,omitempty"`
 }
 
 // NewTaxCategoryData instantiates a new TaxCategoryData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTaxCategoryData(type_ interface{}, attributes GETTaxCategoriesTaxCategoryId200ResponseDataAttributes) *TaxCategoryData {
+func NewTaxCategoryData(type_ interface{}, attributes GETTaxCategories200ResponseDataInnerAttributes) *TaxCategoryData {
 	this := TaxCategoryData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -60,7 +57,7 @@ func (o *TaxCategoryData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TaxCategoryData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -72,9 +69,9 @@ func (o *TaxCategoryData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *TaxCategoryData) GetAttributes() GETTaxCategoriesTaxCategoryId200ResponseDataAttributes {
+func (o *TaxCategoryData) GetAttributes() GETTaxCategories200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret GETTaxCategoriesTaxCategoryId200ResponseDataAttributes
+		var ret GETTaxCategories200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -83,7 +80,7 @@ func (o *TaxCategoryData) GetAttributes() GETTaxCategoriesTaxCategoryId200Respon
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *TaxCategoryData) GetAttributesOk() (*GETTaxCategoriesTaxCategoryId200ResponseDataAttributes, bool) {
+func (o *TaxCategoryData) GetAttributesOk() (*GETTaxCategories200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,13 +88,13 @@ func (o *TaxCategoryData) GetAttributesOk() (*GETTaxCategoriesTaxCategoryId200Re
 }
 
 // SetAttributes sets field value
-func (o *TaxCategoryData) SetAttributes(v GETTaxCategoriesTaxCategoryId200ResponseDataAttributes) {
+func (o *TaxCategoryData) SetAttributes(v GETTaxCategories200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *TaxCategoryData) GetRelationships() TaxCategoryDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		var ret TaxCategoryDataRelationships
 		return ret
 	}
@@ -107,7 +104,7 @@ func (o *TaxCategoryData) GetRelationships() TaxCategoryDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaxCategoryData) GetRelationshipsOk() (*TaxCategoryDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -115,7 +112,7 @@ func (o *TaxCategoryData) GetRelationshipsOk() (*TaxCategoryDataRelationships, b
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *TaxCategoryData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
@@ -128,23 +125,17 @@ func (o *TaxCategoryData) SetRelationships(v TaxCategoryDataRelationships) {
 }
 
 func (o TaxCategoryData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o TaxCategoryData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	toSerialize["attributes"] = o.Attributes
-	if !IsNil(o.Relationships) {
+	if true {
+		toSerialize["attributes"] = o.Attributes
+	}
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableTaxCategoryData struct {

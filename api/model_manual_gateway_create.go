@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the ManualGatewayCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ManualGatewayCreate{}
-
 // ManualGatewayCreate struct for ManualGatewayCreate
 type ManualGatewayCreate struct {
-	Data POSTManualGatewaysRequestData `json:"data"`
+	Data ManualGatewayCreateData `json:"data"`
 }
 
 // NewManualGatewayCreate instantiates a new ManualGatewayCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewManualGatewayCreate(data POSTManualGatewaysRequestData) *ManualGatewayCreate {
+func NewManualGatewayCreate(data ManualGatewayCreateData) *ManualGatewayCreate {
 	this := ManualGatewayCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewManualGatewayCreateWithDefaults() *ManualGatewayCreate {
 }
 
 // GetData returns the Data field value
-func (o *ManualGatewayCreate) GetData() POSTManualGatewaysRequestData {
+func (o *ManualGatewayCreate) GetData() ManualGatewayCreateData {
 	if o == nil {
-		var ret POSTManualGatewaysRequestData
+		var ret ManualGatewayCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *ManualGatewayCreate) GetData() POSTManualGatewaysRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ManualGatewayCreate) GetDataOk() (*POSTManualGatewaysRequestData, bool) {
+func (o *ManualGatewayCreate) GetDataOk() (*ManualGatewayCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *ManualGatewayCreate) GetDataOk() (*POSTManualGatewaysRequestData, bool)
 }
 
 // SetData sets field value
-func (o *ManualGatewayCreate) SetData(v POSTManualGatewaysRequestData) {
+func (o *ManualGatewayCreate) SetData(v ManualGatewayCreateData) {
 	o.Data = v
 }
 
 func (o ManualGatewayCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o ManualGatewayCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableManualGatewayCreate struct {

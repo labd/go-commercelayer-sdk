@@ -29,7 +29,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -37,7 +37,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SatispayGatewaysApi.DELETESatispayGatewaysSatispayGatewayId(context.Background(), satispayGatewayId).Execute()
+    resp, r, err := apiClient.SatispayGatewaysApi.DELETESatispayGatewaysSatispayGatewayId(context.Background(), satispayGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SatispayGatewaysApi.DELETESatispayGatewaysSatispayGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -158,7 +158,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHSatispayGatewaysSatispayGatewayId
 
-> PATCHSatispayGatewaysSatispayGatewayId200Response PATCHSatispayGatewaysSatispayGatewayId(ctx, satispayGatewayId).PATCHSatispayGatewaysSatispayGatewayIdRequest(pATCHSatispayGatewaysSatispayGatewayIdRequest).Execute()
+> PATCHSatispayGatewaysSatispayGatewayId200Response PATCHSatispayGatewaysSatispayGatewayId(ctx, satispayGatewayId).SatispayGatewayUpdate(satispayGatewayUpdate).Execute()
 
 Update a satispay gateway
 
@@ -228,16 +228,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHSatispayGatewaysSatispayGatewayIdRequest := *openapiclient.NewPATCHSatispayGatewaysSatispayGatewayIdRequest(*openapiclient.NewPATCHSatispayGatewaysSatispayGatewayIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHManualGatewaysManualGatewayIdRequestDataAttributes())) // PATCHSatispayGatewaysSatispayGatewayIdRequest | 
+    satispayGatewayUpdate := *openapiclient.NewSatispayGatewayUpdate(*openapiclient.NewSatispayGatewayUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHManualGatewaysManualGatewayId200ResponseDataAttributes())) // SatispayGatewayUpdate | 
     satispayGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SatispayGatewaysApi.PATCHSatispayGatewaysSatispayGatewayId(context.Background(), satispayGatewayId).PATCHSatispayGatewaysSatispayGatewayIdRequest(pATCHSatispayGatewaysSatispayGatewayIdRequest).Execute()
+    resp, r, err := apiClient.SatispayGatewaysApi.PATCHSatispayGatewaysSatispayGatewayId(context.Background(), satispayGatewayId).SatispayGatewayUpdate(satispayGatewayUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SatispayGatewaysApi.PATCHSatispayGatewaysSatispayGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -262,7 +262,7 @@ Other parameters are passed through a pointer to a apiPATCHSatispayGatewaysSatis
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHSatispayGatewaysSatispayGatewayIdRequest** | [**PATCHSatispayGatewaysSatispayGatewayIdRequest**](PATCHSatispayGatewaysSatispayGatewayIdRequest.md) |  | 
+ **satispayGatewayUpdate** | [**SatispayGatewayUpdate**](SatispayGatewayUpdate.md) |  | 
 
 
 ### Return type
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTSatispayGateways
 
-> POSTSatispayGateways201Response POSTSatispayGateways(ctx).POSTSatispayGatewaysRequest(pOSTSatispayGatewaysRequest).Execute()
+> POSTSatispayGateways201Response POSTSatispayGateways(ctx).SatispayGatewayCreate(satispayGatewayCreate).Execute()
 
 Create a satispay gateway
 
@@ -300,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTSatispayGatewaysRequest := *openapiclient.NewPOSTSatispayGatewaysRequest(*openapiclient.NewPOSTSatispayGatewaysRequestData(interface{}(123), *openapiclient.NewPOSTManualGatewaysRequestDataAttributes(interface{}(US payment gateway)))) // POSTSatispayGatewaysRequest | 
+    satispayGatewayCreate := *openapiclient.NewSatispayGatewayCreate(*openapiclient.NewSatispayGatewayCreateData(interface{}(123), *openapiclient.NewPOSTManualGateways201ResponseDataAttributes(interface{}(US payment gateway)))) // SatispayGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SatispayGatewaysApi.POSTSatispayGateways(context.Background()).POSTSatispayGatewaysRequest(pOSTSatispayGatewaysRequest).Execute()
+    resp, r, err := apiClient.SatispayGatewaysApi.POSTSatispayGateways(context.Background()).SatispayGatewayCreate(satispayGatewayCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SatispayGatewaysApi.POSTSatispayGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiPOSTSatispayGatewaysReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTSatispayGatewaysRequest** | [**POSTSatispayGatewaysRequest**](POSTSatispayGatewaysRequest.md) |  | 
+ **satispayGatewayCreate** | [**SatispayGatewayCreate**](SatispayGatewayCreate.md) |  | 
 
 ### Return type
 

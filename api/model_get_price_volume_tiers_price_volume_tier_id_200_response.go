@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETPriceVolumeTiersPriceVolumeTierId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETPriceVolumeTiersPriceVolumeTierId200Response{}
-
 // GETPriceVolumeTiersPriceVolumeTierId200Response struct for GETPriceVolumeTiersPriceVolumeTierId200Response
 type GETPriceVolumeTiersPriceVolumeTierId200Response struct {
-	Data *GETPriceVolumeTiersPriceVolumeTierId200ResponseData `json:"data,omitempty"`
+	Data *GETPriceVolumeTiers200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETPriceVolumeTiersPriceVolumeTierId200Response instantiates a new GETPriceVolumeTiersPriceVolumeTierId200Response object
@@ -41,9 +38,9 @@ func NewGETPriceVolumeTiersPriceVolumeTierId200ResponseWithDefaults() *GETPriceV
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETPriceVolumeTiersPriceVolumeTierId200Response) GetData() GETPriceVolumeTiersPriceVolumeTierId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETPriceVolumeTiersPriceVolumeTierId200ResponseData
+func (o *GETPriceVolumeTiersPriceVolumeTierId200Response) GetData() GETPriceVolumeTiers200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETPriceVolumeTiers200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETPriceVolumeTiersPriceVolumeTierId200Response) GetData() GETPriceVolu
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETPriceVolumeTiersPriceVolumeTierId200Response) GetDataOk() (*GETPriceVolumeTiersPriceVolumeTierId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETPriceVolumeTiersPriceVolumeTierId200Response) GetDataOk() (*GETPriceVolumeTiers200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETPriceVolumeTiersPriceVolumeTierId200Response) GetDataOk() (*GETPrice
 
 // HasData returns a boolean if a field has been set.
 func (o *GETPriceVolumeTiersPriceVolumeTierId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETPriceVolumeTiersPriceVolumeTierId200ResponseData and assigns it to the Data field.
-func (o *GETPriceVolumeTiersPriceVolumeTierId200Response) SetData(v GETPriceVolumeTiersPriceVolumeTierId200ResponseData) {
+// SetData gets a reference to the given GETPriceVolumeTiers200ResponseDataInner and assigns it to the Data field.
+func (o *GETPriceVolumeTiersPriceVolumeTierId200Response) SetData(v GETPriceVolumeTiers200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETPriceVolumeTiersPriceVolumeTierId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETPriceVolumeTiersPriceVolumeTierId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETPriceVolumeTiersPriceVolumeTierId200Response struct {

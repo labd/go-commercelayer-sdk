@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
-**Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
-**Attributes** | Pointer to [**PATCHBundlesBundleIdRequestDataAttributes**](PATCHBundlesBundleIdRequestDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTBundles201ResponseDataRelationships**](POSTBundles201ResponseDataRelationships.md) |  | [optional] 
+**Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
+**Attributes** | Pointer to [**PATCHBundlesBundleId200ResponseDataAttributes**](PATCHBundlesBundleId200ResponseDataAttributes.md) |  | [optional] 
+**Relationships** | Pointer to [**GETBundles200ResponseDataInnerRelationships**](GETBundles200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -101,20 +101,20 @@ HasType returns a boolean if a field has been set.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetLinks
 
-`func (o *PATCHBundlesBundleId200ResponseData) GetLinks() POSTAddresses201ResponseDataLinks`
+`func (o *PATCHBundlesBundleId200ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *PATCHBundlesBundleId200ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool)`
+`func (o *PATCHBundlesBundleId200ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *PATCHBundlesBundleId200ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks)`
+`func (o *PATCHBundlesBundleId200ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks)`
 
 SetLinks sets Links field to given value.
 
@@ -126,20 +126,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *PATCHBundlesBundleId200ResponseData) GetAttributes() PATCHBundlesBundleIdRequestDataAttributes`
+`func (o *PATCHBundlesBundleId200ResponseData) GetAttributes() PATCHBundlesBundleId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PATCHBundlesBundleId200ResponseData) GetAttributesOk() (*PATCHBundlesBundleIdRequestDataAttributes, bool)`
+`func (o *PATCHBundlesBundleId200ResponseData) GetAttributesOk() (*PATCHBundlesBundleId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PATCHBundlesBundleId200ResponseData) SetAttributes(v PATCHBundlesBundleIdRequestDataAttributes)`
+`func (o *PATCHBundlesBundleId200ResponseData) SetAttributes(v PATCHBundlesBundleId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
@@ -151,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHBundlesBundleId200ResponseData) GetRelationships() POSTBundles201ResponseDataRelationships`
+`func (o *PATCHBundlesBundleId200ResponseData) GetRelationships() GETBundles200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHBundlesBundleId200ResponseData) GetRelationshipsOk() (*POSTBundles201ResponseDataRelationships, bool)`
+`func (o *PATCHBundlesBundleId200ResponseData) GetRelationshipsOk() (*GETBundles200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHBundlesBundleId200ResponseData) SetRelationships(v POSTBundles201ResponseDataRelationships)`
+`func (o *PATCHBundlesBundleId200ResponseData) SetRelationships(v GETBundles200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

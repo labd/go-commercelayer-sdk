@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the InventoryModelDataRelationshipsInventoryStockLocations type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &InventoryModelDataRelationshipsInventoryStockLocations{}
-
 // InventoryModelDataRelationshipsInventoryStockLocations struct for InventoryModelDataRelationshipsInventoryStockLocations
 type InventoryModelDataRelationshipsInventoryStockLocations struct {
 	Data *InventoryModelDataRelationshipsInventoryStockLocationsData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewInventoryModelDataRelationshipsInventoryStockLocationsWithDefaults() *In
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *InventoryModelDataRelationshipsInventoryStockLocations) GetData() InventoryModelDataRelationshipsInventoryStockLocationsData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret InventoryModelDataRelationshipsInventoryStockLocationsData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *InventoryModelDataRelationshipsInventoryStockLocations) GetData() Inven
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InventoryModelDataRelationshipsInventoryStockLocations) GetDataOk() (*InventoryModelDataRelationshipsInventoryStockLocationsData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *InventoryModelDataRelationshipsInventoryStockLocations) GetDataOk() (*I
 
 // HasData returns a boolean if a field has been set.
 func (o *InventoryModelDataRelationshipsInventoryStockLocations) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *InventoryModelDataRelationshipsInventoryStockLocations) SetData(v Inven
 }
 
 func (o InventoryModelDataRelationshipsInventoryStockLocations) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o InventoryModelDataRelationshipsInventoryStockLocations) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableInventoryModelDataRelationshipsInventoryStockLocations struct {

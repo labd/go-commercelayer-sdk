@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the ExternalPromotionDataRelationshipsPromotionRules type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ExternalPromotionDataRelationshipsPromotionRules{}
-
 // ExternalPromotionDataRelationshipsPromotionRules struct for ExternalPromotionDataRelationshipsPromotionRules
 type ExternalPromotionDataRelationshipsPromotionRules struct {
-	Data *POSTExternalPromotionsRequestDataRelationshipsPromotionRulesData `json:"data,omitempty"`
+	Data *ExternalPromotionDataRelationshipsPromotionRulesData `json:"data,omitempty"`
 }
 
 // NewExternalPromotionDataRelationshipsPromotionRules instantiates a new ExternalPromotionDataRelationshipsPromotionRules object
@@ -41,9 +38,9 @@ func NewExternalPromotionDataRelationshipsPromotionRulesWithDefaults() *External
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *ExternalPromotionDataRelationshipsPromotionRules) GetData() POSTExternalPromotionsRequestDataRelationshipsPromotionRulesData {
-	if o == nil || IsNil(o.Data) {
-		var ret POSTExternalPromotionsRequestDataRelationshipsPromotionRulesData
+func (o *ExternalPromotionDataRelationshipsPromotionRules) GetData() ExternalPromotionDataRelationshipsPromotionRulesData {
+	if o == nil || o.Data == nil {
+		var ret ExternalPromotionDataRelationshipsPromotionRulesData
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *ExternalPromotionDataRelationshipsPromotionRules) GetData() POSTExterna
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ExternalPromotionDataRelationshipsPromotionRules) GetDataOk() (*POSTExternalPromotionsRequestDataRelationshipsPromotionRulesData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *ExternalPromotionDataRelationshipsPromotionRules) GetDataOk() (*ExternalPromotionDataRelationshipsPromotionRulesData, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *ExternalPromotionDataRelationshipsPromotionRules) GetDataOk() (*POSTExt
 
 // HasData returns a boolean if a field has been set.
 func (o *ExternalPromotionDataRelationshipsPromotionRules) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given POSTExternalPromotionsRequestDataRelationshipsPromotionRulesData and assigns it to the Data field.
-func (o *ExternalPromotionDataRelationshipsPromotionRules) SetData(v POSTExternalPromotionsRequestDataRelationshipsPromotionRulesData) {
+// SetData gets a reference to the given ExternalPromotionDataRelationshipsPromotionRulesData and assigns it to the Data field.
+func (o *ExternalPromotionDataRelationshipsPromotionRules) SetData(v ExternalPromotionDataRelationshipsPromotionRulesData) {
 	o.Data = &v
 }
 
 func (o ExternalPromotionDataRelationshipsPromotionRules) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o ExternalPromotionDataRelationshipsPromotionRules) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableExternalPromotionDataRelationshipsPromotionRules struct {

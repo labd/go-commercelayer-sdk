@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *AdjustmentsApiService) DELETEAdjustmentsAdjustmentIdExecute(r Adjustmen
 	}
 
 	localVarPath := localBasePath + "/adjustments/{adjustmentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"adjustmentId"+"}", url.PathEscape(parameterValueToString(r.adjustmentId, "adjustmentId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"adjustmentId"+"}", url.PathEscape(parameterToString(r.adjustmentId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *AdjustmentsApiService) DELETEAdjustmentsAdjustmentIdExecute(r Adjustmen
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *AdjustmentsApiService) GETAdjustmentsExecute(r AdjustmentsApiGETAdjustm
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *AdjustmentsApiService) GETAdjustmentsAdjustmentIdExecute(r AdjustmentsA
 	}
 
 	localVarPath := localBasePath + "/adjustments/{adjustmentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"adjustmentId"+"}", url.PathEscape(parameterValueToString(r.adjustmentId, "adjustmentId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"adjustmentId"+"}", url.PathEscape(parameterToString(r.adjustmentId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *AdjustmentsApiService) GETAdjustmentsAdjustmentIdExecute(r AdjustmentsA
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -320,14 +320,14 @@ func (a *AdjustmentsApiService) GETAdjustmentsAdjustmentIdExecute(r AdjustmentsA
 }
 
 type AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest struct {
-	ctx                                 context.Context
-	ApiService                          *AdjustmentsApiService
-	pATCHAdjustmentsAdjustmentIdRequest *PATCHAdjustmentsAdjustmentIdRequest
-	adjustmentId                        interface{}
+	ctx              context.Context
+	ApiService       *AdjustmentsApiService
+	adjustmentUpdate *AdjustmentUpdate
+	adjustmentId     interface{}
 }
 
-func (r AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest) PATCHAdjustmentsAdjustmentIdRequest(pATCHAdjustmentsAdjustmentIdRequest PATCHAdjustmentsAdjustmentIdRequest) AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest {
-	r.pATCHAdjustmentsAdjustmentIdRequest = &pATCHAdjustmentsAdjustmentIdRequest
+func (r AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest) AdjustmentUpdate(adjustmentUpdate AdjustmentUpdate) AdjustmentsApiPATCHAdjustmentsAdjustmentIdRequest {
+	r.adjustmentUpdate = &adjustmentUpdate
 	return r
 }
 
@@ -369,13 +369,13 @@ func (a *AdjustmentsApiService) PATCHAdjustmentsAdjustmentIdExecute(r Adjustment
 	}
 
 	localVarPath := localBasePath + "/adjustments/{adjustmentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"adjustmentId"+"}", url.PathEscape(parameterValueToString(r.adjustmentId, "adjustmentId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"adjustmentId"+"}", url.PathEscape(parameterToString(r.adjustmentId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHAdjustmentsAdjustmentIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHAdjustmentsAdjustmentIdRequest is required and must be specified")
+	if r.adjustmentUpdate == nil {
+		return localVarReturnValue, nil, reportError("adjustmentUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -396,7 +396,7 @@ func (a *AdjustmentsApiService) PATCHAdjustmentsAdjustmentIdExecute(r Adjustment
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHAdjustmentsAdjustmentIdRequest
+	localVarPostBody = r.adjustmentUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -407,9 +407,9 @@ func (a *AdjustmentsApiService) PATCHAdjustmentsAdjustmentIdExecute(r Adjustment
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -435,13 +435,13 @@ func (a *AdjustmentsApiService) PATCHAdjustmentsAdjustmentIdExecute(r Adjustment
 }
 
 type AdjustmentsApiPOSTAdjustmentsRequest struct {
-	ctx                    context.Context
-	ApiService             *AdjustmentsApiService
-	pOSTAdjustmentsRequest *POSTAdjustmentsRequest
+	ctx              context.Context
+	ApiService       *AdjustmentsApiService
+	adjustmentCreate *AdjustmentCreate
 }
 
-func (r AdjustmentsApiPOSTAdjustmentsRequest) POSTAdjustmentsRequest(pOSTAdjustmentsRequest POSTAdjustmentsRequest) AdjustmentsApiPOSTAdjustmentsRequest {
-	r.pOSTAdjustmentsRequest = &pOSTAdjustmentsRequest
+func (r AdjustmentsApiPOSTAdjustmentsRequest) AdjustmentCreate(adjustmentCreate AdjustmentCreate) AdjustmentsApiPOSTAdjustmentsRequest {
+	r.adjustmentCreate = &adjustmentCreate
 	return r
 }
 
@@ -485,8 +485,8 @@ func (a *AdjustmentsApiService) POSTAdjustmentsExecute(r AdjustmentsApiPOSTAdjus
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTAdjustmentsRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTAdjustmentsRequest is required and must be specified")
+	if r.adjustmentCreate == nil {
+		return localVarReturnValue, nil, reportError("adjustmentCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -507,7 +507,7 @@ func (a *AdjustmentsApiService) POSTAdjustmentsExecute(r AdjustmentsApiPOSTAdjus
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTAdjustmentsRequest
+	localVarPostBody = r.adjustmentCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -518,9 +518,9 @@ func (a *AdjustmentsApiService) POSTAdjustmentsExecute(r AdjustmentsApiPOSTAdjus
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

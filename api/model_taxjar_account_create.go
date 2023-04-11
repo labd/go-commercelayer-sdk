@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the TaxjarAccountCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &TaxjarAccountCreate{}
-
 // TaxjarAccountCreate struct for TaxjarAccountCreate
 type TaxjarAccountCreate struct {
-	Data POSTTaxjarAccountsRequestData `json:"data"`
+	Data TaxjarAccountCreateData `json:"data"`
 }
 
 // NewTaxjarAccountCreate instantiates a new TaxjarAccountCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTaxjarAccountCreate(data POSTTaxjarAccountsRequestData) *TaxjarAccountCreate {
+func NewTaxjarAccountCreate(data TaxjarAccountCreateData) *TaxjarAccountCreate {
 	this := TaxjarAccountCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewTaxjarAccountCreateWithDefaults() *TaxjarAccountCreate {
 }
 
 // GetData returns the Data field value
-func (o *TaxjarAccountCreate) GetData() POSTTaxjarAccountsRequestData {
+func (o *TaxjarAccountCreate) GetData() TaxjarAccountCreateData {
 	if o == nil {
-		var ret POSTTaxjarAccountsRequestData
+		var ret TaxjarAccountCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *TaxjarAccountCreate) GetData() POSTTaxjarAccountsRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *TaxjarAccountCreate) GetDataOk() (*POSTTaxjarAccountsRequestData, bool) {
+func (o *TaxjarAccountCreate) GetDataOk() (*TaxjarAccountCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *TaxjarAccountCreate) GetDataOk() (*POSTTaxjarAccountsRequestData, bool)
 }
 
 // SetData sets field value
-func (o *TaxjarAccountCreate) SetData(v POSTTaxjarAccountsRequestData) {
+func (o *TaxjarAccountCreate) SetData(v TaxjarAccountCreateData) {
 	o.Data = v
 }
 
 func (o TaxjarAccountCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o TaxjarAccountCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableTaxjarAccountCreate struct {

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PATCHReturnsReturnIdRequestData**](PATCHReturnsReturnIdRequestData.md) |  | 
+**Data** | [**ReturnUpdateData**](ReturnUpdateData.md) |  | 
 
 ## Methods
 
 ### NewReturnUpdate
 
-`func NewReturnUpdate(data PATCHReturnsReturnIdRequestData, ) *ReturnUpdate`
+`func NewReturnUpdate(data ReturnUpdateData, ) *ReturnUpdate`
 
 NewReturnUpdate instantiates a new ReturnUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *ReturnUpdate) GetData() PATCHReturnsReturnIdRequestData`
+`func (o *ReturnUpdate) GetData() ReturnUpdateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ReturnUpdate) GetDataOk() (*PATCHReturnsReturnIdRequestData, bool)`
+`func (o *ReturnUpdate) GetDataOk() (*ReturnUpdateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ReturnUpdate) SetData(v PATCHReturnsReturnIdRequestData)`
+`func (o *ReturnUpdate) SetData(v ReturnUpdateData)`
 
 SetData sets Data field to given value.
 

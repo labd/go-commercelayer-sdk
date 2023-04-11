@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *CustomerPasswordResetsApiService) DELETECustomerPasswordResetsCustomerP
 	}
 
 	localVarPath := localBasePath + "/customer_password_resets/{customerPasswordResetId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerPasswordResetId"+"}", url.PathEscape(parameterValueToString(r.customerPasswordResetId, "customerPasswordResetId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerPasswordResetId"+"}", url.PathEscape(parameterToString(r.customerPasswordResetId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *CustomerPasswordResetsApiService) DELETECustomerPasswordResetsCustomerP
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsExecute(r Cu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsCustomerPass
 	}
 
 	localVarPath := localBasePath + "/customer_password_resets/{customerPasswordResetId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerPasswordResetId"+"}", url.PathEscape(parameterValueToString(r.customerPasswordResetId, "customerPasswordResetId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerPasswordResetId"+"}", url.PathEscape(parameterToString(r.customerPasswordResetId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsCustomerPass
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -320,14 +320,14 @@ func (a *CustomerPasswordResetsApiService) GETCustomerPasswordResetsCustomerPass
 }
 
 type CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest struct {
-	ctx                                                       context.Context
-	ApiService                                                *CustomerPasswordResetsApiService
-	pATCHCustomerPasswordResetsCustomerPasswordResetIdRequest *PATCHCustomerPasswordResetsCustomerPasswordResetIdRequest
-	customerPasswordResetId                                   interface{}
+	ctx                         context.Context
+	ApiService                  *CustomerPasswordResetsApiService
+	customerPasswordResetUpdate *CustomerPasswordResetUpdate
+	customerPasswordResetId     interface{}
 }
 
-func (r CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest) PATCHCustomerPasswordResetsCustomerPasswordResetIdRequest(pATCHCustomerPasswordResetsCustomerPasswordResetIdRequest PATCHCustomerPasswordResetsCustomerPasswordResetIdRequest) CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest {
-	r.pATCHCustomerPasswordResetsCustomerPasswordResetIdRequest = &pATCHCustomerPasswordResetsCustomerPasswordResetIdRequest
+func (r CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest) CustomerPasswordResetUpdate(customerPasswordResetUpdate CustomerPasswordResetUpdate) CustomerPasswordResetsApiPATCHCustomerPasswordResetsCustomerPasswordResetIdRequest {
+	r.customerPasswordResetUpdate = &customerPasswordResetUpdate
 	return r
 }
 
@@ -369,13 +369,13 @@ func (a *CustomerPasswordResetsApiService) PATCHCustomerPasswordResetsCustomerPa
 	}
 
 	localVarPath := localBasePath + "/customer_password_resets/{customerPasswordResetId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerPasswordResetId"+"}", url.PathEscape(parameterValueToString(r.customerPasswordResetId, "customerPasswordResetId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerPasswordResetId"+"}", url.PathEscape(parameterToString(r.customerPasswordResetId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHCustomerPasswordResetsCustomerPasswordResetIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHCustomerPasswordResetsCustomerPasswordResetIdRequest is required and must be specified")
+	if r.customerPasswordResetUpdate == nil {
+		return localVarReturnValue, nil, reportError("customerPasswordResetUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -396,7 +396,7 @@ func (a *CustomerPasswordResetsApiService) PATCHCustomerPasswordResetsCustomerPa
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHCustomerPasswordResetsCustomerPasswordResetIdRequest
+	localVarPostBody = r.customerPasswordResetUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -407,9 +407,9 @@ func (a *CustomerPasswordResetsApiService) PATCHCustomerPasswordResetsCustomerPa
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -435,13 +435,13 @@ func (a *CustomerPasswordResetsApiService) PATCHCustomerPasswordResetsCustomerPa
 }
 
 type CustomerPasswordResetsApiPOSTCustomerPasswordResetsRequest struct {
-	ctx                               context.Context
-	ApiService                        *CustomerPasswordResetsApiService
-	pOSTCustomerPasswordResetsRequest *POSTCustomerPasswordResetsRequest
+	ctx                         context.Context
+	ApiService                  *CustomerPasswordResetsApiService
+	customerPasswordResetCreate *CustomerPasswordResetCreate
 }
 
-func (r CustomerPasswordResetsApiPOSTCustomerPasswordResetsRequest) POSTCustomerPasswordResetsRequest(pOSTCustomerPasswordResetsRequest POSTCustomerPasswordResetsRequest) CustomerPasswordResetsApiPOSTCustomerPasswordResetsRequest {
-	r.pOSTCustomerPasswordResetsRequest = &pOSTCustomerPasswordResetsRequest
+func (r CustomerPasswordResetsApiPOSTCustomerPasswordResetsRequest) CustomerPasswordResetCreate(customerPasswordResetCreate CustomerPasswordResetCreate) CustomerPasswordResetsApiPOSTCustomerPasswordResetsRequest {
+	r.customerPasswordResetCreate = &customerPasswordResetCreate
 	return r
 }
 
@@ -485,8 +485,8 @@ func (a *CustomerPasswordResetsApiService) POSTCustomerPasswordResetsExecute(r C
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTCustomerPasswordResetsRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTCustomerPasswordResetsRequest is required and must be specified")
+	if r.customerPasswordResetCreate == nil {
+		return localVarReturnValue, nil, reportError("customerPasswordResetCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -507,7 +507,7 @@ func (a *CustomerPasswordResetsApiService) POSTCustomerPasswordResetsExecute(r C
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTCustomerPasswordResetsRequest
+	localVarPostBody = r.customerPasswordResetCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -518,9 +518,9 @@ func (a *CustomerPasswordResetsApiService) POSTCustomerPasswordResetsExecute(r C
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the POSTBingGeocoders201Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &POSTBingGeocoders201Response{}
-
 // POSTBingGeocoders201Response struct for POSTBingGeocoders201Response
 type POSTBingGeocoders201Response struct {
 	Data *POSTBingGeocoders201ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPOSTBingGeocoders201ResponseWithDefaults() *POSTBingGeocoders201Response
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTBingGeocoders201Response) GetData() POSTBingGeocoders201ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret POSTBingGeocoders201ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *POSTBingGeocoders201Response) GetData() POSTBingGeocoders201ResponseDat
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTBingGeocoders201Response) GetDataOk() (*POSTBingGeocoders201ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *POSTBingGeocoders201Response) GetDataOk() (*POSTBingGeocoders201Respons
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTBingGeocoders201Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *POSTBingGeocoders201Response) SetData(v POSTBingGeocoders201ResponseDat
 }
 
 func (o POSTBingGeocoders201Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o POSTBingGeocoders201Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePOSTBingGeocoders201Response struct {

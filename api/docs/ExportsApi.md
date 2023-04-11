@@ -28,7 +28,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -36,7 +36,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ExportsApi.DELETEExportsExportId(context.Background(), exportId).Execute()
+    resp, r, err := apiClient.ExportsApi.DELETEExportsExportId(context.Background(), exportId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExportsApi.DELETEExportsExportId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -96,7 +96,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -157,7 +157,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ## POSTExports
 
-> POSTExports201Response POSTExports(ctx).POSTExportsRequest(pOSTExportsRequest).Execute()
+> POSTExports201Response POSTExports(ctx).ExportCreate(exportCreate).Execute()
 
 Create an export
 
@@ -227,15 +227,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTExportsRequest := *openapiclient.NewPOSTExportsRequest(*openapiclient.NewPOSTExportsRequestData(interface{}(123), *openapiclient.NewPOSTExportsRequestDataAttributes(interface{}(skus)))) // POSTExportsRequest | 
+    exportCreate := *openapiclient.NewExportCreate(*openapiclient.NewExportCreateData(interface{}(123), *openapiclient.NewPOSTExports201ResponseDataAttributes(interface{}(skus)))) // ExportCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExportsApi.POSTExports(context.Background()).POSTExportsRequest(pOSTExportsRequest).Execute()
+    resp, r, err := apiClient.ExportsApi.POSTExports(context.Background()).ExportCreate(exportCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExportsApi.POSTExports``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -256,7 +256,7 @@ Other parameters are passed through a pointer to a apiPOSTExportsRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTExportsRequest** | [**POSTExportsRequest**](POSTExportsRequest.md) |  | 
+ **exportCreate** | [**ExportCreate**](ExportCreate.md) |  | 
 
 ### Return type
 

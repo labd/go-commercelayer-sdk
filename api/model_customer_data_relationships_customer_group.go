@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the CustomerDataRelationshipsCustomerGroup type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CustomerDataRelationshipsCustomerGroup{}
-
 // CustomerDataRelationshipsCustomerGroup struct for CustomerDataRelationshipsCustomerGroup
 type CustomerDataRelationshipsCustomerGroup struct {
-	Data *POSTCustomersRequestDataRelationshipsCustomerGroupData `json:"data,omitempty"`
+	Data *CustomerDataRelationshipsCustomerGroupData `json:"data,omitempty"`
 }
 
 // NewCustomerDataRelationshipsCustomerGroup instantiates a new CustomerDataRelationshipsCustomerGroup object
@@ -41,9 +38,9 @@ func NewCustomerDataRelationshipsCustomerGroupWithDefaults() *CustomerDataRelati
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *CustomerDataRelationshipsCustomerGroup) GetData() POSTCustomersRequestDataRelationshipsCustomerGroupData {
-	if o == nil || IsNil(o.Data) {
-		var ret POSTCustomersRequestDataRelationshipsCustomerGroupData
+func (o *CustomerDataRelationshipsCustomerGroup) GetData() CustomerDataRelationshipsCustomerGroupData {
+	if o == nil || o.Data == nil {
+		var ret CustomerDataRelationshipsCustomerGroupData
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *CustomerDataRelationshipsCustomerGroup) GetData() POSTCustomersRequestD
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerDataRelationshipsCustomerGroup) GetDataOk() (*POSTCustomersRequestDataRelationshipsCustomerGroupData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *CustomerDataRelationshipsCustomerGroup) GetDataOk() (*CustomerDataRelationshipsCustomerGroupData, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *CustomerDataRelationshipsCustomerGroup) GetDataOk() (*POSTCustomersRequ
 
 // HasData returns a boolean if a field has been set.
 func (o *CustomerDataRelationshipsCustomerGroup) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given POSTCustomersRequestDataRelationshipsCustomerGroupData and assigns it to the Data field.
-func (o *CustomerDataRelationshipsCustomerGroup) SetData(v POSTCustomersRequestDataRelationshipsCustomerGroupData) {
+// SetData gets a reference to the given CustomerDataRelationshipsCustomerGroupData and assigns it to the Data field.
+func (o *CustomerDataRelationshipsCustomerGroup) SetData(v CustomerDataRelationshipsCustomerGroupData) {
 	o.Data = &v
 }
 
 func (o CustomerDataRelationshipsCustomerGroup) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o CustomerDataRelationshipsCustomerGroup) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableCustomerDataRelationshipsCustomerGroup struct {

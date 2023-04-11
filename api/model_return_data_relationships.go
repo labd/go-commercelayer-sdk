@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the ReturnDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ReturnDataRelationships{}
-
 // ReturnDataRelationships struct for ReturnDataRelationships
 type ReturnDataRelationships struct {
 	Order              *AdyenPaymentDataRelationshipsOrder             `json:"order,omitempty"`
@@ -49,7 +46,7 @@ func NewReturnDataRelationshipsWithDefaults() *ReturnDataRelationships {
 
 // GetOrder returns the Order field value if set, zero value otherwise.
 func (o *ReturnDataRelationships) GetOrder() AdyenPaymentDataRelationshipsOrder {
-	if o == nil || IsNil(o.Order) {
+	if o == nil || o.Order == nil {
 		var ret AdyenPaymentDataRelationshipsOrder
 		return ret
 	}
@@ -59,7 +56,7 @@ func (o *ReturnDataRelationships) GetOrder() AdyenPaymentDataRelationshipsOrder 
 // GetOrderOk returns a tuple with the Order field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReturnDataRelationships) GetOrderOk() (*AdyenPaymentDataRelationshipsOrder, bool) {
-	if o == nil || IsNil(o.Order) {
+	if o == nil || o.Order == nil {
 		return nil, false
 	}
 	return o.Order, true
@@ -67,7 +64,7 @@ func (o *ReturnDataRelationships) GetOrderOk() (*AdyenPaymentDataRelationshipsOr
 
 // HasOrder returns a boolean if a field has been set.
 func (o *ReturnDataRelationships) HasOrder() bool {
-	if o != nil && !IsNil(o.Order) {
+	if o != nil && o.Order != nil {
 		return true
 	}
 
@@ -81,7 +78,7 @@ func (o *ReturnDataRelationships) SetOrder(v AdyenPaymentDataRelationshipsOrder)
 
 // GetCustomer returns the Customer field value if set, zero value otherwise.
 func (o *ReturnDataRelationships) GetCustomer() CouponRecipientDataRelationshipsCustomer {
-	if o == nil || IsNil(o.Customer) {
+	if o == nil || o.Customer == nil {
 		var ret CouponRecipientDataRelationshipsCustomer
 		return ret
 	}
@@ -91,7 +88,7 @@ func (o *ReturnDataRelationships) GetCustomer() CouponRecipientDataRelationships
 // GetCustomerOk returns a tuple with the Customer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReturnDataRelationships) GetCustomerOk() (*CouponRecipientDataRelationshipsCustomer, bool) {
-	if o == nil || IsNil(o.Customer) {
+	if o == nil || o.Customer == nil {
 		return nil, false
 	}
 	return o.Customer, true
@@ -99,7 +96,7 @@ func (o *ReturnDataRelationships) GetCustomerOk() (*CouponRecipientDataRelations
 
 // HasCustomer returns a boolean if a field has been set.
 func (o *ReturnDataRelationships) HasCustomer() bool {
-	if o != nil && !IsNil(o.Customer) {
+	if o != nil && o.Customer != nil {
 		return true
 	}
 
@@ -113,7 +110,7 @@ func (o *ReturnDataRelationships) SetCustomer(v CouponRecipientDataRelationships
 
 // GetStockLocation returns the StockLocation field value if set, zero value otherwise.
 func (o *ReturnDataRelationships) GetStockLocation() DeliveryLeadTimeDataRelationshipsStockLocation {
-	if o == nil || IsNil(o.StockLocation) {
+	if o == nil || o.StockLocation == nil {
 		var ret DeliveryLeadTimeDataRelationshipsStockLocation
 		return ret
 	}
@@ -123,7 +120,7 @@ func (o *ReturnDataRelationships) GetStockLocation() DeliveryLeadTimeDataRelatio
 // GetStockLocationOk returns a tuple with the StockLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReturnDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeDataRelationshipsStockLocation, bool) {
-	if o == nil || IsNil(o.StockLocation) {
+	if o == nil || o.StockLocation == nil {
 		return nil, false
 	}
 	return o.StockLocation, true
@@ -131,7 +128,7 @@ func (o *ReturnDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeDataRel
 
 // HasStockLocation returns a boolean if a field has been set.
 func (o *ReturnDataRelationships) HasStockLocation() bool {
-	if o != nil && !IsNil(o.StockLocation) {
+	if o != nil && o.StockLocation != nil {
 		return true
 	}
 
@@ -145,7 +142,7 @@ func (o *ReturnDataRelationships) SetStockLocation(v DeliveryLeadTimeDataRelatio
 
 // GetOriginAddress returns the OriginAddress field value if set, zero value otherwise.
 func (o *ReturnDataRelationships) GetOriginAddress() BingGeocoderDataRelationshipsAddresses {
-	if o == nil || IsNil(o.OriginAddress) {
+	if o == nil || o.OriginAddress == nil {
 		var ret BingGeocoderDataRelationshipsAddresses
 		return ret
 	}
@@ -155,7 +152,7 @@ func (o *ReturnDataRelationships) GetOriginAddress() BingGeocoderDataRelationshi
 // GetOriginAddressOk returns a tuple with the OriginAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReturnDataRelationships) GetOriginAddressOk() (*BingGeocoderDataRelationshipsAddresses, bool) {
-	if o == nil || IsNil(o.OriginAddress) {
+	if o == nil || o.OriginAddress == nil {
 		return nil, false
 	}
 	return o.OriginAddress, true
@@ -163,7 +160,7 @@ func (o *ReturnDataRelationships) GetOriginAddressOk() (*BingGeocoderDataRelatio
 
 // HasOriginAddress returns a boolean if a field has been set.
 func (o *ReturnDataRelationships) HasOriginAddress() bool {
-	if o != nil && !IsNil(o.OriginAddress) {
+	if o != nil && o.OriginAddress != nil {
 		return true
 	}
 
@@ -177,7 +174,7 @@ func (o *ReturnDataRelationships) SetOriginAddress(v BingGeocoderDataRelationshi
 
 // GetDestinationAddress returns the DestinationAddress field value if set, zero value otherwise.
 func (o *ReturnDataRelationships) GetDestinationAddress() BingGeocoderDataRelationshipsAddresses {
-	if o == nil || IsNil(o.DestinationAddress) {
+	if o == nil || o.DestinationAddress == nil {
 		var ret BingGeocoderDataRelationshipsAddresses
 		return ret
 	}
@@ -187,7 +184,7 @@ func (o *ReturnDataRelationships) GetDestinationAddress() BingGeocoderDataRelati
 // GetDestinationAddressOk returns a tuple with the DestinationAddress field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReturnDataRelationships) GetDestinationAddressOk() (*BingGeocoderDataRelationshipsAddresses, bool) {
-	if o == nil || IsNil(o.DestinationAddress) {
+	if o == nil || o.DestinationAddress == nil {
 		return nil, false
 	}
 	return o.DestinationAddress, true
@@ -195,7 +192,7 @@ func (o *ReturnDataRelationships) GetDestinationAddressOk() (*BingGeocoderDataRe
 
 // HasDestinationAddress returns a boolean if a field has been set.
 func (o *ReturnDataRelationships) HasDestinationAddress() bool {
-	if o != nil && !IsNil(o.DestinationAddress) {
+	if o != nil && o.DestinationAddress != nil {
 		return true
 	}
 
@@ -209,7 +206,7 @@ func (o *ReturnDataRelationships) SetDestinationAddress(v BingGeocoderDataRelati
 
 // GetReturnLineItems returns the ReturnLineItems field value if set, zero value otherwise.
 func (o *ReturnDataRelationships) GetReturnLineItems() ReturnDataRelationshipsReturnLineItems {
-	if o == nil || IsNil(o.ReturnLineItems) {
+	if o == nil || o.ReturnLineItems == nil {
 		var ret ReturnDataRelationshipsReturnLineItems
 		return ret
 	}
@@ -219,7 +216,7 @@ func (o *ReturnDataRelationships) GetReturnLineItems() ReturnDataRelationshipsRe
 // GetReturnLineItemsOk returns a tuple with the ReturnLineItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReturnDataRelationships) GetReturnLineItemsOk() (*ReturnDataRelationshipsReturnLineItems, bool) {
-	if o == nil || IsNil(o.ReturnLineItems) {
+	if o == nil || o.ReturnLineItems == nil {
 		return nil, false
 	}
 	return o.ReturnLineItems, true
@@ -227,7 +224,7 @@ func (o *ReturnDataRelationships) GetReturnLineItemsOk() (*ReturnDataRelationshi
 
 // HasReturnLineItems returns a boolean if a field has been set.
 func (o *ReturnDataRelationships) HasReturnLineItems() bool {
-	if o != nil && !IsNil(o.ReturnLineItems) {
+	if o != nil && o.ReturnLineItems != nil {
 		return true
 	}
 
@@ -241,7 +238,7 @@ func (o *ReturnDataRelationships) SetReturnLineItems(v ReturnDataRelationshipsRe
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *ReturnDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		var ret AvalaraAccountDataRelationshipsAttachments
 		return ret
 	}
@@ -251,7 +248,7 @@ func (o *ReturnDataRelationships) GetAttachments() AvalaraAccountDataRelationshi
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReturnDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		return nil, false
 	}
 	return o.Attachments, true
@@ -259,7 +256,7 @@ func (o *ReturnDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelatio
 
 // HasAttachments returns a boolean if a field has been set.
 func (o *ReturnDataRelationships) HasAttachments() bool {
-	if o != nil && !IsNil(o.Attachments) {
+	if o != nil && o.Attachments != nil {
 		return true
 	}
 
@@ -273,7 +270,7 @@ func (o *ReturnDataRelationships) SetAttachments(v AvalaraAccountDataRelationshi
 
 // GetEvents returns the Events field value if set, zero value otherwise.
 func (o *ReturnDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || o.Events == nil {
 		var ret AuthorizationDataRelationshipsEvents
 		return ret
 	}
@@ -283,7 +280,7 @@ func (o *ReturnDataRelationships) GetEvents() AuthorizationDataRelationshipsEven
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReturnDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || o.Events == nil {
 		return nil, false
 	}
 	return o.Events, true
@@ -291,7 +288,7 @@ func (o *ReturnDataRelationships) GetEventsOk() (*AuthorizationDataRelationships
 
 // HasEvents returns a boolean if a field has been set.
 func (o *ReturnDataRelationships) HasEvents() bool {
-	if o != nil && !IsNil(o.Events) {
+	if o != nil && o.Events != nil {
 		return true
 	}
 
@@ -304,40 +301,32 @@ func (o *ReturnDataRelationships) SetEvents(v AuthorizationDataRelationshipsEven
 }
 
 func (o ReturnDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o ReturnDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Order) {
+	if o.Order != nil {
 		toSerialize["order"] = o.Order
 	}
-	if !IsNil(o.Customer) {
+	if o.Customer != nil {
 		toSerialize["customer"] = o.Customer
 	}
-	if !IsNil(o.StockLocation) {
+	if o.StockLocation != nil {
 		toSerialize["stock_location"] = o.StockLocation
 	}
-	if !IsNil(o.OriginAddress) {
+	if o.OriginAddress != nil {
 		toSerialize["origin_address"] = o.OriginAddress
 	}
-	if !IsNil(o.DestinationAddress) {
+	if o.DestinationAddress != nil {
 		toSerialize["destination_address"] = o.DestinationAddress
 	}
-	if !IsNil(o.ReturnLineItems) {
+	if o.ReturnLineItems != nil {
 		toSerialize["return_line_items"] = o.ReturnLineItems
 	}
-	if !IsNil(o.Attachments) {
+	if o.Attachments != nil {
 		toSerialize["attachments"] = o.Attachments
 	}
-	if !IsNil(o.Events) {
+	if o.Events != nil {
 		toSerialize["events"] = o.Events
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableReturnDataRelationships struct {

@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETApplicationApplicationId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETApplicationApplicationId200ResponseDataAttributes{}
-
 // GETApplicationApplicationId200ResponseDataAttributes struct for GETApplicationApplicationId200ResponseDataAttributes
 type GETApplicationApplicationId200ResponseDataAttributes struct {
 	// The application's internal name.
@@ -72,7 +69,7 @@ func (o *GETApplicationApplicationId200ResponseDataAttributes) GetName() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETApplicationApplicationId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Name) {
+	if o == nil || o.Name == nil {
 		return nil, false
 	}
 	return &o.Name, true
@@ -80,7 +77,7 @@ func (o *GETApplicationApplicationId200ResponseDataAttributes) GetNameOk() (*int
 
 // HasName returns a boolean if a field has been set.
 func (o *GETApplicationApplicationId200ResponseDataAttributes) HasName() bool {
-	if o != nil && IsNil(o.Name) {
+	if o != nil && o.Name != nil {
 		return true
 	}
 
@@ -105,7 +102,7 @@ func (o *GETApplicationApplicationId200ResponseDataAttributes) GetKind() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETApplicationApplicationId200ResponseDataAttributes) GetKindOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Kind) {
+	if o == nil || o.Kind == nil {
 		return nil, false
 	}
 	return &o.Kind, true
@@ -113,7 +110,7 @@ func (o *GETApplicationApplicationId200ResponseDataAttributes) GetKindOk() (*int
 
 // HasKind returns a boolean if a field has been set.
 func (o *GETApplicationApplicationId200ResponseDataAttributes) HasKind() bool {
-	if o != nil && IsNil(o.Kind) {
+	if o != nil && o.Kind != nil {
 		return true
 	}
 
@@ -138,7 +135,7 @@ func (o *GETApplicationApplicationId200ResponseDataAttributes) GetPublicAccess()
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETApplicationApplicationId200ResponseDataAttributes) GetPublicAccessOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.PublicAccess) {
+	if o == nil || o.PublicAccess == nil {
 		return nil, false
 	}
 	return &o.PublicAccess, true
@@ -146,7 +143,7 @@ func (o *GETApplicationApplicationId200ResponseDataAttributes) GetPublicAccessOk
 
 // HasPublicAccess returns a boolean if a field has been set.
 func (o *GETApplicationApplicationId200ResponseDataAttributes) HasPublicAccess() bool {
-	if o != nil && IsNil(o.PublicAccess) {
+	if o != nil && o.PublicAccess != nil {
 		return true
 	}
 
@@ -171,7 +168,7 @@ func (o *GETApplicationApplicationId200ResponseDataAttributes) GetRedirectUri() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETApplicationApplicationId200ResponseDataAttributes) GetRedirectUriOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.RedirectUri) {
+	if o == nil || o.RedirectUri == nil {
 		return nil, false
 	}
 	return &o.RedirectUri, true
@@ -179,7 +176,7 @@ func (o *GETApplicationApplicationId200ResponseDataAttributes) GetRedirectUriOk(
 
 // HasRedirectUri returns a boolean if a field has been set.
 func (o *GETApplicationApplicationId200ResponseDataAttributes) HasRedirectUri() bool {
-	if o != nil && IsNil(o.RedirectUri) {
+	if o != nil && o.RedirectUri != nil {
 		return true
 	}
 
@@ -204,7 +201,7 @@ func (o *GETApplicationApplicationId200ResponseDataAttributes) GetScopes() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETApplicationApplicationId200ResponseDataAttributes) GetScopesOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Scopes) {
+	if o == nil || o.Scopes == nil {
 		return nil, false
 	}
 	return &o.Scopes, true
@@ -212,7 +209,7 @@ func (o *GETApplicationApplicationId200ResponseDataAttributes) GetScopesOk() (*i
 
 // HasScopes returns a boolean if a field has been set.
 func (o *GETApplicationApplicationId200ResponseDataAttributes) HasScopes() bool {
-	if o != nil && IsNil(o.Scopes) {
+	if o != nil && o.Scopes != nil {
 		return true
 	}
 
@@ -237,7 +234,7 @@ func (o *GETApplicationApplicationId200ResponseDataAttributes) GetCreatedAt() in
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETApplicationApplicationId200ResponseDataAttributes) GetCreatedAtOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.CreatedAt) {
+	if o == nil || o.CreatedAt == nil {
 		return nil, false
 	}
 	return &o.CreatedAt, true
@@ -245,7 +242,7 @@ func (o *GETApplicationApplicationId200ResponseDataAttributes) GetCreatedAtOk() 
 
 // HasCreatedAt returns a boolean if a field has been set.
 func (o *GETApplicationApplicationId200ResponseDataAttributes) HasCreatedAt() bool {
-	if o != nil && IsNil(o.CreatedAt) {
+	if o != nil && o.CreatedAt != nil {
 		return true
 	}
 
@@ -270,7 +267,7 @@ func (o *GETApplicationApplicationId200ResponseDataAttributes) GetUpdatedAt() in
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETApplicationApplicationId200ResponseDataAttributes) GetUpdatedAtOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.UpdatedAt) {
+	if o == nil || o.UpdatedAt == nil {
 		return nil, false
 	}
 	return &o.UpdatedAt, true
@@ -278,7 +275,7 @@ func (o *GETApplicationApplicationId200ResponseDataAttributes) GetUpdatedAtOk() 
 
 // HasUpdatedAt returns a boolean if a field has been set.
 func (o *GETApplicationApplicationId200ResponseDataAttributes) HasUpdatedAt() bool {
-	if o != nil && IsNil(o.UpdatedAt) {
+	if o != nil && o.UpdatedAt != nil {
 		return true
 	}
 
@@ -303,7 +300,7 @@ func (o *GETApplicationApplicationId200ResponseDataAttributes) GetReference() in
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETApplicationApplicationId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Reference) {
+	if o == nil || o.Reference == nil {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -311,7 +308,7 @@ func (o *GETApplicationApplicationId200ResponseDataAttributes) GetReferenceOk() 
 
 // HasReference returns a boolean if a field has been set.
 func (o *GETApplicationApplicationId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && IsNil(o.Reference) {
+	if o != nil && o.Reference != nil {
 		return true
 	}
 
@@ -336,7 +333,7 @@ func (o *GETApplicationApplicationId200ResponseDataAttributes) GetReferenceOrigi
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETApplicationApplicationId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.ReferenceOrigin) {
+	if o == nil || o.ReferenceOrigin == nil {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -344,7 +341,7 @@ func (o *GETApplicationApplicationId200ResponseDataAttributes) GetReferenceOrigi
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *GETApplicationApplicationId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && IsNil(o.ReferenceOrigin) {
+	if o != nil && o.ReferenceOrigin != nil {
 		return true
 	}
 
@@ -369,7 +366,7 @@ func (o *GETApplicationApplicationId200ResponseDataAttributes) GetMetadata() int
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETApplicationApplicationId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Metadata) {
+	if o == nil || o.Metadata == nil {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -377,7 +374,7 @@ func (o *GETApplicationApplicationId200ResponseDataAttributes) GetMetadataOk() (
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *GETApplicationApplicationId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && IsNil(o.Metadata) {
+	if o != nil && o.Metadata != nil {
 		return true
 	}
 
@@ -390,14 +387,6 @@ func (o *GETApplicationApplicationId200ResponseDataAttributes) SetMetadata(v int
 }
 
 func (o GETApplicationApplicationId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETApplicationApplicationId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -429,7 +418,7 @@ func (o GETApplicationApplicationId200ResponseDataAttributes) ToMap() (map[strin
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETApplicationApplicationId200ResponseDataAttributes struct {

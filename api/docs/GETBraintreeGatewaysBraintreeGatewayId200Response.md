@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETBraintreeGatewaysBraintreeGatewayId200ResponseData**](GETBraintreeGatewaysBraintreeGatewayId200ResponseData.md) |  | [optional] 
+**Data** | Pointer to [**GETBraintreeGateways200ResponseDataInner**](GETBraintreeGateways200ResponseDataInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETBraintreeGatewaysBraintreeGatewayId200Response) GetData() GETBraintreeGatewaysBraintreeGatewayId200ResponseData`
+`func (o *GETBraintreeGatewaysBraintreeGatewayId200Response) GetData() GETBraintreeGateways200ResponseDataInner`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETBraintreeGatewaysBraintreeGatewayId200Response) GetDataOk() (*GETBraintreeGatewaysBraintreeGatewayId200ResponseData, bool)`
+`func (o *GETBraintreeGatewaysBraintreeGatewayId200Response) GetDataOk() (*GETBraintreeGateways200ResponseDataInner, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETBraintreeGatewaysBraintreeGatewayId200Response) SetData(v GETBraintreeGatewaysBraintreeGatewayId200ResponseData)`
+`func (o *GETBraintreeGatewaysBraintreeGatewayId200Response) SetData(v GETBraintreeGateways200ResponseDataInner)`
 
 SetData sets Data field to given value.
 

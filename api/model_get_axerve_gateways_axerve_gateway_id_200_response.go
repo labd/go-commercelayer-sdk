@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETAxerveGatewaysAxerveGatewayId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETAxerveGatewaysAxerveGatewayId200Response{}
-
 // GETAxerveGatewaysAxerveGatewayId200Response struct for GETAxerveGatewaysAxerveGatewayId200Response
 type GETAxerveGatewaysAxerveGatewayId200Response struct {
-	Data *GETAxerveGatewaysAxerveGatewayId200ResponseData `json:"data,omitempty"`
+	Data *GETAxerveGateways200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETAxerveGatewaysAxerveGatewayId200Response instantiates a new GETAxerveGatewaysAxerveGatewayId200Response object
@@ -41,9 +38,9 @@ func NewGETAxerveGatewaysAxerveGatewayId200ResponseWithDefaults() *GETAxerveGate
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETAxerveGatewaysAxerveGatewayId200Response) GetData() GETAxerveGatewaysAxerveGatewayId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETAxerveGatewaysAxerveGatewayId200ResponseData
+func (o *GETAxerveGatewaysAxerveGatewayId200Response) GetData() GETAxerveGateways200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETAxerveGateways200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETAxerveGatewaysAxerveGatewayId200Response) GetData() GETAxerveGateway
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETAxerveGatewaysAxerveGatewayId200Response) GetDataOk() (*GETAxerveGatewaysAxerveGatewayId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETAxerveGatewaysAxerveGatewayId200Response) GetDataOk() (*GETAxerveGateways200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETAxerveGatewaysAxerveGatewayId200Response) GetDataOk() (*GETAxerveGat
 
 // HasData returns a boolean if a field has been set.
 func (o *GETAxerveGatewaysAxerveGatewayId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETAxerveGatewaysAxerveGatewayId200ResponseData and assigns it to the Data field.
-func (o *GETAxerveGatewaysAxerveGatewayId200Response) SetData(v GETAxerveGatewaysAxerveGatewayId200ResponseData) {
+// SetData gets a reference to the given GETAxerveGateways200ResponseDataInner and assigns it to the Data field.
+func (o *GETAxerveGatewaysAxerveGatewayId200Response) SetData(v GETAxerveGateways200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETAxerveGatewaysAxerveGatewayId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETAxerveGatewaysAxerveGatewayId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETAxerveGatewaysAxerveGatewayId200Response struct {

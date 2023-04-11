@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the PATCHOrderCopiesOrderCopyId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PATCHOrderCopiesOrderCopyId200Response{}
-
 // PATCHOrderCopiesOrderCopyId200Response struct for PATCHOrderCopiesOrderCopyId200Response
 type PATCHOrderCopiesOrderCopyId200Response struct {
 	Data *PATCHOrderCopiesOrderCopyId200ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPATCHOrderCopiesOrderCopyId200ResponseWithDefaults() *PATCHOrderCopiesOr
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *PATCHOrderCopiesOrderCopyId200Response) GetData() PATCHOrderCopiesOrderCopyId200ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret PATCHOrderCopiesOrderCopyId200ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *PATCHOrderCopiesOrderCopyId200Response) GetData() PATCHOrderCopiesOrder
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHOrderCopiesOrderCopyId200Response) GetDataOk() (*PATCHOrderCopiesOrderCopyId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *PATCHOrderCopiesOrderCopyId200Response) GetDataOk() (*PATCHOrderCopiesO
 
 // HasData returns a boolean if a field has been set.
 func (o *PATCHOrderCopiesOrderCopyId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *PATCHOrderCopiesOrderCopyId200Response) SetData(v PATCHOrderCopiesOrder
 }
 
 func (o PATCHOrderCopiesOrderCopyId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o PATCHOrderCopiesOrderCopyId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePATCHOrderCopiesOrderCopyId200Response struct {

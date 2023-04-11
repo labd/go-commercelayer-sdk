@@ -15,22 +15,19 @@ import (
 	"encoding/json"
 )
 
-// checks if the OrderData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &OrderData{}
-
 // OrderData struct for OrderData
 type OrderData struct {
 	// The resource's type
-	Type          interface{}                               `json:"type"`
-	Attributes    GETOrdersOrderId200ResponseDataAttributes `json:"attributes"`
-	Relationships *OrderDataRelationships                   `json:"relationships,omitempty"`
+	Type          interface{}                             `json:"type"`
+	Attributes    GETOrders200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *OrderDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewOrderData instantiates a new OrderData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrderData(type_ interface{}, attributes GETOrdersOrderId200ResponseDataAttributes) *OrderData {
+func NewOrderData(type_ interface{}, attributes GETOrders200ResponseDataInnerAttributes) *OrderData {
 	this := OrderData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -60,7 +57,7 @@ func (o *OrderData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -72,9 +69,9 @@ func (o *OrderData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *OrderData) GetAttributes() GETOrdersOrderId200ResponseDataAttributes {
+func (o *OrderData) GetAttributes() GETOrders200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret GETOrdersOrderId200ResponseDataAttributes
+		var ret GETOrders200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -83,7 +80,7 @@ func (o *OrderData) GetAttributes() GETOrdersOrderId200ResponseDataAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *OrderData) GetAttributesOk() (*GETOrdersOrderId200ResponseDataAttributes, bool) {
+func (o *OrderData) GetAttributesOk() (*GETOrders200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,13 +88,13 @@ func (o *OrderData) GetAttributesOk() (*GETOrdersOrderId200ResponseDataAttribute
 }
 
 // SetAttributes sets field value
-func (o *OrderData) SetAttributes(v GETOrdersOrderId200ResponseDataAttributes) {
+func (o *OrderData) SetAttributes(v GETOrders200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *OrderData) GetRelationships() OrderDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		var ret OrderDataRelationships
 		return ret
 	}
@@ -107,7 +104,7 @@ func (o *OrderData) GetRelationships() OrderDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OrderData) GetRelationshipsOk() (*OrderDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -115,7 +112,7 @@ func (o *OrderData) GetRelationshipsOk() (*OrderDataRelationships, bool) {
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *OrderData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
@@ -128,23 +125,17 @@ func (o *OrderData) SetRelationships(v OrderDataRelationships) {
 }
 
 func (o OrderData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o OrderData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	toSerialize["attributes"] = o.Attributes
-	if !IsNil(o.Relationships) {
+	if true {
+		toSerialize["attributes"] = o.Attributes
+	}
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableOrderData struct {

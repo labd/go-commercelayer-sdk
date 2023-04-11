@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the AvalaraAccountDataRelationshipsAttachments type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AvalaraAccountDataRelationshipsAttachments{}
-
 // AvalaraAccountDataRelationshipsAttachments struct for AvalaraAccountDataRelationshipsAttachments
 type AvalaraAccountDataRelationshipsAttachments struct {
 	Data *AvalaraAccountDataRelationshipsAttachmentsData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewAvalaraAccountDataRelationshipsAttachmentsWithDefaults() *AvalaraAccount
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *AvalaraAccountDataRelationshipsAttachments) GetData() AvalaraAccountDataRelationshipsAttachmentsData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret AvalaraAccountDataRelationshipsAttachmentsData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *AvalaraAccountDataRelationshipsAttachments) GetData() AvalaraAccountDat
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AvalaraAccountDataRelationshipsAttachments) GetDataOk() (*AvalaraAccountDataRelationshipsAttachmentsData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *AvalaraAccountDataRelationshipsAttachments) GetDataOk() (*AvalaraAccoun
 
 // HasData returns a boolean if a field has been set.
 func (o *AvalaraAccountDataRelationshipsAttachments) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *AvalaraAccountDataRelationshipsAttachments) SetData(v AvalaraAccountDat
 }
 
 func (o AvalaraAccountDataRelationshipsAttachments) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o AvalaraAccountDataRelationshipsAttachments) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableAvalaraAccountDataRelationshipsAttachments struct {

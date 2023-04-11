@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *TaxjarAccountsApiService) DELETETaxjarAccountsTaxjarAccountIdExecute(r 
 	}
 
 	localVarPath := localBasePath + "/taxjar_accounts/{taxjarAccountId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxjarAccountId"+"}", url.PathEscape(parameterValueToString(r.taxjarAccountId, "taxjarAccountId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxjarAccountId"+"}", url.PathEscape(parameterToString(r.taxjarAccountId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *TaxjarAccountsApiService) DELETETaxjarAccountsTaxjarAccountIdExecute(r 
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *TaxjarAccountsApiService) GETTaxjarAccountsExecute(r TaxjarAccountsApiG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *TaxjarAccountsApiService) GETTaxjarAccountsTaxjarAccountIdExecute(r Tax
 	}
 
 	localVarPath := localBasePath + "/taxjar_accounts/{taxjarAccountId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxjarAccountId"+"}", url.PathEscape(parameterValueToString(r.taxjarAccountId, "taxjarAccountId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxjarAccountId"+"}", url.PathEscape(parameterToString(r.taxjarAccountId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *TaxjarAccountsApiService) GETTaxjarAccountsTaxjarAccountIdExecute(r Tax
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -320,14 +320,14 @@ func (a *TaxjarAccountsApiService) GETTaxjarAccountsTaxjarAccountIdExecute(r Tax
 }
 
 type TaxjarAccountsApiPATCHTaxjarAccountsTaxjarAccountIdRequest struct {
-	ctx                                       context.Context
-	ApiService                                *TaxjarAccountsApiService
-	pATCHTaxjarAccountsTaxjarAccountIdRequest *PATCHTaxjarAccountsTaxjarAccountIdRequest
-	taxjarAccountId                           interface{}
+	ctx                 context.Context
+	ApiService          *TaxjarAccountsApiService
+	taxjarAccountUpdate *TaxjarAccountUpdate
+	taxjarAccountId     interface{}
 }
 
-func (r TaxjarAccountsApiPATCHTaxjarAccountsTaxjarAccountIdRequest) PATCHTaxjarAccountsTaxjarAccountIdRequest(pATCHTaxjarAccountsTaxjarAccountIdRequest PATCHTaxjarAccountsTaxjarAccountIdRequest) TaxjarAccountsApiPATCHTaxjarAccountsTaxjarAccountIdRequest {
-	r.pATCHTaxjarAccountsTaxjarAccountIdRequest = &pATCHTaxjarAccountsTaxjarAccountIdRequest
+func (r TaxjarAccountsApiPATCHTaxjarAccountsTaxjarAccountIdRequest) TaxjarAccountUpdate(taxjarAccountUpdate TaxjarAccountUpdate) TaxjarAccountsApiPATCHTaxjarAccountsTaxjarAccountIdRequest {
+	r.taxjarAccountUpdate = &taxjarAccountUpdate
 	return r
 }
 
@@ -369,13 +369,13 @@ func (a *TaxjarAccountsApiService) PATCHTaxjarAccountsTaxjarAccountIdExecute(r T
 	}
 
 	localVarPath := localBasePath + "/taxjar_accounts/{taxjarAccountId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxjarAccountId"+"}", url.PathEscape(parameterValueToString(r.taxjarAccountId, "taxjarAccountId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxjarAccountId"+"}", url.PathEscape(parameterToString(r.taxjarAccountId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHTaxjarAccountsTaxjarAccountIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHTaxjarAccountsTaxjarAccountIdRequest is required and must be specified")
+	if r.taxjarAccountUpdate == nil {
+		return localVarReturnValue, nil, reportError("taxjarAccountUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -396,7 +396,7 @@ func (a *TaxjarAccountsApiService) PATCHTaxjarAccountsTaxjarAccountIdExecute(r T
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHTaxjarAccountsTaxjarAccountIdRequest
+	localVarPostBody = r.taxjarAccountUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -407,9 +407,9 @@ func (a *TaxjarAccountsApiService) PATCHTaxjarAccountsTaxjarAccountIdExecute(r T
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -435,13 +435,13 @@ func (a *TaxjarAccountsApiService) PATCHTaxjarAccountsTaxjarAccountIdExecute(r T
 }
 
 type TaxjarAccountsApiPOSTTaxjarAccountsRequest struct {
-	ctx                       context.Context
-	ApiService                *TaxjarAccountsApiService
-	pOSTTaxjarAccountsRequest *POSTTaxjarAccountsRequest
+	ctx                 context.Context
+	ApiService          *TaxjarAccountsApiService
+	taxjarAccountCreate *TaxjarAccountCreate
 }
 
-func (r TaxjarAccountsApiPOSTTaxjarAccountsRequest) POSTTaxjarAccountsRequest(pOSTTaxjarAccountsRequest POSTTaxjarAccountsRequest) TaxjarAccountsApiPOSTTaxjarAccountsRequest {
-	r.pOSTTaxjarAccountsRequest = &pOSTTaxjarAccountsRequest
+func (r TaxjarAccountsApiPOSTTaxjarAccountsRequest) TaxjarAccountCreate(taxjarAccountCreate TaxjarAccountCreate) TaxjarAccountsApiPOSTTaxjarAccountsRequest {
+	r.taxjarAccountCreate = &taxjarAccountCreate
 	return r
 }
 
@@ -485,8 +485,8 @@ func (a *TaxjarAccountsApiService) POSTTaxjarAccountsExecute(r TaxjarAccountsApi
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTTaxjarAccountsRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTTaxjarAccountsRequest is required and must be specified")
+	if r.taxjarAccountCreate == nil {
+		return localVarReturnValue, nil, reportError("taxjarAccountCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -507,7 +507,7 @@ func (a *TaxjarAccountsApiService) POSTTaxjarAccountsExecute(r TaxjarAccountsApi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTTaxjarAccountsRequest
+	localVarPostBody = r.taxjarAccountCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -518,9 +518,9 @@ func (a *TaxjarAccountsApiService) POSTTaxjarAccountsExecute(r TaxjarAccountsApi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

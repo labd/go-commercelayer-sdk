@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the MarketDataRelationshipsTaxCalculator type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &MarketDataRelationshipsTaxCalculator{}
-
 // MarketDataRelationshipsTaxCalculator struct for MarketDataRelationshipsTaxCalculator
 type MarketDataRelationshipsTaxCalculator struct {
-	Data *POSTMarketsRequestDataRelationshipsTaxCalculatorData `json:"data,omitempty"`
+	Data *MarketDataRelationshipsTaxCalculatorData `json:"data,omitempty"`
 }
 
 // NewMarketDataRelationshipsTaxCalculator instantiates a new MarketDataRelationshipsTaxCalculator object
@@ -41,9 +38,9 @@ func NewMarketDataRelationshipsTaxCalculatorWithDefaults() *MarketDataRelationsh
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *MarketDataRelationshipsTaxCalculator) GetData() POSTMarketsRequestDataRelationshipsTaxCalculatorData {
-	if o == nil || IsNil(o.Data) {
-		var ret POSTMarketsRequestDataRelationshipsTaxCalculatorData
+func (o *MarketDataRelationshipsTaxCalculator) GetData() MarketDataRelationshipsTaxCalculatorData {
+	if o == nil || o.Data == nil {
+		var ret MarketDataRelationshipsTaxCalculatorData
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *MarketDataRelationshipsTaxCalculator) GetData() POSTMarketsRequestDataR
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MarketDataRelationshipsTaxCalculator) GetDataOk() (*POSTMarketsRequestDataRelationshipsTaxCalculatorData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *MarketDataRelationshipsTaxCalculator) GetDataOk() (*MarketDataRelationshipsTaxCalculatorData, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *MarketDataRelationshipsTaxCalculator) GetDataOk() (*POSTMarketsRequestD
 
 // HasData returns a boolean if a field has been set.
 func (o *MarketDataRelationshipsTaxCalculator) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given POSTMarketsRequestDataRelationshipsTaxCalculatorData and assigns it to the Data field.
-func (o *MarketDataRelationshipsTaxCalculator) SetData(v POSTMarketsRequestDataRelationshipsTaxCalculatorData) {
+// SetData gets a reference to the given MarketDataRelationshipsTaxCalculatorData and assigns it to the Data field.
+func (o *MarketDataRelationshipsTaxCalculator) SetData(v MarketDataRelationshipsTaxCalculatorData) {
 	o.Data = &v
 }
 
 func (o MarketDataRelationshipsTaxCalculator) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o MarketDataRelationshipsTaxCalculator) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableMarketDataRelationshipsTaxCalculator struct {

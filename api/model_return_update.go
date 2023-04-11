@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the ReturnUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ReturnUpdate{}
-
 // ReturnUpdate struct for ReturnUpdate
 type ReturnUpdate struct {
-	Data PATCHReturnsReturnIdRequestData `json:"data"`
+	Data ReturnUpdateData `json:"data"`
 }
 
 // NewReturnUpdate instantiates a new ReturnUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewReturnUpdate(data PATCHReturnsReturnIdRequestData) *ReturnUpdate {
+func NewReturnUpdate(data ReturnUpdateData) *ReturnUpdate {
 	this := ReturnUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewReturnUpdateWithDefaults() *ReturnUpdate {
 }
 
 // GetData returns the Data field value
-func (o *ReturnUpdate) GetData() PATCHReturnsReturnIdRequestData {
+func (o *ReturnUpdate) GetData() ReturnUpdateData {
 	if o == nil {
-		var ret PATCHReturnsReturnIdRequestData
+		var ret ReturnUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *ReturnUpdate) GetData() PATCHReturnsReturnIdRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ReturnUpdate) GetDataOk() (*PATCHReturnsReturnIdRequestData, bool) {
+func (o *ReturnUpdate) GetDataOk() (*ReturnUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *ReturnUpdate) GetDataOk() (*PATCHReturnsReturnIdRequestData, bool) {
 }
 
 // SetData sets field value
-func (o *ReturnUpdate) SetData(v PATCHReturnsReturnIdRequestData) {
+func (o *ReturnUpdate) SetData(v ReturnUpdateData) {
 	o.Data = v
 }
 
 func (o ReturnUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o ReturnUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableReturnUpdate struct {

@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Customer** | [**POSTCouponRecipientsRequestDataRelationshipsCustomer**](POSTCouponRecipientsRequestDataRelationshipsCustomer.md) |  | 
+**Customer** | [**CouponRecipientCreateDataRelationshipsCustomer**](CouponRecipientCreateDataRelationshipsCustomer.md) |  | 
 **PaymentSource** | [**CustomerPaymentSourceCreateDataRelationshipsPaymentSource**](CustomerPaymentSourceCreateDataRelationshipsPaymentSource.md) |  | 
 
 ## Methods
 
 ### NewCustomerPaymentSourceCreateDataRelationships
 
-`func NewCustomerPaymentSourceCreateDataRelationships(customer POSTCouponRecipientsRequestDataRelationshipsCustomer, paymentSource CustomerPaymentSourceCreateDataRelationshipsPaymentSource, ) *CustomerPaymentSourceCreateDataRelationships`
+`func NewCustomerPaymentSourceCreateDataRelationships(customer CouponRecipientCreateDataRelationshipsCustomer, paymentSource CustomerPaymentSourceCreateDataRelationshipsPaymentSource, ) *CustomerPaymentSourceCreateDataRelationships`
 
 NewCustomerPaymentSourceCreateDataRelationships instantiates a new CustomerPaymentSourceCreateDataRelationships object
 This constructor will assign default values to properties that have it defined,
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetCustomer
 
-`func (o *CustomerPaymentSourceCreateDataRelationships) GetCustomer() POSTCouponRecipientsRequestDataRelationshipsCustomer`
+`func (o *CustomerPaymentSourceCreateDataRelationships) GetCustomer() CouponRecipientCreateDataRelationshipsCustomer`
 
 GetCustomer returns the Customer field if non-nil, zero value otherwise.
 
 ### GetCustomerOk
 
-`func (o *CustomerPaymentSourceCreateDataRelationships) GetCustomerOk() (*POSTCouponRecipientsRequestDataRelationshipsCustomer, bool)`
+`func (o *CustomerPaymentSourceCreateDataRelationships) GetCustomerOk() (*CouponRecipientCreateDataRelationshipsCustomer, bool)`
 
 GetCustomerOk returns a tuple with the Customer field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetCustomer
 
-`func (o *CustomerPaymentSourceCreateDataRelationships) SetCustomer(v POSTCouponRecipientsRequestDataRelationshipsCustomer)`
+`func (o *CustomerPaymentSourceCreateDataRelationships) SetCustomer(v CouponRecipientCreateDataRelationshipsCustomer)`
 
 SetCustomer sets Customer field to given value.
 

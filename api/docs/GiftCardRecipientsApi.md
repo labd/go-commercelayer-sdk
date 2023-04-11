@@ -30,7 +30,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -38,7 +38,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.GiftCardRecipientsApi.DELETEGiftCardRecipientsGiftCardRecipientId(context.Background(), giftCardRecipientId).Execute()
+    resp, r, err := apiClient.GiftCardRecipientsApi.DELETEGiftCardRecipientsGiftCardRecipientId(context.Background(), giftCardRecipientId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GiftCardRecipientsApi.DELETEGiftCardRecipientsGiftCardRecipientId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -98,7 +98,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -106,7 +106,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.GiftCardRecipientsApi.GETGiftCardIdGiftCardRecipient(context.Background(), giftCardId).Execute()
+    resp, r, err := apiClient.GiftCardRecipientsApi.GETGiftCardIdGiftCardRecipient(context.Background(), giftCardId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GiftCardRecipientsApi.GETGiftCardIdGiftCardRecipient``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -166,7 +166,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -227,7 +227,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHGiftCardRecipientsGiftCardRecipientId
 
-> PATCHGiftCardRecipientsGiftCardRecipientId200Response PATCHGiftCardRecipientsGiftCardRecipientId(ctx, giftCardRecipientId).PATCHGiftCardRecipientsGiftCardRecipientIdRequest(pATCHGiftCardRecipientsGiftCardRecipientIdRequest).Execute()
+> PATCHGiftCardRecipientsGiftCardRecipientId200Response PATCHGiftCardRecipientsGiftCardRecipientId(ctx, giftCardRecipientId).GiftCardRecipientUpdate(giftCardRecipientUpdate).Execute()
 
 Update a gift card recipient
 
@@ -297,16 +297,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHGiftCardRecipientsGiftCardRecipientIdRequest := *openapiclient.NewPATCHGiftCardRecipientsGiftCardRecipientIdRequest(*openapiclient.NewPATCHGiftCardRecipientsGiftCardRecipientIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHCouponRecipientsCouponRecipientIdRequestDataAttributes())) // PATCHGiftCardRecipientsGiftCardRecipientIdRequest | 
+    giftCardRecipientUpdate := *openapiclient.NewGiftCardRecipientUpdate(*openapiclient.NewGiftCardRecipientUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes())) // GiftCardRecipientUpdate | 
     giftCardRecipientId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GiftCardRecipientsApi.PATCHGiftCardRecipientsGiftCardRecipientId(context.Background(), giftCardRecipientId).PATCHGiftCardRecipientsGiftCardRecipientIdRequest(pATCHGiftCardRecipientsGiftCardRecipientIdRequest).Execute()
+    resp, r, err := apiClient.GiftCardRecipientsApi.PATCHGiftCardRecipientsGiftCardRecipientId(context.Background(), giftCardRecipientId).GiftCardRecipientUpdate(giftCardRecipientUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GiftCardRecipientsApi.PATCHGiftCardRecipientsGiftCardRecipientId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -331,7 +331,7 @@ Other parameters are passed through a pointer to a apiPATCHGiftCardRecipientsGif
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHGiftCardRecipientsGiftCardRecipientIdRequest** | [**PATCHGiftCardRecipientsGiftCardRecipientIdRequest**](PATCHGiftCardRecipientsGiftCardRecipientIdRequest.md) |  | 
+ **giftCardRecipientUpdate** | [**GiftCardRecipientUpdate**](GiftCardRecipientUpdate.md) |  | 
 
 
 ### Return type
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTGiftCardRecipients
 
-> POSTGiftCardRecipients201Response POSTGiftCardRecipients(ctx).POSTGiftCardRecipientsRequest(pOSTGiftCardRecipientsRequest).Execute()
+> POSTGiftCardRecipients201Response POSTGiftCardRecipients(ctx).GiftCardRecipientCreate(giftCardRecipientCreate).Execute()
 
 Create a gift card recipient
 
@@ -369,15 +369,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTGiftCardRecipientsRequest := *openapiclient.NewPOSTGiftCardRecipientsRequest(*openapiclient.NewPOSTGiftCardRecipientsRequestData(interface{}(123), *openapiclient.NewPOSTCouponRecipientsRequestDataAttributes(interface{}(john@example.com)))) // POSTGiftCardRecipientsRequest | 
+    giftCardRecipientCreate := *openapiclient.NewGiftCardRecipientCreate(*openapiclient.NewGiftCardRecipientCreateData(interface{}(123), *openapiclient.NewPOSTCouponRecipients201ResponseDataAttributes(interface{}(john@example.com)))) // GiftCardRecipientCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GiftCardRecipientsApi.POSTGiftCardRecipients(context.Background()).POSTGiftCardRecipientsRequest(pOSTGiftCardRecipientsRequest).Execute()
+    resp, r, err := apiClient.GiftCardRecipientsApi.POSTGiftCardRecipients(context.Background()).GiftCardRecipientCreate(giftCardRecipientCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GiftCardRecipientsApi.POSTGiftCardRecipients``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +398,7 @@ Other parameters are passed through a pointer to a apiPOSTGiftCardRecipientsRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTGiftCardRecipientsRequest** | [**POSTGiftCardRecipientsRequest**](POSTGiftCardRecipientsRequest.md) |  | 
+ **giftCardRecipientCreate** | [**GiftCardRecipientCreate**](GiftCardRecipientCreate.md) |  | 
 
 ### Return type
 

@@ -15,24 +15,21 @@ import (
 	"encoding/json"
 )
 
-// checks if the CustomerPaymentSourceUpdateData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CustomerPaymentSourceUpdateData{}
-
 // CustomerPaymentSourceUpdateData struct for CustomerPaymentSourceUpdateData
 type CustomerPaymentSourceUpdateData struct {
 	// The resource's type
 	Type interface{} `json:"type"`
 	// The resource's id
-	Id            interface{}                                                                     `json:"id"`
-	Attributes    PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes `json:"attributes"`
-	Relationships *CustomerPaymentSourceUpdateDataRelationships                                   `json:"relationships,omitempty"`
+	Id            interface{}                                                                         `json:"id"`
+	Attributes    PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes `json:"attributes"`
+	Relationships *CustomerPaymentSourceUpdateDataRelationships                                       `json:"relationships,omitempty"`
 }
 
 // NewCustomerPaymentSourceUpdateData instantiates a new CustomerPaymentSourceUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerPaymentSourceUpdateData(type_ interface{}, id interface{}, attributes PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes) *CustomerPaymentSourceUpdateData {
+func NewCustomerPaymentSourceUpdateData(type_ interface{}, id interface{}, attributes PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) *CustomerPaymentSourceUpdateData {
 	this := CustomerPaymentSourceUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -63,7 +60,7 @@ func (o *CustomerPaymentSourceUpdateData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CustomerPaymentSourceUpdateData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -89,7 +86,7 @@ func (o *CustomerPaymentSourceUpdateData) GetId() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CustomerPaymentSourceUpdateData) GetIdOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Id) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
 	return &o.Id, true
@@ -101,9 +98,9 @@ func (o *CustomerPaymentSourceUpdateData) SetId(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CustomerPaymentSourceUpdateData) GetAttributes() PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes {
+func (o *CustomerPaymentSourceUpdateData) GetAttributes() PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes {
 	if o == nil {
-		var ret PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes
+		var ret PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes
 		return ret
 	}
 
@@ -112,7 +109,7 @@ func (o *CustomerPaymentSourceUpdateData) GetAttributes() PATCHBillingInfoValida
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CustomerPaymentSourceUpdateData) GetAttributesOk() (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes, bool) {
+func (o *CustomerPaymentSourceUpdateData) GetAttributesOk() (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -120,13 +117,13 @@ func (o *CustomerPaymentSourceUpdateData) GetAttributesOk() (*PATCHBillingInfoVa
 }
 
 // SetAttributes sets field value
-func (o *CustomerPaymentSourceUpdateData) SetAttributes(v PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes) {
+func (o *CustomerPaymentSourceUpdateData) SetAttributes(v PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *CustomerPaymentSourceUpdateData) GetRelationships() CustomerPaymentSourceUpdateDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		var ret CustomerPaymentSourceUpdateDataRelationships
 		return ret
 	}
@@ -136,7 +133,7 @@ func (o *CustomerPaymentSourceUpdateData) GetRelationships() CustomerPaymentSour
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerPaymentSourceUpdateData) GetRelationshipsOk() (*CustomerPaymentSourceUpdateDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -144,7 +141,7 @@ func (o *CustomerPaymentSourceUpdateData) GetRelationshipsOk() (*CustomerPayment
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *CustomerPaymentSourceUpdateData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
@@ -157,14 +154,6 @@ func (o *CustomerPaymentSourceUpdateData) SetRelationships(v CustomerPaymentSour
 }
 
 func (o CustomerPaymentSourceUpdateData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o CustomerPaymentSourceUpdateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
@@ -172,11 +161,13 @@ func (o CustomerPaymentSourceUpdateData) ToMap() (map[string]interface{}, error)
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
-	toSerialize["attributes"] = o.Attributes
-	if !IsNil(o.Relationships) {
+	if true {
+		toSerialize["attributes"] = o.Attributes
+	}
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableCustomerPaymentSourceUpdateData struct {

@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *StockTransfersApiService) DELETEStockTransfersStockTransferIdExecute(r 
 	}
 
 	localVarPath := localBasePath + "/stock_transfers/{stockTransferId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterValueToString(r.stockTransferId, "stockTransferId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterToString(r.stockTransferId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *StockTransfersApiService) DELETEStockTransfersStockTransferIdExecute(r 
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -156,7 +156,7 @@ func (a *StockTransfersApiService) GETLineItemIdStockTransfersExecute(r StockTra
 	}
 
 	localVarPath := localBasePath + "/line_items/{lineItemId}/stock_transfers"
-	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterValueToString(r.lineItemId, "lineItemId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterToString(r.lineItemId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *StockTransfersApiService) GETLineItemIdStockTransfersExecute(r StockTra
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -248,7 +248,7 @@ func (a *StockTransfersApiService) GETShipmentIdStockTransfersExecute(r StockTra
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/stock_transfers"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -281,9 +281,9 @@ func (a *StockTransfersApiService) GETShipmentIdStockTransfersExecute(r StockTra
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -340,7 +340,7 @@ func (a *StockTransfersApiService) GETStockLocationIdStockTransfersExecute(r Sto
 	}
 
 	localVarPath := localBasePath + "/stock_locations/{stockLocationId}/stock_transfers"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterValueToString(r.stockLocationId, "stockLocationId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterToString(r.stockLocationId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -373,9 +373,9 @@ func (a *StockTransfersApiService) GETStockLocationIdStockTransfersExecute(r Sto
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -464,9 +464,9 @@ func (a *StockTransfersApiService) GETStockTransfersExecute(r StockTransfersApiG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -535,7 +535,7 @@ func (a *StockTransfersApiService) GETStockTransfersStockTransferIdExecute(r Sto
 	}
 
 	localVarPath := localBasePath + "/stock_transfers/{stockTransferId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterValueToString(r.stockTransferId, "stockTransferId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterToString(r.stockTransferId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -568,9 +568,9 @@ func (a *StockTransfersApiService) GETStockTransfersStockTransferIdExecute(r Sto
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -596,14 +596,14 @@ func (a *StockTransfersApiService) GETStockTransfersStockTransferIdExecute(r Sto
 }
 
 type StockTransfersApiPATCHStockTransfersStockTransferIdRequest struct {
-	ctx                                       context.Context
-	ApiService                                *StockTransfersApiService
-	pATCHStockTransfersStockTransferIdRequest *PATCHStockTransfersStockTransferIdRequest
-	stockTransferId                           interface{}
+	ctx                 context.Context
+	ApiService          *StockTransfersApiService
+	stockTransferUpdate *StockTransferUpdate
+	stockTransferId     interface{}
 }
 
-func (r StockTransfersApiPATCHStockTransfersStockTransferIdRequest) PATCHStockTransfersStockTransferIdRequest(pATCHStockTransfersStockTransferIdRequest PATCHStockTransfersStockTransferIdRequest) StockTransfersApiPATCHStockTransfersStockTransferIdRequest {
-	r.pATCHStockTransfersStockTransferIdRequest = &pATCHStockTransfersStockTransferIdRequest
+func (r StockTransfersApiPATCHStockTransfersStockTransferIdRequest) StockTransferUpdate(stockTransferUpdate StockTransferUpdate) StockTransfersApiPATCHStockTransfersStockTransferIdRequest {
+	r.stockTransferUpdate = &stockTransferUpdate
 	return r
 }
 
@@ -645,13 +645,13 @@ func (a *StockTransfersApiService) PATCHStockTransfersStockTransferIdExecute(r S
 	}
 
 	localVarPath := localBasePath + "/stock_transfers/{stockTransferId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterValueToString(r.stockTransferId, "stockTransferId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterToString(r.stockTransferId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHStockTransfersStockTransferIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHStockTransfersStockTransferIdRequest is required and must be specified")
+	if r.stockTransferUpdate == nil {
+		return localVarReturnValue, nil, reportError("stockTransferUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -672,7 +672,7 @@ func (a *StockTransfersApiService) PATCHStockTransfersStockTransferIdExecute(r S
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHStockTransfersStockTransferIdRequest
+	localVarPostBody = r.stockTransferUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -683,9 +683,9 @@ func (a *StockTransfersApiService) PATCHStockTransfersStockTransferIdExecute(r S
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -711,13 +711,13 @@ func (a *StockTransfersApiService) PATCHStockTransfersStockTransferIdExecute(r S
 }
 
 type StockTransfersApiPOSTStockTransfersRequest struct {
-	ctx                       context.Context
-	ApiService                *StockTransfersApiService
-	pOSTStockTransfersRequest *POSTStockTransfersRequest
+	ctx                 context.Context
+	ApiService          *StockTransfersApiService
+	stockTransferCreate *StockTransferCreate
 }
 
-func (r StockTransfersApiPOSTStockTransfersRequest) POSTStockTransfersRequest(pOSTStockTransfersRequest POSTStockTransfersRequest) StockTransfersApiPOSTStockTransfersRequest {
-	r.pOSTStockTransfersRequest = &pOSTStockTransfersRequest
+func (r StockTransfersApiPOSTStockTransfersRequest) StockTransferCreate(stockTransferCreate StockTransferCreate) StockTransfersApiPOSTStockTransfersRequest {
+	r.stockTransferCreate = &stockTransferCreate
 	return r
 }
 
@@ -761,8 +761,8 @@ func (a *StockTransfersApiService) POSTStockTransfersExecute(r StockTransfersApi
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTStockTransfersRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTStockTransfersRequest is required and must be specified")
+	if r.stockTransferCreate == nil {
+		return localVarReturnValue, nil, reportError("stockTransferCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -783,7 +783,7 @@ func (a *StockTransfersApiService) POSTStockTransfersExecute(r StockTransfersApi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTStockTransfersRequest
+	localVarPostBody = r.stockTransferCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -794,9 +794,9 @@ func (a *StockTransfersApiService) POSTStockTransfersExecute(r StockTransfersApi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

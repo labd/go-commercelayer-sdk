@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETCustomerSubscriptionsCustomerSubscriptionId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETCustomerSubscriptionsCustomerSubscriptionId200Response{}
-
 // GETCustomerSubscriptionsCustomerSubscriptionId200Response struct for GETCustomerSubscriptionsCustomerSubscriptionId200Response
 type GETCustomerSubscriptionsCustomerSubscriptionId200Response struct {
-	Data *GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData `json:"data,omitempty"`
+	Data *GETCustomerSubscriptions200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETCustomerSubscriptionsCustomerSubscriptionId200Response instantiates a new GETCustomerSubscriptionsCustomerSubscriptionId200Response object
@@ -41,9 +38,9 @@ func NewGETCustomerSubscriptionsCustomerSubscriptionId200ResponseWithDefaults() 
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETCustomerSubscriptionsCustomerSubscriptionId200Response) GetData() GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData
+func (o *GETCustomerSubscriptionsCustomerSubscriptionId200Response) GetData() GETCustomerSubscriptions200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETCustomerSubscriptions200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETCustomerSubscriptionsCustomerSubscriptionId200Response) GetData() GE
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCustomerSubscriptionsCustomerSubscriptionId200Response) GetDataOk() (*GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETCustomerSubscriptionsCustomerSubscriptionId200Response) GetDataOk() (*GETCustomerSubscriptions200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETCustomerSubscriptionsCustomerSubscriptionId200Response) GetDataOk() 
 
 // HasData returns a boolean if a field has been set.
 func (o *GETCustomerSubscriptionsCustomerSubscriptionId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData and assigns it to the Data field.
-func (o *GETCustomerSubscriptionsCustomerSubscriptionId200Response) SetData(v GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData) {
+// SetData gets a reference to the given GETCustomerSubscriptions200ResponseDataInner and assigns it to the Data field.
+func (o *GETCustomerSubscriptionsCustomerSubscriptionId200Response) SetData(v GETCustomerSubscriptions200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETCustomerSubscriptionsCustomerSubscriptionId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETCustomerSubscriptionsCustomerSubscriptionId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETCustomerSubscriptionsCustomerSubscriptionId200Response struct {

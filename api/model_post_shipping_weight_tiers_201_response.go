@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the POSTShippingWeightTiers201Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &POSTShippingWeightTiers201Response{}
-
 // POSTShippingWeightTiers201Response struct for POSTShippingWeightTiers201Response
 type POSTShippingWeightTiers201Response struct {
 	Data *POSTShippingWeightTiers201ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPOSTShippingWeightTiers201ResponseWithDefaults() *POSTShippingWeightTier
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTShippingWeightTiers201Response) GetData() POSTShippingWeightTiers201ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret POSTShippingWeightTiers201ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *POSTShippingWeightTiers201Response) GetData() POSTShippingWeightTiers20
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTShippingWeightTiers201Response) GetDataOk() (*POSTShippingWeightTiers201ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *POSTShippingWeightTiers201Response) GetDataOk() (*POSTShippingWeightTie
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTShippingWeightTiers201Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *POSTShippingWeightTiers201Response) SetData(v POSTShippingWeightTiers20
 }
 
 func (o POSTShippingWeightTiers201Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o POSTShippingWeightTiers201Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePOSTShippingWeightTiers201Response struct {

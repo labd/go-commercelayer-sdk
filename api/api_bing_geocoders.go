@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *BingGeocodersApiService) DELETEBingGeocodersBingGeocoderIdExecute(r Bin
 	}
 
 	localVarPath := localBasePath + "/bing_geocoders/{bingGeocoderId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bingGeocoderId"+"}", url.PathEscape(parameterValueToString(r.bingGeocoderId, "bingGeocoderId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"bingGeocoderId"+"}", url.PathEscape(parameterToString(r.bingGeocoderId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *BingGeocodersApiService) DELETEBingGeocodersBingGeocoderIdExecute(r Bin
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *BingGeocodersApiService) GETBingGeocodersExecute(r BingGeocodersApiGETB
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *BingGeocodersApiService) GETBingGeocodersBingGeocoderIdExecute(r BingGe
 	}
 
 	localVarPath := localBasePath + "/bing_geocoders/{bingGeocoderId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bingGeocoderId"+"}", url.PathEscape(parameterValueToString(r.bingGeocoderId, "bingGeocoderId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"bingGeocoderId"+"}", url.PathEscape(parameterToString(r.bingGeocoderId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *BingGeocodersApiService) GETBingGeocodersBingGeocoderIdExecute(r BingGe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -320,14 +320,14 @@ func (a *BingGeocodersApiService) GETBingGeocodersBingGeocoderIdExecute(r BingGe
 }
 
 type BingGeocodersApiPATCHBingGeocodersBingGeocoderIdRequest struct {
-	ctx                                     context.Context
-	ApiService                              *BingGeocodersApiService
-	pATCHBingGeocodersBingGeocoderIdRequest *PATCHBingGeocodersBingGeocoderIdRequest
-	bingGeocoderId                          interface{}
+	ctx                context.Context
+	ApiService         *BingGeocodersApiService
+	bingGeocoderUpdate *BingGeocoderUpdate
+	bingGeocoderId     interface{}
 }
 
-func (r BingGeocodersApiPATCHBingGeocodersBingGeocoderIdRequest) PATCHBingGeocodersBingGeocoderIdRequest(pATCHBingGeocodersBingGeocoderIdRequest PATCHBingGeocodersBingGeocoderIdRequest) BingGeocodersApiPATCHBingGeocodersBingGeocoderIdRequest {
-	r.pATCHBingGeocodersBingGeocoderIdRequest = &pATCHBingGeocodersBingGeocoderIdRequest
+func (r BingGeocodersApiPATCHBingGeocodersBingGeocoderIdRequest) BingGeocoderUpdate(bingGeocoderUpdate BingGeocoderUpdate) BingGeocodersApiPATCHBingGeocodersBingGeocoderIdRequest {
+	r.bingGeocoderUpdate = &bingGeocoderUpdate
 	return r
 }
 
@@ -369,13 +369,13 @@ func (a *BingGeocodersApiService) PATCHBingGeocodersBingGeocoderIdExecute(r Bing
 	}
 
 	localVarPath := localBasePath + "/bing_geocoders/{bingGeocoderId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bingGeocoderId"+"}", url.PathEscape(parameterValueToString(r.bingGeocoderId, "bingGeocoderId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"bingGeocoderId"+"}", url.PathEscape(parameterToString(r.bingGeocoderId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHBingGeocodersBingGeocoderIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHBingGeocodersBingGeocoderIdRequest is required and must be specified")
+	if r.bingGeocoderUpdate == nil {
+		return localVarReturnValue, nil, reportError("bingGeocoderUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -396,7 +396,7 @@ func (a *BingGeocodersApiService) PATCHBingGeocodersBingGeocoderIdExecute(r Bing
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHBingGeocodersBingGeocoderIdRequest
+	localVarPostBody = r.bingGeocoderUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -407,9 +407,9 @@ func (a *BingGeocodersApiService) PATCHBingGeocodersBingGeocoderIdExecute(r Bing
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -435,13 +435,13 @@ func (a *BingGeocodersApiService) PATCHBingGeocodersBingGeocoderIdExecute(r Bing
 }
 
 type BingGeocodersApiPOSTBingGeocodersRequest struct {
-	ctx                      context.Context
-	ApiService               *BingGeocodersApiService
-	pOSTBingGeocodersRequest *POSTBingGeocodersRequest
+	ctx                context.Context
+	ApiService         *BingGeocodersApiService
+	bingGeocoderCreate *BingGeocoderCreate
 }
 
-func (r BingGeocodersApiPOSTBingGeocodersRequest) POSTBingGeocodersRequest(pOSTBingGeocodersRequest POSTBingGeocodersRequest) BingGeocodersApiPOSTBingGeocodersRequest {
-	r.pOSTBingGeocodersRequest = &pOSTBingGeocodersRequest
+func (r BingGeocodersApiPOSTBingGeocodersRequest) BingGeocoderCreate(bingGeocoderCreate BingGeocoderCreate) BingGeocodersApiPOSTBingGeocodersRequest {
+	r.bingGeocoderCreate = &bingGeocoderCreate
 	return r
 }
 
@@ -485,8 +485,8 @@ func (a *BingGeocodersApiService) POSTBingGeocodersExecute(r BingGeocodersApiPOS
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTBingGeocodersRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTBingGeocodersRequest is required and must be specified")
+	if r.bingGeocoderCreate == nil {
+		return localVarReturnValue, nil, reportError("bingGeocoderCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -507,7 +507,7 @@ func (a *BingGeocodersApiService) POSTBingGeocodersExecute(r BingGeocodersApiPOS
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTBingGeocodersRequest
+	localVarPostBody = r.bingGeocoderCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -518,9 +518,9 @@ func (a *BingGeocodersApiService) POSTBingGeocodersExecute(r BingGeocodersApiPOS
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

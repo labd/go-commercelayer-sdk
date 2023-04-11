@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the CustomerGroup type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CustomerGroup{}
-
 // CustomerGroup struct for CustomerGroup
 type CustomerGroup struct {
 	Data *CustomerGroupData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewCustomerGroupWithDefaults() *CustomerGroup {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *CustomerGroup) GetData() CustomerGroupData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret CustomerGroupData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *CustomerGroup) GetData() CustomerGroupData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerGroup) GetDataOk() (*CustomerGroupData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *CustomerGroup) GetDataOk() (*CustomerGroupData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *CustomerGroup) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *CustomerGroup) SetData(v CustomerGroupData) {
 }
 
 func (o CustomerGroup) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o CustomerGroup) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableCustomerGroup struct {

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PATCHRecurringOrderCopiesRecurringOrderCopyIdRequestData**](PATCHRecurringOrderCopiesRecurringOrderCopyIdRequestData.md) |  | 
+**Data** | [**RecurringOrderCopyUpdateData**](RecurringOrderCopyUpdateData.md) |  | 
 
 ## Methods
 
 ### NewRecurringOrderCopyUpdate
 
-`func NewRecurringOrderCopyUpdate(data PATCHRecurringOrderCopiesRecurringOrderCopyIdRequestData, ) *RecurringOrderCopyUpdate`
+`func NewRecurringOrderCopyUpdate(data RecurringOrderCopyUpdateData, ) *RecurringOrderCopyUpdate`
 
 NewRecurringOrderCopyUpdate instantiates a new RecurringOrderCopyUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *RecurringOrderCopyUpdate) GetData() PATCHRecurringOrderCopiesRecurringOrderCopyIdRequestData`
+`func (o *RecurringOrderCopyUpdate) GetData() RecurringOrderCopyUpdateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *RecurringOrderCopyUpdate) GetDataOk() (*PATCHRecurringOrderCopiesRecurringOrderCopyIdRequestData, bool)`
+`func (o *RecurringOrderCopyUpdate) GetDataOk() (*RecurringOrderCopyUpdateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *RecurringOrderCopyUpdate) SetData(v PATCHRecurringOrderCopiesRecurringOrderCopyIdRequestData)`
+`func (o *RecurringOrderCopyUpdate) SetData(v RecurringOrderCopyUpdateData)`
 
 SetData sets Data field to given value.
 

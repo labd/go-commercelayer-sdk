@@ -15,22 +15,19 @@ import (
 	"encoding/json"
 )
 
-// checks if the LineItemCreateData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &LineItemCreateData{}
-
 // LineItemCreateData struct for LineItemCreateData
 type LineItemCreateData struct {
 	// The resource's type
-	Type          interface{}                        `json:"type"`
-	Attributes    POSTLineItemsRequestDataAttributes `json:"attributes"`
-	Relationships *LineItemCreateDataRelationships   `json:"relationships,omitempty"`
+	Type          interface{}                            `json:"type"`
+	Attributes    POSTLineItems201ResponseDataAttributes `json:"attributes"`
+	Relationships *LineItemCreateDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewLineItemCreateData instantiates a new LineItemCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLineItemCreateData(type_ interface{}, attributes POSTLineItemsRequestDataAttributes) *LineItemCreateData {
+func NewLineItemCreateData(type_ interface{}, attributes POSTLineItems201ResponseDataAttributes) *LineItemCreateData {
 	this := LineItemCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -60,7 +57,7 @@ func (o *LineItemCreateData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LineItemCreateData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -72,9 +69,9 @@ func (o *LineItemCreateData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *LineItemCreateData) GetAttributes() POSTLineItemsRequestDataAttributes {
+func (o *LineItemCreateData) GetAttributes() POSTLineItems201ResponseDataAttributes {
 	if o == nil {
-		var ret POSTLineItemsRequestDataAttributes
+		var ret POSTLineItems201ResponseDataAttributes
 		return ret
 	}
 
@@ -83,7 +80,7 @@ func (o *LineItemCreateData) GetAttributes() POSTLineItemsRequestDataAttributes 
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *LineItemCreateData) GetAttributesOk() (*POSTLineItemsRequestDataAttributes, bool) {
+func (o *LineItemCreateData) GetAttributesOk() (*POSTLineItems201ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,13 +88,13 @@ func (o *LineItemCreateData) GetAttributesOk() (*POSTLineItemsRequestDataAttribu
 }
 
 // SetAttributes sets field value
-func (o *LineItemCreateData) SetAttributes(v POSTLineItemsRequestDataAttributes) {
+func (o *LineItemCreateData) SetAttributes(v POSTLineItems201ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *LineItemCreateData) GetRelationships() LineItemCreateDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		var ret LineItemCreateDataRelationships
 		return ret
 	}
@@ -107,7 +104,7 @@ func (o *LineItemCreateData) GetRelationships() LineItemCreateDataRelationships 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LineItemCreateData) GetRelationshipsOk() (*LineItemCreateDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -115,7 +112,7 @@ func (o *LineItemCreateData) GetRelationshipsOk() (*LineItemCreateDataRelationsh
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *LineItemCreateData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
@@ -128,23 +125,17 @@ func (o *LineItemCreateData) SetRelationships(v LineItemCreateDataRelationships)
 }
 
 func (o LineItemCreateData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o LineItemCreateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	toSerialize["attributes"] = o.Attributes
-	if !IsNil(o.Relationships) {
+	if true {
+		toSerialize["attributes"] = o.Attributes
+	}
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableLineItemCreateData struct {

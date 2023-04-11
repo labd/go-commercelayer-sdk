@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the ShippingCategoryCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ShippingCategoryCreate{}
-
 // ShippingCategoryCreate struct for ShippingCategoryCreate
 type ShippingCategoryCreate struct {
-	Data POSTShippingCategoriesRequestData `json:"data"`
+	Data ShippingCategoryCreateData `json:"data"`
 }
 
 // NewShippingCategoryCreate instantiates a new ShippingCategoryCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShippingCategoryCreate(data POSTShippingCategoriesRequestData) *ShippingCategoryCreate {
+func NewShippingCategoryCreate(data ShippingCategoryCreateData) *ShippingCategoryCreate {
 	this := ShippingCategoryCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewShippingCategoryCreateWithDefaults() *ShippingCategoryCreate {
 }
 
 // GetData returns the Data field value
-func (o *ShippingCategoryCreate) GetData() POSTShippingCategoriesRequestData {
+func (o *ShippingCategoryCreate) GetData() ShippingCategoryCreateData {
 	if o == nil {
-		var ret POSTShippingCategoriesRequestData
+		var ret ShippingCategoryCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *ShippingCategoryCreate) GetData() POSTShippingCategoriesRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ShippingCategoryCreate) GetDataOk() (*POSTShippingCategoriesRequestData, bool) {
+func (o *ShippingCategoryCreate) GetDataOk() (*ShippingCategoryCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *ShippingCategoryCreate) GetDataOk() (*POSTShippingCategoriesRequestData
 }
 
 // SetData sets field value
-func (o *ShippingCategoryCreate) SetData(v POSTShippingCategoriesRequestData) {
+func (o *ShippingCategoryCreate) SetData(v ShippingCategoryCreateData) {
 	o.Data = v
 }
 
 func (o ShippingCategoryCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o ShippingCategoryCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableShippingCategoryCreate struct {

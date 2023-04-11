@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the CustomerPaymentSourceCreateDataRelationshipsPaymentSource type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CustomerPaymentSourceCreateDataRelationshipsPaymentSource{}
-
 // CustomerPaymentSourceCreateDataRelationshipsPaymentSource struct for CustomerPaymentSourceCreateDataRelationshipsPaymentSource
 type CustomerPaymentSourceCreateDataRelationshipsPaymentSource struct {
-	Data POSTCustomerPaymentSourcesRequestDataRelationshipsPaymentSourceData `json:"data"`
+	Data CustomerPaymentSourceDataRelationshipsPaymentSourceData `json:"data"`
 }
 
 // NewCustomerPaymentSourceCreateDataRelationshipsPaymentSource instantiates a new CustomerPaymentSourceCreateDataRelationshipsPaymentSource object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerPaymentSourceCreateDataRelationshipsPaymentSource(data POSTCustomerPaymentSourcesRequestDataRelationshipsPaymentSourceData) *CustomerPaymentSourceCreateDataRelationshipsPaymentSource {
+func NewCustomerPaymentSourceCreateDataRelationshipsPaymentSource(data CustomerPaymentSourceDataRelationshipsPaymentSourceData) *CustomerPaymentSourceCreateDataRelationshipsPaymentSource {
 	this := CustomerPaymentSourceCreateDataRelationshipsPaymentSource{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewCustomerPaymentSourceCreateDataRelationshipsPaymentSourceWithDefaults() 
 }
 
 // GetData returns the Data field value
-func (o *CustomerPaymentSourceCreateDataRelationshipsPaymentSource) GetData() POSTCustomerPaymentSourcesRequestDataRelationshipsPaymentSourceData {
+func (o *CustomerPaymentSourceCreateDataRelationshipsPaymentSource) GetData() CustomerPaymentSourceDataRelationshipsPaymentSourceData {
 	if o == nil {
-		var ret POSTCustomerPaymentSourcesRequestDataRelationshipsPaymentSourceData
+		var ret CustomerPaymentSourceDataRelationshipsPaymentSourceData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *CustomerPaymentSourceCreateDataRelationshipsPaymentSource) GetData() PO
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CustomerPaymentSourceCreateDataRelationshipsPaymentSource) GetDataOk() (*POSTCustomerPaymentSourcesRequestDataRelationshipsPaymentSourceData, bool) {
+func (o *CustomerPaymentSourceCreateDataRelationshipsPaymentSource) GetDataOk() (*CustomerPaymentSourceDataRelationshipsPaymentSourceData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *CustomerPaymentSourceCreateDataRelationshipsPaymentSource) GetDataOk() 
 }
 
 // SetData sets field value
-func (o *CustomerPaymentSourceCreateDataRelationshipsPaymentSource) SetData(v POSTCustomerPaymentSourcesRequestDataRelationshipsPaymentSourceData) {
+func (o *CustomerPaymentSourceCreateDataRelationshipsPaymentSource) SetData(v CustomerPaymentSourceDataRelationshipsPaymentSourceData) {
 	o.Data = v
 }
 
 func (o CustomerPaymentSourceCreateDataRelationshipsPaymentSource) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o CustomerPaymentSourceCreateDataRelationshipsPaymentSource) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableCustomerPaymentSourceCreateDataRelationshipsPaymentSource struct {

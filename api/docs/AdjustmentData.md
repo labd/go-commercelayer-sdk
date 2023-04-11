@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETAdjustmentsAdjustmentId200ResponseDataAttributes**](GETAdjustmentsAdjustmentId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**GETAdjustments200ResponseDataInnerAttributes**](GETAdjustments200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to **interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewAdjustmentData
 
-`func NewAdjustmentData(type_ interface{}, attributes GETAdjustmentsAdjustmentId200ResponseDataAttributes, ) *AdjustmentData`
+`func NewAdjustmentData(type_ interface{}, attributes GETAdjustments200ResponseDataInnerAttributes, ) *AdjustmentData`
 
 NewAdjustmentData instantiates a new AdjustmentData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *AdjustmentData) GetAttributes() GETAdjustmentsAdjustmentId200ResponseDataAttributes`
+`func (o *AdjustmentData) GetAttributes() GETAdjustments200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *AdjustmentData) GetAttributesOk() (*GETAdjustmentsAdjustmentId200ResponseDataAttributes, bool)`
+`func (o *AdjustmentData) GetAttributesOk() (*GETAdjustments200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *AdjustmentData) SetAttributes(v GETAdjustmentsAdjustmentId200ResponseDataAttributes)`
+`func (o *AdjustmentData) SetAttributes(v GETAdjustments200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

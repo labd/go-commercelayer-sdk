@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PATCHPaypalPaymentsPaypalPaymentIdRequestData**](PATCHPaypalPaymentsPaypalPaymentIdRequestData.md) |  | 
+**Data** | [**PaypalPaymentUpdateData**](PaypalPaymentUpdateData.md) |  | 
 
 ## Methods
 
 ### NewPaypalPaymentUpdate
 
-`func NewPaypalPaymentUpdate(data PATCHPaypalPaymentsPaypalPaymentIdRequestData, ) *PaypalPaymentUpdate`
+`func NewPaypalPaymentUpdate(data PaypalPaymentUpdateData, ) *PaypalPaymentUpdate`
 
 NewPaypalPaymentUpdate instantiates a new PaypalPaymentUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *PaypalPaymentUpdate) GetData() PATCHPaypalPaymentsPaypalPaymentIdRequestData`
+`func (o *PaypalPaymentUpdate) GetData() PaypalPaymentUpdateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *PaypalPaymentUpdate) GetDataOk() (*PATCHPaypalPaymentsPaypalPaymentIdRequestData, bool)`
+`func (o *PaypalPaymentUpdate) GetDataOk() (*PaypalPaymentUpdateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *PaypalPaymentUpdate) SetData(v PATCHPaypalPaymentsPaypalPaymentIdRequestData)`
+`func (o *PaypalPaymentUpdate) SetData(v PaypalPaymentUpdateData)`
 
 SetData sets Data field to given value.
 

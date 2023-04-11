@@ -36,7 +36,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -44,7 +44,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SkuListsApi.DELETESkuListsSkuListId(context.Background(), skuListId).Execute()
+    resp, r, err := apiClient.SkuListsApi.DELETESkuListsSkuListId(context.Background(), skuListId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.DELETESkuListsSkuListId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -104,7 +104,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -112,7 +112,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SkuListsApi.GETBundleIdSkuList(context.Background(), bundleId).Execute()
+    resp, r, err := apiClient.SkuListsApi.GETBundleIdSkuList(context.Background(), bundleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.GETBundleIdSkuList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -172,7 +172,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -180,7 +180,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SkuListsApi.GETCustomerIdSkuLists(context.Background(), customerId).Execute()
+    resp, r, err := apiClient.SkuListsApi.GETCustomerIdSkuLists(context.Background(), customerId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.GETCustomerIdSkuLists``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -240,7 +240,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -248,7 +248,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SkuListsApi.GETFixedPricePromotionIdSkuList(context.Background(), fixedPricePromotionId).Execute()
+    resp, r, err := apiClient.SkuListsApi.GETFixedPricePromotionIdSkuList(context.Background(), fixedPricePromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.GETFixedPricePromotionIdSkuList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -308,7 +308,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -316,7 +316,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SkuListsApi.GETFreeGiftPromotionIdSkuList(context.Background(), freeGiftPromotionId).Execute()
+    resp, r, err := apiClient.SkuListsApi.GETFreeGiftPromotionIdSkuList(context.Background(), freeGiftPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.GETFreeGiftPromotionIdSkuList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -376,7 +376,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -384,7 +384,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SkuListsApi.GETPercentageDiscountPromotionIdSkuList(context.Background(), percentageDiscountPromotionId).Execute()
+    resp, r, err := apiClient.SkuListsApi.GETPercentageDiscountPromotionIdSkuList(context.Background(), percentageDiscountPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.GETPercentageDiscountPromotionIdSkuList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -444,7 +444,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -452,7 +452,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SkuListsApi.GETSkuListItemIdSkuList(context.Background(), skuListItemId).Execute()
+    resp, r, err := apiClient.SkuListsApi.GETSkuListItemIdSkuList(context.Background(), skuListItemId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.GETSkuListItemIdSkuList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -512,7 +512,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -520,7 +520,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SkuListsApi.GETSkuListPromotionRuleIdSkuList(context.Background(), skuListPromotionRuleId).Execute()
+    resp, r, err := apiClient.SkuListsApi.GETSkuListPromotionRuleIdSkuList(context.Background(), skuListPromotionRuleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.GETSkuListPromotionRuleIdSkuList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -580,7 +580,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -641,7 +641,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -696,7 +696,7 @@ Name | Type | Description  | Notes
 
 ## PATCHSkuListsSkuListId
 
-> PATCHSkuListsSkuListId200Response PATCHSkuListsSkuListId(ctx, skuListId).PATCHSkuListsSkuListIdRequest(pATCHSkuListsSkuListIdRequest).Execute()
+> PATCHSkuListsSkuListId200Response PATCHSkuListsSkuListId(ctx, skuListId).SkuListUpdate(skuListUpdate).Execute()
 
 Update a SKU list
 
@@ -711,16 +711,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHSkuListsSkuListIdRequest := *openapiclient.NewPATCHSkuListsSkuListIdRequest(*openapiclient.NewPATCHSkuListsSkuListIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHSkuListsSkuListIdRequestDataAttributes())) // PATCHSkuListsSkuListIdRequest | 
+    skuListUpdate := *openapiclient.NewSkuListUpdate(*openapiclient.NewSkuListUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHSkuListsSkuListId200ResponseDataAttributes())) // SkuListUpdate | 
     skuListId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListsApi.PATCHSkuListsSkuListId(context.Background(), skuListId).PATCHSkuListsSkuListIdRequest(pATCHSkuListsSkuListIdRequest).Execute()
+    resp, r, err := apiClient.SkuListsApi.PATCHSkuListsSkuListId(context.Background(), skuListId).SkuListUpdate(skuListUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.PATCHSkuListsSkuListId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -745,7 +745,7 @@ Other parameters are passed through a pointer to a apiPATCHSkuListsSkuListIdRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHSkuListsSkuListIdRequest** | [**PATCHSkuListsSkuListIdRequest**](PATCHSkuListsSkuListIdRequest.md) |  | 
+ **skuListUpdate** | [**SkuListUpdate**](SkuListUpdate.md) |  | 
 
 
 ### Return type
@@ -768,7 +768,7 @@ Name | Type | Description  | Notes
 
 ## POSTSkuLists
 
-> POSTSkuLists201Response POSTSkuLists(ctx).POSTSkuListsRequest(pOSTSkuListsRequest).Execute()
+> POSTSkuLists201Response POSTSkuLists(ctx).SkuListCreate(skuListCreate).Execute()
 
 Create a SKU list
 
@@ -783,15 +783,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTSkuListsRequest := *openapiclient.NewPOSTSkuListsRequest(*openapiclient.NewPOSTSkuListsRequestData(interface{}(123), *openapiclient.NewPOSTSkuListsRequestDataAttributes(interface{}(Personal list)))) // POSTSkuListsRequest | 
+    skuListCreate := *openapiclient.NewSkuListCreate(*openapiclient.NewSkuListCreateData(interface{}(123), *openapiclient.NewPOSTSkuLists201ResponseDataAttributes(interface{}(Personal list)))) // SkuListCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListsApi.POSTSkuLists(context.Background()).POSTSkuListsRequest(pOSTSkuListsRequest).Execute()
+    resp, r, err := apiClient.SkuListsApi.POSTSkuLists(context.Background()).SkuListCreate(skuListCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.POSTSkuLists``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -812,7 +812,7 @@ Other parameters are passed through a pointer to a apiPOSTSkuListsRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTSkuListsRequest** | [**POSTSkuListsRequest**](POSTSkuListsRequest.md) |  | 
+ **skuListCreate** | [**SkuListCreate**](SkuListCreate.md) |  | 
 
 ### Return type
 

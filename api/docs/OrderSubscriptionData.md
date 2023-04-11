@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes**](GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**GETOrderSubscriptions200ResponseDataInnerAttributes**](GETOrderSubscriptions200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**OrderSubscriptionDataRelationships**](OrderSubscriptionDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewOrderSubscriptionData
 
-`func NewOrderSubscriptionData(type_ interface{}, attributes GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes, ) *OrderSubscriptionData`
+`func NewOrderSubscriptionData(type_ interface{}, attributes GETOrderSubscriptions200ResponseDataInnerAttributes, ) *OrderSubscriptionData`
 
 NewOrderSubscriptionData instantiates a new OrderSubscriptionData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *OrderSubscriptionData) GetAttributes() GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes`
+`func (o *OrderSubscriptionData) GetAttributes() GETOrderSubscriptions200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *OrderSubscriptionData) GetAttributesOk() (*GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes, bool)`
+`func (o *OrderSubscriptionData) GetAttributesOk() (*GETOrderSubscriptions200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *OrderSubscriptionData) SetAttributes(v GETOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes)`
+`func (o *OrderSubscriptionData) SetAttributes(v GETOrderSubscriptions200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

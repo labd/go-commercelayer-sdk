@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the InventoryStockLocationCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &InventoryStockLocationCreate{}
-
 // InventoryStockLocationCreate struct for InventoryStockLocationCreate
 type InventoryStockLocationCreate struct {
-	Data POSTInventoryStockLocationsRequestData `json:"data"`
+	Data InventoryStockLocationCreateData `json:"data"`
 }
 
 // NewInventoryStockLocationCreate instantiates a new InventoryStockLocationCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInventoryStockLocationCreate(data POSTInventoryStockLocationsRequestData) *InventoryStockLocationCreate {
+func NewInventoryStockLocationCreate(data InventoryStockLocationCreateData) *InventoryStockLocationCreate {
 	this := InventoryStockLocationCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewInventoryStockLocationCreateWithDefaults() *InventoryStockLocationCreate
 }
 
 // GetData returns the Data field value
-func (o *InventoryStockLocationCreate) GetData() POSTInventoryStockLocationsRequestData {
+func (o *InventoryStockLocationCreate) GetData() InventoryStockLocationCreateData {
 	if o == nil {
-		var ret POSTInventoryStockLocationsRequestData
+		var ret InventoryStockLocationCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *InventoryStockLocationCreate) GetData() POSTInventoryStockLocationsRequ
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *InventoryStockLocationCreate) GetDataOk() (*POSTInventoryStockLocationsRequestData, bool) {
+func (o *InventoryStockLocationCreate) GetDataOk() (*InventoryStockLocationCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *InventoryStockLocationCreate) GetDataOk() (*POSTInventoryStockLocations
 }
 
 // SetData sets field value
-func (o *InventoryStockLocationCreate) SetData(v POSTInventoryStockLocationsRequestData) {
+func (o *InventoryStockLocationCreate) SetData(v InventoryStockLocationCreateData) {
 	o.Data = v
 }
 
 func (o InventoryStockLocationCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o InventoryStockLocationCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableInventoryStockLocationCreate struct {

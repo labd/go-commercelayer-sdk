@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the GiftCardCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GiftCardCreate{}
-
 // GiftCardCreate struct for GiftCardCreate
 type GiftCardCreate struct {
-	Data POSTGiftCardsRequestData `json:"data"`
+	Data GiftCardCreateData `json:"data"`
 }
 
 // NewGiftCardCreate instantiates a new GiftCardCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGiftCardCreate(data POSTGiftCardsRequestData) *GiftCardCreate {
+func NewGiftCardCreate(data GiftCardCreateData) *GiftCardCreate {
 	this := GiftCardCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewGiftCardCreateWithDefaults() *GiftCardCreate {
 }
 
 // GetData returns the Data field value
-func (o *GiftCardCreate) GetData() POSTGiftCardsRequestData {
+func (o *GiftCardCreate) GetData() GiftCardCreateData {
 	if o == nil {
-		var ret POSTGiftCardsRequestData
+		var ret GiftCardCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *GiftCardCreate) GetData() POSTGiftCardsRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *GiftCardCreate) GetDataOk() (*POSTGiftCardsRequestData, bool) {
+func (o *GiftCardCreate) GetDataOk() (*GiftCardCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *GiftCardCreate) GetDataOk() (*POSTGiftCardsRequestData, bool) {
 }
 
 // SetData sets field value
-func (o *GiftCardCreate) SetData(v POSTGiftCardsRequestData) {
+func (o *GiftCardCreate) SetData(v GiftCardCreateData) {
 	o.Data = v
 }
 
 func (o GiftCardCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o GiftCardCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableGiftCardCreate struct {

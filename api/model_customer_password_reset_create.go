@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the CustomerPasswordResetCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CustomerPasswordResetCreate{}
-
 // CustomerPasswordResetCreate struct for CustomerPasswordResetCreate
 type CustomerPasswordResetCreate struct {
-	Data POSTCustomerPasswordResetsRequestData `json:"data"`
+	Data CustomerPasswordResetCreateData `json:"data"`
 }
 
 // NewCustomerPasswordResetCreate instantiates a new CustomerPasswordResetCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerPasswordResetCreate(data POSTCustomerPasswordResetsRequestData) *CustomerPasswordResetCreate {
+func NewCustomerPasswordResetCreate(data CustomerPasswordResetCreateData) *CustomerPasswordResetCreate {
 	this := CustomerPasswordResetCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewCustomerPasswordResetCreateWithDefaults() *CustomerPasswordResetCreate {
 }
 
 // GetData returns the Data field value
-func (o *CustomerPasswordResetCreate) GetData() POSTCustomerPasswordResetsRequestData {
+func (o *CustomerPasswordResetCreate) GetData() CustomerPasswordResetCreateData {
 	if o == nil {
-		var ret POSTCustomerPasswordResetsRequestData
+		var ret CustomerPasswordResetCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *CustomerPasswordResetCreate) GetData() POSTCustomerPasswordResetsReques
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CustomerPasswordResetCreate) GetDataOk() (*POSTCustomerPasswordResetsRequestData, bool) {
+func (o *CustomerPasswordResetCreate) GetDataOk() (*CustomerPasswordResetCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *CustomerPasswordResetCreate) GetDataOk() (*POSTCustomerPasswordResetsRe
 }
 
 // SetData sets field value
-func (o *CustomerPasswordResetCreate) SetData(v POSTCustomerPasswordResetsRequestData) {
+func (o *CustomerPasswordResetCreate) SetData(v CustomerPasswordResetCreateData) {
 	o.Data = v
 }
 
 func (o CustomerPasswordResetCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o CustomerPasswordResetCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableCustomerPasswordResetCreate struct {

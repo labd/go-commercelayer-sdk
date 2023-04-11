@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *SkuListItemsApiService) DELETESkuListItemsSkuListItemIdExecute(r SkuLis
 	}
 
 	localVarPath := localBasePath + "/sku_list_items/{skuListItemId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuListItemId"+"}", url.PathEscape(parameterValueToString(r.skuListItemId, "skuListItemId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListItemId"+"}", url.PathEscape(parameterToString(r.skuListItemId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *SkuListItemsApiService) DELETESkuListItemsSkuListItemIdExecute(r SkuLis
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -156,7 +156,7 @@ func (a *SkuListItemsApiService) GETSkuListIdSkuListItemsExecute(r SkuListItemsA
 	}
 
 	localVarPath := localBasePath + "/sku_lists/{skuListId}/sku_list_items"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuListId"+"}", url.PathEscape(parameterValueToString(r.skuListId, "skuListId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListId"+"}", url.PathEscape(parameterToString(r.skuListId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *SkuListItemsApiService) GETSkuListIdSkuListItemsExecute(r SkuListItemsA
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *SkuListItemsApiService) GETSkuListItemsExecute(r SkuListItemsApiGETSkuL
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -351,7 +351,7 @@ func (a *SkuListItemsApiService) GETSkuListItemsSkuListItemIdExecute(r SkuListIt
 	}
 
 	localVarPath := localBasePath + "/sku_list_items/{skuListItemId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuListItemId"+"}", url.PathEscape(parameterValueToString(r.skuListItemId, "skuListItemId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListItemId"+"}", url.PathEscape(parameterToString(r.skuListItemId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *SkuListItemsApiService) GETSkuListItemsSkuListItemIdExecute(r SkuListIt
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -412,14 +412,14 @@ func (a *SkuListItemsApiService) GETSkuListItemsSkuListItemIdExecute(r SkuListIt
 }
 
 type SkuListItemsApiPATCHSkuListItemsSkuListItemIdRequest struct {
-	ctx                                   context.Context
-	ApiService                            *SkuListItemsApiService
-	pATCHSkuListItemsSkuListItemIdRequest *PATCHSkuListItemsSkuListItemIdRequest
-	skuListItemId                         interface{}
+	ctx               context.Context
+	ApiService        *SkuListItemsApiService
+	skuListItemUpdate *SkuListItemUpdate
+	skuListItemId     interface{}
 }
 
-func (r SkuListItemsApiPATCHSkuListItemsSkuListItemIdRequest) PATCHSkuListItemsSkuListItemIdRequest(pATCHSkuListItemsSkuListItemIdRequest PATCHSkuListItemsSkuListItemIdRequest) SkuListItemsApiPATCHSkuListItemsSkuListItemIdRequest {
-	r.pATCHSkuListItemsSkuListItemIdRequest = &pATCHSkuListItemsSkuListItemIdRequest
+func (r SkuListItemsApiPATCHSkuListItemsSkuListItemIdRequest) SkuListItemUpdate(skuListItemUpdate SkuListItemUpdate) SkuListItemsApiPATCHSkuListItemsSkuListItemIdRequest {
+	r.skuListItemUpdate = &skuListItemUpdate
 	return r
 }
 
@@ -461,13 +461,13 @@ func (a *SkuListItemsApiService) PATCHSkuListItemsSkuListItemIdExecute(r SkuList
 	}
 
 	localVarPath := localBasePath + "/sku_list_items/{skuListItemId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuListItemId"+"}", url.PathEscape(parameterValueToString(r.skuListItemId, "skuListItemId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListItemId"+"}", url.PathEscape(parameterToString(r.skuListItemId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHSkuListItemsSkuListItemIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHSkuListItemsSkuListItemIdRequest is required and must be specified")
+	if r.skuListItemUpdate == nil {
+		return localVarReturnValue, nil, reportError("skuListItemUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -488,7 +488,7 @@ func (a *SkuListItemsApiService) PATCHSkuListItemsSkuListItemIdExecute(r SkuList
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHSkuListItemsSkuListItemIdRequest
+	localVarPostBody = r.skuListItemUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -499,9 +499,9 @@ func (a *SkuListItemsApiService) PATCHSkuListItemsSkuListItemIdExecute(r SkuList
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -527,13 +527,13 @@ func (a *SkuListItemsApiService) PATCHSkuListItemsSkuListItemIdExecute(r SkuList
 }
 
 type SkuListItemsApiPOSTSkuListItemsRequest struct {
-	ctx                     context.Context
-	ApiService              *SkuListItemsApiService
-	pOSTSkuListItemsRequest *POSTSkuListItemsRequest
+	ctx               context.Context
+	ApiService        *SkuListItemsApiService
+	skuListItemCreate *SkuListItemCreate
 }
 
-func (r SkuListItemsApiPOSTSkuListItemsRequest) POSTSkuListItemsRequest(pOSTSkuListItemsRequest POSTSkuListItemsRequest) SkuListItemsApiPOSTSkuListItemsRequest {
-	r.pOSTSkuListItemsRequest = &pOSTSkuListItemsRequest
+func (r SkuListItemsApiPOSTSkuListItemsRequest) SkuListItemCreate(skuListItemCreate SkuListItemCreate) SkuListItemsApiPOSTSkuListItemsRequest {
+	r.skuListItemCreate = &skuListItemCreate
 	return r
 }
 
@@ -577,8 +577,8 @@ func (a *SkuListItemsApiService) POSTSkuListItemsExecute(r SkuListItemsApiPOSTSk
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTSkuListItemsRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTSkuListItemsRequest is required and must be specified")
+	if r.skuListItemCreate == nil {
+		return localVarReturnValue, nil, reportError("skuListItemCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -599,7 +599,7 @@ func (a *SkuListItemsApiService) POSTSkuListItemsExecute(r SkuListItemsApiPOSTSk
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTSkuListItemsRequest
+	localVarPostBody = r.skuListItemCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -610,9 +610,9 @@ func (a *SkuListItemsApiService) POSTSkuListItemsExecute(r SkuListItemsApiPOSTSk
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

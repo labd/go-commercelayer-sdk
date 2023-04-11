@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
-**Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
-**Attributes** | Pointer to [**POSTDeliveryLeadTimesRequestDataAttributes**](POSTDeliveryLeadTimesRequestDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTDeliveryLeadTimes201ResponseDataRelationships**](POSTDeliveryLeadTimes201ResponseDataRelationships.md) |  | [optional] 
+**Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
+**Attributes** | Pointer to [**POSTDeliveryLeadTimes201ResponseDataAttributes**](POSTDeliveryLeadTimes201ResponseDataAttributes.md) |  | [optional] 
+**Relationships** | Pointer to [**GETDeliveryLeadTimes200ResponseDataInnerRelationships**](GETDeliveryLeadTimes200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -101,20 +101,20 @@ HasType returns a boolean if a field has been set.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetLinks
 
-`func (o *POSTDeliveryLeadTimes201ResponseData) GetLinks() POSTAddresses201ResponseDataLinks`
+`func (o *POSTDeliveryLeadTimes201ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *POSTDeliveryLeadTimes201ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool)`
+`func (o *POSTDeliveryLeadTimes201ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *POSTDeliveryLeadTimes201ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks)`
+`func (o *POSTDeliveryLeadTimes201ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks)`
 
 SetLinks sets Links field to given value.
 
@@ -126,20 +126,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *POSTDeliveryLeadTimes201ResponseData) GetAttributes() POSTDeliveryLeadTimesRequestDataAttributes`
+`func (o *POSTDeliveryLeadTimes201ResponseData) GetAttributes() POSTDeliveryLeadTimes201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *POSTDeliveryLeadTimes201ResponseData) GetAttributesOk() (*POSTDeliveryLeadTimesRequestDataAttributes, bool)`
+`func (o *POSTDeliveryLeadTimes201ResponseData) GetAttributesOk() (*POSTDeliveryLeadTimes201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *POSTDeliveryLeadTimes201ResponseData) SetAttributes(v POSTDeliveryLeadTimesRequestDataAttributes)`
+`func (o *POSTDeliveryLeadTimes201ResponseData) SetAttributes(v POSTDeliveryLeadTimes201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
@@ -151,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *POSTDeliveryLeadTimes201ResponseData) GetRelationships() POSTDeliveryLeadTimes201ResponseDataRelationships`
+`func (o *POSTDeliveryLeadTimes201ResponseData) GetRelationships() GETDeliveryLeadTimes200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *POSTDeliveryLeadTimes201ResponseData) GetRelationshipsOk() (*POSTDeliveryLeadTimes201ResponseDataRelationships, bool)`
+`func (o *POSTDeliveryLeadTimes201ResponseData) GetRelationshipsOk() (*GETDeliveryLeadTimes200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *POSTDeliveryLeadTimes201ResponseData) SetRelationships(v POSTDeliveryLeadTimes201ResponseDataRelationships)`
+`func (o *POSTDeliveryLeadTimes201ResponseData) SetRelationships(v GETDeliveryLeadTimes200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

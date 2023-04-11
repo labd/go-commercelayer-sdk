@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the BraintreeGatewayDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &BraintreeGatewayDataRelationships{}
-
 // BraintreeGatewayDataRelationships struct for BraintreeGatewayDataRelationships
 type BraintreeGatewayDataRelationships struct {
 	PaymentMethods    *AdyenGatewayDataRelationshipsPaymentMethods        `json:"payment_methods,omitempty"`
@@ -43,7 +40,7 @@ func NewBraintreeGatewayDataRelationshipsWithDefaults() *BraintreeGatewayDataRel
 
 // GetPaymentMethods returns the PaymentMethods field value if set, zero value otherwise.
 func (o *BraintreeGatewayDataRelationships) GetPaymentMethods() AdyenGatewayDataRelationshipsPaymentMethods {
-	if o == nil || IsNil(o.PaymentMethods) {
+	if o == nil || o.PaymentMethods == nil {
 		var ret AdyenGatewayDataRelationshipsPaymentMethods
 		return ret
 	}
@@ -53,7 +50,7 @@ func (o *BraintreeGatewayDataRelationships) GetPaymentMethods() AdyenGatewayData
 // GetPaymentMethodsOk returns a tuple with the PaymentMethods field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BraintreeGatewayDataRelationships) GetPaymentMethodsOk() (*AdyenGatewayDataRelationshipsPaymentMethods, bool) {
-	if o == nil || IsNil(o.PaymentMethods) {
+	if o == nil || o.PaymentMethods == nil {
 		return nil, false
 	}
 	return o.PaymentMethods, true
@@ -61,7 +58,7 @@ func (o *BraintreeGatewayDataRelationships) GetPaymentMethodsOk() (*AdyenGateway
 
 // HasPaymentMethods returns a boolean if a field has been set.
 func (o *BraintreeGatewayDataRelationships) HasPaymentMethods() bool {
-	if o != nil && !IsNil(o.PaymentMethods) {
+	if o != nil && o.PaymentMethods != nil {
 		return true
 	}
 
@@ -75,7 +72,7 @@ func (o *BraintreeGatewayDataRelationships) SetPaymentMethods(v AdyenGatewayData
 
 // GetBraintreePayments returns the BraintreePayments field value if set, zero value otherwise.
 func (o *BraintreeGatewayDataRelationships) GetBraintreePayments() BraintreeGatewayDataRelationshipsBraintreePayments {
-	if o == nil || IsNil(o.BraintreePayments) {
+	if o == nil || o.BraintreePayments == nil {
 		var ret BraintreeGatewayDataRelationshipsBraintreePayments
 		return ret
 	}
@@ -85,7 +82,7 @@ func (o *BraintreeGatewayDataRelationships) GetBraintreePayments() BraintreeGate
 // GetBraintreePaymentsOk returns a tuple with the BraintreePayments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BraintreeGatewayDataRelationships) GetBraintreePaymentsOk() (*BraintreeGatewayDataRelationshipsBraintreePayments, bool) {
-	if o == nil || IsNil(o.BraintreePayments) {
+	if o == nil || o.BraintreePayments == nil {
 		return nil, false
 	}
 	return o.BraintreePayments, true
@@ -93,7 +90,7 @@ func (o *BraintreeGatewayDataRelationships) GetBraintreePaymentsOk() (*Braintree
 
 // HasBraintreePayments returns a boolean if a field has been set.
 func (o *BraintreeGatewayDataRelationships) HasBraintreePayments() bool {
-	if o != nil && !IsNil(o.BraintreePayments) {
+	if o != nil && o.BraintreePayments != nil {
 		return true
 	}
 
@@ -106,22 +103,14 @@ func (o *BraintreeGatewayDataRelationships) SetBraintreePayments(v BraintreeGate
 }
 
 func (o BraintreeGatewayDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o BraintreeGatewayDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PaymentMethods) {
+	if o.PaymentMethods != nil {
 		toSerialize["payment_methods"] = o.PaymentMethods
 	}
-	if !IsNil(o.BraintreePayments) {
+	if o.BraintreePayments != nil {
 		toSerialize["braintree_payments"] = o.BraintreePayments
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableBraintreeGatewayDataRelationships struct {

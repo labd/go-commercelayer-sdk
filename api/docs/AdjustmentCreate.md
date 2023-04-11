@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**POSTAdjustmentsRequestData**](POSTAdjustmentsRequestData.md) |  | 
+**Data** | [**AdjustmentCreateData**](AdjustmentCreateData.md) |  | 
 
 ## Methods
 
 ### NewAdjustmentCreate
 
-`func NewAdjustmentCreate(data POSTAdjustmentsRequestData, ) *AdjustmentCreate`
+`func NewAdjustmentCreate(data AdjustmentCreateData, ) *AdjustmentCreate`
 
 NewAdjustmentCreate instantiates a new AdjustmentCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *AdjustmentCreate) GetData() POSTAdjustmentsRequestData`
+`func (o *AdjustmentCreate) GetData() AdjustmentCreateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *AdjustmentCreate) GetDataOk() (*POSTAdjustmentsRequestData, bool)`
+`func (o *AdjustmentCreate) GetDataOk() (*AdjustmentCreateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *AdjustmentCreate) SetData(v POSTAdjustmentsRequestData)`
+`func (o *AdjustmentCreate) SetData(v AdjustmentCreateData)`
 
 SetData sets Data field to given value.
 

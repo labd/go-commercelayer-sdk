@@ -29,7 +29,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -37,7 +37,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CheckoutComGatewaysApi.DELETECheckoutComGatewaysCheckoutComGatewayId(context.Background(), checkoutComGatewayId).Execute()
+    resp, r, err := apiClient.CheckoutComGatewaysApi.DELETECheckoutComGatewaysCheckoutComGatewayId(context.Background(), checkoutComGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckoutComGatewaysApi.DELETECheckoutComGatewaysCheckoutComGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -158,7 +158,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHCheckoutComGatewaysCheckoutComGatewayId
 
-> PATCHCheckoutComGatewaysCheckoutComGatewayId200Response PATCHCheckoutComGatewaysCheckoutComGatewayId(ctx, checkoutComGatewayId).PATCHCheckoutComGatewaysCheckoutComGatewayIdRequest(pATCHCheckoutComGatewaysCheckoutComGatewayIdRequest).Execute()
+> PATCHCheckoutComGatewaysCheckoutComGatewayId200Response PATCHCheckoutComGatewaysCheckoutComGatewayId(ctx, checkoutComGatewayId).CheckoutComGatewayUpdate(checkoutComGatewayUpdate).Execute()
 
 Update a checkout.com gateway
 
@@ -228,16 +228,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHCheckoutComGatewaysCheckoutComGatewayIdRequest := *openapiclient.NewPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest(*openapiclient.NewPATCHCheckoutComGatewaysCheckoutComGatewayIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHCheckoutComGatewaysCheckoutComGatewayIdRequestDataAttributes())) // PATCHCheckoutComGatewaysCheckoutComGatewayIdRequest | 
+    checkoutComGatewayUpdate := *openapiclient.NewCheckoutComGatewayUpdate(*openapiclient.NewCheckoutComGatewayUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes())) // CheckoutComGatewayUpdate | 
     checkoutComGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CheckoutComGatewaysApi.PATCHCheckoutComGatewaysCheckoutComGatewayId(context.Background(), checkoutComGatewayId).PATCHCheckoutComGatewaysCheckoutComGatewayIdRequest(pATCHCheckoutComGatewaysCheckoutComGatewayIdRequest).Execute()
+    resp, r, err := apiClient.CheckoutComGatewaysApi.PATCHCheckoutComGatewaysCheckoutComGatewayId(context.Background(), checkoutComGatewayId).CheckoutComGatewayUpdate(checkoutComGatewayUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckoutComGatewaysApi.PATCHCheckoutComGatewaysCheckoutComGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -262,7 +262,7 @@ Other parameters are passed through a pointer to a apiPATCHCheckoutComGatewaysCh
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHCheckoutComGatewaysCheckoutComGatewayIdRequest** | [**PATCHCheckoutComGatewaysCheckoutComGatewayIdRequest**](PATCHCheckoutComGatewaysCheckoutComGatewayIdRequest.md) |  | 
+ **checkoutComGatewayUpdate** | [**CheckoutComGatewayUpdate**](CheckoutComGatewayUpdate.md) |  | 
 
 
 ### Return type
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTCheckoutComGateways
 
-> POSTCheckoutComGateways201Response POSTCheckoutComGateways(ctx).POSTCheckoutComGatewaysRequest(pOSTCheckoutComGatewaysRequest).Execute()
+> POSTCheckoutComGateways201Response POSTCheckoutComGateways(ctx).CheckoutComGatewayCreate(checkoutComGatewayCreate).Execute()
 
 Create a checkout.com gateway
 
@@ -300,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTCheckoutComGatewaysRequest := *openapiclient.NewPOSTCheckoutComGatewaysRequest(*openapiclient.NewPOSTCheckoutComGatewaysRequestData(interface{}(123), *openapiclient.NewPOSTCheckoutComGatewaysRequestDataAttributes(interface{}(US payment gateway), interface{}(sk_test_xxxx-yyyy-zzzz), interface{}(pk_test_xxxx-yyyy-zzzz)))) // POSTCheckoutComGatewaysRequest | 
+    checkoutComGatewayCreate := *openapiclient.NewCheckoutComGatewayCreate(*openapiclient.NewCheckoutComGatewayCreateData(interface{}(123), *openapiclient.NewPOSTCheckoutComGateways201ResponseDataAttributes(interface{}(US payment gateway), interface{}(sk_test_xxxx-yyyy-zzzz), interface{}(pk_test_xxxx-yyyy-zzzz)))) // CheckoutComGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CheckoutComGatewaysApi.POSTCheckoutComGateways(context.Background()).POSTCheckoutComGatewaysRequest(pOSTCheckoutComGatewaysRequest).Execute()
+    resp, r, err := apiClient.CheckoutComGatewaysApi.POSTCheckoutComGateways(context.Background()).CheckoutComGatewayCreate(checkoutComGatewayCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckoutComGatewaysApi.POSTCheckoutComGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiPOSTCheckoutComGatewaysReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTCheckoutComGatewaysRequest** | [**POSTCheckoutComGatewaysRequest**](POSTCheckoutComGatewaysRequest.md) |  | 
+ **checkoutComGatewayCreate** | [**CheckoutComGatewayCreate**](CheckoutComGatewayCreate.md) |  | 
 
 ### Return type
 

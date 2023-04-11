@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the KlarnaGateway type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &KlarnaGateway{}
-
 // KlarnaGateway struct for KlarnaGateway
 type KlarnaGateway struct {
 	Data *KlarnaGatewayData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewKlarnaGatewayWithDefaults() *KlarnaGateway {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *KlarnaGateway) GetData() KlarnaGatewayData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret KlarnaGatewayData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *KlarnaGateway) GetData() KlarnaGatewayData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KlarnaGateway) GetDataOk() (*KlarnaGatewayData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *KlarnaGateway) GetDataOk() (*KlarnaGatewayData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *KlarnaGateway) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *KlarnaGateway) SetData(v KlarnaGatewayData) {
 }
 
 func (o KlarnaGateway) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o KlarnaGateway) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableKlarnaGateway struct {

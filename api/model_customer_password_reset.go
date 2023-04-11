@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the CustomerPasswordReset type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CustomerPasswordReset{}
-
 // CustomerPasswordReset struct for CustomerPasswordReset
 type CustomerPasswordReset struct {
 	Data *CustomerPasswordResetData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewCustomerPasswordResetWithDefaults() *CustomerPasswordReset {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *CustomerPasswordReset) GetData() CustomerPasswordResetData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret CustomerPasswordResetData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *CustomerPasswordReset) GetData() CustomerPasswordResetData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerPasswordReset) GetDataOk() (*CustomerPasswordResetData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *CustomerPasswordReset) GetDataOk() (*CustomerPasswordResetData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *CustomerPasswordReset) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *CustomerPasswordReset) SetData(v CustomerPasswordResetData) {
 }
 
 func (o CustomerPasswordReset) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o CustomerPasswordReset) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableCustomerPasswordReset struct {

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PATCHParcelLineItemsParcelLineItemIdRequestData**](PATCHParcelLineItemsParcelLineItemIdRequestData.md) |  | 
+**Data** | [**ParcelLineItemUpdateData**](ParcelLineItemUpdateData.md) |  | 
 
 ## Methods
 
 ### NewParcelLineItemUpdate
 
-`func NewParcelLineItemUpdate(data PATCHParcelLineItemsParcelLineItemIdRequestData, ) *ParcelLineItemUpdate`
+`func NewParcelLineItemUpdate(data ParcelLineItemUpdateData, ) *ParcelLineItemUpdate`
 
 NewParcelLineItemUpdate instantiates a new ParcelLineItemUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *ParcelLineItemUpdate) GetData() PATCHParcelLineItemsParcelLineItemIdRequestData`
+`func (o *ParcelLineItemUpdate) GetData() ParcelLineItemUpdateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ParcelLineItemUpdate) GetDataOk() (*PATCHParcelLineItemsParcelLineItemIdRequestData, bool)`
+`func (o *ParcelLineItemUpdate) GetDataOk() (*ParcelLineItemUpdateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ParcelLineItemUpdate) SetData(v PATCHParcelLineItemsParcelLineItemIdRequestData)`
+`func (o *ParcelLineItemUpdate) SetData(v ParcelLineItemUpdateData)`
 
 SetData sets Data field to given value.
 

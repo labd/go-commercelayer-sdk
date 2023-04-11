@@ -29,7 +29,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -37,7 +37,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AdjustmentsApi.DELETEAdjustmentsAdjustmentId(context.Background(), adjustmentId).Execute()
+    resp, r, err := apiClient.AdjustmentsApi.DELETEAdjustmentsAdjustmentId(context.Background(), adjustmentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AdjustmentsApi.DELETEAdjustmentsAdjustmentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -158,7 +158,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHAdjustmentsAdjustmentId
 
-> PATCHAdjustmentsAdjustmentId200Response PATCHAdjustmentsAdjustmentId(ctx, adjustmentId).PATCHAdjustmentsAdjustmentIdRequest(pATCHAdjustmentsAdjustmentIdRequest).Execute()
+> PATCHAdjustmentsAdjustmentId200Response PATCHAdjustmentsAdjustmentId(ctx, adjustmentId).AdjustmentUpdate(adjustmentUpdate).Execute()
 
 Update an adjustment
 
@@ -228,16 +228,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHAdjustmentsAdjustmentIdRequest := *openapiclient.NewPATCHAdjustmentsAdjustmentIdRequest(*openapiclient.NewPATCHAdjustmentsAdjustmentIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHAdjustmentsAdjustmentIdRequestDataAttributes())) // PATCHAdjustmentsAdjustmentIdRequest | 
+    adjustmentUpdate := *openapiclient.NewAdjustmentUpdate(*openapiclient.NewAdjustmentUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHAdjustmentsAdjustmentId200ResponseDataAttributes())) // AdjustmentUpdate | 
     adjustmentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AdjustmentsApi.PATCHAdjustmentsAdjustmentId(context.Background(), adjustmentId).PATCHAdjustmentsAdjustmentIdRequest(pATCHAdjustmentsAdjustmentIdRequest).Execute()
+    resp, r, err := apiClient.AdjustmentsApi.PATCHAdjustmentsAdjustmentId(context.Background(), adjustmentId).AdjustmentUpdate(adjustmentUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AdjustmentsApi.PATCHAdjustmentsAdjustmentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -262,7 +262,7 @@ Other parameters are passed through a pointer to a apiPATCHAdjustmentsAdjustment
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHAdjustmentsAdjustmentIdRequest** | [**PATCHAdjustmentsAdjustmentIdRequest**](PATCHAdjustmentsAdjustmentIdRequest.md) |  | 
+ **adjustmentUpdate** | [**AdjustmentUpdate**](AdjustmentUpdate.md) |  | 
 
 
 ### Return type
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTAdjustments
 
-> POSTAdjustments201Response POSTAdjustments(ctx).POSTAdjustmentsRequest(pOSTAdjustmentsRequest).Execute()
+> POSTAdjustments201Response POSTAdjustments(ctx).AdjustmentCreate(adjustmentCreate).Execute()
 
 Create an adjustment
 
@@ -300,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTAdjustmentsRequest := *openapiclient.NewPOSTAdjustmentsRequest(*openapiclient.NewPOSTAdjustmentsRequestData(interface{}(123), *openapiclient.NewPOSTAdjustmentsRequestDataAttributes(interface{}(Additional service), interface{}(EUR), interface{}(1500)))) // POSTAdjustmentsRequest | 
+    adjustmentCreate := *openapiclient.NewAdjustmentCreate(*openapiclient.NewAdjustmentCreateData(interface{}(123), *openapiclient.NewPOSTAdjustments201ResponseDataAttributes(interface{}(Additional service), interface{}(EUR), interface{}(1500)))) // AdjustmentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AdjustmentsApi.POSTAdjustments(context.Background()).POSTAdjustmentsRequest(pOSTAdjustmentsRequest).Execute()
+    resp, r, err := apiClient.AdjustmentsApi.POSTAdjustments(context.Background()).AdjustmentCreate(adjustmentCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AdjustmentsApi.POSTAdjustments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiPOSTAdjustmentsRequest str
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTAdjustmentsRequest** | [**POSTAdjustmentsRequest**](POSTAdjustmentsRequest.md) |  | 
+ **adjustmentCreate** | [**AdjustmentCreate**](AdjustmentCreate.md) |  | 
 
 ### Return type
 

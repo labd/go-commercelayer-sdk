@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETMarketsMarketId200ResponseDataAttributes**](GETMarketsMarketId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**GETMarkets200ResponseDataInnerAttributes**](GETMarkets200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**MarketDataRelationships**](MarketDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewMarketData
 
-`func NewMarketData(type_ interface{}, attributes GETMarketsMarketId200ResponseDataAttributes, ) *MarketData`
+`func NewMarketData(type_ interface{}, attributes GETMarkets200ResponseDataInnerAttributes, ) *MarketData`
 
 NewMarketData instantiates a new MarketData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *MarketData) GetAttributes() GETMarketsMarketId200ResponseDataAttributes`
+`func (o *MarketData) GetAttributes() GETMarkets200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *MarketData) GetAttributesOk() (*GETMarketsMarketId200ResponseDataAttributes, bool)`
+`func (o *MarketData) GetAttributesOk() (*GETMarkets200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *MarketData) SetAttributes(v GETMarketsMarketId200ResponseDataAttributes)`
+`func (o *MarketData) SetAttributes(v GETMarkets200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

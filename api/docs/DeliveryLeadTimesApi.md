@@ -32,7 +32,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -40,7 +40,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DeliveryLeadTimesApi.DELETEDeliveryLeadTimesDeliveryLeadTimeId(context.Background(), deliveryLeadTimeId).Execute()
+    resp, r, err := apiClient.DeliveryLeadTimesApi.DELETEDeliveryLeadTimesDeliveryLeadTimeId(context.Background(), deliveryLeadTimeId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DeliveryLeadTimesApi.DELETEDeliveryLeadTimesDeliveryLeadTimeId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -100,7 +100,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -161,7 +161,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -231,7 +231,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -239,7 +239,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DeliveryLeadTimesApi.GETShipmentIdDeliveryLeadTime(context.Background(), shipmentId).Execute()
+    resp, r, err := apiClient.DeliveryLeadTimesApi.GETShipmentIdDeliveryLeadTime(context.Background(), shipmentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DeliveryLeadTimesApi.GETShipmentIdDeliveryLeadTime``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -299,7 +299,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -307,7 +307,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DeliveryLeadTimesApi.GETShippingMethodIdDeliveryLeadTimeForShipment(context.Background(), shippingMethodId).Execute()
+    resp, r, err := apiClient.DeliveryLeadTimesApi.GETShippingMethodIdDeliveryLeadTimeForShipment(context.Background(), shippingMethodId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DeliveryLeadTimesApi.GETShippingMethodIdDeliveryLeadTimeForShipment``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -367,7 +367,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -375,7 +375,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.DeliveryLeadTimesApi.GETSkuIdDeliveryLeadTimes(context.Background(), skuId).Execute()
+    resp, r, err := apiClient.DeliveryLeadTimesApi.GETSkuIdDeliveryLeadTimes(context.Background(), skuId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DeliveryLeadTimesApi.GETSkuIdDeliveryLeadTimes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 
 ## PATCHDeliveryLeadTimesDeliveryLeadTimeId
 
-> PATCHDeliveryLeadTimesDeliveryLeadTimeId200Response PATCHDeliveryLeadTimesDeliveryLeadTimeId(ctx, deliveryLeadTimeId).PATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest(pATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest).Execute()
+> PATCHDeliveryLeadTimesDeliveryLeadTimeId200Response PATCHDeliveryLeadTimesDeliveryLeadTimeId(ctx, deliveryLeadTimeId).DeliveryLeadTimeUpdate(deliveryLeadTimeUpdate).Execute()
 
 Update a delivery lead time
 
@@ -435,16 +435,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest := *openapiclient.NewPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest(*openapiclient.NewPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequestDataAttributes())) // PATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest | 
+    deliveryLeadTimeUpdate := *openapiclient.NewDeliveryLeadTimeUpdate(*openapiclient.NewDeliveryLeadTimeUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes())) // DeliveryLeadTimeUpdate | 
     deliveryLeadTimeId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DeliveryLeadTimesApi.PATCHDeliveryLeadTimesDeliveryLeadTimeId(context.Background(), deliveryLeadTimeId).PATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest(pATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest).Execute()
+    resp, r, err := apiClient.DeliveryLeadTimesApi.PATCHDeliveryLeadTimesDeliveryLeadTimeId(context.Background(), deliveryLeadTimeId).DeliveryLeadTimeUpdate(deliveryLeadTimeUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DeliveryLeadTimesApi.PATCHDeliveryLeadTimesDeliveryLeadTimeId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -469,7 +469,7 @@ Other parameters are passed through a pointer to a apiPATCHDeliveryLeadTimesDeli
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest** | [**PATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest**](PATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest.md) |  | 
+ **deliveryLeadTimeUpdate** | [**DeliveryLeadTimeUpdate**](DeliveryLeadTimeUpdate.md) |  | 
 
 
 ### Return type
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 
 ## POSTDeliveryLeadTimes
 
-> POSTDeliveryLeadTimes201Response POSTDeliveryLeadTimes(ctx).POSTDeliveryLeadTimesRequest(pOSTDeliveryLeadTimesRequest).Execute()
+> POSTDeliveryLeadTimes201Response POSTDeliveryLeadTimes(ctx).DeliveryLeadTimeCreate(deliveryLeadTimeCreate).Execute()
 
 Create a delivery lead time
 
@@ -507,15 +507,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTDeliveryLeadTimesRequest := *openapiclient.NewPOSTDeliveryLeadTimesRequest(*openapiclient.NewPOSTDeliveryLeadTimesRequestData(interface{}(123), *openapiclient.NewPOSTDeliveryLeadTimesRequestDataAttributes(interface{}(48), interface{}(72)))) // POSTDeliveryLeadTimesRequest | 
+    deliveryLeadTimeCreate := *openapiclient.NewDeliveryLeadTimeCreate(*openapiclient.NewDeliveryLeadTimeCreateData(interface{}(123), *openapiclient.NewPOSTDeliveryLeadTimes201ResponseDataAttributes(interface{}(48), interface{}(72)))) // DeliveryLeadTimeCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.DeliveryLeadTimesApi.POSTDeliveryLeadTimes(context.Background()).POSTDeliveryLeadTimesRequest(pOSTDeliveryLeadTimesRequest).Execute()
+    resp, r, err := apiClient.DeliveryLeadTimesApi.POSTDeliveryLeadTimes(context.Background()).DeliveryLeadTimeCreate(deliveryLeadTimeCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `DeliveryLeadTimesApi.POSTDeliveryLeadTimes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -536,7 +536,7 @@ Other parameters are passed through a pointer to a apiPOSTDeliveryLeadTimesReque
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTDeliveryLeadTimesRequest** | [**POSTDeliveryLeadTimesRequest**](POSTDeliveryLeadTimesRequest.md) |  | 
+ **deliveryLeadTimeCreate** | [**DeliveryLeadTimeCreate**](DeliveryLeadTimeCreate.md) |  | 
 
 ### Return type
 

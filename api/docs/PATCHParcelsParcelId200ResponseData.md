@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
-**Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
-**Attributes** | Pointer to [**PATCHParcelsParcelIdRequestDataAttributes**](PATCHParcelsParcelIdRequestDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTParcels201ResponseDataRelationships**](POSTParcels201ResponseDataRelationships.md) |  | [optional] 
+**Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
+**Attributes** | Pointer to [**PATCHParcelsParcelId200ResponseDataAttributes**](PATCHParcelsParcelId200ResponseDataAttributes.md) |  | [optional] 
+**Relationships** | Pointer to [**GETParcels200ResponseDataInnerRelationships**](GETParcels200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -101,20 +101,20 @@ HasType returns a boolean if a field has been set.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetLinks
 
-`func (o *PATCHParcelsParcelId200ResponseData) GetLinks() POSTAddresses201ResponseDataLinks`
+`func (o *PATCHParcelsParcelId200ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *PATCHParcelsParcelId200ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool)`
+`func (o *PATCHParcelsParcelId200ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *PATCHParcelsParcelId200ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks)`
+`func (o *PATCHParcelsParcelId200ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks)`
 
 SetLinks sets Links field to given value.
 
@@ -126,20 +126,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *PATCHParcelsParcelId200ResponseData) GetAttributes() PATCHParcelsParcelIdRequestDataAttributes`
+`func (o *PATCHParcelsParcelId200ResponseData) GetAttributes() PATCHParcelsParcelId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PATCHParcelsParcelId200ResponseData) GetAttributesOk() (*PATCHParcelsParcelIdRequestDataAttributes, bool)`
+`func (o *PATCHParcelsParcelId200ResponseData) GetAttributesOk() (*PATCHParcelsParcelId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PATCHParcelsParcelId200ResponseData) SetAttributes(v PATCHParcelsParcelIdRequestDataAttributes)`
+`func (o *PATCHParcelsParcelId200ResponseData) SetAttributes(v PATCHParcelsParcelId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
@@ -151,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHParcelsParcelId200ResponseData) GetRelationships() POSTParcels201ResponseDataRelationships`
+`func (o *PATCHParcelsParcelId200ResponseData) GetRelationships() GETParcels200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHParcelsParcelId200ResponseData) GetRelationshipsOk() (*POSTParcels201ResponseDataRelationships, bool)`
+`func (o *PATCHParcelsParcelId200ResponseData) GetRelationshipsOk() (*GETParcels200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHParcelsParcelId200ResponseData) SetRelationships(v POSTParcels201ResponseDataRelationships)`
+`func (o *PATCHParcelsParcelId200ResponseData) SetRelationships(v GETParcels200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

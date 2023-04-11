@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the CleanupCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CleanupCreate{}
-
 // CleanupCreate struct for CleanupCreate
 type CleanupCreate struct {
-	Data POSTCleanupsRequestData `json:"data"`
+	Data CleanupCreateData `json:"data"`
 }
 
 // NewCleanupCreate instantiates a new CleanupCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCleanupCreate(data POSTCleanupsRequestData) *CleanupCreate {
+func NewCleanupCreate(data CleanupCreateData) *CleanupCreate {
 	this := CleanupCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewCleanupCreateWithDefaults() *CleanupCreate {
 }
 
 // GetData returns the Data field value
-func (o *CleanupCreate) GetData() POSTCleanupsRequestData {
+func (o *CleanupCreate) GetData() CleanupCreateData {
 	if o == nil {
-		var ret POSTCleanupsRequestData
+		var ret CleanupCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *CleanupCreate) GetData() POSTCleanupsRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CleanupCreate) GetDataOk() (*POSTCleanupsRequestData, bool) {
+func (o *CleanupCreate) GetDataOk() (*CleanupCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *CleanupCreate) GetDataOk() (*POSTCleanupsRequestData, bool) {
 }
 
 // SetData sets field value
-func (o *CleanupCreate) SetData(v POSTCleanupsRequestData) {
+func (o *CleanupCreate) SetData(v CleanupCreateData) {
 	o.Data = v
 }
 
 func (o CleanupCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o CleanupCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableCleanupCreate struct {

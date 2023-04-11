@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETMarketsMarketId200ResponseData**](GETMarketsMarketId200ResponseData.md) |  | [optional] 
+**Data** | Pointer to [**GETMarkets200ResponseDataInner**](GETMarkets200ResponseDataInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETMarketsMarketId200Response) GetData() GETMarketsMarketId200ResponseData`
+`func (o *GETMarketsMarketId200Response) GetData() GETMarkets200ResponseDataInner`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETMarketsMarketId200Response) GetDataOk() (*GETMarketsMarketId200ResponseData, bool)`
+`func (o *GETMarketsMarketId200Response) GetDataOk() (*GETMarkets200ResponseDataInner, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETMarketsMarketId200Response) SetData(v GETMarketsMarketId200ResponseData)`
+`func (o *GETMarketsMarketId200Response) SetData(v GETMarkets200ResponseDataInner)`
 
 SetData sets Data field to given value.
 

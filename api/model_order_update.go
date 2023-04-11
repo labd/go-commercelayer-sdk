@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the OrderUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &OrderUpdate{}
-
 // OrderUpdate struct for OrderUpdate
 type OrderUpdate struct {
 	Data OrderUpdateData `json:"data"`
@@ -66,17 +63,11 @@ func (o *OrderUpdate) SetData(v OrderUpdateData) {
 }
 
 func (o OrderUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o OrderUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableOrderUpdate struct {

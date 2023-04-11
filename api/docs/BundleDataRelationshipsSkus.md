@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**POSTInStockSubscriptionsRequestDataRelationshipsSkuData**](POSTInStockSubscriptionsRequestDataRelationshipsSkuData.md) |  | [optional] 
+**Data** | Pointer to [**BundleDataRelationshipsSkusData**](BundleDataRelationshipsSkusData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *BundleDataRelationshipsSkus) GetData() POSTInStockSubscriptionsRequestDataRelationshipsSkuData`
+`func (o *BundleDataRelationshipsSkus) GetData() BundleDataRelationshipsSkusData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *BundleDataRelationshipsSkus) GetDataOk() (*POSTInStockSubscriptionsRequestDataRelationshipsSkuData, bool)`
+`func (o *BundleDataRelationshipsSkus) GetDataOk() (*BundleDataRelationshipsSkusData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *BundleDataRelationshipsSkus) SetData(v POSTInStockSubscriptionsRequestDataRelationshipsSkuData)`
+`func (o *BundleDataRelationshipsSkus) SetData(v BundleDataRelationshipsSkusData)`
 
 SetData sets Data field to given value.
 

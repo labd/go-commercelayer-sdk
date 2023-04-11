@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the PATCHBraintreePaymentsBraintreePaymentId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PATCHBraintreePaymentsBraintreePaymentId200Response{}
-
 // PATCHBraintreePaymentsBraintreePaymentId200Response struct for PATCHBraintreePaymentsBraintreePaymentId200Response
 type PATCHBraintreePaymentsBraintreePaymentId200Response struct {
 	Data *PATCHBraintreePaymentsBraintreePaymentId200ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPATCHBraintreePaymentsBraintreePaymentId200ResponseWithDefaults() *PATCH
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *PATCHBraintreePaymentsBraintreePaymentId200Response) GetData() PATCHBraintreePaymentsBraintreePaymentId200ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret PATCHBraintreePaymentsBraintreePaymentId200ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *PATCHBraintreePaymentsBraintreePaymentId200Response) GetData() PATCHBra
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHBraintreePaymentsBraintreePaymentId200Response) GetDataOk() (*PATCHBraintreePaymentsBraintreePaymentId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *PATCHBraintreePaymentsBraintreePaymentId200Response) GetDataOk() (*PATC
 
 // HasData returns a boolean if a field has been set.
 func (o *PATCHBraintreePaymentsBraintreePaymentId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *PATCHBraintreePaymentsBraintreePaymentId200Response) SetData(v PATCHBra
 }
 
 func (o PATCHBraintreePaymentsBraintreePaymentId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o PATCHBraintreePaymentsBraintreePaymentId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePATCHBraintreePaymentsBraintreePaymentId200Response struct {

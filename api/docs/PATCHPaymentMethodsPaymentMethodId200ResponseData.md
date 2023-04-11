@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
-**Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
-**Attributes** | Pointer to [**PATCHPaymentMethodsPaymentMethodIdRequestDataAttributes**](PATCHPaymentMethodsPaymentMethodIdRequestDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTPaymentMethods201ResponseDataRelationships**](POSTPaymentMethods201ResponseDataRelationships.md) |  | [optional] 
+**Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
+**Attributes** | Pointer to [**PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes**](PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes.md) |  | [optional] 
+**Relationships** | Pointer to [**GETPaymentMethods200ResponseDataInnerRelationships**](GETPaymentMethods200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -101,20 +101,20 @@ HasType returns a boolean if a field has been set.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetLinks
 
-`func (o *PATCHPaymentMethodsPaymentMethodId200ResponseData) GetLinks() POSTAddresses201ResponseDataLinks`
+`func (o *PATCHPaymentMethodsPaymentMethodId200ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *PATCHPaymentMethodsPaymentMethodId200ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool)`
+`func (o *PATCHPaymentMethodsPaymentMethodId200ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *PATCHPaymentMethodsPaymentMethodId200ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks)`
+`func (o *PATCHPaymentMethodsPaymentMethodId200ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks)`
 
 SetLinks sets Links field to given value.
 
@@ -126,20 +126,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *PATCHPaymentMethodsPaymentMethodId200ResponseData) GetAttributes() PATCHPaymentMethodsPaymentMethodIdRequestDataAttributes`
+`func (o *PATCHPaymentMethodsPaymentMethodId200ResponseData) GetAttributes() PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PATCHPaymentMethodsPaymentMethodId200ResponseData) GetAttributesOk() (*PATCHPaymentMethodsPaymentMethodIdRequestDataAttributes, bool)`
+`func (o *PATCHPaymentMethodsPaymentMethodId200ResponseData) GetAttributesOk() (*PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PATCHPaymentMethodsPaymentMethodId200ResponseData) SetAttributes(v PATCHPaymentMethodsPaymentMethodIdRequestDataAttributes)`
+`func (o *PATCHPaymentMethodsPaymentMethodId200ResponseData) SetAttributes(v PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
@@ -151,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHPaymentMethodsPaymentMethodId200ResponseData) GetRelationships() POSTPaymentMethods201ResponseDataRelationships`
+`func (o *PATCHPaymentMethodsPaymentMethodId200ResponseData) GetRelationships() GETPaymentMethods200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHPaymentMethodsPaymentMethodId200ResponseData) GetRelationshipsOk() (*POSTPaymentMethods201ResponseDataRelationships, bool)`
+`func (o *PATCHPaymentMethodsPaymentMethodId200ResponseData) GetRelationshipsOk() (*GETPaymentMethods200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHPaymentMethodsPaymentMethodId200ResponseData) SetRelationships(v POSTPaymentMethods201ResponseDataRelationships)`
+`func (o *PATCHPaymentMethodsPaymentMethodId200ResponseData) SetRelationships(v GETPaymentMethods200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

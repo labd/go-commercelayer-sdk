@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the SkuDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &SkuDataRelationships{}
-
 // SkuDataRelationships struct for SkuDataRelationships
 type SkuDataRelationships struct {
 	ShippingCategory  *ShipmentDataRelationshipsShippingCategory  `json:"shipping_category,omitempty"`
@@ -47,7 +44,7 @@ func NewSkuDataRelationshipsWithDefaults() *SkuDataRelationships {
 
 // GetShippingCategory returns the ShippingCategory field value if set, zero value otherwise.
 func (o *SkuDataRelationships) GetShippingCategory() ShipmentDataRelationshipsShippingCategory {
-	if o == nil || IsNil(o.ShippingCategory) {
+	if o == nil || o.ShippingCategory == nil {
 		var ret ShipmentDataRelationshipsShippingCategory
 		return ret
 	}
@@ -57,7 +54,7 @@ func (o *SkuDataRelationships) GetShippingCategory() ShipmentDataRelationshipsSh
 // GetShippingCategoryOk returns a tuple with the ShippingCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SkuDataRelationships) GetShippingCategoryOk() (*ShipmentDataRelationshipsShippingCategory, bool) {
-	if o == nil || IsNil(o.ShippingCategory) {
+	if o == nil || o.ShippingCategory == nil {
 		return nil, false
 	}
 	return o.ShippingCategory, true
@@ -65,7 +62,7 @@ func (o *SkuDataRelationships) GetShippingCategoryOk() (*ShipmentDataRelationshi
 
 // HasShippingCategory returns a boolean if a field has been set.
 func (o *SkuDataRelationships) HasShippingCategory() bool {
-	if o != nil && !IsNil(o.ShippingCategory) {
+	if o != nil && o.ShippingCategory != nil {
 		return true
 	}
 
@@ -79,7 +76,7 @@ func (o *SkuDataRelationships) SetShippingCategory(v ShipmentDataRelationshipsSh
 
 // GetPrices returns the Prices field value if set, zero value otherwise.
 func (o *SkuDataRelationships) GetPrices() PriceFrequencyTierDataRelationshipsPrice {
-	if o == nil || IsNil(o.Prices) {
+	if o == nil || o.Prices == nil {
 		var ret PriceFrequencyTierDataRelationshipsPrice
 		return ret
 	}
@@ -89,7 +86,7 @@ func (o *SkuDataRelationships) GetPrices() PriceFrequencyTierDataRelationshipsPr
 // GetPricesOk returns a tuple with the Prices field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SkuDataRelationships) GetPricesOk() (*PriceFrequencyTierDataRelationshipsPrice, bool) {
-	if o == nil || IsNil(o.Prices) {
+	if o == nil || o.Prices == nil {
 		return nil, false
 	}
 	return o.Prices, true
@@ -97,7 +94,7 @@ func (o *SkuDataRelationships) GetPricesOk() (*PriceFrequencyTierDataRelationshi
 
 // HasPrices returns a boolean if a field has been set.
 func (o *SkuDataRelationships) HasPrices() bool {
-	if o != nil && !IsNil(o.Prices) {
+	if o != nil && o.Prices != nil {
 		return true
 	}
 
@@ -111,7 +108,7 @@ func (o *SkuDataRelationships) SetPrices(v PriceFrequencyTierDataRelationshipsPr
 
 // GetStockItems returns the StockItems field value if set, zero value otherwise.
 func (o *SkuDataRelationships) GetStockItems() SkuDataRelationshipsStockItems {
-	if o == nil || IsNil(o.StockItems) {
+	if o == nil || o.StockItems == nil {
 		var ret SkuDataRelationshipsStockItems
 		return ret
 	}
@@ -121,7 +118,7 @@ func (o *SkuDataRelationships) GetStockItems() SkuDataRelationshipsStockItems {
 // GetStockItemsOk returns a tuple with the StockItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SkuDataRelationships) GetStockItemsOk() (*SkuDataRelationshipsStockItems, bool) {
-	if o == nil || IsNil(o.StockItems) {
+	if o == nil || o.StockItems == nil {
 		return nil, false
 	}
 	return o.StockItems, true
@@ -129,7 +126,7 @@ func (o *SkuDataRelationships) GetStockItemsOk() (*SkuDataRelationshipsStockItem
 
 // HasStockItems returns a boolean if a field has been set.
 func (o *SkuDataRelationships) HasStockItems() bool {
-	if o != nil && !IsNil(o.StockItems) {
+	if o != nil && o.StockItems != nil {
 		return true
 	}
 
@@ -143,7 +140,7 @@ func (o *SkuDataRelationships) SetStockItems(v SkuDataRelationshipsStockItems) {
 
 // GetDeliveryLeadTimes returns the DeliveryLeadTimes field value if set, zero value otherwise.
 func (o *SkuDataRelationships) GetDeliveryLeadTimes() ShipmentDataRelationshipsDeliveryLeadTime {
-	if o == nil || IsNil(o.DeliveryLeadTimes) {
+	if o == nil || o.DeliveryLeadTimes == nil {
 		var ret ShipmentDataRelationshipsDeliveryLeadTime
 		return ret
 	}
@@ -153,7 +150,7 @@ func (o *SkuDataRelationships) GetDeliveryLeadTimes() ShipmentDataRelationshipsD
 // GetDeliveryLeadTimesOk returns a tuple with the DeliveryLeadTimes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SkuDataRelationships) GetDeliveryLeadTimesOk() (*ShipmentDataRelationshipsDeliveryLeadTime, bool) {
-	if o == nil || IsNil(o.DeliveryLeadTimes) {
+	if o == nil || o.DeliveryLeadTimes == nil {
 		return nil, false
 	}
 	return o.DeliveryLeadTimes, true
@@ -161,7 +158,7 @@ func (o *SkuDataRelationships) GetDeliveryLeadTimesOk() (*ShipmentDataRelationsh
 
 // HasDeliveryLeadTimes returns a boolean if a field has been set.
 func (o *SkuDataRelationships) HasDeliveryLeadTimes() bool {
-	if o != nil && !IsNil(o.DeliveryLeadTimes) {
+	if o != nil && o.DeliveryLeadTimes != nil {
 		return true
 	}
 
@@ -175,7 +172,7 @@ func (o *SkuDataRelationships) SetDeliveryLeadTimes(v ShipmentDataRelationshipsD
 
 // GetSkuOptions returns the SkuOptions field value if set, zero value otherwise.
 func (o *SkuDataRelationships) GetSkuOptions() LineItemOptionDataRelationshipsSkuOption {
-	if o == nil || IsNil(o.SkuOptions) {
+	if o == nil || o.SkuOptions == nil {
 		var ret LineItemOptionDataRelationshipsSkuOption
 		return ret
 	}
@@ -185,7 +182,7 @@ func (o *SkuDataRelationships) GetSkuOptions() LineItemOptionDataRelationshipsSk
 // GetSkuOptionsOk returns a tuple with the SkuOptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SkuDataRelationships) GetSkuOptionsOk() (*LineItemOptionDataRelationshipsSkuOption, bool) {
-	if o == nil || IsNil(o.SkuOptions) {
+	if o == nil || o.SkuOptions == nil {
 		return nil, false
 	}
 	return o.SkuOptions, true
@@ -193,7 +190,7 @@ func (o *SkuDataRelationships) GetSkuOptionsOk() (*LineItemOptionDataRelationshi
 
 // HasSkuOptions returns a boolean if a field has been set.
 func (o *SkuDataRelationships) HasSkuOptions() bool {
-	if o != nil && !IsNil(o.SkuOptions) {
+	if o != nil && o.SkuOptions != nil {
 		return true
 	}
 
@@ -207,7 +204,7 @@ func (o *SkuDataRelationships) SetSkuOptions(v LineItemOptionDataRelationshipsSk
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *SkuDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		var ret AvalaraAccountDataRelationshipsAttachments
 		return ret
 	}
@@ -217,7 +214,7 @@ func (o *SkuDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsA
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SkuDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		return nil, false
 	}
 	return o.Attachments, true
@@ -225,7 +222,7 @@ func (o *SkuDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationsh
 
 // HasAttachments returns a boolean if a field has been set.
 func (o *SkuDataRelationships) HasAttachments() bool {
-	if o != nil && !IsNil(o.Attachments) {
+	if o != nil && o.Attachments != nil {
 		return true
 	}
 
@@ -238,34 +235,26 @@ func (o *SkuDataRelationships) SetAttachments(v AvalaraAccountDataRelationshipsA
 }
 
 func (o SkuDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o SkuDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.ShippingCategory) {
+	if o.ShippingCategory != nil {
 		toSerialize["shipping_category"] = o.ShippingCategory
 	}
-	if !IsNil(o.Prices) {
+	if o.Prices != nil {
 		toSerialize["prices"] = o.Prices
 	}
-	if !IsNil(o.StockItems) {
+	if o.StockItems != nil {
 		toSerialize["stock_items"] = o.StockItems
 	}
-	if !IsNil(o.DeliveryLeadTimes) {
+	if o.DeliveryLeadTimes != nil {
 		toSerialize["delivery_lead_times"] = o.DeliveryLeadTimes
 	}
-	if !IsNil(o.SkuOptions) {
+	if o.SkuOptions != nil {
 		toSerialize["sku_options"] = o.SkuOptions
 	}
-	if !IsNil(o.Attachments) {
+	if o.Attachments != nil {
 		toSerialize["attachments"] = o.Attachments
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableSkuDataRelationships struct {

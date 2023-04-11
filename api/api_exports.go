@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *ExportsApiService) DELETEExportsExportIdExecute(r ExportsApiDELETEExpor
 	}
 
 	localVarPath := localBasePath + "/exports/{exportId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"exportId"+"}", url.PathEscape(parameterValueToString(r.exportId, "exportId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"exportId"+"}", url.PathEscape(parameterToString(r.exportId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *ExportsApiService) DELETEExportsExportIdExecute(r ExportsApiDELETEExpor
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *ExportsApiService) GETExportsExecute(r ExportsApiGETExportsRequest) (*G
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *ExportsApiService) GETExportsExportIdExecute(r ExportsApiGETExportsExpo
 	}
 
 	localVarPath := localBasePath + "/exports/{exportId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"exportId"+"}", url.PathEscape(parameterValueToString(r.exportId, "exportId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"exportId"+"}", url.PathEscape(parameterToString(r.exportId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *ExportsApiService) GETExportsExportIdExecute(r ExportsApiGETExportsExpo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -320,13 +320,13 @@ func (a *ExportsApiService) GETExportsExportIdExecute(r ExportsApiGETExportsExpo
 }
 
 type ExportsApiPOSTExportsRequest struct {
-	ctx                context.Context
-	ApiService         *ExportsApiService
-	pOSTExportsRequest *POSTExportsRequest
+	ctx          context.Context
+	ApiService   *ExportsApiService
+	exportCreate *ExportCreate
 }
 
-func (r ExportsApiPOSTExportsRequest) POSTExportsRequest(pOSTExportsRequest POSTExportsRequest) ExportsApiPOSTExportsRequest {
-	r.pOSTExportsRequest = &pOSTExportsRequest
+func (r ExportsApiPOSTExportsRequest) ExportCreate(exportCreate ExportCreate) ExportsApiPOSTExportsRequest {
+	r.exportCreate = &exportCreate
 	return r
 }
 
@@ -370,8 +370,8 @@ func (a *ExportsApiService) POSTExportsExecute(r ExportsApiPOSTExportsRequest) (
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTExportsRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTExportsRequest is required and must be specified")
+	if r.exportCreate == nil {
+		return localVarReturnValue, nil, reportError("exportCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -392,7 +392,7 @@ func (a *ExportsApiService) POSTExportsExecute(r ExportsApiPOSTExportsRequest) (
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTExportsRequest
+	localVarPostBody = r.exportCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -403,9 +403,9 @@ func (a *ExportsApiService) POSTExportsExecute(r ExportsApiPOSTExportsRequest) (
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -29,7 +29,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -37,7 +37,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ExternalPromotionsApi.DELETEExternalPromotionsExternalPromotionId(context.Background(), externalPromotionId).Execute()
+    resp, r, err := apiClient.ExternalPromotionsApi.DELETEExternalPromotionsExternalPromotionId(context.Background(), externalPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalPromotionsApi.DELETEExternalPromotionsExternalPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -158,7 +158,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHExternalPromotionsExternalPromotionId
 
-> PATCHExternalPromotionsExternalPromotionId200Response PATCHExternalPromotionsExternalPromotionId(ctx, externalPromotionId).PATCHExternalPromotionsExternalPromotionIdRequest(pATCHExternalPromotionsExternalPromotionIdRequest).Execute()
+> PATCHExternalPromotionsExternalPromotionId200Response PATCHExternalPromotionsExternalPromotionId(ctx, externalPromotionId).ExternalPromotionUpdate(externalPromotionUpdate).Execute()
 
 Update an external promotion
 
@@ -228,16 +228,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHExternalPromotionsExternalPromotionIdRequest := *openapiclient.NewPATCHExternalPromotionsExternalPromotionIdRequest(*openapiclient.NewPATCHExternalPromotionsExternalPromotionIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHExternalPromotionsExternalPromotionIdRequestDataAttributes())) // PATCHExternalPromotionsExternalPromotionIdRequest | 
+    externalPromotionUpdate := *openapiclient.NewExternalPromotionUpdate(*openapiclient.NewExternalPromotionUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHExternalPromotionsExternalPromotionId200ResponseDataAttributes())) // ExternalPromotionUpdate | 
     externalPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExternalPromotionsApi.PATCHExternalPromotionsExternalPromotionId(context.Background(), externalPromotionId).PATCHExternalPromotionsExternalPromotionIdRequest(pATCHExternalPromotionsExternalPromotionIdRequest).Execute()
+    resp, r, err := apiClient.ExternalPromotionsApi.PATCHExternalPromotionsExternalPromotionId(context.Background(), externalPromotionId).ExternalPromotionUpdate(externalPromotionUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalPromotionsApi.PATCHExternalPromotionsExternalPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -262,7 +262,7 @@ Other parameters are passed through a pointer to a apiPATCHExternalPromotionsExt
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHExternalPromotionsExternalPromotionIdRequest** | [**PATCHExternalPromotionsExternalPromotionIdRequest**](PATCHExternalPromotionsExternalPromotionIdRequest.md) |  | 
+ **externalPromotionUpdate** | [**ExternalPromotionUpdate**](ExternalPromotionUpdate.md) |  | 
 
 
 ### Return type
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTExternalPromotions
 
-> POSTExternalPromotions201Response POSTExternalPromotions(ctx).POSTExternalPromotionsRequest(pOSTExternalPromotionsRequest).Execute()
+> POSTExternalPromotions201Response POSTExternalPromotions(ctx).ExternalPromotionCreate(externalPromotionCreate).Execute()
 
 Create an external promotion
 
@@ -300,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTExternalPromotionsRequest := *openapiclient.NewPOSTExternalPromotionsRequest(*openapiclient.NewPOSTExternalPromotionsRequestData(interface{}(123), *openapiclient.NewPOSTExternalPromotionsRequestDataAttributes(interface{}(Personal promotion), interface{}(2018-01-01T12:00:00.000Z), interface{}(2018-01-02T12:00:00.000Z), interface{}(5), interface{}(https://external_promotion.yourbrand.com)))) // POSTExternalPromotionsRequest | 
+    externalPromotionCreate := *openapiclient.NewExternalPromotionCreate(*openapiclient.NewExternalPromotionCreateData(interface{}(123), *openapiclient.NewPOSTExternalPromotions201ResponseDataAttributes(interface{}(Personal promotion), interface{}(2018-01-01T12:00:00.000Z), interface{}(2018-01-02T12:00:00.000Z), interface{}(5), interface{}(https://external_promotion.yourbrand.com)))) // ExternalPromotionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExternalPromotionsApi.POSTExternalPromotions(context.Background()).POSTExternalPromotionsRequest(pOSTExternalPromotionsRequest).Execute()
+    resp, r, err := apiClient.ExternalPromotionsApi.POSTExternalPromotions(context.Background()).ExternalPromotionCreate(externalPromotionCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalPromotionsApi.POSTExternalPromotions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiPOSTExternalPromotionsRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTExternalPromotionsRequest** | [**POSTExternalPromotionsRequest**](POSTExternalPromotionsRequest.md) |  | 
+ **externalPromotionCreate** | [**ExternalPromotionCreate**](ExternalPromotionCreate.md) |  | 
 
 ### Return type
 

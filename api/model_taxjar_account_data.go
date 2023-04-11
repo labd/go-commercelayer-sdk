@@ -15,22 +15,19 @@ import (
 	"encoding/json"
 )
 
-// checks if the TaxjarAccountData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &TaxjarAccountData{}
-
 // TaxjarAccountData struct for TaxjarAccountData
 type TaxjarAccountData struct {
 	// The resource's type
-	Type          interface{}                                                           `json:"type"`
-	Attributes    GETManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes `json:"attributes"`
-	Relationships *AvalaraAccountDataRelationships                                      `json:"relationships,omitempty"`
+	Type          interface{}                                           `json:"type"`
+	Attributes    GETManualTaxCalculators200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *AvalaraAccountDataRelationships                      `json:"relationships,omitempty"`
 }
 
 // NewTaxjarAccountData instantiates a new TaxjarAccountData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTaxjarAccountData(type_ interface{}, attributes GETManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes) *TaxjarAccountData {
+func NewTaxjarAccountData(type_ interface{}, attributes GETManualTaxCalculators200ResponseDataInnerAttributes) *TaxjarAccountData {
 	this := TaxjarAccountData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -60,7 +57,7 @@ func (o *TaxjarAccountData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TaxjarAccountData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -72,9 +69,9 @@ func (o *TaxjarAccountData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *TaxjarAccountData) GetAttributes() GETManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes {
+func (o *TaxjarAccountData) GetAttributes() GETManualTaxCalculators200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret GETManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes
+		var ret GETManualTaxCalculators200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -83,7 +80,7 @@ func (o *TaxjarAccountData) GetAttributes() GETManualTaxCalculatorsManualTaxCalc
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *TaxjarAccountData) GetAttributesOk() (*GETManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes, bool) {
+func (o *TaxjarAccountData) GetAttributesOk() (*GETManualTaxCalculators200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,13 +88,13 @@ func (o *TaxjarAccountData) GetAttributesOk() (*GETManualTaxCalculatorsManualTax
 }
 
 // SetAttributes sets field value
-func (o *TaxjarAccountData) SetAttributes(v GETManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes) {
+func (o *TaxjarAccountData) SetAttributes(v GETManualTaxCalculators200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *TaxjarAccountData) GetRelationships() AvalaraAccountDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		var ret AvalaraAccountDataRelationships
 		return ret
 	}
@@ -107,7 +104,7 @@ func (o *TaxjarAccountData) GetRelationships() AvalaraAccountDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaxjarAccountData) GetRelationshipsOk() (*AvalaraAccountDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -115,7 +112,7 @@ func (o *TaxjarAccountData) GetRelationshipsOk() (*AvalaraAccountDataRelationshi
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *TaxjarAccountData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
@@ -128,23 +125,17 @@ func (o *TaxjarAccountData) SetRelationships(v AvalaraAccountDataRelationships) 
 }
 
 func (o TaxjarAccountData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o TaxjarAccountData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	toSerialize["attributes"] = o.Attributes
-	if !IsNil(o.Relationships) {
+	if true {
+		toSerialize["attributes"] = o.Attributes
+	}
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableTaxjarAccountData struct {

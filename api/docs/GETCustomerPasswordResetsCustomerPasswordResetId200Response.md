@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETCustomerPasswordResetsCustomerPasswordResetId200ResponseData**](GETCustomerPasswordResetsCustomerPasswordResetId200ResponseData.md) |  | [optional] 
+**Data** | Pointer to [**GETCustomerPasswordResets200ResponseDataInner**](GETCustomerPasswordResets200ResponseDataInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETCustomerPasswordResetsCustomerPasswordResetId200Response) GetData() GETCustomerPasswordResetsCustomerPasswordResetId200ResponseData`
+`func (o *GETCustomerPasswordResetsCustomerPasswordResetId200Response) GetData() GETCustomerPasswordResets200ResponseDataInner`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETCustomerPasswordResetsCustomerPasswordResetId200Response) GetDataOk() (*GETCustomerPasswordResetsCustomerPasswordResetId200ResponseData, bool)`
+`func (o *GETCustomerPasswordResetsCustomerPasswordResetId200Response) GetDataOk() (*GETCustomerPasswordResets200ResponseDataInner, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETCustomerPasswordResetsCustomerPasswordResetId200Response) SetData(v GETCustomerPasswordResetsCustomerPasswordResetId200ResponseData)`
+`func (o *GETCustomerPasswordResetsCustomerPasswordResetId200Response) SetData(v GETCustomerPasswordResets200ResponseDataInner)`
 
 SetData sets Data field to given value.
 

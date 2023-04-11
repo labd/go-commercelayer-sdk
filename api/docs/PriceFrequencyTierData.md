@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETPriceFrequencyTiersPriceFrequencyTierId200ResponseDataAttributes**](GETPriceFrequencyTiersPriceFrequencyTierId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**GETPriceFrequencyTiers200ResponseDataInnerAttributes**](GETPriceFrequencyTiers200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**PriceFrequencyTierDataRelationships**](PriceFrequencyTierDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPriceFrequencyTierData
 
-`func NewPriceFrequencyTierData(type_ interface{}, attributes GETPriceFrequencyTiersPriceFrequencyTierId200ResponseDataAttributes, ) *PriceFrequencyTierData`
+`func NewPriceFrequencyTierData(type_ interface{}, attributes GETPriceFrequencyTiers200ResponseDataInnerAttributes, ) *PriceFrequencyTierData`
 
 NewPriceFrequencyTierData instantiates a new PriceFrequencyTierData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *PriceFrequencyTierData) GetAttributes() GETPriceFrequencyTiersPriceFrequencyTierId200ResponseDataAttributes`
+`func (o *PriceFrequencyTierData) GetAttributes() GETPriceFrequencyTiers200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PriceFrequencyTierData) GetAttributesOk() (*GETPriceFrequencyTiersPriceFrequencyTierId200ResponseDataAttributes, bool)`
+`func (o *PriceFrequencyTierData) GetAttributesOk() (*GETPriceFrequencyTiers200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PriceFrequencyTierData) SetAttributes(v GETPriceFrequencyTiersPriceFrequencyTierId200ResponseDataAttributes)`
+`func (o *PriceFrequencyTierData) SetAttributes(v GETPriceFrequencyTiers200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

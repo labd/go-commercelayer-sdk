@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the BingGeocoderUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &BingGeocoderUpdate{}
-
 // BingGeocoderUpdate struct for BingGeocoderUpdate
 type BingGeocoderUpdate struct {
-	Data PATCHBingGeocodersBingGeocoderIdRequestData `json:"data"`
+	Data BingGeocoderUpdateData `json:"data"`
 }
 
 // NewBingGeocoderUpdate instantiates a new BingGeocoderUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBingGeocoderUpdate(data PATCHBingGeocodersBingGeocoderIdRequestData) *BingGeocoderUpdate {
+func NewBingGeocoderUpdate(data BingGeocoderUpdateData) *BingGeocoderUpdate {
 	this := BingGeocoderUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewBingGeocoderUpdateWithDefaults() *BingGeocoderUpdate {
 }
 
 // GetData returns the Data field value
-func (o *BingGeocoderUpdate) GetData() PATCHBingGeocodersBingGeocoderIdRequestData {
+func (o *BingGeocoderUpdate) GetData() BingGeocoderUpdateData {
 	if o == nil {
-		var ret PATCHBingGeocodersBingGeocoderIdRequestData
+		var ret BingGeocoderUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *BingGeocoderUpdate) GetData() PATCHBingGeocodersBingGeocoderIdRequestDa
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *BingGeocoderUpdate) GetDataOk() (*PATCHBingGeocodersBingGeocoderIdRequestData, bool) {
+func (o *BingGeocoderUpdate) GetDataOk() (*BingGeocoderUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *BingGeocoderUpdate) GetDataOk() (*PATCHBingGeocodersBingGeocoderIdReque
 }
 
 // SetData sets field value
-func (o *BingGeocoderUpdate) SetData(v PATCHBingGeocodersBingGeocoderIdRequestData) {
+func (o *BingGeocoderUpdate) SetData(v BingGeocoderUpdateData) {
 	o.Data = v
 }
 
 func (o BingGeocoderUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o BingGeocoderUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableBingGeocoderUpdate struct {

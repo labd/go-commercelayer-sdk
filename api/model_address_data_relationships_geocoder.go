@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the AddressDataRelationshipsGeocoder type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AddressDataRelationshipsGeocoder{}
-
 // AddressDataRelationshipsGeocoder struct for AddressDataRelationshipsGeocoder
 type AddressDataRelationshipsGeocoder struct {
-	Data *POSTAddressesRequestDataRelationshipsGeocoderData `json:"data,omitempty"`
+	Data *AddressDataRelationshipsGeocoderData `json:"data,omitempty"`
 }
 
 // NewAddressDataRelationshipsGeocoder instantiates a new AddressDataRelationshipsGeocoder object
@@ -41,9 +38,9 @@ func NewAddressDataRelationshipsGeocoderWithDefaults() *AddressDataRelationships
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *AddressDataRelationshipsGeocoder) GetData() POSTAddressesRequestDataRelationshipsGeocoderData {
-	if o == nil || IsNil(o.Data) {
-		var ret POSTAddressesRequestDataRelationshipsGeocoderData
+func (o *AddressDataRelationshipsGeocoder) GetData() AddressDataRelationshipsGeocoderData {
+	if o == nil || o.Data == nil {
+		var ret AddressDataRelationshipsGeocoderData
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *AddressDataRelationshipsGeocoder) GetData() POSTAddressesRequestDataRel
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AddressDataRelationshipsGeocoder) GetDataOk() (*POSTAddressesRequestDataRelationshipsGeocoderData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *AddressDataRelationshipsGeocoder) GetDataOk() (*AddressDataRelationshipsGeocoderData, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *AddressDataRelationshipsGeocoder) GetDataOk() (*POSTAddressesRequestDat
 
 // HasData returns a boolean if a field has been set.
 func (o *AddressDataRelationshipsGeocoder) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given POSTAddressesRequestDataRelationshipsGeocoderData and assigns it to the Data field.
-func (o *AddressDataRelationshipsGeocoder) SetData(v POSTAddressesRequestDataRelationshipsGeocoderData) {
+// SetData gets a reference to the given AddressDataRelationshipsGeocoderData and assigns it to the Data field.
+func (o *AddressDataRelationshipsGeocoder) SetData(v AddressDataRelationshipsGeocoderData) {
 	o.Data = &v
 }
 
 func (o AddressDataRelationshipsGeocoder) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o AddressDataRelationshipsGeocoder) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableAddressDataRelationshipsGeocoder struct {

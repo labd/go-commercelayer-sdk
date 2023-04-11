@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the ManualTaxCalculatorUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ManualTaxCalculatorUpdate{}
-
 // ManualTaxCalculatorUpdate struct for ManualTaxCalculatorUpdate
 type ManualTaxCalculatorUpdate struct {
-	Data PATCHManualTaxCalculatorsManualTaxCalculatorIdRequestData `json:"data"`
+	Data ManualTaxCalculatorUpdateData `json:"data"`
 }
 
 // NewManualTaxCalculatorUpdate instantiates a new ManualTaxCalculatorUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewManualTaxCalculatorUpdate(data PATCHManualTaxCalculatorsManualTaxCalculatorIdRequestData) *ManualTaxCalculatorUpdate {
+func NewManualTaxCalculatorUpdate(data ManualTaxCalculatorUpdateData) *ManualTaxCalculatorUpdate {
 	this := ManualTaxCalculatorUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewManualTaxCalculatorUpdateWithDefaults() *ManualTaxCalculatorUpdate {
 }
 
 // GetData returns the Data field value
-func (o *ManualTaxCalculatorUpdate) GetData() PATCHManualTaxCalculatorsManualTaxCalculatorIdRequestData {
+func (o *ManualTaxCalculatorUpdate) GetData() ManualTaxCalculatorUpdateData {
 	if o == nil {
-		var ret PATCHManualTaxCalculatorsManualTaxCalculatorIdRequestData
+		var ret ManualTaxCalculatorUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *ManualTaxCalculatorUpdate) GetData() PATCHManualTaxCalculatorsManualTax
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ManualTaxCalculatorUpdate) GetDataOk() (*PATCHManualTaxCalculatorsManualTaxCalculatorIdRequestData, bool) {
+func (o *ManualTaxCalculatorUpdate) GetDataOk() (*ManualTaxCalculatorUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *ManualTaxCalculatorUpdate) GetDataOk() (*PATCHManualTaxCalculatorsManua
 }
 
 // SetData sets field value
-func (o *ManualTaxCalculatorUpdate) SetData(v PATCHManualTaxCalculatorsManualTaxCalculatorIdRequestData) {
+func (o *ManualTaxCalculatorUpdate) SetData(v ManualTaxCalculatorUpdateData) {
 	o.Data = v
 }
 
 func (o ManualTaxCalculatorUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o ManualTaxCalculatorUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableManualTaxCalculatorUpdate struct {

@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the OrderSubscriptionItemCreateDataRelationshipsItem type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &OrderSubscriptionItemCreateDataRelationshipsItem{}
-
 // OrderSubscriptionItemCreateDataRelationshipsItem struct for OrderSubscriptionItemCreateDataRelationshipsItem
 type OrderSubscriptionItemCreateDataRelationshipsItem struct {
-	Data POSTOrderSubscriptionItemsRequestDataRelationshipsItemData `json:"data"`
+	Data OrderSubscriptionItemDataRelationshipsItemData `json:"data"`
 }
 
 // NewOrderSubscriptionItemCreateDataRelationshipsItem instantiates a new OrderSubscriptionItemCreateDataRelationshipsItem object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrderSubscriptionItemCreateDataRelationshipsItem(data POSTOrderSubscriptionItemsRequestDataRelationshipsItemData) *OrderSubscriptionItemCreateDataRelationshipsItem {
+func NewOrderSubscriptionItemCreateDataRelationshipsItem(data OrderSubscriptionItemDataRelationshipsItemData) *OrderSubscriptionItemCreateDataRelationshipsItem {
 	this := OrderSubscriptionItemCreateDataRelationshipsItem{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewOrderSubscriptionItemCreateDataRelationshipsItemWithDefaults() *OrderSub
 }
 
 // GetData returns the Data field value
-func (o *OrderSubscriptionItemCreateDataRelationshipsItem) GetData() POSTOrderSubscriptionItemsRequestDataRelationshipsItemData {
+func (o *OrderSubscriptionItemCreateDataRelationshipsItem) GetData() OrderSubscriptionItemDataRelationshipsItemData {
 	if o == nil {
-		var ret POSTOrderSubscriptionItemsRequestDataRelationshipsItemData
+		var ret OrderSubscriptionItemDataRelationshipsItemData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *OrderSubscriptionItemCreateDataRelationshipsItem) GetData() POSTOrderSu
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *OrderSubscriptionItemCreateDataRelationshipsItem) GetDataOk() (*POSTOrderSubscriptionItemsRequestDataRelationshipsItemData, bool) {
+func (o *OrderSubscriptionItemCreateDataRelationshipsItem) GetDataOk() (*OrderSubscriptionItemDataRelationshipsItemData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *OrderSubscriptionItemCreateDataRelationshipsItem) GetDataOk() (*POSTOrd
 }
 
 // SetData sets field value
-func (o *OrderSubscriptionItemCreateDataRelationshipsItem) SetData(v POSTOrderSubscriptionItemsRequestDataRelationshipsItemData) {
+func (o *OrderSubscriptionItemCreateDataRelationshipsItem) SetData(v OrderSubscriptionItemDataRelationshipsItemData) {
 	o.Data = v
 }
 
 func (o OrderSubscriptionItemCreateDataRelationshipsItem) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o OrderSubscriptionItemCreateDataRelationshipsItem) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableOrderSubscriptionItemCreateDataRelationshipsItem struct {

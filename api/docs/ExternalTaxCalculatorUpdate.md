@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequestData**](PATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequestData.md) |  | 
+**Data** | [**ExternalTaxCalculatorUpdateData**](ExternalTaxCalculatorUpdateData.md) |  | 
 
 ## Methods
 
 ### NewExternalTaxCalculatorUpdate
 
-`func NewExternalTaxCalculatorUpdate(data PATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequestData, ) *ExternalTaxCalculatorUpdate`
+`func NewExternalTaxCalculatorUpdate(data ExternalTaxCalculatorUpdateData, ) *ExternalTaxCalculatorUpdate`
 
 NewExternalTaxCalculatorUpdate instantiates a new ExternalTaxCalculatorUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *ExternalTaxCalculatorUpdate) GetData() PATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequestData`
+`func (o *ExternalTaxCalculatorUpdate) GetData() ExternalTaxCalculatorUpdateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ExternalTaxCalculatorUpdate) GetDataOk() (*PATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequestData, bool)`
+`func (o *ExternalTaxCalculatorUpdate) GetDataOk() (*ExternalTaxCalculatorUpdateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ExternalTaxCalculatorUpdate) SetData(v PATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequestData)`
+`func (o *ExternalTaxCalculatorUpdate) SetData(v ExternalTaxCalculatorUpdateData)`
 
 SetData sets Data field to given value.
 

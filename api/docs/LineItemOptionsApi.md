@@ -30,7 +30,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -38,7 +38,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.LineItemOptionsApi.DELETELineItemOptionsLineItemOptionId(context.Background(), lineItemOptionId).Execute()
+    resp, r, err := apiClient.LineItemOptionsApi.DELETELineItemOptionsLineItemOptionId(context.Background(), lineItemOptionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LineItemOptionsApi.DELETELineItemOptionsLineItemOptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -98,7 +98,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -106,7 +106,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.LineItemOptionsApi.GETLineItemIdLineItemOptions(context.Background(), lineItemId).Execute()
+    resp, r, err := apiClient.LineItemOptionsApi.GETLineItemIdLineItemOptions(context.Background(), lineItemId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LineItemOptionsApi.GETLineItemIdLineItemOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -166,7 +166,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -227,7 +227,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHLineItemOptionsLineItemOptionId
 
-> PATCHLineItemOptionsLineItemOptionId200Response PATCHLineItemOptionsLineItemOptionId(ctx, lineItemOptionId).PATCHLineItemOptionsLineItemOptionIdRequest(pATCHLineItemOptionsLineItemOptionIdRequest).Execute()
+> PATCHLineItemOptionsLineItemOptionId200Response PATCHLineItemOptionsLineItemOptionId(ctx, lineItemOptionId).LineItemOptionUpdate(lineItemOptionUpdate).Execute()
 
 Update a line item option
 
@@ -297,16 +297,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHLineItemOptionsLineItemOptionIdRequest := *openapiclient.NewPATCHLineItemOptionsLineItemOptionIdRequest(*openapiclient.NewPATCHLineItemOptionsLineItemOptionIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHLineItemOptionsLineItemOptionIdRequestDataAttributes())) // PATCHLineItemOptionsLineItemOptionIdRequest | 
+    lineItemOptionUpdate := *openapiclient.NewLineItemOptionUpdate(*openapiclient.NewLineItemOptionUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes())) // LineItemOptionUpdate | 
     lineItemOptionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LineItemOptionsApi.PATCHLineItemOptionsLineItemOptionId(context.Background(), lineItemOptionId).PATCHLineItemOptionsLineItemOptionIdRequest(pATCHLineItemOptionsLineItemOptionIdRequest).Execute()
+    resp, r, err := apiClient.LineItemOptionsApi.PATCHLineItemOptionsLineItemOptionId(context.Background(), lineItemOptionId).LineItemOptionUpdate(lineItemOptionUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LineItemOptionsApi.PATCHLineItemOptionsLineItemOptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -331,7 +331,7 @@ Other parameters are passed through a pointer to a apiPATCHLineItemOptionsLineIt
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHLineItemOptionsLineItemOptionIdRequest** | [**PATCHLineItemOptionsLineItemOptionIdRequest**](PATCHLineItemOptionsLineItemOptionIdRequest.md) |  | 
+ **lineItemOptionUpdate** | [**LineItemOptionUpdate**](LineItemOptionUpdate.md) |  | 
 
 
 ### Return type
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTLineItemOptions
 
-> POSTLineItemOptions201Response POSTLineItemOptions(ctx).POSTLineItemOptionsRequest(pOSTLineItemOptionsRequest).Execute()
+> POSTLineItemOptions201Response POSTLineItemOptions(ctx).LineItemOptionCreate(lineItemOptionCreate).Execute()
 
 Create a line item option
 
@@ -369,15 +369,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTLineItemOptionsRequest := *openapiclient.NewPOSTLineItemOptionsRequest(*openapiclient.NewPOSTLineItemOptionsRequestData(interface{}(123), *openapiclient.NewPOSTLineItemOptionsRequestDataAttributes(interface{}(2), interface{}({"embossing_text":"Happy Birthday!"})))) // POSTLineItemOptionsRequest | 
+    lineItemOptionCreate := *openapiclient.NewLineItemOptionCreate(*openapiclient.NewLineItemOptionCreateData(interface{}(123), *openapiclient.NewPOSTLineItemOptions201ResponseDataAttributes(interface{}(2), interface{}({embossing_text=Happy Birthday!})))) // LineItemOptionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LineItemOptionsApi.POSTLineItemOptions(context.Background()).POSTLineItemOptionsRequest(pOSTLineItemOptionsRequest).Execute()
+    resp, r, err := apiClient.LineItemOptionsApi.POSTLineItemOptions(context.Background()).LineItemOptionCreate(lineItemOptionCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LineItemOptionsApi.POSTLineItemOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +398,7 @@ Other parameters are passed through a pointer to a apiPOSTLineItemOptionsRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTLineItemOptionsRequest** | [**POSTLineItemOptionsRequest**](POSTLineItemOptionsRequest.md) |  | 
+ **lineItemOptionCreate** | [**LineItemOptionCreate**](LineItemOptionCreate.md) |  | 
 
 ### Return type
 

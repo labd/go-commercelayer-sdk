@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
-**Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
-**Attributes** | Pointer to [**POSTAddressesRequestDataAttributes**](POSTAddressesRequestDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTAddresses201ResponseDataRelationships**](POSTAddresses201ResponseDataRelationships.md) |  | [optional] 
+**Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
+**Attributes** | Pointer to [**POSTAddresses201ResponseDataAttributes**](POSTAddresses201ResponseDataAttributes.md) |  | [optional] 
+**Relationships** | Pointer to [**GETAddresses200ResponseDataInnerRelationships**](GETAddresses200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -101,20 +101,20 @@ HasType returns a boolean if a field has been set.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetLinks
 
-`func (o *POSTAddresses201ResponseData) GetLinks() POSTAddresses201ResponseDataLinks`
+`func (o *POSTAddresses201ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *POSTAddresses201ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool)`
+`func (o *POSTAddresses201ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *POSTAddresses201ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks)`
+`func (o *POSTAddresses201ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks)`
 
 SetLinks sets Links field to given value.
 
@@ -126,20 +126,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *POSTAddresses201ResponseData) GetAttributes() POSTAddressesRequestDataAttributes`
+`func (o *POSTAddresses201ResponseData) GetAttributes() POSTAddresses201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *POSTAddresses201ResponseData) GetAttributesOk() (*POSTAddressesRequestDataAttributes, bool)`
+`func (o *POSTAddresses201ResponseData) GetAttributesOk() (*POSTAddresses201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *POSTAddresses201ResponseData) SetAttributes(v POSTAddressesRequestDataAttributes)`
+`func (o *POSTAddresses201ResponseData) SetAttributes(v POSTAddresses201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
@@ -151,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *POSTAddresses201ResponseData) GetRelationships() POSTAddresses201ResponseDataRelationships`
+`func (o *POSTAddresses201ResponseData) GetRelationships() GETAddresses200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *POSTAddresses201ResponseData) GetRelationshipsOk() (*POSTAddresses201ResponseDataRelationships, bool)`
+`func (o *POSTAddresses201ResponseData) GetRelationshipsOk() (*GETAddresses200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *POSTAddresses201ResponseData) SetRelationships(v POSTAddresses201ResponseDataRelationships)`
+`func (o *POSTAddresses201ResponseData) SetRelationships(v GETAddresses200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

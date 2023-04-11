@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *CheckoutComGatewaysApiService) DELETECheckoutComGatewaysCheckoutComGate
 	}
 
 	localVarPath := localBasePath + "/checkout_com_gateways/{checkoutComGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComGatewayId"+"}", url.PathEscape(parameterValueToString(r.checkoutComGatewayId, "checkoutComGatewayId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComGatewayId"+"}", url.PathEscape(parameterToString(r.checkoutComGatewayId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *CheckoutComGatewaysApiService) DELETECheckoutComGatewaysCheckoutComGate
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *CheckoutComGatewaysApiService) GETCheckoutComGatewaysExecute(r Checkout
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *CheckoutComGatewaysApiService) GETCheckoutComGatewaysCheckoutComGateway
 	}
 
 	localVarPath := localBasePath + "/checkout_com_gateways/{checkoutComGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComGatewayId"+"}", url.PathEscape(parameterValueToString(r.checkoutComGatewayId, "checkoutComGatewayId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComGatewayId"+"}", url.PathEscape(parameterToString(r.checkoutComGatewayId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *CheckoutComGatewaysApiService) GETCheckoutComGatewaysCheckoutComGateway
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -320,14 +320,14 @@ func (a *CheckoutComGatewaysApiService) GETCheckoutComGatewaysCheckoutComGateway
 }
 
 type CheckoutComGatewaysApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest struct {
-	ctx                                                 context.Context
-	ApiService                                          *CheckoutComGatewaysApiService
-	pATCHCheckoutComGatewaysCheckoutComGatewayIdRequest *PATCHCheckoutComGatewaysCheckoutComGatewayIdRequest
-	checkoutComGatewayId                                interface{}
+	ctx                      context.Context
+	ApiService               *CheckoutComGatewaysApiService
+	checkoutComGatewayUpdate *CheckoutComGatewayUpdate
+	checkoutComGatewayId     interface{}
 }
 
-func (r CheckoutComGatewaysApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest) PATCHCheckoutComGatewaysCheckoutComGatewayIdRequest(pATCHCheckoutComGatewaysCheckoutComGatewayIdRequest PATCHCheckoutComGatewaysCheckoutComGatewayIdRequest) CheckoutComGatewaysApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest {
-	r.pATCHCheckoutComGatewaysCheckoutComGatewayIdRequest = &pATCHCheckoutComGatewaysCheckoutComGatewayIdRequest
+func (r CheckoutComGatewaysApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest) CheckoutComGatewayUpdate(checkoutComGatewayUpdate CheckoutComGatewayUpdate) CheckoutComGatewaysApiPATCHCheckoutComGatewaysCheckoutComGatewayIdRequest {
+	r.checkoutComGatewayUpdate = &checkoutComGatewayUpdate
 	return r
 }
 
@@ -369,13 +369,13 @@ func (a *CheckoutComGatewaysApiService) PATCHCheckoutComGatewaysCheckoutComGatew
 	}
 
 	localVarPath := localBasePath + "/checkout_com_gateways/{checkoutComGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComGatewayId"+"}", url.PathEscape(parameterValueToString(r.checkoutComGatewayId, "checkoutComGatewayId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComGatewayId"+"}", url.PathEscape(parameterToString(r.checkoutComGatewayId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHCheckoutComGatewaysCheckoutComGatewayIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHCheckoutComGatewaysCheckoutComGatewayIdRequest is required and must be specified")
+	if r.checkoutComGatewayUpdate == nil {
+		return localVarReturnValue, nil, reportError("checkoutComGatewayUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -396,7 +396,7 @@ func (a *CheckoutComGatewaysApiService) PATCHCheckoutComGatewaysCheckoutComGatew
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHCheckoutComGatewaysCheckoutComGatewayIdRequest
+	localVarPostBody = r.checkoutComGatewayUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -407,9 +407,9 @@ func (a *CheckoutComGatewaysApiService) PATCHCheckoutComGatewaysCheckoutComGatew
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -435,13 +435,13 @@ func (a *CheckoutComGatewaysApiService) PATCHCheckoutComGatewaysCheckoutComGatew
 }
 
 type CheckoutComGatewaysApiPOSTCheckoutComGatewaysRequest struct {
-	ctx                            context.Context
-	ApiService                     *CheckoutComGatewaysApiService
-	pOSTCheckoutComGatewaysRequest *POSTCheckoutComGatewaysRequest
+	ctx                      context.Context
+	ApiService               *CheckoutComGatewaysApiService
+	checkoutComGatewayCreate *CheckoutComGatewayCreate
 }
 
-func (r CheckoutComGatewaysApiPOSTCheckoutComGatewaysRequest) POSTCheckoutComGatewaysRequest(pOSTCheckoutComGatewaysRequest POSTCheckoutComGatewaysRequest) CheckoutComGatewaysApiPOSTCheckoutComGatewaysRequest {
-	r.pOSTCheckoutComGatewaysRequest = &pOSTCheckoutComGatewaysRequest
+func (r CheckoutComGatewaysApiPOSTCheckoutComGatewaysRequest) CheckoutComGatewayCreate(checkoutComGatewayCreate CheckoutComGatewayCreate) CheckoutComGatewaysApiPOSTCheckoutComGatewaysRequest {
+	r.checkoutComGatewayCreate = &checkoutComGatewayCreate
 	return r
 }
 
@@ -485,8 +485,8 @@ func (a *CheckoutComGatewaysApiService) POSTCheckoutComGatewaysExecute(r Checkou
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTCheckoutComGatewaysRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTCheckoutComGatewaysRequest is required and must be specified")
+	if r.checkoutComGatewayCreate == nil {
+		return localVarReturnValue, nil, reportError("checkoutComGatewayCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -507,7 +507,7 @@ func (a *CheckoutComGatewaysApiService) POSTCheckoutComGatewaysExecute(r Checkou
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTCheckoutComGatewaysRequest
+	localVarPostBody = r.checkoutComGatewayCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -518,9 +518,9 @@ func (a *CheckoutComGatewaysApiService) POSTCheckoutComGatewaysExecute(r Checkou
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**POSTBingGeocodersRequestData**](POSTBingGeocodersRequestData.md) |  | 
+**Data** | [**BingGeocoderCreateData**](BingGeocoderCreateData.md) |  | 
 
 ## Methods
 
 ### NewBingGeocoderCreate
 
-`func NewBingGeocoderCreate(data POSTBingGeocodersRequestData, ) *BingGeocoderCreate`
+`func NewBingGeocoderCreate(data BingGeocoderCreateData, ) *BingGeocoderCreate`
 
 NewBingGeocoderCreate instantiates a new BingGeocoderCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *BingGeocoderCreate) GetData() POSTBingGeocodersRequestData`
+`func (o *BingGeocoderCreate) GetData() BingGeocoderCreateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *BingGeocoderCreate) GetDataOk() (*POSTBingGeocodersRequestData, bool)`
+`func (o *BingGeocoderCreate) GetDataOk() (*BingGeocoderCreateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *BingGeocoderCreate) SetData(v POSTBingGeocodersRequestData)`
+`func (o *BingGeocoderCreate) SetData(v BingGeocoderCreateData)`
 
 SetData sets Data field to given value.
 

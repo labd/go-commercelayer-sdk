@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Promotion** | Pointer to [**OrderAmountPromotionRuleCreateDataRelationshipsPromotion**](OrderAmountPromotionRuleCreateDataRelationshipsPromotion.md) |  | [optional] 
-**SkuList** | Pointer to [**POSTBundlesRequestDataRelationshipsSkuList**](POSTBundlesRequestDataRelationshipsSkuList.md) |  | [optional] 
+**Promotion** | Pointer to [**CouponCodesPromotionRuleCreateDataRelationshipsPromotion**](CouponCodesPromotionRuleCreateDataRelationshipsPromotion.md) |  | [optional] 
+**SkuList** | Pointer to [**BundleCreateDataRelationshipsSkuList**](BundleCreateDataRelationshipsSkuList.md) |  | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPromotion
 
-`func (o *SkuListPromotionRuleUpdateDataRelationships) GetPromotion() OrderAmountPromotionRuleCreateDataRelationshipsPromotion`
+`func (o *SkuListPromotionRuleUpdateDataRelationships) GetPromotion() CouponCodesPromotionRuleCreateDataRelationshipsPromotion`
 
 GetPromotion returns the Promotion field if non-nil, zero value otherwise.
 
 ### GetPromotionOk
 
-`func (o *SkuListPromotionRuleUpdateDataRelationships) GetPromotionOk() (*OrderAmountPromotionRuleCreateDataRelationshipsPromotion, bool)`
+`func (o *SkuListPromotionRuleUpdateDataRelationships) GetPromotionOk() (*CouponCodesPromotionRuleCreateDataRelationshipsPromotion, bool)`
 
 GetPromotionOk returns a tuple with the Promotion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPromotion
 
-`func (o *SkuListPromotionRuleUpdateDataRelationships) SetPromotion(v OrderAmountPromotionRuleCreateDataRelationshipsPromotion)`
+`func (o *SkuListPromotionRuleUpdateDataRelationships) SetPromotion(v CouponCodesPromotionRuleCreateDataRelationshipsPromotion)`
 
 SetPromotion sets Promotion field to given value.
 
@@ -53,20 +53,20 @@ HasPromotion returns a boolean if a field has been set.
 
 ### GetSkuList
 
-`func (o *SkuListPromotionRuleUpdateDataRelationships) GetSkuList() POSTBundlesRequestDataRelationshipsSkuList`
+`func (o *SkuListPromotionRuleUpdateDataRelationships) GetSkuList() BundleCreateDataRelationshipsSkuList`
 
 GetSkuList returns the SkuList field if non-nil, zero value otherwise.
 
 ### GetSkuListOk
 
-`func (o *SkuListPromotionRuleUpdateDataRelationships) GetSkuListOk() (*POSTBundlesRequestDataRelationshipsSkuList, bool)`
+`func (o *SkuListPromotionRuleUpdateDataRelationships) GetSkuListOk() (*BundleCreateDataRelationshipsSkuList, bool)`
 
 GetSkuListOk returns a tuple with the SkuList field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSkuList
 
-`func (o *SkuListPromotionRuleUpdateDataRelationships) SetSkuList(v POSTBundlesRequestDataRelationshipsSkuList)`
+`func (o *SkuListPromotionRuleUpdateDataRelationships) SetSkuList(v BundleCreateDataRelationshipsSkuList)`
 
 SetSkuList sets SkuList field to given value.
 

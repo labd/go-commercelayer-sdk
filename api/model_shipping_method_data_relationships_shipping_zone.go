@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the ShippingMethodDataRelationshipsShippingZone type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ShippingMethodDataRelationshipsShippingZone{}
-
 // ShippingMethodDataRelationshipsShippingZone struct for ShippingMethodDataRelationshipsShippingZone
 type ShippingMethodDataRelationshipsShippingZone struct {
-	Data *POSTShippingMethodsRequestDataRelationshipsShippingZoneData `json:"data,omitempty"`
+	Data *ShippingMethodDataRelationshipsShippingZoneData `json:"data,omitempty"`
 }
 
 // NewShippingMethodDataRelationshipsShippingZone instantiates a new ShippingMethodDataRelationshipsShippingZone object
@@ -41,9 +38,9 @@ func NewShippingMethodDataRelationshipsShippingZoneWithDefaults() *ShippingMetho
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *ShippingMethodDataRelationshipsShippingZone) GetData() POSTShippingMethodsRequestDataRelationshipsShippingZoneData {
-	if o == nil || IsNil(o.Data) {
-		var ret POSTShippingMethodsRequestDataRelationshipsShippingZoneData
+func (o *ShippingMethodDataRelationshipsShippingZone) GetData() ShippingMethodDataRelationshipsShippingZoneData {
+	if o == nil || o.Data == nil {
+		var ret ShippingMethodDataRelationshipsShippingZoneData
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *ShippingMethodDataRelationshipsShippingZone) GetData() POSTShippingMeth
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ShippingMethodDataRelationshipsShippingZone) GetDataOk() (*POSTShippingMethodsRequestDataRelationshipsShippingZoneData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *ShippingMethodDataRelationshipsShippingZone) GetDataOk() (*ShippingMethodDataRelationshipsShippingZoneData, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *ShippingMethodDataRelationshipsShippingZone) GetDataOk() (*POSTShipping
 
 // HasData returns a boolean if a field has been set.
 func (o *ShippingMethodDataRelationshipsShippingZone) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given POSTShippingMethodsRequestDataRelationshipsShippingZoneData and assigns it to the Data field.
-func (o *ShippingMethodDataRelationshipsShippingZone) SetData(v POSTShippingMethodsRequestDataRelationshipsShippingZoneData) {
+// SetData gets a reference to the given ShippingMethodDataRelationshipsShippingZoneData and assigns it to the Data field.
+func (o *ShippingMethodDataRelationshipsShippingZone) SetData(v ShippingMethodDataRelationshipsShippingZoneData) {
 	o.Data = &v
 }
 
 func (o ShippingMethodDataRelationshipsShippingZone) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o ShippingMethodDataRelationshipsShippingZone) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableShippingMethodDataRelationshipsShippingZone struct {

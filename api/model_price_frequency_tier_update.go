@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the PriceFrequencyTierUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PriceFrequencyTierUpdate{}
-
 // PriceFrequencyTierUpdate struct for PriceFrequencyTierUpdate
 type PriceFrequencyTierUpdate struct {
-	Data PATCHPriceFrequencyTiersPriceFrequencyTierIdRequestData `json:"data"`
+	Data PriceFrequencyTierUpdateData `json:"data"`
 }
 
 // NewPriceFrequencyTierUpdate instantiates a new PriceFrequencyTierUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPriceFrequencyTierUpdate(data PATCHPriceFrequencyTiersPriceFrequencyTierIdRequestData) *PriceFrequencyTierUpdate {
+func NewPriceFrequencyTierUpdate(data PriceFrequencyTierUpdateData) *PriceFrequencyTierUpdate {
 	this := PriceFrequencyTierUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewPriceFrequencyTierUpdateWithDefaults() *PriceFrequencyTierUpdate {
 }
 
 // GetData returns the Data field value
-func (o *PriceFrequencyTierUpdate) GetData() PATCHPriceFrequencyTiersPriceFrequencyTierIdRequestData {
+func (o *PriceFrequencyTierUpdate) GetData() PriceFrequencyTierUpdateData {
 	if o == nil {
-		var ret PATCHPriceFrequencyTiersPriceFrequencyTierIdRequestData
+		var ret PriceFrequencyTierUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *PriceFrequencyTierUpdate) GetData() PATCHPriceFrequencyTiersPriceFreque
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *PriceFrequencyTierUpdate) GetDataOk() (*PATCHPriceFrequencyTiersPriceFrequencyTierIdRequestData, bool) {
+func (o *PriceFrequencyTierUpdate) GetDataOk() (*PriceFrequencyTierUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *PriceFrequencyTierUpdate) GetDataOk() (*PATCHPriceFrequencyTiersPriceFr
 }
 
 // SetData sets field value
-func (o *PriceFrequencyTierUpdate) SetData(v PATCHPriceFrequencyTiersPriceFrequencyTierIdRequestData) {
+func (o *PriceFrequencyTierUpdate) SetData(v PriceFrequencyTierUpdateData) {
 	o.Data = v
 }
 
 func (o PriceFrequencyTierUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o PriceFrequencyTierUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullablePriceFrequencyTierUpdate struct {

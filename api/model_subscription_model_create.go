@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the SubscriptionModelCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &SubscriptionModelCreate{}
-
 // SubscriptionModelCreate struct for SubscriptionModelCreate
 type SubscriptionModelCreate struct {
-	Data POSTSubscriptionModelsRequestData `json:"data"`
+	Data SubscriptionModelCreateData `json:"data"`
 }
 
 // NewSubscriptionModelCreate instantiates a new SubscriptionModelCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSubscriptionModelCreate(data POSTSubscriptionModelsRequestData) *SubscriptionModelCreate {
+func NewSubscriptionModelCreate(data SubscriptionModelCreateData) *SubscriptionModelCreate {
 	this := SubscriptionModelCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewSubscriptionModelCreateWithDefaults() *SubscriptionModelCreate {
 }
 
 // GetData returns the Data field value
-func (o *SubscriptionModelCreate) GetData() POSTSubscriptionModelsRequestData {
+func (o *SubscriptionModelCreate) GetData() SubscriptionModelCreateData {
 	if o == nil {
-		var ret POSTSubscriptionModelsRequestData
+		var ret SubscriptionModelCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *SubscriptionModelCreate) GetData() POSTSubscriptionModelsRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *SubscriptionModelCreate) GetDataOk() (*POSTSubscriptionModelsRequestData, bool) {
+func (o *SubscriptionModelCreate) GetDataOk() (*SubscriptionModelCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *SubscriptionModelCreate) GetDataOk() (*POSTSubscriptionModelsRequestDat
 }
 
 // SetData sets field value
-func (o *SubscriptionModelCreate) SetData(v POSTSubscriptionModelsRequestData) {
+func (o *SubscriptionModelCreate) SetData(v SubscriptionModelCreateData) {
 	o.Data = v
 }
 
 func (o SubscriptionModelCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o SubscriptionModelCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableSubscriptionModelCreate struct {

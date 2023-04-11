@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETOrderFactoriesOrderFactoryId200ResponseDataAttributes**](GETOrderFactoriesOrderFactoryId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**GETOrderFactories200ResponseDataInnerAttributes**](GETOrderFactories200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**OrderFactoryDataRelationships**](OrderFactoryDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewOrderFactoryData
 
-`func NewOrderFactoryData(type_ interface{}, attributes GETOrderFactoriesOrderFactoryId200ResponseDataAttributes, ) *OrderFactoryData`
+`func NewOrderFactoryData(type_ interface{}, attributes GETOrderFactories200ResponseDataInnerAttributes, ) *OrderFactoryData`
 
 NewOrderFactoryData instantiates a new OrderFactoryData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *OrderFactoryData) GetAttributes() GETOrderFactoriesOrderFactoryId200ResponseDataAttributes`
+`func (o *OrderFactoryData) GetAttributes() GETOrderFactories200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *OrderFactoryData) GetAttributesOk() (*GETOrderFactoriesOrderFactoryId200ResponseDataAttributes, bool)`
+`func (o *OrderFactoryData) GetAttributesOk() (*GETOrderFactories200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *OrderFactoryData) SetAttributes(v GETOrderFactoriesOrderFactoryId200ResponseDataAttributes)`
+`func (o *OrderFactoryData) SetAttributes(v GETOrderFactories200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

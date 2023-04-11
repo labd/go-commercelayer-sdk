@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the AdjustmentCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AdjustmentCreate{}
-
 // AdjustmentCreate struct for AdjustmentCreate
 type AdjustmentCreate struct {
-	Data POSTAdjustmentsRequestData `json:"data"`
+	Data AdjustmentCreateData `json:"data"`
 }
 
 // NewAdjustmentCreate instantiates a new AdjustmentCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAdjustmentCreate(data POSTAdjustmentsRequestData) *AdjustmentCreate {
+func NewAdjustmentCreate(data AdjustmentCreateData) *AdjustmentCreate {
 	this := AdjustmentCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewAdjustmentCreateWithDefaults() *AdjustmentCreate {
 }
 
 // GetData returns the Data field value
-func (o *AdjustmentCreate) GetData() POSTAdjustmentsRequestData {
+func (o *AdjustmentCreate) GetData() AdjustmentCreateData {
 	if o == nil {
-		var ret POSTAdjustmentsRequestData
+		var ret AdjustmentCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *AdjustmentCreate) GetData() POSTAdjustmentsRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *AdjustmentCreate) GetDataOk() (*POSTAdjustmentsRequestData, bool) {
+func (o *AdjustmentCreate) GetDataOk() (*AdjustmentCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *AdjustmentCreate) GetDataOk() (*POSTAdjustmentsRequestData, bool) {
 }
 
 // SetData sets field value
-func (o *AdjustmentCreate) SetData(v POSTAdjustmentsRequestData) {
+func (o *AdjustmentCreate) SetData(v AdjustmentCreateData) {
 	o.Data = v
 }
 
 func (o AdjustmentCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o AdjustmentCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableAdjustmentCreate struct {

@@ -30,7 +30,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -38,7 +38,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.PackagesApi.DELETEPackagesPackageId(context.Background(), packageId).Execute()
+    resp, r, err := apiClient.PackagesApi.DELETEPackagesPackageId(context.Background(), packageId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PackagesApi.DELETEPackagesPackageId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -98,7 +98,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -159,7 +159,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -229,7 +229,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -237,7 +237,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.PackagesApi.GETParcelIdPackage(context.Background(), parcelId).Execute()
+    resp, r, err := apiClient.PackagesApi.GETParcelIdPackage(context.Background(), parcelId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PackagesApi.GETParcelIdPackage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHPackagesPackageId
 
-> PATCHPackagesPackageId200Response PATCHPackagesPackageId(ctx, packageId).PATCHPackagesPackageIdRequest(pATCHPackagesPackageIdRequest).Execute()
+> PATCHPackagesPackageId200Response PATCHPackagesPackageId(ctx, packageId).PackageUpdate(packageUpdate).Execute()
 
 Update a package
 
@@ -297,16 +297,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHPackagesPackageIdRequest := *openapiclient.NewPATCHPackagesPackageIdRequest(*openapiclient.NewPATCHPackagesPackageIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHPackagesPackageIdRequestDataAttributes())) // PATCHPackagesPackageIdRequest | 
+    packageUpdate := *openapiclient.NewPackageUpdate(*openapiclient.NewPackageUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHPackagesPackageId200ResponseDataAttributes())) // PackageUpdate | 
     packageId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PackagesApi.PATCHPackagesPackageId(context.Background(), packageId).PATCHPackagesPackageIdRequest(pATCHPackagesPackageIdRequest).Execute()
+    resp, r, err := apiClient.PackagesApi.PATCHPackagesPackageId(context.Background(), packageId).PackageUpdate(packageUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PackagesApi.PATCHPackagesPackageId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -331,7 +331,7 @@ Other parameters are passed through a pointer to a apiPATCHPackagesPackageIdRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHPackagesPackageIdRequest** | [**PATCHPackagesPackageIdRequest**](PATCHPackagesPackageIdRequest.md) |  | 
+ **packageUpdate** | [**PackageUpdate**](PackageUpdate.md) |  | 
 
 
 ### Return type
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTPackages
 
-> POSTPackages201Response POSTPackages(ctx).POSTPackagesRequest(pOSTPackagesRequest).Execute()
+> POSTPackages201Response POSTPackages(ctx).PackageCreate(packageCreate).Execute()
 
 Create a package
 
@@ -369,15 +369,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTPackagesRequest := *openapiclient.NewPOSTPackagesRequest(*openapiclient.NewPOSTPackagesRequestData(interface{}(123), *openapiclient.NewPOSTPackagesRequestDataAttributes(interface{}(Large (60x40x30)), interface{}(40), interface{}(40), interface{}(25), interface{}(gr)))) // POSTPackagesRequest | 
+    packageCreate := *openapiclient.NewPackageCreate(*openapiclient.NewPackageCreateData(interface{}(123), *openapiclient.NewPOSTPackages201ResponseDataAttributes(interface{}(Large (60x40x30)), interface{}(40.0), interface{}(40.0), interface{}(25.0), interface{}(gr)))) // PackageCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PackagesApi.POSTPackages(context.Background()).POSTPackagesRequest(pOSTPackagesRequest).Execute()
+    resp, r, err := apiClient.PackagesApi.POSTPackages(context.Background()).PackageCreate(packageCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PackagesApi.POSTPackages``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +398,7 @@ Other parameters are passed through a pointer to a apiPOSTPackagesRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTPackagesRequest** | [**POSTPackagesRequest**](POSTPackagesRequest.md) |  | 
+ **packageCreate** | [**PackageCreate**](PackageCreate.md) |  | 
 
 ### Return type
 

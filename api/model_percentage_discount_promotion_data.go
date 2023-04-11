@@ -15,22 +15,19 @@ import (
 	"encoding/json"
 )
 
-// checks if the PercentageDiscountPromotionData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PercentageDiscountPromotionData{}
-
 // PercentageDiscountPromotionData struct for PercentageDiscountPromotionData
 type PercentageDiscountPromotionData struct {
 	// The resource's type
-	Type          interface{}                                                                           `json:"type"`
-	Attributes    GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes `json:"attributes"`
-	Relationships *FixedPricePromotionDataRelationships                                                 `json:"relationships,omitempty"`
+	Type          interface{}                                                   `json:"type"`
+	Attributes    GETPercentageDiscountPromotions200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *FixedPricePromotionDataRelationships                         `json:"relationships,omitempty"`
 }
 
 // NewPercentageDiscountPromotionData instantiates a new PercentageDiscountPromotionData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPercentageDiscountPromotionData(type_ interface{}, attributes GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) *PercentageDiscountPromotionData {
+func NewPercentageDiscountPromotionData(type_ interface{}, attributes GETPercentageDiscountPromotions200ResponseDataInnerAttributes) *PercentageDiscountPromotionData {
 	this := PercentageDiscountPromotionData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -60,7 +57,7 @@ func (o *PercentageDiscountPromotionData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PercentageDiscountPromotionData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -72,9 +69,9 @@ func (o *PercentageDiscountPromotionData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PercentageDiscountPromotionData) GetAttributes() GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes {
+func (o *PercentageDiscountPromotionData) GetAttributes() GETPercentageDiscountPromotions200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes
+		var ret GETPercentageDiscountPromotions200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -83,7 +80,7 @@ func (o *PercentageDiscountPromotionData) GetAttributes() GETPercentageDiscountP
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PercentageDiscountPromotionData) GetAttributesOk() (*GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes, bool) {
+func (o *PercentageDiscountPromotionData) GetAttributesOk() (*GETPercentageDiscountPromotions200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,13 +88,13 @@ func (o *PercentageDiscountPromotionData) GetAttributesOk() (*GETPercentageDisco
 }
 
 // SetAttributes sets field value
-func (o *PercentageDiscountPromotionData) SetAttributes(v GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) {
+func (o *PercentageDiscountPromotionData) SetAttributes(v GETPercentageDiscountPromotions200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *PercentageDiscountPromotionData) GetRelationships() FixedPricePromotionDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		var ret FixedPricePromotionDataRelationships
 		return ret
 	}
@@ -107,7 +104,7 @@ func (o *PercentageDiscountPromotionData) GetRelationships() FixedPricePromotion
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PercentageDiscountPromotionData) GetRelationshipsOk() (*FixedPricePromotionDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -115,7 +112,7 @@ func (o *PercentageDiscountPromotionData) GetRelationshipsOk() (*FixedPricePromo
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *PercentageDiscountPromotionData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
@@ -128,23 +125,17 @@ func (o *PercentageDiscountPromotionData) SetRelationships(v FixedPricePromotion
 }
 
 func (o PercentageDiscountPromotionData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o PercentageDiscountPromotionData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	toSerialize["attributes"] = o.Attributes
-	if !IsNil(o.Relationships) {
+	if true {
+		toSerialize["attributes"] = o.Attributes
+	}
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePercentageDiscountPromotionData struct {

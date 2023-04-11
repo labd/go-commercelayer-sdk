@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**POSTStockTransfersRequestData**](POSTStockTransfersRequestData.md) |  | 
+**Data** | [**StockTransferCreateData**](StockTransferCreateData.md) |  | 
 
 ## Methods
 
 ### NewStockTransferCreate
 
-`func NewStockTransferCreate(data POSTStockTransfersRequestData, ) *StockTransferCreate`
+`func NewStockTransferCreate(data StockTransferCreateData, ) *StockTransferCreate`
 
 NewStockTransferCreate instantiates a new StockTransferCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *StockTransferCreate) GetData() POSTStockTransfersRequestData`
+`func (o *StockTransferCreate) GetData() StockTransferCreateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *StockTransferCreate) GetDataOk() (*POSTStockTransfersRequestData, bool)`
+`func (o *StockTransferCreate) GetDataOk() (*StockTransferCreateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *StockTransferCreate) SetData(v POSTStockTransfersRequestData)`
+`func (o *StockTransferCreate) SetData(v StockTransferCreateData)`
 
 SetData sets Data field to given value.
 

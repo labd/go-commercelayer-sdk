@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response{}
-
 // GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response struct for GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response
 type GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response struct {
-	Data *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseData `json:"data,omitempty"`
+	Data *GETPercentageDiscountPromotions200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response instantiates a new GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response object
@@ -41,9 +38,9 @@ func NewGETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseW
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response) GetData() GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseData
+func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response) GetData() GETPercentageDiscountPromotions200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETPercentageDiscountPromotions200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response) GetDataOk() (*GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response) GetDataOk() (*GETPercentageDiscountPromotions200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response
 
 // HasData returns a boolean if a field has been set.
 func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseData and assigns it to the Data field.
-func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response) SetData(v GETPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseData) {
+// SetData gets a reference to the given GETPercentageDiscountPromotions200ResponseDataInner and assigns it to the Data field.
+func (o *GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response) SetData(v GETPercentageDiscountPromotions200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response struct {

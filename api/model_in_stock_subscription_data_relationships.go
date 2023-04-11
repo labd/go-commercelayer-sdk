@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the InStockSubscriptionDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &InStockSubscriptionDataRelationships{}
-
 // InStockSubscriptionDataRelationships struct for InStockSubscriptionDataRelationships
 type InStockSubscriptionDataRelationships struct {
 	Market   *AvalaraAccountDataRelationshipsMarkets   `json:"market,omitempty"`
@@ -45,7 +42,7 @@ func NewInStockSubscriptionDataRelationshipsWithDefaults() *InStockSubscriptionD
 
 // GetMarket returns the Market field value if set, zero value otherwise.
 func (o *InStockSubscriptionDataRelationships) GetMarket() AvalaraAccountDataRelationshipsMarkets {
-	if o == nil || IsNil(o.Market) {
+	if o == nil || o.Market == nil {
 		var ret AvalaraAccountDataRelationshipsMarkets
 		return ret
 	}
@@ -55,7 +52,7 @@ func (o *InStockSubscriptionDataRelationships) GetMarket() AvalaraAccountDataRel
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InStockSubscriptionDataRelationships) GetMarketOk() (*AvalaraAccountDataRelationshipsMarkets, bool) {
-	if o == nil || IsNil(o.Market) {
+	if o == nil || o.Market == nil {
 		return nil, false
 	}
 	return o.Market, true
@@ -63,7 +60,7 @@ func (o *InStockSubscriptionDataRelationships) GetMarketOk() (*AvalaraAccountDat
 
 // HasMarket returns a boolean if a field has been set.
 func (o *InStockSubscriptionDataRelationships) HasMarket() bool {
-	if o != nil && !IsNil(o.Market) {
+	if o != nil && o.Market != nil {
 		return true
 	}
 
@@ -77,7 +74,7 @@ func (o *InStockSubscriptionDataRelationships) SetMarket(v AvalaraAccountDataRel
 
 // GetCustomer returns the Customer field value if set, zero value otherwise.
 func (o *InStockSubscriptionDataRelationships) GetCustomer() CouponRecipientDataRelationshipsCustomer {
-	if o == nil || IsNil(o.Customer) {
+	if o == nil || o.Customer == nil {
 		var ret CouponRecipientDataRelationshipsCustomer
 		return ret
 	}
@@ -87,7 +84,7 @@ func (o *InStockSubscriptionDataRelationships) GetCustomer() CouponRecipientData
 // GetCustomerOk returns a tuple with the Customer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InStockSubscriptionDataRelationships) GetCustomerOk() (*CouponRecipientDataRelationshipsCustomer, bool) {
-	if o == nil || IsNil(o.Customer) {
+	if o == nil || o.Customer == nil {
 		return nil, false
 	}
 	return o.Customer, true
@@ -95,7 +92,7 @@ func (o *InStockSubscriptionDataRelationships) GetCustomerOk() (*CouponRecipient
 
 // HasCustomer returns a boolean if a field has been set.
 func (o *InStockSubscriptionDataRelationships) HasCustomer() bool {
-	if o != nil && !IsNil(o.Customer) {
+	if o != nil && o.Customer != nil {
 		return true
 	}
 
@@ -109,7 +106,7 @@ func (o *InStockSubscriptionDataRelationships) SetCustomer(v CouponRecipientData
 
 // GetSku returns the Sku field value if set, zero value otherwise.
 func (o *InStockSubscriptionDataRelationships) GetSku() BundleDataRelationshipsSkus {
-	if o == nil || IsNil(o.Sku) {
+	if o == nil || o.Sku == nil {
 		var ret BundleDataRelationshipsSkus
 		return ret
 	}
@@ -119,7 +116,7 @@ func (o *InStockSubscriptionDataRelationships) GetSku() BundleDataRelationshipsS
 // GetSkuOk returns a tuple with the Sku field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InStockSubscriptionDataRelationships) GetSkuOk() (*BundleDataRelationshipsSkus, bool) {
-	if o == nil || IsNil(o.Sku) {
+	if o == nil || o.Sku == nil {
 		return nil, false
 	}
 	return o.Sku, true
@@ -127,7 +124,7 @@ func (o *InStockSubscriptionDataRelationships) GetSkuOk() (*BundleDataRelationsh
 
 // HasSku returns a boolean if a field has been set.
 func (o *InStockSubscriptionDataRelationships) HasSku() bool {
-	if o != nil && !IsNil(o.Sku) {
+	if o != nil && o.Sku != nil {
 		return true
 	}
 
@@ -141,7 +138,7 @@ func (o *InStockSubscriptionDataRelationships) SetSku(v BundleDataRelationshipsS
 
 // GetEvents returns the Events field value if set, zero value otherwise.
 func (o *InStockSubscriptionDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || o.Events == nil {
 		var ret AuthorizationDataRelationshipsEvents
 		return ret
 	}
@@ -151,7 +148,7 @@ func (o *InStockSubscriptionDataRelationships) GetEvents() AuthorizationDataRela
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InStockSubscriptionDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || o.Events == nil {
 		return nil, false
 	}
 	return o.Events, true
@@ -159,7 +156,7 @@ func (o *InStockSubscriptionDataRelationships) GetEventsOk() (*AuthorizationData
 
 // HasEvents returns a boolean if a field has been set.
 func (o *InStockSubscriptionDataRelationships) HasEvents() bool {
-	if o != nil && !IsNil(o.Events) {
+	if o != nil && o.Events != nil {
 		return true
 	}
 
@@ -172,28 +169,20 @@ func (o *InStockSubscriptionDataRelationships) SetEvents(v AuthorizationDataRela
 }
 
 func (o InStockSubscriptionDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o InStockSubscriptionDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Market) {
+	if o.Market != nil {
 		toSerialize["market"] = o.Market
 	}
-	if !IsNil(o.Customer) {
+	if o.Customer != nil {
 		toSerialize["customer"] = o.Customer
 	}
-	if !IsNil(o.Sku) {
+	if o.Sku != nil {
 		toSerialize["sku"] = o.Sku
 	}
-	if !IsNil(o.Events) {
+	if o.Events != nil {
 		toSerialize["events"] = o.Events
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableInStockSubscriptionDataRelationships struct {

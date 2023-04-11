@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETAdjustmentsAdjustmentId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETAdjustmentsAdjustmentId200Response{}
-
 // GETAdjustmentsAdjustmentId200Response struct for GETAdjustmentsAdjustmentId200Response
 type GETAdjustmentsAdjustmentId200Response struct {
-	Data *GETAdjustmentsAdjustmentId200ResponseData `json:"data,omitempty"`
+	Data *GETAdjustments200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETAdjustmentsAdjustmentId200Response instantiates a new GETAdjustmentsAdjustmentId200Response object
@@ -41,9 +38,9 @@ func NewGETAdjustmentsAdjustmentId200ResponseWithDefaults() *GETAdjustmentsAdjus
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETAdjustmentsAdjustmentId200Response) GetData() GETAdjustmentsAdjustmentId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETAdjustmentsAdjustmentId200ResponseData
+func (o *GETAdjustmentsAdjustmentId200Response) GetData() GETAdjustments200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETAdjustments200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETAdjustmentsAdjustmentId200Response) GetData() GETAdjustmentsAdjustme
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETAdjustmentsAdjustmentId200Response) GetDataOk() (*GETAdjustmentsAdjustmentId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETAdjustmentsAdjustmentId200Response) GetDataOk() (*GETAdjustments200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETAdjustmentsAdjustmentId200Response) GetDataOk() (*GETAdjustmentsAdju
 
 // HasData returns a boolean if a field has been set.
 func (o *GETAdjustmentsAdjustmentId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETAdjustmentsAdjustmentId200ResponseData and assigns it to the Data field.
-func (o *GETAdjustmentsAdjustmentId200Response) SetData(v GETAdjustmentsAdjustmentId200ResponseData) {
+// SetData gets a reference to the given GETAdjustments200ResponseDataInner and assigns it to the Data field.
+func (o *GETAdjustmentsAdjustmentId200Response) SetData(v GETAdjustments200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETAdjustmentsAdjustmentId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETAdjustmentsAdjustmentId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETAdjustmentsAdjustmentId200Response struct {

@@ -30,7 +30,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -91,7 +91,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -161,7 +161,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -169,7 +169,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AuthorizationsApi.GETCaptureIdReferenceAuthorization(context.Background(), captureId).Execute()
+    resp, r, err := apiClient.AuthorizationsApi.GETCaptureIdReferenceAuthorization(context.Background(), captureId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthorizationsApi.GETCaptureIdReferenceAuthorization``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -229,7 +229,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -237,7 +237,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AuthorizationsApi.GETOrderIdAuthorizations(context.Background(), orderId).Execute()
+    resp, r, err := apiClient.AuthorizationsApi.GETOrderIdAuthorizations(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthorizationsApi.GETOrderIdAuthorizations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -297,7 +297,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -305,7 +305,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AuthorizationsApi.GETVoidIdReferenceAuthorization(context.Background(), voidId).Execute()
+    resp, r, err := apiClient.AuthorizationsApi.GETVoidIdReferenceAuthorization(context.Background(), voidId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthorizationsApi.GETVoidIdReferenceAuthorization``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 ## PATCHAuthorizationsAuthorizationId
 
-> PATCHAuthorizationsAuthorizationId200Response PATCHAuthorizationsAuthorizationId(ctx, authorizationId).PATCHAuthorizationsAuthorizationIdRequest(pATCHAuthorizationsAuthorizationIdRequest).Execute()
+> PATCHAuthorizationsAuthorizationId200Response PATCHAuthorizationsAuthorizationId(ctx, authorizationId).AuthorizationUpdate(authorizationUpdate).Execute()
 
 Update an authorization
 
@@ -365,16 +365,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHAuthorizationsAuthorizationIdRequest := *openapiclient.NewPATCHAuthorizationsAuthorizationIdRequest(*openapiclient.NewPATCHAuthorizationsAuthorizationIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHAuthorizationsAuthorizationIdRequestDataAttributes())) // PATCHAuthorizationsAuthorizationIdRequest | 
+    authorizationUpdate := *openapiclient.NewAuthorizationUpdate(*openapiclient.NewAuthorizationUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHAuthorizationsAuthorizationId200ResponseDataAttributes())) // AuthorizationUpdate | 
     authorizationId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthorizationsApi.PATCHAuthorizationsAuthorizationId(context.Background(), authorizationId).PATCHAuthorizationsAuthorizationIdRequest(pATCHAuthorizationsAuthorizationIdRequest).Execute()
+    resp, r, err := apiClient.AuthorizationsApi.PATCHAuthorizationsAuthorizationId(context.Background(), authorizationId).AuthorizationUpdate(authorizationUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthorizationsApi.PATCHAuthorizationsAuthorizationId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -399,7 +399,7 @@ Other parameters are passed through a pointer to a apiPATCHAuthorizationsAuthori
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHAuthorizationsAuthorizationIdRequest** | [**PATCHAuthorizationsAuthorizationIdRequest**](PATCHAuthorizationsAuthorizationIdRequest.md) |  | 
+ **authorizationUpdate** | [**AuthorizationUpdate**](AuthorizationUpdate.md) |  | 
 
 
 ### Return type

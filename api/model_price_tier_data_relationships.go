@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the PriceTierDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PriceTierDataRelationships{}
-
 // PriceTierDataRelationships struct for PriceTierDataRelationships
 type PriceTierDataRelationships struct {
 	Price       *PriceFrequencyTierDataRelationshipsPrice   `json:"price,omitempty"`
@@ -43,7 +40,7 @@ func NewPriceTierDataRelationshipsWithDefaults() *PriceTierDataRelationships {
 
 // GetPrice returns the Price field value if set, zero value otherwise.
 func (o *PriceTierDataRelationships) GetPrice() PriceFrequencyTierDataRelationshipsPrice {
-	if o == nil || IsNil(o.Price) {
+	if o == nil || o.Price == nil {
 		var ret PriceFrequencyTierDataRelationshipsPrice
 		return ret
 	}
@@ -53,7 +50,7 @@ func (o *PriceTierDataRelationships) GetPrice() PriceFrequencyTierDataRelationsh
 // GetPriceOk returns a tuple with the Price field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PriceTierDataRelationships) GetPriceOk() (*PriceFrequencyTierDataRelationshipsPrice, bool) {
-	if o == nil || IsNil(o.Price) {
+	if o == nil || o.Price == nil {
 		return nil, false
 	}
 	return o.Price, true
@@ -61,7 +58,7 @@ func (o *PriceTierDataRelationships) GetPriceOk() (*PriceFrequencyTierDataRelati
 
 // HasPrice returns a boolean if a field has been set.
 func (o *PriceTierDataRelationships) HasPrice() bool {
-	if o != nil && !IsNil(o.Price) {
+	if o != nil && o.Price != nil {
 		return true
 	}
 
@@ -75,7 +72,7 @@ func (o *PriceTierDataRelationships) SetPrice(v PriceFrequencyTierDataRelationsh
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *PriceTierDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		var ret AvalaraAccountDataRelationshipsAttachments
 		return ret
 	}
@@ -85,7 +82,7 @@ func (o *PriceTierDataRelationships) GetAttachments() AvalaraAccountDataRelation
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PriceTierDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		return nil, false
 	}
 	return o.Attachments, true
@@ -93,7 +90,7 @@ func (o *PriceTierDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRela
 
 // HasAttachments returns a boolean if a field has been set.
 func (o *PriceTierDataRelationships) HasAttachments() bool {
-	if o != nil && !IsNil(o.Attachments) {
+	if o != nil && o.Attachments != nil {
 		return true
 	}
 
@@ -106,22 +103,14 @@ func (o *PriceTierDataRelationships) SetAttachments(v AvalaraAccountDataRelation
 }
 
 func (o PriceTierDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o PriceTierDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Price) {
+	if o.Price != nil {
 		toSerialize["price"] = o.Price
 	}
-	if !IsNil(o.Attachments) {
+	if o.Attachments != nil {
 		toSerialize["attachments"] = o.Attachments
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePriceTierDataRelationships struct {

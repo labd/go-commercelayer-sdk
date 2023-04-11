@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the CheckoutComGatewayCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CheckoutComGatewayCreate{}
-
 // CheckoutComGatewayCreate struct for CheckoutComGatewayCreate
 type CheckoutComGatewayCreate struct {
-	Data POSTCheckoutComGatewaysRequestData `json:"data"`
+	Data CheckoutComGatewayCreateData `json:"data"`
 }
 
 // NewCheckoutComGatewayCreate instantiates a new CheckoutComGatewayCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCheckoutComGatewayCreate(data POSTCheckoutComGatewaysRequestData) *CheckoutComGatewayCreate {
+func NewCheckoutComGatewayCreate(data CheckoutComGatewayCreateData) *CheckoutComGatewayCreate {
 	this := CheckoutComGatewayCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewCheckoutComGatewayCreateWithDefaults() *CheckoutComGatewayCreate {
 }
 
 // GetData returns the Data field value
-func (o *CheckoutComGatewayCreate) GetData() POSTCheckoutComGatewaysRequestData {
+func (o *CheckoutComGatewayCreate) GetData() CheckoutComGatewayCreateData {
 	if o == nil {
-		var ret POSTCheckoutComGatewaysRequestData
+		var ret CheckoutComGatewayCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *CheckoutComGatewayCreate) GetData() POSTCheckoutComGatewaysRequestData 
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CheckoutComGatewayCreate) GetDataOk() (*POSTCheckoutComGatewaysRequestData, bool) {
+func (o *CheckoutComGatewayCreate) GetDataOk() (*CheckoutComGatewayCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *CheckoutComGatewayCreate) GetDataOk() (*POSTCheckoutComGatewaysRequestD
 }
 
 // SetData sets field value
-func (o *CheckoutComGatewayCreate) SetData(v POSTCheckoutComGatewaysRequestData) {
+func (o *CheckoutComGatewayCreate) SetData(v CheckoutComGatewayCreateData) {
 	o.Data = v
 }
 
 func (o CheckoutComGatewayCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o CheckoutComGatewayCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableCheckoutComGatewayCreate struct {

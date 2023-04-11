@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response{}
-
 // PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response struct for PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response
 type PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response struct {
 	Data *PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseWithD
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response) GetData() PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response) Ge
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response) GetDataOk() (*PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response) Ge
 
 // HasData returns a boolean if a field has been set.
 func (o *PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response) Se
 }
 
 func (o PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response struct {

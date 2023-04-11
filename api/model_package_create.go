@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the PackageCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PackageCreate{}
-
 // PackageCreate struct for PackageCreate
 type PackageCreate struct {
-	Data POSTPackagesRequestData `json:"data"`
+	Data PackageCreateData `json:"data"`
 }
 
 // NewPackageCreate instantiates a new PackageCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPackageCreate(data POSTPackagesRequestData) *PackageCreate {
+func NewPackageCreate(data PackageCreateData) *PackageCreate {
 	this := PackageCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewPackageCreateWithDefaults() *PackageCreate {
 }
 
 // GetData returns the Data field value
-func (o *PackageCreate) GetData() POSTPackagesRequestData {
+func (o *PackageCreate) GetData() PackageCreateData {
 	if o == nil {
-		var ret POSTPackagesRequestData
+		var ret PackageCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *PackageCreate) GetData() POSTPackagesRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *PackageCreate) GetDataOk() (*POSTPackagesRequestData, bool) {
+func (o *PackageCreate) GetDataOk() (*PackageCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *PackageCreate) GetDataOk() (*POSTPackagesRequestData, bool) {
 }
 
 // SetData sets field value
-func (o *PackageCreate) SetData(v POSTPackagesRequestData) {
+func (o *PackageCreate) SetData(v PackageCreateData) {
 	o.Data = v
 }
 
 func (o PackageCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o PackageCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullablePackageCreate struct {

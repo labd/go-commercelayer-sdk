@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the LineItemDataRelationshipsLineItemOptionsData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &LineItemDataRelationshipsLineItemOptionsData{}
-
 // LineItemDataRelationshipsLineItemOptionsData struct for LineItemDataRelationshipsLineItemOptionsData
 type LineItemDataRelationshipsLineItemOptionsData struct {
 	// The resource's type
@@ -56,7 +53,7 @@ func (o *LineItemDataRelationshipsLineItemOptionsData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LineItemDataRelationshipsLineItemOptionsData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -64,7 +61,7 @@ func (o *LineItemDataRelationshipsLineItemOptionsData) GetTypeOk() (*interface{}
 
 // HasType returns a boolean if a field has been set.
 func (o *LineItemDataRelationshipsLineItemOptionsData) HasType() bool {
-	if o != nil && IsNil(o.Type) {
+	if o != nil && o.Type != nil {
 		return true
 	}
 
@@ -89,7 +86,7 @@ func (o *LineItemDataRelationshipsLineItemOptionsData) GetId() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *LineItemDataRelationshipsLineItemOptionsData) GetIdOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Id) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
 	return &o.Id, true
@@ -97,7 +94,7 @@ func (o *LineItemDataRelationshipsLineItemOptionsData) GetIdOk() (*interface{}, 
 
 // HasId returns a boolean if a field has been set.
 func (o *LineItemDataRelationshipsLineItemOptionsData) HasId() bool {
-	if o != nil && IsNil(o.Id) {
+	if o != nil && o.Id != nil {
 		return true
 	}
 
@@ -110,14 +107,6 @@ func (o *LineItemDataRelationshipsLineItemOptionsData) SetId(v interface{}) {
 }
 
 func (o LineItemDataRelationshipsLineItemOptionsData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o LineItemDataRelationshipsLineItemOptionsData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
@@ -125,7 +114,7 @@ func (o LineItemDataRelationshipsLineItemOptionsData) ToMap() (map[string]interf
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableLineItemDataRelationshipsLineItemOptionsData struct {

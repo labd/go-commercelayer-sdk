@@ -29,7 +29,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -37,7 +37,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ExternalGatewaysApi.DELETEExternalGatewaysExternalGatewayId(context.Background(), externalGatewayId).Execute()
+    resp, r, err := apiClient.ExternalGatewaysApi.DELETEExternalGatewaysExternalGatewayId(context.Background(), externalGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalGatewaysApi.DELETEExternalGatewaysExternalGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -158,7 +158,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHExternalGatewaysExternalGatewayId
 
-> PATCHExternalGatewaysExternalGatewayId200Response PATCHExternalGatewaysExternalGatewayId(ctx, externalGatewayId).PATCHExternalGatewaysExternalGatewayIdRequest(pATCHExternalGatewaysExternalGatewayIdRequest).Execute()
+> PATCHExternalGatewaysExternalGatewayId200Response PATCHExternalGatewaysExternalGatewayId(ctx, externalGatewayId).ExternalGatewayUpdate(externalGatewayUpdate).Execute()
 
 Update an external gateway
 
@@ -228,16 +228,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHExternalGatewaysExternalGatewayIdRequest := *openapiclient.NewPATCHExternalGatewaysExternalGatewayIdRequest(*openapiclient.NewPATCHExternalGatewaysExternalGatewayIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHExternalGatewaysExternalGatewayIdRequestDataAttributes())) // PATCHExternalGatewaysExternalGatewayIdRequest | 
+    externalGatewayUpdate := *openapiclient.NewExternalGatewayUpdate(*openapiclient.NewExternalGatewayUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes())) // ExternalGatewayUpdate | 
     externalGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExternalGatewaysApi.PATCHExternalGatewaysExternalGatewayId(context.Background(), externalGatewayId).PATCHExternalGatewaysExternalGatewayIdRequest(pATCHExternalGatewaysExternalGatewayIdRequest).Execute()
+    resp, r, err := apiClient.ExternalGatewaysApi.PATCHExternalGatewaysExternalGatewayId(context.Background(), externalGatewayId).ExternalGatewayUpdate(externalGatewayUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalGatewaysApi.PATCHExternalGatewaysExternalGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -262,7 +262,7 @@ Other parameters are passed through a pointer to a apiPATCHExternalGatewaysExter
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHExternalGatewaysExternalGatewayIdRequest** | [**PATCHExternalGatewaysExternalGatewayIdRequest**](PATCHExternalGatewaysExternalGatewayIdRequest.md) |  | 
+ **externalGatewayUpdate** | [**ExternalGatewayUpdate**](ExternalGatewayUpdate.md) |  | 
 
 
 ### Return type
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTExternalGateways
 
-> POSTExternalGateways201Response POSTExternalGateways(ctx).POSTExternalGatewaysRequest(pOSTExternalGatewaysRequest).Execute()
+> POSTExternalGateways201Response POSTExternalGateways(ctx).ExternalGatewayCreate(externalGatewayCreate).Execute()
 
 Create an external gateway
 
@@ -300,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTExternalGatewaysRequest := *openapiclient.NewPOSTExternalGatewaysRequest(*openapiclient.NewPOSTExternalGatewaysRequestData(interface{}(123), *openapiclient.NewPOSTExternalGatewaysRequestDataAttributes(interface{}(US payment gateway)))) // POSTExternalGatewaysRequest | 
+    externalGatewayCreate := *openapiclient.NewExternalGatewayCreate(*openapiclient.NewExternalGatewayCreateData(interface{}(123), *openapiclient.NewPOSTExternalGateways201ResponseDataAttributes(interface{}(US payment gateway)))) // ExternalGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExternalGatewaysApi.POSTExternalGateways(context.Background()).POSTExternalGatewaysRequest(pOSTExternalGatewaysRequest).Execute()
+    resp, r, err := apiClient.ExternalGatewaysApi.POSTExternalGateways(context.Background()).ExternalGatewayCreate(externalGatewayCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalGatewaysApi.POSTExternalGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiPOSTExternalGatewaysReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTExternalGatewaysRequest** | [**POSTExternalGatewaysRequest**](POSTExternalGatewaysRequest.md) |  | 
+ **externalGatewayCreate** | [**ExternalGatewayCreate**](ExternalGatewayCreate.md) |  | 
 
 ### Return type
 

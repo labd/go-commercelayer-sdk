@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *FreeGiftPromotionsApiService) DELETEFreeGiftPromotionsFreeGiftPromotion
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterToString(r.freeGiftPromotionId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *FreeGiftPromotionsApiService) DELETEFreeGiftPromotionsFreeGiftPromotion
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotionsExecute(r FreeGiftPr
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotionsFreeGiftPromotionIdE
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterToString(r.freeGiftPromotionId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotionsFreeGiftPromotionIdE
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -320,14 +320,14 @@ func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotionsFreeGiftPromotionIdE
 }
 
 type FreeGiftPromotionsApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest struct {
-	ctx                                               context.Context
-	ApiService                                        *FreeGiftPromotionsApiService
-	pATCHFreeGiftPromotionsFreeGiftPromotionIdRequest *PATCHFreeGiftPromotionsFreeGiftPromotionIdRequest
-	freeGiftPromotionId                               interface{}
+	ctx                     context.Context
+	ApiService              *FreeGiftPromotionsApiService
+	freeGiftPromotionUpdate *FreeGiftPromotionUpdate
+	freeGiftPromotionId     interface{}
 }
 
-func (r FreeGiftPromotionsApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest) PATCHFreeGiftPromotionsFreeGiftPromotionIdRequest(pATCHFreeGiftPromotionsFreeGiftPromotionIdRequest PATCHFreeGiftPromotionsFreeGiftPromotionIdRequest) FreeGiftPromotionsApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest {
-	r.pATCHFreeGiftPromotionsFreeGiftPromotionIdRequest = &pATCHFreeGiftPromotionsFreeGiftPromotionIdRequest
+func (r FreeGiftPromotionsApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest) FreeGiftPromotionUpdate(freeGiftPromotionUpdate FreeGiftPromotionUpdate) FreeGiftPromotionsApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest {
+	r.freeGiftPromotionUpdate = &freeGiftPromotionUpdate
 	return r
 }
 
@@ -369,13 +369,13 @@ func (a *FreeGiftPromotionsApiService) PATCHFreeGiftPromotionsFreeGiftPromotionI
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterToString(r.freeGiftPromotionId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHFreeGiftPromotionsFreeGiftPromotionIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHFreeGiftPromotionsFreeGiftPromotionIdRequest is required and must be specified")
+	if r.freeGiftPromotionUpdate == nil {
+		return localVarReturnValue, nil, reportError("freeGiftPromotionUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -396,7 +396,7 @@ func (a *FreeGiftPromotionsApiService) PATCHFreeGiftPromotionsFreeGiftPromotionI
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHFreeGiftPromotionsFreeGiftPromotionIdRequest
+	localVarPostBody = r.freeGiftPromotionUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -407,9 +407,9 @@ func (a *FreeGiftPromotionsApiService) PATCHFreeGiftPromotionsFreeGiftPromotionI
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -435,13 +435,13 @@ func (a *FreeGiftPromotionsApiService) PATCHFreeGiftPromotionsFreeGiftPromotionI
 }
 
 type FreeGiftPromotionsApiPOSTFreeGiftPromotionsRequest struct {
-	ctx                           context.Context
-	ApiService                    *FreeGiftPromotionsApiService
-	pOSTFreeGiftPromotionsRequest *POSTFreeGiftPromotionsRequest
+	ctx                     context.Context
+	ApiService              *FreeGiftPromotionsApiService
+	freeGiftPromotionCreate *FreeGiftPromotionCreate
 }
 
-func (r FreeGiftPromotionsApiPOSTFreeGiftPromotionsRequest) POSTFreeGiftPromotionsRequest(pOSTFreeGiftPromotionsRequest POSTFreeGiftPromotionsRequest) FreeGiftPromotionsApiPOSTFreeGiftPromotionsRequest {
-	r.pOSTFreeGiftPromotionsRequest = &pOSTFreeGiftPromotionsRequest
+func (r FreeGiftPromotionsApiPOSTFreeGiftPromotionsRequest) FreeGiftPromotionCreate(freeGiftPromotionCreate FreeGiftPromotionCreate) FreeGiftPromotionsApiPOSTFreeGiftPromotionsRequest {
+	r.freeGiftPromotionCreate = &freeGiftPromotionCreate
 	return r
 }
 
@@ -485,8 +485,8 @@ func (a *FreeGiftPromotionsApiService) POSTFreeGiftPromotionsExecute(r FreeGiftP
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTFreeGiftPromotionsRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTFreeGiftPromotionsRequest is required and must be specified")
+	if r.freeGiftPromotionCreate == nil {
+		return localVarReturnValue, nil, reportError("freeGiftPromotionCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -507,7 +507,7 @@ func (a *FreeGiftPromotionsApiService) POSTFreeGiftPromotionsExecute(r FreeGiftP
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTFreeGiftPromotionsRequest
+	localVarPostBody = r.freeGiftPromotionCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -518,9 +518,9 @@ func (a *FreeGiftPromotionsApiService) POSTFreeGiftPromotionsExecute(r FreeGiftP
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Promotion** | Pointer to [**OrderAmountPromotionRuleDataRelationshipsPromotion**](OrderAmountPromotionRuleDataRelationshipsPromotion.md) |  | [optional] 
+**Promotion** | Pointer to [**CouponCodesPromotionRuleDataRelationshipsPromotion**](CouponCodesPromotionRuleDataRelationshipsPromotion.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPromotion
 
-`func (o *OrderAmountPromotionRuleDataRelationships) GetPromotion() OrderAmountPromotionRuleDataRelationshipsPromotion`
+`func (o *OrderAmountPromotionRuleDataRelationships) GetPromotion() CouponCodesPromotionRuleDataRelationshipsPromotion`
 
 GetPromotion returns the Promotion field if non-nil, zero value otherwise.
 
 ### GetPromotionOk
 
-`func (o *OrderAmountPromotionRuleDataRelationships) GetPromotionOk() (*OrderAmountPromotionRuleDataRelationshipsPromotion, bool)`
+`func (o *OrderAmountPromotionRuleDataRelationships) GetPromotionOk() (*CouponCodesPromotionRuleDataRelationshipsPromotion, bool)`
 
 GetPromotionOk returns a tuple with the Promotion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPromotion
 
-`func (o *OrderAmountPromotionRuleDataRelationships) SetPromotion(v OrderAmountPromotionRuleDataRelationshipsPromotion)`
+`func (o *OrderAmountPromotionRuleDataRelationships) SetPromotion(v CouponCodesPromotionRuleDataRelationshipsPromotion)`
 
 SetPromotion sets Promotion field to given value.
 

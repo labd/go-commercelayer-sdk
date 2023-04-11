@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETFreeShippingPromotionsFreeShippingPromotionId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETFreeShippingPromotionsFreeShippingPromotionId200Response{}
-
 // GETFreeShippingPromotionsFreeShippingPromotionId200Response struct for GETFreeShippingPromotionsFreeShippingPromotionId200Response
 type GETFreeShippingPromotionsFreeShippingPromotionId200Response struct {
-	Data *GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData `json:"data,omitempty"`
+	Data *GETFreeShippingPromotions200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETFreeShippingPromotionsFreeShippingPromotionId200Response instantiates a new GETFreeShippingPromotionsFreeShippingPromotionId200Response object
@@ -41,9 +38,9 @@ func NewGETFreeShippingPromotionsFreeShippingPromotionId200ResponseWithDefaults(
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETFreeShippingPromotionsFreeShippingPromotionId200Response) GetData() GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData
+func (o *GETFreeShippingPromotionsFreeShippingPromotionId200Response) GetData() GETFreeShippingPromotions200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETFreeShippingPromotions200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETFreeShippingPromotionsFreeShippingPromotionId200Response) GetData() 
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETFreeShippingPromotionsFreeShippingPromotionId200Response) GetDataOk() (*GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETFreeShippingPromotionsFreeShippingPromotionId200Response) GetDataOk() (*GETFreeShippingPromotions200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETFreeShippingPromotionsFreeShippingPromotionId200Response) GetDataOk(
 
 // HasData returns a boolean if a field has been set.
 func (o *GETFreeShippingPromotionsFreeShippingPromotionId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData and assigns it to the Data field.
-func (o *GETFreeShippingPromotionsFreeShippingPromotionId200Response) SetData(v GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData) {
+// SetData gets a reference to the given GETFreeShippingPromotions200ResponseDataInner and assigns it to the Data field.
+func (o *GETFreeShippingPromotionsFreeShippingPromotionId200Response) SetData(v GETFreeShippingPromotions200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETFreeShippingPromotionsFreeShippingPromotionId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETFreeShippingPromotionsFreeShippingPromotionId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETFreeShippingPromotionsFreeShippingPromotionId200Response struct {

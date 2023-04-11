@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the Capture type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &Capture{}
-
 // Capture struct for Capture
 type Capture struct {
 	Data *CaptureData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewCaptureWithDefaults() *Capture {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *Capture) GetData() CaptureData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret CaptureData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *Capture) GetData() CaptureData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Capture) GetDataOk() (*CaptureData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *Capture) GetDataOk() (*CaptureData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *Capture) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *Capture) SetData(v CaptureData) {
 }
 
 func (o Capture) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o Capture) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableCapture struct {

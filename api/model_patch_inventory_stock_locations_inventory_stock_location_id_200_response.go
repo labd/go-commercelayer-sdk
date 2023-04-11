@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the PATCHInventoryStockLocationsInventoryStockLocationId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PATCHInventoryStockLocationsInventoryStockLocationId200Response{}
-
 // PATCHInventoryStockLocationsInventoryStockLocationId200Response struct for PATCHInventoryStockLocationsInventoryStockLocationId200Response
 type PATCHInventoryStockLocationsInventoryStockLocationId200Response struct {
 	Data *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPATCHInventoryStockLocationsInventoryStockLocationId200ResponseWithDefau
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *PATCHInventoryStockLocationsInventoryStockLocationId200Response) GetData() PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *PATCHInventoryStockLocationsInventoryStockLocationId200Response) GetDat
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHInventoryStockLocationsInventoryStockLocationId200Response) GetDataOk() (*PATCHInventoryStockLocationsInventoryStockLocationId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *PATCHInventoryStockLocationsInventoryStockLocationId200Response) GetDat
 
 // HasData returns a boolean if a field has been set.
 func (o *PATCHInventoryStockLocationsInventoryStockLocationId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *PATCHInventoryStockLocationsInventoryStockLocationId200Response) SetDat
 }
 
 func (o PATCHInventoryStockLocationsInventoryStockLocationId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o PATCHInventoryStockLocationsInventoryStockLocationId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePATCHInventoryStockLocationsInventoryStockLocationId200Response struct {

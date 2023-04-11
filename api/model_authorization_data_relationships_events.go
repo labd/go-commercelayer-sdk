@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the AuthorizationDataRelationshipsEvents type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AuthorizationDataRelationshipsEvents{}
-
 // AuthorizationDataRelationshipsEvents struct for AuthorizationDataRelationshipsEvents
 type AuthorizationDataRelationshipsEvents struct {
 	Data *AuthorizationDataRelationshipsEventsData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewAuthorizationDataRelationshipsEventsWithDefaults() *AuthorizationDataRel
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *AuthorizationDataRelationshipsEvents) GetData() AuthorizationDataRelationshipsEventsData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret AuthorizationDataRelationshipsEventsData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *AuthorizationDataRelationshipsEvents) GetData() AuthorizationDataRelati
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationDataRelationshipsEvents) GetDataOk() (*AuthorizationDataRelationshipsEventsData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *AuthorizationDataRelationshipsEvents) GetDataOk() (*AuthorizationDataRe
 
 // HasData returns a boolean if a field has been set.
 func (o *AuthorizationDataRelationshipsEvents) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *AuthorizationDataRelationshipsEvents) SetData(v AuthorizationDataRelati
 }
 
 func (o AuthorizationDataRelationshipsEvents) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o AuthorizationDataRelationshipsEvents) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableAuthorizationDataRelationshipsEvents struct {

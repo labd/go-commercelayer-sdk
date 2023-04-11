@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the BraintreePaymentCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &BraintreePaymentCreate{}
-
 // BraintreePaymentCreate struct for BraintreePaymentCreate
 type BraintreePaymentCreate struct {
-	Data POSTBraintreePaymentsRequestData `json:"data"`
+	Data BraintreePaymentCreateData `json:"data"`
 }
 
 // NewBraintreePaymentCreate instantiates a new BraintreePaymentCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBraintreePaymentCreate(data POSTBraintreePaymentsRequestData) *BraintreePaymentCreate {
+func NewBraintreePaymentCreate(data BraintreePaymentCreateData) *BraintreePaymentCreate {
 	this := BraintreePaymentCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewBraintreePaymentCreateWithDefaults() *BraintreePaymentCreate {
 }
 
 // GetData returns the Data field value
-func (o *BraintreePaymentCreate) GetData() POSTBraintreePaymentsRequestData {
+func (o *BraintreePaymentCreate) GetData() BraintreePaymentCreateData {
 	if o == nil {
-		var ret POSTBraintreePaymentsRequestData
+		var ret BraintreePaymentCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *BraintreePaymentCreate) GetData() POSTBraintreePaymentsRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *BraintreePaymentCreate) GetDataOk() (*POSTBraintreePaymentsRequestData, bool) {
+func (o *BraintreePaymentCreate) GetDataOk() (*BraintreePaymentCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *BraintreePaymentCreate) GetDataOk() (*POSTBraintreePaymentsRequestData,
 }
 
 // SetData sets field value
-func (o *BraintreePaymentCreate) SetData(v POSTBraintreePaymentsRequestData) {
+func (o *BraintreePaymentCreate) SetData(v BraintreePaymentCreateData) {
 	o.Data = v
 }
 
 func (o BraintreePaymentCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o BraintreePaymentCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableBraintreePaymentCreate struct {

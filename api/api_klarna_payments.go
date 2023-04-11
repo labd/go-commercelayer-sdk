@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *KlarnaPaymentsApiService) DELETEKlarnaPaymentsKlarnaPaymentIdExecute(r 
 	}
 
 	localVarPath := localBasePath + "/klarna_payments/{klarnaPaymentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"klarnaPaymentId"+"}", url.PathEscape(parameterValueToString(r.klarnaPaymentId, "klarnaPaymentId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"klarnaPaymentId"+"}", url.PathEscape(parameterToString(r.klarnaPaymentId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *KlarnaPaymentsApiService) DELETEKlarnaPaymentsKlarnaPaymentIdExecute(r 
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -156,7 +156,7 @@ func (a *KlarnaPaymentsApiService) GETKlarnaGatewayIdKlarnaPaymentsExecute(r Kla
 	}
 
 	localVarPath := localBasePath + "/klarna_gateways/{klarnaGatewayId}/klarna_payments"
-	localVarPath = strings.Replace(localVarPath, "{"+"klarnaGatewayId"+"}", url.PathEscape(parameterValueToString(r.klarnaGatewayId, "klarnaGatewayId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"klarnaGatewayId"+"}", url.PathEscape(parameterToString(r.klarnaGatewayId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *KlarnaPaymentsApiService) GETKlarnaGatewayIdKlarnaPaymentsExecute(r Kla
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *KlarnaPaymentsApiService) GETKlarnaPaymentsExecute(r KlarnaPaymentsApiG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -351,7 +351,7 @@ func (a *KlarnaPaymentsApiService) GETKlarnaPaymentsKlarnaPaymentIdExecute(r Kla
 	}
 
 	localVarPath := localBasePath + "/klarna_payments/{klarnaPaymentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"klarnaPaymentId"+"}", url.PathEscape(parameterValueToString(r.klarnaPaymentId, "klarnaPaymentId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"klarnaPaymentId"+"}", url.PathEscape(parameterToString(r.klarnaPaymentId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *KlarnaPaymentsApiService) GETKlarnaPaymentsKlarnaPaymentIdExecute(r Kla
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -412,14 +412,14 @@ func (a *KlarnaPaymentsApiService) GETKlarnaPaymentsKlarnaPaymentIdExecute(r Kla
 }
 
 type KlarnaPaymentsApiPATCHKlarnaPaymentsKlarnaPaymentIdRequest struct {
-	ctx                                       context.Context
-	ApiService                                *KlarnaPaymentsApiService
-	pATCHKlarnaPaymentsKlarnaPaymentIdRequest *PATCHKlarnaPaymentsKlarnaPaymentIdRequest
-	klarnaPaymentId                           interface{}
+	ctx                 context.Context
+	ApiService          *KlarnaPaymentsApiService
+	klarnaPaymentUpdate *KlarnaPaymentUpdate
+	klarnaPaymentId     interface{}
 }
 
-func (r KlarnaPaymentsApiPATCHKlarnaPaymentsKlarnaPaymentIdRequest) PATCHKlarnaPaymentsKlarnaPaymentIdRequest(pATCHKlarnaPaymentsKlarnaPaymentIdRequest PATCHKlarnaPaymentsKlarnaPaymentIdRequest) KlarnaPaymentsApiPATCHKlarnaPaymentsKlarnaPaymentIdRequest {
-	r.pATCHKlarnaPaymentsKlarnaPaymentIdRequest = &pATCHKlarnaPaymentsKlarnaPaymentIdRequest
+func (r KlarnaPaymentsApiPATCHKlarnaPaymentsKlarnaPaymentIdRequest) KlarnaPaymentUpdate(klarnaPaymentUpdate KlarnaPaymentUpdate) KlarnaPaymentsApiPATCHKlarnaPaymentsKlarnaPaymentIdRequest {
+	r.klarnaPaymentUpdate = &klarnaPaymentUpdate
 	return r
 }
 
@@ -461,13 +461,13 @@ func (a *KlarnaPaymentsApiService) PATCHKlarnaPaymentsKlarnaPaymentIdExecute(r K
 	}
 
 	localVarPath := localBasePath + "/klarna_payments/{klarnaPaymentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"klarnaPaymentId"+"}", url.PathEscape(parameterValueToString(r.klarnaPaymentId, "klarnaPaymentId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"klarnaPaymentId"+"}", url.PathEscape(parameterToString(r.klarnaPaymentId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHKlarnaPaymentsKlarnaPaymentIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHKlarnaPaymentsKlarnaPaymentIdRequest is required and must be specified")
+	if r.klarnaPaymentUpdate == nil {
+		return localVarReturnValue, nil, reportError("klarnaPaymentUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -488,7 +488,7 @@ func (a *KlarnaPaymentsApiService) PATCHKlarnaPaymentsKlarnaPaymentIdExecute(r K
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHKlarnaPaymentsKlarnaPaymentIdRequest
+	localVarPostBody = r.klarnaPaymentUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -499,9 +499,9 @@ func (a *KlarnaPaymentsApiService) PATCHKlarnaPaymentsKlarnaPaymentIdExecute(r K
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -527,13 +527,13 @@ func (a *KlarnaPaymentsApiService) PATCHKlarnaPaymentsKlarnaPaymentIdExecute(r K
 }
 
 type KlarnaPaymentsApiPOSTKlarnaPaymentsRequest struct {
-	ctx                       context.Context
-	ApiService                *KlarnaPaymentsApiService
-	pOSTKlarnaPaymentsRequest *POSTKlarnaPaymentsRequest
+	ctx                 context.Context
+	ApiService          *KlarnaPaymentsApiService
+	klarnaPaymentCreate *KlarnaPaymentCreate
 }
 
-func (r KlarnaPaymentsApiPOSTKlarnaPaymentsRequest) POSTKlarnaPaymentsRequest(pOSTKlarnaPaymentsRequest POSTKlarnaPaymentsRequest) KlarnaPaymentsApiPOSTKlarnaPaymentsRequest {
-	r.pOSTKlarnaPaymentsRequest = &pOSTKlarnaPaymentsRequest
+func (r KlarnaPaymentsApiPOSTKlarnaPaymentsRequest) KlarnaPaymentCreate(klarnaPaymentCreate KlarnaPaymentCreate) KlarnaPaymentsApiPOSTKlarnaPaymentsRequest {
+	r.klarnaPaymentCreate = &klarnaPaymentCreate
 	return r
 }
 
@@ -577,8 +577,8 @@ func (a *KlarnaPaymentsApiService) POSTKlarnaPaymentsExecute(r KlarnaPaymentsApi
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTKlarnaPaymentsRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTKlarnaPaymentsRequest is required and must be specified")
+	if r.klarnaPaymentCreate == nil {
+		return localVarReturnValue, nil, reportError("klarnaPaymentCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -599,7 +599,7 @@ func (a *KlarnaPaymentsApiService) POSTKlarnaPaymentsExecute(r KlarnaPaymentsApi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTKlarnaPaymentsRequest
+	localVarPostBody = r.klarnaPaymentCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -610,9 +610,9 @@ func (a *KlarnaPaymentsApiService) POSTKlarnaPaymentsExecute(r KlarnaPaymentsApi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

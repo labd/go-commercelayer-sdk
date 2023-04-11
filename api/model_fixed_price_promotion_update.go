@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the FixedPricePromotionUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &FixedPricePromotionUpdate{}
-
 // FixedPricePromotionUpdate struct for FixedPricePromotionUpdate
 type FixedPricePromotionUpdate struct {
-	Data PATCHFixedPricePromotionsFixedPricePromotionIdRequestData `json:"data"`
+	Data FixedPricePromotionUpdateData `json:"data"`
 }
 
 // NewFixedPricePromotionUpdate instantiates a new FixedPricePromotionUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFixedPricePromotionUpdate(data PATCHFixedPricePromotionsFixedPricePromotionIdRequestData) *FixedPricePromotionUpdate {
+func NewFixedPricePromotionUpdate(data FixedPricePromotionUpdateData) *FixedPricePromotionUpdate {
 	this := FixedPricePromotionUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewFixedPricePromotionUpdateWithDefaults() *FixedPricePromotionUpdate {
 }
 
 // GetData returns the Data field value
-func (o *FixedPricePromotionUpdate) GetData() PATCHFixedPricePromotionsFixedPricePromotionIdRequestData {
+func (o *FixedPricePromotionUpdate) GetData() FixedPricePromotionUpdateData {
 	if o == nil {
-		var ret PATCHFixedPricePromotionsFixedPricePromotionIdRequestData
+		var ret FixedPricePromotionUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *FixedPricePromotionUpdate) GetData() PATCHFixedPricePromotionsFixedPric
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *FixedPricePromotionUpdate) GetDataOk() (*PATCHFixedPricePromotionsFixedPricePromotionIdRequestData, bool) {
+func (o *FixedPricePromotionUpdate) GetDataOk() (*FixedPricePromotionUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *FixedPricePromotionUpdate) GetDataOk() (*PATCHFixedPricePromotionsFixed
 }
 
 // SetData sets field value
-func (o *FixedPricePromotionUpdate) SetData(v PATCHFixedPricePromotionsFixedPricePromotionIdRequestData) {
+func (o *FixedPricePromotionUpdate) SetData(v FixedPricePromotionUpdateData) {
 	o.Data = v
 }
 
 func (o FixedPricePromotionUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o FixedPricePromotionUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableFixedPricePromotionUpdate struct {

@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the GiftCardRecipientUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GiftCardRecipientUpdate{}
-
 // GiftCardRecipientUpdate struct for GiftCardRecipientUpdate
 type GiftCardRecipientUpdate struct {
-	Data PATCHGiftCardRecipientsGiftCardRecipientIdRequestData `json:"data"`
+	Data GiftCardRecipientUpdateData `json:"data"`
 }
 
 // NewGiftCardRecipientUpdate instantiates a new GiftCardRecipientUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGiftCardRecipientUpdate(data PATCHGiftCardRecipientsGiftCardRecipientIdRequestData) *GiftCardRecipientUpdate {
+func NewGiftCardRecipientUpdate(data GiftCardRecipientUpdateData) *GiftCardRecipientUpdate {
 	this := GiftCardRecipientUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewGiftCardRecipientUpdateWithDefaults() *GiftCardRecipientUpdate {
 }
 
 // GetData returns the Data field value
-func (o *GiftCardRecipientUpdate) GetData() PATCHGiftCardRecipientsGiftCardRecipientIdRequestData {
+func (o *GiftCardRecipientUpdate) GetData() GiftCardRecipientUpdateData {
 	if o == nil {
-		var ret PATCHGiftCardRecipientsGiftCardRecipientIdRequestData
+		var ret GiftCardRecipientUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *GiftCardRecipientUpdate) GetData() PATCHGiftCardRecipientsGiftCardRecip
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *GiftCardRecipientUpdate) GetDataOk() (*PATCHGiftCardRecipientsGiftCardRecipientIdRequestData, bool) {
+func (o *GiftCardRecipientUpdate) GetDataOk() (*GiftCardRecipientUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *GiftCardRecipientUpdate) GetDataOk() (*PATCHGiftCardRecipientsGiftCardR
 }
 
 // SetData sets field value
-func (o *GiftCardRecipientUpdate) SetData(v PATCHGiftCardRecipientsGiftCardRecipientIdRequestData) {
+func (o *GiftCardRecipientUpdate) SetData(v GiftCardRecipientUpdateData) {
 	o.Data = v
 }
 
 func (o GiftCardRecipientUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o GiftCardRecipientUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableGiftCardRecipientUpdate struct {

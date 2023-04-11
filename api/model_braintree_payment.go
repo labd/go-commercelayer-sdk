@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the BraintreePayment type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &BraintreePayment{}
-
 // BraintreePayment struct for BraintreePayment
 type BraintreePayment struct {
 	Data *BraintreePaymentData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewBraintreePaymentWithDefaults() *BraintreePayment {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *BraintreePayment) GetData() BraintreePaymentData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret BraintreePaymentData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *BraintreePayment) GetData() BraintreePaymentData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BraintreePayment) GetDataOk() (*BraintreePaymentData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *BraintreePayment) GetDataOk() (*BraintreePaymentData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *BraintreePayment) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *BraintreePayment) SetData(v BraintreePaymentData) {
 }
 
 func (o BraintreePayment) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o BraintreePayment) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableBraintreePayment struct {

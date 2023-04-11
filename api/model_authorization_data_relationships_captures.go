@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the AuthorizationDataRelationshipsCaptures type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AuthorizationDataRelationshipsCaptures{}
-
 // AuthorizationDataRelationshipsCaptures struct for AuthorizationDataRelationshipsCaptures
 type AuthorizationDataRelationshipsCaptures struct {
 	Data *AuthorizationDataRelationshipsCapturesData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewAuthorizationDataRelationshipsCapturesWithDefaults() *AuthorizationDataR
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *AuthorizationDataRelationshipsCaptures) GetData() AuthorizationDataRelationshipsCapturesData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret AuthorizationDataRelationshipsCapturesData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *AuthorizationDataRelationshipsCaptures) GetData() AuthorizationDataRela
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationDataRelationshipsCaptures) GetDataOk() (*AuthorizationDataRelationshipsCapturesData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *AuthorizationDataRelationshipsCaptures) GetDataOk() (*AuthorizationData
 
 // HasData returns a boolean if a field has been set.
 func (o *AuthorizationDataRelationshipsCaptures) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *AuthorizationDataRelationshipsCaptures) SetData(v AuthorizationDataRela
 }
 
 func (o AuthorizationDataRelationshipsCaptures) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o AuthorizationDataRelationshipsCaptures) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableAuthorizationDataRelationshipsCaptures struct {

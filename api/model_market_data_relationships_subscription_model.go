@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the MarketDataRelationshipsSubscriptionModel type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &MarketDataRelationshipsSubscriptionModel{}
-
 // MarketDataRelationshipsSubscriptionModel struct for MarketDataRelationshipsSubscriptionModel
 type MarketDataRelationshipsSubscriptionModel struct {
-	Data *POSTMarketsRequestDataRelationshipsSubscriptionModelData `json:"data,omitempty"`
+	Data *MarketDataRelationshipsSubscriptionModelData `json:"data,omitempty"`
 }
 
 // NewMarketDataRelationshipsSubscriptionModel instantiates a new MarketDataRelationshipsSubscriptionModel object
@@ -41,9 +38,9 @@ func NewMarketDataRelationshipsSubscriptionModelWithDefaults() *MarketDataRelati
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *MarketDataRelationshipsSubscriptionModel) GetData() POSTMarketsRequestDataRelationshipsSubscriptionModelData {
-	if o == nil || IsNil(o.Data) {
-		var ret POSTMarketsRequestDataRelationshipsSubscriptionModelData
+func (o *MarketDataRelationshipsSubscriptionModel) GetData() MarketDataRelationshipsSubscriptionModelData {
+	if o == nil || o.Data == nil {
+		var ret MarketDataRelationshipsSubscriptionModelData
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *MarketDataRelationshipsSubscriptionModel) GetData() POSTMarketsRequestD
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *MarketDataRelationshipsSubscriptionModel) GetDataOk() (*POSTMarketsRequestDataRelationshipsSubscriptionModelData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *MarketDataRelationshipsSubscriptionModel) GetDataOk() (*MarketDataRelationshipsSubscriptionModelData, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *MarketDataRelationshipsSubscriptionModel) GetDataOk() (*POSTMarketsRequ
 
 // HasData returns a boolean if a field has been set.
 func (o *MarketDataRelationshipsSubscriptionModel) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given POSTMarketsRequestDataRelationshipsSubscriptionModelData and assigns it to the Data field.
-func (o *MarketDataRelationshipsSubscriptionModel) SetData(v POSTMarketsRequestDataRelationshipsSubscriptionModelData) {
+// SetData gets a reference to the given MarketDataRelationshipsSubscriptionModelData and assigns it to the Data field.
+func (o *MarketDataRelationshipsSubscriptionModel) SetData(v MarketDataRelationshipsSubscriptionModelData) {
 	o.Data = &v
 }
 
 func (o MarketDataRelationshipsSubscriptionModel) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o MarketDataRelationshipsSubscriptionModel) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableMarketDataRelationshipsSubscriptionModel struct {

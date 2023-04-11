@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the StockLocationUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &StockLocationUpdate{}
-
 // StockLocationUpdate struct for StockLocationUpdate
 type StockLocationUpdate struct {
-	Data PATCHStockLocationsStockLocationIdRequestData `json:"data"`
+	Data StockLocationUpdateData `json:"data"`
 }
 
 // NewStockLocationUpdate instantiates a new StockLocationUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStockLocationUpdate(data PATCHStockLocationsStockLocationIdRequestData) *StockLocationUpdate {
+func NewStockLocationUpdate(data StockLocationUpdateData) *StockLocationUpdate {
 	this := StockLocationUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewStockLocationUpdateWithDefaults() *StockLocationUpdate {
 }
 
 // GetData returns the Data field value
-func (o *StockLocationUpdate) GetData() PATCHStockLocationsStockLocationIdRequestData {
+func (o *StockLocationUpdate) GetData() StockLocationUpdateData {
 	if o == nil {
-		var ret PATCHStockLocationsStockLocationIdRequestData
+		var ret StockLocationUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *StockLocationUpdate) GetData() PATCHStockLocationsStockLocationIdReques
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *StockLocationUpdate) GetDataOk() (*PATCHStockLocationsStockLocationIdRequestData, bool) {
+func (o *StockLocationUpdate) GetDataOk() (*StockLocationUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *StockLocationUpdate) GetDataOk() (*PATCHStockLocationsStockLocationIdRe
 }
 
 // SetData sets field value
-func (o *StockLocationUpdate) SetData(v PATCHStockLocationsStockLocationIdRequestData) {
+func (o *StockLocationUpdate) SetData(v StockLocationUpdateData) {
 	o.Data = v
 }
 
 func (o StockLocationUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o StockLocationUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableStockLocationUpdate struct {

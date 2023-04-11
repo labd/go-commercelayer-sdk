@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**POSTTaxCategoriesRequestDataAttributes**](POSTTaxCategoriesRequestDataAttributes.md) |  | 
+**Attributes** | [**POSTTaxCategories201ResponseDataAttributes**](POSTTaxCategories201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**TaxCategoryCreateDataRelationships**](TaxCategoryCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewTaxCategoryCreateData
 
-`func NewTaxCategoryCreateData(type_ interface{}, attributes POSTTaxCategoriesRequestDataAttributes, ) *TaxCategoryCreateData`
+`func NewTaxCategoryCreateData(type_ interface{}, attributes POSTTaxCategories201ResponseDataAttributes, ) *TaxCategoryCreateData`
 
 NewTaxCategoryCreateData instantiates a new TaxCategoryCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *TaxCategoryCreateData) GetAttributes() POSTTaxCategoriesRequestDataAttributes`
+`func (o *TaxCategoryCreateData) GetAttributes() POSTTaxCategories201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *TaxCategoryCreateData) GetAttributesOk() (*POSTTaxCategoriesRequestDataAttributes, bool)`
+`func (o *TaxCategoryCreateData) GetAttributesOk() (*POSTTaxCategories201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *TaxCategoryCreateData) SetAttributes(v POSTTaxCategoriesRequestDataAttributes)`
+`func (o *TaxCategoryCreateData) SetAttributes(v POSTTaxCategories201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

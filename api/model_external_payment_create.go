@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the ExternalPaymentCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ExternalPaymentCreate{}
-
 // ExternalPaymentCreate struct for ExternalPaymentCreate
 type ExternalPaymentCreate struct {
-	Data POSTExternalPaymentsRequestData `json:"data"`
+	Data ExternalPaymentCreateData `json:"data"`
 }
 
 // NewExternalPaymentCreate instantiates a new ExternalPaymentCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalPaymentCreate(data POSTExternalPaymentsRequestData) *ExternalPaymentCreate {
+func NewExternalPaymentCreate(data ExternalPaymentCreateData) *ExternalPaymentCreate {
 	this := ExternalPaymentCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewExternalPaymentCreateWithDefaults() *ExternalPaymentCreate {
 }
 
 // GetData returns the Data field value
-func (o *ExternalPaymentCreate) GetData() POSTExternalPaymentsRequestData {
+func (o *ExternalPaymentCreate) GetData() ExternalPaymentCreateData {
 	if o == nil {
-		var ret POSTExternalPaymentsRequestData
+		var ret ExternalPaymentCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *ExternalPaymentCreate) GetData() POSTExternalPaymentsRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ExternalPaymentCreate) GetDataOk() (*POSTExternalPaymentsRequestData, bool) {
+func (o *ExternalPaymentCreate) GetDataOk() (*ExternalPaymentCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *ExternalPaymentCreate) GetDataOk() (*POSTExternalPaymentsRequestData, b
 }
 
 // SetData sets field value
-func (o *ExternalPaymentCreate) SetData(v POSTExternalPaymentsRequestData) {
+func (o *ExternalPaymentCreate) SetData(v ExternalPaymentCreateData) {
 	o.Data = v
 }
 
 func (o ExternalPaymentCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o ExternalPaymentCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableExternalPaymentCreate struct {

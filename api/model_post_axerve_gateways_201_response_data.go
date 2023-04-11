@@ -15,18 +15,15 @@ import (
 	"encoding/json"
 )
 
-// checks if the POSTAxerveGateways201ResponseData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &POSTAxerveGateways201ResponseData{}
-
 // POSTAxerveGateways201ResponseData struct for POSTAxerveGateways201ResponseData
 type POSTAxerveGateways201ResponseData struct {
 	// The resource's id
 	Id interface{} `json:"id,omitempty"`
 	// The resource's type
-	Type          interface{}                                     `json:"type,omitempty"`
-	Links         *POSTAddresses201ResponseDataLinks              `json:"links,omitempty"`
-	Attributes    *POSTAxerveGatewaysRequestDataAttributes        `json:"attributes,omitempty"`
-	Relationships *POSTAxerveGateways201ResponseDataRelationships `json:"relationships,omitempty"`
+	Type          interface{}                                         `json:"type,omitempty"`
+	Links         *GETAddresses200ResponseDataInnerLinks              `json:"links,omitempty"`
+	Attributes    *POSTAxerveGateways201ResponseDataAttributes        `json:"attributes,omitempty"`
+	Relationships *GETAxerveGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
 }
 
 // NewPOSTAxerveGateways201ResponseData instantiates a new POSTAxerveGateways201ResponseData object
@@ -59,7 +56,7 @@ func (o *POSTAxerveGateways201ResponseData) GetId() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAxerveGateways201ResponseData) GetIdOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Id) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
 	return &o.Id, true
@@ -67,7 +64,7 @@ func (o *POSTAxerveGateways201ResponseData) GetIdOk() (*interface{}, bool) {
 
 // HasId returns a boolean if a field has been set.
 func (o *POSTAxerveGateways201ResponseData) HasId() bool {
-	if o != nil && IsNil(o.Id) {
+	if o != nil && o.Id != nil {
 		return true
 	}
 
@@ -92,7 +89,7 @@ func (o *POSTAxerveGateways201ResponseData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAxerveGateways201ResponseData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -100,7 +97,7 @@ func (o *POSTAxerveGateways201ResponseData) GetTypeOk() (*interface{}, bool) {
 
 // HasType returns a boolean if a field has been set.
 func (o *POSTAxerveGateways201ResponseData) HasType() bool {
-	if o != nil && IsNil(o.Type) {
+	if o != nil && o.Type != nil {
 		return true
 	}
 
@@ -113,9 +110,9 @@ func (o *POSTAxerveGateways201ResponseData) SetType(v interface{}) {
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *POSTAxerveGateways201ResponseData) GetLinks() POSTAddresses201ResponseDataLinks {
-	if o == nil || IsNil(o.Links) {
-		var ret POSTAddresses201ResponseDataLinks
+func (o *POSTAxerveGateways201ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks {
+	if o == nil || o.Links == nil {
+		var ret GETAddresses200ResponseDataInnerLinks
 		return ret
 	}
 	return *o.Links
@@ -123,8 +120,8 @@ func (o *POSTAxerveGateways201ResponseData) GetLinks() POSTAddresses201ResponseD
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTAxerveGateways201ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool) {
-	if o == nil || IsNil(o.Links) {
+func (o *POSTAxerveGateways201ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool) {
+	if o == nil || o.Links == nil {
 		return nil, false
 	}
 	return o.Links, true
@@ -132,22 +129,22 @@ func (o *POSTAxerveGateways201ResponseData) GetLinksOk() (*POSTAddresses201Respo
 
 // HasLinks returns a boolean if a field has been set.
 func (o *POSTAxerveGateways201ResponseData) HasLinks() bool {
-	if o != nil && !IsNil(o.Links) {
+	if o != nil && o.Links != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetLinks gets a reference to the given POSTAddresses201ResponseDataLinks and assigns it to the Links field.
-func (o *POSTAxerveGateways201ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks) {
+// SetLinks gets a reference to the given GETAddresses200ResponseDataInnerLinks and assigns it to the Links field.
+func (o *POSTAxerveGateways201ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks) {
 	o.Links = &v
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *POSTAxerveGateways201ResponseData) GetAttributes() POSTAxerveGatewaysRequestDataAttributes {
-	if o == nil || IsNil(o.Attributes) {
-		var ret POSTAxerveGatewaysRequestDataAttributes
+func (o *POSTAxerveGateways201ResponseData) GetAttributes() POSTAxerveGateways201ResponseDataAttributes {
+	if o == nil || o.Attributes == nil {
+		var ret POSTAxerveGateways201ResponseDataAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -155,8 +152,8 @@ func (o *POSTAxerveGateways201ResponseData) GetAttributes() POSTAxerveGatewaysRe
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTAxerveGateways201ResponseData) GetAttributesOk() (*POSTAxerveGatewaysRequestDataAttributes, bool) {
-	if o == nil || IsNil(o.Attributes) {
+func (o *POSTAxerveGateways201ResponseData) GetAttributesOk() (*POSTAxerveGateways201ResponseDataAttributes, bool) {
+	if o == nil || o.Attributes == nil {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -164,22 +161,22 @@ func (o *POSTAxerveGateways201ResponseData) GetAttributesOk() (*POSTAxerveGatewa
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *POSTAxerveGateways201ResponseData) HasAttributes() bool {
-	if o != nil && !IsNil(o.Attributes) {
+	if o != nil && o.Attributes != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given POSTAxerveGatewaysRequestDataAttributes and assigns it to the Attributes field.
-func (o *POSTAxerveGateways201ResponseData) SetAttributes(v POSTAxerveGatewaysRequestDataAttributes) {
+// SetAttributes gets a reference to the given POSTAxerveGateways201ResponseDataAttributes and assigns it to the Attributes field.
+func (o *POSTAxerveGateways201ResponseData) SetAttributes(v POSTAxerveGateways201ResponseDataAttributes) {
 	o.Attributes = &v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *POSTAxerveGateways201ResponseData) GetRelationships() POSTAxerveGateways201ResponseDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
-		var ret POSTAxerveGateways201ResponseDataRelationships
+func (o *POSTAxerveGateways201ResponseData) GetRelationships() GETAxerveGateways200ResponseDataInnerRelationships {
+	if o == nil || o.Relationships == nil {
+		var ret GETAxerveGateways200ResponseDataInnerRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -187,8 +184,8 @@ func (o *POSTAxerveGateways201ResponseData) GetRelationships() POSTAxerveGateway
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTAxerveGateways201ResponseData) GetRelationshipsOk() (*POSTAxerveGateways201ResponseDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+func (o *POSTAxerveGateways201ResponseData) GetRelationshipsOk() (*GETAxerveGateways200ResponseDataInnerRelationships, bool) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -196,27 +193,19 @@ func (o *POSTAxerveGateways201ResponseData) GetRelationshipsOk() (*POSTAxerveGat
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *POSTAxerveGateways201ResponseData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetRelationships gets a reference to the given POSTAxerveGateways201ResponseDataRelationships and assigns it to the Relationships field.
-func (o *POSTAxerveGateways201ResponseData) SetRelationships(v POSTAxerveGateways201ResponseDataRelationships) {
+// SetRelationships gets a reference to the given GETAxerveGateways200ResponseDataInnerRelationships and assigns it to the Relationships field.
+func (o *POSTAxerveGateways201ResponseData) SetRelationships(v GETAxerveGateways200ResponseDataInnerRelationships) {
 	o.Relationships = &v
 }
 
 func (o POSTAxerveGateways201ResponseData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o POSTAxerveGateways201ResponseData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
@@ -224,16 +213,16 @@ func (o POSTAxerveGateways201ResponseData) ToMap() (map[string]interface{}, erro
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if !IsNil(o.Links) {
+	if o.Links != nil {
 		toSerialize["links"] = o.Links
 	}
-	if !IsNil(o.Attributes) {
+	if o.Attributes != nil {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if !IsNil(o.Relationships) {
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePOSTAxerveGateways201ResponseData struct {

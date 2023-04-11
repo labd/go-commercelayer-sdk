@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *SatispayPaymentsApiService) DELETESatispayPaymentsSatispayPaymentIdExec
 	}
 
 	localVarPath := localBasePath + "/satispay_payments/{satispayPaymentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"satispayPaymentId"+"}", url.PathEscape(parameterValueToString(r.satispayPaymentId, "satispayPaymentId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"satispayPaymentId"+"}", url.PathEscape(parameterToString(r.satispayPaymentId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *SatispayPaymentsApiService) DELETESatispayPaymentsSatispayPaymentIdExec
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -156,7 +156,7 @@ func (a *SatispayPaymentsApiService) GETSatispayGatewayIdSatispayPaymentsExecute
 	}
 
 	localVarPath := localBasePath + "/satispay_gateways/{satispayGatewayId}/satispay_payments"
-	localVarPath = strings.Replace(localVarPath, "{"+"satispayGatewayId"+"}", url.PathEscape(parameterValueToString(r.satispayGatewayId, "satispayGatewayId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"satispayGatewayId"+"}", url.PathEscape(parameterToString(r.satispayGatewayId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *SatispayPaymentsApiService) GETSatispayGatewayIdSatispayPaymentsExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *SatispayPaymentsApiService) GETSatispayPaymentsExecute(r SatispayPaymen
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -351,7 +351,7 @@ func (a *SatispayPaymentsApiService) GETSatispayPaymentsSatispayPaymentIdExecute
 	}
 
 	localVarPath := localBasePath + "/satispay_payments/{satispayPaymentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"satispayPaymentId"+"}", url.PathEscape(parameterValueToString(r.satispayPaymentId, "satispayPaymentId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"satispayPaymentId"+"}", url.PathEscape(parameterToString(r.satispayPaymentId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *SatispayPaymentsApiService) GETSatispayPaymentsSatispayPaymentIdExecute
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -412,14 +412,14 @@ func (a *SatispayPaymentsApiService) GETSatispayPaymentsSatispayPaymentIdExecute
 }
 
 type SatispayPaymentsApiPATCHSatispayPaymentsSatispayPaymentIdRequest struct {
-	ctx                                           context.Context
-	ApiService                                    *SatispayPaymentsApiService
-	pATCHSatispayPaymentsSatispayPaymentIdRequest *PATCHSatispayPaymentsSatispayPaymentIdRequest
-	satispayPaymentId                             interface{}
+	ctx                   context.Context
+	ApiService            *SatispayPaymentsApiService
+	satispayPaymentUpdate *SatispayPaymentUpdate
+	satispayPaymentId     interface{}
 }
 
-func (r SatispayPaymentsApiPATCHSatispayPaymentsSatispayPaymentIdRequest) PATCHSatispayPaymentsSatispayPaymentIdRequest(pATCHSatispayPaymentsSatispayPaymentIdRequest PATCHSatispayPaymentsSatispayPaymentIdRequest) SatispayPaymentsApiPATCHSatispayPaymentsSatispayPaymentIdRequest {
-	r.pATCHSatispayPaymentsSatispayPaymentIdRequest = &pATCHSatispayPaymentsSatispayPaymentIdRequest
+func (r SatispayPaymentsApiPATCHSatispayPaymentsSatispayPaymentIdRequest) SatispayPaymentUpdate(satispayPaymentUpdate SatispayPaymentUpdate) SatispayPaymentsApiPATCHSatispayPaymentsSatispayPaymentIdRequest {
+	r.satispayPaymentUpdate = &satispayPaymentUpdate
 	return r
 }
 
@@ -461,13 +461,13 @@ func (a *SatispayPaymentsApiService) PATCHSatispayPaymentsSatispayPaymentIdExecu
 	}
 
 	localVarPath := localBasePath + "/satispay_payments/{satispayPaymentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"satispayPaymentId"+"}", url.PathEscape(parameterValueToString(r.satispayPaymentId, "satispayPaymentId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"satispayPaymentId"+"}", url.PathEscape(parameterToString(r.satispayPaymentId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHSatispayPaymentsSatispayPaymentIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHSatispayPaymentsSatispayPaymentIdRequest is required and must be specified")
+	if r.satispayPaymentUpdate == nil {
+		return localVarReturnValue, nil, reportError("satispayPaymentUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -488,7 +488,7 @@ func (a *SatispayPaymentsApiService) PATCHSatispayPaymentsSatispayPaymentIdExecu
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHSatispayPaymentsSatispayPaymentIdRequest
+	localVarPostBody = r.satispayPaymentUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -499,9 +499,9 @@ func (a *SatispayPaymentsApiService) PATCHSatispayPaymentsSatispayPaymentIdExecu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -527,13 +527,13 @@ func (a *SatispayPaymentsApiService) PATCHSatispayPaymentsSatispayPaymentIdExecu
 }
 
 type SatispayPaymentsApiPOSTSatispayPaymentsRequest struct {
-	ctx                         context.Context
-	ApiService                  *SatispayPaymentsApiService
-	pOSTSatispayPaymentsRequest *POSTSatispayPaymentsRequest
+	ctx                   context.Context
+	ApiService            *SatispayPaymentsApiService
+	satispayPaymentCreate *SatispayPaymentCreate
 }
 
-func (r SatispayPaymentsApiPOSTSatispayPaymentsRequest) POSTSatispayPaymentsRequest(pOSTSatispayPaymentsRequest POSTSatispayPaymentsRequest) SatispayPaymentsApiPOSTSatispayPaymentsRequest {
-	r.pOSTSatispayPaymentsRequest = &pOSTSatispayPaymentsRequest
+func (r SatispayPaymentsApiPOSTSatispayPaymentsRequest) SatispayPaymentCreate(satispayPaymentCreate SatispayPaymentCreate) SatispayPaymentsApiPOSTSatispayPaymentsRequest {
+	r.satispayPaymentCreate = &satispayPaymentCreate
 	return r
 }
 
@@ -577,8 +577,8 @@ func (a *SatispayPaymentsApiService) POSTSatispayPaymentsExecute(r SatispayPayme
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTSatispayPaymentsRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTSatispayPaymentsRequest is required and must be specified")
+	if r.satispayPaymentCreate == nil {
+		return localVarReturnValue, nil, reportError("satispayPaymentCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -599,7 +599,7 @@ func (a *SatispayPaymentsApiService) POSTSatispayPaymentsExecute(r SatispayPayme
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTSatispayPaymentsRequest
+	localVarPostBody = r.satispayPaymentCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -610,9 +610,9 @@ func (a *SatispayPaymentsApiService) POSTSatispayPaymentsExecute(r SatispayPayme
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200Response{}
-
 // PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200Response struct for PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200Response
 type PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200Response struct {
 	Data *PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseWit
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200Response) GetData() PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200Response) 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200Response) GetDataOk() (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200Response) 
 
 // HasData returns a boolean if a field has been set.
 func (o *PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200Response) 
 }
 
 func (o PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePATCHBillingInfoValidationRulesBillingInfoValidationRuleId200Response struct {

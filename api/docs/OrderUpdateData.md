@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
 **Id** | **interface{}** | The resource&#39;s id | 
-**Attributes** | [**PATCHOrdersOrderIdRequestDataAttributes**](PATCHOrdersOrderIdRequestDataAttributes.md) |  | 
+**Attributes** | [**PATCHOrdersOrderId200ResponseDataAttributes**](PATCHOrdersOrderId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**OrderCreateDataRelationships**](OrderCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewOrderUpdateData
 
-`func NewOrderUpdateData(type_ interface{}, id interface{}, attributes PATCHOrdersOrderIdRequestDataAttributes, ) *OrderUpdateData`
+`func NewOrderUpdateData(type_ interface{}, id interface{}, attributes PATCHOrdersOrderId200ResponseDataAttributes, ) *OrderUpdateData`
 
 NewOrderUpdateData instantiates a new OrderUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -90,20 +90,20 @@ SetId sets Id field to given value.
 UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetAttributes
 
-`func (o *OrderUpdateData) GetAttributes() PATCHOrdersOrderIdRequestDataAttributes`
+`func (o *OrderUpdateData) GetAttributes() PATCHOrdersOrderId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *OrderUpdateData) GetAttributesOk() (*PATCHOrdersOrderIdRequestDataAttributes, bool)`
+`func (o *OrderUpdateData) GetAttributesOk() (*PATCHOrdersOrderId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *OrderUpdateData) SetAttributes(v PATCHOrdersOrderIdRequestDataAttributes)`
+`func (o *OrderUpdateData) SetAttributes(v PATCHOrdersOrderId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

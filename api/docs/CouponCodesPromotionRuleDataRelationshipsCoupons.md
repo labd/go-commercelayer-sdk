@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**POSTCouponCodesPromotionRulesRequestDataRelationshipsCouponsData**](POSTCouponCodesPromotionRulesRequestDataRelationshipsCouponsData.md) |  | [optional] 
+**Data** | Pointer to [**CouponCodesPromotionRuleDataRelationshipsCouponsData**](CouponCodesPromotionRuleDataRelationshipsCouponsData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *CouponCodesPromotionRuleDataRelationshipsCoupons) GetData() POSTCouponCodesPromotionRulesRequestDataRelationshipsCouponsData`
+`func (o *CouponCodesPromotionRuleDataRelationshipsCoupons) GetData() CouponCodesPromotionRuleDataRelationshipsCouponsData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *CouponCodesPromotionRuleDataRelationshipsCoupons) GetDataOk() (*POSTCouponCodesPromotionRulesRequestDataRelationshipsCouponsData, bool)`
+`func (o *CouponCodesPromotionRuleDataRelationshipsCoupons) GetDataOk() (*CouponCodesPromotionRuleDataRelationshipsCouponsData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *CouponCodesPromotionRuleDataRelationshipsCoupons) SetData(v POSTCouponCodesPromotionRulesRequestDataRelationshipsCouponsData)`
+`func (o *CouponCodesPromotionRuleDataRelationshipsCoupons) SetData(v CouponCodesPromotionRuleDataRelationshipsCouponsData)`
 
 SetData sets Data field to given value.
 

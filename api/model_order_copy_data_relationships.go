@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the OrderCopyDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &OrderCopyDataRelationships{}
-
 // OrderCopyDataRelationships struct for OrderCopyDataRelationships
 type OrderCopyDataRelationships struct {
 	SourceOrder       *AdyenPaymentDataRelationshipsOrder          `json:"source_order,omitempty"`
@@ -45,7 +42,7 @@ func NewOrderCopyDataRelationshipsWithDefaults() *OrderCopyDataRelationships {
 
 // GetSourceOrder returns the SourceOrder field value if set, zero value otherwise.
 func (o *OrderCopyDataRelationships) GetSourceOrder() AdyenPaymentDataRelationshipsOrder {
-	if o == nil || IsNil(o.SourceOrder) {
+	if o == nil || o.SourceOrder == nil {
 		var ret AdyenPaymentDataRelationshipsOrder
 		return ret
 	}
@@ -55,7 +52,7 @@ func (o *OrderCopyDataRelationships) GetSourceOrder() AdyenPaymentDataRelationsh
 // GetSourceOrderOk returns a tuple with the SourceOrder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OrderCopyDataRelationships) GetSourceOrderOk() (*AdyenPaymentDataRelationshipsOrder, bool) {
-	if o == nil || IsNil(o.SourceOrder) {
+	if o == nil || o.SourceOrder == nil {
 		return nil, false
 	}
 	return o.SourceOrder, true
@@ -63,7 +60,7 @@ func (o *OrderCopyDataRelationships) GetSourceOrderOk() (*AdyenPaymentDataRelati
 
 // HasSourceOrder returns a boolean if a field has been set.
 func (o *OrderCopyDataRelationships) HasSourceOrder() bool {
-	if o != nil && !IsNil(o.SourceOrder) {
+	if o != nil && o.SourceOrder != nil {
 		return true
 	}
 
@@ -77,7 +74,7 @@ func (o *OrderCopyDataRelationships) SetSourceOrder(v AdyenPaymentDataRelationsh
 
 // GetTargetOrder returns the TargetOrder field value if set, zero value otherwise.
 func (o *OrderCopyDataRelationships) GetTargetOrder() AdyenPaymentDataRelationshipsOrder {
-	if o == nil || IsNil(o.TargetOrder) {
+	if o == nil || o.TargetOrder == nil {
 		var ret AdyenPaymentDataRelationshipsOrder
 		return ret
 	}
@@ -87,7 +84,7 @@ func (o *OrderCopyDataRelationships) GetTargetOrder() AdyenPaymentDataRelationsh
 // GetTargetOrderOk returns a tuple with the TargetOrder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OrderCopyDataRelationships) GetTargetOrderOk() (*AdyenPaymentDataRelationshipsOrder, bool) {
-	if o == nil || IsNil(o.TargetOrder) {
+	if o == nil || o.TargetOrder == nil {
 		return nil, false
 	}
 	return o.TargetOrder, true
@@ -95,7 +92,7 @@ func (o *OrderCopyDataRelationships) GetTargetOrderOk() (*AdyenPaymentDataRelati
 
 // HasTargetOrder returns a boolean if a field has been set.
 func (o *OrderCopyDataRelationships) HasTargetOrder() bool {
-	if o != nil && !IsNil(o.TargetOrder) {
+	if o != nil && o.TargetOrder != nil {
 		return true
 	}
 
@@ -109,7 +106,7 @@ func (o *OrderCopyDataRelationships) SetTargetOrder(v AdyenPaymentDataRelationsh
 
 // GetEvents returns the Events field value if set, zero value otherwise.
 func (o *OrderCopyDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || o.Events == nil {
 		var ret AuthorizationDataRelationshipsEvents
 		return ret
 	}
@@ -119,7 +116,7 @@ func (o *OrderCopyDataRelationships) GetEvents() AuthorizationDataRelationshipsE
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OrderCopyDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
-	if o == nil || IsNil(o.Events) {
+	if o == nil || o.Events == nil {
 		return nil, false
 	}
 	return o.Events, true
@@ -127,7 +124,7 @@ func (o *OrderCopyDataRelationships) GetEventsOk() (*AuthorizationDataRelationsh
 
 // HasEvents returns a boolean if a field has been set.
 func (o *OrderCopyDataRelationships) HasEvents() bool {
-	if o != nil && !IsNil(o.Events) {
+	if o != nil && o.Events != nil {
 		return true
 	}
 
@@ -141,7 +138,7 @@ func (o *OrderCopyDataRelationships) SetEvents(v AuthorizationDataRelationshipsE
 
 // GetOrderSubscription returns the OrderSubscription field value if set, zero value otherwise.
 func (o *OrderCopyDataRelationships) GetOrderSubscription() CustomerDataRelationshipsOrderSubscriptions {
-	if o == nil || IsNil(o.OrderSubscription) {
+	if o == nil || o.OrderSubscription == nil {
 		var ret CustomerDataRelationshipsOrderSubscriptions
 		return ret
 	}
@@ -151,7 +148,7 @@ func (o *OrderCopyDataRelationships) GetOrderSubscription() CustomerDataRelation
 // GetOrderSubscriptionOk returns a tuple with the OrderSubscription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OrderCopyDataRelationships) GetOrderSubscriptionOk() (*CustomerDataRelationshipsOrderSubscriptions, bool) {
-	if o == nil || IsNil(o.OrderSubscription) {
+	if o == nil || o.OrderSubscription == nil {
 		return nil, false
 	}
 	return o.OrderSubscription, true
@@ -159,7 +156,7 @@ func (o *OrderCopyDataRelationships) GetOrderSubscriptionOk() (*CustomerDataRela
 
 // HasOrderSubscription returns a boolean if a field has been set.
 func (o *OrderCopyDataRelationships) HasOrderSubscription() bool {
-	if o != nil && !IsNil(o.OrderSubscription) {
+	if o != nil && o.OrderSubscription != nil {
 		return true
 	}
 
@@ -172,28 +169,20 @@ func (o *OrderCopyDataRelationships) SetOrderSubscription(v CustomerDataRelation
 }
 
 func (o OrderCopyDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o OrderCopyDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.SourceOrder) {
+	if o.SourceOrder != nil {
 		toSerialize["source_order"] = o.SourceOrder
 	}
-	if !IsNil(o.TargetOrder) {
+	if o.TargetOrder != nil {
 		toSerialize["target_order"] = o.TargetOrder
 	}
-	if !IsNil(o.Events) {
+	if o.Events != nil {
 		toSerialize["events"] = o.Events
 	}
-	if !IsNil(o.OrderSubscription) {
+	if o.OrderSubscription != nil {
 		toSerialize["order_subscription"] = o.OrderSubscription
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableOrderCopyDataRelationships struct {

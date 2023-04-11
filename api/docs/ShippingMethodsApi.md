@@ -34,7 +34,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -42,7 +42,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ShippingMethodsApi.DELETEShippingMethodsShippingMethodId(context.Background(), shippingMethodId).Execute()
+    resp, r, err := apiClient.ShippingMethodsApi.DELETEShippingMethodsShippingMethodId(context.Background(), shippingMethodId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodsApi.DELETEShippingMethodsShippingMethodId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -102,7 +102,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -110,7 +110,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ShippingMethodsApi.GETDeliveryLeadTimeIdShippingMethod(context.Background(), deliveryLeadTimeId).Execute()
+    resp, r, err := apiClient.ShippingMethodsApi.GETDeliveryLeadTimeIdShippingMethod(context.Background(), deliveryLeadTimeId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodsApi.GETDeliveryLeadTimeIdShippingMethod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -170,7 +170,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -178,7 +178,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ShippingMethodsApi.GETShipmentIdAvailableShippingMethods(context.Background(), shipmentId).Execute()
+    resp, r, err := apiClient.ShippingMethodsApi.GETShipmentIdAvailableShippingMethods(context.Background(), shipmentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodsApi.GETShipmentIdAvailableShippingMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -238,7 +238,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -246,7 +246,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ShippingMethodsApi.GETShipmentIdShippingMethod(context.Background(), shipmentId).Execute()
+    resp, r, err := apiClient.ShippingMethodsApi.GETShipmentIdShippingMethod(context.Background(), shipmentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodsApi.GETShipmentIdShippingMethod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -306,7 +306,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -314,7 +314,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ShippingMethodsApi.GETShippingMethodTierIdShippingMethod(context.Background(), shippingMethodTierId).Execute()
+    resp, r, err := apiClient.ShippingMethodsApi.GETShippingMethodTierIdShippingMethod(context.Background(), shippingMethodTierId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodsApi.GETShippingMethodTierIdShippingMethod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -374,7 +374,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -435,7 +435,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -505,7 +505,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -513,7 +513,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ShippingMethodsApi.GETShippingWeightTierIdShippingMethod(context.Background(), shippingWeightTierId).Execute()
+    resp, r, err := apiClient.ShippingMethodsApi.GETShippingWeightTierIdShippingMethod(context.Background(), shippingWeightTierId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodsApi.GETShippingWeightTierIdShippingMethod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -558,7 +558,7 @@ Name | Type | Description  | Notes
 
 ## PATCHShippingMethodsShippingMethodId
 
-> PATCHShippingMethodsShippingMethodId200Response PATCHShippingMethodsShippingMethodId(ctx, shippingMethodId).PATCHShippingMethodsShippingMethodIdRequest(pATCHShippingMethodsShippingMethodIdRequest).Execute()
+> PATCHShippingMethodsShippingMethodId200Response PATCHShippingMethodsShippingMethodId(ctx, shippingMethodId).ShippingMethodUpdate(shippingMethodUpdate).Execute()
 
 Update a shipping method
 
@@ -573,16 +573,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHShippingMethodsShippingMethodIdRequest := *openapiclient.NewPATCHShippingMethodsShippingMethodIdRequest(*openapiclient.NewPATCHShippingMethodsShippingMethodIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHShippingMethodsShippingMethodIdRequestDataAttributes())) // PATCHShippingMethodsShippingMethodIdRequest | 
+    shippingMethodUpdate := *openapiclient.NewShippingMethodUpdate(*openapiclient.NewShippingMethodUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHShippingMethodsShippingMethodId200ResponseDataAttributes())) // ShippingMethodUpdate | 
     shippingMethodId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShippingMethodsApi.PATCHShippingMethodsShippingMethodId(context.Background(), shippingMethodId).PATCHShippingMethodsShippingMethodIdRequest(pATCHShippingMethodsShippingMethodIdRequest).Execute()
+    resp, r, err := apiClient.ShippingMethodsApi.PATCHShippingMethodsShippingMethodId(context.Background(), shippingMethodId).ShippingMethodUpdate(shippingMethodUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodsApi.PATCHShippingMethodsShippingMethodId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -607,7 +607,7 @@ Other parameters are passed through a pointer to a apiPATCHShippingMethodsShippi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHShippingMethodsShippingMethodIdRequest** | [**PATCHShippingMethodsShippingMethodIdRequest**](PATCHShippingMethodsShippingMethodIdRequest.md) |  | 
+ **shippingMethodUpdate** | [**ShippingMethodUpdate**](ShippingMethodUpdate.md) |  | 
 
 
 ### Return type
@@ -630,7 +630,7 @@ Name | Type | Description  | Notes
 
 ## POSTShippingMethods
 
-> POSTShippingMethods201Response POSTShippingMethods(ctx).POSTShippingMethodsRequest(pOSTShippingMethodsRequest).Execute()
+> POSTShippingMethods201Response POSTShippingMethods(ctx).ShippingMethodCreate(shippingMethodCreate).Execute()
 
 Create a shipping method
 
@@ -645,15 +645,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTShippingMethodsRequest := *openapiclient.NewPOSTShippingMethodsRequest(*openapiclient.NewPOSTShippingMethodsRequestData(interface{}(123), *openapiclient.NewPOSTShippingMethodsRequestDataAttributes(interface{}(Standard shipping), interface{}(1000)))) // POSTShippingMethodsRequest | 
+    shippingMethodCreate := *openapiclient.NewShippingMethodCreate(*openapiclient.NewShippingMethodCreateData(interface{}(123), *openapiclient.NewPOSTShippingMethods201ResponseDataAttributes(interface{}(Standard shipping), interface{}(1000)))) // ShippingMethodCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShippingMethodsApi.POSTShippingMethods(context.Background()).POSTShippingMethodsRequest(pOSTShippingMethodsRequest).Execute()
+    resp, r, err := apiClient.ShippingMethodsApi.POSTShippingMethods(context.Background()).ShippingMethodCreate(shippingMethodCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodsApi.POSTShippingMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -674,7 +674,7 @@ Other parameters are passed through a pointer to a apiPOSTShippingMethodsRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTShippingMethodsRequest** | [**POSTShippingMethodsRequest**](POSTShippingMethodsRequest.md) |  | 
+ **shippingMethodCreate** | [**ShippingMethodCreate**](ShippingMethodCreate.md) |  | 
 
 ### Return type
 

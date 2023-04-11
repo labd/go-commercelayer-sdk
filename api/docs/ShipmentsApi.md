@@ -31,7 +31,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -39,7 +39,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ShipmentsApi.GETOrderIdShipments(context.Background(), orderId).Execute()
+    resp, r, err := apiClient.ShipmentsApi.GETOrderIdShipments(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShipmentsApi.GETOrderIdShipments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -99,7 +99,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -107,7 +107,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ShipmentsApi.GETParcelIdShipment(context.Background(), parcelId).Execute()
+    resp, r, err := apiClient.ShipmentsApi.GETParcelIdShipment(context.Background(), parcelId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShipmentsApi.GETParcelIdShipment``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -167,7 +167,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -228,7 +228,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -298,7 +298,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -306,7 +306,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ShipmentsApi.GETStockLineItemIdShipment(context.Background(), stockLineItemId).Execute()
+    resp, r, err := apiClient.ShipmentsApi.GETStockLineItemIdShipment(context.Background(), stockLineItemId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShipmentsApi.GETStockLineItemIdShipment``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -366,7 +366,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -374,7 +374,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ShipmentsApi.GETStockTransferIdShipment(context.Background(), stockTransferId).Execute()
+    resp, r, err := apiClient.ShipmentsApi.GETStockTransferIdShipment(context.Background(), stockTransferId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShipmentsApi.GETStockTransferIdShipment``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -419,7 +419,7 @@ Name | Type | Description  | Notes
 
 ## PATCHShipmentsShipmentId
 
-> PATCHShipmentsShipmentId200Response PATCHShipmentsShipmentId(ctx, shipmentId).PATCHShipmentsShipmentIdRequest(pATCHShipmentsShipmentIdRequest).Execute()
+> PATCHShipmentsShipmentId200Response PATCHShipmentsShipmentId(ctx, shipmentId).ShipmentUpdate(shipmentUpdate).Execute()
 
 Update a shipment
 
@@ -434,16 +434,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHShipmentsShipmentIdRequest := *openapiclient.NewPATCHShipmentsShipmentIdRequest(*openapiclient.NewPATCHShipmentsShipmentIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHShipmentsShipmentIdRequestDataAttributes())) // PATCHShipmentsShipmentIdRequest | 
+    shipmentUpdate := *openapiclient.NewShipmentUpdate(*openapiclient.NewShipmentUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHShipmentsShipmentId200ResponseDataAttributes())) // ShipmentUpdate | 
     shipmentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShipmentsApi.PATCHShipmentsShipmentId(context.Background(), shipmentId).PATCHShipmentsShipmentIdRequest(pATCHShipmentsShipmentIdRequest).Execute()
+    resp, r, err := apiClient.ShipmentsApi.PATCHShipmentsShipmentId(context.Background(), shipmentId).ShipmentUpdate(shipmentUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShipmentsApi.PATCHShipmentsShipmentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -468,7 +468,7 @@ Other parameters are passed through a pointer to a apiPATCHShipmentsShipmentIdRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHShipmentsShipmentIdRequest** | [**PATCHShipmentsShipmentIdRequest**](PATCHShipmentsShipmentIdRequest.md) |  | 
+ **shipmentUpdate** | [**ShipmentUpdate**](ShipmentUpdate.md) |  | 
 
 
 ### Return type

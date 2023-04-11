@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -96,9 +96,9 @@ func (a *PromotionRulesApiService) GETPromotionRulesExecute(r PromotionRulesApiG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -167,7 +167,7 @@ func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleIdExecute(r Pro
 	}
 
 	localVarPath := localBasePath + "/promotion_rules/{promotionRuleId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"promotionRuleId"+"}", url.PathEscape(parameterValueToString(r.promotionRuleId, "promotionRuleId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"promotionRuleId"+"}", url.PathEscape(parameterToString(r.promotionRuleId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -200,9 +200,9 @@ func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleIdExecute(r Pro
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

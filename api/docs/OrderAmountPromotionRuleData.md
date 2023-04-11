@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes**](GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**GETOrderAmountPromotionRules200ResponseDataInnerAttributes**](GETOrderAmountPromotionRules200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**OrderAmountPromotionRuleDataRelationships**](OrderAmountPromotionRuleDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewOrderAmountPromotionRuleData
 
-`func NewOrderAmountPromotionRuleData(type_ interface{}, attributes GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes, ) *OrderAmountPromotionRuleData`
+`func NewOrderAmountPromotionRuleData(type_ interface{}, attributes GETOrderAmountPromotionRules200ResponseDataInnerAttributes, ) *OrderAmountPromotionRuleData`
 
 NewOrderAmountPromotionRuleData instantiates a new OrderAmountPromotionRuleData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *OrderAmountPromotionRuleData) GetAttributes() GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes`
+`func (o *OrderAmountPromotionRuleData) GetAttributes() GETOrderAmountPromotionRules200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *OrderAmountPromotionRuleData) GetAttributesOk() (*GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes, bool)`
+`func (o *OrderAmountPromotionRuleData) GetAttributesOk() (*GETOrderAmountPromotionRules200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *OrderAmountPromotionRuleData) SetAttributes(v GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes)`
+`func (o *OrderAmountPromotionRuleData) SetAttributes(v GETOrderAmountPromotionRules200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

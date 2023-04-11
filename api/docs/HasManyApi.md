@@ -210,7 +210,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -218,7 +218,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETAdyenGatewayIdAdyenPayments(context.Background(), adyenGatewayId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETAdyenGatewayIdAdyenPayments(context.Background(), adyenGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETAdyenGatewayIdAdyenPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -278,7 +278,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -286,7 +286,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETAdyenGatewayIdPaymentMethods(context.Background(), adyenGatewayId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETAdyenGatewayIdPaymentMethods(context.Background(), adyenGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETAdyenGatewayIdPaymentMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -346,7 +346,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -354,7 +354,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETAuthorizationIdCaptures(context.Background(), authorizationId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETAuthorizationIdCaptures(context.Background(), authorizationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETAuthorizationIdCaptures``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -414,7 +414,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -422,7 +422,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETAuthorizationIdEvents(context.Background(), authorizationId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETAuthorizationIdEvents(context.Background(), authorizationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETAuthorizationIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -482,7 +482,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -490,7 +490,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETAuthorizationIdVoids(context.Background(), authorizationId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETAuthorizationIdVoids(context.Background(), authorizationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETAuthorizationIdVoids``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -550,7 +550,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -558,7 +558,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETAvalaraAccountIdAttachments(context.Background(), avalaraAccountId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETAvalaraAccountIdAttachments(context.Background(), avalaraAccountId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETAvalaraAccountIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -618,7 +618,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -626,7 +626,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETAvalaraAccountIdMarkets(context.Background(), avalaraAccountId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETAvalaraAccountIdMarkets(context.Background(), avalaraAccountId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETAvalaraAccountIdMarkets``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -686,7 +686,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -694,7 +694,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETAvalaraAccountIdTaxCategories(context.Background(), avalaraAccountId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETAvalaraAccountIdTaxCategories(context.Background(), avalaraAccountId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETAvalaraAccountIdTaxCategories``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -754,7 +754,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -762,7 +762,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETAxerveGatewayIdAxervePayments(context.Background(), axerveGatewayId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETAxerveGatewayIdAxervePayments(context.Background(), axerveGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETAxerveGatewayIdAxervePayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -822,7 +822,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -830,7 +830,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETAxerveGatewayIdPaymentMethods(context.Background(), axerveGatewayId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETAxerveGatewayIdPaymentMethods(context.Background(), axerveGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETAxerveGatewayIdPaymentMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -890,7 +890,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -898,7 +898,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETBillingInfoValidationRuleIdAttachments(context.Background(), billingInfoValidationRuleId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETBillingInfoValidationRuleIdAttachments(context.Background(), billingInfoValidationRuleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETBillingInfoValidationRuleIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -958,7 +958,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -966,7 +966,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETBingGeocoderIdAddresses(context.Background(), bingGeocoderId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETBingGeocoderIdAddresses(context.Background(), bingGeocoderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETBingGeocoderIdAddresses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1026,7 +1026,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -1034,7 +1034,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETBingGeocoderIdAttachments(context.Background(), bingGeocoderId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETBingGeocoderIdAttachments(context.Background(), bingGeocoderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETBingGeocoderIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1094,7 +1094,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -1102,7 +1102,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETBraintreeGatewayIdBraintreePayments(context.Background(), braintreeGatewayId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETBraintreeGatewayIdBraintreePayments(context.Background(), braintreeGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETBraintreeGatewayIdBraintreePayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1162,7 +1162,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -1170,7 +1170,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETBraintreeGatewayIdPaymentMethods(context.Background(), braintreeGatewayId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETBraintreeGatewayIdPaymentMethods(context.Background(), braintreeGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETBraintreeGatewayIdPaymentMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1230,7 +1230,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -1238,7 +1238,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETBundleIdAttachments(context.Background(), bundleId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETBundleIdAttachments(context.Background(), bundleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETBundleIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1298,7 +1298,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -1306,7 +1306,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETBundleIdSkus(context.Background(), bundleId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETBundleIdSkus(context.Background(), bundleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETBundleIdSkus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1366,7 +1366,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -1374,7 +1374,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETCaptureIdEvents(context.Background(), captureId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETCaptureIdEvents(context.Background(), captureId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCaptureIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1434,7 +1434,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -1442,7 +1442,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETCaptureIdRefunds(context.Background(), captureId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETCaptureIdRefunds(context.Background(), captureId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCaptureIdRefunds``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1502,7 +1502,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -1510,7 +1510,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETCarrierAccountIdAttachments(context.Background(), carrierAccountId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETCarrierAccountIdAttachments(context.Background(), carrierAccountId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCarrierAccountIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1570,7 +1570,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -1578,7 +1578,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETCheckoutComGatewayIdCheckoutComPayments(context.Background(), checkoutComGatewayId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETCheckoutComGatewayIdCheckoutComPayments(context.Background(), checkoutComGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCheckoutComGatewayIdCheckoutComPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1638,7 +1638,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -1646,7 +1646,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETCheckoutComGatewayIdPaymentMethods(context.Background(), checkoutComGatewayId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETCheckoutComGatewayIdPaymentMethods(context.Background(), checkoutComGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCheckoutComGatewayIdPaymentMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1706,7 +1706,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -1714,7 +1714,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETCleanupIdEvents(context.Background(), cleanupId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETCleanupIdEvents(context.Background(), cleanupId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCleanupIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1774,7 +1774,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -1782,7 +1782,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETCouponCodesPromotionRuleIdCoupons(context.Background(), couponCodesPromotionRuleId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETCouponCodesPromotionRuleIdCoupons(context.Background(), couponCodesPromotionRuleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCouponCodesPromotionRuleIdCoupons``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1842,7 +1842,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -1850,7 +1850,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETCouponRecipientIdAttachments(context.Background(), couponRecipientId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETCouponRecipientIdAttachments(context.Background(), couponRecipientId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCouponRecipientIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1910,7 +1910,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -1918,7 +1918,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETCustomerAddressIdEvents(context.Background(), customerAddressId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETCustomerAddressIdEvents(context.Background(), customerAddressId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCustomerAddressIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1978,7 +1978,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -1986,7 +1986,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETCustomerGroupIdAttachments(context.Background(), customerGroupId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETCustomerGroupIdAttachments(context.Background(), customerGroupId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCustomerGroupIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2046,7 +2046,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -2054,7 +2054,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETCustomerGroupIdCustomers(context.Background(), customerGroupId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETCustomerGroupIdCustomers(context.Background(), customerGroupId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCustomerGroupIdCustomers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2114,7 +2114,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -2122,7 +2122,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETCustomerGroupIdMarkets(context.Background(), customerGroupId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETCustomerGroupIdMarkets(context.Background(), customerGroupId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCustomerGroupIdMarkets``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2182,7 +2182,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -2190,7 +2190,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETCustomerIdAttachments(context.Background(), customerId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETCustomerIdAttachments(context.Background(), customerId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCustomerIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2250,7 +2250,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -2258,7 +2258,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETCustomerIdCustomerAddresses(context.Background(), customerId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETCustomerIdCustomerAddresses(context.Background(), customerId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCustomerIdCustomerAddresses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2318,7 +2318,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -2326,7 +2326,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETCustomerIdCustomerPaymentSources(context.Background(), customerId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETCustomerIdCustomerPaymentSources(context.Background(), customerId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCustomerIdCustomerPaymentSources``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2386,7 +2386,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -2394,7 +2394,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETCustomerIdCustomerSubscriptions(context.Background(), customerId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETCustomerIdCustomerSubscriptions(context.Background(), customerId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCustomerIdCustomerSubscriptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2454,7 +2454,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -2462,7 +2462,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETCustomerIdEvents(context.Background(), customerId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETCustomerIdEvents(context.Background(), customerId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCustomerIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2522,7 +2522,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -2530,7 +2530,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETCustomerIdOrderSubscriptions(context.Background(), customerId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETCustomerIdOrderSubscriptions(context.Background(), customerId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCustomerIdOrderSubscriptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2590,7 +2590,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -2598,7 +2598,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETCustomerIdOrders(context.Background(), customerId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETCustomerIdOrders(context.Background(), customerId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCustomerIdOrders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2658,7 +2658,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -2666,7 +2666,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETCustomerIdReturns(context.Background(), customerId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETCustomerIdReturns(context.Background(), customerId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCustomerIdReturns``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2726,7 +2726,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -2734,7 +2734,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETCustomerIdSkuLists(context.Background(), customerId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETCustomerIdSkuLists(context.Background(), customerId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCustomerIdSkuLists``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2794,7 +2794,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -2802,7 +2802,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETCustomerPasswordResetIdEvents(context.Background(), customerPasswordResetId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETCustomerPasswordResetIdEvents(context.Background(), customerPasswordResetId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCustomerPasswordResetIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2862,7 +2862,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -2870,7 +2870,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETCustomerSubscriptionIdEvents(context.Background(), customerSubscriptionId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETCustomerSubscriptionIdEvents(context.Background(), customerSubscriptionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETCustomerSubscriptionIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2930,7 +2930,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -2938,7 +2938,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETDeliveryLeadTimeIdAttachments(context.Background(), deliveryLeadTimeId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETDeliveryLeadTimeIdAttachments(context.Background(), deliveryLeadTimeId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETDeliveryLeadTimeIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2998,7 +2998,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -3006,7 +3006,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETEventIdLastEventCallbacks(context.Background(), eventId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETEventIdLastEventCallbacks(context.Background(), eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETEventIdLastEventCallbacks``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3066,7 +3066,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -3074,7 +3074,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETEventIdWebhooks(context.Background(), eventId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETEventIdWebhooks(context.Background(), eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETEventIdWebhooks``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3134,7 +3134,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -3142,7 +3142,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETExportIdEvents(context.Background(), exportId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETExportIdEvents(context.Background(), exportId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETExportIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3202,7 +3202,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -3210,7 +3210,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETExternalGatewayIdExternalPayments(context.Background(), externalGatewayId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETExternalGatewayIdExternalPayments(context.Background(), externalGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETExternalGatewayIdExternalPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3270,7 +3270,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -3278,7 +3278,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETExternalGatewayIdPaymentMethods(context.Background(), externalGatewayId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETExternalGatewayIdPaymentMethods(context.Background(), externalGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETExternalGatewayIdPaymentMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3338,7 +3338,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -3346,7 +3346,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETExternalPromotionIdAttachments(context.Background(), externalPromotionId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETExternalPromotionIdAttachments(context.Background(), externalPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETExternalPromotionIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3406,7 +3406,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -3414,7 +3414,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETExternalPromotionIdEvents(context.Background(), externalPromotionId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETExternalPromotionIdEvents(context.Background(), externalPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETExternalPromotionIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3474,7 +3474,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -3482,7 +3482,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETExternalTaxCalculatorIdAttachments(context.Background(), externalTaxCalculatorId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETExternalTaxCalculatorIdAttachments(context.Background(), externalTaxCalculatorId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETExternalTaxCalculatorIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3542,7 +3542,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -3550,7 +3550,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETExternalTaxCalculatorIdMarkets(context.Background(), externalTaxCalculatorId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETExternalTaxCalculatorIdMarkets(context.Background(), externalTaxCalculatorId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETExternalTaxCalculatorIdMarkets``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3610,7 +3610,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -3618,7 +3618,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETFixedAmountPromotionIdAttachments(context.Background(), fixedAmountPromotionId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETFixedAmountPromotionIdAttachments(context.Background(), fixedAmountPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETFixedAmountPromotionIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3678,7 +3678,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -3686,7 +3686,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETFixedAmountPromotionIdEvents(context.Background(), fixedAmountPromotionId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETFixedAmountPromotionIdEvents(context.Background(), fixedAmountPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETFixedAmountPromotionIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3746,7 +3746,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -3754,7 +3754,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETFixedPricePromotionIdAttachments(context.Background(), fixedPricePromotionId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETFixedPricePromotionIdAttachments(context.Background(), fixedPricePromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETFixedPricePromotionIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3814,7 +3814,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -3822,7 +3822,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETFixedPricePromotionIdEvents(context.Background(), fixedPricePromotionId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETFixedPricePromotionIdEvents(context.Background(), fixedPricePromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETFixedPricePromotionIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3882,7 +3882,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -3890,7 +3890,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETFixedPricePromotionIdSkus(context.Background(), fixedPricePromotionId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETFixedPricePromotionIdSkus(context.Background(), fixedPricePromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETFixedPricePromotionIdSkus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3950,7 +3950,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -3958,7 +3958,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETFreeGiftPromotionIdAttachments(context.Background(), freeGiftPromotionId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETFreeGiftPromotionIdAttachments(context.Background(), freeGiftPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETFreeGiftPromotionIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4018,7 +4018,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -4026,7 +4026,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETFreeGiftPromotionIdEvents(context.Background(), freeGiftPromotionId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETFreeGiftPromotionIdEvents(context.Background(), freeGiftPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETFreeGiftPromotionIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4086,7 +4086,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -4094,7 +4094,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETFreeGiftPromotionIdSkus(context.Background(), freeGiftPromotionId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETFreeGiftPromotionIdSkus(context.Background(), freeGiftPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETFreeGiftPromotionIdSkus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4154,7 +4154,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -4162,7 +4162,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETFreeShippingPromotionIdAttachments(context.Background(), freeShippingPromotionId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETFreeShippingPromotionIdAttachments(context.Background(), freeShippingPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETFreeShippingPromotionIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4222,7 +4222,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -4230,7 +4230,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETFreeShippingPromotionIdEvents(context.Background(), freeShippingPromotionId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETFreeShippingPromotionIdEvents(context.Background(), freeShippingPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETFreeShippingPromotionIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4290,7 +4290,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -4298,7 +4298,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETGeocoderIdAddresses(context.Background(), geocoderId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETGeocoderIdAddresses(context.Background(), geocoderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETGeocoderIdAddresses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4358,7 +4358,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -4366,7 +4366,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETGeocoderIdAttachments(context.Background(), geocoderId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETGeocoderIdAttachments(context.Background(), geocoderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETGeocoderIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4426,7 +4426,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -4434,7 +4434,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETGiftCardIdAttachments(context.Background(), giftCardId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETGiftCardIdAttachments(context.Background(), giftCardId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETGiftCardIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4494,7 +4494,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -4502,7 +4502,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETGiftCardIdEvents(context.Background(), giftCardId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETGiftCardIdEvents(context.Background(), giftCardId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETGiftCardIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4562,7 +4562,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -4570,7 +4570,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETGiftCardRecipientIdAttachments(context.Background(), giftCardRecipientId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETGiftCardRecipientIdAttachments(context.Background(), giftCardRecipientId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETGiftCardRecipientIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4630,7 +4630,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -4638,7 +4638,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETGoogleGeocoderIdAddresses(context.Background(), googleGeocoderId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETGoogleGeocoderIdAddresses(context.Background(), googleGeocoderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETGoogleGeocoderIdAddresses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4698,7 +4698,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -4706,7 +4706,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETGoogleGeocoderIdAttachments(context.Background(), googleGeocoderId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETGoogleGeocoderIdAttachments(context.Background(), googleGeocoderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETGoogleGeocoderIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4766,7 +4766,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -4774,7 +4774,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETImportIdEvents(context.Background(), importId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETImportIdEvents(context.Background(), importId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETImportIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4834,7 +4834,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -4842,7 +4842,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETInStockSubscriptionIdEvents(context.Background(), inStockSubscriptionId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETInStockSubscriptionIdEvents(context.Background(), inStockSubscriptionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETInStockSubscriptionIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4902,7 +4902,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -4910,7 +4910,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETInventoryModelIdAttachments(context.Background(), inventoryModelId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETInventoryModelIdAttachments(context.Background(), inventoryModelId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETInventoryModelIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -4970,7 +4970,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -4978,7 +4978,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETInventoryModelIdInventoryReturnLocations(context.Background(), inventoryModelId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETInventoryModelIdInventoryReturnLocations(context.Background(), inventoryModelId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETInventoryModelIdInventoryReturnLocations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5038,7 +5038,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -5046,7 +5046,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETInventoryModelIdInventoryStockLocations(context.Background(), inventoryModelId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETInventoryModelIdInventoryStockLocations(context.Background(), inventoryModelId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETInventoryModelIdInventoryStockLocations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5106,7 +5106,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -5114,7 +5114,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETKlarnaGatewayIdKlarnaPayments(context.Background(), klarnaGatewayId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETKlarnaGatewayIdKlarnaPayments(context.Background(), klarnaGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETKlarnaGatewayIdKlarnaPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5174,7 +5174,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -5182,7 +5182,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETKlarnaGatewayIdPaymentMethods(context.Background(), klarnaGatewayId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETKlarnaGatewayIdPaymentMethods(context.Background(), klarnaGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETKlarnaGatewayIdPaymentMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5242,7 +5242,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -5250,7 +5250,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETLineItemIdLineItemOptions(context.Background(), lineItemId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETLineItemIdLineItemOptions(context.Background(), lineItemId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETLineItemIdLineItemOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5310,7 +5310,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -5318,7 +5318,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETLineItemIdStockLineItems(context.Background(), lineItemId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETLineItemIdStockLineItems(context.Background(), lineItemId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETLineItemIdStockLineItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5378,7 +5378,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -5386,7 +5386,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETLineItemIdStockTransfers(context.Background(), lineItemId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETLineItemIdStockTransfers(context.Background(), lineItemId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETLineItemIdStockTransfers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5446,7 +5446,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -5454,7 +5454,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETManualGatewayIdPaymentMethods(context.Background(), manualGatewayId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETManualGatewayIdPaymentMethods(context.Background(), manualGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETManualGatewayIdPaymentMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5514,7 +5514,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -5522,7 +5522,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETManualTaxCalculatorIdAttachments(context.Background(), manualTaxCalculatorId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETManualTaxCalculatorIdAttachments(context.Background(), manualTaxCalculatorId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETManualTaxCalculatorIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5582,7 +5582,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -5590,7 +5590,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETManualTaxCalculatorIdMarkets(context.Background(), manualTaxCalculatorId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETManualTaxCalculatorIdMarkets(context.Background(), manualTaxCalculatorId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETManualTaxCalculatorIdMarkets``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5650,7 +5650,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -5658,7 +5658,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETManualTaxCalculatorIdTaxRules(context.Background(), manualTaxCalculatorId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETManualTaxCalculatorIdTaxRules(context.Background(), manualTaxCalculatorId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETManualTaxCalculatorIdTaxRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5718,7 +5718,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -5726,7 +5726,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETMarketIdAttachments(context.Background(), marketId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETMarketIdAttachments(context.Background(), marketId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETMarketIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5786,7 +5786,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -5794,7 +5794,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETMerchantIdAttachments(context.Background(), merchantId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETMerchantIdAttachments(context.Background(), merchantId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETMerchantIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5854,7 +5854,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -5862,7 +5862,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETOrderCopyIdEvents(context.Background(), orderCopyId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETOrderCopyIdEvents(context.Background(), orderCopyId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderCopyIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5922,7 +5922,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -5930,7 +5930,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETOrderFactoryIdEvents(context.Background(), orderFactoryId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETOrderFactoryIdEvents(context.Background(), orderFactoryId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderFactoryIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -5990,7 +5990,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -5998,7 +5998,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETOrderIdAttachments(context.Background(), orderId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETOrderIdAttachments(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6058,7 +6058,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -6066,7 +6066,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETOrderIdAuthorizations(context.Background(), orderId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETOrderIdAuthorizations(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderIdAuthorizations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6126,7 +6126,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -6134,7 +6134,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETOrderIdAvailableCustomerPaymentSources(context.Background(), orderId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETOrderIdAvailableCustomerPaymentSources(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderIdAvailableCustomerPaymentSources``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6194,7 +6194,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -6202,7 +6202,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETOrderIdAvailableFreeBundles(context.Background(), orderId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETOrderIdAvailableFreeBundles(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderIdAvailableFreeBundles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6262,7 +6262,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -6270,7 +6270,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETOrderIdAvailableFreeSkus(context.Background(), orderId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETOrderIdAvailableFreeSkus(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderIdAvailableFreeSkus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6330,7 +6330,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -6338,7 +6338,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETOrderIdAvailablePaymentMethods(context.Background(), orderId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETOrderIdAvailablePaymentMethods(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderIdAvailablePaymentMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6398,7 +6398,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -6406,7 +6406,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETOrderIdCaptures(context.Background(), orderId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETOrderIdCaptures(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderIdCaptures``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6466,7 +6466,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -6474,7 +6474,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETOrderIdEvents(context.Background(), orderId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETOrderIdEvents(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6534,7 +6534,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -6542,7 +6542,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETOrderIdLineItems(context.Background(), orderId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETOrderIdLineItems(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderIdLineItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6602,7 +6602,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -6610,7 +6610,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETOrderIdOrderCopies(context.Background(), orderId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETOrderIdOrderCopies(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderIdOrderCopies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6670,7 +6670,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -6678,7 +6678,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETOrderIdOrderFactories(context.Background(), orderId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETOrderIdOrderFactories(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderIdOrderFactories``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6738,7 +6738,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -6746,7 +6746,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETOrderIdOrderSubscriptions(context.Background(), orderId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETOrderIdOrderSubscriptions(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderIdOrderSubscriptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6806,7 +6806,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -6814,7 +6814,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETOrderIdRecurringOrderCopies(context.Background(), orderId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETOrderIdRecurringOrderCopies(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderIdRecurringOrderCopies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6874,7 +6874,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -6882,7 +6882,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETOrderIdRefunds(context.Background(), orderId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETOrderIdRefunds(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderIdRefunds``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -6942,7 +6942,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -6950,7 +6950,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETOrderIdReturns(context.Background(), orderId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETOrderIdReturns(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderIdReturns``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7010,7 +7010,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -7018,7 +7018,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETOrderIdShipments(context.Background(), orderId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETOrderIdShipments(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderIdShipments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7078,7 +7078,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -7086,7 +7086,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETOrderIdVoids(context.Background(), orderId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETOrderIdVoids(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderIdVoids``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7146,7 +7146,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -7154,7 +7154,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETOrderSubscriptionIdEvents(context.Background(), orderSubscriptionId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETOrderSubscriptionIdEvents(context.Background(), orderSubscriptionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderSubscriptionIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7214,7 +7214,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -7222,7 +7222,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETOrderSubscriptionIdOrderFactories(context.Background(), orderSubscriptionId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETOrderSubscriptionIdOrderFactories(context.Background(), orderSubscriptionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderSubscriptionIdOrderFactories``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7282,7 +7282,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -7290,7 +7290,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETOrderSubscriptionIdOrderSubscriptionItems(context.Background(), orderSubscriptionId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETOrderSubscriptionIdOrderSubscriptionItems(context.Background(), orderSubscriptionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderSubscriptionIdOrderSubscriptionItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7350,7 +7350,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -7358,7 +7358,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETOrderSubscriptionIdOrders(context.Background(), orderSubscriptionId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETOrderSubscriptionIdOrders(context.Background(), orderSubscriptionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderSubscriptionIdOrders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7418,7 +7418,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -7426,7 +7426,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETOrderSubscriptionIdRecurringOrderCopies(context.Background(), orderSubscriptionId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETOrderSubscriptionIdRecurringOrderCopies(context.Background(), orderSubscriptionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderSubscriptionIdRecurringOrderCopies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7486,7 +7486,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -7494,7 +7494,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETOrderValidationRuleIdAttachments(context.Background(), orderValidationRuleId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETOrderValidationRuleIdAttachments(context.Background(), orderValidationRuleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETOrderValidationRuleIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7554,7 +7554,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -7562,7 +7562,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETPackageIdAttachments(context.Background(), packageId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETPackageIdAttachments(context.Background(), packageId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETPackageIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7622,7 +7622,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -7630,7 +7630,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETPackageIdParcels(context.Background(), packageId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETPackageIdParcels(context.Background(), packageId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETPackageIdParcels``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7690,7 +7690,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -7698,7 +7698,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETParcelIdAttachments(context.Background(), parcelId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETParcelIdAttachments(context.Background(), parcelId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETParcelIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7758,7 +7758,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -7766,7 +7766,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETParcelIdEvents(context.Background(), parcelId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETParcelIdEvents(context.Background(), parcelId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETParcelIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7826,7 +7826,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -7834,7 +7834,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETParcelIdParcelLineItems(context.Background(), parcelId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETParcelIdParcelLineItems(context.Background(), parcelId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETParcelIdParcelLineItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7894,7 +7894,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -7902,7 +7902,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETPaymentGatewayIdPaymentMethods(context.Background(), paymentGatewayId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETPaymentGatewayIdPaymentMethods(context.Background(), paymentGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETPaymentGatewayIdPaymentMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -7962,7 +7962,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -7970,7 +7970,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETPaymentMethodIdAttachments(context.Background(), paymentMethodId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETPaymentMethodIdAttachments(context.Background(), paymentMethodId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETPaymentMethodIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8030,7 +8030,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -8038,7 +8038,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETPaypalGatewayIdPaymentMethods(context.Background(), paypalGatewayId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETPaypalGatewayIdPaymentMethods(context.Background(), paypalGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETPaypalGatewayIdPaymentMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8098,7 +8098,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -8106,7 +8106,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETPaypalGatewayIdPaypalPayments(context.Background(), paypalGatewayId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETPaypalGatewayIdPaypalPayments(context.Background(), paypalGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETPaypalGatewayIdPaypalPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8166,7 +8166,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -8174,7 +8174,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETPercentageDiscountPromotionIdAttachments(context.Background(), percentageDiscountPromotionId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETPercentageDiscountPromotionIdAttachments(context.Background(), percentageDiscountPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETPercentageDiscountPromotionIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8234,7 +8234,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -8242,7 +8242,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETPercentageDiscountPromotionIdEvents(context.Background(), percentageDiscountPromotionId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETPercentageDiscountPromotionIdEvents(context.Background(), percentageDiscountPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETPercentageDiscountPromotionIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8302,7 +8302,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -8310,7 +8310,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETPercentageDiscountPromotionIdSkus(context.Background(), percentageDiscountPromotionId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETPercentageDiscountPromotionIdSkus(context.Background(), percentageDiscountPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETPercentageDiscountPromotionIdSkus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8370,7 +8370,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -8378,7 +8378,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETPriceFrequencyTierIdAttachments(context.Background(), priceFrequencyTierId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETPriceFrequencyTierIdAttachments(context.Background(), priceFrequencyTierId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETPriceFrequencyTierIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8438,7 +8438,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -8446,7 +8446,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETPriceFrequencyTierIdEvents(context.Background(), priceFrequencyTierId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETPriceFrequencyTierIdEvents(context.Background(), priceFrequencyTierId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETPriceFrequencyTierIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8506,7 +8506,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -8514,7 +8514,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETPriceIdAttachments(context.Background(), priceId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETPriceIdAttachments(context.Background(), priceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETPriceIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8574,7 +8574,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -8582,7 +8582,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETPriceIdPriceFrequencyTiers(context.Background(), priceId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETPriceIdPriceFrequencyTiers(context.Background(), priceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETPriceIdPriceFrequencyTiers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8642,7 +8642,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -8650,7 +8650,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETPriceIdPriceTiers(context.Background(), priceId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETPriceIdPriceTiers(context.Background(), priceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETPriceIdPriceTiers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8710,7 +8710,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -8718,7 +8718,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETPriceIdPriceVolumeTiers(context.Background(), priceId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETPriceIdPriceVolumeTiers(context.Background(), priceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETPriceIdPriceVolumeTiers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8778,7 +8778,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -8786,7 +8786,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETPriceListIdAttachments(context.Background(), priceListId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETPriceListIdAttachments(context.Background(), priceListId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETPriceListIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8846,7 +8846,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -8854,7 +8854,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETPriceListIdPrices(context.Background(), priceListId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETPriceListIdPrices(context.Background(), priceListId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETPriceListIdPrices``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8914,7 +8914,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -8922,7 +8922,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETPriceTierIdAttachments(context.Background(), priceTierId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETPriceTierIdAttachments(context.Background(), priceTierId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETPriceTierIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -8982,7 +8982,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -8990,7 +8990,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETPriceVolumeTierIdAttachments(context.Background(), priceVolumeTierId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETPriceVolumeTierIdAttachments(context.Background(), priceVolumeTierId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETPriceVolumeTierIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9050,7 +9050,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -9058,7 +9058,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETPriceVolumeTierIdEvents(context.Background(), priceVolumeTierId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETPriceVolumeTierIdEvents(context.Background(), priceVolumeTierId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETPriceVolumeTierIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9118,7 +9118,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -9126,7 +9126,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETPromotionIdAttachments(context.Background(), promotionId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETPromotionIdAttachments(context.Background(), promotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETPromotionIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9186,7 +9186,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -9194,7 +9194,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETPromotionIdEvents(context.Background(), promotionId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETPromotionIdEvents(context.Background(), promotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETPromotionIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9254,7 +9254,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -9262,7 +9262,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETRecurringOrderCopyIdEvents(context.Background(), recurringOrderCopyId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETRecurringOrderCopyIdEvents(context.Background(), recurringOrderCopyId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETRecurringOrderCopyIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9322,7 +9322,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -9330,7 +9330,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETRefundIdEvents(context.Background(), refundId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETRefundIdEvents(context.Background(), refundId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETRefundIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9390,7 +9390,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -9398,7 +9398,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETReturnIdAttachments(context.Background(), returnId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETReturnIdAttachments(context.Background(), returnId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETReturnIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9458,7 +9458,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -9466,7 +9466,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETReturnIdEvents(context.Background(), returnId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETReturnIdEvents(context.Background(), returnId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETReturnIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9526,7 +9526,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -9534,7 +9534,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETReturnIdReturnLineItems(context.Background(), returnId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETReturnIdReturnLineItems(context.Background(), returnId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETReturnIdReturnLineItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9594,7 +9594,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -9602,7 +9602,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETSatispayGatewayIdPaymentMethods(context.Background(), satispayGatewayId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETSatispayGatewayIdPaymentMethods(context.Background(), satispayGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETSatispayGatewayIdPaymentMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9662,7 +9662,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -9670,7 +9670,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETSatispayGatewayIdSatispayPayments(context.Background(), satispayGatewayId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETSatispayGatewayIdSatispayPayments(context.Background(), satispayGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETSatispayGatewayIdSatispayPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9730,7 +9730,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -9738,7 +9738,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETShipmentIdAttachments(context.Background(), shipmentId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETShipmentIdAttachments(context.Background(), shipmentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETShipmentIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9798,7 +9798,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -9806,7 +9806,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETShipmentIdAvailableShippingMethods(context.Background(), shipmentId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETShipmentIdAvailableShippingMethods(context.Background(), shipmentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETShipmentIdAvailableShippingMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9866,7 +9866,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -9874,7 +9874,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETShipmentIdCarrierAccounts(context.Background(), shipmentId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETShipmentIdCarrierAccounts(context.Background(), shipmentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETShipmentIdCarrierAccounts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -9934,7 +9934,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -9942,7 +9942,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETShipmentIdEvents(context.Background(), shipmentId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETShipmentIdEvents(context.Background(), shipmentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETShipmentIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10002,7 +10002,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -10010,7 +10010,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETShipmentIdParcels(context.Background(), shipmentId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETShipmentIdParcels(context.Background(), shipmentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETShipmentIdParcels``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10070,7 +10070,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -10078,7 +10078,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETShipmentIdStockLineItems(context.Background(), shipmentId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETShipmentIdStockLineItems(context.Background(), shipmentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETShipmentIdStockLineItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10138,7 +10138,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -10146,7 +10146,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETShipmentIdStockTransfers(context.Background(), shipmentId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETShipmentIdStockTransfers(context.Background(), shipmentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETShipmentIdStockTransfers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10206,7 +10206,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -10214,7 +10214,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETShippingCategoryIdAttachments(context.Background(), shippingCategoryId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETShippingCategoryIdAttachments(context.Background(), shippingCategoryId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETShippingCategoryIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10274,7 +10274,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -10282,7 +10282,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETShippingCategoryIdSkus(context.Background(), shippingCategoryId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETShippingCategoryIdSkus(context.Background(), shippingCategoryId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETShippingCategoryIdSkus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10342,7 +10342,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -10350,7 +10350,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETShippingMethodIdAttachments(context.Background(), shippingMethodId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETShippingMethodIdAttachments(context.Background(), shippingMethodId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETShippingMethodIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10410,7 +10410,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -10418,7 +10418,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETShippingMethodIdShippingMethodTiers(context.Background(), shippingMethodId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETShippingMethodIdShippingMethodTiers(context.Background(), shippingMethodId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETShippingMethodIdShippingMethodTiers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10478,7 +10478,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -10486,7 +10486,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETShippingMethodIdShippingWeightTiers(context.Background(), shippingMethodId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETShippingMethodIdShippingWeightTiers(context.Background(), shippingMethodId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETShippingMethodIdShippingWeightTiers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10546,7 +10546,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -10554,7 +10554,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETShippingMethodTierIdAttachments(context.Background(), shippingMethodTierId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETShippingMethodTierIdAttachments(context.Background(), shippingMethodTierId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETShippingMethodTierIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10614,7 +10614,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -10622,7 +10622,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETShippingWeightTierIdAttachments(context.Background(), shippingWeightTierId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETShippingWeightTierIdAttachments(context.Background(), shippingWeightTierId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETShippingWeightTierIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10682,7 +10682,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -10690,7 +10690,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETShippingZoneIdAttachments(context.Background(), shippingZoneId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETShippingZoneIdAttachments(context.Background(), shippingZoneId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETShippingZoneIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10750,7 +10750,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -10758,7 +10758,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETSkuIdAttachments(context.Background(), skuId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETSkuIdAttachments(context.Background(), skuId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETSkuIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10818,7 +10818,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -10826,7 +10826,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETSkuIdDeliveryLeadTimes(context.Background(), skuId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETSkuIdDeliveryLeadTimes(context.Background(), skuId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETSkuIdDeliveryLeadTimes``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10886,7 +10886,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -10894,7 +10894,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETSkuIdPrices(context.Background(), skuId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETSkuIdPrices(context.Background(), skuId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETSkuIdPrices``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -10954,7 +10954,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -10962,7 +10962,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETSkuIdSkuOptions(context.Background(), skuId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETSkuIdSkuOptions(context.Background(), skuId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETSkuIdSkuOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11022,7 +11022,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -11030,7 +11030,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETSkuIdStockItems(context.Background(), skuId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETSkuIdStockItems(context.Background(), skuId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETSkuIdStockItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11090,7 +11090,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -11098,7 +11098,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETSkuListIdAttachments(context.Background(), skuListId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETSkuListIdAttachments(context.Background(), skuListId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETSkuListIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11158,7 +11158,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -11166,7 +11166,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETSkuListIdBundles(context.Background(), skuListId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETSkuListIdBundles(context.Background(), skuListId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETSkuListIdBundles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11226,7 +11226,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -11234,7 +11234,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETSkuListIdSkuListItems(context.Background(), skuListId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETSkuListIdSkuListItems(context.Background(), skuListId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETSkuListIdSkuListItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11294,7 +11294,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -11302,7 +11302,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETSkuListIdSkus(context.Background(), skuListId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETSkuListIdSkus(context.Background(), skuListId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETSkuListIdSkus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11362,7 +11362,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -11370,7 +11370,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETSkuListPromotionRuleIdSkus(context.Background(), skuListPromotionRuleId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETSkuListPromotionRuleIdSkus(context.Background(), skuListPromotionRuleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETSkuListPromotionRuleIdSkus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11430,7 +11430,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -11438,7 +11438,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETSkuOptionIdAttachments(context.Background(), skuOptionId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETSkuOptionIdAttachments(context.Background(), skuOptionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETSkuOptionIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11498,7 +11498,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -11506,7 +11506,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETStockItemIdAttachments(context.Background(), stockItemId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETStockItemIdAttachments(context.Background(), stockItemId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETStockItemIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11566,7 +11566,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -11574,7 +11574,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETStockLocationIdAttachments(context.Background(), stockLocationId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETStockLocationIdAttachments(context.Background(), stockLocationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETStockLocationIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11634,7 +11634,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -11642,7 +11642,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETStockLocationIdInventoryReturnLocations(context.Background(), stockLocationId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETStockLocationIdInventoryReturnLocations(context.Background(), stockLocationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETStockLocationIdInventoryReturnLocations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11702,7 +11702,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -11710,7 +11710,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETStockLocationIdInventoryStockLocations(context.Background(), stockLocationId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETStockLocationIdInventoryStockLocations(context.Background(), stockLocationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETStockLocationIdInventoryStockLocations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11770,7 +11770,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -11778,7 +11778,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETStockLocationIdStockItems(context.Background(), stockLocationId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETStockLocationIdStockItems(context.Background(), stockLocationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETStockLocationIdStockItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11838,7 +11838,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -11846,7 +11846,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETStockLocationIdStockTransfers(context.Background(), stockLocationId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETStockLocationIdStockTransfers(context.Background(), stockLocationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETStockLocationIdStockTransfers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11906,7 +11906,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -11914,7 +11914,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETStockTransferIdEvents(context.Background(), stockTransferId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETStockTransferIdEvents(context.Background(), stockTransferId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETStockTransferIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -11974,7 +11974,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -11982,7 +11982,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETStripeGatewayIdPaymentMethods(context.Background(), stripeGatewayId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETStripeGatewayIdPaymentMethods(context.Background(), stripeGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETStripeGatewayIdPaymentMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12042,7 +12042,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -12050,7 +12050,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETStripeGatewayIdStripePayments(context.Background(), stripeGatewayId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETStripeGatewayIdStripePayments(context.Background(), stripeGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETStripeGatewayIdStripePayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12110,7 +12110,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -12118,7 +12118,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETSubscriptionModelIdAttachments(context.Background(), subscriptionModelId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETSubscriptionModelIdAttachments(context.Background(), subscriptionModelId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETSubscriptionModelIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12178,7 +12178,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -12186,7 +12186,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETSubscriptionModelIdMarkets(context.Background(), subscriptionModelId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETSubscriptionModelIdMarkets(context.Background(), subscriptionModelId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETSubscriptionModelIdMarkets``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12246,7 +12246,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -12254,7 +12254,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETSubscriptionModelIdOrderSubscriptions(context.Background(), subscriptionModelId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETSubscriptionModelIdOrderSubscriptions(context.Background(), subscriptionModelId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETSubscriptionModelIdOrderSubscriptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12314,7 +12314,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -12322,7 +12322,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETTaxCalculatorIdAttachments(context.Background(), taxCalculatorId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETTaxCalculatorIdAttachments(context.Background(), taxCalculatorId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETTaxCalculatorIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12382,7 +12382,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -12390,7 +12390,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETTaxCalculatorIdMarkets(context.Background(), taxCalculatorId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETTaxCalculatorIdMarkets(context.Background(), taxCalculatorId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETTaxCalculatorIdMarkets``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12450,7 +12450,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -12458,7 +12458,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETTaxCategoryIdAttachments(context.Background(), taxCategoryId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETTaxCategoryIdAttachments(context.Background(), taxCategoryId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETTaxCategoryIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12518,7 +12518,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -12526,7 +12526,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETTaxjarAccountIdAttachments(context.Background(), taxjarAccountId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETTaxjarAccountIdAttachments(context.Background(), taxjarAccountId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETTaxjarAccountIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12586,7 +12586,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -12594,7 +12594,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETTaxjarAccountIdMarkets(context.Background(), taxjarAccountId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETTaxjarAccountIdMarkets(context.Background(), taxjarAccountId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETTaxjarAccountIdMarkets``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12654,7 +12654,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -12662,7 +12662,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETTaxjarAccountIdTaxCategories(context.Background(), taxjarAccountId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETTaxjarAccountIdTaxCategories(context.Background(), taxjarAccountId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETTaxjarAccountIdTaxCategories``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12722,7 +12722,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -12730,7 +12730,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETVoidIdEvents(context.Background(), voidId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETVoidIdEvents(context.Background(), voidId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETVoidIdEvents``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -12790,7 +12790,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -12798,7 +12798,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.HasManyApi.GETWebhookIdLastEventCallbacks(context.Background(), webhookId).Execute()
+    resp, r, err := apiClient.HasManyApi.GETWebhookIdLastEventCallbacks(context.Background(), webhookId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `HasManyApi.GETWebhookIdLastEventCallbacks``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

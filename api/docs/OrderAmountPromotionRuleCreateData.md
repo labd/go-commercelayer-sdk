@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**POSTOrderAmountPromotionRulesRequestDataAttributes**](POSTOrderAmountPromotionRulesRequestDataAttributes.md) |  | 
+**Attributes** | [**POSTOrderAmountPromotionRules201ResponseDataAttributes**](POSTOrderAmountPromotionRules201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**OrderAmountPromotionRuleCreateDataRelationships**](OrderAmountPromotionRuleCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewOrderAmountPromotionRuleCreateData
 
-`func NewOrderAmountPromotionRuleCreateData(type_ interface{}, attributes POSTOrderAmountPromotionRulesRequestDataAttributes, ) *OrderAmountPromotionRuleCreateData`
+`func NewOrderAmountPromotionRuleCreateData(type_ interface{}, attributes POSTOrderAmountPromotionRules201ResponseDataAttributes, ) *OrderAmountPromotionRuleCreateData`
 
 NewOrderAmountPromotionRuleCreateData instantiates a new OrderAmountPromotionRuleCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *OrderAmountPromotionRuleCreateData) GetAttributes() POSTOrderAmountPromotionRulesRequestDataAttributes`
+`func (o *OrderAmountPromotionRuleCreateData) GetAttributes() POSTOrderAmountPromotionRules201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *OrderAmountPromotionRuleCreateData) GetAttributesOk() (*POSTOrderAmountPromotionRulesRequestDataAttributes, bool)`
+`func (o *OrderAmountPromotionRuleCreateData) GetAttributesOk() (*POSTOrderAmountPromotionRules201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *OrderAmountPromotionRuleCreateData) SetAttributes(v POSTOrderAmountPromotionRulesRequestDataAttributes)`
+`func (o *OrderAmountPromotionRuleCreateData) SetAttributes(v POSTOrderAmountPromotionRules201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

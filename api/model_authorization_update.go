@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the AuthorizationUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AuthorizationUpdate{}
-
 // AuthorizationUpdate struct for AuthorizationUpdate
 type AuthorizationUpdate struct {
-	Data PATCHAuthorizationsAuthorizationIdRequestData `json:"data"`
+	Data AuthorizationUpdateData `json:"data"`
 }
 
 // NewAuthorizationUpdate instantiates a new AuthorizationUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAuthorizationUpdate(data PATCHAuthorizationsAuthorizationIdRequestData) *AuthorizationUpdate {
+func NewAuthorizationUpdate(data AuthorizationUpdateData) *AuthorizationUpdate {
 	this := AuthorizationUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewAuthorizationUpdateWithDefaults() *AuthorizationUpdate {
 }
 
 // GetData returns the Data field value
-func (o *AuthorizationUpdate) GetData() PATCHAuthorizationsAuthorizationIdRequestData {
+func (o *AuthorizationUpdate) GetData() AuthorizationUpdateData {
 	if o == nil {
-		var ret PATCHAuthorizationsAuthorizationIdRequestData
+		var ret AuthorizationUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *AuthorizationUpdate) GetData() PATCHAuthorizationsAuthorizationIdReques
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *AuthorizationUpdate) GetDataOk() (*PATCHAuthorizationsAuthorizationIdRequestData, bool) {
+func (o *AuthorizationUpdate) GetDataOk() (*AuthorizationUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *AuthorizationUpdate) GetDataOk() (*PATCHAuthorizationsAuthorizationIdRe
 }
 
 // SetData sets field value
-func (o *AuthorizationUpdate) SetData(v PATCHAuthorizationsAuthorizationIdRequestData) {
+func (o *AuthorizationUpdate) SetData(v AuthorizationUpdateData) {
 	o.Data = v
 }
 
 func (o AuthorizationUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o AuthorizationUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableAuthorizationUpdate struct {

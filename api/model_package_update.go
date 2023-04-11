@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the PackageUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PackageUpdate{}
-
 // PackageUpdate struct for PackageUpdate
 type PackageUpdate struct {
-	Data PATCHPackagesPackageIdRequestData `json:"data"`
+	Data PackageUpdateData `json:"data"`
 }
 
 // NewPackageUpdate instantiates a new PackageUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPackageUpdate(data PATCHPackagesPackageIdRequestData) *PackageUpdate {
+func NewPackageUpdate(data PackageUpdateData) *PackageUpdate {
 	this := PackageUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewPackageUpdateWithDefaults() *PackageUpdate {
 }
 
 // GetData returns the Data field value
-func (o *PackageUpdate) GetData() PATCHPackagesPackageIdRequestData {
+func (o *PackageUpdate) GetData() PackageUpdateData {
 	if o == nil {
-		var ret PATCHPackagesPackageIdRequestData
+		var ret PackageUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *PackageUpdate) GetData() PATCHPackagesPackageIdRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *PackageUpdate) GetDataOk() (*PATCHPackagesPackageIdRequestData, bool) {
+func (o *PackageUpdate) GetDataOk() (*PackageUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *PackageUpdate) GetDataOk() (*PATCHPackagesPackageIdRequestData, bool) {
 }
 
 // SetData sets field value
-func (o *PackageUpdate) SetData(v PATCHPackagesPackageIdRequestData) {
+func (o *PackageUpdate) SetData(v PackageUpdateData) {
 	o.Data = v
 }
 
 func (o PackageUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o PackageUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullablePackageUpdate struct {

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PATCHAvalaraAccountsAvalaraAccountIdRequestData**](PATCHAvalaraAccountsAvalaraAccountIdRequestData.md) |  | 
+**Data** | [**AvalaraAccountUpdateData**](AvalaraAccountUpdateData.md) |  | 
 
 ## Methods
 
 ### NewAvalaraAccountUpdate
 
-`func NewAvalaraAccountUpdate(data PATCHAvalaraAccountsAvalaraAccountIdRequestData, ) *AvalaraAccountUpdate`
+`func NewAvalaraAccountUpdate(data AvalaraAccountUpdateData, ) *AvalaraAccountUpdate`
 
 NewAvalaraAccountUpdate instantiates a new AvalaraAccountUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *AvalaraAccountUpdate) GetData() PATCHAvalaraAccountsAvalaraAccountIdRequestData`
+`func (o *AvalaraAccountUpdate) GetData() AvalaraAccountUpdateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *AvalaraAccountUpdate) GetDataOk() (*PATCHAvalaraAccountsAvalaraAccountIdRequestData, bool)`
+`func (o *AvalaraAccountUpdate) GetDataOk() (*AvalaraAccountUpdateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *AvalaraAccountUpdate) SetData(v PATCHAvalaraAccountsAvalaraAccountIdRequestData)`
+`func (o *AvalaraAccountUpdate) SetData(v AvalaraAccountUpdateData)`
 
 SetData sets Data field to given value.
 

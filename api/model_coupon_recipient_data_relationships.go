@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the CouponRecipientDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CouponRecipientDataRelationships{}
-
 // CouponRecipientDataRelationships struct for CouponRecipientDataRelationships
 type CouponRecipientDataRelationships struct {
 	Customer    *CouponRecipientDataRelationshipsCustomer   `json:"customer,omitempty"`
@@ -43,7 +40,7 @@ func NewCouponRecipientDataRelationshipsWithDefaults() *CouponRecipientDataRelat
 
 // GetCustomer returns the Customer field value if set, zero value otherwise.
 func (o *CouponRecipientDataRelationships) GetCustomer() CouponRecipientDataRelationshipsCustomer {
-	if o == nil || IsNil(o.Customer) {
+	if o == nil || o.Customer == nil {
 		var ret CouponRecipientDataRelationshipsCustomer
 		return ret
 	}
@@ -53,7 +50,7 @@ func (o *CouponRecipientDataRelationships) GetCustomer() CouponRecipientDataRela
 // GetCustomerOk returns a tuple with the Customer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CouponRecipientDataRelationships) GetCustomerOk() (*CouponRecipientDataRelationshipsCustomer, bool) {
-	if o == nil || IsNil(o.Customer) {
+	if o == nil || o.Customer == nil {
 		return nil, false
 	}
 	return o.Customer, true
@@ -61,7 +58,7 @@ func (o *CouponRecipientDataRelationships) GetCustomerOk() (*CouponRecipientData
 
 // HasCustomer returns a boolean if a field has been set.
 func (o *CouponRecipientDataRelationships) HasCustomer() bool {
-	if o != nil && !IsNil(o.Customer) {
+	if o != nil && o.Customer != nil {
 		return true
 	}
 
@@ -75,7 +72,7 @@ func (o *CouponRecipientDataRelationships) SetCustomer(v CouponRecipientDataRela
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *CouponRecipientDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		var ret AvalaraAccountDataRelationshipsAttachments
 		return ret
 	}
@@ -85,7 +82,7 @@ func (o *CouponRecipientDataRelationships) GetAttachments() AvalaraAccountDataRe
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CouponRecipientDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		return nil, false
 	}
 	return o.Attachments, true
@@ -93,7 +90,7 @@ func (o *CouponRecipientDataRelationships) GetAttachmentsOk() (*AvalaraAccountDa
 
 // HasAttachments returns a boolean if a field has been set.
 func (o *CouponRecipientDataRelationships) HasAttachments() bool {
-	if o != nil && !IsNil(o.Attachments) {
+	if o != nil && o.Attachments != nil {
 		return true
 	}
 
@@ -106,22 +103,14 @@ func (o *CouponRecipientDataRelationships) SetAttachments(v AvalaraAccountDataRe
 }
 
 func (o CouponRecipientDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o CouponRecipientDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Customer) {
+	if o.Customer != nil {
 		toSerialize["customer"] = o.Customer
 	}
-	if !IsNil(o.Attachments) {
+	if o.Attachments != nil {
 		toSerialize["attachments"] = o.Attachments
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableCouponRecipientDataRelationships struct {

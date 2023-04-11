@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestData**](PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestData.md) |  | 
+**Data** | [**BillingInfoValidationRuleUpdateData**](BillingInfoValidationRuleUpdateData.md) |  | 
 
 ## Methods
 
 ### NewBillingInfoValidationRuleUpdate
 
-`func NewBillingInfoValidationRuleUpdate(data PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestData, ) *BillingInfoValidationRuleUpdate`
+`func NewBillingInfoValidationRuleUpdate(data BillingInfoValidationRuleUpdateData, ) *BillingInfoValidationRuleUpdate`
 
 NewBillingInfoValidationRuleUpdate instantiates a new BillingInfoValidationRuleUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *BillingInfoValidationRuleUpdate) GetData() PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestData`
+`func (o *BillingInfoValidationRuleUpdate) GetData() BillingInfoValidationRuleUpdateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *BillingInfoValidationRuleUpdate) GetDataOk() (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestData, bool)`
+`func (o *BillingInfoValidationRuleUpdate) GetDataOk() (*BillingInfoValidationRuleUpdateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *BillingInfoValidationRuleUpdate) SetData(v PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestData)`
+`func (o *BillingInfoValidationRuleUpdate) SetData(v BillingInfoValidationRuleUpdateData)`
 
 SetData sets Data field to given value.
 

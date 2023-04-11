@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the CheckoutComGatewayUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CheckoutComGatewayUpdate{}
-
 // CheckoutComGatewayUpdate struct for CheckoutComGatewayUpdate
 type CheckoutComGatewayUpdate struct {
-	Data PATCHCheckoutComGatewaysCheckoutComGatewayIdRequestData `json:"data"`
+	Data CheckoutComGatewayUpdateData `json:"data"`
 }
 
 // NewCheckoutComGatewayUpdate instantiates a new CheckoutComGatewayUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCheckoutComGatewayUpdate(data PATCHCheckoutComGatewaysCheckoutComGatewayIdRequestData) *CheckoutComGatewayUpdate {
+func NewCheckoutComGatewayUpdate(data CheckoutComGatewayUpdateData) *CheckoutComGatewayUpdate {
 	this := CheckoutComGatewayUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewCheckoutComGatewayUpdateWithDefaults() *CheckoutComGatewayUpdate {
 }
 
 // GetData returns the Data field value
-func (o *CheckoutComGatewayUpdate) GetData() PATCHCheckoutComGatewaysCheckoutComGatewayIdRequestData {
+func (o *CheckoutComGatewayUpdate) GetData() CheckoutComGatewayUpdateData {
 	if o == nil {
-		var ret PATCHCheckoutComGatewaysCheckoutComGatewayIdRequestData
+		var ret CheckoutComGatewayUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *CheckoutComGatewayUpdate) GetData() PATCHCheckoutComGatewaysCheckoutCom
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CheckoutComGatewayUpdate) GetDataOk() (*PATCHCheckoutComGatewaysCheckoutComGatewayIdRequestData, bool) {
+func (o *CheckoutComGatewayUpdate) GetDataOk() (*CheckoutComGatewayUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *CheckoutComGatewayUpdate) GetDataOk() (*PATCHCheckoutComGatewaysCheckou
 }
 
 // SetData sets field value
-func (o *CheckoutComGatewayUpdate) SetData(v PATCHCheckoutComGatewaysCheckoutComGatewayIdRequestData) {
+func (o *CheckoutComGatewayUpdate) SetData(v CheckoutComGatewayUpdateData) {
 	o.Data = v
 }
 
 func (o CheckoutComGatewayUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o CheckoutComGatewayUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableCheckoutComGatewayUpdate struct {

@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the AdyenPaymentDataRelationshipsOrder type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AdyenPaymentDataRelationshipsOrder{}
-
 // AdyenPaymentDataRelationshipsOrder struct for AdyenPaymentDataRelationshipsOrder
 type AdyenPaymentDataRelationshipsOrder struct {
-	Data *POSTAdyenPaymentsRequestDataRelationshipsOrderData `json:"data,omitempty"`
+	Data *AdyenPaymentDataRelationshipsOrderData `json:"data,omitempty"`
 }
 
 // NewAdyenPaymentDataRelationshipsOrder instantiates a new AdyenPaymentDataRelationshipsOrder object
@@ -41,9 +38,9 @@ func NewAdyenPaymentDataRelationshipsOrderWithDefaults() *AdyenPaymentDataRelati
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *AdyenPaymentDataRelationshipsOrder) GetData() POSTAdyenPaymentsRequestDataRelationshipsOrderData {
-	if o == nil || IsNil(o.Data) {
-		var ret POSTAdyenPaymentsRequestDataRelationshipsOrderData
+func (o *AdyenPaymentDataRelationshipsOrder) GetData() AdyenPaymentDataRelationshipsOrderData {
+	if o == nil || o.Data == nil {
+		var ret AdyenPaymentDataRelationshipsOrderData
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *AdyenPaymentDataRelationshipsOrder) GetData() POSTAdyenPaymentsRequestD
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AdyenPaymentDataRelationshipsOrder) GetDataOk() (*POSTAdyenPaymentsRequestDataRelationshipsOrderData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *AdyenPaymentDataRelationshipsOrder) GetDataOk() (*AdyenPaymentDataRelationshipsOrderData, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *AdyenPaymentDataRelationshipsOrder) GetDataOk() (*POSTAdyenPaymentsRequ
 
 // HasData returns a boolean if a field has been set.
 func (o *AdyenPaymentDataRelationshipsOrder) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given POSTAdyenPaymentsRequestDataRelationshipsOrderData and assigns it to the Data field.
-func (o *AdyenPaymentDataRelationshipsOrder) SetData(v POSTAdyenPaymentsRequestDataRelationshipsOrderData) {
+// SetData gets a reference to the given AdyenPaymentDataRelationshipsOrderData and assigns it to the Data field.
+func (o *AdyenPaymentDataRelationshipsOrder) SetData(v AdyenPaymentDataRelationshipsOrderData) {
 	o.Data = &v
 }
 
 func (o AdyenPaymentDataRelationshipsOrder) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o AdyenPaymentDataRelationshipsOrder) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableAdyenPaymentDataRelationshipsOrder struct {

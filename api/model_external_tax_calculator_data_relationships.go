@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the ExternalTaxCalculatorDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ExternalTaxCalculatorDataRelationships{}
-
 // ExternalTaxCalculatorDataRelationships struct for ExternalTaxCalculatorDataRelationships
 type ExternalTaxCalculatorDataRelationships struct {
 	Markets     *AvalaraAccountDataRelationshipsMarkets     `json:"markets,omitempty"`
@@ -43,7 +40,7 @@ func NewExternalTaxCalculatorDataRelationshipsWithDefaults() *ExternalTaxCalcula
 
 // GetMarkets returns the Markets field value if set, zero value otherwise.
 func (o *ExternalTaxCalculatorDataRelationships) GetMarkets() AvalaraAccountDataRelationshipsMarkets {
-	if o == nil || IsNil(o.Markets) {
+	if o == nil || o.Markets == nil {
 		var ret AvalaraAccountDataRelationshipsMarkets
 		return ret
 	}
@@ -53,7 +50,7 @@ func (o *ExternalTaxCalculatorDataRelationships) GetMarkets() AvalaraAccountData
 // GetMarketsOk returns a tuple with the Markets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalTaxCalculatorDataRelationships) GetMarketsOk() (*AvalaraAccountDataRelationshipsMarkets, bool) {
-	if o == nil || IsNil(o.Markets) {
+	if o == nil || o.Markets == nil {
 		return nil, false
 	}
 	return o.Markets, true
@@ -61,7 +58,7 @@ func (o *ExternalTaxCalculatorDataRelationships) GetMarketsOk() (*AvalaraAccount
 
 // HasMarkets returns a boolean if a field has been set.
 func (o *ExternalTaxCalculatorDataRelationships) HasMarkets() bool {
-	if o != nil && !IsNil(o.Markets) {
+	if o != nil && o.Markets != nil {
 		return true
 	}
 
@@ -75,7 +72,7 @@ func (o *ExternalTaxCalculatorDataRelationships) SetMarkets(v AvalaraAccountData
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *ExternalTaxCalculatorDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		var ret AvalaraAccountDataRelationshipsAttachments
 		return ret
 	}
@@ -85,7 +82,7 @@ func (o *ExternalTaxCalculatorDataRelationships) GetAttachments() AvalaraAccount
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalTaxCalculatorDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		return nil, false
 	}
 	return o.Attachments, true
@@ -93,7 +90,7 @@ func (o *ExternalTaxCalculatorDataRelationships) GetAttachmentsOk() (*AvalaraAcc
 
 // HasAttachments returns a boolean if a field has been set.
 func (o *ExternalTaxCalculatorDataRelationships) HasAttachments() bool {
-	if o != nil && !IsNil(o.Attachments) {
+	if o != nil && o.Attachments != nil {
 		return true
 	}
 
@@ -106,22 +103,14 @@ func (o *ExternalTaxCalculatorDataRelationships) SetAttachments(v AvalaraAccount
 }
 
 func (o ExternalTaxCalculatorDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o ExternalTaxCalculatorDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Markets) {
+	if o.Markets != nil {
 		toSerialize["markets"] = o.Markets
 	}
-	if !IsNil(o.Attachments) {
+	if o.Attachments != nil {
 		toSerialize["attachments"] = o.Attachments
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableExternalTaxCalculatorDataRelationships struct {

@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETOrderFactoriesOrderFactoryId200ResponseDataAttributes**](GETOrderFactoriesOrderFactoryId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**GETOrderFactories200ResponseDataInnerAttributes**](GETOrderFactories200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**OrderCopyDataRelationships**](OrderCopyDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewRecurringOrderCopyData
 
-`func NewRecurringOrderCopyData(type_ interface{}, attributes GETOrderFactoriesOrderFactoryId200ResponseDataAttributes, ) *RecurringOrderCopyData`
+`func NewRecurringOrderCopyData(type_ interface{}, attributes GETOrderFactories200ResponseDataInnerAttributes, ) *RecurringOrderCopyData`
 
 NewRecurringOrderCopyData instantiates a new RecurringOrderCopyData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *RecurringOrderCopyData) GetAttributes() GETOrderFactoriesOrderFactoryId200ResponseDataAttributes`
+`func (o *RecurringOrderCopyData) GetAttributes() GETOrderFactories200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *RecurringOrderCopyData) GetAttributesOk() (*GETOrderFactoriesOrderFactoryId200ResponseDataAttributes, bool)`
+`func (o *RecurringOrderCopyData) GetAttributesOk() (*GETOrderFactories200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *RecurringOrderCopyData) SetAttributes(v GETOrderFactoriesOrderFactoryId200ResponseDataAttributes)`
+`func (o *RecurringOrderCopyData) SetAttributes(v GETOrderFactories200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

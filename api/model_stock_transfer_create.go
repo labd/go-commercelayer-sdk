@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the StockTransferCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &StockTransferCreate{}
-
 // StockTransferCreate struct for StockTransferCreate
 type StockTransferCreate struct {
-	Data POSTStockTransfersRequestData `json:"data"`
+	Data StockTransferCreateData `json:"data"`
 }
 
 // NewStockTransferCreate instantiates a new StockTransferCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStockTransferCreate(data POSTStockTransfersRequestData) *StockTransferCreate {
+func NewStockTransferCreate(data StockTransferCreateData) *StockTransferCreate {
 	this := StockTransferCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewStockTransferCreateWithDefaults() *StockTransferCreate {
 }
 
 // GetData returns the Data field value
-func (o *StockTransferCreate) GetData() POSTStockTransfersRequestData {
+func (o *StockTransferCreate) GetData() StockTransferCreateData {
 	if o == nil {
-		var ret POSTStockTransfersRequestData
+		var ret StockTransferCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *StockTransferCreate) GetData() POSTStockTransfersRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *StockTransferCreate) GetDataOk() (*POSTStockTransfersRequestData, bool) {
+func (o *StockTransferCreate) GetDataOk() (*StockTransferCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *StockTransferCreate) GetDataOk() (*POSTStockTransfersRequestData, bool)
 }
 
 // SetData sets field value
-func (o *StockTransferCreate) SetData(v POSTStockTransfersRequestData) {
+func (o *StockTransferCreate) SetData(v StockTransferCreateData) {
 	o.Data = v
 }
 
 func (o StockTransferCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o StockTransferCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableStockTransferCreate struct {

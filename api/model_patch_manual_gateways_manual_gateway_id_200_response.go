@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the PATCHManualGatewaysManualGatewayId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PATCHManualGatewaysManualGatewayId200Response{}
-
 // PATCHManualGatewaysManualGatewayId200Response struct for PATCHManualGatewaysManualGatewayId200Response
 type PATCHManualGatewaysManualGatewayId200Response struct {
 	Data *PATCHManualGatewaysManualGatewayId200ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPATCHManualGatewaysManualGatewayId200ResponseWithDefaults() *PATCHManual
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *PATCHManualGatewaysManualGatewayId200Response) GetData() PATCHManualGatewaysManualGatewayId200ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret PATCHManualGatewaysManualGatewayId200ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *PATCHManualGatewaysManualGatewayId200Response) GetData() PATCHManualGat
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHManualGatewaysManualGatewayId200Response) GetDataOk() (*PATCHManualGatewaysManualGatewayId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *PATCHManualGatewaysManualGatewayId200Response) GetDataOk() (*PATCHManua
 
 // HasData returns a boolean if a field has been set.
 func (o *PATCHManualGatewaysManualGatewayId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *PATCHManualGatewaysManualGatewayId200Response) SetData(v PATCHManualGat
 }
 
 func (o PATCHManualGatewaysManualGatewayId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o PATCHManualGatewaysManualGatewayId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePATCHManualGatewaysManualGatewayId200Response struct {

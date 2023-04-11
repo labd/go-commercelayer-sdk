@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the PATCHParcelLineItemsParcelLineItemId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PATCHParcelLineItemsParcelLineItemId200Response{}
-
 // PATCHParcelLineItemsParcelLineItemId200Response struct for PATCHParcelLineItemsParcelLineItemId200Response
 type PATCHParcelLineItemsParcelLineItemId200Response struct {
 	Data *PATCHParcelLineItemsParcelLineItemId200ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPATCHParcelLineItemsParcelLineItemId200ResponseWithDefaults() *PATCHParc
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *PATCHParcelLineItemsParcelLineItemId200Response) GetData() PATCHParcelLineItemsParcelLineItemId200ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret PATCHParcelLineItemsParcelLineItemId200ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *PATCHParcelLineItemsParcelLineItemId200Response) GetData() PATCHParcelL
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHParcelLineItemsParcelLineItemId200Response) GetDataOk() (*PATCHParcelLineItemsParcelLineItemId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *PATCHParcelLineItemsParcelLineItemId200Response) GetDataOk() (*PATCHPar
 
 // HasData returns a boolean if a field has been set.
 func (o *PATCHParcelLineItemsParcelLineItemId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *PATCHParcelLineItemsParcelLineItemId200Response) SetData(v PATCHParcelL
 }
 
 func (o PATCHParcelLineItemsParcelLineItemId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o PATCHParcelLineItemsParcelLineItemId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePATCHParcelLineItemsParcelLineItemId200Response struct {

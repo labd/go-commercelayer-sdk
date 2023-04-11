@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the PaypalGatewayDataRelationshipsPaypalPayments type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PaypalGatewayDataRelationshipsPaypalPayments{}
-
 // PaypalGatewayDataRelationshipsPaypalPayments struct for PaypalGatewayDataRelationshipsPaypalPayments
 type PaypalGatewayDataRelationshipsPaypalPayments struct {
 	Data *PaypalGatewayDataRelationshipsPaypalPaymentsData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPaypalGatewayDataRelationshipsPaypalPaymentsWithDefaults() *PaypalGatewa
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *PaypalGatewayDataRelationshipsPaypalPayments) GetData() PaypalGatewayDataRelationshipsPaypalPaymentsData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret PaypalGatewayDataRelationshipsPaypalPaymentsData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *PaypalGatewayDataRelationshipsPaypalPayments) GetData() PaypalGatewayDa
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PaypalGatewayDataRelationshipsPaypalPayments) GetDataOk() (*PaypalGatewayDataRelationshipsPaypalPaymentsData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *PaypalGatewayDataRelationshipsPaypalPayments) GetDataOk() (*PaypalGatew
 
 // HasData returns a boolean if a field has been set.
 func (o *PaypalGatewayDataRelationshipsPaypalPayments) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *PaypalGatewayDataRelationshipsPaypalPayments) SetData(v PaypalGatewayDa
 }
 
 func (o PaypalGatewayDataRelationshipsPaypalPayments) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o PaypalGatewayDataRelationshipsPaypalPayments) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePaypalGatewayDataRelationshipsPaypalPayments struct {

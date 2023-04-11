@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**POSTAvalaraAccountsRequestData**](POSTAvalaraAccountsRequestData.md) |  | 
+**Data** | [**AvalaraAccountCreateData**](AvalaraAccountCreateData.md) |  | 
 
 ## Methods
 
 ### NewAvalaraAccountCreate
 
-`func NewAvalaraAccountCreate(data POSTAvalaraAccountsRequestData, ) *AvalaraAccountCreate`
+`func NewAvalaraAccountCreate(data AvalaraAccountCreateData, ) *AvalaraAccountCreate`
 
 NewAvalaraAccountCreate instantiates a new AvalaraAccountCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *AvalaraAccountCreate) GetData() POSTAvalaraAccountsRequestData`
+`func (o *AvalaraAccountCreate) GetData() AvalaraAccountCreateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *AvalaraAccountCreate) GetDataOk() (*POSTAvalaraAccountsRequestData, bool)`
+`func (o *AvalaraAccountCreate) GetDataOk() (*AvalaraAccountCreateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *AvalaraAccountCreate) SetData(v POSTAvalaraAccountsRequestData)`
+`func (o *AvalaraAccountCreate) SetData(v AvalaraAccountCreateData)`
 
 SetData sets Data field to given value.
 

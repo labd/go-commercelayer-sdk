@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *ExternalTaxCalculatorsApiService) DELETEExternalTaxCalculatorsExternalT
 	}
 
 	localVarPath := localBasePath + "/external_tax_calculators/{externalTaxCalculatorId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalTaxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.externalTaxCalculatorId, "externalTaxCalculatorId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalTaxCalculatorId"+"}", url.PathEscape(parameterToString(r.externalTaxCalculatorId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *ExternalTaxCalculatorsApiService) DELETEExternalTaxCalculatorsExternalT
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *ExternalTaxCalculatorsApiService) GETExternalTaxCalculatorsExecute(r Ex
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *ExternalTaxCalculatorsApiService) GETExternalTaxCalculatorsExternalTaxC
 	}
 
 	localVarPath := localBasePath + "/external_tax_calculators/{externalTaxCalculatorId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalTaxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.externalTaxCalculatorId, "externalTaxCalculatorId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalTaxCalculatorId"+"}", url.PathEscape(parameterToString(r.externalTaxCalculatorId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *ExternalTaxCalculatorsApiService) GETExternalTaxCalculatorsExternalTaxC
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -320,14 +320,14 @@ func (a *ExternalTaxCalculatorsApiService) GETExternalTaxCalculatorsExternalTaxC
 }
 
 type ExternalTaxCalculatorsApiPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest struct {
-	ctx                                                       context.Context
-	ApiService                                                *ExternalTaxCalculatorsApiService
-	pATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest *PATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest
-	externalTaxCalculatorId                                   interface{}
+	ctx                         context.Context
+	ApiService                  *ExternalTaxCalculatorsApiService
+	externalTaxCalculatorUpdate *ExternalTaxCalculatorUpdate
+	externalTaxCalculatorId     interface{}
 }
 
-func (r ExternalTaxCalculatorsApiPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest) PATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest(pATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest PATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest) ExternalTaxCalculatorsApiPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest {
-	r.pATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest = &pATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest
+func (r ExternalTaxCalculatorsApiPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest) ExternalTaxCalculatorUpdate(externalTaxCalculatorUpdate ExternalTaxCalculatorUpdate) ExternalTaxCalculatorsApiPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest {
+	r.externalTaxCalculatorUpdate = &externalTaxCalculatorUpdate
 	return r
 }
 
@@ -369,13 +369,13 @@ func (a *ExternalTaxCalculatorsApiService) PATCHExternalTaxCalculatorsExternalTa
 	}
 
 	localVarPath := localBasePath + "/external_tax_calculators/{externalTaxCalculatorId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalTaxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.externalTaxCalculatorId, "externalTaxCalculatorId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalTaxCalculatorId"+"}", url.PathEscape(parameterToString(r.externalTaxCalculatorId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest is required and must be specified")
+	if r.externalTaxCalculatorUpdate == nil {
+		return localVarReturnValue, nil, reportError("externalTaxCalculatorUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -396,7 +396,7 @@ func (a *ExternalTaxCalculatorsApiService) PATCHExternalTaxCalculatorsExternalTa
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest
+	localVarPostBody = r.externalTaxCalculatorUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -407,9 +407,9 @@ func (a *ExternalTaxCalculatorsApiService) PATCHExternalTaxCalculatorsExternalTa
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -435,13 +435,13 @@ func (a *ExternalTaxCalculatorsApiService) PATCHExternalTaxCalculatorsExternalTa
 }
 
 type ExternalTaxCalculatorsApiPOSTExternalTaxCalculatorsRequest struct {
-	ctx                               context.Context
-	ApiService                        *ExternalTaxCalculatorsApiService
-	pOSTExternalTaxCalculatorsRequest *POSTExternalTaxCalculatorsRequest
+	ctx                         context.Context
+	ApiService                  *ExternalTaxCalculatorsApiService
+	externalTaxCalculatorCreate *ExternalTaxCalculatorCreate
 }
 
-func (r ExternalTaxCalculatorsApiPOSTExternalTaxCalculatorsRequest) POSTExternalTaxCalculatorsRequest(pOSTExternalTaxCalculatorsRequest POSTExternalTaxCalculatorsRequest) ExternalTaxCalculatorsApiPOSTExternalTaxCalculatorsRequest {
-	r.pOSTExternalTaxCalculatorsRequest = &pOSTExternalTaxCalculatorsRequest
+func (r ExternalTaxCalculatorsApiPOSTExternalTaxCalculatorsRequest) ExternalTaxCalculatorCreate(externalTaxCalculatorCreate ExternalTaxCalculatorCreate) ExternalTaxCalculatorsApiPOSTExternalTaxCalculatorsRequest {
+	r.externalTaxCalculatorCreate = &externalTaxCalculatorCreate
 	return r
 }
 
@@ -485,8 +485,8 @@ func (a *ExternalTaxCalculatorsApiService) POSTExternalTaxCalculatorsExecute(r E
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTExternalTaxCalculatorsRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTExternalTaxCalculatorsRequest is required and must be specified")
+	if r.externalTaxCalculatorCreate == nil {
+		return localVarReturnValue, nil, reportError("externalTaxCalculatorCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -507,7 +507,7 @@ func (a *ExternalTaxCalculatorsApiService) POSTExternalTaxCalculatorsExecute(r E
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTExternalTaxCalculatorsRequest
+	localVarPostBody = r.externalTaxCalculatorCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -518,9 +518,9 @@ func (a *ExternalTaxCalculatorsApiService) POSTExternalTaxCalculatorsExecute(r E
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

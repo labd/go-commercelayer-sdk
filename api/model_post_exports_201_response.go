@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the POSTExports201Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &POSTExports201Response{}
-
 // POSTExports201Response struct for POSTExports201Response
 type POSTExports201Response struct {
 	Data *POSTExports201ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPOSTExports201ResponseWithDefaults() *POSTExports201Response {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTExports201Response) GetData() POSTExports201ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret POSTExports201ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *POSTExports201Response) GetData() POSTExports201ResponseData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTExports201Response) GetDataOk() (*POSTExports201ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *POSTExports201Response) GetDataOk() (*POSTExports201ResponseData, bool)
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTExports201Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *POSTExports201Response) SetData(v POSTExports201ResponseData) {
 }
 
 func (o POSTExports201Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o POSTExports201Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePOSTExports201Response struct {

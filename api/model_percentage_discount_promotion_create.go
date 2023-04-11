@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the PercentageDiscountPromotionCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PercentageDiscountPromotionCreate{}
-
 // PercentageDiscountPromotionCreate struct for PercentageDiscountPromotionCreate
 type PercentageDiscountPromotionCreate struct {
-	Data POSTPercentageDiscountPromotionsRequestData `json:"data"`
+	Data PercentageDiscountPromotionCreateData `json:"data"`
 }
 
 // NewPercentageDiscountPromotionCreate instantiates a new PercentageDiscountPromotionCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPercentageDiscountPromotionCreate(data POSTPercentageDiscountPromotionsRequestData) *PercentageDiscountPromotionCreate {
+func NewPercentageDiscountPromotionCreate(data PercentageDiscountPromotionCreateData) *PercentageDiscountPromotionCreate {
 	this := PercentageDiscountPromotionCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewPercentageDiscountPromotionCreateWithDefaults() *PercentageDiscountPromo
 }
 
 // GetData returns the Data field value
-func (o *PercentageDiscountPromotionCreate) GetData() POSTPercentageDiscountPromotionsRequestData {
+func (o *PercentageDiscountPromotionCreate) GetData() PercentageDiscountPromotionCreateData {
 	if o == nil {
-		var ret POSTPercentageDiscountPromotionsRequestData
+		var ret PercentageDiscountPromotionCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *PercentageDiscountPromotionCreate) GetData() POSTPercentageDiscountProm
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *PercentageDiscountPromotionCreate) GetDataOk() (*POSTPercentageDiscountPromotionsRequestData, bool) {
+func (o *PercentageDiscountPromotionCreate) GetDataOk() (*PercentageDiscountPromotionCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *PercentageDiscountPromotionCreate) GetDataOk() (*POSTPercentageDiscount
 }
 
 // SetData sets field value
-func (o *PercentageDiscountPromotionCreate) SetData(v POSTPercentageDiscountPromotionsRequestData) {
+func (o *PercentageDiscountPromotionCreate) SetData(v PercentageDiscountPromotionCreateData) {
 	o.Data = v
 }
 
 func (o PercentageDiscountPromotionCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o PercentageDiscountPromotionCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullablePercentageDiscountPromotionCreate struct {

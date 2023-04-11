@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PATCHCustomerSubscriptionsCustomerSubscriptionIdRequestData**](PATCHCustomerSubscriptionsCustomerSubscriptionIdRequestData.md) |  | 
+**Data** | [**CustomerSubscriptionUpdateData**](CustomerSubscriptionUpdateData.md) |  | 
 
 ## Methods
 
 ### NewCustomerSubscriptionUpdate
 
-`func NewCustomerSubscriptionUpdate(data PATCHCustomerSubscriptionsCustomerSubscriptionIdRequestData, ) *CustomerSubscriptionUpdate`
+`func NewCustomerSubscriptionUpdate(data CustomerSubscriptionUpdateData, ) *CustomerSubscriptionUpdate`
 
 NewCustomerSubscriptionUpdate instantiates a new CustomerSubscriptionUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *CustomerSubscriptionUpdate) GetData() PATCHCustomerSubscriptionsCustomerSubscriptionIdRequestData`
+`func (o *CustomerSubscriptionUpdate) GetData() CustomerSubscriptionUpdateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *CustomerSubscriptionUpdate) GetDataOk() (*PATCHCustomerSubscriptionsCustomerSubscriptionIdRequestData, bool)`
+`func (o *CustomerSubscriptionUpdate) GetDataOk() (*CustomerSubscriptionUpdateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *CustomerSubscriptionUpdate) SetData(v PATCHCustomerSubscriptionsCustomerSubscriptionIdRequestData)`
+`func (o *CustomerSubscriptionUpdate) SetData(v CustomerSubscriptionUpdateData)`
 
 SetData sets Data field to given value.
 

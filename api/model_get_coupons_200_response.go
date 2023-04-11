@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETCoupons200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETCoupons200Response{}
-
 // GETCoupons200Response struct for GETCoupons200Response
 type GETCoupons200Response struct {
-	Data interface{} `json:"data,omitempty"`
+	Data []GETCoupons200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETCoupons200Response instantiates a new GETCoupons200Response object
@@ -40,10 +37,10 @@ func NewGETCoupons200ResponseWithDefaults() *GETCoupons200Response {
 	return &this
 }
 
-// GetData returns the Data field value if set, zero value otherwise (both if not set or set to explicit null).
-func (o *GETCoupons200Response) GetData() interface{} {
-	if o == nil {
-		var ret interface{}
+// GetData returns the Data field value if set, zero value otherwise.
+func (o *GETCoupons200Response) GetData() []GETCoupons200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret []GETCoupons200ResponseDataInner
 		return ret
 	}
 	return o.Data
@@ -51,42 +48,33 @@ func (o *GETCoupons200Response) GetData() interface{} {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-// NOTE: If the value is an explicit nil, `nil, true` will be returned
-func (o *GETCoupons200Response) GetDataOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETCoupons200Response) GetDataOk() ([]GETCoupons200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
-	return &o.Data, true
+	return o.Data, true
 }
 
 // HasData returns a boolean if a field has been set.
 func (o *GETCoupons200Response) HasData() bool {
-	if o != nil && IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given interface{} and assigns it to the Data field.
-func (o *GETCoupons200Response) SetData(v interface{}) {
+// SetData gets a reference to the given []GETCoupons200ResponseDataInner and assigns it to the Data field.
+func (o *GETCoupons200Response) SetData(v []GETCoupons200ResponseDataInner) {
 	o.Data = v
 }
 
 func (o GETCoupons200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETCoupons200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETCoupons200Response struct {

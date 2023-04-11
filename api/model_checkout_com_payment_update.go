@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the CheckoutComPaymentUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CheckoutComPaymentUpdate{}
-
 // CheckoutComPaymentUpdate struct for CheckoutComPaymentUpdate
 type CheckoutComPaymentUpdate struct {
-	Data PATCHCheckoutComPaymentsCheckoutComPaymentIdRequestData `json:"data"`
+	Data CheckoutComPaymentUpdateData `json:"data"`
 }
 
 // NewCheckoutComPaymentUpdate instantiates a new CheckoutComPaymentUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCheckoutComPaymentUpdate(data PATCHCheckoutComPaymentsCheckoutComPaymentIdRequestData) *CheckoutComPaymentUpdate {
+func NewCheckoutComPaymentUpdate(data CheckoutComPaymentUpdateData) *CheckoutComPaymentUpdate {
 	this := CheckoutComPaymentUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewCheckoutComPaymentUpdateWithDefaults() *CheckoutComPaymentUpdate {
 }
 
 // GetData returns the Data field value
-func (o *CheckoutComPaymentUpdate) GetData() PATCHCheckoutComPaymentsCheckoutComPaymentIdRequestData {
+func (o *CheckoutComPaymentUpdate) GetData() CheckoutComPaymentUpdateData {
 	if o == nil {
-		var ret PATCHCheckoutComPaymentsCheckoutComPaymentIdRequestData
+		var ret CheckoutComPaymentUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *CheckoutComPaymentUpdate) GetData() PATCHCheckoutComPaymentsCheckoutCom
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CheckoutComPaymentUpdate) GetDataOk() (*PATCHCheckoutComPaymentsCheckoutComPaymentIdRequestData, bool) {
+func (o *CheckoutComPaymentUpdate) GetDataOk() (*CheckoutComPaymentUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *CheckoutComPaymentUpdate) GetDataOk() (*PATCHCheckoutComPaymentsCheckou
 }
 
 // SetData sets field value
-func (o *CheckoutComPaymentUpdate) SetData(v PATCHCheckoutComPaymentsCheckoutComPaymentIdRequestData) {
+func (o *CheckoutComPaymentUpdate) SetData(v CheckoutComPaymentUpdateData) {
 	o.Data = v
 }
 
 func (o CheckoutComPaymentUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o CheckoutComPaymentUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableCheckoutComPaymentUpdate struct {

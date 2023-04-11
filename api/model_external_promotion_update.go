@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the ExternalPromotionUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ExternalPromotionUpdate{}
-
 // ExternalPromotionUpdate struct for ExternalPromotionUpdate
 type ExternalPromotionUpdate struct {
-	Data PATCHExternalPromotionsExternalPromotionIdRequestData `json:"data"`
+	Data ExternalPromotionUpdateData `json:"data"`
 }
 
 // NewExternalPromotionUpdate instantiates a new ExternalPromotionUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalPromotionUpdate(data PATCHExternalPromotionsExternalPromotionIdRequestData) *ExternalPromotionUpdate {
+func NewExternalPromotionUpdate(data ExternalPromotionUpdateData) *ExternalPromotionUpdate {
 	this := ExternalPromotionUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewExternalPromotionUpdateWithDefaults() *ExternalPromotionUpdate {
 }
 
 // GetData returns the Data field value
-func (o *ExternalPromotionUpdate) GetData() PATCHExternalPromotionsExternalPromotionIdRequestData {
+func (o *ExternalPromotionUpdate) GetData() ExternalPromotionUpdateData {
 	if o == nil {
-		var ret PATCHExternalPromotionsExternalPromotionIdRequestData
+		var ret ExternalPromotionUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *ExternalPromotionUpdate) GetData() PATCHExternalPromotionsExternalPromo
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ExternalPromotionUpdate) GetDataOk() (*PATCHExternalPromotionsExternalPromotionIdRequestData, bool) {
+func (o *ExternalPromotionUpdate) GetDataOk() (*ExternalPromotionUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *ExternalPromotionUpdate) GetDataOk() (*PATCHExternalPromotionsExternalP
 }
 
 // SetData sets field value
-func (o *ExternalPromotionUpdate) SetData(v PATCHExternalPromotionsExternalPromotionIdRequestData) {
+func (o *ExternalPromotionUpdate) SetData(v ExternalPromotionUpdateData) {
 	o.Data = v
 }
 
 func (o ExternalPromotionUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o ExternalPromotionUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableExternalPromotionUpdate struct {

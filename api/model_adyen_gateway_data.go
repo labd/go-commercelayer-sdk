@@ -15,22 +15,19 @@ import (
 	"encoding/json"
 )
 
-// checks if the AdyenGatewayData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AdyenGatewayData{}
-
 // AdyenGatewayData struct for AdyenGatewayData
 type AdyenGatewayData struct {
 	// The resource's type
-	Type          interface{}                                             `json:"type"`
-	Attributes    GETAdyenGatewaysAdyenGatewayId200ResponseDataAttributes `json:"attributes"`
-	Relationships *AdyenGatewayDataRelationships                          `json:"relationships,omitempty"`
+	Type          interface{}                                    `json:"type"`
+	Attributes    GETAdyenGateways200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *AdyenGatewayDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewAdyenGatewayData instantiates a new AdyenGatewayData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAdyenGatewayData(type_ interface{}, attributes GETAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) *AdyenGatewayData {
+func NewAdyenGatewayData(type_ interface{}, attributes GETAdyenGateways200ResponseDataInnerAttributes) *AdyenGatewayData {
 	this := AdyenGatewayData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -60,7 +57,7 @@ func (o *AdyenGatewayData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AdyenGatewayData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -72,9 +69,9 @@ func (o *AdyenGatewayData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AdyenGatewayData) GetAttributes() GETAdyenGatewaysAdyenGatewayId200ResponseDataAttributes {
+func (o *AdyenGatewayData) GetAttributes() GETAdyenGateways200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret GETAdyenGatewaysAdyenGatewayId200ResponseDataAttributes
+		var ret GETAdyenGateways200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -83,7 +80,7 @@ func (o *AdyenGatewayData) GetAttributes() GETAdyenGatewaysAdyenGatewayId200Resp
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AdyenGatewayData) GetAttributesOk() (*GETAdyenGatewaysAdyenGatewayId200ResponseDataAttributes, bool) {
+func (o *AdyenGatewayData) GetAttributesOk() (*GETAdyenGateways200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,13 +88,13 @@ func (o *AdyenGatewayData) GetAttributesOk() (*GETAdyenGatewaysAdyenGatewayId200
 }
 
 // SetAttributes sets field value
-func (o *AdyenGatewayData) SetAttributes(v GETAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) {
+func (o *AdyenGatewayData) SetAttributes(v GETAdyenGateways200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *AdyenGatewayData) GetRelationships() AdyenGatewayDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		var ret AdyenGatewayDataRelationships
 		return ret
 	}
@@ -107,7 +104,7 @@ func (o *AdyenGatewayData) GetRelationships() AdyenGatewayDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AdyenGatewayData) GetRelationshipsOk() (*AdyenGatewayDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -115,7 +112,7 @@ func (o *AdyenGatewayData) GetRelationshipsOk() (*AdyenGatewayDataRelationships,
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *AdyenGatewayData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
@@ -128,23 +125,17 @@ func (o *AdyenGatewayData) SetRelationships(v AdyenGatewayDataRelationships) {
 }
 
 func (o AdyenGatewayData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o AdyenGatewayData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	toSerialize["attributes"] = o.Attributes
-	if !IsNil(o.Relationships) {
+	if true {
+		toSerialize["attributes"] = o.Attributes
+	}
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableAdyenGatewayData struct {

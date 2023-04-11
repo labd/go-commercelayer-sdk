@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**POSTAdyenGatewaysRequestData**](POSTAdyenGatewaysRequestData.md) |  | 
+**Data** | [**AdyenGatewayCreateData**](AdyenGatewayCreateData.md) |  | 
 
 ## Methods
 
 ### NewAdyenGatewayCreate
 
-`func NewAdyenGatewayCreate(data POSTAdyenGatewaysRequestData, ) *AdyenGatewayCreate`
+`func NewAdyenGatewayCreate(data AdyenGatewayCreateData, ) *AdyenGatewayCreate`
 
 NewAdyenGatewayCreate instantiates a new AdyenGatewayCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *AdyenGatewayCreate) GetData() POSTAdyenGatewaysRequestData`
+`func (o *AdyenGatewayCreate) GetData() AdyenGatewayCreateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *AdyenGatewayCreate) GetDataOk() (*POSTAdyenGatewaysRequestData, bool)`
+`func (o *AdyenGatewayCreate) GetDataOk() (*AdyenGatewayCreateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *AdyenGatewayCreate) SetData(v POSTAdyenGatewaysRequestData)`
+`func (o *AdyenGatewayCreate) SetData(v AdyenGatewayCreateData)`
 
 SetData sets Data field to given value.
 

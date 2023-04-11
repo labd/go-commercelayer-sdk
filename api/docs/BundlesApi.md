@@ -31,7 +31,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -39,7 +39,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.BundlesApi.DELETEBundlesBundleId(context.Background(), bundleId).Execute()
+    resp, r, err := apiClient.BundlesApi.DELETEBundlesBundleId(context.Background(), bundleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BundlesApi.DELETEBundlesBundleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -99,7 +99,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -160,7 +160,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -230,7 +230,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -238,7 +238,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.BundlesApi.GETOrderIdAvailableFreeBundles(context.Background(), orderId).Execute()
+    resp, r, err := apiClient.BundlesApi.GETOrderIdAvailableFreeBundles(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BundlesApi.GETOrderIdAvailableFreeBundles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -298,7 +298,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -306,7 +306,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.BundlesApi.GETSkuListIdBundles(context.Background(), skuListId).Execute()
+    resp, r, err := apiClient.BundlesApi.GETSkuListIdBundles(context.Background(), skuListId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BundlesApi.GETSkuListIdBundles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ## PATCHBundlesBundleId
 
-> PATCHBundlesBundleId200Response PATCHBundlesBundleId(ctx, bundleId).PATCHBundlesBundleIdRequest(pATCHBundlesBundleIdRequest).Execute()
+> PATCHBundlesBundleId200Response PATCHBundlesBundleId(ctx, bundleId).BundleUpdate(bundleUpdate).Execute()
 
 Update a bundle
 
@@ -366,16 +366,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHBundlesBundleIdRequest := *openapiclient.NewPATCHBundlesBundleIdRequest(*openapiclient.NewPATCHBundlesBundleIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBundlesBundleIdRequestDataAttributes())) // PATCHBundlesBundleIdRequest | 
+    bundleUpdate := *openapiclient.NewBundleUpdate(*openapiclient.NewBundleUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBundlesBundleId200ResponseDataAttributes())) // BundleUpdate | 
     bundleId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BundlesApi.PATCHBundlesBundleId(context.Background(), bundleId).PATCHBundlesBundleIdRequest(pATCHBundlesBundleIdRequest).Execute()
+    resp, r, err := apiClient.BundlesApi.PATCHBundlesBundleId(context.Background(), bundleId).BundleUpdate(bundleUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BundlesApi.PATCHBundlesBundleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -400,7 +400,7 @@ Other parameters are passed through a pointer to a apiPATCHBundlesBundleIdReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHBundlesBundleIdRequest** | [**PATCHBundlesBundleIdRequest**](PATCHBundlesBundleIdRequest.md) |  | 
+ **bundleUpdate** | [**BundleUpdate**](BundleUpdate.md) |  | 
 
 
 ### Return type
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ## POSTBundles
 
-> POSTBundles201Response POSTBundles(ctx).POSTBundlesRequest(pOSTBundlesRequest).Execute()
+> POSTBundles201Response POSTBundles(ctx).BundleCreate(bundleCreate).Execute()
 
 Create a bundle
 
@@ -438,15 +438,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTBundlesRequest := *openapiclient.NewPOSTBundlesRequest(*openapiclient.NewPOSTBundlesRequestData(interface{}(123), *openapiclient.NewPOSTBundlesRequestDataAttributes(interface{}(BUNDMM000000FFFFFFXLXX), interface{}(Black Men T-shirt (XL) with Black Cap and Socks, all with White Logo), interface{}(10000), interface{}(13000)))) // POSTBundlesRequest | 
+    bundleCreate := *openapiclient.NewBundleCreate(*openapiclient.NewBundleCreateData(interface{}(123), *openapiclient.NewPOSTBundles201ResponseDataAttributes(interface{}(BUNDMM000000FFFFFFXLXX), interface{}(Black Men T-shirt (XL) with Black Cap and Socks, all with White Logo), interface{}(10000), interface{}(13000)))) // BundleCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BundlesApi.POSTBundles(context.Background()).POSTBundlesRequest(pOSTBundlesRequest).Execute()
+    resp, r, err := apiClient.BundlesApi.POSTBundles(context.Background()).BundleCreate(bundleCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BundlesApi.POSTBundles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -467,7 +467,7 @@ Other parameters are passed through a pointer to a apiPOSTBundlesRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTBundlesRequest** | [**POSTBundlesRequest**](POSTBundlesRequest.md) |  | 
+ **bundleCreate** | [**BundleCreate**](BundleCreate.md) |  | 
 
 ### Return type
 

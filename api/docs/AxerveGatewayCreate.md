@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**POSTAxerveGatewaysRequestData**](POSTAxerveGatewaysRequestData.md) |  | 
+**Data** | [**AxerveGatewayCreateData**](AxerveGatewayCreateData.md) |  | 
 
 ## Methods
 
 ### NewAxerveGatewayCreate
 
-`func NewAxerveGatewayCreate(data POSTAxerveGatewaysRequestData, ) *AxerveGatewayCreate`
+`func NewAxerveGatewayCreate(data AxerveGatewayCreateData, ) *AxerveGatewayCreate`
 
 NewAxerveGatewayCreate instantiates a new AxerveGatewayCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *AxerveGatewayCreate) GetData() POSTAxerveGatewaysRequestData`
+`func (o *AxerveGatewayCreate) GetData() AxerveGatewayCreateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *AxerveGatewayCreate) GetDataOk() (*POSTAxerveGatewaysRequestData, bool)`
+`func (o *AxerveGatewayCreate) GetDataOk() (*AxerveGatewayCreateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *AxerveGatewayCreate) SetData(v POSTAxerveGatewaysRequestData)`
+`func (o *AxerveGatewayCreate) SetData(v AxerveGatewayCreateData)`
 
 SetData sets Data field to given value.
 

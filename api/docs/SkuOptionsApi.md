@@ -31,7 +31,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -39,7 +39,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SkuOptionsApi.DELETESkuOptionsSkuOptionId(context.Background(), skuOptionId).Execute()
+    resp, r, err := apiClient.SkuOptionsApi.DELETESkuOptionsSkuOptionId(context.Background(), skuOptionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuOptionsApi.DELETESkuOptionsSkuOptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -99,7 +99,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -107,7 +107,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SkuOptionsApi.GETLineItemOptionIdSkuOption(context.Background(), lineItemOptionId).Execute()
+    resp, r, err := apiClient.SkuOptionsApi.GETLineItemOptionIdSkuOption(context.Background(), lineItemOptionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuOptionsApi.GETLineItemOptionIdSkuOption``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -167,7 +167,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -175,7 +175,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SkuOptionsApi.GETSkuIdSkuOptions(context.Background(), skuId).Execute()
+    resp, r, err := apiClient.SkuOptionsApi.GETSkuIdSkuOptions(context.Background(), skuId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuOptionsApi.GETSkuIdSkuOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -235,7 +235,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -296,7 +296,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ## PATCHSkuOptionsSkuOptionId
 
-> PATCHSkuOptionsSkuOptionId200Response PATCHSkuOptionsSkuOptionId(ctx, skuOptionId).PATCHSkuOptionsSkuOptionIdRequest(pATCHSkuOptionsSkuOptionIdRequest).Execute()
+> PATCHSkuOptionsSkuOptionId200Response PATCHSkuOptionsSkuOptionId(ctx, skuOptionId).SkuOptionUpdate(skuOptionUpdate).Execute()
 
 Update a SKU option
 
@@ -366,16 +366,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHSkuOptionsSkuOptionIdRequest := *openapiclient.NewPATCHSkuOptionsSkuOptionIdRequest(*openapiclient.NewPATCHSkuOptionsSkuOptionIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHSkuOptionsSkuOptionIdRequestDataAttributes())) // PATCHSkuOptionsSkuOptionIdRequest | 
+    skuOptionUpdate := *openapiclient.NewSkuOptionUpdate(*openapiclient.NewSkuOptionUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHSkuOptionsSkuOptionId200ResponseDataAttributes())) // SkuOptionUpdate | 
     skuOptionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuOptionsApi.PATCHSkuOptionsSkuOptionId(context.Background(), skuOptionId).PATCHSkuOptionsSkuOptionIdRequest(pATCHSkuOptionsSkuOptionIdRequest).Execute()
+    resp, r, err := apiClient.SkuOptionsApi.PATCHSkuOptionsSkuOptionId(context.Background(), skuOptionId).SkuOptionUpdate(skuOptionUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuOptionsApi.PATCHSkuOptionsSkuOptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -400,7 +400,7 @@ Other parameters are passed through a pointer to a apiPATCHSkuOptionsSkuOptionId
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHSkuOptionsSkuOptionIdRequest** | [**PATCHSkuOptionsSkuOptionIdRequest**](PATCHSkuOptionsSkuOptionIdRequest.md) |  | 
+ **skuOptionUpdate** | [**SkuOptionUpdate**](SkuOptionUpdate.md) |  | 
 
 
 ### Return type
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ## POSTSkuOptions
 
-> POSTSkuOptions201Response POSTSkuOptions(ctx).POSTSkuOptionsRequest(pOSTSkuOptionsRequest).Execute()
+> POSTSkuOptions201Response POSTSkuOptions(ctx).SkuOptionCreate(skuOptionCreate).Execute()
 
 Create a SKU option
 
@@ -438,15 +438,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTSkuOptionsRequest := *openapiclient.NewPOSTSkuOptionsRequest(*openapiclient.NewPOSTSkuOptionsRequestData(interface{}(123), *openapiclient.NewPOSTSkuOptionsRequestDataAttributes(interface{}(Embossing)))) // POSTSkuOptionsRequest | 
+    skuOptionCreate := *openapiclient.NewSkuOptionCreate(*openapiclient.NewSkuOptionCreateData(interface{}(123), *openapiclient.NewPOSTSkuOptions201ResponseDataAttributes(interface{}(Embossing)))) // SkuOptionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuOptionsApi.POSTSkuOptions(context.Background()).POSTSkuOptionsRequest(pOSTSkuOptionsRequest).Execute()
+    resp, r, err := apiClient.SkuOptionsApi.POSTSkuOptions(context.Background()).SkuOptionCreate(skuOptionCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuOptionsApi.POSTSkuOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -467,7 +467,7 @@ Other parameters are passed through a pointer to a apiPOSTSkuOptionsRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTSkuOptionsRequest** | [**POSTSkuOptionsRequest**](POSTSkuOptionsRequest.md) |  | 
+ **skuOptionCreate** | [**SkuOptionCreate**](SkuOptionCreate.md) |  | 
 
 ### Return type
 

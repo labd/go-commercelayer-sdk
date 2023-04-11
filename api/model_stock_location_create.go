@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the StockLocationCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &StockLocationCreate{}
-
 // StockLocationCreate struct for StockLocationCreate
 type StockLocationCreate struct {
-	Data POSTStockLocationsRequestData `json:"data"`
+	Data StockLocationCreateData `json:"data"`
 }
 
 // NewStockLocationCreate instantiates a new StockLocationCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStockLocationCreate(data POSTStockLocationsRequestData) *StockLocationCreate {
+func NewStockLocationCreate(data StockLocationCreateData) *StockLocationCreate {
 	this := StockLocationCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewStockLocationCreateWithDefaults() *StockLocationCreate {
 }
 
 // GetData returns the Data field value
-func (o *StockLocationCreate) GetData() POSTStockLocationsRequestData {
+func (o *StockLocationCreate) GetData() StockLocationCreateData {
 	if o == nil {
-		var ret POSTStockLocationsRequestData
+		var ret StockLocationCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *StockLocationCreate) GetData() POSTStockLocationsRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *StockLocationCreate) GetDataOk() (*POSTStockLocationsRequestData, bool) {
+func (o *StockLocationCreate) GetDataOk() (*StockLocationCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *StockLocationCreate) GetDataOk() (*POSTStockLocationsRequestData, bool)
 }
 
 // SetData sets field value
-func (o *StockLocationCreate) SetData(v POSTStockLocationsRequestData) {
+func (o *StockLocationCreate) SetData(v StockLocationCreateData) {
 	o.Data = v
 }
 
 func (o StockLocationCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o StockLocationCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableStockLocationCreate struct {

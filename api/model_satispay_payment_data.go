@@ -15,22 +15,19 @@ import (
 	"encoding/json"
 )
 
-// checks if the SatispayPaymentData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &SatispayPaymentData{}
-
 // SatispayPaymentData struct for SatispayPaymentData
 type SatispayPaymentData struct {
 	// The resource's type
-	Type          interface{}                                                   `json:"type"`
-	Attributes    GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes `json:"attributes"`
-	Relationships *AdyenPaymentDataRelationships                                `json:"relationships,omitempty"`
+	Type          interface{}                                       `json:"type"`
+	Attributes    GETSatispayPayments200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *AdyenPaymentDataRelationships                    `json:"relationships,omitempty"`
 }
 
 // NewSatispayPaymentData instantiates a new SatispayPaymentData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSatispayPaymentData(type_ interface{}, attributes GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) *SatispayPaymentData {
+func NewSatispayPaymentData(type_ interface{}, attributes GETSatispayPayments200ResponseDataInnerAttributes) *SatispayPaymentData {
 	this := SatispayPaymentData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -60,7 +57,7 @@ func (o *SatispayPaymentData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SatispayPaymentData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -72,9 +69,9 @@ func (o *SatispayPaymentData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *SatispayPaymentData) GetAttributes() GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes {
+func (o *SatispayPaymentData) GetAttributes() GETSatispayPayments200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes
+		var ret GETSatispayPayments200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -83,7 +80,7 @@ func (o *SatispayPaymentData) GetAttributes() GETSatispayPaymentsSatispayPayment
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *SatispayPaymentData) GetAttributesOk() (*GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes, bool) {
+func (o *SatispayPaymentData) GetAttributesOk() (*GETSatispayPayments200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,13 +88,13 @@ func (o *SatispayPaymentData) GetAttributesOk() (*GETSatispayPaymentsSatispayPay
 }
 
 // SetAttributes sets field value
-func (o *SatispayPaymentData) SetAttributes(v GETSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) {
+func (o *SatispayPaymentData) SetAttributes(v GETSatispayPayments200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *SatispayPaymentData) GetRelationships() AdyenPaymentDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		var ret AdyenPaymentDataRelationships
 		return ret
 	}
@@ -107,7 +104,7 @@ func (o *SatispayPaymentData) GetRelationships() AdyenPaymentDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SatispayPaymentData) GetRelationshipsOk() (*AdyenPaymentDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -115,7 +112,7 @@ func (o *SatispayPaymentData) GetRelationshipsOk() (*AdyenPaymentDataRelationshi
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *SatispayPaymentData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
@@ -128,23 +125,17 @@ func (o *SatispayPaymentData) SetRelationships(v AdyenPaymentDataRelationships) 
 }
 
 func (o SatispayPaymentData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o SatispayPaymentData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	toSerialize["attributes"] = o.Attributes
-	if !IsNil(o.Relationships) {
+	if true {
+		toSerialize["attributes"] = o.Attributes
+	}
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableSatispayPaymentData struct {

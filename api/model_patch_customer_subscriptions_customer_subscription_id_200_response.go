@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the PATCHCustomerSubscriptionsCustomerSubscriptionId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PATCHCustomerSubscriptionsCustomerSubscriptionId200Response{}
-
 // PATCHCustomerSubscriptionsCustomerSubscriptionId200Response struct for PATCHCustomerSubscriptionsCustomerSubscriptionId200Response
 type PATCHCustomerSubscriptionsCustomerSubscriptionId200Response struct {
 	Data *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseWithDefaults(
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200Response) GetData() PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200Response) GetData() 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200Response) GetDataOk() (*PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200Response) GetDataOk(
 
 // HasData returns a boolean if a field has been set.
 func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200Response) SetData(v 
 }
 
 func (o PATCHCustomerSubscriptionsCustomerSubscriptionId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o PATCHCustomerSubscriptionsCustomerSubscriptionId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePATCHCustomerSubscriptionsCustomerSubscriptionId200Response struct {

@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the RecurringOrderCopyUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &RecurringOrderCopyUpdate{}
-
 // RecurringOrderCopyUpdate struct for RecurringOrderCopyUpdate
 type RecurringOrderCopyUpdate struct {
-	Data PATCHRecurringOrderCopiesRecurringOrderCopyIdRequestData `json:"data"`
+	Data RecurringOrderCopyUpdateData `json:"data"`
 }
 
 // NewRecurringOrderCopyUpdate instantiates a new RecurringOrderCopyUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRecurringOrderCopyUpdate(data PATCHRecurringOrderCopiesRecurringOrderCopyIdRequestData) *RecurringOrderCopyUpdate {
+func NewRecurringOrderCopyUpdate(data RecurringOrderCopyUpdateData) *RecurringOrderCopyUpdate {
 	this := RecurringOrderCopyUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewRecurringOrderCopyUpdateWithDefaults() *RecurringOrderCopyUpdate {
 }
 
 // GetData returns the Data field value
-func (o *RecurringOrderCopyUpdate) GetData() PATCHRecurringOrderCopiesRecurringOrderCopyIdRequestData {
+func (o *RecurringOrderCopyUpdate) GetData() RecurringOrderCopyUpdateData {
 	if o == nil {
-		var ret PATCHRecurringOrderCopiesRecurringOrderCopyIdRequestData
+		var ret RecurringOrderCopyUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *RecurringOrderCopyUpdate) GetData() PATCHRecurringOrderCopiesRecurringO
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *RecurringOrderCopyUpdate) GetDataOk() (*PATCHRecurringOrderCopiesRecurringOrderCopyIdRequestData, bool) {
+func (o *RecurringOrderCopyUpdate) GetDataOk() (*RecurringOrderCopyUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *RecurringOrderCopyUpdate) GetDataOk() (*PATCHRecurringOrderCopiesRecurr
 }
 
 // SetData sets field value
-func (o *RecurringOrderCopyUpdate) SetData(v PATCHRecurringOrderCopiesRecurringOrderCopyIdRequestData) {
+func (o *RecurringOrderCopyUpdate) SetData(v RecurringOrderCopyUpdateData) {
 	o.Data = v
 }
 
 func (o RecurringOrderCopyUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o RecurringOrderCopyUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableRecurringOrderCopyUpdate struct {

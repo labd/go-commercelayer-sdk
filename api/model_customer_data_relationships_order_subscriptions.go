@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the CustomerDataRelationshipsOrderSubscriptions type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CustomerDataRelationshipsOrderSubscriptions{}
-
 // CustomerDataRelationshipsOrderSubscriptions struct for CustomerDataRelationshipsOrderSubscriptions
 type CustomerDataRelationshipsOrderSubscriptions struct {
-	Data *POSTOrderSubscriptionItemsRequestDataRelationshipsOrderSubscriptionData `json:"data,omitempty"`
+	Data *CustomerDataRelationshipsOrderSubscriptionsData `json:"data,omitempty"`
 }
 
 // NewCustomerDataRelationshipsOrderSubscriptions instantiates a new CustomerDataRelationshipsOrderSubscriptions object
@@ -41,9 +38,9 @@ func NewCustomerDataRelationshipsOrderSubscriptionsWithDefaults() *CustomerDataR
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *CustomerDataRelationshipsOrderSubscriptions) GetData() POSTOrderSubscriptionItemsRequestDataRelationshipsOrderSubscriptionData {
-	if o == nil || IsNil(o.Data) {
-		var ret POSTOrderSubscriptionItemsRequestDataRelationshipsOrderSubscriptionData
+func (o *CustomerDataRelationshipsOrderSubscriptions) GetData() CustomerDataRelationshipsOrderSubscriptionsData {
+	if o == nil || o.Data == nil {
+		var ret CustomerDataRelationshipsOrderSubscriptionsData
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *CustomerDataRelationshipsOrderSubscriptions) GetData() POSTOrderSubscri
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerDataRelationshipsOrderSubscriptions) GetDataOk() (*POSTOrderSubscriptionItemsRequestDataRelationshipsOrderSubscriptionData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *CustomerDataRelationshipsOrderSubscriptions) GetDataOk() (*CustomerDataRelationshipsOrderSubscriptionsData, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *CustomerDataRelationshipsOrderSubscriptions) GetDataOk() (*POSTOrderSub
 
 // HasData returns a boolean if a field has been set.
 func (o *CustomerDataRelationshipsOrderSubscriptions) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given POSTOrderSubscriptionItemsRequestDataRelationshipsOrderSubscriptionData and assigns it to the Data field.
-func (o *CustomerDataRelationshipsOrderSubscriptions) SetData(v POSTOrderSubscriptionItemsRequestDataRelationshipsOrderSubscriptionData) {
+// SetData gets a reference to the given CustomerDataRelationshipsOrderSubscriptionsData and assigns it to the Data field.
+func (o *CustomerDataRelationshipsOrderSubscriptions) SetData(v CustomerDataRelationshipsOrderSubscriptionsData) {
 	o.Data = &v
 }
 
 func (o CustomerDataRelationshipsOrderSubscriptions) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o CustomerDataRelationshipsOrderSubscriptions) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableCustomerDataRelationshipsOrderSubscriptions struct {

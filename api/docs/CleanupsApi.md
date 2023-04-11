@@ -28,7 +28,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -36,7 +36,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CleanupsApi.DELETECleanupsCleanupId(context.Background(), cleanupId).Execute()
+    resp, r, err := apiClient.CleanupsApi.DELETECleanupsCleanupId(context.Background(), cleanupId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CleanupsApi.DELETECleanupsCleanupId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -96,7 +96,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -157,7 +157,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ## POSTCleanups
 
-> POSTCleanups201Response POSTCleanups(ctx).POSTCleanupsRequest(pOSTCleanupsRequest).Execute()
+> POSTCleanups201Response POSTCleanups(ctx).CleanupCreate(cleanupCreate).Execute()
 
 Create a cleanup
 
@@ -227,15 +227,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTCleanupsRequest := *openapiclient.NewPOSTCleanupsRequest(*openapiclient.NewPOSTCleanupsRequestData(interface{}(123), *openapiclient.NewPOSTCleanupsRequestDataAttributes(interface{}(skus)))) // POSTCleanupsRequest | 
+    cleanupCreate := *openapiclient.NewCleanupCreate(*openapiclient.NewCleanupCreateData(interface{}(123), *openapiclient.NewPOSTCleanups201ResponseDataAttributes(interface{}(skus)))) // CleanupCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CleanupsApi.POSTCleanups(context.Background()).POSTCleanupsRequest(pOSTCleanupsRequest).Execute()
+    resp, r, err := apiClient.CleanupsApi.POSTCleanups(context.Background()).CleanupCreate(cleanupCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CleanupsApi.POSTCleanups``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -256,7 +256,7 @@ Other parameters are passed through a pointer to a apiPOSTCleanupsRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTCleanupsRequest** | [**POSTCleanupsRequest**](POSTCleanupsRequest.md) |  | 
+ **cleanupCreate** | [**CleanupCreate**](CleanupCreate.md) |  | 
 
 ### Return type
 

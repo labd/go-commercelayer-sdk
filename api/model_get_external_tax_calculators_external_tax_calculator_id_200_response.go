@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETExternalTaxCalculatorsExternalTaxCalculatorId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETExternalTaxCalculatorsExternalTaxCalculatorId200Response{}
-
 // GETExternalTaxCalculatorsExternalTaxCalculatorId200Response struct for GETExternalTaxCalculatorsExternalTaxCalculatorId200Response
 type GETExternalTaxCalculatorsExternalTaxCalculatorId200Response struct {
-	Data *GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseData `json:"data,omitempty"`
+	Data *GETExternalTaxCalculators200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETExternalTaxCalculatorsExternalTaxCalculatorId200Response instantiates a new GETExternalTaxCalculatorsExternalTaxCalculatorId200Response object
@@ -41,9 +38,9 @@ func NewGETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseWithDefaults(
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200Response) GetData() GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseData
+func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200Response) GetData() GETExternalTaxCalculators200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETExternalTaxCalculators200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200Response) GetData() 
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200Response) GetDataOk() (*GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200Response) GetDataOk() (*GETExternalTaxCalculators200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200Response) GetDataOk(
 
 // HasData returns a boolean if a field has been set.
 func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseData and assigns it to the Data field.
-func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200Response) SetData(v GETExternalTaxCalculatorsExternalTaxCalculatorId200ResponseData) {
+// SetData gets a reference to the given GETExternalTaxCalculators200ResponseDataInner and assigns it to the Data field.
+func (o *GETExternalTaxCalculatorsExternalTaxCalculatorId200Response) SetData(v GETExternalTaxCalculators200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETExternalTaxCalculatorsExternalTaxCalculatorId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETExternalTaxCalculatorsExternalTaxCalculatorId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETExternalTaxCalculatorsExternalTaxCalculatorId200Response struct {

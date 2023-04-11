@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the StockLocation type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &StockLocation{}
-
 // StockLocation struct for StockLocation
 type StockLocation struct {
 	Data *StockLocationData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewStockLocationWithDefaults() *StockLocation {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *StockLocation) GetData() StockLocationData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret StockLocationData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *StockLocation) GetData() StockLocationData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StockLocation) GetDataOk() (*StockLocationData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *StockLocation) GetDataOk() (*StockLocationData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *StockLocation) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *StockLocation) SetData(v StockLocationData) {
 }
 
 func (o StockLocation) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o StockLocation) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableStockLocation struct {

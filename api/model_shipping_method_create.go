@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the ShippingMethodCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ShippingMethodCreate{}
-
 // ShippingMethodCreate struct for ShippingMethodCreate
 type ShippingMethodCreate struct {
-	Data POSTShippingMethodsRequestData `json:"data"`
+	Data ShippingMethodCreateData `json:"data"`
 }
 
 // NewShippingMethodCreate instantiates a new ShippingMethodCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShippingMethodCreate(data POSTShippingMethodsRequestData) *ShippingMethodCreate {
+func NewShippingMethodCreate(data ShippingMethodCreateData) *ShippingMethodCreate {
 	this := ShippingMethodCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewShippingMethodCreateWithDefaults() *ShippingMethodCreate {
 }
 
 // GetData returns the Data field value
-func (o *ShippingMethodCreate) GetData() POSTShippingMethodsRequestData {
+func (o *ShippingMethodCreate) GetData() ShippingMethodCreateData {
 	if o == nil {
-		var ret POSTShippingMethodsRequestData
+		var ret ShippingMethodCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *ShippingMethodCreate) GetData() POSTShippingMethodsRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ShippingMethodCreate) GetDataOk() (*POSTShippingMethodsRequestData, bool) {
+func (o *ShippingMethodCreate) GetDataOk() (*ShippingMethodCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *ShippingMethodCreate) GetDataOk() (*POSTShippingMethodsRequestData, boo
 }
 
 // SetData sets field value
-func (o *ShippingMethodCreate) SetData(v POSTShippingMethodsRequestData) {
+func (o *ShippingMethodCreate) SetData(v ShippingMethodCreateData) {
 	o.Data = v
 }
 
 func (o ShippingMethodCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o ShippingMethodCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableShippingMethodCreate struct {

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**POSTMarketsRequestDataRelationshipsTaxCalculatorData**](POSTMarketsRequestDataRelationshipsTaxCalculatorData.md) |  | [optional] 
+**Data** | Pointer to [**MarketDataRelationshipsTaxCalculatorData**](MarketDataRelationshipsTaxCalculatorData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *MarketDataRelationshipsTaxCalculator) GetData() POSTMarketsRequestDataRelationshipsTaxCalculatorData`
+`func (o *MarketDataRelationshipsTaxCalculator) GetData() MarketDataRelationshipsTaxCalculatorData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *MarketDataRelationshipsTaxCalculator) GetDataOk() (*POSTMarketsRequestDataRelationshipsTaxCalculatorData, bool)`
+`func (o *MarketDataRelationshipsTaxCalculator) GetDataOk() (*MarketDataRelationshipsTaxCalculatorData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *MarketDataRelationshipsTaxCalculator) SetData(v POSTMarketsRequestDataRelationshipsTaxCalculatorData)`
+`func (o *MarketDataRelationshipsTaxCalculator) SetData(v MarketDataRelationshipsTaxCalculatorData)`
 
 SetData sets Data field to given value.
 

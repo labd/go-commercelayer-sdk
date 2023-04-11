@@ -15,22 +15,19 @@ import (
 	"encoding/json"
 )
 
-// checks if the FixedAmountPromotionData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &FixedAmountPromotionData{}
-
 // FixedAmountPromotionData struct for FixedAmountPromotionData
 type FixedAmountPromotionData struct {
 	// The resource's type
-	Type          interface{}                                                             `json:"type"`
-	Attributes    GETFixedAmountPromotionsFixedAmountPromotionId200ResponseDataAttributes `json:"attributes"`
-	Relationships *ExternalPromotionDataRelationships                                     `json:"relationships,omitempty"`
+	Type          interface{}                                            `json:"type"`
+	Attributes    GETFixedAmountPromotions200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *ExternalPromotionDataRelationships                    `json:"relationships,omitempty"`
 }
 
 // NewFixedAmountPromotionData instantiates a new FixedAmountPromotionData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFixedAmountPromotionData(type_ interface{}, attributes GETFixedAmountPromotionsFixedAmountPromotionId200ResponseDataAttributes) *FixedAmountPromotionData {
+func NewFixedAmountPromotionData(type_ interface{}, attributes GETFixedAmountPromotions200ResponseDataInnerAttributes) *FixedAmountPromotionData {
 	this := FixedAmountPromotionData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -60,7 +57,7 @@ func (o *FixedAmountPromotionData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *FixedAmountPromotionData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -72,9 +69,9 @@ func (o *FixedAmountPromotionData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *FixedAmountPromotionData) GetAttributes() GETFixedAmountPromotionsFixedAmountPromotionId200ResponseDataAttributes {
+func (o *FixedAmountPromotionData) GetAttributes() GETFixedAmountPromotions200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret GETFixedAmountPromotionsFixedAmountPromotionId200ResponseDataAttributes
+		var ret GETFixedAmountPromotions200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -83,7 +80,7 @@ func (o *FixedAmountPromotionData) GetAttributes() GETFixedAmountPromotionsFixed
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *FixedAmountPromotionData) GetAttributesOk() (*GETFixedAmountPromotionsFixedAmountPromotionId200ResponseDataAttributes, bool) {
+func (o *FixedAmountPromotionData) GetAttributesOk() (*GETFixedAmountPromotions200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,13 +88,13 @@ func (o *FixedAmountPromotionData) GetAttributesOk() (*GETFixedAmountPromotionsF
 }
 
 // SetAttributes sets field value
-func (o *FixedAmountPromotionData) SetAttributes(v GETFixedAmountPromotionsFixedAmountPromotionId200ResponseDataAttributes) {
+func (o *FixedAmountPromotionData) SetAttributes(v GETFixedAmountPromotions200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *FixedAmountPromotionData) GetRelationships() ExternalPromotionDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		var ret ExternalPromotionDataRelationships
 		return ret
 	}
@@ -107,7 +104,7 @@ func (o *FixedAmountPromotionData) GetRelationships() ExternalPromotionDataRelat
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FixedAmountPromotionData) GetRelationshipsOk() (*ExternalPromotionDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -115,7 +112,7 @@ func (o *FixedAmountPromotionData) GetRelationshipsOk() (*ExternalPromotionDataR
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *FixedAmountPromotionData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
@@ -128,23 +125,17 @@ func (o *FixedAmountPromotionData) SetRelationships(v ExternalPromotionDataRelat
 }
 
 func (o FixedAmountPromotionData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o FixedAmountPromotionData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	toSerialize["attributes"] = o.Attributes
-	if !IsNil(o.Relationships) {
+	if true {
+		toSerialize["attributes"] = o.Attributes
+	}
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableFixedAmountPromotionData struct {

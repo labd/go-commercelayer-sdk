@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *ReturnLineItemsApiService) DELETEReturnLineItemsReturnLineItemIdExecute
 	}
 
 	localVarPath := localBasePath + "/return_line_items/{returnLineItemId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnLineItemId"+"}", url.PathEscape(parameterValueToString(r.returnLineItemId, "returnLineItemId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnLineItemId"+"}", url.PathEscape(parameterToString(r.returnLineItemId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *ReturnLineItemsApiService) DELETEReturnLineItemsReturnLineItemIdExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -156,7 +156,7 @@ func (a *ReturnLineItemsApiService) GETReturnIdReturnLineItemsExecute(r ReturnLi
 	}
 
 	localVarPath := localBasePath + "/returns/{returnId}/return_line_items"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterToString(r.returnId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *ReturnLineItemsApiService) GETReturnIdReturnLineItemsExecute(r ReturnLi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *ReturnLineItemsApiService) GETReturnLineItemsExecute(r ReturnLineItemsA
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -351,7 +351,7 @@ func (a *ReturnLineItemsApiService) GETReturnLineItemsReturnLineItemIdExecute(r 
 	}
 
 	localVarPath := localBasePath + "/return_line_items/{returnLineItemId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnLineItemId"+"}", url.PathEscape(parameterValueToString(r.returnLineItemId, "returnLineItemId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnLineItemId"+"}", url.PathEscape(parameterToString(r.returnLineItemId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *ReturnLineItemsApiService) GETReturnLineItemsReturnLineItemIdExecute(r 
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -412,14 +412,14 @@ func (a *ReturnLineItemsApiService) GETReturnLineItemsReturnLineItemIdExecute(r 
 }
 
 type ReturnLineItemsApiPATCHReturnLineItemsReturnLineItemIdRequest struct {
-	ctx                                         context.Context
-	ApiService                                  *ReturnLineItemsApiService
-	pATCHReturnLineItemsReturnLineItemIdRequest *PATCHReturnLineItemsReturnLineItemIdRequest
-	returnLineItemId                            interface{}
+	ctx                  context.Context
+	ApiService           *ReturnLineItemsApiService
+	returnLineItemUpdate *ReturnLineItemUpdate
+	returnLineItemId     interface{}
 }
 
-func (r ReturnLineItemsApiPATCHReturnLineItemsReturnLineItemIdRequest) PATCHReturnLineItemsReturnLineItemIdRequest(pATCHReturnLineItemsReturnLineItemIdRequest PATCHReturnLineItemsReturnLineItemIdRequest) ReturnLineItemsApiPATCHReturnLineItemsReturnLineItemIdRequest {
-	r.pATCHReturnLineItemsReturnLineItemIdRequest = &pATCHReturnLineItemsReturnLineItemIdRequest
+func (r ReturnLineItemsApiPATCHReturnLineItemsReturnLineItemIdRequest) ReturnLineItemUpdate(returnLineItemUpdate ReturnLineItemUpdate) ReturnLineItemsApiPATCHReturnLineItemsReturnLineItemIdRequest {
+	r.returnLineItemUpdate = &returnLineItemUpdate
 	return r
 }
 
@@ -461,13 +461,13 @@ func (a *ReturnLineItemsApiService) PATCHReturnLineItemsReturnLineItemIdExecute(
 	}
 
 	localVarPath := localBasePath + "/return_line_items/{returnLineItemId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnLineItemId"+"}", url.PathEscape(parameterValueToString(r.returnLineItemId, "returnLineItemId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnLineItemId"+"}", url.PathEscape(parameterToString(r.returnLineItemId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHReturnLineItemsReturnLineItemIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHReturnLineItemsReturnLineItemIdRequest is required and must be specified")
+	if r.returnLineItemUpdate == nil {
+		return localVarReturnValue, nil, reportError("returnLineItemUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -488,7 +488,7 @@ func (a *ReturnLineItemsApiService) PATCHReturnLineItemsReturnLineItemIdExecute(
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHReturnLineItemsReturnLineItemIdRequest
+	localVarPostBody = r.returnLineItemUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -499,9 +499,9 @@ func (a *ReturnLineItemsApiService) PATCHReturnLineItemsReturnLineItemIdExecute(
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -527,13 +527,13 @@ func (a *ReturnLineItemsApiService) PATCHReturnLineItemsReturnLineItemIdExecute(
 }
 
 type ReturnLineItemsApiPOSTReturnLineItemsRequest struct {
-	ctx                        context.Context
-	ApiService                 *ReturnLineItemsApiService
-	pOSTReturnLineItemsRequest *POSTReturnLineItemsRequest
+	ctx                  context.Context
+	ApiService           *ReturnLineItemsApiService
+	returnLineItemCreate *ReturnLineItemCreate
 }
 
-func (r ReturnLineItemsApiPOSTReturnLineItemsRequest) POSTReturnLineItemsRequest(pOSTReturnLineItemsRequest POSTReturnLineItemsRequest) ReturnLineItemsApiPOSTReturnLineItemsRequest {
-	r.pOSTReturnLineItemsRequest = &pOSTReturnLineItemsRequest
+func (r ReturnLineItemsApiPOSTReturnLineItemsRequest) ReturnLineItemCreate(returnLineItemCreate ReturnLineItemCreate) ReturnLineItemsApiPOSTReturnLineItemsRequest {
+	r.returnLineItemCreate = &returnLineItemCreate
 	return r
 }
 
@@ -577,8 +577,8 @@ func (a *ReturnLineItemsApiService) POSTReturnLineItemsExecute(r ReturnLineItems
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTReturnLineItemsRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTReturnLineItemsRequest is required and must be specified")
+	if r.returnLineItemCreate == nil {
+		return localVarReturnValue, nil, reportError("returnLineItemCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -599,7 +599,7 @@ func (a *ReturnLineItemsApiService) POSTReturnLineItemsExecute(r ReturnLineItems
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTReturnLineItemsRequest
+	localVarPostBody = r.returnLineItemCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -610,9 +610,9 @@ func (a *ReturnLineItemsApiService) POSTReturnLineItemsExecute(r ReturnLineItems
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -15,22 +15,19 @@ import (
 	"encoding/json"
 )
 
-// checks if the CaptureData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &CaptureData{}
-
 // CaptureData struct for CaptureData
 type CaptureData struct {
 	// The resource's type
-	Type          interface{}                                   `json:"type"`
-	Attributes    GETCapturesCaptureId200ResponseDataAttributes `json:"attributes"`
-	Relationships *CaptureDataRelationships                     `json:"relationships,omitempty"`
+	Type          interface{}                               `json:"type"`
+	Attributes    GETCaptures200ResponseDataInnerAttributes `json:"attributes"`
+	Relationships *CaptureDataRelationships                 `json:"relationships,omitempty"`
 }
 
 // NewCaptureData instantiates a new CaptureData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCaptureData(type_ interface{}, attributes GETCapturesCaptureId200ResponseDataAttributes) *CaptureData {
+func NewCaptureData(type_ interface{}, attributes GETCaptures200ResponseDataInnerAttributes) *CaptureData {
 	this := CaptureData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -60,7 +57,7 @@ func (o *CaptureData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CaptureData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -72,9 +69,9 @@ func (o *CaptureData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CaptureData) GetAttributes() GETCapturesCaptureId200ResponseDataAttributes {
+func (o *CaptureData) GetAttributes() GETCaptures200ResponseDataInnerAttributes {
 	if o == nil {
-		var ret GETCapturesCaptureId200ResponseDataAttributes
+		var ret GETCaptures200ResponseDataInnerAttributes
 		return ret
 	}
 
@@ -83,7 +80,7 @@ func (o *CaptureData) GetAttributes() GETCapturesCaptureId200ResponseDataAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CaptureData) GetAttributesOk() (*GETCapturesCaptureId200ResponseDataAttributes, bool) {
+func (o *CaptureData) GetAttributesOk() (*GETCaptures200ResponseDataInnerAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -91,13 +88,13 @@ func (o *CaptureData) GetAttributesOk() (*GETCapturesCaptureId200ResponseDataAtt
 }
 
 // SetAttributes sets field value
-func (o *CaptureData) SetAttributes(v GETCapturesCaptureId200ResponseDataAttributes) {
+func (o *CaptureData) SetAttributes(v GETCaptures200ResponseDataInnerAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *CaptureData) GetRelationships() CaptureDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		var ret CaptureDataRelationships
 		return ret
 	}
@@ -107,7 +104,7 @@ func (o *CaptureData) GetRelationships() CaptureDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CaptureData) GetRelationshipsOk() (*CaptureDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -115,7 +112,7 @@ func (o *CaptureData) GetRelationshipsOk() (*CaptureDataRelationships, bool) {
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *CaptureData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
@@ -128,23 +125,17 @@ func (o *CaptureData) SetRelationships(v CaptureDataRelationships) {
 }
 
 func (o CaptureData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o CaptureData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	toSerialize["attributes"] = o.Attributes
-	if !IsNil(o.Relationships) {
+	if true {
+		toSerialize["attributes"] = o.Attributes
+	}
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableCaptureData struct {

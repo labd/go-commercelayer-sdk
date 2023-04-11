@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETShipmentsShipmentId200ResponseDataAttributes**](GETShipmentsShipmentId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**GETShipments200ResponseDataInnerAttributes**](GETShipments200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**ShipmentDataRelationships**](ShipmentDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewShipmentData
 
-`func NewShipmentData(type_ interface{}, attributes GETShipmentsShipmentId200ResponseDataAttributes, ) *ShipmentData`
+`func NewShipmentData(type_ interface{}, attributes GETShipments200ResponseDataInnerAttributes, ) *ShipmentData`
 
 NewShipmentData instantiates a new ShipmentData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *ShipmentData) GetAttributes() GETShipmentsShipmentId200ResponseDataAttributes`
+`func (o *ShipmentData) GetAttributes() GETShipments200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ShipmentData) GetAttributesOk() (*GETShipmentsShipmentId200ResponseDataAttributes, bool)`
+`func (o *ShipmentData) GetAttributesOk() (*GETShipments200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ShipmentData) SetAttributes(v GETShipmentsShipmentId200ResponseDataAttributes)`
+`func (o *ShipmentData) SetAttributes(v GETShipments200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

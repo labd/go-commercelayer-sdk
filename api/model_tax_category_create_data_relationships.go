@@ -15,20 +15,17 @@ import (
 	"encoding/json"
 )
 
-// checks if the TaxCategoryCreateDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &TaxCategoryCreateDataRelationships{}
-
 // TaxCategoryCreateDataRelationships struct for TaxCategoryCreateDataRelationships
 type TaxCategoryCreateDataRelationships struct {
-	Sku           POSTInStockSubscriptionsRequestDataRelationshipsSku `json:"sku"`
-	TaxCalculator TaxCategoryCreateDataRelationshipsTaxCalculator     `json:"tax_calculator"`
+	Sku           InStockSubscriptionCreateDataRelationshipsSku   `json:"sku"`
+	TaxCalculator TaxCategoryCreateDataRelationshipsTaxCalculator `json:"tax_calculator"`
 }
 
 // NewTaxCategoryCreateDataRelationships instantiates a new TaxCategoryCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTaxCategoryCreateDataRelationships(sku POSTInStockSubscriptionsRequestDataRelationshipsSku, taxCalculator TaxCategoryCreateDataRelationshipsTaxCalculator) *TaxCategoryCreateDataRelationships {
+func NewTaxCategoryCreateDataRelationships(sku InStockSubscriptionCreateDataRelationshipsSku, taxCalculator TaxCategoryCreateDataRelationshipsTaxCalculator) *TaxCategoryCreateDataRelationships {
 	this := TaxCategoryCreateDataRelationships{}
 	this.Sku = sku
 	this.TaxCalculator = taxCalculator
@@ -44,9 +41,9 @@ func NewTaxCategoryCreateDataRelationshipsWithDefaults() *TaxCategoryCreateDataR
 }
 
 // GetSku returns the Sku field value
-func (o *TaxCategoryCreateDataRelationships) GetSku() POSTInStockSubscriptionsRequestDataRelationshipsSku {
+func (o *TaxCategoryCreateDataRelationships) GetSku() InStockSubscriptionCreateDataRelationshipsSku {
 	if o == nil {
-		var ret POSTInStockSubscriptionsRequestDataRelationshipsSku
+		var ret InStockSubscriptionCreateDataRelationshipsSku
 		return ret
 	}
 
@@ -55,7 +52,7 @@ func (o *TaxCategoryCreateDataRelationships) GetSku() POSTInStockSubscriptionsRe
 
 // GetSkuOk returns a tuple with the Sku field value
 // and a boolean to check if the value has been set.
-func (o *TaxCategoryCreateDataRelationships) GetSkuOk() (*POSTInStockSubscriptionsRequestDataRelationshipsSku, bool) {
+func (o *TaxCategoryCreateDataRelationships) GetSkuOk() (*InStockSubscriptionCreateDataRelationshipsSku, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -63,7 +60,7 @@ func (o *TaxCategoryCreateDataRelationships) GetSkuOk() (*POSTInStockSubscriptio
 }
 
 // SetSku sets field value
-func (o *TaxCategoryCreateDataRelationships) SetSku(v POSTInStockSubscriptionsRequestDataRelationshipsSku) {
+func (o *TaxCategoryCreateDataRelationships) SetSku(v InStockSubscriptionCreateDataRelationshipsSku) {
 	o.Sku = v
 }
 
@@ -92,18 +89,14 @@ func (o *TaxCategoryCreateDataRelationships) SetTaxCalculator(v TaxCategoryCreat
 }
 
 func (o TaxCategoryCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["sku"] = o.Sku
+	}
+	if true {
+		toSerialize["tax_calculator"] = o.TaxCalculator
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o TaxCategoryCreateDataRelationships) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["sku"] = o.Sku
-	toSerialize["tax_calculator"] = o.TaxCalculator
-	return toSerialize, nil
 }
 
 type NullableTaxCategoryCreateDataRelationships struct {

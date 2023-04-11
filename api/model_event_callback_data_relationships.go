@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the EventCallbackDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &EventCallbackDataRelationships{}
-
 // EventCallbackDataRelationships struct for EventCallbackDataRelationships
 type EventCallbackDataRelationships struct {
 	Webhook *EventCallbackDataRelationshipsWebhook `json:"webhook,omitempty"`
@@ -42,7 +39,7 @@ func NewEventCallbackDataRelationshipsWithDefaults() *EventCallbackDataRelations
 
 // GetWebhook returns the Webhook field value if set, zero value otherwise.
 func (o *EventCallbackDataRelationships) GetWebhook() EventCallbackDataRelationshipsWebhook {
-	if o == nil || IsNil(o.Webhook) {
+	if o == nil || o.Webhook == nil {
 		var ret EventCallbackDataRelationshipsWebhook
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *EventCallbackDataRelationships) GetWebhook() EventCallbackDataRelations
 // GetWebhookOk returns a tuple with the Webhook field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventCallbackDataRelationships) GetWebhookOk() (*EventCallbackDataRelationshipsWebhook, bool) {
-	if o == nil || IsNil(o.Webhook) {
+	if o == nil || o.Webhook == nil {
 		return nil, false
 	}
 	return o.Webhook, true
@@ -60,7 +57,7 @@ func (o *EventCallbackDataRelationships) GetWebhookOk() (*EventCallbackDataRelat
 
 // HasWebhook returns a boolean if a field has been set.
 func (o *EventCallbackDataRelationships) HasWebhook() bool {
-	if o != nil && !IsNil(o.Webhook) {
+	if o != nil && o.Webhook != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *EventCallbackDataRelationships) SetWebhook(v EventCallbackDataRelations
 }
 
 func (o EventCallbackDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o EventCallbackDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Webhook) {
+	if o.Webhook != nil {
 		toSerialize["webhook"] = o.Webhook
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableEventCallbackDataRelationships struct {

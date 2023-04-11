@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
-**Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
-**Attributes** | Pointer to [**PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequestDataAttributes**](PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequestDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTOrderAmountPromotionRules201ResponseDataRelationships**](POSTOrderAmountPromotionRules201ResponseDataRelationships.md) |  | [optional] 
+**Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
+**Attributes** | Pointer to [**PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes**](PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes.md) |  | [optional] 
+**Relationships** | Pointer to [**GETOrderAmountPromotionRules200ResponseDataInnerRelationships**](GETOrderAmountPromotionRules200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -101,20 +101,20 @@ HasType returns a boolean if a field has been set.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetLinks
 
-`func (o *PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseData) GetLinks() POSTAddresses201ResponseDataLinks`
+`func (o *PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool)`
+`func (o *PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks)`
+`func (o *PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks)`
 
 SetLinks sets Links field to given value.
 
@@ -126,20 +126,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseData) GetAttributes() PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequestDataAttributes`
+`func (o *PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseData) GetAttributes() PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseData) GetAttributesOk() (*PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequestDataAttributes, bool)`
+`func (o *PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseData) GetAttributesOk() (*PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseData) SetAttributes(v PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequestDataAttributes)`
+`func (o *PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseData) SetAttributes(v PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
@@ -151,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseData) GetRelationships() POSTOrderAmountPromotionRules201ResponseDataRelationships`
+`func (o *PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseData) GetRelationships() GETOrderAmountPromotionRules200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseData) GetRelationshipsOk() (*POSTOrderAmountPromotionRules201ResponseDataRelationships, bool)`
+`func (o *PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseData) GetRelationshipsOk() (*GETOrderAmountPromotionRules200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseData) SetRelationships(v POSTOrderAmountPromotionRules201ResponseDataRelationships)`
+`func (o *PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseData) SetRelationships(v GETOrderAmountPromotionRules200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

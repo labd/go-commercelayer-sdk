@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the TaxRuleCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &TaxRuleCreate{}
-
 // TaxRuleCreate struct for TaxRuleCreate
 type TaxRuleCreate struct {
-	Data POSTTaxRulesRequestData `json:"data"`
+	Data TaxRuleCreateData `json:"data"`
 }
 
 // NewTaxRuleCreate instantiates a new TaxRuleCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTaxRuleCreate(data POSTTaxRulesRequestData) *TaxRuleCreate {
+func NewTaxRuleCreate(data TaxRuleCreateData) *TaxRuleCreate {
 	this := TaxRuleCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewTaxRuleCreateWithDefaults() *TaxRuleCreate {
 }
 
 // GetData returns the Data field value
-func (o *TaxRuleCreate) GetData() POSTTaxRulesRequestData {
+func (o *TaxRuleCreate) GetData() TaxRuleCreateData {
 	if o == nil {
-		var ret POSTTaxRulesRequestData
+		var ret TaxRuleCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *TaxRuleCreate) GetData() POSTTaxRulesRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *TaxRuleCreate) GetDataOk() (*POSTTaxRulesRequestData, bool) {
+func (o *TaxRuleCreate) GetDataOk() (*TaxRuleCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *TaxRuleCreate) GetDataOk() (*POSTTaxRulesRequestData, bool) {
 }
 
 // SetData sets field value
-func (o *TaxRuleCreate) SetData(v POSTTaxRulesRequestData) {
+func (o *TaxRuleCreate) SetData(v TaxRuleCreateData) {
 	o.Data = v
 }
 
 func (o TaxRuleCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o TaxRuleCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableTaxRuleCreate struct {

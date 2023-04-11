@@ -32,7 +32,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -40,7 +40,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ShippingCategoriesApi.DELETEShippingCategoriesShippingCategoryId(context.Background(), shippingCategoryId).Execute()
+    resp, r, err := apiClient.ShippingCategoriesApi.DELETEShippingCategoriesShippingCategoryId(context.Background(), shippingCategoryId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingCategoriesApi.DELETEShippingCategoriesShippingCategoryId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -100,7 +100,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -108,7 +108,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ShippingCategoriesApi.GETShipmentIdShippingCategory(context.Background(), shipmentId).Execute()
+    resp, r, err := apiClient.ShippingCategoriesApi.GETShipmentIdShippingCategory(context.Background(), shipmentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingCategoriesApi.GETShipmentIdShippingCategory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -168,7 +168,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -229,7 +229,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -299,7 +299,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -307,7 +307,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ShippingCategoriesApi.GETShippingMethodIdShippingCategory(context.Background(), shippingMethodId).Execute()
+    resp, r, err := apiClient.ShippingCategoriesApi.GETShippingMethodIdShippingCategory(context.Background(), shippingMethodId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingCategoriesApi.GETShippingMethodIdShippingCategory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -367,7 +367,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -375,7 +375,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ShippingCategoriesApi.GETSkuIdShippingCategory(context.Background(), skuId).Execute()
+    resp, r, err := apiClient.ShippingCategoriesApi.GETSkuIdShippingCategory(context.Background(), skuId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingCategoriesApi.GETSkuIdShippingCategory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 
 ## PATCHShippingCategoriesShippingCategoryId
 
-> PATCHShippingCategoriesShippingCategoryId200Response PATCHShippingCategoriesShippingCategoryId(ctx, shippingCategoryId).PATCHShippingCategoriesShippingCategoryIdRequest(pATCHShippingCategoriesShippingCategoryIdRequest).Execute()
+> PATCHShippingCategoriesShippingCategoryId200Response PATCHShippingCategoriesShippingCategoryId(ctx, shippingCategoryId).ShippingCategoryUpdate(shippingCategoryUpdate).Execute()
 
 Update a shipping category
 
@@ -435,16 +435,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHShippingCategoriesShippingCategoryIdRequest := *openapiclient.NewPATCHShippingCategoriesShippingCategoryIdRequest(*openapiclient.NewPATCHShippingCategoriesShippingCategoryIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHShippingCategoriesShippingCategoryIdRequestDataAttributes())) // PATCHShippingCategoriesShippingCategoryIdRequest | 
+    shippingCategoryUpdate := *openapiclient.NewShippingCategoryUpdate(*openapiclient.NewShippingCategoryUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes())) // ShippingCategoryUpdate | 
     shippingCategoryId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShippingCategoriesApi.PATCHShippingCategoriesShippingCategoryId(context.Background(), shippingCategoryId).PATCHShippingCategoriesShippingCategoryIdRequest(pATCHShippingCategoriesShippingCategoryIdRequest).Execute()
+    resp, r, err := apiClient.ShippingCategoriesApi.PATCHShippingCategoriesShippingCategoryId(context.Background(), shippingCategoryId).ShippingCategoryUpdate(shippingCategoryUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingCategoriesApi.PATCHShippingCategoriesShippingCategoryId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -469,7 +469,7 @@ Other parameters are passed through a pointer to a apiPATCHShippingCategoriesShi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHShippingCategoriesShippingCategoryIdRequest** | [**PATCHShippingCategoriesShippingCategoryIdRequest**](PATCHShippingCategoriesShippingCategoryIdRequest.md) |  | 
+ **shippingCategoryUpdate** | [**ShippingCategoryUpdate**](ShippingCategoryUpdate.md) |  | 
 
 
 ### Return type
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 
 ## POSTShippingCategories
 
-> POSTShippingCategories201Response POSTShippingCategories(ctx).POSTShippingCategoriesRequest(pOSTShippingCategoriesRequest).Execute()
+> POSTShippingCategories201Response POSTShippingCategories(ctx).ShippingCategoryCreate(shippingCategoryCreate).Execute()
 
 Create a shipping category
 
@@ -507,15 +507,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTShippingCategoriesRequest := *openapiclient.NewPOSTShippingCategoriesRequest(*openapiclient.NewPOSTShippingCategoriesRequestData(interface{}(123), *openapiclient.NewPOSTShippingCategoriesRequestDataAttributes(interface{}(Merchandise)))) // POSTShippingCategoriesRequest | 
+    shippingCategoryCreate := *openapiclient.NewShippingCategoryCreate(*openapiclient.NewShippingCategoryCreateData(interface{}(123), *openapiclient.NewPOSTShippingCategories201ResponseDataAttributes(interface{}(Merchandise)))) // ShippingCategoryCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShippingCategoriesApi.POSTShippingCategories(context.Background()).POSTShippingCategoriesRequest(pOSTShippingCategoriesRequest).Execute()
+    resp, r, err := apiClient.ShippingCategoriesApi.POSTShippingCategories(context.Background()).ShippingCategoryCreate(shippingCategoryCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingCategoriesApi.POSTShippingCategories``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -536,7 +536,7 @@ Other parameters are passed through a pointer to a apiPOSTShippingCategoriesRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTShippingCategoriesRequest** | [**POSTShippingCategoriesRequest**](POSTShippingCategoriesRequest.md) |  | 
+ **shippingCategoryCreate** | [**ShippingCategoryCreate**](ShippingCategoryCreate.md) |  | 
 
 ### Return type
 

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETManualTaxCalculatorsManualTaxCalculatorId200ResponseData**](GETManualTaxCalculatorsManualTaxCalculatorId200ResponseData.md) |  | [optional] 
+**Data** | Pointer to [**GETManualTaxCalculators200ResponseDataInner**](GETManualTaxCalculators200ResponseDataInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETManualTaxCalculatorsManualTaxCalculatorId200Response) GetData() GETManualTaxCalculatorsManualTaxCalculatorId200ResponseData`
+`func (o *GETManualTaxCalculatorsManualTaxCalculatorId200Response) GetData() GETManualTaxCalculators200ResponseDataInner`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETManualTaxCalculatorsManualTaxCalculatorId200Response) GetDataOk() (*GETManualTaxCalculatorsManualTaxCalculatorId200ResponseData, bool)`
+`func (o *GETManualTaxCalculatorsManualTaxCalculatorId200Response) GetDataOk() (*GETManualTaxCalculators200ResponseDataInner, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETManualTaxCalculatorsManualTaxCalculatorId200Response) SetData(v GETManualTaxCalculatorsManualTaxCalculatorId200ResponseData)`
+`func (o *GETManualTaxCalculatorsManualTaxCalculatorId200Response) SetData(v GETManualTaxCalculators200ResponseDataInner)`
 
 SetData sets Data field to given value.
 

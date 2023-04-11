@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the TaxCategoryDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &TaxCategoryDataRelationships{}
-
 // TaxCategoryDataRelationships struct for TaxCategoryDataRelationships
 type TaxCategoryDataRelationships struct {
 	Sku           *BundleDataRelationshipsSkus                `json:"sku,omitempty"`
@@ -44,7 +41,7 @@ func NewTaxCategoryDataRelationshipsWithDefaults() *TaxCategoryDataRelationships
 
 // GetSku returns the Sku field value if set, zero value otherwise.
 func (o *TaxCategoryDataRelationships) GetSku() BundleDataRelationshipsSkus {
-	if o == nil || IsNil(o.Sku) {
+	if o == nil || o.Sku == nil {
 		var ret BundleDataRelationshipsSkus
 		return ret
 	}
@@ -54,7 +51,7 @@ func (o *TaxCategoryDataRelationships) GetSku() BundleDataRelationshipsSkus {
 // GetSkuOk returns a tuple with the Sku field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaxCategoryDataRelationships) GetSkuOk() (*BundleDataRelationshipsSkus, bool) {
-	if o == nil || IsNil(o.Sku) {
+	if o == nil || o.Sku == nil {
 		return nil, false
 	}
 	return o.Sku, true
@@ -62,7 +59,7 @@ func (o *TaxCategoryDataRelationships) GetSkuOk() (*BundleDataRelationshipsSkus,
 
 // HasSku returns a boolean if a field has been set.
 func (o *TaxCategoryDataRelationships) HasSku() bool {
-	if o != nil && !IsNil(o.Sku) {
+	if o != nil && o.Sku != nil {
 		return true
 	}
 
@@ -76,7 +73,7 @@ func (o *TaxCategoryDataRelationships) SetSku(v BundleDataRelationshipsSkus) {
 
 // GetTaxCalculator returns the TaxCalculator field value if set, zero value otherwise.
 func (o *TaxCategoryDataRelationships) GetTaxCalculator() TaxCategoryDataRelationshipsTaxCalculator {
-	if o == nil || IsNil(o.TaxCalculator) {
+	if o == nil || o.TaxCalculator == nil {
 		var ret TaxCategoryDataRelationshipsTaxCalculator
 		return ret
 	}
@@ -86,7 +83,7 @@ func (o *TaxCategoryDataRelationships) GetTaxCalculator() TaxCategoryDataRelatio
 // GetTaxCalculatorOk returns a tuple with the TaxCalculator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaxCategoryDataRelationships) GetTaxCalculatorOk() (*TaxCategoryDataRelationshipsTaxCalculator, bool) {
-	if o == nil || IsNil(o.TaxCalculator) {
+	if o == nil || o.TaxCalculator == nil {
 		return nil, false
 	}
 	return o.TaxCalculator, true
@@ -94,7 +91,7 @@ func (o *TaxCategoryDataRelationships) GetTaxCalculatorOk() (*TaxCategoryDataRel
 
 // HasTaxCalculator returns a boolean if a field has been set.
 func (o *TaxCategoryDataRelationships) HasTaxCalculator() bool {
-	if o != nil && !IsNil(o.TaxCalculator) {
+	if o != nil && o.TaxCalculator != nil {
 		return true
 	}
 
@@ -108,7 +105,7 @@ func (o *TaxCategoryDataRelationships) SetTaxCalculator(v TaxCategoryDataRelatio
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *TaxCategoryDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		var ret AvalaraAccountDataRelationshipsAttachments
 		return ret
 	}
@@ -118,7 +115,7 @@ func (o *TaxCategoryDataRelationships) GetAttachments() AvalaraAccountDataRelati
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaxCategoryDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		return nil, false
 	}
 	return o.Attachments, true
@@ -126,7 +123,7 @@ func (o *TaxCategoryDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRe
 
 // HasAttachments returns a boolean if a field has been set.
 func (o *TaxCategoryDataRelationships) HasAttachments() bool {
-	if o != nil && !IsNil(o.Attachments) {
+	if o != nil && o.Attachments != nil {
 		return true
 	}
 
@@ -139,25 +136,17 @@ func (o *TaxCategoryDataRelationships) SetAttachments(v AvalaraAccountDataRelati
 }
 
 func (o TaxCategoryDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o TaxCategoryDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Sku) {
+	if o.Sku != nil {
 		toSerialize["sku"] = o.Sku
 	}
-	if !IsNil(o.TaxCalculator) {
+	if o.TaxCalculator != nil {
 		toSerialize["tax_calculator"] = o.TaxCalculator
 	}
-	if !IsNil(o.Attachments) {
+	if o.Attachments != nil {
 		toSerialize["attachments"] = o.Attachments
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableTaxCategoryDataRelationships struct {

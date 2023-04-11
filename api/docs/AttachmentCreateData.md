@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**POSTAttachmentsRequestDataAttributes**](POSTAttachmentsRequestDataAttributes.md) |  | 
+**Attributes** | [**POSTAttachments201ResponseDataAttributes**](POSTAttachments201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AttachmentCreateDataRelationships**](AttachmentCreateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewAttachmentCreateData
 
-`func NewAttachmentCreateData(type_ interface{}, attributes POSTAttachmentsRequestDataAttributes, ) *AttachmentCreateData`
+`func NewAttachmentCreateData(type_ interface{}, attributes POSTAttachments201ResponseDataAttributes, ) *AttachmentCreateData`
 
 NewAttachmentCreateData instantiates a new AttachmentCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *AttachmentCreateData) GetAttributes() POSTAttachmentsRequestDataAttributes`
+`func (o *AttachmentCreateData) GetAttributes() POSTAttachments201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *AttachmentCreateData) GetAttributesOk() (*POSTAttachmentsRequestDataAttributes, bool)`
+`func (o *AttachmentCreateData) GetAttributesOk() (*POSTAttachments201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *AttachmentCreateData) SetAttributes(v POSTAttachmentsRequestDataAttributes)`
+`func (o *AttachmentCreateData) SetAttributes(v POSTAttachments201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

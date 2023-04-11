@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETBraintreePaymentsBraintreePaymentId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETBraintreePaymentsBraintreePaymentId200Response{}
-
 // GETBraintreePaymentsBraintreePaymentId200Response struct for GETBraintreePaymentsBraintreePaymentId200Response
 type GETBraintreePaymentsBraintreePaymentId200Response struct {
-	Data *GETBraintreePaymentsBraintreePaymentId200ResponseData `json:"data,omitempty"`
+	Data *GETBraintreePayments200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETBraintreePaymentsBraintreePaymentId200Response instantiates a new GETBraintreePaymentsBraintreePaymentId200Response object
@@ -41,9 +38,9 @@ func NewGETBraintreePaymentsBraintreePaymentId200ResponseWithDefaults() *GETBrai
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETBraintreePaymentsBraintreePaymentId200Response) GetData() GETBraintreePaymentsBraintreePaymentId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETBraintreePaymentsBraintreePaymentId200ResponseData
+func (o *GETBraintreePaymentsBraintreePaymentId200Response) GetData() GETBraintreePayments200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETBraintreePayments200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETBraintreePaymentsBraintreePaymentId200Response) GetData() GETBraintr
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETBraintreePaymentsBraintreePaymentId200Response) GetDataOk() (*GETBraintreePaymentsBraintreePaymentId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETBraintreePaymentsBraintreePaymentId200Response) GetDataOk() (*GETBraintreePayments200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETBraintreePaymentsBraintreePaymentId200Response) GetDataOk() (*GETBra
 
 // HasData returns a boolean if a field has been set.
 func (o *GETBraintreePaymentsBraintreePaymentId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETBraintreePaymentsBraintreePaymentId200ResponseData and assigns it to the Data field.
-func (o *GETBraintreePaymentsBraintreePaymentId200Response) SetData(v GETBraintreePaymentsBraintreePaymentId200ResponseData) {
+// SetData gets a reference to the given GETBraintreePayments200ResponseDataInner and assigns it to the Data field.
+func (o *GETBraintreePaymentsBraintreePaymentId200Response) SetData(v GETBraintreePayments200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETBraintreePaymentsBraintreePaymentId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETBraintreePaymentsBraintreePaymentId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETBraintreePaymentsBraintreePaymentId200Response struct {

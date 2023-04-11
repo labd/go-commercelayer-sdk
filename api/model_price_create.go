@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the PriceCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PriceCreate{}
-
 // PriceCreate struct for PriceCreate
 type PriceCreate struct {
-	Data POSTPricesRequestData `json:"data"`
+	Data PriceCreateData `json:"data"`
 }
 
 // NewPriceCreate instantiates a new PriceCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPriceCreate(data POSTPricesRequestData) *PriceCreate {
+func NewPriceCreate(data PriceCreateData) *PriceCreate {
 	this := PriceCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewPriceCreateWithDefaults() *PriceCreate {
 }
 
 // GetData returns the Data field value
-func (o *PriceCreate) GetData() POSTPricesRequestData {
+func (o *PriceCreate) GetData() PriceCreateData {
 	if o == nil {
-		var ret POSTPricesRequestData
+		var ret PriceCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *PriceCreate) GetData() POSTPricesRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *PriceCreate) GetDataOk() (*POSTPricesRequestData, bool) {
+func (o *PriceCreate) GetDataOk() (*PriceCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *PriceCreate) GetDataOk() (*POSTPricesRequestData, bool) {
 }
 
 // SetData sets field value
-func (o *PriceCreate) SetData(v POSTPricesRequestData) {
+func (o *PriceCreate) SetData(v PriceCreateData) {
 	o.Data = v
 }
 
 func (o PriceCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o PriceCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullablePriceCreate struct {

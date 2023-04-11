@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the KlarnaGatewayDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &KlarnaGatewayDataRelationships{}
-
 // KlarnaGatewayDataRelationships struct for KlarnaGatewayDataRelationships
 type KlarnaGatewayDataRelationships struct {
 	PaymentMethods *AdyenGatewayDataRelationshipsPaymentMethods  `json:"payment_methods,omitempty"`
@@ -43,7 +40,7 @@ func NewKlarnaGatewayDataRelationshipsWithDefaults() *KlarnaGatewayDataRelations
 
 // GetPaymentMethods returns the PaymentMethods field value if set, zero value otherwise.
 func (o *KlarnaGatewayDataRelationships) GetPaymentMethods() AdyenGatewayDataRelationshipsPaymentMethods {
-	if o == nil || IsNil(o.PaymentMethods) {
+	if o == nil || o.PaymentMethods == nil {
 		var ret AdyenGatewayDataRelationshipsPaymentMethods
 		return ret
 	}
@@ -53,7 +50,7 @@ func (o *KlarnaGatewayDataRelationships) GetPaymentMethods() AdyenGatewayDataRel
 // GetPaymentMethodsOk returns a tuple with the PaymentMethods field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KlarnaGatewayDataRelationships) GetPaymentMethodsOk() (*AdyenGatewayDataRelationshipsPaymentMethods, bool) {
-	if o == nil || IsNil(o.PaymentMethods) {
+	if o == nil || o.PaymentMethods == nil {
 		return nil, false
 	}
 	return o.PaymentMethods, true
@@ -61,7 +58,7 @@ func (o *KlarnaGatewayDataRelationships) GetPaymentMethodsOk() (*AdyenGatewayDat
 
 // HasPaymentMethods returns a boolean if a field has been set.
 func (o *KlarnaGatewayDataRelationships) HasPaymentMethods() bool {
-	if o != nil && !IsNil(o.PaymentMethods) {
+	if o != nil && o.PaymentMethods != nil {
 		return true
 	}
 
@@ -75,7 +72,7 @@ func (o *KlarnaGatewayDataRelationships) SetPaymentMethods(v AdyenGatewayDataRel
 
 // GetKlarnaPayments returns the KlarnaPayments field value if set, zero value otherwise.
 func (o *KlarnaGatewayDataRelationships) GetKlarnaPayments() KlarnaGatewayDataRelationshipsKlarnaPayments {
-	if o == nil || IsNil(o.KlarnaPayments) {
+	if o == nil || o.KlarnaPayments == nil {
 		var ret KlarnaGatewayDataRelationshipsKlarnaPayments
 		return ret
 	}
@@ -85,7 +82,7 @@ func (o *KlarnaGatewayDataRelationships) GetKlarnaPayments() KlarnaGatewayDataRe
 // GetKlarnaPaymentsOk returns a tuple with the KlarnaPayments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KlarnaGatewayDataRelationships) GetKlarnaPaymentsOk() (*KlarnaGatewayDataRelationshipsKlarnaPayments, bool) {
-	if o == nil || IsNil(o.KlarnaPayments) {
+	if o == nil || o.KlarnaPayments == nil {
 		return nil, false
 	}
 	return o.KlarnaPayments, true
@@ -93,7 +90,7 @@ func (o *KlarnaGatewayDataRelationships) GetKlarnaPaymentsOk() (*KlarnaGatewayDa
 
 // HasKlarnaPayments returns a boolean if a field has been set.
 func (o *KlarnaGatewayDataRelationships) HasKlarnaPayments() bool {
-	if o != nil && !IsNil(o.KlarnaPayments) {
+	if o != nil && o.KlarnaPayments != nil {
 		return true
 	}
 
@@ -106,22 +103,14 @@ func (o *KlarnaGatewayDataRelationships) SetKlarnaPayments(v KlarnaGatewayDataRe
 }
 
 func (o KlarnaGatewayDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o KlarnaGatewayDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.PaymentMethods) {
+	if o.PaymentMethods != nil {
 		toSerialize["payment_methods"] = o.PaymentMethods
 	}
-	if !IsNil(o.KlarnaPayments) {
+	if o.KlarnaPayments != nil {
 		toSerialize["klarna_payments"] = o.KlarnaPayments
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableKlarnaGatewayDataRelationships struct {

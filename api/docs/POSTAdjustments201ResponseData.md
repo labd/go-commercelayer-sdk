@@ -6,8 +6,8 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
-**Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
-**Attributes** | Pointer to [**POSTAdjustmentsRequestDataAttributes**](POSTAdjustmentsRequestDataAttributes.md) |  | [optional] 
+**Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
+**Attributes** | Pointer to [**POSTAdjustments201ResponseDataAttributes**](POSTAdjustments201ResponseDataAttributes.md) |  | [optional] 
 **Relationships** | Pointer to **interface{}** |  | [optional] 
 
 ## Methods
@@ -101,20 +101,20 @@ HasType returns a boolean if a field has been set.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetLinks
 
-`func (o *POSTAdjustments201ResponseData) GetLinks() POSTAddresses201ResponseDataLinks`
+`func (o *POSTAdjustments201ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *POSTAdjustments201ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool)`
+`func (o *POSTAdjustments201ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *POSTAdjustments201ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks)`
+`func (o *POSTAdjustments201ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks)`
 
 SetLinks sets Links field to given value.
 
@@ -126,20 +126,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *POSTAdjustments201ResponseData) GetAttributes() POSTAdjustmentsRequestDataAttributes`
+`func (o *POSTAdjustments201ResponseData) GetAttributes() POSTAdjustments201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *POSTAdjustments201ResponseData) GetAttributesOk() (*POSTAdjustmentsRequestDataAttributes, bool)`
+`func (o *POSTAdjustments201ResponseData) GetAttributesOk() (*POSTAdjustments201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *POSTAdjustments201ResponseData) SetAttributes(v POSTAdjustmentsRequestDataAttributes)`
+`func (o *POSTAdjustments201ResponseData) SetAttributes(v POSTAdjustments201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

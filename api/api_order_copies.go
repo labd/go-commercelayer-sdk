@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *OrderCopiesApiService) DELETEOrderCopiesOrderCopyIdExecute(r OrderCopie
 	}
 
 	localVarPath := localBasePath + "/order_copies/{orderCopyId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterValueToString(r.orderCopyId, "orderCopyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterToString(r.orderCopyId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *OrderCopiesApiService) DELETEOrderCopiesOrderCopyIdExecute(r OrderCopie
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *OrderCopiesApiService) GETOrderCopiesExecute(r OrderCopiesApiGETOrderCo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *OrderCopiesApiService) GETOrderCopiesOrderCopyIdExecute(r OrderCopiesAp
 	}
 
 	localVarPath := localBasePath + "/order_copies/{orderCopyId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterValueToString(r.orderCopyId, "orderCopyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterToString(r.orderCopyId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *OrderCopiesApiService) GETOrderCopiesOrderCopyIdExecute(r OrderCopiesAp
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -360,7 +360,7 @@ func (a *OrderCopiesApiService) GETOrderIdOrderCopiesExecute(r OrderCopiesApiGET
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/order_copies"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -393,9 +393,9 @@ func (a *OrderCopiesApiService) GETOrderIdOrderCopiesExecute(r OrderCopiesApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -412,14 +412,14 @@ func (a *OrderCopiesApiService) GETOrderIdOrderCopiesExecute(r OrderCopiesApiGET
 }
 
 type OrderCopiesApiPATCHOrderCopiesOrderCopyIdRequest struct {
-	ctx                                context.Context
-	ApiService                         *OrderCopiesApiService
-	pATCHOrderCopiesOrderCopyIdRequest *PATCHOrderCopiesOrderCopyIdRequest
-	orderCopyId                        interface{}
+	ctx             context.Context
+	ApiService      *OrderCopiesApiService
+	orderCopyUpdate *OrderCopyUpdate
+	orderCopyId     interface{}
 }
 
-func (r OrderCopiesApiPATCHOrderCopiesOrderCopyIdRequest) PATCHOrderCopiesOrderCopyIdRequest(pATCHOrderCopiesOrderCopyIdRequest PATCHOrderCopiesOrderCopyIdRequest) OrderCopiesApiPATCHOrderCopiesOrderCopyIdRequest {
-	r.pATCHOrderCopiesOrderCopyIdRequest = &pATCHOrderCopiesOrderCopyIdRequest
+func (r OrderCopiesApiPATCHOrderCopiesOrderCopyIdRequest) OrderCopyUpdate(orderCopyUpdate OrderCopyUpdate) OrderCopiesApiPATCHOrderCopiesOrderCopyIdRequest {
+	r.orderCopyUpdate = &orderCopyUpdate
 	return r
 }
 
@@ -461,13 +461,13 @@ func (a *OrderCopiesApiService) PATCHOrderCopiesOrderCopyIdExecute(r OrderCopies
 	}
 
 	localVarPath := localBasePath + "/order_copies/{orderCopyId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterValueToString(r.orderCopyId, "orderCopyId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterToString(r.orderCopyId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHOrderCopiesOrderCopyIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHOrderCopiesOrderCopyIdRequest is required and must be specified")
+	if r.orderCopyUpdate == nil {
+		return localVarReturnValue, nil, reportError("orderCopyUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -488,7 +488,7 @@ func (a *OrderCopiesApiService) PATCHOrderCopiesOrderCopyIdExecute(r OrderCopies
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHOrderCopiesOrderCopyIdRequest
+	localVarPostBody = r.orderCopyUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -499,9 +499,9 @@ func (a *OrderCopiesApiService) PATCHOrderCopiesOrderCopyIdExecute(r OrderCopies
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -527,13 +527,13 @@ func (a *OrderCopiesApiService) PATCHOrderCopiesOrderCopyIdExecute(r OrderCopies
 }
 
 type OrderCopiesApiPOSTOrderCopiesRequest struct {
-	ctx                    context.Context
-	ApiService             *OrderCopiesApiService
-	pOSTOrderCopiesRequest *POSTOrderCopiesRequest
+	ctx             context.Context
+	ApiService      *OrderCopiesApiService
+	orderCopyCreate *OrderCopyCreate
 }
 
-func (r OrderCopiesApiPOSTOrderCopiesRequest) POSTOrderCopiesRequest(pOSTOrderCopiesRequest POSTOrderCopiesRequest) OrderCopiesApiPOSTOrderCopiesRequest {
-	r.pOSTOrderCopiesRequest = &pOSTOrderCopiesRequest
+func (r OrderCopiesApiPOSTOrderCopiesRequest) OrderCopyCreate(orderCopyCreate OrderCopyCreate) OrderCopiesApiPOSTOrderCopiesRequest {
+	r.orderCopyCreate = &orderCopyCreate
 	return r
 }
 
@@ -577,8 +577,8 @@ func (a *OrderCopiesApiService) POSTOrderCopiesExecute(r OrderCopiesApiPOSTOrder
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTOrderCopiesRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTOrderCopiesRequest is required and must be specified")
+	if r.orderCopyCreate == nil {
+		return localVarReturnValue, nil, reportError("orderCopyCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -599,7 +599,7 @@ func (a *OrderCopiesApiService) POSTOrderCopiesExecute(r OrderCopiesApiPOSTOrder
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTOrderCopiesRequest
+	localVarPostBody = r.orderCopyCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -610,9 +610,9 @@ func (a *OrderCopiesApiService) POSTOrderCopiesExecute(r OrderCopiesApiPOSTOrder
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

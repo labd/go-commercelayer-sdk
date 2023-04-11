@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETCleanupsCleanupId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETCleanupsCleanupId200Response{}
-
 // GETCleanupsCleanupId200Response struct for GETCleanupsCleanupId200Response
 type GETCleanupsCleanupId200Response struct {
-	Data *GETCleanupsCleanupId200ResponseData `json:"data,omitempty"`
+	Data *GETCleanups200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETCleanupsCleanupId200Response instantiates a new GETCleanupsCleanupId200Response object
@@ -41,9 +38,9 @@ func NewGETCleanupsCleanupId200ResponseWithDefaults() *GETCleanupsCleanupId200Re
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETCleanupsCleanupId200Response) GetData() GETCleanupsCleanupId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETCleanupsCleanupId200ResponseData
+func (o *GETCleanupsCleanupId200Response) GetData() GETCleanups200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETCleanups200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETCleanupsCleanupId200Response) GetData() GETCleanupsCleanupId200Respo
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCleanupsCleanupId200Response) GetDataOk() (*GETCleanupsCleanupId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETCleanupsCleanupId200Response) GetDataOk() (*GETCleanups200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETCleanupsCleanupId200Response) GetDataOk() (*GETCleanupsCleanupId200R
 
 // HasData returns a boolean if a field has been set.
 func (o *GETCleanupsCleanupId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETCleanupsCleanupId200ResponseData and assigns it to the Data field.
-func (o *GETCleanupsCleanupId200Response) SetData(v GETCleanupsCleanupId200ResponseData) {
+// SetData gets a reference to the given GETCleanups200ResponseDataInner and assigns it to the Data field.
+func (o *GETCleanupsCleanupId200Response) SetData(v GETCleanups200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETCleanupsCleanupId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETCleanupsCleanupId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETCleanupsCleanupId200Response struct {

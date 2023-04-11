@@ -15,20 +15,17 @@ import (
 	"encoding/json"
 )
 
-// checks if the OrderSubscriptionItemCreateDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &OrderSubscriptionItemCreateDataRelationships{}
-
 // OrderSubscriptionItemCreateDataRelationships struct for OrderSubscriptionItemCreateDataRelationships
 type OrderSubscriptionItemCreateDataRelationships struct {
-	OrderSubscription POSTOrderSubscriptionItemsRequestDataRelationshipsOrderSubscription `json:"order_subscription"`
-	Item              OrderSubscriptionItemCreateDataRelationshipsItem                    `json:"item"`
+	OrderSubscription OrderSubscriptionItemCreateDataRelationshipsOrderSubscription `json:"order_subscription"`
+	Item              OrderSubscriptionItemCreateDataRelationshipsItem              `json:"item"`
 }
 
 // NewOrderSubscriptionItemCreateDataRelationships instantiates a new OrderSubscriptionItemCreateDataRelationships object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrderSubscriptionItemCreateDataRelationships(orderSubscription POSTOrderSubscriptionItemsRequestDataRelationshipsOrderSubscription, item OrderSubscriptionItemCreateDataRelationshipsItem) *OrderSubscriptionItemCreateDataRelationships {
+func NewOrderSubscriptionItemCreateDataRelationships(orderSubscription OrderSubscriptionItemCreateDataRelationshipsOrderSubscription, item OrderSubscriptionItemCreateDataRelationshipsItem) *OrderSubscriptionItemCreateDataRelationships {
 	this := OrderSubscriptionItemCreateDataRelationships{}
 	this.OrderSubscription = orderSubscription
 	this.Item = item
@@ -44,9 +41,9 @@ func NewOrderSubscriptionItemCreateDataRelationshipsWithDefaults() *OrderSubscri
 }
 
 // GetOrderSubscription returns the OrderSubscription field value
-func (o *OrderSubscriptionItemCreateDataRelationships) GetOrderSubscription() POSTOrderSubscriptionItemsRequestDataRelationshipsOrderSubscription {
+func (o *OrderSubscriptionItemCreateDataRelationships) GetOrderSubscription() OrderSubscriptionItemCreateDataRelationshipsOrderSubscription {
 	if o == nil {
-		var ret POSTOrderSubscriptionItemsRequestDataRelationshipsOrderSubscription
+		var ret OrderSubscriptionItemCreateDataRelationshipsOrderSubscription
 		return ret
 	}
 
@@ -55,7 +52,7 @@ func (o *OrderSubscriptionItemCreateDataRelationships) GetOrderSubscription() PO
 
 // GetOrderSubscriptionOk returns a tuple with the OrderSubscription field value
 // and a boolean to check if the value has been set.
-func (o *OrderSubscriptionItemCreateDataRelationships) GetOrderSubscriptionOk() (*POSTOrderSubscriptionItemsRequestDataRelationshipsOrderSubscription, bool) {
+func (o *OrderSubscriptionItemCreateDataRelationships) GetOrderSubscriptionOk() (*OrderSubscriptionItemCreateDataRelationshipsOrderSubscription, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -63,7 +60,7 @@ func (o *OrderSubscriptionItemCreateDataRelationships) GetOrderSubscriptionOk() 
 }
 
 // SetOrderSubscription sets field value
-func (o *OrderSubscriptionItemCreateDataRelationships) SetOrderSubscription(v POSTOrderSubscriptionItemsRequestDataRelationshipsOrderSubscription) {
+func (o *OrderSubscriptionItemCreateDataRelationships) SetOrderSubscription(v OrderSubscriptionItemCreateDataRelationshipsOrderSubscription) {
 	o.OrderSubscription = v
 }
 
@@ -92,18 +89,14 @@ func (o *OrderSubscriptionItemCreateDataRelationships) SetItem(v OrderSubscripti
 }
 
 func (o OrderSubscriptionItemCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["order_subscription"] = o.OrderSubscription
+	}
+	if true {
+		toSerialize["item"] = o.Item
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o OrderSubscriptionItemCreateDataRelationships) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["order_subscription"] = o.OrderSubscription
-	toSerialize["item"] = o.Item
-	return toSerialize, nil
 }
 
 type NullableOrderSubscriptionItemCreateDataRelationships struct {

@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the InventoryStockLocationUpdate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &InventoryStockLocationUpdate{}
-
 // InventoryStockLocationUpdate struct for InventoryStockLocationUpdate
 type InventoryStockLocationUpdate struct {
-	Data PATCHInventoryStockLocationsInventoryStockLocationIdRequestData `json:"data"`
+	Data InventoryStockLocationUpdateData `json:"data"`
 }
 
 // NewInventoryStockLocationUpdate instantiates a new InventoryStockLocationUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInventoryStockLocationUpdate(data PATCHInventoryStockLocationsInventoryStockLocationIdRequestData) *InventoryStockLocationUpdate {
+func NewInventoryStockLocationUpdate(data InventoryStockLocationUpdateData) *InventoryStockLocationUpdate {
 	this := InventoryStockLocationUpdate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewInventoryStockLocationUpdateWithDefaults() *InventoryStockLocationUpdate
 }
 
 // GetData returns the Data field value
-func (o *InventoryStockLocationUpdate) GetData() PATCHInventoryStockLocationsInventoryStockLocationIdRequestData {
+func (o *InventoryStockLocationUpdate) GetData() InventoryStockLocationUpdateData {
 	if o == nil {
-		var ret PATCHInventoryStockLocationsInventoryStockLocationIdRequestData
+		var ret InventoryStockLocationUpdateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *InventoryStockLocationUpdate) GetData() PATCHInventoryStockLocationsInv
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *InventoryStockLocationUpdate) GetDataOk() (*PATCHInventoryStockLocationsInventoryStockLocationIdRequestData, bool) {
+func (o *InventoryStockLocationUpdate) GetDataOk() (*InventoryStockLocationUpdateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *InventoryStockLocationUpdate) GetDataOk() (*PATCHInventoryStockLocation
 }
 
 // SetData sets field value
-func (o *InventoryStockLocationUpdate) SetData(v PATCHInventoryStockLocationsInventoryStockLocationIdRequestData) {
+func (o *InventoryStockLocationUpdate) SetData(v InventoryStockLocationUpdateData) {
 	o.Data = v
 }
 
 func (o InventoryStockLocationUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o InventoryStockLocationUpdate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableInventoryStockLocationUpdate struct {

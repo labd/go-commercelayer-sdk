@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the SkuCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &SkuCreate{}
-
 // SkuCreate struct for SkuCreate
 type SkuCreate struct {
-	Data POSTSkusRequestData `json:"data"`
+	Data SkuCreateData `json:"data"`
 }
 
 // NewSkuCreate instantiates a new SkuCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuCreate(data POSTSkusRequestData) *SkuCreate {
+func NewSkuCreate(data SkuCreateData) *SkuCreate {
 	this := SkuCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewSkuCreateWithDefaults() *SkuCreate {
 }
 
 // GetData returns the Data field value
-func (o *SkuCreate) GetData() POSTSkusRequestData {
+func (o *SkuCreate) GetData() SkuCreateData {
 	if o == nil {
-		var ret POSTSkusRequestData
+		var ret SkuCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *SkuCreate) GetData() POSTSkusRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *SkuCreate) GetDataOk() (*POSTSkusRequestData, bool) {
+func (o *SkuCreate) GetDataOk() (*SkuCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *SkuCreate) GetDataOk() (*POSTSkusRequestData, bool) {
 }
 
 // SetData sets field value
-func (o *SkuCreate) SetData(v POSTSkusRequestData) {
+func (o *SkuCreate) SetData(v SkuCreateData) {
 	o.Data = v
 }
 
 func (o SkuCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o SkuCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableSkuCreate struct {

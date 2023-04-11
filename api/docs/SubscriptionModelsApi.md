@@ -31,7 +31,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -39,7 +39,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SubscriptionModelsApi.DELETESubscriptionModelsSubscriptionModelId(context.Background(), subscriptionModelId).Execute()
+    resp, r, err := apiClient.SubscriptionModelsApi.DELETESubscriptionModelsSubscriptionModelId(context.Background(), subscriptionModelId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionModelsApi.DELETESubscriptionModelsSubscriptionModelId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -99,7 +99,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -107,7 +107,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SubscriptionModelsApi.GETMarketIdSubscriptionModel(context.Background(), marketId).Execute()
+    resp, r, err := apiClient.SubscriptionModelsApi.GETMarketIdSubscriptionModel(context.Background(), marketId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionModelsApi.GETMarketIdSubscriptionModel``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -167,7 +167,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -175,7 +175,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.SubscriptionModelsApi.GETOrderSubscriptionIdSubscriptionModel(context.Background(), orderSubscriptionId).Execute()
+    resp, r, err := apiClient.SubscriptionModelsApi.GETOrderSubscriptionIdSubscriptionModel(context.Background(), orderSubscriptionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionModelsApi.GETOrderSubscriptionIdSubscriptionModel``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -235,7 +235,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -296,7 +296,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ## PATCHSubscriptionModelsSubscriptionModelId
 
-> PATCHSubscriptionModelsSubscriptionModelId200Response PATCHSubscriptionModelsSubscriptionModelId(ctx, subscriptionModelId).PATCHSubscriptionModelsSubscriptionModelIdRequest(pATCHSubscriptionModelsSubscriptionModelIdRequest).Execute()
+> PATCHSubscriptionModelsSubscriptionModelId200Response PATCHSubscriptionModelsSubscriptionModelId(ctx, subscriptionModelId).SubscriptionModelUpdate(subscriptionModelUpdate).Execute()
 
 Update a subscription model
 
@@ -366,16 +366,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHSubscriptionModelsSubscriptionModelIdRequest := *openapiclient.NewPATCHSubscriptionModelsSubscriptionModelIdRequest(*openapiclient.NewPATCHSubscriptionModelsSubscriptionModelIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHSubscriptionModelsSubscriptionModelIdRequestDataAttributes())) // PATCHSubscriptionModelsSubscriptionModelIdRequest | 
+    subscriptionModelUpdate := *openapiclient.NewSubscriptionModelUpdate(*openapiclient.NewSubscriptionModelUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHSubscriptionModelsSubscriptionModelId200ResponseDataAttributes())) // SubscriptionModelUpdate | 
     subscriptionModelId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SubscriptionModelsApi.PATCHSubscriptionModelsSubscriptionModelId(context.Background(), subscriptionModelId).PATCHSubscriptionModelsSubscriptionModelIdRequest(pATCHSubscriptionModelsSubscriptionModelIdRequest).Execute()
+    resp, r, err := apiClient.SubscriptionModelsApi.PATCHSubscriptionModelsSubscriptionModelId(context.Background(), subscriptionModelId).SubscriptionModelUpdate(subscriptionModelUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionModelsApi.PATCHSubscriptionModelsSubscriptionModelId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -400,7 +400,7 @@ Other parameters are passed through a pointer to a apiPATCHSubscriptionModelsSub
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHSubscriptionModelsSubscriptionModelIdRequest** | [**PATCHSubscriptionModelsSubscriptionModelIdRequest**](PATCHSubscriptionModelsSubscriptionModelIdRequest.md) |  | 
+ **subscriptionModelUpdate** | [**SubscriptionModelUpdate**](SubscriptionModelUpdate.md) |  | 
 
 
 ### Return type
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ## POSTSubscriptionModels
 
-> POSTSubscriptionModels201Response POSTSubscriptionModels(ctx).POSTSubscriptionModelsRequest(pOSTSubscriptionModelsRequest).Execute()
+> POSTSubscriptionModels201Response POSTSubscriptionModels(ctx).SubscriptionModelCreate(subscriptionModelCreate).Execute()
 
 Create a subscription model
 
@@ -438,15 +438,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTSubscriptionModelsRequest := *openapiclient.NewPOSTSubscriptionModelsRequest(*openapiclient.NewPOSTSubscriptionModelsRequestData(interface{}(123), *openapiclient.NewPOSTSubscriptionModelsRequestDataAttributes(interface{}(EU Subscription Model), interface{}(["hourly","10 * * * *","weekly","monthly","two-month"])))) // POSTSubscriptionModelsRequest | 
+    subscriptionModelCreate := *openapiclient.NewSubscriptionModelCreate(*openapiclient.NewSubscriptionModelCreateData(interface{}(123), *openapiclient.NewPOSTSubscriptionModels201ResponseDataAttributes(interface{}(EU Subscription Model), interface{}([hourly, 10 * * * *, weekly, monthly, two-month])))) // SubscriptionModelCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SubscriptionModelsApi.POSTSubscriptionModels(context.Background()).POSTSubscriptionModelsRequest(pOSTSubscriptionModelsRequest).Execute()
+    resp, r, err := apiClient.SubscriptionModelsApi.POSTSubscriptionModels(context.Background()).SubscriptionModelCreate(subscriptionModelCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SubscriptionModelsApi.POSTSubscriptionModels``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -467,7 +467,7 @@ Other parameters are passed through a pointer to a apiPOSTSubscriptionModelsRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTSubscriptionModelsRequest** | [**POSTSubscriptionModelsRequest**](POSTSubscriptionModelsRequest.md) |  | 
+ **subscriptionModelCreate** | [**SubscriptionModelCreate**](SubscriptionModelCreate.md) |  | 
 
 ### Return type
 

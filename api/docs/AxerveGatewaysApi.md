@@ -29,7 +29,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -37,7 +37,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AxerveGatewaysApi.DELETEAxerveGatewaysAxerveGatewayId(context.Background(), axerveGatewayId).Execute()
+    resp, r, err := apiClient.AxerveGatewaysApi.DELETEAxerveGatewaysAxerveGatewayId(context.Background(), axerveGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AxerveGatewaysApi.DELETEAxerveGatewaysAxerveGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -158,7 +158,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHAxerveGatewaysAxerveGatewayId
 
-> PATCHAxerveGatewaysAxerveGatewayId200Response PATCHAxerveGatewaysAxerveGatewayId(ctx, axerveGatewayId).PATCHAxerveGatewaysAxerveGatewayIdRequest(pATCHAxerveGatewaysAxerveGatewayIdRequest).Execute()
+> PATCHAxerveGatewaysAxerveGatewayId200Response PATCHAxerveGatewaysAxerveGatewayId(ctx, axerveGatewayId).AxerveGatewayUpdate(axerveGatewayUpdate).Execute()
 
 Update an axerve gateway
 
@@ -228,16 +228,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHAxerveGatewaysAxerveGatewayIdRequest := *openapiclient.NewPATCHAxerveGatewaysAxerveGatewayIdRequest(*openapiclient.NewPATCHAxerveGatewaysAxerveGatewayIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHAxerveGatewaysAxerveGatewayIdRequestDataAttributes())) // PATCHAxerveGatewaysAxerveGatewayIdRequest | 
+    axerveGatewayUpdate := *openapiclient.NewAxerveGatewayUpdate(*openapiclient.NewAxerveGatewayUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHAxerveGatewaysAxerveGatewayId200ResponseDataAttributes())) // AxerveGatewayUpdate | 
     axerveGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AxerveGatewaysApi.PATCHAxerveGatewaysAxerveGatewayId(context.Background(), axerveGatewayId).PATCHAxerveGatewaysAxerveGatewayIdRequest(pATCHAxerveGatewaysAxerveGatewayIdRequest).Execute()
+    resp, r, err := apiClient.AxerveGatewaysApi.PATCHAxerveGatewaysAxerveGatewayId(context.Background(), axerveGatewayId).AxerveGatewayUpdate(axerveGatewayUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AxerveGatewaysApi.PATCHAxerveGatewaysAxerveGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -262,7 +262,7 @@ Other parameters are passed through a pointer to a apiPATCHAxerveGatewaysAxerveG
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHAxerveGatewaysAxerveGatewayIdRequest** | [**PATCHAxerveGatewaysAxerveGatewayIdRequest**](PATCHAxerveGatewaysAxerveGatewayIdRequest.md) |  | 
+ **axerveGatewayUpdate** | [**AxerveGatewayUpdate**](AxerveGatewayUpdate.md) |  | 
 
 
 ### Return type
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTAxerveGateways
 
-> POSTAxerveGateways201Response POSTAxerveGateways(ctx).POSTAxerveGatewaysRequest(pOSTAxerveGatewaysRequest).Execute()
+> POSTAxerveGateways201Response POSTAxerveGateways(ctx).AxerveGatewayCreate(axerveGatewayCreate).Execute()
 
 Create an axerve gateway
 
@@ -300,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTAxerveGatewaysRequest := *openapiclient.NewPOSTAxerveGatewaysRequest(*openapiclient.NewPOSTAxerveGatewaysRequestData(interface{}(123), *openapiclient.NewPOSTAxerveGatewaysRequestDataAttributes(interface{}(US payment gateway), interface{}(xxxx-yyyy-zzzz), interface{}(xxxx-yyyy-zzzz)))) // POSTAxerveGatewaysRequest | 
+    axerveGatewayCreate := *openapiclient.NewAxerveGatewayCreate(*openapiclient.NewAxerveGatewayCreateData(interface{}(123), *openapiclient.NewPOSTAxerveGateways201ResponseDataAttributes(interface{}(US payment gateway), interface{}(xxxx-yyyy-zzzz), interface{}(xxxx-yyyy-zzzz)))) // AxerveGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AxerveGatewaysApi.POSTAxerveGateways(context.Background()).POSTAxerveGatewaysRequest(pOSTAxerveGatewaysRequest).Execute()
+    resp, r, err := apiClient.AxerveGatewaysApi.POSTAxerveGateways(context.Background()).AxerveGatewayCreate(axerveGatewayCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AxerveGatewaysApi.POSTAxerveGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiPOSTAxerveGatewaysRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTAxerveGatewaysRequest** | [**POSTAxerveGatewaysRequest**](POSTAxerveGatewaysRequest.md) |  | 
+ **axerveGatewayCreate** | [**AxerveGatewayCreate**](AxerveGatewayCreate.md) |  | 
 
 ### Return type
 

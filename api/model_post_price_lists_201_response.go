@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the POSTPriceLists201Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &POSTPriceLists201Response{}
-
 // POSTPriceLists201Response struct for POSTPriceLists201Response
 type POSTPriceLists201Response struct {
 	Data *POSTPriceLists201ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPOSTPriceLists201ResponseWithDefaults() *POSTPriceLists201Response {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTPriceLists201Response) GetData() POSTPriceLists201ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret POSTPriceLists201ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *POSTPriceLists201Response) GetData() POSTPriceLists201ResponseData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTPriceLists201Response) GetDataOk() (*POSTPriceLists201ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *POSTPriceLists201Response) GetDataOk() (*POSTPriceLists201ResponseData,
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTPriceLists201Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *POSTPriceLists201Response) SetData(v POSTPriceLists201ResponseData) {
 }
 
 func (o POSTPriceLists201Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o POSTPriceLists201Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePOSTPriceLists201Response struct {

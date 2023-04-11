@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the MarketDataRelationships type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &MarketDataRelationships{}
-
 // MarketDataRelationships struct for MarketDataRelationships
 type MarketDataRelationships struct {
 	Merchant          *MarketDataRelationshipsMerchant                        `json:"merchant,omitempty"`
@@ -48,7 +45,7 @@ func NewMarketDataRelationshipsWithDefaults() *MarketDataRelationships {
 
 // GetMerchant returns the Merchant field value if set, zero value otherwise.
 func (o *MarketDataRelationships) GetMerchant() MarketDataRelationshipsMerchant {
-	if o == nil || IsNil(o.Merchant) {
+	if o == nil || o.Merchant == nil {
 		var ret MarketDataRelationshipsMerchant
 		return ret
 	}
@@ -58,7 +55,7 @@ func (o *MarketDataRelationships) GetMerchant() MarketDataRelationshipsMerchant 
 // GetMerchantOk returns a tuple with the Merchant field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MarketDataRelationships) GetMerchantOk() (*MarketDataRelationshipsMerchant, bool) {
-	if o == nil || IsNil(o.Merchant) {
+	if o == nil || o.Merchant == nil {
 		return nil, false
 	}
 	return o.Merchant, true
@@ -66,7 +63,7 @@ func (o *MarketDataRelationships) GetMerchantOk() (*MarketDataRelationshipsMerch
 
 // HasMerchant returns a boolean if a field has been set.
 func (o *MarketDataRelationships) HasMerchant() bool {
-	if o != nil && !IsNil(o.Merchant) {
+	if o != nil && o.Merchant != nil {
 		return true
 	}
 
@@ -80,7 +77,7 @@ func (o *MarketDataRelationships) SetMerchant(v MarketDataRelationshipsMerchant)
 
 // GetPriceList returns the PriceList field value if set, zero value otherwise.
 func (o *MarketDataRelationships) GetPriceList() MarketDataRelationshipsPriceList {
-	if o == nil || IsNil(o.PriceList) {
+	if o == nil || o.PriceList == nil {
 		var ret MarketDataRelationshipsPriceList
 		return ret
 	}
@@ -90,7 +87,7 @@ func (o *MarketDataRelationships) GetPriceList() MarketDataRelationshipsPriceLis
 // GetPriceListOk returns a tuple with the PriceList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MarketDataRelationships) GetPriceListOk() (*MarketDataRelationshipsPriceList, bool) {
-	if o == nil || IsNil(o.PriceList) {
+	if o == nil || o.PriceList == nil {
 		return nil, false
 	}
 	return o.PriceList, true
@@ -98,7 +95,7 @@ func (o *MarketDataRelationships) GetPriceListOk() (*MarketDataRelationshipsPric
 
 // HasPriceList returns a boolean if a field has been set.
 func (o *MarketDataRelationships) HasPriceList() bool {
-	if o != nil && !IsNil(o.PriceList) {
+	if o != nil && o.PriceList != nil {
 		return true
 	}
 
@@ -112,7 +109,7 @@ func (o *MarketDataRelationships) SetPriceList(v MarketDataRelationshipsPriceLis
 
 // GetInventoryModel returns the InventoryModel field value if set, zero value otherwise.
 func (o *MarketDataRelationships) GetInventoryModel() InventoryReturnLocationDataRelationshipsInventoryModel {
-	if o == nil || IsNil(o.InventoryModel) {
+	if o == nil || o.InventoryModel == nil {
 		var ret InventoryReturnLocationDataRelationshipsInventoryModel
 		return ret
 	}
@@ -122,7 +119,7 @@ func (o *MarketDataRelationships) GetInventoryModel() InventoryReturnLocationDat
 // GetInventoryModelOk returns a tuple with the InventoryModel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MarketDataRelationships) GetInventoryModelOk() (*InventoryReturnLocationDataRelationshipsInventoryModel, bool) {
-	if o == nil || IsNil(o.InventoryModel) {
+	if o == nil || o.InventoryModel == nil {
 		return nil, false
 	}
 	return o.InventoryModel, true
@@ -130,7 +127,7 @@ func (o *MarketDataRelationships) GetInventoryModelOk() (*InventoryReturnLocatio
 
 // HasInventoryModel returns a boolean if a field has been set.
 func (o *MarketDataRelationships) HasInventoryModel() bool {
-	if o != nil && !IsNil(o.InventoryModel) {
+	if o != nil && o.InventoryModel != nil {
 		return true
 	}
 
@@ -144,7 +141,7 @@ func (o *MarketDataRelationships) SetInventoryModel(v InventoryReturnLocationDat
 
 // GetSubscriptionModel returns the SubscriptionModel field value if set, zero value otherwise.
 func (o *MarketDataRelationships) GetSubscriptionModel() MarketDataRelationshipsSubscriptionModel {
-	if o == nil || IsNil(o.SubscriptionModel) {
+	if o == nil || o.SubscriptionModel == nil {
 		var ret MarketDataRelationshipsSubscriptionModel
 		return ret
 	}
@@ -154,7 +151,7 @@ func (o *MarketDataRelationships) GetSubscriptionModel() MarketDataRelationships
 // GetSubscriptionModelOk returns a tuple with the SubscriptionModel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MarketDataRelationships) GetSubscriptionModelOk() (*MarketDataRelationshipsSubscriptionModel, bool) {
-	if o == nil || IsNil(o.SubscriptionModel) {
+	if o == nil || o.SubscriptionModel == nil {
 		return nil, false
 	}
 	return o.SubscriptionModel, true
@@ -162,7 +159,7 @@ func (o *MarketDataRelationships) GetSubscriptionModelOk() (*MarketDataRelations
 
 // HasSubscriptionModel returns a boolean if a field has been set.
 func (o *MarketDataRelationships) HasSubscriptionModel() bool {
-	if o != nil && !IsNil(o.SubscriptionModel) {
+	if o != nil && o.SubscriptionModel != nil {
 		return true
 	}
 
@@ -176,7 +173,7 @@ func (o *MarketDataRelationships) SetSubscriptionModel(v MarketDataRelationships
 
 // GetTaxCalculator returns the TaxCalculator field value if set, zero value otherwise.
 func (o *MarketDataRelationships) GetTaxCalculator() MarketDataRelationshipsTaxCalculator {
-	if o == nil || IsNil(o.TaxCalculator) {
+	if o == nil || o.TaxCalculator == nil {
 		var ret MarketDataRelationshipsTaxCalculator
 		return ret
 	}
@@ -186,7 +183,7 @@ func (o *MarketDataRelationships) GetTaxCalculator() MarketDataRelationshipsTaxC
 // GetTaxCalculatorOk returns a tuple with the TaxCalculator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MarketDataRelationships) GetTaxCalculatorOk() (*MarketDataRelationshipsTaxCalculator, bool) {
-	if o == nil || IsNil(o.TaxCalculator) {
+	if o == nil || o.TaxCalculator == nil {
 		return nil, false
 	}
 	return o.TaxCalculator, true
@@ -194,7 +191,7 @@ func (o *MarketDataRelationships) GetTaxCalculatorOk() (*MarketDataRelationships
 
 // HasTaxCalculator returns a boolean if a field has been set.
 func (o *MarketDataRelationships) HasTaxCalculator() bool {
-	if o != nil && !IsNil(o.TaxCalculator) {
+	if o != nil && o.TaxCalculator != nil {
 		return true
 	}
 
@@ -208,7 +205,7 @@ func (o *MarketDataRelationships) SetTaxCalculator(v MarketDataRelationshipsTaxC
 
 // GetCustomerGroup returns the CustomerGroup field value if set, zero value otherwise.
 func (o *MarketDataRelationships) GetCustomerGroup() CustomerDataRelationshipsCustomerGroup {
-	if o == nil || IsNil(o.CustomerGroup) {
+	if o == nil || o.CustomerGroup == nil {
 		var ret CustomerDataRelationshipsCustomerGroup
 		return ret
 	}
@@ -218,7 +215,7 @@ func (o *MarketDataRelationships) GetCustomerGroup() CustomerDataRelationshipsCu
 // GetCustomerGroupOk returns a tuple with the CustomerGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MarketDataRelationships) GetCustomerGroupOk() (*CustomerDataRelationshipsCustomerGroup, bool) {
-	if o == nil || IsNil(o.CustomerGroup) {
+	if o == nil || o.CustomerGroup == nil {
 		return nil, false
 	}
 	return o.CustomerGroup, true
@@ -226,7 +223,7 @@ func (o *MarketDataRelationships) GetCustomerGroupOk() (*CustomerDataRelationshi
 
 // HasCustomerGroup returns a boolean if a field has been set.
 func (o *MarketDataRelationships) HasCustomerGroup() bool {
-	if o != nil && !IsNil(o.CustomerGroup) {
+	if o != nil && o.CustomerGroup != nil {
 		return true
 	}
 
@@ -240,7 +237,7 @@ func (o *MarketDataRelationships) SetCustomerGroup(v CustomerDataRelationshipsCu
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *MarketDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		var ret AvalaraAccountDataRelationshipsAttachments
 		return ret
 	}
@@ -250,7 +247,7 @@ func (o *MarketDataRelationships) GetAttachments() AvalaraAccountDataRelationshi
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MarketDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
-	if o == nil || IsNil(o.Attachments) {
+	if o == nil || o.Attachments == nil {
 		return nil, false
 	}
 	return o.Attachments, true
@@ -258,7 +255,7 @@ func (o *MarketDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelatio
 
 // HasAttachments returns a boolean if a field has been set.
 func (o *MarketDataRelationships) HasAttachments() bool {
-	if o != nil && !IsNil(o.Attachments) {
+	if o != nil && o.Attachments != nil {
 		return true
 	}
 
@@ -271,37 +268,29 @@ func (o *MarketDataRelationships) SetAttachments(v AvalaraAccountDataRelationshi
 }
 
 func (o MarketDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o MarketDataRelationships) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Merchant) {
+	if o.Merchant != nil {
 		toSerialize["merchant"] = o.Merchant
 	}
-	if !IsNil(o.PriceList) {
+	if o.PriceList != nil {
 		toSerialize["price_list"] = o.PriceList
 	}
-	if !IsNil(o.InventoryModel) {
+	if o.InventoryModel != nil {
 		toSerialize["inventory_model"] = o.InventoryModel
 	}
-	if !IsNil(o.SubscriptionModel) {
+	if o.SubscriptionModel != nil {
 		toSerialize["subscription_model"] = o.SubscriptionModel
 	}
-	if !IsNil(o.TaxCalculator) {
+	if o.TaxCalculator != nil {
 		toSerialize["tax_calculator"] = o.TaxCalculator
 	}
-	if !IsNil(o.CustomerGroup) {
+	if o.CustomerGroup != nil {
 		toSerialize["customer_group"] = o.CustomerGroup
 	}
-	if !IsNil(o.Attachments) {
+	if o.Attachments != nil {
 		toSerialize["attachments"] = o.Attachments
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableMarketDataRelationships struct {

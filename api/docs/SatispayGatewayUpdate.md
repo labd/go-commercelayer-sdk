@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PATCHSatispayGatewaysSatispayGatewayIdRequestData**](PATCHSatispayGatewaysSatispayGatewayIdRequestData.md) |  | 
+**Data** | [**SatispayGatewayUpdateData**](SatispayGatewayUpdateData.md) |  | 
 
 ## Methods
 
 ### NewSatispayGatewayUpdate
 
-`func NewSatispayGatewayUpdate(data PATCHSatispayGatewaysSatispayGatewayIdRequestData, ) *SatispayGatewayUpdate`
+`func NewSatispayGatewayUpdate(data SatispayGatewayUpdateData, ) *SatispayGatewayUpdate`
 
 NewSatispayGatewayUpdate instantiates a new SatispayGatewayUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *SatispayGatewayUpdate) GetData() PATCHSatispayGatewaysSatispayGatewayIdRequestData`
+`func (o *SatispayGatewayUpdate) GetData() SatispayGatewayUpdateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *SatispayGatewayUpdate) GetDataOk() (*PATCHSatispayGatewaysSatispayGatewayIdRequestData, bool)`
+`func (o *SatispayGatewayUpdate) GetDataOk() (*SatispayGatewayUpdateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *SatispayGatewayUpdate) SetData(v PATCHSatispayGatewaysSatispayGatewayIdRequestData)`
+`func (o *SatispayGatewayUpdate) SetData(v SatispayGatewayUpdateData)`
 
 SetData sets Data field to given value.
 

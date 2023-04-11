@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the WebhookCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &WebhookCreate{}
-
 // WebhookCreate struct for WebhookCreate
 type WebhookCreate struct {
-	Data POSTWebhooksRequestData `json:"data"`
+	Data WebhookCreateData `json:"data"`
 }
 
 // NewWebhookCreate instantiates a new WebhookCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWebhookCreate(data POSTWebhooksRequestData) *WebhookCreate {
+func NewWebhookCreate(data WebhookCreateData) *WebhookCreate {
 	this := WebhookCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewWebhookCreateWithDefaults() *WebhookCreate {
 }
 
 // GetData returns the Data field value
-func (o *WebhookCreate) GetData() POSTWebhooksRequestData {
+func (o *WebhookCreate) GetData() WebhookCreateData {
 	if o == nil {
-		var ret POSTWebhooksRequestData
+		var ret WebhookCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *WebhookCreate) GetData() POSTWebhooksRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *WebhookCreate) GetDataOk() (*POSTWebhooksRequestData, bool) {
+func (o *WebhookCreate) GetDataOk() (*WebhookCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *WebhookCreate) GetDataOk() (*POSTWebhooksRequestData, bool) {
 }
 
 // SetData sets field value
-func (o *WebhookCreate) SetData(v POSTWebhooksRequestData) {
+func (o *WebhookCreate) SetData(v WebhookCreateData) {
 	o.Data = v
 }
 
 func (o WebhookCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o WebhookCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableWebhookCreate struct {

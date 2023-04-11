@@ -31,7 +31,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -39,7 +39,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CustomerGroupsApi.DELETECustomerGroupsCustomerGroupId(context.Background(), customerGroupId).Execute()
+    resp, r, err := apiClient.CustomerGroupsApi.DELETECustomerGroupsCustomerGroupId(context.Background(), customerGroupId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerGroupsApi.DELETECustomerGroupsCustomerGroupId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -99,7 +99,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -160,7 +160,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -230,7 +230,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -238,7 +238,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CustomerGroupsApi.GETCustomerIdCustomerGroup(context.Background(), customerId).Execute()
+    resp, r, err := apiClient.CustomerGroupsApi.GETCustomerIdCustomerGroup(context.Background(), customerId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerGroupsApi.GETCustomerIdCustomerGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -298,7 +298,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -306,7 +306,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.CustomerGroupsApi.GETMarketIdCustomerGroup(context.Background(), marketId).Execute()
+    resp, r, err := apiClient.CustomerGroupsApi.GETMarketIdCustomerGroup(context.Background(), marketId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerGroupsApi.GETMarketIdCustomerGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ## PATCHCustomerGroupsCustomerGroupId
 
-> PATCHCustomerGroupsCustomerGroupId200Response PATCHCustomerGroupsCustomerGroupId(ctx, customerGroupId).PATCHCustomerGroupsCustomerGroupIdRequest(pATCHCustomerGroupsCustomerGroupIdRequest).Execute()
+> PATCHCustomerGroupsCustomerGroupId200Response PATCHCustomerGroupsCustomerGroupId(ctx, customerGroupId).CustomerGroupUpdate(customerGroupUpdate).Execute()
 
 Update a customer group
 
@@ -366,16 +366,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHCustomerGroupsCustomerGroupIdRequest := *openapiclient.NewPATCHCustomerGroupsCustomerGroupIdRequest(*openapiclient.NewPATCHCustomerGroupsCustomerGroupIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHCustomerGroupsCustomerGroupIdRequestDataAttributes())) // PATCHCustomerGroupsCustomerGroupIdRequest | 
+    customerGroupUpdate := *openapiclient.NewCustomerGroupUpdate(*openapiclient.NewCustomerGroupUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHCustomerGroupsCustomerGroupId200ResponseDataAttributes())) // CustomerGroupUpdate | 
     customerGroupId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomerGroupsApi.PATCHCustomerGroupsCustomerGroupId(context.Background(), customerGroupId).PATCHCustomerGroupsCustomerGroupIdRequest(pATCHCustomerGroupsCustomerGroupIdRequest).Execute()
+    resp, r, err := apiClient.CustomerGroupsApi.PATCHCustomerGroupsCustomerGroupId(context.Background(), customerGroupId).CustomerGroupUpdate(customerGroupUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerGroupsApi.PATCHCustomerGroupsCustomerGroupId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -400,7 +400,7 @@ Other parameters are passed through a pointer to a apiPATCHCustomerGroupsCustome
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHCustomerGroupsCustomerGroupIdRequest** | [**PATCHCustomerGroupsCustomerGroupIdRequest**](PATCHCustomerGroupsCustomerGroupIdRequest.md) |  | 
+ **customerGroupUpdate** | [**CustomerGroupUpdate**](CustomerGroupUpdate.md) |  | 
 
 
 ### Return type
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ## POSTCustomerGroups
 
-> POSTCustomerGroups201Response POSTCustomerGroups(ctx).POSTCustomerGroupsRequest(pOSTCustomerGroupsRequest).Execute()
+> POSTCustomerGroups201Response POSTCustomerGroups(ctx).CustomerGroupCreate(customerGroupCreate).Execute()
 
 Create a customer group
 
@@ -438,15 +438,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTCustomerGroupsRequest := *openapiclient.NewPOSTCustomerGroupsRequest(*openapiclient.NewPOSTCustomerGroupsRequestData(interface{}(123), *openapiclient.NewPOSTCustomerGroupsRequestDataAttributes(interface{}(VIP)))) // POSTCustomerGroupsRequest | 
+    customerGroupCreate := *openapiclient.NewCustomerGroupCreate(*openapiclient.NewCustomerGroupCreateData(interface{}(123), *openapiclient.NewPOSTCustomerGroups201ResponseDataAttributes(interface{}(VIP)))) // CustomerGroupCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomerGroupsApi.POSTCustomerGroups(context.Background()).POSTCustomerGroupsRequest(pOSTCustomerGroupsRequest).Execute()
+    resp, r, err := apiClient.CustomerGroupsApi.POSTCustomerGroups(context.Background()).CustomerGroupCreate(customerGroupCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerGroupsApi.POSTCustomerGroups``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -467,7 +467,7 @@ Other parameters are passed through a pointer to a apiPOSTCustomerGroupsRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTCustomerGroupsRequest** | [**POSTCustomerGroupsRequest**](POSTCustomerGroupsRequest.md) |  | 
+ **customerGroupCreate** | [**CustomerGroupCreate**](CustomerGroupCreate.md) |  | 
 
 ### Return type
 

@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETCouponsCouponId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETCouponsCouponId200Response{}
-
 // GETCouponsCouponId200Response struct for GETCouponsCouponId200Response
 type GETCouponsCouponId200Response struct {
-	Data *GETCouponsCouponId200ResponseData `json:"data,omitempty"`
+	Data *GETCoupons200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETCouponsCouponId200Response instantiates a new GETCouponsCouponId200Response object
@@ -41,9 +38,9 @@ func NewGETCouponsCouponId200ResponseWithDefaults() *GETCouponsCouponId200Respon
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETCouponsCouponId200Response) GetData() GETCouponsCouponId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETCouponsCouponId200ResponseData
+func (o *GETCouponsCouponId200Response) GetData() GETCoupons200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETCoupons200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETCouponsCouponId200Response) GetData() GETCouponsCouponId200ResponseD
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCouponsCouponId200Response) GetDataOk() (*GETCouponsCouponId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETCouponsCouponId200Response) GetDataOk() (*GETCoupons200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETCouponsCouponId200Response) GetDataOk() (*GETCouponsCouponId200Respo
 
 // HasData returns a boolean if a field has been set.
 func (o *GETCouponsCouponId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETCouponsCouponId200ResponseData and assigns it to the Data field.
-func (o *GETCouponsCouponId200Response) SetData(v GETCouponsCouponId200ResponseData) {
+// SetData gets a reference to the given GETCoupons200ResponseDataInner and assigns it to the Data field.
+func (o *GETCouponsCouponId200Response) SetData(v GETCoupons200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETCouponsCouponId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETCouponsCouponId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETCouponsCouponId200Response struct {

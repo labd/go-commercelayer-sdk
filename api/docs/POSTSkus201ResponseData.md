@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
-**Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
-**Attributes** | Pointer to [**POSTSkusRequestDataAttributes**](POSTSkusRequestDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTSkus201ResponseDataRelationships**](POSTSkus201ResponseDataRelationships.md) |  | [optional] 
+**Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
+**Attributes** | Pointer to [**POSTSkus201ResponseDataAttributes**](POSTSkus201ResponseDataAttributes.md) |  | [optional] 
+**Relationships** | Pointer to [**GETSkus200ResponseDataInnerRelationships**](GETSkus200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -101,20 +101,20 @@ HasType returns a boolean if a field has been set.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetLinks
 
-`func (o *POSTSkus201ResponseData) GetLinks() POSTAddresses201ResponseDataLinks`
+`func (o *POSTSkus201ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *POSTSkus201ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool)`
+`func (o *POSTSkus201ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *POSTSkus201ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks)`
+`func (o *POSTSkus201ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks)`
 
 SetLinks sets Links field to given value.
 
@@ -126,20 +126,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *POSTSkus201ResponseData) GetAttributes() POSTSkusRequestDataAttributes`
+`func (o *POSTSkus201ResponseData) GetAttributes() POSTSkus201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *POSTSkus201ResponseData) GetAttributesOk() (*POSTSkusRequestDataAttributes, bool)`
+`func (o *POSTSkus201ResponseData) GetAttributesOk() (*POSTSkus201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *POSTSkus201ResponseData) SetAttributes(v POSTSkusRequestDataAttributes)`
+`func (o *POSTSkus201ResponseData) SetAttributes(v POSTSkus201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
@@ -151,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *POSTSkus201ResponseData) GetRelationships() POSTSkus201ResponseDataRelationships`
+`func (o *POSTSkus201ResponseData) GetRelationships() GETSkus200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *POSTSkus201ResponseData) GetRelationshipsOk() (*POSTSkus201ResponseDataRelationships, bool)`
+`func (o *POSTSkus201ResponseData) GetRelationshipsOk() (*GETSkus200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *POSTSkus201ResponseData) SetRelationships(v POSTSkus201ResponseDataRelationships)`
+`func (o *POSTSkus201ResponseData) SetRelationships(v GETSkus200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

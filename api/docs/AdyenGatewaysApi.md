@@ -29,7 +29,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -37,7 +37,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.AdyenGatewaysApi.DELETEAdyenGatewaysAdyenGatewayId(context.Background(), adyenGatewayId).Execute()
+    resp, r, err := apiClient.AdyenGatewaysApi.DELETEAdyenGatewaysAdyenGatewayId(context.Background(), adyenGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AdyenGatewaysApi.DELETEAdyenGatewaysAdyenGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -158,7 +158,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHAdyenGatewaysAdyenGatewayId
 
-> PATCHAdyenGatewaysAdyenGatewayId200Response PATCHAdyenGatewaysAdyenGatewayId(ctx, adyenGatewayId).PATCHAdyenGatewaysAdyenGatewayIdRequest(pATCHAdyenGatewaysAdyenGatewayIdRequest).Execute()
+> PATCHAdyenGatewaysAdyenGatewayId200Response PATCHAdyenGatewaysAdyenGatewayId(ctx, adyenGatewayId).AdyenGatewayUpdate(adyenGatewayUpdate).Execute()
 
 Update an adyen gateway
 
@@ -228,16 +228,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHAdyenGatewaysAdyenGatewayIdRequest := *openapiclient.NewPATCHAdyenGatewaysAdyenGatewayIdRequest(*openapiclient.NewPATCHAdyenGatewaysAdyenGatewayIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHAdyenGatewaysAdyenGatewayIdRequestDataAttributes())) // PATCHAdyenGatewaysAdyenGatewayIdRequest | 
+    adyenGatewayUpdate := *openapiclient.NewAdyenGatewayUpdate(*openapiclient.NewAdyenGatewayUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes())) // AdyenGatewayUpdate | 
     adyenGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AdyenGatewaysApi.PATCHAdyenGatewaysAdyenGatewayId(context.Background(), adyenGatewayId).PATCHAdyenGatewaysAdyenGatewayIdRequest(pATCHAdyenGatewaysAdyenGatewayIdRequest).Execute()
+    resp, r, err := apiClient.AdyenGatewaysApi.PATCHAdyenGatewaysAdyenGatewayId(context.Background(), adyenGatewayId).AdyenGatewayUpdate(adyenGatewayUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AdyenGatewaysApi.PATCHAdyenGatewaysAdyenGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -262,7 +262,7 @@ Other parameters are passed through a pointer to a apiPATCHAdyenGatewaysAdyenGat
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHAdyenGatewaysAdyenGatewayIdRequest** | [**PATCHAdyenGatewaysAdyenGatewayIdRequest**](PATCHAdyenGatewaysAdyenGatewayIdRequest.md) |  | 
+ **adyenGatewayUpdate** | [**AdyenGatewayUpdate**](AdyenGatewayUpdate.md) |  | 
 
 
 ### Return type
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTAdyenGateways
 
-> POSTAdyenGateways201Response POSTAdyenGateways(ctx).POSTAdyenGatewaysRequest(pOSTAdyenGatewaysRequest).Execute()
+> POSTAdyenGateways201Response POSTAdyenGateways(ctx).AdyenGatewayCreate(adyenGatewayCreate).Execute()
 
 Create an adyen gateway
 
@@ -300,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTAdyenGatewaysRequest := *openapiclient.NewPOSTAdyenGatewaysRequest(*openapiclient.NewPOSTAdyenGatewaysRequestData(interface{}(123), *openapiclient.NewPOSTAdyenGatewaysRequestDataAttributes(interface{}(US payment gateway), interface{}(xxxx-yyyy-zzzz), interface{}(xxxx-yyyy-zzzz), interface{}(1797a841fbb37ca7-AdyenDemo)))) // POSTAdyenGatewaysRequest | 
+    adyenGatewayCreate := *openapiclient.NewAdyenGatewayCreate(*openapiclient.NewAdyenGatewayCreateData(interface{}(123), *openapiclient.NewPOSTAdyenGateways201ResponseDataAttributes(interface{}(US payment gateway), interface{}(xxxx-yyyy-zzzz), interface{}(xxxx-yyyy-zzzz), interface{}(1797a841fbb37ca7-AdyenDemo)))) // AdyenGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AdyenGatewaysApi.POSTAdyenGateways(context.Background()).POSTAdyenGatewaysRequest(pOSTAdyenGatewaysRequest).Execute()
+    resp, r, err := apiClient.AdyenGatewaysApi.POSTAdyenGateways(context.Background()).AdyenGatewayCreate(adyenGatewayCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AdyenGatewaysApi.POSTAdyenGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiPOSTAdyenGatewaysRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTAdyenGatewaysRequest** | [**POSTAdyenGatewaysRequest**](POSTAdyenGatewaysRequest.md) |  | 
+ **adyenGatewayCreate** | [**AdyenGatewayCreate**](AdyenGatewayCreate.md) |  | 
 
 ### Return type
 

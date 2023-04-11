@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the RecurringOrderCopyCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &RecurringOrderCopyCreate{}
-
 // RecurringOrderCopyCreate struct for RecurringOrderCopyCreate
 type RecurringOrderCopyCreate struct {
-	Data POSTRecurringOrderCopiesRequestData `json:"data"`
+	Data RecurringOrderCopyCreateData `json:"data"`
 }
 
 // NewRecurringOrderCopyCreate instantiates a new RecurringOrderCopyCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRecurringOrderCopyCreate(data POSTRecurringOrderCopiesRequestData) *RecurringOrderCopyCreate {
+func NewRecurringOrderCopyCreate(data RecurringOrderCopyCreateData) *RecurringOrderCopyCreate {
 	this := RecurringOrderCopyCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewRecurringOrderCopyCreateWithDefaults() *RecurringOrderCopyCreate {
 }
 
 // GetData returns the Data field value
-func (o *RecurringOrderCopyCreate) GetData() POSTRecurringOrderCopiesRequestData {
+func (o *RecurringOrderCopyCreate) GetData() RecurringOrderCopyCreateData {
 	if o == nil {
-		var ret POSTRecurringOrderCopiesRequestData
+		var ret RecurringOrderCopyCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *RecurringOrderCopyCreate) GetData() POSTRecurringOrderCopiesRequestData
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *RecurringOrderCopyCreate) GetDataOk() (*POSTRecurringOrderCopiesRequestData, bool) {
+func (o *RecurringOrderCopyCreate) GetDataOk() (*RecurringOrderCopyCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *RecurringOrderCopyCreate) GetDataOk() (*POSTRecurringOrderCopiesRequest
 }
 
 // SetData sets field value
-func (o *RecurringOrderCopyCreate) SetData(v POSTRecurringOrderCopiesRequestData) {
+func (o *RecurringOrderCopyCreate) SetData(v RecurringOrderCopyCreateData) {
 	o.Data = v
 }
 
 func (o RecurringOrderCopyCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o RecurringOrderCopyCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableRecurringOrderCopyCreate struct {

@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the StripeGatewayDataRelationshipsStripePayments type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &StripeGatewayDataRelationshipsStripePayments{}
-
 // StripeGatewayDataRelationshipsStripePayments struct for StripeGatewayDataRelationshipsStripePayments
 type StripeGatewayDataRelationshipsStripePayments struct {
 	Data *StripeGatewayDataRelationshipsStripePaymentsData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewStripeGatewayDataRelationshipsStripePaymentsWithDefaults() *StripeGatewa
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *StripeGatewayDataRelationshipsStripePayments) GetData() StripeGatewayDataRelationshipsStripePaymentsData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret StripeGatewayDataRelationshipsStripePaymentsData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *StripeGatewayDataRelationshipsStripePayments) GetData() StripeGatewayDa
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StripeGatewayDataRelationshipsStripePayments) GetDataOk() (*StripeGatewayDataRelationshipsStripePaymentsData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *StripeGatewayDataRelationshipsStripePayments) GetDataOk() (*StripeGatew
 
 // HasData returns a boolean if a field has been set.
 func (o *StripeGatewayDataRelationshipsStripePayments) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *StripeGatewayDataRelationshipsStripePayments) SetData(v StripeGatewayDa
 }
 
 func (o StripeGatewayDataRelationshipsStripePayments) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o StripeGatewayDataRelationshipsStripePayments) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableStripeGatewayDataRelationshipsStripePayments struct {

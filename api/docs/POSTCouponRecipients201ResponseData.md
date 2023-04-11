@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
-**Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
-**Attributes** | Pointer to [**POSTCouponRecipientsRequestDataAttributes**](POSTCouponRecipientsRequestDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**POSTCouponRecipients201ResponseDataRelationships**](POSTCouponRecipients201ResponseDataRelationships.md) |  | [optional] 
+**Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
+**Attributes** | Pointer to [**POSTCouponRecipients201ResponseDataAttributes**](POSTCouponRecipients201ResponseDataAttributes.md) |  | [optional] 
+**Relationships** | Pointer to [**GETCouponRecipients200ResponseDataInnerRelationships**](GETCouponRecipients200ResponseDataInnerRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -101,20 +101,20 @@ HasType returns a boolean if a field has been set.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetLinks
 
-`func (o *POSTCouponRecipients201ResponseData) GetLinks() POSTAddresses201ResponseDataLinks`
+`func (o *POSTCouponRecipients201ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *POSTCouponRecipients201ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool)`
+`func (o *POSTCouponRecipients201ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *POSTCouponRecipients201ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks)`
+`func (o *POSTCouponRecipients201ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks)`
 
 SetLinks sets Links field to given value.
 
@@ -126,20 +126,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *POSTCouponRecipients201ResponseData) GetAttributes() POSTCouponRecipientsRequestDataAttributes`
+`func (o *POSTCouponRecipients201ResponseData) GetAttributes() POSTCouponRecipients201ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *POSTCouponRecipients201ResponseData) GetAttributesOk() (*POSTCouponRecipientsRequestDataAttributes, bool)`
+`func (o *POSTCouponRecipients201ResponseData) GetAttributesOk() (*POSTCouponRecipients201ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *POSTCouponRecipients201ResponseData) SetAttributes(v POSTCouponRecipientsRequestDataAttributes)`
+`func (o *POSTCouponRecipients201ResponseData) SetAttributes(v POSTCouponRecipients201ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
@@ -151,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *POSTCouponRecipients201ResponseData) GetRelationships() POSTCouponRecipients201ResponseDataRelationships`
+`func (o *POSTCouponRecipients201ResponseData) GetRelationships() GETCouponRecipients200ResponseDataInnerRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *POSTCouponRecipients201ResponseData) GetRelationshipsOk() (*POSTCouponRecipients201ResponseDataRelationships, bool)`
+`func (o *POSTCouponRecipients201ResponseData) GetRelationshipsOk() (*GETCouponRecipients200ResponseDataInnerRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *POSTCouponRecipients201ResponseData) SetRelationships(v POSTCouponRecipients201ResponseDataRelationships)`
+`func (o *POSTCouponRecipients201ResponseData) SetRelationships(v GETCouponRecipients200ResponseDataInnerRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

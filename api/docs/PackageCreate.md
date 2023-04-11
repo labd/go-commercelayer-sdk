@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**POSTPackagesRequestData**](POSTPackagesRequestData.md) |  | 
+**Data** | [**PackageCreateData**](PackageCreateData.md) |  | 
 
 ## Methods
 
 ### NewPackageCreate
 
-`func NewPackageCreate(data POSTPackagesRequestData, ) *PackageCreate`
+`func NewPackageCreate(data PackageCreateData, ) *PackageCreate`
 
 NewPackageCreate instantiates a new PackageCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *PackageCreate) GetData() POSTPackagesRequestData`
+`func (o *PackageCreate) GetData() PackageCreateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *PackageCreate) GetDataOk() (*POSTPackagesRequestData, bool)`
+`func (o *PackageCreate) GetDataOk() (*PackageCreateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *PackageCreate) SetData(v POSTPackagesRequestData)`
+`func (o *PackageCreate) SetData(v PackageCreateData)`
 
 SetData sets Data field to given value.
 

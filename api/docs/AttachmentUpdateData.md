@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
 **Id** | **interface{}** | The resource&#39;s id | 
-**Attributes** | [**PATCHAttachmentsAttachmentIdRequestDataAttributes**](PATCHAttachmentsAttachmentIdRequestDataAttributes.md) |  | 
+**Attributes** | [**PATCHAttachmentsAttachmentId200ResponseDataAttributes**](PATCHAttachmentsAttachmentId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AttachmentUpdateDataRelationships**](AttachmentUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewAttachmentUpdateData
 
-`func NewAttachmentUpdateData(type_ interface{}, id interface{}, attributes PATCHAttachmentsAttachmentIdRequestDataAttributes, ) *AttachmentUpdateData`
+`func NewAttachmentUpdateData(type_ interface{}, id interface{}, attributes PATCHAttachmentsAttachmentId200ResponseDataAttributes, ) *AttachmentUpdateData`
 
 NewAttachmentUpdateData instantiates a new AttachmentUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -90,20 +90,20 @@ SetId sets Id field to given value.
 UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetAttributes
 
-`func (o *AttachmentUpdateData) GetAttributes() PATCHAttachmentsAttachmentIdRequestDataAttributes`
+`func (o *AttachmentUpdateData) GetAttributes() PATCHAttachmentsAttachmentId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *AttachmentUpdateData) GetAttributesOk() (*PATCHAttachmentsAttachmentIdRequestDataAttributes, bool)`
+`func (o *AttachmentUpdateData) GetAttributesOk() (*PATCHAttachmentsAttachmentId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *AttachmentUpdateData) SetAttributes(v PATCHAttachmentsAttachmentIdRequestDataAttributes)`
+`func (o *AttachmentUpdateData) SetAttributes(v PATCHAttachmentsAttachmentId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

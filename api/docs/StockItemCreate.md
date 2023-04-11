@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**POSTStockItemsRequestData**](POSTStockItemsRequestData.md) |  | 
+**Data** | [**StockItemCreateData**](StockItemCreateData.md) |  | 
 
 ## Methods
 
 ### NewStockItemCreate
 
-`func NewStockItemCreate(data POSTStockItemsRequestData, ) *StockItemCreate`
+`func NewStockItemCreate(data StockItemCreateData, ) *StockItemCreate`
 
 NewStockItemCreate instantiates a new StockItemCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *StockItemCreate) GetData() POSTStockItemsRequestData`
+`func (o *StockItemCreate) GetData() StockItemCreateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *StockItemCreate) GetDataOk() (*POSTStockItemsRequestData, bool)`
+`func (o *StockItemCreate) GetDataOk() (*StockItemCreateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *StockItemCreate) SetData(v POSTStockItemsRequestData)`
+`func (o *StockItemCreate) SetData(v StockItemCreateData)`
 
 SetData sets Data field to given value.
 

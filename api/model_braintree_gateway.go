@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the BraintreeGateway type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &BraintreeGateway{}
-
 // BraintreeGateway struct for BraintreeGateway
 type BraintreeGateway struct {
 	Data *BraintreeGatewayData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewBraintreeGatewayWithDefaults() *BraintreeGateway {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *BraintreeGateway) GetData() BraintreeGatewayData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret BraintreeGatewayData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *BraintreeGateway) GetData() BraintreeGatewayData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BraintreeGateway) GetDataOk() (*BraintreeGatewayData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *BraintreeGateway) GetDataOk() (*BraintreeGatewayData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *BraintreeGateway) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *BraintreeGateway) SetData(v BraintreeGatewayData) {
 }
 
 func (o BraintreeGateway) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o BraintreeGateway) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableBraintreeGateway struct {

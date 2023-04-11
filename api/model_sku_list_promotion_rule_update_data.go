@@ -15,24 +15,21 @@ import (
 	"encoding/json"
 )
 
-// checks if the SkuListPromotionRuleUpdateData type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &SkuListPromotionRuleUpdateData{}
-
 // SkuListPromotionRuleUpdateData struct for SkuListPromotionRuleUpdateData
 type SkuListPromotionRuleUpdateData struct {
 	// The resource's type
 	Type interface{} `json:"type"`
 	// The resource's id
-	Id            interface{}                                                           `json:"id"`
-	Attributes    PATCHSkuListPromotionRulesSkuListPromotionRuleIdRequestDataAttributes `json:"attributes"`
-	Relationships *SkuListPromotionRuleUpdateDataRelationships                          `json:"relationships,omitempty"`
+	Id            interface{}                                                               `json:"id"`
+	Attributes    PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes `json:"attributes"`
+	Relationships *SkuListPromotionRuleUpdateDataRelationships                              `json:"relationships,omitempty"`
 }
 
 // NewSkuListPromotionRuleUpdateData instantiates a new SkuListPromotionRuleUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuListPromotionRuleUpdateData(type_ interface{}, id interface{}, attributes PATCHSkuListPromotionRulesSkuListPromotionRuleIdRequestDataAttributes) *SkuListPromotionRuleUpdateData {
+func NewSkuListPromotionRuleUpdateData(type_ interface{}, id interface{}, attributes PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes) *SkuListPromotionRuleUpdateData {
 	this := SkuListPromotionRuleUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -63,7 +60,7 @@ func (o *SkuListPromotionRuleUpdateData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SkuListPromotionRuleUpdateData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Type) {
+	if o == nil || o.Type == nil {
 		return nil, false
 	}
 	return &o.Type, true
@@ -89,7 +86,7 @@ func (o *SkuListPromotionRuleUpdateData) GetId() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SkuListPromotionRuleUpdateData) GetIdOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Id) {
+	if o == nil || o.Id == nil {
 		return nil, false
 	}
 	return &o.Id, true
@@ -101,9 +98,9 @@ func (o *SkuListPromotionRuleUpdateData) SetId(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *SkuListPromotionRuleUpdateData) GetAttributes() PATCHSkuListPromotionRulesSkuListPromotionRuleIdRequestDataAttributes {
+func (o *SkuListPromotionRuleUpdateData) GetAttributes() PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes {
 	if o == nil {
-		var ret PATCHSkuListPromotionRulesSkuListPromotionRuleIdRequestDataAttributes
+		var ret PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes
 		return ret
 	}
 
@@ -112,7 +109,7 @@ func (o *SkuListPromotionRuleUpdateData) GetAttributes() PATCHSkuListPromotionRu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *SkuListPromotionRuleUpdateData) GetAttributesOk() (*PATCHSkuListPromotionRulesSkuListPromotionRuleIdRequestDataAttributes, bool) {
+func (o *SkuListPromotionRuleUpdateData) GetAttributesOk() (*PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -120,13 +117,13 @@ func (o *SkuListPromotionRuleUpdateData) GetAttributesOk() (*PATCHSkuListPromoti
 }
 
 // SetAttributes sets field value
-func (o *SkuListPromotionRuleUpdateData) SetAttributes(v PATCHSkuListPromotionRulesSkuListPromotionRuleIdRequestDataAttributes) {
+func (o *SkuListPromotionRuleUpdateData) SetAttributes(v PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *SkuListPromotionRuleUpdateData) GetRelationships() SkuListPromotionRuleUpdateDataRelationships {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		var ret SkuListPromotionRuleUpdateDataRelationships
 		return ret
 	}
@@ -136,7 +133,7 @@ func (o *SkuListPromotionRuleUpdateData) GetRelationships() SkuListPromotionRule
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SkuListPromotionRuleUpdateData) GetRelationshipsOk() (*SkuListPromotionRuleUpdateDataRelationships, bool) {
-	if o == nil || IsNil(o.Relationships) {
+	if o == nil || o.Relationships == nil {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -144,7 +141,7 @@ func (o *SkuListPromotionRuleUpdateData) GetRelationshipsOk() (*SkuListPromotion
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *SkuListPromotionRuleUpdateData) HasRelationships() bool {
-	if o != nil && !IsNil(o.Relationships) {
+	if o != nil && o.Relationships != nil {
 		return true
 	}
 
@@ -157,14 +154,6 @@ func (o *SkuListPromotionRuleUpdateData) SetRelationships(v SkuListPromotionRule
 }
 
 func (o SkuListPromotionRuleUpdateData) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o SkuListPromotionRuleUpdateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
@@ -172,11 +161,13 @@ func (o SkuListPromotionRuleUpdateData) ToMap() (map[string]interface{}, error) 
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
-	toSerialize["attributes"] = o.Attributes
-	if !IsNil(o.Relationships) {
+	if true {
+		toSerialize["attributes"] = o.Attributes
+	}
+	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableSkuListPromotionRuleUpdateData struct {

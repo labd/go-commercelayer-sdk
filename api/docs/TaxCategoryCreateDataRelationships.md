@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Sku** | [**POSTInStockSubscriptionsRequestDataRelationshipsSku**](POSTInStockSubscriptionsRequestDataRelationshipsSku.md) |  | 
+**Sku** | [**InStockSubscriptionCreateDataRelationshipsSku**](InStockSubscriptionCreateDataRelationshipsSku.md) |  | 
 **TaxCalculator** | [**TaxCategoryCreateDataRelationshipsTaxCalculator**](TaxCategoryCreateDataRelationshipsTaxCalculator.md) |  | 
 
 ## Methods
 
 ### NewTaxCategoryCreateDataRelationships
 
-`func NewTaxCategoryCreateDataRelationships(sku POSTInStockSubscriptionsRequestDataRelationshipsSku, taxCalculator TaxCategoryCreateDataRelationshipsTaxCalculator, ) *TaxCategoryCreateDataRelationships`
+`func NewTaxCategoryCreateDataRelationships(sku InStockSubscriptionCreateDataRelationshipsSku, taxCalculator TaxCategoryCreateDataRelationshipsTaxCalculator, ) *TaxCategoryCreateDataRelationships`
 
 NewTaxCategoryCreateDataRelationships instantiates a new TaxCategoryCreateDataRelationships object
 This constructor will assign default values to properties that have it defined,
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetSku
 
-`func (o *TaxCategoryCreateDataRelationships) GetSku() POSTInStockSubscriptionsRequestDataRelationshipsSku`
+`func (o *TaxCategoryCreateDataRelationships) GetSku() InStockSubscriptionCreateDataRelationshipsSku`
 
 GetSku returns the Sku field if non-nil, zero value otherwise.
 
 ### GetSkuOk
 
-`func (o *TaxCategoryCreateDataRelationships) GetSkuOk() (*POSTInStockSubscriptionsRequestDataRelationshipsSku, bool)`
+`func (o *TaxCategoryCreateDataRelationships) GetSkuOk() (*InStockSubscriptionCreateDataRelationshipsSku, bool)`
 
 GetSkuOk returns a tuple with the Sku field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSku
 
-`func (o *TaxCategoryCreateDataRelationships) SetSku(v POSTInStockSubscriptionsRequestDataRelationshipsSku)`
+`func (o *TaxCategoryCreateDataRelationships) SetSku(v InStockSubscriptionCreateDataRelationshipsSku)`
 
 SetSku sets Sku field to given value.
 

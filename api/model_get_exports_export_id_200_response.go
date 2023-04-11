@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETExportsExportId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETExportsExportId200Response{}
-
 // GETExportsExportId200Response struct for GETExportsExportId200Response
 type GETExportsExportId200Response struct {
 	Data *GETExportsExportId200ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewGETExportsExportId200ResponseWithDefaults() *GETExportsExportId200Respon
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *GETExportsExportId200Response) GetData() GETExportsExportId200ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret GETExportsExportId200ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *GETExportsExportId200Response) GetData() GETExportsExportId200ResponseD
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GETExportsExportId200Response) GetDataOk() (*GETExportsExportId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *GETExportsExportId200Response) GetDataOk() (*GETExportsExportId200Respo
 
 // HasData returns a boolean if a field has been set.
 func (o *GETExportsExportId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *GETExportsExportId200Response) SetData(v GETExportsExportId200ResponseD
 }
 
 func (o GETExportsExportId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETExportsExportId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETExportsExportId200Response struct {

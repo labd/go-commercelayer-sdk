@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the POSTInventoryModels201Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &POSTInventoryModels201Response{}
-
 // POSTInventoryModels201Response struct for POSTInventoryModels201Response
 type POSTInventoryModels201Response struct {
 	Data *POSTInventoryModels201ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPOSTInventoryModels201ResponseWithDefaults() *POSTInventoryModels201Resp
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTInventoryModels201Response) GetData() POSTInventoryModels201ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret POSTInventoryModels201ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *POSTInventoryModels201Response) GetData() POSTInventoryModels201Respons
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTInventoryModels201Response) GetDataOk() (*POSTInventoryModels201ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *POSTInventoryModels201Response) GetDataOk() (*POSTInventoryModels201Res
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTInventoryModels201Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *POSTInventoryModels201Response) SetData(v POSTInventoryModels201Respons
 }
 
 func (o POSTInventoryModels201Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o POSTInventoryModels201Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePOSTInventoryModels201Response struct {

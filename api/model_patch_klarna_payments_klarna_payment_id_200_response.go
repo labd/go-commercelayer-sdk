@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the PATCHKlarnaPaymentsKlarnaPaymentId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PATCHKlarnaPaymentsKlarnaPaymentId200Response{}
-
 // PATCHKlarnaPaymentsKlarnaPaymentId200Response struct for PATCHKlarnaPaymentsKlarnaPaymentId200Response
 type PATCHKlarnaPaymentsKlarnaPaymentId200Response struct {
 	Data *PATCHKlarnaPaymentsKlarnaPaymentId200ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPATCHKlarnaPaymentsKlarnaPaymentId200ResponseWithDefaults() *PATCHKlarna
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *PATCHKlarnaPaymentsKlarnaPaymentId200Response) GetData() PATCHKlarnaPaymentsKlarnaPaymentId200ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret PATCHKlarnaPaymentsKlarnaPaymentId200ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *PATCHKlarnaPaymentsKlarnaPaymentId200Response) GetData() PATCHKlarnaPay
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHKlarnaPaymentsKlarnaPaymentId200Response) GetDataOk() (*PATCHKlarnaPaymentsKlarnaPaymentId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *PATCHKlarnaPaymentsKlarnaPaymentId200Response) GetDataOk() (*PATCHKlarn
 
 // HasData returns a boolean if a field has been set.
 func (o *PATCHKlarnaPaymentsKlarnaPaymentId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *PATCHKlarnaPaymentsKlarnaPaymentId200Response) SetData(v PATCHKlarnaPay
 }
 
 func (o PATCHKlarnaPaymentsKlarnaPaymentId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o PATCHKlarnaPaymentsKlarnaPaymentId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePATCHKlarnaPaymentsKlarnaPaymentId200Response struct {

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PATCHTaxRulesTaxRuleIdRequestData**](PATCHTaxRulesTaxRuleIdRequestData.md) |  | 
+**Data** | [**TaxRuleUpdateData**](TaxRuleUpdateData.md) |  | 
 
 ## Methods
 
 ### NewTaxRuleUpdate
 
-`func NewTaxRuleUpdate(data PATCHTaxRulesTaxRuleIdRequestData, ) *TaxRuleUpdate`
+`func NewTaxRuleUpdate(data TaxRuleUpdateData, ) *TaxRuleUpdate`
 
 NewTaxRuleUpdate instantiates a new TaxRuleUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *TaxRuleUpdate) GetData() PATCHTaxRulesTaxRuleIdRequestData`
+`func (o *TaxRuleUpdate) GetData() TaxRuleUpdateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *TaxRuleUpdate) GetDataOk() (*PATCHTaxRulesTaxRuleIdRequestData, bool)`
+`func (o *TaxRuleUpdate) GetDataOk() (*TaxRuleUpdateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *TaxRuleUpdate) SetData(v PATCHTaxRulesTaxRuleIdRequestData)`
+`func (o *TaxRuleUpdate) SetData(v TaxRuleUpdateData)`
 
 SetData sets Data field to given value.
 

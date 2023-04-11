@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETRecurringOrderCopiesRecurringOrderCopyId200ResponseData**](GETRecurringOrderCopiesRecurringOrderCopyId200ResponseData.md) |  | [optional] 
+**Data** | Pointer to [**GETRecurringOrderCopies200ResponseDataInner**](GETRecurringOrderCopies200ResponseDataInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETRecurringOrderCopiesRecurringOrderCopyId200Response) GetData() GETRecurringOrderCopiesRecurringOrderCopyId200ResponseData`
+`func (o *GETRecurringOrderCopiesRecurringOrderCopyId200Response) GetData() GETRecurringOrderCopies200ResponseDataInner`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETRecurringOrderCopiesRecurringOrderCopyId200Response) GetDataOk() (*GETRecurringOrderCopiesRecurringOrderCopyId200ResponseData, bool)`
+`func (o *GETRecurringOrderCopiesRecurringOrderCopyId200Response) GetDataOk() (*GETRecurringOrderCopies200ResponseDataInner, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETRecurringOrderCopiesRecurringOrderCopyId200Response) SetData(v GETRecurringOrderCopiesRecurringOrderCopyId200ResponseData)`
+`func (o *GETRecurringOrderCopiesRecurringOrderCopyId200Response) SetData(v GETRecurringOrderCopies200ResponseDataInner)`
 
 SetData sets Data field to given value.
 

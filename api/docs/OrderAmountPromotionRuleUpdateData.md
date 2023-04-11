@@ -6,14 +6,14 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
 **Id** | **interface{}** | The resource&#39;s id | 
-**Attributes** | [**PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequestDataAttributes**](PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequestDataAttributes.md) |  | 
+**Attributes** | [**PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes**](PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**OrderAmountPromotionRuleUpdateDataRelationships**](OrderAmountPromotionRuleUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewOrderAmountPromotionRuleUpdateData
 
-`func NewOrderAmountPromotionRuleUpdateData(type_ interface{}, id interface{}, attributes PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequestDataAttributes, ) *OrderAmountPromotionRuleUpdateData`
+`func NewOrderAmountPromotionRuleUpdateData(type_ interface{}, id interface{}, attributes PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes, ) *OrderAmountPromotionRuleUpdateData`
 
 NewOrderAmountPromotionRuleUpdateData instantiates a new OrderAmountPromotionRuleUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -90,20 +90,20 @@ SetId sets Id field to given value.
 UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetAttributes
 
-`func (o *OrderAmountPromotionRuleUpdateData) GetAttributes() PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequestDataAttributes`
+`func (o *OrderAmountPromotionRuleUpdateData) GetAttributes() PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *OrderAmountPromotionRuleUpdateData) GetAttributesOk() (*PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequestDataAttributes, bool)`
+`func (o *OrderAmountPromotionRuleUpdateData) GetAttributesOk() (*PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *OrderAmountPromotionRuleUpdateData) SetAttributes(v PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequestDataAttributes)`
+`func (o *OrderAmountPromotionRuleUpdateData) SetAttributes(v PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETPackagesPackageId200ResponseDataAttributes**](GETPackagesPackageId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**GETPackages200ResponseDataInnerAttributes**](GETPackages200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**PackageDataRelationships**](PackageDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPackageData
 
-`func NewPackageData(type_ interface{}, attributes GETPackagesPackageId200ResponseDataAttributes, ) *PackageData`
+`func NewPackageData(type_ interface{}, attributes GETPackages200ResponseDataInnerAttributes, ) *PackageData`
 
 NewPackageData instantiates a new PackageData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *PackageData) GetAttributes() GETPackagesPackageId200ResponseDataAttributes`
+`func (o *PackageData) GetAttributes() GETPackages200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PackageData) GetAttributesOk() (*GETPackagesPackageId200ResponseDataAttributes, bool)`
+`func (o *PackageData) GetAttributesOk() (*GETPackages200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PackageData) SetAttributes(v GETPackagesPackageId200ResponseDataAttributes)`
+`func (o *PackageData) SetAttributes(v GETPackages200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Order** | [**POSTAdyenPaymentsRequestDataRelationshipsOrder**](POSTAdyenPaymentsRequestDataRelationshipsOrder.md) |  | 
+**Order** | [**AdyenPaymentCreateDataRelationshipsOrder**](AdyenPaymentCreateDataRelationshipsOrder.md) |  | 
 **Item** | Pointer to [**LineItemCreateDataRelationshipsItem**](LineItemCreateDataRelationshipsItem.md) |  | [optional] 
 
 ## Methods
 
 ### NewLineItemCreateDataRelationships
 
-`func NewLineItemCreateDataRelationships(order POSTAdyenPaymentsRequestDataRelationshipsOrder, ) *LineItemCreateDataRelationships`
+`func NewLineItemCreateDataRelationships(order AdyenPaymentCreateDataRelationshipsOrder, ) *LineItemCreateDataRelationships`
 
 NewLineItemCreateDataRelationships instantiates a new LineItemCreateDataRelationships object
 This constructor will assign default values to properties that have it defined,
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetOrder
 
-`func (o *LineItemCreateDataRelationships) GetOrder() POSTAdyenPaymentsRequestDataRelationshipsOrder`
+`func (o *LineItemCreateDataRelationships) GetOrder() AdyenPaymentCreateDataRelationshipsOrder`
 
 GetOrder returns the Order field if non-nil, zero value otherwise.
 
 ### GetOrderOk
 
-`func (o *LineItemCreateDataRelationships) GetOrderOk() (*POSTAdyenPaymentsRequestDataRelationshipsOrder, bool)`
+`func (o *LineItemCreateDataRelationships) GetOrderOk() (*AdyenPaymentCreateDataRelationshipsOrder, bool)`
 
 GetOrderOk returns a tuple with the Order field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOrder
 
-`func (o *LineItemCreateDataRelationships) SetOrder(v POSTAdyenPaymentsRequestDataRelationshipsOrder)`
+`func (o *LineItemCreateDataRelationships) SetOrder(v AdyenPaymentCreateDataRelationshipsOrder)`
 
 SetOrder sets Order field to given value.
 

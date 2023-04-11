@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETImportsImportId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETImportsImportId200ResponseDataAttributes{}
-
 // GETImportsImportId200ResponseDataAttributes struct for GETImportsImportId200ResponseDataAttributes
 type GETImportsImportId200ResponseDataAttributes struct {
 	// The type of resource being imported.
@@ -94,7 +91,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetResourceType() interfac
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETImportsImportId200ResponseDataAttributes) GetResourceTypeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.ResourceType) {
+	if o == nil || o.ResourceType == nil {
 		return nil, false
 	}
 	return &o.ResourceType, true
@@ -102,7 +99,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetResourceTypeOk() (*inte
 
 // HasResourceType returns a boolean if a field has been set.
 func (o *GETImportsImportId200ResponseDataAttributes) HasResourceType() bool {
-	if o != nil && IsNil(o.ResourceType) {
+	if o != nil && o.ResourceType != nil {
 		return true
 	}
 
@@ -127,7 +124,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetParentResourceId() inte
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETImportsImportId200ResponseDataAttributes) GetParentResourceIdOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.ParentResourceId) {
+	if o == nil || o.ParentResourceId == nil {
 		return nil, false
 	}
 	return &o.ParentResourceId, true
@@ -135,7 +132,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetParentResourceIdOk() (*
 
 // HasParentResourceId returns a boolean if a field has been set.
 func (o *GETImportsImportId200ResponseDataAttributes) HasParentResourceId() bool {
-	if o != nil && IsNil(o.ParentResourceId) {
+	if o != nil && o.ParentResourceId != nil {
 		return true
 	}
 
@@ -160,7 +157,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetStatus() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETImportsImportId200ResponseDataAttributes) GetStatusOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Status) {
+	if o == nil || o.Status == nil {
 		return nil, false
 	}
 	return &o.Status, true
@@ -168,7 +165,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetStatusOk() (*interface{
 
 // HasStatus returns a boolean if a field has been set.
 func (o *GETImportsImportId200ResponseDataAttributes) HasStatus() bool {
-	if o != nil && IsNil(o.Status) {
+	if o != nil && o.Status != nil {
 		return true
 	}
 
@@ -193,7 +190,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetStartedAt() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETImportsImportId200ResponseDataAttributes) GetStartedAtOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.StartedAt) {
+	if o == nil || o.StartedAt == nil {
 		return nil, false
 	}
 	return &o.StartedAt, true
@@ -201,7 +198,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetStartedAtOk() (*interfa
 
 // HasStartedAt returns a boolean if a field has been set.
 func (o *GETImportsImportId200ResponseDataAttributes) HasStartedAt() bool {
-	if o != nil && IsNil(o.StartedAt) {
+	if o != nil && o.StartedAt != nil {
 		return true
 	}
 
@@ -226,7 +223,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetCompletedAt() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETImportsImportId200ResponseDataAttributes) GetCompletedAtOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.CompletedAt) {
+	if o == nil || o.CompletedAt == nil {
 		return nil, false
 	}
 	return &o.CompletedAt, true
@@ -234,7 +231,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetCompletedAtOk() (*inter
 
 // HasCompletedAt returns a boolean if a field has been set.
 func (o *GETImportsImportId200ResponseDataAttributes) HasCompletedAt() bool {
-	if o != nil && IsNil(o.CompletedAt) {
+	if o != nil && o.CompletedAt != nil {
 		return true
 	}
 
@@ -259,7 +256,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetInterruptedAt() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETImportsImportId200ResponseDataAttributes) GetInterruptedAtOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.InterruptedAt) {
+	if o == nil || o.InterruptedAt == nil {
 		return nil, false
 	}
 	return &o.InterruptedAt, true
@@ -267,7 +264,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetInterruptedAtOk() (*int
 
 // HasInterruptedAt returns a boolean if a field has been set.
 func (o *GETImportsImportId200ResponseDataAttributes) HasInterruptedAt() bool {
-	if o != nil && IsNil(o.InterruptedAt) {
+	if o != nil && o.InterruptedAt != nil {
 		return true
 	}
 
@@ -292,7 +289,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetInputs() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETImportsImportId200ResponseDataAttributes) GetInputsOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Inputs) {
+	if o == nil || o.Inputs == nil {
 		return nil, false
 	}
 	return &o.Inputs, true
@@ -300,7 +297,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetInputsOk() (*interface{
 
 // HasInputs returns a boolean if a field has been set.
 func (o *GETImportsImportId200ResponseDataAttributes) HasInputs() bool {
-	if o != nil && IsNil(o.Inputs) {
+	if o != nil && o.Inputs != nil {
 		return true
 	}
 
@@ -325,7 +322,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetInputsSize() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETImportsImportId200ResponseDataAttributes) GetInputsSizeOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.InputsSize) {
+	if o == nil || o.InputsSize == nil {
 		return nil, false
 	}
 	return &o.InputsSize, true
@@ -333,7 +330,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetInputsSizeOk() (*interf
 
 // HasInputsSize returns a boolean if a field has been set.
 func (o *GETImportsImportId200ResponseDataAttributes) HasInputsSize() bool {
-	if o != nil && IsNil(o.InputsSize) {
+	if o != nil && o.InputsSize != nil {
 		return true
 	}
 
@@ -358,7 +355,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetErrorsCount() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETImportsImportId200ResponseDataAttributes) GetErrorsCountOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.ErrorsCount) {
+	if o == nil || o.ErrorsCount == nil {
 		return nil, false
 	}
 	return &o.ErrorsCount, true
@@ -366,7 +363,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetErrorsCountOk() (*inter
 
 // HasErrorsCount returns a boolean if a field has been set.
 func (o *GETImportsImportId200ResponseDataAttributes) HasErrorsCount() bool {
-	if o != nil && IsNil(o.ErrorsCount) {
+	if o != nil && o.ErrorsCount != nil {
 		return true
 	}
 
@@ -391,7 +388,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetWarningsCount() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETImportsImportId200ResponseDataAttributes) GetWarningsCountOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.WarningsCount) {
+	if o == nil || o.WarningsCount == nil {
 		return nil, false
 	}
 	return &o.WarningsCount, true
@@ -399,7 +396,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetWarningsCountOk() (*int
 
 // HasWarningsCount returns a boolean if a field has been set.
 func (o *GETImportsImportId200ResponseDataAttributes) HasWarningsCount() bool {
-	if o != nil && IsNil(o.WarningsCount) {
+	if o != nil && o.WarningsCount != nil {
 		return true
 	}
 
@@ -424,7 +421,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetDestroyedCount() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETImportsImportId200ResponseDataAttributes) GetDestroyedCountOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.DestroyedCount) {
+	if o == nil || o.DestroyedCount == nil {
 		return nil, false
 	}
 	return &o.DestroyedCount, true
@@ -432,7 +429,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetDestroyedCountOk() (*in
 
 // HasDestroyedCount returns a boolean if a field has been set.
 func (o *GETImportsImportId200ResponseDataAttributes) HasDestroyedCount() bool {
-	if o != nil && IsNil(o.DestroyedCount) {
+	if o != nil && o.DestroyedCount != nil {
 		return true
 	}
 
@@ -457,7 +454,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetProcessedCount() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETImportsImportId200ResponseDataAttributes) GetProcessedCountOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.ProcessedCount) {
+	if o == nil || o.ProcessedCount == nil {
 		return nil, false
 	}
 	return &o.ProcessedCount, true
@@ -465,7 +462,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetProcessedCountOk() (*in
 
 // HasProcessedCount returns a boolean if a field has been set.
 func (o *GETImportsImportId200ResponseDataAttributes) HasProcessedCount() bool {
-	if o != nil && IsNil(o.ProcessedCount) {
+	if o != nil && o.ProcessedCount != nil {
 		return true
 	}
 
@@ -490,7 +487,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetErrorsLog() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETImportsImportId200ResponseDataAttributes) GetErrorsLogOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.ErrorsLog) {
+	if o == nil || o.ErrorsLog == nil {
 		return nil, false
 	}
 	return &o.ErrorsLog, true
@@ -498,7 +495,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetErrorsLogOk() (*interfa
 
 // HasErrorsLog returns a boolean if a field has been set.
 func (o *GETImportsImportId200ResponseDataAttributes) HasErrorsLog() bool {
-	if o != nil && IsNil(o.ErrorsLog) {
+	if o != nil && o.ErrorsLog != nil {
 		return true
 	}
 
@@ -523,7 +520,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetWarningsLog() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETImportsImportId200ResponseDataAttributes) GetWarningsLogOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.WarningsLog) {
+	if o == nil || o.WarningsLog == nil {
 		return nil, false
 	}
 	return &o.WarningsLog, true
@@ -531,7 +528,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetWarningsLogOk() (*inter
 
 // HasWarningsLog returns a boolean if a field has been set.
 func (o *GETImportsImportId200ResponseDataAttributes) HasWarningsLog() bool {
-	if o != nil && IsNil(o.WarningsLog) {
+	if o != nil && o.WarningsLog != nil {
 		return true
 	}
 
@@ -556,7 +553,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetCleanupRecords() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETImportsImportId200ResponseDataAttributes) GetCleanupRecordsOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.CleanupRecords) {
+	if o == nil || o.CleanupRecords == nil {
 		return nil, false
 	}
 	return &o.CleanupRecords, true
@@ -564,7 +561,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetCleanupRecordsOk() (*in
 
 // HasCleanupRecords returns a boolean if a field has been set.
 func (o *GETImportsImportId200ResponseDataAttributes) HasCleanupRecords() bool {
-	if o != nil && IsNil(o.CleanupRecords) {
+	if o != nil && o.CleanupRecords != nil {
 		return true
 	}
 
@@ -589,7 +586,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetAttachmentUrl() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETImportsImportId200ResponseDataAttributes) GetAttachmentUrlOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.AttachmentUrl) {
+	if o == nil || o.AttachmentUrl == nil {
 		return nil, false
 	}
 	return &o.AttachmentUrl, true
@@ -597,7 +594,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetAttachmentUrlOk() (*int
 
 // HasAttachmentUrl returns a boolean if a field has been set.
 func (o *GETImportsImportId200ResponseDataAttributes) HasAttachmentUrl() bool {
-	if o != nil && IsNil(o.AttachmentUrl) {
+	if o != nil && o.AttachmentUrl != nil {
 		return true
 	}
 
@@ -622,7 +619,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetCreatedAt() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETImportsImportId200ResponseDataAttributes) GetCreatedAtOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.CreatedAt) {
+	if o == nil || o.CreatedAt == nil {
 		return nil, false
 	}
 	return &o.CreatedAt, true
@@ -630,7 +627,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetCreatedAtOk() (*interfa
 
 // HasCreatedAt returns a boolean if a field has been set.
 func (o *GETImportsImportId200ResponseDataAttributes) HasCreatedAt() bool {
-	if o != nil && IsNil(o.CreatedAt) {
+	if o != nil && o.CreatedAt != nil {
 		return true
 	}
 
@@ -655,7 +652,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetUpdatedAt() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETImportsImportId200ResponseDataAttributes) GetUpdatedAtOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.UpdatedAt) {
+	if o == nil || o.UpdatedAt == nil {
 		return nil, false
 	}
 	return &o.UpdatedAt, true
@@ -663,7 +660,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetUpdatedAtOk() (*interfa
 
 // HasUpdatedAt returns a boolean if a field has been set.
 func (o *GETImportsImportId200ResponseDataAttributes) HasUpdatedAt() bool {
-	if o != nil && IsNil(o.UpdatedAt) {
+	if o != nil && o.UpdatedAt != nil {
 		return true
 	}
 
@@ -688,7 +685,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetReference() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETImportsImportId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Reference) {
+	if o == nil || o.Reference == nil {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -696,7 +693,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetReferenceOk() (*interfa
 
 // HasReference returns a boolean if a field has been set.
 func (o *GETImportsImportId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && IsNil(o.Reference) {
+	if o != nil && o.Reference != nil {
 		return true
 	}
 
@@ -721,7 +718,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetReferenceOrigin() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETImportsImportId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.ReferenceOrigin) {
+	if o == nil || o.ReferenceOrigin == nil {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -729,7 +726,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetReferenceOriginOk() (*i
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *GETImportsImportId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && IsNil(o.ReferenceOrigin) {
+	if o != nil && o.ReferenceOrigin != nil {
 		return true
 	}
 
@@ -754,7 +751,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetMetadata() interface{} 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETImportsImportId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || IsNil(o.Metadata) {
+	if o == nil || o.Metadata == nil {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -762,7 +759,7 @@ func (o *GETImportsImportId200ResponseDataAttributes) GetMetadataOk() (*interfac
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *GETImportsImportId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && IsNil(o.Metadata) {
+	if o != nil && o.Metadata != nil {
 		return true
 	}
 
@@ -775,14 +772,6 @@ func (o *GETImportsImportId200ResponseDataAttributes) SetMetadata(v interface{})
 }
 
 func (o GETImportsImportId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETImportsImportId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.ResourceType != nil {
 		toSerialize["resource_type"] = o.ResourceType
@@ -847,7 +836,7 @@ func (o GETImportsImportId200ResponseDataAttributes) ToMap() (map[string]interfa
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETImportsImportId200ResponseDataAttributes struct {

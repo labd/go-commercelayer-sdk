@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the POSTSkuOptions201Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &POSTSkuOptions201Response{}
-
 // POSTSkuOptions201Response struct for POSTSkuOptions201Response
 type POSTSkuOptions201Response struct {
 	Data *POSTSkuOptions201ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPOSTSkuOptions201ResponseWithDefaults() *POSTSkuOptions201Response {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTSkuOptions201Response) GetData() POSTSkuOptions201ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret POSTSkuOptions201ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *POSTSkuOptions201Response) GetData() POSTSkuOptions201ResponseData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTSkuOptions201Response) GetDataOk() (*POSTSkuOptions201ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *POSTSkuOptions201Response) GetDataOk() (*POSTSkuOptions201ResponseData,
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTSkuOptions201Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *POSTSkuOptions201Response) SetData(v POSTSkuOptions201ResponseData) {
 }
 
 func (o POSTSkuOptions201Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o POSTSkuOptions201Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePOSTSkuOptions201Response struct {

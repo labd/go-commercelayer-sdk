@@ -32,7 +32,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -40,7 +40,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ReturnsApi.DELETEReturnsReturnId(context.Background(), returnId).Execute()
+    resp, r, err := apiClient.ReturnsApi.DELETEReturnsReturnId(context.Background(), returnId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnsApi.DELETEReturnsReturnId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -100,7 +100,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -108,7 +108,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ReturnsApi.GETCustomerIdReturns(context.Background(), customerId).Execute()
+    resp, r, err := apiClient.ReturnsApi.GETCustomerIdReturns(context.Background(), customerId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnsApi.GETCustomerIdReturns``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -168,7 +168,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -176,7 +176,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ReturnsApi.GETOrderIdReturns(context.Background(), orderId).Execute()
+    resp, r, err := apiClient.ReturnsApi.GETOrderIdReturns(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnsApi.GETOrderIdReturns``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -236,7 +236,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -244,7 +244,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    r, err := apiClient.ReturnsApi.GETReturnLineItemIdReturn(context.Background(), returnLineItemId).Execute()
+    resp, r, err := apiClient.ReturnsApi.GETReturnLineItemIdReturn(context.Background(), returnLineItemId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnsApi.GETReturnLineItemIdReturn``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -304,7 +304,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -365,7 +365,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 
 ## PATCHReturnsReturnId
 
-> PATCHReturnsReturnId200Response PATCHReturnsReturnId(ctx, returnId).PATCHReturnsReturnIdRequest(pATCHReturnsReturnIdRequest).Execute()
+> PATCHReturnsReturnId200Response PATCHReturnsReturnId(ctx, returnId).ReturnUpdate(returnUpdate).Execute()
 
 Update a return
 
@@ -435,16 +435,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pATCHReturnsReturnIdRequest := *openapiclient.NewPATCHReturnsReturnIdRequest(*openapiclient.NewPATCHReturnsReturnIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHReturnsReturnIdRequestDataAttributes())) // PATCHReturnsReturnIdRequest | 
+    returnUpdate := *openapiclient.NewReturnUpdate(*openapiclient.NewReturnUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHReturnsReturnId200ResponseDataAttributes())) // ReturnUpdate | 
     returnId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReturnsApi.PATCHReturnsReturnId(context.Background(), returnId).PATCHReturnsReturnIdRequest(pATCHReturnsReturnIdRequest).Execute()
+    resp, r, err := apiClient.ReturnsApi.PATCHReturnsReturnId(context.Background(), returnId).ReturnUpdate(returnUpdate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnsApi.PATCHReturnsReturnId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -469,7 +469,7 @@ Other parameters are passed through a pointer to a apiPATCHReturnsReturnIdReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pATCHReturnsReturnIdRequest** | [**PATCHReturnsReturnIdRequest**](PATCHReturnsReturnIdRequest.md) |  | 
+ **returnUpdate** | [**ReturnUpdate**](ReturnUpdate.md) |  | 
 
 
 ### Return type
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 
 ## POSTReturns
 
-> POSTReturns201Response POSTReturns(ctx).POSTReturnsRequest(pOSTReturnsRequest).Execute()
+> POSTReturns201Response POSTReturns(ctx).ReturnCreate(returnCreate).Execute()
 
 Create a return
 
@@ -507,15 +507,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+    openapiclient "./openapi"
 )
 
 func main() {
-    pOSTReturnsRequest := *openapiclient.NewPOSTReturnsRequest(*openapiclient.NewPOSTReturnsRequestData(interface{}(123), *openapiclient.NewPOSTAdyenPaymentsRequestDataAttributes())) // POSTReturnsRequest | 
+    returnCreate := *openapiclient.NewReturnCreate(*openapiclient.NewReturnCreateData(interface{}(123), *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // ReturnCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReturnsApi.POSTReturns(context.Background()).POSTReturnsRequest(pOSTReturnsRequest).Execute()
+    resp, r, err := apiClient.ReturnsApi.POSTReturns(context.Background()).ReturnCreate(returnCreate).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnsApi.POSTReturns``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -536,7 +536,7 @@ Other parameters are passed through a pointer to a apiPOSTReturnsRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **pOSTReturnsRequest** | [**POSTReturnsRequest**](POSTReturnsRequest.md) |  | 
+ **returnCreate** | [**ReturnCreate**](ReturnCreate.md) |  | 
 
 ### Return type
 

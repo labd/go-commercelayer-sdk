@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETAxervePaymentsAxervePaymentId200ResponseDataAttributes**](GETAxervePaymentsAxervePaymentId200ResponseDataAttributes.md) |  | 
+**Attributes** | [**GETAxervePayments200ResponseDataInnerAttributes**](GETAxervePayments200ResponseDataInnerAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentDataRelationships**](AdyenPaymentDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewAxervePaymentData
 
-`func NewAxervePaymentData(type_ interface{}, attributes GETAxervePaymentsAxervePaymentId200ResponseDataAttributes, ) *AxervePaymentData`
+`func NewAxervePaymentData(type_ interface{}, attributes GETAxervePayments200ResponseDataInnerAttributes, ) *AxervePaymentData`
 
 NewAxervePaymentData instantiates a new AxervePaymentData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *AxervePaymentData) GetAttributes() GETAxervePaymentsAxervePaymentId200ResponseDataAttributes`
+`func (o *AxervePaymentData) GetAttributes() GETAxervePayments200ResponseDataInnerAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *AxervePaymentData) GetAttributesOk() (*GETAxervePaymentsAxervePaymentId200ResponseDataAttributes, bool)`
+`func (o *AxervePaymentData) GetAttributesOk() (*GETAxervePayments200ResponseDataInnerAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *AxervePaymentData) SetAttributes(v GETAxervePaymentsAxervePaymentId200ResponseDataAttributes)`
+`func (o *AxervePaymentData) SetAttributes(v GETAxervePayments200ResponseDataInnerAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

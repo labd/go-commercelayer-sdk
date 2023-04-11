@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETOrderValidationRulesOrderValidationRuleId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETOrderValidationRulesOrderValidationRuleId200Response{}
-
 // GETOrderValidationRulesOrderValidationRuleId200Response struct for GETOrderValidationRulesOrderValidationRuleId200Response
 type GETOrderValidationRulesOrderValidationRuleId200Response struct {
-	Data *GETOrderValidationRulesOrderValidationRuleId200ResponseData `json:"data,omitempty"`
+	Data *GETOrderValidationRules200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETOrderValidationRulesOrderValidationRuleId200Response instantiates a new GETOrderValidationRulesOrderValidationRuleId200Response object
@@ -41,9 +38,9 @@ func NewGETOrderValidationRulesOrderValidationRuleId200ResponseWithDefaults() *G
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETOrderValidationRulesOrderValidationRuleId200Response) GetData() GETOrderValidationRulesOrderValidationRuleId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETOrderValidationRulesOrderValidationRuleId200ResponseData
+func (o *GETOrderValidationRulesOrderValidationRuleId200Response) GetData() GETOrderValidationRules200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETOrderValidationRules200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETOrderValidationRulesOrderValidationRuleId200Response) GetData() GETO
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETOrderValidationRulesOrderValidationRuleId200Response) GetDataOk() (*GETOrderValidationRulesOrderValidationRuleId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETOrderValidationRulesOrderValidationRuleId200Response) GetDataOk() (*GETOrderValidationRules200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETOrderValidationRulesOrderValidationRuleId200Response) GetDataOk() (*
 
 // HasData returns a boolean if a field has been set.
 func (o *GETOrderValidationRulesOrderValidationRuleId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETOrderValidationRulesOrderValidationRuleId200ResponseData and assigns it to the Data field.
-func (o *GETOrderValidationRulesOrderValidationRuleId200Response) SetData(v GETOrderValidationRulesOrderValidationRuleId200ResponseData) {
+// SetData gets a reference to the given GETOrderValidationRules200ResponseDataInner and assigns it to the Data field.
+func (o *GETOrderValidationRulesOrderValidationRuleId200Response) SetData(v GETOrderValidationRules200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETOrderValidationRulesOrderValidationRuleId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETOrderValidationRulesOrderValidationRuleId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETOrderValidationRulesOrderValidationRuleId200Response struct {

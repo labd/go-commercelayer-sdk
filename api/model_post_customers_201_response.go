@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the POSTCustomers201Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &POSTCustomers201Response{}
-
 // POSTCustomers201Response struct for POSTCustomers201Response
 type POSTCustomers201Response struct {
 	Data *POSTCustomers201ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPOSTCustomers201ResponseWithDefaults() *POSTCustomers201Response {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTCustomers201Response) GetData() POSTCustomers201ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret POSTCustomers201ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *POSTCustomers201Response) GetData() POSTCustomers201ResponseData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTCustomers201Response) GetDataOk() (*POSTCustomers201ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *POSTCustomers201Response) GetDataOk() (*POSTCustomers201ResponseData, b
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTCustomers201Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *POSTCustomers201Response) SetData(v POSTCustomers201ResponseData) {
 }
 
 func (o POSTCustomers201Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o POSTCustomers201Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePOSTCustomers201Response struct {

@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the MarketCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &MarketCreate{}
-
 // MarketCreate struct for MarketCreate
 type MarketCreate struct {
-	Data POSTMarketsRequestData `json:"data"`
+	Data MarketCreateData `json:"data"`
 }
 
 // NewMarketCreate instantiates a new MarketCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMarketCreate(data POSTMarketsRequestData) *MarketCreate {
+func NewMarketCreate(data MarketCreateData) *MarketCreate {
 	this := MarketCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewMarketCreateWithDefaults() *MarketCreate {
 }
 
 // GetData returns the Data field value
-func (o *MarketCreate) GetData() POSTMarketsRequestData {
+func (o *MarketCreate) GetData() MarketCreateData {
 	if o == nil {
-		var ret POSTMarketsRequestData
+		var ret MarketCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *MarketCreate) GetData() POSTMarketsRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *MarketCreate) GetDataOk() (*POSTMarketsRequestData, bool) {
+func (o *MarketCreate) GetDataOk() (*MarketCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *MarketCreate) GetDataOk() (*POSTMarketsRequestData, bool) {
 }
 
 // SetData sets field value
-func (o *MarketCreate) SetData(v POSTMarketsRequestData) {
+func (o *MarketCreate) SetData(v MarketCreateData) {
 	o.Data = v
 }
 
 func (o MarketCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o MarketCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableMarketCreate struct {

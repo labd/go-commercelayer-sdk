@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *AdyenGatewaysApiService) DELETEAdyenGatewaysAdyenGatewayIdExecute(r Ady
 	}
 
 	localVarPath := localBasePath + "/adyen_gateways/{adyenGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"adyenGatewayId"+"}", url.PathEscape(parameterValueToString(r.adyenGatewayId, "adyenGatewayId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"adyenGatewayId"+"}", url.PathEscape(parameterToString(r.adyenGatewayId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *AdyenGatewaysApiService) DELETEAdyenGatewaysAdyenGatewayIdExecute(r Ady
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *AdyenGatewaysApiService) GETAdyenGatewaysExecute(r AdyenGatewaysApiGETA
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *AdyenGatewaysApiService) GETAdyenGatewaysAdyenGatewayIdExecute(r AdyenG
 	}
 
 	localVarPath := localBasePath + "/adyen_gateways/{adyenGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"adyenGatewayId"+"}", url.PathEscape(parameterValueToString(r.adyenGatewayId, "adyenGatewayId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"adyenGatewayId"+"}", url.PathEscape(parameterToString(r.adyenGatewayId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *AdyenGatewaysApiService) GETAdyenGatewaysAdyenGatewayIdExecute(r AdyenG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -320,14 +320,14 @@ func (a *AdyenGatewaysApiService) GETAdyenGatewaysAdyenGatewayIdExecute(r AdyenG
 }
 
 type AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest struct {
-	ctx                                     context.Context
-	ApiService                              *AdyenGatewaysApiService
-	pATCHAdyenGatewaysAdyenGatewayIdRequest *PATCHAdyenGatewaysAdyenGatewayIdRequest
-	adyenGatewayId                          interface{}
+	ctx                context.Context
+	ApiService         *AdyenGatewaysApiService
+	adyenGatewayUpdate *AdyenGatewayUpdate
+	adyenGatewayId     interface{}
 }
 
-func (r AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest) PATCHAdyenGatewaysAdyenGatewayIdRequest(pATCHAdyenGatewaysAdyenGatewayIdRequest PATCHAdyenGatewaysAdyenGatewayIdRequest) AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest {
-	r.pATCHAdyenGatewaysAdyenGatewayIdRequest = &pATCHAdyenGatewaysAdyenGatewayIdRequest
+func (r AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest) AdyenGatewayUpdate(adyenGatewayUpdate AdyenGatewayUpdate) AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest {
+	r.adyenGatewayUpdate = &adyenGatewayUpdate
 	return r
 }
 
@@ -369,13 +369,13 @@ func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayIdExecute(r Adye
 	}
 
 	localVarPath := localBasePath + "/adyen_gateways/{adyenGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"adyenGatewayId"+"}", url.PathEscape(parameterValueToString(r.adyenGatewayId, "adyenGatewayId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"adyenGatewayId"+"}", url.PathEscape(parameterToString(r.adyenGatewayId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHAdyenGatewaysAdyenGatewayIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHAdyenGatewaysAdyenGatewayIdRequest is required and must be specified")
+	if r.adyenGatewayUpdate == nil {
+		return localVarReturnValue, nil, reportError("adyenGatewayUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -396,7 +396,7 @@ func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayIdExecute(r Adye
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHAdyenGatewaysAdyenGatewayIdRequest
+	localVarPostBody = r.adyenGatewayUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -407,9 +407,9 @@ func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayIdExecute(r Adye
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -435,13 +435,13 @@ func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayIdExecute(r Adye
 }
 
 type AdyenGatewaysApiPOSTAdyenGatewaysRequest struct {
-	ctx                      context.Context
-	ApiService               *AdyenGatewaysApiService
-	pOSTAdyenGatewaysRequest *POSTAdyenGatewaysRequest
+	ctx                context.Context
+	ApiService         *AdyenGatewaysApiService
+	adyenGatewayCreate *AdyenGatewayCreate
 }
 
-func (r AdyenGatewaysApiPOSTAdyenGatewaysRequest) POSTAdyenGatewaysRequest(pOSTAdyenGatewaysRequest POSTAdyenGatewaysRequest) AdyenGatewaysApiPOSTAdyenGatewaysRequest {
-	r.pOSTAdyenGatewaysRequest = &pOSTAdyenGatewaysRequest
+func (r AdyenGatewaysApiPOSTAdyenGatewaysRequest) AdyenGatewayCreate(adyenGatewayCreate AdyenGatewayCreate) AdyenGatewaysApiPOSTAdyenGatewaysRequest {
+	r.adyenGatewayCreate = &adyenGatewayCreate
 	return r
 }
 
@@ -485,8 +485,8 @@ func (a *AdyenGatewaysApiService) POSTAdyenGatewaysExecute(r AdyenGatewaysApiPOS
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTAdyenGatewaysRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTAdyenGatewaysRequest is required and must be specified")
+	if r.adyenGatewayCreate == nil {
+		return localVarReturnValue, nil, reportError("adyenGatewayCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -507,7 +507,7 @@ func (a *AdyenGatewaysApiService) POSTAdyenGatewaysExecute(r AdyenGatewaysApiPOS
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTAdyenGatewaysRequest
+	localVarPostBody = r.adyenGatewayCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -518,9 +518,9 @@ func (a *AdyenGatewaysApiService) POSTAdyenGatewaysExecute(r AdyenGatewaysApiPOS
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

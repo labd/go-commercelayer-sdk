@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**POSTInventoryStockLocationsRequestData**](POSTInventoryStockLocationsRequestData.md) |  | 
+**Data** | [**InventoryStockLocationCreateData**](InventoryStockLocationCreateData.md) |  | 
 
 ## Methods
 
 ### NewInventoryStockLocationCreate
 
-`func NewInventoryStockLocationCreate(data POSTInventoryStockLocationsRequestData, ) *InventoryStockLocationCreate`
+`func NewInventoryStockLocationCreate(data InventoryStockLocationCreateData, ) *InventoryStockLocationCreate`
 
 NewInventoryStockLocationCreate instantiates a new InventoryStockLocationCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *InventoryStockLocationCreate) GetData() POSTInventoryStockLocationsRequestData`
+`func (o *InventoryStockLocationCreate) GetData() InventoryStockLocationCreateData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *InventoryStockLocationCreate) GetDataOk() (*POSTInventoryStockLocationsRequestData, bool)`
+`func (o *InventoryStockLocationCreate) GetDataOk() (*InventoryStockLocationCreateData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *InventoryStockLocationCreate) SetData(v POSTInventoryStockLocationsRequestData)`
+`func (o *InventoryStockLocationCreate) SetData(v InventoryStockLocationCreateData)`
 
 SetData sets Data field to given value.
 

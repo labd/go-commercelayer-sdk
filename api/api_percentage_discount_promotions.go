@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *PercentageDiscountPromotionsApiService) DELETEPercentageDiscountPromoti
 	}
 
 	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterToString(r.percentageDiscountPromotionId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *PercentageDiscountPromotionsApiService) DELETEPercentageDiscountPromoti
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotions
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotions
 	}
 
 	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterToString(r.percentageDiscountPromotionId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotions
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -320,14 +320,14 @@ func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotions
 }
 
 type PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest struct {
-	ctx                                                                   context.Context
-	ApiService                                                            *PercentageDiscountPromotionsApiService
-	pATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest
-	percentageDiscountPromotionId                                         interface{}
+	ctx                               context.Context
+	ApiService                        *PercentageDiscountPromotionsApiService
+	percentageDiscountPromotionUpdate *PercentageDiscountPromotionUpdate
+	percentageDiscountPromotionId     interface{}
 }
 
-func (r PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) PATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest(pATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest PATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest {
-	r.pATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest = &pATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest
+func (r PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) PercentageDiscountPromotionUpdate(percentageDiscountPromotionUpdate PercentageDiscountPromotionUpdate) PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest {
+	r.percentageDiscountPromotionUpdate = &percentageDiscountPromotionUpdate
 	return r
 }
 
@@ -369,13 +369,13 @@ func (a *PercentageDiscountPromotionsApiService) PATCHPercentageDiscountPromotio
 	}
 
 	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterToString(r.percentageDiscountPromotionId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest is required and must be specified")
+	if r.percentageDiscountPromotionUpdate == nil {
+		return localVarReturnValue, nil, reportError("percentageDiscountPromotionUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -396,7 +396,7 @@ func (a *PercentageDiscountPromotionsApiService) PATCHPercentageDiscountPromotio
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest
+	localVarPostBody = r.percentageDiscountPromotionUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -407,9 +407,9 @@ func (a *PercentageDiscountPromotionsApiService) PATCHPercentageDiscountPromotio
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -435,13 +435,13 @@ func (a *PercentageDiscountPromotionsApiService) PATCHPercentageDiscountPromotio
 }
 
 type PercentageDiscountPromotionsApiPOSTPercentageDiscountPromotionsRequest struct {
-	ctx                                     context.Context
-	ApiService                              *PercentageDiscountPromotionsApiService
-	pOSTPercentageDiscountPromotionsRequest *POSTPercentageDiscountPromotionsRequest
+	ctx                               context.Context
+	ApiService                        *PercentageDiscountPromotionsApiService
+	percentageDiscountPromotionCreate *PercentageDiscountPromotionCreate
 }
 
-func (r PercentageDiscountPromotionsApiPOSTPercentageDiscountPromotionsRequest) POSTPercentageDiscountPromotionsRequest(pOSTPercentageDiscountPromotionsRequest POSTPercentageDiscountPromotionsRequest) PercentageDiscountPromotionsApiPOSTPercentageDiscountPromotionsRequest {
-	r.pOSTPercentageDiscountPromotionsRequest = &pOSTPercentageDiscountPromotionsRequest
+func (r PercentageDiscountPromotionsApiPOSTPercentageDiscountPromotionsRequest) PercentageDiscountPromotionCreate(percentageDiscountPromotionCreate PercentageDiscountPromotionCreate) PercentageDiscountPromotionsApiPOSTPercentageDiscountPromotionsRequest {
+	r.percentageDiscountPromotionCreate = &percentageDiscountPromotionCreate
 	return r
 }
 
@@ -485,8 +485,8 @@ func (a *PercentageDiscountPromotionsApiService) POSTPercentageDiscountPromotion
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTPercentageDiscountPromotionsRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTPercentageDiscountPromotionsRequest is required and must be specified")
+	if r.percentageDiscountPromotionCreate == nil {
+		return localVarReturnValue, nil, reportError("percentageDiscountPromotionCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -507,7 +507,7 @@ func (a *PercentageDiscountPromotionsApiService) POSTPercentageDiscountPromotion
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTPercentageDiscountPromotionsRequest
+	localVarPostBody = r.percentageDiscountPromotionCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -518,9 +518,9 @@ func (a *PercentageDiscountPromotionsApiService) POSTPercentageDiscountPromotion
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

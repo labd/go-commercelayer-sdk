@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the ParcelCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &ParcelCreate{}
-
 // ParcelCreate struct for ParcelCreate
 type ParcelCreate struct {
-	Data POSTParcelsRequestData `json:"data"`
+	Data ParcelCreateData `json:"data"`
 }
 
 // NewParcelCreate instantiates a new ParcelCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewParcelCreate(data POSTParcelsRequestData) *ParcelCreate {
+func NewParcelCreate(data ParcelCreateData) *ParcelCreate {
 	this := ParcelCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewParcelCreateWithDefaults() *ParcelCreate {
 }
 
 // GetData returns the Data field value
-func (o *ParcelCreate) GetData() POSTParcelsRequestData {
+func (o *ParcelCreate) GetData() ParcelCreateData {
 	if o == nil {
-		var ret POSTParcelsRequestData
+		var ret ParcelCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *ParcelCreate) GetData() POSTParcelsRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ParcelCreate) GetDataOk() (*POSTParcelsRequestData, bool) {
+func (o *ParcelCreate) GetDataOk() (*ParcelCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *ParcelCreate) GetDataOk() (*POSTParcelsRequestData, bool) {
 }
 
 // SetData sets field value
-func (o *ParcelCreate) SetData(v POSTParcelsRequestData) {
+func (o *ParcelCreate) SetData(v ParcelCreateData) {
 	o.Data = v
 }
 
 func (o ParcelCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o ParcelCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableParcelCreate struct {

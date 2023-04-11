@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETSkuListPromotionRulesSkuListPromotionRuleId200ResponseData**](GETSkuListPromotionRulesSkuListPromotionRuleId200ResponseData.md) |  | [optional] 
+**Data** | Pointer to [**GETSkuListPromotionRules200ResponseDataInner**](GETSkuListPromotionRules200ResponseDataInner.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETSkuListPromotionRulesSkuListPromotionRuleId200Response) GetData() GETSkuListPromotionRulesSkuListPromotionRuleId200ResponseData`
+`func (o *GETSkuListPromotionRulesSkuListPromotionRuleId200Response) GetData() GETSkuListPromotionRules200ResponseDataInner`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETSkuListPromotionRulesSkuListPromotionRuleId200Response) GetDataOk() (*GETSkuListPromotionRulesSkuListPromotionRuleId200ResponseData, bool)`
+`func (o *GETSkuListPromotionRulesSkuListPromotionRuleId200Response) GetDataOk() (*GETSkuListPromotionRules200ResponseDataInner, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETSkuListPromotionRulesSkuListPromotionRuleId200Response) SetData(v GETSkuListPromotionRulesSkuListPromotionRuleId200ResponseData)`
+`func (o *GETSkuListPromotionRulesSkuListPromotionRuleId200Response) SetData(v GETSkuListPromotionRules200ResponseDataInner)`
 
 SetData sets Data field to given value.
 

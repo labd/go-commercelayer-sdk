@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETTaxCategoriesTaxCategoryId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETTaxCategoriesTaxCategoryId200Response{}
-
 // GETTaxCategoriesTaxCategoryId200Response struct for GETTaxCategoriesTaxCategoryId200Response
 type GETTaxCategoriesTaxCategoryId200Response struct {
-	Data *GETTaxCategoriesTaxCategoryId200ResponseData `json:"data,omitempty"`
+	Data *GETTaxCategories200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETTaxCategoriesTaxCategoryId200Response instantiates a new GETTaxCategoriesTaxCategoryId200Response object
@@ -41,9 +38,9 @@ func NewGETTaxCategoriesTaxCategoryId200ResponseWithDefaults() *GETTaxCategories
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETTaxCategoriesTaxCategoryId200Response) GetData() GETTaxCategoriesTaxCategoryId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETTaxCategoriesTaxCategoryId200ResponseData
+func (o *GETTaxCategoriesTaxCategoryId200Response) GetData() GETTaxCategories200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETTaxCategories200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETTaxCategoriesTaxCategoryId200Response) GetData() GETTaxCategoriesTax
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETTaxCategoriesTaxCategoryId200Response) GetDataOk() (*GETTaxCategoriesTaxCategoryId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETTaxCategoriesTaxCategoryId200Response) GetDataOk() (*GETTaxCategories200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETTaxCategoriesTaxCategoryId200Response) GetDataOk() (*GETTaxCategorie
 
 // HasData returns a boolean if a field has been set.
 func (o *GETTaxCategoriesTaxCategoryId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETTaxCategoriesTaxCategoryId200ResponseData and assigns it to the Data field.
-func (o *GETTaxCategoriesTaxCategoryId200Response) SetData(v GETTaxCategoriesTaxCategoryId200ResponseData) {
+// SetData gets a reference to the given GETTaxCategories200ResponseDataInner and assigns it to the Data field.
+func (o *GETTaxCategoriesTaxCategoryId200Response) SetData(v GETTaxCategories200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETTaxCategoriesTaxCategoryId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETTaxCategoriesTaxCategoryId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETTaxCategoriesTaxCategoryId200Response struct {

@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the Parcel type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &Parcel{}
-
 // Parcel struct for Parcel
 type Parcel struct {
 	Data *ParcelData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewParcelWithDefaults() *Parcel {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *Parcel) GetData() ParcelData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret ParcelData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *Parcel) GetData() ParcelData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Parcel) GetDataOk() (*ParcelData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *Parcel) GetDataOk() (*ParcelData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *Parcel) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *Parcel) SetData(v ParcelData) {
 }
 
 func (o Parcel) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o Parcel) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableParcel struct {

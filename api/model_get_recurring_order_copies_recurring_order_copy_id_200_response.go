@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the GETRecurringOrderCopiesRecurringOrderCopyId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &GETRecurringOrderCopiesRecurringOrderCopyId200Response{}
-
 // GETRecurringOrderCopiesRecurringOrderCopyId200Response struct for GETRecurringOrderCopiesRecurringOrderCopyId200Response
 type GETRecurringOrderCopiesRecurringOrderCopyId200Response struct {
-	Data *GETRecurringOrderCopiesRecurringOrderCopyId200ResponseData `json:"data,omitempty"`
+	Data *GETRecurringOrderCopies200ResponseDataInner `json:"data,omitempty"`
 }
 
 // NewGETRecurringOrderCopiesRecurringOrderCopyId200Response instantiates a new GETRecurringOrderCopiesRecurringOrderCopyId200Response object
@@ -41,9 +38,9 @@ func NewGETRecurringOrderCopiesRecurringOrderCopyId200ResponseWithDefaults() *GE
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETRecurringOrderCopiesRecurringOrderCopyId200Response) GetData() GETRecurringOrderCopiesRecurringOrderCopyId200ResponseData {
-	if o == nil || IsNil(o.Data) {
-		var ret GETRecurringOrderCopiesRecurringOrderCopyId200ResponseData
+func (o *GETRecurringOrderCopiesRecurringOrderCopyId200Response) GetData() GETRecurringOrderCopies200ResponseDataInner {
+	if o == nil || o.Data == nil {
+		var ret GETRecurringOrderCopies200ResponseDataInner
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *GETRecurringOrderCopiesRecurringOrderCopyId200Response) GetData() GETRe
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETRecurringOrderCopiesRecurringOrderCopyId200Response) GetDataOk() (*GETRecurringOrderCopiesRecurringOrderCopyId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *GETRecurringOrderCopiesRecurringOrderCopyId200Response) GetDataOk() (*GETRecurringOrderCopies200ResponseDataInner, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *GETRecurringOrderCopiesRecurringOrderCopyId200Response) GetDataOk() (*G
 
 // HasData returns a boolean if a field has been set.
 func (o *GETRecurringOrderCopiesRecurringOrderCopyId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETRecurringOrderCopiesRecurringOrderCopyId200ResponseData and assigns it to the Data field.
-func (o *GETRecurringOrderCopiesRecurringOrderCopyId200Response) SetData(v GETRecurringOrderCopiesRecurringOrderCopyId200ResponseData) {
+// SetData gets a reference to the given GETRecurringOrderCopies200ResponseDataInner and assigns it to the Data field.
+func (o *GETRecurringOrderCopiesRecurringOrderCopyId200Response) SetData(v GETRecurringOrderCopies200ResponseDataInner) {
 	o.Data = &v
 }
 
 func (o GETRecurringOrderCopiesRecurringOrderCopyId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o GETRecurringOrderCopiesRecurringOrderCopyId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableGETRecurringOrderCopiesRecurringOrderCopyId200Response struct {

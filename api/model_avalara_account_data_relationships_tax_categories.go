@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the AvalaraAccountDataRelationshipsTaxCategories type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AvalaraAccountDataRelationshipsTaxCategories{}
-
 // AvalaraAccountDataRelationshipsTaxCategories struct for AvalaraAccountDataRelationshipsTaxCategories
 type AvalaraAccountDataRelationshipsTaxCategories struct {
-	Data *POSTAvalaraAccountsRequestDataRelationshipsTaxCategoriesData `json:"data,omitempty"`
+	Data *AvalaraAccountDataRelationshipsTaxCategoriesData `json:"data,omitempty"`
 }
 
 // NewAvalaraAccountDataRelationshipsTaxCategories instantiates a new AvalaraAccountDataRelationshipsTaxCategories object
@@ -41,9 +38,9 @@ func NewAvalaraAccountDataRelationshipsTaxCategoriesWithDefaults() *AvalaraAccou
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *AvalaraAccountDataRelationshipsTaxCategories) GetData() POSTAvalaraAccountsRequestDataRelationshipsTaxCategoriesData {
-	if o == nil || IsNil(o.Data) {
-		var ret POSTAvalaraAccountsRequestDataRelationshipsTaxCategoriesData
+func (o *AvalaraAccountDataRelationshipsTaxCategories) GetData() AvalaraAccountDataRelationshipsTaxCategoriesData {
+	if o == nil || o.Data == nil {
+		var ret AvalaraAccountDataRelationshipsTaxCategoriesData
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *AvalaraAccountDataRelationshipsTaxCategories) GetData() POSTAvalaraAcco
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AvalaraAccountDataRelationshipsTaxCategories) GetDataOk() (*POSTAvalaraAccountsRequestDataRelationshipsTaxCategoriesData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *AvalaraAccountDataRelationshipsTaxCategories) GetDataOk() (*AvalaraAccountDataRelationshipsTaxCategoriesData, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *AvalaraAccountDataRelationshipsTaxCategories) GetDataOk() (*POSTAvalara
 
 // HasData returns a boolean if a field has been set.
 func (o *AvalaraAccountDataRelationshipsTaxCategories) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given POSTAvalaraAccountsRequestDataRelationshipsTaxCategoriesData and assigns it to the Data field.
-func (o *AvalaraAccountDataRelationshipsTaxCategories) SetData(v POSTAvalaraAccountsRequestDataRelationshipsTaxCategoriesData) {
+// SetData gets a reference to the given AvalaraAccountDataRelationshipsTaxCategoriesData and assigns it to the Data field.
+func (o *AvalaraAccountDataRelationshipsTaxCategories) SetData(v AvalaraAccountDataRelationshipsTaxCategoriesData) {
 	o.Data = &v
 }
 
 func (o AvalaraAccountDataRelationshipsTaxCategories) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o AvalaraAccountDataRelationshipsTaxCategories) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableAvalaraAccountDataRelationshipsTaxCategories struct {

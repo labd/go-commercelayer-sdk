@@ -15,19 +15,16 @@ import (
 	"encoding/json"
 )
 
-// checks if the AdyenGatewayCreate type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AdyenGatewayCreate{}
-
 // AdyenGatewayCreate struct for AdyenGatewayCreate
 type AdyenGatewayCreate struct {
-	Data POSTAdyenGatewaysRequestData `json:"data"`
+	Data AdyenGatewayCreateData `json:"data"`
 }
 
 // NewAdyenGatewayCreate instantiates a new AdyenGatewayCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAdyenGatewayCreate(data POSTAdyenGatewaysRequestData) *AdyenGatewayCreate {
+func NewAdyenGatewayCreate(data AdyenGatewayCreateData) *AdyenGatewayCreate {
 	this := AdyenGatewayCreate{}
 	this.Data = data
 	return &this
@@ -42,9 +39,9 @@ func NewAdyenGatewayCreateWithDefaults() *AdyenGatewayCreate {
 }
 
 // GetData returns the Data field value
-func (o *AdyenGatewayCreate) GetData() POSTAdyenGatewaysRequestData {
+func (o *AdyenGatewayCreate) GetData() AdyenGatewayCreateData {
 	if o == nil {
-		var ret POSTAdyenGatewaysRequestData
+		var ret AdyenGatewayCreateData
 		return ret
 	}
 
@@ -53,7 +50,7 @@ func (o *AdyenGatewayCreate) GetData() POSTAdyenGatewaysRequestData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *AdyenGatewayCreate) GetDataOk() (*POSTAdyenGatewaysRequestData, bool) {
+func (o *AdyenGatewayCreate) GetDataOk() (*AdyenGatewayCreateData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -61,22 +58,16 @@ func (o *AdyenGatewayCreate) GetDataOk() (*POSTAdyenGatewaysRequestData, bool) {
 }
 
 // SetData sets field value
-func (o *AdyenGatewayCreate) SetData(v POSTAdyenGatewaysRequestData) {
+func (o *AdyenGatewayCreate) SetData(v AdyenGatewayCreateData) {
 	o.Data = v
 }
 
 func (o AdyenGatewayCreate) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
+	toSerialize := map[string]interface{}{}
+	if true {
+		toSerialize["data"] = o.Data
 	}
 	return json.Marshal(toSerialize)
-}
-
-func (o AdyenGatewayCreate) ToMap() (map[string]interface{}, error) {
-	toSerialize := map[string]interface{}{}
-	toSerialize["data"] = o.Data
-	return toSerialize, nil
 }
 
 type NullableAdyenGatewayCreate struct {

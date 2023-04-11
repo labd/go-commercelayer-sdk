@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io"
+	"io/ioutil"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *PriceVolumeTiersApiService) DELETEPriceVolumeTiersPriceVolumeTierIdExec
 	}
 
 	localVarPath := localBasePath + "/price_volume_tiers/{priceVolumeTierId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceVolumeTierId"+"}", url.PathEscape(parameterValueToString(r.priceVolumeTierId, "priceVolumeTierId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceVolumeTierId"+"}", url.PathEscape(parameterToString(r.priceVolumeTierId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *PriceVolumeTiersApiService) DELETEPriceVolumeTiersPriceVolumeTierIdExec
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -156,7 +156,7 @@ func (a *PriceVolumeTiersApiService) GETPriceIdPriceVolumeTiersExecute(r PriceVo
 	}
 
 	localVarPath := localBasePath + "/prices/{priceId}/price_volume_tiers"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterValueToString(r.priceId, "priceId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterToString(r.priceId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *PriceVolumeTiersApiService) GETPriceIdPriceVolumeTiersExecute(r PriceVo
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *PriceVolumeTiersApiService) GETPriceVolumeTiersExecute(r PriceVolumeTie
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -351,7 +351,7 @@ func (a *PriceVolumeTiersApiService) GETPriceVolumeTiersPriceVolumeTierIdExecute
 	}
 
 	localVarPath := localBasePath + "/price_volume_tiers/{priceVolumeTierId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceVolumeTierId"+"}", url.PathEscape(parameterValueToString(r.priceVolumeTierId, "priceVolumeTierId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceVolumeTierId"+"}", url.PathEscape(parameterToString(r.priceVolumeTierId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *PriceVolumeTiersApiService) GETPriceVolumeTiersPriceVolumeTierIdExecute
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -412,14 +412,14 @@ func (a *PriceVolumeTiersApiService) GETPriceVolumeTiersPriceVolumeTierIdExecute
 }
 
 type PriceVolumeTiersApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest struct {
-	ctx                                           context.Context
-	ApiService                                    *PriceVolumeTiersApiService
-	pATCHPriceVolumeTiersPriceVolumeTierIdRequest *PATCHPriceVolumeTiersPriceVolumeTierIdRequest
-	priceVolumeTierId                             interface{}
+	ctx                   context.Context
+	ApiService            *PriceVolumeTiersApiService
+	priceVolumeTierUpdate *PriceVolumeTierUpdate
+	priceVolumeTierId     interface{}
 }
 
-func (r PriceVolumeTiersApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest) PATCHPriceVolumeTiersPriceVolumeTierIdRequest(pATCHPriceVolumeTiersPriceVolumeTierIdRequest PATCHPriceVolumeTiersPriceVolumeTierIdRequest) PriceVolumeTiersApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest {
-	r.pATCHPriceVolumeTiersPriceVolumeTierIdRequest = &pATCHPriceVolumeTiersPriceVolumeTierIdRequest
+func (r PriceVolumeTiersApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest) PriceVolumeTierUpdate(priceVolumeTierUpdate PriceVolumeTierUpdate) PriceVolumeTiersApiPATCHPriceVolumeTiersPriceVolumeTierIdRequest {
+	r.priceVolumeTierUpdate = &priceVolumeTierUpdate
 	return r
 }
 
@@ -461,13 +461,13 @@ func (a *PriceVolumeTiersApiService) PATCHPriceVolumeTiersPriceVolumeTierIdExecu
 	}
 
 	localVarPath := localBasePath + "/price_volume_tiers/{priceVolumeTierId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceVolumeTierId"+"}", url.PathEscape(parameterValueToString(r.priceVolumeTierId, "priceVolumeTierId")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceVolumeTierId"+"}", url.PathEscape(parameterToString(r.priceVolumeTierId, "")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pATCHPriceVolumeTiersPriceVolumeTierIdRequest == nil {
-		return localVarReturnValue, nil, reportError("pATCHPriceVolumeTiersPriceVolumeTierIdRequest is required and must be specified")
+	if r.priceVolumeTierUpdate == nil {
+		return localVarReturnValue, nil, reportError("priceVolumeTierUpdate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -488,7 +488,7 @@ func (a *PriceVolumeTiersApiService) PATCHPriceVolumeTiersPriceVolumeTierIdExecu
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pATCHPriceVolumeTiersPriceVolumeTierIdRequest
+	localVarPostBody = r.priceVolumeTierUpdate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -499,9 +499,9 @@ func (a *PriceVolumeTiersApiService) PATCHPriceVolumeTiersPriceVolumeTierIdExecu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -527,13 +527,13 @@ func (a *PriceVolumeTiersApiService) PATCHPriceVolumeTiersPriceVolumeTierIdExecu
 }
 
 type PriceVolumeTiersApiPOSTPriceVolumeTiersRequest struct {
-	ctx                         context.Context
-	ApiService                  *PriceVolumeTiersApiService
-	pOSTPriceVolumeTiersRequest *POSTPriceVolumeTiersRequest
+	ctx                   context.Context
+	ApiService            *PriceVolumeTiersApiService
+	priceVolumeTierCreate *PriceVolumeTierCreate
 }
 
-func (r PriceVolumeTiersApiPOSTPriceVolumeTiersRequest) POSTPriceVolumeTiersRequest(pOSTPriceVolumeTiersRequest POSTPriceVolumeTiersRequest) PriceVolumeTiersApiPOSTPriceVolumeTiersRequest {
-	r.pOSTPriceVolumeTiersRequest = &pOSTPriceVolumeTiersRequest
+func (r PriceVolumeTiersApiPOSTPriceVolumeTiersRequest) PriceVolumeTierCreate(priceVolumeTierCreate PriceVolumeTierCreate) PriceVolumeTiersApiPOSTPriceVolumeTiersRequest {
+	r.priceVolumeTierCreate = &priceVolumeTierCreate
 	return r
 }
 
@@ -577,8 +577,8 @@ func (a *PriceVolumeTiersApiService) POSTPriceVolumeTiersExecute(r PriceVolumeTi
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.pOSTPriceVolumeTiersRequest == nil {
-		return localVarReturnValue, nil, reportError("pOSTPriceVolumeTiersRequest is required and must be specified")
+	if r.priceVolumeTierCreate == nil {
+		return localVarReturnValue, nil, reportError("priceVolumeTierCreate is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -599,7 +599,7 @@ func (a *PriceVolumeTiersApiService) POSTPriceVolumeTiersExecute(r PriceVolumeTi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.pOSTPriceVolumeTiersRequest
+	localVarPostBody = r.priceVolumeTierCreate
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -610,9 +610,9 @@ func (a *PriceVolumeTiersApiService) POSTPriceVolumeTiersExecute(r PriceVolumeTi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

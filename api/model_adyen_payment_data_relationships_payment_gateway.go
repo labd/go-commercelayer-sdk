@@ -15,12 +15,9 @@ import (
 	"encoding/json"
 )
 
-// checks if the AdyenPaymentDataRelationshipsPaymentGateway type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &AdyenPaymentDataRelationshipsPaymentGateway{}
-
 // AdyenPaymentDataRelationshipsPaymentGateway struct for AdyenPaymentDataRelationshipsPaymentGateway
 type AdyenPaymentDataRelationshipsPaymentGateway struct {
-	Data *POSTPaymentMethodsRequestDataRelationshipsPaymentGatewayData `json:"data,omitempty"`
+	Data *AdyenPaymentDataRelationshipsPaymentGatewayData `json:"data,omitempty"`
 }
 
 // NewAdyenPaymentDataRelationshipsPaymentGateway instantiates a new AdyenPaymentDataRelationshipsPaymentGateway object
@@ -41,9 +38,9 @@ func NewAdyenPaymentDataRelationshipsPaymentGatewayWithDefaults() *AdyenPaymentD
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *AdyenPaymentDataRelationshipsPaymentGateway) GetData() POSTPaymentMethodsRequestDataRelationshipsPaymentGatewayData {
-	if o == nil || IsNil(o.Data) {
-		var ret POSTPaymentMethodsRequestDataRelationshipsPaymentGatewayData
+func (o *AdyenPaymentDataRelationshipsPaymentGateway) GetData() AdyenPaymentDataRelationshipsPaymentGatewayData {
+	if o == nil || o.Data == nil {
+		var ret AdyenPaymentDataRelationshipsPaymentGatewayData
 		return ret
 	}
 	return *o.Data
@@ -51,8 +48,8 @@ func (o *AdyenPaymentDataRelationshipsPaymentGateway) GetData() POSTPaymentMetho
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AdyenPaymentDataRelationshipsPaymentGateway) GetDataOk() (*POSTPaymentMethodsRequestDataRelationshipsPaymentGatewayData, bool) {
-	if o == nil || IsNil(o.Data) {
+func (o *AdyenPaymentDataRelationshipsPaymentGateway) GetDataOk() (*AdyenPaymentDataRelationshipsPaymentGatewayData, bool) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,32 +57,24 @@ func (o *AdyenPaymentDataRelationshipsPaymentGateway) GetDataOk() (*POSTPaymentM
 
 // HasData returns a boolean if a field has been set.
 func (o *AdyenPaymentDataRelationshipsPaymentGateway) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given POSTPaymentMethodsRequestDataRelationshipsPaymentGatewayData and assigns it to the Data field.
-func (o *AdyenPaymentDataRelationshipsPaymentGateway) SetData(v POSTPaymentMethodsRequestDataRelationshipsPaymentGatewayData) {
+// SetData gets a reference to the given AdyenPaymentDataRelationshipsPaymentGatewayData and assigns it to the Data field.
+func (o *AdyenPaymentDataRelationshipsPaymentGateway) SetData(v AdyenPaymentDataRelationshipsPaymentGatewayData) {
 	o.Data = &v
 }
 
 func (o AdyenPaymentDataRelationshipsPaymentGateway) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o AdyenPaymentDataRelationshipsPaymentGateway) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullableAdyenPaymentDataRelationshipsPaymentGateway struct {

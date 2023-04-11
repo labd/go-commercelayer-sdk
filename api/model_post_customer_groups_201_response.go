@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the POSTCustomerGroups201Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &POSTCustomerGroups201Response{}
-
 // POSTCustomerGroups201Response struct for POSTCustomerGroups201Response
 type POSTCustomerGroups201Response struct {
 	Data *POSTCustomerGroups201ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPOSTCustomerGroups201ResponseWithDefaults() *POSTCustomerGroups201Respon
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTCustomerGroups201Response) GetData() POSTCustomerGroups201ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret POSTCustomerGroups201ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *POSTCustomerGroups201Response) GetData() POSTCustomerGroups201ResponseD
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTCustomerGroups201Response) GetDataOk() (*POSTCustomerGroups201ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *POSTCustomerGroups201Response) GetDataOk() (*POSTCustomerGroups201Respo
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTCustomerGroups201Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *POSTCustomerGroups201Response) SetData(v POSTCustomerGroups201ResponseD
 }
 
 func (o POSTCustomerGroups201Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o POSTCustomerGroups201Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePOSTCustomerGroups201Response struct {

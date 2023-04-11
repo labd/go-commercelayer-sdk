@@ -15,9 +15,6 @@ import (
 	"encoding/json"
 )
 
-// checks if the PATCHRecurringOrderCopiesRecurringOrderCopyId200Response type satisfies the MappedNullable interface at compile time
-var _ MappedNullable = &PATCHRecurringOrderCopiesRecurringOrderCopyId200Response{}
-
 // PATCHRecurringOrderCopiesRecurringOrderCopyId200Response struct for PATCHRecurringOrderCopiesRecurringOrderCopyId200Response
 type PATCHRecurringOrderCopiesRecurringOrderCopyId200Response struct {
 	Data *PATCHRecurringOrderCopiesRecurringOrderCopyId200ResponseData `json:"data,omitempty"`
@@ -42,7 +39,7 @@ func NewPATCHRecurringOrderCopiesRecurringOrderCopyId200ResponseWithDefaults() *
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *PATCHRecurringOrderCopiesRecurringOrderCopyId200Response) GetData() PATCHRecurringOrderCopiesRecurringOrderCopyId200ResponseData {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		var ret PATCHRecurringOrderCopiesRecurringOrderCopyId200ResponseData
 		return ret
 	}
@@ -52,7 +49,7 @@ func (o *PATCHRecurringOrderCopiesRecurringOrderCopyId200Response) GetData() PAT
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHRecurringOrderCopiesRecurringOrderCopyId200Response) GetDataOk() (*PATCHRecurringOrderCopiesRecurringOrderCopyId200ResponseData, bool) {
-	if o == nil || IsNil(o.Data) {
+	if o == nil || o.Data == nil {
 		return nil, false
 	}
 	return o.Data, true
@@ -60,7 +57,7 @@ func (o *PATCHRecurringOrderCopiesRecurringOrderCopyId200Response) GetDataOk() (
 
 // HasData returns a boolean if a field has been set.
 func (o *PATCHRecurringOrderCopiesRecurringOrderCopyId200Response) HasData() bool {
-	if o != nil && !IsNil(o.Data) {
+	if o != nil && o.Data != nil {
 		return true
 	}
 
@@ -73,19 +70,11 @@ func (o *PATCHRecurringOrderCopiesRecurringOrderCopyId200Response) SetData(v PAT
 }
 
 func (o PATCHRecurringOrderCopiesRecurringOrderCopyId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize, err := o.ToMap()
-	if err != nil {
-		return []byte{}, err
-	}
-	return json.Marshal(toSerialize)
-}
-
-func (o PATCHRecurringOrderCopiesRecurringOrderCopyId200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if !IsNil(o.Data) {
+	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return toSerialize, nil
+	return json.Marshal(toSerialize)
 }
 
 type NullablePATCHRecurringOrderCopiesRecurringOrderCopyId200Response struct {
