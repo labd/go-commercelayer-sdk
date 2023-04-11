@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETBraintreePayments200ResponseDataInnerAttributes**](GETBraintreePayments200ResponseDataInnerAttributes.md) |  | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Attributes** | [**GETBraintreePaymentsBraintreePaymentId200ResponseDataAttributes**](GETBraintreePaymentsBraintreePaymentId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentDataRelationships**](AdyenPaymentDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewBraintreePaymentData
 
-`func NewBraintreePaymentData(type_ string, attributes GETBraintreePayments200ResponseDataInnerAttributes, ) *BraintreePaymentData`
+`func NewBraintreePaymentData(type_ interface{}, attributes GETBraintreePaymentsBraintreePaymentId200ResponseDataAttributes, ) *BraintreePaymentData`
 
 NewBraintreePaymentData instantiates a new BraintreePaymentData object
 This constructor will assign default values to properties that have it defined,
@@ -29,40 +29,50 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *BraintreePaymentData) GetType() string`
+`func (o *BraintreePaymentData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *BraintreePaymentData) GetTypeOk() (*string, bool)`
+`func (o *BraintreePaymentData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *BraintreePaymentData) SetType(v string)`
+`func (o *BraintreePaymentData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *BraintreePaymentData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *BraintreePaymentData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *BraintreePaymentData) GetAttributes() GETBraintreePayments200ResponseDataInnerAttributes`
+`func (o *BraintreePaymentData) GetAttributes() GETBraintreePaymentsBraintreePaymentId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *BraintreePaymentData) GetAttributesOk() (*GETBraintreePayments200ResponseDataInnerAttributes, bool)`
+`func (o *BraintreePaymentData) GetAttributesOk() (*GETBraintreePaymentsBraintreePaymentId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *BraintreePaymentData) SetAttributes(v GETBraintreePayments200ResponseDataInnerAttributes)`
+`func (o *BraintreePaymentData) SetAttributes(v GETBraintreePaymentsBraintreePaymentId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

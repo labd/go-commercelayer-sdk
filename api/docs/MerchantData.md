@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETMerchants200ResponseDataInnerAttributes**](GETMerchants200ResponseDataInnerAttributes.md) |  | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Attributes** | [**GETMerchantsMerchantId200ResponseDataAttributes**](GETMerchantsMerchantId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**MerchantDataRelationships**](MerchantDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewMerchantData
 
-`func NewMerchantData(type_ string, attributes GETMerchants200ResponseDataInnerAttributes, ) *MerchantData`
+`func NewMerchantData(type_ interface{}, attributes GETMerchantsMerchantId200ResponseDataAttributes, ) *MerchantData`
 
 NewMerchantData instantiates a new MerchantData object
 This constructor will assign default values to properties that have it defined,
@@ -29,40 +29,50 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *MerchantData) GetType() string`
+`func (o *MerchantData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *MerchantData) GetTypeOk() (*string, bool)`
+`func (o *MerchantData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *MerchantData) SetType(v string)`
+`func (o *MerchantData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *MerchantData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *MerchantData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *MerchantData) GetAttributes() GETMerchants200ResponseDataInnerAttributes`
+`func (o *MerchantData) GetAttributes() GETMerchantsMerchantId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *MerchantData) GetAttributesOk() (*GETMerchants200ResponseDataInnerAttributes, bool)`
+`func (o *MerchantData) GetAttributesOk() (*GETMerchantsMerchantId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *MerchantData) SetAttributes(v GETMerchants200ResponseDataInnerAttributes)`
+`func (o *MerchantData) SetAttributes(v GETMerchantsMerchantId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the AuthorizationUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AuthorizationUpdate{}
+
 // AuthorizationUpdate struct for AuthorizationUpdate
 type AuthorizationUpdate struct {
-	Data AuthorizationUpdateData `json:"data"`
+	Data PATCHAuthorizationsAuthorizationIdRequestData `json:"data"`
 }
 
 // NewAuthorizationUpdate instantiates a new AuthorizationUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAuthorizationUpdate(data AuthorizationUpdateData) *AuthorizationUpdate {
+func NewAuthorizationUpdate(data PATCHAuthorizationsAuthorizationIdRequestData) *AuthorizationUpdate {
 	this := AuthorizationUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewAuthorizationUpdateWithDefaults() *AuthorizationUpdate {
 }
 
 // GetData returns the Data field value
-func (o *AuthorizationUpdate) GetData() AuthorizationUpdateData {
+func (o *AuthorizationUpdate) GetData() PATCHAuthorizationsAuthorizationIdRequestData {
 	if o == nil {
-		var ret AuthorizationUpdateData
+		var ret PATCHAuthorizationsAuthorizationIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *AuthorizationUpdate) GetData() AuthorizationUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *AuthorizationUpdate) GetDataOk() (*AuthorizationUpdateData, bool) {
+func (o *AuthorizationUpdate) GetDataOk() (*PATCHAuthorizationsAuthorizationIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *AuthorizationUpdate) GetDataOk() (*AuthorizationUpdateData, bool) {
 }
 
 // SetData sets field value
-func (o *AuthorizationUpdate) SetData(v AuthorizationUpdateData) {
+func (o *AuthorizationUpdate) SetData(v PATCHAuthorizationsAuthorizationIdRequestData) {
 	o.Data = v
 }
 
 func (o AuthorizationUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AuthorizationUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableAuthorizationUpdate struct {

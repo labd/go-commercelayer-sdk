@@ -1,12 +1,13 @@
 # \OrdersApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DELETEOrdersOrderId**](OrdersApi.md#DELETEOrdersOrderId) | **Delete** /orders/{orderId} | Delete an order
 [**GETAdyenPaymentIdOrder**](OrdersApi.md#GETAdyenPaymentIdOrder) | **Get** /adyen_payments/{adyenPaymentId}/order | Retrieve the order associated to the adyen payment
 [**GETAuthorizationIdOrder**](OrdersApi.md#GETAuthorizationIdOrder) | **Get** /authorizations/{authorizationId}/order | Retrieve the order associated to the authorization
+[**GETAxervePaymentIdOrder**](OrdersApi.md#GETAxervePaymentIdOrder) | **Get** /axerve_payments/{axervePaymentId}/order | Retrieve the order associated to the axerve payment
 [**GETBraintreePaymentIdOrder**](OrdersApi.md#GETBraintreePaymentIdOrder) | **Get** /braintree_payments/{braintreePaymentId}/order | Retrieve the order associated to the braintree payment
 [**GETCaptureIdOrder**](OrdersApi.md#GETCaptureIdOrder) | **Get** /captures/{captureId}/order | Retrieve the order associated to the capture
 [**GETCheckoutComPaymentIdOrder**](OrdersApi.md#GETCheckoutComPaymentIdOrder) | **Get** /checkout_com_payments/{checkoutComPaymentId}/order | Retrieve the order associated to the checkout.com payment
@@ -16,13 +17,18 @@ Method | HTTP request | Description
 [**GETLineItemIdOrder**](OrdersApi.md#GETLineItemIdOrder) | **Get** /line_items/{lineItemId}/order | Retrieve the order associated to the line item
 [**GETOrderCopyIdSourceOrder**](OrdersApi.md#GETOrderCopyIdSourceOrder) | **Get** /order_copies/{orderCopyId}/source_order | Retrieve the source order associated to the order copy
 [**GETOrderCopyIdTargetOrder**](OrdersApi.md#GETOrderCopyIdTargetOrder) | **Get** /order_copies/{orderCopyId}/target_order | Retrieve the target order associated to the order copy
+[**GETOrderFactoryIdSourceOrder**](OrdersApi.md#GETOrderFactoryIdSourceOrder) | **Get** /order_factories/{orderFactoryId}/source_order | Retrieve the source order associated to the order factory
+[**GETOrderFactoryIdTargetOrder**](OrdersApi.md#GETOrderFactoryIdTargetOrder) | **Get** /order_factories/{orderFactoryId}/target_order | Retrieve the target order associated to the order factory
 [**GETOrderSubscriptionIdOrders**](OrdersApi.md#GETOrderSubscriptionIdOrders) | **Get** /order_subscriptions/{orderSubscriptionId}/orders | Retrieve the orders associated to the order subscription
 [**GETOrderSubscriptionIdSourceOrder**](OrdersApi.md#GETOrderSubscriptionIdSourceOrder) | **Get** /order_subscriptions/{orderSubscriptionId}/source_order | Retrieve the source order associated to the order subscription
 [**GETOrders**](OrdersApi.md#GETOrders) | **Get** /orders | List all orders
 [**GETOrdersOrderId**](OrdersApi.md#GETOrdersOrderId) | **Get** /orders/{orderId} | Retrieve an order
 [**GETPaypalPaymentIdOrder**](OrdersApi.md#GETPaypalPaymentIdOrder) | **Get** /paypal_payments/{paypalPaymentId}/order | Retrieve the order associated to the paypal payment
+[**GETRecurringOrderCopyIdSourceOrder**](OrdersApi.md#GETRecurringOrderCopyIdSourceOrder) | **Get** /recurring_order_copies/{recurringOrderCopyId}/source_order | Retrieve the source order associated to the recurring order copy
+[**GETRecurringOrderCopyIdTargetOrder**](OrdersApi.md#GETRecurringOrderCopyIdTargetOrder) | **Get** /recurring_order_copies/{recurringOrderCopyId}/target_order | Retrieve the target order associated to the recurring order copy
 [**GETRefundIdOrder**](OrdersApi.md#GETRefundIdOrder) | **Get** /refunds/{refundId}/order | Retrieve the order associated to the refund
 [**GETReturnIdOrder**](OrdersApi.md#GETReturnIdOrder) | **Get** /returns/{returnId}/order | Retrieve the order associated to the return
+[**GETSatispayPaymentIdOrder**](OrdersApi.md#GETSatispayPaymentIdOrder) | **Get** /satispay_payments/{satispayPaymentId}/order | Retrieve the order associated to the satispay payment
 [**GETShipmentIdOrder**](OrdersApi.md#GETShipmentIdOrder) | **Get** /shipments/{shipmentId}/order | Retrieve the order associated to the shipment
 [**GETStripePaymentIdOrder**](OrdersApi.md#GETStripePaymentIdOrder) | **Get** /stripe_payments/{stripePaymentId}/order | Retrieve the order associated to the stripe payment
 [**GETTransactionIdOrder**](OrdersApi.md#GETTransactionIdOrder) | **Get** /transactions/{transactionId}/order | Retrieve the order associated to the transaction
@@ -50,15 +56,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    orderId := "orderId_example" // string | The resource's id
+    orderId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrdersApi.DELETEOrdersOrderId(context.Background(), orderId).Execute()
+    r, err := apiClient.OrdersApi.DELETEOrdersOrderId(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.DELETEOrdersOrderId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -72,7 +78,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**orderId** | **string** | The resource&#39;s id | 
+**orderId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -118,15 +124,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    adyenPaymentId := "adyenPaymentId_example" // string | The resource's id
+    adyenPaymentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrdersApi.GETAdyenPaymentIdOrder(context.Background(), adyenPaymentId).Execute()
+    r, err := apiClient.OrdersApi.GETAdyenPaymentIdOrder(context.Background(), adyenPaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETAdyenPaymentIdOrder``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -140,7 +146,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**adyenPaymentId** | **string** | The resource&#39;s id | 
+**adyenPaymentId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -186,15 +192,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    authorizationId := "authorizationId_example" // string | The resource's id
+    authorizationId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrdersApi.GETAuthorizationIdOrder(context.Background(), authorizationId).Execute()
+    r, err := apiClient.OrdersApi.GETAuthorizationIdOrder(context.Background(), authorizationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETAuthorizationIdOrder``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -208,11 +214,79 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**authorizationId** | **string** | The resource&#39;s id | 
+**authorizationId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETAuthorizationIdOrderRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETAxervePaymentIdOrder
+
+> GETAxervePaymentIdOrder(ctx, axervePaymentId).Execute()
+
+Retrieve the order associated to the axerve payment
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    axervePaymentId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.OrdersApi.GETAxervePaymentIdOrder(context.Background(), axervePaymentId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETAxervePaymentIdOrder``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**axervePaymentId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETAxervePaymentIdOrderRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -254,15 +328,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    braintreePaymentId := "braintreePaymentId_example" // string | The resource's id
+    braintreePaymentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrdersApi.GETBraintreePaymentIdOrder(context.Background(), braintreePaymentId).Execute()
+    r, err := apiClient.OrdersApi.GETBraintreePaymentIdOrder(context.Background(), braintreePaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETBraintreePaymentIdOrder``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -276,7 +350,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**braintreePaymentId** | **string** | The resource&#39;s id | 
+**braintreePaymentId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -322,15 +396,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    captureId := "captureId_example" // string | The resource's id
+    captureId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrdersApi.GETCaptureIdOrder(context.Background(), captureId).Execute()
+    r, err := apiClient.OrdersApi.GETCaptureIdOrder(context.Background(), captureId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETCaptureIdOrder``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -344,7 +418,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**captureId** | **string** | The resource&#39;s id | 
+**captureId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -390,15 +464,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    checkoutComPaymentId := "checkoutComPaymentId_example" // string | The resource's id
+    checkoutComPaymentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrdersApi.GETCheckoutComPaymentIdOrder(context.Background(), checkoutComPaymentId).Execute()
+    r, err := apiClient.OrdersApi.GETCheckoutComPaymentIdOrder(context.Background(), checkoutComPaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETCheckoutComPaymentIdOrder``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -412,7 +486,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**checkoutComPaymentId** | **string** | The resource&#39;s id | 
+**checkoutComPaymentId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -458,15 +532,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    customerId := "customerId_example" // string | The resource's id
+    customerId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrdersApi.GETCustomerIdOrders(context.Background(), customerId).Execute()
+    r, err := apiClient.OrdersApi.GETCustomerIdOrders(context.Background(), customerId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETCustomerIdOrders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -480,7 +554,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**customerId** | **string** | The resource&#39;s id | 
+**customerId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -526,15 +600,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    externalPaymentId := "externalPaymentId_example" // string | The resource's id
+    externalPaymentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrdersApi.GETExternalPaymentIdOrder(context.Background(), externalPaymentId).Execute()
+    r, err := apiClient.OrdersApi.GETExternalPaymentIdOrder(context.Background(), externalPaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETExternalPaymentIdOrder``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -548,7 +622,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**externalPaymentId** | **string** | The resource&#39;s id | 
+**externalPaymentId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -594,15 +668,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    klarnaPaymentId := "klarnaPaymentId_example" // string | The resource's id
+    klarnaPaymentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrdersApi.GETKlarnaPaymentIdOrder(context.Background(), klarnaPaymentId).Execute()
+    r, err := apiClient.OrdersApi.GETKlarnaPaymentIdOrder(context.Background(), klarnaPaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETKlarnaPaymentIdOrder``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -616,7 +690,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**klarnaPaymentId** | **string** | The resource&#39;s id | 
+**klarnaPaymentId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -662,15 +736,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    lineItemId := "lineItemId_example" // string | The resource's id
+    lineItemId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrdersApi.GETLineItemIdOrder(context.Background(), lineItemId).Execute()
+    r, err := apiClient.OrdersApi.GETLineItemIdOrder(context.Background(), lineItemId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETLineItemIdOrder``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -684,7 +758,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**lineItemId** | **string** | The resource&#39;s id | 
+**lineItemId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -730,15 +804,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    orderCopyId := "orderCopyId_example" // string | The resource's id
+    orderCopyId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrdersApi.GETOrderCopyIdSourceOrder(context.Background(), orderCopyId).Execute()
+    r, err := apiClient.OrdersApi.GETOrderCopyIdSourceOrder(context.Background(), orderCopyId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETOrderCopyIdSourceOrder``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -752,7 +826,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**orderCopyId** | **string** | The resource&#39;s id | 
+**orderCopyId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -798,15 +872,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    orderCopyId := "orderCopyId_example" // string | The resource's id
+    orderCopyId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrdersApi.GETOrderCopyIdTargetOrder(context.Background(), orderCopyId).Execute()
+    r, err := apiClient.OrdersApi.GETOrderCopyIdTargetOrder(context.Background(), orderCopyId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETOrderCopyIdTargetOrder``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -820,11 +894,147 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**orderCopyId** | **string** | The resource&#39;s id | 
+**orderCopyId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETOrderCopyIdTargetOrderRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETOrderFactoryIdSourceOrder
+
+> GETOrderFactoryIdSourceOrder(ctx, orderFactoryId).Execute()
+
+Retrieve the source order associated to the order factory
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    orderFactoryId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.OrdersApi.GETOrderFactoryIdSourceOrder(context.Background(), orderFactoryId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETOrderFactoryIdSourceOrder``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**orderFactoryId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETOrderFactoryIdSourceOrderRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETOrderFactoryIdTargetOrder
+
+> GETOrderFactoryIdTargetOrder(ctx, orderFactoryId).Execute()
+
+Retrieve the target order associated to the order factory
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    orderFactoryId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.OrdersApi.GETOrderFactoryIdTargetOrder(context.Background(), orderFactoryId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETOrderFactoryIdTargetOrder``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**orderFactoryId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETOrderFactoryIdTargetOrderRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -866,15 +1076,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    orderSubscriptionId := "orderSubscriptionId_example" // string | The resource's id
+    orderSubscriptionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrdersApi.GETOrderSubscriptionIdOrders(context.Background(), orderSubscriptionId).Execute()
+    r, err := apiClient.OrdersApi.GETOrderSubscriptionIdOrders(context.Background(), orderSubscriptionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETOrderSubscriptionIdOrders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -888,7 +1098,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**orderSubscriptionId** | **string** | The resource&#39;s id | 
+**orderSubscriptionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -934,15 +1144,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    orderSubscriptionId := "orderSubscriptionId_example" // string | The resource's id
+    orderSubscriptionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrdersApi.GETOrderSubscriptionIdSourceOrder(context.Background(), orderSubscriptionId).Execute()
+    r, err := apiClient.OrdersApi.GETOrderSubscriptionIdSourceOrder(context.Background(), orderSubscriptionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETOrderSubscriptionIdSourceOrder``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -956,7 +1166,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**orderSubscriptionId** | **string** | The resource&#39;s id | 
+**orderSubscriptionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -1002,7 +1212,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -1063,11 +1273,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    orderId := "orderId_example" // string | The resource's id
+    orderId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1087,7 +1297,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**orderId** | **string** | The resource&#39;s id | 
+**orderId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -1133,15 +1343,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    paypalPaymentId := "paypalPaymentId_example" // string | The resource's id
+    paypalPaymentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrdersApi.GETPaypalPaymentIdOrder(context.Background(), paypalPaymentId).Execute()
+    r, err := apiClient.OrdersApi.GETPaypalPaymentIdOrder(context.Background(), paypalPaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETPaypalPaymentIdOrder``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1155,11 +1365,147 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**paypalPaymentId** | **string** | The resource&#39;s id | 
+**paypalPaymentId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETPaypalPaymentIdOrderRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETRecurringOrderCopyIdSourceOrder
+
+> GETRecurringOrderCopyIdSourceOrder(ctx, recurringOrderCopyId).Execute()
+
+Retrieve the source order associated to the recurring order copy
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    recurringOrderCopyId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.OrdersApi.GETRecurringOrderCopyIdSourceOrder(context.Background(), recurringOrderCopyId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETRecurringOrderCopyIdSourceOrder``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**recurringOrderCopyId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETRecurringOrderCopyIdSourceOrderRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETRecurringOrderCopyIdTargetOrder
+
+> GETRecurringOrderCopyIdTargetOrder(ctx, recurringOrderCopyId).Execute()
+
+Retrieve the target order associated to the recurring order copy
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    recurringOrderCopyId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.OrdersApi.GETRecurringOrderCopyIdTargetOrder(context.Background(), recurringOrderCopyId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETRecurringOrderCopyIdTargetOrder``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**recurringOrderCopyId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETRecurringOrderCopyIdTargetOrderRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1201,15 +1547,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    refundId := "refundId_example" // string | The resource's id
+    refundId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrdersApi.GETRefundIdOrder(context.Background(), refundId).Execute()
+    r, err := apiClient.OrdersApi.GETRefundIdOrder(context.Background(), refundId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETRefundIdOrder``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1223,7 +1569,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**refundId** | **string** | The resource&#39;s id | 
+**refundId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -1269,15 +1615,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    returnId := "returnId_example" // string | The resource's id
+    returnId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrdersApi.GETReturnIdOrder(context.Background(), returnId).Execute()
+    r, err := apiClient.OrdersApi.GETReturnIdOrder(context.Background(), returnId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETReturnIdOrder``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1291,11 +1637,79 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**returnId** | **string** | The resource&#39;s id | 
+**returnId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETReturnIdOrderRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETSatispayPaymentIdOrder
+
+> GETSatispayPaymentIdOrder(ctx, satispayPaymentId).Execute()
+
+Retrieve the order associated to the satispay payment
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    satispayPaymentId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.OrdersApi.GETSatispayPaymentIdOrder(context.Background(), satispayPaymentId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETSatispayPaymentIdOrder``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**satispayPaymentId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETSatispayPaymentIdOrderRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -1337,15 +1751,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    shipmentId := "shipmentId_example" // string | The resource's id
+    shipmentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrdersApi.GETShipmentIdOrder(context.Background(), shipmentId).Execute()
+    r, err := apiClient.OrdersApi.GETShipmentIdOrder(context.Background(), shipmentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETShipmentIdOrder``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1359,7 +1773,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**shipmentId** | **string** | The resource&#39;s id | 
+**shipmentId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -1405,15 +1819,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    stripePaymentId := "stripePaymentId_example" // string | The resource's id
+    stripePaymentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrdersApi.GETStripePaymentIdOrder(context.Background(), stripePaymentId).Execute()
+    r, err := apiClient.OrdersApi.GETStripePaymentIdOrder(context.Background(), stripePaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETStripePaymentIdOrder``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1427,7 +1841,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**stripePaymentId** | **string** | The resource&#39;s id | 
+**stripePaymentId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -1473,15 +1887,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    transactionId := "transactionId_example" // string | The resource's id
+    transactionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrdersApi.GETTransactionIdOrder(context.Background(), transactionId).Execute()
+    r, err := apiClient.OrdersApi.GETTransactionIdOrder(context.Background(), transactionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETTransactionIdOrder``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1495,7 +1909,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**transactionId** | **string** | The resource&#39;s id | 
+**transactionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -1541,15 +1955,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    voidId := "voidId_example" // string | The resource's id
+    voidId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrdersApi.GETVoidIdOrder(context.Background(), voidId).Execute()
+    r, err := apiClient.OrdersApi.GETVoidIdOrder(context.Background(), voidId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETVoidIdOrder``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1563,7 +1977,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**voidId** | **string** | The resource&#39;s id | 
+**voidId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -1609,15 +2023,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    wireTransferId := "wireTransferId_example" // string | The resource's id
+    wireTransferId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrdersApi.GETWireTransferIdOrder(context.Background(), wireTransferId).Execute()
+    r, err := apiClient.OrdersApi.GETWireTransferIdOrder(context.Background(), wireTransferId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.GETWireTransferIdOrder``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1631,7 +2045,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**wireTransferId** | **string** | The resource&#39;s id | 
+**wireTransferId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -1662,7 +2076,7 @@ Name | Type | Description  | Notes
 
 ## PATCHOrdersOrderId
 
-> PATCHOrdersOrderId200Response PATCHOrdersOrderId(ctx, orderId).OrderUpdate(orderUpdate).Execute()
+> PATCHOrdersOrderId200Response PATCHOrdersOrderId(ctx, orderId).PATCHOrdersOrderIdRequest(pATCHOrdersOrderIdRequest).Execute()
 
 Update an order
 
@@ -1677,16 +2091,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    orderUpdate := *openapiclient.NewOrderUpdate(*openapiclient.NewOrderUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHOrdersOrderId200ResponseDataAttributes())) // OrderUpdate | 
-    orderId := "orderId_example" // string | The resource's id
+    pATCHOrdersOrderIdRequest := *openapiclient.NewPATCHOrdersOrderIdRequest(*openapiclient.NewPATCHOrdersOrderIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHOrdersOrderIdRequestDataAttributes())) // PATCHOrdersOrderIdRequest | 
+    orderId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrdersApi.PATCHOrdersOrderId(context.Background(), orderId).OrderUpdate(orderUpdate).Execute()
+    resp, r, err := apiClient.OrdersApi.PATCHOrdersOrderId(context.Background(), orderId).PATCHOrdersOrderIdRequest(pATCHOrdersOrderIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.PATCHOrdersOrderId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1702,7 +2116,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**orderId** | **string** | The resource&#39;s id | 
+**orderId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -1711,7 +2125,7 @@ Other parameters are passed through a pointer to a apiPATCHOrdersOrderIdRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderUpdate** | [**OrderUpdate**](OrderUpdate.md) |  | 
+ **pATCHOrdersOrderIdRequest** | [**PATCHOrdersOrderIdRequest**](PATCHOrdersOrderIdRequest.md) |  | 
 
 
 ### Return type
@@ -1734,7 +2148,7 @@ Name | Type | Description  | Notes
 
 ## POSTOrders
 
-> POSTOrders201Response POSTOrders(ctx).OrderCreate(orderCreate).Execute()
+> POSTOrders201Response POSTOrders(ctx).POSTOrdersRequest(pOSTOrdersRequest).Execute()
 
 Create an order
 
@@ -1749,15 +2163,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    orderCreate := *openapiclient.NewOrderCreate(*openapiclient.NewOrderCreateData("Type_example", *openapiclient.NewPOSTOrders201ResponseDataAttributes())) // OrderCreate | 
+    pOSTOrdersRequest := *openapiclient.NewPOSTOrdersRequest(*openapiclient.NewPOSTOrdersRequestData(interface{}(123), *openapiclient.NewPOSTOrdersRequestDataAttributes())) // POSTOrdersRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrdersApi.POSTOrders(context.Background()).OrderCreate(orderCreate).Execute()
+    resp, r, err := apiClient.OrdersApi.POSTOrders(context.Background()).POSTOrdersRequest(pOSTOrdersRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrdersApi.POSTOrders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1778,7 +2192,7 @@ Other parameters are passed through a pointer to a apiPOSTOrdersRequest struct v
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **orderCreate** | [**OrderCreate**](OrderCreate.md) |  | 
+ **pOSTOrdersRequest** | [**POSTOrdersRequest**](POSTOrdersRequest.md) |  | 
 
 ### Return type
 

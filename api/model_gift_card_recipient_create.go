@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the GiftCardRecipientCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GiftCardRecipientCreate{}
+
 // GiftCardRecipientCreate struct for GiftCardRecipientCreate
 type GiftCardRecipientCreate struct {
-	Data GiftCardRecipientCreateData `json:"data"`
+	Data POSTGiftCardRecipientsRequestData `json:"data"`
 }
 
 // NewGiftCardRecipientCreate instantiates a new GiftCardRecipientCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGiftCardRecipientCreate(data GiftCardRecipientCreateData) *GiftCardRecipientCreate {
+func NewGiftCardRecipientCreate(data POSTGiftCardRecipientsRequestData) *GiftCardRecipientCreate {
 	this := GiftCardRecipientCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewGiftCardRecipientCreateWithDefaults() *GiftCardRecipientCreate {
 }
 
 // GetData returns the Data field value
-func (o *GiftCardRecipientCreate) GetData() GiftCardRecipientCreateData {
+func (o *GiftCardRecipientCreate) GetData() POSTGiftCardRecipientsRequestData {
 	if o == nil {
-		var ret GiftCardRecipientCreateData
+		var ret POSTGiftCardRecipientsRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *GiftCardRecipientCreate) GetData() GiftCardRecipientCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *GiftCardRecipientCreate) GetDataOk() (*GiftCardRecipientCreateData, bool) {
+func (o *GiftCardRecipientCreate) GetDataOk() (*POSTGiftCardRecipientsRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *GiftCardRecipientCreate) GetDataOk() (*GiftCardRecipientCreateData, boo
 }
 
 // SetData sets field value
-func (o *GiftCardRecipientCreate) SetData(v GiftCardRecipientCreateData) {
+func (o *GiftCardRecipientCreate) SetData(v POSTGiftCardRecipientsRequestData) {
 	o.Data = v
 }
 
 func (o GiftCardRecipientCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GiftCardRecipientCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableGiftCardRecipientCreate struct {

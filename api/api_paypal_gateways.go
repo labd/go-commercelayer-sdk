@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type PaypalGatewaysApiService service
 type PaypalGatewaysApiDELETEPaypalGatewaysPaypalGatewayIdRequest struct {
 	ctx             context.Context
 	ApiService      *PaypalGatewaysApiService
-	paypalGatewayId string
+	paypalGatewayId interface{}
 }
 
 func (r PaypalGatewaysApiDELETEPaypalGatewaysPaypalGatewayIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a paypal gateway
 	@param paypalGatewayId The resource's id
 	@return PaypalGatewaysApiDELETEPaypalGatewaysPaypalGatewayIdRequest
 */
-func (a *PaypalGatewaysApiService) DELETEPaypalGatewaysPaypalGatewayId(ctx context.Context, paypalGatewayId string) PaypalGatewaysApiDELETEPaypalGatewaysPaypalGatewayIdRequest {
+func (a *PaypalGatewaysApiService) DELETEPaypalGatewaysPaypalGatewayId(ctx context.Context, paypalGatewayId interface{}) PaypalGatewaysApiDELETEPaypalGatewaysPaypalGatewayIdRequest {
 	return PaypalGatewaysApiDELETEPaypalGatewaysPaypalGatewayIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -64,7 +64,7 @@ func (a *PaypalGatewaysApiService) DELETEPaypalGatewaysPaypalGatewayIdExecute(r 
 	}
 
 	localVarPath := localBasePath + "/paypal_gateways/{paypalGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"paypalGatewayId"+"}", url.PathEscape(parameterToString(r.paypalGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"paypalGatewayId"+"}", url.PathEscape(parameterValueToString(r.paypalGatewayId, "paypalGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *PaypalGatewaysApiService) DELETEPaypalGatewaysPaypalGatewayIdExecute(r 
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *PaypalGatewaysApiService) GETPaypalGatewaysExecute(r PaypalGatewaysApiG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -218,7 +218,7 @@ func (a *PaypalGatewaysApiService) GETPaypalGatewaysExecute(r PaypalGatewaysApiG
 type PaypalGatewaysApiGETPaypalGatewaysPaypalGatewayIdRequest struct {
 	ctx             context.Context
 	ApiService      *PaypalGatewaysApiService
-	paypalGatewayId string
+	paypalGatewayId interface{}
 }
 
 func (r PaypalGatewaysApiGETPaypalGatewaysPaypalGatewayIdRequest) Execute() (*GETPaypalGatewaysPaypalGatewayId200Response, *http.Response, error) {
@@ -234,7 +234,7 @@ Retrieve a paypal gateway
 	@param paypalGatewayId The resource's id
 	@return PaypalGatewaysApiGETPaypalGatewaysPaypalGatewayIdRequest
 */
-func (a *PaypalGatewaysApiService) GETPaypalGatewaysPaypalGatewayId(ctx context.Context, paypalGatewayId string) PaypalGatewaysApiGETPaypalGatewaysPaypalGatewayIdRequest {
+func (a *PaypalGatewaysApiService) GETPaypalGatewaysPaypalGatewayId(ctx context.Context, paypalGatewayId interface{}) PaypalGatewaysApiGETPaypalGatewaysPaypalGatewayIdRequest {
 	return PaypalGatewaysApiGETPaypalGatewaysPaypalGatewayIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -259,7 +259,7 @@ func (a *PaypalGatewaysApiService) GETPaypalGatewaysPaypalGatewayIdExecute(r Pay
 	}
 
 	localVarPath := localBasePath + "/paypal_gateways/{paypalGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"paypalGatewayId"+"}", url.PathEscape(parameterToString(r.paypalGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"paypalGatewayId"+"}", url.PathEscape(parameterValueToString(r.paypalGatewayId, "paypalGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *PaypalGatewaysApiService) GETPaypalGatewaysPaypalGatewayIdExecute(r Pay
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -320,14 +320,14 @@ func (a *PaypalGatewaysApiService) GETPaypalGatewaysPaypalGatewayIdExecute(r Pay
 }
 
 type PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest struct {
-	ctx                 context.Context
-	ApiService          *PaypalGatewaysApiService
-	paypalGatewayUpdate *PaypalGatewayUpdate
-	paypalGatewayId     string
+	ctx                                       context.Context
+	ApiService                                *PaypalGatewaysApiService
+	pATCHPaypalGatewaysPaypalGatewayIdRequest *PATCHPaypalGatewaysPaypalGatewayIdRequest
+	paypalGatewayId                           interface{}
 }
 
-func (r PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest) PaypalGatewayUpdate(paypalGatewayUpdate PaypalGatewayUpdate) PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest {
-	r.paypalGatewayUpdate = &paypalGatewayUpdate
+func (r PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest) PATCHPaypalGatewaysPaypalGatewayIdRequest(pATCHPaypalGatewaysPaypalGatewayIdRequest PATCHPaypalGatewaysPaypalGatewayIdRequest) PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest {
+	r.pATCHPaypalGatewaysPaypalGatewayIdRequest = &pATCHPaypalGatewaysPaypalGatewayIdRequest
 	return r
 }
 
@@ -344,7 +344,7 @@ Update a paypal gateway
 	@param paypalGatewayId The resource's id
 	@return PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest
 */
-func (a *PaypalGatewaysApiService) PATCHPaypalGatewaysPaypalGatewayId(ctx context.Context, paypalGatewayId string) PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest {
+func (a *PaypalGatewaysApiService) PATCHPaypalGatewaysPaypalGatewayId(ctx context.Context, paypalGatewayId interface{}) PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest {
 	return PaypalGatewaysApiPATCHPaypalGatewaysPaypalGatewayIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -369,13 +369,13 @@ func (a *PaypalGatewaysApiService) PATCHPaypalGatewaysPaypalGatewayIdExecute(r P
 	}
 
 	localVarPath := localBasePath + "/paypal_gateways/{paypalGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"paypalGatewayId"+"}", url.PathEscape(parameterToString(r.paypalGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"paypalGatewayId"+"}", url.PathEscape(parameterValueToString(r.paypalGatewayId, "paypalGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.paypalGatewayUpdate == nil {
-		return localVarReturnValue, nil, reportError("paypalGatewayUpdate is required and must be specified")
+	if r.pATCHPaypalGatewaysPaypalGatewayIdRequest == nil {
+		return localVarReturnValue, nil, reportError("pATCHPaypalGatewaysPaypalGatewayIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -396,7 +396,7 @@ func (a *PaypalGatewaysApiService) PATCHPaypalGatewaysPaypalGatewayIdExecute(r P
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.paypalGatewayUpdate
+	localVarPostBody = r.pATCHPaypalGatewaysPaypalGatewayIdRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -407,9 +407,9 @@ func (a *PaypalGatewaysApiService) PATCHPaypalGatewaysPaypalGatewayIdExecute(r P
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -435,13 +435,13 @@ func (a *PaypalGatewaysApiService) PATCHPaypalGatewaysPaypalGatewayIdExecute(r P
 }
 
 type PaypalGatewaysApiPOSTPaypalGatewaysRequest struct {
-	ctx                 context.Context
-	ApiService          *PaypalGatewaysApiService
-	paypalGatewayCreate *PaypalGatewayCreate
+	ctx                       context.Context
+	ApiService                *PaypalGatewaysApiService
+	pOSTPaypalGatewaysRequest *POSTPaypalGatewaysRequest
 }
 
-func (r PaypalGatewaysApiPOSTPaypalGatewaysRequest) PaypalGatewayCreate(paypalGatewayCreate PaypalGatewayCreate) PaypalGatewaysApiPOSTPaypalGatewaysRequest {
-	r.paypalGatewayCreate = &paypalGatewayCreate
+func (r PaypalGatewaysApiPOSTPaypalGatewaysRequest) POSTPaypalGatewaysRequest(pOSTPaypalGatewaysRequest POSTPaypalGatewaysRequest) PaypalGatewaysApiPOSTPaypalGatewaysRequest {
+	r.pOSTPaypalGatewaysRequest = &pOSTPaypalGatewaysRequest
 	return r
 }
 
@@ -485,8 +485,8 @@ func (a *PaypalGatewaysApiService) POSTPaypalGatewaysExecute(r PaypalGatewaysApi
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.paypalGatewayCreate == nil {
-		return localVarReturnValue, nil, reportError("paypalGatewayCreate is required and must be specified")
+	if r.pOSTPaypalGatewaysRequest == nil {
+		return localVarReturnValue, nil, reportError("pOSTPaypalGatewaysRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -507,7 +507,7 @@ func (a *PaypalGatewaysApiService) POSTPaypalGatewaysExecute(r PaypalGatewaysApi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.paypalGatewayCreate
+	localVarPostBody = r.pOSTPaypalGatewaysRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -518,9 +518,9 @@ func (a *PaypalGatewaysApiService) POSTPaypalGatewaysExecute(r PaypalGatewaysApi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

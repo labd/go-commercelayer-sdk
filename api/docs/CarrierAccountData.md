@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETCarrierAccounts200ResponseDataInnerAttributes**](GETCarrierAccounts200ResponseDataInnerAttributes.md) |  | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Attributes** | [**GETCarrierAccountsCarrierAccountId200ResponseDataAttributes**](GETCarrierAccountsCarrierAccountId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**BillingInfoValidationRuleDataRelationships**](BillingInfoValidationRuleDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCarrierAccountData
 
-`func NewCarrierAccountData(type_ string, attributes GETCarrierAccounts200ResponseDataInnerAttributes, ) *CarrierAccountData`
+`func NewCarrierAccountData(type_ interface{}, attributes GETCarrierAccountsCarrierAccountId200ResponseDataAttributes, ) *CarrierAccountData`
 
 NewCarrierAccountData instantiates a new CarrierAccountData object
 This constructor will assign default values to properties that have it defined,
@@ -29,40 +29,50 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *CarrierAccountData) GetType() string`
+`func (o *CarrierAccountData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *CarrierAccountData) GetTypeOk() (*string, bool)`
+`func (o *CarrierAccountData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *CarrierAccountData) SetType(v string)`
+`func (o *CarrierAccountData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *CarrierAccountData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *CarrierAccountData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *CarrierAccountData) GetAttributes() GETCarrierAccounts200ResponseDataInnerAttributes`
+`func (o *CarrierAccountData) GetAttributes() GETCarrierAccountsCarrierAccountId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CarrierAccountData) GetAttributesOk() (*GETCarrierAccounts200ResponseDataInnerAttributes, bool)`
+`func (o *CarrierAccountData) GetAttributesOk() (*GETCarrierAccountsCarrierAccountId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CarrierAccountData) SetAttributes(v GETCarrierAccounts200ResponseDataInnerAttributes)`
+`func (o *CarrierAccountData) SetAttributes(v GETCarrierAccountsCarrierAccountId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

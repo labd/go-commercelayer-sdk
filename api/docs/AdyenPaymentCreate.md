@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**AdyenPaymentCreateData**](AdyenPaymentCreateData.md) |  | 
+**Data** | [**POSTAdyenPaymentsRequestData**](POSTAdyenPaymentsRequestData.md) |  | 
 
 ## Methods
 
 ### NewAdyenPaymentCreate
 
-`func NewAdyenPaymentCreate(data AdyenPaymentCreateData, ) *AdyenPaymentCreate`
+`func NewAdyenPaymentCreate(data POSTAdyenPaymentsRequestData, ) *AdyenPaymentCreate`
 
 NewAdyenPaymentCreate instantiates a new AdyenPaymentCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *AdyenPaymentCreate) GetData() AdyenPaymentCreateData`
+`func (o *AdyenPaymentCreate) GetData() POSTAdyenPaymentsRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *AdyenPaymentCreate) GetDataOk() (*AdyenPaymentCreateData, bool)`
+`func (o *AdyenPaymentCreate) GetDataOk() (*POSTAdyenPaymentsRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *AdyenPaymentCreate) SetData(v AdyenPaymentCreateData)`
+`func (o *AdyenPaymentCreate) SetData(v POSTAdyenPaymentsRequestData)`
 
 SetData sets Data field to given value.
 

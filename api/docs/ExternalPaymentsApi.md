@@ -1,6 +1,6 @@
 # \ExternalPaymentsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,15 +30,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    externalPaymentId := "externalPaymentId_example" // string | The resource's id
+    externalPaymentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExternalPaymentsApi.DELETEExternalPaymentsExternalPaymentId(context.Background(), externalPaymentId).Execute()
+    r, err := apiClient.ExternalPaymentsApi.DELETEExternalPaymentsExternalPaymentId(context.Background(), externalPaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalPaymentsApi.DELETEExternalPaymentsExternalPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -52,7 +52,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**externalPaymentId** | **string** | The resource&#39;s id | 
+**externalPaymentId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -98,15 +98,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    externalGatewayId := "externalGatewayId_example" // string | The resource's id
+    externalGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExternalPaymentsApi.GETExternalGatewayIdExternalPayments(context.Background(), externalGatewayId).Execute()
+    r, err := apiClient.ExternalPaymentsApi.GETExternalGatewayIdExternalPayments(context.Background(), externalGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalPaymentsApi.GETExternalGatewayIdExternalPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -120,7 +120,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**externalGatewayId** | **string** | The resource&#39;s id | 
+**externalGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -166,7 +166,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -227,11 +227,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    externalPaymentId := "externalPaymentId_example" // string | The resource's id
+    externalPaymentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -251,7 +251,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**externalPaymentId** | **string** | The resource&#39;s id | 
+**externalPaymentId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHExternalPaymentsExternalPaymentId
 
-> PATCHExternalPaymentsExternalPaymentId200Response PATCHExternalPaymentsExternalPaymentId(ctx, externalPaymentId).ExternalPaymentUpdate(externalPaymentUpdate).Execute()
+> PATCHExternalPaymentsExternalPaymentId200Response PATCHExternalPaymentsExternalPaymentId(ctx, externalPaymentId).PATCHExternalPaymentsExternalPaymentIdRequest(pATCHExternalPaymentsExternalPaymentIdRequest).Execute()
 
 Update an external payment
 
@@ -297,16 +297,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    externalPaymentUpdate := *openapiclient.NewExternalPaymentUpdate(*openapiclient.NewExternalPaymentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes())) // ExternalPaymentUpdate | 
-    externalPaymentId := "externalPaymentId_example" // string | The resource's id
+    pATCHExternalPaymentsExternalPaymentIdRequest := *openapiclient.NewPATCHExternalPaymentsExternalPaymentIdRequest(*openapiclient.NewPATCHExternalPaymentsExternalPaymentIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHExternalPaymentsExternalPaymentIdRequestDataAttributes())) // PATCHExternalPaymentsExternalPaymentIdRequest | 
+    externalPaymentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExternalPaymentsApi.PATCHExternalPaymentsExternalPaymentId(context.Background(), externalPaymentId).ExternalPaymentUpdate(externalPaymentUpdate).Execute()
+    resp, r, err := apiClient.ExternalPaymentsApi.PATCHExternalPaymentsExternalPaymentId(context.Background(), externalPaymentId).PATCHExternalPaymentsExternalPaymentIdRequest(pATCHExternalPaymentsExternalPaymentIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalPaymentsApi.PATCHExternalPaymentsExternalPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -322,7 +322,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**externalPaymentId** | **string** | The resource&#39;s id | 
+**externalPaymentId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -331,7 +331,7 @@ Other parameters are passed through a pointer to a apiPATCHExternalPaymentsExter
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **externalPaymentUpdate** | [**ExternalPaymentUpdate**](ExternalPaymentUpdate.md) |  | 
+ **pATCHExternalPaymentsExternalPaymentIdRequest** | [**PATCHExternalPaymentsExternalPaymentIdRequest**](PATCHExternalPaymentsExternalPaymentIdRequest.md) |  | 
 
 
 ### Return type
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTExternalPayments
 
-> POSTExternalPayments201Response POSTExternalPayments(ctx).ExternalPaymentCreate(externalPaymentCreate).Execute()
+> POSTExternalPayments201Response POSTExternalPayments(ctx).POSTExternalPaymentsRequest(pOSTExternalPaymentsRequest).Execute()
 
 Create an external payment
 
@@ -369,15 +369,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    externalPaymentCreate := *openapiclient.NewExternalPaymentCreate(*openapiclient.NewExternalPaymentCreateData("Type_example", *openapiclient.NewPOSTExternalPayments201ResponseDataAttributes("xxxx.yyyy.zzzz"))) // ExternalPaymentCreate | 
+    pOSTExternalPaymentsRequest := *openapiclient.NewPOSTExternalPaymentsRequest(*openapiclient.NewPOSTExternalPaymentsRequestData(interface{}(123), *openapiclient.NewPOSTExternalPaymentsRequestDataAttributes(interface{}(xxxx.yyyy.zzzz)))) // POSTExternalPaymentsRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExternalPaymentsApi.POSTExternalPayments(context.Background()).ExternalPaymentCreate(externalPaymentCreate).Execute()
+    resp, r, err := apiClient.ExternalPaymentsApi.POSTExternalPayments(context.Background()).POSTExternalPaymentsRequest(pOSTExternalPaymentsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalPaymentsApi.POSTExternalPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +398,7 @@ Other parameters are passed through a pointer to a apiPOSTExternalPaymentsReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **externalPaymentCreate** | [**ExternalPaymentCreate**](ExternalPaymentCreate.md) |  | 
+ **pOSTExternalPaymentsRequest** | [**POSTExternalPaymentsRequest**](POSTExternalPaymentsRequest.md) |  | 
 
 ### Return type
 

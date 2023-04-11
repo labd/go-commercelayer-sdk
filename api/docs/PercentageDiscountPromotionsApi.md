@@ -1,6 +1,6 @@
 # \PercentageDiscountPromotionsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,15 +29,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    percentageDiscountPromotionId := "percentageDiscountPromotionId_example" // string | The resource's id
+    percentageDiscountPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PercentageDiscountPromotionsApi.DELETEPercentageDiscountPromotionsPercentageDiscountPromotionId(context.Background(), percentageDiscountPromotionId).Execute()
+    r, err := apiClient.PercentageDiscountPromotionsApi.DELETEPercentageDiscountPromotionsPercentageDiscountPromotionId(context.Background(), percentageDiscountPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PercentageDiscountPromotionsApi.DELETEPercentageDiscountPromotionsPercentageDiscountPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -51,7 +51,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**percentageDiscountPromotionId** | **string** | The resource&#39;s id | 
+**percentageDiscountPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -158,11 +158,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    percentageDiscountPromotionId := "percentageDiscountPromotionId_example" // string | The resource's id
+    percentageDiscountPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -182,7 +182,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**percentageDiscountPromotionId** | **string** | The resource&#39;s id | 
+**percentageDiscountPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId
 
-> PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Response PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId(ctx, percentageDiscountPromotionId).PercentageDiscountPromotionUpdate(percentageDiscountPromotionUpdate).Execute()
+> PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Response PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId(ctx, percentageDiscountPromotionId).PATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest(pATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest).Execute()
 
 Update a percentage discount promotion
 
@@ -228,16 +228,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    percentageDiscountPromotionUpdate := *openapiclient.NewPercentageDiscountPromotionUpdate(*openapiclient.NewPercentageDiscountPromotionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes())) // PercentageDiscountPromotionUpdate | 
-    percentageDiscountPromotionId := "percentageDiscountPromotionId_example" // string | The resource's id
+    pATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest := *openapiclient.NewPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest(*openapiclient.NewPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequestDataAttributes())) // PATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest | 
+    percentageDiscountPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PercentageDiscountPromotionsApi.PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId(context.Background(), percentageDiscountPromotionId).PercentageDiscountPromotionUpdate(percentageDiscountPromotionUpdate).Execute()
+    resp, r, err := apiClient.PercentageDiscountPromotionsApi.PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId(context.Background(), percentageDiscountPromotionId).PATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest(pATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PercentageDiscountPromotionsApi.PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -253,7 +253,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**percentageDiscountPromotionId** | **string** | The resource&#39;s id | 
+**percentageDiscountPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -262,7 +262,7 @@ Other parameters are passed through a pointer to a apiPATCHPercentageDiscountPro
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **percentageDiscountPromotionUpdate** | [**PercentageDiscountPromotionUpdate**](PercentageDiscountPromotionUpdate.md) |  | 
+ **pATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest** | [**PATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest**](PATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest.md) |  | 
 
 
 ### Return type
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTPercentageDiscountPromotions
 
-> POSTPercentageDiscountPromotions201Response POSTPercentageDiscountPromotions(ctx).PercentageDiscountPromotionCreate(percentageDiscountPromotionCreate).Execute()
+> POSTPercentageDiscountPromotions201Response POSTPercentageDiscountPromotions(ctx).POSTPercentageDiscountPromotionsRequest(pOSTPercentageDiscountPromotionsRequest).Execute()
 
 Create a percentage discount promotion
 
@@ -300,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    percentageDiscountPromotionCreate := *openapiclient.NewPercentageDiscountPromotionCreate(*openapiclient.NewPercentageDiscountPromotionCreateData("Type_example", *openapiclient.NewPOSTPercentageDiscountPromotions201ResponseDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5), int32(10)))) // PercentageDiscountPromotionCreate | 
+    pOSTPercentageDiscountPromotionsRequest := *openapiclient.NewPOSTPercentageDiscountPromotionsRequest(*openapiclient.NewPOSTPercentageDiscountPromotionsRequestData(interface{}(123), *openapiclient.NewPOSTPercentageDiscountPromotionsRequestDataAttributes(interface{}(Personal promotion), interface{}(2018-01-01T12:00:00.000Z), interface{}(2018-01-02T12:00:00.000Z), interface{}(5), interface{}(10)))) // POSTPercentageDiscountPromotionsRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PercentageDiscountPromotionsApi.POSTPercentageDiscountPromotions(context.Background()).PercentageDiscountPromotionCreate(percentageDiscountPromotionCreate).Execute()
+    resp, r, err := apiClient.PercentageDiscountPromotionsApi.POSTPercentageDiscountPromotions(context.Background()).POSTPercentageDiscountPromotionsRequest(pOSTPercentageDiscountPromotionsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PercentageDiscountPromotionsApi.POSTPercentageDiscountPromotions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiPOSTPercentageDiscountProm
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **percentageDiscountPromotionCreate** | [**PercentageDiscountPromotionCreate**](PercentageDiscountPromotionCreate.md) |  | 
+ **pOSTPercentageDiscountPromotionsRequest** | [**POSTPercentageDiscountPromotionsRequest**](POSTPercentageDiscountPromotionsRequest.md) |  | 
 
 ### Return type
 

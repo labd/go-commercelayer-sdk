@@ -1,6 +1,6 @@
 # \WebhooksApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,15 +31,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    webhookId := "webhookId_example" // string | The resource's id
+    webhookId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksApi.DELETEWebhooksWebhookId(context.Background(), webhookId).Execute()
+    r, err := apiClient.WebhooksApi.DELETEWebhooksWebhookId(context.Background(), webhookId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.DELETEWebhooksWebhookId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -53,7 +53,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**webhookId** | **string** | The resource&#39;s id | 
+**webhookId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -99,15 +99,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    eventCallbackId := "eventCallbackId_example" // string | The resource's id
+    eventCallbackId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksApi.GETEventCallbackIdWebhook(context.Background(), eventCallbackId).Execute()
+    r, err := apiClient.WebhooksApi.GETEventCallbackIdWebhook(context.Background(), eventCallbackId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.GETEventCallbackIdWebhook``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -121,7 +121,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**eventCallbackId** | **string** | The resource&#39;s id | 
+**eventCallbackId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -167,15 +167,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    eventId := "eventId_example" // string | The resource's id
+    eventId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksApi.GETEventIdWebhooks(context.Background(), eventId).Execute()
+    r, err := apiClient.WebhooksApi.GETEventIdWebhooks(context.Background(), eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.GETEventIdWebhooks``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -189,7 +189,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**eventId** | **string** | The resource&#39;s id | 
+**eventId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -235,7 +235,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -296,11 +296,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    webhookId := "webhookId_example" // string | The resource's id
+    webhookId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -320,7 +320,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**webhookId** | **string** | The resource&#39;s id | 
+**webhookId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ## PATCHWebhooksWebhookId
 
-> PATCHWebhooksWebhookId200Response PATCHWebhooksWebhookId(ctx, webhookId).WebhookUpdate(webhookUpdate).Execute()
+> PATCHWebhooksWebhookId200Response PATCHWebhooksWebhookId(ctx, webhookId).PATCHWebhooksWebhookIdRequest(pATCHWebhooksWebhookIdRequest).Execute()
 
 Update a webhook
 
@@ -366,16 +366,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    webhookUpdate := *openapiclient.NewWebhookUpdate(*openapiclient.NewWebhookUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHWebhooksWebhookId200ResponseDataAttributes())) // WebhookUpdate | 
-    webhookId := "webhookId_example" // string | The resource's id
+    pATCHWebhooksWebhookIdRequest := *openapiclient.NewPATCHWebhooksWebhookIdRequest(*openapiclient.NewPATCHWebhooksWebhookIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHWebhooksWebhookIdRequestDataAttributes())) // PATCHWebhooksWebhookIdRequest | 
+    webhookId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksApi.PATCHWebhooksWebhookId(context.Background(), webhookId).WebhookUpdate(webhookUpdate).Execute()
+    resp, r, err := apiClient.WebhooksApi.PATCHWebhooksWebhookId(context.Background(), webhookId).PATCHWebhooksWebhookIdRequest(pATCHWebhooksWebhookIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.PATCHWebhooksWebhookId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -391,7 +391,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**webhookId** | **string** | The resource&#39;s id | 
+**webhookId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -400,7 +400,7 @@ Other parameters are passed through a pointer to a apiPATCHWebhooksWebhookIdRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhookUpdate** | [**WebhookUpdate**](WebhookUpdate.md) |  | 
+ **pATCHWebhooksWebhookIdRequest** | [**PATCHWebhooksWebhookIdRequest**](PATCHWebhooksWebhookIdRequest.md) |  | 
 
 
 ### Return type
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ## POSTWebhooks
 
-> POSTWebhooks201Response POSTWebhooks(ctx).WebhookCreate(webhookCreate).Execute()
+> POSTWebhooks201Response POSTWebhooks(ctx).POSTWebhooksRequest(pOSTWebhooksRequest).Execute()
 
 Create a webhook
 
@@ -438,15 +438,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    webhookCreate := *openapiclient.NewWebhookCreate(*openapiclient.NewWebhookCreateData("Type_example", *openapiclient.NewPOSTWebhooks201ResponseDataAttributes("orders.place", "https://yourapp.com/webhooks"))) // WebhookCreate | 
+    pOSTWebhooksRequest := *openapiclient.NewPOSTWebhooksRequest(*openapiclient.NewPOSTWebhooksRequestData(interface{}(123), *openapiclient.NewPOSTWebhooksRequestDataAttributes(interface{}(orders.place), interface{}(https://yourapp.com/webhooks)))) // POSTWebhooksRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WebhooksApi.POSTWebhooks(context.Background()).WebhookCreate(webhookCreate).Execute()
+    resp, r, err := apiClient.WebhooksApi.POSTWebhooks(context.Background()).POSTWebhooksRequest(pOSTWebhooksRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WebhooksApi.POSTWebhooks``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -467,7 +467,7 @@ Other parameters are passed through a pointer to a apiPOSTWebhooksRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **webhookCreate** | [**WebhookCreate**](WebhookCreate.md) |  | 
+ **pOSTWebhooksRequest** | [**POSTWebhooksRequest**](POSTWebhooksRequest.md) |  | 
 
 ### Return type
 

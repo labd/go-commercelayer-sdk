@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 **AvailableFreeSkus** | Pointer to [**BundleDataRelationshipsSkus**](BundleDataRelationshipsSkus.md) |  | [optional] 
 **AvailableFreeBundles** | Pointer to [**OrderDataRelationshipsAvailableFreeBundles**](OrderDataRelationshipsAvailableFreeBundles.md) |  | [optional] 
 **PaymentMethod** | Pointer to [**AdyenGatewayDataRelationshipsPaymentMethods**](AdyenGatewayDataRelationshipsPaymentMethods.md) |  | [optional] 
-**PaymentSource** | Pointer to [**CustomerPaymentSourceDataRelationshipsPaymentSource**](CustomerPaymentSourceDataRelationshipsPaymentSource.md) |  | [optional] 
+**PaymentSource** | Pointer to [**OrderDataRelationshipsPaymentSource**](OrderDataRelationshipsPaymentSource.md) |  | [optional] 
 **LineItems** | Pointer to [**LineItemOptionDataRelationshipsLineItem**](LineItemOptionDataRelationshipsLineItem.md) |  | [optional] 
 **Shipments** | Pointer to [**OrderDataRelationshipsShipments**](OrderDataRelationshipsShipments.md) |  | [optional] 
 **Transactions** | Pointer to [**OrderDataRelationshipsTransactions**](OrderDataRelationshipsTransactions.md) |  | [optional] 
@@ -23,7 +23,9 @@ Name | Type | Description | Notes
 **Refunds** | Pointer to [**CaptureDataRelationshipsRefunds**](CaptureDataRelationshipsRefunds.md) |  | [optional] 
 **Returns** | Pointer to [**CustomerDataRelationshipsReturns**](CustomerDataRelationshipsReturns.md) |  | [optional] 
 **OrderSubscriptions** | Pointer to [**CustomerDataRelationshipsOrderSubscriptions**](CustomerDataRelationshipsOrderSubscriptions.md) |  | [optional] 
-**OrderCopies** | Pointer to [**OrderSubscriptionDataRelationshipsOrderCopies**](OrderSubscriptionDataRelationshipsOrderCopies.md) |  | [optional] 
+**OrderFactories** | Pointer to [**OrderSubscriptionDataRelationshipsOrderFactories**](OrderSubscriptionDataRelationshipsOrderFactories.md) |  | [optional] 
+**OrderCopies** | Pointer to [**OrderDataRelationshipsOrderCopies**](OrderDataRelationshipsOrderCopies.md) |  | [optional] 
+**RecurringOrderCopies** | Pointer to [**OrderSubscriptionDataRelationshipsRecurringOrderCopies**](OrderSubscriptionDataRelationshipsRecurringOrderCopies.md) |  | [optional] 
 **Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
 **Events** | Pointer to [**AuthorizationDataRelationshipsEvents**](AuthorizationDataRelationshipsEvents.md) |  | [optional] 
 
@@ -273,20 +275,20 @@ HasPaymentMethod returns a boolean if a field has been set.
 
 ### GetPaymentSource
 
-`func (o *OrderDataRelationships) GetPaymentSource() CustomerPaymentSourceDataRelationshipsPaymentSource`
+`func (o *OrderDataRelationships) GetPaymentSource() OrderDataRelationshipsPaymentSource`
 
 GetPaymentSource returns the PaymentSource field if non-nil, zero value otherwise.
 
 ### GetPaymentSourceOk
 
-`func (o *OrderDataRelationships) GetPaymentSourceOk() (*CustomerPaymentSourceDataRelationshipsPaymentSource, bool)`
+`func (o *OrderDataRelationships) GetPaymentSourceOk() (*OrderDataRelationshipsPaymentSource, bool)`
 
 GetPaymentSourceOk returns a tuple with the PaymentSource field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPaymentSource
 
-`func (o *OrderDataRelationships) SetPaymentSource(v CustomerPaymentSourceDataRelationshipsPaymentSource)`
+`func (o *OrderDataRelationships) SetPaymentSource(v OrderDataRelationshipsPaymentSource)`
 
 SetPaymentSource sets PaymentSource field to given value.
 
@@ -521,22 +523,47 @@ SetOrderSubscriptions sets OrderSubscriptions field to given value.
 
 HasOrderSubscriptions returns a boolean if a field has been set.
 
+### GetOrderFactories
+
+`func (o *OrderDataRelationships) GetOrderFactories() OrderSubscriptionDataRelationshipsOrderFactories`
+
+GetOrderFactories returns the OrderFactories field if non-nil, zero value otherwise.
+
+### GetOrderFactoriesOk
+
+`func (o *OrderDataRelationships) GetOrderFactoriesOk() (*OrderSubscriptionDataRelationshipsOrderFactories, bool)`
+
+GetOrderFactoriesOk returns a tuple with the OrderFactories field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetOrderFactories
+
+`func (o *OrderDataRelationships) SetOrderFactories(v OrderSubscriptionDataRelationshipsOrderFactories)`
+
+SetOrderFactories sets OrderFactories field to given value.
+
+### HasOrderFactories
+
+`func (o *OrderDataRelationships) HasOrderFactories() bool`
+
+HasOrderFactories returns a boolean if a field has been set.
+
 ### GetOrderCopies
 
-`func (o *OrderDataRelationships) GetOrderCopies() OrderSubscriptionDataRelationshipsOrderCopies`
+`func (o *OrderDataRelationships) GetOrderCopies() OrderDataRelationshipsOrderCopies`
 
 GetOrderCopies returns the OrderCopies field if non-nil, zero value otherwise.
 
 ### GetOrderCopiesOk
 
-`func (o *OrderDataRelationships) GetOrderCopiesOk() (*OrderSubscriptionDataRelationshipsOrderCopies, bool)`
+`func (o *OrderDataRelationships) GetOrderCopiesOk() (*OrderDataRelationshipsOrderCopies, bool)`
 
 GetOrderCopiesOk returns a tuple with the OrderCopies field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetOrderCopies
 
-`func (o *OrderDataRelationships) SetOrderCopies(v OrderSubscriptionDataRelationshipsOrderCopies)`
+`func (o *OrderDataRelationships) SetOrderCopies(v OrderDataRelationshipsOrderCopies)`
 
 SetOrderCopies sets OrderCopies field to given value.
 
@@ -545,6 +572,31 @@ SetOrderCopies sets OrderCopies field to given value.
 `func (o *OrderDataRelationships) HasOrderCopies() bool`
 
 HasOrderCopies returns a boolean if a field has been set.
+
+### GetRecurringOrderCopies
+
+`func (o *OrderDataRelationships) GetRecurringOrderCopies() OrderSubscriptionDataRelationshipsRecurringOrderCopies`
+
+GetRecurringOrderCopies returns the RecurringOrderCopies field if non-nil, zero value otherwise.
+
+### GetRecurringOrderCopiesOk
+
+`func (o *OrderDataRelationships) GetRecurringOrderCopiesOk() (*OrderSubscriptionDataRelationshipsRecurringOrderCopies, bool)`
+
+GetRecurringOrderCopiesOk returns a tuple with the RecurringOrderCopies field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetRecurringOrderCopies
+
+`func (o *OrderDataRelationships) SetRecurringOrderCopies(v OrderSubscriptionDataRelationshipsRecurringOrderCopies)`
+
+SetRecurringOrderCopies sets RecurringOrderCopies field to given value.
+
+### HasRecurringOrderCopies
+
+`func (o *OrderDataRelationships) HasRecurringOrderCopies() bool`
+
+HasRecurringOrderCopies returns a boolean if a field has been set.
 
 ### GetAttachments
 

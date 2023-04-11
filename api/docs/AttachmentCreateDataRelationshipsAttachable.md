@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**AttachmentDataRelationshipsAttachableData**](AttachmentDataRelationshipsAttachableData.md) |  | 
+**Data** | [**POSTAttachmentsRequestDataRelationshipsAttachableData**](POSTAttachmentsRequestDataRelationshipsAttachableData.md) |  | 
 
 ## Methods
 
 ### NewAttachmentCreateDataRelationshipsAttachable
 
-`func NewAttachmentCreateDataRelationshipsAttachable(data AttachmentDataRelationshipsAttachableData, ) *AttachmentCreateDataRelationshipsAttachable`
+`func NewAttachmentCreateDataRelationshipsAttachable(data POSTAttachmentsRequestDataRelationshipsAttachableData, ) *AttachmentCreateDataRelationshipsAttachable`
 
 NewAttachmentCreateDataRelationshipsAttachable instantiates a new AttachmentCreateDataRelationshipsAttachable object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *AttachmentCreateDataRelationshipsAttachable) GetData() AttachmentDataRelationshipsAttachableData`
+`func (o *AttachmentCreateDataRelationshipsAttachable) GetData() POSTAttachmentsRequestDataRelationshipsAttachableData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *AttachmentCreateDataRelationshipsAttachable) GetDataOk() (*AttachmentDataRelationshipsAttachableData, bool)`
+`func (o *AttachmentCreateDataRelationshipsAttachable) GetDataOk() (*POSTAttachmentsRequestDataRelationshipsAttachableData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *AttachmentCreateDataRelationshipsAttachable) SetData(v AttachmentDataRelationshipsAttachableData)`
+`func (o *AttachmentCreateDataRelationshipsAttachable) SetData(v POSTAttachmentsRequestDataRelationshipsAttachableData)`
 
 SetData sets Data field to given value.
 

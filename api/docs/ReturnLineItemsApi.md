@@ -1,6 +1,6 @@
 # \ReturnLineItemsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,15 +30,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    returnLineItemId := "returnLineItemId_example" // string | The resource's id
+    returnLineItemId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReturnLineItemsApi.DELETEReturnLineItemsReturnLineItemId(context.Background(), returnLineItemId).Execute()
+    r, err := apiClient.ReturnLineItemsApi.DELETEReturnLineItemsReturnLineItemId(context.Background(), returnLineItemId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnLineItemsApi.DELETEReturnLineItemsReturnLineItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -52,7 +52,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**returnLineItemId** | **string** | The resource&#39;s id | 
+**returnLineItemId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -98,15 +98,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    returnId := "returnId_example" // string | The resource's id
+    returnId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReturnLineItemsApi.GETReturnIdReturnLineItems(context.Background(), returnId).Execute()
+    r, err := apiClient.ReturnLineItemsApi.GETReturnIdReturnLineItems(context.Background(), returnId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnLineItemsApi.GETReturnIdReturnLineItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -120,7 +120,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**returnId** | **string** | The resource&#39;s id | 
+**returnId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -166,7 +166,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -227,11 +227,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    returnLineItemId := "returnLineItemId_example" // string | The resource's id
+    returnLineItemId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -251,7 +251,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**returnLineItemId** | **string** | The resource&#39;s id | 
+**returnLineItemId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHReturnLineItemsReturnLineItemId
 
-> PATCHReturnLineItemsReturnLineItemId200Response PATCHReturnLineItemsReturnLineItemId(ctx, returnLineItemId).ReturnLineItemUpdate(returnLineItemUpdate).Execute()
+> PATCHReturnLineItemsReturnLineItemId200Response PATCHReturnLineItemsReturnLineItemId(ctx, returnLineItemId).PATCHReturnLineItemsReturnLineItemIdRequest(pATCHReturnLineItemsReturnLineItemIdRequest).Execute()
 
 Update a return line item
 
@@ -297,16 +297,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    returnLineItemUpdate := *openapiclient.NewReturnLineItemUpdate(*openapiclient.NewReturnLineItemUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes())) // ReturnLineItemUpdate | 
-    returnLineItemId := "returnLineItemId_example" // string | The resource's id
+    pATCHReturnLineItemsReturnLineItemIdRequest := *openapiclient.NewPATCHReturnLineItemsReturnLineItemIdRequest(*openapiclient.NewPATCHReturnLineItemsReturnLineItemIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHReturnLineItemsReturnLineItemIdRequestDataAttributes())) // PATCHReturnLineItemsReturnLineItemIdRequest | 
+    returnLineItemId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReturnLineItemsApi.PATCHReturnLineItemsReturnLineItemId(context.Background(), returnLineItemId).ReturnLineItemUpdate(returnLineItemUpdate).Execute()
+    resp, r, err := apiClient.ReturnLineItemsApi.PATCHReturnLineItemsReturnLineItemId(context.Background(), returnLineItemId).PATCHReturnLineItemsReturnLineItemIdRequest(pATCHReturnLineItemsReturnLineItemIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnLineItemsApi.PATCHReturnLineItemsReturnLineItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -322,7 +322,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**returnLineItemId** | **string** | The resource&#39;s id | 
+**returnLineItemId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -331,7 +331,7 @@ Other parameters are passed through a pointer to a apiPATCHReturnLineItemsReturn
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **returnLineItemUpdate** | [**ReturnLineItemUpdate**](ReturnLineItemUpdate.md) |  | 
+ **pATCHReturnLineItemsReturnLineItemIdRequest** | [**PATCHReturnLineItemsReturnLineItemIdRequest**](PATCHReturnLineItemsReturnLineItemIdRequest.md) |  | 
 
 
 ### Return type
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTReturnLineItems
 
-> POSTReturnLineItems201Response POSTReturnLineItems(ctx).ReturnLineItemCreate(returnLineItemCreate).Execute()
+> POSTReturnLineItems201Response POSTReturnLineItems(ctx).POSTReturnLineItemsRequest(pOSTReturnLineItemsRequest).Execute()
 
 Create a return line item
 
@@ -369,15 +369,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    returnLineItemCreate := *openapiclient.NewReturnLineItemCreate(*openapiclient.NewReturnLineItemCreateData("Type_example", *openapiclient.NewPOSTReturnLineItems201ResponseDataAttributes(int32(4)))) // ReturnLineItemCreate | 
+    pOSTReturnLineItemsRequest := *openapiclient.NewPOSTReturnLineItemsRequest(*openapiclient.NewPOSTReturnLineItemsRequestData(interface{}(123), *openapiclient.NewPOSTReturnLineItemsRequestDataAttributes(interface{}(4)))) // POSTReturnLineItemsRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReturnLineItemsApi.POSTReturnLineItems(context.Background()).ReturnLineItemCreate(returnLineItemCreate).Execute()
+    resp, r, err := apiClient.ReturnLineItemsApi.POSTReturnLineItems(context.Background()).POSTReturnLineItemsRequest(pOSTReturnLineItemsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnLineItemsApi.POSTReturnLineItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +398,7 @@ Other parameters are passed through a pointer to a apiPOSTReturnLineItemsRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **returnLineItemCreate** | [**ReturnLineItemCreate**](ReturnLineItemCreate.md) |  | 
+ **pOSTReturnLineItemsRequest** | [**POSTReturnLineItemsRequest**](POSTReturnLineItemsRequest.md) |  | 
 
 ### Return type
 

@@ -1,6 +1,6 @@
 # \CustomerGroupsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,15 +31,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    customerGroupId := "customerGroupId_example" // string | The resource's id
+    customerGroupId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomerGroupsApi.DELETECustomerGroupsCustomerGroupId(context.Background(), customerGroupId).Execute()
+    r, err := apiClient.CustomerGroupsApi.DELETECustomerGroupsCustomerGroupId(context.Background(), customerGroupId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerGroupsApi.DELETECustomerGroupsCustomerGroupId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -53,7 +53,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**customerGroupId** | **string** | The resource&#39;s id | 
+**customerGroupId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -99,7 +99,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -160,11 +160,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    customerGroupId := "customerGroupId_example" // string | The resource's id
+    customerGroupId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -184,7 +184,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**customerGroupId** | **string** | The resource&#39;s id | 
+**customerGroupId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -230,15 +230,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    customerId := "customerId_example" // string | The resource's id
+    customerId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomerGroupsApi.GETCustomerIdCustomerGroup(context.Background(), customerId).Execute()
+    r, err := apiClient.CustomerGroupsApi.GETCustomerIdCustomerGroup(context.Background(), customerId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerGroupsApi.GETCustomerIdCustomerGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -252,7 +252,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**customerId** | **string** | The resource&#39;s id | 
+**customerId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -298,15 +298,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    marketId := "marketId_example" // string | The resource's id
+    marketId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomerGroupsApi.GETMarketIdCustomerGroup(context.Background(), marketId).Execute()
+    r, err := apiClient.CustomerGroupsApi.GETMarketIdCustomerGroup(context.Background(), marketId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerGroupsApi.GETMarketIdCustomerGroup``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -320,7 +320,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**marketId** | **string** | The resource&#39;s id | 
+**marketId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ## PATCHCustomerGroupsCustomerGroupId
 
-> PATCHCustomerGroupsCustomerGroupId200Response PATCHCustomerGroupsCustomerGroupId(ctx, customerGroupId).CustomerGroupUpdate(customerGroupUpdate).Execute()
+> PATCHCustomerGroupsCustomerGroupId200Response PATCHCustomerGroupsCustomerGroupId(ctx, customerGroupId).PATCHCustomerGroupsCustomerGroupIdRequest(pATCHCustomerGroupsCustomerGroupIdRequest).Execute()
 
 Update a customer group
 
@@ -366,16 +366,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    customerGroupUpdate := *openapiclient.NewCustomerGroupUpdate(*openapiclient.NewCustomerGroupUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHCustomerGroupsCustomerGroupId200ResponseDataAttributes())) // CustomerGroupUpdate | 
-    customerGroupId := "customerGroupId_example" // string | The resource's id
+    pATCHCustomerGroupsCustomerGroupIdRequest := *openapiclient.NewPATCHCustomerGroupsCustomerGroupIdRequest(*openapiclient.NewPATCHCustomerGroupsCustomerGroupIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHCustomerGroupsCustomerGroupIdRequestDataAttributes())) // PATCHCustomerGroupsCustomerGroupIdRequest | 
+    customerGroupId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomerGroupsApi.PATCHCustomerGroupsCustomerGroupId(context.Background(), customerGroupId).CustomerGroupUpdate(customerGroupUpdate).Execute()
+    resp, r, err := apiClient.CustomerGroupsApi.PATCHCustomerGroupsCustomerGroupId(context.Background(), customerGroupId).PATCHCustomerGroupsCustomerGroupIdRequest(pATCHCustomerGroupsCustomerGroupIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerGroupsApi.PATCHCustomerGroupsCustomerGroupId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -391,7 +391,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**customerGroupId** | **string** | The resource&#39;s id | 
+**customerGroupId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -400,7 +400,7 @@ Other parameters are passed through a pointer to a apiPATCHCustomerGroupsCustome
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerGroupUpdate** | [**CustomerGroupUpdate**](CustomerGroupUpdate.md) |  | 
+ **pATCHCustomerGroupsCustomerGroupIdRequest** | [**PATCHCustomerGroupsCustomerGroupIdRequest**](PATCHCustomerGroupsCustomerGroupIdRequest.md) |  | 
 
 
 ### Return type
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ## POSTCustomerGroups
 
-> POSTCustomerGroups201Response POSTCustomerGroups(ctx).CustomerGroupCreate(customerGroupCreate).Execute()
+> POSTCustomerGroups201Response POSTCustomerGroups(ctx).POSTCustomerGroupsRequest(pOSTCustomerGroupsRequest).Execute()
 
 Create a customer group
 
@@ -438,15 +438,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    customerGroupCreate := *openapiclient.NewCustomerGroupCreate(*openapiclient.NewCustomerGroupCreateData("Type_example", *openapiclient.NewPOSTCustomerGroups201ResponseDataAttributes("VIP"))) // CustomerGroupCreate | 
+    pOSTCustomerGroupsRequest := *openapiclient.NewPOSTCustomerGroupsRequest(*openapiclient.NewPOSTCustomerGroupsRequestData(interface{}(123), *openapiclient.NewPOSTCustomerGroupsRequestDataAttributes(interface{}(VIP)))) // POSTCustomerGroupsRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomerGroupsApi.POSTCustomerGroups(context.Background()).CustomerGroupCreate(customerGroupCreate).Execute()
+    resp, r, err := apiClient.CustomerGroupsApi.POSTCustomerGroups(context.Background()).POSTCustomerGroupsRequest(pOSTCustomerGroupsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerGroupsApi.POSTCustomerGroups``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -467,7 +467,7 @@ Other parameters are passed through a pointer to a apiPOSTCustomerGroupsRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **customerGroupCreate** | [**CustomerGroupCreate**](CustomerGroupCreate.md) |  | 
+ **pOSTCustomerGroupsRequest** | [**POSTCustomerGroupsRequest**](POSTCustomerGroupsRequest.md) |  | 
 
 ### Return type
 

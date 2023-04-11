@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the TaxRuleUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &TaxRuleUpdate{}
+
 // TaxRuleUpdate struct for TaxRuleUpdate
 type TaxRuleUpdate struct {
-	Data TaxRuleUpdateData `json:"data"`
+	Data PATCHTaxRulesTaxRuleIdRequestData `json:"data"`
 }
 
 // NewTaxRuleUpdate instantiates a new TaxRuleUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTaxRuleUpdate(data TaxRuleUpdateData) *TaxRuleUpdate {
+func NewTaxRuleUpdate(data PATCHTaxRulesTaxRuleIdRequestData) *TaxRuleUpdate {
 	this := TaxRuleUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewTaxRuleUpdateWithDefaults() *TaxRuleUpdate {
 }
 
 // GetData returns the Data field value
-func (o *TaxRuleUpdate) GetData() TaxRuleUpdateData {
+func (o *TaxRuleUpdate) GetData() PATCHTaxRulesTaxRuleIdRequestData {
 	if o == nil {
-		var ret TaxRuleUpdateData
+		var ret PATCHTaxRulesTaxRuleIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *TaxRuleUpdate) GetData() TaxRuleUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *TaxRuleUpdate) GetDataOk() (*TaxRuleUpdateData, bool) {
+func (o *TaxRuleUpdate) GetDataOk() (*PATCHTaxRulesTaxRuleIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *TaxRuleUpdate) GetDataOk() (*TaxRuleUpdateData, bool) {
 }
 
 // SetData sets field value
-func (o *TaxRuleUpdate) SetData(v TaxRuleUpdateData) {
+func (o *TaxRuleUpdate) SetData(v PATCHTaxRulesTaxRuleIdRequestData) {
 	o.Data = v
 }
 
 func (o TaxRuleUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o TaxRuleUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableTaxRuleUpdate struct {

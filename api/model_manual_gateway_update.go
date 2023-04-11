@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the ManualGatewayUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ManualGatewayUpdate{}
+
 // ManualGatewayUpdate struct for ManualGatewayUpdate
 type ManualGatewayUpdate struct {
-	Data ManualGatewayUpdateData `json:"data"`
+	Data PATCHManualGatewaysManualGatewayIdRequestData `json:"data"`
 }
 
 // NewManualGatewayUpdate instantiates a new ManualGatewayUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewManualGatewayUpdate(data ManualGatewayUpdateData) *ManualGatewayUpdate {
+func NewManualGatewayUpdate(data PATCHManualGatewaysManualGatewayIdRequestData) *ManualGatewayUpdate {
 	this := ManualGatewayUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewManualGatewayUpdateWithDefaults() *ManualGatewayUpdate {
 }
 
 // GetData returns the Data field value
-func (o *ManualGatewayUpdate) GetData() ManualGatewayUpdateData {
+func (o *ManualGatewayUpdate) GetData() PATCHManualGatewaysManualGatewayIdRequestData {
 	if o == nil {
-		var ret ManualGatewayUpdateData
+		var ret PATCHManualGatewaysManualGatewayIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *ManualGatewayUpdate) GetData() ManualGatewayUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ManualGatewayUpdate) GetDataOk() (*ManualGatewayUpdateData, bool) {
+func (o *ManualGatewayUpdate) GetDataOk() (*PATCHManualGatewaysManualGatewayIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *ManualGatewayUpdate) GetDataOk() (*ManualGatewayUpdateData, bool) {
 }
 
 // SetData sets field value
-func (o *ManualGatewayUpdate) SetData(v ManualGatewayUpdateData) {
+func (o *ManualGatewayUpdate) SetData(v PATCHManualGatewaysManualGatewayIdRequestData) {
 	o.Data = v
 }
 
 func (o ManualGatewayUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ManualGatewayUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableManualGatewayUpdate struct {

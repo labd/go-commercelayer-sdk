@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | The resource&#39;s id | [optional] 
-**Type** | Pointer to **string** | The resource&#39;s type | [optional] 
-**Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
-**Attributes** | Pointer to [**POSTTaxCategories201ResponseDataAttributes**](POSTTaxCategories201ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**GETTaxCategories200ResponseDataInnerRelationships**](GETTaxCategories200ResponseDataInnerRelationships.md) |  | [optional] 
+**Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
+**Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
+**Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
+**Attributes** | Pointer to [**POSTTaxCategoriesRequestDataAttributes**](POSTTaxCategoriesRequestDataAttributes.md) |  | [optional] 
+**Relationships** | Pointer to [**POSTTaxCategories201ResponseDataRelationships**](POSTTaxCategories201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *POSTTaxCategories201ResponseData) GetId() string`
+`func (o *POSTTaxCategories201ResponseData) GetId() interface{}`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *POSTTaxCategories201ResponseData) GetIdOk() (*string, bool)`
+`func (o *POSTTaxCategories201ResponseData) GetIdOk() (*interface{}, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *POSTTaxCategories201ResponseData) SetId(v string)`
+`func (o *POSTTaxCategories201ResponseData) SetId(v interface{})`
 
 SetId sets Id field to given value.
 
@@ -54,22 +54,32 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
+### SetIdNil
+
+`func (o *POSTTaxCategories201ResponseData) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *POSTTaxCategories201ResponseData) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetType
 
-`func (o *POSTTaxCategories201ResponseData) GetType() string`
+`func (o *POSTTaxCategories201ResponseData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *POSTTaxCategories201ResponseData) GetTypeOk() (*string, bool)`
+`func (o *POSTTaxCategories201ResponseData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *POSTTaxCategories201ResponseData) SetType(v string)`
+`func (o *POSTTaxCategories201ResponseData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
@@ -79,22 +89,32 @@ SetType sets Type field to given value.
 
 HasType returns a boolean if a field has been set.
 
+### SetTypeNil
+
+`func (o *POSTTaxCategories201ResponseData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *POSTTaxCategories201ResponseData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetLinks
 
-`func (o *POSTTaxCategories201ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks`
+`func (o *POSTTaxCategories201ResponseData) GetLinks() POSTAddresses201ResponseDataLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *POSTTaxCategories201ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool)`
+`func (o *POSTTaxCategories201ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *POSTTaxCategories201ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks)`
+`func (o *POSTTaxCategories201ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks)`
 
 SetLinks sets Links field to given value.
 
@@ -106,20 +126,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *POSTTaxCategories201ResponseData) GetAttributes() POSTTaxCategories201ResponseDataAttributes`
+`func (o *POSTTaxCategories201ResponseData) GetAttributes() POSTTaxCategoriesRequestDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *POSTTaxCategories201ResponseData) GetAttributesOk() (*POSTTaxCategories201ResponseDataAttributes, bool)`
+`func (o *POSTTaxCategories201ResponseData) GetAttributesOk() (*POSTTaxCategoriesRequestDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *POSTTaxCategories201ResponseData) SetAttributes(v POSTTaxCategories201ResponseDataAttributes)`
+`func (o *POSTTaxCategories201ResponseData) SetAttributes(v POSTTaxCategoriesRequestDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
@@ -131,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *POSTTaxCategories201ResponseData) GetRelationships() GETTaxCategories200ResponseDataInnerRelationships`
+`func (o *POSTTaxCategories201ResponseData) GetRelationships() POSTTaxCategories201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *POSTTaxCategories201ResponseData) GetRelationshipsOk() (*GETTaxCategories200ResponseDataInnerRelationships, bool)`
+`func (o *POSTTaxCategories201ResponseData) GetRelationshipsOk() (*POSTTaxCategories201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *POSTTaxCategories201ResponseData) SetRelationships(v GETTaxCategories200ResponseDataInnerRelationships)`
+`func (o *POSTTaxCategories201ResponseData) SetRelationships(v POSTTaxCategories201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

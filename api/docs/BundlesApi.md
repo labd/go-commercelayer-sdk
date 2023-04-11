@@ -1,6 +1,6 @@
 # \BundlesApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,15 +31,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    bundleId := "bundleId_example" // string | The resource's id
+    bundleId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BundlesApi.DELETEBundlesBundleId(context.Background(), bundleId).Execute()
+    r, err := apiClient.BundlesApi.DELETEBundlesBundleId(context.Background(), bundleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BundlesApi.DELETEBundlesBundleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -53,7 +53,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bundleId** | **string** | The resource&#39;s id | 
+**bundleId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -99,7 +99,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -160,11 +160,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    bundleId := "bundleId_example" // string | The resource's id
+    bundleId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -184,7 +184,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bundleId** | **string** | The resource&#39;s id | 
+**bundleId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -230,15 +230,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    orderId := "orderId_example" // string | The resource's id
+    orderId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BundlesApi.GETOrderIdAvailableFreeBundles(context.Background(), orderId).Execute()
+    r, err := apiClient.BundlesApi.GETOrderIdAvailableFreeBundles(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BundlesApi.GETOrderIdAvailableFreeBundles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -252,7 +252,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**orderId** | **string** | The resource&#39;s id | 
+**orderId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -298,15 +298,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    skuListId := "skuListId_example" // string | The resource's id
+    skuListId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BundlesApi.GETSkuListIdBundles(context.Background(), skuListId).Execute()
+    r, err := apiClient.BundlesApi.GETSkuListIdBundles(context.Background(), skuListId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BundlesApi.GETSkuListIdBundles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -320,7 +320,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**skuListId** | **string** | The resource&#39;s id | 
+**skuListId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ## PATCHBundlesBundleId
 
-> PATCHBundlesBundleId200Response PATCHBundlesBundleId(ctx, bundleId).BundleUpdate(bundleUpdate).Execute()
+> PATCHBundlesBundleId200Response PATCHBundlesBundleId(ctx, bundleId).PATCHBundlesBundleIdRequest(pATCHBundlesBundleIdRequest).Execute()
 
 Update a bundle
 
@@ -366,16 +366,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    bundleUpdate := *openapiclient.NewBundleUpdate(*openapiclient.NewBundleUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHBundlesBundleId200ResponseDataAttributes())) // BundleUpdate | 
-    bundleId := "bundleId_example" // string | The resource's id
+    pATCHBundlesBundleIdRequest := *openapiclient.NewPATCHBundlesBundleIdRequest(*openapiclient.NewPATCHBundlesBundleIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBundlesBundleIdRequestDataAttributes())) // PATCHBundlesBundleIdRequest | 
+    bundleId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BundlesApi.PATCHBundlesBundleId(context.Background(), bundleId).BundleUpdate(bundleUpdate).Execute()
+    resp, r, err := apiClient.BundlesApi.PATCHBundlesBundleId(context.Background(), bundleId).PATCHBundlesBundleIdRequest(pATCHBundlesBundleIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BundlesApi.PATCHBundlesBundleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -391,7 +391,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bundleId** | **string** | The resource&#39;s id | 
+**bundleId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -400,7 +400,7 @@ Other parameters are passed through a pointer to a apiPATCHBundlesBundleIdReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bundleUpdate** | [**BundleUpdate**](BundleUpdate.md) |  | 
+ **pATCHBundlesBundleIdRequest** | [**PATCHBundlesBundleIdRequest**](PATCHBundlesBundleIdRequest.md) |  | 
 
 
 ### Return type
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ## POSTBundles
 
-> POSTBundles201Response POSTBundles(ctx).BundleCreate(bundleCreate).Execute()
+> POSTBundles201Response POSTBundles(ctx).POSTBundlesRequest(pOSTBundlesRequest).Execute()
 
 Create a bundle
 
@@ -438,15 +438,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    bundleCreate := *openapiclient.NewBundleCreate(*openapiclient.NewBundleCreateData("Type_example", *openapiclient.NewPOSTBundles201ResponseDataAttributes("BUNDMM000000FFFFFFXLXX", "Black Men T-shirt (XL) with Black Cap and Socks, all with White Logo", int32(10000), int32(13000)))) // BundleCreate | 
+    pOSTBundlesRequest := *openapiclient.NewPOSTBundlesRequest(*openapiclient.NewPOSTBundlesRequestData(interface{}(123), *openapiclient.NewPOSTBundlesRequestDataAttributes(interface{}(BUNDMM000000FFFFFFXLXX), interface{}(Black Men T-shirt (XL) with Black Cap and Socks, all with White Logo), interface{}(10000), interface{}(13000)))) // POSTBundlesRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BundlesApi.POSTBundles(context.Background()).BundleCreate(bundleCreate).Execute()
+    resp, r, err := apiClient.BundlesApi.POSTBundles(context.Background()).POSTBundlesRequest(pOSTBundlesRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BundlesApi.POSTBundles``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -467,7 +467,7 @@ Other parameters are passed through a pointer to a apiPOSTBundlesRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bundleCreate** | [**BundleCreate**](BundleCreate.md) |  | 
+ **pOSTBundlesRequest** | [**POSTBundlesRequest**](POSTBundlesRequest.md) |  | 
 
 ### Return type
 

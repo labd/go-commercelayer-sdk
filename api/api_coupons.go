@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type CouponsApiService service
 type CouponsApiDELETECouponsCouponIdRequest struct {
 	ctx        context.Context
 	ApiService *CouponsApiService
-	couponId   string
+	couponId   interface{}
 }
 
 func (r CouponsApiDELETECouponsCouponIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a coupon
 	@param couponId The resource's id
 	@return CouponsApiDELETECouponsCouponIdRequest
 */
-func (a *CouponsApiService) DELETECouponsCouponId(ctx context.Context, couponId string) CouponsApiDELETECouponsCouponIdRequest {
+func (a *CouponsApiService) DELETECouponsCouponId(ctx context.Context, couponId interface{}) CouponsApiDELETECouponsCouponIdRequest {
 	return CouponsApiDELETECouponsCouponIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -64,7 +64,7 @@ func (a *CouponsApiService) DELETECouponsCouponIdExecute(r CouponsApiDELETECoupo
 	}
 
 	localVarPath := localBasePath + "/coupons/{couponId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"couponId"+"}", url.PathEscape(parameterToString(r.couponId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"couponId"+"}", url.PathEscape(parameterValueToString(r.couponId, "couponId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *CouponsApiService) DELETECouponsCouponIdExecute(r CouponsApiDELETECoupo
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *CouponsApiService) DELETECouponsCouponIdExecute(r CouponsApiDELETECoupo
 type CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest struct {
 	ctx                        context.Context
 	ApiService                 *CouponsApiService
-	couponCodesPromotionRuleId string
+	couponCodesPromotionRuleId interface{}
 }
 
 func (r CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the coupons associated to the coupon codes promotion rule
 	@param couponCodesPromotionRuleId The resource's id
 	@return CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest
 */
-func (a *CouponsApiService) GETCouponCodesPromotionRuleIdCoupons(ctx context.Context, couponCodesPromotionRuleId string) CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest {
+func (a *CouponsApiService) GETCouponCodesPromotionRuleIdCoupons(ctx context.Context, couponCodesPromotionRuleId interface{}) CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest {
 	return CouponsApiGETCouponCodesPromotionRuleIdCouponsRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
@@ -156,7 +156,7 @@ func (a *CouponsApiService) GETCouponCodesPromotionRuleIdCouponsExecute(r Coupon
 	}
 
 	localVarPath := localBasePath + "/coupon_codes_promotion_rules/{couponCodesPromotionRuleId}/coupons"
-	localVarPath = strings.Replace(localVarPath, "{"+"couponCodesPromotionRuleId"+"}", url.PathEscape(parameterToString(r.couponCodesPromotionRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"couponCodesPromotionRuleId"+"}", url.PathEscape(parameterValueToString(r.couponCodesPromotionRuleId, "couponCodesPromotionRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *CouponsApiService) GETCouponCodesPromotionRuleIdCouponsExecute(r Coupon
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *CouponsApiService) GETCouponsExecute(r CouponsApiGETCouponsRequest) (*G
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -310,7 +310,7 @@ func (a *CouponsApiService) GETCouponsExecute(r CouponsApiGETCouponsRequest) (*G
 type CouponsApiGETCouponsCouponIdRequest struct {
 	ctx        context.Context
 	ApiService *CouponsApiService
-	couponId   string
+	couponId   interface{}
 }
 
 func (r CouponsApiGETCouponsCouponIdRequest) Execute() (*GETCouponsCouponId200Response, *http.Response, error) {
@@ -326,7 +326,7 @@ Retrieve a coupon
 	@param couponId The resource's id
 	@return CouponsApiGETCouponsCouponIdRequest
 */
-func (a *CouponsApiService) GETCouponsCouponId(ctx context.Context, couponId string) CouponsApiGETCouponsCouponIdRequest {
+func (a *CouponsApiService) GETCouponsCouponId(ctx context.Context, couponId interface{}) CouponsApiGETCouponsCouponIdRequest {
 	return CouponsApiGETCouponsCouponIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -351,7 +351,7 @@ func (a *CouponsApiService) GETCouponsCouponIdExecute(r CouponsApiGETCouponsCoup
 	}
 
 	localVarPath := localBasePath + "/coupons/{couponId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"couponId"+"}", url.PathEscape(parameterToString(r.couponId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"couponId"+"}", url.PathEscape(parameterValueToString(r.couponId, "couponId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *CouponsApiService) GETCouponsCouponIdExecute(r CouponsApiGETCouponsCoup
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -412,14 +412,14 @@ func (a *CouponsApiService) GETCouponsCouponIdExecute(r CouponsApiGETCouponsCoup
 }
 
 type CouponsApiPATCHCouponsCouponIdRequest struct {
-	ctx          context.Context
-	ApiService   *CouponsApiService
-	couponUpdate *CouponUpdate
-	couponId     string
+	ctx                         context.Context
+	ApiService                  *CouponsApiService
+	pATCHCouponsCouponIdRequest *PATCHCouponsCouponIdRequest
+	couponId                    interface{}
 }
 
-func (r CouponsApiPATCHCouponsCouponIdRequest) CouponUpdate(couponUpdate CouponUpdate) CouponsApiPATCHCouponsCouponIdRequest {
-	r.couponUpdate = &couponUpdate
+func (r CouponsApiPATCHCouponsCouponIdRequest) PATCHCouponsCouponIdRequest(pATCHCouponsCouponIdRequest PATCHCouponsCouponIdRequest) CouponsApiPATCHCouponsCouponIdRequest {
+	r.pATCHCouponsCouponIdRequest = &pATCHCouponsCouponIdRequest
 	return r
 }
 
@@ -436,7 +436,7 @@ Update a coupon
 	@param couponId The resource's id
 	@return CouponsApiPATCHCouponsCouponIdRequest
 */
-func (a *CouponsApiService) PATCHCouponsCouponId(ctx context.Context, couponId string) CouponsApiPATCHCouponsCouponIdRequest {
+func (a *CouponsApiService) PATCHCouponsCouponId(ctx context.Context, couponId interface{}) CouponsApiPATCHCouponsCouponIdRequest {
 	return CouponsApiPATCHCouponsCouponIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -461,13 +461,13 @@ func (a *CouponsApiService) PATCHCouponsCouponIdExecute(r CouponsApiPATCHCoupons
 	}
 
 	localVarPath := localBasePath + "/coupons/{couponId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"couponId"+"}", url.PathEscape(parameterToString(r.couponId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"couponId"+"}", url.PathEscape(parameterValueToString(r.couponId, "couponId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.couponUpdate == nil {
-		return localVarReturnValue, nil, reportError("couponUpdate is required and must be specified")
+	if r.pATCHCouponsCouponIdRequest == nil {
+		return localVarReturnValue, nil, reportError("pATCHCouponsCouponIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -488,7 +488,7 @@ func (a *CouponsApiService) PATCHCouponsCouponIdExecute(r CouponsApiPATCHCoupons
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.couponUpdate
+	localVarPostBody = r.pATCHCouponsCouponIdRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -499,9 +499,9 @@ func (a *CouponsApiService) PATCHCouponsCouponIdExecute(r CouponsApiPATCHCoupons
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -527,13 +527,13 @@ func (a *CouponsApiService) PATCHCouponsCouponIdExecute(r CouponsApiPATCHCoupons
 }
 
 type CouponsApiPOSTCouponsRequest struct {
-	ctx          context.Context
-	ApiService   *CouponsApiService
-	couponCreate *CouponCreate
+	ctx                context.Context
+	ApiService         *CouponsApiService
+	pOSTCouponsRequest *POSTCouponsRequest
 }
 
-func (r CouponsApiPOSTCouponsRequest) CouponCreate(couponCreate CouponCreate) CouponsApiPOSTCouponsRequest {
-	r.couponCreate = &couponCreate
+func (r CouponsApiPOSTCouponsRequest) POSTCouponsRequest(pOSTCouponsRequest POSTCouponsRequest) CouponsApiPOSTCouponsRequest {
+	r.pOSTCouponsRequest = &pOSTCouponsRequest
 	return r
 }
 
@@ -577,8 +577,8 @@ func (a *CouponsApiService) POSTCouponsExecute(r CouponsApiPOSTCouponsRequest) (
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.couponCreate == nil {
-		return localVarReturnValue, nil, reportError("couponCreate is required and must be specified")
+	if r.pOSTCouponsRequest == nil {
+		return localVarReturnValue, nil, reportError("pOSTCouponsRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -599,7 +599,7 @@ func (a *CouponsApiService) POSTCouponsExecute(r CouponsApiPOSTCouponsRequest) (
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.couponCreate
+	localVarPostBody = r.pOSTCouponsRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -610,9 +610,9 @@ func (a *CouponsApiService) POSTCouponsExecute(r CouponsApiPOSTCouponsRequest) (
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

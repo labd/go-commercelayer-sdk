@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type CustomerAddressesApiService service
 type CustomerAddressesApiDELETECustomerAddressesCustomerAddressIdRequest struct {
 	ctx               context.Context
 	ApiService        *CustomerAddressesApiService
-	customerAddressId string
+	customerAddressId interface{}
 }
 
 func (r CustomerAddressesApiDELETECustomerAddressesCustomerAddressIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a customer address
 	@param customerAddressId The resource's id
 	@return CustomerAddressesApiDELETECustomerAddressesCustomerAddressIdRequest
 */
-func (a *CustomerAddressesApiService) DELETECustomerAddressesCustomerAddressId(ctx context.Context, customerAddressId string) CustomerAddressesApiDELETECustomerAddressesCustomerAddressIdRequest {
+func (a *CustomerAddressesApiService) DELETECustomerAddressesCustomerAddressId(ctx context.Context, customerAddressId interface{}) CustomerAddressesApiDELETECustomerAddressesCustomerAddressIdRequest {
 	return CustomerAddressesApiDELETECustomerAddressesCustomerAddressIdRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -64,7 +64,7 @@ func (a *CustomerAddressesApiService) DELETECustomerAddressesCustomerAddressIdEx
 	}
 
 	localVarPath := localBasePath + "/customer_addresses/{customerAddressId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterToString(r.customerAddressId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterValueToString(r.customerAddressId, "customerAddressId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *CustomerAddressesApiService) DELETECustomerAddressesCustomerAddressIdEx
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *CustomerAddressesApiService) GETCustomerAddressesExecute(r CustomerAddr
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -218,7 +218,7 @@ func (a *CustomerAddressesApiService) GETCustomerAddressesExecute(r CustomerAddr
 type CustomerAddressesApiGETCustomerAddressesCustomerAddressIdRequest struct {
 	ctx               context.Context
 	ApiService        *CustomerAddressesApiService
-	customerAddressId string
+	customerAddressId interface{}
 }
 
 func (r CustomerAddressesApiGETCustomerAddressesCustomerAddressIdRequest) Execute() (*GETCustomerAddressesCustomerAddressId200Response, *http.Response, error) {
@@ -234,7 +234,7 @@ Retrieve a customer address
 	@param customerAddressId The resource's id
 	@return CustomerAddressesApiGETCustomerAddressesCustomerAddressIdRequest
 */
-func (a *CustomerAddressesApiService) GETCustomerAddressesCustomerAddressId(ctx context.Context, customerAddressId string) CustomerAddressesApiGETCustomerAddressesCustomerAddressIdRequest {
+func (a *CustomerAddressesApiService) GETCustomerAddressesCustomerAddressId(ctx context.Context, customerAddressId interface{}) CustomerAddressesApiGETCustomerAddressesCustomerAddressIdRequest {
 	return CustomerAddressesApiGETCustomerAddressesCustomerAddressIdRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -259,7 +259,7 @@ func (a *CustomerAddressesApiService) GETCustomerAddressesCustomerAddressIdExecu
 	}
 
 	localVarPath := localBasePath + "/customer_addresses/{customerAddressId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterToString(r.customerAddressId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterValueToString(r.customerAddressId, "customerAddressId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *CustomerAddressesApiService) GETCustomerAddressesCustomerAddressIdExecu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -322,7 +322,7 @@ func (a *CustomerAddressesApiService) GETCustomerAddressesCustomerAddressIdExecu
 type CustomerAddressesApiGETCustomerIdCustomerAddressesRequest struct {
 	ctx        context.Context
 	ApiService *CustomerAddressesApiService
-	customerId string
+	customerId interface{}
 }
 
 func (r CustomerAddressesApiGETCustomerIdCustomerAddressesRequest) Execute() (*http.Response, error) {
@@ -338,7 +338,7 @@ Retrieve the customer addresses associated to the customer
 	@param customerId The resource's id
 	@return CustomerAddressesApiGETCustomerIdCustomerAddressesRequest
 */
-func (a *CustomerAddressesApiService) GETCustomerIdCustomerAddresses(ctx context.Context, customerId string) CustomerAddressesApiGETCustomerIdCustomerAddressesRequest {
+func (a *CustomerAddressesApiService) GETCustomerIdCustomerAddresses(ctx context.Context, customerId interface{}) CustomerAddressesApiGETCustomerIdCustomerAddressesRequest {
 	return CustomerAddressesApiGETCustomerIdCustomerAddressesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -360,7 +360,7 @@ func (a *CustomerAddressesApiService) GETCustomerIdCustomerAddressesExecute(r Cu
 	}
 
 	localVarPath := localBasePath + "/customers/{customerId}/customer_addresses"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterToString(r.customerId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -393,9 +393,9 @@ func (a *CustomerAddressesApiService) GETCustomerIdCustomerAddressesExecute(r Cu
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -412,18 +412,18 @@ func (a *CustomerAddressesApiService) GETCustomerIdCustomerAddressesExecute(r Cu
 }
 
 type CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest struct {
-	ctx                   context.Context
-	ApiService            *CustomerAddressesApiService
-	customerAddressUpdate *CustomerAddressUpdate
-	customerAddressId     string
+	ctx                                            context.Context
+	ApiService                                     *CustomerAddressesApiService
+	pATCHCustomerAddressesCustomerAddressIdRequest *PATCHCustomerAddressesCustomerAddressIdRequest
+	customerAddressId                              interface{}
 }
 
-func (r CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest) CustomerAddressUpdate(customerAddressUpdate CustomerAddressUpdate) CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest {
-	r.customerAddressUpdate = &customerAddressUpdate
+func (r CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest) PATCHCustomerAddressesCustomerAddressIdRequest(pATCHCustomerAddressesCustomerAddressIdRequest PATCHCustomerAddressesCustomerAddressIdRequest) CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest {
+	r.pATCHCustomerAddressesCustomerAddressIdRequest = &pATCHCustomerAddressesCustomerAddressIdRequest
 	return r
 }
 
-func (r CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest) Execute() (*POSTCustomerAddresses201Response, *http.Response, error) {
+func (r CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest) Execute() (*PATCHCustomerAddressesCustomerAddressId200Response, *http.Response, error) {
 	return r.ApiService.PATCHCustomerAddressesCustomerAddressIdExecute(r)
 }
 
@@ -436,7 +436,7 @@ Update a customer address
 	@param customerAddressId The resource's id
 	@return CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest
 */
-func (a *CustomerAddressesApiService) PATCHCustomerAddressesCustomerAddressId(ctx context.Context, customerAddressId string) CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest {
+func (a *CustomerAddressesApiService) PATCHCustomerAddressesCustomerAddressId(ctx context.Context, customerAddressId interface{}) CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest {
 	return CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -446,13 +446,13 @@ func (a *CustomerAddressesApiService) PATCHCustomerAddressesCustomerAddressId(ct
 
 // Execute executes the request
 //
-//	@return POSTCustomerAddresses201Response
-func (a *CustomerAddressesApiService) PATCHCustomerAddressesCustomerAddressIdExecute(r CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest) (*POSTCustomerAddresses201Response, *http.Response, error) {
+//	@return PATCHCustomerAddressesCustomerAddressId200Response
+func (a *CustomerAddressesApiService) PATCHCustomerAddressesCustomerAddressIdExecute(r CustomerAddressesApiPATCHCustomerAddressesCustomerAddressIdRequest) (*PATCHCustomerAddressesCustomerAddressId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTCustomerAddresses201Response
+		localVarReturnValue *PATCHCustomerAddressesCustomerAddressId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "CustomerAddressesApiService.PATCHCustomerAddressesCustomerAddressId")
@@ -461,13 +461,13 @@ func (a *CustomerAddressesApiService) PATCHCustomerAddressesCustomerAddressIdExe
 	}
 
 	localVarPath := localBasePath + "/customer_addresses/{customerAddressId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterToString(r.customerAddressId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterValueToString(r.customerAddressId, "customerAddressId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.customerAddressUpdate == nil {
-		return localVarReturnValue, nil, reportError("customerAddressUpdate is required and must be specified")
+	if r.pATCHCustomerAddressesCustomerAddressIdRequest == nil {
+		return localVarReturnValue, nil, reportError("pATCHCustomerAddressesCustomerAddressIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -488,7 +488,7 @@ func (a *CustomerAddressesApiService) PATCHCustomerAddressesCustomerAddressIdExe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.customerAddressUpdate
+	localVarPostBody = r.pATCHCustomerAddressesCustomerAddressIdRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -499,9 +499,9 @@ func (a *CustomerAddressesApiService) PATCHCustomerAddressesCustomerAddressIdExe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -527,13 +527,13 @@ func (a *CustomerAddressesApiService) PATCHCustomerAddressesCustomerAddressIdExe
 }
 
 type CustomerAddressesApiPOSTCustomerAddressesRequest struct {
-	ctx                   context.Context
-	ApiService            *CustomerAddressesApiService
-	customerAddressCreate *CustomerAddressCreate
+	ctx                          context.Context
+	ApiService                   *CustomerAddressesApiService
+	pOSTCustomerAddressesRequest *POSTCustomerAddressesRequest
 }
 
-func (r CustomerAddressesApiPOSTCustomerAddressesRequest) CustomerAddressCreate(customerAddressCreate CustomerAddressCreate) CustomerAddressesApiPOSTCustomerAddressesRequest {
-	r.customerAddressCreate = &customerAddressCreate
+func (r CustomerAddressesApiPOSTCustomerAddressesRequest) POSTCustomerAddressesRequest(pOSTCustomerAddressesRequest POSTCustomerAddressesRequest) CustomerAddressesApiPOSTCustomerAddressesRequest {
+	r.pOSTCustomerAddressesRequest = &pOSTCustomerAddressesRequest
 	return r
 }
 
@@ -577,8 +577,8 @@ func (a *CustomerAddressesApiService) POSTCustomerAddressesExecute(r CustomerAdd
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.customerAddressCreate == nil {
-		return localVarReturnValue, nil, reportError("customerAddressCreate is required and must be specified")
+	if r.pOSTCustomerAddressesRequest == nil {
+		return localVarReturnValue, nil, reportError("pOSTCustomerAddressesRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -599,7 +599,7 @@ func (a *CustomerAddressesApiService) POSTCustomerAddressesExecute(r CustomerAdd
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.customerAddressCreate
+	localVarPostBody = r.pOSTCustomerAddressesRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -610,9 +610,9 @@ func (a *CustomerAddressesApiService) POSTCustomerAddressesExecute(r CustomerAdd
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

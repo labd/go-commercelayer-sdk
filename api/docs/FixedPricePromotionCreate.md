@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**FixedPricePromotionCreateData**](FixedPricePromotionCreateData.md) |  | 
+**Data** | [**POSTFixedPricePromotionsRequestData**](POSTFixedPricePromotionsRequestData.md) |  | 
 
 ## Methods
 
 ### NewFixedPricePromotionCreate
 
-`func NewFixedPricePromotionCreate(data FixedPricePromotionCreateData, ) *FixedPricePromotionCreate`
+`func NewFixedPricePromotionCreate(data POSTFixedPricePromotionsRequestData, ) *FixedPricePromotionCreate`
 
 NewFixedPricePromotionCreate instantiates a new FixedPricePromotionCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *FixedPricePromotionCreate) GetData() FixedPricePromotionCreateData`
+`func (o *FixedPricePromotionCreate) GetData() POSTFixedPricePromotionsRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *FixedPricePromotionCreate) GetDataOk() (*FixedPricePromotionCreateData, bool)`
+`func (o *FixedPricePromotionCreate) GetDataOk() (*POSTFixedPricePromotionsRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *FixedPricePromotionCreate) SetData(v FixedPricePromotionCreateData)`
+`func (o *FixedPricePromotionCreate) SetData(v POSTFixedPricePromotionsRequestData)`
 
 SetData sets Data field to given value.
 

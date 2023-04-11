@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the ReturnLineItemUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ReturnLineItemUpdate{}
+
 // ReturnLineItemUpdate struct for ReturnLineItemUpdate
 type ReturnLineItemUpdate struct {
-	Data ReturnLineItemUpdateData `json:"data"`
+	Data PATCHReturnLineItemsReturnLineItemIdRequestData `json:"data"`
 }
 
 // NewReturnLineItemUpdate instantiates a new ReturnLineItemUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewReturnLineItemUpdate(data ReturnLineItemUpdateData) *ReturnLineItemUpdate {
+func NewReturnLineItemUpdate(data PATCHReturnLineItemsReturnLineItemIdRequestData) *ReturnLineItemUpdate {
 	this := ReturnLineItemUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewReturnLineItemUpdateWithDefaults() *ReturnLineItemUpdate {
 }
 
 // GetData returns the Data field value
-func (o *ReturnLineItemUpdate) GetData() ReturnLineItemUpdateData {
+func (o *ReturnLineItemUpdate) GetData() PATCHReturnLineItemsReturnLineItemIdRequestData {
 	if o == nil {
-		var ret ReturnLineItemUpdateData
+		var ret PATCHReturnLineItemsReturnLineItemIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *ReturnLineItemUpdate) GetData() ReturnLineItemUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ReturnLineItemUpdate) GetDataOk() (*ReturnLineItemUpdateData, bool) {
+func (o *ReturnLineItemUpdate) GetDataOk() (*PATCHReturnLineItemsReturnLineItemIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *ReturnLineItemUpdate) GetDataOk() (*ReturnLineItemUpdateData, bool) {
 }
 
 // SetData sets field value
-func (o *ReturnLineItemUpdate) SetData(v ReturnLineItemUpdateData) {
+func (o *ReturnLineItemUpdate) SetData(v PATCHReturnLineItemsReturnLineItemIdRequestData) {
 	o.Data = v
 }
 
 func (o ReturnLineItemUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ReturnLineItemUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableReturnLineItemUpdate struct {

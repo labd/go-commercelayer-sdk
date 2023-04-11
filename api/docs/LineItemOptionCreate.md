@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**LineItemOptionCreateData**](LineItemOptionCreateData.md) |  | 
+**Data** | [**POSTLineItemOptionsRequestData**](POSTLineItemOptionsRequestData.md) |  | 
 
 ## Methods
 
 ### NewLineItemOptionCreate
 
-`func NewLineItemOptionCreate(data LineItemOptionCreateData, ) *LineItemOptionCreate`
+`func NewLineItemOptionCreate(data POSTLineItemOptionsRequestData, ) *LineItemOptionCreate`
 
 NewLineItemOptionCreate instantiates a new LineItemOptionCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *LineItemOptionCreate) GetData() LineItemOptionCreateData`
+`func (o *LineItemOptionCreate) GetData() POSTLineItemOptionsRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *LineItemOptionCreate) GetDataOk() (*LineItemOptionCreateData, bool)`
+`func (o *LineItemOptionCreate) GetDataOk() (*POSTLineItemOptionsRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *LineItemOptionCreate) SetData(v LineItemOptionCreateData)`
+`func (o *LineItemOptionCreate) SetData(v POSTLineItemOptionsRequestData)`
 
 SetData sets Data field to given value.
 

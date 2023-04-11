@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**SkuListUpdateData**](SkuListUpdateData.md) |  | 
+**Data** | [**PATCHSkuListsSkuListIdRequestData**](PATCHSkuListsSkuListIdRequestData.md) |  | 
 
 ## Methods
 
 ### NewSkuListUpdate
 
-`func NewSkuListUpdate(data SkuListUpdateData, ) *SkuListUpdate`
+`func NewSkuListUpdate(data PATCHSkuListsSkuListIdRequestData, ) *SkuListUpdate`
 
 NewSkuListUpdate instantiates a new SkuListUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *SkuListUpdate) GetData() SkuListUpdateData`
+`func (o *SkuListUpdate) GetData() PATCHSkuListsSkuListIdRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *SkuListUpdate) GetDataOk() (*SkuListUpdateData, bool)`
+`func (o *SkuListUpdate) GetDataOk() (*PATCHSkuListsSkuListIdRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *SkuListUpdate) SetData(v SkuListUpdateData)`
+`func (o *SkuListUpdate) SetData(v PATCHSkuListsSkuListIdRequestData)`
 
 SetData sets Data field to given value.
 

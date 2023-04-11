@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**GoogleGeocoderUpdateData**](GoogleGeocoderUpdateData.md) |  | 
+**Data** | [**PATCHGoogleGeocodersGoogleGeocoderIdRequestData**](PATCHGoogleGeocodersGoogleGeocoderIdRequestData.md) |  | 
 
 ## Methods
 
 ### NewGoogleGeocoderUpdate
 
-`func NewGoogleGeocoderUpdate(data GoogleGeocoderUpdateData, ) *GoogleGeocoderUpdate`
+`func NewGoogleGeocoderUpdate(data PATCHGoogleGeocodersGoogleGeocoderIdRequestData, ) *GoogleGeocoderUpdate`
 
 NewGoogleGeocoderUpdate instantiates a new GoogleGeocoderUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GoogleGeocoderUpdate) GetData() GoogleGeocoderUpdateData`
+`func (o *GoogleGeocoderUpdate) GetData() PATCHGoogleGeocodersGoogleGeocoderIdRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GoogleGeocoderUpdate) GetDataOk() (*GoogleGeocoderUpdateData, bool)`
+`func (o *GoogleGeocoderUpdate) GetDataOk() (*PATCHGoogleGeocodersGoogleGeocoderIdRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GoogleGeocoderUpdate) SetData(v GoogleGeocoderUpdateData)`
+`func (o *GoogleGeocoderUpdate) SetData(v PATCHGoogleGeocodersGoogleGeocoderIdRequestData)`
 
 SetData sets Data field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type StripePaymentsApiService service
 type StripePaymentsApiDELETEStripePaymentsStripePaymentIdRequest struct {
 	ctx             context.Context
 	ApiService      *StripePaymentsApiService
-	stripePaymentId string
+	stripePaymentId interface{}
 }
 
 func (r StripePaymentsApiDELETEStripePaymentsStripePaymentIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a stripe payment
 	@param stripePaymentId The resource's id
 	@return StripePaymentsApiDELETEStripePaymentsStripePaymentIdRequest
 */
-func (a *StripePaymentsApiService) DELETEStripePaymentsStripePaymentId(ctx context.Context, stripePaymentId string) StripePaymentsApiDELETEStripePaymentsStripePaymentIdRequest {
+func (a *StripePaymentsApiService) DELETEStripePaymentsStripePaymentId(ctx context.Context, stripePaymentId interface{}) StripePaymentsApiDELETEStripePaymentsStripePaymentIdRequest {
 	return StripePaymentsApiDELETEStripePaymentsStripePaymentIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -64,7 +64,7 @@ func (a *StripePaymentsApiService) DELETEStripePaymentsStripePaymentIdExecute(r 
 	}
 
 	localVarPath := localBasePath + "/stripe_payments/{stripePaymentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"stripePaymentId"+"}", url.PathEscape(parameterToString(r.stripePaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stripePaymentId"+"}", url.PathEscape(parameterValueToString(r.stripePaymentId, "stripePaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *StripePaymentsApiService) DELETEStripePaymentsStripePaymentIdExecute(r 
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *StripePaymentsApiService) DELETEStripePaymentsStripePaymentIdExecute(r 
 type StripePaymentsApiGETStripeGatewayIdStripePaymentsRequest struct {
 	ctx             context.Context
 	ApiService      *StripePaymentsApiService
-	stripeGatewayId string
+	stripeGatewayId interface{}
 }
 
 func (r StripePaymentsApiGETStripeGatewayIdStripePaymentsRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the stripe payments associated to the stripe gateway
 	@param stripeGatewayId The resource's id
 	@return StripePaymentsApiGETStripeGatewayIdStripePaymentsRequest
 */
-func (a *StripePaymentsApiService) GETStripeGatewayIdStripePayments(ctx context.Context, stripeGatewayId string) StripePaymentsApiGETStripeGatewayIdStripePaymentsRequest {
+func (a *StripePaymentsApiService) GETStripeGatewayIdStripePayments(ctx context.Context, stripeGatewayId interface{}) StripePaymentsApiGETStripeGatewayIdStripePaymentsRequest {
 	return StripePaymentsApiGETStripeGatewayIdStripePaymentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -156,7 +156,7 @@ func (a *StripePaymentsApiService) GETStripeGatewayIdStripePaymentsExecute(r Str
 	}
 
 	localVarPath := localBasePath + "/stripe_gateways/{stripeGatewayId}/stripe_payments"
-	localVarPath = strings.Replace(localVarPath, "{"+"stripeGatewayId"+"}", url.PathEscape(parameterToString(r.stripeGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stripeGatewayId"+"}", url.PathEscape(parameterValueToString(r.stripeGatewayId, "stripeGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *StripePaymentsApiService) GETStripeGatewayIdStripePaymentsExecute(r Str
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *StripePaymentsApiService) GETStripePaymentsExecute(r StripePaymentsApiG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -310,7 +310,7 @@ func (a *StripePaymentsApiService) GETStripePaymentsExecute(r StripePaymentsApiG
 type StripePaymentsApiGETStripePaymentsStripePaymentIdRequest struct {
 	ctx             context.Context
 	ApiService      *StripePaymentsApiService
-	stripePaymentId string
+	stripePaymentId interface{}
 }
 
 func (r StripePaymentsApiGETStripePaymentsStripePaymentIdRequest) Execute() (*GETStripePaymentsStripePaymentId200Response, *http.Response, error) {
@@ -326,7 +326,7 @@ Retrieve a stripe payment
 	@param stripePaymentId The resource's id
 	@return StripePaymentsApiGETStripePaymentsStripePaymentIdRequest
 */
-func (a *StripePaymentsApiService) GETStripePaymentsStripePaymentId(ctx context.Context, stripePaymentId string) StripePaymentsApiGETStripePaymentsStripePaymentIdRequest {
+func (a *StripePaymentsApiService) GETStripePaymentsStripePaymentId(ctx context.Context, stripePaymentId interface{}) StripePaymentsApiGETStripePaymentsStripePaymentIdRequest {
 	return StripePaymentsApiGETStripePaymentsStripePaymentIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -351,7 +351,7 @@ func (a *StripePaymentsApiService) GETStripePaymentsStripePaymentIdExecute(r Str
 	}
 
 	localVarPath := localBasePath + "/stripe_payments/{stripePaymentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"stripePaymentId"+"}", url.PathEscape(parameterToString(r.stripePaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stripePaymentId"+"}", url.PathEscape(parameterValueToString(r.stripePaymentId, "stripePaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *StripePaymentsApiService) GETStripePaymentsStripePaymentIdExecute(r Str
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -412,14 +412,14 @@ func (a *StripePaymentsApiService) GETStripePaymentsStripePaymentIdExecute(r Str
 }
 
 type StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest struct {
-	ctx                 context.Context
-	ApiService          *StripePaymentsApiService
-	stripePaymentUpdate *StripePaymentUpdate
-	stripePaymentId     string
+	ctx                                       context.Context
+	ApiService                                *StripePaymentsApiService
+	pATCHStripePaymentsStripePaymentIdRequest *PATCHStripePaymentsStripePaymentIdRequest
+	stripePaymentId                           interface{}
 }
 
-func (r StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest) StripePaymentUpdate(stripePaymentUpdate StripePaymentUpdate) StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest {
-	r.stripePaymentUpdate = &stripePaymentUpdate
+func (r StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest) PATCHStripePaymentsStripePaymentIdRequest(pATCHStripePaymentsStripePaymentIdRequest PATCHStripePaymentsStripePaymentIdRequest) StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest {
+	r.pATCHStripePaymentsStripePaymentIdRequest = &pATCHStripePaymentsStripePaymentIdRequest
 	return r
 }
 
@@ -436,7 +436,7 @@ Update a stripe payment
 	@param stripePaymentId The resource's id
 	@return StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest
 */
-func (a *StripePaymentsApiService) PATCHStripePaymentsStripePaymentId(ctx context.Context, stripePaymentId string) StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest {
+func (a *StripePaymentsApiService) PATCHStripePaymentsStripePaymentId(ctx context.Context, stripePaymentId interface{}) StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest {
 	return StripePaymentsApiPATCHStripePaymentsStripePaymentIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -461,13 +461,13 @@ func (a *StripePaymentsApiService) PATCHStripePaymentsStripePaymentIdExecute(r S
 	}
 
 	localVarPath := localBasePath + "/stripe_payments/{stripePaymentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"stripePaymentId"+"}", url.PathEscape(parameterToString(r.stripePaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stripePaymentId"+"}", url.PathEscape(parameterValueToString(r.stripePaymentId, "stripePaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.stripePaymentUpdate == nil {
-		return localVarReturnValue, nil, reportError("stripePaymentUpdate is required and must be specified")
+	if r.pATCHStripePaymentsStripePaymentIdRequest == nil {
+		return localVarReturnValue, nil, reportError("pATCHStripePaymentsStripePaymentIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -488,7 +488,7 @@ func (a *StripePaymentsApiService) PATCHStripePaymentsStripePaymentIdExecute(r S
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.stripePaymentUpdate
+	localVarPostBody = r.pATCHStripePaymentsStripePaymentIdRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -499,9 +499,9 @@ func (a *StripePaymentsApiService) PATCHStripePaymentsStripePaymentIdExecute(r S
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -527,13 +527,13 @@ func (a *StripePaymentsApiService) PATCHStripePaymentsStripePaymentIdExecute(r S
 }
 
 type StripePaymentsApiPOSTStripePaymentsRequest struct {
-	ctx                 context.Context
-	ApiService          *StripePaymentsApiService
-	stripePaymentCreate *StripePaymentCreate
+	ctx                       context.Context
+	ApiService                *StripePaymentsApiService
+	pOSTStripePaymentsRequest *POSTStripePaymentsRequest
 }
 
-func (r StripePaymentsApiPOSTStripePaymentsRequest) StripePaymentCreate(stripePaymentCreate StripePaymentCreate) StripePaymentsApiPOSTStripePaymentsRequest {
-	r.stripePaymentCreate = &stripePaymentCreate
+func (r StripePaymentsApiPOSTStripePaymentsRequest) POSTStripePaymentsRequest(pOSTStripePaymentsRequest POSTStripePaymentsRequest) StripePaymentsApiPOSTStripePaymentsRequest {
+	r.pOSTStripePaymentsRequest = &pOSTStripePaymentsRequest
 	return r
 }
 
@@ -577,8 +577,8 @@ func (a *StripePaymentsApiService) POSTStripePaymentsExecute(r StripePaymentsApi
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.stripePaymentCreate == nil {
-		return localVarReturnValue, nil, reportError("stripePaymentCreate is required and must be specified")
+	if r.pOSTStripePaymentsRequest == nil {
+		return localVarReturnValue, nil, reportError("pOSTStripePaymentsRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -599,7 +599,7 @@ func (a *StripePaymentsApiService) POSTStripePaymentsExecute(r StripePaymentsApi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.stripePaymentCreate
+	localVarPostBody = r.pOSTStripePaymentsRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -610,9 +610,9 @@ func (a *StripePaymentsApiService) POSTStripePaymentsExecute(r StripePaymentsApi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

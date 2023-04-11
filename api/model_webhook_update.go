@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the WebhookUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &WebhookUpdate{}
+
 // WebhookUpdate struct for WebhookUpdate
 type WebhookUpdate struct {
-	Data WebhookUpdateData `json:"data"`
+	Data PATCHWebhooksWebhookIdRequestData `json:"data"`
 }
 
 // NewWebhookUpdate instantiates a new WebhookUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWebhookUpdate(data WebhookUpdateData) *WebhookUpdate {
+func NewWebhookUpdate(data PATCHWebhooksWebhookIdRequestData) *WebhookUpdate {
 	this := WebhookUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewWebhookUpdateWithDefaults() *WebhookUpdate {
 }
 
 // GetData returns the Data field value
-func (o *WebhookUpdate) GetData() WebhookUpdateData {
+func (o *WebhookUpdate) GetData() PATCHWebhooksWebhookIdRequestData {
 	if o == nil {
-		var ret WebhookUpdateData
+		var ret PATCHWebhooksWebhookIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *WebhookUpdate) GetData() WebhookUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *WebhookUpdate) GetDataOk() (*WebhookUpdateData, bool) {
+func (o *WebhookUpdate) GetDataOk() (*PATCHWebhooksWebhookIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *WebhookUpdate) GetDataOk() (*WebhookUpdateData, bool) {
 }
 
 // SetData sets field value
-func (o *WebhookUpdate) SetData(v WebhookUpdateData) {
+func (o *WebhookUpdate) SetData(v PATCHWebhooksWebhookIdRequestData) {
 	o.Data = v
 }
 
 func (o WebhookUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o WebhookUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableWebhookUpdate struct {

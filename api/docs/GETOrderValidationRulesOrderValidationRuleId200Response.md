@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETOrderValidationRules200ResponseDataInner**](GETOrderValidationRules200ResponseDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETOrderValidationRulesOrderValidationRuleId200ResponseData**](GETOrderValidationRulesOrderValidationRuleId200ResponseData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETOrderValidationRulesOrderValidationRuleId200Response) GetData() GETOrderValidationRules200ResponseDataInner`
+`func (o *GETOrderValidationRulesOrderValidationRuleId200Response) GetData() GETOrderValidationRulesOrderValidationRuleId200ResponseData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETOrderValidationRulesOrderValidationRuleId200Response) GetDataOk() (*GETOrderValidationRules200ResponseDataInner, bool)`
+`func (o *GETOrderValidationRulesOrderValidationRuleId200Response) GetDataOk() (*GETOrderValidationRulesOrderValidationRuleId200ResponseData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETOrderValidationRulesOrderValidationRuleId200Response) SetData(v GETOrderValidationRules200ResponseDataInner)`
+`func (o *GETOrderValidationRulesOrderValidationRuleId200Response) SetData(v GETOrderValidationRulesOrderValidationRuleId200ResponseData)`
 
 SetData sets Data field to given value.
 

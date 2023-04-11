@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the StockItemCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &StockItemCreate{}
+
 // StockItemCreate struct for StockItemCreate
 type StockItemCreate struct {
-	Data StockItemCreateData `json:"data"`
+	Data POSTStockItemsRequestData `json:"data"`
 }
 
 // NewStockItemCreate instantiates a new StockItemCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStockItemCreate(data StockItemCreateData) *StockItemCreate {
+func NewStockItemCreate(data POSTStockItemsRequestData) *StockItemCreate {
 	this := StockItemCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewStockItemCreateWithDefaults() *StockItemCreate {
 }
 
 // GetData returns the Data field value
-func (o *StockItemCreate) GetData() StockItemCreateData {
+func (o *StockItemCreate) GetData() POSTStockItemsRequestData {
 	if o == nil {
-		var ret StockItemCreateData
+		var ret POSTStockItemsRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *StockItemCreate) GetData() StockItemCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *StockItemCreate) GetDataOk() (*StockItemCreateData, bool) {
+func (o *StockItemCreate) GetDataOk() (*POSTStockItemsRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *StockItemCreate) GetDataOk() (*StockItemCreateData, bool) {
 }
 
 // SetData sets field value
-func (o *StockItemCreate) SetData(v StockItemCreateData) {
+func (o *StockItemCreate) SetData(v POSTStockItemsRequestData) {
 	o.Data = v
 }
 
 func (o StockItemCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o StockItemCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableStockItemCreate struct {

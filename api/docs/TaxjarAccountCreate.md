@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**TaxjarAccountCreateData**](TaxjarAccountCreateData.md) |  | 
+**Data** | [**POSTTaxjarAccountsRequestData**](POSTTaxjarAccountsRequestData.md) |  | 
 
 ## Methods
 
 ### NewTaxjarAccountCreate
 
-`func NewTaxjarAccountCreate(data TaxjarAccountCreateData, ) *TaxjarAccountCreate`
+`func NewTaxjarAccountCreate(data POSTTaxjarAccountsRequestData, ) *TaxjarAccountCreate`
 
 NewTaxjarAccountCreate instantiates a new TaxjarAccountCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *TaxjarAccountCreate) GetData() TaxjarAccountCreateData`
+`func (o *TaxjarAccountCreate) GetData() POSTTaxjarAccountsRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *TaxjarAccountCreate) GetDataOk() (*TaxjarAccountCreateData, bool)`
+`func (o *TaxjarAccountCreate) GetDataOk() (*POSTTaxjarAccountsRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *TaxjarAccountCreate) SetData(v TaxjarAccountCreateData)`
+`func (o *TaxjarAccountCreate) SetData(v POSTTaxjarAccountsRequestData)`
 
 SetData sets Data field to given value.
 

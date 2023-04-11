@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**KlarnaGatewayUpdateData**](KlarnaGatewayUpdateData.md) |  | 
+**Data** | [**PATCHKlarnaGatewaysKlarnaGatewayIdRequestData**](PATCHKlarnaGatewaysKlarnaGatewayIdRequestData.md) |  | 
 
 ## Methods
 
 ### NewKlarnaGatewayUpdate
 
-`func NewKlarnaGatewayUpdate(data KlarnaGatewayUpdateData, ) *KlarnaGatewayUpdate`
+`func NewKlarnaGatewayUpdate(data PATCHKlarnaGatewaysKlarnaGatewayIdRequestData, ) *KlarnaGatewayUpdate`
 
 NewKlarnaGatewayUpdate instantiates a new KlarnaGatewayUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *KlarnaGatewayUpdate) GetData() KlarnaGatewayUpdateData`
+`func (o *KlarnaGatewayUpdate) GetData() PATCHKlarnaGatewaysKlarnaGatewayIdRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *KlarnaGatewayUpdate) GetDataOk() (*KlarnaGatewayUpdateData, bool)`
+`func (o *KlarnaGatewayUpdate) GetDataOk() (*PATCHKlarnaGatewaysKlarnaGatewayIdRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *KlarnaGatewayUpdate) SetData(v KlarnaGatewayUpdateData)`
+`func (o *KlarnaGatewayUpdate) SetData(v PATCHKlarnaGatewaysKlarnaGatewayIdRequestData)`
 
 SetData sets Data field to given value.
 

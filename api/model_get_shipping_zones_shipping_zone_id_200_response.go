@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETShippingZonesShippingZoneId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETShippingZonesShippingZoneId200Response{}
+
 // GETShippingZonesShippingZoneId200Response struct for GETShippingZonesShippingZoneId200Response
 type GETShippingZonesShippingZoneId200Response struct {
-	Data *GETShippingZones200ResponseDataInner `json:"data,omitempty"`
+	Data *GETShippingZonesShippingZoneId200ResponseData `json:"data,omitempty"`
 }
 
 // NewGETShippingZonesShippingZoneId200Response instantiates a new GETShippingZonesShippingZoneId200Response object
@@ -38,9 +41,9 @@ func NewGETShippingZonesShippingZoneId200ResponseWithDefaults() *GETShippingZone
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETShippingZonesShippingZoneId200Response) GetData() GETShippingZones200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret GETShippingZones200ResponseDataInner
+func (o *GETShippingZonesShippingZoneId200Response) GetData() GETShippingZonesShippingZoneId200ResponseData {
+	if o == nil || IsNil(o.Data) {
+		var ret GETShippingZonesShippingZoneId200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *GETShippingZonesShippingZoneId200Response) GetData() GETShippingZones20
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETShippingZonesShippingZoneId200Response) GetDataOk() (*GETShippingZones200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+func (o *GETShippingZonesShippingZoneId200Response) GetDataOk() (*GETShippingZonesShippingZoneId200ResponseData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *GETShippingZonesShippingZoneId200Response) GetDataOk() (*GETShippingZon
 
 // HasData returns a boolean if a field has been set.
 func (o *GETShippingZonesShippingZoneId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETShippingZones200ResponseDataInner and assigns it to the Data field.
-func (o *GETShippingZonesShippingZoneId200Response) SetData(v GETShippingZones200ResponseDataInner) {
+// SetData gets a reference to the given GETShippingZonesShippingZoneId200ResponseData and assigns it to the Data field.
+func (o *GETShippingZonesShippingZoneId200Response) SetData(v GETShippingZonesShippingZoneId200ResponseData) {
 	o.Data = &v
 }
 
 func (o GETShippingZonesShippingZoneId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GETShippingZonesShippingZoneId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGETShippingZonesShippingZoneId200Response struct {

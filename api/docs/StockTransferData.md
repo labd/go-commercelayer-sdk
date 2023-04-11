@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETStockTransfers200ResponseDataInnerAttributes**](GETStockTransfers200ResponseDataInnerAttributes.md) |  | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Attributes** | [**GETStockTransfersStockTransferId200ResponseDataAttributes**](GETStockTransfersStockTransferId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**StockTransferDataRelationships**](StockTransferDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewStockTransferData
 
-`func NewStockTransferData(type_ string, attributes GETStockTransfers200ResponseDataInnerAttributes, ) *StockTransferData`
+`func NewStockTransferData(type_ interface{}, attributes GETStockTransfersStockTransferId200ResponseDataAttributes, ) *StockTransferData`
 
 NewStockTransferData instantiates a new StockTransferData object
 This constructor will assign default values to properties that have it defined,
@@ -29,40 +29,50 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *StockTransferData) GetType() string`
+`func (o *StockTransferData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *StockTransferData) GetTypeOk() (*string, bool)`
+`func (o *StockTransferData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *StockTransferData) SetType(v string)`
+`func (o *StockTransferData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *StockTransferData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *StockTransferData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *StockTransferData) GetAttributes() GETStockTransfers200ResponseDataInnerAttributes`
+`func (o *StockTransferData) GetAttributes() GETStockTransfersStockTransferId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *StockTransferData) GetAttributesOk() (*GETStockTransfers200ResponseDataInnerAttributes, bool)`
+`func (o *StockTransferData) GetAttributesOk() (*GETStockTransfersStockTransferId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *StockTransferData) SetAttributes(v GETStockTransfers200ResponseDataInnerAttributes)`
+`func (o *StockTransferData) SetAttributes(v GETStockTransfersStockTransferId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

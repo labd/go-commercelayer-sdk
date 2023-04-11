@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type TaxCategoriesApiService service
 type TaxCategoriesApiDELETETaxCategoriesTaxCategoryIdRequest struct {
 	ctx           context.Context
 	ApiService    *TaxCategoriesApiService
-	taxCategoryId string
+	taxCategoryId interface{}
 }
 
 func (r TaxCategoriesApiDELETETaxCategoriesTaxCategoryIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a tax category
 	@param taxCategoryId The resource's id
 	@return TaxCategoriesApiDELETETaxCategoriesTaxCategoryIdRequest
 */
-func (a *TaxCategoriesApiService) DELETETaxCategoriesTaxCategoryId(ctx context.Context, taxCategoryId string) TaxCategoriesApiDELETETaxCategoriesTaxCategoryIdRequest {
+func (a *TaxCategoriesApiService) DELETETaxCategoriesTaxCategoryId(ctx context.Context, taxCategoryId interface{}) TaxCategoriesApiDELETETaxCategoriesTaxCategoryIdRequest {
 	return TaxCategoriesApiDELETETaxCategoriesTaxCategoryIdRequest{
 		ApiService:    a,
 		ctx:           ctx,
@@ -64,7 +64,7 @@ func (a *TaxCategoriesApiService) DELETETaxCategoriesTaxCategoryIdExecute(r TaxC
 	}
 
 	localVarPath := localBasePath + "/tax_categories/{taxCategoryId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxCategoryId"+"}", url.PathEscape(parameterToString(r.taxCategoryId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxCategoryId"+"}", url.PathEscape(parameterValueToString(r.taxCategoryId, "taxCategoryId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *TaxCategoriesApiService) DELETETaxCategoriesTaxCategoryIdExecute(r TaxC
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *TaxCategoriesApiService) DELETETaxCategoriesTaxCategoryIdExecute(r TaxC
 type TaxCategoriesApiGETAvalaraAccountIdTaxCategoriesRequest struct {
 	ctx              context.Context
 	ApiService       *TaxCategoriesApiService
-	avalaraAccountId string
+	avalaraAccountId interface{}
 }
 
 func (r TaxCategoriesApiGETAvalaraAccountIdTaxCategoriesRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the tax categories associated to the avalara account
 	@param avalaraAccountId The resource's id
 	@return TaxCategoriesApiGETAvalaraAccountIdTaxCategoriesRequest
 */
-func (a *TaxCategoriesApiService) GETAvalaraAccountIdTaxCategories(ctx context.Context, avalaraAccountId string) TaxCategoriesApiGETAvalaraAccountIdTaxCategoriesRequest {
+func (a *TaxCategoriesApiService) GETAvalaraAccountIdTaxCategories(ctx context.Context, avalaraAccountId interface{}) TaxCategoriesApiGETAvalaraAccountIdTaxCategoriesRequest {
 	return TaxCategoriesApiGETAvalaraAccountIdTaxCategoriesRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -156,7 +156,7 @@ func (a *TaxCategoriesApiService) GETAvalaraAccountIdTaxCategoriesExecute(r TaxC
 	}
 
 	localVarPath := localBasePath + "/avalara_accounts/{avalaraAccountId}/tax_categories"
-	localVarPath = strings.Replace(localVarPath, "{"+"avalaraAccountId"+"}", url.PathEscape(parameterToString(r.avalaraAccountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"avalaraAccountId"+"}", url.PathEscape(parameterValueToString(r.avalaraAccountId, "avalaraAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *TaxCategoriesApiService) GETAvalaraAccountIdTaxCategoriesExecute(r TaxC
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *TaxCategoriesApiService) GETTaxCategoriesExecute(r TaxCategoriesApiGETT
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -310,7 +310,7 @@ func (a *TaxCategoriesApiService) GETTaxCategoriesExecute(r TaxCategoriesApiGETT
 type TaxCategoriesApiGETTaxCategoriesTaxCategoryIdRequest struct {
 	ctx           context.Context
 	ApiService    *TaxCategoriesApiService
-	taxCategoryId string
+	taxCategoryId interface{}
 }
 
 func (r TaxCategoriesApiGETTaxCategoriesTaxCategoryIdRequest) Execute() (*GETTaxCategoriesTaxCategoryId200Response, *http.Response, error) {
@@ -326,7 +326,7 @@ Retrieve a tax category
 	@param taxCategoryId The resource's id
 	@return TaxCategoriesApiGETTaxCategoriesTaxCategoryIdRequest
 */
-func (a *TaxCategoriesApiService) GETTaxCategoriesTaxCategoryId(ctx context.Context, taxCategoryId string) TaxCategoriesApiGETTaxCategoriesTaxCategoryIdRequest {
+func (a *TaxCategoriesApiService) GETTaxCategoriesTaxCategoryId(ctx context.Context, taxCategoryId interface{}) TaxCategoriesApiGETTaxCategoriesTaxCategoryIdRequest {
 	return TaxCategoriesApiGETTaxCategoriesTaxCategoryIdRequest{
 		ApiService:    a,
 		ctx:           ctx,
@@ -351,7 +351,7 @@ func (a *TaxCategoriesApiService) GETTaxCategoriesTaxCategoryIdExecute(r TaxCate
 	}
 
 	localVarPath := localBasePath + "/tax_categories/{taxCategoryId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxCategoryId"+"}", url.PathEscape(parameterToString(r.taxCategoryId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxCategoryId"+"}", url.PathEscape(parameterValueToString(r.taxCategoryId, "taxCategoryId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *TaxCategoriesApiService) GETTaxCategoriesTaxCategoryIdExecute(r TaxCate
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -414,7 +414,7 @@ func (a *TaxCategoriesApiService) GETTaxCategoriesTaxCategoryIdExecute(r TaxCate
 type TaxCategoriesApiGETTaxjarAccountIdTaxCategoriesRequest struct {
 	ctx             context.Context
 	ApiService      *TaxCategoriesApiService
-	taxjarAccountId string
+	taxjarAccountId interface{}
 }
 
 func (r TaxCategoriesApiGETTaxjarAccountIdTaxCategoriesRequest) Execute() (*http.Response, error) {
@@ -430,7 +430,7 @@ Retrieve the tax categories associated to the taxjar account
 	@param taxjarAccountId The resource's id
 	@return TaxCategoriesApiGETTaxjarAccountIdTaxCategoriesRequest
 */
-func (a *TaxCategoriesApiService) GETTaxjarAccountIdTaxCategories(ctx context.Context, taxjarAccountId string) TaxCategoriesApiGETTaxjarAccountIdTaxCategoriesRequest {
+func (a *TaxCategoriesApiService) GETTaxjarAccountIdTaxCategories(ctx context.Context, taxjarAccountId interface{}) TaxCategoriesApiGETTaxjarAccountIdTaxCategoriesRequest {
 	return TaxCategoriesApiGETTaxjarAccountIdTaxCategoriesRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -452,7 +452,7 @@ func (a *TaxCategoriesApiService) GETTaxjarAccountIdTaxCategoriesExecute(r TaxCa
 	}
 
 	localVarPath := localBasePath + "/taxjar_accounts/{taxjarAccountId}/tax_categories"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxjarAccountId"+"}", url.PathEscape(parameterToString(r.taxjarAccountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxjarAccountId"+"}", url.PathEscape(parameterValueToString(r.taxjarAccountId, "taxjarAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -485,9 +485,9 @@ func (a *TaxCategoriesApiService) GETTaxjarAccountIdTaxCategoriesExecute(r TaxCa
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -504,14 +504,14 @@ func (a *TaxCategoriesApiService) GETTaxjarAccountIdTaxCategoriesExecute(r TaxCa
 }
 
 type TaxCategoriesApiPATCHTaxCategoriesTaxCategoryIdRequest struct {
-	ctx               context.Context
-	ApiService        *TaxCategoriesApiService
-	taxCategoryUpdate *TaxCategoryUpdate
-	taxCategoryId     string
+	ctx                                    context.Context
+	ApiService                             *TaxCategoriesApiService
+	pATCHTaxCategoriesTaxCategoryIdRequest *PATCHTaxCategoriesTaxCategoryIdRequest
+	taxCategoryId                          interface{}
 }
 
-func (r TaxCategoriesApiPATCHTaxCategoriesTaxCategoryIdRequest) TaxCategoryUpdate(taxCategoryUpdate TaxCategoryUpdate) TaxCategoriesApiPATCHTaxCategoriesTaxCategoryIdRequest {
-	r.taxCategoryUpdate = &taxCategoryUpdate
+func (r TaxCategoriesApiPATCHTaxCategoriesTaxCategoryIdRequest) PATCHTaxCategoriesTaxCategoryIdRequest(pATCHTaxCategoriesTaxCategoryIdRequest PATCHTaxCategoriesTaxCategoryIdRequest) TaxCategoriesApiPATCHTaxCategoriesTaxCategoryIdRequest {
+	r.pATCHTaxCategoriesTaxCategoryIdRequest = &pATCHTaxCategoriesTaxCategoryIdRequest
 	return r
 }
 
@@ -528,7 +528,7 @@ Update a tax category
 	@param taxCategoryId The resource's id
 	@return TaxCategoriesApiPATCHTaxCategoriesTaxCategoryIdRequest
 */
-func (a *TaxCategoriesApiService) PATCHTaxCategoriesTaxCategoryId(ctx context.Context, taxCategoryId string) TaxCategoriesApiPATCHTaxCategoriesTaxCategoryIdRequest {
+func (a *TaxCategoriesApiService) PATCHTaxCategoriesTaxCategoryId(ctx context.Context, taxCategoryId interface{}) TaxCategoriesApiPATCHTaxCategoriesTaxCategoryIdRequest {
 	return TaxCategoriesApiPATCHTaxCategoriesTaxCategoryIdRequest{
 		ApiService:    a,
 		ctx:           ctx,
@@ -553,13 +553,13 @@ func (a *TaxCategoriesApiService) PATCHTaxCategoriesTaxCategoryIdExecute(r TaxCa
 	}
 
 	localVarPath := localBasePath + "/tax_categories/{taxCategoryId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxCategoryId"+"}", url.PathEscape(parameterToString(r.taxCategoryId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxCategoryId"+"}", url.PathEscape(parameterValueToString(r.taxCategoryId, "taxCategoryId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.taxCategoryUpdate == nil {
-		return localVarReturnValue, nil, reportError("taxCategoryUpdate is required and must be specified")
+	if r.pATCHTaxCategoriesTaxCategoryIdRequest == nil {
+		return localVarReturnValue, nil, reportError("pATCHTaxCategoriesTaxCategoryIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -580,7 +580,7 @@ func (a *TaxCategoriesApiService) PATCHTaxCategoriesTaxCategoryIdExecute(r TaxCa
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.taxCategoryUpdate
+	localVarPostBody = r.pATCHTaxCategoriesTaxCategoryIdRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -591,9 +591,9 @@ func (a *TaxCategoriesApiService) PATCHTaxCategoriesTaxCategoryIdExecute(r TaxCa
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -619,13 +619,13 @@ func (a *TaxCategoriesApiService) PATCHTaxCategoriesTaxCategoryIdExecute(r TaxCa
 }
 
 type TaxCategoriesApiPOSTTaxCategoriesRequest struct {
-	ctx               context.Context
-	ApiService        *TaxCategoriesApiService
-	taxCategoryCreate *TaxCategoryCreate
+	ctx                      context.Context
+	ApiService               *TaxCategoriesApiService
+	pOSTTaxCategoriesRequest *POSTTaxCategoriesRequest
 }
 
-func (r TaxCategoriesApiPOSTTaxCategoriesRequest) TaxCategoryCreate(taxCategoryCreate TaxCategoryCreate) TaxCategoriesApiPOSTTaxCategoriesRequest {
-	r.taxCategoryCreate = &taxCategoryCreate
+func (r TaxCategoriesApiPOSTTaxCategoriesRequest) POSTTaxCategoriesRequest(pOSTTaxCategoriesRequest POSTTaxCategoriesRequest) TaxCategoriesApiPOSTTaxCategoriesRequest {
+	r.pOSTTaxCategoriesRequest = &pOSTTaxCategoriesRequest
 	return r
 }
 
@@ -669,8 +669,8 @@ func (a *TaxCategoriesApiService) POSTTaxCategoriesExecute(r TaxCategoriesApiPOS
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.taxCategoryCreate == nil {
-		return localVarReturnValue, nil, reportError("taxCategoryCreate is required and must be specified")
+	if r.pOSTTaxCategoriesRequest == nil {
+		return localVarReturnValue, nil, reportError("pOSTTaxCategoriesRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -691,7 +691,7 @@ func (a *TaxCategoriesApiService) POSTTaxCategoriesExecute(r TaxCategoriesApiPOS
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.taxCategoryCreate
+	localVarPostBody = r.pOSTTaxCategoriesRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -702,9 +702,9 @@ func (a *TaxCategoriesApiService) POSTTaxCategoriesExecute(r TaxCategoriesApiPOS
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

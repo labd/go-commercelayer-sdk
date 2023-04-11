@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the PriceVolumeTierUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PriceVolumeTierUpdate{}
+
 // PriceVolumeTierUpdate struct for PriceVolumeTierUpdate
 type PriceVolumeTierUpdate struct {
-	Data PriceVolumeTierUpdateData `json:"data"`
+	Data PATCHPriceVolumeTiersPriceVolumeTierIdRequestData `json:"data"`
 }
 
 // NewPriceVolumeTierUpdate instantiates a new PriceVolumeTierUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPriceVolumeTierUpdate(data PriceVolumeTierUpdateData) *PriceVolumeTierUpdate {
+func NewPriceVolumeTierUpdate(data PATCHPriceVolumeTiersPriceVolumeTierIdRequestData) *PriceVolumeTierUpdate {
 	this := PriceVolumeTierUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewPriceVolumeTierUpdateWithDefaults() *PriceVolumeTierUpdate {
 }
 
 // GetData returns the Data field value
-func (o *PriceVolumeTierUpdate) GetData() PriceVolumeTierUpdateData {
+func (o *PriceVolumeTierUpdate) GetData() PATCHPriceVolumeTiersPriceVolumeTierIdRequestData {
 	if o == nil {
-		var ret PriceVolumeTierUpdateData
+		var ret PATCHPriceVolumeTiersPriceVolumeTierIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *PriceVolumeTierUpdate) GetData() PriceVolumeTierUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *PriceVolumeTierUpdate) GetDataOk() (*PriceVolumeTierUpdateData, bool) {
+func (o *PriceVolumeTierUpdate) GetDataOk() (*PATCHPriceVolumeTiersPriceVolumeTierIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *PriceVolumeTierUpdate) GetDataOk() (*PriceVolumeTierUpdateData, bool) {
 }
 
 // SetData sets field value
-func (o *PriceVolumeTierUpdate) SetData(v PriceVolumeTierUpdateData) {
+func (o *PriceVolumeTierUpdate) SetData(v PATCHPriceVolumeTiersPriceVolumeTierIdRequestData) {
 	o.Data = v
 }
 
 func (o PriceVolumeTierUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PriceVolumeTierUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullablePriceVolumeTierUpdate struct {

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**InventoryModelCreateData**](InventoryModelCreateData.md) |  | 
+**Data** | [**POSTInventoryModelsRequestData**](POSTInventoryModelsRequestData.md) |  | 
 
 ## Methods
 
 ### NewInventoryModelCreate
 
-`func NewInventoryModelCreate(data InventoryModelCreateData, ) *InventoryModelCreate`
+`func NewInventoryModelCreate(data POSTInventoryModelsRequestData, ) *InventoryModelCreate`
 
 NewInventoryModelCreate instantiates a new InventoryModelCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *InventoryModelCreate) GetData() InventoryModelCreateData`
+`func (o *InventoryModelCreate) GetData() POSTInventoryModelsRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *InventoryModelCreate) GetDataOk() (*InventoryModelCreateData, bool)`
+`func (o *InventoryModelCreate) GetDataOk() (*POSTInventoryModelsRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *InventoryModelCreate) SetData(v InventoryModelCreateData)`
+`func (o *InventoryModelCreate) SetData(v POSTInventoryModelsRequestData)`
 
 SetData sets Data field to given value.
 

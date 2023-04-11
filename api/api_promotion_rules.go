@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -96,9 +96,9 @@ func (a *PromotionRulesApiService) GETPromotionRulesExecute(r PromotionRulesApiG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -126,7 +126,7 @@ func (a *PromotionRulesApiService) GETPromotionRulesExecute(r PromotionRulesApiG
 type PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest struct {
 	ctx             context.Context
 	ApiService      *PromotionRulesApiService
-	promotionRuleId string
+	promotionRuleId interface{}
 }
 
 func (r PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest) Execute() (*GETPromotionRulesPromotionRuleId200Response, *http.Response, error) {
@@ -142,7 +142,7 @@ Retrieve a promotion rule
 	@param promotionRuleId The resource's id
 	@return PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest
 */
-func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleId(ctx context.Context, promotionRuleId string) PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest {
+func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleId(ctx context.Context, promotionRuleId interface{}) PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest {
 	return PromotionRulesApiGETPromotionRulesPromotionRuleIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -167,7 +167,7 @@ func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleIdExecute(r Pro
 	}
 
 	localVarPath := localBasePath + "/promotion_rules/{promotionRuleId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"promotionRuleId"+"}", url.PathEscape(parameterToString(r.promotionRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"promotionRuleId"+"}", url.PathEscape(parameterValueToString(r.promotionRuleId, "promotionRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -200,9 +200,9 @@ func (a *PromotionRulesApiService) GETPromotionRulesPromotionRuleIdExecute(r Pro
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**KlarnaPaymentCreateData**](KlarnaPaymentCreateData.md) |  | 
+**Data** | [**POSTKlarnaPaymentsRequestData**](POSTKlarnaPaymentsRequestData.md) |  | 
 
 ## Methods
 
 ### NewKlarnaPaymentCreate
 
-`func NewKlarnaPaymentCreate(data KlarnaPaymentCreateData, ) *KlarnaPaymentCreate`
+`func NewKlarnaPaymentCreate(data POSTKlarnaPaymentsRequestData, ) *KlarnaPaymentCreate`
 
 NewKlarnaPaymentCreate instantiates a new KlarnaPaymentCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *KlarnaPaymentCreate) GetData() KlarnaPaymentCreateData`
+`func (o *KlarnaPaymentCreate) GetData() POSTKlarnaPaymentsRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *KlarnaPaymentCreate) GetDataOk() (*KlarnaPaymentCreateData, bool)`
+`func (o *KlarnaPaymentCreate) GetDataOk() (*POSTKlarnaPaymentsRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *KlarnaPaymentCreate) SetData(v KlarnaPaymentCreateData)`
+`func (o *KlarnaPaymentCreate) SetData(v POSTKlarnaPaymentsRequestData)`
 
 SetData sets Data field to given value.
 

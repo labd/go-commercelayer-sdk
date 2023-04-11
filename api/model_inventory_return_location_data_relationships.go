@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the InventoryReturnLocationDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &InventoryReturnLocationDataRelationships{}
 
 // InventoryReturnLocationDataRelationships struct for InventoryReturnLocationDataRelationships
 type InventoryReturnLocationDataRelationships struct {
@@ -40,7 +43,7 @@ func NewInventoryReturnLocationDataRelationshipsWithDefaults() *InventoryReturnL
 
 // GetStockLocation returns the StockLocation field value if set, zero value otherwise.
 func (o *InventoryReturnLocationDataRelationships) GetStockLocation() DeliveryLeadTimeDataRelationshipsStockLocation {
-	if o == nil || o.StockLocation == nil {
+	if o == nil || IsNil(o.StockLocation) {
 		var ret DeliveryLeadTimeDataRelationshipsStockLocation
 		return ret
 	}
@@ -50,7 +53,7 @@ func (o *InventoryReturnLocationDataRelationships) GetStockLocation() DeliveryLe
 // GetStockLocationOk returns a tuple with the StockLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InventoryReturnLocationDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeDataRelationshipsStockLocation, bool) {
-	if o == nil || o.StockLocation == nil {
+	if o == nil || IsNil(o.StockLocation) {
 		return nil, false
 	}
 	return o.StockLocation, true
@@ -58,7 +61,7 @@ func (o *InventoryReturnLocationDataRelationships) GetStockLocationOk() (*Delive
 
 // HasStockLocation returns a boolean if a field has been set.
 func (o *InventoryReturnLocationDataRelationships) HasStockLocation() bool {
-	if o != nil && o.StockLocation != nil {
+	if o != nil && !IsNil(o.StockLocation) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *InventoryReturnLocationDataRelationships) SetStockLocation(v DeliveryLe
 
 // GetInventoryModel returns the InventoryModel field value if set, zero value otherwise.
 func (o *InventoryReturnLocationDataRelationships) GetInventoryModel() InventoryReturnLocationDataRelationshipsInventoryModel {
-	if o == nil || o.InventoryModel == nil {
+	if o == nil || IsNil(o.InventoryModel) {
 		var ret InventoryReturnLocationDataRelationshipsInventoryModel
 		return ret
 	}
@@ -82,7 +85,7 @@ func (o *InventoryReturnLocationDataRelationships) GetInventoryModel() Inventory
 // GetInventoryModelOk returns a tuple with the InventoryModel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InventoryReturnLocationDataRelationships) GetInventoryModelOk() (*InventoryReturnLocationDataRelationshipsInventoryModel, bool) {
-	if o == nil || o.InventoryModel == nil {
+	if o == nil || IsNil(o.InventoryModel) {
 		return nil, false
 	}
 	return o.InventoryModel, true
@@ -90,7 +93,7 @@ func (o *InventoryReturnLocationDataRelationships) GetInventoryModelOk() (*Inven
 
 // HasInventoryModel returns a boolean if a field has been set.
 func (o *InventoryReturnLocationDataRelationships) HasInventoryModel() bool {
-	if o != nil && o.InventoryModel != nil {
+	if o != nil && !IsNil(o.InventoryModel) {
 		return true
 	}
 
@@ -103,14 +106,22 @@ func (o *InventoryReturnLocationDataRelationships) SetInventoryModel(v Inventory
 }
 
 func (o InventoryReturnLocationDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.StockLocation != nil {
-		toSerialize["stock_location"] = o.StockLocation
-	}
-	if o.InventoryModel != nil {
-		toSerialize["inventory_model"] = o.InventoryModel
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o InventoryReturnLocationDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.StockLocation) {
+		toSerialize["stock_location"] = o.StockLocation
+	}
+	if !IsNil(o.InventoryModel) {
+		toSerialize["inventory_model"] = o.InventoryModel
+	}
+	return toSerialize, nil
 }
 
 type NullableInventoryReturnLocationDataRelationships struct {

@@ -1,6 +1,6 @@
 # \ShippingWeightTiersApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,15 +30,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    shippingWeightTierId := "shippingWeightTierId_example" // string | The resource's id
+    shippingWeightTierId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShippingWeightTiersApi.DELETEShippingWeightTiersShippingWeightTierId(context.Background(), shippingWeightTierId).Execute()
+    r, err := apiClient.ShippingWeightTiersApi.DELETEShippingWeightTiersShippingWeightTierId(context.Background(), shippingWeightTierId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingWeightTiersApi.DELETEShippingWeightTiersShippingWeightTierId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -52,7 +52,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**shippingWeightTierId** | **string** | The resource&#39;s id | 
+**shippingWeightTierId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -98,15 +98,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    shippingMethodId := "shippingMethodId_example" // string | The resource's id
+    shippingMethodId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShippingWeightTiersApi.GETShippingMethodIdShippingWeightTiers(context.Background(), shippingMethodId).Execute()
+    r, err := apiClient.ShippingWeightTiersApi.GETShippingMethodIdShippingWeightTiers(context.Background(), shippingMethodId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingWeightTiersApi.GETShippingMethodIdShippingWeightTiers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -120,7 +120,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**shippingMethodId** | **string** | The resource&#39;s id | 
+**shippingMethodId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -166,7 +166,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -227,11 +227,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    shippingWeightTierId := "shippingWeightTierId_example" // string | The resource's id
+    shippingWeightTierId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -251,7 +251,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**shippingWeightTierId** | **string** | The resource&#39;s id | 
+**shippingWeightTierId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHShippingWeightTiersShippingWeightTierId
 
-> PATCHShippingWeightTiersShippingWeightTierId200Response PATCHShippingWeightTiersShippingWeightTierId(ctx, shippingWeightTierId).ShippingWeightTierUpdate(shippingWeightTierUpdate).Execute()
+> PATCHShippingWeightTiersShippingWeightTierId200Response PATCHShippingWeightTiersShippingWeightTierId(ctx, shippingWeightTierId).PATCHShippingWeightTiersShippingWeightTierIdRequest(pATCHShippingWeightTiersShippingWeightTierIdRequest).Execute()
 
 Update a shipping weight tier
 
@@ -297,16 +297,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    shippingWeightTierUpdate := *openapiclient.NewShippingWeightTierUpdate(*openapiclient.NewShippingWeightTierUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes())) // ShippingWeightTierUpdate | 
-    shippingWeightTierId := "shippingWeightTierId_example" // string | The resource's id
+    pATCHShippingWeightTiersShippingWeightTierIdRequest := *openapiclient.NewPATCHShippingWeightTiersShippingWeightTierIdRequest(*openapiclient.NewPATCHShippingWeightTiersShippingWeightTierIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHShippingWeightTiersShippingWeightTierIdRequestDataAttributes())) // PATCHShippingWeightTiersShippingWeightTierIdRequest | 
+    shippingWeightTierId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShippingWeightTiersApi.PATCHShippingWeightTiersShippingWeightTierId(context.Background(), shippingWeightTierId).ShippingWeightTierUpdate(shippingWeightTierUpdate).Execute()
+    resp, r, err := apiClient.ShippingWeightTiersApi.PATCHShippingWeightTiersShippingWeightTierId(context.Background(), shippingWeightTierId).PATCHShippingWeightTiersShippingWeightTierIdRequest(pATCHShippingWeightTiersShippingWeightTierIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingWeightTiersApi.PATCHShippingWeightTiersShippingWeightTierId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -322,7 +322,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**shippingWeightTierId** | **string** | The resource&#39;s id | 
+**shippingWeightTierId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -331,7 +331,7 @@ Other parameters are passed through a pointer to a apiPATCHShippingWeightTiersSh
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **shippingWeightTierUpdate** | [**ShippingWeightTierUpdate**](ShippingWeightTierUpdate.md) |  | 
+ **pATCHShippingWeightTiersShippingWeightTierIdRequest** | [**PATCHShippingWeightTiersShippingWeightTierIdRequest**](PATCHShippingWeightTiersShippingWeightTierIdRequest.md) |  | 
 
 
 ### Return type
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTShippingWeightTiers
 
-> POSTShippingWeightTiers201Response POSTShippingWeightTiers(ctx).ShippingWeightTierCreate(shippingWeightTierCreate).Execute()
+> POSTShippingWeightTiers201Response POSTShippingWeightTiers(ctx).POSTShippingWeightTiersRequest(pOSTShippingWeightTiersRequest).Execute()
 
 Create a shipping weight tier
 
@@ -369,15 +369,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    shippingWeightTierCreate := *openapiclient.NewShippingWeightTierCreate(*openapiclient.NewShippingWeightTierCreateData("Type_example", *openapiclient.NewPOSTShippingWeightTiers201ResponseDataAttributes("Light shipping under 3kg", int32(1000)))) // ShippingWeightTierCreate | 
+    pOSTShippingWeightTiersRequest := *openapiclient.NewPOSTShippingWeightTiersRequest(*openapiclient.NewPOSTShippingWeightTiersRequestData(interface{}(123), *openapiclient.NewPOSTShippingWeightTiersRequestDataAttributes(interface{}(Light shipping under 3kg), interface{}(1000)))) // POSTShippingWeightTiersRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShippingWeightTiersApi.POSTShippingWeightTiers(context.Background()).ShippingWeightTierCreate(shippingWeightTierCreate).Execute()
+    resp, r, err := apiClient.ShippingWeightTiersApi.POSTShippingWeightTiers(context.Background()).POSTShippingWeightTiersRequest(pOSTShippingWeightTiersRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingWeightTiersApi.POSTShippingWeightTiers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +398,7 @@ Other parameters are passed through a pointer to a apiPOSTShippingWeightTiersReq
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **shippingWeightTierCreate** | [**ShippingWeightTierCreate**](ShippingWeightTierCreate.md) |  | 
+ **pOSTShippingWeightTiersRequest** | [**POSTShippingWeightTiersRequest**](POSTShippingWeightTiersRequest.md) |  | 
 
 ### Return type
 

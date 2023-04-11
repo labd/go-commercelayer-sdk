@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**ParcelCreateData**](ParcelCreateData.md) |  | 
+**Data** | [**POSTParcelsRequestData**](POSTParcelsRequestData.md) |  | 
 
 ## Methods
 
 ### NewParcelCreate
 
-`func NewParcelCreate(data ParcelCreateData, ) *ParcelCreate`
+`func NewParcelCreate(data POSTParcelsRequestData, ) *ParcelCreate`
 
 NewParcelCreate instantiates a new ParcelCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *ParcelCreate) GetData() ParcelCreateData`
+`func (o *ParcelCreate) GetData() POSTParcelsRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ParcelCreate) GetDataOk() (*ParcelCreateData, bool)`
+`func (o *ParcelCreate) GetDataOk() (*POSTParcelsRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ParcelCreate) SetData(v ParcelCreateData)`
+`func (o *ParcelCreate) SetData(v POSTParcelsRequestData)`
 
 SetData sets Data field to given value.
 

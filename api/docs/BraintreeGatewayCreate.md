@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**BraintreeGatewayCreateData**](BraintreeGatewayCreateData.md) |  | 
+**Data** | [**POSTBraintreeGatewaysRequestData**](POSTBraintreeGatewaysRequestData.md) |  | 
 
 ## Methods
 
 ### NewBraintreeGatewayCreate
 
-`func NewBraintreeGatewayCreate(data BraintreeGatewayCreateData, ) *BraintreeGatewayCreate`
+`func NewBraintreeGatewayCreate(data POSTBraintreeGatewaysRequestData, ) *BraintreeGatewayCreate`
 
 NewBraintreeGatewayCreate instantiates a new BraintreeGatewayCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *BraintreeGatewayCreate) GetData() BraintreeGatewayCreateData`
+`func (o *BraintreeGatewayCreate) GetData() POSTBraintreeGatewaysRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *BraintreeGatewayCreate) GetDataOk() (*BraintreeGatewayCreateData, bool)`
+`func (o *BraintreeGatewayCreate) GetDataOk() (*POSTBraintreeGatewaysRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *BraintreeGatewayCreate) SetData(v BraintreeGatewayCreateData)`
+`func (o *BraintreeGatewayCreate) SetData(v POSTBraintreeGatewaysRequestData)`
 
 SetData sets Data field to given value.
 

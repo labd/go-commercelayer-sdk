@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the PackageUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PackageUpdate{}
+
 // PackageUpdate struct for PackageUpdate
 type PackageUpdate struct {
-	Data PackageUpdateData `json:"data"`
+	Data PATCHPackagesPackageIdRequestData `json:"data"`
 }
 
 // NewPackageUpdate instantiates a new PackageUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPackageUpdate(data PackageUpdateData) *PackageUpdate {
+func NewPackageUpdate(data PATCHPackagesPackageIdRequestData) *PackageUpdate {
 	this := PackageUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewPackageUpdateWithDefaults() *PackageUpdate {
 }
 
 // GetData returns the Data field value
-func (o *PackageUpdate) GetData() PackageUpdateData {
+func (o *PackageUpdate) GetData() PATCHPackagesPackageIdRequestData {
 	if o == nil {
-		var ret PackageUpdateData
+		var ret PATCHPackagesPackageIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *PackageUpdate) GetData() PackageUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *PackageUpdate) GetDataOk() (*PackageUpdateData, bool) {
+func (o *PackageUpdate) GetDataOk() (*PATCHPackagesPackageIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *PackageUpdate) GetDataOk() (*PackageUpdateData, bool) {
 }
 
 // SetData sets field value
-func (o *PackageUpdate) SetData(v PackageUpdateData) {
+func (o *PackageUpdate) SetData(v PATCHPackagesPackageIdRequestData) {
 	o.Data = v
 }
 
 func (o PackageUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PackageUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullablePackageUpdate struct {

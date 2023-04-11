@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**FreeGiftPromotionCreateData**](FreeGiftPromotionCreateData.md) |  | 
+**Data** | [**POSTFreeGiftPromotionsRequestData**](POSTFreeGiftPromotionsRequestData.md) |  | 
 
 ## Methods
 
 ### NewFreeGiftPromotionCreate
 
-`func NewFreeGiftPromotionCreate(data FreeGiftPromotionCreateData, ) *FreeGiftPromotionCreate`
+`func NewFreeGiftPromotionCreate(data POSTFreeGiftPromotionsRequestData, ) *FreeGiftPromotionCreate`
 
 NewFreeGiftPromotionCreate instantiates a new FreeGiftPromotionCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *FreeGiftPromotionCreate) GetData() FreeGiftPromotionCreateData`
+`func (o *FreeGiftPromotionCreate) GetData() POSTFreeGiftPromotionsRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *FreeGiftPromotionCreate) GetDataOk() (*FreeGiftPromotionCreateData, bool)`
+`func (o *FreeGiftPromotionCreate) GetDataOk() (*POSTFreeGiftPromotionsRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *FreeGiftPromotionCreate) SetData(v FreeGiftPromotionCreateData)`
+`func (o *FreeGiftPromotionCreate) SetData(v POSTFreeGiftPromotionsRequestData)`
 
 SetData sets Data field to given value.
 

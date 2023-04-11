@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the KlarnaPaymentUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &KlarnaPaymentUpdate{}
+
 // KlarnaPaymentUpdate struct for KlarnaPaymentUpdate
 type KlarnaPaymentUpdate struct {
-	Data KlarnaPaymentUpdateData `json:"data"`
+	Data PATCHKlarnaPaymentsKlarnaPaymentIdRequestData `json:"data"`
 }
 
 // NewKlarnaPaymentUpdate instantiates a new KlarnaPaymentUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKlarnaPaymentUpdate(data KlarnaPaymentUpdateData) *KlarnaPaymentUpdate {
+func NewKlarnaPaymentUpdate(data PATCHKlarnaPaymentsKlarnaPaymentIdRequestData) *KlarnaPaymentUpdate {
 	this := KlarnaPaymentUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewKlarnaPaymentUpdateWithDefaults() *KlarnaPaymentUpdate {
 }
 
 // GetData returns the Data field value
-func (o *KlarnaPaymentUpdate) GetData() KlarnaPaymentUpdateData {
+func (o *KlarnaPaymentUpdate) GetData() PATCHKlarnaPaymentsKlarnaPaymentIdRequestData {
 	if o == nil {
-		var ret KlarnaPaymentUpdateData
+		var ret PATCHKlarnaPaymentsKlarnaPaymentIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *KlarnaPaymentUpdate) GetData() KlarnaPaymentUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *KlarnaPaymentUpdate) GetDataOk() (*KlarnaPaymentUpdateData, bool) {
+func (o *KlarnaPaymentUpdate) GetDataOk() (*PATCHKlarnaPaymentsKlarnaPaymentIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *KlarnaPaymentUpdate) GetDataOk() (*KlarnaPaymentUpdateData, bool) {
 }
 
 // SetData sets field value
-func (o *KlarnaPaymentUpdate) SetData(v KlarnaPaymentUpdateData) {
+func (o *KlarnaPaymentUpdate) SetData(v PATCHKlarnaPaymentsKlarnaPaymentIdRequestData) {
 	o.Data = v
 }
 
 func (o KlarnaPaymentUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o KlarnaPaymentUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableKlarnaPaymentUpdate struct {

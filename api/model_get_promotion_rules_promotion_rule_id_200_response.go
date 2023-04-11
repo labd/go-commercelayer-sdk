@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETPromotionRulesPromotionRuleId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETPromotionRulesPromotionRuleId200Response{}
+
 // GETPromotionRulesPromotionRuleId200Response struct for GETPromotionRulesPromotionRuleId200Response
 type GETPromotionRulesPromotionRuleId200Response struct {
-	Data *GETPromotionRules200ResponseDataInner `json:"data,omitempty"`
+	Data *GETPromotionRulesPromotionRuleId200ResponseData `json:"data,omitempty"`
 }
 
 // NewGETPromotionRulesPromotionRuleId200Response instantiates a new GETPromotionRulesPromotionRuleId200Response object
@@ -38,9 +41,9 @@ func NewGETPromotionRulesPromotionRuleId200ResponseWithDefaults() *GETPromotionR
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETPromotionRulesPromotionRuleId200Response) GetData() GETPromotionRules200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret GETPromotionRules200ResponseDataInner
+func (o *GETPromotionRulesPromotionRuleId200Response) GetData() GETPromotionRulesPromotionRuleId200ResponseData {
+	if o == nil || IsNil(o.Data) {
+		var ret GETPromotionRulesPromotionRuleId200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *GETPromotionRulesPromotionRuleId200Response) GetData() GETPromotionRule
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETPromotionRulesPromotionRuleId200Response) GetDataOk() (*GETPromotionRules200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+func (o *GETPromotionRulesPromotionRuleId200Response) GetDataOk() (*GETPromotionRulesPromotionRuleId200ResponseData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *GETPromotionRulesPromotionRuleId200Response) GetDataOk() (*GETPromotion
 
 // HasData returns a boolean if a field has been set.
 func (o *GETPromotionRulesPromotionRuleId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETPromotionRules200ResponseDataInner and assigns it to the Data field.
-func (o *GETPromotionRulesPromotionRuleId200Response) SetData(v GETPromotionRules200ResponseDataInner) {
+// SetData gets a reference to the given GETPromotionRulesPromotionRuleId200ResponseData and assigns it to the Data field.
+func (o *GETPromotionRulesPromotionRuleId200Response) SetData(v GETPromotionRulesPromotionRuleId200ResponseData) {
 	o.Data = &v
 }
 
 func (o GETPromotionRulesPromotionRuleId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GETPromotionRulesPromotionRuleId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGETPromotionRulesPromotionRuleId200Response struct {

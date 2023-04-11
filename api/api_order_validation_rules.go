@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -96,9 +96,9 @@ func (a *OrderValidationRulesApiService) GETOrderValidationRulesExecute(r OrderV
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -126,7 +126,7 @@ func (a *OrderValidationRulesApiService) GETOrderValidationRulesExecute(r OrderV
 type OrderValidationRulesApiGETOrderValidationRulesOrderValidationRuleIdRequest struct {
 	ctx                   context.Context
 	ApiService            *OrderValidationRulesApiService
-	orderValidationRuleId string
+	orderValidationRuleId interface{}
 }
 
 func (r OrderValidationRulesApiGETOrderValidationRulesOrderValidationRuleIdRequest) Execute() (*GETOrderValidationRulesOrderValidationRuleId200Response, *http.Response, error) {
@@ -142,7 +142,7 @@ Retrieve an order validation rule
 	@param orderValidationRuleId The resource's id
 	@return OrderValidationRulesApiGETOrderValidationRulesOrderValidationRuleIdRequest
 */
-func (a *OrderValidationRulesApiService) GETOrderValidationRulesOrderValidationRuleId(ctx context.Context, orderValidationRuleId string) OrderValidationRulesApiGETOrderValidationRulesOrderValidationRuleIdRequest {
+func (a *OrderValidationRulesApiService) GETOrderValidationRulesOrderValidationRuleId(ctx context.Context, orderValidationRuleId interface{}) OrderValidationRulesApiGETOrderValidationRulesOrderValidationRuleIdRequest {
 	return OrderValidationRulesApiGETOrderValidationRulesOrderValidationRuleIdRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -167,7 +167,7 @@ func (a *OrderValidationRulesApiService) GETOrderValidationRulesOrderValidationR
 	}
 
 	localVarPath := localBasePath + "/order_validation_rules/{orderValidationRuleId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderValidationRuleId"+"}", url.PathEscape(parameterToString(r.orderValidationRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderValidationRuleId"+"}", url.PathEscape(parameterValueToString(r.orderValidationRuleId, "orderValidationRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -200,9 +200,9 @@ func (a *OrderValidationRulesApiService) GETOrderValidationRulesOrderValidationR
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the AdyenGatewayCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AdyenGatewayCreate{}
+
 // AdyenGatewayCreate struct for AdyenGatewayCreate
 type AdyenGatewayCreate struct {
-	Data AdyenGatewayCreateData `json:"data"`
+	Data POSTAdyenGatewaysRequestData `json:"data"`
 }
 
 // NewAdyenGatewayCreate instantiates a new AdyenGatewayCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAdyenGatewayCreate(data AdyenGatewayCreateData) *AdyenGatewayCreate {
+func NewAdyenGatewayCreate(data POSTAdyenGatewaysRequestData) *AdyenGatewayCreate {
 	this := AdyenGatewayCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewAdyenGatewayCreateWithDefaults() *AdyenGatewayCreate {
 }
 
 // GetData returns the Data field value
-func (o *AdyenGatewayCreate) GetData() AdyenGatewayCreateData {
+func (o *AdyenGatewayCreate) GetData() POSTAdyenGatewaysRequestData {
 	if o == nil {
-		var ret AdyenGatewayCreateData
+		var ret POSTAdyenGatewaysRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *AdyenGatewayCreate) GetData() AdyenGatewayCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *AdyenGatewayCreate) GetDataOk() (*AdyenGatewayCreateData, bool) {
+func (o *AdyenGatewayCreate) GetDataOk() (*POSTAdyenGatewaysRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *AdyenGatewayCreate) GetDataOk() (*AdyenGatewayCreateData, bool) {
 }
 
 // SetData sets field value
-func (o *AdyenGatewayCreate) SetData(v AdyenGatewayCreateData) {
+func (o *AdyenGatewayCreate) SetData(v POSTAdyenGatewaysRequestData) {
 	o.Data = v
 }
 
 func (o AdyenGatewayCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AdyenGatewayCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableAdyenGatewayCreate struct {

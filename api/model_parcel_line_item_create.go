@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the ParcelLineItemCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ParcelLineItemCreate{}
+
 // ParcelLineItemCreate struct for ParcelLineItemCreate
 type ParcelLineItemCreate struct {
-	Data ParcelLineItemCreateData `json:"data"`
+	Data POSTParcelLineItemsRequestData `json:"data"`
 }
 
 // NewParcelLineItemCreate instantiates a new ParcelLineItemCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewParcelLineItemCreate(data ParcelLineItemCreateData) *ParcelLineItemCreate {
+func NewParcelLineItemCreate(data POSTParcelLineItemsRequestData) *ParcelLineItemCreate {
 	this := ParcelLineItemCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewParcelLineItemCreateWithDefaults() *ParcelLineItemCreate {
 }
 
 // GetData returns the Data field value
-func (o *ParcelLineItemCreate) GetData() ParcelLineItemCreateData {
+func (o *ParcelLineItemCreate) GetData() POSTParcelLineItemsRequestData {
 	if o == nil {
-		var ret ParcelLineItemCreateData
+		var ret POSTParcelLineItemsRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *ParcelLineItemCreate) GetData() ParcelLineItemCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ParcelLineItemCreate) GetDataOk() (*ParcelLineItemCreateData, bool) {
+func (o *ParcelLineItemCreate) GetDataOk() (*POSTParcelLineItemsRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *ParcelLineItemCreate) GetDataOk() (*ParcelLineItemCreateData, bool) {
 }
 
 // SetData sets field value
-func (o *ParcelLineItemCreate) SetData(v ParcelLineItemCreateData) {
+func (o *ParcelLineItemCreate) SetData(v POSTParcelLineItemsRequestData) {
 	o.Data = v
 }
 
 func (o ParcelLineItemCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ParcelLineItemCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableParcelLineItemCreate struct {

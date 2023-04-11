@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the FreeShippingPromotionData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &FreeShippingPromotionData{}
+
 // FreeShippingPromotionData struct for FreeShippingPromotionData
 type FreeShippingPromotionData struct {
 	// The resource's type
-	Type          string                                                  `json:"type"`
-	Attributes    GETFreeShippingPromotions200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *FreeShippingPromotionDataRelationships                 `json:"relationships,omitempty"`
+	Type          interface{}                                                               `json:"type"`
+	Attributes    GETFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes `json:"attributes"`
+	Relationships *ExternalPromotionDataRelationships                                       `json:"relationships,omitempty"`
 }
 
 // NewFreeShippingPromotionData instantiates a new FreeShippingPromotionData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFreeShippingPromotionData(type_ string, attributes GETFreeShippingPromotions200ResponseDataInnerAttributes) *FreeShippingPromotionData {
+func NewFreeShippingPromotionData(type_ interface{}, attributes GETFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes) *FreeShippingPromotionData {
 	this := FreeShippingPromotionData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -43,9 +46,10 @@ func NewFreeShippingPromotionDataWithDefaults() *FreeShippingPromotionData {
 }
 
 // GetType returns the Type field value
-func (o *FreeShippingPromotionData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *FreeShippingPromotionData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -54,22 +58,23 @@ func (o *FreeShippingPromotionData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *FreeShippingPromotionData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *FreeShippingPromotionData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *FreeShippingPromotionData) SetType(v string) {
+func (o *FreeShippingPromotionData) SetType(v interface{}) {
 	o.Type = v
 }
 
 // GetAttributes returns the Attributes field value
-func (o *FreeShippingPromotionData) GetAttributes() GETFreeShippingPromotions200ResponseDataInnerAttributes {
+func (o *FreeShippingPromotionData) GetAttributes() GETFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETFreeShippingPromotions200ResponseDataInnerAttributes
+		var ret GETFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes
 		return ret
 	}
 
@@ -78,7 +83,7 @@ func (o *FreeShippingPromotionData) GetAttributes() GETFreeShippingPromotions200
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *FreeShippingPromotionData) GetAttributesOk() (*GETFreeShippingPromotions200ResponseDataInnerAttributes, bool) {
+func (o *FreeShippingPromotionData) GetAttributesOk() (*GETFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,14 +91,14 @@ func (o *FreeShippingPromotionData) GetAttributesOk() (*GETFreeShippingPromotion
 }
 
 // SetAttributes sets field value
-func (o *FreeShippingPromotionData) SetAttributes(v GETFreeShippingPromotions200ResponseDataInnerAttributes) {
+func (o *FreeShippingPromotionData) SetAttributes(v GETFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *FreeShippingPromotionData) GetRelationships() FreeShippingPromotionDataRelationships {
-	if o == nil || o.Relationships == nil {
-		var ret FreeShippingPromotionDataRelationships
+func (o *FreeShippingPromotionData) GetRelationships() ExternalPromotionDataRelationships {
+	if o == nil || IsNil(o.Relationships) {
+		var ret ExternalPromotionDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -101,8 +106,8 @@ func (o *FreeShippingPromotionData) GetRelationships() FreeShippingPromotionData
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *FreeShippingPromotionData) GetRelationshipsOk() (*FreeShippingPromotionDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+func (o *FreeShippingPromotionData) GetRelationshipsOk() (*ExternalPromotionDataRelationships, bool) {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -110,30 +115,36 @@ func (o *FreeShippingPromotionData) GetRelationshipsOk() (*FreeShippingPromotion
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *FreeShippingPromotionData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
 	return false
 }
 
-// SetRelationships gets a reference to the given FreeShippingPromotionDataRelationships and assigns it to the Relationships field.
-func (o *FreeShippingPromotionData) SetRelationships(v FreeShippingPromotionDataRelationships) {
+// SetRelationships gets a reference to the given ExternalPromotionDataRelationships and assigns it to the Relationships field.
+func (o *FreeShippingPromotionData) SetRelationships(v ExternalPromotionDataRelationships) {
 	o.Relationships = &v
 }
 
 func (o FreeShippingPromotionData) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
-		toSerialize["relationships"] = o.Relationships
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o FreeShippingPromotionData) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
+		toSerialize["relationships"] = o.Relationships
+	}
+	return toSerialize, nil
 }
 
 type NullableFreeShippingPromotionData struct {

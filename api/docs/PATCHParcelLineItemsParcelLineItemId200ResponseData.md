@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | The resource&#39;s id | [optional] 
-**Type** | Pointer to **string** | The resource&#39;s type | [optional] 
-**Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
-**Attributes** | Pointer to [**POSTAdyenPayments201ResponseDataAttributes**](POSTAdyenPayments201ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**GETParcelLineItems200ResponseDataInnerRelationships**](GETParcelLineItems200ResponseDataInnerRelationships.md) |  | [optional] 
+**Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
+**Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
+**Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
+**Attributes** | Pointer to [**PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes**](PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes.md) |  | [optional] 
+**Relationships** | Pointer to [**POSTParcelLineItems201ResponseDataRelationships**](POSTParcelLineItems201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) GetId() string`
+`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) GetId() interface{}`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) GetIdOk() (*string, bool)`
+`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) GetIdOk() (*interface{}, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) SetId(v string)`
+`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) SetId(v interface{})`
 
 SetId sets Id field to given value.
 
@@ -54,22 +54,32 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
+### SetIdNil
+
+`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetType
 
-`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) GetType() string`
+`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) GetTypeOk() (*string, bool)`
+`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) SetType(v string)`
+`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
@@ -79,22 +89,32 @@ SetType sets Type field to given value.
 
 HasType returns a boolean if a field has been set.
 
+### SetTypeNil
+
+`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetLinks
 
-`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks`
+`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) GetLinks() POSTAddresses201ResponseDataLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool)`
+`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks)`
+`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks)`
 
 SetLinks sets Links field to given value.
 
@@ -106,20 +126,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes`
+`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) GetAttributes() PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool)`
+`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) GetAttributesOk() (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes)`
+`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) SetAttributes(v PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
@@ -131,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) GetRelationships() GETParcelLineItems200ResponseDataInnerRelationships`
+`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) GetRelationships() POSTParcelLineItems201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) GetRelationshipsOk() (*GETParcelLineItems200ResponseDataInnerRelationships, bool)`
+`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) GetRelationshipsOk() (*POSTParcelLineItems201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) SetRelationships(v GETParcelLineItems200ResponseDataInnerRelationships)`
+`func (o *PATCHParcelLineItemsParcelLineItemId200ResponseData) SetRelationships(v POSTParcelLineItems201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

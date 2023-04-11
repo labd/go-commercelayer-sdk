@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the InventoryModelUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &InventoryModelUpdate{}
+
 // InventoryModelUpdate struct for InventoryModelUpdate
 type InventoryModelUpdate struct {
-	Data InventoryModelUpdateData `json:"data"`
+	Data PATCHInventoryModelsInventoryModelIdRequestData `json:"data"`
 }
 
 // NewInventoryModelUpdate instantiates a new InventoryModelUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInventoryModelUpdate(data InventoryModelUpdateData) *InventoryModelUpdate {
+func NewInventoryModelUpdate(data PATCHInventoryModelsInventoryModelIdRequestData) *InventoryModelUpdate {
 	this := InventoryModelUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewInventoryModelUpdateWithDefaults() *InventoryModelUpdate {
 }
 
 // GetData returns the Data field value
-func (o *InventoryModelUpdate) GetData() InventoryModelUpdateData {
+func (o *InventoryModelUpdate) GetData() PATCHInventoryModelsInventoryModelIdRequestData {
 	if o == nil {
-		var ret InventoryModelUpdateData
+		var ret PATCHInventoryModelsInventoryModelIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *InventoryModelUpdate) GetData() InventoryModelUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *InventoryModelUpdate) GetDataOk() (*InventoryModelUpdateData, bool) {
+func (o *InventoryModelUpdate) GetDataOk() (*PATCHInventoryModelsInventoryModelIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *InventoryModelUpdate) GetDataOk() (*InventoryModelUpdateData, bool) {
 }
 
 // SetData sets field value
-func (o *InventoryModelUpdate) SetData(v InventoryModelUpdateData) {
+func (o *InventoryModelUpdate) SetData(v PATCHInventoryModelsInventoryModelIdRequestData) {
 	o.Data = v
 }
 
 func (o InventoryModelUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o InventoryModelUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableInventoryModelUpdate struct {

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the AdyenPaymentCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AdyenPaymentCreate{}
+
 // AdyenPaymentCreate struct for AdyenPaymentCreate
 type AdyenPaymentCreate struct {
-	Data AdyenPaymentCreateData `json:"data"`
+	Data POSTAdyenPaymentsRequestData `json:"data"`
 }
 
 // NewAdyenPaymentCreate instantiates a new AdyenPaymentCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAdyenPaymentCreate(data AdyenPaymentCreateData) *AdyenPaymentCreate {
+func NewAdyenPaymentCreate(data POSTAdyenPaymentsRequestData) *AdyenPaymentCreate {
 	this := AdyenPaymentCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewAdyenPaymentCreateWithDefaults() *AdyenPaymentCreate {
 }
 
 // GetData returns the Data field value
-func (o *AdyenPaymentCreate) GetData() AdyenPaymentCreateData {
+func (o *AdyenPaymentCreate) GetData() POSTAdyenPaymentsRequestData {
 	if o == nil {
-		var ret AdyenPaymentCreateData
+		var ret POSTAdyenPaymentsRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *AdyenPaymentCreate) GetData() AdyenPaymentCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *AdyenPaymentCreate) GetDataOk() (*AdyenPaymentCreateData, bool) {
+func (o *AdyenPaymentCreate) GetDataOk() (*POSTAdyenPaymentsRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *AdyenPaymentCreate) GetDataOk() (*AdyenPaymentCreateData, bool) {
 }
 
 // SetData sets field value
-func (o *AdyenPaymentCreate) SetData(v AdyenPaymentCreateData) {
+func (o *AdyenPaymentCreate) SetData(v POSTAdyenPaymentsRequestData) {
 	o.Data = v
 }
 
 func (o AdyenPaymentCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AdyenPaymentCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableAdyenPaymentCreate struct {

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**StockItemUpdateData**](StockItemUpdateData.md) |  | 
+**Data** | [**PATCHStockItemsStockItemIdRequestData**](PATCHStockItemsStockItemIdRequestData.md) |  | 
 
 ## Methods
 
 ### NewStockItemUpdate
 
-`func NewStockItemUpdate(data StockItemUpdateData, ) *StockItemUpdate`
+`func NewStockItemUpdate(data PATCHStockItemsStockItemIdRequestData, ) *StockItemUpdate`
 
 NewStockItemUpdate instantiates a new StockItemUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *StockItemUpdate) GetData() StockItemUpdateData`
+`func (o *StockItemUpdate) GetData() PATCHStockItemsStockItemIdRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *StockItemUpdate) GetDataOk() (*StockItemUpdateData, bool)`
+`func (o *StockItemUpdate) GetDataOk() (*PATCHStockItemsStockItemIdRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *StockItemUpdate) SetData(v StockItemUpdateData)`
+`func (o *StockItemUpdate) SetData(v PATCHStockItemsStockItemIdRequestData)`
 
 SetData sets Data field to given value.
 

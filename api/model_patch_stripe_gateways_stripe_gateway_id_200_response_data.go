@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,15 +15,18 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHStripeGatewaysStripeGatewayId200ResponseData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHStripeGatewaysStripeGatewayId200ResponseData{}
+
 // PATCHStripeGatewaysStripeGatewayId200ResponseData struct for PATCHStripeGatewaysStripeGatewayId200ResponseData
 type PATCHStripeGatewaysStripeGatewayId200ResponseData struct {
 	// The resource's id
-	Id *string `json:"id,omitempty"`
+	Id interface{} `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                                      `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks                       `json:"links,omitempty"`
-	Attributes    *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETStripeGateways200ResponseDataInnerRelationships          `json:"relationships,omitempty"`
+	Type          interface{}                                              `json:"type,omitempty"`
+	Links         *POSTAddresses201ResponseDataLinks                       `json:"links,omitempty"`
+	Attributes    *PATCHStripeGatewaysStripeGatewayIdRequestDataAttributes `json:"attributes,omitempty"`
+	Relationships *POSTStripeGateways201ResponseDataRelationships          `json:"relationships,omitempty"`
 }
 
 // NewPATCHStripeGatewaysStripeGatewayId200ResponseData instantiates a new PATCHStripeGatewaysStripeGatewayId200ResponseData object
@@ -43,74 +46,76 @@ func NewPATCHStripeGatewaysStripeGatewayId200ResponseDataWithDefaults() *PATCHSt
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetId() string {
-	if o == nil || o.Id == nil {
-		var ret string
+// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetId() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Id
+	return o.Id
 }
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) HasId() bool {
-	if o != nil && o.Id != nil {
+	if o != nil && IsNil(o.Id) {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) SetId(v string) {
-	o.Id = &v
+// SetId gets a reference to the given interface{} and assigns it to the Id field.
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) SetId(v interface{}) {
+	o.Id = v
 }
 
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetType() string {
-	if o == nil || o.Type == nil {
-		var ret string
+// GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetType() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Type
+	return o.Type
 }
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetTypeOk() (*string, bool) {
-	if o == nil || o.Type == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
-	return o.Type, true
+	return &o.Type, true
 }
 
 // HasType returns a boolean if a field has been set.
 func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) HasType() bool {
-	if o != nil && o.Type != nil {
+	if o != nil && IsNil(o.Type) {
 		return true
 	}
 
 	return false
 }
 
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) SetType(v string) {
-	o.Type = &v
+// SetType gets a reference to the given interface{} and assigns it to the Type field.
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) SetType(v interface{}) {
+	o.Type = v
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks {
-	if o == nil || o.Links == nil {
-		var ret GETAddresses200ResponseDataInnerLinks
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetLinks() POSTAddresses201ResponseDataLinks {
+	if o == nil || IsNil(o.Links) {
+		var ret POSTAddresses201ResponseDataLinks
 		return ret
 	}
 	return *o.Links
@@ -118,8 +123,8 @@ func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetLinks() GETAddres
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool) {
-	if o == nil || o.Links == nil {
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool) {
+	if o == nil || IsNil(o.Links) {
 		return nil, false
 	}
 	return o.Links, true
@@ -127,22 +132,22 @@ func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetLinksOk() (*GETAd
 
 // HasLinks returns a boolean if a field has been set.
 func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) HasLinks() bool {
-	if o != nil && o.Links != nil {
+	if o != nil && !IsNil(o.Links) {
 		return true
 	}
 
 	return false
 }
 
-// SetLinks gets a reference to the given GETAddresses200ResponseDataInnerLinks and assigns it to the Links field.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks) {
+// SetLinks gets a reference to the given POSTAddresses201ResponseDataLinks and assigns it to the Links field.
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks) {
 	o.Links = &v
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetAttributes() PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes {
-	if o == nil || o.Attributes == nil {
-		var ret PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetAttributes() PATCHStripeGatewaysStripeGatewayIdRequestDataAttributes {
+	if o == nil || IsNil(o.Attributes) {
+		var ret PATCHStripeGatewaysStripeGatewayIdRequestDataAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -150,8 +155,8 @@ func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetAttributes() PATC
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetAttributesOk() (*PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes, bool) {
-	if o == nil || o.Attributes == nil {
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetAttributesOk() (*PATCHStripeGatewaysStripeGatewayIdRequestDataAttributes, bool) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -159,22 +164,22 @@ func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetAttributesOk() (*
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) HasAttributes() bool {
-	if o != nil && o.Attributes != nil {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes and assigns it to the Attributes field.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) SetAttributes(v PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) {
+// SetAttributes gets a reference to the given PATCHStripeGatewaysStripeGatewayIdRequestDataAttributes and assigns it to the Attributes field.
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) SetAttributes(v PATCHStripeGatewaysStripeGatewayIdRequestDataAttributes) {
 	o.Attributes = &v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetRelationships() GETStripeGateways200ResponseDataInnerRelationships {
-	if o == nil || o.Relationships == nil {
-		var ret GETStripeGateways200ResponseDataInnerRelationships
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetRelationships() POSTStripeGateways201ResponseDataRelationships {
+	if o == nil || IsNil(o.Relationships) {
+		var ret POSTStripeGateways201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -182,8 +187,8 @@ func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetRelationships() G
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetRelationshipsOk() (*GETStripeGateways200ResponseDataInnerRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetRelationshipsOk() (*POSTStripeGateways201ResponseDataRelationships, bool) {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -191,19 +196,27 @@ func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) GetRelationshipsOk()
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
 	return false
 }
 
-// SetRelationships gets a reference to the given GETStripeGateways200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) SetRelationships(v GETStripeGateways200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given POSTStripeGateways201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseData) SetRelationships(v POSTStripeGateways201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 
 func (o PATCHStripeGatewaysStripeGatewayId200ResponseData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHStripeGatewaysStripeGatewayId200ResponseData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
@@ -211,16 +224,16 @@ func (o PATCHStripeGatewaysStripeGatewayId200ResponseData) MarshalJSON() ([]byte
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if o.Links != nil {
+	if !IsNil(o.Links) {
 		toSerialize["links"] = o.Links
 	}
-	if o.Attributes != nil {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if o.Relationships != nil {
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHStripeGatewaysStripeGatewayId200ResponseData struct {

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type BillingInfoValidationRulesApiService service
 type BillingInfoValidationRulesApiDELETEBillingInfoValidationRulesBillingInfoValidationRuleIdRequest struct {
 	ctx                         context.Context
 	ApiService                  *BillingInfoValidationRulesApiService
-	billingInfoValidationRuleId string
+	billingInfoValidationRuleId interface{}
 }
 
 func (r BillingInfoValidationRulesApiDELETEBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a billing info validation rule
 	@param billingInfoValidationRuleId The resource's id
 	@return BillingInfoValidationRulesApiDELETEBillingInfoValidationRulesBillingInfoValidationRuleIdRequest
 */
-func (a *BillingInfoValidationRulesApiService) DELETEBillingInfoValidationRulesBillingInfoValidationRuleId(ctx context.Context, billingInfoValidationRuleId string) BillingInfoValidationRulesApiDELETEBillingInfoValidationRulesBillingInfoValidationRuleIdRequest {
+func (a *BillingInfoValidationRulesApiService) DELETEBillingInfoValidationRulesBillingInfoValidationRuleId(ctx context.Context, billingInfoValidationRuleId interface{}) BillingInfoValidationRulesApiDELETEBillingInfoValidationRulesBillingInfoValidationRuleIdRequest {
 	return BillingInfoValidationRulesApiDELETEBillingInfoValidationRulesBillingInfoValidationRuleIdRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
@@ -64,7 +64,7 @@ func (a *BillingInfoValidationRulesApiService) DELETEBillingInfoValidationRulesB
 	}
 
 	localVarPath := localBasePath + "/billing_info_validation_rules/{billingInfoValidationRuleId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterToString(r.billingInfoValidationRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterValueToString(r.billingInfoValidationRuleId, "billingInfoValidationRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *BillingInfoValidationRulesApiService) DELETEBillingInfoValidationRulesB
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesExec
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -218,7 +218,7 @@ func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesExec
 type BillingInfoValidationRulesApiGETBillingInfoValidationRulesBillingInfoValidationRuleIdRequest struct {
 	ctx                         context.Context
 	ApiService                  *BillingInfoValidationRulesApiService
-	billingInfoValidationRuleId string
+	billingInfoValidationRuleId interface{}
 }
 
 func (r BillingInfoValidationRulesApiGETBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) Execute() (*GETBillingInfoValidationRulesBillingInfoValidationRuleId200Response, *http.Response, error) {
@@ -234,7 +234,7 @@ Retrieve a billing info validation rule
 	@param billingInfoValidationRuleId The resource's id
 	@return BillingInfoValidationRulesApiGETBillingInfoValidationRulesBillingInfoValidationRuleIdRequest
 */
-func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesBillingInfoValidationRuleId(ctx context.Context, billingInfoValidationRuleId string) BillingInfoValidationRulesApiGETBillingInfoValidationRulesBillingInfoValidationRuleIdRequest {
+func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesBillingInfoValidationRuleId(ctx context.Context, billingInfoValidationRuleId interface{}) BillingInfoValidationRulesApiGETBillingInfoValidationRulesBillingInfoValidationRuleIdRequest {
 	return BillingInfoValidationRulesApiGETBillingInfoValidationRulesBillingInfoValidationRuleIdRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
@@ -259,7 +259,7 @@ func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesBill
 	}
 
 	localVarPath := localBasePath + "/billing_info_validation_rules/{billingInfoValidationRuleId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterToString(r.billingInfoValidationRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterValueToString(r.billingInfoValidationRuleId, "billingInfoValidationRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesBill
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -320,18 +320,18 @@ func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesBill
 }
 
 type BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest struct {
-	ctx                             context.Context
-	ApiService                      *BillingInfoValidationRulesApiService
-	billingInfoValidationRuleUpdate *BillingInfoValidationRuleUpdate
-	billingInfoValidationRuleId     string
+	ctx                                                               context.Context
+	ApiService                                                        *BillingInfoValidationRulesApiService
+	pATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest *PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest
+	billingInfoValidationRuleId                                       interface{}
 }
 
-func (r BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) BillingInfoValidationRuleUpdate(billingInfoValidationRuleUpdate BillingInfoValidationRuleUpdate) BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest {
-	r.billingInfoValidationRuleUpdate = &billingInfoValidationRuleUpdate
+func (r BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest(pATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest {
+	r.pATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest = &pATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest
 	return r
 }
 
-func (r BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) Execute() (*POSTBillingInfoValidationRules201Response, *http.Response, error) {
+func (r BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) Execute() (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200Response, *http.Response, error) {
 	return r.ApiService.PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdExecute(r)
 }
 
@@ -344,7 +344,7 @@ Update a billing info validation rule
 	@param billingInfoValidationRuleId The resource's id
 	@return BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest
 */
-func (a *BillingInfoValidationRulesApiService) PATCHBillingInfoValidationRulesBillingInfoValidationRuleId(ctx context.Context, billingInfoValidationRuleId string) BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest {
+func (a *BillingInfoValidationRulesApiService) PATCHBillingInfoValidationRulesBillingInfoValidationRuleId(ctx context.Context, billingInfoValidationRuleId interface{}) BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest {
 	return BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
@@ -354,13 +354,13 @@ func (a *BillingInfoValidationRulesApiService) PATCHBillingInfoValidationRulesBi
 
 // Execute executes the request
 //
-//	@return POSTBillingInfoValidationRules201Response
-func (a *BillingInfoValidationRulesApiService) PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdExecute(r BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) (*POSTBillingInfoValidationRules201Response, *http.Response, error) {
+//	@return PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200Response
+func (a *BillingInfoValidationRulesApiService) PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdExecute(r BillingInfoValidationRulesApiPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest) (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTBillingInfoValidationRules201Response
+		localVarReturnValue *PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "BillingInfoValidationRulesApiService.PATCHBillingInfoValidationRulesBillingInfoValidationRuleId")
@@ -369,13 +369,13 @@ func (a *BillingInfoValidationRulesApiService) PATCHBillingInfoValidationRulesBi
 	}
 
 	localVarPath := localBasePath + "/billing_info_validation_rules/{billingInfoValidationRuleId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterToString(r.billingInfoValidationRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterValueToString(r.billingInfoValidationRuleId, "billingInfoValidationRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.billingInfoValidationRuleUpdate == nil {
-		return localVarReturnValue, nil, reportError("billingInfoValidationRuleUpdate is required and must be specified")
+	if r.pATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest == nil {
+		return localVarReturnValue, nil, reportError("pATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -396,7 +396,7 @@ func (a *BillingInfoValidationRulesApiService) PATCHBillingInfoValidationRulesBi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.billingInfoValidationRuleUpdate
+	localVarPostBody = r.pATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -407,9 +407,9 @@ func (a *BillingInfoValidationRulesApiService) PATCHBillingInfoValidationRulesBi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -435,13 +435,13 @@ func (a *BillingInfoValidationRulesApiService) PATCHBillingInfoValidationRulesBi
 }
 
 type BillingInfoValidationRulesApiPOSTBillingInfoValidationRulesRequest struct {
-	ctx                             context.Context
-	ApiService                      *BillingInfoValidationRulesApiService
-	billingInfoValidationRuleCreate *BillingInfoValidationRuleCreate
+	ctx                                   context.Context
+	ApiService                            *BillingInfoValidationRulesApiService
+	pOSTBillingInfoValidationRulesRequest *POSTBillingInfoValidationRulesRequest
 }
 
-func (r BillingInfoValidationRulesApiPOSTBillingInfoValidationRulesRequest) BillingInfoValidationRuleCreate(billingInfoValidationRuleCreate BillingInfoValidationRuleCreate) BillingInfoValidationRulesApiPOSTBillingInfoValidationRulesRequest {
-	r.billingInfoValidationRuleCreate = &billingInfoValidationRuleCreate
+func (r BillingInfoValidationRulesApiPOSTBillingInfoValidationRulesRequest) POSTBillingInfoValidationRulesRequest(pOSTBillingInfoValidationRulesRequest POSTBillingInfoValidationRulesRequest) BillingInfoValidationRulesApiPOSTBillingInfoValidationRulesRequest {
+	r.pOSTBillingInfoValidationRulesRequest = &pOSTBillingInfoValidationRulesRequest
 	return r
 }
 
@@ -485,8 +485,8 @@ func (a *BillingInfoValidationRulesApiService) POSTBillingInfoValidationRulesExe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.billingInfoValidationRuleCreate == nil {
-		return localVarReturnValue, nil, reportError("billingInfoValidationRuleCreate is required and must be specified")
+	if r.pOSTBillingInfoValidationRulesRequest == nil {
+		return localVarReturnValue, nil, reportError("pOSTBillingInfoValidationRulesRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -507,7 +507,7 @@ func (a *BillingInfoValidationRulesApiService) POSTBillingInfoValidationRulesExe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.billingInfoValidationRuleCreate
+	localVarPostBody = r.pOSTBillingInfoValidationRulesRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -518,9 +518,9 @@ func (a *BillingInfoValidationRulesApiService) POSTBillingInfoValidationRulesExe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

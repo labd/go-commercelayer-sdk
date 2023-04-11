@@ -1,6 +1,6 @@
 # \AvalaraAccountsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,15 +29,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    avalaraAccountId := "avalaraAccountId_example" // string | The resource's id
+    avalaraAccountId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AvalaraAccountsApi.DELETEAvalaraAccountsAvalaraAccountId(context.Background(), avalaraAccountId).Execute()
+    r, err := apiClient.AvalaraAccountsApi.DELETEAvalaraAccountsAvalaraAccountId(context.Background(), avalaraAccountId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AvalaraAccountsApi.DELETEAvalaraAccountsAvalaraAccountId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -51,7 +51,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**avalaraAccountId** | **string** | The resource&#39;s id | 
+**avalaraAccountId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -158,11 +158,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    avalaraAccountId := "avalaraAccountId_example" // string | The resource's id
+    avalaraAccountId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -182,7 +182,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**avalaraAccountId** | **string** | The resource&#39;s id | 
+**avalaraAccountId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHAvalaraAccountsAvalaraAccountId
 
-> PATCHAvalaraAccountsAvalaraAccountId200Response PATCHAvalaraAccountsAvalaraAccountId(ctx, avalaraAccountId).AvalaraAccountUpdate(avalaraAccountUpdate).Execute()
+> PATCHAvalaraAccountsAvalaraAccountId200Response PATCHAvalaraAccountsAvalaraAccountId(ctx, avalaraAccountId).PATCHAvalaraAccountsAvalaraAccountIdRequest(pATCHAvalaraAccountsAvalaraAccountIdRequest).Execute()
 
 Update an avalara account
 
@@ -228,16 +228,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    avalaraAccountUpdate := *openapiclient.NewAvalaraAccountUpdate(*openapiclient.NewAvalaraAccountUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes())) // AvalaraAccountUpdate | 
-    avalaraAccountId := "avalaraAccountId_example" // string | The resource's id
+    pATCHAvalaraAccountsAvalaraAccountIdRequest := *openapiclient.NewPATCHAvalaraAccountsAvalaraAccountIdRequest(*openapiclient.NewPATCHAvalaraAccountsAvalaraAccountIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHAvalaraAccountsAvalaraAccountIdRequestDataAttributes())) // PATCHAvalaraAccountsAvalaraAccountIdRequest | 
+    avalaraAccountId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AvalaraAccountsApi.PATCHAvalaraAccountsAvalaraAccountId(context.Background(), avalaraAccountId).AvalaraAccountUpdate(avalaraAccountUpdate).Execute()
+    resp, r, err := apiClient.AvalaraAccountsApi.PATCHAvalaraAccountsAvalaraAccountId(context.Background(), avalaraAccountId).PATCHAvalaraAccountsAvalaraAccountIdRequest(pATCHAvalaraAccountsAvalaraAccountIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AvalaraAccountsApi.PATCHAvalaraAccountsAvalaraAccountId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -253,7 +253,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**avalaraAccountId** | **string** | The resource&#39;s id | 
+**avalaraAccountId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -262,7 +262,7 @@ Other parameters are passed through a pointer to a apiPATCHAvalaraAccountsAvalar
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **avalaraAccountUpdate** | [**AvalaraAccountUpdate**](AvalaraAccountUpdate.md) |  | 
+ **pATCHAvalaraAccountsAvalaraAccountIdRequest** | [**PATCHAvalaraAccountsAvalaraAccountIdRequest**](PATCHAvalaraAccountsAvalaraAccountIdRequest.md) |  | 
 
 
 ### Return type
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTAvalaraAccounts
 
-> POSTAvalaraAccounts201Response POSTAvalaraAccounts(ctx).AvalaraAccountCreate(avalaraAccountCreate).Execute()
+> POSTAvalaraAccounts201Response POSTAvalaraAccounts(ctx).POSTAvalaraAccountsRequest(pOSTAvalaraAccountsRequest).Execute()
 
 Create an avalara account
 
@@ -300,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    avalaraAccountCreate := *openapiclient.NewAvalaraAccountCreate(*openapiclient.NewAvalaraAccountCreateData("Type_example", *openapiclient.NewPOSTAvalaraAccounts201ResponseDataAttributes("Personal tax calculator", "user@mydomain.com", "secret", "MYCOMPANY"))) // AvalaraAccountCreate | 
+    pOSTAvalaraAccountsRequest := *openapiclient.NewPOSTAvalaraAccountsRequest(*openapiclient.NewPOSTAvalaraAccountsRequestData(interface{}(123), *openapiclient.NewPOSTAvalaraAccountsRequestDataAttributes(interface{}(Personal tax calculator), interface{}(user@mydomain.com), interface{}(secret), interface{}(MYCOMPANY)))) // POSTAvalaraAccountsRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AvalaraAccountsApi.POSTAvalaraAccounts(context.Background()).AvalaraAccountCreate(avalaraAccountCreate).Execute()
+    resp, r, err := apiClient.AvalaraAccountsApi.POSTAvalaraAccounts(context.Background()).POSTAvalaraAccountsRequest(pOSTAvalaraAccountsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AvalaraAccountsApi.POSTAvalaraAccounts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiPOSTAvalaraAccountsRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **avalaraAccountCreate** | [**AvalaraAccountCreate**](AvalaraAccountCreate.md) |  | 
+ **pOSTAvalaraAccountsRequest** | [**POSTAvalaraAccountsRequest**](POSTAvalaraAccountsRequest.md) |  | 
 
 ### Return type
 

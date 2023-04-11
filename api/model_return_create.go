@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the ReturnCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ReturnCreate{}
+
 // ReturnCreate struct for ReturnCreate
 type ReturnCreate struct {
-	Data ReturnCreateData `json:"data"`
+	Data POSTReturnsRequestData `json:"data"`
 }
 
 // NewReturnCreate instantiates a new ReturnCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewReturnCreate(data ReturnCreateData) *ReturnCreate {
+func NewReturnCreate(data POSTReturnsRequestData) *ReturnCreate {
 	this := ReturnCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewReturnCreateWithDefaults() *ReturnCreate {
 }
 
 // GetData returns the Data field value
-func (o *ReturnCreate) GetData() ReturnCreateData {
+func (o *ReturnCreate) GetData() POSTReturnsRequestData {
 	if o == nil {
-		var ret ReturnCreateData
+		var ret POSTReturnsRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *ReturnCreate) GetData() ReturnCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ReturnCreate) GetDataOk() (*ReturnCreateData, bool) {
+func (o *ReturnCreate) GetDataOk() (*POSTReturnsRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *ReturnCreate) GetDataOk() (*ReturnCreateData, bool) {
 }
 
 // SetData sets field value
-func (o *ReturnCreate) SetData(v ReturnCreateData) {
+func (o *ReturnCreate) SetData(v POSTReturnsRequestData) {
 	o.Data = v
 }
 
 func (o ReturnCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ReturnCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableReturnCreate struct {

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the ExternalPaymentCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ExternalPaymentCreate{}
+
 // ExternalPaymentCreate struct for ExternalPaymentCreate
 type ExternalPaymentCreate struct {
-	Data ExternalPaymentCreateData `json:"data"`
+	Data POSTExternalPaymentsRequestData `json:"data"`
 }
 
 // NewExternalPaymentCreate instantiates a new ExternalPaymentCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalPaymentCreate(data ExternalPaymentCreateData) *ExternalPaymentCreate {
+func NewExternalPaymentCreate(data POSTExternalPaymentsRequestData) *ExternalPaymentCreate {
 	this := ExternalPaymentCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewExternalPaymentCreateWithDefaults() *ExternalPaymentCreate {
 }
 
 // GetData returns the Data field value
-func (o *ExternalPaymentCreate) GetData() ExternalPaymentCreateData {
+func (o *ExternalPaymentCreate) GetData() POSTExternalPaymentsRequestData {
 	if o == nil {
-		var ret ExternalPaymentCreateData
+		var ret POSTExternalPaymentsRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *ExternalPaymentCreate) GetData() ExternalPaymentCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ExternalPaymentCreate) GetDataOk() (*ExternalPaymentCreateData, bool) {
+func (o *ExternalPaymentCreate) GetDataOk() (*POSTExternalPaymentsRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *ExternalPaymentCreate) GetDataOk() (*ExternalPaymentCreateData, bool) {
 }
 
 // SetData sets field value
-func (o *ExternalPaymentCreate) SetData(v ExternalPaymentCreateData) {
+func (o *ExternalPaymentCreate) SetData(v POSTExternalPaymentsRequestData) {
 	o.Data = v
 }
 
 func (o ExternalPaymentCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ExternalPaymentCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableExternalPaymentCreate struct {

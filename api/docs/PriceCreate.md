@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PriceCreateData**](PriceCreateData.md) |  | 
+**Data** | [**POSTPricesRequestData**](POSTPricesRequestData.md) |  | 
 
 ## Methods
 
 ### NewPriceCreate
 
-`func NewPriceCreate(data PriceCreateData, ) *PriceCreate`
+`func NewPriceCreate(data POSTPricesRequestData, ) *PriceCreate`
 
 NewPriceCreate instantiates a new PriceCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *PriceCreate) GetData() PriceCreateData`
+`func (o *PriceCreate) GetData() POSTPricesRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *PriceCreate) GetDataOk() (*PriceCreateData, bool)`
+`func (o *PriceCreate) GetDataOk() (*POSTPricesRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *PriceCreate) SetData(v PriceCreateData)`
+`func (o *PriceCreate) SetData(v POSTPricesRequestData)`
 
 SetData sets Data field to given value.
 

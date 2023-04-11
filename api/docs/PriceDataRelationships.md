@@ -8,6 +8,7 @@ Name | Type | Description | Notes
 **Sku** | Pointer to [**BundleDataRelationshipsSkus**](BundleDataRelationshipsSkus.md) |  | [optional] 
 **PriceTiers** | Pointer to [**PriceDataRelationshipsPriceTiers**](PriceDataRelationshipsPriceTiers.md) |  | [optional] 
 **PriceVolumeTiers** | Pointer to [**PriceDataRelationshipsPriceVolumeTiers**](PriceDataRelationshipsPriceVolumeTiers.md) |  | [optional] 
+**PriceFrequencyTiers** | Pointer to [**PriceDataRelationshipsPriceFrequencyTiers**](PriceDataRelationshipsPriceFrequencyTiers.md) |  | [optional] 
 **Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
 
 ## Methods
@@ -128,6 +129,31 @@ SetPriceVolumeTiers sets PriceVolumeTiers field to given value.
 `func (o *PriceDataRelationships) HasPriceVolumeTiers() bool`
 
 HasPriceVolumeTiers returns a boolean if a field has been set.
+
+### GetPriceFrequencyTiers
+
+`func (o *PriceDataRelationships) GetPriceFrequencyTiers() PriceDataRelationshipsPriceFrequencyTiers`
+
+GetPriceFrequencyTiers returns the PriceFrequencyTiers field if non-nil, zero value otherwise.
+
+### GetPriceFrequencyTiersOk
+
+`func (o *PriceDataRelationships) GetPriceFrequencyTiersOk() (*PriceDataRelationshipsPriceFrequencyTiers, bool)`
+
+GetPriceFrequencyTiersOk returns a tuple with the PriceFrequencyTiers field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetPriceFrequencyTiers
+
+`func (o *PriceDataRelationships) SetPriceFrequencyTiers(v PriceDataRelationshipsPriceFrequencyTiers)`
+
+SetPriceFrequencyTiers sets PriceFrequencyTiers field to given value.
+
+### HasPriceFrequencyTiers
+
+`func (o *PriceDataRelationships) HasPriceFrequencyTiers() bool`
+
+HasPriceFrequencyTiers returns a boolean if a field has been set.
 
 ### GetAttachments
 

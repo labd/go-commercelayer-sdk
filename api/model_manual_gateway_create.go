@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the ManualGatewayCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ManualGatewayCreate{}
+
 // ManualGatewayCreate struct for ManualGatewayCreate
 type ManualGatewayCreate struct {
-	Data ManualGatewayCreateData `json:"data"`
+	Data POSTManualGatewaysRequestData `json:"data"`
 }
 
 // NewManualGatewayCreate instantiates a new ManualGatewayCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewManualGatewayCreate(data ManualGatewayCreateData) *ManualGatewayCreate {
+func NewManualGatewayCreate(data POSTManualGatewaysRequestData) *ManualGatewayCreate {
 	this := ManualGatewayCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewManualGatewayCreateWithDefaults() *ManualGatewayCreate {
 }
 
 // GetData returns the Data field value
-func (o *ManualGatewayCreate) GetData() ManualGatewayCreateData {
+func (o *ManualGatewayCreate) GetData() POSTManualGatewaysRequestData {
 	if o == nil {
-		var ret ManualGatewayCreateData
+		var ret POSTManualGatewaysRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *ManualGatewayCreate) GetData() ManualGatewayCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ManualGatewayCreate) GetDataOk() (*ManualGatewayCreateData, bool) {
+func (o *ManualGatewayCreate) GetDataOk() (*POSTManualGatewaysRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *ManualGatewayCreate) GetDataOk() (*ManualGatewayCreateData, bool) {
 }
 
 // SetData sets field value
-func (o *ManualGatewayCreate) SetData(v ManualGatewayCreateData) {
+func (o *ManualGatewayCreate) SetData(v POSTManualGatewaysRequestData) {
 	o.Data = v
 }
 
 func (o ManualGatewayCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ManualGatewayCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableManualGatewayCreate struct {

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**ShippingWeightTierCreateData**](ShippingWeightTierCreateData.md) |  | 
+**Data** | [**POSTShippingWeightTiersRequestData**](POSTShippingWeightTiersRequestData.md) |  | 
 
 ## Methods
 
 ### NewShippingWeightTierCreate
 
-`func NewShippingWeightTierCreate(data ShippingWeightTierCreateData, ) *ShippingWeightTierCreate`
+`func NewShippingWeightTierCreate(data POSTShippingWeightTiersRequestData, ) *ShippingWeightTierCreate`
 
 NewShippingWeightTierCreate instantiates a new ShippingWeightTierCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *ShippingWeightTierCreate) GetData() ShippingWeightTierCreateData`
+`func (o *ShippingWeightTierCreate) GetData() POSTShippingWeightTiersRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ShippingWeightTierCreate) GetDataOk() (*ShippingWeightTierCreateData, bool)`
+`func (o *ShippingWeightTierCreate) GetDataOk() (*POSTShippingWeightTiersRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ShippingWeightTierCreate) SetData(v ShippingWeightTierCreateData)`
+`func (o *ShippingWeightTierCreate) SetData(v POSTShippingWeightTiersRequestData)`
 
 SetData sets Data field to given value.
 

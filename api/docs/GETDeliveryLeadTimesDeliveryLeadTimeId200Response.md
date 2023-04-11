@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETDeliveryLeadTimes200ResponseDataInner**](GETDeliveryLeadTimes200ResponseDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETDeliveryLeadTimesDeliveryLeadTimeId200ResponseData**](GETDeliveryLeadTimesDeliveryLeadTimeId200ResponseData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETDeliveryLeadTimesDeliveryLeadTimeId200Response) GetData() GETDeliveryLeadTimes200ResponseDataInner`
+`func (o *GETDeliveryLeadTimesDeliveryLeadTimeId200Response) GetData() GETDeliveryLeadTimesDeliveryLeadTimeId200ResponseData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETDeliveryLeadTimesDeliveryLeadTimeId200Response) GetDataOk() (*GETDeliveryLeadTimes200ResponseDataInner, bool)`
+`func (o *GETDeliveryLeadTimesDeliveryLeadTimeId200Response) GetDataOk() (*GETDeliveryLeadTimesDeliveryLeadTimeId200ResponseData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETDeliveryLeadTimesDeliveryLeadTimeId200Response) SetData(v GETDeliveryLeadTimes200ResponseDataInner)`
+`func (o *GETDeliveryLeadTimesDeliveryLeadTimeId200Response) SetData(v GETDeliveryLeadTimesDeliveryLeadTimeId200ResponseData)`
 
 SetData sets Data field to given value.
 

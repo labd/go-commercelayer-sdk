@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type FixedAmountPromotionsApiService service
 type FixedAmountPromotionsApiDELETEFixedAmountPromotionsFixedAmountPromotionIdRequest struct {
 	ctx                    context.Context
 	ApiService             *FixedAmountPromotionsApiService
-	fixedAmountPromotionId string
+	fixedAmountPromotionId interface{}
 }
 
 func (r FixedAmountPromotionsApiDELETEFixedAmountPromotionsFixedAmountPromotionIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a fixed amount promotion
 	@param fixedAmountPromotionId The resource's id
 	@return FixedAmountPromotionsApiDELETEFixedAmountPromotionsFixedAmountPromotionIdRequest
 */
-func (a *FixedAmountPromotionsApiService) DELETEFixedAmountPromotionsFixedAmountPromotionId(ctx context.Context, fixedAmountPromotionId string) FixedAmountPromotionsApiDELETEFixedAmountPromotionsFixedAmountPromotionIdRequest {
+func (a *FixedAmountPromotionsApiService) DELETEFixedAmountPromotionsFixedAmountPromotionId(ctx context.Context, fixedAmountPromotionId interface{}) FixedAmountPromotionsApiDELETEFixedAmountPromotionsFixedAmountPromotionIdRequest {
 	return FixedAmountPromotionsApiDELETEFixedAmountPromotionsFixedAmountPromotionIdRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -64,7 +64,7 @@ func (a *FixedAmountPromotionsApiService) DELETEFixedAmountPromotionsFixedAmount
 	}
 
 	localVarPath := localBasePath + "/fixed_amount_promotions/{fixedAmountPromotionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterToString(r.fixedAmountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedAmountPromotionId, "fixedAmountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *FixedAmountPromotionsApiService) DELETEFixedAmountPromotionsFixedAmount
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *FixedAmountPromotionsApiService) GETFixedAmountPromotionsExecute(r Fixe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -218,7 +218,7 @@ func (a *FixedAmountPromotionsApiService) GETFixedAmountPromotionsExecute(r Fixe
 type FixedAmountPromotionsApiGETFixedAmountPromotionsFixedAmountPromotionIdRequest struct {
 	ctx                    context.Context
 	ApiService             *FixedAmountPromotionsApiService
-	fixedAmountPromotionId string
+	fixedAmountPromotionId interface{}
 }
 
 func (r FixedAmountPromotionsApiGETFixedAmountPromotionsFixedAmountPromotionIdRequest) Execute() (*GETFixedAmountPromotionsFixedAmountPromotionId200Response, *http.Response, error) {
@@ -234,7 +234,7 @@ Retrieve a fixed amount promotion
 	@param fixedAmountPromotionId The resource's id
 	@return FixedAmountPromotionsApiGETFixedAmountPromotionsFixedAmountPromotionIdRequest
 */
-func (a *FixedAmountPromotionsApiService) GETFixedAmountPromotionsFixedAmountPromotionId(ctx context.Context, fixedAmountPromotionId string) FixedAmountPromotionsApiGETFixedAmountPromotionsFixedAmountPromotionIdRequest {
+func (a *FixedAmountPromotionsApiService) GETFixedAmountPromotionsFixedAmountPromotionId(ctx context.Context, fixedAmountPromotionId interface{}) FixedAmountPromotionsApiGETFixedAmountPromotionsFixedAmountPromotionIdRequest {
 	return FixedAmountPromotionsApiGETFixedAmountPromotionsFixedAmountPromotionIdRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -259,7 +259,7 @@ func (a *FixedAmountPromotionsApiService) GETFixedAmountPromotionsFixedAmountPro
 	}
 
 	localVarPath := localBasePath + "/fixed_amount_promotions/{fixedAmountPromotionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterToString(r.fixedAmountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedAmountPromotionId, "fixedAmountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *FixedAmountPromotionsApiService) GETFixedAmountPromotionsFixedAmountPro
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -320,14 +320,14 @@ func (a *FixedAmountPromotionsApiService) GETFixedAmountPromotionsFixedAmountPro
 }
 
 type FixedAmountPromotionsApiPATCHFixedAmountPromotionsFixedAmountPromotionIdRequest struct {
-	ctx                        context.Context
-	ApiService                 *FixedAmountPromotionsApiService
-	fixedAmountPromotionUpdate *FixedAmountPromotionUpdate
-	fixedAmountPromotionId     string
+	ctx                                                     context.Context
+	ApiService                                              *FixedAmountPromotionsApiService
+	pATCHFixedAmountPromotionsFixedAmountPromotionIdRequest *PATCHFixedAmountPromotionsFixedAmountPromotionIdRequest
+	fixedAmountPromotionId                                  interface{}
 }
 
-func (r FixedAmountPromotionsApiPATCHFixedAmountPromotionsFixedAmountPromotionIdRequest) FixedAmountPromotionUpdate(fixedAmountPromotionUpdate FixedAmountPromotionUpdate) FixedAmountPromotionsApiPATCHFixedAmountPromotionsFixedAmountPromotionIdRequest {
-	r.fixedAmountPromotionUpdate = &fixedAmountPromotionUpdate
+func (r FixedAmountPromotionsApiPATCHFixedAmountPromotionsFixedAmountPromotionIdRequest) PATCHFixedAmountPromotionsFixedAmountPromotionIdRequest(pATCHFixedAmountPromotionsFixedAmountPromotionIdRequest PATCHFixedAmountPromotionsFixedAmountPromotionIdRequest) FixedAmountPromotionsApiPATCHFixedAmountPromotionsFixedAmountPromotionIdRequest {
+	r.pATCHFixedAmountPromotionsFixedAmountPromotionIdRequest = &pATCHFixedAmountPromotionsFixedAmountPromotionIdRequest
 	return r
 }
 
@@ -344,7 +344,7 @@ Update a fixed amount promotion
 	@param fixedAmountPromotionId The resource's id
 	@return FixedAmountPromotionsApiPATCHFixedAmountPromotionsFixedAmountPromotionIdRequest
 */
-func (a *FixedAmountPromotionsApiService) PATCHFixedAmountPromotionsFixedAmountPromotionId(ctx context.Context, fixedAmountPromotionId string) FixedAmountPromotionsApiPATCHFixedAmountPromotionsFixedAmountPromotionIdRequest {
+func (a *FixedAmountPromotionsApiService) PATCHFixedAmountPromotionsFixedAmountPromotionId(ctx context.Context, fixedAmountPromotionId interface{}) FixedAmountPromotionsApiPATCHFixedAmountPromotionsFixedAmountPromotionIdRequest {
 	return FixedAmountPromotionsApiPATCHFixedAmountPromotionsFixedAmountPromotionIdRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -369,13 +369,13 @@ func (a *FixedAmountPromotionsApiService) PATCHFixedAmountPromotionsFixedAmountP
 	}
 
 	localVarPath := localBasePath + "/fixed_amount_promotions/{fixedAmountPromotionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterToString(r.fixedAmountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedAmountPromotionId, "fixedAmountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.fixedAmountPromotionUpdate == nil {
-		return localVarReturnValue, nil, reportError("fixedAmountPromotionUpdate is required and must be specified")
+	if r.pATCHFixedAmountPromotionsFixedAmountPromotionIdRequest == nil {
+		return localVarReturnValue, nil, reportError("pATCHFixedAmountPromotionsFixedAmountPromotionIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -396,7 +396,7 @@ func (a *FixedAmountPromotionsApiService) PATCHFixedAmountPromotionsFixedAmountP
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.fixedAmountPromotionUpdate
+	localVarPostBody = r.pATCHFixedAmountPromotionsFixedAmountPromotionIdRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -407,9 +407,9 @@ func (a *FixedAmountPromotionsApiService) PATCHFixedAmountPromotionsFixedAmountP
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -435,13 +435,13 @@ func (a *FixedAmountPromotionsApiService) PATCHFixedAmountPromotionsFixedAmountP
 }
 
 type FixedAmountPromotionsApiPOSTFixedAmountPromotionsRequest struct {
-	ctx                        context.Context
-	ApiService                 *FixedAmountPromotionsApiService
-	fixedAmountPromotionCreate *FixedAmountPromotionCreate
+	ctx                              context.Context
+	ApiService                       *FixedAmountPromotionsApiService
+	pOSTFixedAmountPromotionsRequest *POSTFixedAmountPromotionsRequest
 }
 
-func (r FixedAmountPromotionsApiPOSTFixedAmountPromotionsRequest) FixedAmountPromotionCreate(fixedAmountPromotionCreate FixedAmountPromotionCreate) FixedAmountPromotionsApiPOSTFixedAmountPromotionsRequest {
-	r.fixedAmountPromotionCreate = &fixedAmountPromotionCreate
+func (r FixedAmountPromotionsApiPOSTFixedAmountPromotionsRequest) POSTFixedAmountPromotionsRequest(pOSTFixedAmountPromotionsRequest POSTFixedAmountPromotionsRequest) FixedAmountPromotionsApiPOSTFixedAmountPromotionsRequest {
+	r.pOSTFixedAmountPromotionsRequest = &pOSTFixedAmountPromotionsRequest
 	return r
 }
 
@@ -485,8 +485,8 @@ func (a *FixedAmountPromotionsApiService) POSTFixedAmountPromotionsExecute(r Fix
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.fixedAmountPromotionCreate == nil {
-		return localVarReturnValue, nil, reportError("fixedAmountPromotionCreate is required and must be specified")
+	if r.pOSTFixedAmountPromotionsRequest == nil {
+		return localVarReturnValue, nil, reportError("pOSTFixedAmountPromotionsRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -507,7 +507,7 @@ func (a *FixedAmountPromotionsApiService) POSTFixedAmountPromotionsExecute(r Fix
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.fixedAmountPromotionCreate
+	localVarPostBody = r.pOSTFixedAmountPromotionsRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -518,9 +518,9 @@ func (a *FixedAmountPromotionsApiService) POSTFixedAmountPromotionsExecute(r Fix
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

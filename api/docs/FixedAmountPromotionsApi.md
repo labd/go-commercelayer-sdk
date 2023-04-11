@@ -1,6 +1,6 @@
 # \FixedAmountPromotionsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,15 +29,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    fixedAmountPromotionId := "fixedAmountPromotionId_example" // string | The resource's id
+    fixedAmountPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.FixedAmountPromotionsApi.DELETEFixedAmountPromotionsFixedAmountPromotionId(context.Background(), fixedAmountPromotionId).Execute()
+    r, err := apiClient.FixedAmountPromotionsApi.DELETEFixedAmountPromotionsFixedAmountPromotionId(context.Background(), fixedAmountPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `FixedAmountPromotionsApi.DELETEFixedAmountPromotionsFixedAmountPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -51,7 +51,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**fixedAmountPromotionId** | **string** | The resource&#39;s id | 
+**fixedAmountPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -158,11 +158,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    fixedAmountPromotionId := "fixedAmountPromotionId_example" // string | The resource's id
+    fixedAmountPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -182,7 +182,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**fixedAmountPromotionId** | **string** | The resource&#39;s id | 
+**fixedAmountPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHFixedAmountPromotionsFixedAmountPromotionId
 
-> PATCHFixedAmountPromotionsFixedAmountPromotionId200Response PATCHFixedAmountPromotionsFixedAmountPromotionId(ctx, fixedAmountPromotionId).FixedAmountPromotionUpdate(fixedAmountPromotionUpdate).Execute()
+> PATCHFixedAmountPromotionsFixedAmountPromotionId200Response PATCHFixedAmountPromotionsFixedAmountPromotionId(ctx, fixedAmountPromotionId).PATCHFixedAmountPromotionsFixedAmountPromotionIdRequest(pATCHFixedAmountPromotionsFixedAmountPromotionIdRequest).Execute()
 
 Update a fixed amount promotion
 
@@ -228,16 +228,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    fixedAmountPromotionUpdate := *openapiclient.NewFixedAmountPromotionUpdate(*openapiclient.NewFixedAmountPromotionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHFixedAmountPromotionsFixedAmountPromotionId200ResponseDataAttributes())) // FixedAmountPromotionUpdate | 
-    fixedAmountPromotionId := "fixedAmountPromotionId_example" // string | The resource's id
+    pATCHFixedAmountPromotionsFixedAmountPromotionIdRequest := *openapiclient.NewPATCHFixedAmountPromotionsFixedAmountPromotionIdRequest(*openapiclient.NewPATCHFixedAmountPromotionsFixedAmountPromotionIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHFixedAmountPromotionsFixedAmountPromotionIdRequestDataAttributes())) // PATCHFixedAmountPromotionsFixedAmountPromotionIdRequest | 
+    fixedAmountPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.FixedAmountPromotionsApi.PATCHFixedAmountPromotionsFixedAmountPromotionId(context.Background(), fixedAmountPromotionId).FixedAmountPromotionUpdate(fixedAmountPromotionUpdate).Execute()
+    resp, r, err := apiClient.FixedAmountPromotionsApi.PATCHFixedAmountPromotionsFixedAmountPromotionId(context.Background(), fixedAmountPromotionId).PATCHFixedAmountPromotionsFixedAmountPromotionIdRequest(pATCHFixedAmountPromotionsFixedAmountPromotionIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `FixedAmountPromotionsApi.PATCHFixedAmountPromotionsFixedAmountPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -253,7 +253,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**fixedAmountPromotionId** | **string** | The resource&#39;s id | 
+**fixedAmountPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -262,7 +262,7 @@ Other parameters are passed through a pointer to a apiPATCHFixedAmountPromotions
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fixedAmountPromotionUpdate** | [**FixedAmountPromotionUpdate**](FixedAmountPromotionUpdate.md) |  | 
+ **pATCHFixedAmountPromotionsFixedAmountPromotionIdRequest** | [**PATCHFixedAmountPromotionsFixedAmountPromotionIdRequest**](PATCHFixedAmountPromotionsFixedAmountPromotionIdRequest.md) |  | 
 
 
 ### Return type
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTFixedAmountPromotions
 
-> POSTFixedAmountPromotions201Response POSTFixedAmountPromotions(ctx).FixedAmountPromotionCreate(fixedAmountPromotionCreate).Execute()
+> POSTFixedAmountPromotions201Response POSTFixedAmountPromotions(ctx).POSTFixedAmountPromotionsRequest(pOSTFixedAmountPromotionsRequest).Execute()
 
 Create a fixed amount promotion
 
@@ -300,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    fixedAmountPromotionCreate := *openapiclient.NewFixedAmountPromotionCreate(*openapiclient.NewFixedAmountPromotionCreateData("Type_example", *openapiclient.NewPOSTFixedAmountPromotions201ResponseDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5), int32(1000)))) // FixedAmountPromotionCreate | 
+    pOSTFixedAmountPromotionsRequest := *openapiclient.NewPOSTFixedAmountPromotionsRequest(*openapiclient.NewPOSTFixedAmountPromotionsRequestData(interface{}(123), *openapiclient.NewPOSTFixedAmountPromotionsRequestDataAttributes(interface{}(Personal promotion), interface{}(2018-01-01T12:00:00.000Z), interface{}(2018-01-02T12:00:00.000Z), interface{}(5), interface{}(1000)))) // POSTFixedAmountPromotionsRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.FixedAmountPromotionsApi.POSTFixedAmountPromotions(context.Background()).FixedAmountPromotionCreate(fixedAmountPromotionCreate).Execute()
+    resp, r, err := apiClient.FixedAmountPromotionsApi.POSTFixedAmountPromotions(context.Background()).POSTFixedAmountPromotionsRequest(pOSTFixedAmountPromotionsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `FixedAmountPromotionsApi.POSTFixedAmountPromotions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiPOSTFixedAmountPromotionsR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **fixedAmountPromotionCreate** | [**FixedAmountPromotionCreate**](FixedAmountPromotionCreate.md) |  | 
+ **pOSTFixedAmountPromotionsRequest** | [**POSTFixedAmountPromotionsRequest**](POSTFixedAmountPromotionsRequest.md) |  | 
 
 ### Return type
 

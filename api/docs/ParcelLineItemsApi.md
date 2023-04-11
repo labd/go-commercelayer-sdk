@@ -1,6 +1,6 @@
 # \ParcelLineItemsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,15 +30,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    parcelLineItemId := "parcelLineItemId_example" // string | The resource's id
+    parcelLineItemId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ParcelLineItemsApi.DELETEParcelLineItemsParcelLineItemId(context.Background(), parcelLineItemId).Execute()
+    r, err := apiClient.ParcelLineItemsApi.DELETEParcelLineItemsParcelLineItemId(context.Background(), parcelLineItemId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ParcelLineItemsApi.DELETEParcelLineItemsParcelLineItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -52,7 +52,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**parcelLineItemId** | **string** | The resource&#39;s id | 
+**parcelLineItemId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -98,15 +98,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    parcelId := "parcelId_example" // string | The resource's id
+    parcelId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ParcelLineItemsApi.GETParcelIdParcelLineItems(context.Background(), parcelId).Execute()
+    r, err := apiClient.ParcelLineItemsApi.GETParcelIdParcelLineItems(context.Background(), parcelId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ParcelLineItemsApi.GETParcelIdParcelLineItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -120,7 +120,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**parcelId** | **string** | The resource&#39;s id | 
+**parcelId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -166,7 +166,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -227,11 +227,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    parcelLineItemId := "parcelLineItemId_example" // string | The resource's id
+    parcelLineItemId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -251,7 +251,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**parcelLineItemId** | **string** | The resource&#39;s id | 
+**parcelLineItemId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHParcelLineItemsParcelLineItemId
 
-> PATCHParcelLineItemsParcelLineItemId200Response PATCHParcelLineItemsParcelLineItemId(ctx, parcelLineItemId).ParcelLineItemUpdate(parcelLineItemUpdate).Execute()
+> PATCHParcelLineItemsParcelLineItemId200Response PATCHParcelLineItemsParcelLineItemId(ctx, parcelLineItemId).PATCHParcelLineItemsParcelLineItemIdRequest(pATCHParcelLineItemsParcelLineItemIdRequest).Execute()
 
 Update a parcel line item
 
@@ -297,16 +297,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    parcelLineItemUpdate := *openapiclient.NewParcelLineItemUpdate(*openapiclient.NewParcelLineItemUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // ParcelLineItemUpdate | 
-    parcelLineItemId := "parcelLineItemId_example" // string | The resource's id
+    pATCHParcelLineItemsParcelLineItemIdRequest := *openapiclient.NewPATCHParcelLineItemsParcelLineItemIdRequest(*openapiclient.NewPATCHParcelLineItemsParcelLineItemIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes())) // PATCHParcelLineItemsParcelLineItemIdRequest | 
+    parcelLineItemId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ParcelLineItemsApi.PATCHParcelLineItemsParcelLineItemId(context.Background(), parcelLineItemId).ParcelLineItemUpdate(parcelLineItemUpdate).Execute()
+    resp, r, err := apiClient.ParcelLineItemsApi.PATCHParcelLineItemsParcelLineItemId(context.Background(), parcelLineItemId).PATCHParcelLineItemsParcelLineItemIdRequest(pATCHParcelLineItemsParcelLineItemIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ParcelLineItemsApi.PATCHParcelLineItemsParcelLineItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -322,7 +322,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**parcelLineItemId** | **string** | The resource&#39;s id | 
+**parcelLineItemId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -331,7 +331,7 @@ Other parameters are passed through a pointer to a apiPATCHParcelLineItemsParcel
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parcelLineItemUpdate** | [**ParcelLineItemUpdate**](ParcelLineItemUpdate.md) |  | 
+ **pATCHParcelLineItemsParcelLineItemIdRequest** | [**PATCHParcelLineItemsParcelLineItemIdRequest**](PATCHParcelLineItemsParcelLineItemIdRequest.md) |  | 
 
 
 ### Return type
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTParcelLineItems
 
-> POSTParcelLineItems201Response POSTParcelLineItems(ctx).ParcelLineItemCreate(parcelLineItemCreate).Execute()
+> POSTParcelLineItems201Response POSTParcelLineItems(ctx).POSTParcelLineItemsRequest(pOSTParcelLineItemsRequest).Execute()
 
 Create a parcel line item
 
@@ -369,15 +369,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    parcelLineItemCreate := *openapiclient.NewParcelLineItemCreate(*openapiclient.NewParcelLineItemCreateData("Type_example", *openapiclient.NewPOSTParcelLineItems201ResponseDataAttributes(int32(4)))) // ParcelLineItemCreate | 
+    pOSTParcelLineItemsRequest := *openapiclient.NewPOSTParcelLineItemsRequest(*openapiclient.NewPOSTParcelLineItemsRequestData(interface{}(123), *openapiclient.NewPOSTParcelLineItemsRequestDataAttributes(interface{}(4)))) // POSTParcelLineItemsRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ParcelLineItemsApi.POSTParcelLineItems(context.Background()).ParcelLineItemCreate(parcelLineItemCreate).Execute()
+    resp, r, err := apiClient.ParcelLineItemsApi.POSTParcelLineItems(context.Background()).POSTParcelLineItemsRequest(pOSTParcelLineItemsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ParcelLineItemsApi.POSTParcelLineItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +398,7 @@ Other parameters are passed through a pointer to a apiPOSTParcelLineItemsRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **parcelLineItemCreate** | [**ParcelLineItemCreate**](ParcelLineItemCreate.md) |  | 
+ **pOSTParcelLineItemsRequest** | [**POSTParcelLineItemsRequest**](POSTParcelLineItemsRequest.md) |  | 
 
 ### Return type
 

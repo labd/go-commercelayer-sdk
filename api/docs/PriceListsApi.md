@@ -1,6 +1,6 @@
 # \PriceListsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,15 +31,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    priceListId := "priceListId_example" // string | The resource's id
+    priceListId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PriceListsApi.DELETEPriceListsPriceListId(context.Background(), priceListId).Execute()
+    r, err := apiClient.PriceListsApi.DELETEPriceListsPriceListId(context.Background(), priceListId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceListsApi.DELETEPriceListsPriceListId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -53,7 +53,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**priceListId** | **string** | The resource&#39;s id | 
+**priceListId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -99,15 +99,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    marketId := "marketId_example" // string | The resource's id
+    marketId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PriceListsApi.GETMarketIdPriceList(context.Background(), marketId).Execute()
+    r, err := apiClient.PriceListsApi.GETMarketIdPriceList(context.Background(), marketId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceListsApi.GETMarketIdPriceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -121,7 +121,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**marketId** | **string** | The resource&#39;s id | 
+**marketId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -167,15 +167,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    priceId := "priceId_example" // string | The resource's id
+    priceId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PriceListsApi.GETPriceIdPriceList(context.Background(), priceId).Execute()
+    r, err := apiClient.PriceListsApi.GETPriceIdPriceList(context.Background(), priceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceListsApi.GETPriceIdPriceList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -189,7 +189,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**priceId** | **string** | The resource&#39;s id | 
+**priceId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -235,7 +235,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -296,11 +296,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    priceListId := "priceListId_example" // string | The resource's id
+    priceListId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -320,7 +320,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**priceListId** | **string** | The resource&#39;s id | 
+**priceListId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ## PATCHPriceListsPriceListId
 
-> PATCHPriceListsPriceListId200Response PATCHPriceListsPriceListId(ctx, priceListId).PriceListUpdate(priceListUpdate).Execute()
+> PATCHPriceListsPriceListId200Response PATCHPriceListsPriceListId(ctx, priceListId).PATCHPriceListsPriceListIdRequest(pATCHPriceListsPriceListIdRequest).Execute()
 
 Update a price list
 
@@ -366,16 +366,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    priceListUpdate := *openapiclient.NewPriceListUpdate(*openapiclient.NewPriceListUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHPriceListsPriceListId200ResponseDataAttributes())) // PriceListUpdate | 
-    priceListId := "priceListId_example" // string | The resource's id
+    pATCHPriceListsPriceListIdRequest := *openapiclient.NewPATCHPriceListsPriceListIdRequest(*openapiclient.NewPATCHPriceListsPriceListIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHPriceListsPriceListIdRequestDataAttributes())) // PATCHPriceListsPriceListIdRequest | 
+    priceListId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PriceListsApi.PATCHPriceListsPriceListId(context.Background(), priceListId).PriceListUpdate(priceListUpdate).Execute()
+    resp, r, err := apiClient.PriceListsApi.PATCHPriceListsPriceListId(context.Background(), priceListId).PATCHPriceListsPriceListIdRequest(pATCHPriceListsPriceListIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceListsApi.PATCHPriceListsPriceListId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -391,7 +391,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**priceListId** | **string** | The resource&#39;s id | 
+**priceListId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -400,7 +400,7 @@ Other parameters are passed through a pointer to a apiPATCHPriceListsPriceListId
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **priceListUpdate** | [**PriceListUpdate**](PriceListUpdate.md) |  | 
+ **pATCHPriceListsPriceListIdRequest** | [**PATCHPriceListsPriceListIdRequest**](PATCHPriceListsPriceListIdRequest.md) |  | 
 
 
 ### Return type
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ## POSTPriceLists
 
-> POSTPriceLists201Response POSTPriceLists(ctx).PriceListCreate(priceListCreate).Execute()
+> POSTPriceLists201Response POSTPriceLists(ctx).POSTPriceListsRequest(pOSTPriceListsRequest).Execute()
 
 Create a price list
 
@@ -438,15 +438,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    priceListCreate := *openapiclient.NewPriceListCreate(*openapiclient.NewPriceListCreateData("Type_example", *openapiclient.NewPOSTPriceLists201ResponseDataAttributes("EU Price list", "EUR"))) // PriceListCreate | 
+    pOSTPriceListsRequest := *openapiclient.NewPOSTPriceListsRequest(*openapiclient.NewPOSTPriceListsRequestData(interface{}(123), *openapiclient.NewPOSTPriceListsRequestDataAttributes(interface{}(EU Price list), interface{}(EUR)))) // POSTPriceListsRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PriceListsApi.POSTPriceLists(context.Background()).PriceListCreate(priceListCreate).Execute()
+    resp, r, err := apiClient.PriceListsApi.POSTPriceLists(context.Background()).POSTPriceListsRequest(pOSTPriceListsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PriceListsApi.POSTPriceLists``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -467,7 +467,7 @@ Other parameters are passed through a pointer to a apiPOSTPriceListsRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **priceListCreate** | [**PriceListCreate**](PriceListCreate.md) |  | 
+ **pOSTPriceListsRequest** | [**POSTPriceListsRequest**](POSTPriceListsRequest.md) |  | 
 
 ### Return type
 

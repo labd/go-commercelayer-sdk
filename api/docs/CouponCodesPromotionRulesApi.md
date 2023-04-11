@@ -1,6 +1,6 @@
 # \CouponCodesPromotionRulesApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -37,15 +37,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    couponCodesPromotionRuleId := "couponCodesPromotionRuleId_example" // string | The resource's id
+    couponCodesPromotionRuleId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CouponCodesPromotionRulesApi.DELETECouponCodesPromotionRulesCouponCodesPromotionRuleId(context.Background(), couponCodesPromotionRuleId).Execute()
+    r, err := apiClient.CouponCodesPromotionRulesApi.DELETECouponCodesPromotionRulesCouponCodesPromotionRuleId(context.Background(), couponCodesPromotionRuleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponCodesPromotionRulesApi.DELETECouponCodesPromotionRulesCouponCodesPromotionRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -59,7 +59,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**couponCodesPromotionRuleId** | **string** | The resource&#39;s id | 
+**couponCodesPromotionRuleId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -105,7 +105,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -166,11 +166,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    couponCodesPromotionRuleId := "couponCodesPromotionRuleId_example" // string | The resource's id
+    couponCodesPromotionRuleId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -190,7 +190,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**couponCodesPromotionRuleId** | **string** | The resource&#39;s id | 
+**couponCodesPromotionRuleId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -236,15 +236,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    couponId := "couponId_example" // string | The resource's id
+    couponId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CouponCodesPromotionRulesApi.GETCouponIdPromotionRule(context.Background(), couponId).Execute()
+    r, err := apiClient.CouponCodesPromotionRulesApi.GETCouponIdPromotionRule(context.Background(), couponId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponCodesPromotionRulesApi.GETCouponIdPromotionRule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -258,7 +258,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**couponId** | **string** | The resource&#39;s id | 
+**couponId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -304,15 +304,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    externalPromotionId := "externalPromotionId_example" // string | The resource's id
+    externalPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CouponCodesPromotionRulesApi.GETExternalPromotionIdCouponCodesPromotionRule(context.Background(), externalPromotionId).Execute()
+    r, err := apiClient.CouponCodesPromotionRulesApi.GETExternalPromotionIdCouponCodesPromotionRule(context.Background(), externalPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponCodesPromotionRulesApi.GETExternalPromotionIdCouponCodesPromotionRule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -326,7 +326,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**externalPromotionId** | **string** | The resource&#39;s id | 
+**externalPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -372,15 +372,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    fixedAmountPromotionId := "fixedAmountPromotionId_example" // string | The resource's id
+    fixedAmountPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CouponCodesPromotionRulesApi.GETFixedAmountPromotionIdCouponCodesPromotionRule(context.Background(), fixedAmountPromotionId).Execute()
+    r, err := apiClient.CouponCodesPromotionRulesApi.GETFixedAmountPromotionIdCouponCodesPromotionRule(context.Background(), fixedAmountPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponCodesPromotionRulesApi.GETFixedAmountPromotionIdCouponCodesPromotionRule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -394,7 +394,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**fixedAmountPromotionId** | **string** | The resource&#39;s id | 
+**fixedAmountPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -440,15 +440,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    fixedPricePromotionId := "fixedPricePromotionId_example" // string | The resource's id
+    fixedPricePromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CouponCodesPromotionRulesApi.GETFixedPricePromotionIdCouponCodesPromotionRule(context.Background(), fixedPricePromotionId).Execute()
+    r, err := apiClient.CouponCodesPromotionRulesApi.GETFixedPricePromotionIdCouponCodesPromotionRule(context.Background(), fixedPricePromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponCodesPromotionRulesApi.GETFixedPricePromotionIdCouponCodesPromotionRule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -462,7 +462,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**fixedPricePromotionId** | **string** | The resource&#39;s id | 
+**fixedPricePromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -508,15 +508,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    freeGiftPromotionId := "freeGiftPromotionId_example" // string | The resource's id
+    freeGiftPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CouponCodesPromotionRulesApi.GETFreeGiftPromotionIdCouponCodesPromotionRule(context.Background(), freeGiftPromotionId).Execute()
+    r, err := apiClient.CouponCodesPromotionRulesApi.GETFreeGiftPromotionIdCouponCodesPromotionRule(context.Background(), freeGiftPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponCodesPromotionRulesApi.GETFreeGiftPromotionIdCouponCodesPromotionRule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -530,7 +530,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**freeGiftPromotionId** | **string** | The resource&#39;s id | 
+**freeGiftPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -576,15 +576,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    freeShippingPromotionId := "freeShippingPromotionId_example" // string | The resource's id
+    freeShippingPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CouponCodesPromotionRulesApi.GETFreeShippingPromotionIdCouponCodesPromotionRule(context.Background(), freeShippingPromotionId).Execute()
+    r, err := apiClient.CouponCodesPromotionRulesApi.GETFreeShippingPromotionIdCouponCodesPromotionRule(context.Background(), freeShippingPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponCodesPromotionRulesApi.GETFreeShippingPromotionIdCouponCodesPromotionRule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -598,7 +598,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**freeShippingPromotionId** | **string** | The resource&#39;s id | 
+**freeShippingPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -644,15 +644,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    percentageDiscountPromotionId := "percentageDiscountPromotionId_example" // string | The resource's id
+    percentageDiscountPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CouponCodesPromotionRulesApi.GETPercentageDiscountPromotionIdCouponCodesPromotionRule(context.Background(), percentageDiscountPromotionId).Execute()
+    r, err := apiClient.CouponCodesPromotionRulesApi.GETPercentageDiscountPromotionIdCouponCodesPromotionRule(context.Background(), percentageDiscountPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponCodesPromotionRulesApi.GETPercentageDiscountPromotionIdCouponCodesPromotionRule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -666,7 +666,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**percentageDiscountPromotionId** | **string** | The resource&#39;s id | 
+**percentageDiscountPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -712,15 +712,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    promotionId := "promotionId_example" // string | The resource's id
+    promotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CouponCodesPromotionRulesApi.GETPromotionIdCouponCodesPromotionRule(context.Background(), promotionId).Execute()
+    r, err := apiClient.CouponCodesPromotionRulesApi.GETPromotionIdCouponCodesPromotionRule(context.Background(), promotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponCodesPromotionRulesApi.GETPromotionIdCouponCodesPromotionRule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -734,7 +734,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**promotionId** | **string** | The resource&#39;s id | 
+**promotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -765,7 +765,7 @@ Name | Type | Description  | Notes
 
 ## PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId
 
-> POSTCouponCodesPromotionRules201Response PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId(ctx, couponCodesPromotionRuleId).CouponCodesPromotionRuleUpdate(couponCodesPromotionRuleUpdate).Execute()
+> PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId(ctx, couponCodesPromotionRuleId).PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest(pATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest).Execute()
 
 Update a coupon codes promotion rule
 
@@ -780,21 +780,21 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    couponCodesPromotionRuleUpdate := *openapiclient.NewCouponCodesPromotionRuleUpdate(*openapiclient.NewCouponCodesPromotionRuleUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CouponCodesPromotionRuleUpdate | 
-    couponCodesPromotionRuleId := "couponCodesPromotionRuleId_example" // string | The resource's id
+    pATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest := *openapiclient.NewPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest(*openapiclient.NewPATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes())) // PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest | 
+    couponCodesPromotionRuleId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CouponCodesPromotionRulesApi.PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId(context.Background(), couponCodesPromotionRuleId).CouponCodesPromotionRuleUpdate(couponCodesPromotionRuleUpdate).Execute()
+    resp, r, err := apiClient.CouponCodesPromotionRulesApi.PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId(context.Background(), couponCodesPromotionRuleId).PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest(pATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponCodesPromotionRulesApi.PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId`: POSTCouponCodesPromotionRules201Response
+    // response from `PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId`: PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response
     fmt.Fprintf(os.Stdout, "Response from `CouponCodesPromotionRulesApi.PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId`: %v\n", resp)
 }
 ```
@@ -805,7 +805,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**couponCodesPromotionRuleId** | **string** | The resource&#39;s id | 
+**couponCodesPromotionRuleId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -814,12 +814,12 @@ Other parameters are passed through a pointer to a apiPATCHCouponCodesPromotionR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **couponCodesPromotionRuleUpdate** | [**CouponCodesPromotionRuleUpdate**](CouponCodesPromotionRuleUpdate.md) |  | 
+ **pATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest** | [**PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest**](PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleIdRequest.md) |  | 
 
 
 ### Return type
 
-[**POSTCouponCodesPromotionRules201Response**](POSTCouponCodesPromotionRules201Response.md)
+[**PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response**](PATCHCouponCodesPromotionRulesCouponCodesPromotionRuleId200Response.md)
 
 ### Authorization
 
@@ -837,7 +837,7 @@ Name | Type | Description  | Notes
 
 ## POSTCouponCodesPromotionRules
 
-> POSTCouponCodesPromotionRules201Response POSTCouponCodesPromotionRules(ctx).CouponCodesPromotionRuleCreate(couponCodesPromotionRuleCreate).Execute()
+> POSTCouponCodesPromotionRules201Response POSTCouponCodesPromotionRules(ctx).POSTCouponCodesPromotionRulesRequest(pOSTCouponCodesPromotionRulesRequest).Execute()
 
 Create a coupon codes promotion rule
 
@@ -852,15 +852,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    couponCodesPromotionRuleCreate := *openapiclient.NewCouponCodesPromotionRuleCreate(*openapiclient.NewCouponCodesPromotionRuleCreateData("Type_example", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CouponCodesPromotionRuleCreate | 
+    pOSTCouponCodesPromotionRulesRequest := *openapiclient.NewPOSTCouponCodesPromotionRulesRequest(*openapiclient.NewPOSTCouponCodesPromotionRulesRequestData(interface{}(123), *openapiclient.NewPOSTAdyenPaymentsRequestDataAttributes())) // POSTCouponCodesPromotionRulesRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CouponCodesPromotionRulesApi.POSTCouponCodesPromotionRules(context.Background()).CouponCodesPromotionRuleCreate(couponCodesPromotionRuleCreate).Execute()
+    resp, r, err := apiClient.CouponCodesPromotionRulesApi.POSTCouponCodesPromotionRules(context.Background()).POSTCouponCodesPromotionRulesRequest(pOSTCouponCodesPromotionRulesRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponCodesPromotionRulesApi.POSTCouponCodesPromotionRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -881,7 +881,7 @@ Other parameters are passed through a pointer to a apiPOSTCouponCodesPromotionRu
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **couponCodesPromotionRuleCreate** | [**CouponCodesPromotionRuleCreate**](CouponCodesPromotionRuleCreate.md) |  | 
+ **pOSTCouponCodesPromotionRulesRequest** | [**POSTCouponCodesPromotionRulesRequest**](POSTCouponCodesPromotionRulesRequest.md) |  | 
 
 ### Return type
 

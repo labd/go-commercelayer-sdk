@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the LineItemOptionCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &LineItemOptionCreate{}
+
 // LineItemOptionCreate struct for LineItemOptionCreate
 type LineItemOptionCreate struct {
-	Data LineItemOptionCreateData `json:"data"`
+	Data POSTLineItemOptionsRequestData `json:"data"`
 }
 
 // NewLineItemOptionCreate instantiates a new LineItemOptionCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLineItemOptionCreate(data LineItemOptionCreateData) *LineItemOptionCreate {
+func NewLineItemOptionCreate(data POSTLineItemOptionsRequestData) *LineItemOptionCreate {
 	this := LineItemOptionCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewLineItemOptionCreateWithDefaults() *LineItemOptionCreate {
 }
 
 // GetData returns the Data field value
-func (o *LineItemOptionCreate) GetData() LineItemOptionCreateData {
+func (o *LineItemOptionCreate) GetData() POSTLineItemOptionsRequestData {
 	if o == nil {
-		var ret LineItemOptionCreateData
+		var ret POSTLineItemOptionsRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *LineItemOptionCreate) GetData() LineItemOptionCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *LineItemOptionCreate) GetDataOk() (*LineItemOptionCreateData, bool) {
+func (o *LineItemOptionCreate) GetDataOk() (*POSTLineItemOptionsRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *LineItemOptionCreate) GetDataOk() (*LineItemOptionCreateData, bool) {
 }
 
 // SetData sets field value
-func (o *LineItemOptionCreate) SetData(v LineItemOptionCreateData) {
+func (o *LineItemOptionCreate) SetData(v POSTLineItemOptionsRequestData) {
 	o.Data = v
 }
 
 func (o LineItemOptionCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o LineItemOptionCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableLineItemOptionCreate struct {

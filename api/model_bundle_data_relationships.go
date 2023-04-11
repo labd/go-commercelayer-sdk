@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the BundleDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BundleDataRelationships{}
 
 // BundleDataRelationships struct for BundleDataRelationships
 type BundleDataRelationships struct {
@@ -42,7 +45,7 @@ func NewBundleDataRelationshipsWithDefaults() *BundleDataRelationships {
 
 // GetMarket returns the Market field value if set, zero value otherwise.
 func (o *BundleDataRelationships) GetMarket() AvalaraAccountDataRelationshipsMarkets {
-	if o == nil || o.Market == nil {
+	if o == nil || IsNil(o.Market) {
 		var ret AvalaraAccountDataRelationshipsMarkets
 		return ret
 	}
@@ -52,7 +55,7 @@ func (o *BundleDataRelationships) GetMarket() AvalaraAccountDataRelationshipsMar
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BundleDataRelationships) GetMarketOk() (*AvalaraAccountDataRelationshipsMarkets, bool) {
-	if o == nil || o.Market == nil {
+	if o == nil || IsNil(o.Market) {
 		return nil, false
 	}
 	return o.Market, true
@@ -60,7 +63,7 @@ func (o *BundleDataRelationships) GetMarketOk() (*AvalaraAccountDataRelationship
 
 // HasMarket returns a boolean if a field has been set.
 func (o *BundleDataRelationships) HasMarket() bool {
-	if o != nil && o.Market != nil {
+	if o != nil && !IsNil(o.Market) {
 		return true
 	}
 
@@ -74,7 +77,7 @@ func (o *BundleDataRelationships) SetMarket(v AvalaraAccountDataRelationshipsMar
 
 // GetSkuList returns the SkuList field value if set, zero value otherwise.
 func (o *BundleDataRelationships) GetSkuList() BundleDataRelationshipsSkuList {
-	if o == nil || o.SkuList == nil {
+	if o == nil || IsNil(o.SkuList) {
 		var ret BundleDataRelationshipsSkuList
 		return ret
 	}
@@ -84,7 +87,7 @@ func (o *BundleDataRelationships) GetSkuList() BundleDataRelationshipsSkuList {
 // GetSkuListOk returns a tuple with the SkuList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BundleDataRelationships) GetSkuListOk() (*BundleDataRelationshipsSkuList, bool) {
-	if o == nil || o.SkuList == nil {
+	if o == nil || IsNil(o.SkuList) {
 		return nil, false
 	}
 	return o.SkuList, true
@@ -92,7 +95,7 @@ func (o *BundleDataRelationships) GetSkuListOk() (*BundleDataRelationshipsSkuLis
 
 // HasSkuList returns a boolean if a field has been set.
 func (o *BundleDataRelationships) HasSkuList() bool {
-	if o != nil && o.SkuList != nil {
+	if o != nil && !IsNil(o.SkuList) {
 		return true
 	}
 
@@ -106,7 +109,7 @@ func (o *BundleDataRelationships) SetSkuList(v BundleDataRelationshipsSkuList) {
 
 // GetSkus returns the Skus field value if set, zero value otherwise.
 func (o *BundleDataRelationships) GetSkus() BundleDataRelationshipsSkus {
-	if o == nil || o.Skus == nil {
+	if o == nil || IsNil(o.Skus) {
 		var ret BundleDataRelationshipsSkus
 		return ret
 	}
@@ -116,7 +119,7 @@ func (o *BundleDataRelationships) GetSkus() BundleDataRelationshipsSkus {
 // GetSkusOk returns a tuple with the Skus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BundleDataRelationships) GetSkusOk() (*BundleDataRelationshipsSkus, bool) {
-	if o == nil || o.Skus == nil {
+	if o == nil || IsNil(o.Skus) {
 		return nil, false
 	}
 	return o.Skus, true
@@ -124,7 +127,7 @@ func (o *BundleDataRelationships) GetSkusOk() (*BundleDataRelationshipsSkus, boo
 
 // HasSkus returns a boolean if a field has been set.
 func (o *BundleDataRelationships) HasSkus() bool {
-	if o != nil && o.Skus != nil {
+	if o != nil && !IsNil(o.Skus) {
 		return true
 	}
 
@@ -138,7 +141,7 @@ func (o *BundleDataRelationships) SetSkus(v BundleDataRelationshipsSkus) {
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *BundleDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
-	if o == nil || o.Attachments == nil {
+	if o == nil || IsNil(o.Attachments) {
 		var ret AvalaraAccountDataRelationshipsAttachments
 		return ret
 	}
@@ -148,7 +151,7 @@ func (o *BundleDataRelationships) GetAttachments() AvalaraAccountDataRelationshi
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BundleDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
-	if o == nil || o.Attachments == nil {
+	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
 	return o.Attachments, true
@@ -156,7 +159,7 @@ func (o *BundleDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelatio
 
 // HasAttachments returns a boolean if a field has been set.
 func (o *BundleDataRelationships) HasAttachments() bool {
-	if o != nil && o.Attachments != nil {
+	if o != nil && !IsNil(o.Attachments) {
 		return true
 	}
 
@@ -169,20 +172,28 @@ func (o *BundleDataRelationships) SetAttachments(v AvalaraAccountDataRelationshi
 }
 
 func (o BundleDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Market != nil {
-		toSerialize["market"] = o.Market
-	}
-	if o.SkuList != nil {
-		toSerialize["sku_list"] = o.SkuList
-	}
-	if o.Skus != nil {
-		toSerialize["skus"] = o.Skus
-	}
-	if o.Attachments != nil {
-		toSerialize["attachments"] = o.Attachments
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o BundleDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Market) {
+		toSerialize["market"] = o.Market
+	}
+	if !IsNil(o.SkuList) {
+		toSerialize["sku_list"] = o.SkuList
+	}
+	if !IsNil(o.Skus) {
+		toSerialize["skus"] = o.Skus
+	}
+	if !IsNil(o.Attachments) {
+		toSerialize["attachments"] = o.Attachments
+	}
+	return toSerialize, nil
 }
 
 type NullableBundleDataRelationships struct {

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the ShippingZoneCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ShippingZoneCreate{}
+
 // ShippingZoneCreate struct for ShippingZoneCreate
 type ShippingZoneCreate struct {
-	Data ShippingZoneCreateData `json:"data"`
+	Data POSTShippingZonesRequestData `json:"data"`
 }
 
 // NewShippingZoneCreate instantiates a new ShippingZoneCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShippingZoneCreate(data ShippingZoneCreateData) *ShippingZoneCreate {
+func NewShippingZoneCreate(data POSTShippingZonesRequestData) *ShippingZoneCreate {
 	this := ShippingZoneCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewShippingZoneCreateWithDefaults() *ShippingZoneCreate {
 }
 
 // GetData returns the Data field value
-func (o *ShippingZoneCreate) GetData() ShippingZoneCreateData {
+func (o *ShippingZoneCreate) GetData() POSTShippingZonesRequestData {
 	if o == nil {
-		var ret ShippingZoneCreateData
+		var ret POSTShippingZonesRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *ShippingZoneCreate) GetData() ShippingZoneCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ShippingZoneCreate) GetDataOk() (*ShippingZoneCreateData, bool) {
+func (o *ShippingZoneCreate) GetDataOk() (*POSTShippingZonesRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *ShippingZoneCreate) GetDataOk() (*ShippingZoneCreateData, bool) {
 }
 
 // SetData sets field value
-func (o *ShippingZoneCreate) SetData(v ShippingZoneCreateData) {
+func (o *ShippingZoneCreate) SetData(v POSTShippingZonesRequestData) {
 	o.Data = v
 }
 
 func (o ShippingZoneCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ShippingZoneCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableShippingZoneCreate struct {

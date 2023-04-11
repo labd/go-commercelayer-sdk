@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the StripeGatewayUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &StripeGatewayUpdate{}
+
 // StripeGatewayUpdate struct for StripeGatewayUpdate
 type StripeGatewayUpdate struct {
-	Data StripeGatewayUpdateData `json:"data"`
+	Data PATCHStripeGatewaysStripeGatewayIdRequestData `json:"data"`
 }
 
 // NewStripeGatewayUpdate instantiates a new StripeGatewayUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStripeGatewayUpdate(data StripeGatewayUpdateData) *StripeGatewayUpdate {
+func NewStripeGatewayUpdate(data PATCHStripeGatewaysStripeGatewayIdRequestData) *StripeGatewayUpdate {
 	this := StripeGatewayUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewStripeGatewayUpdateWithDefaults() *StripeGatewayUpdate {
 }
 
 // GetData returns the Data field value
-func (o *StripeGatewayUpdate) GetData() StripeGatewayUpdateData {
+func (o *StripeGatewayUpdate) GetData() PATCHStripeGatewaysStripeGatewayIdRequestData {
 	if o == nil {
-		var ret StripeGatewayUpdateData
+		var ret PATCHStripeGatewaysStripeGatewayIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *StripeGatewayUpdate) GetData() StripeGatewayUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *StripeGatewayUpdate) GetDataOk() (*StripeGatewayUpdateData, bool) {
+func (o *StripeGatewayUpdate) GetDataOk() (*PATCHStripeGatewaysStripeGatewayIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *StripeGatewayUpdate) GetDataOk() (*StripeGatewayUpdateData, bool) {
 }
 
 // SetData sets field value
-func (o *StripeGatewayUpdate) SetData(v StripeGatewayUpdateData) {
+func (o *StripeGatewayUpdate) SetData(v PATCHStripeGatewaysStripeGatewayIdRequestData) {
 	o.Data = v
 }
 
 func (o StripeGatewayUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o StripeGatewayUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableStripeGatewayUpdate struct {

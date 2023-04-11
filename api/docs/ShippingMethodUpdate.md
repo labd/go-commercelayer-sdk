@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**ShippingMethodUpdateData**](ShippingMethodUpdateData.md) |  | 
+**Data** | [**PATCHShippingMethodsShippingMethodIdRequestData**](PATCHShippingMethodsShippingMethodIdRequestData.md) |  | 
 
 ## Methods
 
 ### NewShippingMethodUpdate
 
-`func NewShippingMethodUpdate(data ShippingMethodUpdateData, ) *ShippingMethodUpdate`
+`func NewShippingMethodUpdate(data PATCHShippingMethodsShippingMethodIdRequestData, ) *ShippingMethodUpdate`
 
 NewShippingMethodUpdate instantiates a new ShippingMethodUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *ShippingMethodUpdate) GetData() ShippingMethodUpdateData`
+`func (o *ShippingMethodUpdate) GetData() PATCHShippingMethodsShippingMethodIdRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ShippingMethodUpdate) GetDataOk() (*ShippingMethodUpdateData, bool)`
+`func (o *ShippingMethodUpdate) GetDataOk() (*PATCHShippingMethodsShippingMethodIdRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ShippingMethodUpdate) SetData(v ShippingMethodUpdateData)`
+`func (o *ShippingMethodUpdate) SetData(v PATCHShippingMethodsShippingMethodIdRequestData)`
 
 SetData sets Data field to given value.
 

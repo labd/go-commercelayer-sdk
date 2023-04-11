@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the CustomerPaymentSourceDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CustomerPaymentSourceDataRelationships{}
 
 // CustomerPaymentSourceDataRelationships struct for CustomerPaymentSourceDataRelationships
 type CustomerPaymentSourceDataRelationships struct {
@@ -40,7 +43,7 @@ func NewCustomerPaymentSourceDataRelationshipsWithDefaults() *CustomerPaymentSou
 
 // GetCustomer returns the Customer field value if set, zero value otherwise.
 func (o *CustomerPaymentSourceDataRelationships) GetCustomer() CouponRecipientDataRelationshipsCustomer {
-	if o == nil || o.Customer == nil {
+	if o == nil || IsNil(o.Customer) {
 		var ret CouponRecipientDataRelationshipsCustomer
 		return ret
 	}
@@ -50,7 +53,7 @@ func (o *CustomerPaymentSourceDataRelationships) GetCustomer() CouponRecipientDa
 // GetCustomerOk returns a tuple with the Customer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerPaymentSourceDataRelationships) GetCustomerOk() (*CouponRecipientDataRelationshipsCustomer, bool) {
-	if o == nil || o.Customer == nil {
+	if o == nil || IsNil(o.Customer) {
 		return nil, false
 	}
 	return o.Customer, true
@@ -58,7 +61,7 @@ func (o *CustomerPaymentSourceDataRelationships) GetCustomerOk() (*CouponRecipie
 
 // HasCustomer returns a boolean if a field has been set.
 func (o *CustomerPaymentSourceDataRelationships) HasCustomer() bool {
-	if o != nil && o.Customer != nil {
+	if o != nil && !IsNil(o.Customer) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *CustomerPaymentSourceDataRelationships) SetCustomer(v CouponRecipientDa
 
 // GetPaymentSource returns the PaymentSource field value if set, zero value otherwise.
 func (o *CustomerPaymentSourceDataRelationships) GetPaymentSource() CustomerPaymentSourceDataRelationshipsPaymentSource {
-	if o == nil || o.PaymentSource == nil {
+	if o == nil || IsNil(o.PaymentSource) {
 		var ret CustomerPaymentSourceDataRelationshipsPaymentSource
 		return ret
 	}
@@ -82,7 +85,7 @@ func (o *CustomerPaymentSourceDataRelationships) GetPaymentSource() CustomerPaym
 // GetPaymentSourceOk returns a tuple with the PaymentSource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerPaymentSourceDataRelationships) GetPaymentSourceOk() (*CustomerPaymentSourceDataRelationshipsPaymentSource, bool) {
-	if o == nil || o.PaymentSource == nil {
+	if o == nil || IsNil(o.PaymentSource) {
 		return nil, false
 	}
 	return o.PaymentSource, true
@@ -90,7 +93,7 @@ func (o *CustomerPaymentSourceDataRelationships) GetPaymentSourceOk() (*Customer
 
 // HasPaymentSource returns a boolean if a field has been set.
 func (o *CustomerPaymentSourceDataRelationships) HasPaymentSource() bool {
-	if o != nil && o.PaymentSource != nil {
+	if o != nil && !IsNil(o.PaymentSource) {
 		return true
 	}
 
@@ -103,14 +106,22 @@ func (o *CustomerPaymentSourceDataRelationships) SetPaymentSource(v CustomerPaym
 }
 
 func (o CustomerPaymentSourceDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Customer != nil {
-		toSerialize["customer"] = o.Customer
-	}
-	if o.PaymentSource != nil {
-		toSerialize["payment_source"] = o.PaymentSource
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CustomerPaymentSourceDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Customer) {
+		toSerialize["customer"] = o.Customer
+	}
+	if !IsNil(o.PaymentSource) {
+		toSerialize["payment_source"] = o.PaymentSource
+	}
+	return toSerialize, nil
 }
 
 type NullableCustomerPaymentSourceDataRelationships struct {

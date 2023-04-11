@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETPrices200ResponseDataInnerAttributes**](GETPrices200ResponseDataInnerAttributes.md) |  | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Attributes** | [**GETPricesPriceId200ResponseDataAttributes**](GETPricesPriceId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**PriceDataRelationships**](PriceDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPriceData
 
-`func NewPriceData(type_ string, attributes GETPrices200ResponseDataInnerAttributes, ) *PriceData`
+`func NewPriceData(type_ interface{}, attributes GETPricesPriceId200ResponseDataAttributes, ) *PriceData`
 
 NewPriceData instantiates a new PriceData object
 This constructor will assign default values to properties that have it defined,
@@ -29,40 +29,50 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *PriceData) GetType() string`
+`func (o *PriceData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *PriceData) GetTypeOk() (*string, bool)`
+`func (o *PriceData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *PriceData) SetType(v string)`
+`func (o *PriceData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *PriceData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *PriceData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *PriceData) GetAttributes() GETPrices200ResponseDataInnerAttributes`
+`func (o *PriceData) GetAttributes() GETPricesPriceId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PriceData) GetAttributesOk() (*GETPrices200ResponseDataInnerAttributes, bool)`
+`func (o *PriceData) GetAttributesOk() (*GETPricesPriceId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PriceData) SetAttributes(v GETPrices200ResponseDataInnerAttributes)`
+`func (o *PriceData) SetAttributes(v GETPricesPriceId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

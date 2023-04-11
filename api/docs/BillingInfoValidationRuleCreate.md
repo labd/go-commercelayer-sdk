@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**BillingInfoValidationRuleCreateData**](BillingInfoValidationRuleCreateData.md) |  | 
+**Data** | [**POSTBillingInfoValidationRulesRequestData**](POSTBillingInfoValidationRulesRequestData.md) |  | 
 
 ## Methods
 
 ### NewBillingInfoValidationRuleCreate
 
-`func NewBillingInfoValidationRuleCreate(data BillingInfoValidationRuleCreateData, ) *BillingInfoValidationRuleCreate`
+`func NewBillingInfoValidationRuleCreate(data POSTBillingInfoValidationRulesRequestData, ) *BillingInfoValidationRuleCreate`
 
 NewBillingInfoValidationRuleCreate instantiates a new BillingInfoValidationRuleCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *BillingInfoValidationRuleCreate) GetData() BillingInfoValidationRuleCreateData`
+`func (o *BillingInfoValidationRuleCreate) GetData() POSTBillingInfoValidationRulesRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *BillingInfoValidationRuleCreate) GetDataOk() (*BillingInfoValidationRuleCreateData, bool)`
+`func (o *BillingInfoValidationRuleCreate) GetDataOk() (*POSTBillingInfoValidationRulesRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *BillingInfoValidationRuleCreate) SetData(v BillingInfoValidationRuleCreateData)`
+`func (o *BillingInfoValidationRuleCreate) SetData(v POSTBillingInfoValidationRulesRequestData)`
 
 SetData sets Data field to given value.
 

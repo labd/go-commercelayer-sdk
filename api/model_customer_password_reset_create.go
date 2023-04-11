@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the CustomerPasswordResetCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CustomerPasswordResetCreate{}
+
 // CustomerPasswordResetCreate struct for CustomerPasswordResetCreate
 type CustomerPasswordResetCreate struct {
-	Data CustomerPasswordResetCreateData `json:"data"`
+	Data POSTCustomerPasswordResetsRequestData `json:"data"`
 }
 
 // NewCustomerPasswordResetCreate instantiates a new CustomerPasswordResetCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerPasswordResetCreate(data CustomerPasswordResetCreateData) *CustomerPasswordResetCreate {
+func NewCustomerPasswordResetCreate(data POSTCustomerPasswordResetsRequestData) *CustomerPasswordResetCreate {
 	this := CustomerPasswordResetCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewCustomerPasswordResetCreateWithDefaults() *CustomerPasswordResetCreate {
 }
 
 // GetData returns the Data field value
-func (o *CustomerPasswordResetCreate) GetData() CustomerPasswordResetCreateData {
+func (o *CustomerPasswordResetCreate) GetData() POSTCustomerPasswordResetsRequestData {
 	if o == nil {
-		var ret CustomerPasswordResetCreateData
+		var ret POSTCustomerPasswordResetsRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *CustomerPasswordResetCreate) GetData() CustomerPasswordResetCreateData 
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CustomerPasswordResetCreate) GetDataOk() (*CustomerPasswordResetCreateData, bool) {
+func (o *CustomerPasswordResetCreate) GetDataOk() (*POSTCustomerPasswordResetsRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *CustomerPasswordResetCreate) GetDataOk() (*CustomerPasswordResetCreateD
 }
 
 // SetData sets field value
-func (o *CustomerPasswordResetCreate) SetData(v CustomerPasswordResetCreateData) {
+func (o *CustomerPasswordResetCreate) SetData(v POSTCustomerPasswordResetsRequestData) {
 	o.Data = v
 }
 
 func (o CustomerPasswordResetCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CustomerPasswordResetCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableCustomerPasswordResetCreate struct {

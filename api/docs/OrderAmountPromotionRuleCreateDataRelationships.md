@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Promotion** | [**CouponCodesPromotionRuleCreateDataRelationshipsPromotion**](CouponCodesPromotionRuleCreateDataRelationshipsPromotion.md) |  | 
+**Promotion** | [**OrderAmountPromotionRuleCreateDataRelationshipsPromotion**](OrderAmountPromotionRuleCreateDataRelationshipsPromotion.md) |  | 
 
 ## Methods
 
 ### NewOrderAmountPromotionRuleCreateDataRelationships
 
-`func NewOrderAmountPromotionRuleCreateDataRelationships(promotion CouponCodesPromotionRuleCreateDataRelationshipsPromotion, ) *OrderAmountPromotionRuleCreateDataRelationships`
+`func NewOrderAmountPromotionRuleCreateDataRelationships(promotion OrderAmountPromotionRuleCreateDataRelationshipsPromotion, ) *OrderAmountPromotionRuleCreateDataRelationships`
 
 NewOrderAmountPromotionRuleCreateDataRelationships instantiates a new OrderAmountPromotionRuleCreateDataRelationships object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPromotion
 
-`func (o *OrderAmountPromotionRuleCreateDataRelationships) GetPromotion() CouponCodesPromotionRuleCreateDataRelationshipsPromotion`
+`func (o *OrderAmountPromotionRuleCreateDataRelationships) GetPromotion() OrderAmountPromotionRuleCreateDataRelationshipsPromotion`
 
 GetPromotion returns the Promotion field if non-nil, zero value otherwise.
 
 ### GetPromotionOk
 
-`func (o *OrderAmountPromotionRuleCreateDataRelationships) GetPromotionOk() (*CouponCodesPromotionRuleCreateDataRelationshipsPromotion, bool)`
+`func (o *OrderAmountPromotionRuleCreateDataRelationships) GetPromotionOk() (*OrderAmountPromotionRuleCreateDataRelationshipsPromotion, bool)`
 
 GetPromotionOk returns a tuple with the Promotion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPromotion
 
-`func (o *OrderAmountPromotionRuleCreateDataRelationships) SetPromotion(v CouponCodesPromotionRuleCreateDataRelationshipsPromotion)`
+`func (o *OrderAmountPromotionRuleCreateDataRelationships) SetPromotion(v OrderAmountPromotionRuleCreateDataRelationshipsPromotion)`
 
 SetPromotion sets Promotion field to given value.
 

@@ -10,9 +10,9 @@ Name | Type | Description | Notes
 **SkuListPromotionRule** | Pointer to [**ExternalPromotionDataRelationshipsSkuListPromotionRule**](ExternalPromotionDataRelationshipsSkuListPromotionRule.md) |  | [optional] 
 **CouponCodesPromotionRule** | Pointer to [**CouponDataRelationshipsPromotionRule**](CouponDataRelationshipsPromotionRule.md) |  | [optional] 
 **Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
+**Events** | Pointer to [**AuthorizationDataRelationshipsEvents**](AuthorizationDataRelationshipsEvents.md) |  | [optional] 
 **SkuList** | Pointer to [**BundleDataRelationshipsSkuList**](BundleDataRelationshipsSkuList.md) |  | [optional] 
 **Skus** | Pointer to [**BundleDataRelationshipsSkus**](BundleDataRelationshipsSkus.md) |  | [optional] 
-**Events** | Pointer to [**AuthorizationDataRelationshipsEvents**](AuthorizationDataRelationshipsEvents.md) |  | [optional] 
 
 ## Methods
 
@@ -183,6 +183,31 @@ SetAttachments sets Attachments field to given value.
 
 HasAttachments returns a boolean if a field has been set.
 
+### GetEvents
+
+`func (o *FixedPricePromotionDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents`
+
+GetEvents returns the Events field if non-nil, zero value otherwise.
+
+### GetEventsOk
+
+`func (o *FixedPricePromotionDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool)`
+
+GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetEvents
+
+`func (o *FixedPricePromotionDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents)`
+
+SetEvents sets Events field to given value.
+
+### HasEvents
+
+`func (o *FixedPricePromotionDataRelationships) HasEvents() bool`
+
+HasEvents returns a boolean if a field has been set.
+
 ### GetSkuList
 
 `func (o *FixedPricePromotionDataRelationships) GetSkuList() BundleDataRelationshipsSkuList`
@@ -232,31 +257,6 @@ SetSkus sets Skus field to given value.
 `func (o *FixedPricePromotionDataRelationships) HasSkus() bool`
 
 HasSkus returns a boolean if a field has been set.
-
-### GetEvents
-
-`func (o *FixedPricePromotionDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents`
-
-GetEvents returns the Events field if non-nil, zero value otherwise.
-
-### GetEventsOk
-
-`func (o *FixedPricePromotionDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool)`
-
-GetEventsOk returns a tuple with the Events field if it's non-nil, zero value otherwise
-and a boolean to check if the value has been set.
-
-### SetEvents
-
-`func (o *FixedPricePromotionDataRelationships) SetEvents(v AuthorizationDataRelationshipsEvents)`
-
-SetEvents sets Events field to given value.
-
-### HasEvents
-
-`func (o *FixedPricePromotionDataRelationships) HasEvents() bool`
-
-HasEvents returns a boolean if a field has been set.
 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

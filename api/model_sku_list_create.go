@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the SkuListCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SkuListCreate{}
+
 // SkuListCreate struct for SkuListCreate
 type SkuListCreate struct {
-	Data SkuListCreateData `json:"data"`
+	Data POSTSkuListsRequestData `json:"data"`
 }
 
 // NewSkuListCreate instantiates a new SkuListCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuListCreate(data SkuListCreateData) *SkuListCreate {
+func NewSkuListCreate(data POSTSkuListsRequestData) *SkuListCreate {
 	this := SkuListCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewSkuListCreateWithDefaults() *SkuListCreate {
 }
 
 // GetData returns the Data field value
-func (o *SkuListCreate) GetData() SkuListCreateData {
+func (o *SkuListCreate) GetData() POSTSkuListsRequestData {
 	if o == nil {
-		var ret SkuListCreateData
+		var ret POSTSkuListsRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *SkuListCreate) GetData() SkuListCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *SkuListCreate) GetDataOk() (*SkuListCreateData, bool) {
+func (o *SkuListCreate) GetDataOk() (*POSTSkuListsRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *SkuListCreate) GetDataOk() (*SkuListCreateData, bool) {
 }
 
 // SetData sets field value
-func (o *SkuListCreate) SetData(v SkuListCreateData) {
+func (o *SkuListCreate) SetData(v POSTSkuListsRequestData) {
 	o.Data = v
 }
 
 func (o SkuListCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o SkuListCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableSkuListCreate struct {

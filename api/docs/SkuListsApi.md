@@ -1,6 +1,6 @@
 # \SkuListsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -36,15 +36,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    skuListId := "skuListId_example" // string | The resource's id
+    skuListId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListsApi.DELETESkuListsSkuListId(context.Background(), skuListId).Execute()
+    r, err := apiClient.SkuListsApi.DELETESkuListsSkuListId(context.Background(), skuListId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.DELETESkuListsSkuListId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -58,7 +58,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**skuListId** | **string** | The resource&#39;s id | 
+**skuListId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -104,15 +104,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    bundleId := "bundleId_example" // string | The resource's id
+    bundleId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListsApi.GETBundleIdSkuList(context.Background(), bundleId).Execute()
+    r, err := apiClient.SkuListsApi.GETBundleIdSkuList(context.Background(), bundleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.GETBundleIdSkuList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -126,7 +126,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bundleId** | **string** | The resource&#39;s id | 
+**bundleId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -172,15 +172,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    customerId := "customerId_example" // string | The resource's id
+    customerId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListsApi.GETCustomerIdSkuLists(context.Background(), customerId).Execute()
+    r, err := apiClient.SkuListsApi.GETCustomerIdSkuLists(context.Background(), customerId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.GETCustomerIdSkuLists``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -194,7 +194,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**customerId** | **string** | The resource&#39;s id | 
+**customerId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -240,15 +240,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    fixedPricePromotionId := "fixedPricePromotionId_example" // string | The resource's id
+    fixedPricePromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListsApi.GETFixedPricePromotionIdSkuList(context.Background(), fixedPricePromotionId).Execute()
+    r, err := apiClient.SkuListsApi.GETFixedPricePromotionIdSkuList(context.Background(), fixedPricePromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.GETFixedPricePromotionIdSkuList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -262,7 +262,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**fixedPricePromotionId** | **string** | The resource&#39;s id | 
+**fixedPricePromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -308,15 +308,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    freeGiftPromotionId := "freeGiftPromotionId_example" // string | The resource's id
+    freeGiftPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListsApi.GETFreeGiftPromotionIdSkuList(context.Background(), freeGiftPromotionId).Execute()
+    r, err := apiClient.SkuListsApi.GETFreeGiftPromotionIdSkuList(context.Background(), freeGiftPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.GETFreeGiftPromotionIdSkuList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -330,7 +330,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**freeGiftPromotionId** | **string** | The resource&#39;s id | 
+**freeGiftPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -376,15 +376,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    percentageDiscountPromotionId := "percentageDiscountPromotionId_example" // string | The resource's id
+    percentageDiscountPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListsApi.GETPercentageDiscountPromotionIdSkuList(context.Background(), percentageDiscountPromotionId).Execute()
+    r, err := apiClient.SkuListsApi.GETPercentageDiscountPromotionIdSkuList(context.Background(), percentageDiscountPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.GETPercentageDiscountPromotionIdSkuList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +398,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**percentageDiscountPromotionId** | **string** | The resource&#39;s id | 
+**percentageDiscountPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -444,15 +444,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    skuListItemId := "skuListItemId_example" // string | The resource's id
+    skuListItemId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListsApi.GETSkuListItemIdSkuList(context.Background(), skuListItemId).Execute()
+    r, err := apiClient.SkuListsApi.GETSkuListItemIdSkuList(context.Background(), skuListItemId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.GETSkuListItemIdSkuList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -466,7 +466,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**skuListItemId** | **string** | The resource&#39;s id | 
+**skuListItemId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -512,15 +512,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    skuListPromotionRuleId := "skuListPromotionRuleId_example" // string | The resource's id
+    skuListPromotionRuleId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListsApi.GETSkuListPromotionRuleIdSkuList(context.Background(), skuListPromotionRuleId).Execute()
+    r, err := apiClient.SkuListsApi.GETSkuListPromotionRuleIdSkuList(context.Background(), skuListPromotionRuleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.GETSkuListPromotionRuleIdSkuList``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -534,7 +534,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**skuListPromotionRuleId** | **string** | The resource&#39;s id | 
+**skuListPromotionRuleId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -580,7 +580,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -641,11 +641,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    skuListId := "skuListId_example" // string | The resource's id
+    skuListId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -665,7 +665,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**skuListId** | **string** | The resource&#39;s id | 
+**skuListId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -696,7 +696,7 @@ Name | Type | Description  | Notes
 
 ## PATCHSkuListsSkuListId
 
-> PATCHSkuListsSkuListId200Response PATCHSkuListsSkuListId(ctx, skuListId).SkuListUpdate(skuListUpdate).Execute()
+> PATCHSkuListsSkuListId200Response PATCHSkuListsSkuListId(ctx, skuListId).PATCHSkuListsSkuListIdRequest(pATCHSkuListsSkuListIdRequest).Execute()
 
 Update a SKU list
 
@@ -711,16 +711,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    skuListUpdate := *openapiclient.NewSkuListUpdate(*openapiclient.NewSkuListUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHSkuListsSkuListId200ResponseDataAttributes())) // SkuListUpdate | 
-    skuListId := "skuListId_example" // string | The resource's id
+    pATCHSkuListsSkuListIdRequest := *openapiclient.NewPATCHSkuListsSkuListIdRequest(*openapiclient.NewPATCHSkuListsSkuListIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHSkuListsSkuListIdRequestDataAttributes())) // PATCHSkuListsSkuListIdRequest | 
+    skuListId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListsApi.PATCHSkuListsSkuListId(context.Background(), skuListId).SkuListUpdate(skuListUpdate).Execute()
+    resp, r, err := apiClient.SkuListsApi.PATCHSkuListsSkuListId(context.Background(), skuListId).PATCHSkuListsSkuListIdRequest(pATCHSkuListsSkuListIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.PATCHSkuListsSkuListId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -736,7 +736,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**skuListId** | **string** | The resource&#39;s id | 
+**skuListId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -745,7 +745,7 @@ Other parameters are passed through a pointer to a apiPATCHSkuListsSkuListIdRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **skuListUpdate** | [**SkuListUpdate**](SkuListUpdate.md) |  | 
+ **pATCHSkuListsSkuListIdRequest** | [**PATCHSkuListsSkuListIdRequest**](PATCHSkuListsSkuListIdRequest.md) |  | 
 
 
 ### Return type
@@ -768,7 +768,7 @@ Name | Type | Description  | Notes
 
 ## POSTSkuLists
 
-> POSTSkuLists201Response POSTSkuLists(ctx).SkuListCreate(skuListCreate).Execute()
+> POSTSkuLists201Response POSTSkuLists(ctx).POSTSkuListsRequest(pOSTSkuListsRequest).Execute()
 
 Create a SKU list
 
@@ -783,15 +783,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    skuListCreate := *openapiclient.NewSkuListCreate(*openapiclient.NewSkuListCreateData("Type_example", *openapiclient.NewPOSTSkuLists201ResponseDataAttributes("Personal list"))) // SkuListCreate | 
+    pOSTSkuListsRequest := *openapiclient.NewPOSTSkuListsRequest(*openapiclient.NewPOSTSkuListsRequestData(interface{}(123), *openapiclient.NewPOSTSkuListsRequestDataAttributes(interface{}(Personal list)))) // POSTSkuListsRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListsApi.POSTSkuLists(context.Background()).SkuListCreate(skuListCreate).Execute()
+    resp, r, err := apiClient.SkuListsApi.POSTSkuLists(context.Background()).POSTSkuListsRequest(pOSTSkuListsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListsApi.POSTSkuLists``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -812,7 +812,7 @@ Other parameters are passed through a pointer to a apiPOSTSkuListsRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **skuListCreate** | [**SkuListCreate**](SkuListCreate.md) |  | 
+ **pOSTSkuListsRequest** | [**POSTSkuListsRequest**](POSTSkuListsRequest.md) |  | 
 
 ### Return type
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the BraintreeGatewayUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BraintreeGatewayUpdate{}
+
 // BraintreeGatewayUpdate struct for BraintreeGatewayUpdate
 type BraintreeGatewayUpdate struct {
-	Data BraintreeGatewayUpdateData `json:"data"`
+	Data PATCHBraintreeGatewaysBraintreeGatewayIdRequestData `json:"data"`
 }
 
 // NewBraintreeGatewayUpdate instantiates a new BraintreeGatewayUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBraintreeGatewayUpdate(data BraintreeGatewayUpdateData) *BraintreeGatewayUpdate {
+func NewBraintreeGatewayUpdate(data PATCHBraintreeGatewaysBraintreeGatewayIdRequestData) *BraintreeGatewayUpdate {
 	this := BraintreeGatewayUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewBraintreeGatewayUpdateWithDefaults() *BraintreeGatewayUpdate {
 }
 
 // GetData returns the Data field value
-func (o *BraintreeGatewayUpdate) GetData() BraintreeGatewayUpdateData {
+func (o *BraintreeGatewayUpdate) GetData() PATCHBraintreeGatewaysBraintreeGatewayIdRequestData {
 	if o == nil {
-		var ret BraintreeGatewayUpdateData
+		var ret PATCHBraintreeGatewaysBraintreeGatewayIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *BraintreeGatewayUpdate) GetData() BraintreeGatewayUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *BraintreeGatewayUpdate) GetDataOk() (*BraintreeGatewayUpdateData, bool) {
+func (o *BraintreeGatewayUpdate) GetDataOk() (*PATCHBraintreeGatewaysBraintreeGatewayIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *BraintreeGatewayUpdate) GetDataOk() (*BraintreeGatewayUpdateData, bool)
 }
 
 // SetData sets field value
-func (o *BraintreeGatewayUpdate) SetData(v BraintreeGatewayUpdateData) {
+func (o *BraintreeGatewayUpdate) SetData(v PATCHBraintreeGatewaysBraintreeGatewayIdRequestData) {
 	o.Data = v
 }
 
 func (o BraintreeGatewayUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o BraintreeGatewayUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableBraintreeGatewayUpdate struct {

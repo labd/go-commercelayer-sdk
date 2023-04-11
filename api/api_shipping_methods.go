@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type ShippingMethodsApiService service
 type ShippingMethodsApiDELETEShippingMethodsShippingMethodIdRequest struct {
 	ctx              context.Context
 	ApiService       *ShippingMethodsApiService
-	shippingMethodId string
+	shippingMethodId interface{}
 }
 
 func (r ShippingMethodsApiDELETEShippingMethodsShippingMethodIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a shipping method
 	@param shippingMethodId The resource's id
 	@return ShippingMethodsApiDELETEShippingMethodsShippingMethodIdRequest
 */
-func (a *ShippingMethodsApiService) DELETEShippingMethodsShippingMethodId(ctx context.Context, shippingMethodId string) ShippingMethodsApiDELETEShippingMethodsShippingMethodIdRequest {
+func (a *ShippingMethodsApiService) DELETEShippingMethodsShippingMethodId(ctx context.Context, shippingMethodId interface{}) ShippingMethodsApiDELETEShippingMethodsShippingMethodIdRequest {
 	return ShippingMethodsApiDELETEShippingMethodsShippingMethodIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -64,7 +64,7 @@ func (a *ShippingMethodsApiService) DELETEShippingMethodsShippingMethodIdExecute
 	}
 
 	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodId, "shippingMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *ShippingMethodsApiService) DELETEShippingMethodsShippingMethodIdExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *ShippingMethodsApiService) DELETEShippingMethodsShippingMethodIdExecute
 type ShippingMethodsApiGETDeliveryLeadTimeIdShippingMethodRequest struct {
 	ctx                context.Context
 	ApiService         *ShippingMethodsApiService
-	deliveryLeadTimeId string
+	deliveryLeadTimeId interface{}
 }
 
 func (r ShippingMethodsApiGETDeliveryLeadTimeIdShippingMethodRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the shipping method associated to the delivery lead time
 	@param deliveryLeadTimeId The resource's id
 	@return ShippingMethodsApiGETDeliveryLeadTimeIdShippingMethodRequest
 */
-func (a *ShippingMethodsApiService) GETDeliveryLeadTimeIdShippingMethod(ctx context.Context, deliveryLeadTimeId string) ShippingMethodsApiGETDeliveryLeadTimeIdShippingMethodRequest {
+func (a *ShippingMethodsApiService) GETDeliveryLeadTimeIdShippingMethod(ctx context.Context, deliveryLeadTimeId interface{}) ShippingMethodsApiGETDeliveryLeadTimeIdShippingMethodRequest {
 	return ShippingMethodsApiGETDeliveryLeadTimeIdShippingMethodRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -156,7 +156,7 @@ func (a *ShippingMethodsApiService) GETDeliveryLeadTimeIdShippingMethodExecute(r
 	}
 
 	localVarPath := localBasePath + "/delivery_lead_times/{deliveryLeadTimeId}/shipping_method"
-	localVarPath = strings.Replace(localVarPath, "{"+"deliveryLeadTimeId"+"}", url.PathEscape(parameterToString(r.deliveryLeadTimeId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"deliveryLeadTimeId"+"}", url.PathEscape(parameterValueToString(r.deliveryLeadTimeId, "deliveryLeadTimeId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *ShippingMethodsApiService) GETDeliveryLeadTimeIdShippingMethodExecute(r
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -210,7 +210,7 @@ func (a *ShippingMethodsApiService) GETDeliveryLeadTimeIdShippingMethodExecute(r
 type ShippingMethodsApiGETShipmentIdAvailableShippingMethodsRequest struct {
 	ctx        context.Context
 	ApiService *ShippingMethodsApiService
-	shipmentId string
+	shipmentId interface{}
 }
 
 func (r ShippingMethodsApiGETShipmentIdAvailableShippingMethodsRequest) Execute() (*http.Response, error) {
@@ -226,7 +226,7 @@ Retrieve the available shipping methods associated to the shipment
 	@param shipmentId The resource's id
 	@return ShippingMethodsApiGETShipmentIdAvailableShippingMethodsRequest
 */
-func (a *ShippingMethodsApiService) GETShipmentIdAvailableShippingMethods(ctx context.Context, shipmentId string) ShippingMethodsApiGETShipmentIdAvailableShippingMethodsRequest {
+func (a *ShippingMethodsApiService) GETShipmentIdAvailableShippingMethods(ctx context.Context, shipmentId interface{}) ShippingMethodsApiGETShipmentIdAvailableShippingMethodsRequest {
 	return ShippingMethodsApiGETShipmentIdAvailableShippingMethodsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -248,7 +248,7 @@ func (a *ShippingMethodsApiService) GETShipmentIdAvailableShippingMethodsExecute
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/available_shipping_methods"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -281,9 +281,9 @@ func (a *ShippingMethodsApiService) GETShipmentIdAvailableShippingMethodsExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -302,7 +302,7 @@ func (a *ShippingMethodsApiService) GETShipmentIdAvailableShippingMethodsExecute
 type ShippingMethodsApiGETShipmentIdShippingMethodRequest struct {
 	ctx        context.Context
 	ApiService *ShippingMethodsApiService
-	shipmentId string
+	shipmentId interface{}
 }
 
 func (r ShippingMethodsApiGETShipmentIdShippingMethodRequest) Execute() (*http.Response, error) {
@@ -318,7 +318,7 @@ Retrieve the shipping method associated to the shipment
 	@param shipmentId The resource's id
 	@return ShippingMethodsApiGETShipmentIdShippingMethodRequest
 */
-func (a *ShippingMethodsApiService) GETShipmentIdShippingMethod(ctx context.Context, shipmentId string) ShippingMethodsApiGETShipmentIdShippingMethodRequest {
+func (a *ShippingMethodsApiService) GETShipmentIdShippingMethod(ctx context.Context, shipmentId interface{}) ShippingMethodsApiGETShipmentIdShippingMethodRequest {
 	return ShippingMethodsApiGETShipmentIdShippingMethodRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -340,7 +340,7 @@ func (a *ShippingMethodsApiService) GETShipmentIdShippingMethodExecute(r Shippin
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/shipping_method"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -373,9 +373,9 @@ func (a *ShippingMethodsApiService) GETShipmentIdShippingMethodExecute(r Shippin
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -394,7 +394,7 @@ func (a *ShippingMethodsApiService) GETShipmentIdShippingMethodExecute(r Shippin
 type ShippingMethodsApiGETShippingMethodTierIdShippingMethodRequest struct {
 	ctx                  context.Context
 	ApiService           *ShippingMethodsApiService
-	shippingMethodTierId string
+	shippingMethodTierId interface{}
 }
 
 func (r ShippingMethodsApiGETShippingMethodTierIdShippingMethodRequest) Execute() (*http.Response, error) {
@@ -410,7 +410,7 @@ Retrieve the shipping method associated to the shipping method tier
 	@param shippingMethodTierId The resource's id
 	@return ShippingMethodsApiGETShippingMethodTierIdShippingMethodRequest
 */
-func (a *ShippingMethodsApiService) GETShippingMethodTierIdShippingMethod(ctx context.Context, shippingMethodTierId string) ShippingMethodsApiGETShippingMethodTierIdShippingMethodRequest {
+func (a *ShippingMethodsApiService) GETShippingMethodTierIdShippingMethod(ctx context.Context, shippingMethodTierId interface{}) ShippingMethodsApiGETShippingMethodTierIdShippingMethodRequest {
 	return ShippingMethodsApiGETShippingMethodTierIdShippingMethodRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -432,7 +432,7 @@ func (a *ShippingMethodsApiService) GETShippingMethodTierIdShippingMethodExecute
 	}
 
 	localVarPath := localBasePath + "/shipping_method_tiers/{shippingMethodTierId}/shipping_method"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodTierId"+"}", url.PathEscape(parameterToString(r.shippingMethodTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodTierId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodTierId, "shippingMethodTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -465,9 +465,9 @@ func (a *ShippingMethodsApiService) GETShippingMethodTierIdShippingMethodExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -556,9 +556,9 @@ func (a *ShippingMethodsApiService) GETShippingMethodsExecute(r ShippingMethodsA
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -586,7 +586,7 @@ func (a *ShippingMethodsApiService) GETShippingMethodsExecute(r ShippingMethodsA
 type ShippingMethodsApiGETShippingMethodsShippingMethodIdRequest struct {
 	ctx              context.Context
 	ApiService       *ShippingMethodsApiService
-	shippingMethodId string
+	shippingMethodId interface{}
 }
 
 func (r ShippingMethodsApiGETShippingMethodsShippingMethodIdRequest) Execute() (*GETShippingMethodsShippingMethodId200Response, *http.Response, error) {
@@ -602,7 +602,7 @@ Retrieve a shipping method
 	@param shippingMethodId The resource's id
 	@return ShippingMethodsApiGETShippingMethodsShippingMethodIdRequest
 */
-func (a *ShippingMethodsApiService) GETShippingMethodsShippingMethodId(ctx context.Context, shippingMethodId string) ShippingMethodsApiGETShippingMethodsShippingMethodIdRequest {
+func (a *ShippingMethodsApiService) GETShippingMethodsShippingMethodId(ctx context.Context, shippingMethodId interface{}) ShippingMethodsApiGETShippingMethodsShippingMethodIdRequest {
 	return ShippingMethodsApiGETShippingMethodsShippingMethodIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -627,7 +627,7 @@ func (a *ShippingMethodsApiService) GETShippingMethodsShippingMethodIdExecute(r 
 	}
 
 	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodId, "shippingMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -660,9 +660,9 @@ func (a *ShippingMethodsApiService) GETShippingMethodsShippingMethodIdExecute(r 
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -690,7 +690,7 @@ func (a *ShippingMethodsApiService) GETShippingMethodsShippingMethodIdExecute(r 
 type ShippingMethodsApiGETShippingWeightTierIdShippingMethodRequest struct {
 	ctx                  context.Context
 	ApiService           *ShippingMethodsApiService
-	shippingWeightTierId string
+	shippingWeightTierId interface{}
 }
 
 func (r ShippingMethodsApiGETShippingWeightTierIdShippingMethodRequest) Execute() (*http.Response, error) {
@@ -706,7 +706,7 @@ Retrieve the shipping method associated to the shipping weight tier
 	@param shippingWeightTierId The resource's id
 	@return ShippingMethodsApiGETShippingWeightTierIdShippingMethodRequest
 */
-func (a *ShippingMethodsApiService) GETShippingWeightTierIdShippingMethod(ctx context.Context, shippingWeightTierId string) ShippingMethodsApiGETShippingWeightTierIdShippingMethodRequest {
+func (a *ShippingMethodsApiService) GETShippingWeightTierIdShippingMethod(ctx context.Context, shippingWeightTierId interface{}) ShippingMethodsApiGETShippingWeightTierIdShippingMethodRequest {
 	return ShippingMethodsApiGETShippingWeightTierIdShippingMethodRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -728,7 +728,7 @@ func (a *ShippingMethodsApiService) GETShippingWeightTierIdShippingMethodExecute
 	}
 
 	localVarPath := localBasePath + "/shipping_weight_tiers/{shippingWeightTierId}/shipping_method"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingWeightTierId"+"}", url.PathEscape(parameterToString(r.shippingWeightTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingWeightTierId"+"}", url.PathEscape(parameterValueToString(r.shippingWeightTierId, "shippingWeightTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -761,9 +761,9 @@ func (a *ShippingMethodsApiService) GETShippingWeightTierIdShippingMethodExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -780,14 +780,14 @@ func (a *ShippingMethodsApiService) GETShippingWeightTierIdShippingMethodExecute
 }
 
 type ShippingMethodsApiPATCHShippingMethodsShippingMethodIdRequest struct {
-	ctx                  context.Context
-	ApiService           *ShippingMethodsApiService
-	shippingMethodUpdate *ShippingMethodUpdate
-	shippingMethodId     string
+	ctx                                         context.Context
+	ApiService                                  *ShippingMethodsApiService
+	pATCHShippingMethodsShippingMethodIdRequest *PATCHShippingMethodsShippingMethodIdRequest
+	shippingMethodId                            interface{}
 }
 
-func (r ShippingMethodsApiPATCHShippingMethodsShippingMethodIdRequest) ShippingMethodUpdate(shippingMethodUpdate ShippingMethodUpdate) ShippingMethodsApiPATCHShippingMethodsShippingMethodIdRequest {
-	r.shippingMethodUpdate = &shippingMethodUpdate
+func (r ShippingMethodsApiPATCHShippingMethodsShippingMethodIdRequest) PATCHShippingMethodsShippingMethodIdRequest(pATCHShippingMethodsShippingMethodIdRequest PATCHShippingMethodsShippingMethodIdRequest) ShippingMethodsApiPATCHShippingMethodsShippingMethodIdRequest {
+	r.pATCHShippingMethodsShippingMethodIdRequest = &pATCHShippingMethodsShippingMethodIdRequest
 	return r
 }
 
@@ -804,7 +804,7 @@ Update a shipping method
 	@param shippingMethodId The resource's id
 	@return ShippingMethodsApiPATCHShippingMethodsShippingMethodIdRequest
 */
-func (a *ShippingMethodsApiService) PATCHShippingMethodsShippingMethodId(ctx context.Context, shippingMethodId string) ShippingMethodsApiPATCHShippingMethodsShippingMethodIdRequest {
+func (a *ShippingMethodsApiService) PATCHShippingMethodsShippingMethodId(ctx context.Context, shippingMethodId interface{}) ShippingMethodsApiPATCHShippingMethodsShippingMethodIdRequest {
 	return ShippingMethodsApiPATCHShippingMethodsShippingMethodIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -829,13 +829,13 @@ func (a *ShippingMethodsApiService) PATCHShippingMethodsShippingMethodIdExecute(
 	}
 
 	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodId, "shippingMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.shippingMethodUpdate == nil {
-		return localVarReturnValue, nil, reportError("shippingMethodUpdate is required and must be specified")
+	if r.pATCHShippingMethodsShippingMethodIdRequest == nil {
+		return localVarReturnValue, nil, reportError("pATCHShippingMethodsShippingMethodIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -856,7 +856,7 @@ func (a *ShippingMethodsApiService) PATCHShippingMethodsShippingMethodIdExecute(
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.shippingMethodUpdate
+	localVarPostBody = r.pATCHShippingMethodsShippingMethodIdRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -867,9 +867,9 @@ func (a *ShippingMethodsApiService) PATCHShippingMethodsShippingMethodIdExecute(
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -895,13 +895,13 @@ func (a *ShippingMethodsApiService) PATCHShippingMethodsShippingMethodIdExecute(
 }
 
 type ShippingMethodsApiPOSTShippingMethodsRequest struct {
-	ctx                  context.Context
-	ApiService           *ShippingMethodsApiService
-	shippingMethodCreate *ShippingMethodCreate
+	ctx                        context.Context
+	ApiService                 *ShippingMethodsApiService
+	pOSTShippingMethodsRequest *POSTShippingMethodsRequest
 }
 
-func (r ShippingMethodsApiPOSTShippingMethodsRequest) ShippingMethodCreate(shippingMethodCreate ShippingMethodCreate) ShippingMethodsApiPOSTShippingMethodsRequest {
-	r.shippingMethodCreate = &shippingMethodCreate
+func (r ShippingMethodsApiPOSTShippingMethodsRequest) POSTShippingMethodsRequest(pOSTShippingMethodsRequest POSTShippingMethodsRequest) ShippingMethodsApiPOSTShippingMethodsRequest {
+	r.pOSTShippingMethodsRequest = &pOSTShippingMethodsRequest
 	return r
 }
 
@@ -945,8 +945,8 @@ func (a *ShippingMethodsApiService) POSTShippingMethodsExecute(r ShippingMethods
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.shippingMethodCreate == nil {
-		return localVarReturnValue, nil, reportError("shippingMethodCreate is required and must be specified")
+	if r.pOSTShippingMethodsRequest == nil {
+		return localVarReturnValue, nil, reportError("pOSTShippingMethodsRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -967,7 +967,7 @@ func (a *ShippingMethodsApiService) POSTShippingMethodsExecute(r ShippingMethods
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.shippingMethodCreate
+	localVarPostBody = r.pOSTShippingMethodsRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -978,9 +978,9 @@ func (a *ShippingMethodsApiService) POSTShippingMethodsExecute(r ShippingMethods
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

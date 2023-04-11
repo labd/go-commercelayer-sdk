@@ -1,6 +1,6 @@
 # \StockTransfersApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -32,15 +32,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    stockTransferId := "stockTransferId_example" // string | The resource's id
+    stockTransferId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.StockTransfersApi.DELETEStockTransfersStockTransferId(context.Background(), stockTransferId).Execute()
+    r, err := apiClient.StockTransfersApi.DELETEStockTransfersStockTransferId(context.Background(), stockTransferId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StockTransfersApi.DELETEStockTransfersStockTransferId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -54,7 +54,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**stockTransferId** | **string** | The resource&#39;s id | 
+**stockTransferId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -100,15 +100,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    lineItemId := "lineItemId_example" // string | The resource's id
+    lineItemId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.StockTransfersApi.GETLineItemIdStockTransfers(context.Background(), lineItemId).Execute()
+    r, err := apiClient.StockTransfersApi.GETLineItemIdStockTransfers(context.Background(), lineItemId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StockTransfersApi.GETLineItemIdStockTransfers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -122,7 +122,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**lineItemId** | **string** | The resource&#39;s id | 
+**lineItemId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -168,15 +168,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    shipmentId := "shipmentId_example" // string | The resource's id
+    shipmentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.StockTransfersApi.GETShipmentIdStockTransfers(context.Background(), shipmentId).Execute()
+    r, err := apiClient.StockTransfersApi.GETShipmentIdStockTransfers(context.Background(), shipmentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StockTransfersApi.GETShipmentIdStockTransfers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -190,7 +190,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**shipmentId** | **string** | The resource&#39;s id | 
+**shipmentId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -236,15 +236,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    stockLocationId := "stockLocationId_example" // string | The resource's id
+    stockLocationId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.StockTransfersApi.GETStockLocationIdStockTransfers(context.Background(), stockLocationId).Execute()
+    r, err := apiClient.StockTransfersApi.GETStockLocationIdStockTransfers(context.Background(), stockLocationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StockTransfersApi.GETStockLocationIdStockTransfers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -258,7 +258,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**stockLocationId** | **string** | The resource&#39;s id | 
+**stockLocationId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -304,7 +304,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -365,11 +365,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    stockTransferId := "stockTransferId_example" // string | The resource's id
+    stockTransferId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -389,7 +389,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**stockTransferId** | **string** | The resource&#39;s id | 
+**stockTransferId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 
 ## PATCHStockTransfersStockTransferId
 
-> PATCHStockTransfersStockTransferId200Response PATCHStockTransfersStockTransferId(ctx, stockTransferId).StockTransferUpdate(stockTransferUpdate).Execute()
+> PATCHStockTransfersStockTransferId200Response PATCHStockTransfersStockTransferId(ctx, stockTransferId).PATCHStockTransfersStockTransferIdRequest(pATCHStockTransfersStockTransferIdRequest).Execute()
 
 Update a stock transfer
 
@@ -435,16 +435,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    stockTransferUpdate := *openapiclient.NewStockTransferUpdate(*openapiclient.NewStockTransferUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHStockTransfersStockTransferId200ResponseDataAttributes())) // StockTransferUpdate | 
-    stockTransferId := "stockTransferId_example" // string | The resource's id
+    pATCHStockTransfersStockTransferIdRequest := *openapiclient.NewPATCHStockTransfersStockTransferIdRequest(*openapiclient.NewPATCHStockTransfersStockTransferIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHStockTransfersStockTransferIdRequestDataAttributes())) // PATCHStockTransfersStockTransferIdRequest | 
+    stockTransferId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.StockTransfersApi.PATCHStockTransfersStockTransferId(context.Background(), stockTransferId).StockTransferUpdate(stockTransferUpdate).Execute()
+    resp, r, err := apiClient.StockTransfersApi.PATCHStockTransfersStockTransferId(context.Background(), stockTransferId).PATCHStockTransfersStockTransferIdRequest(pATCHStockTransfersStockTransferIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StockTransfersApi.PATCHStockTransfersStockTransferId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -460,7 +460,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**stockTransferId** | **string** | The resource&#39;s id | 
+**stockTransferId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -469,7 +469,7 @@ Other parameters are passed through a pointer to a apiPATCHStockTransfersStockTr
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stockTransferUpdate** | [**StockTransferUpdate**](StockTransferUpdate.md) |  | 
+ **pATCHStockTransfersStockTransferIdRequest** | [**PATCHStockTransfersStockTransferIdRequest**](PATCHStockTransfersStockTransferIdRequest.md) |  | 
 
 
 ### Return type
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 
 ## POSTStockTransfers
 
-> POSTStockTransfers201Response POSTStockTransfers(ctx).StockTransferCreate(stockTransferCreate).Execute()
+> POSTStockTransfers201Response POSTStockTransfers(ctx).POSTStockTransfersRequest(pOSTStockTransfersRequest).Execute()
 
 Create a stock transfer
 
@@ -507,15 +507,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    stockTransferCreate := *openapiclient.NewStockTransferCreate(*openapiclient.NewStockTransferCreateData("Type_example", *openapiclient.NewPOSTStockTransfers201ResponseDataAttributes(int32(2)))) // StockTransferCreate | 
+    pOSTStockTransfersRequest := *openapiclient.NewPOSTStockTransfersRequest(*openapiclient.NewPOSTStockTransfersRequestData(interface{}(123), *openapiclient.NewPOSTStockTransfersRequestDataAttributes(interface{}(2)))) // POSTStockTransfersRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.StockTransfersApi.POSTStockTransfers(context.Background()).StockTransferCreate(stockTransferCreate).Execute()
+    resp, r, err := apiClient.StockTransfersApi.POSTStockTransfers(context.Background()).POSTStockTransfersRequest(pOSTStockTransfersRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StockTransfersApi.POSTStockTransfers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -536,7 +536,7 @@ Other parameters are passed through a pointer to a apiPOSTStockTransfersRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **stockTransferCreate** | [**StockTransferCreate**](StockTransferCreate.md) |  | 
+ **pOSTStockTransfersRequest** | [**POSTStockTransfersRequest**](POSTStockTransfersRequest.md) |  | 
 
 ### Return type
 

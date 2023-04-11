@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type CapturesApiService service
 type CapturesApiGETAuthorizationIdCapturesRequest struct {
 	ctx             context.Context
 	ApiService      *CapturesApiService
-	authorizationId string
+	authorizationId interface{}
 }
 
 func (r CapturesApiGETAuthorizationIdCapturesRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Retrieve the captures associated to the authorization
 	@param authorizationId The resource's id
 	@return CapturesApiGETAuthorizationIdCapturesRequest
 */
-func (a *CapturesApiService) GETAuthorizationIdCaptures(ctx context.Context, authorizationId string) CapturesApiGETAuthorizationIdCapturesRequest {
+func (a *CapturesApiService) GETAuthorizationIdCaptures(ctx context.Context, authorizationId interface{}) CapturesApiGETAuthorizationIdCapturesRequest {
 	return CapturesApiGETAuthorizationIdCapturesRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -64,7 +64,7 @@ func (a *CapturesApiService) GETAuthorizationIdCapturesExecute(r CapturesApiGETA
 	}
 
 	localVarPath := localBasePath + "/authorizations/{authorizationId}/captures"
-	localVarPath = strings.Replace(localVarPath, "{"+"authorizationId"+"}", url.PathEscape(parameterToString(r.authorizationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"authorizationId"+"}", url.PathEscape(parameterValueToString(r.authorizationId, "authorizationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *CapturesApiService) GETAuthorizationIdCapturesExecute(r CapturesApiGETA
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *CapturesApiService) GETCapturesExecute(r CapturesApiGETCapturesRequest)
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -218,7 +218,7 @@ func (a *CapturesApiService) GETCapturesExecute(r CapturesApiGETCapturesRequest)
 type CapturesApiGETCapturesCaptureIdRequest struct {
 	ctx        context.Context
 	ApiService *CapturesApiService
-	captureId  string
+	captureId  interface{}
 }
 
 func (r CapturesApiGETCapturesCaptureIdRequest) Execute() (*GETCapturesCaptureId200Response, *http.Response, error) {
@@ -234,7 +234,7 @@ Retrieve a capture
 	@param captureId The resource's id
 	@return CapturesApiGETCapturesCaptureIdRequest
 */
-func (a *CapturesApiService) GETCapturesCaptureId(ctx context.Context, captureId string) CapturesApiGETCapturesCaptureIdRequest {
+func (a *CapturesApiService) GETCapturesCaptureId(ctx context.Context, captureId interface{}) CapturesApiGETCapturesCaptureIdRequest {
 	return CapturesApiGETCapturesCaptureIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -259,7 +259,7 @@ func (a *CapturesApiService) GETCapturesCaptureIdExecute(r CapturesApiGETCapture
 	}
 
 	localVarPath := localBasePath + "/captures/{captureId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"captureId"+"}", url.PathEscape(parameterToString(r.captureId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"captureId"+"}", url.PathEscape(parameterValueToString(r.captureId, "captureId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *CapturesApiService) GETCapturesCaptureIdExecute(r CapturesApiGETCapture
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -322,7 +322,7 @@ func (a *CapturesApiService) GETCapturesCaptureIdExecute(r CapturesApiGETCapture
 type CapturesApiGETOrderIdCapturesRequest struct {
 	ctx        context.Context
 	ApiService *CapturesApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r CapturesApiGETOrderIdCapturesRequest) Execute() (*http.Response, error) {
@@ -338,7 +338,7 @@ Retrieve the captures associated to the order
 	@param orderId The resource's id
 	@return CapturesApiGETOrderIdCapturesRequest
 */
-func (a *CapturesApiService) GETOrderIdCaptures(ctx context.Context, orderId string) CapturesApiGETOrderIdCapturesRequest {
+func (a *CapturesApiService) GETOrderIdCaptures(ctx context.Context, orderId interface{}) CapturesApiGETOrderIdCapturesRequest {
 	return CapturesApiGETOrderIdCapturesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -360,7 +360,7 @@ func (a *CapturesApiService) GETOrderIdCapturesExecute(r CapturesApiGETOrderIdCa
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/captures"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -393,9 +393,9 @@ func (a *CapturesApiService) GETOrderIdCapturesExecute(r CapturesApiGETOrderIdCa
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -414,7 +414,7 @@ func (a *CapturesApiService) GETOrderIdCapturesExecute(r CapturesApiGETOrderIdCa
 type CapturesApiGETRefundIdReferenceCaptureRequest struct {
 	ctx        context.Context
 	ApiService *CapturesApiService
-	refundId   string
+	refundId   interface{}
 }
 
 func (r CapturesApiGETRefundIdReferenceCaptureRequest) Execute() (*http.Response, error) {
@@ -430,7 +430,7 @@ Retrieve the reference capture associated to the refund
 	@param refundId The resource's id
 	@return CapturesApiGETRefundIdReferenceCaptureRequest
 */
-func (a *CapturesApiService) GETRefundIdReferenceCapture(ctx context.Context, refundId string) CapturesApiGETRefundIdReferenceCaptureRequest {
+func (a *CapturesApiService) GETRefundIdReferenceCapture(ctx context.Context, refundId interface{}) CapturesApiGETRefundIdReferenceCaptureRequest {
 	return CapturesApiGETRefundIdReferenceCaptureRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -452,7 +452,7 @@ func (a *CapturesApiService) GETRefundIdReferenceCaptureExecute(r CapturesApiGET
 	}
 
 	localVarPath := localBasePath + "/refunds/{refundId}/reference_capture"
-	localVarPath = strings.Replace(localVarPath, "{"+"refundId"+"}", url.PathEscape(parameterToString(r.refundId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"refundId"+"}", url.PathEscape(parameterValueToString(r.refundId, "refundId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -485,9 +485,9 @@ func (a *CapturesApiService) GETRefundIdReferenceCaptureExecute(r CapturesApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -504,14 +504,14 @@ func (a *CapturesApiService) GETRefundIdReferenceCaptureExecute(r CapturesApiGET
 }
 
 type CapturesApiPATCHCapturesCaptureIdRequest struct {
-	ctx           context.Context
-	ApiService    *CapturesApiService
-	captureUpdate *CaptureUpdate
-	captureId     string
+	ctx                           context.Context
+	ApiService                    *CapturesApiService
+	pATCHCapturesCaptureIdRequest *PATCHCapturesCaptureIdRequest
+	captureId                     interface{}
 }
 
-func (r CapturesApiPATCHCapturesCaptureIdRequest) CaptureUpdate(captureUpdate CaptureUpdate) CapturesApiPATCHCapturesCaptureIdRequest {
-	r.captureUpdate = &captureUpdate
+func (r CapturesApiPATCHCapturesCaptureIdRequest) PATCHCapturesCaptureIdRequest(pATCHCapturesCaptureIdRequest PATCHCapturesCaptureIdRequest) CapturesApiPATCHCapturesCaptureIdRequest {
+	r.pATCHCapturesCaptureIdRequest = &pATCHCapturesCaptureIdRequest
 	return r
 }
 
@@ -528,7 +528,7 @@ Update a capture
 	@param captureId The resource's id
 	@return CapturesApiPATCHCapturesCaptureIdRequest
 */
-func (a *CapturesApiService) PATCHCapturesCaptureId(ctx context.Context, captureId string) CapturesApiPATCHCapturesCaptureIdRequest {
+func (a *CapturesApiService) PATCHCapturesCaptureId(ctx context.Context, captureId interface{}) CapturesApiPATCHCapturesCaptureIdRequest {
 	return CapturesApiPATCHCapturesCaptureIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -553,13 +553,13 @@ func (a *CapturesApiService) PATCHCapturesCaptureIdExecute(r CapturesApiPATCHCap
 	}
 
 	localVarPath := localBasePath + "/captures/{captureId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"captureId"+"}", url.PathEscape(parameterToString(r.captureId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"captureId"+"}", url.PathEscape(parameterValueToString(r.captureId, "captureId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.captureUpdate == nil {
-		return localVarReturnValue, nil, reportError("captureUpdate is required and must be specified")
+	if r.pATCHCapturesCaptureIdRequest == nil {
+		return localVarReturnValue, nil, reportError("pATCHCapturesCaptureIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -580,7 +580,7 @@ func (a *CapturesApiService) PATCHCapturesCaptureIdExecute(r CapturesApiPATCHCap
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.captureUpdate
+	localVarPostBody = r.pATCHCapturesCaptureIdRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -591,9 +591,9 @@ func (a *CapturesApiService) PATCHCapturesCaptureIdExecute(r CapturesApiPATCHCap
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

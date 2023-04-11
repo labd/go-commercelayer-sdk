@@ -6,7 +6,7 @@ clean:
 	rm -rf api/
 
 generate:
-	openapi-generator-cli generate -i "https://data.commercelayer.app/schemas/openapi-no-ref.json" \
+	openapi-generator-cli generate -i "./openapi.json" \
 		--generator-name go \
 		--output api \
 		--ignore-file-override .openapi-generator-ignore \

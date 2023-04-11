@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type TaxRulesApiService service
 type TaxRulesApiDELETETaxRulesTaxRuleIdRequest struct {
 	ctx        context.Context
 	ApiService *TaxRulesApiService
-	taxRuleId  string
+	taxRuleId  interface{}
 }
 
 func (r TaxRulesApiDELETETaxRulesTaxRuleIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a tax rule
 	@param taxRuleId The resource's id
 	@return TaxRulesApiDELETETaxRulesTaxRuleIdRequest
 */
-func (a *TaxRulesApiService) DELETETaxRulesTaxRuleId(ctx context.Context, taxRuleId string) TaxRulesApiDELETETaxRulesTaxRuleIdRequest {
+func (a *TaxRulesApiService) DELETETaxRulesTaxRuleId(ctx context.Context, taxRuleId interface{}) TaxRulesApiDELETETaxRulesTaxRuleIdRequest {
 	return TaxRulesApiDELETETaxRulesTaxRuleIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -64,7 +64,7 @@ func (a *TaxRulesApiService) DELETETaxRulesTaxRuleIdExecute(r TaxRulesApiDELETET
 	}
 
 	localVarPath := localBasePath + "/tax_rules/{taxRuleId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxRuleId"+"}", url.PathEscape(parameterToString(r.taxRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxRuleId"+"}", url.PathEscape(parameterValueToString(r.taxRuleId, "taxRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *TaxRulesApiService) DELETETaxRulesTaxRuleIdExecute(r TaxRulesApiDELETET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *TaxRulesApiService) DELETETaxRulesTaxRuleIdExecute(r TaxRulesApiDELETET
 type TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest struct {
 	ctx                   context.Context
 	ApiService            *TaxRulesApiService
-	manualTaxCalculatorId string
+	manualTaxCalculatorId interface{}
 }
 
 func (r TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the tax rules associated to the manual tax calculator
 	@param manualTaxCalculatorId The resource's id
 	@return TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest
 */
-func (a *TaxRulesApiService) GETManualTaxCalculatorIdTaxRules(ctx context.Context, manualTaxCalculatorId string) TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest {
+func (a *TaxRulesApiService) GETManualTaxCalculatorIdTaxRules(ctx context.Context, manualTaxCalculatorId interface{}) TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest {
 	return TaxRulesApiGETManualTaxCalculatorIdTaxRulesRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -156,7 +156,7 @@ func (a *TaxRulesApiService) GETManualTaxCalculatorIdTaxRulesExecute(r TaxRulesA
 	}
 
 	localVarPath := localBasePath + "/manual_tax_calculators/{manualTaxCalculatorId}/tax_rules"
-	localVarPath = strings.Replace(localVarPath, "{"+"manualTaxCalculatorId"+"}", url.PathEscape(parameterToString(r.manualTaxCalculatorId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"manualTaxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.manualTaxCalculatorId, "manualTaxCalculatorId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *TaxRulesApiService) GETManualTaxCalculatorIdTaxRulesExecute(r TaxRulesA
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *TaxRulesApiService) GETTaxRulesExecute(r TaxRulesApiGETTaxRulesRequest)
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -310,7 +310,7 @@ func (a *TaxRulesApiService) GETTaxRulesExecute(r TaxRulesApiGETTaxRulesRequest)
 type TaxRulesApiGETTaxRulesTaxRuleIdRequest struct {
 	ctx        context.Context
 	ApiService *TaxRulesApiService
-	taxRuleId  string
+	taxRuleId  interface{}
 }
 
 func (r TaxRulesApiGETTaxRulesTaxRuleIdRequest) Execute() (*GETTaxRulesTaxRuleId200Response, *http.Response, error) {
@@ -326,7 +326,7 @@ Retrieve a tax rule
 	@param taxRuleId The resource's id
 	@return TaxRulesApiGETTaxRulesTaxRuleIdRequest
 */
-func (a *TaxRulesApiService) GETTaxRulesTaxRuleId(ctx context.Context, taxRuleId string) TaxRulesApiGETTaxRulesTaxRuleIdRequest {
+func (a *TaxRulesApiService) GETTaxRulesTaxRuleId(ctx context.Context, taxRuleId interface{}) TaxRulesApiGETTaxRulesTaxRuleIdRequest {
 	return TaxRulesApiGETTaxRulesTaxRuleIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -351,7 +351,7 @@ func (a *TaxRulesApiService) GETTaxRulesTaxRuleIdExecute(r TaxRulesApiGETTaxRule
 	}
 
 	localVarPath := localBasePath + "/tax_rules/{taxRuleId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxRuleId"+"}", url.PathEscape(parameterToString(r.taxRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxRuleId"+"}", url.PathEscape(parameterValueToString(r.taxRuleId, "taxRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *TaxRulesApiService) GETTaxRulesTaxRuleIdExecute(r TaxRulesApiGETTaxRule
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -412,14 +412,14 @@ func (a *TaxRulesApiService) GETTaxRulesTaxRuleIdExecute(r TaxRulesApiGETTaxRule
 }
 
 type TaxRulesApiPATCHTaxRulesTaxRuleIdRequest struct {
-	ctx           context.Context
-	ApiService    *TaxRulesApiService
-	taxRuleUpdate *TaxRuleUpdate
-	taxRuleId     string
+	ctx                           context.Context
+	ApiService                    *TaxRulesApiService
+	pATCHTaxRulesTaxRuleIdRequest *PATCHTaxRulesTaxRuleIdRequest
+	taxRuleId                     interface{}
 }
 
-func (r TaxRulesApiPATCHTaxRulesTaxRuleIdRequest) TaxRuleUpdate(taxRuleUpdate TaxRuleUpdate) TaxRulesApiPATCHTaxRulesTaxRuleIdRequest {
-	r.taxRuleUpdate = &taxRuleUpdate
+func (r TaxRulesApiPATCHTaxRulesTaxRuleIdRequest) PATCHTaxRulesTaxRuleIdRequest(pATCHTaxRulesTaxRuleIdRequest PATCHTaxRulesTaxRuleIdRequest) TaxRulesApiPATCHTaxRulesTaxRuleIdRequest {
+	r.pATCHTaxRulesTaxRuleIdRequest = &pATCHTaxRulesTaxRuleIdRequest
 	return r
 }
 
@@ -436,7 +436,7 @@ Update a tax rule
 	@param taxRuleId The resource's id
 	@return TaxRulesApiPATCHTaxRulesTaxRuleIdRequest
 */
-func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleId(ctx context.Context, taxRuleId string) TaxRulesApiPATCHTaxRulesTaxRuleIdRequest {
+func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleId(ctx context.Context, taxRuleId interface{}) TaxRulesApiPATCHTaxRulesTaxRuleIdRequest {
 	return TaxRulesApiPATCHTaxRulesTaxRuleIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -461,13 +461,13 @@ func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleIdExecute(r TaxRulesApiPATCHTax
 	}
 
 	localVarPath := localBasePath + "/tax_rules/{taxRuleId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxRuleId"+"}", url.PathEscape(parameterToString(r.taxRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxRuleId"+"}", url.PathEscape(parameterValueToString(r.taxRuleId, "taxRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.taxRuleUpdate == nil {
-		return localVarReturnValue, nil, reportError("taxRuleUpdate is required and must be specified")
+	if r.pATCHTaxRulesTaxRuleIdRequest == nil {
+		return localVarReturnValue, nil, reportError("pATCHTaxRulesTaxRuleIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -488,7 +488,7 @@ func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleIdExecute(r TaxRulesApiPATCHTax
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.taxRuleUpdate
+	localVarPostBody = r.pATCHTaxRulesTaxRuleIdRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -499,9 +499,9 @@ func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleIdExecute(r TaxRulesApiPATCHTax
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -527,13 +527,13 @@ func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleIdExecute(r TaxRulesApiPATCHTax
 }
 
 type TaxRulesApiPOSTTaxRulesRequest struct {
-	ctx           context.Context
-	ApiService    *TaxRulesApiService
-	taxRuleCreate *TaxRuleCreate
+	ctx                 context.Context
+	ApiService          *TaxRulesApiService
+	pOSTTaxRulesRequest *POSTTaxRulesRequest
 }
 
-func (r TaxRulesApiPOSTTaxRulesRequest) TaxRuleCreate(taxRuleCreate TaxRuleCreate) TaxRulesApiPOSTTaxRulesRequest {
-	r.taxRuleCreate = &taxRuleCreate
+func (r TaxRulesApiPOSTTaxRulesRequest) POSTTaxRulesRequest(pOSTTaxRulesRequest POSTTaxRulesRequest) TaxRulesApiPOSTTaxRulesRequest {
+	r.pOSTTaxRulesRequest = &pOSTTaxRulesRequest
 	return r
 }
 
@@ -577,8 +577,8 @@ func (a *TaxRulesApiService) POSTTaxRulesExecute(r TaxRulesApiPOSTTaxRulesReques
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.taxRuleCreate == nil {
-		return localVarReturnValue, nil, reportError("taxRuleCreate is required and must be specified")
+	if r.pOSTTaxRulesRequest == nil {
+		return localVarReturnValue, nil, reportError("pOSTTaxRulesRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -599,7 +599,7 @@ func (a *TaxRulesApiService) POSTTaxRulesExecute(r TaxRulesApiPOSTTaxRulesReques
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.taxRuleCreate
+	localVarPostBody = r.pOSTTaxRulesRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -610,9 +610,9 @@ func (a *TaxRulesApiService) POSTTaxRulesExecute(r TaxRulesApiPOSTTaxRulesReques
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETDeliveryLeadTimes200ResponseDataInnerAttributes**](GETDeliveryLeadTimes200ResponseDataInnerAttributes.md) |  | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Attributes** | [**GETDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes**](GETDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**DeliveryLeadTimeDataRelationships**](DeliveryLeadTimeDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewDeliveryLeadTimeData
 
-`func NewDeliveryLeadTimeData(type_ string, attributes GETDeliveryLeadTimes200ResponseDataInnerAttributes, ) *DeliveryLeadTimeData`
+`func NewDeliveryLeadTimeData(type_ interface{}, attributes GETDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes, ) *DeliveryLeadTimeData`
 
 NewDeliveryLeadTimeData instantiates a new DeliveryLeadTimeData object
 This constructor will assign default values to properties that have it defined,
@@ -29,40 +29,50 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *DeliveryLeadTimeData) GetType() string`
+`func (o *DeliveryLeadTimeData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *DeliveryLeadTimeData) GetTypeOk() (*string, bool)`
+`func (o *DeliveryLeadTimeData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *DeliveryLeadTimeData) SetType(v string)`
+`func (o *DeliveryLeadTimeData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *DeliveryLeadTimeData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *DeliveryLeadTimeData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *DeliveryLeadTimeData) GetAttributes() GETDeliveryLeadTimes200ResponseDataInnerAttributes`
+`func (o *DeliveryLeadTimeData) GetAttributes() GETDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *DeliveryLeadTimeData) GetAttributesOk() (*GETDeliveryLeadTimes200ResponseDataInnerAttributes, bool)`
+`func (o *DeliveryLeadTimeData) GetAttributesOk() (*GETDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *DeliveryLeadTimeData) SetAttributes(v GETDeliveryLeadTimes200ResponseDataInnerAttributes)`
+`func (o *DeliveryLeadTimeData) SetAttributes(v GETDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

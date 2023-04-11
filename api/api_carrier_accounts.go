@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -96,9 +96,9 @@ func (a *CarrierAccountsApiService) GETCarrierAccountsExecute(r CarrierAccountsA
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -126,7 +126,7 @@ func (a *CarrierAccountsApiService) GETCarrierAccountsExecute(r CarrierAccountsA
 type CarrierAccountsApiGETCarrierAccountsCarrierAccountIdRequest struct {
 	ctx              context.Context
 	ApiService       *CarrierAccountsApiService
-	carrierAccountId string
+	carrierAccountId interface{}
 }
 
 func (r CarrierAccountsApiGETCarrierAccountsCarrierAccountIdRequest) Execute() (*GETCarrierAccountsCarrierAccountId200Response, *http.Response, error) {
@@ -142,7 +142,7 @@ Retrieve a carrier account
 	@param carrierAccountId The resource's id
 	@return CarrierAccountsApiGETCarrierAccountsCarrierAccountIdRequest
 */
-func (a *CarrierAccountsApiService) GETCarrierAccountsCarrierAccountId(ctx context.Context, carrierAccountId string) CarrierAccountsApiGETCarrierAccountsCarrierAccountIdRequest {
+func (a *CarrierAccountsApiService) GETCarrierAccountsCarrierAccountId(ctx context.Context, carrierAccountId interface{}) CarrierAccountsApiGETCarrierAccountsCarrierAccountIdRequest {
 	return CarrierAccountsApiGETCarrierAccountsCarrierAccountIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -167,7 +167,7 @@ func (a *CarrierAccountsApiService) GETCarrierAccountsCarrierAccountIdExecute(r 
 	}
 
 	localVarPath := localBasePath + "/carrier_accounts/{carrierAccountId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"carrierAccountId"+"}", url.PathEscape(parameterToString(r.carrierAccountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"carrierAccountId"+"}", url.PathEscape(parameterValueToString(r.carrierAccountId, "carrierAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -200,9 +200,9 @@ func (a *CarrierAccountsApiService) GETCarrierAccountsCarrierAccountIdExecute(r 
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -230,7 +230,7 @@ func (a *CarrierAccountsApiService) GETCarrierAccountsCarrierAccountIdExecute(r 
 type CarrierAccountsApiGETShipmentIdCarrierAccountsRequest struct {
 	ctx        context.Context
 	ApiService *CarrierAccountsApiService
-	shipmentId string
+	shipmentId interface{}
 }
 
 func (r CarrierAccountsApiGETShipmentIdCarrierAccountsRequest) Execute() (*http.Response, error) {
@@ -246,7 +246,7 @@ Retrieve the carrier accounts associated to the shipment
 	@param shipmentId The resource's id
 	@return CarrierAccountsApiGETShipmentIdCarrierAccountsRequest
 */
-func (a *CarrierAccountsApiService) GETShipmentIdCarrierAccounts(ctx context.Context, shipmentId string) CarrierAccountsApiGETShipmentIdCarrierAccountsRequest {
+func (a *CarrierAccountsApiService) GETShipmentIdCarrierAccounts(ctx context.Context, shipmentId interface{}) CarrierAccountsApiGETShipmentIdCarrierAccountsRequest {
 	return CarrierAccountsApiGETShipmentIdCarrierAccountsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -268,7 +268,7 @@ func (a *CarrierAccountsApiService) GETShipmentIdCarrierAccountsExecute(r Carrie
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/carrier_accounts"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -301,9 +301,9 @@ func (a *CarrierAccountsApiService) GETShipmentIdCarrierAccountsExecute(r Carrie
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

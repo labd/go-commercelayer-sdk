@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type HasOneApiService service
 type HasOneApiGETAddressIdGeocoderRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	addressId  string
+	addressId  interface{}
 }
 
 func (r HasOneApiGETAddressIdGeocoderRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Retrieve the geocoder associated to the address
 	@param addressId The resource's id
 	@return HasOneApiGETAddressIdGeocoderRequest
 */
-func (a *HasOneApiService) GETAddressIdGeocoder(ctx context.Context, addressId string) HasOneApiGETAddressIdGeocoderRequest {
+func (a *HasOneApiService) GETAddressIdGeocoder(ctx context.Context, addressId interface{}) HasOneApiGETAddressIdGeocoderRequest {
 	return HasOneApiGETAddressIdGeocoderRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -64,7 +64,7 @@ func (a *HasOneApiService) GETAddressIdGeocoderExecute(r HasOneApiGETAddressIdGe
 	}
 
 	localVarPath := localBasePath + "/addresses/{addressId}/geocoder"
-	localVarPath = strings.Replace(localVarPath, "{"+"addressId"+"}", url.PathEscape(parameterToString(r.addressId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"addressId"+"}", url.PathEscape(parameterValueToString(r.addressId, "addressId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *HasOneApiService) GETAddressIdGeocoderExecute(r HasOneApiGETAddressIdGe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *HasOneApiService) GETAddressIdGeocoderExecute(r HasOneApiGETAddressIdGe
 type HasOneApiGETAdyenPaymentIdOrderRequest struct {
 	ctx            context.Context
 	ApiService     *HasOneApiService
-	adyenPaymentId string
+	adyenPaymentId interface{}
 }
 
 func (r HasOneApiGETAdyenPaymentIdOrderRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the order associated to the adyen payment
 	@param adyenPaymentId The resource's id
 	@return HasOneApiGETAdyenPaymentIdOrderRequest
 */
-func (a *HasOneApiService) GETAdyenPaymentIdOrder(ctx context.Context, adyenPaymentId string) HasOneApiGETAdyenPaymentIdOrderRequest {
+func (a *HasOneApiService) GETAdyenPaymentIdOrder(ctx context.Context, adyenPaymentId interface{}) HasOneApiGETAdyenPaymentIdOrderRequest {
 	return HasOneApiGETAdyenPaymentIdOrderRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -156,7 +156,7 @@ func (a *HasOneApiService) GETAdyenPaymentIdOrderExecute(r HasOneApiGETAdyenPaym
 	}
 
 	localVarPath := localBasePath + "/adyen_payments/{adyenPaymentId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"adyenPaymentId"+"}", url.PathEscape(parameterToString(r.adyenPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"adyenPaymentId"+"}", url.PathEscape(parameterValueToString(r.adyenPaymentId, "adyenPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *HasOneApiService) GETAdyenPaymentIdOrderExecute(r HasOneApiGETAdyenPaym
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -210,7 +210,7 @@ func (a *HasOneApiService) GETAdyenPaymentIdOrderExecute(r HasOneApiGETAdyenPaym
 type HasOneApiGETAdyenPaymentIdPaymentGatewayRequest struct {
 	ctx            context.Context
 	ApiService     *HasOneApiService
-	adyenPaymentId string
+	adyenPaymentId interface{}
 }
 
 func (r HasOneApiGETAdyenPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
@@ -226,7 +226,7 @@ Retrieve the payment gateway associated to the adyen payment
 	@param adyenPaymentId The resource's id
 	@return HasOneApiGETAdyenPaymentIdPaymentGatewayRequest
 */
-func (a *HasOneApiService) GETAdyenPaymentIdPaymentGateway(ctx context.Context, adyenPaymentId string) HasOneApiGETAdyenPaymentIdPaymentGatewayRequest {
+func (a *HasOneApiService) GETAdyenPaymentIdPaymentGateway(ctx context.Context, adyenPaymentId interface{}) HasOneApiGETAdyenPaymentIdPaymentGatewayRequest {
 	return HasOneApiGETAdyenPaymentIdPaymentGatewayRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -248,7 +248,7 @@ func (a *HasOneApiService) GETAdyenPaymentIdPaymentGatewayExecute(r HasOneApiGET
 	}
 
 	localVarPath := localBasePath + "/adyen_payments/{adyenPaymentId}/payment_gateway"
-	localVarPath = strings.Replace(localVarPath, "{"+"adyenPaymentId"+"}", url.PathEscape(parameterToString(r.adyenPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"adyenPaymentId"+"}", url.PathEscape(parameterValueToString(r.adyenPaymentId, "adyenPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -281,9 +281,9 @@ func (a *HasOneApiService) GETAdyenPaymentIdPaymentGatewayExecute(r HasOneApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -302,7 +302,7 @@ func (a *HasOneApiService) GETAdyenPaymentIdPaymentGatewayExecute(r HasOneApiGET
 type HasOneApiGETAuthorizationIdOrderRequest struct {
 	ctx             context.Context
 	ApiService      *HasOneApiService
-	authorizationId string
+	authorizationId interface{}
 }
 
 func (r HasOneApiGETAuthorizationIdOrderRequest) Execute() (*http.Response, error) {
@@ -318,7 +318,7 @@ Retrieve the order associated to the authorization
 	@param authorizationId The resource's id
 	@return HasOneApiGETAuthorizationIdOrderRequest
 */
-func (a *HasOneApiService) GETAuthorizationIdOrder(ctx context.Context, authorizationId string) HasOneApiGETAuthorizationIdOrderRequest {
+func (a *HasOneApiService) GETAuthorizationIdOrder(ctx context.Context, authorizationId interface{}) HasOneApiGETAuthorizationIdOrderRequest {
 	return HasOneApiGETAuthorizationIdOrderRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -340,7 +340,7 @@ func (a *HasOneApiService) GETAuthorizationIdOrderExecute(r HasOneApiGETAuthoriz
 	}
 
 	localVarPath := localBasePath + "/authorizations/{authorizationId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"authorizationId"+"}", url.PathEscape(parameterToString(r.authorizationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"authorizationId"+"}", url.PathEscape(parameterValueToString(r.authorizationId, "authorizationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -373,9 +373,193 @@ func (a *HasOneApiService) GETAuthorizationIdOrderExecute(r HasOneApiGETAuthoriz
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasOneApiGETAxervePaymentIdOrderRequest struct {
+	ctx             context.Context
+	ApiService      *HasOneApiService
+	axervePaymentId interface{}
+}
+
+func (r HasOneApiGETAxervePaymentIdOrderRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETAxervePaymentIdOrderExecute(r)
+}
+
+/*
+GETAxervePaymentIdOrder Retrieve the order associated to the axerve payment
+
+Retrieve the order associated to the axerve payment
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param axervePaymentId The resource's id
+	@return HasOneApiGETAxervePaymentIdOrderRequest
+*/
+func (a *HasOneApiService) GETAxervePaymentIdOrder(ctx context.Context, axervePaymentId interface{}) HasOneApiGETAxervePaymentIdOrderRequest {
+	return HasOneApiGETAxervePaymentIdOrderRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		axervePaymentId: axervePaymentId,
+	}
+}
+
+// Execute executes the request
+func (a *HasOneApiService) GETAxervePaymentIdOrderExecute(r HasOneApiGETAxervePaymentIdOrderRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasOneApiService.GETAxervePaymentIdOrder")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/axerve_payments/{axervePaymentId}/order"
+	localVarPath = strings.Replace(localVarPath, "{"+"axervePaymentId"+"}", url.PathEscape(parameterValueToString(r.axervePaymentId, "axervePaymentId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasOneApiGETAxervePaymentIdPaymentGatewayRequest struct {
+	ctx             context.Context
+	ApiService      *HasOneApiService
+	axervePaymentId interface{}
+}
+
+func (r HasOneApiGETAxervePaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETAxervePaymentIdPaymentGatewayExecute(r)
+}
+
+/*
+GETAxervePaymentIdPaymentGateway Retrieve the payment gateway associated to the axerve payment
+
+Retrieve the payment gateway associated to the axerve payment
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param axervePaymentId The resource's id
+	@return HasOneApiGETAxervePaymentIdPaymentGatewayRequest
+*/
+func (a *HasOneApiService) GETAxervePaymentIdPaymentGateway(ctx context.Context, axervePaymentId interface{}) HasOneApiGETAxervePaymentIdPaymentGatewayRequest {
+	return HasOneApiGETAxervePaymentIdPaymentGatewayRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		axervePaymentId: axervePaymentId,
+	}
+}
+
+// Execute executes the request
+func (a *HasOneApiService) GETAxervePaymentIdPaymentGatewayExecute(r HasOneApiGETAxervePaymentIdPaymentGatewayRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasOneApiService.GETAxervePaymentIdPaymentGateway")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/axerve_payments/{axervePaymentId}/payment_gateway"
+	localVarPath = strings.Replace(localVarPath, "{"+"axervePaymentId"+"}", url.PathEscape(parameterValueToString(r.axervePaymentId, "axervePaymentId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -394,7 +578,7 @@ func (a *HasOneApiService) GETAuthorizationIdOrderExecute(r HasOneApiGETAuthoriz
 type HasOneApiGETBillingInfoValidationRuleIdMarketRequest struct {
 	ctx                         context.Context
 	ApiService                  *HasOneApiService
-	billingInfoValidationRuleId string
+	billingInfoValidationRuleId interface{}
 }
 
 func (r HasOneApiGETBillingInfoValidationRuleIdMarketRequest) Execute() (*http.Response, error) {
@@ -410,7 +594,7 @@ Retrieve the market associated to the billing info validation rule
 	@param billingInfoValidationRuleId The resource's id
 	@return HasOneApiGETBillingInfoValidationRuleIdMarketRequest
 */
-func (a *HasOneApiService) GETBillingInfoValidationRuleIdMarket(ctx context.Context, billingInfoValidationRuleId string) HasOneApiGETBillingInfoValidationRuleIdMarketRequest {
+func (a *HasOneApiService) GETBillingInfoValidationRuleIdMarket(ctx context.Context, billingInfoValidationRuleId interface{}) HasOneApiGETBillingInfoValidationRuleIdMarketRequest {
 	return HasOneApiGETBillingInfoValidationRuleIdMarketRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
@@ -432,7 +616,7 @@ func (a *HasOneApiService) GETBillingInfoValidationRuleIdMarketExecute(r HasOneA
 	}
 
 	localVarPath := localBasePath + "/billing_info_validation_rules/{billingInfoValidationRuleId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterToString(r.billingInfoValidationRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterValueToString(r.billingInfoValidationRuleId, "billingInfoValidationRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -465,9 +649,9 @@ func (a *HasOneApiService) GETBillingInfoValidationRuleIdMarketExecute(r HasOneA
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -486,7 +670,7 @@ func (a *HasOneApiService) GETBillingInfoValidationRuleIdMarketExecute(r HasOneA
 type HasOneApiGETBraintreePaymentIdOrderRequest struct {
 	ctx                context.Context
 	ApiService         *HasOneApiService
-	braintreePaymentId string
+	braintreePaymentId interface{}
 }
 
 func (r HasOneApiGETBraintreePaymentIdOrderRequest) Execute() (*http.Response, error) {
@@ -502,7 +686,7 @@ Retrieve the order associated to the braintree payment
 	@param braintreePaymentId The resource's id
 	@return HasOneApiGETBraintreePaymentIdOrderRequest
 */
-func (a *HasOneApiService) GETBraintreePaymentIdOrder(ctx context.Context, braintreePaymentId string) HasOneApiGETBraintreePaymentIdOrderRequest {
+func (a *HasOneApiService) GETBraintreePaymentIdOrder(ctx context.Context, braintreePaymentId interface{}) HasOneApiGETBraintreePaymentIdOrderRequest {
 	return HasOneApiGETBraintreePaymentIdOrderRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -524,7 +708,7 @@ func (a *HasOneApiService) GETBraintreePaymentIdOrderExecute(r HasOneApiGETBrain
 	}
 
 	localVarPath := localBasePath + "/braintree_payments/{braintreePaymentId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"braintreePaymentId"+"}", url.PathEscape(parameterToString(r.braintreePaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"braintreePaymentId"+"}", url.PathEscape(parameterValueToString(r.braintreePaymentId, "braintreePaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -557,9 +741,9 @@ func (a *HasOneApiService) GETBraintreePaymentIdOrderExecute(r HasOneApiGETBrain
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -578,7 +762,7 @@ func (a *HasOneApiService) GETBraintreePaymentIdOrderExecute(r HasOneApiGETBrain
 type HasOneApiGETBraintreePaymentIdPaymentGatewayRequest struct {
 	ctx                context.Context
 	ApiService         *HasOneApiService
-	braintreePaymentId string
+	braintreePaymentId interface{}
 }
 
 func (r HasOneApiGETBraintreePaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
@@ -594,7 +778,7 @@ Retrieve the payment gateway associated to the braintree payment
 	@param braintreePaymentId The resource's id
 	@return HasOneApiGETBraintreePaymentIdPaymentGatewayRequest
 */
-func (a *HasOneApiService) GETBraintreePaymentIdPaymentGateway(ctx context.Context, braintreePaymentId string) HasOneApiGETBraintreePaymentIdPaymentGatewayRequest {
+func (a *HasOneApiService) GETBraintreePaymentIdPaymentGateway(ctx context.Context, braintreePaymentId interface{}) HasOneApiGETBraintreePaymentIdPaymentGatewayRequest {
 	return HasOneApiGETBraintreePaymentIdPaymentGatewayRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -616,7 +800,7 @@ func (a *HasOneApiService) GETBraintreePaymentIdPaymentGatewayExecute(r HasOneAp
 	}
 
 	localVarPath := localBasePath + "/braintree_payments/{braintreePaymentId}/payment_gateway"
-	localVarPath = strings.Replace(localVarPath, "{"+"braintreePaymentId"+"}", url.PathEscape(parameterToString(r.braintreePaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"braintreePaymentId"+"}", url.PathEscape(parameterValueToString(r.braintreePaymentId, "braintreePaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -649,9 +833,9 @@ func (a *HasOneApiService) GETBraintreePaymentIdPaymentGatewayExecute(r HasOneAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -670,7 +854,7 @@ func (a *HasOneApiService) GETBraintreePaymentIdPaymentGatewayExecute(r HasOneAp
 type HasOneApiGETBundleIdMarketRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	bundleId   string
+	bundleId   interface{}
 }
 
 func (r HasOneApiGETBundleIdMarketRequest) Execute() (*http.Response, error) {
@@ -686,7 +870,7 @@ Retrieve the market associated to the bundle
 	@param bundleId The resource's id
 	@return HasOneApiGETBundleIdMarketRequest
 */
-func (a *HasOneApiService) GETBundleIdMarket(ctx context.Context, bundleId string) HasOneApiGETBundleIdMarketRequest {
+func (a *HasOneApiService) GETBundleIdMarket(ctx context.Context, bundleId interface{}) HasOneApiGETBundleIdMarketRequest {
 	return HasOneApiGETBundleIdMarketRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -708,7 +892,7 @@ func (a *HasOneApiService) GETBundleIdMarketExecute(r HasOneApiGETBundleIdMarket
 	}
 
 	localVarPath := localBasePath + "/bundles/{bundleId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterToString(r.bundleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterValueToString(r.bundleId, "bundleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -741,9 +925,9 @@ func (a *HasOneApiService) GETBundleIdMarketExecute(r HasOneApiGETBundleIdMarket
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -762,7 +946,7 @@ func (a *HasOneApiService) GETBundleIdMarketExecute(r HasOneApiGETBundleIdMarket
 type HasOneApiGETBundleIdSkuListRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	bundleId   string
+	bundleId   interface{}
 }
 
 func (r HasOneApiGETBundleIdSkuListRequest) Execute() (*http.Response, error) {
@@ -778,7 +962,7 @@ Retrieve the sku list associated to the bundle
 	@param bundleId The resource's id
 	@return HasOneApiGETBundleIdSkuListRequest
 */
-func (a *HasOneApiService) GETBundleIdSkuList(ctx context.Context, bundleId string) HasOneApiGETBundleIdSkuListRequest {
+func (a *HasOneApiService) GETBundleIdSkuList(ctx context.Context, bundleId interface{}) HasOneApiGETBundleIdSkuListRequest {
 	return HasOneApiGETBundleIdSkuListRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -800,7 +984,7 @@ func (a *HasOneApiService) GETBundleIdSkuListExecute(r HasOneApiGETBundleIdSkuLi
 	}
 
 	localVarPath := localBasePath + "/bundles/{bundleId}/sku_list"
-	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterToString(r.bundleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterValueToString(r.bundleId, "bundleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -833,9 +1017,9 @@ func (a *HasOneApiService) GETBundleIdSkuListExecute(r HasOneApiGETBundleIdSkuLi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -854,7 +1038,7 @@ func (a *HasOneApiService) GETBundleIdSkuListExecute(r HasOneApiGETBundleIdSkuLi
 type HasOneApiGETCaptureIdOrderRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	captureId  string
+	captureId  interface{}
 }
 
 func (r HasOneApiGETCaptureIdOrderRequest) Execute() (*http.Response, error) {
@@ -870,7 +1054,7 @@ Retrieve the order associated to the capture
 	@param captureId The resource's id
 	@return HasOneApiGETCaptureIdOrderRequest
 */
-func (a *HasOneApiService) GETCaptureIdOrder(ctx context.Context, captureId string) HasOneApiGETCaptureIdOrderRequest {
+func (a *HasOneApiService) GETCaptureIdOrder(ctx context.Context, captureId interface{}) HasOneApiGETCaptureIdOrderRequest {
 	return HasOneApiGETCaptureIdOrderRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -892,7 +1076,7 @@ func (a *HasOneApiService) GETCaptureIdOrderExecute(r HasOneApiGETCaptureIdOrder
 	}
 
 	localVarPath := localBasePath + "/captures/{captureId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"captureId"+"}", url.PathEscape(parameterToString(r.captureId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"captureId"+"}", url.PathEscape(parameterValueToString(r.captureId, "captureId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -925,9 +1109,9 @@ func (a *HasOneApiService) GETCaptureIdOrderExecute(r HasOneApiGETCaptureIdOrder
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -946,7 +1130,7 @@ func (a *HasOneApiService) GETCaptureIdOrderExecute(r HasOneApiGETCaptureIdOrder
 type HasOneApiGETCaptureIdReferenceAuthorizationRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	captureId  string
+	captureId  interface{}
 }
 
 func (r HasOneApiGETCaptureIdReferenceAuthorizationRequest) Execute() (*http.Response, error) {
@@ -962,7 +1146,7 @@ Retrieve the reference authorization associated to the capture
 	@param captureId The resource's id
 	@return HasOneApiGETCaptureIdReferenceAuthorizationRequest
 */
-func (a *HasOneApiService) GETCaptureIdReferenceAuthorization(ctx context.Context, captureId string) HasOneApiGETCaptureIdReferenceAuthorizationRequest {
+func (a *HasOneApiService) GETCaptureIdReferenceAuthorization(ctx context.Context, captureId interface{}) HasOneApiGETCaptureIdReferenceAuthorizationRequest {
 	return HasOneApiGETCaptureIdReferenceAuthorizationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -984,7 +1168,7 @@ func (a *HasOneApiService) GETCaptureIdReferenceAuthorizationExecute(r HasOneApi
 	}
 
 	localVarPath := localBasePath + "/captures/{captureId}/reference_authorization"
-	localVarPath = strings.Replace(localVarPath, "{"+"captureId"+"}", url.PathEscape(parameterToString(r.captureId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"captureId"+"}", url.PathEscape(parameterValueToString(r.captureId, "captureId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1017,9 +1201,9 @@ func (a *HasOneApiService) GETCaptureIdReferenceAuthorizationExecute(r HasOneApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1038,7 +1222,7 @@ func (a *HasOneApiService) GETCaptureIdReferenceAuthorizationExecute(r HasOneApi
 type HasOneApiGETCarrierAccountIdMarketRequest struct {
 	ctx              context.Context
 	ApiService       *HasOneApiService
-	carrierAccountId string
+	carrierAccountId interface{}
 }
 
 func (r HasOneApiGETCarrierAccountIdMarketRequest) Execute() (*http.Response, error) {
@@ -1054,7 +1238,7 @@ Retrieve the market associated to the carrier account
 	@param carrierAccountId The resource's id
 	@return HasOneApiGETCarrierAccountIdMarketRequest
 */
-func (a *HasOneApiService) GETCarrierAccountIdMarket(ctx context.Context, carrierAccountId string) HasOneApiGETCarrierAccountIdMarketRequest {
+func (a *HasOneApiService) GETCarrierAccountIdMarket(ctx context.Context, carrierAccountId interface{}) HasOneApiGETCarrierAccountIdMarketRequest {
 	return HasOneApiGETCarrierAccountIdMarketRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -1076,7 +1260,7 @@ func (a *HasOneApiService) GETCarrierAccountIdMarketExecute(r HasOneApiGETCarrie
 	}
 
 	localVarPath := localBasePath + "/carrier_accounts/{carrierAccountId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"carrierAccountId"+"}", url.PathEscape(parameterToString(r.carrierAccountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"carrierAccountId"+"}", url.PathEscape(parameterValueToString(r.carrierAccountId, "carrierAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1109,9 +1293,9 @@ func (a *HasOneApiService) GETCarrierAccountIdMarketExecute(r HasOneApiGETCarrie
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1130,7 +1314,7 @@ func (a *HasOneApiService) GETCarrierAccountIdMarketExecute(r HasOneApiGETCarrie
 type HasOneApiGETCheckoutComPaymentIdOrderRequest struct {
 	ctx                  context.Context
 	ApiService           *HasOneApiService
-	checkoutComPaymentId string
+	checkoutComPaymentId interface{}
 }
 
 func (r HasOneApiGETCheckoutComPaymentIdOrderRequest) Execute() (*http.Response, error) {
@@ -1146,7 +1330,7 @@ Retrieve the order associated to the checkout.com payment
 	@param checkoutComPaymentId The resource's id
 	@return HasOneApiGETCheckoutComPaymentIdOrderRequest
 */
-func (a *HasOneApiService) GETCheckoutComPaymentIdOrder(ctx context.Context, checkoutComPaymentId string) HasOneApiGETCheckoutComPaymentIdOrderRequest {
+func (a *HasOneApiService) GETCheckoutComPaymentIdOrder(ctx context.Context, checkoutComPaymentId interface{}) HasOneApiGETCheckoutComPaymentIdOrderRequest {
 	return HasOneApiGETCheckoutComPaymentIdOrderRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -1168,7 +1352,7 @@ func (a *HasOneApiService) GETCheckoutComPaymentIdOrderExecute(r HasOneApiGETChe
 	}
 
 	localVarPath := localBasePath + "/checkout_com_payments/{checkoutComPaymentId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComPaymentId"+"}", url.PathEscape(parameterToString(r.checkoutComPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComPaymentId"+"}", url.PathEscape(parameterValueToString(r.checkoutComPaymentId, "checkoutComPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1201,9 +1385,9 @@ func (a *HasOneApiService) GETCheckoutComPaymentIdOrderExecute(r HasOneApiGETChe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1222,7 +1406,7 @@ func (a *HasOneApiService) GETCheckoutComPaymentIdOrderExecute(r HasOneApiGETChe
 type HasOneApiGETCheckoutComPaymentIdPaymentGatewayRequest struct {
 	ctx                  context.Context
 	ApiService           *HasOneApiService
-	checkoutComPaymentId string
+	checkoutComPaymentId interface{}
 }
 
 func (r HasOneApiGETCheckoutComPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
@@ -1238,7 +1422,7 @@ Retrieve the payment gateway associated to the checkout.com payment
 	@param checkoutComPaymentId The resource's id
 	@return HasOneApiGETCheckoutComPaymentIdPaymentGatewayRequest
 */
-func (a *HasOneApiService) GETCheckoutComPaymentIdPaymentGateway(ctx context.Context, checkoutComPaymentId string) HasOneApiGETCheckoutComPaymentIdPaymentGatewayRequest {
+func (a *HasOneApiService) GETCheckoutComPaymentIdPaymentGateway(ctx context.Context, checkoutComPaymentId interface{}) HasOneApiGETCheckoutComPaymentIdPaymentGatewayRequest {
 	return HasOneApiGETCheckoutComPaymentIdPaymentGatewayRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -1260,7 +1444,7 @@ func (a *HasOneApiService) GETCheckoutComPaymentIdPaymentGatewayExecute(r HasOne
 	}
 
 	localVarPath := localBasePath + "/checkout_com_payments/{checkoutComPaymentId}/payment_gateway"
-	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComPaymentId"+"}", url.PathEscape(parameterToString(r.checkoutComPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComPaymentId"+"}", url.PathEscape(parameterValueToString(r.checkoutComPaymentId, "checkoutComPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1293,9 +1477,9 @@ func (a *HasOneApiService) GETCheckoutComPaymentIdPaymentGatewayExecute(r HasOne
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1314,7 +1498,7 @@ func (a *HasOneApiService) GETCheckoutComPaymentIdPaymentGatewayExecute(r HasOne
 type HasOneApiGETCouponIdPromotionRuleRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	couponId   string
+	couponId   interface{}
 }
 
 func (r HasOneApiGETCouponIdPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -1330,7 +1514,7 @@ Retrieve the promotion rule associated to the coupon
 	@param couponId The resource's id
 	@return HasOneApiGETCouponIdPromotionRuleRequest
 */
-func (a *HasOneApiService) GETCouponIdPromotionRule(ctx context.Context, couponId string) HasOneApiGETCouponIdPromotionRuleRequest {
+func (a *HasOneApiService) GETCouponIdPromotionRule(ctx context.Context, couponId interface{}) HasOneApiGETCouponIdPromotionRuleRequest {
 	return HasOneApiGETCouponIdPromotionRuleRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1352,7 +1536,7 @@ func (a *HasOneApiService) GETCouponIdPromotionRuleExecute(r HasOneApiGETCouponI
 	}
 
 	localVarPath := localBasePath + "/coupons/{couponId}/promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"couponId"+"}", url.PathEscape(parameterToString(r.couponId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"couponId"+"}", url.PathEscape(parameterValueToString(r.couponId, "couponId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1385,9 +1569,9 @@ func (a *HasOneApiService) GETCouponIdPromotionRuleExecute(r HasOneApiGETCouponI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1406,7 +1590,7 @@ func (a *HasOneApiService) GETCouponIdPromotionRuleExecute(r HasOneApiGETCouponI
 type HasOneApiGETCouponRecipientIdCustomerRequest struct {
 	ctx               context.Context
 	ApiService        *HasOneApiService
-	couponRecipientId string
+	couponRecipientId interface{}
 }
 
 func (r HasOneApiGETCouponRecipientIdCustomerRequest) Execute() (*http.Response, error) {
@@ -1422,7 +1606,7 @@ Retrieve the customer associated to the coupon recipient
 	@param couponRecipientId The resource's id
 	@return HasOneApiGETCouponRecipientIdCustomerRequest
 */
-func (a *HasOneApiService) GETCouponRecipientIdCustomer(ctx context.Context, couponRecipientId string) HasOneApiGETCouponRecipientIdCustomerRequest {
+func (a *HasOneApiService) GETCouponRecipientIdCustomer(ctx context.Context, couponRecipientId interface{}) HasOneApiGETCouponRecipientIdCustomerRequest {
 	return HasOneApiGETCouponRecipientIdCustomerRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -1444,7 +1628,7 @@ func (a *HasOneApiService) GETCouponRecipientIdCustomerExecute(r HasOneApiGETCou
 	}
 
 	localVarPath := localBasePath + "/coupon_recipients/{couponRecipientId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"couponRecipientId"+"}", url.PathEscape(parameterToString(r.couponRecipientId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"couponRecipientId"+"}", url.PathEscape(parameterValueToString(r.couponRecipientId, "couponRecipientId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1477,9 +1661,9 @@ func (a *HasOneApiService) GETCouponRecipientIdCustomerExecute(r HasOneApiGETCou
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1498,7 +1682,7 @@ func (a *HasOneApiService) GETCouponRecipientIdCustomerExecute(r HasOneApiGETCou
 type HasOneApiGETCustomerAddressIdAddressRequest struct {
 	ctx               context.Context
 	ApiService        *HasOneApiService
-	customerAddressId string
+	customerAddressId interface{}
 }
 
 func (r HasOneApiGETCustomerAddressIdAddressRequest) Execute() (*http.Response, error) {
@@ -1514,7 +1698,7 @@ Retrieve the address associated to the customer address
 	@param customerAddressId The resource's id
 	@return HasOneApiGETCustomerAddressIdAddressRequest
 */
-func (a *HasOneApiService) GETCustomerAddressIdAddress(ctx context.Context, customerAddressId string) HasOneApiGETCustomerAddressIdAddressRequest {
+func (a *HasOneApiService) GETCustomerAddressIdAddress(ctx context.Context, customerAddressId interface{}) HasOneApiGETCustomerAddressIdAddressRequest {
 	return HasOneApiGETCustomerAddressIdAddressRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -1536,7 +1720,7 @@ func (a *HasOneApiService) GETCustomerAddressIdAddressExecute(r HasOneApiGETCust
 	}
 
 	localVarPath := localBasePath + "/customer_addresses/{customerAddressId}/address"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterToString(r.customerAddressId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterValueToString(r.customerAddressId, "customerAddressId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1569,9 +1753,9 @@ func (a *HasOneApiService) GETCustomerAddressIdAddressExecute(r HasOneApiGETCust
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1590,7 +1774,7 @@ func (a *HasOneApiService) GETCustomerAddressIdAddressExecute(r HasOneApiGETCust
 type HasOneApiGETCustomerAddressIdCustomerRequest struct {
 	ctx               context.Context
 	ApiService        *HasOneApiService
-	customerAddressId string
+	customerAddressId interface{}
 }
 
 func (r HasOneApiGETCustomerAddressIdCustomerRequest) Execute() (*http.Response, error) {
@@ -1606,7 +1790,7 @@ Retrieve the customer associated to the customer address
 	@param customerAddressId The resource's id
 	@return HasOneApiGETCustomerAddressIdCustomerRequest
 */
-func (a *HasOneApiService) GETCustomerAddressIdCustomer(ctx context.Context, customerAddressId string) HasOneApiGETCustomerAddressIdCustomerRequest {
+func (a *HasOneApiService) GETCustomerAddressIdCustomer(ctx context.Context, customerAddressId interface{}) HasOneApiGETCustomerAddressIdCustomerRequest {
 	return HasOneApiGETCustomerAddressIdCustomerRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -1628,7 +1812,7 @@ func (a *HasOneApiService) GETCustomerAddressIdCustomerExecute(r HasOneApiGETCus
 	}
 
 	localVarPath := localBasePath + "/customer_addresses/{customerAddressId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterToString(r.customerAddressId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterValueToString(r.customerAddressId, "customerAddressId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1661,9 +1845,9 @@ func (a *HasOneApiService) GETCustomerAddressIdCustomerExecute(r HasOneApiGETCus
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1682,7 +1866,7 @@ func (a *HasOneApiService) GETCustomerAddressIdCustomerExecute(r HasOneApiGETCus
 type HasOneApiGETCustomerIdCustomerGroupRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	customerId string
+	customerId interface{}
 }
 
 func (r HasOneApiGETCustomerIdCustomerGroupRequest) Execute() (*http.Response, error) {
@@ -1698,7 +1882,7 @@ Retrieve the customer group associated to the customer
 	@param customerId The resource's id
 	@return HasOneApiGETCustomerIdCustomerGroupRequest
 */
-func (a *HasOneApiService) GETCustomerIdCustomerGroup(ctx context.Context, customerId string) HasOneApiGETCustomerIdCustomerGroupRequest {
+func (a *HasOneApiService) GETCustomerIdCustomerGroup(ctx context.Context, customerId interface{}) HasOneApiGETCustomerIdCustomerGroupRequest {
 	return HasOneApiGETCustomerIdCustomerGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1720,7 +1904,7 @@ func (a *HasOneApiService) GETCustomerIdCustomerGroupExecute(r HasOneApiGETCusto
 	}
 
 	localVarPath := localBasePath + "/customers/{customerId}/customer_group"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterToString(r.customerId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1753,9 +1937,9 @@ func (a *HasOneApiService) GETCustomerIdCustomerGroupExecute(r HasOneApiGETCusto
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1774,7 +1958,7 @@ func (a *HasOneApiService) GETCustomerIdCustomerGroupExecute(r HasOneApiGETCusto
 type HasOneApiGETCustomerPasswordResetIdCustomerRequest struct {
 	ctx                     context.Context
 	ApiService              *HasOneApiService
-	customerPasswordResetId string
+	customerPasswordResetId interface{}
 }
 
 func (r HasOneApiGETCustomerPasswordResetIdCustomerRequest) Execute() (*http.Response, error) {
@@ -1790,7 +1974,7 @@ Retrieve the customer associated to the customer password reset
 	@param customerPasswordResetId The resource's id
 	@return HasOneApiGETCustomerPasswordResetIdCustomerRequest
 */
-func (a *HasOneApiService) GETCustomerPasswordResetIdCustomer(ctx context.Context, customerPasswordResetId string) HasOneApiGETCustomerPasswordResetIdCustomerRequest {
+func (a *HasOneApiService) GETCustomerPasswordResetIdCustomer(ctx context.Context, customerPasswordResetId interface{}) HasOneApiGETCustomerPasswordResetIdCustomerRequest {
 	return HasOneApiGETCustomerPasswordResetIdCustomerRequest{
 		ApiService:              a,
 		ctx:                     ctx,
@@ -1812,7 +1996,7 @@ func (a *HasOneApiService) GETCustomerPasswordResetIdCustomerExecute(r HasOneApi
 	}
 
 	localVarPath := localBasePath + "/customer_password_resets/{customerPasswordResetId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerPasswordResetId"+"}", url.PathEscape(parameterToString(r.customerPasswordResetId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerPasswordResetId"+"}", url.PathEscape(parameterValueToString(r.customerPasswordResetId, "customerPasswordResetId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1845,9 +2029,9 @@ func (a *HasOneApiService) GETCustomerPasswordResetIdCustomerExecute(r HasOneApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1866,7 +2050,7 @@ func (a *HasOneApiService) GETCustomerPasswordResetIdCustomerExecute(r HasOneApi
 type HasOneApiGETCustomerPaymentSourceIdCustomerRequest struct {
 	ctx                     context.Context
 	ApiService              *HasOneApiService
-	customerPaymentSourceId string
+	customerPaymentSourceId interface{}
 }
 
 func (r HasOneApiGETCustomerPaymentSourceIdCustomerRequest) Execute() (*http.Response, error) {
@@ -1882,7 +2066,7 @@ Retrieve the customer associated to the customer payment source
 	@param customerPaymentSourceId The resource's id
 	@return HasOneApiGETCustomerPaymentSourceIdCustomerRequest
 */
-func (a *HasOneApiService) GETCustomerPaymentSourceIdCustomer(ctx context.Context, customerPaymentSourceId string) HasOneApiGETCustomerPaymentSourceIdCustomerRequest {
+func (a *HasOneApiService) GETCustomerPaymentSourceIdCustomer(ctx context.Context, customerPaymentSourceId interface{}) HasOneApiGETCustomerPaymentSourceIdCustomerRequest {
 	return HasOneApiGETCustomerPaymentSourceIdCustomerRequest{
 		ApiService:              a,
 		ctx:                     ctx,
@@ -1904,7 +2088,7 @@ func (a *HasOneApiService) GETCustomerPaymentSourceIdCustomerExecute(r HasOneApi
 	}
 
 	localVarPath := localBasePath + "/customer_payment_sources/{customerPaymentSourceId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerPaymentSourceId"+"}", url.PathEscape(parameterToString(r.customerPaymentSourceId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerPaymentSourceId"+"}", url.PathEscape(parameterValueToString(r.customerPaymentSourceId, "customerPaymentSourceId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1937,9 +2121,9 @@ func (a *HasOneApiService) GETCustomerPaymentSourceIdCustomerExecute(r HasOneApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1958,7 +2142,7 @@ func (a *HasOneApiService) GETCustomerPaymentSourceIdCustomerExecute(r HasOneApi
 type HasOneApiGETCustomerSubscriptionIdCustomerRequest struct {
 	ctx                    context.Context
 	ApiService             *HasOneApiService
-	customerSubscriptionId string
+	customerSubscriptionId interface{}
 }
 
 func (r HasOneApiGETCustomerSubscriptionIdCustomerRequest) Execute() (*http.Response, error) {
@@ -1974,7 +2158,7 @@ Retrieve the customer associated to the customer subscription
 	@param customerSubscriptionId The resource's id
 	@return HasOneApiGETCustomerSubscriptionIdCustomerRequest
 */
-func (a *HasOneApiService) GETCustomerSubscriptionIdCustomer(ctx context.Context, customerSubscriptionId string) HasOneApiGETCustomerSubscriptionIdCustomerRequest {
+func (a *HasOneApiService) GETCustomerSubscriptionIdCustomer(ctx context.Context, customerSubscriptionId interface{}) HasOneApiGETCustomerSubscriptionIdCustomerRequest {
 	return HasOneApiGETCustomerSubscriptionIdCustomerRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -1996,7 +2180,7 @@ func (a *HasOneApiService) GETCustomerSubscriptionIdCustomerExecute(r HasOneApiG
 	}
 
 	localVarPath := localBasePath + "/customer_subscriptions/{customerSubscriptionId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerSubscriptionId"+"}", url.PathEscape(parameterToString(r.customerSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.customerSubscriptionId, "customerSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2029,9 +2213,9 @@ func (a *HasOneApiService) GETCustomerSubscriptionIdCustomerExecute(r HasOneApiG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2050,7 +2234,7 @@ func (a *HasOneApiService) GETCustomerSubscriptionIdCustomerExecute(r HasOneApiG
 type HasOneApiGETDeliveryLeadTimeIdShippingMethodRequest struct {
 	ctx                context.Context
 	ApiService         *HasOneApiService
-	deliveryLeadTimeId string
+	deliveryLeadTimeId interface{}
 }
 
 func (r HasOneApiGETDeliveryLeadTimeIdShippingMethodRequest) Execute() (*http.Response, error) {
@@ -2066,7 +2250,7 @@ Retrieve the shipping method associated to the delivery lead time
 	@param deliveryLeadTimeId The resource's id
 	@return HasOneApiGETDeliveryLeadTimeIdShippingMethodRequest
 */
-func (a *HasOneApiService) GETDeliveryLeadTimeIdShippingMethod(ctx context.Context, deliveryLeadTimeId string) HasOneApiGETDeliveryLeadTimeIdShippingMethodRequest {
+func (a *HasOneApiService) GETDeliveryLeadTimeIdShippingMethod(ctx context.Context, deliveryLeadTimeId interface{}) HasOneApiGETDeliveryLeadTimeIdShippingMethodRequest {
 	return HasOneApiGETDeliveryLeadTimeIdShippingMethodRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -2088,7 +2272,7 @@ func (a *HasOneApiService) GETDeliveryLeadTimeIdShippingMethodExecute(r HasOneAp
 	}
 
 	localVarPath := localBasePath + "/delivery_lead_times/{deliveryLeadTimeId}/shipping_method"
-	localVarPath = strings.Replace(localVarPath, "{"+"deliveryLeadTimeId"+"}", url.PathEscape(parameterToString(r.deliveryLeadTimeId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"deliveryLeadTimeId"+"}", url.PathEscape(parameterValueToString(r.deliveryLeadTimeId, "deliveryLeadTimeId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2121,9 +2305,9 @@ func (a *HasOneApiService) GETDeliveryLeadTimeIdShippingMethodExecute(r HasOneAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2142,7 +2326,7 @@ func (a *HasOneApiService) GETDeliveryLeadTimeIdShippingMethodExecute(r HasOneAp
 type HasOneApiGETDeliveryLeadTimeIdStockLocationRequest struct {
 	ctx                context.Context
 	ApiService         *HasOneApiService
-	deliveryLeadTimeId string
+	deliveryLeadTimeId interface{}
 }
 
 func (r HasOneApiGETDeliveryLeadTimeIdStockLocationRequest) Execute() (*http.Response, error) {
@@ -2158,7 +2342,7 @@ Retrieve the stock location associated to the delivery lead time
 	@param deliveryLeadTimeId The resource's id
 	@return HasOneApiGETDeliveryLeadTimeIdStockLocationRequest
 */
-func (a *HasOneApiService) GETDeliveryLeadTimeIdStockLocation(ctx context.Context, deliveryLeadTimeId string) HasOneApiGETDeliveryLeadTimeIdStockLocationRequest {
+func (a *HasOneApiService) GETDeliveryLeadTimeIdStockLocation(ctx context.Context, deliveryLeadTimeId interface{}) HasOneApiGETDeliveryLeadTimeIdStockLocationRequest {
 	return HasOneApiGETDeliveryLeadTimeIdStockLocationRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -2180,7 +2364,7 @@ func (a *HasOneApiService) GETDeliveryLeadTimeIdStockLocationExecute(r HasOneApi
 	}
 
 	localVarPath := localBasePath + "/delivery_lead_times/{deliveryLeadTimeId}/stock_location"
-	localVarPath = strings.Replace(localVarPath, "{"+"deliveryLeadTimeId"+"}", url.PathEscape(parameterToString(r.deliveryLeadTimeId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"deliveryLeadTimeId"+"}", url.PathEscape(parameterValueToString(r.deliveryLeadTimeId, "deliveryLeadTimeId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2213,9 +2397,9 @@ func (a *HasOneApiService) GETDeliveryLeadTimeIdStockLocationExecute(r HasOneApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2234,7 +2418,7 @@ func (a *HasOneApiService) GETDeliveryLeadTimeIdStockLocationExecute(r HasOneApi
 type HasOneApiGETEventCallbackIdWebhookRequest struct {
 	ctx             context.Context
 	ApiService      *HasOneApiService
-	eventCallbackId string
+	eventCallbackId interface{}
 }
 
 func (r HasOneApiGETEventCallbackIdWebhookRequest) Execute() (*http.Response, error) {
@@ -2250,7 +2434,7 @@ Retrieve the webhook associated to the event callback
 	@param eventCallbackId The resource's id
 	@return HasOneApiGETEventCallbackIdWebhookRequest
 */
-func (a *HasOneApiService) GETEventCallbackIdWebhook(ctx context.Context, eventCallbackId string) HasOneApiGETEventCallbackIdWebhookRequest {
+func (a *HasOneApiService) GETEventCallbackIdWebhook(ctx context.Context, eventCallbackId interface{}) HasOneApiGETEventCallbackIdWebhookRequest {
 	return HasOneApiGETEventCallbackIdWebhookRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -2272,7 +2456,7 @@ func (a *HasOneApiService) GETEventCallbackIdWebhookExecute(r HasOneApiGETEventC
 	}
 
 	localVarPath := localBasePath + "/event_callbacks/{eventCallbackId}/webhook"
-	localVarPath = strings.Replace(localVarPath, "{"+"eventCallbackId"+"}", url.PathEscape(parameterToString(r.eventCallbackId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"eventCallbackId"+"}", url.PathEscape(parameterValueToString(r.eventCallbackId, "eventCallbackId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2305,9 +2489,9 @@ func (a *HasOneApiService) GETEventCallbackIdWebhookExecute(r HasOneApiGETEventC
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2326,7 +2510,7 @@ func (a *HasOneApiService) GETEventCallbackIdWebhookExecute(r HasOneApiGETEventC
 type HasOneApiGETExternalPaymentIdOrderRequest struct {
 	ctx               context.Context
 	ApiService        *HasOneApiService
-	externalPaymentId string
+	externalPaymentId interface{}
 }
 
 func (r HasOneApiGETExternalPaymentIdOrderRequest) Execute() (*http.Response, error) {
@@ -2342,7 +2526,7 @@ Retrieve the order associated to the external payment
 	@param externalPaymentId The resource's id
 	@return HasOneApiGETExternalPaymentIdOrderRequest
 */
-func (a *HasOneApiService) GETExternalPaymentIdOrder(ctx context.Context, externalPaymentId string) HasOneApiGETExternalPaymentIdOrderRequest {
+func (a *HasOneApiService) GETExternalPaymentIdOrder(ctx context.Context, externalPaymentId interface{}) HasOneApiGETExternalPaymentIdOrderRequest {
 	return HasOneApiGETExternalPaymentIdOrderRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -2364,7 +2548,7 @@ func (a *HasOneApiService) GETExternalPaymentIdOrderExecute(r HasOneApiGETExtern
 	}
 
 	localVarPath := localBasePath + "/external_payments/{externalPaymentId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPaymentId"+"}", url.PathEscape(parameterToString(r.externalPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPaymentId"+"}", url.PathEscape(parameterValueToString(r.externalPaymentId, "externalPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2397,9 +2581,9 @@ func (a *HasOneApiService) GETExternalPaymentIdOrderExecute(r HasOneApiGETExtern
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2418,7 +2602,7 @@ func (a *HasOneApiService) GETExternalPaymentIdOrderExecute(r HasOneApiGETExtern
 type HasOneApiGETExternalPaymentIdPaymentGatewayRequest struct {
 	ctx               context.Context
 	ApiService        *HasOneApiService
-	externalPaymentId string
+	externalPaymentId interface{}
 }
 
 func (r HasOneApiGETExternalPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
@@ -2434,7 +2618,7 @@ Retrieve the payment gateway associated to the external payment
 	@param externalPaymentId The resource's id
 	@return HasOneApiGETExternalPaymentIdPaymentGatewayRequest
 */
-func (a *HasOneApiService) GETExternalPaymentIdPaymentGateway(ctx context.Context, externalPaymentId string) HasOneApiGETExternalPaymentIdPaymentGatewayRequest {
+func (a *HasOneApiService) GETExternalPaymentIdPaymentGateway(ctx context.Context, externalPaymentId interface{}) HasOneApiGETExternalPaymentIdPaymentGatewayRequest {
 	return HasOneApiGETExternalPaymentIdPaymentGatewayRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -2456,7 +2640,7 @@ func (a *HasOneApiService) GETExternalPaymentIdPaymentGatewayExecute(r HasOneApi
 	}
 
 	localVarPath := localBasePath + "/external_payments/{externalPaymentId}/payment_gateway"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPaymentId"+"}", url.PathEscape(parameterToString(r.externalPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPaymentId"+"}", url.PathEscape(parameterValueToString(r.externalPaymentId, "externalPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2489,9 +2673,9 @@ func (a *HasOneApiService) GETExternalPaymentIdPaymentGatewayExecute(r HasOneApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2510,7 +2694,7 @@ func (a *HasOneApiService) GETExternalPaymentIdPaymentGatewayExecute(r HasOneApi
 type HasOneApiGETExternalPaymentIdWalletRequest struct {
 	ctx               context.Context
 	ApiService        *HasOneApiService
-	externalPaymentId string
+	externalPaymentId interface{}
 }
 
 func (r HasOneApiGETExternalPaymentIdWalletRequest) Execute() (*http.Response, error) {
@@ -2526,7 +2710,7 @@ Retrieve the wallet associated to the external payment
 	@param externalPaymentId The resource's id
 	@return HasOneApiGETExternalPaymentIdWalletRequest
 */
-func (a *HasOneApiService) GETExternalPaymentIdWallet(ctx context.Context, externalPaymentId string) HasOneApiGETExternalPaymentIdWalletRequest {
+func (a *HasOneApiService) GETExternalPaymentIdWallet(ctx context.Context, externalPaymentId interface{}) HasOneApiGETExternalPaymentIdWalletRequest {
 	return HasOneApiGETExternalPaymentIdWalletRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -2548,7 +2732,7 @@ func (a *HasOneApiService) GETExternalPaymentIdWalletExecute(r HasOneApiGETExter
 	}
 
 	localVarPath := localBasePath + "/external_payments/{externalPaymentId}/wallet"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPaymentId"+"}", url.PathEscape(parameterToString(r.externalPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPaymentId"+"}", url.PathEscape(parameterValueToString(r.externalPaymentId, "externalPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2581,9 +2765,9 @@ func (a *HasOneApiService) GETExternalPaymentIdWalletExecute(r HasOneApiGETExter
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2602,7 +2786,7 @@ func (a *HasOneApiService) GETExternalPaymentIdWalletExecute(r HasOneApiGETExter
 type HasOneApiGETExternalPromotionIdCouponCodesPromotionRuleRequest struct {
 	ctx                 context.Context
 	ApiService          *HasOneApiService
-	externalPromotionId string
+	externalPromotionId interface{}
 }
 
 func (r HasOneApiGETExternalPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -2618,7 +2802,7 @@ Retrieve the coupon codes promotion rule associated to the external promotion
 	@param externalPromotionId The resource's id
 	@return HasOneApiGETExternalPromotionIdCouponCodesPromotionRuleRequest
 */
-func (a *HasOneApiService) GETExternalPromotionIdCouponCodesPromotionRule(ctx context.Context, externalPromotionId string) HasOneApiGETExternalPromotionIdCouponCodesPromotionRuleRequest {
+func (a *HasOneApiService) GETExternalPromotionIdCouponCodesPromotionRule(ctx context.Context, externalPromotionId interface{}) HasOneApiGETExternalPromotionIdCouponCodesPromotionRuleRequest {
 	return HasOneApiGETExternalPromotionIdCouponCodesPromotionRuleRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -2640,7 +2824,7 @@ func (a *HasOneApiService) GETExternalPromotionIdCouponCodesPromotionRuleExecute
 	}
 
 	localVarPath := localBasePath + "/external_promotions/{externalPromotionId}/coupon_codes_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterToString(r.externalPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterValueToString(r.externalPromotionId, "externalPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2673,9 +2857,9 @@ func (a *HasOneApiService) GETExternalPromotionIdCouponCodesPromotionRuleExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2694,7 +2878,7 @@ func (a *HasOneApiService) GETExternalPromotionIdCouponCodesPromotionRuleExecute
 type HasOneApiGETExternalPromotionIdMarketRequest struct {
 	ctx                 context.Context
 	ApiService          *HasOneApiService
-	externalPromotionId string
+	externalPromotionId interface{}
 }
 
 func (r HasOneApiGETExternalPromotionIdMarketRequest) Execute() (*http.Response, error) {
@@ -2710,7 +2894,7 @@ Retrieve the market associated to the external promotion
 	@param externalPromotionId The resource's id
 	@return HasOneApiGETExternalPromotionIdMarketRequest
 */
-func (a *HasOneApiService) GETExternalPromotionIdMarket(ctx context.Context, externalPromotionId string) HasOneApiGETExternalPromotionIdMarketRequest {
+func (a *HasOneApiService) GETExternalPromotionIdMarket(ctx context.Context, externalPromotionId interface{}) HasOneApiGETExternalPromotionIdMarketRequest {
 	return HasOneApiGETExternalPromotionIdMarketRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -2732,7 +2916,7 @@ func (a *HasOneApiService) GETExternalPromotionIdMarketExecute(r HasOneApiGETExt
 	}
 
 	localVarPath := localBasePath + "/external_promotions/{externalPromotionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterToString(r.externalPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterValueToString(r.externalPromotionId, "externalPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2765,9 +2949,9 @@ func (a *HasOneApiService) GETExternalPromotionIdMarketExecute(r HasOneApiGETExt
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2786,7 +2970,7 @@ func (a *HasOneApiService) GETExternalPromotionIdMarketExecute(r HasOneApiGETExt
 type HasOneApiGETExternalPromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx                 context.Context
 	ApiService          *HasOneApiService
-	externalPromotionId string
+	externalPromotionId interface{}
 }
 
 func (r HasOneApiGETExternalPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -2802,7 +2986,7 @@ Retrieve the order amount promotion rule associated to the external promotion
 	@param externalPromotionId The resource's id
 	@return HasOneApiGETExternalPromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *HasOneApiService) GETExternalPromotionIdOrderAmountPromotionRule(ctx context.Context, externalPromotionId string) HasOneApiGETExternalPromotionIdOrderAmountPromotionRuleRequest {
+func (a *HasOneApiService) GETExternalPromotionIdOrderAmountPromotionRule(ctx context.Context, externalPromotionId interface{}) HasOneApiGETExternalPromotionIdOrderAmountPromotionRuleRequest {
 	return HasOneApiGETExternalPromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -2824,7 +3008,7 @@ func (a *HasOneApiService) GETExternalPromotionIdOrderAmountPromotionRuleExecute
 	}
 
 	localVarPath := localBasePath + "/external_promotions/{externalPromotionId}/order_amount_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterToString(r.externalPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterValueToString(r.externalPromotionId, "externalPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2857,9 +3041,9 @@ func (a *HasOneApiService) GETExternalPromotionIdOrderAmountPromotionRuleExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2878,7 +3062,7 @@ func (a *HasOneApiService) GETExternalPromotionIdOrderAmountPromotionRuleExecute
 type HasOneApiGETExternalPromotionIdSkuListPromotionRuleRequest struct {
 	ctx                 context.Context
 	ApiService          *HasOneApiService
-	externalPromotionId string
+	externalPromotionId interface{}
 }
 
 func (r HasOneApiGETExternalPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -2894,7 +3078,7 @@ Retrieve the sku list promotion rule associated to the external promotion
 	@param externalPromotionId The resource's id
 	@return HasOneApiGETExternalPromotionIdSkuListPromotionRuleRequest
 */
-func (a *HasOneApiService) GETExternalPromotionIdSkuListPromotionRule(ctx context.Context, externalPromotionId string) HasOneApiGETExternalPromotionIdSkuListPromotionRuleRequest {
+func (a *HasOneApiService) GETExternalPromotionIdSkuListPromotionRule(ctx context.Context, externalPromotionId interface{}) HasOneApiGETExternalPromotionIdSkuListPromotionRuleRequest {
 	return HasOneApiGETExternalPromotionIdSkuListPromotionRuleRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -2916,7 +3100,7 @@ func (a *HasOneApiService) GETExternalPromotionIdSkuListPromotionRuleExecute(r H
 	}
 
 	localVarPath := localBasePath + "/external_promotions/{externalPromotionId}/sku_list_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterToString(r.externalPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterValueToString(r.externalPromotionId, "externalPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2949,9 +3133,9 @@ func (a *HasOneApiService) GETExternalPromotionIdSkuListPromotionRuleExecute(r H
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2970,7 +3154,7 @@ func (a *HasOneApiService) GETExternalPromotionIdSkuListPromotionRuleExecute(r H
 type HasOneApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest struct {
 	ctx                    context.Context
 	ApiService             *HasOneApiService
-	fixedAmountPromotionId string
+	fixedAmountPromotionId interface{}
 }
 
 func (r HasOneApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -2986,7 +3170,7 @@ Retrieve the coupon codes promotion rule associated to the fixed amount promotio
 	@param fixedAmountPromotionId The resource's id
 	@return HasOneApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest
 */
-func (a *HasOneApiService) GETFixedAmountPromotionIdCouponCodesPromotionRule(ctx context.Context, fixedAmountPromotionId string) HasOneApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest {
+func (a *HasOneApiService) GETFixedAmountPromotionIdCouponCodesPromotionRule(ctx context.Context, fixedAmountPromotionId interface{}) HasOneApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest {
 	return HasOneApiGETFixedAmountPromotionIdCouponCodesPromotionRuleRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -3008,7 +3192,7 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdCouponCodesPromotionRuleExec
 	}
 
 	localVarPath := localBasePath + "/fixed_amount_promotions/{fixedAmountPromotionId}/coupon_codes_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterToString(r.fixedAmountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedAmountPromotionId, "fixedAmountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3041,9 +3225,9 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdCouponCodesPromotionRuleExec
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3062,7 +3246,7 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdCouponCodesPromotionRuleExec
 type HasOneApiGETFixedAmountPromotionIdMarketRequest struct {
 	ctx                    context.Context
 	ApiService             *HasOneApiService
-	fixedAmountPromotionId string
+	fixedAmountPromotionId interface{}
 }
 
 func (r HasOneApiGETFixedAmountPromotionIdMarketRequest) Execute() (*http.Response, error) {
@@ -3078,7 +3262,7 @@ Retrieve the market associated to the fixed amount promotion
 	@param fixedAmountPromotionId The resource's id
 	@return HasOneApiGETFixedAmountPromotionIdMarketRequest
 */
-func (a *HasOneApiService) GETFixedAmountPromotionIdMarket(ctx context.Context, fixedAmountPromotionId string) HasOneApiGETFixedAmountPromotionIdMarketRequest {
+func (a *HasOneApiService) GETFixedAmountPromotionIdMarket(ctx context.Context, fixedAmountPromotionId interface{}) HasOneApiGETFixedAmountPromotionIdMarketRequest {
 	return HasOneApiGETFixedAmountPromotionIdMarketRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -3100,7 +3284,7 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdMarketExecute(r HasOneApiGET
 	}
 
 	localVarPath := localBasePath + "/fixed_amount_promotions/{fixedAmountPromotionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterToString(r.fixedAmountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedAmountPromotionId, "fixedAmountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3133,9 +3317,9 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdMarketExecute(r HasOneApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3154,7 +3338,7 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdMarketExecute(r HasOneApiGET
 type HasOneApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx                    context.Context
 	ApiService             *HasOneApiService
-	fixedAmountPromotionId string
+	fixedAmountPromotionId interface{}
 }
 
 func (r HasOneApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -3170,7 +3354,7 @@ Retrieve the order amount promotion rule associated to the fixed amount promotio
 	@param fixedAmountPromotionId The resource's id
 	@return HasOneApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *HasOneApiService) GETFixedAmountPromotionIdOrderAmountPromotionRule(ctx context.Context, fixedAmountPromotionId string) HasOneApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest {
+func (a *HasOneApiService) GETFixedAmountPromotionIdOrderAmountPromotionRule(ctx context.Context, fixedAmountPromotionId interface{}) HasOneApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest {
 	return HasOneApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -3192,7 +3376,7 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdOrderAmountPromotionRuleExec
 	}
 
 	localVarPath := localBasePath + "/fixed_amount_promotions/{fixedAmountPromotionId}/order_amount_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterToString(r.fixedAmountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedAmountPromotionId, "fixedAmountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3225,9 +3409,9 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdOrderAmountPromotionRuleExec
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3246,7 +3430,7 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdOrderAmountPromotionRuleExec
 type HasOneApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest struct {
 	ctx                    context.Context
 	ApiService             *HasOneApiService
-	fixedAmountPromotionId string
+	fixedAmountPromotionId interface{}
 }
 
 func (r HasOneApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -3262,7 +3446,7 @@ Retrieve the sku list promotion rule associated to the fixed amount promotion
 	@param fixedAmountPromotionId The resource's id
 	@return HasOneApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest
 */
-func (a *HasOneApiService) GETFixedAmountPromotionIdSkuListPromotionRule(ctx context.Context, fixedAmountPromotionId string) HasOneApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest {
+func (a *HasOneApiService) GETFixedAmountPromotionIdSkuListPromotionRule(ctx context.Context, fixedAmountPromotionId interface{}) HasOneApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest {
 	return HasOneApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -3284,7 +3468,7 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdSkuListPromotionRuleExecute(
 	}
 
 	localVarPath := localBasePath + "/fixed_amount_promotions/{fixedAmountPromotionId}/sku_list_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterToString(r.fixedAmountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedAmountPromotionId, "fixedAmountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3317,9 +3501,9 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdSkuListPromotionRuleExecute(
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3338,7 +3522,7 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdSkuListPromotionRuleExecute(
 type HasOneApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest struct {
 	ctx                   context.Context
 	ApiService            *HasOneApiService
-	fixedPricePromotionId string
+	fixedPricePromotionId interface{}
 }
 
 func (r HasOneApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -3354,7 +3538,7 @@ Retrieve the coupon codes promotion rule associated to the fixed price promotion
 	@param fixedPricePromotionId The resource's id
 	@return HasOneApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest
 */
-func (a *HasOneApiService) GETFixedPricePromotionIdCouponCodesPromotionRule(ctx context.Context, fixedPricePromotionId string) HasOneApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest {
+func (a *HasOneApiService) GETFixedPricePromotionIdCouponCodesPromotionRule(ctx context.Context, fixedPricePromotionId interface{}) HasOneApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest {
 	return HasOneApiGETFixedPricePromotionIdCouponCodesPromotionRuleRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -3376,7 +3560,7 @@ func (a *HasOneApiService) GETFixedPricePromotionIdCouponCodesPromotionRuleExecu
 	}
 
 	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}/coupon_codes_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterToString(r.fixedPricePromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3409,9 +3593,9 @@ func (a *HasOneApiService) GETFixedPricePromotionIdCouponCodesPromotionRuleExecu
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3430,7 +3614,7 @@ func (a *HasOneApiService) GETFixedPricePromotionIdCouponCodesPromotionRuleExecu
 type HasOneApiGETFixedPricePromotionIdMarketRequest struct {
 	ctx                   context.Context
 	ApiService            *HasOneApiService
-	fixedPricePromotionId string
+	fixedPricePromotionId interface{}
 }
 
 func (r HasOneApiGETFixedPricePromotionIdMarketRequest) Execute() (*http.Response, error) {
@@ -3446,7 +3630,7 @@ Retrieve the market associated to the fixed price promotion
 	@param fixedPricePromotionId The resource's id
 	@return HasOneApiGETFixedPricePromotionIdMarketRequest
 */
-func (a *HasOneApiService) GETFixedPricePromotionIdMarket(ctx context.Context, fixedPricePromotionId string) HasOneApiGETFixedPricePromotionIdMarketRequest {
+func (a *HasOneApiService) GETFixedPricePromotionIdMarket(ctx context.Context, fixedPricePromotionId interface{}) HasOneApiGETFixedPricePromotionIdMarketRequest {
 	return HasOneApiGETFixedPricePromotionIdMarketRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -3468,7 +3652,7 @@ func (a *HasOneApiService) GETFixedPricePromotionIdMarketExecute(r HasOneApiGETF
 	}
 
 	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterToString(r.fixedPricePromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3501,9 +3685,9 @@ func (a *HasOneApiService) GETFixedPricePromotionIdMarketExecute(r HasOneApiGETF
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3522,7 +3706,7 @@ func (a *HasOneApiService) GETFixedPricePromotionIdMarketExecute(r HasOneApiGETF
 type HasOneApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx                   context.Context
 	ApiService            *HasOneApiService
-	fixedPricePromotionId string
+	fixedPricePromotionId interface{}
 }
 
 func (r HasOneApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -3538,7 +3722,7 @@ Retrieve the order amount promotion rule associated to the fixed price promotion
 	@param fixedPricePromotionId The resource's id
 	@return HasOneApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *HasOneApiService) GETFixedPricePromotionIdOrderAmountPromotionRule(ctx context.Context, fixedPricePromotionId string) HasOneApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest {
+func (a *HasOneApiService) GETFixedPricePromotionIdOrderAmountPromotionRule(ctx context.Context, fixedPricePromotionId interface{}) HasOneApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest {
 	return HasOneApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -3560,7 +3744,7 @@ func (a *HasOneApiService) GETFixedPricePromotionIdOrderAmountPromotionRuleExecu
 	}
 
 	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}/order_amount_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterToString(r.fixedPricePromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3593,9 +3777,9 @@ func (a *HasOneApiService) GETFixedPricePromotionIdOrderAmountPromotionRuleExecu
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3614,7 +3798,7 @@ func (a *HasOneApiService) GETFixedPricePromotionIdOrderAmountPromotionRuleExecu
 type HasOneApiGETFixedPricePromotionIdSkuListRequest struct {
 	ctx                   context.Context
 	ApiService            *HasOneApiService
-	fixedPricePromotionId string
+	fixedPricePromotionId interface{}
 }
 
 func (r HasOneApiGETFixedPricePromotionIdSkuListRequest) Execute() (*http.Response, error) {
@@ -3630,7 +3814,7 @@ Retrieve the sku list associated to the fixed price promotion
 	@param fixedPricePromotionId The resource's id
 	@return HasOneApiGETFixedPricePromotionIdSkuListRequest
 */
-func (a *HasOneApiService) GETFixedPricePromotionIdSkuList(ctx context.Context, fixedPricePromotionId string) HasOneApiGETFixedPricePromotionIdSkuListRequest {
+func (a *HasOneApiService) GETFixedPricePromotionIdSkuList(ctx context.Context, fixedPricePromotionId interface{}) HasOneApiGETFixedPricePromotionIdSkuListRequest {
 	return HasOneApiGETFixedPricePromotionIdSkuListRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -3652,7 +3836,7 @@ func (a *HasOneApiService) GETFixedPricePromotionIdSkuListExecute(r HasOneApiGET
 	}
 
 	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}/sku_list"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterToString(r.fixedPricePromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3685,9 +3869,9 @@ func (a *HasOneApiService) GETFixedPricePromotionIdSkuListExecute(r HasOneApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3706,7 +3890,7 @@ func (a *HasOneApiService) GETFixedPricePromotionIdSkuListExecute(r HasOneApiGET
 type HasOneApiGETFixedPricePromotionIdSkuListPromotionRuleRequest struct {
 	ctx                   context.Context
 	ApiService            *HasOneApiService
-	fixedPricePromotionId string
+	fixedPricePromotionId interface{}
 }
 
 func (r HasOneApiGETFixedPricePromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -3722,7 +3906,7 @@ Retrieve the sku list promotion rule associated to the fixed price promotion
 	@param fixedPricePromotionId The resource's id
 	@return HasOneApiGETFixedPricePromotionIdSkuListPromotionRuleRequest
 */
-func (a *HasOneApiService) GETFixedPricePromotionIdSkuListPromotionRule(ctx context.Context, fixedPricePromotionId string) HasOneApiGETFixedPricePromotionIdSkuListPromotionRuleRequest {
+func (a *HasOneApiService) GETFixedPricePromotionIdSkuListPromotionRule(ctx context.Context, fixedPricePromotionId interface{}) HasOneApiGETFixedPricePromotionIdSkuListPromotionRuleRequest {
 	return HasOneApiGETFixedPricePromotionIdSkuListPromotionRuleRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -3744,7 +3928,7 @@ func (a *HasOneApiService) GETFixedPricePromotionIdSkuListPromotionRuleExecute(r
 	}
 
 	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}/sku_list_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterToString(r.fixedPricePromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3777,9 +3961,9 @@ func (a *HasOneApiService) GETFixedPricePromotionIdSkuListPromotionRuleExecute(r
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3798,7 +3982,7 @@ func (a *HasOneApiService) GETFixedPricePromotionIdSkuListPromotionRuleExecute(r
 type HasOneApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest struct {
 	ctx                 context.Context
 	ApiService          *HasOneApiService
-	freeGiftPromotionId string
+	freeGiftPromotionId interface{}
 }
 
 func (r HasOneApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -3814,7 +3998,7 @@ Retrieve the coupon codes promotion rule associated to the free gift promotion
 	@param freeGiftPromotionId The resource's id
 	@return HasOneApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest
 */
-func (a *HasOneApiService) GETFreeGiftPromotionIdCouponCodesPromotionRule(ctx context.Context, freeGiftPromotionId string) HasOneApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest {
+func (a *HasOneApiService) GETFreeGiftPromotionIdCouponCodesPromotionRule(ctx context.Context, freeGiftPromotionId interface{}) HasOneApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest {
 	return HasOneApiGETFreeGiftPromotionIdCouponCodesPromotionRuleRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -3836,7 +4020,7 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdCouponCodesPromotionRuleExecute
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}/coupon_codes_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterToString(r.freeGiftPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3869,9 +4053,9 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdCouponCodesPromotionRuleExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3890,7 +4074,7 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdCouponCodesPromotionRuleExecute
 type HasOneApiGETFreeGiftPromotionIdMarketRequest struct {
 	ctx                 context.Context
 	ApiService          *HasOneApiService
-	freeGiftPromotionId string
+	freeGiftPromotionId interface{}
 }
 
 func (r HasOneApiGETFreeGiftPromotionIdMarketRequest) Execute() (*http.Response, error) {
@@ -3906,7 +4090,7 @@ Retrieve the market associated to the free gift promotion
 	@param freeGiftPromotionId The resource's id
 	@return HasOneApiGETFreeGiftPromotionIdMarketRequest
 */
-func (a *HasOneApiService) GETFreeGiftPromotionIdMarket(ctx context.Context, freeGiftPromotionId string) HasOneApiGETFreeGiftPromotionIdMarketRequest {
+func (a *HasOneApiService) GETFreeGiftPromotionIdMarket(ctx context.Context, freeGiftPromotionId interface{}) HasOneApiGETFreeGiftPromotionIdMarketRequest {
 	return HasOneApiGETFreeGiftPromotionIdMarketRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -3928,7 +4112,7 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdMarketExecute(r HasOneApiGETFre
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterToString(r.freeGiftPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3961,9 +4145,9 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdMarketExecute(r HasOneApiGETFre
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3982,7 +4166,7 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdMarketExecute(r HasOneApiGETFre
 type HasOneApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx                 context.Context
 	ApiService          *HasOneApiService
-	freeGiftPromotionId string
+	freeGiftPromotionId interface{}
 }
 
 func (r HasOneApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -3998,7 +4182,7 @@ Retrieve the order amount promotion rule associated to the free gift promotion
 	@param freeGiftPromotionId The resource's id
 	@return HasOneApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *HasOneApiService) GETFreeGiftPromotionIdOrderAmountPromotionRule(ctx context.Context, freeGiftPromotionId string) HasOneApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest {
+func (a *HasOneApiService) GETFreeGiftPromotionIdOrderAmountPromotionRule(ctx context.Context, freeGiftPromotionId interface{}) HasOneApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest {
 	return HasOneApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -4020,7 +4204,7 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdOrderAmountPromotionRuleExecute
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}/order_amount_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterToString(r.freeGiftPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4053,9 +4237,9 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdOrderAmountPromotionRuleExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4074,7 +4258,7 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdOrderAmountPromotionRuleExecute
 type HasOneApiGETFreeGiftPromotionIdSkuListRequest struct {
 	ctx                 context.Context
 	ApiService          *HasOneApiService
-	freeGiftPromotionId string
+	freeGiftPromotionId interface{}
 }
 
 func (r HasOneApiGETFreeGiftPromotionIdSkuListRequest) Execute() (*http.Response, error) {
@@ -4090,7 +4274,7 @@ Retrieve the sku list associated to the free gift promotion
 	@param freeGiftPromotionId The resource's id
 	@return HasOneApiGETFreeGiftPromotionIdSkuListRequest
 */
-func (a *HasOneApiService) GETFreeGiftPromotionIdSkuList(ctx context.Context, freeGiftPromotionId string) HasOneApiGETFreeGiftPromotionIdSkuListRequest {
+func (a *HasOneApiService) GETFreeGiftPromotionIdSkuList(ctx context.Context, freeGiftPromotionId interface{}) HasOneApiGETFreeGiftPromotionIdSkuListRequest {
 	return HasOneApiGETFreeGiftPromotionIdSkuListRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -4112,7 +4296,7 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdSkuListExecute(r HasOneApiGETFr
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}/sku_list"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterToString(r.freeGiftPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4145,9 +4329,9 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdSkuListExecute(r HasOneApiGETFr
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4166,7 +4350,7 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdSkuListExecute(r HasOneApiGETFr
 type HasOneApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest struct {
 	ctx                 context.Context
 	ApiService          *HasOneApiService
-	freeGiftPromotionId string
+	freeGiftPromotionId interface{}
 }
 
 func (r HasOneApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -4182,7 +4366,7 @@ Retrieve the sku list promotion rule associated to the free gift promotion
 	@param freeGiftPromotionId The resource's id
 	@return HasOneApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest
 */
-func (a *HasOneApiService) GETFreeGiftPromotionIdSkuListPromotionRule(ctx context.Context, freeGiftPromotionId string) HasOneApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest {
+func (a *HasOneApiService) GETFreeGiftPromotionIdSkuListPromotionRule(ctx context.Context, freeGiftPromotionId interface{}) HasOneApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest {
 	return HasOneApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -4204,7 +4388,7 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdSkuListPromotionRuleExecute(r H
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}/sku_list_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterToString(r.freeGiftPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4237,9 +4421,9 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdSkuListPromotionRuleExecute(r H
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4258,7 +4442,7 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdSkuListPromotionRuleExecute(r H
 type HasOneApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest struct {
 	ctx                     context.Context
 	ApiService              *HasOneApiService
-	freeShippingPromotionId string
+	freeShippingPromotionId interface{}
 }
 
 func (r HasOneApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -4274,7 +4458,7 @@ Retrieve the coupon codes promotion rule associated to the free shipping promoti
 	@param freeShippingPromotionId The resource's id
 	@return HasOneApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest
 */
-func (a *HasOneApiService) GETFreeShippingPromotionIdCouponCodesPromotionRule(ctx context.Context, freeShippingPromotionId string) HasOneApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest {
+func (a *HasOneApiService) GETFreeShippingPromotionIdCouponCodesPromotionRule(ctx context.Context, freeShippingPromotionId interface{}) HasOneApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest {
 	return HasOneApiGETFreeShippingPromotionIdCouponCodesPromotionRuleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
@@ -4296,7 +4480,7 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdCouponCodesPromotionRuleExe
 	}
 
 	localVarPath := localBasePath + "/free_shipping_promotions/{freeShippingPromotionId}/coupon_codes_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterToString(r.freeShippingPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeShippingPromotionId, "freeShippingPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4329,9 +4513,9 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdCouponCodesPromotionRuleExe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4350,7 +4534,7 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdCouponCodesPromotionRuleExe
 type HasOneApiGETFreeShippingPromotionIdMarketRequest struct {
 	ctx                     context.Context
 	ApiService              *HasOneApiService
-	freeShippingPromotionId string
+	freeShippingPromotionId interface{}
 }
 
 func (r HasOneApiGETFreeShippingPromotionIdMarketRequest) Execute() (*http.Response, error) {
@@ -4366,7 +4550,7 @@ Retrieve the market associated to the free shipping promotion
 	@param freeShippingPromotionId The resource's id
 	@return HasOneApiGETFreeShippingPromotionIdMarketRequest
 */
-func (a *HasOneApiService) GETFreeShippingPromotionIdMarket(ctx context.Context, freeShippingPromotionId string) HasOneApiGETFreeShippingPromotionIdMarketRequest {
+func (a *HasOneApiService) GETFreeShippingPromotionIdMarket(ctx context.Context, freeShippingPromotionId interface{}) HasOneApiGETFreeShippingPromotionIdMarketRequest {
 	return HasOneApiGETFreeShippingPromotionIdMarketRequest{
 		ApiService:              a,
 		ctx:                     ctx,
@@ -4388,7 +4572,7 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdMarketExecute(r HasOneApiGE
 	}
 
 	localVarPath := localBasePath + "/free_shipping_promotions/{freeShippingPromotionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterToString(r.freeShippingPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeShippingPromotionId, "freeShippingPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4421,9 +4605,9 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdMarketExecute(r HasOneApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4442,7 +4626,7 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdMarketExecute(r HasOneApiGE
 type HasOneApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx                     context.Context
 	ApiService              *HasOneApiService
-	freeShippingPromotionId string
+	freeShippingPromotionId interface{}
 }
 
 func (r HasOneApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -4458,7 +4642,7 @@ Retrieve the order amount promotion rule associated to the free shipping promoti
 	@param freeShippingPromotionId The resource's id
 	@return HasOneApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *HasOneApiService) GETFreeShippingPromotionIdOrderAmountPromotionRule(ctx context.Context, freeShippingPromotionId string) HasOneApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest {
+func (a *HasOneApiService) GETFreeShippingPromotionIdOrderAmountPromotionRule(ctx context.Context, freeShippingPromotionId interface{}) HasOneApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest {
 	return HasOneApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
@@ -4480,7 +4664,7 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdOrderAmountPromotionRuleExe
 	}
 
 	localVarPath := localBasePath + "/free_shipping_promotions/{freeShippingPromotionId}/order_amount_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterToString(r.freeShippingPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeShippingPromotionId, "freeShippingPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4513,9 +4697,9 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdOrderAmountPromotionRuleExe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4534,7 +4718,7 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdOrderAmountPromotionRuleExe
 type HasOneApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest struct {
 	ctx                     context.Context
 	ApiService              *HasOneApiService
-	freeShippingPromotionId string
+	freeShippingPromotionId interface{}
 }
 
 func (r HasOneApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -4550,7 +4734,7 @@ Retrieve the sku list promotion rule associated to the free shipping promotion
 	@param freeShippingPromotionId The resource's id
 	@return HasOneApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest
 */
-func (a *HasOneApiService) GETFreeShippingPromotionIdSkuListPromotionRule(ctx context.Context, freeShippingPromotionId string) HasOneApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest {
+func (a *HasOneApiService) GETFreeShippingPromotionIdSkuListPromotionRule(ctx context.Context, freeShippingPromotionId interface{}) HasOneApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest {
 	return HasOneApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
@@ -4572,7 +4756,7 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdSkuListPromotionRuleExecute
 	}
 
 	localVarPath := localBasePath + "/free_shipping_promotions/{freeShippingPromotionId}/sku_list_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterToString(r.freeShippingPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeShippingPromotionId, "freeShippingPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4605,9 +4789,9 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdSkuListPromotionRuleExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4626,7 +4810,7 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdSkuListPromotionRuleExecute
 type HasOneApiGETGiftCardIdGiftCardRecipientRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	giftCardId string
+	giftCardId interface{}
 }
 
 func (r HasOneApiGETGiftCardIdGiftCardRecipientRequest) Execute() (*http.Response, error) {
@@ -4642,7 +4826,7 @@ Retrieve the gift card recipient associated to the gift card
 	@param giftCardId The resource's id
 	@return HasOneApiGETGiftCardIdGiftCardRecipientRequest
 */
-func (a *HasOneApiService) GETGiftCardIdGiftCardRecipient(ctx context.Context, giftCardId string) HasOneApiGETGiftCardIdGiftCardRecipientRequest {
+func (a *HasOneApiService) GETGiftCardIdGiftCardRecipient(ctx context.Context, giftCardId interface{}) HasOneApiGETGiftCardIdGiftCardRecipientRequest {
 	return HasOneApiGETGiftCardIdGiftCardRecipientRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4664,7 +4848,7 @@ func (a *HasOneApiService) GETGiftCardIdGiftCardRecipientExecute(r HasOneApiGETG
 	}
 
 	localVarPath := localBasePath + "/gift_cards/{giftCardId}/gift_card_recipient"
-	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterToString(r.giftCardId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterValueToString(r.giftCardId, "giftCardId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4697,9 +4881,9 @@ func (a *HasOneApiService) GETGiftCardIdGiftCardRecipientExecute(r HasOneApiGETG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4718,7 +4902,7 @@ func (a *HasOneApiService) GETGiftCardIdGiftCardRecipientExecute(r HasOneApiGETG
 type HasOneApiGETGiftCardIdMarketRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	giftCardId string
+	giftCardId interface{}
 }
 
 func (r HasOneApiGETGiftCardIdMarketRequest) Execute() (*http.Response, error) {
@@ -4734,7 +4918,7 @@ Retrieve the market associated to the gift card
 	@param giftCardId The resource's id
 	@return HasOneApiGETGiftCardIdMarketRequest
 */
-func (a *HasOneApiService) GETGiftCardIdMarket(ctx context.Context, giftCardId string) HasOneApiGETGiftCardIdMarketRequest {
+func (a *HasOneApiService) GETGiftCardIdMarket(ctx context.Context, giftCardId interface{}) HasOneApiGETGiftCardIdMarketRequest {
 	return HasOneApiGETGiftCardIdMarketRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4756,7 +4940,7 @@ func (a *HasOneApiService) GETGiftCardIdMarketExecute(r HasOneApiGETGiftCardIdMa
 	}
 
 	localVarPath := localBasePath + "/gift_cards/{giftCardId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterToString(r.giftCardId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterValueToString(r.giftCardId, "giftCardId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4789,9 +4973,9 @@ func (a *HasOneApiService) GETGiftCardIdMarketExecute(r HasOneApiGETGiftCardIdMa
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4810,7 +4994,7 @@ func (a *HasOneApiService) GETGiftCardIdMarketExecute(r HasOneApiGETGiftCardIdMa
 type HasOneApiGETGiftCardRecipientIdCustomerRequest struct {
 	ctx                 context.Context
 	ApiService          *HasOneApiService
-	giftCardRecipientId string
+	giftCardRecipientId interface{}
 }
 
 func (r HasOneApiGETGiftCardRecipientIdCustomerRequest) Execute() (*http.Response, error) {
@@ -4826,7 +5010,7 @@ Retrieve the customer associated to the gift card recipient
 	@param giftCardRecipientId The resource's id
 	@return HasOneApiGETGiftCardRecipientIdCustomerRequest
 */
-func (a *HasOneApiService) GETGiftCardRecipientIdCustomer(ctx context.Context, giftCardRecipientId string) HasOneApiGETGiftCardRecipientIdCustomerRequest {
+func (a *HasOneApiService) GETGiftCardRecipientIdCustomer(ctx context.Context, giftCardRecipientId interface{}) HasOneApiGETGiftCardRecipientIdCustomerRequest {
 	return HasOneApiGETGiftCardRecipientIdCustomerRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -4848,7 +5032,7 @@ func (a *HasOneApiService) GETGiftCardRecipientIdCustomerExecute(r HasOneApiGETG
 	}
 
 	localVarPath := localBasePath + "/gift_card_recipients/{giftCardRecipientId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"giftCardRecipientId"+"}", url.PathEscape(parameterToString(r.giftCardRecipientId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"giftCardRecipientId"+"}", url.PathEscape(parameterValueToString(r.giftCardRecipientId, "giftCardRecipientId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4881,9 +5065,9 @@ func (a *HasOneApiService) GETGiftCardRecipientIdCustomerExecute(r HasOneApiGETG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4902,7 +5086,7 @@ func (a *HasOneApiService) GETGiftCardRecipientIdCustomerExecute(r HasOneApiGETG
 type HasOneApiGETInStockSubscriptionIdCustomerRequest struct {
 	ctx                   context.Context
 	ApiService            *HasOneApiService
-	inStockSubscriptionId string
+	inStockSubscriptionId interface{}
 }
 
 func (r HasOneApiGETInStockSubscriptionIdCustomerRequest) Execute() (*http.Response, error) {
@@ -4918,7 +5102,7 @@ Retrieve the customer associated to the in stock subscription
 	@param inStockSubscriptionId The resource's id
 	@return HasOneApiGETInStockSubscriptionIdCustomerRequest
 */
-func (a *HasOneApiService) GETInStockSubscriptionIdCustomer(ctx context.Context, inStockSubscriptionId string) HasOneApiGETInStockSubscriptionIdCustomerRequest {
+func (a *HasOneApiService) GETInStockSubscriptionIdCustomer(ctx context.Context, inStockSubscriptionId interface{}) HasOneApiGETInStockSubscriptionIdCustomerRequest {
 	return HasOneApiGETInStockSubscriptionIdCustomerRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -4940,7 +5124,7 @@ func (a *HasOneApiService) GETInStockSubscriptionIdCustomerExecute(r HasOneApiGE
 	}
 
 	localVarPath := localBasePath + "/in_stock_subscriptions/{inStockSubscriptionId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"inStockSubscriptionId"+"}", url.PathEscape(parameterToString(r.inStockSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inStockSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.inStockSubscriptionId, "inStockSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4973,9 +5157,9 @@ func (a *HasOneApiService) GETInStockSubscriptionIdCustomerExecute(r HasOneApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4994,7 +5178,7 @@ func (a *HasOneApiService) GETInStockSubscriptionIdCustomerExecute(r HasOneApiGE
 type HasOneApiGETInStockSubscriptionIdMarketRequest struct {
 	ctx                   context.Context
 	ApiService            *HasOneApiService
-	inStockSubscriptionId string
+	inStockSubscriptionId interface{}
 }
 
 func (r HasOneApiGETInStockSubscriptionIdMarketRequest) Execute() (*http.Response, error) {
@@ -5010,7 +5194,7 @@ Retrieve the market associated to the in stock subscription
 	@param inStockSubscriptionId The resource's id
 	@return HasOneApiGETInStockSubscriptionIdMarketRequest
 */
-func (a *HasOneApiService) GETInStockSubscriptionIdMarket(ctx context.Context, inStockSubscriptionId string) HasOneApiGETInStockSubscriptionIdMarketRequest {
+func (a *HasOneApiService) GETInStockSubscriptionIdMarket(ctx context.Context, inStockSubscriptionId interface{}) HasOneApiGETInStockSubscriptionIdMarketRequest {
 	return HasOneApiGETInStockSubscriptionIdMarketRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -5032,7 +5216,7 @@ func (a *HasOneApiService) GETInStockSubscriptionIdMarketExecute(r HasOneApiGETI
 	}
 
 	localVarPath := localBasePath + "/in_stock_subscriptions/{inStockSubscriptionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"inStockSubscriptionId"+"}", url.PathEscape(parameterToString(r.inStockSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inStockSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.inStockSubscriptionId, "inStockSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5065,9 +5249,9 @@ func (a *HasOneApiService) GETInStockSubscriptionIdMarketExecute(r HasOneApiGETI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5086,7 +5270,7 @@ func (a *HasOneApiService) GETInStockSubscriptionIdMarketExecute(r HasOneApiGETI
 type HasOneApiGETInStockSubscriptionIdSkuRequest struct {
 	ctx                   context.Context
 	ApiService            *HasOneApiService
-	inStockSubscriptionId string
+	inStockSubscriptionId interface{}
 }
 
 func (r HasOneApiGETInStockSubscriptionIdSkuRequest) Execute() (*http.Response, error) {
@@ -5102,7 +5286,7 @@ Retrieve the sku associated to the in stock subscription
 	@param inStockSubscriptionId The resource's id
 	@return HasOneApiGETInStockSubscriptionIdSkuRequest
 */
-func (a *HasOneApiService) GETInStockSubscriptionIdSku(ctx context.Context, inStockSubscriptionId string) HasOneApiGETInStockSubscriptionIdSkuRequest {
+func (a *HasOneApiService) GETInStockSubscriptionIdSku(ctx context.Context, inStockSubscriptionId interface{}) HasOneApiGETInStockSubscriptionIdSkuRequest {
 	return HasOneApiGETInStockSubscriptionIdSkuRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -5124,7 +5308,7 @@ func (a *HasOneApiService) GETInStockSubscriptionIdSkuExecute(r HasOneApiGETInSt
 	}
 
 	localVarPath := localBasePath + "/in_stock_subscriptions/{inStockSubscriptionId}/sku"
-	localVarPath = strings.Replace(localVarPath, "{"+"inStockSubscriptionId"+"}", url.PathEscape(parameterToString(r.inStockSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inStockSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.inStockSubscriptionId, "inStockSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5157,9 +5341,9 @@ func (a *HasOneApiService) GETInStockSubscriptionIdSkuExecute(r HasOneApiGETInSt
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5178,7 +5362,7 @@ func (a *HasOneApiService) GETInStockSubscriptionIdSkuExecute(r HasOneApiGETInSt
 type HasOneApiGETInventoryReturnLocationIdInventoryModelRequest struct {
 	ctx                       context.Context
 	ApiService                *HasOneApiService
-	inventoryReturnLocationId string
+	inventoryReturnLocationId interface{}
 }
 
 func (r HasOneApiGETInventoryReturnLocationIdInventoryModelRequest) Execute() (*http.Response, error) {
@@ -5194,7 +5378,7 @@ Retrieve the inventory model associated to the inventory return location
 	@param inventoryReturnLocationId The resource's id
 	@return HasOneApiGETInventoryReturnLocationIdInventoryModelRequest
 */
-func (a *HasOneApiService) GETInventoryReturnLocationIdInventoryModel(ctx context.Context, inventoryReturnLocationId string) HasOneApiGETInventoryReturnLocationIdInventoryModelRequest {
+func (a *HasOneApiService) GETInventoryReturnLocationIdInventoryModel(ctx context.Context, inventoryReturnLocationId interface{}) HasOneApiGETInventoryReturnLocationIdInventoryModelRequest {
 	return HasOneApiGETInventoryReturnLocationIdInventoryModelRequest{
 		ApiService:                a,
 		ctx:                       ctx,
@@ -5216,7 +5400,7 @@ func (a *HasOneApiService) GETInventoryReturnLocationIdInventoryModelExecute(r H
 	}
 
 	localVarPath := localBasePath + "/inventory_return_locations/{inventoryReturnLocationId}/inventory_model"
-	localVarPath = strings.Replace(localVarPath, "{"+"inventoryReturnLocationId"+"}", url.PathEscape(parameterToString(r.inventoryReturnLocationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inventoryReturnLocationId"+"}", url.PathEscape(parameterValueToString(r.inventoryReturnLocationId, "inventoryReturnLocationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5249,9 +5433,9 @@ func (a *HasOneApiService) GETInventoryReturnLocationIdInventoryModelExecute(r H
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5270,7 +5454,7 @@ func (a *HasOneApiService) GETInventoryReturnLocationIdInventoryModelExecute(r H
 type HasOneApiGETInventoryReturnLocationIdStockLocationRequest struct {
 	ctx                       context.Context
 	ApiService                *HasOneApiService
-	inventoryReturnLocationId string
+	inventoryReturnLocationId interface{}
 }
 
 func (r HasOneApiGETInventoryReturnLocationIdStockLocationRequest) Execute() (*http.Response, error) {
@@ -5286,7 +5470,7 @@ Retrieve the stock location associated to the inventory return location
 	@param inventoryReturnLocationId The resource's id
 	@return HasOneApiGETInventoryReturnLocationIdStockLocationRequest
 */
-func (a *HasOneApiService) GETInventoryReturnLocationIdStockLocation(ctx context.Context, inventoryReturnLocationId string) HasOneApiGETInventoryReturnLocationIdStockLocationRequest {
+func (a *HasOneApiService) GETInventoryReturnLocationIdStockLocation(ctx context.Context, inventoryReturnLocationId interface{}) HasOneApiGETInventoryReturnLocationIdStockLocationRequest {
 	return HasOneApiGETInventoryReturnLocationIdStockLocationRequest{
 		ApiService:                a,
 		ctx:                       ctx,
@@ -5308,7 +5492,7 @@ func (a *HasOneApiService) GETInventoryReturnLocationIdStockLocationExecute(r Ha
 	}
 
 	localVarPath := localBasePath + "/inventory_return_locations/{inventoryReturnLocationId}/stock_location"
-	localVarPath = strings.Replace(localVarPath, "{"+"inventoryReturnLocationId"+"}", url.PathEscape(parameterToString(r.inventoryReturnLocationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inventoryReturnLocationId"+"}", url.PathEscape(parameterValueToString(r.inventoryReturnLocationId, "inventoryReturnLocationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5341,9 +5525,9 @@ func (a *HasOneApiService) GETInventoryReturnLocationIdStockLocationExecute(r Ha
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5362,7 +5546,7 @@ func (a *HasOneApiService) GETInventoryReturnLocationIdStockLocationExecute(r Ha
 type HasOneApiGETInventoryStockLocationIdInventoryModelRequest struct {
 	ctx                      context.Context
 	ApiService               *HasOneApiService
-	inventoryStockLocationId string
+	inventoryStockLocationId interface{}
 }
 
 func (r HasOneApiGETInventoryStockLocationIdInventoryModelRequest) Execute() (*http.Response, error) {
@@ -5378,7 +5562,7 @@ Retrieve the inventory model associated to the inventory stock location
 	@param inventoryStockLocationId The resource's id
 	@return HasOneApiGETInventoryStockLocationIdInventoryModelRequest
 */
-func (a *HasOneApiService) GETInventoryStockLocationIdInventoryModel(ctx context.Context, inventoryStockLocationId string) HasOneApiGETInventoryStockLocationIdInventoryModelRequest {
+func (a *HasOneApiService) GETInventoryStockLocationIdInventoryModel(ctx context.Context, inventoryStockLocationId interface{}) HasOneApiGETInventoryStockLocationIdInventoryModelRequest {
 	return HasOneApiGETInventoryStockLocationIdInventoryModelRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -5400,7 +5584,7 @@ func (a *HasOneApiService) GETInventoryStockLocationIdInventoryModelExecute(r Ha
 	}
 
 	localVarPath := localBasePath + "/inventory_stock_locations/{inventoryStockLocationId}/inventory_model"
-	localVarPath = strings.Replace(localVarPath, "{"+"inventoryStockLocationId"+"}", url.PathEscape(parameterToString(r.inventoryStockLocationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inventoryStockLocationId"+"}", url.PathEscape(parameterValueToString(r.inventoryStockLocationId, "inventoryStockLocationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5433,9 +5617,9 @@ func (a *HasOneApiService) GETInventoryStockLocationIdInventoryModelExecute(r Ha
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5454,7 +5638,7 @@ func (a *HasOneApiService) GETInventoryStockLocationIdInventoryModelExecute(r Ha
 type HasOneApiGETInventoryStockLocationIdStockLocationRequest struct {
 	ctx                      context.Context
 	ApiService               *HasOneApiService
-	inventoryStockLocationId string
+	inventoryStockLocationId interface{}
 }
 
 func (r HasOneApiGETInventoryStockLocationIdStockLocationRequest) Execute() (*http.Response, error) {
@@ -5470,7 +5654,7 @@ Retrieve the stock location associated to the inventory stock location
 	@param inventoryStockLocationId The resource's id
 	@return HasOneApiGETInventoryStockLocationIdStockLocationRequest
 */
-func (a *HasOneApiService) GETInventoryStockLocationIdStockLocation(ctx context.Context, inventoryStockLocationId string) HasOneApiGETInventoryStockLocationIdStockLocationRequest {
+func (a *HasOneApiService) GETInventoryStockLocationIdStockLocation(ctx context.Context, inventoryStockLocationId interface{}) HasOneApiGETInventoryStockLocationIdStockLocationRequest {
 	return HasOneApiGETInventoryStockLocationIdStockLocationRequest{
 		ApiService:               a,
 		ctx:                      ctx,
@@ -5492,7 +5676,7 @@ func (a *HasOneApiService) GETInventoryStockLocationIdStockLocationExecute(r Has
 	}
 
 	localVarPath := localBasePath + "/inventory_stock_locations/{inventoryStockLocationId}/stock_location"
-	localVarPath = strings.Replace(localVarPath, "{"+"inventoryStockLocationId"+"}", url.PathEscape(parameterToString(r.inventoryStockLocationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inventoryStockLocationId"+"}", url.PathEscape(parameterValueToString(r.inventoryStockLocationId, "inventoryStockLocationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5525,9 +5709,9 @@ func (a *HasOneApiService) GETInventoryStockLocationIdStockLocationExecute(r Has
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5546,7 +5730,7 @@ func (a *HasOneApiService) GETInventoryStockLocationIdStockLocationExecute(r Has
 type HasOneApiGETKlarnaPaymentIdOrderRequest struct {
 	ctx             context.Context
 	ApiService      *HasOneApiService
-	klarnaPaymentId string
+	klarnaPaymentId interface{}
 }
 
 func (r HasOneApiGETKlarnaPaymentIdOrderRequest) Execute() (*http.Response, error) {
@@ -5562,7 +5746,7 @@ Retrieve the order associated to the klarna payment
 	@param klarnaPaymentId The resource's id
 	@return HasOneApiGETKlarnaPaymentIdOrderRequest
 */
-func (a *HasOneApiService) GETKlarnaPaymentIdOrder(ctx context.Context, klarnaPaymentId string) HasOneApiGETKlarnaPaymentIdOrderRequest {
+func (a *HasOneApiService) GETKlarnaPaymentIdOrder(ctx context.Context, klarnaPaymentId interface{}) HasOneApiGETKlarnaPaymentIdOrderRequest {
 	return HasOneApiGETKlarnaPaymentIdOrderRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -5584,7 +5768,7 @@ func (a *HasOneApiService) GETKlarnaPaymentIdOrderExecute(r HasOneApiGETKlarnaPa
 	}
 
 	localVarPath := localBasePath + "/klarna_payments/{klarnaPaymentId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"klarnaPaymentId"+"}", url.PathEscape(parameterToString(r.klarnaPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"klarnaPaymentId"+"}", url.PathEscape(parameterValueToString(r.klarnaPaymentId, "klarnaPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5617,9 +5801,9 @@ func (a *HasOneApiService) GETKlarnaPaymentIdOrderExecute(r HasOneApiGETKlarnaPa
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5638,7 +5822,7 @@ func (a *HasOneApiService) GETKlarnaPaymentIdOrderExecute(r HasOneApiGETKlarnaPa
 type HasOneApiGETKlarnaPaymentIdPaymentGatewayRequest struct {
 	ctx             context.Context
 	ApiService      *HasOneApiService
-	klarnaPaymentId string
+	klarnaPaymentId interface{}
 }
 
 func (r HasOneApiGETKlarnaPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
@@ -5654,7 +5838,7 @@ Retrieve the payment gateway associated to the klarna payment
 	@param klarnaPaymentId The resource's id
 	@return HasOneApiGETKlarnaPaymentIdPaymentGatewayRequest
 */
-func (a *HasOneApiService) GETKlarnaPaymentIdPaymentGateway(ctx context.Context, klarnaPaymentId string) HasOneApiGETKlarnaPaymentIdPaymentGatewayRequest {
+func (a *HasOneApiService) GETKlarnaPaymentIdPaymentGateway(ctx context.Context, klarnaPaymentId interface{}) HasOneApiGETKlarnaPaymentIdPaymentGatewayRequest {
 	return HasOneApiGETKlarnaPaymentIdPaymentGatewayRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -5676,7 +5860,7 @@ func (a *HasOneApiService) GETKlarnaPaymentIdPaymentGatewayExecute(r HasOneApiGE
 	}
 
 	localVarPath := localBasePath + "/klarna_payments/{klarnaPaymentId}/payment_gateway"
-	localVarPath = strings.Replace(localVarPath, "{"+"klarnaPaymentId"+"}", url.PathEscape(parameterToString(r.klarnaPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"klarnaPaymentId"+"}", url.PathEscape(parameterValueToString(r.klarnaPaymentId, "klarnaPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5709,9 +5893,9 @@ func (a *HasOneApiService) GETKlarnaPaymentIdPaymentGatewayExecute(r HasOneApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5730,7 +5914,7 @@ func (a *HasOneApiService) GETKlarnaPaymentIdPaymentGatewayExecute(r HasOneApiGE
 type HasOneApiGETLineItemIdOrderRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	lineItemId string
+	lineItemId interface{}
 }
 
 func (r HasOneApiGETLineItemIdOrderRequest) Execute() (*http.Response, error) {
@@ -5746,7 +5930,7 @@ Retrieve the order associated to the line item
 	@param lineItemId The resource's id
 	@return HasOneApiGETLineItemIdOrderRequest
 */
-func (a *HasOneApiService) GETLineItemIdOrder(ctx context.Context, lineItemId string) HasOneApiGETLineItemIdOrderRequest {
+func (a *HasOneApiService) GETLineItemIdOrder(ctx context.Context, lineItemId interface{}) HasOneApiGETLineItemIdOrderRequest {
 	return HasOneApiGETLineItemIdOrderRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -5768,7 +5952,7 @@ func (a *HasOneApiService) GETLineItemIdOrderExecute(r HasOneApiGETLineItemIdOrd
 	}
 
 	localVarPath := localBasePath + "/line_items/{lineItemId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterToString(r.lineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterValueToString(r.lineItemId, "lineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5801,9 +5985,9 @@ func (a *HasOneApiService) GETLineItemIdOrderExecute(r HasOneApiGETLineItemIdOrd
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5822,7 +6006,7 @@ func (a *HasOneApiService) GETLineItemIdOrderExecute(r HasOneApiGETLineItemIdOrd
 type HasOneApiGETLineItemOptionIdLineItemRequest struct {
 	ctx              context.Context
 	ApiService       *HasOneApiService
-	lineItemOptionId string
+	lineItemOptionId interface{}
 }
 
 func (r HasOneApiGETLineItemOptionIdLineItemRequest) Execute() (*http.Response, error) {
@@ -5838,7 +6022,7 @@ Retrieve the line item associated to the line item option
 	@param lineItemOptionId The resource's id
 	@return HasOneApiGETLineItemOptionIdLineItemRequest
 */
-func (a *HasOneApiService) GETLineItemOptionIdLineItem(ctx context.Context, lineItemOptionId string) HasOneApiGETLineItemOptionIdLineItemRequest {
+func (a *HasOneApiService) GETLineItemOptionIdLineItem(ctx context.Context, lineItemOptionId interface{}) HasOneApiGETLineItemOptionIdLineItemRequest {
 	return HasOneApiGETLineItemOptionIdLineItemRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -5860,7 +6044,7 @@ func (a *HasOneApiService) GETLineItemOptionIdLineItemExecute(r HasOneApiGETLine
 	}
 
 	localVarPath := localBasePath + "/line_item_options/{lineItemOptionId}/line_item"
-	localVarPath = strings.Replace(localVarPath, "{"+"lineItemOptionId"+"}", url.PathEscape(parameterToString(r.lineItemOptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemOptionId"+"}", url.PathEscape(parameterValueToString(r.lineItemOptionId, "lineItemOptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5893,9 +6077,9 @@ func (a *HasOneApiService) GETLineItemOptionIdLineItemExecute(r HasOneApiGETLine
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5914,7 +6098,7 @@ func (a *HasOneApiService) GETLineItemOptionIdLineItemExecute(r HasOneApiGETLine
 type HasOneApiGETLineItemOptionIdSkuOptionRequest struct {
 	ctx              context.Context
 	ApiService       *HasOneApiService
-	lineItemOptionId string
+	lineItemOptionId interface{}
 }
 
 func (r HasOneApiGETLineItemOptionIdSkuOptionRequest) Execute() (*http.Response, error) {
@@ -5930,7 +6114,7 @@ Retrieve the sku option associated to the line item option
 	@param lineItemOptionId The resource's id
 	@return HasOneApiGETLineItemOptionIdSkuOptionRequest
 */
-func (a *HasOneApiService) GETLineItemOptionIdSkuOption(ctx context.Context, lineItemOptionId string) HasOneApiGETLineItemOptionIdSkuOptionRequest {
+func (a *HasOneApiService) GETLineItemOptionIdSkuOption(ctx context.Context, lineItemOptionId interface{}) HasOneApiGETLineItemOptionIdSkuOptionRequest {
 	return HasOneApiGETLineItemOptionIdSkuOptionRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -5952,7 +6136,7 @@ func (a *HasOneApiService) GETLineItemOptionIdSkuOptionExecute(r HasOneApiGETLin
 	}
 
 	localVarPath := localBasePath + "/line_item_options/{lineItemOptionId}/sku_option"
-	localVarPath = strings.Replace(localVarPath, "{"+"lineItemOptionId"+"}", url.PathEscape(parameterToString(r.lineItemOptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemOptionId"+"}", url.PathEscape(parameterValueToString(r.lineItemOptionId, "lineItemOptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5985,9 +6169,9 @@ func (a *HasOneApiService) GETLineItemOptionIdSkuOptionExecute(r HasOneApiGETLin
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6006,7 +6190,7 @@ func (a *HasOneApiService) GETLineItemOptionIdSkuOptionExecute(r HasOneApiGETLin
 type HasOneApiGETMarketIdCustomerGroupRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	marketId   string
+	marketId   interface{}
 }
 
 func (r HasOneApiGETMarketIdCustomerGroupRequest) Execute() (*http.Response, error) {
@@ -6022,7 +6206,7 @@ Retrieve the customer group associated to the market
 	@param marketId The resource's id
 	@return HasOneApiGETMarketIdCustomerGroupRequest
 */
-func (a *HasOneApiService) GETMarketIdCustomerGroup(ctx context.Context, marketId string) HasOneApiGETMarketIdCustomerGroupRequest {
+func (a *HasOneApiService) GETMarketIdCustomerGroup(ctx context.Context, marketId interface{}) HasOneApiGETMarketIdCustomerGroupRequest {
 	return HasOneApiGETMarketIdCustomerGroupRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -6044,7 +6228,7 @@ func (a *HasOneApiService) GETMarketIdCustomerGroupExecute(r HasOneApiGETMarketI
 	}
 
 	localVarPath := localBasePath + "/markets/{marketId}/customer_group"
-	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterToString(r.marketId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6077,9 +6261,9 @@ func (a *HasOneApiService) GETMarketIdCustomerGroupExecute(r HasOneApiGETMarketI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6098,7 +6282,7 @@ func (a *HasOneApiService) GETMarketIdCustomerGroupExecute(r HasOneApiGETMarketI
 type HasOneApiGETMarketIdInventoryModelRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	marketId   string
+	marketId   interface{}
 }
 
 func (r HasOneApiGETMarketIdInventoryModelRequest) Execute() (*http.Response, error) {
@@ -6114,7 +6298,7 @@ Retrieve the inventory model associated to the market
 	@param marketId The resource's id
 	@return HasOneApiGETMarketIdInventoryModelRequest
 */
-func (a *HasOneApiService) GETMarketIdInventoryModel(ctx context.Context, marketId string) HasOneApiGETMarketIdInventoryModelRequest {
+func (a *HasOneApiService) GETMarketIdInventoryModel(ctx context.Context, marketId interface{}) HasOneApiGETMarketIdInventoryModelRequest {
 	return HasOneApiGETMarketIdInventoryModelRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -6136,7 +6320,7 @@ func (a *HasOneApiService) GETMarketIdInventoryModelExecute(r HasOneApiGETMarket
 	}
 
 	localVarPath := localBasePath + "/markets/{marketId}/inventory_model"
-	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterToString(r.marketId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6169,9 +6353,9 @@ func (a *HasOneApiService) GETMarketIdInventoryModelExecute(r HasOneApiGETMarket
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6190,7 +6374,7 @@ func (a *HasOneApiService) GETMarketIdInventoryModelExecute(r HasOneApiGETMarket
 type HasOneApiGETMarketIdMerchantRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	marketId   string
+	marketId   interface{}
 }
 
 func (r HasOneApiGETMarketIdMerchantRequest) Execute() (*http.Response, error) {
@@ -6206,7 +6390,7 @@ Retrieve the merchant associated to the market
 	@param marketId The resource's id
 	@return HasOneApiGETMarketIdMerchantRequest
 */
-func (a *HasOneApiService) GETMarketIdMerchant(ctx context.Context, marketId string) HasOneApiGETMarketIdMerchantRequest {
+func (a *HasOneApiService) GETMarketIdMerchant(ctx context.Context, marketId interface{}) HasOneApiGETMarketIdMerchantRequest {
 	return HasOneApiGETMarketIdMerchantRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -6228,7 +6412,7 @@ func (a *HasOneApiService) GETMarketIdMerchantExecute(r HasOneApiGETMarketIdMerc
 	}
 
 	localVarPath := localBasePath + "/markets/{marketId}/merchant"
-	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterToString(r.marketId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6261,9 +6445,9 @@ func (a *HasOneApiService) GETMarketIdMerchantExecute(r HasOneApiGETMarketIdMerc
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6282,7 +6466,7 @@ func (a *HasOneApiService) GETMarketIdMerchantExecute(r HasOneApiGETMarketIdMerc
 type HasOneApiGETMarketIdPriceListRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	marketId   string
+	marketId   interface{}
 }
 
 func (r HasOneApiGETMarketIdPriceListRequest) Execute() (*http.Response, error) {
@@ -6298,7 +6482,7 @@ Retrieve the price list associated to the market
 	@param marketId The resource's id
 	@return HasOneApiGETMarketIdPriceListRequest
 */
-func (a *HasOneApiService) GETMarketIdPriceList(ctx context.Context, marketId string) HasOneApiGETMarketIdPriceListRequest {
+func (a *HasOneApiService) GETMarketIdPriceList(ctx context.Context, marketId interface{}) HasOneApiGETMarketIdPriceListRequest {
 	return HasOneApiGETMarketIdPriceListRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -6320,7 +6504,7 @@ func (a *HasOneApiService) GETMarketIdPriceListExecute(r HasOneApiGETMarketIdPri
 	}
 
 	localVarPath := localBasePath + "/markets/{marketId}/price_list"
-	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterToString(r.marketId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6353,9 +6537,101 @@ func (a *HasOneApiService) GETMarketIdPriceListExecute(r HasOneApiGETMarketIdPri
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasOneApiGETMarketIdSubscriptionModelRequest struct {
+	ctx        context.Context
+	ApiService *HasOneApiService
+	marketId   interface{}
+}
+
+func (r HasOneApiGETMarketIdSubscriptionModelRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETMarketIdSubscriptionModelExecute(r)
+}
+
+/*
+GETMarketIdSubscriptionModel Retrieve the subscription model associated to the market
+
+Retrieve the subscription model associated to the market
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param marketId The resource's id
+	@return HasOneApiGETMarketIdSubscriptionModelRequest
+*/
+func (a *HasOneApiService) GETMarketIdSubscriptionModel(ctx context.Context, marketId interface{}) HasOneApiGETMarketIdSubscriptionModelRequest {
+	return HasOneApiGETMarketIdSubscriptionModelRequest{
+		ApiService: a,
+		ctx:        ctx,
+		marketId:   marketId,
+	}
+}
+
+// Execute executes the request
+func (a *HasOneApiService) GETMarketIdSubscriptionModelExecute(r HasOneApiGETMarketIdSubscriptionModelRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasOneApiService.GETMarketIdSubscriptionModel")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/markets/{marketId}/subscription_model"
+	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6374,7 +6650,7 @@ func (a *HasOneApiService) GETMarketIdPriceListExecute(r HasOneApiGETMarketIdPri
 type HasOneApiGETMarketIdTaxCalculatorRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	marketId   string
+	marketId   interface{}
 }
 
 func (r HasOneApiGETMarketIdTaxCalculatorRequest) Execute() (*http.Response, error) {
@@ -6390,7 +6666,7 @@ Retrieve the tax calculator associated to the market
 	@param marketId The resource's id
 	@return HasOneApiGETMarketIdTaxCalculatorRequest
 */
-func (a *HasOneApiService) GETMarketIdTaxCalculator(ctx context.Context, marketId string) HasOneApiGETMarketIdTaxCalculatorRequest {
+func (a *HasOneApiService) GETMarketIdTaxCalculator(ctx context.Context, marketId interface{}) HasOneApiGETMarketIdTaxCalculatorRequest {
 	return HasOneApiGETMarketIdTaxCalculatorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -6412,7 +6688,7 @@ func (a *HasOneApiService) GETMarketIdTaxCalculatorExecute(r HasOneApiGETMarketI
 	}
 
 	localVarPath := localBasePath + "/markets/{marketId}/tax_calculator"
-	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterToString(r.marketId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6445,9 +6721,9 @@ func (a *HasOneApiService) GETMarketIdTaxCalculatorExecute(r HasOneApiGETMarketI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6466,7 +6742,7 @@ func (a *HasOneApiService) GETMarketIdTaxCalculatorExecute(r HasOneApiGETMarketI
 type HasOneApiGETMerchantIdAddressRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	merchantId string
+	merchantId interface{}
 }
 
 func (r HasOneApiGETMerchantIdAddressRequest) Execute() (*http.Response, error) {
@@ -6482,7 +6758,7 @@ Retrieve the address associated to the merchant
 	@param merchantId The resource's id
 	@return HasOneApiGETMerchantIdAddressRequest
 */
-func (a *HasOneApiService) GETMerchantIdAddress(ctx context.Context, merchantId string) HasOneApiGETMerchantIdAddressRequest {
+func (a *HasOneApiService) GETMerchantIdAddress(ctx context.Context, merchantId interface{}) HasOneApiGETMerchantIdAddressRequest {
 	return HasOneApiGETMerchantIdAddressRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -6504,7 +6780,7 @@ func (a *HasOneApiService) GETMerchantIdAddressExecute(r HasOneApiGETMerchantIdA
 	}
 
 	localVarPath := localBasePath + "/merchants/{merchantId}/address"
-	localVarPath = strings.Replace(localVarPath, "{"+"merchantId"+"}", url.PathEscape(parameterToString(r.merchantId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"merchantId"+"}", url.PathEscape(parameterValueToString(r.merchantId, "merchantId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6537,9 +6813,9 @@ func (a *HasOneApiService) GETMerchantIdAddressExecute(r HasOneApiGETMerchantIdA
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6558,7 +6834,7 @@ func (a *HasOneApiService) GETMerchantIdAddressExecute(r HasOneApiGETMerchantIdA
 type HasOneApiGETOrderCopyIdOrderSubscriptionRequest struct {
 	ctx         context.Context
 	ApiService  *HasOneApiService
-	orderCopyId string
+	orderCopyId interface{}
 }
 
 func (r HasOneApiGETOrderCopyIdOrderSubscriptionRequest) Execute() (*http.Response, error) {
@@ -6574,7 +6850,7 @@ Retrieve the order subscription associated to the order copy
 	@param orderCopyId The resource's id
 	@return HasOneApiGETOrderCopyIdOrderSubscriptionRequest
 */
-func (a *HasOneApiService) GETOrderCopyIdOrderSubscription(ctx context.Context, orderCopyId string) HasOneApiGETOrderCopyIdOrderSubscriptionRequest {
+func (a *HasOneApiService) GETOrderCopyIdOrderSubscription(ctx context.Context, orderCopyId interface{}) HasOneApiGETOrderCopyIdOrderSubscriptionRequest {
 	return HasOneApiGETOrderCopyIdOrderSubscriptionRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -6596,7 +6872,7 @@ func (a *HasOneApiService) GETOrderCopyIdOrderSubscriptionExecute(r HasOneApiGET
 	}
 
 	localVarPath := localBasePath + "/order_copies/{orderCopyId}/order_subscription"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterToString(r.orderCopyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterValueToString(r.orderCopyId, "orderCopyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6629,9 +6905,9 @@ func (a *HasOneApiService) GETOrderCopyIdOrderSubscriptionExecute(r HasOneApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6650,7 +6926,7 @@ func (a *HasOneApiService) GETOrderCopyIdOrderSubscriptionExecute(r HasOneApiGET
 type HasOneApiGETOrderCopyIdSourceOrderRequest struct {
 	ctx         context.Context
 	ApiService  *HasOneApiService
-	orderCopyId string
+	orderCopyId interface{}
 }
 
 func (r HasOneApiGETOrderCopyIdSourceOrderRequest) Execute() (*http.Response, error) {
@@ -6666,7 +6942,7 @@ Retrieve the source order associated to the order copy
 	@param orderCopyId The resource's id
 	@return HasOneApiGETOrderCopyIdSourceOrderRequest
 */
-func (a *HasOneApiService) GETOrderCopyIdSourceOrder(ctx context.Context, orderCopyId string) HasOneApiGETOrderCopyIdSourceOrderRequest {
+func (a *HasOneApiService) GETOrderCopyIdSourceOrder(ctx context.Context, orderCopyId interface{}) HasOneApiGETOrderCopyIdSourceOrderRequest {
 	return HasOneApiGETOrderCopyIdSourceOrderRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -6688,7 +6964,7 @@ func (a *HasOneApiService) GETOrderCopyIdSourceOrderExecute(r HasOneApiGETOrderC
 	}
 
 	localVarPath := localBasePath + "/order_copies/{orderCopyId}/source_order"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterToString(r.orderCopyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterValueToString(r.orderCopyId, "orderCopyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6721,9 +6997,9 @@ func (a *HasOneApiService) GETOrderCopyIdSourceOrderExecute(r HasOneApiGETOrderC
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6742,7 +7018,7 @@ func (a *HasOneApiService) GETOrderCopyIdSourceOrderExecute(r HasOneApiGETOrderC
 type HasOneApiGETOrderCopyIdTargetOrderRequest struct {
 	ctx         context.Context
 	ApiService  *HasOneApiService
-	orderCopyId string
+	orderCopyId interface{}
 }
 
 func (r HasOneApiGETOrderCopyIdTargetOrderRequest) Execute() (*http.Response, error) {
@@ -6758,7 +7034,7 @@ Retrieve the target order associated to the order copy
 	@param orderCopyId The resource's id
 	@return HasOneApiGETOrderCopyIdTargetOrderRequest
 */
-func (a *HasOneApiService) GETOrderCopyIdTargetOrder(ctx context.Context, orderCopyId string) HasOneApiGETOrderCopyIdTargetOrderRequest {
+func (a *HasOneApiService) GETOrderCopyIdTargetOrder(ctx context.Context, orderCopyId interface{}) HasOneApiGETOrderCopyIdTargetOrderRequest {
 	return HasOneApiGETOrderCopyIdTargetOrderRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -6780,7 +7056,7 @@ func (a *HasOneApiService) GETOrderCopyIdTargetOrderExecute(r HasOneApiGETOrderC
 	}
 
 	localVarPath := localBasePath + "/order_copies/{orderCopyId}/target_order"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterToString(r.orderCopyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterValueToString(r.orderCopyId, "orderCopyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6813,9 +7089,193 @@ func (a *HasOneApiService) GETOrderCopyIdTargetOrderExecute(r HasOneApiGETOrderC
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasOneApiGETOrderFactoryIdSourceOrderRequest struct {
+	ctx            context.Context
+	ApiService     *HasOneApiService
+	orderFactoryId interface{}
+}
+
+func (r HasOneApiGETOrderFactoryIdSourceOrderRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderFactoryIdSourceOrderExecute(r)
+}
+
+/*
+GETOrderFactoryIdSourceOrder Retrieve the source order associated to the order factory
+
+Retrieve the source order associated to the order factory
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderFactoryId The resource's id
+	@return HasOneApiGETOrderFactoryIdSourceOrderRequest
+*/
+func (a *HasOneApiService) GETOrderFactoryIdSourceOrder(ctx context.Context, orderFactoryId interface{}) HasOneApiGETOrderFactoryIdSourceOrderRequest {
+	return HasOneApiGETOrderFactoryIdSourceOrderRequest{
+		ApiService:     a,
+		ctx:            ctx,
+		orderFactoryId: orderFactoryId,
+	}
+}
+
+// Execute executes the request
+func (a *HasOneApiService) GETOrderFactoryIdSourceOrderExecute(r HasOneApiGETOrderFactoryIdSourceOrderRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasOneApiService.GETOrderFactoryIdSourceOrder")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/order_factories/{orderFactoryId}/source_order"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderFactoryId"+"}", url.PathEscape(parameterValueToString(r.orderFactoryId, "orderFactoryId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasOneApiGETOrderFactoryIdTargetOrderRequest struct {
+	ctx            context.Context
+	ApiService     *HasOneApiService
+	orderFactoryId interface{}
+}
+
+func (r HasOneApiGETOrderFactoryIdTargetOrderRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderFactoryIdTargetOrderExecute(r)
+}
+
+/*
+GETOrderFactoryIdTargetOrder Retrieve the target order associated to the order factory
+
+Retrieve the target order associated to the order factory
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderFactoryId The resource's id
+	@return HasOneApiGETOrderFactoryIdTargetOrderRequest
+*/
+func (a *HasOneApiService) GETOrderFactoryIdTargetOrder(ctx context.Context, orderFactoryId interface{}) HasOneApiGETOrderFactoryIdTargetOrderRequest {
+	return HasOneApiGETOrderFactoryIdTargetOrderRequest{
+		ApiService:     a,
+		ctx:            ctx,
+		orderFactoryId: orderFactoryId,
+	}
+}
+
+// Execute executes the request
+func (a *HasOneApiService) GETOrderFactoryIdTargetOrderExecute(r HasOneApiGETOrderFactoryIdTargetOrderRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasOneApiService.GETOrderFactoryIdTargetOrder")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/order_factories/{orderFactoryId}/target_order"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderFactoryId"+"}", url.PathEscape(parameterValueToString(r.orderFactoryId, "orderFactoryId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6834,7 +7294,7 @@ func (a *HasOneApiService) GETOrderCopyIdTargetOrderExecute(r HasOneApiGETOrderC
 type HasOneApiGETOrderIdBillingAddressRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r HasOneApiGETOrderIdBillingAddressRequest) Execute() (*http.Response, error) {
@@ -6850,7 +7310,7 @@ Retrieve the billing address associated to the order
 	@param orderId The resource's id
 	@return HasOneApiGETOrderIdBillingAddressRequest
 */
-func (a *HasOneApiService) GETOrderIdBillingAddress(ctx context.Context, orderId string) HasOneApiGETOrderIdBillingAddressRequest {
+func (a *HasOneApiService) GETOrderIdBillingAddress(ctx context.Context, orderId interface{}) HasOneApiGETOrderIdBillingAddressRequest {
 	return HasOneApiGETOrderIdBillingAddressRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -6872,7 +7332,7 @@ func (a *HasOneApiService) GETOrderIdBillingAddressExecute(r HasOneApiGETOrderId
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/billing_address"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6905,9 +7365,9 @@ func (a *HasOneApiService) GETOrderIdBillingAddressExecute(r HasOneApiGETOrderId
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6926,7 +7386,7 @@ func (a *HasOneApiService) GETOrderIdBillingAddressExecute(r HasOneApiGETOrderId
 type HasOneApiGETOrderIdCustomerRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r HasOneApiGETOrderIdCustomerRequest) Execute() (*http.Response, error) {
@@ -6942,7 +7402,7 @@ Retrieve the customer associated to the order
 	@param orderId The resource's id
 	@return HasOneApiGETOrderIdCustomerRequest
 */
-func (a *HasOneApiService) GETOrderIdCustomer(ctx context.Context, orderId string) HasOneApiGETOrderIdCustomerRequest {
+func (a *HasOneApiService) GETOrderIdCustomer(ctx context.Context, orderId interface{}) HasOneApiGETOrderIdCustomerRequest {
 	return HasOneApiGETOrderIdCustomerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -6964,7 +7424,7 @@ func (a *HasOneApiService) GETOrderIdCustomerExecute(r HasOneApiGETOrderIdCustom
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6997,9 +7457,9 @@ func (a *HasOneApiService) GETOrderIdCustomerExecute(r HasOneApiGETOrderIdCustom
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7018,7 +7478,7 @@ func (a *HasOneApiService) GETOrderIdCustomerExecute(r HasOneApiGETOrderIdCustom
 type HasOneApiGETOrderIdMarketRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r HasOneApiGETOrderIdMarketRequest) Execute() (*http.Response, error) {
@@ -7034,7 +7494,7 @@ Retrieve the market associated to the order
 	@param orderId The resource's id
 	@return HasOneApiGETOrderIdMarketRequest
 */
-func (a *HasOneApiService) GETOrderIdMarket(ctx context.Context, orderId string) HasOneApiGETOrderIdMarketRequest {
+func (a *HasOneApiService) GETOrderIdMarket(ctx context.Context, orderId interface{}) HasOneApiGETOrderIdMarketRequest {
 	return HasOneApiGETOrderIdMarketRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -7056,7 +7516,7 @@ func (a *HasOneApiService) GETOrderIdMarketExecute(r HasOneApiGETOrderIdMarketRe
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7089,9 +7549,9 @@ func (a *HasOneApiService) GETOrderIdMarketExecute(r HasOneApiGETOrderIdMarketRe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7110,7 +7570,7 @@ func (a *HasOneApiService) GETOrderIdMarketExecute(r HasOneApiGETOrderIdMarketRe
 type HasOneApiGETOrderIdPaymentMethodRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r HasOneApiGETOrderIdPaymentMethodRequest) Execute() (*http.Response, error) {
@@ -7126,7 +7586,7 @@ Retrieve the payment method associated to the order
 	@param orderId The resource's id
 	@return HasOneApiGETOrderIdPaymentMethodRequest
 */
-func (a *HasOneApiService) GETOrderIdPaymentMethod(ctx context.Context, orderId string) HasOneApiGETOrderIdPaymentMethodRequest {
+func (a *HasOneApiService) GETOrderIdPaymentMethod(ctx context.Context, orderId interface{}) HasOneApiGETOrderIdPaymentMethodRequest {
 	return HasOneApiGETOrderIdPaymentMethodRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -7148,7 +7608,7 @@ func (a *HasOneApiService) GETOrderIdPaymentMethodExecute(r HasOneApiGETOrderIdP
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/payment_method"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7181,9 +7641,9 @@ func (a *HasOneApiService) GETOrderIdPaymentMethodExecute(r HasOneApiGETOrderIdP
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7202,7 +7662,7 @@ func (a *HasOneApiService) GETOrderIdPaymentMethodExecute(r HasOneApiGETOrderIdP
 type HasOneApiGETOrderIdShippingAddressRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r HasOneApiGETOrderIdShippingAddressRequest) Execute() (*http.Response, error) {
@@ -7218,7 +7678,7 @@ Retrieve the shipping address associated to the order
 	@param orderId The resource's id
 	@return HasOneApiGETOrderIdShippingAddressRequest
 */
-func (a *HasOneApiService) GETOrderIdShippingAddress(ctx context.Context, orderId string) HasOneApiGETOrderIdShippingAddressRequest {
+func (a *HasOneApiService) GETOrderIdShippingAddress(ctx context.Context, orderId interface{}) HasOneApiGETOrderIdShippingAddressRequest {
 	return HasOneApiGETOrderIdShippingAddressRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -7240,7 +7700,7 @@ func (a *HasOneApiService) GETOrderIdShippingAddressExecute(r HasOneApiGETOrderI
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/shipping_address"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7273,9 +7733,9 @@ func (a *HasOneApiService) GETOrderIdShippingAddressExecute(r HasOneApiGETOrderI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7294,7 +7754,7 @@ func (a *HasOneApiService) GETOrderIdShippingAddressExecute(r HasOneApiGETOrderI
 type HasOneApiGETOrderSubscriptionIdCustomerRequest struct {
 	ctx                 context.Context
 	ApiService          *HasOneApiService
-	orderSubscriptionId string
+	orderSubscriptionId interface{}
 }
 
 func (r HasOneApiGETOrderSubscriptionIdCustomerRequest) Execute() (*http.Response, error) {
@@ -7310,7 +7770,7 @@ Retrieve the customer associated to the order subscription
 	@param orderSubscriptionId The resource's id
 	@return HasOneApiGETOrderSubscriptionIdCustomerRequest
 */
-func (a *HasOneApiService) GETOrderSubscriptionIdCustomer(ctx context.Context, orderSubscriptionId string) HasOneApiGETOrderSubscriptionIdCustomerRequest {
+func (a *HasOneApiService) GETOrderSubscriptionIdCustomer(ctx context.Context, orderSubscriptionId interface{}) HasOneApiGETOrderSubscriptionIdCustomerRequest {
 	return HasOneApiGETOrderSubscriptionIdCustomerRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -7332,7 +7792,7 @@ func (a *HasOneApiService) GETOrderSubscriptionIdCustomerExecute(r HasOneApiGETO
 	}
 
 	localVarPath := localBasePath + "/order_subscriptions/{orderSubscriptionId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterToString(r.orderSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionId, "orderSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7365,9 +7825,101 @@ func (a *HasOneApiService) GETOrderSubscriptionIdCustomerExecute(r HasOneApiGETO
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasOneApiGETOrderSubscriptionIdCustomerPaymentSourceRequest struct {
+	ctx                 context.Context
+	ApiService          *HasOneApiService
+	orderSubscriptionId interface{}
+}
+
+func (r HasOneApiGETOrderSubscriptionIdCustomerPaymentSourceRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderSubscriptionIdCustomerPaymentSourceExecute(r)
+}
+
+/*
+GETOrderSubscriptionIdCustomerPaymentSource Retrieve the customer payment source associated to the order subscription
+
+Retrieve the customer payment source associated to the order subscription
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderSubscriptionId The resource's id
+	@return HasOneApiGETOrderSubscriptionIdCustomerPaymentSourceRequest
+*/
+func (a *HasOneApiService) GETOrderSubscriptionIdCustomerPaymentSource(ctx context.Context, orderSubscriptionId interface{}) HasOneApiGETOrderSubscriptionIdCustomerPaymentSourceRequest {
+	return HasOneApiGETOrderSubscriptionIdCustomerPaymentSourceRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		orderSubscriptionId: orderSubscriptionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasOneApiService) GETOrderSubscriptionIdCustomerPaymentSourceExecute(r HasOneApiGETOrderSubscriptionIdCustomerPaymentSourceRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasOneApiService.GETOrderSubscriptionIdCustomerPaymentSource")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/order_subscriptions/{orderSubscriptionId}/customer_payment_source"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionId, "orderSubscriptionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7386,7 +7938,7 @@ func (a *HasOneApiService) GETOrderSubscriptionIdCustomerExecute(r HasOneApiGETO
 type HasOneApiGETOrderSubscriptionIdMarketRequest struct {
 	ctx                 context.Context
 	ApiService          *HasOneApiService
-	orderSubscriptionId string
+	orderSubscriptionId interface{}
 }
 
 func (r HasOneApiGETOrderSubscriptionIdMarketRequest) Execute() (*http.Response, error) {
@@ -7402,7 +7954,7 @@ Retrieve the market associated to the order subscription
 	@param orderSubscriptionId The resource's id
 	@return HasOneApiGETOrderSubscriptionIdMarketRequest
 */
-func (a *HasOneApiService) GETOrderSubscriptionIdMarket(ctx context.Context, orderSubscriptionId string) HasOneApiGETOrderSubscriptionIdMarketRequest {
+func (a *HasOneApiService) GETOrderSubscriptionIdMarket(ctx context.Context, orderSubscriptionId interface{}) HasOneApiGETOrderSubscriptionIdMarketRequest {
 	return HasOneApiGETOrderSubscriptionIdMarketRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -7424,7 +7976,7 @@ func (a *HasOneApiService) GETOrderSubscriptionIdMarketExecute(r HasOneApiGETOrd
 	}
 
 	localVarPath := localBasePath + "/order_subscriptions/{orderSubscriptionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterToString(r.orderSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionId, "orderSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7457,9 +8009,9 @@ func (a *HasOneApiService) GETOrderSubscriptionIdMarketExecute(r HasOneApiGETOrd
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7478,7 +8030,7 @@ func (a *HasOneApiService) GETOrderSubscriptionIdMarketExecute(r HasOneApiGETOrd
 type HasOneApiGETOrderSubscriptionIdSourceOrderRequest struct {
 	ctx                 context.Context
 	ApiService          *HasOneApiService
-	orderSubscriptionId string
+	orderSubscriptionId interface{}
 }
 
 func (r HasOneApiGETOrderSubscriptionIdSourceOrderRequest) Execute() (*http.Response, error) {
@@ -7494,7 +8046,7 @@ Retrieve the source order associated to the order subscription
 	@param orderSubscriptionId The resource's id
 	@return HasOneApiGETOrderSubscriptionIdSourceOrderRequest
 */
-func (a *HasOneApiService) GETOrderSubscriptionIdSourceOrder(ctx context.Context, orderSubscriptionId string) HasOneApiGETOrderSubscriptionIdSourceOrderRequest {
+func (a *HasOneApiService) GETOrderSubscriptionIdSourceOrder(ctx context.Context, orderSubscriptionId interface{}) HasOneApiGETOrderSubscriptionIdSourceOrderRequest {
 	return HasOneApiGETOrderSubscriptionIdSourceOrderRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -7516,7 +8068,7 @@ func (a *HasOneApiService) GETOrderSubscriptionIdSourceOrderExecute(r HasOneApiG
 	}
 
 	localVarPath := localBasePath + "/order_subscriptions/{orderSubscriptionId}/source_order"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterToString(r.orderSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionId, "orderSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7549,9 +8101,193 @@ func (a *HasOneApiService) GETOrderSubscriptionIdSourceOrderExecute(r HasOneApiG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasOneApiGETOrderSubscriptionIdSubscriptionModelRequest struct {
+	ctx                 context.Context
+	ApiService          *HasOneApiService
+	orderSubscriptionId interface{}
+}
+
+func (r HasOneApiGETOrderSubscriptionIdSubscriptionModelRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderSubscriptionIdSubscriptionModelExecute(r)
+}
+
+/*
+GETOrderSubscriptionIdSubscriptionModel Retrieve the subscription model associated to the order subscription
+
+Retrieve the subscription model associated to the order subscription
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderSubscriptionId The resource's id
+	@return HasOneApiGETOrderSubscriptionIdSubscriptionModelRequest
+*/
+func (a *HasOneApiService) GETOrderSubscriptionIdSubscriptionModel(ctx context.Context, orderSubscriptionId interface{}) HasOneApiGETOrderSubscriptionIdSubscriptionModelRequest {
+	return HasOneApiGETOrderSubscriptionIdSubscriptionModelRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		orderSubscriptionId: orderSubscriptionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasOneApiService) GETOrderSubscriptionIdSubscriptionModelExecute(r HasOneApiGETOrderSubscriptionIdSubscriptionModelRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasOneApiService.GETOrderSubscriptionIdSubscriptionModel")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/order_subscriptions/{orderSubscriptionId}/subscription_model"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionId, "orderSubscriptionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasOneApiGETOrderSubscriptionItemIdOrderSubscriptionRequest struct {
+	ctx                     context.Context
+	ApiService              *HasOneApiService
+	orderSubscriptionItemId interface{}
+}
+
+func (r HasOneApiGETOrderSubscriptionItemIdOrderSubscriptionRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderSubscriptionItemIdOrderSubscriptionExecute(r)
+}
+
+/*
+GETOrderSubscriptionItemIdOrderSubscription Retrieve the order subscription associated to the order subscription item
+
+Retrieve the order subscription associated to the order subscription item
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderSubscriptionItemId The resource's id
+	@return HasOneApiGETOrderSubscriptionItemIdOrderSubscriptionRequest
+*/
+func (a *HasOneApiService) GETOrderSubscriptionItemIdOrderSubscription(ctx context.Context, orderSubscriptionItemId interface{}) HasOneApiGETOrderSubscriptionItemIdOrderSubscriptionRequest {
+	return HasOneApiGETOrderSubscriptionItemIdOrderSubscriptionRequest{
+		ApiService:              a,
+		ctx:                     ctx,
+		orderSubscriptionItemId: orderSubscriptionItemId,
+	}
+}
+
+// Execute executes the request
+func (a *HasOneApiService) GETOrderSubscriptionItemIdOrderSubscriptionExecute(r HasOneApiGETOrderSubscriptionItemIdOrderSubscriptionRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasOneApiService.GETOrderSubscriptionItemIdOrderSubscription")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/order_subscription_items/{orderSubscriptionItemId}/order_subscription"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionItemId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionItemId, "orderSubscriptionItemId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7570,7 +8306,7 @@ func (a *HasOneApiService) GETOrderSubscriptionIdSourceOrderExecute(r HasOneApiG
 type HasOneApiGETOrderValidationRuleIdMarketRequest struct {
 	ctx                   context.Context
 	ApiService            *HasOneApiService
-	orderValidationRuleId string
+	orderValidationRuleId interface{}
 }
 
 func (r HasOneApiGETOrderValidationRuleIdMarketRequest) Execute() (*http.Response, error) {
@@ -7586,7 +8322,7 @@ Retrieve the market associated to the order validation rule
 	@param orderValidationRuleId The resource's id
 	@return HasOneApiGETOrderValidationRuleIdMarketRequest
 */
-func (a *HasOneApiService) GETOrderValidationRuleIdMarket(ctx context.Context, orderValidationRuleId string) HasOneApiGETOrderValidationRuleIdMarketRequest {
+func (a *HasOneApiService) GETOrderValidationRuleIdMarket(ctx context.Context, orderValidationRuleId interface{}) HasOneApiGETOrderValidationRuleIdMarketRequest {
 	return HasOneApiGETOrderValidationRuleIdMarketRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -7608,7 +8344,7 @@ func (a *HasOneApiService) GETOrderValidationRuleIdMarketExecute(r HasOneApiGETO
 	}
 
 	localVarPath := localBasePath + "/order_validation_rules/{orderValidationRuleId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderValidationRuleId"+"}", url.PathEscape(parameterToString(r.orderValidationRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderValidationRuleId"+"}", url.PathEscape(parameterValueToString(r.orderValidationRuleId, "orderValidationRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7641,9 +8377,9 @@ func (a *HasOneApiService) GETOrderValidationRuleIdMarketExecute(r HasOneApiGETO
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7662,7 +8398,7 @@ func (a *HasOneApiService) GETOrderValidationRuleIdMarketExecute(r HasOneApiGETO
 type HasOneApiGETPackageIdStockLocationRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	packageId  string
+	packageId  interface{}
 }
 
 func (r HasOneApiGETPackageIdStockLocationRequest) Execute() (*http.Response, error) {
@@ -7678,7 +8414,7 @@ Retrieve the stock location associated to the package
 	@param packageId The resource's id
 	@return HasOneApiGETPackageIdStockLocationRequest
 */
-func (a *HasOneApiService) GETPackageIdStockLocation(ctx context.Context, packageId string) HasOneApiGETPackageIdStockLocationRequest {
+func (a *HasOneApiService) GETPackageIdStockLocation(ctx context.Context, packageId interface{}) HasOneApiGETPackageIdStockLocationRequest {
 	return HasOneApiGETPackageIdStockLocationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -7700,7 +8436,7 @@ func (a *HasOneApiService) GETPackageIdStockLocationExecute(r HasOneApiGETPackag
 	}
 
 	localVarPath := localBasePath + "/packages/{packageId}/stock_location"
-	localVarPath = strings.Replace(localVarPath, "{"+"packageId"+"}", url.PathEscape(parameterToString(r.packageId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"packageId"+"}", url.PathEscape(parameterValueToString(r.packageId, "packageId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7733,9 +8469,9 @@ func (a *HasOneApiService) GETPackageIdStockLocationExecute(r HasOneApiGETPackag
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7754,7 +8490,7 @@ func (a *HasOneApiService) GETPackageIdStockLocationExecute(r HasOneApiGETPackag
 type HasOneApiGETParcelIdPackageRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	parcelId   string
+	parcelId   interface{}
 }
 
 func (r HasOneApiGETParcelIdPackageRequest) Execute() (*http.Response, error) {
@@ -7770,7 +8506,7 @@ Retrieve the package associated to the parcel
 	@param parcelId The resource's id
 	@return HasOneApiGETParcelIdPackageRequest
 */
-func (a *HasOneApiService) GETParcelIdPackage(ctx context.Context, parcelId string) HasOneApiGETParcelIdPackageRequest {
+func (a *HasOneApiService) GETParcelIdPackage(ctx context.Context, parcelId interface{}) HasOneApiGETParcelIdPackageRequest {
 	return HasOneApiGETParcelIdPackageRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -7792,7 +8528,7 @@ func (a *HasOneApiService) GETParcelIdPackageExecute(r HasOneApiGETParcelIdPacka
 	}
 
 	localVarPath := localBasePath + "/parcels/{parcelId}/package"
-	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterToString(r.parcelId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterValueToString(r.parcelId, "parcelId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7825,9 +8561,9 @@ func (a *HasOneApiService) GETParcelIdPackageExecute(r HasOneApiGETParcelIdPacka
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7846,7 +8582,7 @@ func (a *HasOneApiService) GETParcelIdPackageExecute(r HasOneApiGETParcelIdPacka
 type HasOneApiGETParcelIdShipmentRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	parcelId   string
+	parcelId   interface{}
 }
 
 func (r HasOneApiGETParcelIdShipmentRequest) Execute() (*http.Response, error) {
@@ -7862,7 +8598,7 @@ Retrieve the shipment associated to the parcel
 	@param parcelId The resource's id
 	@return HasOneApiGETParcelIdShipmentRequest
 */
-func (a *HasOneApiService) GETParcelIdShipment(ctx context.Context, parcelId string) HasOneApiGETParcelIdShipmentRequest {
+func (a *HasOneApiService) GETParcelIdShipment(ctx context.Context, parcelId interface{}) HasOneApiGETParcelIdShipmentRequest {
 	return HasOneApiGETParcelIdShipmentRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -7884,7 +8620,7 @@ func (a *HasOneApiService) GETParcelIdShipmentExecute(r HasOneApiGETParcelIdShip
 	}
 
 	localVarPath := localBasePath + "/parcels/{parcelId}/shipment"
-	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterToString(r.parcelId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterValueToString(r.parcelId, "parcelId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7917,9 +8653,9 @@ func (a *HasOneApiService) GETParcelIdShipmentExecute(r HasOneApiGETParcelIdShip
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7938,7 +8674,7 @@ func (a *HasOneApiService) GETParcelIdShipmentExecute(r HasOneApiGETParcelIdShip
 type HasOneApiGETParcelLineItemIdParcelRequest struct {
 	ctx              context.Context
 	ApiService       *HasOneApiService
-	parcelLineItemId string
+	parcelLineItemId interface{}
 }
 
 func (r HasOneApiGETParcelLineItemIdParcelRequest) Execute() (*http.Response, error) {
@@ -7954,7 +8690,7 @@ Retrieve the parcel associated to the parcel line item
 	@param parcelLineItemId The resource's id
 	@return HasOneApiGETParcelLineItemIdParcelRequest
 */
-func (a *HasOneApiService) GETParcelLineItemIdParcel(ctx context.Context, parcelLineItemId string) HasOneApiGETParcelLineItemIdParcelRequest {
+func (a *HasOneApiService) GETParcelLineItemIdParcel(ctx context.Context, parcelLineItemId interface{}) HasOneApiGETParcelLineItemIdParcelRequest {
 	return HasOneApiGETParcelLineItemIdParcelRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -7976,7 +8712,7 @@ func (a *HasOneApiService) GETParcelLineItemIdParcelExecute(r HasOneApiGETParcel
 	}
 
 	localVarPath := localBasePath + "/parcel_line_items/{parcelLineItemId}/parcel"
-	localVarPath = strings.Replace(localVarPath, "{"+"parcelLineItemId"+"}", url.PathEscape(parameterToString(r.parcelLineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"parcelLineItemId"+"}", url.PathEscape(parameterValueToString(r.parcelLineItemId, "parcelLineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8009,9 +8745,9 @@ func (a *HasOneApiService) GETParcelLineItemIdParcelExecute(r HasOneApiGETParcel
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8030,7 +8766,7 @@ func (a *HasOneApiService) GETParcelLineItemIdParcelExecute(r HasOneApiGETParcel
 type HasOneApiGETParcelLineItemIdStockLineItemRequest struct {
 	ctx              context.Context
 	ApiService       *HasOneApiService
-	parcelLineItemId string
+	parcelLineItemId interface{}
 }
 
 func (r HasOneApiGETParcelLineItemIdStockLineItemRequest) Execute() (*http.Response, error) {
@@ -8046,7 +8782,7 @@ Retrieve the stock line item associated to the parcel line item
 	@param parcelLineItemId The resource's id
 	@return HasOneApiGETParcelLineItemIdStockLineItemRequest
 */
-func (a *HasOneApiService) GETParcelLineItemIdStockLineItem(ctx context.Context, parcelLineItemId string) HasOneApiGETParcelLineItemIdStockLineItemRequest {
+func (a *HasOneApiService) GETParcelLineItemIdStockLineItem(ctx context.Context, parcelLineItemId interface{}) HasOneApiGETParcelLineItemIdStockLineItemRequest {
 	return HasOneApiGETParcelLineItemIdStockLineItemRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -8068,7 +8804,7 @@ func (a *HasOneApiService) GETParcelLineItemIdStockLineItemExecute(r HasOneApiGE
 	}
 
 	localVarPath := localBasePath + "/parcel_line_items/{parcelLineItemId}/stock_line_item"
-	localVarPath = strings.Replace(localVarPath, "{"+"parcelLineItemId"+"}", url.PathEscape(parameterToString(r.parcelLineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"parcelLineItemId"+"}", url.PathEscape(parameterValueToString(r.parcelLineItemId, "parcelLineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8101,9 +8837,9 @@ func (a *HasOneApiService) GETParcelLineItemIdStockLineItemExecute(r HasOneApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8122,7 +8858,7 @@ func (a *HasOneApiService) GETParcelLineItemIdStockLineItemExecute(r HasOneApiGE
 type HasOneApiGETPaymentMethodIdMarketRequest struct {
 	ctx             context.Context
 	ApiService      *HasOneApiService
-	paymentMethodId string
+	paymentMethodId interface{}
 }
 
 func (r HasOneApiGETPaymentMethodIdMarketRequest) Execute() (*http.Response, error) {
@@ -8138,7 +8874,7 @@ Retrieve the market associated to the payment method
 	@param paymentMethodId The resource's id
 	@return HasOneApiGETPaymentMethodIdMarketRequest
 */
-func (a *HasOneApiService) GETPaymentMethodIdMarket(ctx context.Context, paymentMethodId string) HasOneApiGETPaymentMethodIdMarketRequest {
+func (a *HasOneApiService) GETPaymentMethodIdMarket(ctx context.Context, paymentMethodId interface{}) HasOneApiGETPaymentMethodIdMarketRequest {
 	return HasOneApiGETPaymentMethodIdMarketRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -8160,7 +8896,7 @@ func (a *HasOneApiService) GETPaymentMethodIdMarketExecute(r HasOneApiGETPayment
 	}
 
 	localVarPath := localBasePath + "/payment_methods/{paymentMethodId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"paymentMethodId"+"}", url.PathEscape(parameterToString(r.paymentMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"paymentMethodId"+"}", url.PathEscape(parameterValueToString(r.paymentMethodId, "paymentMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8193,9 +8929,9 @@ func (a *HasOneApiService) GETPaymentMethodIdMarketExecute(r HasOneApiGETPayment
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8214,7 +8950,7 @@ func (a *HasOneApiService) GETPaymentMethodIdMarketExecute(r HasOneApiGETPayment
 type HasOneApiGETPaymentMethodIdPaymentGatewayRequest struct {
 	ctx             context.Context
 	ApiService      *HasOneApiService
-	paymentMethodId string
+	paymentMethodId interface{}
 }
 
 func (r HasOneApiGETPaymentMethodIdPaymentGatewayRequest) Execute() (*http.Response, error) {
@@ -8230,7 +8966,7 @@ Retrieve the payment gateway associated to the payment method
 	@param paymentMethodId The resource's id
 	@return HasOneApiGETPaymentMethodIdPaymentGatewayRequest
 */
-func (a *HasOneApiService) GETPaymentMethodIdPaymentGateway(ctx context.Context, paymentMethodId string) HasOneApiGETPaymentMethodIdPaymentGatewayRequest {
+func (a *HasOneApiService) GETPaymentMethodIdPaymentGateway(ctx context.Context, paymentMethodId interface{}) HasOneApiGETPaymentMethodIdPaymentGatewayRequest {
 	return HasOneApiGETPaymentMethodIdPaymentGatewayRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -8252,7 +8988,7 @@ func (a *HasOneApiService) GETPaymentMethodIdPaymentGatewayExecute(r HasOneApiGE
 	}
 
 	localVarPath := localBasePath + "/payment_methods/{paymentMethodId}/payment_gateway"
-	localVarPath = strings.Replace(localVarPath, "{"+"paymentMethodId"+"}", url.PathEscape(parameterToString(r.paymentMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"paymentMethodId"+"}", url.PathEscape(parameterValueToString(r.paymentMethodId, "paymentMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8285,9 +9021,9 @@ func (a *HasOneApiService) GETPaymentMethodIdPaymentGatewayExecute(r HasOneApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8306,7 +9042,7 @@ func (a *HasOneApiService) GETPaymentMethodIdPaymentGatewayExecute(r HasOneApiGE
 type HasOneApiGETPaypalPaymentIdOrderRequest struct {
 	ctx             context.Context
 	ApiService      *HasOneApiService
-	paypalPaymentId string
+	paypalPaymentId interface{}
 }
 
 func (r HasOneApiGETPaypalPaymentIdOrderRequest) Execute() (*http.Response, error) {
@@ -8322,7 +9058,7 @@ Retrieve the order associated to the paypal payment
 	@param paypalPaymentId The resource's id
 	@return HasOneApiGETPaypalPaymentIdOrderRequest
 */
-func (a *HasOneApiService) GETPaypalPaymentIdOrder(ctx context.Context, paypalPaymentId string) HasOneApiGETPaypalPaymentIdOrderRequest {
+func (a *HasOneApiService) GETPaypalPaymentIdOrder(ctx context.Context, paypalPaymentId interface{}) HasOneApiGETPaypalPaymentIdOrderRequest {
 	return HasOneApiGETPaypalPaymentIdOrderRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -8344,7 +9080,7 @@ func (a *HasOneApiService) GETPaypalPaymentIdOrderExecute(r HasOneApiGETPaypalPa
 	}
 
 	localVarPath := localBasePath + "/paypal_payments/{paypalPaymentId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"paypalPaymentId"+"}", url.PathEscape(parameterToString(r.paypalPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"paypalPaymentId"+"}", url.PathEscape(parameterValueToString(r.paypalPaymentId, "paypalPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8377,9 +9113,9 @@ func (a *HasOneApiService) GETPaypalPaymentIdOrderExecute(r HasOneApiGETPaypalPa
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8398,7 +9134,7 @@ func (a *HasOneApiService) GETPaypalPaymentIdOrderExecute(r HasOneApiGETPaypalPa
 type HasOneApiGETPaypalPaymentIdPaymentGatewayRequest struct {
 	ctx             context.Context
 	ApiService      *HasOneApiService
-	paypalPaymentId string
+	paypalPaymentId interface{}
 }
 
 func (r HasOneApiGETPaypalPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
@@ -8414,7 +9150,7 @@ Retrieve the payment gateway associated to the paypal payment
 	@param paypalPaymentId The resource's id
 	@return HasOneApiGETPaypalPaymentIdPaymentGatewayRequest
 */
-func (a *HasOneApiService) GETPaypalPaymentIdPaymentGateway(ctx context.Context, paypalPaymentId string) HasOneApiGETPaypalPaymentIdPaymentGatewayRequest {
+func (a *HasOneApiService) GETPaypalPaymentIdPaymentGateway(ctx context.Context, paypalPaymentId interface{}) HasOneApiGETPaypalPaymentIdPaymentGatewayRequest {
 	return HasOneApiGETPaypalPaymentIdPaymentGatewayRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -8436,7 +9172,7 @@ func (a *HasOneApiService) GETPaypalPaymentIdPaymentGatewayExecute(r HasOneApiGE
 	}
 
 	localVarPath := localBasePath + "/paypal_payments/{paypalPaymentId}/payment_gateway"
-	localVarPath = strings.Replace(localVarPath, "{"+"paypalPaymentId"+"}", url.PathEscape(parameterToString(r.paypalPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"paypalPaymentId"+"}", url.PathEscape(parameterValueToString(r.paypalPaymentId, "paypalPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8469,9 +9205,9 @@ func (a *HasOneApiService) GETPaypalPaymentIdPaymentGatewayExecute(r HasOneApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8490,7 +9226,7 @@ func (a *HasOneApiService) GETPaypalPaymentIdPaymentGatewayExecute(r HasOneApiGE
 type HasOneApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest struct {
 	ctx                           context.Context
 	ApiService                    *HasOneApiService
-	percentageDiscountPromotionId string
+	percentageDiscountPromotionId interface{}
 }
 
 func (r HasOneApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -8506,7 +9242,7 @@ Retrieve the coupon codes promotion rule associated to the percentage discount p
 	@param percentageDiscountPromotionId The resource's id
 	@return HasOneApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest
 */
-func (a *HasOneApiService) GETPercentageDiscountPromotionIdCouponCodesPromotionRule(ctx context.Context, percentageDiscountPromotionId string) HasOneApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest {
+func (a *HasOneApiService) GETPercentageDiscountPromotionIdCouponCodesPromotionRule(ctx context.Context, percentageDiscountPromotionId interface{}) HasOneApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest {
 	return HasOneApiGETPercentageDiscountPromotionIdCouponCodesPromotionRuleRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
@@ -8528,7 +9264,7 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdCouponCodesPromotionR
 	}
 
 	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}/coupon_codes_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterToString(r.percentageDiscountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8561,9 +9297,9 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdCouponCodesPromotionR
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8582,7 +9318,7 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdCouponCodesPromotionR
 type HasOneApiGETPercentageDiscountPromotionIdMarketRequest struct {
 	ctx                           context.Context
 	ApiService                    *HasOneApiService
-	percentageDiscountPromotionId string
+	percentageDiscountPromotionId interface{}
 }
 
 func (r HasOneApiGETPercentageDiscountPromotionIdMarketRequest) Execute() (*http.Response, error) {
@@ -8598,7 +9334,7 @@ Retrieve the market associated to the percentage discount promotion
 	@param percentageDiscountPromotionId The resource's id
 	@return HasOneApiGETPercentageDiscountPromotionIdMarketRequest
 */
-func (a *HasOneApiService) GETPercentageDiscountPromotionIdMarket(ctx context.Context, percentageDiscountPromotionId string) HasOneApiGETPercentageDiscountPromotionIdMarketRequest {
+func (a *HasOneApiService) GETPercentageDiscountPromotionIdMarket(ctx context.Context, percentageDiscountPromotionId interface{}) HasOneApiGETPercentageDiscountPromotionIdMarketRequest {
 	return HasOneApiGETPercentageDiscountPromotionIdMarketRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
@@ -8620,7 +9356,7 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdMarketExecute(r HasOn
 	}
 
 	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterToString(r.percentageDiscountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8653,9 +9389,9 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdMarketExecute(r HasOn
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8674,7 +9410,7 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdMarketExecute(r HasOn
 type HasOneApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx                           context.Context
 	ApiService                    *HasOneApiService
-	percentageDiscountPromotionId string
+	percentageDiscountPromotionId interface{}
 }
 
 func (r HasOneApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -8690,7 +9426,7 @@ Retrieve the order amount promotion rule associated to the percentage discount p
 	@param percentageDiscountPromotionId The resource's id
 	@return HasOneApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *HasOneApiService) GETPercentageDiscountPromotionIdOrderAmountPromotionRule(ctx context.Context, percentageDiscountPromotionId string) HasOneApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest {
+func (a *HasOneApiService) GETPercentageDiscountPromotionIdOrderAmountPromotionRule(ctx context.Context, percentageDiscountPromotionId interface{}) HasOneApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest {
 	return HasOneApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
@@ -8712,7 +9448,7 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdOrderAmountPromotionR
 	}
 
 	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}/order_amount_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterToString(r.percentageDiscountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8745,9 +9481,9 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdOrderAmountPromotionR
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8766,7 +9502,7 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdOrderAmountPromotionR
 type HasOneApiGETPercentageDiscountPromotionIdSkuListRequest struct {
 	ctx                           context.Context
 	ApiService                    *HasOneApiService
-	percentageDiscountPromotionId string
+	percentageDiscountPromotionId interface{}
 }
 
 func (r HasOneApiGETPercentageDiscountPromotionIdSkuListRequest) Execute() (*http.Response, error) {
@@ -8782,7 +9518,7 @@ Retrieve the sku list associated to the percentage discount promotion
 	@param percentageDiscountPromotionId The resource's id
 	@return HasOneApiGETPercentageDiscountPromotionIdSkuListRequest
 */
-func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuList(ctx context.Context, percentageDiscountPromotionId string) HasOneApiGETPercentageDiscountPromotionIdSkuListRequest {
+func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuList(ctx context.Context, percentageDiscountPromotionId interface{}) HasOneApiGETPercentageDiscountPromotionIdSkuListRequest {
 	return HasOneApiGETPercentageDiscountPromotionIdSkuListRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
@@ -8804,7 +9540,7 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuListExecute(r HasO
 	}
 
 	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}/sku_list"
-	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterToString(r.percentageDiscountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8837,9 +9573,9 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuListExecute(r HasO
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8858,7 +9594,7 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuListExecute(r HasO
 type HasOneApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest struct {
 	ctx                           context.Context
 	ApiService                    *HasOneApiService
-	percentageDiscountPromotionId string
+	percentageDiscountPromotionId interface{}
 }
 
 func (r HasOneApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -8874,7 +9610,7 @@ Retrieve the sku list promotion rule associated to the percentage discount promo
 	@param percentageDiscountPromotionId The resource's id
 	@return HasOneApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest
 */
-func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuListPromotionRule(ctx context.Context, percentageDiscountPromotionId string) HasOneApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest {
+func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuListPromotionRule(ctx context.Context, percentageDiscountPromotionId interface{}) HasOneApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest {
 	return HasOneApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
@@ -8896,7 +9632,7 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuListPromotionRuleE
 	}
 
 	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}/sku_list_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterToString(r.percentageDiscountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8929,9 +9665,101 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuListPromotionRuleE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasOneApiGETPriceFrequencyTierIdPriceRequest struct {
+	ctx                  context.Context
+	ApiService           *HasOneApiService
+	priceFrequencyTierId interface{}
+}
+
+func (r HasOneApiGETPriceFrequencyTierIdPriceRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPriceFrequencyTierIdPriceExecute(r)
+}
+
+/*
+GETPriceFrequencyTierIdPrice Retrieve the price associated to the price frequency tier
+
+Retrieve the price associated to the price frequency tier
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceFrequencyTierId The resource's id
+	@return HasOneApiGETPriceFrequencyTierIdPriceRequest
+*/
+func (a *HasOneApiService) GETPriceFrequencyTierIdPrice(ctx context.Context, priceFrequencyTierId interface{}) HasOneApiGETPriceFrequencyTierIdPriceRequest {
+	return HasOneApiGETPriceFrequencyTierIdPriceRequest{
+		ApiService:           a,
+		ctx:                  ctx,
+		priceFrequencyTierId: priceFrequencyTierId,
+	}
+}
+
+// Execute executes the request
+func (a *HasOneApiService) GETPriceFrequencyTierIdPriceExecute(r HasOneApiGETPriceFrequencyTierIdPriceRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasOneApiService.GETPriceFrequencyTierIdPrice")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/price_frequency_tiers/{priceFrequencyTierId}/price"
+	localVarPath = strings.Replace(localVarPath, "{"+"priceFrequencyTierId"+"}", url.PathEscape(parameterValueToString(r.priceFrequencyTierId, "priceFrequencyTierId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8950,7 +9778,7 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuListPromotionRuleE
 type HasOneApiGETPriceIdPriceListRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	priceId    string
+	priceId    interface{}
 }
 
 func (r HasOneApiGETPriceIdPriceListRequest) Execute() (*http.Response, error) {
@@ -8966,7 +9794,7 @@ Retrieve the price list associated to the price
 	@param priceId The resource's id
 	@return HasOneApiGETPriceIdPriceListRequest
 */
-func (a *HasOneApiService) GETPriceIdPriceList(ctx context.Context, priceId string) HasOneApiGETPriceIdPriceListRequest {
+func (a *HasOneApiService) GETPriceIdPriceList(ctx context.Context, priceId interface{}) HasOneApiGETPriceIdPriceListRequest {
 	return HasOneApiGETPriceIdPriceListRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -8988,7 +9816,7 @@ func (a *HasOneApiService) GETPriceIdPriceListExecute(r HasOneApiGETPriceIdPrice
 	}
 
 	localVarPath := localBasePath + "/prices/{priceId}/price_list"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterToString(r.priceId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterValueToString(r.priceId, "priceId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9021,9 +9849,9 @@ func (a *HasOneApiService) GETPriceIdPriceListExecute(r HasOneApiGETPriceIdPrice
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9042,7 +9870,7 @@ func (a *HasOneApiService) GETPriceIdPriceListExecute(r HasOneApiGETPriceIdPrice
 type HasOneApiGETPriceIdSkuRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	priceId    string
+	priceId    interface{}
 }
 
 func (r HasOneApiGETPriceIdSkuRequest) Execute() (*http.Response, error) {
@@ -9058,7 +9886,7 @@ Retrieve the sku associated to the price
 	@param priceId The resource's id
 	@return HasOneApiGETPriceIdSkuRequest
 */
-func (a *HasOneApiService) GETPriceIdSku(ctx context.Context, priceId string) HasOneApiGETPriceIdSkuRequest {
+func (a *HasOneApiService) GETPriceIdSku(ctx context.Context, priceId interface{}) HasOneApiGETPriceIdSkuRequest {
 	return HasOneApiGETPriceIdSkuRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -9080,7 +9908,7 @@ func (a *HasOneApiService) GETPriceIdSkuExecute(r HasOneApiGETPriceIdSkuRequest)
 	}
 
 	localVarPath := localBasePath + "/prices/{priceId}/sku"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterToString(r.priceId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterValueToString(r.priceId, "priceId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9113,9 +9941,9 @@ func (a *HasOneApiService) GETPriceIdSkuExecute(r HasOneApiGETPriceIdSkuRequest)
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9134,7 +9962,7 @@ func (a *HasOneApiService) GETPriceIdSkuExecute(r HasOneApiGETPriceIdSkuRequest)
 type HasOneApiGETPriceTierIdPriceRequest struct {
 	ctx         context.Context
 	ApiService  *HasOneApiService
-	priceTierId string
+	priceTierId interface{}
 }
 
 func (r HasOneApiGETPriceTierIdPriceRequest) Execute() (*http.Response, error) {
@@ -9150,7 +9978,7 @@ Retrieve the price associated to the price tier
 	@param priceTierId The resource's id
 	@return HasOneApiGETPriceTierIdPriceRequest
 */
-func (a *HasOneApiService) GETPriceTierIdPrice(ctx context.Context, priceTierId string) HasOneApiGETPriceTierIdPriceRequest {
+func (a *HasOneApiService) GETPriceTierIdPrice(ctx context.Context, priceTierId interface{}) HasOneApiGETPriceTierIdPriceRequest {
 	return HasOneApiGETPriceTierIdPriceRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -9172,7 +10000,7 @@ func (a *HasOneApiService) GETPriceTierIdPriceExecute(r HasOneApiGETPriceTierIdP
 	}
 
 	localVarPath := localBasePath + "/price_tiers/{priceTierId}/price"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceTierId"+"}", url.PathEscape(parameterToString(r.priceTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceTierId"+"}", url.PathEscape(parameterValueToString(r.priceTierId, "priceTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9205,9 +10033,9 @@ func (a *HasOneApiService) GETPriceTierIdPriceExecute(r HasOneApiGETPriceTierIdP
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9226,7 +10054,7 @@ func (a *HasOneApiService) GETPriceTierIdPriceExecute(r HasOneApiGETPriceTierIdP
 type HasOneApiGETPriceVolumeTierIdPriceRequest struct {
 	ctx               context.Context
 	ApiService        *HasOneApiService
-	priceVolumeTierId string
+	priceVolumeTierId interface{}
 }
 
 func (r HasOneApiGETPriceVolumeTierIdPriceRequest) Execute() (*http.Response, error) {
@@ -9242,7 +10070,7 @@ Retrieve the price associated to the price volume tier
 	@param priceVolumeTierId The resource's id
 	@return HasOneApiGETPriceVolumeTierIdPriceRequest
 */
-func (a *HasOneApiService) GETPriceVolumeTierIdPrice(ctx context.Context, priceVolumeTierId string) HasOneApiGETPriceVolumeTierIdPriceRequest {
+func (a *HasOneApiService) GETPriceVolumeTierIdPrice(ctx context.Context, priceVolumeTierId interface{}) HasOneApiGETPriceVolumeTierIdPriceRequest {
 	return HasOneApiGETPriceVolumeTierIdPriceRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -9264,7 +10092,7 @@ func (a *HasOneApiService) GETPriceVolumeTierIdPriceExecute(r HasOneApiGETPriceV
 	}
 
 	localVarPath := localBasePath + "/price_volume_tiers/{priceVolumeTierId}/price"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceVolumeTierId"+"}", url.PathEscape(parameterToString(r.priceVolumeTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceVolumeTierId"+"}", url.PathEscape(parameterValueToString(r.priceVolumeTierId, "priceVolumeTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9297,9 +10125,9 @@ func (a *HasOneApiService) GETPriceVolumeTierIdPriceExecute(r HasOneApiGETPriceV
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9318,7 +10146,7 @@ func (a *HasOneApiService) GETPriceVolumeTierIdPriceExecute(r HasOneApiGETPriceV
 type HasOneApiGETPromotionIdCouponCodesPromotionRuleRequest struct {
 	ctx         context.Context
 	ApiService  *HasOneApiService
-	promotionId string
+	promotionId interface{}
 }
 
 func (r HasOneApiGETPromotionIdCouponCodesPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -9334,7 +10162,7 @@ Retrieve the coupon codes promotion rule associated to the promotion
 	@param promotionId The resource's id
 	@return HasOneApiGETPromotionIdCouponCodesPromotionRuleRequest
 */
-func (a *HasOneApiService) GETPromotionIdCouponCodesPromotionRule(ctx context.Context, promotionId string) HasOneApiGETPromotionIdCouponCodesPromotionRuleRequest {
+func (a *HasOneApiService) GETPromotionIdCouponCodesPromotionRule(ctx context.Context, promotionId interface{}) HasOneApiGETPromotionIdCouponCodesPromotionRuleRequest {
 	return HasOneApiGETPromotionIdCouponCodesPromotionRuleRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -9356,7 +10184,7 @@ func (a *HasOneApiService) GETPromotionIdCouponCodesPromotionRuleExecute(r HasOn
 	}
 
 	localVarPath := localBasePath + "/promotions/{promotionId}/coupon_codes_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterToString(r.promotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterValueToString(r.promotionId, "promotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9389,9 +10217,9 @@ func (a *HasOneApiService) GETPromotionIdCouponCodesPromotionRuleExecute(r HasOn
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9410,7 +10238,7 @@ func (a *HasOneApiService) GETPromotionIdCouponCodesPromotionRuleExecute(r HasOn
 type HasOneApiGETPromotionIdMarketRequest struct {
 	ctx         context.Context
 	ApiService  *HasOneApiService
-	promotionId string
+	promotionId interface{}
 }
 
 func (r HasOneApiGETPromotionIdMarketRequest) Execute() (*http.Response, error) {
@@ -9426,7 +10254,7 @@ Retrieve the market associated to the promotion
 	@param promotionId The resource's id
 	@return HasOneApiGETPromotionIdMarketRequest
 */
-func (a *HasOneApiService) GETPromotionIdMarket(ctx context.Context, promotionId string) HasOneApiGETPromotionIdMarketRequest {
+func (a *HasOneApiService) GETPromotionIdMarket(ctx context.Context, promotionId interface{}) HasOneApiGETPromotionIdMarketRequest {
 	return HasOneApiGETPromotionIdMarketRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -9448,7 +10276,7 @@ func (a *HasOneApiService) GETPromotionIdMarketExecute(r HasOneApiGETPromotionId
 	}
 
 	localVarPath := localBasePath + "/promotions/{promotionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterToString(r.promotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterValueToString(r.promotionId, "promotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9481,9 +10309,9 @@ func (a *HasOneApiService) GETPromotionIdMarketExecute(r HasOneApiGETPromotionId
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9502,7 +10330,7 @@ func (a *HasOneApiService) GETPromotionIdMarketExecute(r HasOneApiGETPromotionId
 type HasOneApiGETPromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx         context.Context
 	ApiService  *HasOneApiService
-	promotionId string
+	promotionId interface{}
 }
 
 func (r HasOneApiGETPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -9518,7 +10346,7 @@ Retrieve the order amount promotion rule associated to the promotion
 	@param promotionId The resource's id
 	@return HasOneApiGETPromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *HasOneApiService) GETPromotionIdOrderAmountPromotionRule(ctx context.Context, promotionId string) HasOneApiGETPromotionIdOrderAmountPromotionRuleRequest {
+func (a *HasOneApiService) GETPromotionIdOrderAmountPromotionRule(ctx context.Context, promotionId interface{}) HasOneApiGETPromotionIdOrderAmountPromotionRuleRequest {
 	return HasOneApiGETPromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -9540,7 +10368,7 @@ func (a *HasOneApiService) GETPromotionIdOrderAmountPromotionRuleExecute(r HasOn
 	}
 
 	localVarPath := localBasePath + "/promotions/{promotionId}/order_amount_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterToString(r.promotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterValueToString(r.promotionId, "promotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9573,9 +10401,9 @@ func (a *HasOneApiService) GETPromotionIdOrderAmountPromotionRuleExecute(r HasOn
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9594,7 +10422,7 @@ func (a *HasOneApiService) GETPromotionIdOrderAmountPromotionRuleExecute(r HasOn
 type HasOneApiGETPromotionIdSkuListPromotionRuleRequest struct {
 	ctx         context.Context
 	ApiService  *HasOneApiService
-	promotionId string
+	promotionId interface{}
 }
 
 func (r HasOneApiGETPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -9610,7 +10438,7 @@ Retrieve the sku list promotion rule associated to the promotion
 	@param promotionId The resource's id
 	@return HasOneApiGETPromotionIdSkuListPromotionRuleRequest
 */
-func (a *HasOneApiService) GETPromotionIdSkuListPromotionRule(ctx context.Context, promotionId string) HasOneApiGETPromotionIdSkuListPromotionRuleRequest {
+func (a *HasOneApiService) GETPromotionIdSkuListPromotionRule(ctx context.Context, promotionId interface{}) HasOneApiGETPromotionIdSkuListPromotionRuleRequest {
 	return HasOneApiGETPromotionIdSkuListPromotionRuleRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -9632,7 +10460,7 @@ func (a *HasOneApiService) GETPromotionIdSkuListPromotionRuleExecute(r HasOneApi
 	}
 
 	localVarPath := localBasePath + "/promotions/{promotionId}/sku_list_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterToString(r.promotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterValueToString(r.promotionId, "promotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9665,9 +10493,285 @@ func (a *HasOneApiService) GETPromotionIdSkuListPromotionRuleExecute(r HasOneApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasOneApiGETRecurringOrderCopyIdOrderSubscriptionRequest struct {
+	ctx                  context.Context
+	ApiService           *HasOneApiService
+	recurringOrderCopyId interface{}
+}
+
+func (r HasOneApiGETRecurringOrderCopyIdOrderSubscriptionRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETRecurringOrderCopyIdOrderSubscriptionExecute(r)
+}
+
+/*
+GETRecurringOrderCopyIdOrderSubscription Retrieve the order subscription associated to the recurring order copy
+
+Retrieve the order subscription associated to the recurring order copy
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param recurringOrderCopyId The resource's id
+	@return HasOneApiGETRecurringOrderCopyIdOrderSubscriptionRequest
+*/
+func (a *HasOneApiService) GETRecurringOrderCopyIdOrderSubscription(ctx context.Context, recurringOrderCopyId interface{}) HasOneApiGETRecurringOrderCopyIdOrderSubscriptionRequest {
+	return HasOneApiGETRecurringOrderCopyIdOrderSubscriptionRequest{
+		ApiService:           a,
+		ctx:                  ctx,
+		recurringOrderCopyId: recurringOrderCopyId,
+	}
+}
+
+// Execute executes the request
+func (a *HasOneApiService) GETRecurringOrderCopyIdOrderSubscriptionExecute(r HasOneApiGETRecurringOrderCopyIdOrderSubscriptionRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasOneApiService.GETRecurringOrderCopyIdOrderSubscription")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/recurring_order_copies/{recurringOrderCopyId}/order_subscription"
+	localVarPath = strings.Replace(localVarPath, "{"+"recurringOrderCopyId"+"}", url.PathEscape(parameterValueToString(r.recurringOrderCopyId, "recurringOrderCopyId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasOneApiGETRecurringOrderCopyIdSourceOrderRequest struct {
+	ctx                  context.Context
+	ApiService           *HasOneApiService
+	recurringOrderCopyId interface{}
+}
+
+func (r HasOneApiGETRecurringOrderCopyIdSourceOrderRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETRecurringOrderCopyIdSourceOrderExecute(r)
+}
+
+/*
+GETRecurringOrderCopyIdSourceOrder Retrieve the source order associated to the recurring order copy
+
+Retrieve the source order associated to the recurring order copy
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param recurringOrderCopyId The resource's id
+	@return HasOneApiGETRecurringOrderCopyIdSourceOrderRequest
+*/
+func (a *HasOneApiService) GETRecurringOrderCopyIdSourceOrder(ctx context.Context, recurringOrderCopyId interface{}) HasOneApiGETRecurringOrderCopyIdSourceOrderRequest {
+	return HasOneApiGETRecurringOrderCopyIdSourceOrderRequest{
+		ApiService:           a,
+		ctx:                  ctx,
+		recurringOrderCopyId: recurringOrderCopyId,
+	}
+}
+
+// Execute executes the request
+func (a *HasOneApiService) GETRecurringOrderCopyIdSourceOrderExecute(r HasOneApiGETRecurringOrderCopyIdSourceOrderRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasOneApiService.GETRecurringOrderCopyIdSourceOrder")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/recurring_order_copies/{recurringOrderCopyId}/source_order"
+	localVarPath = strings.Replace(localVarPath, "{"+"recurringOrderCopyId"+"}", url.PathEscape(parameterValueToString(r.recurringOrderCopyId, "recurringOrderCopyId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasOneApiGETRecurringOrderCopyIdTargetOrderRequest struct {
+	ctx                  context.Context
+	ApiService           *HasOneApiService
+	recurringOrderCopyId interface{}
+}
+
+func (r HasOneApiGETRecurringOrderCopyIdTargetOrderRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETRecurringOrderCopyIdTargetOrderExecute(r)
+}
+
+/*
+GETRecurringOrderCopyIdTargetOrder Retrieve the target order associated to the recurring order copy
+
+Retrieve the target order associated to the recurring order copy
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param recurringOrderCopyId The resource's id
+	@return HasOneApiGETRecurringOrderCopyIdTargetOrderRequest
+*/
+func (a *HasOneApiService) GETRecurringOrderCopyIdTargetOrder(ctx context.Context, recurringOrderCopyId interface{}) HasOneApiGETRecurringOrderCopyIdTargetOrderRequest {
+	return HasOneApiGETRecurringOrderCopyIdTargetOrderRequest{
+		ApiService:           a,
+		ctx:                  ctx,
+		recurringOrderCopyId: recurringOrderCopyId,
+	}
+}
+
+// Execute executes the request
+func (a *HasOneApiService) GETRecurringOrderCopyIdTargetOrderExecute(r HasOneApiGETRecurringOrderCopyIdTargetOrderRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasOneApiService.GETRecurringOrderCopyIdTargetOrder")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/recurring_order_copies/{recurringOrderCopyId}/target_order"
+	localVarPath = strings.Replace(localVarPath, "{"+"recurringOrderCopyId"+"}", url.PathEscape(parameterValueToString(r.recurringOrderCopyId, "recurringOrderCopyId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9686,7 +10790,7 @@ func (a *HasOneApiService) GETPromotionIdSkuListPromotionRuleExecute(r HasOneApi
 type HasOneApiGETRefundIdOrderRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	refundId   string
+	refundId   interface{}
 }
 
 func (r HasOneApiGETRefundIdOrderRequest) Execute() (*http.Response, error) {
@@ -9702,7 +10806,7 @@ Retrieve the order associated to the refund
 	@param refundId The resource's id
 	@return HasOneApiGETRefundIdOrderRequest
 */
-func (a *HasOneApiService) GETRefundIdOrder(ctx context.Context, refundId string) HasOneApiGETRefundIdOrderRequest {
+func (a *HasOneApiService) GETRefundIdOrder(ctx context.Context, refundId interface{}) HasOneApiGETRefundIdOrderRequest {
 	return HasOneApiGETRefundIdOrderRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -9724,7 +10828,7 @@ func (a *HasOneApiService) GETRefundIdOrderExecute(r HasOneApiGETRefundIdOrderRe
 	}
 
 	localVarPath := localBasePath + "/refunds/{refundId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"refundId"+"}", url.PathEscape(parameterToString(r.refundId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"refundId"+"}", url.PathEscape(parameterValueToString(r.refundId, "refundId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9757,9 +10861,9 @@ func (a *HasOneApiService) GETRefundIdOrderExecute(r HasOneApiGETRefundIdOrderRe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9778,7 +10882,7 @@ func (a *HasOneApiService) GETRefundIdOrderExecute(r HasOneApiGETRefundIdOrderRe
 type HasOneApiGETRefundIdReferenceCaptureRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	refundId   string
+	refundId   interface{}
 }
 
 func (r HasOneApiGETRefundIdReferenceCaptureRequest) Execute() (*http.Response, error) {
@@ -9794,7 +10898,7 @@ Retrieve the reference capture associated to the refund
 	@param refundId The resource's id
 	@return HasOneApiGETRefundIdReferenceCaptureRequest
 */
-func (a *HasOneApiService) GETRefundIdReferenceCapture(ctx context.Context, refundId string) HasOneApiGETRefundIdReferenceCaptureRequest {
+func (a *HasOneApiService) GETRefundIdReferenceCapture(ctx context.Context, refundId interface{}) HasOneApiGETRefundIdReferenceCaptureRequest {
 	return HasOneApiGETRefundIdReferenceCaptureRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -9816,7 +10920,7 @@ func (a *HasOneApiService) GETRefundIdReferenceCaptureExecute(r HasOneApiGETRefu
 	}
 
 	localVarPath := localBasePath + "/refunds/{refundId}/reference_capture"
-	localVarPath = strings.Replace(localVarPath, "{"+"refundId"+"}", url.PathEscape(parameterToString(r.refundId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"refundId"+"}", url.PathEscape(parameterValueToString(r.refundId, "refundId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9849,9 +10953,9 @@ func (a *HasOneApiService) GETRefundIdReferenceCaptureExecute(r HasOneApiGETRefu
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9870,7 +10974,7 @@ func (a *HasOneApiService) GETRefundIdReferenceCaptureExecute(r HasOneApiGETRefu
 type HasOneApiGETReturnIdCustomerRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	returnId   string
+	returnId   interface{}
 }
 
 func (r HasOneApiGETReturnIdCustomerRequest) Execute() (*http.Response, error) {
@@ -9886,7 +10990,7 @@ Retrieve the customer associated to the return
 	@param returnId The resource's id
 	@return HasOneApiGETReturnIdCustomerRequest
 */
-func (a *HasOneApiService) GETReturnIdCustomer(ctx context.Context, returnId string) HasOneApiGETReturnIdCustomerRequest {
+func (a *HasOneApiService) GETReturnIdCustomer(ctx context.Context, returnId interface{}) HasOneApiGETReturnIdCustomerRequest {
 	return HasOneApiGETReturnIdCustomerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -9908,7 +11012,7 @@ func (a *HasOneApiService) GETReturnIdCustomerExecute(r HasOneApiGETReturnIdCust
 	}
 
 	localVarPath := localBasePath + "/returns/{returnId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterToString(r.returnId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9941,9 +11045,9 @@ func (a *HasOneApiService) GETReturnIdCustomerExecute(r HasOneApiGETReturnIdCust
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9962,7 +11066,7 @@ func (a *HasOneApiService) GETReturnIdCustomerExecute(r HasOneApiGETReturnIdCust
 type HasOneApiGETReturnIdDestinationAddressRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	returnId   string
+	returnId   interface{}
 }
 
 func (r HasOneApiGETReturnIdDestinationAddressRequest) Execute() (*http.Response, error) {
@@ -9978,7 +11082,7 @@ Retrieve the destination address associated to the return
 	@param returnId The resource's id
 	@return HasOneApiGETReturnIdDestinationAddressRequest
 */
-func (a *HasOneApiService) GETReturnIdDestinationAddress(ctx context.Context, returnId string) HasOneApiGETReturnIdDestinationAddressRequest {
+func (a *HasOneApiService) GETReturnIdDestinationAddress(ctx context.Context, returnId interface{}) HasOneApiGETReturnIdDestinationAddressRequest {
 	return HasOneApiGETReturnIdDestinationAddressRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -10000,7 +11104,7 @@ func (a *HasOneApiService) GETReturnIdDestinationAddressExecute(r HasOneApiGETRe
 	}
 
 	localVarPath := localBasePath + "/returns/{returnId}/destination_address"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterToString(r.returnId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10033,9 +11137,9 @@ func (a *HasOneApiService) GETReturnIdDestinationAddressExecute(r HasOneApiGETRe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10054,7 +11158,7 @@ func (a *HasOneApiService) GETReturnIdDestinationAddressExecute(r HasOneApiGETRe
 type HasOneApiGETReturnIdOrderRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	returnId   string
+	returnId   interface{}
 }
 
 func (r HasOneApiGETReturnIdOrderRequest) Execute() (*http.Response, error) {
@@ -10070,7 +11174,7 @@ Retrieve the order associated to the return
 	@param returnId The resource's id
 	@return HasOneApiGETReturnIdOrderRequest
 */
-func (a *HasOneApiService) GETReturnIdOrder(ctx context.Context, returnId string) HasOneApiGETReturnIdOrderRequest {
+func (a *HasOneApiService) GETReturnIdOrder(ctx context.Context, returnId interface{}) HasOneApiGETReturnIdOrderRequest {
 	return HasOneApiGETReturnIdOrderRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -10092,7 +11196,7 @@ func (a *HasOneApiService) GETReturnIdOrderExecute(r HasOneApiGETReturnIdOrderRe
 	}
 
 	localVarPath := localBasePath + "/returns/{returnId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterToString(r.returnId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10125,9 +11229,9 @@ func (a *HasOneApiService) GETReturnIdOrderExecute(r HasOneApiGETReturnIdOrderRe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10146,7 +11250,7 @@ func (a *HasOneApiService) GETReturnIdOrderExecute(r HasOneApiGETReturnIdOrderRe
 type HasOneApiGETReturnIdOriginAddressRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	returnId   string
+	returnId   interface{}
 }
 
 func (r HasOneApiGETReturnIdOriginAddressRequest) Execute() (*http.Response, error) {
@@ -10162,7 +11266,7 @@ Retrieve the origin address associated to the return
 	@param returnId The resource's id
 	@return HasOneApiGETReturnIdOriginAddressRequest
 */
-func (a *HasOneApiService) GETReturnIdOriginAddress(ctx context.Context, returnId string) HasOneApiGETReturnIdOriginAddressRequest {
+func (a *HasOneApiService) GETReturnIdOriginAddress(ctx context.Context, returnId interface{}) HasOneApiGETReturnIdOriginAddressRequest {
 	return HasOneApiGETReturnIdOriginAddressRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -10184,7 +11288,7 @@ func (a *HasOneApiService) GETReturnIdOriginAddressExecute(r HasOneApiGETReturnI
 	}
 
 	localVarPath := localBasePath + "/returns/{returnId}/origin_address"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterToString(r.returnId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10217,9 +11321,9 @@ func (a *HasOneApiService) GETReturnIdOriginAddressExecute(r HasOneApiGETReturnI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10238,7 +11342,7 @@ func (a *HasOneApiService) GETReturnIdOriginAddressExecute(r HasOneApiGETReturnI
 type HasOneApiGETReturnIdStockLocationRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	returnId   string
+	returnId   interface{}
 }
 
 func (r HasOneApiGETReturnIdStockLocationRequest) Execute() (*http.Response, error) {
@@ -10254,7 +11358,7 @@ Retrieve the stock location associated to the return
 	@param returnId The resource's id
 	@return HasOneApiGETReturnIdStockLocationRequest
 */
-func (a *HasOneApiService) GETReturnIdStockLocation(ctx context.Context, returnId string) HasOneApiGETReturnIdStockLocationRequest {
+func (a *HasOneApiService) GETReturnIdStockLocation(ctx context.Context, returnId interface{}) HasOneApiGETReturnIdStockLocationRequest {
 	return HasOneApiGETReturnIdStockLocationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -10276,7 +11380,7 @@ func (a *HasOneApiService) GETReturnIdStockLocationExecute(r HasOneApiGETReturnI
 	}
 
 	localVarPath := localBasePath + "/returns/{returnId}/stock_location"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterToString(r.returnId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10309,9 +11413,9 @@ func (a *HasOneApiService) GETReturnIdStockLocationExecute(r HasOneApiGETReturnI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10330,7 +11434,7 @@ func (a *HasOneApiService) GETReturnIdStockLocationExecute(r HasOneApiGETReturnI
 type HasOneApiGETReturnLineItemIdLineItemRequest struct {
 	ctx              context.Context
 	ApiService       *HasOneApiService
-	returnLineItemId string
+	returnLineItemId interface{}
 }
 
 func (r HasOneApiGETReturnLineItemIdLineItemRequest) Execute() (*http.Response, error) {
@@ -10346,7 +11450,7 @@ Retrieve the line item associated to the return line item
 	@param returnLineItemId The resource's id
 	@return HasOneApiGETReturnLineItemIdLineItemRequest
 */
-func (a *HasOneApiService) GETReturnLineItemIdLineItem(ctx context.Context, returnLineItemId string) HasOneApiGETReturnLineItemIdLineItemRequest {
+func (a *HasOneApiService) GETReturnLineItemIdLineItem(ctx context.Context, returnLineItemId interface{}) HasOneApiGETReturnLineItemIdLineItemRequest {
 	return HasOneApiGETReturnLineItemIdLineItemRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -10368,7 +11472,7 @@ func (a *HasOneApiService) GETReturnLineItemIdLineItemExecute(r HasOneApiGETRetu
 	}
 
 	localVarPath := localBasePath + "/return_line_items/{returnLineItemId}/line_item"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnLineItemId"+"}", url.PathEscape(parameterToString(r.returnLineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnLineItemId"+"}", url.PathEscape(parameterValueToString(r.returnLineItemId, "returnLineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10401,9 +11505,9 @@ func (a *HasOneApiService) GETReturnLineItemIdLineItemExecute(r HasOneApiGETRetu
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10422,7 +11526,7 @@ func (a *HasOneApiService) GETReturnLineItemIdLineItemExecute(r HasOneApiGETRetu
 type HasOneApiGETReturnLineItemIdReturnRequest struct {
 	ctx              context.Context
 	ApiService       *HasOneApiService
-	returnLineItemId string
+	returnLineItemId interface{}
 }
 
 func (r HasOneApiGETReturnLineItemIdReturnRequest) Execute() (*http.Response, error) {
@@ -10438,7 +11542,7 @@ Retrieve the return associated to the return line item
 	@param returnLineItemId The resource's id
 	@return HasOneApiGETReturnLineItemIdReturnRequest
 */
-func (a *HasOneApiService) GETReturnLineItemIdReturn(ctx context.Context, returnLineItemId string) HasOneApiGETReturnLineItemIdReturnRequest {
+func (a *HasOneApiService) GETReturnLineItemIdReturn(ctx context.Context, returnLineItemId interface{}) HasOneApiGETReturnLineItemIdReturnRequest {
 	return HasOneApiGETReturnLineItemIdReturnRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -10460,7 +11564,7 @@ func (a *HasOneApiService) GETReturnLineItemIdReturnExecute(r HasOneApiGETReturn
 	}
 
 	localVarPath := localBasePath + "/return_line_items/{returnLineItemId}/return"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnLineItemId"+"}", url.PathEscape(parameterToString(r.returnLineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnLineItemId"+"}", url.PathEscape(parameterValueToString(r.returnLineItemId, "returnLineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10493,9 +11597,193 @@ func (a *HasOneApiService) GETReturnLineItemIdReturnExecute(r HasOneApiGETReturn
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasOneApiGETSatispayPaymentIdOrderRequest struct {
+	ctx               context.Context
+	ApiService        *HasOneApiService
+	satispayPaymentId interface{}
+}
+
+func (r HasOneApiGETSatispayPaymentIdOrderRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSatispayPaymentIdOrderExecute(r)
+}
+
+/*
+GETSatispayPaymentIdOrder Retrieve the order associated to the satispay payment
+
+Retrieve the order associated to the satispay payment
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param satispayPaymentId The resource's id
+	@return HasOneApiGETSatispayPaymentIdOrderRequest
+*/
+func (a *HasOneApiService) GETSatispayPaymentIdOrder(ctx context.Context, satispayPaymentId interface{}) HasOneApiGETSatispayPaymentIdOrderRequest {
+	return HasOneApiGETSatispayPaymentIdOrderRequest{
+		ApiService:        a,
+		ctx:               ctx,
+		satispayPaymentId: satispayPaymentId,
+	}
+}
+
+// Execute executes the request
+func (a *HasOneApiService) GETSatispayPaymentIdOrderExecute(r HasOneApiGETSatispayPaymentIdOrderRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasOneApiService.GETSatispayPaymentIdOrder")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/satispay_payments/{satispayPaymentId}/order"
+	localVarPath = strings.Replace(localVarPath, "{"+"satispayPaymentId"+"}", url.PathEscape(parameterValueToString(r.satispayPaymentId, "satispayPaymentId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasOneApiGETSatispayPaymentIdPaymentGatewayRequest struct {
+	ctx               context.Context
+	ApiService        *HasOneApiService
+	satispayPaymentId interface{}
+}
+
+func (r HasOneApiGETSatispayPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSatispayPaymentIdPaymentGatewayExecute(r)
+}
+
+/*
+GETSatispayPaymentIdPaymentGateway Retrieve the payment gateway associated to the satispay payment
+
+Retrieve the payment gateway associated to the satispay payment
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param satispayPaymentId The resource's id
+	@return HasOneApiGETSatispayPaymentIdPaymentGatewayRequest
+*/
+func (a *HasOneApiService) GETSatispayPaymentIdPaymentGateway(ctx context.Context, satispayPaymentId interface{}) HasOneApiGETSatispayPaymentIdPaymentGatewayRequest {
+	return HasOneApiGETSatispayPaymentIdPaymentGatewayRequest{
+		ApiService:        a,
+		ctx:               ctx,
+		satispayPaymentId: satispayPaymentId,
+	}
+}
+
+// Execute executes the request
+func (a *HasOneApiService) GETSatispayPaymentIdPaymentGatewayExecute(r HasOneApiGETSatispayPaymentIdPaymentGatewayRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasOneApiService.GETSatispayPaymentIdPaymentGateway")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/satispay_payments/{satispayPaymentId}/payment_gateway"
+	localVarPath = strings.Replace(localVarPath, "{"+"satispayPaymentId"+"}", url.PathEscape(parameterValueToString(r.satispayPaymentId, "satispayPaymentId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10514,7 +11802,7 @@ func (a *HasOneApiService) GETReturnLineItemIdReturnExecute(r HasOneApiGETReturn
 type HasOneApiGETShipmentIdDeliveryLeadTimeRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	shipmentId string
+	shipmentId interface{}
 }
 
 func (r HasOneApiGETShipmentIdDeliveryLeadTimeRequest) Execute() (*http.Response, error) {
@@ -10530,7 +11818,7 @@ Retrieve the delivery lead time associated to the shipment
 	@param shipmentId The resource's id
 	@return HasOneApiGETShipmentIdDeliveryLeadTimeRequest
 */
-func (a *HasOneApiService) GETShipmentIdDeliveryLeadTime(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdDeliveryLeadTimeRequest {
+func (a *HasOneApiService) GETShipmentIdDeliveryLeadTime(ctx context.Context, shipmentId interface{}) HasOneApiGETShipmentIdDeliveryLeadTimeRequest {
 	return HasOneApiGETShipmentIdDeliveryLeadTimeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -10552,7 +11840,7 @@ func (a *HasOneApiService) GETShipmentIdDeliveryLeadTimeExecute(r HasOneApiGETSh
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/delivery_lead_time"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10585,9 +11873,9 @@ func (a *HasOneApiService) GETShipmentIdDeliveryLeadTimeExecute(r HasOneApiGETSh
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10606,7 +11894,7 @@ func (a *HasOneApiService) GETShipmentIdDeliveryLeadTimeExecute(r HasOneApiGETSh
 type HasOneApiGETShipmentIdOrderRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	shipmentId string
+	shipmentId interface{}
 }
 
 func (r HasOneApiGETShipmentIdOrderRequest) Execute() (*http.Response, error) {
@@ -10622,7 +11910,7 @@ Retrieve the order associated to the shipment
 	@param shipmentId The resource's id
 	@return HasOneApiGETShipmentIdOrderRequest
 */
-func (a *HasOneApiService) GETShipmentIdOrder(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdOrderRequest {
+func (a *HasOneApiService) GETShipmentIdOrder(ctx context.Context, shipmentId interface{}) HasOneApiGETShipmentIdOrderRequest {
 	return HasOneApiGETShipmentIdOrderRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -10644,7 +11932,7 @@ func (a *HasOneApiService) GETShipmentIdOrderExecute(r HasOneApiGETShipmentIdOrd
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10677,9 +11965,9 @@ func (a *HasOneApiService) GETShipmentIdOrderExecute(r HasOneApiGETShipmentIdOrd
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10698,7 +11986,7 @@ func (a *HasOneApiService) GETShipmentIdOrderExecute(r HasOneApiGETShipmentIdOrd
 type HasOneApiGETShipmentIdOriginAddressRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	shipmentId string
+	shipmentId interface{}
 }
 
 func (r HasOneApiGETShipmentIdOriginAddressRequest) Execute() (*http.Response, error) {
@@ -10714,7 +12002,7 @@ Retrieve the origin address associated to the shipment
 	@param shipmentId The resource's id
 	@return HasOneApiGETShipmentIdOriginAddressRequest
 */
-func (a *HasOneApiService) GETShipmentIdOriginAddress(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdOriginAddressRequest {
+func (a *HasOneApiService) GETShipmentIdOriginAddress(ctx context.Context, shipmentId interface{}) HasOneApiGETShipmentIdOriginAddressRequest {
 	return HasOneApiGETShipmentIdOriginAddressRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -10736,7 +12024,7 @@ func (a *HasOneApiService) GETShipmentIdOriginAddressExecute(r HasOneApiGETShipm
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/origin_address"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10769,9 +12057,9 @@ func (a *HasOneApiService) GETShipmentIdOriginAddressExecute(r HasOneApiGETShipm
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10790,7 +12078,7 @@ func (a *HasOneApiService) GETShipmentIdOriginAddressExecute(r HasOneApiGETShipm
 type HasOneApiGETShipmentIdShippingAddressRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	shipmentId string
+	shipmentId interface{}
 }
 
 func (r HasOneApiGETShipmentIdShippingAddressRequest) Execute() (*http.Response, error) {
@@ -10806,7 +12094,7 @@ Retrieve the shipping address associated to the shipment
 	@param shipmentId The resource's id
 	@return HasOneApiGETShipmentIdShippingAddressRequest
 */
-func (a *HasOneApiService) GETShipmentIdShippingAddress(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdShippingAddressRequest {
+func (a *HasOneApiService) GETShipmentIdShippingAddress(ctx context.Context, shipmentId interface{}) HasOneApiGETShipmentIdShippingAddressRequest {
 	return HasOneApiGETShipmentIdShippingAddressRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -10828,7 +12116,7 @@ func (a *HasOneApiService) GETShipmentIdShippingAddressExecute(r HasOneApiGETShi
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/shipping_address"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10861,9 +12149,9 @@ func (a *HasOneApiService) GETShipmentIdShippingAddressExecute(r HasOneApiGETShi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10882,7 +12170,7 @@ func (a *HasOneApiService) GETShipmentIdShippingAddressExecute(r HasOneApiGETShi
 type HasOneApiGETShipmentIdShippingCategoryRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	shipmentId string
+	shipmentId interface{}
 }
 
 func (r HasOneApiGETShipmentIdShippingCategoryRequest) Execute() (*http.Response, error) {
@@ -10898,7 +12186,7 @@ Retrieve the shipping category associated to the shipment
 	@param shipmentId The resource's id
 	@return HasOneApiGETShipmentIdShippingCategoryRequest
 */
-func (a *HasOneApiService) GETShipmentIdShippingCategory(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdShippingCategoryRequest {
+func (a *HasOneApiService) GETShipmentIdShippingCategory(ctx context.Context, shipmentId interface{}) HasOneApiGETShipmentIdShippingCategoryRequest {
 	return HasOneApiGETShipmentIdShippingCategoryRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -10920,7 +12208,7 @@ func (a *HasOneApiService) GETShipmentIdShippingCategoryExecute(r HasOneApiGETSh
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/shipping_category"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10953,9 +12241,9 @@ func (a *HasOneApiService) GETShipmentIdShippingCategoryExecute(r HasOneApiGETSh
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10974,7 +12262,7 @@ func (a *HasOneApiService) GETShipmentIdShippingCategoryExecute(r HasOneApiGETSh
 type HasOneApiGETShipmentIdShippingMethodRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	shipmentId string
+	shipmentId interface{}
 }
 
 func (r HasOneApiGETShipmentIdShippingMethodRequest) Execute() (*http.Response, error) {
@@ -10990,7 +12278,7 @@ Retrieve the shipping method associated to the shipment
 	@param shipmentId The resource's id
 	@return HasOneApiGETShipmentIdShippingMethodRequest
 */
-func (a *HasOneApiService) GETShipmentIdShippingMethod(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdShippingMethodRequest {
+func (a *HasOneApiService) GETShipmentIdShippingMethod(ctx context.Context, shipmentId interface{}) HasOneApiGETShipmentIdShippingMethodRequest {
 	return HasOneApiGETShipmentIdShippingMethodRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -11012,7 +12300,7 @@ func (a *HasOneApiService) GETShipmentIdShippingMethodExecute(r HasOneApiGETShip
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/shipping_method"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11045,9 +12333,9 @@ func (a *HasOneApiService) GETShipmentIdShippingMethodExecute(r HasOneApiGETShip
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11066,7 +12354,7 @@ func (a *HasOneApiService) GETShipmentIdShippingMethodExecute(r HasOneApiGETShip
 type HasOneApiGETShipmentIdStockLocationRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	shipmentId string
+	shipmentId interface{}
 }
 
 func (r HasOneApiGETShipmentIdStockLocationRequest) Execute() (*http.Response, error) {
@@ -11082,7 +12370,7 @@ Retrieve the stock location associated to the shipment
 	@param shipmentId The resource's id
 	@return HasOneApiGETShipmentIdStockLocationRequest
 */
-func (a *HasOneApiService) GETShipmentIdStockLocation(ctx context.Context, shipmentId string) HasOneApiGETShipmentIdStockLocationRequest {
+func (a *HasOneApiService) GETShipmentIdStockLocation(ctx context.Context, shipmentId interface{}) HasOneApiGETShipmentIdStockLocationRequest {
 	return HasOneApiGETShipmentIdStockLocationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -11104,7 +12392,7 @@ func (a *HasOneApiService) GETShipmentIdStockLocationExecute(r HasOneApiGETShipm
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/stock_location"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11137,9 +12425,9 @@ func (a *HasOneApiService) GETShipmentIdStockLocationExecute(r HasOneApiGETShipm
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11158,7 +12446,7 @@ func (a *HasOneApiService) GETShipmentIdStockLocationExecute(r HasOneApiGETShipm
 type HasOneApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest struct {
 	ctx              context.Context
 	ApiService       *HasOneApiService
-	shippingMethodId string
+	shippingMethodId interface{}
 }
 
 func (r HasOneApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest) Execute() (*http.Response, error) {
@@ -11174,7 +12462,7 @@ Retrieve the delivery lead time for shipment associated to the shipping method
 	@param shippingMethodId The resource's id
 	@return HasOneApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest
 */
-func (a *HasOneApiService) GETShippingMethodIdDeliveryLeadTimeForShipment(ctx context.Context, shippingMethodId string) HasOneApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest {
+func (a *HasOneApiService) GETShippingMethodIdDeliveryLeadTimeForShipment(ctx context.Context, shippingMethodId interface{}) HasOneApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest {
 	return HasOneApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -11196,7 +12484,7 @@ func (a *HasOneApiService) GETShippingMethodIdDeliveryLeadTimeForShipmentExecute
 	}
 
 	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}/delivery_lead_time_for_shipment"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodId, "shippingMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11229,9 +12517,9 @@ func (a *HasOneApiService) GETShippingMethodIdDeliveryLeadTimeForShipmentExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11250,7 +12538,7 @@ func (a *HasOneApiService) GETShippingMethodIdDeliveryLeadTimeForShipmentExecute
 type HasOneApiGETShippingMethodIdMarketRequest struct {
 	ctx              context.Context
 	ApiService       *HasOneApiService
-	shippingMethodId string
+	shippingMethodId interface{}
 }
 
 func (r HasOneApiGETShippingMethodIdMarketRequest) Execute() (*http.Response, error) {
@@ -11266,7 +12554,7 @@ Retrieve the market associated to the shipping method
 	@param shippingMethodId The resource's id
 	@return HasOneApiGETShippingMethodIdMarketRequest
 */
-func (a *HasOneApiService) GETShippingMethodIdMarket(ctx context.Context, shippingMethodId string) HasOneApiGETShippingMethodIdMarketRequest {
+func (a *HasOneApiService) GETShippingMethodIdMarket(ctx context.Context, shippingMethodId interface{}) HasOneApiGETShippingMethodIdMarketRequest {
 	return HasOneApiGETShippingMethodIdMarketRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -11288,7 +12576,7 @@ func (a *HasOneApiService) GETShippingMethodIdMarketExecute(r HasOneApiGETShippi
 	}
 
 	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodId, "shippingMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11321,9 +12609,9 @@ func (a *HasOneApiService) GETShippingMethodIdMarketExecute(r HasOneApiGETShippi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11342,7 +12630,7 @@ func (a *HasOneApiService) GETShippingMethodIdMarketExecute(r HasOneApiGETShippi
 type HasOneApiGETShippingMethodIdShippingCategoryRequest struct {
 	ctx              context.Context
 	ApiService       *HasOneApiService
-	shippingMethodId string
+	shippingMethodId interface{}
 }
 
 func (r HasOneApiGETShippingMethodIdShippingCategoryRequest) Execute() (*http.Response, error) {
@@ -11358,7 +12646,7 @@ Retrieve the shipping category associated to the shipping method
 	@param shippingMethodId The resource's id
 	@return HasOneApiGETShippingMethodIdShippingCategoryRequest
 */
-func (a *HasOneApiService) GETShippingMethodIdShippingCategory(ctx context.Context, shippingMethodId string) HasOneApiGETShippingMethodIdShippingCategoryRequest {
+func (a *HasOneApiService) GETShippingMethodIdShippingCategory(ctx context.Context, shippingMethodId interface{}) HasOneApiGETShippingMethodIdShippingCategoryRequest {
 	return HasOneApiGETShippingMethodIdShippingCategoryRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -11380,7 +12668,7 @@ func (a *HasOneApiService) GETShippingMethodIdShippingCategoryExecute(r HasOneAp
 	}
 
 	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}/shipping_category"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodId, "shippingMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11413,9 +12701,9 @@ func (a *HasOneApiService) GETShippingMethodIdShippingCategoryExecute(r HasOneAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11434,7 +12722,7 @@ func (a *HasOneApiService) GETShippingMethodIdShippingCategoryExecute(r HasOneAp
 type HasOneApiGETShippingMethodIdShippingZoneRequest struct {
 	ctx              context.Context
 	ApiService       *HasOneApiService
-	shippingMethodId string
+	shippingMethodId interface{}
 }
 
 func (r HasOneApiGETShippingMethodIdShippingZoneRequest) Execute() (*http.Response, error) {
@@ -11450,7 +12738,7 @@ Retrieve the shipping zone associated to the shipping method
 	@param shippingMethodId The resource's id
 	@return HasOneApiGETShippingMethodIdShippingZoneRequest
 */
-func (a *HasOneApiService) GETShippingMethodIdShippingZone(ctx context.Context, shippingMethodId string) HasOneApiGETShippingMethodIdShippingZoneRequest {
+func (a *HasOneApiService) GETShippingMethodIdShippingZone(ctx context.Context, shippingMethodId interface{}) HasOneApiGETShippingMethodIdShippingZoneRequest {
 	return HasOneApiGETShippingMethodIdShippingZoneRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -11472,7 +12760,7 @@ func (a *HasOneApiService) GETShippingMethodIdShippingZoneExecute(r HasOneApiGET
 	}
 
 	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}/shipping_zone"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodId, "shippingMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11505,9 +12793,9 @@ func (a *HasOneApiService) GETShippingMethodIdShippingZoneExecute(r HasOneApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11526,7 +12814,7 @@ func (a *HasOneApiService) GETShippingMethodIdShippingZoneExecute(r HasOneApiGET
 type HasOneApiGETShippingMethodIdStockLocationRequest struct {
 	ctx              context.Context
 	ApiService       *HasOneApiService
-	shippingMethodId string
+	shippingMethodId interface{}
 }
 
 func (r HasOneApiGETShippingMethodIdStockLocationRequest) Execute() (*http.Response, error) {
@@ -11542,7 +12830,7 @@ Retrieve the stock location associated to the shipping method
 	@param shippingMethodId The resource's id
 	@return HasOneApiGETShippingMethodIdStockLocationRequest
 */
-func (a *HasOneApiService) GETShippingMethodIdStockLocation(ctx context.Context, shippingMethodId string) HasOneApiGETShippingMethodIdStockLocationRequest {
+func (a *HasOneApiService) GETShippingMethodIdStockLocation(ctx context.Context, shippingMethodId interface{}) HasOneApiGETShippingMethodIdStockLocationRequest {
 	return HasOneApiGETShippingMethodIdStockLocationRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -11564,7 +12852,7 @@ func (a *HasOneApiService) GETShippingMethodIdStockLocationExecute(r HasOneApiGE
 	}
 
 	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}/stock_location"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodId, "shippingMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11597,9 +12885,9 @@ func (a *HasOneApiService) GETShippingMethodIdStockLocationExecute(r HasOneApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11618,7 +12906,7 @@ func (a *HasOneApiService) GETShippingMethodIdStockLocationExecute(r HasOneApiGE
 type HasOneApiGETShippingMethodTierIdShippingMethodRequest struct {
 	ctx                  context.Context
 	ApiService           *HasOneApiService
-	shippingMethodTierId string
+	shippingMethodTierId interface{}
 }
 
 func (r HasOneApiGETShippingMethodTierIdShippingMethodRequest) Execute() (*http.Response, error) {
@@ -11634,7 +12922,7 @@ Retrieve the shipping method associated to the shipping method tier
 	@param shippingMethodTierId The resource's id
 	@return HasOneApiGETShippingMethodTierIdShippingMethodRequest
 */
-func (a *HasOneApiService) GETShippingMethodTierIdShippingMethod(ctx context.Context, shippingMethodTierId string) HasOneApiGETShippingMethodTierIdShippingMethodRequest {
+func (a *HasOneApiService) GETShippingMethodTierIdShippingMethod(ctx context.Context, shippingMethodTierId interface{}) HasOneApiGETShippingMethodTierIdShippingMethodRequest {
 	return HasOneApiGETShippingMethodTierIdShippingMethodRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -11656,7 +12944,7 @@ func (a *HasOneApiService) GETShippingMethodTierIdShippingMethodExecute(r HasOne
 	}
 
 	localVarPath := localBasePath + "/shipping_method_tiers/{shippingMethodTierId}/shipping_method"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodTierId"+"}", url.PathEscape(parameterToString(r.shippingMethodTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodTierId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodTierId, "shippingMethodTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11689,9 +12977,9 @@ func (a *HasOneApiService) GETShippingMethodTierIdShippingMethodExecute(r HasOne
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11710,7 +12998,7 @@ func (a *HasOneApiService) GETShippingMethodTierIdShippingMethodExecute(r HasOne
 type HasOneApiGETShippingWeightTierIdShippingMethodRequest struct {
 	ctx                  context.Context
 	ApiService           *HasOneApiService
-	shippingWeightTierId string
+	shippingWeightTierId interface{}
 }
 
 func (r HasOneApiGETShippingWeightTierIdShippingMethodRequest) Execute() (*http.Response, error) {
@@ -11726,7 +13014,7 @@ Retrieve the shipping method associated to the shipping weight tier
 	@param shippingWeightTierId The resource's id
 	@return HasOneApiGETShippingWeightTierIdShippingMethodRequest
 */
-func (a *HasOneApiService) GETShippingWeightTierIdShippingMethod(ctx context.Context, shippingWeightTierId string) HasOneApiGETShippingWeightTierIdShippingMethodRequest {
+func (a *HasOneApiService) GETShippingWeightTierIdShippingMethod(ctx context.Context, shippingWeightTierId interface{}) HasOneApiGETShippingWeightTierIdShippingMethodRequest {
 	return HasOneApiGETShippingWeightTierIdShippingMethodRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -11748,7 +13036,7 @@ func (a *HasOneApiService) GETShippingWeightTierIdShippingMethodExecute(r HasOne
 	}
 
 	localVarPath := localBasePath + "/shipping_weight_tiers/{shippingWeightTierId}/shipping_method"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingWeightTierId"+"}", url.PathEscape(parameterToString(r.shippingWeightTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingWeightTierId"+"}", url.PathEscape(parameterValueToString(r.shippingWeightTierId, "shippingWeightTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11781,9 +13069,9 @@ func (a *HasOneApiService) GETShippingWeightTierIdShippingMethodExecute(r HasOne
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11802,7 +13090,7 @@ func (a *HasOneApiService) GETShippingWeightTierIdShippingMethodExecute(r HasOne
 type HasOneApiGETSkuIdShippingCategoryRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	skuId      string
+	skuId      interface{}
 }
 
 func (r HasOneApiGETSkuIdShippingCategoryRequest) Execute() (*http.Response, error) {
@@ -11818,7 +13106,7 @@ Retrieve the shipping category associated to the SKU
 	@param skuId The resource's id
 	@return HasOneApiGETSkuIdShippingCategoryRequest
 */
-func (a *HasOneApiService) GETSkuIdShippingCategory(ctx context.Context, skuId string) HasOneApiGETSkuIdShippingCategoryRequest {
+func (a *HasOneApiService) GETSkuIdShippingCategory(ctx context.Context, skuId interface{}) HasOneApiGETSkuIdShippingCategoryRequest {
 	return HasOneApiGETSkuIdShippingCategoryRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -11840,7 +13128,7 @@ func (a *HasOneApiService) GETSkuIdShippingCategoryExecute(r HasOneApiGETSkuIdSh
 	}
 
 	localVarPath := localBasePath + "/skus/{skuId}/shipping_category"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterToString(r.skuId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11873,9 +13161,9 @@ func (a *HasOneApiService) GETSkuIdShippingCategoryExecute(r HasOneApiGETSkuIdSh
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11894,7 +13182,7 @@ func (a *HasOneApiService) GETSkuIdShippingCategoryExecute(r HasOneApiGETSkuIdSh
 type HasOneApiGETSkuListIdCustomerRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	skuListId  string
+	skuListId  interface{}
 }
 
 func (r HasOneApiGETSkuListIdCustomerRequest) Execute() (*http.Response, error) {
@@ -11910,7 +13198,7 @@ Retrieve the customer associated to the SKU list
 	@param skuListId The resource's id
 	@return HasOneApiGETSkuListIdCustomerRequest
 */
-func (a *HasOneApiService) GETSkuListIdCustomer(ctx context.Context, skuListId string) HasOneApiGETSkuListIdCustomerRequest {
+func (a *HasOneApiService) GETSkuListIdCustomer(ctx context.Context, skuListId interface{}) HasOneApiGETSkuListIdCustomerRequest {
 	return HasOneApiGETSkuListIdCustomerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -11932,7 +13220,7 @@ func (a *HasOneApiService) GETSkuListIdCustomerExecute(r HasOneApiGETSkuListIdCu
 	}
 
 	localVarPath := localBasePath + "/sku_lists/{skuListId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuListId"+"}", url.PathEscape(parameterToString(r.skuListId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListId"+"}", url.PathEscape(parameterValueToString(r.skuListId, "skuListId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11965,9 +13253,9 @@ func (a *HasOneApiService) GETSkuListIdCustomerExecute(r HasOneApiGETSkuListIdCu
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11986,7 +13274,7 @@ func (a *HasOneApiService) GETSkuListIdCustomerExecute(r HasOneApiGETSkuListIdCu
 type HasOneApiGETSkuListItemIdSkuRequest struct {
 	ctx           context.Context
 	ApiService    *HasOneApiService
-	skuListItemId string
+	skuListItemId interface{}
 }
 
 func (r HasOneApiGETSkuListItemIdSkuRequest) Execute() (*http.Response, error) {
@@ -12002,7 +13290,7 @@ Retrieve the sku associated to the SKU list item
 	@param skuListItemId The resource's id
 	@return HasOneApiGETSkuListItemIdSkuRequest
 */
-func (a *HasOneApiService) GETSkuListItemIdSku(ctx context.Context, skuListItemId string) HasOneApiGETSkuListItemIdSkuRequest {
+func (a *HasOneApiService) GETSkuListItemIdSku(ctx context.Context, skuListItemId interface{}) HasOneApiGETSkuListItemIdSkuRequest {
 	return HasOneApiGETSkuListItemIdSkuRequest{
 		ApiService:    a,
 		ctx:           ctx,
@@ -12024,7 +13312,7 @@ func (a *HasOneApiService) GETSkuListItemIdSkuExecute(r HasOneApiGETSkuListItemI
 	}
 
 	localVarPath := localBasePath + "/sku_list_items/{skuListItemId}/sku"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuListItemId"+"}", url.PathEscape(parameterToString(r.skuListItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListItemId"+"}", url.PathEscape(parameterValueToString(r.skuListItemId, "skuListItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12057,9 +13345,9 @@ func (a *HasOneApiService) GETSkuListItemIdSkuExecute(r HasOneApiGETSkuListItemI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12078,7 +13366,7 @@ func (a *HasOneApiService) GETSkuListItemIdSkuExecute(r HasOneApiGETSkuListItemI
 type HasOneApiGETSkuListItemIdSkuListRequest struct {
 	ctx           context.Context
 	ApiService    *HasOneApiService
-	skuListItemId string
+	skuListItemId interface{}
 }
 
 func (r HasOneApiGETSkuListItemIdSkuListRequest) Execute() (*http.Response, error) {
@@ -12094,7 +13382,7 @@ Retrieve the sku list associated to the SKU list item
 	@param skuListItemId The resource's id
 	@return HasOneApiGETSkuListItemIdSkuListRequest
 */
-func (a *HasOneApiService) GETSkuListItemIdSkuList(ctx context.Context, skuListItemId string) HasOneApiGETSkuListItemIdSkuListRequest {
+func (a *HasOneApiService) GETSkuListItemIdSkuList(ctx context.Context, skuListItemId interface{}) HasOneApiGETSkuListItemIdSkuListRequest {
 	return HasOneApiGETSkuListItemIdSkuListRequest{
 		ApiService:    a,
 		ctx:           ctx,
@@ -12116,7 +13404,7 @@ func (a *HasOneApiService) GETSkuListItemIdSkuListExecute(r HasOneApiGETSkuListI
 	}
 
 	localVarPath := localBasePath + "/sku_list_items/{skuListItemId}/sku_list"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuListItemId"+"}", url.PathEscape(parameterToString(r.skuListItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListItemId"+"}", url.PathEscape(parameterValueToString(r.skuListItemId, "skuListItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12149,9 +13437,9 @@ func (a *HasOneApiService) GETSkuListItemIdSkuListExecute(r HasOneApiGETSkuListI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12170,7 +13458,7 @@ func (a *HasOneApiService) GETSkuListItemIdSkuListExecute(r HasOneApiGETSkuListI
 type HasOneApiGETSkuListPromotionRuleIdSkuListRequest struct {
 	ctx                    context.Context
 	ApiService             *HasOneApiService
-	skuListPromotionRuleId string
+	skuListPromotionRuleId interface{}
 }
 
 func (r HasOneApiGETSkuListPromotionRuleIdSkuListRequest) Execute() (*http.Response, error) {
@@ -12186,7 +13474,7 @@ Retrieve the sku list associated to the SKU list promotion rule
 	@param skuListPromotionRuleId The resource's id
 	@return HasOneApiGETSkuListPromotionRuleIdSkuListRequest
 */
-func (a *HasOneApiService) GETSkuListPromotionRuleIdSkuList(ctx context.Context, skuListPromotionRuleId string) HasOneApiGETSkuListPromotionRuleIdSkuListRequest {
+func (a *HasOneApiService) GETSkuListPromotionRuleIdSkuList(ctx context.Context, skuListPromotionRuleId interface{}) HasOneApiGETSkuListPromotionRuleIdSkuListRequest {
 	return HasOneApiGETSkuListPromotionRuleIdSkuListRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -12208,7 +13496,7 @@ func (a *HasOneApiService) GETSkuListPromotionRuleIdSkuListExecute(r HasOneApiGE
 	}
 
 	localVarPath := localBasePath + "/sku_list_promotion_rules/{skuListPromotionRuleId}/sku_list"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuListPromotionRuleId"+"}", url.PathEscape(parameterToString(r.skuListPromotionRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListPromotionRuleId"+"}", url.PathEscape(parameterValueToString(r.skuListPromotionRuleId, "skuListPromotionRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12241,9 +13529,9 @@ func (a *HasOneApiService) GETSkuListPromotionRuleIdSkuListExecute(r HasOneApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12262,7 +13550,7 @@ func (a *HasOneApiService) GETSkuListPromotionRuleIdSkuListExecute(r HasOneApiGE
 type HasOneApiGETSkuOptionIdMarketRequest struct {
 	ctx         context.Context
 	ApiService  *HasOneApiService
-	skuOptionId string
+	skuOptionId interface{}
 }
 
 func (r HasOneApiGETSkuOptionIdMarketRequest) Execute() (*http.Response, error) {
@@ -12278,7 +13566,7 @@ Retrieve the market associated to the SKU option
 	@param skuOptionId The resource's id
 	@return HasOneApiGETSkuOptionIdMarketRequest
 */
-func (a *HasOneApiService) GETSkuOptionIdMarket(ctx context.Context, skuOptionId string) HasOneApiGETSkuOptionIdMarketRequest {
+func (a *HasOneApiService) GETSkuOptionIdMarket(ctx context.Context, skuOptionId interface{}) HasOneApiGETSkuOptionIdMarketRequest {
 	return HasOneApiGETSkuOptionIdMarketRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -12300,7 +13588,7 @@ func (a *HasOneApiService) GETSkuOptionIdMarketExecute(r HasOneApiGETSkuOptionId
 	}
 
 	localVarPath := localBasePath + "/sku_options/{skuOptionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuOptionId"+"}", url.PathEscape(parameterToString(r.skuOptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuOptionId"+"}", url.PathEscape(parameterValueToString(r.skuOptionId, "skuOptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12333,9 +13621,9 @@ func (a *HasOneApiService) GETSkuOptionIdMarketExecute(r HasOneApiGETSkuOptionId
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12354,7 +13642,7 @@ func (a *HasOneApiService) GETSkuOptionIdMarketExecute(r HasOneApiGETSkuOptionId
 type HasOneApiGETStockItemIdSkuRequest struct {
 	ctx         context.Context
 	ApiService  *HasOneApiService
-	stockItemId string
+	stockItemId interface{}
 }
 
 func (r HasOneApiGETStockItemIdSkuRequest) Execute() (*http.Response, error) {
@@ -12370,7 +13658,7 @@ Retrieve the sku associated to the stock item
 	@param stockItemId The resource's id
 	@return HasOneApiGETStockItemIdSkuRequest
 */
-func (a *HasOneApiService) GETStockItemIdSku(ctx context.Context, stockItemId string) HasOneApiGETStockItemIdSkuRequest {
+func (a *HasOneApiService) GETStockItemIdSku(ctx context.Context, stockItemId interface{}) HasOneApiGETStockItemIdSkuRequest {
 	return HasOneApiGETStockItemIdSkuRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -12392,7 +13680,7 @@ func (a *HasOneApiService) GETStockItemIdSkuExecute(r HasOneApiGETStockItemIdSku
 	}
 
 	localVarPath := localBasePath + "/stock_items/{stockItemId}/sku"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockItemId"+"}", url.PathEscape(parameterToString(r.stockItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockItemId"+"}", url.PathEscape(parameterValueToString(r.stockItemId, "stockItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12425,9 +13713,9 @@ func (a *HasOneApiService) GETStockItemIdSkuExecute(r HasOneApiGETStockItemIdSku
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12446,7 +13734,7 @@ func (a *HasOneApiService) GETStockItemIdSkuExecute(r HasOneApiGETStockItemIdSku
 type HasOneApiGETStockItemIdStockLocationRequest struct {
 	ctx         context.Context
 	ApiService  *HasOneApiService
-	stockItemId string
+	stockItemId interface{}
 }
 
 func (r HasOneApiGETStockItemIdStockLocationRequest) Execute() (*http.Response, error) {
@@ -12462,7 +13750,7 @@ Retrieve the stock location associated to the stock item
 	@param stockItemId The resource's id
 	@return HasOneApiGETStockItemIdStockLocationRequest
 */
-func (a *HasOneApiService) GETStockItemIdStockLocation(ctx context.Context, stockItemId string) HasOneApiGETStockItemIdStockLocationRequest {
+func (a *HasOneApiService) GETStockItemIdStockLocation(ctx context.Context, stockItemId interface{}) HasOneApiGETStockItemIdStockLocationRequest {
 	return HasOneApiGETStockItemIdStockLocationRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -12484,7 +13772,7 @@ func (a *HasOneApiService) GETStockItemIdStockLocationExecute(r HasOneApiGETStoc
 	}
 
 	localVarPath := localBasePath + "/stock_items/{stockItemId}/stock_location"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockItemId"+"}", url.PathEscape(parameterToString(r.stockItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockItemId"+"}", url.PathEscape(parameterValueToString(r.stockItemId, "stockItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12517,9 +13805,9 @@ func (a *HasOneApiService) GETStockItemIdStockLocationExecute(r HasOneApiGETStoc
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12538,7 +13826,7 @@ func (a *HasOneApiService) GETStockItemIdStockLocationExecute(r HasOneApiGETStoc
 type HasOneApiGETStockLineItemIdLineItemRequest struct {
 	ctx             context.Context
 	ApiService      *HasOneApiService
-	stockLineItemId string
+	stockLineItemId interface{}
 }
 
 func (r HasOneApiGETStockLineItemIdLineItemRequest) Execute() (*http.Response, error) {
@@ -12554,7 +13842,7 @@ Retrieve the line item associated to the stock line item
 	@param stockLineItemId The resource's id
 	@return HasOneApiGETStockLineItemIdLineItemRequest
 */
-func (a *HasOneApiService) GETStockLineItemIdLineItem(ctx context.Context, stockLineItemId string) HasOneApiGETStockLineItemIdLineItemRequest {
+func (a *HasOneApiService) GETStockLineItemIdLineItem(ctx context.Context, stockLineItemId interface{}) HasOneApiGETStockLineItemIdLineItemRequest {
 	return HasOneApiGETStockLineItemIdLineItemRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -12576,7 +13864,7 @@ func (a *HasOneApiService) GETStockLineItemIdLineItemExecute(r HasOneApiGETStock
 	}
 
 	localVarPath := localBasePath + "/stock_line_items/{stockLineItemId}/line_item"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockLineItemId"+"}", url.PathEscape(parameterToString(r.stockLineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockLineItemId"+"}", url.PathEscape(parameterValueToString(r.stockLineItemId, "stockLineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12609,9 +13897,9 @@ func (a *HasOneApiService) GETStockLineItemIdLineItemExecute(r HasOneApiGETStock
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12630,7 +13918,7 @@ func (a *HasOneApiService) GETStockLineItemIdLineItemExecute(r HasOneApiGETStock
 type HasOneApiGETStockLineItemIdShipmentRequest struct {
 	ctx             context.Context
 	ApiService      *HasOneApiService
-	stockLineItemId string
+	stockLineItemId interface{}
 }
 
 func (r HasOneApiGETStockLineItemIdShipmentRequest) Execute() (*http.Response, error) {
@@ -12646,7 +13934,7 @@ Retrieve the shipment associated to the stock line item
 	@param stockLineItemId The resource's id
 	@return HasOneApiGETStockLineItemIdShipmentRequest
 */
-func (a *HasOneApiService) GETStockLineItemIdShipment(ctx context.Context, stockLineItemId string) HasOneApiGETStockLineItemIdShipmentRequest {
+func (a *HasOneApiService) GETStockLineItemIdShipment(ctx context.Context, stockLineItemId interface{}) HasOneApiGETStockLineItemIdShipmentRequest {
 	return HasOneApiGETStockLineItemIdShipmentRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -12668,7 +13956,7 @@ func (a *HasOneApiService) GETStockLineItemIdShipmentExecute(r HasOneApiGETStock
 	}
 
 	localVarPath := localBasePath + "/stock_line_items/{stockLineItemId}/shipment"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockLineItemId"+"}", url.PathEscape(parameterToString(r.stockLineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockLineItemId"+"}", url.PathEscape(parameterValueToString(r.stockLineItemId, "stockLineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12701,9 +13989,9 @@ func (a *HasOneApiService) GETStockLineItemIdShipmentExecute(r HasOneApiGETStock
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12722,7 +14010,7 @@ func (a *HasOneApiService) GETStockLineItemIdShipmentExecute(r HasOneApiGETStock
 type HasOneApiGETStockLineItemIdStockItemRequest struct {
 	ctx             context.Context
 	ApiService      *HasOneApiService
-	stockLineItemId string
+	stockLineItemId interface{}
 }
 
 func (r HasOneApiGETStockLineItemIdStockItemRequest) Execute() (*http.Response, error) {
@@ -12738,7 +14026,7 @@ Retrieve the stock item associated to the stock line item
 	@param stockLineItemId The resource's id
 	@return HasOneApiGETStockLineItemIdStockItemRequest
 */
-func (a *HasOneApiService) GETStockLineItemIdStockItem(ctx context.Context, stockLineItemId string) HasOneApiGETStockLineItemIdStockItemRequest {
+func (a *HasOneApiService) GETStockLineItemIdStockItem(ctx context.Context, stockLineItemId interface{}) HasOneApiGETStockLineItemIdStockItemRequest {
 	return HasOneApiGETStockLineItemIdStockItemRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -12760,7 +14048,7 @@ func (a *HasOneApiService) GETStockLineItemIdStockItemExecute(r HasOneApiGETStoc
 	}
 
 	localVarPath := localBasePath + "/stock_line_items/{stockLineItemId}/stock_item"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockLineItemId"+"}", url.PathEscape(parameterToString(r.stockLineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockLineItemId"+"}", url.PathEscape(parameterValueToString(r.stockLineItemId, "stockLineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12793,9 +14081,9 @@ func (a *HasOneApiService) GETStockLineItemIdStockItemExecute(r HasOneApiGETStoc
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12814,7 +14102,7 @@ func (a *HasOneApiService) GETStockLineItemIdStockItemExecute(r HasOneApiGETStoc
 type HasOneApiGETStockLocationIdAddressRequest struct {
 	ctx             context.Context
 	ApiService      *HasOneApiService
-	stockLocationId string
+	stockLocationId interface{}
 }
 
 func (r HasOneApiGETStockLocationIdAddressRequest) Execute() (*http.Response, error) {
@@ -12830,7 +14118,7 @@ Retrieve the address associated to the stock location
 	@param stockLocationId The resource's id
 	@return HasOneApiGETStockLocationIdAddressRequest
 */
-func (a *HasOneApiService) GETStockLocationIdAddress(ctx context.Context, stockLocationId string) HasOneApiGETStockLocationIdAddressRequest {
+func (a *HasOneApiService) GETStockLocationIdAddress(ctx context.Context, stockLocationId interface{}) HasOneApiGETStockLocationIdAddressRequest {
 	return HasOneApiGETStockLocationIdAddressRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -12852,7 +14140,7 @@ func (a *HasOneApiService) GETStockLocationIdAddressExecute(r HasOneApiGETStockL
 	}
 
 	localVarPath := localBasePath + "/stock_locations/{stockLocationId}/address"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterToString(r.stockLocationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterValueToString(r.stockLocationId, "stockLocationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12885,9 +14173,9 @@ func (a *HasOneApiService) GETStockLocationIdAddressExecute(r HasOneApiGETStockL
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12906,7 +14194,7 @@ func (a *HasOneApiService) GETStockLocationIdAddressExecute(r HasOneApiGETStockL
 type HasOneApiGETStockTransferIdDestinationStockLocationRequest struct {
 	ctx             context.Context
 	ApiService      *HasOneApiService
-	stockTransferId string
+	stockTransferId interface{}
 }
 
 func (r HasOneApiGETStockTransferIdDestinationStockLocationRequest) Execute() (*http.Response, error) {
@@ -12922,7 +14210,7 @@ Retrieve the destination stock location associated to the stock transfer
 	@param stockTransferId The resource's id
 	@return HasOneApiGETStockTransferIdDestinationStockLocationRequest
 */
-func (a *HasOneApiService) GETStockTransferIdDestinationStockLocation(ctx context.Context, stockTransferId string) HasOneApiGETStockTransferIdDestinationStockLocationRequest {
+func (a *HasOneApiService) GETStockTransferIdDestinationStockLocation(ctx context.Context, stockTransferId interface{}) HasOneApiGETStockTransferIdDestinationStockLocationRequest {
 	return HasOneApiGETStockTransferIdDestinationStockLocationRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -12944,7 +14232,7 @@ func (a *HasOneApiService) GETStockTransferIdDestinationStockLocationExecute(r H
 	}
 
 	localVarPath := localBasePath + "/stock_transfers/{stockTransferId}/destination_stock_location"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterToString(r.stockTransferId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterValueToString(r.stockTransferId, "stockTransferId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12977,9 +14265,9 @@ func (a *HasOneApiService) GETStockTransferIdDestinationStockLocationExecute(r H
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12998,7 +14286,7 @@ func (a *HasOneApiService) GETStockTransferIdDestinationStockLocationExecute(r H
 type HasOneApiGETStockTransferIdLineItemRequest struct {
 	ctx             context.Context
 	ApiService      *HasOneApiService
-	stockTransferId string
+	stockTransferId interface{}
 }
 
 func (r HasOneApiGETStockTransferIdLineItemRequest) Execute() (*http.Response, error) {
@@ -13014,7 +14302,7 @@ Retrieve the line item associated to the stock transfer
 	@param stockTransferId The resource's id
 	@return HasOneApiGETStockTransferIdLineItemRequest
 */
-func (a *HasOneApiService) GETStockTransferIdLineItem(ctx context.Context, stockTransferId string) HasOneApiGETStockTransferIdLineItemRequest {
+func (a *HasOneApiService) GETStockTransferIdLineItem(ctx context.Context, stockTransferId interface{}) HasOneApiGETStockTransferIdLineItemRequest {
 	return HasOneApiGETStockTransferIdLineItemRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -13036,7 +14324,7 @@ func (a *HasOneApiService) GETStockTransferIdLineItemExecute(r HasOneApiGETStock
 	}
 
 	localVarPath := localBasePath + "/stock_transfers/{stockTransferId}/line_item"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterToString(r.stockTransferId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterValueToString(r.stockTransferId, "stockTransferId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13069,9 +14357,9 @@ func (a *HasOneApiService) GETStockTransferIdLineItemExecute(r HasOneApiGETStock
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13090,7 +14378,7 @@ func (a *HasOneApiService) GETStockTransferIdLineItemExecute(r HasOneApiGETStock
 type HasOneApiGETStockTransferIdOriginStockLocationRequest struct {
 	ctx             context.Context
 	ApiService      *HasOneApiService
-	stockTransferId string
+	stockTransferId interface{}
 }
 
 func (r HasOneApiGETStockTransferIdOriginStockLocationRequest) Execute() (*http.Response, error) {
@@ -13106,7 +14394,7 @@ Retrieve the origin stock location associated to the stock transfer
 	@param stockTransferId The resource's id
 	@return HasOneApiGETStockTransferIdOriginStockLocationRequest
 */
-func (a *HasOneApiService) GETStockTransferIdOriginStockLocation(ctx context.Context, stockTransferId string) HasOneApiGETStockTransferIdOriginStockLocationRequest {
+func (a *HasOneApiService) GETStockTransferIdOriginStockLocation(ctx context.Context, stockTransferId interface{}) HasOneApiGETStockTransferIdOriginStockLocationRequest {
 	return HasOneApiGETStockTransferIdOriginStockLocationRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -13128,7 +14416,7 @@ func (a *HasOneApiService) GETStockTransferIdOriginStockLocationExecute(r HasOne
 	}
 
 	localVarPath := localBasePath + "/stock_transfers/{stockTransferId}/origin_stock_location"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterToString(r.stockTransferId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterValueToString(r.stockTransferId, "stockTransferId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13161,9 +14449,9 @@ func (a *HasOneApiService) GETStockTransferIdOriginStockLocationExecute(r HasOne
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13182,7 +14470,7 @@ func (a *HasOneApiService) GETStockTransferIdOriginStockLocationExecute(r HasOne
 type HasOneApiGETStockTransferIdShipmentRequest struct {
 	ctx             context.Context
 	ApiService      *HasOneApiService
-	stockTransferId string
+	stockTransferId interface{}
 }
 
 func (r HasOneApiGETStockTransferIdShipmentRequest) Execute() (*http.Response, error) {
@@ -13198,7 +14486,7 @@ Retrieve the shipment associated to the stock transfer
 	@param stockTransferId The resource's id
 	@return HasOneApiGETStockTransferIdShipmentRequest
 */
-func (a *HasOneApiService) GETStockTransferIdShipment(ctx context.Context, stockTransferId string) HasOneApiGETStockTransferIdShipmentRequest {
+func (a *HasOneApiService) GETStockTransferIdShipment(ctx context.Context, stockTransferId interface{}) HasOneApiGETStockTransferIdShipmentRequest {
 	return HasOneApiGETStockTransferIdShipmentRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -13220,7 +14508,7 @@ func (a *HasOneApiService) GETStockTransferIdShipmentExecute(r HasOneApiGETStock
 	}
 
 	localVarPath := localBasePath + "/stock_transfers/{stockTransferId}/shipment"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterToString(r.stockTransferId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterValueToString(r.stockTransferId, "stockTransferId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13253,9 +14541,9 @@ func (a *HasOneApiService) GETStockTransferIdShipmentExecute(r HasOneApiGETStock
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13274,7 +14562,7 @@ func (a *HasOneApiService) GETStockTransferIdShipmentExecute(r HasOneApiGETStock
 type HasOneApiGETStockTransferIdSkuRequest struct {
 	ctx             context.Context
 	ApiService      *HasOneApiService
-	stockTransferId string
+	stockTransferId interface{}
 }
 
 func (r HasOneApiGETStockTransferIdSkuRequest) Execute() (*http.Response, error) {
@@ -13290,7 +14578,7 @@ Retrieve the sku associated to the stock transfer
 	@param stockTransferId The resource's id
 	@return HasOneApiGETStockTransferIdSkuRequest
 */
-func (a *HasOneApiService) GETStockTransferIdSku(ctx context.Context, stockTransferId string) HasOneApiGETStockTransferIdSkuRequest {
+func (a *HasOneApiService) GETStockTransferIdSku(ctx context.Context, stockTransferId interface{}) HasOneApiGETStockTransferIdSkuRequest {
 	return HasOneApiGETStockTransferIdSkuRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -13312,7 +14600,7 @@ func (a *HasOneApiService) GETStockTransferIdSkuExecute(r HasOneApiGETStockTrans
 	}
 
 	localVarPath := localBasePath + "/stock_transfers/{stockTransferId}/sku"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterToString(r.stockTransferId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterValueToString(r.stockTransferId, "stockTransferId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13345,9 +14633,9 @@ func (a *HasOneApiService) GETStockTransferIdSkuExecute(r HasOneApiGETStockTrans
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13366,7 +14654,7 @@ func (a *HasOneApiService) GETStockTransferIdSkuExecute(r HasOneApiGETStockTrans
 type HasOneApiGETStripePaymentIdOrderRequest struct {
 	ctx             context.Context
 	ApiService      *HasOneApiService
-	stripePaymentId string
+	stripePaymentId interface{}
 }
 
 func (r HasOneApiGETStripePaymentIdOrderRequest) Execute() (*http.Response, error) {
@@ -13382,7 +14670,7 @@ Retrieve the order associated to the stripe payment
 	@param stripePaymentId The resource's id
 	@return HasOneApiGETStripePaymentIdOrderRequest
 */
-func (a *HasOneApiService) GETStripePaymentIdOrder(ctx context.Context, stripePaymentId string) HasOneApiGETStripePaymentIdOrderRequest {
+func (a *HasOneApiService) GETStripePaymentIdOrder(ctx context.Context, stripePaymentId interface{}) HasOneApiGETStripePaymentIdOrderRequest {
 	return HasOneApiGETStripePaymentIdOrderRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -13404,7 +14692,7 @@ func (a *HasOneApiService) GETStripePaymentIdOrderExecute(r HasOneApiGETStripePa
 	}
 
 	localVarPath := localBasePath + "/stripe_payments/{stripePaymentId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"stripePaymentId"+"}", url.PathEscape(parameterToString(r.stripePaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stripePaymentId"+"}", url.PathEscape(parameterValueToString(r.stripePaymentId, "stripePaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13437,9 +14725,9 @@ func (a *HasOneApiService) GETStripePaymentIdOrderExecute(r HasOneApiGETStripePa
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13458,7 +14746,7 @@ func (a *HasOneApiService) GETStripePaymentIdOrderExecute(r HasOneApiGETStripePa
 type HasOneApiGETStripePaymentIdPaymentGatewayRequest struct {
 	ctx             context.Context
 	ApiService      *HasOneApiService
-	stripePaymentId string
+	stripePaymentId interface{}
 }
 
 func (r HasOneApiGETStripePaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
@@ -13474,7 +14762,7 @@ Retrieve the payment gateway associated to the stripe payment
 	@param stripePaymentId The resource's id
 	@return HasOneApiGETStripePaymentIdPaymentGatewayRequest
 */
-func (a *HasOneApiService) GETStripePaymentIdPaymentGateway(ctx context.Context, stripePaymentId string) HasOneApiGETStripePaymentIdPaymentGatewayRequest {
+func (a *HasOneApiService) GETStripePaymentIdPaymentGateway(ctx context.Context, stripePaymentId interface{}) HasOneApiGETStripePaymentIdPaymentGatewayRequest {
 	return HasOneApiGETStripePaymentIdPaymentGatewayRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -13496,7 +14784,7 @@ func (a *HasOneApiService) GETStripePaymentIdPaymentGatewayExecute(r HasOneApiGE
 	}
 
 	localVarPath := localBasePath + "/stripe_payments/{stripePaymentId}/payment_gateway"
-	localVarPath = strings.Replace(localVarPath, "{"+"stripePaymentId"+"}", url.PathEscape(parameterToString(r.stripePaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stripePaymentId"+"}", url.PathEscape(parameterValueToString(r.stripePaymentId, "stripePaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13529,9 +14817,9 @@ func (a *HasOneApiService) GETStripePaymentIdPaymentGatewayExecute(r HasOneApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13550,7 +14838,7 @@ func (a *HasOneApiService) GETStripePaymentIdPaymentGatewayExecute(r HasOneApiGE
 type HasOneApiGETTaxCategoryIdSkuRequest struct {
 	ctx           context.Context
 	ApiService    *HasOneApiService
-	taxCategoryId string
+	taxCategoryId interface{}
 }
 
 func (r HasOneApiGETTaxCategoryIdSkuRequest) Execute() (*http.Response, error) {
@@ -13566,7 +14854,7 @@ Retrieve the sku associated to the tax category
 	@param taxCategoryId The resource's id
 	@return HasOneApiGETTaxCategoryIdSkuRequest
 */
-func (a *HasOneApiService) GETTaxCategoryIdSku(ctx context.Context, taxCategoryId string) HasOneApiGETTaxCategoryIdSkuRequest {
+func (a *HasOneApiService) GETTaxCategoryIdSku(ctx context.Context, taxCategoryId interface{}) HasOneApiGETTaxCategoryIdSkuRequest {
 	return HasOneApiGETTaxCategoryIdSkuRequest{
 		ApiService:    a,
 		ctx:           ctx,
@@ -13588,7 +14876,7 @@ func (a *HasOneApiService) GETTaxCategoryIdSkuExecute(r HasOneApiGETTaxCategoryI
 	}
 
 	localVarPath := localBasePath + "/tax_categories/{taxCategoryId}/sku"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxCategoryId"+"}", url.PathEscape(parameterToString(r.taxCategoryId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxCategoryId"+"}", url.PathEscape(parameterValueToString(r.taxCategoryId, "taxCategoryId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13621,9 +14909,9 @@ func (a *HasOneApiService) GETTaxCategoryIdSkuExecute(r HasOneApiGETTaxCategoryI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13642,7 +14930,7 @@ func (a *HasOneApiService) GETTaxCategoryIdSkuExecute(r HasOneApiGETTaxCategoryI
 type HasOneApiGETTaxRuleIdManualTaxCalculatorRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	taxRuleId  string
+	taxRuleId  interface{}
 }
 
 func (r HasOneApiGETTaxRuleIdManualTaxCalculatorRequest) Execute() (*http.Response, error) {
@@ -13658,7 +14946,7 @@ Retrieve the manual tax calculator associated to the tax rule
 	@param taxRuleId The resource's id
 	@return HasOneApiGETTaxRuleIdManualTaxCalculatorRequest
 */
-func (a *HasOneApiService) GETTaxRuleIdManualTaxCalculator(ctx context.Context, taxRuleId string) HasOneApiGETTaxRuleIdManualTaxCalculatorRequest {
+func (a *HasOneApiService) GETTaxRuleIdManualTaxCalculator(ctx context.Context, taxRuleId interface{}) HasOneApiGETTaxRuleIdManualTaxCalculatorRequest {
 	return HasOneApiGETTaxRuleIdManualTaxCalculatorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -13680,7 +14968,7 @@ func (a *HasOneApiService) GETTaxRuleIdManualTaxCalculatorExecute(r HasOneApiGET
 	}
 
 	localVarPath := localBasePath + "/tax_rules/{taxRuleId}/manual_tax_calculator"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxRuleId"+"}", url.PathEscape(parameterToString(r.taxRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxRuleId"+"}", url.PathEscape(parameterValueToString(r.taxRuleId, "taxRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13713,9 +15001,9 @@ func (a *HasOneApiService) GETTaxRuleIdManualTaxCalculatorExecute(r HasOneApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13734,7 +15022,7 @@ func (a *HasOneApiService) GETTaxRuleIdManualTaxCalculatorExecute(r HasOneApiGET
 type HasOneApiGETTransactionIdOrderRequest struct {
 	ctx           context.Context
 	ApiService    *HasOneApiService
-	transactionId string
+	transactionId interface{}
 }
 
 func (r HasOneApiGETTransactionIdOrderRequest) Execute() (*http.Response, error) {
@@ -13750,7 +15038,7 @@ Retrieve the order associated to the transaction
 	@param transactionId The resource's id
 	@return HasOneApiGETTransactionIdOrderRequest
 */
-func (a *HasOneApiService) GETTransactionIdOrder(ctx context.Context, transactionId string) HasOneApiGETTransactionIdOrderRequest {
+func (a *HasOneApiService) GETTransactionIdOrder(ctx context.Context, transactionId interface{}) HasOneApiGETTransactionIdOrderRequest {
 	return HasOneApiGETTransactionIdOrderRequest{
 		ApiService:    a,
 		ctx:           ctx,
@@ -13772,7 +15060,7 @@ func (a *HasOneApiService) GETTransactionIdOrderExecute(r HasOneApiGETTransactio
 	}
 
 	localVarPath := localBasePath + "/transactions/{transactionId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"transactionId"+"}", url.PathEscape(parameterToString(r.transactionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"transactionId"+"}", url.PathEscape(parameterValueToString(r.transactionId, "transactionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13805,9 +15093,9 @@ func (a *HasOneApiService) GETTransactionIdOrderExecute(r HasOneApiGETTransactio
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13826,7 +15114,7 @@ func (a *HasOneApiService) GETTransactionIdOrderExecute(r HasOneApiGETTransactio
 type HasOneApiGETVoidIdOrderRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	voidId     string
+	voidId     interface{}
 }
 
 func (r HasOneApiGETVoidIdOrderRequest) Execute() (*http.Response, error) {
@@ -13842,7 +15130,7 @@ Retrieve the order associated to the void
 	@param voidId The resource's id
 	@return HasOneApiGETVoidIdOrderRequest
 */
-func (a *HasOneApiService) GETVoidIdOrder(ctx context.Context, voidId string) HasOneApiGETVoidIdOrderRequest {
+func (a *HasOneApiService) GETVoidIdOrder(ctx context.Context, voidId interface{}) HasOneApiGETVoidIdOrderRequest {
 	return HasOneApiGETVoidIdOrderRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -13864,7 +15152,7 @@ func (a *HasOneApiService) GETVoidIdOrderExecute(r HasOneApiGETVoidIdOrderReques
 	}
 
 	localVarPath := localBasePath + "/voids/{voidId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"voidId"+"}", url.PathEscape(parameterToString(r.voidId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"voidId"+"}", url.PathEscape(parameterValueToString(r.voidId, "voidId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13897,9 +15185,9 @@ func (a *HasOneApiService) GETVoidIdOrderExecute(r HasOneApiGETVoidIdOrderReques
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13918,7 +15206,7 @@ func (a *HasOneApiService) GETVoidIdOrderExecute(r HasOneApiGETVoidIdOrderReques
 type HasOneApiGETVoidIdReferenceAuthorizationRequest struct {
 	ctx        context.Context
 	ApiService *HasOneApiService
-	voidId     string
+	voidId     interface{}
 }
 
 func (r HasOneApiGETVoidIdReferenceAuthorizationRequest) Execute() (*http.Response, error) {
@@ -13934,7 +15222,7 @@ Retrieve the reference authorization associated to the void
 	@param voidId The resource's id
 	@return HasOneApiGETVoidIdReferenceAuthorizationRequest
 */
-func (a *HasOneApiService) GETVoidIdReferenceAuthorization(ctx context.Context, voidId string) HasOneApiGETVoidIdReferenceAuthorizationRequest {
+func (a *HasOneApiService) GETVoidIdReferenceAuthorization(ctx context.Context, voidId interface{}) HasOneApiGETVoidIdReferenceAuthorizationRequest {
 	return HasOneApiGETVoidIdReferenceAuthorizationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -13956,7 +15244,7 @@ func (a *HasOneApiService) GETVoidIdReferenceAuthorizationExecute(r HasOneApiGET
 	}
 
 	localVarPath := localBasePath + "/voids/{voidId}/reference_authorization"
-	localVarPath = strings.Replace(localVarPath, "{"+"voidId"+"}", url.PathEscape(parameterToString(r.voidId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"voidId"+"}", url.PathEscape(parameterValueToString(r.voidId, "voidId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13989,9 +15277,9 @@ func (a *HasOneApiService) GETVoidIdReferenceAuthorizationExecute(r HasOneApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -14010,7 +15298,7 @@ func (a *HasOneApiService) GETVoidIdReferenceAuthorizationExecute(r HasOneApiGET
 type HasOneApiGETWireTransferIdOrderRequest struct {
 	ctx            context.Context
 	ApiService     *HasOneApiService
-	wireTransferId string
+	wireTransferId interface{}
 }
 
 func (r HasOneApiGETWireTransferIdOrderRequest) Execute() (*http.Response, error) {
@@ -14026,7 +15314,7 @@ Retrieve the order associated to the wire transfer
 	@param wireTransferId The resource's id
 	@return HasOneApiGETWireTransferIdOrderRequest
 */
-func (a *HasOneApiService) GETWireTransferIdOrder(ctx context.Context, wireTransferId string) HasOneApiGETWireTransferIdOrderRequest {
+func (a *HasOneApiService) GETWireTransferIdOrder(ctx context.Context, wireTransferId interface{}) HasOneApiGETWireTransferIdOrderRequest {
 	return HasOneApiGETWireTransferIdOrderRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -14048,7 +15336,7 @@ func (a *HasOneApiService) GETWireTransferIdOrderExecute(r HasOneApiGETWireTrans
 	}
 
 	localVarPath := localBasePath + "/wire_transfers/{wireTransferId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"wireTransferId"+"}", url.PathEscape(parameterToString(r.wireTransferId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wireTransferId"+"}", url.PathEscape(parameterValueToString(r.wireTransferId, "wireTransferId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14081,9 +15369,9 @@ func (a *HasOneApiService) GETWireTransferIdOrderExecute(r HasOneApiGETWireTrans
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

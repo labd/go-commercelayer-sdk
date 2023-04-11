@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the ShippingMethodUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ShippingMethodUpdate{}
+
 // ShippingMethodUpdate struct for ShippingMethodUpdate
 type ShippingMethodUpdate struct {
-	Data ShippingMethodUpdateData `json:"data"`
+	Data PATCHShippingMethodsShippingMethodIdRequestData `json:"data"`
 }
 
 // NewShippingMethodUpdate instantiates a new ShippingMethodUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShippingMethodUpdate(data ShippingMethodUpdateData) *ShippingMethodUpdate {
+func NewShippingMethodUpdate(data PATCHShippingMethodsShippingMethodIdRequestData) *ShippingMethodUpdate {
 	this := ShippingMethodUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewShippingMethodUpdateWithDefaults() *ShippingMethodUpdate {
 }
 
 // GetData returns the Data field value
-func (o *ShippingMethodUpdate) GetData() ShippingMethodUpdateData {
+func (o *ShippingMethodUpdate) GetData() PATCHShippingMethodsShippingMethodIdRequestData {
 	if o == nil {
-		var ret ShippingMethodUpdateData
+		var ret PATCHShippingMethodsShippingMethodIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *ShippingMethodUpdate) GetData() ShippingMethodUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ShippingMethodUpdate) GetDataOk() (*ShippingMethodUpdateData, bool) {
+func (o *ShippingMethodUpdate) GetDataOk() (*PATCHShippingMethodsShippingMethodIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *ShippingMethodUpdate) GetDataOk() (*ShippingMethodUpdateData, bool) {
 }
 
 // SetData sets field value
-func (o *ShippingMethodUpdate) SetData(v ShippingMethodUpdateData) {
+func (o *ShippingMethodUpdate) SetData(v PATCHShippingMethodsShippingMethodIdRequestData) {
 	o.Data = v
 }
 
 func (o ShippingMethodUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ShippingMethodUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableShippingMethodUpdate struct {

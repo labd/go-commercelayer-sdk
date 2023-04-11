@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the WebhookData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &WebhookData{}
+
 // WebhookData struct for WebhookData
 type WebhookData struct {
 	// The resource's type
-	Type          string                                    `json:"type"`
-	Attributes    GETWebhooks200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *WebhookDataRelationships                 `json:"relationships,omitempty"`
+	Type          interface{}                                   `json:"type"`
+	Attributes    GETWebhooksWebhookId200ResponseDataAttributes `json:"attributes"`
+	Relationships *WebhookDataRelationships                     `json:"relationships,omitempty"`
 }
 
 // NewWebhookData instantiates a new WebhookData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWebhookData(type_ string, attributes GETWebhooks200ResponseDataInnerAttributes) *WebhookData {
+func NewWebhookData(type_ interface{}, attributes GETWebhooksWebhookId200ResponseDataAttributes) *WebhookData {
 	this := WebhookData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -43,9 +46,10 @@ func NewWebhookDataWithDefaults() *WebhookData {
 }
 
 // GetType returns the Type field value
-func (o *WebhookData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *WebhookData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -54,22 +58,23 @@ func (o *WebhookData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *WebhookData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *WebhookData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *WebhookData) SetType(v string) {
+func (o *WebhookData) SetType(v interface{}) {
 	o.Type = v
 }
 
 // GetAttributes returns the Attributes field value
-func (o *WebhookData) GetAttributes() GETWebhooks200ResponseDataInnerAttributes {
+func (o *WebhookData) GetAttributes() GETWebhooksWebhookId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETWebhooks200ResponseDataInnerAttributes
+		var ret GETWebhooksWebhookId200ResponseDataAttributes
 		return ret
 	}
 
@@ -78,7 +83,7 @@ func (o *WebhookData) GetAttributes() GETWebhooks200ResponseDataInnerAttributes 
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *WebhookData) GetAttributesOk() (*GETWebhooks200ResponseDataInnerAttributes, bool) {
+func (o *WebhookData) GetAttributesOk() (*GETWebhooksWebhookId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,13 +91,13 @@ func (o *WebhookData) GetAttributesOk() (*GETWebhooks200ResponseDataInnerAttribu
 }
 
 // SetAttributes sets field value
-func (o *WebhookData) SetAttributes(v GETWebhooks200ResponseDataInnerAttributes) {
+func (o *WebhookData) SetAttributes(v GETWebhooksWebhookId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *WebhookData) GetRelationships() WebhookDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret WebhookDataRelationships
 		return ret
 	}
@@ -102,7 +107,7 @@ func (o *WebhookData) GetRelationships() WebhookDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WebhookData) GetRelationshipsOk() (*WebhookDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -110,7 +115,7 @@ func (o *WebhookData) GetRelationshipsOk() (*WebhookDataRelationships, bool) {
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *WebhookData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -123,17 +128,23 @@ func (o *WebhookData) SetRelationships(v WebhookDataRelationships) {
 }
 
 func (o WebhookData) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
-		toSerialize["relationships"] = o.Relationships
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o WebhookData) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
+		toSerialize["relationships"] = o.Relationships
+	}
+	return toSerialize, nil
 }
 
 type NullableWebhookData struct {

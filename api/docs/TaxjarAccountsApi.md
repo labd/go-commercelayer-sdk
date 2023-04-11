@@ -1,6 +1,6 @@
 # \TaxjarAccountsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,15 +29,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    taxjarAccountId := "taxjarAccountId_example" // string | The resource's id
+    taxjarAccountId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TaxjarAccountsApi.DELETETaxjarAccountsTaxjarAccountId(context.Background(), taxjarAccountId).Execute()
+    r, err := apiClient.TaxjarAccountsApi.DELETETaxjarAccountsTaxjarAccountId(context.Background(), taxjarAccountId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxjarAccountsApi.DELETETaxjarAccountsTaxjarAccountId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -51,7 +51,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**taxjarAccountId** | **string** | The resource&#39;s id | 
+**taxjarAccountId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -158,11 +158,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    taxjarAccountId := "taxjarAccountId_example" // string | The resource's id
+    taxjarAccountId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -182,7 +182,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**taxjarAccountId** | **string** | The resource&#39;s id | 
+**taxjarAccountId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHTaxjarAccountsTaxjarAccountId
 
-> PATCHTaxjarAccountsTaxjarAccountId200Response PATCHTaxjarAccountsTaxjarAccountId(ctx, taxjarAccountId).TaxjarAccountUpdate(taxjarAccountUpdate).Execute()
+> PATCHTaxjarAccountsTaxjarAccountId200Response PATCHTaxjarAccountsTaxjarAccountId(ctx, taxjarAccountId).PATCHTaxjarAccountsTaxjarAccountIdRequest(pATCHTaxjarAccountsTaxjarAccountIdRequest).Execute()
 
 Update a taxjar account
 
@@ -228,16 +228,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    taxjarAccountUpdate := *openapiclient.NewTaxjarAccountUpdate(*openapiclient.NewTaxjarAccountUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHTaxjarAccountsTaxjarAccountId200ResponseDataAttributes())) // TaxjarAccountUpdate | 
-    taxjarAccountId := "taxjarAccountId_example" // string | The resource's id
+    pATCHTaxjarAccountsTaxjarAccountIdRequest := *openapiclient.NewPATCHTaxjarAccountsTaxjarAccountIdRequest(*openapiclient.NewPATCHTaxjarAccountsTaxjarAccountIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHTaxjarAccountsTaxjarAccountIdRequestDataAttributes())) // PATCHTaxjarAccountsTaxjarAccountIdRequest | 
+    taxjarAccountId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TaxjarAccountsApi.PATCHTaxjarAccountsTaxjarAccountId(context.Background(), taxjarAccountId).TaxjarAccountUpdate(taxjarAccountUpdate).Execute()
+    resp, r, err := apiClient.TaxjarAccountsApi.PATCHTaxjarAccountsTaxjarAccountId(context.Background(), taxjarAccountId).PATCHTaxjarAccountsTaxjarAccountIdRequest(pATCHTaxjarAccountsTaxjarAccountIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxjarAccountsApi.PATCHTaxjarAccountsTaxjarAccountId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -253,7 +253,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**taxjarAccountId** | **string** | The resource&#39;s id | 
+**taxjarAccountId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -262,7 +262,7 @@ Other parameters are passed through a pointer to a apiPATCHTaxjarAccountsTaxjarA
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **taxjarAccountUpdate** | [**TaxjarAccountUpdate**](TaxjarAccountUpdate.md) |  | 
+ **pATCHTaxjarAccountsTaxjarAccountIdRequest** | [**PATCHTaxjarAccountsTaxjarAccountIdRequest**](PATCHTaxjarAccountsTaxjarAccountIdRequest.md) |  | 
 
 
 ### Return type
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTTaxjarAccounts
 
-> POSTTaxjarAccounts201Response POSTTaxjarAccounts(ctx).TaxjarAccountCreate(taxjarAccountCreate).Execute()
+> POSTTaxjarAccounts201Response POSTTaxjarAccounts(ctx).POSTTaxjarAccountsRequest(pOSTTaxjarAccountsRequest).Execute()
 
 Create a taxjar account
 
@@ -300,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    taxjarAccountCreate := *openapiclient.NewTaxjarAccountCreate(*openapiclient.NewTaxjarAccountCreateData("Type_example", *openapiclient.NewPOSTTaxjarAccounts201ResponseDataAttributes("Personal tax calculator", "TAXJAR_API_KEY"))) // TaxjarAccountCreate | 
+    pOSTTaxjarAccountsRequest := *openapiclient.NewPOSTTaxjarAccountsRequest(*openapiclient.NewPOSTTaxjarAccountsRequestData(interface{}(123), *openapiclient.NewPOSTTaxjarAccountsRequestDataAttributes(interface{}(Personal tax calculator), interface{}(TAXJAR_API_KEY)))) // POSTTaxjarAccountsRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TaxjarAccountsApi.POSTTaxjarAccounts(context.Background()).TaxjarAccountCreate(taxjarAccountCreate).Execute()
+    resp, r, err := apiClient.TaxjarAccountsApi.POSTTaxjarAccounts(context.Background()).POSTTaxjarAccountsRequest(pOSTTaxjarAccountsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxjarAccountsApi.POSTTaxjarAccounts``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiPOSTTaxjarAccountsRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **taxjarAccountCreate** | [**TaxjarAccountCreate**](TaxjarAccountCreate.md) |  | 
+ **pOSTTaxjarAccountsRequest** | [**POSTTaxjarAccountsRequest**](POSTTaxjarAccountsRequest.md) |  | 
 
 ### Return type
 

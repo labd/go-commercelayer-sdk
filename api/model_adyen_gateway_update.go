@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the AdyenGatewayUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AdyenGatewayUpdate{}
+
 // AdyenGatewayUpdate struct for AdyenGatewayUpdate
 type AdyenGatewayUpdate struct {
-	Data AdyenGatewayUpdateData `json:"data"`
+	Data PATCHAdyenGatewaysAdyenGatewayIdRequestData `json:"data"`
 }
 
 // NewAdyenGatewayUpdate instantiates a new AdyenGatewayUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAdyenGatewayUpdate(data AdyenGatewayUpdateData) *AdyenGatewayUpdate {
+func NewAdyenGatewayUpdate(data PATCHAdyenGatewaysAdyenGatewayIdRequestData) *AdyenGatewayUpdate {
 	this := AdyenGatewayUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewAdyenGatewayUpdateWithDefaults() *AdyenGatewayUpdate {
 }
 
 // GetData returns the Data field value
-func (o *AdyenGatewayUpdate) GetData() AdyenGatewayUpdateData {
+func (o *AdyenGatewayUpdate) GetData() PATCHAdyenGatewaysAdyenGatewayIdRequestData {
 	if o == nil {
-		var ret AdyenGatewayUpdateData
+		var ret PATCHAdyenGatewaysAdyenGatewayIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *AdyenGatewayUpdate) GetData() AdyenGatewayUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *AdyenGatewayUpdate) GetDataOk() (*AdyenGatewayUpdateData, bool) {
+func (o *AdyenGatewayUpdate) GetDataOk() (*PATCHAdyenGatewaysAdyenGatewayIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *AdyenGatewayUpdate) GetDataOk() (*AdyenGatewayUpdateData, bool) {
 }
 
 // SetData sets field value
-func (o *AdyenGatewayUpdate) SetData(v AdyenGatewayUpdateData) {
+func (o *AdyenGatewayUpdate) SetData(v PATCHAdyenGatewaysAdyenGatewayIdRequestData) {
 	o.Data = v
 }
 
 func (o AdyenGatewayUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AdyenGatewayUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableAdyenGatewayUpdate struct {

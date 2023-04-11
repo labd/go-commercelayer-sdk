@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the StripeGatewayCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &StripeGatewayCreate{}
+
 // StripeGatewayCreate struct for StripeGatewayCreate
 type StripeGatewayCreate struct {
-	Data StripeGatewayCreateData `json:"data"`
+	Data POSTStripeGatewaysRequestData `json:"data"`
 }
 
 // NewStripeGatewayCreate instantiates a new StripeGatewayCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStripeGatewayCreate(data StripeGatewayCreateData) *StripeGatewayCreate {
+func NewStripeGatewayCreate(data POSTStripeGatewaysRequestData) *StripeGatewayCreate {
 	this := StripeGatewayCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewStripeGatewayCreateWithDefaults() *StripeGatewayCreate {
 }
 
 // GetData returns the Data field value
-func (o *StripeGatewayCreate) GetData() StripeGatewayCreateData {
+func (o *StripeGatewayCreate) GetData() POSTStripeGatewaysRequestData {
 	if o == nil {
-		var ret StripeGatewayCreateData
+		var ret POSTStripeGatewaysRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *StripeGatewayCreate) GetData() StripeGatewayCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *StripeGatewayCreate) GetDataOk() (*StripeGatewayCreateData, bool) {
+func (o *StripeGatewayCreate) GetDataOk() (*POSTStripeGatewaysRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *StripeGatewayCreate) GetDataOk() (*StripeGatewayCreateData, bool) {
 }
 
 // SetData sets field value
-func (o *StripeGatewayCreate) SetData(v StripeGatewayCreateData) {
+func (o *StripeGatewayCreate) SetData(v POSTStripeGatewaysRequestData) {
 	o.Data = v
 }
 
 func (o StripeGatewayCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o StripeGatewayCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableStripeGatewayCreate struct {

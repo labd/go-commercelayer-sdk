@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the PriceDataRelationshipsPriceTiers type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PriceDataRelationshipsPriceTiers{}
+
 // PriceDataRelationshipsPriceTiers struct for PriceDataRelationshipsPriceTiers
 type PriceDataRelationshipsPriceTiers struct {
-	Data *PriceDataRelationshipsPriceTiersData `json:"data,omitempty"`
+	Data *POSTPricesRequestDataRelationshipsPriceTiersData `json:"data,omitempty"`
 }
 
 // NewPriceDataRelationshipsPriceTiers instantiates a new PriceDataRelationshipsPriceTiers object
@@ -38,9 +41,9 @@ func NewPriceDataRelationshipsPriceTiersWithDefaults() *PriceDataRelationshipsPr
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *PriceDataRelationshipsPriceTiers) GetData() PriceDataRelationshipsPriceTiersData {
-	if o == nil || o.Data == nil {
-		var ret PriceDataRelationshipsPriceTiersData
+func (o *PriceDataRelationshipsPriceTiers) GetData() POSTPricesRequestDataRelationshipsPriceTiersData {
+	if o == nil || IsNil(o.Data) {
+		var ret POSTPricesRequestDataRelationshipsPriceTiersData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *PriceDataRelationshipsPriceTiers) GetData() PriceDataRelationshipsPrice
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PriceDataRelationshipsPriceTiers) GetDataOk() (*PriceDataRelationshipsPriceTiersData, bool) {
-	if o == nil || o.Data == nil {
+func (o *PriceDataRelationshipsPriceTiers) GetDataOk() (*POSTPricesRequestDataRelationshipsPriceTiersData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *PriceDataRelationshipsPriceTiers) GetDataOk() (*PriceDataRelationshipsP
 
 // HasData returns a boolean if a field has been set.
 func (o *PriceDataRelationshipsPriceTiers) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given PriceDataRelationshipsPriceTiersData and assigns it to the Data field.
-func (o *PriceDataRelationshipsPriceTiers) SetData(v PriceDataRelationshipsPriceTiersData) {
+// SetData gets a reference to the given POSTPricesRequestDataRelationshipsPriceTiersData and assigns it to the Data field.
+func (o *PriceDataRelationshipsPriceTiers) SetData(v POSTPricesRequestDataRelationshipsPriceTiersData) {
 	o.Data = &v
 }
 
 func (o PriceDataRelationshipsPriceTiers) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PriceDataRelationshipsPriceTiers) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullablePriceDataRelationshipsPriceTiers struct {

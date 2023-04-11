@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the FixedAmountPromotionUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &FixedAmountPromotionUpdate{}
+
 // FixedAmountPromotionUpdate struct for FixedAmountPromotionUpdate
 type FixedAmountPromotionUpdate struct {
-	Data FixedAmountPromotionUpdateData `json:"data"`
+	Data PATCHFixedAmountPromotionsFixedAmountPromotionIdRequestData `json:"data"`
 }
 
 // NewFixedAmountPromotionUpdate instantiates a new FixedAmountPromotionUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFixedAmountPromotionUpdate(data FixedAmountPromotionUpdateData) *FixedAmountPromotionUpdate {
+func NewFixedAmountPromotionUpdate(data PATCHFixedAmountPromotionsFixedAmountPromotionIdRequestData) *FixedAmountPromotionUpdate {
 	this := FixedAmountPromotionUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewFixedAmountPromotionUpdateWithDefaults() *FixedAmountPromotionUpdate {
 }
 
 // GetData returns the Data field value
-func (o *FixedAmountPromotionUpdate) GetData() FixedAmountPromotionUpdateData {
+func (o *FixedAmountPromotionUpdate) GetData() PATCHFixedAmountPromotionsFixedAmountPromotionIdRequestData {
 	if o == nil {
-		var ret FixedAmountPromotionUpdateData
+		var ret PATCHFixedAmountPromotionsFixedAmountPromotionIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *FixedAmountPromotionUpdate) GetData() FixedAmountPromotionUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *FixedAmountPromotionUpdate) GetDataOk() (*FixedAmountPromotionUpdateData, bool) {
+func (o *FixedAmountPromotionUpdate) GetDataOk() (*PATCHFixedAmountPromotionsFixedAmountPromotionIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *FixedAmountPromotionUpdate) GetDataOk() (*FixedAmountPromotionUpdateDat
 }
 
 // SetData sets field value
-func (o *FixedAmountPromotionUpdate) SetData(v FixedAmountPromotionUpdateData) {
+func (o *FixedAmountPromotionUpdate) SetData(v PATCHFixedAmountPromotionsFixedAmountPromotionIdRequestData) {
 	o.Data = v
 }
 
 func (o FixedAmountPromotionUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o FixedAmountPromotionUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableFixedAmountPromotionUpdate struct {

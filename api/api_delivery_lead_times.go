@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type DeliveryLeadTimesApiService service
 type DeliveryLeadTimesApiDELETEDeliveryLeadTimesDeliveryLeadTimeIdRequest struct {
 	ctx                context.Context
 	ApiService         *DeliveryLeadTimesApiService
-	deliveryLeadTimeId string
+	deliveryLeadTimeId interface{}
 }
 
 func (r DeliveryLeadTimesApiDELETEDeliveryLeadTimesDeliveryLeadTimeIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a delivery lead time
 	@param deliveryLeadTimeId The resource's id
 	@return DeliveryLeadTimesApiDELETEDeliveryLeadTimesDeliveryLeadTimeIdRequest
 */
-func (a *DeliveryLeadTimesApiService) DELETEDeliveryLeadTimesDeliveryLeadTimeId(ctx context.Context, deliveryLeadTimeId string) DeliveryLeadTimesApiDELETEDeliveryLeadTimesDeliveryLeadTimeIdRequest {
+func (a *DeliveryLeadTimesApiService) DELETEDeliveryLeadTimesDeliveryLeadTimeId(ctx context.Context, deliveryLeadTimeId interface{}) DeliveryLeadTimesApiDELETEDeliveryLeadTimesDeliveryLeadTimeIdRequest {
 	return DeliveryLeadTimesApiDELETEDeliveryLeadTimesDeliveryLeadTimeIdRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -64,7 +64,7 @@ func (a *DeliveryLeadTimesApiService) DELETEDeliveryLeadTimesDeliveryLeadTimeIdE
 	}
 
 	localVarPath := localBasePath + "/delivery_lead_times/{deliveryLeadTimeId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"deliveryLeadTimeId"+"}", url.PathEscape(parameterToString(r.deliveryLeadTimeId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"deliveryLeadTimeId"+"}", url.PathEscape(parameterValueToString(r.deliveryLeadTimeId, "deliveryLeadTimeId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *DeliveryLeadTimesApiService) DELETEDeliveryLeadTimesDeliveryLeadTimeIdE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *DeliveryLeadTimesApiService) GETDeliveryLeadTimesExecute(r DeliveryLead
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -218,7 +218,7 @@ func (a *DeliveryLeadTimesApiService) GETDeliveryLeadTimesExecute(r DeliveryLead
 type DeliveryLeadTimesApiGETDeliveryLeadTimesDeliveryLeadTimeIdRequest struct {
 	ctx                context.Context
 	ApiService         *DeliveryLeadTimesApiService
-	deliveryLeadTimeId string
+	deliveryLeadTimeId interface{}
 }
 
 func (r DeliveryLeadTimesApiGETDeliveryLeadTimesDeliveryLeadTimeIdRequest) Execute() (*GETDeliveryLeadTimesDeliveryLeadTimeId200Response, *http.Response, error) {
@@ -234,7 +234,7 @@ Retrieve a delivery lead time
 	@param deliveryLeadTimeId The resource's id
 	@return DeliveryLeadTimesApiGETDeliveryLeadTimesDeliveryLeadTimeIdRequest
 */
-func (a *DeliveryLeadTimesApiService) GETDeliveryLeadTimesDeliveryLeadTimeId(ctx context.Context, deliveryLeadTimeId string) DeliveryLeadTimesApiGETDeliveryLeadTimesDeliveryLeadTimeIdRequest {
+func (a *DeliveryLeadTimesApiService) GETDeliveryLeadTimesDeliveryLeadTimeId(ctx context.Context, deliveryLeadTimeId interface{}) DeliveryLeadTimesApiGETDeliveryLeadTimesDeliveryLeadTimeIdRequest {
 	return DeliveryLeadTimesApiGETDeliveryLeadTimesDeliveryLeadTimeIdRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -259,7 +259,7 @@ func (a *DeliveryLeadTimesApiService) GETDeliveryLeadTimesDeliveryLeadTimeIdExec
 	}
 
 	localVarPath := localBasePath + "/delivery_lead_times/{deliveryLeadTimeId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"deliveryLeadTimeId"+"}", url.PathEscape(parameterToString(r.deliveryLeadTimeId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"deliveryLeadTimeId"+"}", url.PathEscape(parameterValueToString(r.deliveryLeadTimeId, "deliveryLeadTimeId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *DeliveryLeadTimesApiService) GETDeliveryLeadTimesDeliveryLeadTimeIdExec
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -322,7 +322,7 @@ func (a *DeliveryLeadTimesApiService) GETDeliveryLeadTimesDeliveryLeadTimeIdExec
 type DeliveryLeadTimesApiGETShipmentIdDeliveryLeadTimeRequest struct {
 	ctx        context.Context
 	ApiService *DeliveryLeadTimesApiService
-	shipmentId string
+	shipmentId interface{}
 }
 
 func (r DeliveryLeadTimesApiGETShipmentIdDeliveryLeadTimeRequest) Execute() (*http.Response, error) {
@@ -338,7 +338,7 @@ Retrieve the delivery lead time associated to the shipment
 	@param shipmentId The resource's id
 	@return DeliveryLeadTimesApiGETShipmentIdDeliveryLeadTimeRequest
 */
-func (a *DeliveryLeadTimesApiService) GETShipmentIdDeliveryLeadTime(ctx context.Context, shipmentId string) DeliveryLeadTimesApiGETShipmentIdDeliveryLeadTimeRequest {
+func (a *DeliveryLeadTimesApiService) GETShipmentIdDeliveryLeadTime(ctx context.Context, shipmentId interface{}) DeliveryLeadTimesApiGETShipmentIdDeliveryLeadTimeRequest {
 	return DeliveryLeadTimesApiGETShipmentIdDeliveryLeadTimeRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -360,7 +360,7 @@ func (a *DeliveryLeadTimesApiService) GETShipmentIdDeliveryLeadTimeExecute(r Del
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/delivery_lead_time"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -393,9 +393,9 @@ func (a *DeliveryLeadTimesApiService) GETShipmentIdDeliveryLeadTimeExecute(r Del
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -414,7 +414,7 @@ func (a *DeliveryLeadTimesApiService) GETShipmentIdDeliveryLeadTimeExecute(r Del
 type DeliveryLeadTimesApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest struct {
 	ctx              context.Context
 	ApiService       *DeliveryLeadTimesApiService
-	shippingMethodId string
+	shippingMethodId interface{}
 }
 
 func (r DeliveryLeadTimesApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest) Execute() (*http.Response, error) {
@@ -430,7 +430,7 @@ Retrieve the delivery lead time for shipment associated to the shipping method
 	@param shippingMethodId The resource's id
 	@return DeliveryLeadTimesApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest
 */
-func (a *DeliveryLeadTimesApiService) GETShippingMethodIdDeliveryLeadTimeForShipment(ctx context.Context, shippingMethodId string) DeliveryLeadTimesApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest {
+func (a *DeliveryLeadTimesApiService) GETShippingMethodIdDeliveryLeadTimeForShipment(ctx context.Context, shippingMethodId interface{}) DeliveryLeadTimesApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest {
 	return DeliveryLeadTimesApiGETShippingMethodIdDeliveryLeadTimeForShipmentRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -452,7 +452,7 @@ func (a *DeliveryLeadTimesApiService) GETShippingMethodIdDeliveryLeadTimeForShip
 	}
 
 	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}/delivery_lead_time_for_shipment"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodId, "shippingMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -485,9 +485,9 @@ func (a *DeliveryLeadTimesApiService) GETShippingMethodIdDeliveryLeadTimeForShip
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -506,7 +506,7 @@ func (a *DeliveryLeadTimesApiService) GETShippingMethodIdDeliveryLeadTimeForShip
 type DeliveryLeadTimesApiGETSkuIdDeliveryLeadTimesRequest struct {
 	ctx        context.Context
 	ApiService *DeliveryLeadTimesApiService
-	skuId      string
+	skuId      interface{}
 }
 
 func (r DeliveryLeadTimesApiGETSkuIdDeliveryLeadTimesRequest) Execute() (*http.Response, error) {
@@ -522,7 +522,7 @@ Retrieve the delivery lead times associated to the SKU
 	@param skuId The resource's id
 	@return DeliveryLeadTimesApiGETSkuIdDeliveryLeadTimesRequest
 */
-func (a *DeliveryLeadTimesApiService) GETSkuIdDeliveryLeadTimes(ctx context.Context, skuId string) DeliveryLeadTimesApiGETSkuIdDeliveryLeadTimesRequest {
+func (a *DeliveryLeadTimesApiService) GETSkuIdDeliveryLeadTimes(ctx context.Context, skuId interface{}) DeliveryLeadTimesApiGETSkuIdDeliveryLeadTimesRequest {
 	return DeliveryLeadTimesApiGETSkuIdDeliveryLeadTimesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -544,7 +544,7 @@ func (a *DeliveryLeadTimesApiService) GETSkuIdDeliveryLeadTimesExecute(r Deliver
 	}
 
 	localVarPath := localBasePath + "/skus/{skuId}/delivery_lead_times"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterToString(r.skuId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -577,9 +577,9 @@ func (a *DeliveryLeadTimesApiService) GETSkuIdDeliveryLeadTimesExecute(r Deliver
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -596,14 +596,14 @@ func (a *DeliveryLeadTimesApiService) GETSkuIdDeliveryLeadTimesExecute(r Deliver
 }
 
 type DeliveryLeadTimesApiPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest struct {
-	ctx                    context.Context
-	ApiService             *DeliveryLeadTimesApiService
-	deliveryLeadTimeUpdate *DeliveryLeadTimeUpdate
-	deliveryLeadTimeId     string
+	ctx                                             context.Context
+	ApiService                                      *DeliveryLeadTimesApiService
+	pATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest *PATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest
+	deliveryLeadTimeId                              interface{}
 }
 
-func (r DeliveryLeadTimesApiPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest) DeliveryLeadTimeUpdate(deliveryLeadTimeUpdate DeliveryLeadTimeUpdate) DeliveryLeadTimesApiPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest {
-	r.deliveryLeadTimeUpdate = &deliveryLeadTimeUpdate
+func (r DeliveryLeadTimesApiPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest) PATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest(pATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest PATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest) DeliveryLeadTimesApiPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest {
+	r.pATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest = &pATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest
 	return r
 }
 
@@ -620,7 +620,7 @@ Update a delivery lead time
 	@param deliveryLeadTimeId The resource's id
 	@return DeliveryLeadTimesApiPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest
 */
-func (a *DeliveryLeadTimesApiService) PATCHDeliveryLeadTimesDeliveryLeadTimeId(ctx context.Context, deliveryLeadTimeId string) DeliveryLeadTimesApiPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest {
+func (a *DeliveryLeadTimesApiService) PATCHDeliveryLeadTimesDeliveryLeadTimeId(ctx context.Context, deliveryLeadTimeId interface{}) DeliveryLeadTimesApiPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest {
 	return DeliveryLeadTimesApiPATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -645,13 +645,13 @@ func (a *DeliveryLeadTimesApiService) PATCHDeliveryLeadTimesDeliveryLeadTimeIdEx
 	}
 
 	localVarPath := localBasePath + "/delivery_lead_times/{deliveryLeadTimeId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"deliveryLeadTimeId"+"}", url.PathEscape(parameterToString(r.deliveryLeadTimeId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"deliveryLeadTimeId"+"}", url.PathEscape(parameterValueToString(r.deliveryLeadTimeId, "deliveryLeadTimeId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.deliveryLeadTimeUpdate == nil {
-		return localVarReturnValue, nil, reportError("deliveryLeadTimeUpdate is required and must be specified")
+	if r.pATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest == nil {
+		return localVarReturnValue, nil, reportError("pATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -672,7 +672,7 @@ func (a *DeliveryLeadTimesApiService) PATCHDeliveryLeadTimesDeliveryLeadTimeIdEx
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.deliveryLeadTimeUpdate
+	localVarPostBody = r.pATCHDeliveryLeadTimesDeliveryLeadTimeIdRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -683,9 +683,9 @@ func (a *DeliveryLeadTimesApiService) PATCHDeliveryLeadTimesDeliveryLeadTimeIdEx
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -711,13 +711,13 @@ func (a *DeliveryLeadTimesApiService) PATCHDeliveryLeadTimesDeliveryLeadTimeIdEx
 }
 
 type DeliveryLeadTimesApiPOSTDeliveryLeadTimesRequest struct {
-	ctx                    context.Context
-	ApiService             *DeliveryLeadTimesApiService
-	deliveryLeadTimeCreate *DeliveryLeadTimeCreate
+	ctx                          context.Context
+	ApiService                   *DeliveryLeadTimesApiService
+	pOSTDeliveryLeadTimesRequest *POSTDeliveryLeadTimesRequest
 }
 
-func (r DeliveryLeadTimesApiPOSTDeliveryLeadTimesRequest) DeliveryLeadTimeCreate(deliveryLeadTimeCreate DeliveryLeadTimeCreate) DeliveryLeadTimesApiPOSTDeliveryLeadTimesRequest {
-	r.deliveryLeadTimeCreate = &deliveryLeadTimeCreate
+func (r DeliveryLeadTimesApiPOSTDeliveryLeadTimesRequest) POSTDeliveryLeadTimesRequest(pOSTDeliveryLeadTimesRequest POSTDeliveryLeadTimesRequest) DeliveryLeadTimesApiPOSTDeliveryLeadTimesRequest {
+	r.pOSTDeliveryLeadTimesRequest = &pOSTDeliveryLeadTimesRequest
 	return r
 }
 
@@ -761,8 +761,8 @@ func (a *DeliveryLeadTimesApiService) POSTDeliveryLeadTimesExecute(r DeliveryLea
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.deliveryLeadTimeCreate == nil {
-		return localVarReturnValue, nil, reportError("deliveryLeadTimeCreate is required and must be specified")
+	if r.pOSTDeliveryLeadTimesRequest == nil {
+		return localVarReturnValue, nil, reportError("pOSTDeliveryLeadTimesRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -783,7 +783,7 @@ func (a *DeliveryLeadTimesApiService) POSTDeliveryLeadTimesExecute(r DeliveryLea
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.deliveryLeadTimeCreate
+	localVarPostBody = r.pOSTDeliveryLeadTimesRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -794,9 +794,9 @@ func (a *DeliveryLeadTimesApiService) POSTDeliveryLeadTimesExecute(r DeliveryLea
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

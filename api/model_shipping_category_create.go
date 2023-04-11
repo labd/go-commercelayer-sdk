@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the ShippingCategoryCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ShippingCategoryCreate{}
+
 // ShippingCategoryCreate struct for ShippingCategoryCreate
 type ShippingCategoryCreate struct {
-	Data ShippingCategoryCreateData `json:"data"`
+	Data POSTShippingCategoriesRequestData `json:"data"`
 }
 
 // NewShippingCategoryCreate instantiates a new ShippingCategoryCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShippingCategoryCreate(data ShippingCategoryCreateData) *ShippingCategoryCreate {
+func NewShippingCategoryCreate(data POSTShippingCategoriesRequestData) *ShippingCategoryCreate {
 	this := ShippingCategoryCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewShippingCategoryCreateWithDefaults() *ShippingCategoryCreate {
 }
 
 // GetData returns the Data field value
-func (o *ShippingCategoryCreate) GetData() ShippingCategoryCreateData {
+func (o *ShippingCategoryCreate) GetData() POSTShippingCategoriesRequestData {
 	if o == nil {
-		var ret ShippingCategoryCreateData
+		var ret POSTShippingCategoriesRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *ShippingCategoryCreate) GetData() ShippingCategoryCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ShippingCategoryCreate) GetDataOk() (*ShippingCategoryCreateData, bool) {
+func (o *ShippingCategoryCreate) GetDataOk() (*POSTShippingCategoriesRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *ShippingCategoryCreate) GetDataOk() (*ShippingCategoryCreateData, bool)
 }
 
 // SetData sets field value
-func (o *ShippingCategoryCreate) SetData(v ShippingCategoryCreateData) {
+func (o *ShippingCategoryCreate) SetData(v POSTShippingCategoriesRequestData) {
 	o.Data = v
 }
 
 func (o ShippingCategoryCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ShippingCategoryCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableShippingCategoryCreate struct {

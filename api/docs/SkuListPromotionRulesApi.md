@@ -1,6 +1,6 @@
 # \SkuListPromotionRulesApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -36,15 +36,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    skuListPromotionRuleId := "skuListPromotionRuleId_example" // string | The resource's id
+    skuListPromotionRuleId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListPromotionRulesApi.DELETESkuListPromotionRulesSkuListPromotionRuleId(context.Background(), skuListPromotionRuleId).Execute()
+    r, err := apiClient.SkuListPromotionRulesApi.DELETESkuListPromotionRulesSkuListPromotionRuleId(context.Background(), skuListPromotionRuleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.DELETESkuListPromotionRulesSkuListPromotionRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -58,7 +58,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**skuListPromotionRuleId** | **string** | The resource&#39;s id | 
+**skuListPromotionRuleId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -104,15 +104,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    externalPromotionId := "externalPromotionId_example" // string | The resource's id
+    externalPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListPromotionRulesApi.GETExternalPromotionIdSkuListPromotionRule(context.Background(), externalPromotionId).Execute()
+    r, err := apiClient.SkuListPromotionRulesApi.GETExternalPromotionIdSkuListPromotionRule(context.Background(), externalPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.GETExternalPromotionIdSkuListPromotionRule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -126,7 +126,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**externalPromotionId** | **string** | The resource&#39;s id | 
+**externalPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -172,15 +172,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    fixedAmountPromotionId := "fixedAmountPromotionId_example" // string | The resource's id
+    fixedAmountPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListPromotionRulesApi.GETFixedAmountPromotionIdSkuListPromotionRule(context.Background(), fixedAmountPromotionId).Execute()
+    r, err := apiClient.SkuListPromotionRulesApi.GETFixedAmountPromotionIdSkuListPromotionRule(context.Background(), fixedAmountPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.GETFixedAmountPromotionIdSkuListPromotionRule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -194,7 +194,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**fixedAmountPromotionId** | **string** | The resource&#39;s id | 
+**fixedAmountPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -240,15 +240,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    fixedPricePromotionId := "fixedPricePromotionId_example" // string | The resource's id
+    fixedPricePromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListPromotionRulesApi.GETFixedPricePromotionIdSkuListPromotionRule(context.Background(), fixedPricePromotionId).Execute()
+    r, err := apiClient.SkuListPromotionRulesApi.GETFixedPricePromotionIdSkuListPromotionRule(context.Background(), fixedPricePromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.GETFixedPricePromotionIdSkuListPromotionRule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -262,7 +262,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**fixedPricePromotionId** | **string** | The resource&#39;s id | 
+**fixedPricePromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -308,15 +308,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    freeGiftPromotionId := "freeGiftPromotionId_example" // string | The resource's id
+    freeGiftPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListPromotionRulesApi.GETFreeGiftPromotionIdSkuListPromotionRule(context.Background(), freeGiftPromotionId).Execute()
+    r, err := apiClient.SkuListPromotionRulesApi.GETFreeGiftPromotionIdSkuListPromotionRule(context.Background(), freeGiftPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.GETFreeGiftPromotionIdSkuListPromotionRule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -330,7 +330,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**freeGiftPromotionId** | **string** | The resource&#39;s id | 
+**freeGiftPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -376,15 +376,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    freeShippingPromotionId := "freeShippingPromotionId_example" // string | The resource's id
+    freeShippingPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListPromotionRulesApi.GETFreeShippingPromotionIdSkuListPromotionRule(context.Background(), freeShippingPromotionId).Execute()
+    r, err := apiClient.SkuListPromotionRulesApi.GETFreeShippingPromotionIdSkuListPromotionRule(context.Background(), freeShippingPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.GETFreeShippingPromotionIdSkuListPromotionRule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +398,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**freeShippingPromotionId** | **string** | The resource&#39;s id | 
+**freeShippingPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -444,15 +444,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    percentageDiscountPromotionId := "percentageDiscountPromotionId_example" // string | The resource's id
+    percentageDiscountPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListPromotionRulesApi.GETPercentageDiscountPromotionIdSkuListPromotionRule(context.Background(), percentageDiscountPromotionId).Execute()
+    r, err := apiClient.SkuListPromotionRulesApi.GETPercentageDiscountPromotionIdSkuListPromotionRule(context.Background(), percentageDiscountPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.GETPercentageDiscountPromotionIdSkuListPromotionRule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -466,7 +466,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**percentageDiscountPromotionId** | **string** | The resource&#39;s id | 
+**percentageDiscountPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -512,15 +512,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    promotionId := "promotionId_example" // string | The resource's id
+    promotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListPromotionRulesApi.GETPromotionIdSkuListPromotionRule(context.Background(), promotionId).Execute()
+    r, err := apiClient.SkuListPromotionRulesApi.GETPromotionIdSkuListPromotionRule(context.Background(), promotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.GETPromotionIdSkuListPromotionRule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -534,7 +534,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**promotionId** | **string** | The resource&#39;s id | 
+**promotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -580,7 +580,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -641,11 +641,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    skuListPromotionRuleId := "skuListPromotionRuleId_example" // string | The resource's id
+    skuListPromotionRuleId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -665,7 +665,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**skuListPromotionRuleId** | **string** | The resource&#39;s id | 
+**skuListPromotionRuleId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -696,7 +696,7 @@ Name | Type | Description  | Notes
 
 ## PATCHSkuListPromotionRulesSkuListPromotionRuleId
 
-> POSTSkuListPromotionRules201Response PATCHSkuListPromotionRulesSkuListPromotionRuleId(ctx, skuListPromotionRuleId).SkuListPromotionRuleUpdate(skuListPromotionRuleUpdate).Execute()
+> PATCHSkuListPromotionRulesSkuListPromotionRuleId200Response PATCHSkuListPromotionRulesSkuListPromotionRuleId(ctx, skuListPromotionRuleId).PATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest(pATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest).Execute()
 
 Update a SKU list promotion rule
 
@@ -711,21 +711,21 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    skuListPromotionRuleUpdate := *openapiclient.NewSkuListPromotionRuleUpdate(*openapiclient.NewSkuListPromotionRuleUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTSkuListPromotionRules201ResponseDataAttributes())) // SkuListPromotionRuleUpdate | 
-    skuListPromotionRuleId := "skuListPromotionRuleId_example" // string | The resource's id
+    pATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest := *openapiclient.NewPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest(*openapiclient.NewPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequestDataAttributes())) // PATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest | 
+    skuListPromotionRuleId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListPromotionRulesApi.PATCHSkuListPromotionRulesSkuListPromotionRuleId(context.Background(), skuListPromotionRuleId).SkuListPromotionRuleUpdate(skuListPromotionRuleUpdate).Execute()
+    resp, r, err := apiClient.SkuListPromotionRulesApi.PATCHSkuListPromotionRulesSkuListPromotionRuleId(context.Background(), skuListPromotionRuleId).PATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest(pATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.PATCHSkuListPromotionRulesSkuListPromotionRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHSkuListPromotionRulesSkuListPromotionRuleId`: POSTSkuListPromotionRules201Response
+    // response from `PATCHSkuListPromotionRulesSkuListPromotionRuleId`: PATCHSkuListPromotionRulesSkuListPromotionRuleId200Response
     fmt.Fprintf(os.Stdout, "Response from `SkuListPromotionRulesApi.PATCHSkuListPromotionRulesSkuListPromotionRuleId`: %v\n", resp)
 }
 ```
@@ -736,7 +736,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**skuListPromotionRuleId** | **string** | The resource&#39;s id | 
+**skuListPromotionRuleId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -745,12 +745,12 @@ Other parameters are passed through a pointer to a apiPATCHSkuListPromotionRules
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **skuListPromotionRuleUpdate** | [**SkuListPromotionRuleUpdate**](SkuListPromotionRuleUpdate.md) |  | 
+ **pATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest** | [**PATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest**](PATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest.md) |  | 
 
 
 ### Return type
 
-[**POSTSkuListPromotionRules201Response**](POSTSkuListPromotionRules201Response.md)
+[**PATCHSkuListPromotionRulesSkuListPromotionRuleId200Response**](PATCHSkuListPromotionRulesSkuListPromotionRuleId200Response.md)
 
 ### Authorization
 
@@ -768,7 +768,7 @@ Name | Type | Description  | Notes
 
 ## POSTSkuListPromotionRules
 
-> POSTSkuListPromotionRules201Response POSTSkuListPromotionRules(ctx).SkuListPromotionRuleCreate(skuListPromotionRuleCreate).Execute()
+> POSTSkuListPromotionRules201Response POSTSkuListPromotionRules(ctx).POSTSkuListPromotionRulesRequest(pOSTSkuListPromotionRulesRequest).Execute()
 
 Create a SKU list promotion rule
 
@@ -783,15 +783,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    skuListPromotionRuleCreate := *openapiclient.NewSkuListPromotionRuleCreate(*openapiclient.NewSkuListPromotionRuleCreateData("Type_example", *openapiclient.NewPOSTSkuListPromotionRules201ResponseDataAttributes())) // SkuListPromotionRuleCreate | 
+    pOSTSkuListPromotionRulesRequest := *openapiclient.NewPOSTSkuListPromotionRulesRequest(*openapiclient.NewPOSTSkuListPromotionRulesRequestData(interface{}(123), *openapiclient.NewPOSTSkuListPromotionRulesRequestDataAttributes())) // POSTSkuListPromotionRulesRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListPromotionRulesApi.POSTSkuListPromotionRules(context.Background()).SkuListPromotionRuleCreate(skuListPromotionRuleCreate).Execute()
+    resp, r, err := apiClient.SkuListPromotionRulesApi.POSTSkuListPromotionRules(context.Background()).POSTSkuListPromotionRulesRequest(pOSTSkuListPromotionRulesRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.POSTSkuListPromotionRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -812,7 +812,7 @@ Other parameters are passed through a pointer to a apiPOSTSkuListPromotionRulesR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **skuListPromotionRuleCreate** | [**SkuListPromotionRuleCreate**](SkuListPromotionRuleCreate.md) |  | 
+ **pOSTSkuListPromotionRulesRequest** | [**POSTSkuListPromotionRulesRequest**](POSTSkuListPromotionRulesRequest.md) |  | 
 
 ### Return type
 

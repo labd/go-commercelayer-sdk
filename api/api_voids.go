@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type VoidsApiService service
 type VoidsApiGETAuthorizationIdVoidsRequest struct {
 	ctx             context.Context
 	ApiService      *VoidsApiService
-	authorizationId string
+	authorizationId interface{}
 }
 
 func (r VoidsApiGETAuthorizationIdVoidsRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Retrieve the voids associated to the authorization
 	@param authorizationId The resource's id
 	@return VoidsApiGETAuthorizationIdVoidsRequest
 */
-func (a *VoidsApiService) GETAuthorizationIdVoids(ctx context.Context, authorizationId string) VoidsApiGETAuthorizationIdVoidsRequest {
+func (a *VoidsApiService) GETAuthorizationIdVoids(ctx context.Context, authorizationId interface{}) VoidsApiGETAuthorizationIdVoidsRequest {
 	return VoidsApiGETAuthorizationIdVoidsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -64,7 +64,7 @@ func (a *VoidsApiService) GETAuthorizationIdVoidsExecute(r VoidsApiGETAuthorizat
 	}
 
 	localVarPath := localBasePath + "/authorizations/{authorizationId}/voids"
-	localVarPath = strings.Replace(localVarPath, "{"+"authorizationId"+"}", url.PathEscape(parameterToString(r.authorizationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"authorizationId"+"}", url.PathEscape(parameterValueToString(r.authorizationId, "authorizationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *VoidsApiService) GETAuthorizationIdVoidsExecute(r VoidsApiGETAuthorizat
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *VoidsApiService) GETAuthorizationIdVoidsExecute(r VoidsApiGETAuthorizat
 type VoidsApiGETOrderIdVoidsRequest struct {
 	ctx        context.Context
 	ApiService *VoidsApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r VoidsApiGETOrderIdVoidsRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the voids associated to the order
 	@param orderId The resource's id
 	@return VoidsApiGETOrderIdVoidsRequest
 */
-func (a *VoidsApiService) GETOrderIdVoids(ctx context.Context, orderId string) VoidsApiGETOrderIdVoidsRequest {
+func (a *VoidsApiService) GETOrderIdVoids(ctx context.Context, orderId interface{}) VoidsApiGETOrderIdVoidsRequest {
 	return VoidsApiGETOrderIdVoidsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -156,7 +156,7 @@ func (a *VoidsApiService) GETOrderIdVoidsExecute(r VoidsApiGETOrderIdVoidsReques
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/voids"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *VoidsApiService) GETOrderIdVoidsExecute(r VoidsApiGETOrderIdVoidsReques
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *VoidsApiService) GETVoidsExecute(r VoidsApiGETVoidsRequest) (*GETVoids2
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -310,7 +310,7 @@ func (a *VoidsApiService) GETVoidsExecute(r VoidsApiGETVoidsRequest) (*GETVoids2
 type VoidsApiGETVoidsVoidIdRequest struct {
 	ctx        context.Context
 	ApiService *VoidsApiService
-	voidId     string
+	voidId     interface{}
 }
 
 func (r VoidsApiGETVoidsVoidIdRequest) Execute() (*GETVoidsVoidId200Response, *http.Response, error) {
@@ -326,7 +326,7 @@ Retrieve a void
 	@param voidId The resource's id
 	@return VoidsApiGETVoidsVoidIdRequest
 */
-func (a *VoidsApiService) GETVoidsVoidId(ctx context.Context, voidId string) VoidsApiGETVoidsVoidIdRequest {
+func (a *VoidsApiService) GETVoidsVoidId(ctx context.Context, voidId interface{}) VoidsApiGETVoidsVoidIdRequest {
 	return VoidsApiGETVoidsVoidIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -351,7 +351,7 @@ func (a *VoidsApiService) GETVoidsVoidIdExecute(r VoidsApiGETVoidsVoidIdRequest)
 	}
 
 	localVarPath := localBasePath + "/voids/{voidId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"voidId"+"}", url.PathEscape(parameterToString(r.voidId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"voidId"+"}", url.PathEscape(parameterValueToString(r.voidId, "voidId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *VoidsApiService) GETVoidsVoidIdExecute(r VoidsApiGETVoidsVoidIdRequest)
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the ExternalTaxCalculatorUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ExternalTaxCalculatorUpdate{}
+
 // ExternalTaxCalculatorUpdate struct for ExternalTaxCalculatorUpdate
 type ExternalTaxCalculatorUpdate struct {
-	Data ExternalTaxCalculatorUpdateData `json:"data"`
+	Data PATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequestData `json:"data"`
 }
 
 // NewExternalTaxCalculatorUpdate instantiates a new ExternalTaxCalculatorUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalTaxCalculatorUpdate(data ExternalTaxCalculatorUpdateData) *ExternalTaxCalculatorUpdate {
+func NewExternalTaxCalculatorUpdate(data PATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequestData) *ExternalTaxCalculatorUpdate {
 	this := ExternalTaxCalculatorUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewExternalTaxCalculatorUpdateWithDefaults() *ExternalTaxCalculatorUpdate {
 }
 
 // GetData returns the Data field value
-func (o *ExternalTaxCalculatorUpdate) GetData() ExternalTaxCalculatorUpdateData {
+func (o *ExternalTaxCalculatorUpdate) GetData() PATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequestData {
 	if o == nil {
-		var ret ExternalTaxCalculatorUpdateData
+		var ret PATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *ExternalTaxCalculatorUpdate) GetData() ExternalTaxCalculatorUpdateData 
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ExternalTaxCalculatorUpdate) GetDataOk() (*ExternalTaxCalculatorUpdateData, bool) {
+func (o *ExternalTaxCalculatorUpdate) GetDataOk() (*PATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *ExternalTaxCalculatorUpdate) GetDataOk() (*ExternalTaxCalculatorUpdateD
 }
 
 // SetData sets field value
-func (o *ExternalTaxCalculatorUpdate) SetData(v ExternalTaxCalculatorUpdateData) {
+func (o *ExternalTaxCalculatorUpdate) SetData(v PATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequestData) {
 	o.Data = v
 }
 
 func (o ExternalTaxCalculatorUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ExternalTaxCalculatorUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableExternalTaxCalculatorUpdate struct {

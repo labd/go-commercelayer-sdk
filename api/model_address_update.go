@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddressUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddressUpdate{}
+
 // AddressUpdate struct for AddressUpdate
 type AddressUpdate struct {
-	Data AddressUpdateData `json:"data"`
+	Data PATCHAddressesAddressIdRequestData `json:"data"`
 }
 
 // NewAddressUpdate instantiates a new AddressUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddressUpdate(data AddressUpdateData) *AddressUpdate {
+func NewAddressUpdate(data PATCHAddressesAddressIdRequestData) *AddressUpdate {
 	this := AddressUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewAddressUpdateWithDefaults() *AddressUpdate {
 }
 
 // GetData returns the Data field value
-func (o *AddressUpdate) GetData() AddressUpdateData {
+func (o *AddressUpdate) GetData() PATCHAddressesAddressIdRequestData {
 	if o == nil {
-		var ret AddressUpdateData
+		var ret PATCHAddressesAddressIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *AddressUpdate) GetData() AddressUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *AddressUpdate) GetDataOk() (*AddressUpdateData, bool) {
+func (o *AddressUpdate) GetDataOk() (*PATCHAddressesAddressIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *AddressUpdate) GetDataOk() (*AddressUpdateData, bool) {
 }
 
 // SetData sets field value
-func (o *AddressUpdate) SetData(v AddressUpdateData) {
+func (o *AddressUpdate) SetData(v PATCHAddressesAddressIdRequestData) {
 	o.Data = v
 }
 
 func (o AddressUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddressUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableAddressUpdate struct {

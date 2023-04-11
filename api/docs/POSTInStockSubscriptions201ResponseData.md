@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | The resource&#39;s id | [optional] 
-**Type** | Pointer to **string** | The resource&#39;s type | [optional] 
-**Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
-**Attributes** | Pointer to [**POSTInStockSubscriptions201ResponseDataAttributes**](POSTInStockSubscriptions201ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**GETInStockSubscriptions200ResponseDataInnerRelationships**](GETInStockSubscriptions200ResponseDataInnerRelationships.md) |  | [optional] 
+**Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
+**Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
+**Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
+**Attributes** | Pointer to [**POSTInStockSubscriptionsRequestDataAttributes**](POSTInStockSubscriptionsRequestDataAttributes.md) |  | [optional] 
+**Relationships** | Pointer to [**POSTInStockSubscriptions201ResponseDataRelationships**](POSTInStockSubscriptions201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *POSTInStockSubscriptions201ResponseData) GetId() string`
+`func (o *POSTInStockSubscriptions201ResponseData) GetId() interface{}`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *POSTInStockSubscriptions201ResponseData) GetIdOk() (*string, bool)`
+`func (o *POSTInStockSubscriptions201ResponseData) GetIdOk() (*interface{}, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *POSTInStockSubscriptions201ResponseData) SetId(v string)`
+`func (o *POSTInStockSubscriptions201ResponseData) SetId(v interface{})`
 
 SetId sets Id field to given value.
 
@@ -54,22 +54,32 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
+### SetIdNil
+
+`func (o *POSTInStockSubscriptions201ResponseData) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *POSTInStockSubscriptions201ResponseData) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetType
 
-`func (o *POSTInStockSubscriptions201ResponseData) GetType() string`
+`func (o *POSTInStockSubscriptions201ResponseData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *POSTInStockSubscriptions201ResponseData) GetTypeOk() (*string, bool)`
+`func (o *POSTInStockSubscriptions201ResponseData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *POSTInStockSubscriptions201ResponseData) SetType(v string)`
+`func (o *POSTInStockSubscriptions201ResponseData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
@@ -79,22 +89,32 @@ SetType sets Type field to given value.
 
 HasType returns a boolean if a field has been set.
 
+### SetTypeNil
+
+`func (o *POSTInStockSubscriptions201ResponseData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *POSTInStockSubscriptions201ResponseData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetLinks
 
-`func (o *POSTInStockSubscriptions201ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks`
+`func (o *POSTInStockSubscriptions201ResponseData) GetLinks() POSTAddresses201ResponseDataLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *POSTInStockSubscriptions201ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool)`
+`func (o *POSTInStockSubscriptions201ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *POSTInStockSubscriptions201ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks)`
+`func (o *POSTInStockSubscriptions201ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks)`
 
 SetLinks sets Links field to given value.
 
@@ -106,20 +126,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *POSTInStockSubscriptions201ResponseData) GetAttributes() POSTInStockSubscriptions201ResponseDataAttributes`
+`func (o *POSTInStockSubscriptions201ResponseData) GetAttributes() POSTInStockSubscriptionsRequestDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *POSTInStockSubscriptions201ResponseData) GetAttributesOk() (*POSTInStockSubscriptions201ResponseDataAttributes, bool)`
+`func (o *POSTInStockSubscriptions201ResponseData) GetAttributesOk() (*POSTInStockSubscriptionsRequestDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *POSTInStockSubscriptions201ResponseData) SetAttributes(v POSTInStockSubscriptions201ResponseDataAttributes)`
+`func (o *POSTInStockSubscriptions201ResponseData) SetAttributes(v POSTInStockSubscriptionsRequestDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
@@ -131,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *POSTInStockSubscriptions201ResponseData) GetRelationships() GETInStockSubscriptions200ResponseDataInnerRelationships`
+`func (o *POSTInStockSubscriptions201ResponseData) GetRelationships() POSTInStockSubscriptions201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *POSTInStockSubscriptions201ResponseData) GetRelationshipsOk() (*GETInStockSubscriptions200ResponseDataInnerRelationships, bool)`
+`func (o *POSTInStockSubscriptions201ResponseData) GetRelationshipsOk() (*POSTInStockSubscriptions201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *POSTInStockSubscriptions201ResponseData) SetRelationships(v GETInStockSubscriptions200ResponseDataInnerRelationships)`
+`func (o *POSTInStockSubscriptions201ResponseData) SetRelationships(v POSTInStockSubscriptions201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type ReturnsApiService service
 type ReturnsApiDELETEReturnsReturnIdRequest struct {
 	ctx        context.Context
 	ApiService *ReturnsApiService
-	returnId   string
+	returnId   interface{}
 }
 
 func (r ReturnsApiDELETEReturnsReturnIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a return
 	@param returnId The resource's id
 	@return ReturnsApiDELETEReturnsReturnIdRequest
 */
-func (a *ReturnsApiService) DELETEReturnsReturnId(ctx context.Context, returnId string) ReturnsApiDELETEReturnsReturnIdRequest {
+func (a *ReturnsApiService) DELETEReturnsReturnId(ctx context.Context, returnId interface{}) ReturnsApiDELETEReturnsReturnIdRequest {
 	return ReturnsApiDELETEReturnsReturnIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -64,7 +64,7 @@ func (a *ReturnsApiService) DELETEReturnsReturnIdExecute(r ReturnsApiDELETERetur
 	}
 
 	localVarPath := localBasePath + "/returns/{returnId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterToString(r.returnId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *ReturnsApiService) DELETEReturnsReturnIdExecute(r ReturnsApiDELETERetur
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *ReturnsApiService) DELETEReturnsReturnIdExecute(r ReturnsApiDELETERetur
 type ReturnsApiGETCustomerIdReturnsRequest struct {
 	ctx        context.Context
 	ApiService *ReturnsApiService
-	customerId string
+	customerId interface{}
 }
 
 func (r ReturnsApiGETCustomerIdReturnsRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the returns associated to the customer
 	@param customerId The resource's id
 	@return ReturnsApiGETCustomerIdReturnsRequest
 */
-func (a *ReturnsApiService) GETCustomerIdReturns(ctx context.Context, customerId string) ReturnsApiGETCustomerIdReturnsRequest {
+func (a *ReturnsApiService) GETCustomerIdReturns(ctx context.Context, customerId interface{}) ReturnsApiGETCustomerIdReturnsRequest {
 	return ReturnsApiGETCustomerIdReturnsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -156,7 +156,7 @@ func (a *ReturnsApiService) GETCustomerIdReturnsExecute(r ReturnsApiGETCustomerI
 	}
 
 	localVarPath := localBasePath + "/customers/{customerId}/returns"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterToString(r.customerId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *ReturnsApiService) GETCustomerIdReturnsExecute(r ReturnsApiGETCustomerI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -210,7 +210,7 @@ func (a *ReturnsApiService) GETCustomerIdReturnsExecute(r ReturnsApiGETCustomerI
 type ReturnsApiGETOrderIdReturnsRequest struct {
 	ctx        context.Context
 	ApiService *ReturnsApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r ReturnsApiGETOrderIdReturnsRequest) Execute() (*http.Response, error) {
@@ -226,7 +226,7 @@ Retrieve the returns associated to the order
 	@param orderId The resource's id
 	@return ReturnsApiGETOrderIdReturnsRequest
 */
-func (a *ReturnsApiService) GETOrderIdReturns(ctx context.Context, orderId string) ReturnsApiGETOrderIdReturnsRequest {
+func (a *ReturnsApiService) GETOrderIdReturns(ctx context.Context, orderId interface{}) ReturnsApiGETOrderIdReturnsRequest {
 	return ReturnsApiGETOrderIdReturnsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -248,7 +248,7 @@ func (a *ReturnsApiService) GETOrderIdReturnsExecute(r ReturnsApiGETOrderIdRetur
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/returns"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -281,9 +281,9 @@ func (a *ReturnsApiService) GETOrderIdReturnsExecute(r ReturnsApiGETOrderIdRetur
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -302,7 +302,7 @@ func (a *ReturnsApiService) GETOrderIdReturnsExecute(r ReturnsApiGETOrderIdRetur
 type ReturnsApiGETReturnLineItemIdReturnRequest struct {
 	ctx              context.Context
 	ApiService       *ReturnsApiService
-	returnLineItemId string
+	returnLineItemId interface{}
 }
 
 func (r ReturnsApiGETReturnLineItemIdReturnRequest) Execute() (*http.Response, error) {
@@ -318,7 +318,7 @@ Retrieve the return associated to the return line item
 	@param returnLineItemId The resource's id
 	@return ReturnsApiGETReturnLineItemIdReturnRequest
 */
-func (a *ReturnsApiService) GETReturnLineItemIdReturn(ctx context.Context, returnLineItemId string) ReturnsApiGETReturnLineItemIdReturnRequest {
+func (a *ReturnsApiService) GETReturnLineItemIdReturn(ctx context.Context, returnLineItemId interface{}) ReturnsApiGETReturnLineItemIdReturnRequest {
 	return ReturnsApiGETReturnLineItemIdReturnRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -340,7 +340,7 @@ func (a *ReturnsApiService) GETReturnLineItemIdReturnExecute(r ReturnsApiGETRetu
 	}
 
 	localVarPath := localBasePath + "/return_line_items/{returnLineItemId}/return"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnLineItemId"+"}", url.PathEscape(parameterToString(r.returnLineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnLineItemId"+"}", url.PathEscape(parameterValueToString(r.returnLineItemId, "returnLineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -373,9 +373,9 @@ func (a *ReturnsApiService) GETReturnLineItemIdReturnExecute(r ReturnsApiGETRetu
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -464,9 +464,9 @@ func (a *ReturnsApiService) GETReturnsExecute(r ReturnsApiGETReturnsRequest) (*G
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -494,7 +494,7 @@ func (a *ReturnsApiService) GETReturnsExecute(r ReturnsApiGETReturnsRequest) (*G
 type ReturnsApiGETReturnsReturnIdRequest struct {
 	ctx        context.Context
 	ApiService *ReturnsApiService
-	returnId   string
+	returnId   interface{}
 }
 
 func (r ReturnsApiGETReturnsReturnIdRequest) Execute() (*GETReturnsReturnId200Response, *http.Response, error) {
@@ -510,7 +510,7 @@ Retrieve a return
 	@param returnId The resource's id
 	@return ReturnsApiGETReturnsReturnIdRequest
 */
-func (a *ReturnsApiService) GETReturnsReturnId(ctx context.Context, returnId string) ReturnsApiGETReturnsReturnIdRequest {
+func (a *ReturnsApiService) GETReturnsReturnId(ctx context.Context, returnId interface{}) ReturnsApiGETReturnsReturnIdRequest {
 	return ReturnsApiGETReturnsReturnIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -535,7 +535,7 @@ func (a *ReturnsApiService) GETReturnsReturnIdExecute(r ReturnsApiGETReturnsRetu
 	}
 
 	localVarPath := localBasePath + "/returns/{returnId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterToString(r.returnId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -568,9 +568,9 @@ func (a *ReturnsApiService) GETReturnsReturnIdExecute(r ReturnsApiGETReturnsRetu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -596,14 +596,14 @@ func (a *ReturnsApiService) GETReturnsReturnIdExecute(r ReturnsApiGETReturnsRetu
 }
 
 type ReturnsApiPATCHReturnsReturnIdRequest struct {
-	ctx          context.Context
-	ApiService   *ReturnsApiService
-	returnUpdate *ReturnUpdate
-	returnId     string
+	ctx                         context.Context
+	ApiService                  *ReturnsApiService
+	pATCHReturnsReturnIdRequest *PATCHReturnsReturnIdRequest
+	returnId                    interface{}
 }
 
-func (r ReturnsApiPATCHReturnsReturnIdRequest) ReturnUpdate(returnUpdate ReturnUpdate) ReturnsApiPATCHReturnsReturnIdRequest {
-	r.returnUpdate = &returnUpdate
+func (r ReturnsApiPATCHReturnsReturnIdRequest) PATCHReturnsReturnIdRequest(pATCHReturnsReturnIdRequest PATCHReturnsReturnIdRequest) ReturnsApiPATCHReturnsReturnIdRequest {
+	r.pATCHReturnsReturnIdRequest = &pATCHReturnsReturnIdRequest
 	return r
 }
 
@@ -620,7 +620,7 @@ Update a return
 	@param returnId The resource's id
 	@return ReturnsApiPATCHReturnsReturnIdRequest
 */
-func (a *ReturnsApiService) PATCHReturnsReturnId(ctx context.Context, returnId string) ReturnsApiPATCHReturnsReturnIdRequest {
+func (a *ReturnsApiService) PATCHReturnsReturnId(ctx context.Context, returnId interface{}) ReturnsApiPATCHReturnsReturnIdRequest {
 	return ReturnsApiPATCHReturnsReturnIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -645,13 +645,13 @@ func (a *ReturnsApiService) PATCHReturnsReturnIdExecute(r ReturnsApiPATCHReturns
 	}
 
 	localVarPath := localBasePath + "/returns/{returnId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterToString(r.returnId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.returnUpdate == nil {
-		return localVarReturnValue, nil, reportError("returnUpdate is required and must be specified")
+	if r.pATCHReturnsReturnIdRequest == nil {
+		return localVarReturnValue, nil, reportError("pATCHReturnsReturnIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -672,7 +672,7 @@ func (a *ReturnsApiService) PATCHReturnsReturnIdExecute(r ReturnsApiPATCHReturns
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.returnUpdate
+	localVarPostBody = r.pATCHReturnsReturnIdRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -683,9 +683,9 @@ func (a *ReturnsApiService) PATCHReturnsReturnIdExecute(r ReturnsApiPATCHReturns
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -711,13 +711,13 @@ func (a *ReturnsApiService) PATCHReturnsReturnIdExecute(r ReturnsApiPATCHReturns
 }
 
 type ReturnsApiPOSTReturnsRequest struct {
-	ctx          context.Context
-	ApiService   *ReturnsApiService
-	returnCreate *ReturnCreate
+	ctx                context.Context
+	ApiService         *ReturnsApiService
+	pOSTReturnsRequest *POSTReturnsRequest
 }
 
-func (r ReturnsApiPOSTReturnsRequest) ReturnCreate(returnCreate ReturnCreate) ReturnsApiPOSTReturnsRequest {
-	r.returnCreate = &returnCreate
+func (r ReturnsApiPOSTReturnsRequest) POSTReturnsRequest(pOSTReturnsRequest POSTReturnsRequest) ReturnsApiPOSTReturnsRequest {
+	r.pOSTReturnsRequest = &pOSTReturnsRequest
 	return r
 }
 
@@ -761,8 +761,8 @@ func (a *ReturnsApiService) POSTReturnsExecute(r ReturnsApiPOSTReturnsRequest) (
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.returnCreate == nil {
-		return localVarReturnValue, nil, reportError("returnCreate is required and must be specified")
+	if r.pOSTReturnsRequest == nil {
+		return localVarReturnValue, nil, reportError("pOSTReturnsRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -783,7 +783,7 @@ func (a *ReturnsApiService) POSTReturnsExecute(r ReturnsApiPOSTReturnsRequest) (
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.returnCreate
+	localVarPostBody = r.pOSTReturnsRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -794,9 +794,9 @@ func (a *ReturnsApiService) POSTReturnsExecute(r ReturnsApiPOSTReturnsRequest) (
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

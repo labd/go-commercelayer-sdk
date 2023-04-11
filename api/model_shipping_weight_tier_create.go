@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the ShippingWeightTierCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ShippingWeightTierCreate{}
+
 // ShippingWeightTierCreate struct for ShippingWeightTierCreate
 type ShippingWeightTierCreate struct {
-	Data ShippingWeightTierCreateData `json:"data"`
+	Data POSTShippingWeightTiersRequestData `json:"data"`
 }
 
 // NewShippingWeightTierCreate instantiates a new ShippingWeightTierCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShippingWeightTierCreate(data ShippingWeightTierCreateData) *ShippingWeightTierCreate {
+func NewShippingWeightTierCreate(data POSTShippingWeightTiersRequestData) *ShippingWeightTierCreate {
 	this := ShippingWeightTierCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewShippingWeightTierCreateWithDefaults() *ShippingWeightTierCreate {
 }
 
 // GetData returns the Data field value
-func (o *ShippingWeightTierCreate) GetData() ShippingWeightTierCreateData {
+func (o *ShippingWeightTierCreate) GetData() POSTShippingWeightTiersRequestData {
 	if o == nil {
-		var ret ShippingWeightTierCreateData
+		var ret POSTShippingWeightTiersRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *ShippingWeightTierCreate) GetData() ShippingWeightTierCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ShippingWeightTierCreate) GetDataOk() (*ShippingWeightTierCreateData, bool) {
+func (o *ShippingWeightTierCreate) GetDataOk() (*POSTShippingWeightTiersRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *ShippingWeightTierCreate) GetDataOk() (*ShippingWeightTierCreateData, b
 }
 
 // SetData sets field value
-func (o *ShippingWeightTierCreate) SetData(v ShippingWeightTierCreateData) {
+func (o *ShippingWeightTierCreate) SetData(v POSTShippingWeightTiersRequestData) {
 	o.Data = v
 }
 
 func (o ShippingWeightTierCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ShippingWeightTierCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableShippingWeightTierCreate struct {

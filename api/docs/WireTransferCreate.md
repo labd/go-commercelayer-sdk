@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**WireTransferCreateData**](WireTransferCreateData.md) |  | 
+**Data** | [**POSTWireTransfersRequestData**](POSTWireTransfersRequestData.md) |  | 
 
 ## Methods
 
 ### NewWireTransferCreate
 
-`func NewWireTransferCreate(data WireTransferCreateData, ) *WireTransferCreate`
+`func NewWireTransferCreate(data POSTWireTransfersRequestData, ) *WireTransferCreate`
 
 NewWireTransferCreate instantiates a new WireTransferCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *WireTransferCreate) GetData() WireTransferCreateData`
+`func (o *WireTransferCreate) GetData() POSTWireTransfersRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *WireTransferCreate) GetDataOk() (*WireTransferCreateData, bool)`
+`func (o *WireTransferCreate) GetDataOk() (*POSTWireTransfersRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *WireTransferCreate) SetData(v WireTransferCreateData)`
+`func (o *WireTransferCreate) SetData(v POSTWireTransfersRequestData)`
 
 SetData sets Data field to given value.
 

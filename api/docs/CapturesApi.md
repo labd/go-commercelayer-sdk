@@ -1,6 +1,6 @@
 # \CapturesApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,15 +30,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    authorizationId := "authorizationId_example" // string | The resource's id
+    authorizationId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapturesApi.GETAuthorizationIdCaptures(context.Background(), authorizationId).Execute()
+    r, err := apiClient.CapturesApi.GETAuthorizationIdCaptures(context.Background(), authorizationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CapturesApi.GETAuthorizationIdCaptures``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -52,7 +52,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**authorizationId** | **string** | The resource&#39;s id | 
+**authorizationId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -98,7 +98,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -159,11 +159,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    captureId := "captureId_example" // string | The resource's id
+    captureId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -183,7 +183,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**captureId** | **string** | The resource&#39;s id | 
+**captureId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -229,15 +229,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    orderId := "orderId_example" // string | The resource's id
+    orderId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapturesApi.GETOrderIdCaptures(context.Background(), orderId).Execute()
+    r, err := apiClient.CapturesApi.GETOrderIdCaptures(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CapturesApi.GETOrderIdCaptures``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -251,7 +251,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**orderId** | **string** | The resource&#39;s id | 
+**orderId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -297,15 +297,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    refundId := "refundId_example" // string | The resource's id
+    refundId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapturesApi.GETRefundIdReferenceCapture(context.Background(), refundId).Execute()
+    r, err := apiClient.CapturesApi.GETRefundIdReferenceCapture(context.Background(), refundId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CapturesApi.GETRefundIdReferenceCapture``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -319,7 +319,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**refundId** | **string** | The resource&#39;s id | 
+**refundId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -350,7 +350,7 @@ Name | Type | Description  | Notes
 
 ## PATCHCapturesCaptureId
 
-> PATCHCapturesCaptureId200Response PATCHCapturesCaptureId(ctx, captureId).CaptureUpdate(captureUpdate).Execute()
+> PATCHCapturesCaptureId200Response PATCHCapturesCaptureId(ctx, captureId).PATCHCapturesCaptureIdRequest(pATCHCapturesCaptureIdRequest).Execute()
 
 Update a capture
 
@@ -365,16 +365,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    captureUpdate := *openapiclient.NewCaptureUpdate(*openapiclient.NewCaptureUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHCapturesCaptureId200ResponseDataAttributes())) // CaptureUpdate | 
-    captureId := "captureId_example" // string | The resource's id
+    pATCHCapturesCaptureIdRequest := *openapiclient.NewPATCHCapturesCaptureIdRequest(*openapiclient.NewPATCHCapturesCaptureIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHCapturesCaptureIdRequestDataAttributes())) // PATCHCapturesCaptureIdRequest | 
+    captureId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CapturesApi.PATCHCapturesCaptureId(context.Background(), captureId).CaptureUpdate(captureUpdate).Execute()
+    resp, r, err := apiClient.CapturesApi.PATCHCapturesCaptureId(context.Background(), captureId).PATCHCapturesCaptureIdRequest(pATCHCapturesCaptureIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CapturesApi.PATCHCapturesCaptureId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -390,7 +390,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**captureId** | **string** | The resource&#39;s id | 
+**captureId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -399,7 +399,7 @@ Other parameters are passed through a pointer to a apiPATCHCapturesCaptureIdRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **captureUpdate** | [**CaptureUpdate**](CaptureUpdate.md) |  | 
+ **pATCHCapturesCaptureIdRequest** | [**PATCHCapturesCaptureIdRequest**](PATCHCapturesCaptureIdRequest.md) |  | 
 
 
 ### Return type

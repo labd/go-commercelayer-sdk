@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the CleanupCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CleanupCreate{}
+
 // CleanupCreate struct for CleanupCreate
 type CleanupCreate struct {
-	Data CleanupCreateData `json:"data"`
+	Data POSTCleanupsRequestData `json:"data"`
 }
 
 // NewCleanupCreate instantiates a new CleanupCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCleanupCreate(data CleanupCreateData) *CleanupCreate {
+func NewCleanupCreate(data POSTCleanupsRequestData) *CleanupCreate {
 	this := CleanupCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewCleanupCreateWithDefaults() *CleanupCreate {
 }
 
 // GetData returns the Data field value
-func (o *CleanupCreate) GetData() CleanupCreateData {
+func (o *CleanupCreate) GetData() POSTCleanupsRequestData {
 	if o == nil {
-		var ret CleanupCreateData
+		var ret POSTCleanupsRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *CleanupCreate) GetData() CleanupCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CleanupCreate) GetDataOk() (*CleanupCreateData, bool) {
+func (o *CleanupCreate) GetDataOk() (*POSTCleanupsRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *CleanupCreate) GetDataOk() (*CleanupCreateData, bool) {
 }
 
 // SetData sets field value
-func (o *CleanupCreate) SetData(v CleanupCreateData) {
+func (o *CleanupCreate) SetData(v POSTCleanupsRequestData) {
 	o.Data = v
 }
 
 func (o CleanupCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CleanupCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableCleanupCreate struct {

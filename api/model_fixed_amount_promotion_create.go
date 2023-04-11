@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the FixedAmountPromotionCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &FixedAmountPromotionCreate{}
+
 // FixedAmountPromotionCreate struct for FixedAmountPromotionCreate
 type FixedAmountPromotionCreate struct {
-	Data FixedAmountPromotionCreateData `json:"data"`
+	Data POSTFixedAmountPromotionsRequestData `json:"data"`
 }
 
 // NewFixedAmountPromotionCreate instantiates a new FixedAmountPromotionCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFixedAmountPromotionCreate(data FixedAmountPromotionCreateData) *FixedAmountPromotionCreate {
+func NewFixedAmountPromotionCreate(data POSTFixedAmountPromotionsRequestData) *FixedAmountPromotionCreate {
 	this := FixedAmountPromotionCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewFixedAmountPromotionCreateWithDefaults() *FixedAmountPromotionCreate {
 }
 
 // GetData returns the Data field value
-func (o *FixedAmountPromotionCreate) GetData() FixedAmountPromotionCreateData {
+func (o *FixedAmountPromotionCreate) GetData() POSTFixedAmountPromotionsRequestData {
 	if o == nil {
-		var ret FixedAmountPromotionCreateData
+		var ret POSTFixedAmountPromotionsRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *FixedAmountPromotionCreate) GetData() FixedAmountPromotionCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *FixedAmountPromotionCreate) GetDataOk() (*FixedAmountPromotionCreateData, bool) {
+func (o *FixedAmountPromotionCreate) GetDataOk() (*POSTFixedAmountPromotionsRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *FixedAmountPromotionCreate) GetDataOk() (*FixedAmountPromotionCreateDat
 }
 
 // SetData sets field value
-func (o *FixedAmountPromotionCreate) SetData(v FixedAmountPromotionCreateData) {
+func (o *FixedAmountPromotionCreate) SetData(v POSTFixedAmountPromotionsRequestData) {
 	o.Data = v
 }
 
 func (o FixedAmountPromotionCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o FixedAmountPromotionCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableFixedAmountPromotionCreate struct {

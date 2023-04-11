@@ -1,6 +1,6 @@
 # \ShippingZonesApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,15 +30,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    shippingZoneId := "shippingZoneId_example" // string | The resource's id
+    shippingZoneId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShippingZonesApi.DELETEShippingZonesShippingZoneId(context.Background(), shippingZoneId).Execute()
+    r, err := apiClient.ShippingZonesApi.DELETEShippingZonesShippingZoneId(context.Background(), shippingZoneId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingZonesApi.DELETEShippingZonesShippingZoneId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -52,7 +52,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**shippingZoneId** | **string** | The resource&#39;s id | 
+**shippingZoneId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -98,15 +98,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    shippingMethodId := "shippingMethodId_example" // string | The resource's id
+    shippingMethodId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShippingZonesApi.GETShippingMethodIdShippingZone(context.Background(), shippingMethodId).Execute()
+    r, err := apiClient.ShippingZonesApi.GETShippingMethodIdShippingZone(context.Background(), shippingMethodId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingZonesApi.GETShippingMethodIdShippingZone``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -120,7 +120,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**shippingMethodId** | **string** | The resource&#39;s id | 
+**shippingMethodId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -166,7 +166,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -227,11 +227,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    shippingZoneId := "shippingZoneId_example" // string | The resource's id
+    shippingZoneId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -251,7 +251,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**shippingZoneId** | **string** | The resource&#39;s id | 
+**shippingZoneId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHShippingZonesShippingZoneId
 
-> PATCHShippingZonesShippingZoneId200Response PATCHShippingZonesShippingZoneId(ctx, shippingZoneId).ShippingZoneUpdate(shippingZoneUpdate).Execute()
+> PATCHShippingZonesShippingZoneId200Response PATCHShippingZonesShippingZoneId(ctx, shippingZoneId).PATCHShippingZonesShippingZoneIdRequest(pATCHShippingZonesShippingZoneIdRequest).Execute()
 
 Update a shipping zone
 
@@ -297,16 +297,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    shippingZoneUpdate := *openapiclient.NewShippingZoneUpdate(*openapiclient.NewShippingZoneUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHShippingZonesShippingZoneId200ResponseDataAttributes())) // ShippingZoneUpdate | 
-    shippingZoneId := "shippingZoneId_example" // string | The resource's id
+    pATCHShippingZonesShippingZoneIdRequest := *openapiclient.NewPATCHShippingZonesShippingZoneIdRequest(*openapiclient.NewPATCHShippingZonesShippingZoneIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHShippingZonesShippingZoneIdRequestDataAttributes())) // PATCHShippingZonesShippingZoneIdRequest | 
+    shippingZoneId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShippingZonesApi.PATCHShippingZonesShippingZoneId(context.Background(), shippingZoneId).ShippingZoneUpdate(shippingZoneUpdate).Execute()
+    resp, r, err := apiClient.ShippingZonesApi.PATCHShippingZonesShippingZoneId(context.Background(), shippingZoneId).PATCHShippingZonesShippingZoneIdRequest(pATCHShippingZonesShippingZoneIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingZonesApi.PATCHShippingZonesShippingZoneId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -322,7 +322,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**shippingZoneId** | **string** | The resource&#39;s id | 
+**shippingZoneId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -331,7 +331,7 @@ Other parameters are passed through a pointer to a apiPATCHShippingZonesShipping
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **shippingZoneUpdate** | [**ShippingZoneUpdate**](ShippingZoneUpdate.md) |  | 
+ **pATCHShippingZonesShippingZoneIdRequest** | [**PATCHShippingZonesShippingZoneIdRequest**](PATCHShippingZonesShippingZoneIdRequest.md) |  | 
 
 
 ### Return type
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTShippingZones
 
-> POSTShippingZones201Response POSTShippingZones(ctx).ShippingZoneCreate(shippingZoneCreate).Execute()
+> POSTShippingZones201Response POSTShippingZones(ctx).POSTShippingZonesRequest(pOSTShippingZonesRequest).Execute()
 
 Create a shipping zone
 
@@ -369,15 +369,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    shippingZoneCreate := *openapiclient.NewShippingZoneCreate(*openapiclient.NewShippingZoneCreateData("Type_example", *openapiclient.NewPOSTShippingZones201ResponseDataAttributes("Europe (main countries)"))) // ShippingZoneCreate | 
+    pOSTShippingZonesRequest := *openapiclient.NewPOSTShippingZonesRequest(*openapiclient.NewPOSTShippingZonesRequestData(interface{}(123), *openapiclient.NewPOSTShippingZonesRequestDataAttributes(interface{}(Europe (main countries))))) // POSTShippingZonesRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShippingZonesApi.POSTShippingZones(context.Background()).ShippingZoneCreate(shippingZoneCreate).Execute()
+    resp, r, err := apiClient.ShippingZonesApi.POSTShippingZones(context.Background()).POSTShippingZonesRequest(pOSTShippingZonesRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingZonesApi.POSTShippingZones``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +398,7 @@ Other parameters are passed through a pointer to a apiPOSTShippingZonesRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **shippingZoneCreate** | [**ShippingZoneCreate**](ShippingZoneCreate.md) |  | 
+ **pOSTShippingZonesRequest** | [**POSTShippingZonesRequest**](POSTShippingZonesRequest.md) |  | 
 
 ### Return type
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the PriceListUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PriceListUpdate{}
+
 // PriceListUpdate struct for PriceListUpdate
 type PriceListUpdate struct {
-	Data PriceListUpdateData `json:"data"`
+	Data PATCHPriceListsPriceListIdRequestData `json:"data"`
 }
 
 // NewPriceListUpdate instantiates a new PriceListUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPriceListUpdate(data PriceListUpdateData) *PriceListUpdate {
+func NewPriceListUpdate(data PATCHPriceListsPriceListIdRequestData) *PriceListUpdate {
 	this := PriceListUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewPriceListUpdateWithDefaults() *PriceListUpdate {
 }
 
 // GetData returns the Data field value
-func (o *PriceListUpdate) GetData() PriceListUpdateData {
+func (o *PriceListUpdate) GetData() PATCHPriceListsPriceListIdRequestData {
 	if o == nil {
-		var ret PriceListUpdateData
+		var ret PATCHPriceListsPriceListIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *PriceListUpdate) GetData() PriceListUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *PriceListUpdate) GetDataOk() (*PriceListUpdateData, bool) {
+func (o *PriceListUpdate) GetDataOk() (*PATCHPriceListsPriceListIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *PriceListUpdate) GetDataOk() (*PriceListUpdateData, bool) {
 }
 
 // SetData sets field value
-func (o *PriceListUpdate) SetData(v PriceListUpdateData) {
+func (o *PriceListUpdate) SetData(v PATCHPriceListsPriceListIdRequestData) {
 	o.Data = v
 }
 
 func (o PriceListUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PriceListUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullablePriceListUpdate struct {

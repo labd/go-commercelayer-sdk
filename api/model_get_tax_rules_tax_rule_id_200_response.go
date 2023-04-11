@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETTaxRulesTaxRuleId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETTaxRulesTaxRuleId200Response{}
+
 // GETTaxRulesTaxRuleId200Response struct for GETTaxRulesTaxRuleId200Response
 type GETTaxRulesTaxRuleId200Response struct {
-	Data *GETTaxRules200ResponseDataInner `json:"data,omitempty"`
+	Data *GETTaxRulesTaxRuleId200ResponseData `json:"data,omitempty"`
 }
 
 // NewGETTaxRulesTaxRuleId200Response instantiates a new GETTaxRulesTaxRuleId200Response object
@@ -38,9 +41,9 @@ func NewGETTaxRulesTaxRuleId200ResponseWithDefaults() *GETTaxRulesTaxRuleId200Re
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETTaxRulesTaxRuleId200Response) GetData() GETTaxRules200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret GETTaxRules200ResponseDataInner
+func (o *GETTaxRulesTaxRuleId200Response) GetData() GETTaxRulesTaxRuleId200ResponseData {
+	if o == nil || IsNil(o.Data) {
+		var ret GETTaxRulesTaxRuleId200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *GETTaxRulesTaxRuleId200Response) GetData() GETTaxRules200ResponseDataIn
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETTaxRulesTaxRuleId200Response) GetDataOk() (*GETTaxRules200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+func (o *GETTaxRulesTaxRuleId200Response) GetDataOk() (*GETTaxRulesTaxRuleId200ResponseData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *GETTaxRulesTaxRuleId200Response) GetDataOk() (*GETTaxRules200ResponseDa
 
 // HasData returns a boolean if a field has been set.
 func (o *GETTaxRulesTaxRuleId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETTaxRules200ResponseDataInner and assigns it to the Data field.
-func (o *GETTaxRulesTaxRuleId200Response) SetData(v GETTaxRules200ResponseDataInner) {
+// SetData gets a reference to the given GETTaxRulesTaxRuleId200ResponseData and assigns it to the Data field.
+func (o *GETTaxRulesTaxRuleId200Response) SetData(v GETTaxRulesTaxRuleId200ResponseData) {
 	o.Data = &v
 }
 
 func (o GETTaxRulesTaxRuleId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GETTaxRulesTaxRuleId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGETTaxRulesTaxRuleId200Response struct {

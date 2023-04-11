@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the CustomerPaymentSourceData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CustomerPaymentSourceData{}
+
 // CustomerPaymentSourceData struct for CustomerPaymentSourceData
 type CustomerPaymentSourceData struct {
 	// The resource's type
-	Type          string                                                  `json:"type"`
-	Attributes    GETCustomerPaymentSources200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *CustomerPaymentSourceDataRelationships                 `json:"relationships,omitempty"`
+	Type          interface{}                                                               `json:"type"`
+	Attributes    GETCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes `json:"attributes"`
+	Relationships *CustomerPaymentSourceDataRelationships                                   `json:"relationships,omitempty"`
 }
 
 // NewCustomerPaymentSourceData instantiates a new CustomerPaymentSourceData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerPaymentSourceData(type_ string, attributes GETCustomerPaymentSources200ResponseDataInnerAttributes) *CustomerPaymentSourceData {
+func NewCustomerPaymentSourceData(type_ interface{}, attributes GETCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes) *CustomerPaymentSourceData {
 	this := CustomerPaymentSourceData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -43,9 +46,10 @@ func NewCustomerPaymentSourceDataWithDefaults() *CustomerPaymentSourceData {
 }
 
 // GetType returns the Type field value
-func (o *CustomerPaymentSourceData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *CustomerPaymentSourceData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -54,22 +58,23 @@ func (o *CustomerPaymentSourceData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *CustomerPaymentSourceData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CustomerPaymentSourceData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *CustomerPaymentSourceData) SetType(v string) {
+func (o *CustomerPaymentSourceData) SetType(v interface{}) {
 	o.Type = v
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CustomerPaymentSourceData) GetAttributes() GETCustomerPaymentSources200ResponseDataInnerAttributes {
+func (o *CustomerPaymentSourceData) GetAttributes() GETCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETCustomerPaymentSources200ResponseDataInnerAttributes
+		var ret GETCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes
 		return ret
 	}
 
@@ -78,7 +83,7 @@ func (o *CustomerPaymentSourceData) GetAttributes() GETCustomerPaymentSources200
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CustomerPaymentSourceData) GetAttributesOk() (*GETCustomerPaymentSources200ResponseDataInnerAttributes, bool) {
+func (o *CustomerPaymentSourceData) GetAttributesOk() (*GETCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,13 +91,13 @@ func (o *CustomerPaymentSourceData) GetAttributesOk() (*GETCustomerPaymentSource
 }
 
 // SetAttributes sets field value
-func (o *CustomerPaymentSourceData) SetAttributes(v GETCustomerPaymentSources200ResponseDataInnerAttributes) {
+func (o *CustomerPaymentSourceData) SetAttributes(v GETCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *CustomerPaymentSourceData) GetRelationships() CustomerPaymentSourceDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret CustomerPaymentSourceDataRelationships
 		return ret
 	}
@@ -102,7 +107,7 @@ func (o *CustomerPaymentSourceData) GetRelationships() CustomerPaymentSourceData
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerPaymentSourceData) GetRelationshipsOk() (*CustomerPaymentSourceDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -110,7 +115,7 @@ func (o *CustomerPaymentSourceData) GetRelationshipsOk() (*CustomerPaymentSource
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *CustomerPaymentSourceData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -123,17 +128,23 @@ func (o *CustomerPaymentSourceData) SetRelationships(v CustomerPaymentSourceData
 }
 
 func (o CustomerPaymentSourceData) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
-		toSerialize["relationships"] = o.Relationships
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CustomerPaymentSourceData) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
+		toSerialize["relationships"] = o.Relationships
+	}
+	return toSerialize, nil
 }
 
 type NullableCustomerPaymentSourceData struct {

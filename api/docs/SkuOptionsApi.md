@@ -1,6 +1,6 @@
 # \SkuOptionsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,15 +31,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    skuOptionId := "skuOptionId_example" // string | The resource's id
+    skuOptionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuOptionsApi.DELETESkuOptionsSkuOptionId(context.Background(), skuOptionId).Execute()
+    r, err := apiClient.SkuOptionsApi.DELETESkuOptionsSkuOptionId(context.Background(), skuOptionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuOptionsApi.DELETESkuOptionsSkuOptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -53,7 +53,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**skuOptionId** | **string** | The resource&#39;s id | 
+**skuOptionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -99,15 +99,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    lineItemOptionId := "lineItemOptionId_example" // string | The resource's id
+    lineItemOptionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuOptionsApi.GETLineItemOptionIdSkuOption(context.Background(), lineItemOptionId).Execute()
+    r, err := apiClient.SkuOptionsApi.GETLineItemOptionIdSkuOption(context.Background(), lineItemOptionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuOptionsApi.GETLineItemOptionIdSkuOption``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -121,7 +121,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**lineItemOptionId** | **string** | The resource&#39;s id | 
+**lineItemOptionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -167,15 +167,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    skuId := "skuId_example" // string | The resource's id
+    skuId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuOptionsApi.GETSkuIdSkuOptions(context.Background(), skuId).Execute()
+    r, err := apiClient.SkuOptionsApi.GETSkuIdSkuOptions(context.Background(), skuId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuOptionsApi.GETSkuIdSkuOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -189,7 +189,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**skuId** | **string** | The resource&#39;s id | 
+**skuId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -235,7 +235,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -296,11 +296,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    skuOptionId := "skuOptionId_example" // string | The resource's id
+    skuOptionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -320,7 +320,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**skuOptionId** | **string** | The resource&#39;s id | 
+**skuOptionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 ## PATCHSkuOptionsSkuOptionId
 
-> PATCHSkuOptionsSkuOptionId200Response PATCHSkuOptionsSkuOptionId(ctx, skuOptionId).SkuOptionUpdate(skuOptionUpdate).Execute()
+> PATCHSkuOptionsSkuOptionId200Response PATCHSkuOptionsSkuOptionId(ctx, skuOptionId).PATCHSkuOptionsSkuOptionIdRequest(pATCHSkuOptionsSkuOptionIdRequest).Execute()
 
 Update a SKU option
 
@@ -366,16 +366,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    skuOptionUpdate := *openapiclient.NewSkuOptionUpdate(*openapiclient.NewSkuOptionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHSkuOptionsSkuOptionId200ResponseDataAttributes())) // SkuOptionUpdate | 
-    skuOptionId := "skuOptionId_example" // string | The resource's id
+    pATCHSkuOptionsSkuOptionIdRequest := *openapiclient.NewPATCHSkuOptionsSkuOptionIdRequest(*openapiclient.NewPATCHSkuOptionsSkuOptionIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHSkuOptionsSkuOptionIdRequestDataAttributes())) // PATCHSkuOptionsSkuOptionIdRequest | 
+    skuOptionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuOptionsApi.PATCHSkuOptionsSkuOptionId(context.Background(), skuOptionId).SkuOptionUpdate(skuOptionUpdate).Execute()
+    resp, r, err := apiClient.SkuOptionsApi.PATCHSkuOptionsSkuOptionId(context.Background(), skuOptionId).PATCHSkuOptionsSkuOptionIdRequest(pATCHSkuOptionsSkuOptionIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuOptionsApi.PATCHSkuOptionsSkuOptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -391,7 +391,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**skuOptionId** | **string** | The resource&#39;s id | 
+**skuOptionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -400,7 +400,7 @@ Other parameters are passed through a pointer to a apiPATCHSkuOptionsSkuOptionId
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **skuOptionUpdate** | [**SkuOptionUpdate**](SkuOptionUpdate.md) |  | 
+ **pATCHSkuOptionsSkuOptionIdRequest** | [**PATCHSkuOptionsSkuOptionIdRequest**](PATCHSkuOptionsSkuOptionIdRequest.md) |  | 
 
 
 ### Return type
@@ -423,7 +423,7 @@ Name | Type | Description  | Notes
 
 ## POSTSkuOptions
 
-> POSTSkuOptions201Response POSTSkuOptions(ctx).SkuOptionCreate(skuOptionCreate).Execute()
+> POSTSkuOptions201Response POSTSkuOptions(ctx).POSTSkuOptionsRequest(pOSTSkuOptionsRequest).Execute()
 
 Create a SKU option
 
@@ -438,15 +438,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    skuOptionCreate := *openapiclient.NewSkuOptionCreate(*openapiclient.NewSkuOptionCreateData("Type_example", *openapiclient.NewPOSTSkuOptions201ResponseDataAttributes("Embossing"))) // SkuOptionCreate | 
+    pOSTSkuOptionsRequest := *openapiclient.NewPOSTSkuOptionsRequest(*openapiclient.NewPOSTSkuOptionsRequestData(interface{}(123), *openapiclient.NewPOSTSkuOptionsRequestDataAttributes(interface{}(Embossing)))) // POSTSkuOptionsRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuOptionsApi.POSTSkuOptions(context.Background()).SkuOptionCreate(skuOptionCreate).Execute()
+    resp, r, err := apiClient.SkuOptionsApi.POSTSkuOptions(context.Background()).POSTSkuOptionsRequest(pOSTSkuOptionsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuOptionsApi.POSTSkuOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -467,7 +467,7 @@ Other parameters are passed through a pointer to a apiPOSTSkuOptionsRequest stru
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **skuOptionCreate** | [**SkuOptionCreate**](SkuOptionCreate.md) |  | 
+ **pOSTSkuOptionsRequest** | [**POSTSkuOptionsRequest**](POSTSkuOptionsRequest.md) |  | 
 
 ### Return type
 

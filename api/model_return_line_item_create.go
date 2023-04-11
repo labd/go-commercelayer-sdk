@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the ReturnLineItemCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ReturnLineItemCreate{}
+
 // ReturnLineItemCreate struct for ReturnLineItemCreate
 type ReturnLineItemCreate struct {
-	Data ReturnLineItemCreateData `json:"data"`
+	Data POSTReturnLineItemsRequestData `json:"data"`
 }
 
 // NewReturnLineItemCreate instantiates a new ReturnLineItemCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewReturnLineItemCreate(data ReturnLineItemCreateData) *ReturnLineItemCreate {
+func NewReturnLineItemCreate(data POSTReturnLineItemsRequestData) *ReturnLineItemCreate {
 	this := ReturnLineItemCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewReturnLineItemCreateWithDefaults() *ReturnLineItemCreate {
 }
 
 // GetData returns the Data field value
-func (o *ReturnLineItemCreate) GetData() ReturnLineItemCreateData {
+func (o *ReturnLineItemCreate) GetData() POSTReturnLineItemsRequestData {
 	if o == nil {
-		var ret ReturnLineItemCreateData
+		var ret POSTReturnLineItemsRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *ReturnLineItemCreate) GetData() ReturnLineItemCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ReturnLineItemCreate) GetDataOk() (*ReturnLineItemCreateData, bool) {
+func (o *ReturnLineItemCreate) GetDataOk() (*POSTReturnLineItemsRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *ReturnLineItemCreate) GetDataOk() (*ReturnLineItemCreateData, bool) {
 }
 
 // SetData sets field value
-func (o *ReturnLineItemCreate) SetData(v ReturnLineItemCreateData) {
+func (o *ReturnLineItemCreate) SetData(v POSTReturnLineItemsRequestData) {
 	o.Data = v
 }
 
 func (o ReturnLineItemCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ReturnLineItemCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableReturnLineItemCreate struct {

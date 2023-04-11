@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Merchant** | Pointer to [**MarketDataRelationshipsMerchant**](MarketDataRelationshipsMerchant.md) |  | [optional] 
 **PriceList** | Pointer to [**MarketDataRelationshipsPriceList**](MarketDataRelationshipsPriceList.md) |  | [optional] 
 **InventoryModel** | Pointer to [**InventoryReturnLocationDataRelationshipsInventoryModel**](InventoryReturnLocationDataRelationshipsInventoryModel.md) |  | [optional] 
+**SubscriptionModel** | Pointer to [**MarketDataRelationshipsSubscriptionModel**](MarketDataRelationshipsSubscriptionModel.md) |  | [optional] 
 **TaxCalculator** | Pointer to [**MarketDataRelationshipsTaxCalculator**](MarketDataRelationshipsTaxCalculator.md) |  | [optional] 
 **CustomerGroup** | Pointer to [**CustomerDataRelationshipsCustomerGroup**](CustomerDataRelationshipsCustomerGroup.md) |  | [optional] 
 **Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
@@ -104,6 +105,31 @@ SetInventoryModel sets InventoryModel field to given value.
 `func (o *MarketDataRelationships) HasInventoryModel() bool`
 
 HasInventoryModel returns a boolean if a field has been set.
+
+### GetSubscriptionModel
+
+`func (o *MarketDataRelationships) GetSubscriptionModel() MarketDataRelationshipsSubscriptionModel`
+
+GetSubscriptionModel returns the SubscriptionModel field if non-nil, zero value otherwise.
+
+### GetSubscriptionModelOk
+
+`func (o *MarketDataRelationships) GetSubscriptionModelOk() (*MarketDataRelationshipsSubscriptionModel, bool)`
+
+GetSubscriptionModelOk returns a tuple with the SubscriptionModel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubscriptionModel
+
+`func (o *MarketDataRelationships) SetSubscriptionModel(v MarketDataRelationshipsSubscriptionModel)`
+
+SetSubscriptionModel sets SubscriptionModel field to given value.
+
+### HasSubscriptionModel
+
+`func (o *MarketDataRelationships) HasSubscriptionModel() bool`
+
+HasSubscriptionModel returns a boolean if a field has been set.
 
 ### GetTaxCalculator
 

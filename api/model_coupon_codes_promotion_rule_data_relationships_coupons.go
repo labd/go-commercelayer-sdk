@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the CouponCodesPromotionRuleDataRelationshipsCoupons type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CouponCodesPromotionRuleDataRelationshipsCoupons{}
+
 // CouponCodesPromotionRuleDataRelationshipsCoupons struct for CouponCodesPromotionRuleDataRelationshipsCoupons
 type CouponCodesPromotionRuleDataRelationshipsCoupons struct {
-	Data *CouponCodesPromotionRuleDataRelationshipsCouponsData `json:"data,omitempty"`
+	Data *POSTCouponCodesPromotionRulesRequestDataRelationshipsCouponsData `json:"data,omitempty"`
 }
 
 // NewCouponCodesPromotionRuleDataRelationshipsCoupons instantiates a new CouponCodesPromotionRuleDataRelationshipsCoupons object
@@ -38,9 +41,9 @@ func NewCouponCodesPromotionRuleDataRelationshipsCouponsWithDefaults() *CouponCo
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *CouponCodesPromotionRuleDataRelationshipsCoupons) GetData() CouponCodesPromotionRuleDataRelationshipsCouponsData {
-	if o == nil || o.Data == nil {
-		var ret CouponCodesPromotionRuleDataRelationshipsCouponsData
+func (o *CouponCodesPromotionRuleDataRelationshipsCoupons) GetData() POSTCouponCodesPromotionRulesRequestDataRelationshipsCouponsData {
+	if o == nil || IsNil(o.Data) {
+		var ret POSTCouponCodesPromotionRulesRequestDataRelationshipsCouponsData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *CouponCodesPromotionRuleDataRelationshipsCoupons) GetData() CouponCodes
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CouponCodesPromotionRuleDataRelationshipsCoupons) GetDataOk() (*CouponCodesPromotionRuleDataRelationshipsCouponsData, bool) {
-	if o == nil || o.Data == nil {
+func (o *CouponCodesPromotionRuleDataRelationshipsCoupons) GetDataOk() (*POSTCouponCodesPromotionRulesRequestDataRelationshipsCouponsData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *CouponCodesPromotionRuleDataRelationshipsCoupons) GetDataOk() (*CouponC
 
 // HasData returns a boolean if a field has been set.
 func (o *CouponCodesPromotionRuleDataRelationshipsCoupons) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given CouponCodesPromotionRuleDataRelationshipsCouponsData and assigns it to the Data field.
-func (o *CouponCodesPromotionRuleDataRelationshipsCoupons) SetData(v CouponCodesPromotionRuleDataRelationshipsCouponsData) {
+// SetData gets a reference to the given POSTCouponCodesPromotionRulesRequestDataRelationshipsCouponsData and assigns it to the Data field.
+func (o *CouponCodesPromotionRuleDataRelationshipsCoupons) SetData(v POSTCouponCodesPromotionRulesRequestDataRelationshipsCouponsData) {
 	o.Data = &v
 }
 
 func (o CouponCodesPromotionRuleDataRelationshipsCoupons) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CouponCodesPromotionRuleDataRelationshipsCoupons) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableCouponCodesPromotionRuleDataRelationshipsCoupons struct {

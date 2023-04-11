@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETParcels200ResponseDataInnerAttributes**](GETParcels200ResponseDataInnerAttributes.md) |  | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Attributes** | [**GETParcelsParcelId200ResponseDataAttributes**](GETParcelsParcelId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ParcelDataRelationships**](ParcelDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewParcelData
 
-`func NewParcelData(type_ string, attributes GETParcels200ResponseDataInnerAttributes, ) *ParcelData`
+`func NewParcelData(type_ interface{}, attributes GETParcelsParcelId200ResponseDataAttributes, ) *ParcelData`
 
 NewParcelData instantiates a new ParcelData object
 This constructor will assign default values to properties that have it defined,
@@ -29,40 +29,50 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *ParcelData) GetType() string`
+`func (o *ParcelData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *ParcelData) GetTypeOk() (*string, bool)`
+`func (o *ParcelData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *ParcelData) SetType(v string)`
+`func (o *ParcelData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *ParcelData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *ParcelData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *ParcelData) GetAttributes() GETParcels200ResponseDataInnerAttributes`
+`func (o *ParcelData) GetAttributes() GETParcelsParcelId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ParcelData) GetAttributesOk() (*GETParcels200ResponseDataInnerAttributes, bool)`
+`func (o *ParcelData) GetAttributesOk() (*GETParcelsParcelId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ParcelData) SetAttributes(v GETParcels200ResponseDataInnerAttributes)`
+`func (o *ParcelData) SetAttributes(v GETParcelsParcelId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

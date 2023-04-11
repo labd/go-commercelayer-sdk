@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the PaymentMethodDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PaymentMethodDataRelationships{}
 
 // PaymentMethodDataRelationships struct for PaymentMethodDataRelationships
 type PaymentMethodDataRelationships struct {
@@ -41,7 +44,7 @@ func NewPaymentMethodDataRelationshipsWithDefaults() *PaymentMethodDataRelations
 
 // GetMarket returns the Market field value if set, zero value otherwise.
 func (o *PaymentMethodDataRelationships) GetMarket() AvalaraAccountDataRelationshipsMarkets {
-	if o == nil || o.Market == nil {
+	if o == nil || IsNil(o.Market) {
 		var ret AvalaraAccountDataRelationshipsMarkets
 		return ret
 	}
@@ -51,7 +54,7 @@ func (o *PaymentMethodDataRelationships) GetMarket() AvalaraAccountDataRelations
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PaymentMethodDataRelationships) GetMarketOk() (*AvalaraAccountDataRelationshipsMarkets, bool) {
-	if o == nil || o.Market == nil {
+	if o == nil || IsNil(o.Market) {
 		return nil, false
 	}
 	return o.Market, true
@@ -59,7 +62,7 @@ func (o *PaymentMethodDataRelationships) GetMarketOk() (*AvalaraAccountDataRelat
 
 // HasMarket returns a boolean if a field has been set.
 func (o *PaymentMethodDataRelationships) HasMarket() bool {
-	if o != nil && o.Market != nil {
+	if o != nil && !IsNil(o.Market) {
 		return true
 	}
 
@@ -73,7 +76,7 @@ func (o *PaymentMethodDataRelationships) SetMarket(v AvalaraAccountDataRelations
 
 // GetPaymentGateway returns the PaymentGateway field value if set, zero value otherwise.
 func (o *PaymentMethodDataRelationships) GetPaymentGateway() AdyenPaymentDataRelationshipsPaymentGateway {
-	if o == nil || o.PaymentGateway == nil {
+	if o == nil || IsNil(o.PaymentGateway) {
 		var ret AdyenPaymentDataRelationshipsPaymentGateway
 		return ret
 	}
@@ -83,7 +86,7 @@ func (o *PaymentMethodDataRelationships) GetPaymentGateway() AdyenPaymentDataRel
 // GetPaymentGatewayOk returns a tuple with the PaymentGateway field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PaymentMethodDataRelationships) GetPaymentGatewayOk() (*AdyenPaymentDataRelationshipsPaymentGateway, bool) {
-	if o == nil || o.PaymentGateway == nil {
+	if o == nil || IsNil(o.PaymentGateway) {
 		return nil, false
 	}
 	return o.PaymentGateway, true
@@ -91,7 +94,7 @@ func (o *PaymentMethodDataRelationships) GetPaymentGatewayOk() (*AdyenPaymentDat
 
 // HasPaymentGateway returns a boolean if a field has been set.
 func (o *PaymentMethodDataRelationships) HasPaymentGateway() bool {
-	if o != nil && o.PaymentGateway != nil {
+	if o != nil && !IsNil(o.PaymentGateway) {
 		return true
 	}
 
@@ -105,7 +108,7 @@ func (o *PaymentMethodDataRelationships) SetPaymentGateway(v AdyenPaymentDataRel
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *PaymentMethodDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
-	if o == nil || o.Attachments == nil {
+	if o == nil || IsNil(o.Attachments) {
 		var ret AvalaraAccountDataRelationshipsAttachments
 		return ret
 	}
@@ -115,7 +118,7 @@ func (o *PaymentMethodDataRelationships) GetAttachments() AvalaraAccountDataRela
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PaymentMethodDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
-	if o == nil || o.Attachments == nil {
+	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
 	return o.Attachments, true
@@ -123,7 +126,7 @@ func (o *PaymentMethodDataRelationships) GetAttachmentsOk() (*AvalaraAccountData
 
 // HasAttachments returns a boolean if a field has been set.
 func (o *PaymentMethodDataRelationships) HasAttachments() bool {
-	if o != nil && o.Attachments != nil {
+	if o != nil && !IsNil(o.Attachments) {
 		return true
 	}
 
@@ -136,17 +139,25 @@ func (o *PaymentMethodDataRelationships) SetAttachments(v AvalaraAccountDataRela
 }
 
 func (o PaymentMethodDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Market != nil {
-		toSerialize["market"] = o.Market
-	}
-	if o.PaymentGateway != nil {
-		toSerialize["payment_gateway"] = o.PaymentGateway
-	}
-	if o.Attachments != nil {
-		toSerialize["attachments"] = o.Attachments
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PaymentMethodDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Market) {
+		toSerialize["market"] = o.Market
+	}
+	if !IsNil(o.PaymentGateway) {
+		toSerialize["payment_gateway"] = o.PaymentGateway
+	}
+	if !IsNil(o.Attachments) {
+		toSerialize["attachments"] = o.Attachments
+	}
+	return toSerialize, nil
 }
 
 type NullablePaymentMethodDataRelationships struct {

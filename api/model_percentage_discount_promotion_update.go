@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the PercentageDiscountPromotionUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PercentageDiscountPromotionUpdate{}
+
 // PercentageDiscountPromotionUpdate struct for PercentageDiscountPromotionUpdate
 type PercentageDiscountPromotionUpdate struct {
-	Data PercentageDiscountPromotionUpdateData `json:"data"`
+	Data PATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequestData `json:"data"`
 }
 
 // NewPercentageDiscountPromotionUpdate instantiates a new PercentageDiscountPromotionUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPercentageDiscountPromotionUpdate(data PercentageDiscountPromotionUpdateData) *PercentageDiscountPromotionUpdate {
+func NewPercentageDiscountPromotionUpdate(data PATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequestData) *PercentageDiscountPromotionUpdate {
 	this := PercentageDiscountPromotionUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewPercentageDiscountPromotionUpdateWithDefaults() *PercentageDiscountPromo
 }
 
 // GetData returns the Data field value
-func (o *PercentageDiscountPromotionUpdate) GetData() PercentageDiscountPromotionUpdateData {
+func (o *PercentageDiscountPromotionUpdate) GetData() PATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequestData {
 	if o == nil {
-		var ret PercentageDiscountPromotionUpdateData
+		var ret PATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *PercentageDiscountPromotionUpdate) GetData() PercentageDiscountPromotio
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *PercentageDiscountPromotionUpdate) GetDataOk() (*PercentageDiscountPromotionUpdateData, bool) {
+func (o *PercentageDiscountPromotionUpdate) GetDataOk() (*PATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *PercentageDiscountPromotionUpdate) GetDataOk() (*PercentageDiscountProm
 }
 
 // SetData sets field value
-func (o *PercentageDiscountPromotionUpdate) SetData(v PercentageDiscountPromotionUpdateData) {
+func (o *PercentageDiscountPromotionUpdate) SetData(v PATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequestData) {
 	o.Data = v
 }
 
 func (o PercentageDiscountPromotionUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PercentageDiscountPromotionUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullablePercentageDiscountPromotionUpdate struct {

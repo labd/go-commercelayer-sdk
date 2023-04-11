@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the ExternalPaymentData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ExternalPaymentData{}
+
 // ExternalPaymentData struct for ExternalPaymentData
 type ExternalPaymentData struct {
 	// The resource's type
-	Type          string                                            `json:"type"`
-	Attributes    GETExternalPayments200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *ExternalPaymentDataRelationships                 `json:"relationships,omitempty"`
+	Type          interface{}                                                   `json:"type"`
+	Attributes    GETExternalPaymentsExternalPaymentId200ResponseDataAttributes `json:"attributes"`
+	Relationships *ExternalPaymentDataRelationships                             `json:"relationships,omitempty"`
 }
 
 // NewExternalPaymentData instantiates a new ExternalPaymentData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalPaymentData(type_ string, attributes GETExternalPayments200ResponseDataInnerAttributes) *ExternalPaymentData {
+func NewExternalPaymentData(type_ interface{}, attributes GETExternalPaymentsExternalPaymentId200ResponseDataAttributes) *ExternalPaymentData {
 	this := ExternalPaymentData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -43,9 +46,10 @@ func NewExternalPaymentDataWithDefaults() *ExternalPaymentData {
 }
 
 // GetType returns the Type field value
-func (o *ExternalPaymentData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *ExternalPaymentData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -54,22 +58,23 @@ func (o *ExternalPaymentData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *ExternalPaymentData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ExternalPaymentData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *ExternalPaymentData) SetType(v string) {
+func (o *ExternalPaymentData) SetType(v interface{}) {
 	o.Type = v
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ExternalPaymentData) GetAttributes() GETExternalPayments200ResponseDataInnerAttributes {
+func (o *ExternalPaymentData) GetAttributes() GETExternalPaymentsExternalPaymentId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETExternalPayments200ResponseDataInnerAttributes
+		var ret GETExternalPaymentsExternalPaymentId200ResponseDataAttributes
 		return ret
 	}
 
@@ -78,7 +83,7 @@ func (o *ExternalPaymentData) GetAttributes() GETExternalPayments200ResponseData
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ExternalPaymentData) GetAttributesOk() (*GETExternalPayments200ResponseDataInnerAttributes, bool) {
+func (o *ExternalPaymentData) GetAttributesOk() (*GETExternalPaymentsExternalPaymentId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,13 +91,13 @@ func (o *ExternalPaymentData) GetAttributesOk() (*GETExternalPayments200Response
 }
 
 // SetAttributes sets field value
-func (o *ExternalPaymentData) SetAttributes(v GETExternalPayments200ResponseDataInnerAttributes) {
+func (o *ExternalPaymentData) SetAttributes(v GETExternalPaymentsExternalPaymentId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *ExternalPaymentData) GetRelationships() ExternalPaymentDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret ExternalPaymentDataRelationships
 		return ret
 	}
@@ -102,7 +107,7 @@ func (o *ExternalPaymentData) GetRelationships() ExternalPaymentDataRelationship
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalPaymentData) GetRelationshipsOk() (*ExternalPaymentDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -110,7 +115,7 @@ func (o *ExternalPaymentData) GetRelationshipsOk() (*ExternalPaymentDataRelation
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *ExternalPaymentData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -123,17 +128,23 @@ func (o *ExternalPaymentData) SetRelationships(v ExternalPaymentDataRelationship
 }
 
 func (o ExternalPaymentData) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
-		toSerialize["relationships"] = o.Relationships
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ExternalPaymentData) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
+		toSerialize["relationships"] = o.Relationships
+	}
+	return toSerialize, nil
 }
 
 type NullableExternalPaymentData struct {

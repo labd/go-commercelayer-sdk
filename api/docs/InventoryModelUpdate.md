@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**InventoryModelUpdateData**](InventoryModelUpdateData.md) |  | 
+**Data** | [**PATCHInventoryModelsInventoryModelIdRequestData**](PATCHInventoryModelsInventoryModelIdRequestData.md) |  | 
 
 ## Methods
 
 ### NewInventoryModelUpdate
 
-`func NewInventoryModelUpdate(data InventoryModelUpdateData, ) *InventoryModelUpdate`
+`func NewInventoryModelUpdate(data PATCHInventoryModelsInventoryModelIdRequestData, ) *InventoryModelUpdate`
 
 NewInventoryModelUpdate instantiates a new InventoryModelUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *InventoryModelUpdate) GetData() InventoryModelUpdateData`
+`func (o *InventoryModelUpdate) GetData() PATCHInventoryModelsInventoryModelIdRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *InventoryModelUpdate) GetDataOk() (*InventoryModelUpdateData, bool)`
+`func (o *InventoryModelUpdate) GetDataOk() (*PATCHInventoryModelsInventoryModelIdRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *InventoryModelUpdate) SetData(v InventoryModelUpdateData)`
+`func (o *InventoryModelUpdate) SetData(v PATCHInventoryModelsInventoryModelIdRequestData)`
 
 SetData sets Data field to given value.
 

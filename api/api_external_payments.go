@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type ExternalPaymentsApiService service
 type ExternalPaymentsApiDELETEExternalPaymentsExternalPaymentIdRequest struct {
 	ctx               context.Context
 	ApiService        *ExternalPaymentsApiService
-	externalPaymentId string
+	externalPaymentId interface{}
 }
 
 func (r ExternalPaymentsApiDELETEExternalPaymentsExternalPaymentIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete an external payment
 	@param externalPaymentId The resource's id
 	@return ExternalPaymentsApiDELETEExternalPaymentsExternalPaymentIdRequest
 */
-func (a *ExternalPaymentsApiService) DELETEExternalPaymentsExternalPaymentId(ctx context.Context, externalPaymentId string) ExternalPaymentsApiDELETEExternalPaymentsExternalPaymentIdRequest {
+func (a *ExternalPaymentsApiService) DELETEExternalPaymentsExternalPaymentId(ctx context.Context, externalPaymentId interface{}) ExternalPaymentsApiDELETEExternalPaymentsExternalPaymentIdRequest {
 	return ExternalPaymentsApiDELETEExternalPaymentsExternalPaymentIdRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -64,7 +64,7 @@ func (a *ExternalPaymentsApiService) DELETEExternalPaymentsExternalPaymentIdExec
 	}
 
 	localVarPath := localBasePath + "/external_payments/{externalPaymentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPaymentId"+"}", url.PathEscape(parameterToString(r.externalPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPaymentId"+"}", url.PathEscape(parameterValueToString(r.externalPaymentId, "externalPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *ExternalPaymentsApiService) DELETEExternalPaymentsExternalPaymentIdExec
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *ExternalPaymentsApiService) DELETEExternalPaymentsExternalPaymentIdExec
 type ExternalPaymentsApiGETExternalGatewayIdExternalPaymentsRequest struct {
 	ctx               context.Context
 	ApiService        *ExternalPaymentsApiService
-	externalGatewayId string
+	externalGatewayId interface{}
 }
 
 func (r ExternalPaymentsApiGETExternalGatewayIdExternalPaymentsRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the external payments associated to the external gateway
 	@param externalGatewayId The resource's id
 	@return ExternalPaymentsApiGETExternalGatewayIdExternalPaymentsRequest
 */
-func (a *ExternalPaymentsApiService) GETExternalGatewayIdExternalPayments(ctx context.Context, externalGatewayId string) ExternalPaymentsApiGETExternalGatewayIdExternalPaymentsRequest {
+func (a *ExternalPaymentsApiService) GETExternalGatewayIdExternalPayments(ctx context.Context, externalGatewayId interface{}) ExternalPaymentsApiGETExternalGatewayIdExternalPaymentsRequest {
 	return ExternalPaymentsApiGETExternalGatewayIdExternalPaymentsRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -156,7 +156,7 @@ func (a *ExternalPaymentsApiService) GETExternalGatewayIdExternalPaymentsExecute
 	}
 
 	localVarPath := localBasePath + "/external_gateways/{externalGatewayId}/external_payments"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalGatewayId"+"}", url.PathEscape(parameterToString(r.externalGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalGatewayId"+"}", url.PathEscape(parameterValueToString(r.externalGatewayId, "externalGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *ExternalPaymentsApiService) GETExternalGatewayIdExternalPaymentsExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *ExternalPaymentsApiService) GETExternalPaymentsExecute(r ExternalPaymen
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -310,7 +310,7 @@ func (a *ExternalPaymentsApiService) GETExternalPaymentsExecute(r ExternalPaymen
 type ExternalPaymentsApiGETExternalPaymentsExternalPaymentIdRequest struct {
 	ctx               context.Context
 	ApiService        *ExternalPaymentsApiService
-	externalPaymentId string
+	externalPaymentId interface{}
 }
 
 func (r ExternalPaymentsApiGETExternalPaymentsExternalPaymentIdRequest) Execute() (*GETExternalPaymentsExternalPaymentId200Response, *http.Response, error) {
@@ -326,7 +326,7 @@ Retrieve an external payment
 	@param externalPaymentId The resource's id
 	@return ExternalPaymentsApiGETExternalPaymentsExternalPaymentIdRequest
 */
-func (a *ExternalPaymentsApiService) GETExternalPaymentsExternalPaymentId(ctx context.Context, externalPaymentId string) ExternalPaymentsApiGETExternalPaymentsExternalPaymentIdRequest {
+func (a *ExternalPaymentsApiService) GETExternalPaymentsExternalPaymentId(ctx context.Context, externalPaymentId interface{}) ExternalPaymentsApiGETExternalPaymentsExternalPaymentIdRequest {
 	return ExternalPaymentsApiGETExternalPaymentsExternalPaymentIdRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -351,7 +351,7 @@ func (a *ExternalPaymentsApiService) GETExternalPaymentsExternalPaymentIdExecute
 	}
 
 	localVarPath := localBasePath + "/external_payments/{externalPaymentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPaymentId"+"}", url.PathEscape(parameterToString(r.externalPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPaymentId"+"}", url.PathEscape(parameterValueToString(r.externalPaymentId, "externalPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *ExternalPaymentsApiService) GETExternalPaymentsExternalPaymentIdExecute
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -412,14 +412,14 @@ func (a *ExternalPaymentsApiService) GETExternalPaymentsExternalPaymentIdExecute
 }
 
 type ExternalPaymentsApiPATCHExternalPaymentsExternalPaymentIdRequest struct {
-	ctx                   context.Context
-	ApiService            *ExternalPaymentsApiService
-	externalPaymentUpdate *ExternalPaymentUpdate
-	externalPaymentId     string
+	ctx                                           context.Context
+	ApiService                                    *ExternalPaymentsApiService
+	pATCHExternalPaymentsExternalPaymentIdRequest *PATCHExternalPaymentsExternalPaymentIdRequest
+	externalPaymentId                             interface{}
 }
 
-func (r ExternalPaymentsApiPATCHExternalPaymentsExternalPaymentIdRequest) ExternalPaymentUpdate(externalPaymentUpdate ExternalPaymentUpdate) ExternalPaymentsApiPATCHExternalPaymentsExternalPaymentIdRequest {
-	r.externalPaymentUpdate = &externalPaymentUpdate
+func (r ExternalPaymentsApiPATCHExternalPaymentsExternalPaymentIdRequest) PATCHExternalPaymentsExternalPaymentIdRequest(pATCHExternalPaymentsExternalPaymentIdRequest PATCHExternalPaymentsExternalPaymentIdRequest) ExternalPaymentsApiPATCHExternalPaymentsExternalPaymentIdRequest {
+	r.pATCHExternalPaymentsExternalPaymentIdRequest = &pATCHExternalPaymentsExternalPaymentIdRequest
 	return r
 }
 
@@ -436,7 +436,7 @@ Update an external payment
 	@param externalPaymentId The resource's id
 	@return ExternalPaymentsApiPATCHExternalPaymentsExternalPaymentIdRequest
 */
-func (a *ExternalPaymentsApiService) PATCHExternalPaymentsExternalPaymentId(ctx context.Context, externalPaymentId string) ExternalPaymentsApiPATCHExternalPaymentsExternalPaymentIdRequest {
+func (a *ExternalPaymentsApiService) PATCHExternalPaymentsExternalPaymentId(ctx context.Context, externalPaymentId interface{}) ExternalPaymentsApiPATCHExternalPaymentsExternalPaymentIdRequest {
 	return ExternalPaymentsApiPATCHExternalPaymentsExternalPaymentIdRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -461,13 +461,13 @@ func (a *ExternalPaymentsApiService) PATCHExternalPaymentsExternalPaymentIdExecu
 	}
 
 	localVarPath := localBasePath + "/external_payments/{externalPaymentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPaymentId"+"}", url.PathEscape(parameterToString(r.externalPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPaymentId"+"}", url.PathEscape(parameterValueToString(r.externalPaymentId, "externalPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.externalPaymentUpdate == nil {
-		return localVarReturnValue, nil, reportError("externalPaymentUpdate is required and must be specified")
+	if r.pATCHExternalPaymentsExternalPaymentIdRequest == nil {
+		return localVarReturnValue, nil, reportError("pATCHExternalPaymentsExternalPaymentIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -488,7 +488,7 @@ func (a *ExternalPaymentsApiService) PATCHExternalPaymentsExternalPaymentIdExecu
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.externalPaymentUpdate
+	localVarPostBody = r.pATCHExternalPaymentsExternalPaymentIdRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -499,9 +499,9 @@ func (a *ExternalPaymentsApiService) PATCHExternalPaymentsExternalPaymentIdExecu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -527,13 +527,13 @@ func (a *ExternalPaymentsApiService) PATCHExternalPaymentsExternalPaymentIdExecu
 }
 
 type ExternalPaymentsApiPOSTExternalPaymentsRequest struct {
-	ctx                   context.Context
-	ApiService            *ExternalPaymentsApiService
-	externalPaymentCreate *ExternalPaymentCreate
+	ctx                         context.Context
+	ApiService                  *ExternalPaymentsApiService
+	pOSTExternalPaymentsRequest *POSTExternalPaymentsRequest
 }
 
-func (r ExternalPaymentsApiPOSTExternalPaymentsRequest) ExternalPaymentCreate(externalPaymentCreate ExternalPaymentCreate) ExternalPaymentsApiPOSTExternalPaymentsRequest {
-	r.externalPaymentCreate = &externalPaymentCreate
+func (r ExternalPaymentsApiPOSTExternalPaymentsRequest) POSTExternalPaymentsRequest(pOSTExternalPaymentsRequest POSTExternalPaymentsRequest) ExternalPaymentsApiPOSTExternalPaymentsRequest {
+	r.pOSTExternalPaymentsRequest = &pOSTExternalPaymentsRequest
 	return r
 }
 
@@ -577,8 +577,8 @@ func (a *ExternalPaymentsApiService) POSTExternalPaymentsExecute(r ExternalPayme
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.externalPaymentCreate == nil {
-		return localVarReturnValue, nil, reportError("externalPaymentCreate is required and must be specified")
+	if r.pOSTExternalPaymentsRequest == nil {
+		return localVarReturnValue, nil, reportError("pOSTExternalPaymentsRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -599,7 +599,7 @@ func (a *ExternalPaymentsApiService) POSTExternalPaymentsExecute(r ExternalPayme
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.externalPaymentCreate
+	localVarPostBody = r.pOSTExternalPaymentsRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -610,9 +610,9 @@ func (a *ExternalPaymentsApiService) POSTExternalPaymentsExecute(r ExternalPayme
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

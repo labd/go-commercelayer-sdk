@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the ShippingWeightTierData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ShippingWeightTierData{}
+
 // ShippingWeightTierData struct for ShippingWeightTierData
 type ShippingWeightTierData struct {
 	// The resource's type
-	Type          string                                               `json:"type"`
-	Attributes    GETShippingMethodTiers200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *ShippingMethodTierDataRelationships                 `json:"relationships,omitempty"`
+	Type          interface{}                                                         `json:"type"`
+	Attributes    GETShippingMethodTiersShippingMethodTierId200ResponseDataAttributes `json:"attributes"`
+	Relationships *ShippingMethodTierDataRelationships                                `json:"relationships,omitempty"`
 }
 
 // NewShippingWeightTierData instantiates a new ShippingWeightTierData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShippingWeightTierData(type_ string, attributes GETShippingMethodTiers200ResponseDataInnerAttributes) *ShippingWeightTierData {
+func NewShippingWeightTierData(type_ interface{}, attributes GETShippingMethodTiersShippingMethodTierId200ResponseDataAttributes) *ShippingWeightTierData {
 	this := ShippingWeightTierData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -43,9 +46,10 @@ func NewShippingWeightTierDataWithDefaults() *ShippingWeightTierData {
 }
 
 // GetType returns the Type field value
-func (o *ShippingWeightTierData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *ShippingWeightTierData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -54,22 +58,23 @@ func (o *ShippingWeightTierData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *ShippingWeightTierData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ShippingWeightTierData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *ShippingWeightTierData) SetType(v string) {
+func (o *ShippingWeightTierData) SetType(v interface{}) {
 	o.Type = v
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ShippingWeightTierData) GetAttributes() GETShippingMethodTiers200ResponseDataInnerAttributes {
+func (o *ShippingWeightTierData) GetAttributes() GETShippingMethodTiersShippingMethodTierId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETShippingMethodTiers200ResponseDataInnerAttributes
+		var ret GETShippingMethodTiersShippingMethodTierId200ResponseDataAttributes
 		return ret
 	}
 
@@ -78,7 +83,7 @@ func (o *ShippingWeightTierData) GetAttributes() GETShippingMethodTiers200Respon
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ShippingWeightTierData) GetAttributesOk() (*GETShippingMethodTiers200ResponseDataInnerAttributes, bool) {
+func (o *ShippingWeightTierData) GetAttributesOk() (*GETShippingMethodTiersShippingMethodTierId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,13 +91,13 @@ func (o *ShippingWeightTierData) GetAttributesOk() (*GETShippingMethodTiers200Re
 }
 
 // SetAttributes sets field value
-func (o *ShippingWeightTierData) SetAttributes(v GETShippingMethodTiers200ResponseDataInnerAttributes) {
+func (o *ShippingWeightTierData) SetAttributes(v GETShippingMethodTiersShippingMethodTierId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *ShippingWeightTierData) GetRelationships() ShippingMethodTierDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret ShippingMethodTierDataRelationships
 		return ret
 	}
@@ -102,7 +107,7 @@ func (o *ShippingWeightTierData) GetRelationships() ShippingMethodTierDataRelati
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ShippingWeightTierData) GetRelationshipsOk() (*ShippingMethodTierDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -110,7 +115,7 @@ func (o *ShippingWeightTierData) GetRelationshipsOk() (*ShippingMethodTierDataRe
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *ShippingWeightTierData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -123,17 +128,23 @@ func (o *ShippingWeightTierData) SetRelationships(v ShippingMethodTierDataRelati
 }
 
 func (o ShippingWeightTierData) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
-		toSerialize["relationships"] = o.Relationships
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ShippingWeightTierData) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
+		toSerialize["relationships"] = o.Relationships
+	}
+	return toSerialize, nil
 }
 
 type NullableShippingWeightTierData struct {

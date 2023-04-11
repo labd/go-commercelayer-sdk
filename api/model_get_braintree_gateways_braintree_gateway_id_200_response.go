@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETBraintreeGatewaysBraintreeGatewayId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETBraintreeGatewaysBraintreeGatewayId200Response{}
+
 // GETBraintreeGatewaysBraintreeGatewayId200Response struct for GETBraintreeGatewaysBraintreeGatewayId200Response
 type GETBraintreeGatewaysBraintreeGatewayId200Response struct {
-	Data *GETBraintreeGateways200ResponseDataInner `json:"data,omitempty"`
+	Data *GETBraintreeGatewaysBraintreeGatewayId200ResponseData `json:"data,omitempty"`
 }
 
 // NewGETBraintreeGatewaysBraintreeGatewayId200Response instantiates a new GETBraintreeGatewaysBraintreeGatewayId200Response object
@@ -38,9 +41,9 @@ func NewGETBraintreeGatewaysBraintreeGatewayId200ResponseWithDefaults() *GETBrai
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETBraintreeGatewaysBraintreeGatewayId200Response) GetData() GETBraintreeGateways200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret GETBraintreeGateways200ResponseDataInner
+func (o *GETBraintreeGatewaysBraintreeGatewayId200Response) GetData() GETBraintreeGatewaysBraintreeGatewayId200ResponseData {
+	if o == nil || IsNil(o.Data) {
+		var ret GETBraintreeGatewaysBraintreeGatewayId200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *GETBraintreeGatewaysBraintreeGatewayId200Response) GetData() GETBraintr
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETBraintreeGatewaysBraintreeGatewayId200Response) GetDataOk() (*GETBraintreeGateways200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+func (o *GETBraintreeGatewaysBraintreeGatewayId200Response) GetDataOk() (*GETBraintreeGatewaysBraintreeGatewayId200ResponseData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *GETBraintreeGatewaysBraintreeGatewayId200Response) GetDataOk() (*GETBra
 
 // HasData returns a boolean if a field has been set.
 func (o *GETBraintreeGatewaysBraintreeGatewayId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETBraintreeGateways200ResponseDataInner and assigns it to the Data field.
-func (o *GETBraintreeGatewaysBraintreeGatewayId200Response) SetData(v GETBraintreeGateways200ResponseDataInner) {
+// SetData gets a reference to the given GETBraintreeGatewaysBraintreeGatewayId200ResponseData and assigns it to the Data field.
+func (o *GETBraintreeGatewaysBraintreeGatewayId200Response) SetData(v GETBraintreeGatewaysBraintreeGatewayId200ResponseData) {
 	o.Data = &v
 }
 
 func (o GETBraintreeGatewaysBraintreeGatewayId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GETBraintreeGatewaysBraintreeGatewayId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGETBraintreeGatewaysBraintreeGatewayId200Response struct {

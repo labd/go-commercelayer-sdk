@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the OrderCopyCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &OrderCopyCreate{}
+
 // OrderCopyCreate struct for OrderCopyCreate
 type OrderCopyCreate struct {
-	Data OrderCopyCreateData `json:"data"`
+	Data POSTOrderCopiesRequestData `json:"data"`
 }
 
 // NewOrderCopyCreate instantiates a new OrderCopyCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrderCopyCreate(data OrderCopyCreateData) *OrderCopyCreate {
+func NewOrderCopyCreate(data POSTOrderCopiesRequestData) *OrderCopyCreate {
 	this := OrderCopyCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewOrderCopyCreateWithDefaults() *OrderCopyCreate {
 }
 
 // GetData returns the Data field value
-func (o *OrderCopyCreate) GetData() OrderCopyCreateData {
+func (o *OrderCopyCreate) GetData() POSTOrderCopiesRequestData {
 	if o == nil {
-		var ret OrderCopyCreateData
+		var ret POSTOrderCopiesRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *OrderCopyCreate) GetData() OrderCopyCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *OrderCopyCreate) GetDataOk() (*OrderCopyCreateData, bool) {
+func (o *OrderCopyCreate) GetDataOk() (*POSTOrderCopiesRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *OrderCopyCreate) GetDataOk() (*OrderCopyCreateData, bool) {
 }
 
 // SetData sets field value
-func (o *OrderCopyCreate) SetData(v OrderCopyCreateData) {
+func (o *OrderCopyCreate) SetData(v POSTOrderCopiesRequestData) {
 	o.Data = v
 }
 
 func (o OrderCopyCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o OrderCopyCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableOrderCopyCreate struct {

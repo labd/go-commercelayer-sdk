@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETExternalGateways200ResponseDataInnerAttributes**](GETExternalGateways200ResponseDataInnerAttributes.md) |  | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Attributes** | [**GETExternalGatewaysExternalGatewayId200ResponseDataAttributes**](GETExternalGatewaysExternalGatewayId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ExternalGatewayDataRelationships**](ExternalGatewayDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewExternalGatewayData
 
-`func NewExternalGatewayData(type_ string, attributes GETExternalGateways200ResponseDataInnerAttributes, ) *ExternalGatewayData`
+`func NewExternalGatewayData(type_ interface{}, attributes GETExternalGatewaysExternalGatewayId200ResponseDataAttributes, ) *ExternalGatewayData`
 
 NewExternalGatewayData instantiates a new ExternalGatewayData object
 This constructor will assign default values to properties that have it defined,
@@ -29,40 +29,50 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *ExternalGatewayData) GetType() string`
+`func (o *ExternalGatewayData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *ExternalGatewayData) GetTypeOk() (*string, bool)`
+`func (o *ExternalGatewayData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *ExternalGatewayData) SetType(v string)`
+`func (o *ExternalGatewayData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *ExternalGatewayData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *ExternalGatewayData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *ExternalGatewayData) GetAttributes() GETExternalGateways200ResponseDataInnerAttributes`
+`func (o *ExternalGatewayData) GetAttributes() GETExternalGatewaysExternalGatewayId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ExternalGatewayData) GetAttributesOk() (*GETExternalGateways200ResponseDataInnerAttributes, bool)`
+`func (o *ExternalGatewayData) GetAttributesOk() (*GETExternalGatewaysExternalGatewayId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ExternalGatewayData) SetAttributes(v GETExternalGateways200ResponseDataInnerAttributes)`
+`func (o *ExternalGatewayData) SetAttributes(v GETExternalGatewaysExternalGatewayId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

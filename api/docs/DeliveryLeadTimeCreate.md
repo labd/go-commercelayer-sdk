@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**DeliveryLeadTimeCreateData**](DeliveryLeadTimeCreateData.md) |  | 
+**Data** | [**POSTDeliveryLeadTimesRequestData**](POSTDeliveryLeadTimesRequestData.md) |  | 
 
 ## Methods
 
 ### NewDeliveryLeadTimeCreate
 
-`func NewDeliveryLeadTimeCreate(data DeliveryLeadTimeCreateData, ) *DeliveryLeadTimeCreate`
+`func NewDeliveryLeadTimeCreate(data POSTDeliveryLeadTimesRequestData, ) *DeliveryLeadTimeCreate`
 
 NewDeliveryLeadTimeCreate instantiates a new DeliveryLeadTimeCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *DeliveryLeadTimeCreate) GetData() DeliveryLeadTimeCreateData`
+`func (o *DeliveryLeadTimeCreate) GetData() POSTDeliveryLeadTimesRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *DeliveryLeadTimeCreate) GetDataOk() (*DeliveryLeadTimeCreateData, bool)`
+`func (o *DeliveryLeadTimeCreate) GetDataOk() (*POSTDeliveryLeadTimesRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *DeliveryLeadTimeCreate) SetData(v DeliveryLeadTimeCreateData)`
+`func (o *DeliveryLeadTimeCreate) SetData(v POSTDeliveryLeadTimesRequestData)`
 
 SetData sets Data field to given value.
 

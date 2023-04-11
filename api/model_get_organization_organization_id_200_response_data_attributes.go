@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,50 +15,53 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETOrganizationOrganizationId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETOrganizationOrganizationId200ResponseDataAttributes{}
+
 // GETOrganizationOrganizationId200ResponseDataAttributes struct for GETOrganizationOrganizationId200ResponseDataAttributes
 type GETOrganizationOrganizationId200ResponseDataAttributes struct {
 	// The organization's internal name.
-	Name *string `json:"name,omitempty"`
+	Name interface{} `json:"name,omitempty"`
 	// The organization's slug name.
-	Slug *string `json:"slug,omitempty"`
+	Slug interface{} `json:"slug,omitempty"`
 	// The organization's domain.
-	Domain *string `json:"domain,omitempty"`
+	Domain interface{} `json:"domain,omitempty"`
 	// The organization's support phone.
-	SupportPhone *string `json:"support_phone,omitempty"`
+	SupportPhone interface{} `json:"support_phone,omitempty"`
 	// The organization's support email.
-	SupportEmail *string `json:"support_email,omitempty"`
+	SupportEmail interface{} `json:"support_email,omitempty"`
 	// The URL to the organization's logo.
-	LogoUrl *string `json:"logo_url,omitempty"`
+	LogoUrl interface{} `json:"logo_url,omitempty"`
 	// The URL to the organization's favicon.
-	FaviconUrl *string `json:"favicon_url,omitempty"`
+	FaviconUrl interface{} `json:"favicon_url,omitempty"`
 	// The organization's primary color.
-	PrimaryColor *string `json:"primary_color,omitempty"`
+	PrimaryColor interface{} `json:"primary_color,omitempty"`
 	// The organization's contrast color.
-	ContrastColor *string `json:"contrast_color,omitempty"`
+	ContrastColor interface{} `json:"contrast_color,omitempty"`
 	// The organization's Google Tag Manager ID.
-	GtmId *string `json:"gtm_id,omitempty"`
+	GtmId interface{} `json:"gtm_id,omitempty"`
 	// The organization's Google Tag Manager ID for test.
-	GtmIdTest *string `json:"gtm_id_test,omitempty"`
+	GtmIdTest interface{} `json:"gtm_id_test,omitempty"`
 	// Indicates if organization has discount disabled.
-	DiscountDisabled *bool `json:"discount_disabled,omitempty"`
+	DiscountDisabled interface{} `json:"discount_disabled,omitempty"`
 	// Indicates if organization has account disabled.
-	AccountDisabled *bool `json:"account_disabled,omitempty"`
+	AccountDisabled interface{} `json:"account_disabled,omitempty"`
 	// Indicates if organization has acceptance disabled.
-	AcceptanceDisabled *bool `json:"acceptance_disabled,omitempty"`
+	AcceptanceDisabled interface{} `json:"acceptance_disabled,omitempty"`
 	// The maximum number of active concurrent promotions allowed for your organization.
-	MaxConcurrentPromotions *int32 `json:"max_concurrent_promotions,omitempty"`
+	MaxConcurrentPromotions interface{} `json:"max_concurrent_promotions,omitempty"`
 	// The maximum number of concurrent imports allowed for your organization.
-	MaxConcurrentImports *int32 `json:"max_concurrent_imports,omitempty"`
+	MaxConcurrentImports interface{} `json:"max_concurrent_imports,omitempty"`
 	// Time at which the resource was created.
-	CreatedAt *string `json:"created_at,omitempty"`
+	CreatedAt interface{} `json:"created_at,omitempty"`
 	// Time at which the resource was last updated.
-	UpdatedAt *string `json:"updated_at,omitempty"`
+	UpdatedAt interface{} `json:"updated_at,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 }
 
 // NewGETOrganizationOrganizationId200ResponseDataAttributes instantiates a new GETOrganizationOrganizationId200ResponseDataAttributes object
@@ -78,650 +81,670 @@ func NewGETOrganizationOrganizationId200ResponseDataAttributesWithDefaults() *GE
 	return &this
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetName() string {
-	if o == nil || o.Name == nil {
-		var ret string
+// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetName() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Name
+	return o.Name
 }
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return o.Name, true
+	return &o.Name, true
 }
 
 // HasName returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetName(v string) {
-	o.Name = &v
+// SetName gets a reference to the given interface{} and assigns it to the Name field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetName(v interface{}) {
+	o.Name = v
 }
 
-// GetSlug returns the Slug field value if set, zero value otherwise.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetSlug() string {
-	if o == nil || o.Slug == nil {
-		var ret string
+// GetSlug returns the Slug field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetSlug() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Slug
+	return o.Slug
 }
 
 // GetSlugOk returns a tuple with the Slug field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetSlugOk() (*string, bool) {
-	if o == nil || o.Slug == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetSlugOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Slug) {
 		return nil, false
 	}
-	return o.Slug, true
+	return &o.Slug, true
 }
 
 // HasSlug returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasSlug() bool {
-	if o != nil && o.Slug != nil {
+	if o != nil && IsNil(o.Slug) {
 		return true
 	}
 
 	return false
 }
 
-// SetSlug gets a reference to the given string and assigns it to the Slug field.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetSlug(v string) {
-	o.Slug = &v
+// SetSlug gets a reference to the given interface{} and assigns it to the Slug field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetSlug(v interface{}) {
+	o.Slug = v
 }
 
-// GetDomain returns the Domain field value if set, zero value otherwise.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetDomain() string {
-	if o == nil || o.Domain == nil {
-		var ret string
+// GetDomain returns the Domain field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetDomain() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Domain
+	return o.Domain
 }
 
 // GetDomainOk returns a tuple with the Domain field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetDomainOk() (*string, bool) {
-	if o == nil || o.Domain == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetDomainOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Domain) {
 		return nil, false
 	}
-	return o.Domain, true
+	return &o.Domain, true
 }
 
 // HasDomain returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasDomain() bool {
-	if o != nil && o.Domain != nil {
+	if o != nil && IsNil(o.Domain) {
 		return true
 	}
 
 	return false
 }
 
-// SetDomain gets a reference to the given string and assigns it to the Domain field.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetDomain(v string) {
-	o.Domain = &v
+// SetDomain gets a reference to the given interface{} and assigns it to the Domain field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetDomain(v interface{}) {
+	o.Domain = v
 }
 
-// GetSupportPhone returns the SupportPhone field value if set, zero value otherwise.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetSupportPhone() string {
-	if o == nil || o.SupportPhone == nil {
-		var ret string
+// GetSupportPhone returns the SupportPhone field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetSupportPhone() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.SupportPhone
+	return o.SupportPhone
 }
 
 // GetSupportPhoneOk returns a tuple with the SupportPhone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetSupportPhoneOk() (*string, bool) {
-	if o == nil || o.SupportPhone == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetSupportPhoneOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.SupportPhone) {
 		return nil, false
 	}
-	return o.SupportPhone, true
+	return &o.SupportPhone, true
 }
 
 // HasSupportPhone returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasSupportPhone() bool {
-	if o != nil && o.SupportPhone != nil {
+	if o != nil && IsNil(o.SupportPhone) {
 		return true
 	}
 
 	return false
 }
 
-// SetSupportPhone gets a reference to the given string and assigns it to the SupportPhone field.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetSupportPhone(v string) {
-	o.SupportPhone = &v
+// SetSupportPhone gets a reference to the given interface{} and assigns it to the SupportPhone field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetSupportPhone(v interface{}) {
+	o.SupportPhone = v
 }
 
-// GetSupportEmail returns the SupportEmail field value if set, zero value otherwise.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetSupportEmail() string {
-	if o == nil || o.SupportEmail == nil {
-		var ret string
+// GetSupportEmail returns the SupportEmail field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetSupportEmail() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.SupportEmail
+	return o.SupportEmail
 }
 
 // GetSupportEmailOk returns a tuple with the SupportEmail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetSupportEmailOk() (*string, bool) {
-	if o == nil || o.SupportEmail == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetSupportEmailOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.SupportEmail) {
 		return nil, false
 	}
-	return o.SupportEmail, true
+	return &o.SupportEmail, true
 }
 
 // HasSupportEmail returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasSupportEmail() bool {
-	if o != nil && o.SupportEmail != nil {
+	if o != nil && IsNil(o.SupportEmail) {
 		return true
 	}
 
 	return false
 }
 
-// SetSupportEmail gets a reference to the given string and assigns it to the SupportEmail field.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetSupportEmail(v string) {
-	o.SupportEmail = &v
+// SetSupportEmail gets a reference to the given interface{} and assigns it to the SupportEmail field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetSupportEmail(v interface{}) {
+	o.SupportEmail = v
 }
 
-// GetLogoUrl returns the LogoUrl field value if set, zero value otherwise.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetLogoUrl() string {
-	if o == nil || o.LogoUrl == nil {
-		var ret string
+// GetLogoUrl returns the LogoUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetLogoUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.LogoUrl
+	return o.LogoUrl
 }
 
 // GetLogoUrlOk returns a tuple with the LogoUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetLogoUrlOk() (*string, bool) {
-	if o == nil || o.LogoUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetLogoUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.LogoUrl) {
 		return nil, false
 	}
-	return o.LogoUrl, true
+	return &o.LogoUrl, true
 }
 
 // HasLogoUrl returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasLogoUrl() bool {
-	if o != nil && o.LogoUrl != nil {
+	if o != nil && IsNil(o.LogoUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetLogoUrl gets a reference to the given string and assigns it to the LogoUrl field.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetLogoUrl(v string) {
-	o.LogoUrl = &v
+// SetLogoUrl gets a reference to the given interface{} and assigns it to the LogoUrl field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetLogoUrl(v interface{}) {
+	o.LogoUrl = v
 }
 
-// GetFaviconUrl returns the FaviconUrl field value if set, zero value otherwise.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetFaviconUrl() string {
-	if o == nil || o.FaviconUrl == nil {
-		var ret string
+// GetFaviconUrl returns the FaviconUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetFaviconUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.FaviconUrl
+	return o.FaviconUrl
 }
 
 // GetFaviconUrlOk returns a tuple with the FaviconUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetFaviconUrlOk() (*string, bool) {
-	if o == nil || o.FaviconUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetFaviconUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.FaviconUrl) {
 		return nil, false
 	}
-	return o.FaviconUrl, true
+	return &o.FaviconUrl, true
 }
 
 // HasFaviconUrl returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasFaviconUrl() bool {
-	if o != nil && o.FaviconUrl != nil {
+	if o != nil && IsNil(o.FaviconUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetFaviconUrl gets a reference to the given string and assigns it to the FaviconUrl field.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetFaviconUrl(v string) {
-	o.FaviconUrl = &v
+// SetFaviconUrl gets a reference to the given interface{} and assigns it to the FaviconUrl field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetFaviconUrl(v interface{}) {
+	o.FaviconUrl = v
 }
 
-// GetPrimaryColor returns the PrimaryColor field value if set, zero value otherwise.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetPrimaryColor() string {
-	if o == nil || o.PrimaryColor == nil {
-		var ret string
+// GetPrimaryColor returns the PrimaryColor field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetPrimaryColor() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.PrimaryColor
+	return o.PrimaryColor
 }
 
 // GetPrimaryColorOk returns a tuple with the PrimaryColor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetPrimaryColorOk() (*string, bool) {
-	if o == nil || o.PrimaryColor == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetPrimaryColorOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PrimaryColor) {
 		return nil, false
 	}
-	return o.PrimaryColor, true
+	return &o.PrimaryColor, true
 }
 
 // HasPrimaryColor returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasPrimaryColor() bool {
-	if o != nil && o.PrimaryColor != nil {
+	if o != nil && IsNil(o.PrimaryColor) {
 		return true
 	}
 
 	return false
 }
 
-// SetPrimaryColor gets a reference to the given string and assigns it to the PrimaryColor field.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetPrimaryColor(v string) {
-	o.PrimaryColor = &v
+// SetPrimaryColor gets a reference to the given interface{} and assigns it to the PrimaryColor field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetPrimaryColor(v interface{}) {
+	o.PrimaryColor = v
 }
 
-// GetContrastColor returns the ContrastColor field value if set, zero value otherwise.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetContrastColor() string {
-	if o == nil || o.ContrastColor == nil {
-		var ret string
+// GetContrastColor returns the ContrastColor field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetContrastColor() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ContrastColor
+	return o.ContrastColor
 }
 
 // GetContrastColorOk returns a tuple with the ContrastColor field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetContrastColorOk() (*string, bool) {
-	if o == nil || o.ContrastColor == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetContrastColorOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ContrastColor) {
 		return nil, false
 	}
-	return o.ContrastColor, true
+	return &o.ContrastColor, true
 }
 
 // HasContrastColor returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasContrastColor() bool {
-	if o != nil && o.ContrastColor != nil {
+	if o != nil && IsNil(o.ContrastColor) {
 		return true
 	}
 
 	return false
 }
 
-// SetContrastColor gets a reference to the given string and assigns it to the ContrastColor field.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetContrastColor(v string) {
-	o.ContrastColor = &v
+// SetContrastColor gets a reference to the given interface{} and assigns it to the ContrastColor field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetContrastColor(v interface{}) {
+	o.ContrastColor = v
 }
 
-// GetGtmId returns the GtmId field value if set, zero value otherwise.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetGtmId() string {
-	if o == nil || o.GtmId == nil {
-		var ret string
+// GetGtmId returns the GtmId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetGtmId() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.GtmId
+	return o.GtmId
 }
 
 // GetGtmIdOk returns a tuple with the GtmId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetGtmIdOk() (*string, bool) {
-	if o == nil || o.GtmId == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetGtmIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.GtmId) {
 		return nil, false
 	}
-	return o.GtmId, true
+	return &o.GtmId, true
 }
 
 // HasGtmId returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasGtmId() bool {
-	if o != nil && o.GtmId != nil {
+	if o != nil && IsNil(o.GtmId) {
 		return true
 	}
 
 	return false
 }
 
-// SetGtmId gets a reference to the given string and assigns it to the GtmId field.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetGtmId(v string) {
-	o.GtmId = &v
+// SetGtmId gets a reference to the given interface{} and assigns it to the GtmId field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetGtmId(v interface{}) {
+	o.GtmId = v
 }
 
-// GetGtmIdTest returns the GtmIdTest field value if set, zero value otherwise.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetGtmIdTest() string {
-	if o == nil || o.GtmIdTest == nil {
-		var ret string
+// GetGtmIdTest returns the GtmIdTest field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetGtmIdTest() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.GtmIdTest
+	return o.GtmIdTest
 }
 
 // GetGtmIdTestOk returns a tuple with the GtmIdTest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetGtmIdTestOk() (*string, bool) {
-	if o == nil || o.GtmIdTest == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetGtmIdTestOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.GtmIdTest) {
 		return nil, false
 	}
-	return o.GtmIdTest, true
+	return &o.GtmIdTest, true
 }
 
 // HasGtmIdTest returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasGtmIdTest() bool {
-	if o != nil && o.GtmIdTest != nil {
+	if o != nil && IsNil(o.GtmIdTest) {
 		return true
 	}
 
 	return false
 }
 
-// SetGtmIdTest gets a reference to the given string and assigns it to the GtmIdTest field.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetGtmIdTest(v string) {
-	o.GtmIdTest = &v
+// SetGtmIdTest gets a reference to the given interface{} and assigns it to the GtmIdTest field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetGtmIdTest(v interface{}) {
+	o.GtmIdTest = v
 }
 
-// GetDiscountDisabled returns the DiscountDisabled field value if set, zero value otherwise.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetDiscountDisabled() bool {
-	if o == nil || o.DiscountDisabled == nil {
-		var ret bool
+// GetDiscountDisabled returns the DiscountDisabled field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetDiscountDisabled() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.DiscountDisabled
+	return o.DiscountDisabled
 }
 
 // GetDiscountDisabledOk returns a tuple with the DiscountDisabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetDiscountDisabledOk() (*bool, bool) {
-	if o == nil || o.DiscountDisabled == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetDiscountDisabledOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.DiscountDisabled) {
 		return nil, false
 	}
-	return o.DiscountDisabled, true
+	return &o.DiscountDisabled, true
 }
 
 // HasDiscountDisabled returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasDiscountDisabled() bool {
-	if o != nil && o.DiscountDisabled != nil {
+	if o != nil && IsNil(o.DiscountDisabled) {
 		return true
 	}
 
 	return false
 }
 
-// SetDiscountDisabled gets a reference to the given bool and assigns it to the DiscountDisabled field.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetDiscountDisabled(v bool) {
-	o.DiscountDisabled = &v
+// SetDiscountDisabled gets a reference to the given interface{} and assigns it to the DiscountDisabled field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetDiscountDisabled(v interface{}) {
+	o.DiscountDisabled = v
 }
 
-// GetAccountDisabled returns the AccountDisabled field value if set, zero value otherwise.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetAccountDisabled() bool {
-	if o == nil || o.AccountDisabled == nil {
-		var ret bool
+// GetAccountDisabled returns the AccountDisabled field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetAccountDisabled() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.AccountDisabled
+	return o.AccountDisabled
 }
 
 // GetAccountDisabledOk returns a tuple with the AccountDisabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetAccountDisabledOk() (*bool, bool) {
-	if o == nil || o.AccountDisabled == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetAccountDisabledOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.AccountDisabled) {
 		return nil, false
 	}
-	return o.AccountDisabled, true
+	return &o.AccountDisabled, true
 }
 
 // HasAccountDisabled returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasAccountDisabled() bool {
-	if o != nil && o.AccountDisabled != nil {
+	if o != nil && IsNil(o.AccountDisabled) {
 		return true
 	}
 
 	return false
 }
 
-// SetAccountDisabled gets a reference to the given bool and assigns it to the AccountDisabled field.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetAccountDisabled(v bool) {
-	o.AccountDisabled = &v
+// SetAccountDisabled gets a reference to the given interface{} and assigns it to the AccountDisabled field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetAccountDisabled(v interface{}) {
+	o.AccountDisabled = v
 }
 
-// GetAcceptanceDisabled returns the AcceptanceDisabled field value if set, zero value otherwise.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetAcceptanceDisabled() bool {
-	if o == nil || o.AcceptanceDisabled == nil {
-		var ret bool
+// GetAcceptanceDisabled returns the AcceptanceDisabled field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetAcceptanceDisabled() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.AcceptanceDisabled
+	return o.AcceptanceDisabled
 }
 
 // GetAcceptanceDisabledOk returns a tuple with the AcceptanceDisabled field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetAcceptanceDisabledOk() (*bool, bool) {
-	if o == nil || o.AcceptanceDisabled == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetAcceptanceDisabledOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.AcceptanceDisabled) {
 		return nil, false
 	}
-	return o.AcceptanceDisabled, true
+	return &o.AcceptanceDisabled, true
 }
 
 // HasAcceptanceDisabled returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasAcceptanceDisabled() bool {
-	if o != nil && o.AcceptanceDisabled != nil {
+	if o != nil && IsNil(o.AcceptanceDisabled) {
 		return true
 	}
 
 	return false
 }
 
-// SetAcceptanceDisabled gets a reference to the given bool and assigns it to the AcceptanceDisabled field.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetAcceptanceDisabled(v bool) {
-	o.AcceptanceDisabled = &v
+// SetAcceptanceDisabled gets a reference to the given interface{} and assigns it to the AcceptanceDisabled field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetAcceptanceDisabled(v interface{}) {
+	o.AcceptanceDisabled = v
 }
 
-// GetMaxConcurrentPromotions returns the MaxConcurrentPromotions field value if set, zero value otherwise.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetMaxConcurrentPromotions() int32 {
-	if o == nil || o.MaxConcurrentPromotions == nil {
-		var ret int32
+// GetMaxConcurrentPromotions returns the MaxConcurrentPromotions field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetMaxConcurrentPromotions() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.MaxConcurrentPromotions
+	return o.MaxConcurrentPromotions
 }
 
 // GetMaxConcurrentPromotionsOk returns a tuple with the MaxConcurrentPromotions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetMaxConcurrentPromotionsOk() (*int32, bool) {
-	if o == nil || o.MaxConcurrentPromotions == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetMaxConcurrentPromotionsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.MaxConcurrentPromotions) {
 		return nil, false
 	}
-	return o.MaxConcurrentPromotions, true
+	return &o.MaxConcurrentPromotions, true
 }
 
 // HasMaxConcurrentPromotions returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasMaxConcurrentPromotions() bool {
-	if o != nil && o.MaxConcurrentPromotions != nil {
+	if o != nil && IsNil(o.MaxConcurrentPromotions) {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxConcurrentPromotions gets a reference to the given int32 and assigns it to the MaxConcurrentPromotions field.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetMaxConcurrentPromotions(v int32) {
-	o.MaxConcurrentPromotions = &v
+// SetMaxConcurrentPromotions gets a reference to the given interface{} and assigns it to the MaxConcurrentPromotions field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetMaxConcurrentPromotions(v interface{}) {
+	o.MaxConcurrentPromotions = v
 }
 
-// GetMaxConcurrentImports returns the MaxConcurrentImports field value if set, zero value otherwise.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetMaxConcurrentImports() int32 {
-	if o == nil || o.MaxConcurrentImports == nil {
-		var ret int32
+// GetMaxConcurrentImports returns the MaxConcurrentImports field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetMaxConcurrentImports() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.MaxConcurrentImports
+	return o.MaxConcurrentImports
 }
 
 // GetMaxConcurrentImportsOk returns a tuple with the MaxConcurrentImports field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetMaxConcurrentImportsOk() (*int32, bool) {
-	if o == nil || o.MaxConcurrentImports == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetMaxConcurrentImportsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.MaxConcurrentImports) {
 		return nil, false
 	}
-	return o.MaxConcurrentImports, true
+	return &o.MaxConcurrentImports, true
 }
 
 // HasMaxConcurrentImports returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasMaxConcurrentImports() bool {
-	if o != nil && o.MaxConcurrentImports != nil {
+	if o != nil && IsNil(o.MaxConcurrentImports) {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxConcurrentImports gets a reference to the given int32 and assigns it to the MaxConcurrentImports field.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetMaxConcurrentImports(v int32) {
-	o.MaxConcurrentImports = &v
+// SetMaxConcurrentImports gets a reference to the given interface{} and assigns it to the MaxConcurrentImports field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetMaxConcurrentImports(v interface{}) {
+	o.MaxConcurrentImports = v
 }
 
-// GetCreatedAt returns the CreatedAt field value if set, zero value otherwise.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetCreatedAt() string {
-	if o == nil || o.CreatedAt == nil {
-		var ret string
+// GetCreatedAt returns the CreatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetCreatedAt() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CreatedAt
+	return o.CreatedAt
 }
 
 // GetCreatedAtOk returns a tuple with the CreatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetCreatedAtOk() (*string, bool) {
-	if o == nil || o.CreatedAt == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetCreatedAtOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CreatedAt) {
 		return nil, false
 	}
-	return o.CreatedAt, true
+	return &o.CreatedAt, true
 }
 
 // HasCreatedAt returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasCreatedAt() bool {
-	if o != nil && o.CreatedAt != nil {
+	if o != nil && IsNil(o.CreatedAt) {
 		return true
 	}
 
 	return false
 }
 
-// SetCreatedAt gets a reference to the given string and assigns it to the CreatedAt field.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetCreatedAt(v string) {
-	o.CreatedAt = &v
+// SetCreatedAt gets a reference to the given interface{} and assigns it to the CreatedAt field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetCreatedAt(v interface{}) {
+	o.CreatedAt = v
 }
 
-// GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetUpdatedAt() string {
-	if o == nil || o.UpdatedAt == nil {
-		var ret string
+// GetUpdatedAt returns the UpdatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetUpdatedAt() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.UpdatedAt
+	return o.UpdatedAt
 }
 
 // GetUpdatedAtOk returns a tuple with the UpdatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetUpdatedAtOk() (*string, bool) {
-	if o == nil || o.UpdatedAt == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetUpdatedAtOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.UpdatedAt) {
 		return nil, false
 	}
-	return o.UpdatedAt, true
+	return &o.UpdatedAt, true
 }
 
 // HasUpdatedAt returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasUpdatedAt() bool {
-	if o != nil && o.UpdatedAt != nil {
+	if o != nil && IsNil(o.UpdatedAt) {
 		return true
 	}
 
 	return false
 }
 
-// SetUpdatedAt gets a reference to the given string and assigns it to the UpdatedAt field.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetUpdatedAt(v string) {
-	o.UpdatedAt = &v
+// SetUpdatedAt gets a reference to the given interface{} and assigns it to the UpdatedAt field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetUpdatedAt(v interface{}) {
+	o.UpdatedAt = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -729,28 +752,37 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetMetadata() m
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 func (o GETOrganizationOrganizationId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o GETOrganizationOrganizationId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -815,7 +847,7 @@ func (o GETOrganizationOrganizationId200ResponseDataAttributes) MarshalJSON() ([
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableGETOrganizationOrganizationId200ResponseDataAttributes struct {

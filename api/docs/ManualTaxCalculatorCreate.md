@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**ManualTaxCalculatorCreateData**](ManualTaxCalculatorCreateData.md) |  | 
+**Data** | [**POSTManualTaxCalculatorsRequestData**](POSTManualTaxCalculatorsRequestData.md) |  | 
 
 ## Methods
 
 ### NewManualTaxCalculatorCreate
 
-`func NewManualTaxCalculatorCreate(data ManualTaxCalculatorCreateData, ) *ManualTaxCalculatorCreate`
+`func NewManualTaxCalculatorCreate(data POSTManualTaxCalculatorsRequestData, ) *ManualTaxCalculatorCreate`
 
 NewManualTaxCalculatorCreate instantiates a new ManualTaxCalculatorCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *ManualTaxCalculatorCreate) GetData() ManualTaxCalculatorCreateData`
+`func (o *ManualTaxCalculatorCreate) GetData() POSTManualTaxCalculatorsRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ManualTaxCalculatorCreate) GetDataOk() (*ManualTaxCalculatorCreateData, bool)`
+`func (o *ManualTaxCalculatorCreate) GetDataOk() (*POSTManualTaxCalculatorsRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ManualTaxCalculatorCreate) SetData(v ManualTaxCalculatorCreateData)`
+`func (o *ManualTaxCalculatorCreate) SetData(v POSTManualTaxCalculatorsRequestData)`
 
 SetData sets Data field to given value.
 

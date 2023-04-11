@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the FreeShippingPromotionUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &FreeShippingPromotionUpdate{}
+
 // FreeShippingPromotionUpdate struct for FreeShippingPromotionUpdate
 type FreeShippingPromotionUpdate struct {
-	Data FreeShippingPromotionUpdateData `json:"data"`
+	Data PATCHFreeShippingPromotionsFreeShippingPromotionIdRequestData `json:"data"`
 }
 
 // NewFreeShippingPromotionUpdate instantiates a new FreeShippingPromotionUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFreeShippingPromotionUpdate(data FreeShippingPromotionUpdateData) *FreeShippingPromotionUpdate {
+func NewFreeShippingPromotionUpdate(data PATCHFreeShippingPromotionsFreeShippingPromotionIdRequestData) *FreeShippingPromotionUpdate {
 	this := FreeShippingPromotionUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewFreeShippingPromotionUpdateWithDefaults() *FreeShippingPromotionUpdate {
 }
 
 // GetData returns the Data field value
-func (o *FreeShippingPromotionUpdate) GetData() FreeShippingPromotionUpdateData {
+func (o *FreeShippingPromotionUpdate) GetData() PATCHFreeShippingPromotionsFreeShippingPromotionIdRequestData {
 	if o == nil {
-		var ret FreeShippingPromotionUpdateData
+		var ret PATCHFreeShippingPromotionsFreeShippingPromotionIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *FreeShippingPromotionUpdate) GetData() FreeShippingPromotionUpdateData 
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *FreeShippingPromotionUpdate) GetDataOk() (*FreeShippingPromotionUpdateData, bool) {
+func (o *FreeShippingPromotionUpdate) GetDataOk() (*PATCHFreeShippingPromotionsFreeShippingPromotionIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *FreeShippingPromotionUpdate) GetDataOk() (*FreeShippingPromotionUpdateD
 }
 
 // SetData sets field value
-func (o *FreeShippingPromotionUpdate) SetData(v FreeShippingPromotionUpdateData) {
+func (o *FreeShippingPromotionUpdate) SetData(v PATCHFreeShippingPromotionsFreeShippingPromotionIdRequestData) {
 	o.Data = v
 }
 
 func (o FreeShippingPromotionUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o FreeShippingPromotionUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableFreeShippingPromotionUpdate struct {

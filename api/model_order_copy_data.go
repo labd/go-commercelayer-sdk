@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the OrderCopyData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &OrderCopyData{}
+
 // OrderCopyData struct for OrderCopyData
 type OrderCopyData struct {
 	// The resource's type
-	Type          string                                       `json:"type"`
-	Attributes    GETOrderCopies200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *OrderCopyDataRelationships                  `json:"relationships,omitempty"`
+	Type          interface{}                                        `json:"type"`
+	Attributes    GETOrderCopiesOrderCopyId200ResponseDataAttributes `json:"attributes"`
+	Relationships *OrderCopyDataRelationships                        `json:"relationships,omitempty"`
 }
 
 // NewOrderCopyData instantiates a new OrderCopyData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrderCopyData(type_ string, attributes GETOrderCopies200ResponseDataInnerAttributes) *OrderCopyData {
+func NewOrderCopyData(type_ interface{}, attributes GETOrderCopiesOrderCopyId200ResponseDataAttributes) *OrderCopyData {
 	this := OrderCopyData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -43,9 +46,10 @@ func NewOrderCopyDataWithDefaults() *OrderCopyData {
 }
 
 // GetType returns the Type field value
-func (o *OrderCopyData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *OrderCopyData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -54,22 +58,23 @@ func (o *OrderCopyData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *OrderCopyData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *OrderCopyData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *OrderCopyData) SetType(v string) {
+func (o *OrderCopyData) SetType(v interface{}) {
 	o.Type = v
 }
 
 // GetAttributes returns the Attributes field value
-func (o *OrderCopyData) GetAttributes() GETOrderCopies200ResponseDataInnerAttributes {
+func (o *OrderCopyData) GetAttributes() GETOrderCopiesOrderCopyId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETOrderCopies200ResponseDataInnerAttributes
+		var ret GETOrderCopiesOrderCopyId200ResponseDataAttributes
 		return ret
 	}
 
@@ -78,7 +83,7 @@ func (o *OrderCopyData) GetAttributes() GETOrderCopies200ResponseDataInnerAttrib
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *OrderCopyData) GetAttributesOk() (*GETOrderCopies200ResponseDataInnerAttributes, bool) {
+func (o *OrderCopyData) GetAttributesOk() (*GETOrderCopiesOrderCopyId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,13 +91,13 @@ func (o *OrderCopyData) GetAttributesOk() (*GETOrderCopies200ResponseDataInnerAt
 }
 
 // SetAttributes sets field value
-func (o *OrderCopyData) SetAttributes(v GETOrderCopies200ResponseDataInnerAttributes) {
+func (o *OrderCopyData) SetAttributes(v GETOrderCopiesOrderCopyId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *OrderCopyData) GetRelationships() OrderCopyDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret OrderCopyDataRelationships
 		return ret
 	}
@@ -102,7 +107,7 @@ func (o *OrderCopyData) GetRelationships() OrderCopyDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OrderCopyData) GetRelationshipsOk() (*OrderCopyDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -110,7 +115,7 @@ func (o *OrderCopyData) GetRelationshipsOk() (*OrderCopyDataRelationships, bool)
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *OrderCopyData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -123,17 +128,23 @@ func (o *OrderCopyData) SetRelationships(v OrderCopyDataRelationships) {
 }
 
 func (o OrderCopyData) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
-		toSerialize["relationships"] = o.Relationships
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o OrderCopyData) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
+		toSerialize["relationships"] = o.Relationships
+	}
+	return toSerialize, nil
 }
 
 type NullableOrderCopyData struct {

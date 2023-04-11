@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**AttachmentDataRelationshipsAttachableData**](AttachmentDataRelationshipsAttachableData.md) |  | [optional] 
+**Data** | Pointer to [**POSTAttachmentsRequestDataRelationshipsAttachableData**](POSTAttachmentsRequestDataRelationshipsAttachableData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *AttachmentDataRelationshipsAttachable) GetData() AttachmentDataRelationshipsAttachableData`
+`func (o *AttachmentDataRelationshipsAttachable) GetData() POSTAttachmentsRequestDataRelationshipsAttachableData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *AttachmentDataRelationshipsAttachable) GetDataOk() (*AttachmentDataRelationshipsAttachableData, bool)`
+`func (o *AttachmentDataRelationshipsAttachable) GetDataOk() (*POSTAttachmentsRequestDataRelationshipsAttachableData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *AttachmentDataRelationshipsAttachable) SetData(v AttachmentDataRelationshipsAttachableData)`
+`func (o *AttachmentDataRelationshipsAttachable) SetData(v POSTAttachmentsRequestDataRelationshipsAttachableData)`
 
 SetData sets Data field to given value.
 

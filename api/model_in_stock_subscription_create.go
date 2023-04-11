@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the InStockSubscriptionCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &InStockSubscriptionCreate{}
+
 // InStockSubscriptionCreate struct for InStockSubscriptionCreate
 type InStockSubscriptionCreate struct {
-	Data InStockSubscriptionCreateData `json:"data"`
+	Data POSTInStockSubscriptionsRequestData `json:"data"`
 }
 
 // NewInStockSubscriptionCreate instantiates a new InStockSubscriptionCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInStockSubscriptionCreate(data InStockSubscriptionCreateData) *InStockSubscriptionCreate {
+func NewInStockSubscriptionCreate(data POSTInStockSubscriptionsRequestData) *InStockSubscriptionCreate {
 	this := InStockSubscriptionCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewInStockSubscriptionCreateWithDefaults() *InStockSubscriptionCreate {
 }
 
 // GetData returns the Data field value
-func (o *InStockSubscriptionCreate) GetData() InStockSubscriptionCreateData {
+func (o *InStockSubscriptionCreate) GetData() POSTInStockSubscriptionsRequestData {
 	if o == nil {
-		var ret InStockSubscriptionCreateData
+		var ret POSTInStockSubscriptionsRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *InStockSubscriptionCreate) GetData() InStockSubscriptionCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *InStockSubscriptionCreate) GetDataOk() (*InStockSubscriptionCreateData, bool) {
+func (o *InStockSubscriptionCreate) GetDataOk() (*POSTInStockSubscriptionsRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *InStockSubscriptionCreate) GetDataOk() (*InStockSubscriptionCreateData,
 }
 
 // SetData sets field value
-func (o *InStockSubscriptionCreate) SetData(v InStockSubscriptionCreateData) {
+func (o *InStockSubscriptionCreate) SetData(v POSTInStockSubscriptionsRequestData) {
 	o.Data = v
 }
 
 func (o InStockSubscriptionCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o InStockSubscriptionCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableInStockSubscriptionCreate struct {

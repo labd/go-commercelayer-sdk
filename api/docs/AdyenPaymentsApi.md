@@ -1,6 +1,6 @@
 # \AdyenPaymentsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,15 +30,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    adyenPaymentId := "adyenPaymentId_example" // string | The resource's id
+    adyenPaymentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AdyenPaymentsApi.DELETEAdyenPaymentsAdyenPaymentId(context.Background(), adyenPaymentId).Execute()
+    r, err := apiClient.AdyenPaymentsApi.DELETEAdyenPaymentsAdyenPaymentId(context.Background(), adyenPaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AdyenPaymentsApi.DELETEAdyenPaymentsAdyenPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -52,7 +52,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**adyenPaymentId** | **string** | The resource&#39;s id | 
+**adyenPaymentId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -98,15 +98,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    adyenGatewayId := "adyenGatewayId_example" // string | The resource's id
+    adyenGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AdyenPaymentsApi.GETAdyenGatewayIdAdyenPayments(context.Background(), adyenGatewayId).Execute()
+    r, err := apiClient.AdyenPaymentsApi.GETAdyenGatewayIdAdyenPayments(context.Background(), adyenGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AdyenPaymentsApi.GETAdyenGatewayIdAdyenPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -120,7 +120,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**adyenGatewayId** | **string** | The resource&#39;s id | 
+**adyenGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -166,7 +166,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -227,11 +227,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    adyenPaymentId := "adyenPaymentId_example" // string | The resource's id
+    adyenPaymentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -251,7 +251,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**adyenPaymentId** | **string** | The resource&#39;s id | 
+**adyenPaymentId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHAdyenPaymentsAdyenPaymentId
 
-> PATCHAdyenPaymentsAdyenPaymentId200Response PATCHAdyenPaymentsAdyenPaymentId(ctx, adyenPaymentId).AdyenPaymentUpdate(adyenPaymentUpdate).Execute()
+> PATCHAdyenPaymentsAdyenPaymentId200Response PATCHAdyenPaymentsAdyenPaymentId(ctx, adyenPaymentId).PATCHAdyenPaymentsAdyenPaymentIdRequest(pATCHAdyenPaymentsAdyenPaymentIdRequest).Execute()
 
 Update an adyen payment
 
@@ -297,16 +297,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    adyenPaymentUpdate := *openapiclient.NewAdyenPaymentUpdate(*openapiclient.NewAdyenPaymentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes())) // AdyenPaymentUpdate | 
-    adyenPaymentId := "adyenPaymentId_example" // string | The resource's id
+    pATCHAdyenPaymentsAdyenPaymentIdRequest := *openapiclient.NewPATCHAdyenPaymentsAdyenPaymentIdRequest(*openapiclient.NewPATCHAdyenPaymentsAdyenPaymentIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHAdyenPaymentsAdyenPaymentIdRequestDataAttributes())) // PATCHAdyenPaymentsAdyenPaymentIdRequest | 
+    adyenPaymentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AdyenPaymentsApi.PATCHAdyenPaymentsAdyenPaymentId(context.Background(), adyenPaymentId).AdyenPaymentUpdate(adyenPaymentUpdate).Execute()
+    resp, r, err := apiClient.AdyenPaymentsApi.PATCHAdyenPaymentsAdyenPaymentId(context.Background(), adyenPaymentId).PATCHAdyenPaymentsAdyenPaymentIdRequest(pATCHAdyenPaymentsAdyenPaymentIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AdyenPaymentsApi.PATCHAdyenPaymentsAdyenPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -322,7 +322,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**adyenPaymentId** | **string** | The resource&#39;s id | 
+**adyenPaymentId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -331,7 +331,7 @@ Other parameters are passed through a pointer to a apiPATCHAdyenPaymentsAdyenPay
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **adyenPaymentUpdate** | [**AdyenPaymentUpdate**](AdyenPaymentUpdate.md) |  | 
+ **pATCHAdyenPaymentsAdyenPaymentIdRequest** | [**PATCHAdyenPaymentsAdyenPaymentIdRequest**](PATCHAdyenPaymentsAdyenPaymentIdRequest.md) |  | 
 
 
 ### Return type
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTAdyenPayments
 
-> POSTAdyenPayments201Response POSTAdyenPayments(ctx).AdyenPaymentCreate(adyenPaymentCreate).Execute()
+> POSTAdyenPayments201Response POSTAdyenPayments(ctx).POSTAdyenPaymentsRequest(pOSTAdyenPaymentsRequest).Execute()
 
 Create an adyen payment
 
@@ -369,15 +369,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    adyenPaymentCreate := *openapiclient.NewAdyenPaymentCreate(*openapiclient.NewAdyenPaymentCreateData("Type_example", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // AdyenPaymentCreate | 
+    pOSTAdyenPaymentsRequest := *openapiclient.NewPOSTAdyenPaymentsRequest(*openapiclient.NewPOSTAdyenPaymentsRequestData(interface{}(123), *openapiclient.NewPOSTAdyenPaymentsRequestDataAttributes())) // POSTAdyenPaymentsRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AdyenPaymentsApi.POSTAdyenPayments(context.Background()).AdyenPaymentCreate(adyenPaymentCreate).Execute()
+    resp, r, err := apiClient.AdyenPaymentsApi.POSTAdyenPayments(context.Background()).POSTAdyenPaymentsRequest(pOSTAdyenPaymentsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AdyenPaymentsApi.POSTAdyenPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +398,7 @@ Other parameters are passed through a pointer to a apiPOSTAdyenPaymentsRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **adyenPaymentCreate** | [**AdyenPaymentCreate**](AdyenPaymentCreate.md) |  | 
+ **pOSTAdyenPaymentsRequest** | [**POSTAdyenPaymentsRequest**](POSTAdyenPaymentsRequest.md) |  | 
 
 ### Return type
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the PriceListCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PriceListCreate{}
+
 // PriceListCreate struct for PriceListCreate
 type PriceListCreate struct {
-	Data PriceListCreateData `json:"data"`
+	Data POSTPriceListsRequestData `json:"data"`
 }
 
 // NewPriceListCreate instantiates a new PriceListCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPriceListCreate(data PriceListCreateData) *PriceListCreate {
+func NewPriceListCreate(data POSTPriceListsRequestData) *PriceListCreate {
 	this := PriceListCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewPriceListCreateWithDefaults() *PriceListCreate {
 }
 
 // GetData returns the Data field value
-func (o *PriceListCreate) GetData() PriceListCreateData {
+func (o *PriceListCreate) GetData() POSTPriceListsRequestData {
 	if o == nil {
-		var ret PriceListCreateData
+		var ret POSTPriceListsRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *PriceListCreate) GetData() PriceListCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *PriceListCreate) GetDataOk() (*PriceListCreateData, bool) {
+func (o *PriceListCreate) GetDataOk() (*POSTPriceListsRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *PriceListCreate) GetDataOk() (*PriceListCreateData, bool) {
 }
 
 // SetData sets field value
-func (o *PriceListCreate) SetData(v PriceListCreateData) {
+func (o *PriceListCreate) SetData(v POSTPriceListsRequestData) {
 	o.Data = v
 }
 
 func (o PriceListCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PriceListCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullablePriceListCreate struct {

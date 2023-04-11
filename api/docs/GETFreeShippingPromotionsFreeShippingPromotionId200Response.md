@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETFreeShippingPromotions200ResponseDataInner**](GETFreeShippingPromotions200ResponseDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData**](GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETFreeShippingPromotionsFreeShippingPromotionId200Response) GetData() GETFreeShippingPromotions200ResponseDataInner`
+`func (o *GETFreeShippingPromotionsFreeShippingPromotionId200Response) GetData() GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETFreeShippingPromotionsFreeShippingPromotionId200Response) GetDataOk() (*GETFreeShippingPromotions200ResponseDataInner, bool)`
+`func (o *GETFreeShippingPromotionsFreeShippingPromotionId200Response) GetDataOk() (*GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETFreeShippingPromotionsFreeShippingPromotionId200Response) SetData(v GETFreeShippingPromotions200ResponseDataInner)`
+`func (o *GETFreeShippingPromotionsFreeShippingPromotionId200Response) SetData(v GETFreeShippingPromotionsFreeShippingPromotionId200ResponseData)`
 
 SetData sets Data field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -13,340 +13,79 @@ package api
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
-// LineItemDataRelationshipsItem - struct for LineItemDataRelationshipsItem
+// checks if the LineItemDataRelationshipsItem type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &LineItemDataRelationshipsItem{}
+
+// LineItemDataRelationshipsItem struct for LineItemDataRelationshipsItem
 type LineItemDataRelationshipsItem struct {
-	Adjustment                  *Adjustment
-	Bundle                      *Bundle
-	ExternalPromotion           *ExternalPromotion
-	FixedAmountPromotion        *FixedAmountPromotion
-	FreeShippingPromotion       *FreeShippingPromotion
-	GiftCard                    *GiftCard
-	PaymentMethod               *PaymentMethod
-	PercentageDiscountPromotion *PercentageDiscountPromotion
-	Shipment                    *Shipment
-	Sku                         *Sku
+	Data *POSTLineItemsRequestDataRelationshipsItemData `json:"data,omitempty"`
 }
 
-// AdjustmentAsLineItemDataRelationshipsItem is a convenience function that returns Adjustment wrapped in LineItemDataRelationshipsItem
-func AdjustmentAsLineItemDataRelationshipsItem(v *Adjustment) LineItemDataRelationshipsItem {
-	return LineItemDataRelationshipsItem{
-		Adjustment: v,
-	}
+// NewLineItemDataRelationshipsItem instantiates a new LineItemDataRelationshipsItem object
+// This constructor will assign default values to properties that have it defined,
+// and makes sure properties required by API are set, but the set of arguments
+// will change when the set of required properties is changed
+func NewLineItemDataRelationshipsItem() *LineItemDataRelationshipsItem {
+	this := LineItemDataRelationshipsItem{}
+	return &this
 }
 
-// BundleAsLineItemDataRelationshipsItem is a convenience function that returns Bundle wrapped in LineItemDataRelationshipsItem
-func BundleAsLineItemDataRelationshipsItem(v *Bundle) LineItemDataRelationshipsItem {
-	return LineItemDataRelationshipsItem{
-		Bundle: v,
-	}
+// NewLineItemDataRelationshipsItemWithDefaults instantiates a new LineItemDataRelationshipsItem object
+// This constructor will only assign default values to properties that have it defined,
+// but it doesn't guarantee that properties required by API are set
+func NewLineItemDataRelationshipsItemWithDefaults() *LineItemDataRelationshipsItem {
+	this := LineItemDataRelationshipsItem{}
+	return &this
 }
 
-// ExternalPromotionAsLineItemDataRelationshipsItem is a convenience function that returns ExternalPromotion wrapped in LineItemDataRelationshipsItem
-func ExternalPromotionAsLineItemDataRelationshipsItem(v *ExternalPromotion) LineItemDataRelationshipsItem {
-	return LineItemDataRelationshipsItem{
-		ExternalPromotion: v,
+// GetData returns the Data field value if set, zero value otherwise.
+func (o *LineItemDataRelationshipsItem) GetData() POSTLineItemsRequestDataRelationshipsItemData {
+	if o == nil || IsNil(o.Data) {
+		var ret POSTLineItemsRequestDataRelationshipsItemData
+		return ret
 	}
+	return *o.Data
 }
 
-// FixedAmountPromotionAsLineItemDataRelationshipsItem is a convenience function that returns FixedAmountPromotion wrapped in LineItemDataRelationshipsItem
-func FixedAmountPromotionAsLineItemDataRelationshipsItem(v *FixedAmountPromotion) LineItemDataRelationshipsItem {
-	return LineItemDataRelationshipsItem{
-		FixedAmountPromotion: v,
+// GetDataOk returns a tuple with the Data field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *LineItemDataRelationshipsItem) GetDataOk() (*POSTLineItemsRequestDataRelationshipsItemData, bool) {
+	if o == nil || IsNil(o.Data) {
+		return nil, false
 	}
+	return o.Data, true
 }
 
-// FreeShippingPromotionAsLineItemDataRelationshipsItem is a convenience function that returns FreeShippingPromotion wrapped in LineItemDataRelationshipsItem
-func FreeShippingPromotionAsLineItemDataRelationshipsItem(v *FreeShippingPromotion) LineItemDataRelationshipsItem {
-	return LineItemDataRelationshipsItem{
-		FreeShippingPromotion: v,
+// HasData returns a boolean if a field has been set.
+func (o *LineItemDataRelationshipsItem) HasData() bool {
+	if o != nil && !IsNil(o.Data) {
+		return true
 	}
+
+	return false
 }
 
-// GiftCardAsLineItemDataRelationshipsItem is a convenience function that returns GiftCard wrapped in LineItemDataRelationshipsItem
-func GiftCardAsLineItemDataRelationshipsItem(v *GiftCard) LineItemDataRelationshipsItem {
-	return LineItemDataRelationshipsItem{
-		GiftCard: v,
-	}
+// SetData gets a reference to the given POSTLineItemsRequestDataRelationshipsItemData and assigns it to the Data field.
+func (o *LineItemDataRelationshipsItem) SetData(v POSTLineItemsRequestDataRelationshipsItemData) {
+	o.Data = &v
 }
 
-// PaymentMethodAsLineItemDataRelationshipsItem is a convenience function that returns PaymentMethod wrapped in LineItemDataRelationshipsItem
-func PaymentMethodAsLineItemDataRelationshipsItem(v *PaymentMethod) LineItemDataRelationshipsItem {
-	return LineItemDataRelationshipsItem{
-		PaymentMethod: v,
+func (o LineItemDataRelationshipsItem) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
+	return json.Marshal(toSerialize)
 }
 
-// PercentageDiscountPromotionAsLineItemDataRelationshipsItem is a convenience function that returns PercentageDiscountPromotion wrapped in LineItemDataRelationshipsItem
-func PercentageDiscountPromotionAsLineItemDataRelationshipsItem(v *PercentageDiscountPromotion) LineItemDataRelationshipsItem {
-	return LineItemDataRelationshipsItem{
-		PercentageDiscountPromotion: v,
+func (o LineItemDataRelationshipsItem) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
 	}
-}
-
-// ShipmentAsLineItemDataRelationshipsItem is a convenience function that returns Shipment wrapped in LineItemDataRelationshipsItem
-func ShipmentAsLineItemDataRelationshipsItem(v *Shipment) LineItemDataRelationshipsItem {
-	return LineItemDataRelationshipsItem{
-		Shipment: v,
-	}
-}
-
-// SkuAsLineItemDataRelationshipsItem is a convenience function that returns Sku wrapped in LineItemDataRelationshipsItem
-func SkuAsLineItemDataRelationshipsItem(v *Sku) LineItemDataRelationshipsItem {
-	return LineItemDataRelationshipsItem{
-		Sku: v,
-	}
-}
-
-// Unmarshal JSON data into one of the pointers in the struct
-func (dst *LineItemDataRelationshipsItem) UnmarshalJSON(data []byte) error {
-	var err error
-	match := 0
-	// try to unmarshal data into Adjustment
-	err = newStrictDecoder(data).Decode(&dst.Adjustment)
-	if err == nil {
-		jsonAdjustment, _ := json.Marshal(dst.Adjustment)
-		if string(jsonAdjustment) == "{}" { // empty struct
-			dst.Adjustment = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.Adjustment = nil
-	}
-
-	// try to unmarshal data into Bundle
-	err = newStrictDecoder(data).Decode(&dst.Bundle)
-	if err == nil {
-		jsonBundle, _ := json.Marshal(dst.Bundle)
-		if string(jsonBundle) == "{}" { // empty struct
-			dst.Bundle = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.Bundle = nil
-	}
-
-	// try to unmarshal data into ExternalPromotion
-	err = newStrictDecoder(data).Decode(&dst.ExternalPromotion)
-	if err == nil {
-		jsonExternalPromotion, _ := json.Marshal(dst.ExternalPromotion)
-		if string(jsonExternalPromotion) == "{}" { // empty struct
-			dst.ExternalPromotion = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.ExternalPromotion = nil
-	}
-
-	// try to unmarshal data into FixedAmountPromotion
-	err = newStrictDecoder(data).Decode(&dst.FixedAmountPromotion)
-	if err == nil {
-		jsonFixedAmountPromotion, _ := json.Marshal(dst.FixedAmountPromotion)
-		if string(jsonFixedAmountPromotion) == "{}" { // empty struct
-			dst.FixedAmountPromotion = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.FixedAmountPromotion = nil
-	}
-
-	// try to unmarshal data into FreeShippingPromotion
-	err = newStrictDecoder(data).Decode(&dst.FreeShippingPromotion)
-	if err == nil {
-		jsonFreeShippingPromotion, _ := json.Marshal(dst.FreeShippingPromotion)
-		if string(jsonFreeShippingPromotion) == "{}" { // empty struct
-			dst.FreeShippingPromotion = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.FreeShippingPromotion = nil
-	}
-
-	// try to unmarshal data into GiftCard
-	err = newStrictDecoder(data).Decode(&dst.GiftCard)
-	if err == nil {
-		jsonGiftCard, _ := json.Marshal(dst.GiftCard)
-		if string(jsonGiftCard) == "{}" { // empty struct
-			dst.GiftCard = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.GiftCard = nil
-	}
-
-	// try to unmarshal data into PaymentMethod
-	err = newStrictDecoder(data).Decode(&dst.PaymentMethod)
-	if err == nil {
-		jsonPaymentMethod, _ := json.Marshal(dst.PaymentMethod)
-		if string(jsonPaymentMethod) == "{}" { // empty struct
-			dst.PaymentMethod = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.PaymentMethod = nil
-	}
-
-	// try to unmarshal data into PercentageDiscountPromotion
-	err = newStrictDecoder(data).Decode(&dst.PercentageDiscountPromotion)
-	if err == nil {
-		jsonPercentageDiscountPromotion, _ := json.Marshal(dst.PercentageDiscountPromotion)
-		if string(jsonPercentageDiscountPromotion) == "{}" { // empty struct
-			dst.PercentageDiscountPromotion = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.PercentageDiscountPromotion = nil
-	}
-
-	// try to unmarshal data into Shipment
-	err = newStrictDecoder(data).Decode(&dst.Shipment)
-	if err == nil {
-		jsonShipment, _ := json.Marshal(dst.Shipment)
-		if string(jsonShipment) == "{}" { // empty struct
-			dst.Shipment = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.Shipment = nil
-	}
-
-	// try to unmarshal data into Sku
-	err = newStrictDecoder(data).Decode(&dst.Sku)
-	if err == nil {
-		jsonSku, _ := json.Marshal(dst.Sku)
-		if string(jsonSku) == "{}" { // empty struct
-			dst.Sku = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.Sku = nil
-	}
-
-	if match > 1 { // more than 1 match
-		// reset to nil
-		dst.Adjustment = nil
-		dst.Bundle = nil
-		dst.ExternalPromotion = nil
-		dst.FixedAmountPromotion = nil
-		dst.FreeShippingPromotion = nil
-		dst.GiftCard = nil
-		dst.PaymentMethod = nil
-		dst.PercentageDiscountPromotion = nil
-		dst.Shipment = nil
-		dst.Sku = nil
-
-		return fmt.Errorf("Data matches more than one schema in oneOf(LineItemDataRelationshipsItem)")
-	} else if match == 1 {
-		return nil // exactly one match
-	} else { // no match
-		return fmt.Errorf("Data failed to match schemas in oneOf(LineItemDataRelationshipsItem)")
-	}
-}
-
-// Marshal data from the first non-nil pointers in the struct to JSON
-func (src LineItemDataRelationshipsItem) MarshalJSON() ([]byte, error) {
-	if src.Adjustment != nil {
-		return json.Marshal(&src.Adjustment)
-	}
-
-	if src.Bundle != nil {
-		return json.Marshal(&src.Bundle)
-	}
-
-	if src.ExternalPromotion != nil {
-		return json.Marshal(&src.ExternalPromotion)
-	}
-
-	if src.FixedAmountPromotion != nil {
-		return json.Marshal(&src.FixedAmountPromotion)
-	}
-
-	if src.FreeShippingPromotion != nil {
-		return json.Marshal(&src.FreeShippingPromotion)
-	}
-
-	if src.GiftCard != nil {
-		return json.Marshal(&src.GiftCard)
-	}
-
-	if src.PaymentMethod != nil {
-		return json.Marshal(&src.PaymentMethod)
-	}
-
-	if src.PercentageDiscountPromotion != nil {
-		return json.Marshal(&src.PercentageDiscountPromotion)
-	}
-
-	if src.Shipment != nil {
-		return json.Marshal(&src.Shipment)
-	}
-
-	if src.Sku != nil {
-		return json.Marshal(&src.Sku)
-	}
-
-	return nil, nil // no data in oneOf schemas
-}
-
-// Get the actual instance
-func (obj *LineItemDataRelationshipsItem) GetActualInstance() interface{} {
-	if obj == nil {
-		return nil
-	}
-	if obj.Adjustment != nil {
-		return obj.Adjustment
-	}
-
-	if obj.Bundle != nil {
-		return obj.Bundle
-	}
-
-	if obj.ExternalPromotion != nil {
-		return obj.ExternalPromotion
-	}
-
-	if obj.FixedAmountPromotion != nil {
-		return obj.FixedAmountPromotion
-	}
-
-	if obj.FreeShippingPromotion != nil {
-		return obj.FreeShippingPromotion
-	}
-
-	if obj.GiftCard != nil {
-		return obj.GiftCard
-	}
-
-	if obj.PaymentMethod != nil {
-		return obj.PaymentMethod
-	}
-
-	if obj.PercentageDiscountPromotion != nil {
-		return obj.PercentageDiscountPromotion
-	}
-
-	if obj.Shipment != nil {
-		return obj.Shipment
-	}
-
-	if obj.Sku != nil {
-		return obj.Sku
-	}
-
-	// all schemas are nil
-	return nil
+	return toSerialize, nil
 }
 
 type NullableLineItemDataRelationshipsItem struct {

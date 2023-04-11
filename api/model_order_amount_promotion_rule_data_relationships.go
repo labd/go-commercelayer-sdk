@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the OrderAmountPromotionRuleDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &OrderAmountPromotionRuleDataRelationships{}
+
 // OrderAmountPromotionRuleDataRelationships struct for OrderAmountPromotionRuleDataRelationships
 type OrderAmountPromotionRuleDataRelationships struct {
-	Promotion *CouponCodesPromotionRuleDataRelationshipsPromotion `json:"promotion,omitempty"`
+	Promotion *OrderAmountPromotionRuleDataRelationshipsPromotion `json:"promotion,omitempty"`
 }
 
 // NewOrderAmountPromotionRuleDataRelationships instantiates a new OrderAmountPromotionRuleDataRelationships object
@@ -38,9 +41,9 @@ func NewOrderAmountPromotionRuleDataRelationshipsWithDefaults() *OrderAmountProm
 }
 
 // GetPromotion returns the Promotion field value if set, zero value otherwise.
-func (o *OrderAmountPromotionRuleDataRelationships) GetPromotion() CouponCodesPromotionRuleDataRelationshipsPromotion {
-	if o == nil || o.Promotion == nil {
-		var ret CouponCodesPromotionRuleDataRelationshipsPromotion
+func (o *OrderAmountPromotionRuleDataRelationships) GetPromotion() OrderAmountPromotionRuleDataRelationshipsPromotion {
+	if o == nil || IsNil(o.Promotion) {
+		var ret OrderAmountPromotionRuleDataRelationshipsPromotion
 		return ret
 	}
 	return *o.Promotion
@@ -48,8 +51,8 @@ func (o *OrderAmountPromotionRuleDataRelationships) GetPromotion() CouponCodesPr
 
 // GetPromotionOk returns a tuple with the Promotion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *OrderAmountPromotionRuleDataRelationships) GetPromotionOk() (*CouponCodesPromotionRuleDataRelationshipsPromotion, bool) {
-	if o == nil || o.Promotion == nil {
+func (o *OrderAmountPromotionRuleDataRelationships) GetPromotionOk() (*OrderAmountPromotionRuleDataRelationshipsPromotion, bool) {
+	if o == nil || IsNil(o.Promotion) {
 		return nil, false
 	}
 	return o.Promotion, true
@@ -57,24 +60,32 @@ func (o *OrderAmountPromotionRuleDataRelationships) GetPromotionOk() (*CouponCod
 
 // HasPromotion returns a boolean if a field has been set.
 func (o *OrderAmountPromotionRuleDataRelationships) HasPromotion() bool {
-	if o != nil && o.Promotion != nil {
+	if o != nil && !IsNil(o.Promotion) {
 		return true
 	}
 
 	return false
 }
 
-// SetPromotion gets a reference to the given CouponCodesPromotionRuleDataRelationshipsPromotion and assigns it to the Promotion field.
-func (o *OrderAmountPromotionRuleDataRelationships) SetPromotion(v CouponCodesPromotionRuleDataRelationshipsPromotion) {
+// SetPromotion gets a reference to the given OrderAmountPromotionRuleDataRelationshipsPromotion and assigns it to the Promotion field.
+func (o *OrderAmountPromotionRuleDataRelationships) SetPromotion(v OrderAmountPromotionRuleDataRelationshipsPromotion) {
 	o.Promotion = &v
 }
 
 func (o OrderAmountPromotionRuleDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Promotion != nil {
-		toSerialize["promotion"] = o.Promotion
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o OrderAmountPromotionRuleDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Promotion) {
+		toSerialize["promotion"] = o.Promotion
+	}
+	return toSerialize, nil
 }
 
 type NullableOrderAmountPromotionRuleDataRelationships struct {

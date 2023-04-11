@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the AdjustmentUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AdjustmentUpdate{}
+
 // AdjustmentUpdate struct for AdjustmentUpdate
 type AdjustmentUpdate struct {
-	Data AdjustmentUpdateData `json:"data"`
+	Data PATCHAdjustmentsAdjustmentIdRequestData `json:"data"`
 }
 
 // NewAdjustmentUpdate instantiates a new AdjustmentUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAdjustmentUpdate(data AdjustmentUpdateData) *AdjustmentUpdate {
+func NewAdjustmentUpdate(data PATCHAdjustmentsAdjustmentIdRequestData) *AdjustmentUpdate {
 	this := AdjustmentUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewAdjustmentUpdateWithDefaults() *AdjustmentUpdate {
 }
 
 // GetData returns the Data field value
-func (o *AdjustmentUpdate) GetData() AdjustmentUpdateData {
+func (o *AdjustmentUpdate) GetData() PATCHAdjustmentsAdjustmentIdRequestData {
 	if o == nil {
-		var ret AdjustmentUpdateData
+		var ret PATCHAdjustmentsAdjustmentIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *AdjustmentUpdate) GetData() AdjustmentUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *AdjustmentUpdate) GetDataOk() (*AdjustmentUpdateData, bool) {
+func (o *AdjustmentUpdate) GetDataOk() (*PATCHAdjustmentsAdjustmentIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *AdjustmentUpdate) GetDataOk() (*AdjustmentUpdateData, bool) {
 }
 
 // SetData sets field value
-func (o *AdjustmentUpdate) SetData(v AdjustmentUpdateData) {
+func (o *AdjustmentUpdate) SetData(v PATCHAdjustmentsAdjustmentIdRequestData) {
 	o.Data = v
 }
 
 func (o AdjustmentUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AdjustmentUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableAdjustmentUpdate struct {

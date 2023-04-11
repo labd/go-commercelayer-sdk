@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the POSTShippingZones201Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTShippingZones201Response{}
 
 // POSTShippingZones201Response struct for POSTShippingZones201Response
 type POSTShippingZones201Response struct {
@@ -39,7 +42,7 @@ func NewPOSTShippingZones201ResponseWithDefaults() *POSTShippingZones201Response
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTShippingZones201Response) GetData() POSTShippingZones201ResponseData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret POSTShippingZones201ResponseData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *POSTShippingZones201Response) GetData() POSTShippingZones201ResponseDat
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTShippingZones201Response) GetDataOk() (*POSTShippingZones201ResponseData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *POSTShippingZones201Response) GetDataOk() (*POSTShippingZones201Respons
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTShippingZones201Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *POSTShippingZones201Response) SetData(v POSTShippingZones201ResponseDat
 }
 
 func (o POSTShippingZones201Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o POSTShippingZones201Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullablePOSTShippingZones201Response struct {

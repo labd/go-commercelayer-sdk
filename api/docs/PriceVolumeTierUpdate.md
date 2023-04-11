@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PriceVolumeTierUpdateData**](PriceVolumeTierUpdateData.md) |  | 
+**Data** | [**PATCHPriceVolumeTiersPriceVolumeTierIdRequestData**](PATCHPriceVolumeTiersPriceVolumeTierIdRequestData.md) |  | 
 
 ## Methods
 
 ### NewPriceVolumeTierUpdate
 
-`func NewPriceVolumeTierUpdate(data PriceVolumeTierUpdateData, ) *PriceVolumeTierUpdate`
+`func NewPriceVolumeTierUpdate(data PATCHPriceVolumeTiersPriceVolumeTierIdRequestData, ) *PriceVolumeTierUpdate`
 
 NewPriceVolumeTierUpdate instantiates a new PriceVolumeTierUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *PriceVolumeTierUpdate) GetData() PriceVolumeTierUpdateData`
+`func (o *PriceVolumeTierUpdate) GetData() PATCHPriceVolumeTiersPriceVolumeTierIdRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *PriceVolumeTierUpdate) GetDataOk() (*PriceVolumeTierUpdateData, bool)`
+`func (o *PriceVolumeTierUpdate) GetDataOk() (*PATCHPriceVolumeTiersPriceVolumeTierIdRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *PriceVolumeTierUpdate) SetData(v PriceVolumeTierUpdateData)`
+`func (o *PriceVolumeTierUpdate) SetData(v PATCHPriceVolumeTiersPriceVolumeTierIdRequestData)`
 
 SetData sets Data field to given value.
 

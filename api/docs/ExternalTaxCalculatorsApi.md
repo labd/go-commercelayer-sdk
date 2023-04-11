@@ -1,6 +1,6 @@
 # \ExternalTaxCalculatorsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,15 +29,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    externalTaxCalculatorId := "externalTaxCalculatorId_example" // string | The resource's id
+    externalTaxCalculatorId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExternalTaxCalculatorsApi.DELETEExternalTaxCalculatorsExternalTaxCalculatorId(context.Background(), externalTaxCalculatorId).Execute()
+    r, err := apiClient.ExternalTaxCalculatorsApi.DELETEExternalTaxCalculatorsExternalTaxCalculatorId(context.Background(), externalTaxCalculatorId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalTaxCalculatorsApi.DELETEExternalTaxCalculatorsExternalTaxCalculatorId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -51,7 +51,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**externalTaxCalculatorId** | **string** | The resource&#39;s id | 
+**externalTaxCalculatorId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -158,11 +158,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    externalTaxCalculatorId := "externalTaxCalculatorId_example" // string | The resource's id
+    externalTaxCalculatorId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -182,7 +182,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**externalTaxCalculatorId** | **string** | The resource&#39;s id | 
+**externalTaxCalculatorId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHExternalTaxCalculatorsExternalTaxCalculatorId
 
-> PATCHExternalTaxCalculatorsExternalTaxCalculatorId200Response PATCHExternalTaxCalculatorsExternalTaxCalculatorId(ctx, externalTaxCalculatorId).ExternalTaxCalculatorUpdate(externalTaxCalculatorUpdate).Execute()
+> PATCHExternalTaxCalculatorsExternalTaxCalculatorId200Response PATCHExternalTaxCalculatorsExternalTaxCalculatorId(ctx, externalTaxCalculatorId).PATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest(pATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest).Execute()
 
 Update an external tax calculator
 
@@ -228,16 +228,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    externalTaxCalculatorUpdate := *openapiclient.NewExternalTaxCalculatorUpdate(*openapiclient.NewExternalTaxCalculatorUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes())) // ExternalTaxCalculatorUpdate | 
-    externalTaxCalculatorId := "externalTaxCalculatorId_example" // string | The resource's id
+    pATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest := *openapiclient.NewPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest(*openapiclient.NewPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequestDataAttributes())) // PATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest | 
+    externalTaxCalculatorId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExternalTaxCalculatorsApi.PATCHExternalTaxCalculatorsExternalTaxCalculatorId(context.Background(), externalTaxCalculatorId).ExternalTaxCalculatorUpdate(externalTaxCalculatorUpdate).Execute()
+    resp, r, err := apiClient.ExternalTaxCalculatorsApi.PATCHExternalTaxCalculatorsExternalTaxCalculatorId(context.Background(), externalTaxCalculatorId).PATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest(pATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalTaxCalculatorsApi.PATCHExternalTaxCalculatorsExternalTaxCalculatorId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -253,7 +253,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**externalTaxCalculatorId** | **string** | The resource&#39;s id | 
+**externalTaxCalculatorId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -262,7 +262,7 @@ Other parameters are passed through a pointer to a apiPATCHExternalTaxCalculator
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **externalTaxCalculatorUpdate** | [**ExternalTaxCalculatorUpdate**](ExternalTaxCalculatorUpdate.md) |  | 
+ **pATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest** | [**PATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest**](PATCHExternalTaxCalculatorsExternalTaxCalculatorIdRequest.md) |  | 
 
 
 ### Return type
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTExternalTaxCalculators
 
-> POSTExternalTaxCalculators201Response POSTExternalTaxCalculators(ctx).ExternalTaxCalculatorCreate(externalTaxCalculatorCreate).Execute()
+> POSTExternalTaxCalculators201Response POSTExternalTaxCalculators(ctx).POSTExternalTaxCalculatorsRequest(pOSTExternalTaxCalculatorsRequest).Execute()
 
 Create an external tax calculator
 
@@ -300,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    externalTaxCalculatorCreate := *openapiclient.NewExternalTaxCalculatorCreate(*openapiclient.NewExternalTaxCalculatorCreateData("Type_example", *openapiclient.NewPOSTExternalTaxCalculators201ResponseDataAttributes("Personal tax calculator", "https://external_calculator.yourbrand.com"))) // ExternalTaxCalculatorCreate | 
+    pOSTExternalTaxCalculatorsRequest := *openapiclient.NewPOSTExternalTaxCalculatorsRequest(*openapiclient.NewPOSTExternalTaxCalculatorsRequestData(interface{}(123), *openapiclient.NewPOSTExternalTaxCalculatorsRequestDataAttributes(interface{}(Personal tax calculator), interface{}(https://external_calculator.yourbrand.com)))) // POSTExternalTaxCalculatorsRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExternalTaxCalculatorsApi.POSTExternalTaxCalculators(context.Background()).ExternalTaxCalculatorCreate(externalTaxCalculatorCreate).Execute()
+    resp, r, err := apiClient.ExternalTaxCalculatorsApi.POSTExternalTaxCalculators(context.Background()).POSTExternalTaxCalculatorsRequest(pOSTExternalTaxCalculatorsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalTaxCalculatorsApi.POSTExternalTaxCalculators``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiPOSTExternalTaxCalculators
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **externalTaxCalculatorCreate** | [**ExternalTaxCalculatorCreate**](ExternalTaxCalculatorCreate.md) |  | 
+ **pOSTExternalTaxCalculatorsRequest** | [**POSTExternalTaxCalculatorsRequest**](POSTExternalTaxCalculatorsRequest.md) |  | 
 
 ### Return type
 

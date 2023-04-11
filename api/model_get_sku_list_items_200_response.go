@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETSkuListItems200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETSkuListItems200Response{}
+
 // GETSkuListItems200Response struct for GETSkuListItems200Response
 type GETSkuListItems200Response struct {
-	Data []GETSkuListItems200ResponseDataInner `json:"data,omitempty"`
+	Data interface{} `json:"data,omitempty"`
 }
 
 // NewGETSkuListItems200Response instantiates a new GETSkuListItems200Response object
@@ -37,10 +40,10 @@ func NewGETSkuListItems200ResponseWithDefaults() *GETSkuListItems200Response {
 	return &this
 }
 
-// GetData returns the Data field value if set, zero value otherwise.
-func (o *GETSkuListItems200Response) GetData() []GETSkuListItems200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret []GETSkuListItems200ResponseDataInner
+// GetData returns the Data field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETSkuListItems200Response) GetData() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Data
@@ -48,33 +51,42 @@ func (o *GETSkuListItems200Response) GetData() []GETSkuListItems200ResponseDataI
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETSkuListItems200Response) GetDataOk() ([]GETSkuListItems200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETSkuListItems200Response) GetDataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
-	return o.Data, true
+	return &o.Data, true
 }
 
 // HasData returns a boolean if a field has been set.
 func (o *GETSkuListItems200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given []GETSkuListItems200ResponseDataInner and assigns it to the Data field.
-func (o *GETSkuListItems200Response) SetData(v []GETSkuListItems200ResponseDataInner) {
+// SetData gets a reference to the given interface{} and assigns it to the Data field.
+func (o *GETSkuListItems200Response) SetData(v interface{}) {
 	o.Data = v
 }
 
 func (o GETSkuListItems200Response) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o GETSkuListItems200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableGETSkuListItems200Response struct {

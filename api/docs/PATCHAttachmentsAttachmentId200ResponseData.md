@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | The resource&#39;s id | [optional] 
-**Type** | Pointer to **string** | The resource&#39;s type | [optional] 
-**Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
-**Attributes** | Pointer to [**PATCHAttachmentsAttachmentId200ResponseDataAttributes**](PATCHAttachmentsAttachmentId200ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**GETAttachments200ResponseDataInnerRelationships**](GETAttachments200ResponseDataInnerRelationships.md) |  | [optional] 
+**Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
+**Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
+**Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
+**Attributes** | Pointer to [**PATCHAttachmentsAttachmentIdRequestDataAttributes**](PATCHAttachmentsAttachmentIdRequestDataAttributes.md) |  | [optional] 
+**Relationships** | Pointer to [**POSTAttachments201ResponseDataRelationships**](POSTAttachments201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *PATCHAttachmentsAttachmentId200ResponseData) GetId() string`
+`func (o *PATCHAttachmentsAttachmentId200ResponseData) GetId() interface{}`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *PATCHAttachmentsAttachmentId200ResponseData) GetIdOk() (*string, bool)`
+`func (o *PATCHAttachmentsAttachmentId200ResponseData) GetIdOk() (*interface{}, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *PATCHAttachmentsAttachmentId200ResponseData) SetId(v string)`
+`func (o *PATCHAttachmentsAttachmentId200ResponseData) SetId(v interface{})`
 
 SetId sets Id field to given value.
 
@@ -54,22 +54,32 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
+### SetIdNil
+
+`func (o *PATCHAttachmentsAttachmentId200ResponseData) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *PATCHAttachmentsAttachmentId200ResponseData) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetType
 
-`func (o *PATCHAttachmentsAttachmentId200ResponseData) GetType() string`
+`func (o *PATCHAttachmentsAttachmentId200ResponseData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *PATCHAttachmentsAttachmentId200ResponseData) GetTypeOk() (*string, bool)`
+`func (o *PATCHAttachmentsAttachmentId200ResponseData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *PATCHAttachmentsAttachmentId200ResponseData) SetType(v string)`
+`func (o *PATCHAttachmentsAttachmentId200ResponseData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
@@ -79,22 +89,32 @@ SetType sets Type field to given value.
 
 HasType returns a boolean if a field has been set.
 
+### SetTypeNil
+
+`func (o *PATCHAttachmentsAttachmentId200ResponseData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *PATCHAttachmentsAttachmentId200ResponseData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetLinks
 
-`func (o *PATCHAttachmentsAttachmentId200ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks`
+`func (o *PATCHAttachmentsAttachmentId200ResponseData) GetLinks() POSTAddresses201ResponseDataLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *PATCHAttachmentsAttachmentId200ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool)`
+`func (o *PATCHAttachmentsAttachmentId200ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *PATCHAttachmentsAttachmentId200ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks)`
+`func (o *PATCHAttachmentsAttachmentId200ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks)`
 
 SetLinks sets Links field to given value.
 
@@ -106,20 +126,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *PATCHAttachmentsAttachmentId200ResponseData) GetAttributes() PATCHAttachmentsAttachmentId200ResponseDataAttributes`
+`func (o *PATCHAttachmentsAttachmentId200ResponseData) GetAttributes() PATCHAttachmentsAttachmentIdRequestDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PATCHAttachmentsAttachmentId200ResponseData) GetAttributesOk() (*PATCHAttachmentsAttachmentId200ResponseDataAttributes, bool)`
+`func (o *PATCHAttachmentsAttachmentId200ResponseData) GetAttributesOk() (*PATCHAttachmentsAttachmentIdRequestDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PATCHAttachmentsAttachmentId200ResponseData) SetAttributes(v PATCHAttachmentsAttachmentId200ResponseDataAttributes)`
+`func (o *PATCHAttachmentsAttachmentId200ResponseData) SetAttributes(v PATCHAttachmentsAttachmentIdRequestDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
@@ -131,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHAttachmentsAttachmentId200ResponseData) GetRelationships() GETAttachments200ResponseDataInnerRelationships`
+`func (o *PATCHAttachmentsAttachmentId200ResponseData) GetRelationships() POSTAttachments201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHAttachmentsAttachmentId200ResponseData) GetRelationshipsOk() (*GETAttachments200ResponseDataInnerRelationships, bool)`
+`func (o *PATCHAttachmentsAttachmentId200ResponseData) GetRelationshipsOk() (*POSTAttachments201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHAttachmentsAttachmentId200ResponseData) SetRelationships(v GETAttachments200ResponseDataInnerRelationships)`
+`func (o *PATCHAttachmentsAttachmentId200ResponseData) SetRelationships(v POSTAttachments201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

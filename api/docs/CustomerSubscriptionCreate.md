@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**CustomerSubscriptionCreateData**](CustomerSubscriptionCreateData.md) |  | 
+**Data** | [**POSTCustomerSubscriptionsRequestData**](POSTCustomerSubscriptionsRequestData.md) |  | 
 
 ## Methods
 
 ### NewCustomerSubscriptionCreate
 
-`func NewCustomerSubscriptionCreate(data CustomerSubscriptionCreateData, ) *CustomerSubscriptionCreate`
+`func NewCustomerSubscriptionCreate(data POSTCustomerSubscriptionsRequestData, ) *CustomerSubscriptionCreate`
 
 NewCustomerSubscriptionCreate instantiates a new CustomerSubscriptionCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *CustomerSubscriptionCreate) GetData() CustomerSubscriptionCreateData`
+`func (o *CustomerSubscriptionCreate) GetData() POSTCustomerSubscriptionsRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *CustomerSubscriptionCreate) GetDataOk() (*CustomerSubscriptionCreateData, bool)`
+`func (o *CustomerSubscriptionCreate) GetDataOk() (*POSTCustomerSubscriptionsRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *CustomerSubscriptionCreate) SetData(v CustomerSubscriptionCreateData)`
+`func (o *CustomerSubscriptionCreate) SetData(v POSTCustomerSubscriptionsRequestData)`
 
 SetData sets Data field to given value.
 

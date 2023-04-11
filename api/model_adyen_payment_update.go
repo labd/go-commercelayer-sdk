@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the AdyenPaymentUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AdyenPaymentUpdate{}
+
 // AdyenPaymentUpdate struct for AdyenPaymentUpdate
 type AdyenPaymentUpdate struct {
-	Data AdyenPaymentUpdateData `json:"data"`
+	Data PATCHAdyenPaymentsAdyenPaymentIdRequestData `json:"data"`
 }
 
 // NewAdyenPaymentUpdate instantiates a new AdyenPaymentUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAdyenPaymentUpdate(data AdyenPaymentUpdateData) *AdyenPaymentUpdate {
+func NewAdyenPaymentUpdate(data PATCHAdyenPaymentsAdyenPaymentIdRequestData) *AdyenPaymentUpdate {
 	this := AdyenPaymentUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewAdyenPaymentUpdateWithDefaults() *AdyenPaymentUpdate {
 }
 
 // GetData returns the Data field value
-func (o *AdyenPaymentUpdate) GetData() AdyenPaymentUpdateData {
+func (o *AdyenPaymentUpdate) GetData() PATCHAdyenPaymentsAdyenPaymentIdRequestData {
 	if o == nil {
-		var ret AdyenPaymentUpdateData
+		var ret PATCHAdyenPaymentsAdyenPaymentIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *AdyenPaymentUpdate) GetData() AdyenPaymentUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *AdyenPaymentUpdate) GetDataOk() (*AdyenPaymentUpdateData, bool) {
+func (o *AdyenPaymentUpdate) GetDataOk() (*PATCHAdyenPaymentsAdyenPaymentIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *AdyenPaymentUpdate) GetDataOk() (*AdyenPaymentUpdateData, bool) {
 }
 
 // SetData sets field value
-func (o *AdyenPaymentUpdate) SetData(v AdyenPaymentUpdateData) {
+func (o *AdyenPaymentUpdate) SetData(v PATCHAdyenPaymentsAdyenPaymentIdRequestData) {
 	o.Data = v
 }
 
 func (o AdyenPaymentUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AdyenPaymentUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableAdyenPaymentUpdate struct {

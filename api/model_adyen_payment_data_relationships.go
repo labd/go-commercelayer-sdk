@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the AdyenPaymentDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AdyenPaymentDataRelationships{}
 
 // AdyenPaymentDataRelationships struct for AdyenPaymentDataRelationships
 type AdyenPaymentDataRelationships struct {
@@ -40,7 +43,7 @@ func NewAdyenPaymentDataRelationshipsWithDefaults() *AdyenPaymentDataRelationshi
 
 // GetOrder returns the Order field value if set, zero value otherwise.
 func (o *AdyenPaymentDataRelationships) GetOrder() AdyenPaymentDataRelationshipsOrder {
-	if o == nil || o.Order == nil {
+	if o == nil || IsNil(o.Order) {
 		var ret AdyenPaymentDataRelationshipsOrder
 		return ret
 	}
@@ -50,7 +53,7 @@ func (o *AdyenPaymentDataRelationships) GetOrder() AdyenPaymentDataRelationships
 // GetOrderOk returns a tuple with the Order field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AdyenPaymentDataRelationships) GetOrderOk() (*AdyenPaymentDataRelationshipsOrder, bool) {
-	if o == nil || o.Order == nil {
+	if o == nil || IsNil(o.Order) {
 		return nil, false
 	}
 	return o.Order, true
@@ -58,7 +61,7 @@ func (o *AdyenPaymentDataRelationships) GetOrderOk() (*AdyenPaymentDataRelations
 
 // HasOrder returns a boolean if a field has been set.
 func (o *AdyenPaymentDataRelationships) HasOrder() bool {
-	if o != nil && o.Order != nil {
+	if o != nil && !IsNil(o.Order) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *AdyenPaymentDataRelationships) SetOrder(v AdyenPaymentDataRelationships
 
 // GetPaymentGateway returns the PaymentGateway field value if set, zero value otherwise.
 func (o *AdyenPaymentDataRelationships) GetPaymentGateway() AdyenPaymentDataRelationshipsPaymentGateway {
-	if o == nil || o.PaymentGateway == nil {
+	if o == nil || IsNil(o.PaymentGateway) {
 		var ret AdyenPaymentDataRelationshipsPaymentGateway
 		return ret
 	}
@@ -82,7 +85,7 @@ func (o *AdyenPaymentDataRelationships) GetPaymentGateway() AdyenPaymentDataRela
 // GetPaymentGatewayOk returns a tuple with the PaymentGateway field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AdyenPaymentDataRelationships) GetPaymentGatewayOk() (*AdyenPaymentDataRelationshipsPaymentGateway, bool) {
-	if o == nil || o.PaymentGateway == nil {
+	if o == nil || IsNil(o.PaymentGateway) {
 		return nil, false
 	}
 	return o.PaymentGateway, true
@@ -90,7 +93,7 @@ func (o *AdyenPaymentDataRelationships) GetPaymentGatewayOk() (*AdyenPaymentData
 
 // HasPaymentGateway returns a boolean if a field has been set.
 func (o *AdyenPaymentDataRelationships) HasPaymentGateway() bool {
-	if o != nil && o.PaymentGateway != nil {
+	if o != nil && !IsNil(o.PaymentGateway) {
 		return true
 	}
 
@@ -103,14 +106,22 @@ func (o *AdyenPaymentDataRelationships) SetPaymentGateway(v AdyenPaymentDataRela
 }
 
 func (o AdyenPaymentDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Order != nil {
-		toSerialize["order"] = o.Order
-	}
-	if o.PaymentGateway != nil {
-		toSerialize["payment_gateway"] = o.PaymentGateway
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AdyenPaymentDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Order) {
+		toSerialize["order"] = o.Order
+	}
+	if !IsNil(o.PaymentGateway) {
+		toSerialize["payment_gateway"] = o.PaymentGateway
+	}
+	return toSerialize, nil
 }
 
 type NullableAdyenPaymentDataRelationships struct {

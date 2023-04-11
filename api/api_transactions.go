@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -96,9 +96,9 @@ func (a *TransactionsApiService) GETTransactionsExecute(r TransactionsApiGETTran
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -126,7 +126,7 @@ func (a *TransactionsApiService) GETTransactionsExecute(r TransactionsApiGETTran
 type TransactionsApiGETTransactionsTransactionIdRequest struct {
 	ctx           context.Context
 	ApiService    *TransactionsApiService
-	transactionId string
+	transactionId interface{}
 }
 
 func (r TransactionsApiGETTransactionsTransactionIdRequest) Execute() (*GETTransactionsTransactionId200Response, *http.Response, error) {
@@ -142,7 +142,7 @@ Retrieve a transaction
 	@param transactionId The resource's id
 	@return TransactionsApiGETTransactionsTransactionIdRequest
 */
-func (a *TransactionsApiService) GETTransactionsTransactionId(ctx context.Context, transactionId string) TransactionsApiGETTransactionsTransactionIdRequest {
+func (a *TransactionsApiService) GETTransactionsTransactionId(ctx context.Context, transactionId interface{}) TransactionsApiGETTransactionsTransactionIdRequest {
 	return TransactionsApiGETTransactionsTransactionIdRequest{
 		ApiService:    a,
 		ctx:           ctx,
@@ -167,7 +167,7 @@ func (a *TransactionsApiService) GETTransactionsTransactionIdExecute(r Transacti
 	}
 
 	localVarPath := localBasePath + "/transactions/{transactionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"transactionId"+"}", url.PathEscape(parameterToString(r.transactionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"transactionId"+"}", url.PathEscape(parameterValueToString(r.transactionId, "transactionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -200,9 +200,9 @@ func (a *TransactionsApiService) GETTransactionsTransactionIdExecute(r Transacti
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

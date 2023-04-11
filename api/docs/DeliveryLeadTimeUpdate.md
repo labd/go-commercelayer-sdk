@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**DeliveryLeadTimeUpdateData**](DeliveryLeadTimeUpdateData.md) |  | 
+**Data** | [**PATCHDeliveryLeadTimesDeliveryLeadTimeIdRequestData**](PATCHDeliveryLeadTimesDeliveryLeadTimeIdRequestData.md) |  | 
 
 ## Methods
 
 ### NewDeliveryLeadTimeUpdate
 
-`func NewDeliveryLeadTimeUpdate(data DeliveryLeadTimeUpdateData, ) *DeliveryLeadTimeUpdate`
+`func NewDeliveryLeadTimeUpdate(data PATCHDeliveryLeadTimesDeliveryLeadTimeIdRequestData, ) *DeliveryLeadTimeUpdate`
 
 NewDeliveryLeadTimeUpdate instantiates a new DeliveryLeadTimeUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *DeliveryLeadTimeUpdate) GetData() DeliveryLeadTimeUpdateData`
+`func (o *DeliveryLeadTimeUpdate) GetData() PATCHDeliveryLeadTimesDeliveryLeadTimeIdRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *DeliveryLeadTimeUpdate) GetDataOk() (*DeliveryLeadTimeUpdateData, bool)`
+`func (o *DeliveryLeadTimeUpdate) GetDataOk() (*PATCHDeliveryLeadTimesDeliveryLeadTimeIdRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *DeliveryLeadTimeUpdate) SetData(v DeliveryLeadTimeUpdateData)`
+`func (o *DeliveryLeadTimeUpdate) SetData(v PATCHDeliveryLeadTimesDeliveryLeadTimeIdRequestData)`
 
 SetData sets Data field to given value.
 

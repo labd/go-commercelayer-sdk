@@ -1,6 +1,6 @@
 # \WireTransfersApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,15 +29,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    wireTransferId := "wireTransferId_example" // string | The resource's id
+    wireTransferId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WireTransfersApi.DELETEWireTransfersWireTransferId(context.Background(), wireTransferId).Execute()
+    r, err := apiClient.WireTransfersApi.DELETEWireTransfersWireTransferId(context.Background(), wireTransferId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WireTransfersApi.DELETEWireTransfersWireTransferId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -51,7 +51,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**wireTransferId** | **string** | The resource&#39;s id | 
+**wireTransferId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -158,11 +158,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    wireTransferId := "wireTransferId_example" // string | The resource's id
+    wireTransferId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -182,7 +182,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**wireTransferId** | **string** | The resource&#39;s id | 
+**wireTransferId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHWireTransfersWireTransferId
 
-> POSTWireTransfers201Response PATCHWireTransfersWireTransferId(ctx, wireTransferId).WireTransferUpdate(wireTransferUpdate).Execute()
+> PATCHWireTransfersWireTransferId200Response PATCHWireTransfersWireTransferId(ctx, wireTransferId).PATCHWireTransfersWireTransferIdRequest(pATCHWireTransfersWireTransferIdRequest).Execute()
 
 Update a wire transfer
 
@@ -228,21 +228,21 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    wireTransferUpdate := *openapiclient.NewWireTransferUpdate(*openapiclient.NewWireTransferUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // WireTransferUpdate | 
-    wireTransferId := "wireTransferId_example" // string | The resource's id
+    pATCHWireTransfersWireTransferIdRequest := *openapiclient.NewPATCHWireTransfersWireTransferIdRequest(*openapiclient.NewPATCHWireTransfersWireTransferIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes())) // PATCHWireTransfersWireTransferIdRequest | 
+    wireTransferId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WireTransfersApi.PATCHWireTransfersWireTransferId(context.Background(), wireTransferId).WireTransferUpdate(wireTransferUpdate).Execute()
+    resp, r, err := apiClient.WireTransfersApi.PATCHWireTransfersWireTransferId(context.Background(), wireTransferId).PATCHWireTransfersWireTransferIdRequest(pATCHWireTransfersWireTransferIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WireTransfersApi.PATCHWireTransfersWireTransferId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHWireTransfersWireTransferId`: POSTWireTransfers201Response
+    // response from `PATCHWireTransfersWireTransferId`: PATCHWireTransfersWireTransferId200Response
     fmt.Fprintf(os.Stdout, "Response from `WireTransfersApi.PATCHWireTransfersWireTransferId`: %v\n", resp)
 }
 ```
@@ -253,7 +253,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**wireTransferId** | **string** | The resource&#39;s id | 
+**wireTransferId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -262,12 +262,12 @@ Other parameters are passed through a pointer to a apiPATCHWireTransfersWireTran
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wireTransferUpdate** | [**WireTransferUpdate**](WireTransferUpdate.md) |  | 
+ **pATCHWireTransfersWireTransferIdRequest** | [**PATCHWireTransfersWireTransferIdRequest**](PATCHWireTransfersWireTransferIdRequest.md) |  | 
 
 
 ### Return type
 
-[**POSTWireTransfers201Response**](POSTWireTransfers201Response.md)
+[**PATCHWireTransfersWireTransferId200Response**](PATCHWireTransfersWireTransferId200Response.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTWireTransfers
 
-> POSTWireTransfers201Response POSTWireTransfers(ctx).WireTransferCreate(wireTransferCreate).Execute()
+> POSTWireTransfers201Response POSTWireTransfers(ctx).POSTWireTransfersRequest(pOSTWireTransfersRequest).Execute()
 
 Create a wire transfer
 
@@ -300,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    wireTransferCreate := *openapiclient.NewWireTransferCreate(*openapiclient.NewWireTransferCreateData("Type_example", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // WireTransferCreate | 
+    pOSTWireTransfersRequest := *openapiclient.NewPOSTWireTransfersRequest(*openapiclient.NewPOSTWireTransfersRequestData(interface{}(123), *openapiclient.NewPOSTAdyenPaymentsRequestDataAttributes())) // POSTWireTransfersRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.WireTransfersApi.POSTWireTransfers(context.Background()).WireTransferCreate(wireTransferCreate).Execute()
+    resp, r, err := apiClient.WireTransfersApi.POSTWireTransfers(context.Background()).POSTWireTransfersRequest(pOSTWireTransfersRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `WireTransfersApi.POSTWireTransfers``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiPOSTWireTransfersRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **wireTransferCreate** | [**WireTransferCreate**](WireTransferCreate.md) |  | 
+ **pOSTWireTransfersRequest** | [**POSTWireTransfersRequest**](POSTWireTransfersRequest.md) |  | 
 
 ### Return type
 

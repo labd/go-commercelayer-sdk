@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**ExternalPaymentUpdateData**](ExternalPaymentUpdateData.md) |  | 
+**Data** | [**PATCHExternalPaymentsExternalPaymentIdRequestData**](PATCHExternalPaymentsExternalPaymentIdRequestData.md) |  | 
 
 ## Methods
 
 ### NewExternalPaymentUpdate
 
-`func NewExternalPaymentUpdate(data ExternalPaymentUpdateData, ) *ExternalPaymentUpdate`
+`func NewExternalPaymentUpdate(data PATCHExternalPaymentsExternalPaymentIdRequestData, ) *ExternalPaymentUpdate`
 
 NewExternalPaymentUpdate instantiates a new ExternalPaymentUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *ExternalPaymentUpdate) GetData() ExternalPaymentUpdateData`
+`func (o *ExternalPaymentUpdate) GetData() PATCHExternalPaymentsExternalPaymentIdRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ExternalPaymentUpdate) GetDataOk() (*ExternalPaymentUpdateData, bool)`
+`func (o *ExternalPaymentUpdate) GetDataOk() (*PATCHExternalPaymentsExternalPaymentIdRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ExternalPaymentUpdate) SetData(v ExternalPaymentUpdateData)`
+`func (o *ExternalPaymentUpdate) SetData(v PATCHExternalPaymentsExternalPaymentIdRequestData)`
 
 SetData sets Data field to given value.
 

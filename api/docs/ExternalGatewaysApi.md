@@ -1,6 +1,6 @@
 # \ExternalGatewaysApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,15 +29,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    externalGatewayId := "externalGatewayId_example" // string | The resource's id
+    externalGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExternalGatewaysApi.DELETEExternalGatewaysExternalGatewayId(context.Background(), externalGatewayId).Execute()
+    r, err := apiClient.ExternalGatewaysApi.DELETEExternalGatewaysExternalGatewayId(context.Background(), externalGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalGatewaysApi.DELETEExternalGatewaysExternalGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -51,7 +51,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**externalGatewayId** | **string** | The resource&#39;s id | 
+**externalGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -158,11 +158,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    externalGatewayId := "externalGatewayId_example" // string | The resource's id
+    externalGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -182,7 +182,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**externalGatewayId** | **string** | The resource&#39;s id | 
+**externalGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHExternalGatewaysExternalGatewayId
 
-> PATCHExternalGatewaysExternalGatewayId200Response PATCHExternalGatewaysExternalGatewayId(ctx, externalGatewayId).ExternalGatewayUpdate(externalGatewayUpdate).Execute()
+> PATCHExternalGatewaysExternalGatewayId200Response PATCHExternalGatewaysExternalGatewayId(ctx, externalGatewayId).PATCHExternalGatewaysExternalGatewayIdRequest(pATCHExternalGatewaysExternalGatewayIdRequest).Execute()
 
 Update an external gateway
 
@@ -228,16 +228,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    externalGatewayUpdate := *openapiclient.NewExternalGatewayUpdate(*openapiclient.NewExternalGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes())) // ExternalGatewayUpdate | 
-    externalGatewayId := "externalGatewayId_example" // string | The resource's id
+    pATCHExternalGatewaysExternalGatewayIdRequest := *openapiclient.NewPATCHExternalGatewaysExternalGatewayIdRequest(*openapiclient.NewPATCHExternalGatewaysExternalGatewayIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHExternalGatewaysExternalGatewayIdRequestDataAttributes())) // PATCHExternalGatewaysExternalGatewayIdRequest | 
+    externalGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExternalGatewaysApi.PATCHExternalGatewaysExternalGatewayId(context.Background(), externalGatewayId).ExternalGatewayUpdate(externalGatewayUpdate).Execute()
+    resp, r, err := apiClient.ExternalGatewaysApi.PATCHExternalGatewaysExternalGatewayId(context.Background(), externalGatewayId).PATCHExternalGatewaysExternalGatewayIdRequest(pATCHExternalGatewaysExternalGatewayIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalGatewaysApi.PATCHExternalGatewaysExternalGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -253,7 +253,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**externalGatewayId** | **string** | The resource&#39;s id | 
+**externalGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -262,7 +262,7 @@ Other parameters are passed through a pointer to a apiPATCHExternalGatewaysExter
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **externalGatewayUpdate** | [**ExternalGatewayUpdate**](ExternalGatewayUpdate.md) |  | 
+ **pATCHExternalGatewaysExternalGatewayIdRequest** | [**PATCHExternalGatewaysExternalGatewayIdRequest**](PATCHExternalGatewaysExternalGatewayIdRequest.md) |  | 
 
 
 ### Return type
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTExternalGateways
 
-> POSTExternalGateways201Response POSTExternalGateways(ctx).ExternalGatewayCreate(externalGatewayCreate).Execute()
+> POSTExternalGateways201Response POSTExternalGateways(ctx).POSTExternalGatewaysRequest(pOSTExternalGatewaysRequest).Execute()
 
 Create an external gateway
 
@@ -300,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    externalGatewayCreate := *openapiclient.NewExternalGatewayCreate(*openapiclient.NewExternalGatewayCreateData("Type_example", *openapiclient.NewPOSTExternalGateways201ResponseDataAttributes("US payment gateway"))) // ExternalGatewayCreate | 
+    pOSTExternalGatewaysRequest := *openapiclient.NewPOSTExternalGatewaysRequest(*openapiclient.NewPOSTExternalGatewaysRequestData(interface{}(123), *openapiclient.NewPOSTExternalGatewaysRequestDataAttributes(interface{}(US payment gateway)))) // POSTExternalGatewaysRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExternalGatewaysApi.POSTExternalGateways(context.Background()).ExternalGatewayCreate(externalGatewayCreate).Execute()
+    resp, r, err := apiClient.ExternalGatewaysApi.POSTExternalGateways(context.Background()).POSTExternalGatewaysRequest(pOSTExternalGatewaysRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExternalGatewaysApi.POSTExternalGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiPOSTExternalGatewaysReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **externalGatewayCreate** | [**ExternalGatewayCreate**](ExternalGatewayCreate.md) |  | 
+ **pOSTExternalGatewaysRequest** | [**POSTExternalGatewaysRequest**](POSTExternalGatewaysRequest.md) |  | 
 
 ### Return type
 

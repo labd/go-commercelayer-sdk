@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the AvalaraAccountUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AvalaraAccountUpdate{}
+
 // AvalaraAccountUpdate struct for AvalaraAccountUpdate
 type AvalaraAccountUpdate struct {
-	Data AvalaraAccountUpdateData `json:"data"`
+	Data PATCHAvalaraAccountsAvalaraAccountIdRequestData `json:"data"`
 }
 
 // NewAvalaraAccountUpdate instantiates a new AvalaraAccountUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAvalaraAccountUpdate(data AvalaraAccountUpdateData) *AvalaraAccountUpdate {
+func NewAvalaraAccountUpdate(data PATCHAvalaraAccountsAvalaraAccountIdRequestData) *AvalaraAccountUpdate {
 	this := AvalaraAccountUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewAvalaraAccountUpdateWithDefaults() *AvalaraAccountUpdate {
 }
 
 // GetData returns the Data field value
-func (o *AvalaraAccountUpdate) GetData() AvalaraAccountUpdateData {
+func (o *AvalaraAccountUpdate) GetData() PATCHAvalaraAccountsAvalaraAccountIdRequestData {
 	if o == nil {
-		var ret AvalaraAccountUpdateData
+		var ret PATCHAvalaraAccountsAvalaraAccountIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *AvalaraAccountUpdate) GetData() AvalaraAccountUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *AvalaraAccountUpdate) GetDataOk() (*AvalaraAccountUpdateData, bool) {
+func (o *AvalaraAccountUpdate) GetDataOk() (*PATCHAvalaraAccountsAvalaraAccountIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *AvalaraAccountUpdate) GetDataOk() (*AvalaraAccountUpdateData, bool) {
 }
 
 // SetData sets field value
-func (o *AvalaraAccountUpdate) SetData(v AvalaraAccountUpdateData) {
+func (o *AvalaraAccountUpdate) SetData(v PATCHAvalaraAccountsAvalaraAccountIdRequestData) {
 	o.Data = v
 }
 
 func (o AvalaraAccountUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AvalaraAccountUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableAvalaraAccountUpdate struct {

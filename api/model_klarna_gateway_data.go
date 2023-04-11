@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the KlarnaGatewayData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &KlarnaGatewayData{}
+
 // KlarnaGatewayData struct for KlarnaGatewayData
 type KlarnaGatewayData struct {
 	// The resource's type
-	Type          string                                          `json:"type"`
-	Attributes    GETKlarnaGateways200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *KlarnaGatewayDataRelationships                 `json:"relationships,omitempty"`
+	Type          interface{}                                               `json:"type"`
+	Attributes    GETKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes `json:"attributes"`
+	Relationships *KlarnaGatewayDataRelationships                           `json:"relationships,omitempty"`
 }
 
 // NewKlarnaGatewayData instantiates a new KlarnaGatewayData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKlarnaGatewayData(type_ string, attributes GETKlarnaGateways200ResponseDataInnerAttributes) *KlarnaGatewayData {
+func NewKlarnaGatewayData(type_ interface{}, attributes GETKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) *KlarnaGatewayData {
 	this := KlarnaGatewayData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -43,9 +46,10 @@ func NewKlarnaGatewayDataWithDefaults() *KlarnaGatewayData {
 }
 
 // GetType returns the Type field value
-func (o *KlarnaGatewayData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *KlarnaGatewayData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -54,22 +58,23 @@ func (o *KlarnaGatewayData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *KlarnaGatewayData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *KlarnaGatewayData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *KlarnaGatewayData) SetType(v string) {
+func (o *KlarnaGatewayData) SetType(v interface{}) {
 	o.Type = v
 }
 
 // GetAttributes returns the Attributes field value
-func (o *KlarnaGatewayData) GetAttributes() GETKlarnaGateways200ResponseDataInnerAttributes {
+func (o *KlarnaGatewayData) GetAttributes() GETKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETKlarnaGateways200ResponseDataInnerAttributes
+		var ret GETKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes
 		return ret
 	}
 
@@ -78,7 +83,7 @@ func (o *KlarnaGatewayData) GetAttributes() GETKlarnaGateways200ResponseDataInne
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *KlarnaGatewayData) GetAttributesOk() (*GETKlarnaGateways200ResponseDataInnerAttributes, bool) {
+func (o *KlarnaGatewayData) GetAttributesOk() (*GETKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,13 +91,13 @@ func (o *KlarnaGatewayData) GetAttributesOk() (*GETKlarnaGateways200ResponseData
 }
 
 // SetAttributes sets field value
-func (o *KlarnaGatewayData) SetAttributes(v GETKlarnaGateways200ResponseDataInnerAttributes) {
+func (o *KlarnaGatewayData) SetAttributes(v GETKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *KlarnaGatewayData) GetRelationships() KlarnaGatewayDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret KlarnaGatewayDataRelationships
 		return ret
 	}
@@ -102,7 +107,7 @@ func (o *KlarnaGatewayData) GetRelationships() KlarnaGatewayDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KlarnaGatewayData) GetRelationshipsOk() (*KlarnaGatewayDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -110,7 +115,7 @@ func (o *KlarnaGatewayData) GetRelationshipsOk() (*KlarnaGatewayDataRelationship
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *KlarnaGatewayData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -123,17 +128,23 @@ func (o *KlarnaGatewayData) SetRelationships(v KlarnaGatewayDataRelationships) {
 }
 
 func (o KlarnaGatewayData) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
-		toSerialize["relationships"] = o.Relationships
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o KlarnaGatewayData) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
+		toSerialize["relationships"] = o.Relationships
+	}
+	return toSerialize, nil
 }
 
 type NullableKlarnaGatewayData struct {

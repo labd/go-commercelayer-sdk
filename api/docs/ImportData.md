@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETImports200ResponseDataInnerAttributes**](GETImports200ResponseDataInnerAttributes.md) |  | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Attributes** | [**GETImportsImportId200ResponseDataAttributes**](GETImportsImportId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CleanupDataRelationships**](CleanupDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewImportData
 
-`func NewImportData(type_ string, attributes GETImports200ResponseDataInnerAttributes, ) *ImportData`
+`func NewImportData(type_ interface{}, attributes GETImportsImportId200ResponseDataAttributes, ) *ImportData`
 
 NewImportData instantiates a new ImportData object
 This constructor will assign default values to properties that have it defined,
@@ -29,40 +29,50 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *ImportData) GetType() string`
+`func (o *ImportData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *ImportData) GetTypeOk() (*string, bool)`
+`func (o *ImportData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *ImportData) SetType(v string)`
+`func (o *ImportData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *ImportData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *ImportData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *ImportData) GetAttributes() GETImports200ResponseDataInnerAttributes`
+`func (o *ImportData) GetAttributes() GETImportsImportId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ImportData) GetAttributesOk() (*GETImports200ResponseDataInnerAttributes, bool)`
+`func (o *ImportData) GetAttributesOk() (*GETImportsImportId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ImportData) SetAttributes(v GETImports200ResponseDataInnerAttributes)`
+`func (o *ImportData) SetAttributes(v GETImportsImportId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

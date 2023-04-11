@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**CouponCreateData**](CouponCreateData.md) |  | 
+**Data** | [**POSTCouponsRequestData**](POSTCouponsRequestData.md) |  | 
 
 ## Methods
 
 ### NewCouponCreate
 
-`func NewCouponCreate(data CouponCreateData, ) *CouponCreate`
+`func NewCouponCreate(data POSTCouponsRequestData, ) *CouponCreate`
 
 NewCouponCreate instantiates a new CouponCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *CouponCreate) GetData() CouponCreateData`
+`func (o *CouponCreate) GetData() POSTCouponsRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *CouponCreate) GetDataOk() (*CouponCreateData, bool)`
+`func (o *CouponCreate) GetDataOk() (*POSTCouponsRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *CouponCreate) SetData(v CouponCreateData)`
+`func (o *CouponCreate) SetData(v POSTCouponsRequestData)`
 
 SetData sets Data field to given value.
 

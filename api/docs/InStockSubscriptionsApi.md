@@ -1,6 +1,6 @@
 # \InStockSubscriptionsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,15 +29,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    inStockSubscriptionId := "inStockSubscriptionId_example" // string | The resource's id
+    inStockSubscriptionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InStockSubscriptionsApi.DELETEInStockSubscriptionsInStockSubscriptionId(context.Background(), inStockSubscriptionId).Execute()
+    r, err := apiClient.InStockSubscriptionsApi.DELETEInStockSubscriptionsInStockSubscriptionId(context.Background(), inStockSubscriptionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InStockSubscriptionsApi.DELETEInStockSubscriptionsInStockSubscriptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -51,7 +51,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**inStockSubscriptionId** | **string** | The resource&#39;s id | 
+**inStockSubscriptionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -158,11 +158,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    inStockSubscriptionId := "inStockSubscriptionId_example" // string | The resource's id
+    inStockSubscriptionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -182,7 +182,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**inStockSubscriptionId** | **string** | The resource&#39;s id | 
+**inStockSubscriptionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHInStockSubscriptionsInStockSubscriptionId
 
-> PATCHInStockSubscriptionsInStockSubscriptionId200Response PATCHInStockSubscriptionsInStockSubscriptionId(ctx, inStockSubscriptionId).InStockSubscriptionUpdate(inStockSubscriptionUpdate).Execute()
+> PATCHInStockSubscriptionsInStockSubscriptionId200Response PATCHInStockSubscriptionsInStockSubscriptionId(ctx, inStockSubscriptionId).PATCHInStockSubscriptionsInStockSubscriptionIdRequest(pATCHInStockSubscriptionsInStockSubscriptionIdRequest).Execute()
 
 Update an in stock subscription
 
@@ -228,16 +228,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    inStockSubscriptionUpdate := *openapiclient.NewInStockSubscriptionUpdate(*openapiclient.NewInStockSubscriptionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes())) // InStockSubscriptionUpdate | 
-    inStockSubscriptionId := "inStockSubscriptionId_example" // string | The resource's id
+    pATCHInStockSubscriptionsInStockSubscriptionIdRequest := *openapiclient.NewPATCHInStockSubscriptionsInStockSubscriptionIdRequest(*openapiclient.NewPATCHInStockSubscriptionsInStockSubscriptionIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHInStockSubscriptionsInStockSubscriptionIdRequestDataAttributes())) // PATCHInStockSubscriptionsInStockSubscriptionIdRequest | 
+    inStockSubscriptionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InStockSubscriptionsApi.PATCHInStockSubscriptionsInStockSubscriptionId(context.Background(), inStockSubscriptionId).InStockSubscriptionUpdate(inStockSubscriptionUpdate).Execute()
+    resp, r, err := apiClient.InStockSubscriptionsApi.PATCHInStockSubscriptionsInStockSubscriptionId(context.Background(), inStockSubscriptionId).PATCHInStockSubscriptionsInStockSubscriptionIdRequest(pATCHInStockSubscriptionsInStockSubscriptionIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InStockSubscriptionsApi.PATCHInStockSubscriptionsInStockSubscriptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -253,7 +253,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**inStockSubscriptionId** | **string** | The resource&#39;s id | 
+**inStockSubscriptionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -262,7 +262,7 @@ Other parameters are passed through a pointer to a apiPATCHInStockSubscriptionsI
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inStockSubscriptionUpdate** | [**InStockSubscriptionUpdate**](InStockSubscriptionUpdate.md) |  | 
+ **pATCHInStockSubscriptionsInStockSubscriptionIdRequest** | [**PATCHInStockSubscriptionsInStockSubscriptionIdRequest**](PATCHInStockSubscriptionsInStockSubscriptionIdRequest.md) |  | 
 
 
 ### Return type
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTInStockSubscriptions
 
-> POSTInStockSubscriptions201Response POSTInStockSubscriptions(ctx).InStockSubscriptionCreate(inStockSubscriptionCreate).Execute()
+> POSTInStockSubscriptions201Response POSTInStockSubscriptions(ctx).POSTInStockSubscriptionsRequest(pOSTInStockSubscriptionsRequest).Execute()
 
 Create an in stock subscription
 
@@ -300,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    inStockSubscriptionCreate := *openapiclient.NewInStockSubscriptionCreate(*openapiclient.NewInStockSubscriptionCreateData("Type_example", *openapiclient.NewPOSTInStockSubscriptions201ResponseDataAttributes())) // InStockSubscriptionCreate | 
+    pOSTInStockSubscriptionsRequest := *openapiclient.NewPOSTInStockSubscriptionsRequest(*openapiclient.NewPOSTInStockSubscriptionsRequestData(interface{}(123), *openapiclient.NewPOSTInStockSubscriptionsRequestDataAttributes())) // POSTInStockSubscriptionsRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InStockSubscriptionsApi.POSTInStockSubscriptions(context.Background()).InStockSubscriptionCreate(inStockSubscriptionCreate).Execute()
+    resp, r, err := apiClient.InStockSubscriptionsApi.POSTInStockSubscriptions(context.Background()).POSTInStockSubscriptionsRequest(pOSTInStockSubscriptionsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InStockSubscriptionsApi.POSTInStockSubscriptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiPOSTInStockSubscriptionsRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **inStockSubscriptionCreate** | [**InStockSubscriptionCreate**](InStockSubscriptionCreate.md) |  | 
+ **pOSTInStockSubscriptionsRequest** | [**POSTInStockSubscriptionsRequest**](POSTInStockSubscriptionsRequest.md) |  | 
 
 ### Return type
 

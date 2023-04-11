@@ -1,6 +1,6 @@
 # \ShipmentsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,15 +31,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    orderId := "orderId_example" // string | The resource's id
+    orderId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShipmentsApi.GETOrderIdShipments(context.Background(), orderId).Execute()
+    r, err := apiClient.ShipmentsApi.GETOrderIdShipments(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShipmentsApi.GETOrderIdShipments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -53,7 +53,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**orderId** | **string** | The resource&#39;s id | 
+**orderId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -99,15 +99,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    parcelId := "parcelId_example" // string | The resource's id
+    parcelId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShipmentsApi.GETParcelIdShipment(context.Background(), parcelId).Execute()
+    r, err := apiClient.ShipmentsApi.GETParcelIdShipment(context.Background(), parcelId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShipmentsApi.GETParcelIdShipment``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -121,7 +121,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**parcelId** | **string** | The resource&#39;s id | 
+**parcelId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -167,7 +167,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -228,11 +228,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    shipmentId := "shipmentId_example" // string | The resource's id
+    shipmentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -252,7 +252,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**shipmentId** | **string** | The resource&#39;s id | 
+**shipmentId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -298,15 +298,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    stockLineItemId := "stockLineItemId_example" // string | The resource's id
+    stockLineItemId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShipmentsApi.GETStockLineItemIdShipment(context.Background(), stockLineItemId).Execute()
+    r, err := apiClient.ShipmentsApi.GETStockLineItemIdShipment(context.Background(), stockLineItemId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShipmentsApi.GETStockLineItemIdShipment``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -320,7 +320,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**stockLineItemId** | **string** | The resource&#39;s id | 
+**stockLineItemId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -366,15 +366,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    stockTransferId := "stockTransferId_example" // string | The resource's id
+    stockTransferId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShipmentsApi.GETStockTransferIdShipment(context.Background(), stockTransferId).Execute()
+    r, err := apiClient.ShipmentsApi.GETStockTransferIdShipment(context.Background(), stockTransferId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShipmentsApi.GETStockTransferIdShipment``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -388,7 +388,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**stockTransferId** | **string** | The resource&#39;s id | 
+**stockTransferId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -419,7 +419,7 @@ Name | Type | Description  | Notes
 
 ## PATCHShipmentsShipmentId
 
-> PATCHShipmentsShipmentId200Response PATCHShipmentsShipmentId(ctx, shipmentId).ShipmentUpdate(shipmentUpdate).Execute()
+> PATCHShipmentsShipmentId200Response PATCHShipmentsShipmentId(ctx, shipmentId).PATCHShipmentsShipmentIdRequest(pATCHShipmentsShipmentIdRequest).Execute()
 
 Update a shipment
 
@@ -434,16 +434,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    shipmentUpdate := *openapiclient.NewShipmentUpdate(*openapiclient.NewShipmentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHShipmentsShipmentId200ResponseDataAttributes())) // ShipmentUpdate | 
-    shipmentId := "shipmentId_example" // string | The resource's id
+    pATCHShipmentsShipmentIdRequest := *openapiclient.NewPATCHShipmentsShipmentIdRequest(*openapiclient.NewPATCHShipmentsShipmentIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHShipmentsShipmentIdRequestDataAttributes())) // PATCHShipmentsShipmentIdRequest | 
+    shipmentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShipmentsApi.PATCHShipmentsShipmentId(context.Background(), shipmentId).ShipmentUpdate(shipmentUpdate).Execute()
+    resp, r, err := apiClient.ShipmentsApi.PATCHShipmentsShipmentId(context.Background(), shipmentId).PATCHShipmentsShipmentIdRequest(pATCHShipmentsShipmentIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShipmentsApi.PATCHShipmentsShipmentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -459,7 +459,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**shipmentId** | **string** | The resource&#39;s id | 
+**shipmentId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -468,7 +468,7 @@ Other parameters are passed through a pointer to a apiPATCHShipmentsShipmentIdRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **shipmentUpdate** | [**ShipmentUpdate**](ShipmentUpdate.md) |  | 
+ **pATCHShipmentsShipmentIdRequest** | [**PATCHShipmentsShipmentIdRequest**](PATCHShipmentsShipmentIdRequest.md) |  | 
 
 
 ### Return type

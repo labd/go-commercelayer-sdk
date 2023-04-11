@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type ManualGatewaysApiService service
 type ManualGatewaysApiDELETEManualGatewaysManualGatewayIdRequest struct {
 	ctx             context.Context
 	ApiService      *ManualGatewaysApiService
-	manualGatewayId string
+	manualGatewayId interface{}
 }
 
 func (r ManualGatewaysApiDELETEManualGatewaysManualGatewayIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a manual gateway
 	@param manualGatewayId The resource's id
 	@return ManualGatewaysApiDELETEManualGatewaysManualGatewayIdRequest
 */
-func (a *ManualGatewaysApiService) DELETEManualGatewaysManualGatewayId(ctx context.Context, manualGatewayId string) ManualGatewaysApiDELETEManualGatewaysManualGatewayIdRequest {
+func (a *ManualGatewaysApiService) DELETEManualGatewaysManualGatewayId(ctx context.Context, manualGatewayId interface{}) ManualGatewaysApiDELETEManualGatewaysManualGatewayIdRequest {
 	return ManualGatewaysApiDELETEManualGatewaysManualGatewayIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -64,7 +64,7 @@ func (a *ManualGatewaysApiService) DELETEManualGatewaysManualGatewayIdExecute(r 
 	}
 
 	localVarPath := localBasePath + "/manual_gateways/{manualGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"manualGatewayId"+"}", url.PathEscape(parameterToString(r.manualGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"manualGatewayId"+"}", url.PathEscape(parameterValueToString(r.manualGatewayId, "manualGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *ManualGatewaysApiService) DELETEManualGatewaysManualGatewayIdExecute(r 
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *ManualGatewaysApiService) GETManualGatewaysExecute(r ManualGatewaysApiG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -218,7 +218,7 @@ func (a *ManualGatewaysApiService) GETManualGatewaysExecute(r ManualGatewaysApiG
 type ManualGatewaysApiGETManualGatewaysManualGatewayIdRequest struct {
 	ctx             context.Context
 	ApiService      *ManualGatewaysApiService
-	manualGatewayId string
+	manualGatewayId interface{}
 }
 
 func (r ManualGatewaysApiGETManualGatewaysManualGatewayIdRequest) Execute() (*GETManualGatewaysManualGatewayId200Response, *http.Response, error) {
@@ -234,7 +234,7 @@ Retrieve a manual gateway
 	@param manualGatewayId The resource's id
 	@return ManualGatewaysApiGETManualGatewaysManualGatewayIdRequest
 */
-func (a *ManualGatewaysApiService) GETManualGatewaysManualGatewayId(ctx context.Context, manualGatewayId string) ManualGatewaysApiGETManualGatewaysManualGatewayIdRequest {
+func (a *ManualGatewaysApiService) GETManualGatewaysManualGatewayId(ctx context.Context, manualGatewayId interface{}) ManualGatewaysApiGETManualGatewaysManualGatewayIdRequest {
 	return ManualGatewaysApiGETManualGatewaysManualGatewayIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -259,7 +259,7 @@ func (a *ManualGatewaysApiService) GETManualGatewaysManualGatewayIdExecute(r Man
 	}
 
 	localVarPath := localBasePath + "/manual_gateways/{manualGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"manualGatewayId"+"}", url.PathEscape(parameterToString(r.manualGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"manualGatewayId"+"}", url.PathEscape(parameterValueToString(r.manualGatewayId, "manualGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *ManualGatewaysApiService) GETManualGatewaysManualGatewayIdExecute(r Man
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -320,14 +320,14 @@ func (a *ManualGatewaysApiService) GETManualGatewaysManualGatewayIdExecute(r Man
 }
 
 type ManualGatewaysApiPATCHManualGatewaysManualGatewayIdRequest struct {
-	ctx                 context.Context
-	ApiService          *ManualGatewaysApiService
-	manualGatewayUpdate *ManualGatewayUpdate
-	manualGatewayId     string
+	ctx                                       context.Context
+	ApiService                                *ManualGatewaysApiService
+	pATCHManualGatewaysManualGatewayIdRequest *PATCHManualGatewaysManualGatewayIdRequest
+	manualGatewayId                           interface{}
 }
 
-func (r ManualGatewaysApiPATCHManualGatewaysManualGatewayIdRequest) ManualGatewayUpdate(manualGatewayUpdate ManualGatewayUpdate) ManualGatewaysApiPATCHManualGatewaysManualGatewayIdRequest {
-	r.manualGatewayUpdate = &manualGatewayUpdate
+func (r ManualGatewaysApiPATCHManualGatewaysManualGatewayIdRequest) PATCHManualGatewaysManualGatewayIdRequest(pATCHManualGatewaysManualGatewayIdRequest PATCHManualGatewaysManualGatewayIdRequest) ManualGatewaysApiPATCHManualGatewaysManualGatewayIdRequest {
+	r.pATCHManualGatewaysManualGatewayIdRequest = &pATCHManualGatewaysManualGatewayIdRequest
 	return r
 }
 
@@ -344,7 +344,7 @@ Update a manual gateway
 	@param manualGatewayId The resource's id
 	@return ManualGatewaysApiPATCHManualGatewaysManualGatewayIdRequest
 */
-func (a *ManualGatewaysApiService) PATCHManualGatewaysManualGatewayId(ctx context.Context, manualGatewayId string) ManualGatewaysApiPATCHManualGatewaysManualGatewayIdRequest {
+func (a *ManualGatewaysApiService) PATCHManualGatewaysManualGatewayId(ctx context.Context, manualGatewayId interface{}) ManualGatewaysApiPATCHManualGatewaysManualGatewayIdRequest {
 	return ManualGatewaysApiPATCHManualGatewaysManualGatewayIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -369,13 +369,13 @@ func (a *ManualGatewaysApiService) PATCHManualGatewaysManualGatewayIdExecute(r M
 	}
 
 	localVarPath := localBasePath + "/manual_gateways/{manualGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"manualGatewayId"+"}", url.PathEscape(parameterToString(r.manualGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"manualGatewayId"+"}", url.PathEscape(parameterValueToString(r.manualGatewayId, "manualGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.manualGatewayUpdate == nil {
-		return localVarReturnValue, nil, reportError("manualGatewayUpdate is required and must be specified")
+	if r.pATCHManualGatewaysManualGatewayIdRequest == nil {
+		return localVarReturnValue, nil, reportError("pATCHManualGatewaysManualGatewayIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -396,7 +396,7 @@ func (a *ManualGatewaysApiService) PATCHManualGatewaysManualGatewayIdExecute(r M
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.manualGatewayUpdate
+	localVarPostBody = r.pATCHManualGatewaysManualGatewayIdRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -407,9 +407,9 @@ func (a *ManualGatewaysApiService) PATCHManualGatewaysManualGatewayIdExecute(r M
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -435,13 +435,13 @@ func (a *ManualGatewaysApiService) PATCHManualGatewaysManualGatewayIdExecute(r M
 }
 
 type ManualGatewaysApiPOSTManualGatewaysRequest struct {
-	ctx                 context.Context
-	ApiService          *ManualGatewaysApiService
-	manualGatewayCreate *ManualGatewayCreate
+	ctx                       context.Context
+	ApiService                *ManualGatewaysApiService
+	pOSTManualGatewaysRequest *POSTManualGatewaysRequest
 }
 
-func (r ManualGatewaysApiPOSTManualGatewaysRequest) ManualGatewayCreate(manualGatewayCreate ManualGatewayCreate) ManualGatewaysApiPOSTManualGatewaysRequest {
-	r.manualGatewayCreate = &manualGatewayCreate
+func (r ManualGatewaysApiPOSTManualGatewaysRequest) POSTManualGatewaysRequest(pOSTManualGatewaysRequest POSTManualGatewaysRequest) ManualGatewaysApiPOSTManualGatewaysRequest {
+	r.pOSTManualGatewaysRequest = &pOSTManualGatewaysRequest
 	return r
 }
 
@@ -485,8 +485,8 @@ func (a *ManualGatewaysApiService) POSTManualGatewaysExecute(r ManualGatewaysApi
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.manualGatewayCreate == nil {
-		return localVarReturnValue, nil, reportError("manualGatewayCreate is required and must be specified")
+	if r.pOSTManualGatewaysRequest == nil {
+		return localVarReturnValue, nil, reportError("pOSTManualGatewaysRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -507,7 +507,7 @@ func (a *ManualGatewaysApiService) POSTManualGatewaysExecute(r ManualGatewaysApi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.manualGatewayCreate
+	localVarPostBody = r.pOSTManualGatewaysRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -518,9 +518,9 @@ func (a *ManualGatewaysApiService) POSTManualGatewaysExecute(r ManualGatewaysApi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

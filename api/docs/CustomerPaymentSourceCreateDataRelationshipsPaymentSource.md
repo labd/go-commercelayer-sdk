@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**CustomerPaymentSourceDataRelationshipsPaymentSourceData**](CustomerPaymentSourceDataRelationshipsPaymentSourceData.md) |  | 
+**Data** | [**POSTCustomerPaymentSourcesRequestDataRelationshipsPaymentSourceData**](POSTCustomerPaymentSourcesRequestDataRelationshipsPaymentSourceData.md) |  | 
 
 ## Methods
 
 ### NewCustomerPaymentSourceCreateDataRelationshipsPaymentSource
 
-`func NewCustomerPaymentSourceCreateDataRelationshipsPaymentSource(data CustomerPaymentSourceDataRelationshipsPaymentSourceData, ) *CustomerPaymentSourceCreateDataRelationshipsPaymentSource`
+`func NewCustomerPaymentSourceCreateDataRelationshipsPaymentSource(data POSTCustomerPaymentSourcesRequestDataRelationshipsPaymentSourceData, ) *CustomerPaymentSourceCreateDataRelationshipsPaymentSource`
 
 NewCustomerPaymentSourceCreateDataRelationshipsPaymentSource instantiates a new CustomerPaymentSourceCreateDataRelationshipsPaymentSource object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *CustomerPaymentSourceCreateDataRelationshipsPaymentSource) GetData() CustomerPaymentSourceDataRelationshipsPaymentSourceData`
+`func (o *CustomerPaymentSourceCreateDataRelationshipsPaymentSource) GetData() POSTCustomerPaymentSourcesRequestDataRelationshipsPaymentSourceData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *CustomerPaymentSourceCreateDataRelationshipsPaymentSource) GetDataOk() (*CustomerPaymentSourceDataRelationshipsPaymentSourceData, bool)`
+`func (o *CustomerPaymentSourceCreateDataRelationshipsPaymentSource) GetDataOk() (*POSTCustomerPaymentSourcesRequestDataRelationshipsPaymentSourceData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *CustomerPaymentSourceCreateDataRelationshipsPaymentSource) SetData(v CustomerPaymentSourceDataRelationshipsPaymentSourceData)`
+`func (o *CustomerPaymentSourceCreateDataRelationshipsPaymentSource) SetData(v POSTCustomerPaymentSourcesRequestDataRelationshipsPaymentSourceData)`
 
 SetData sets Data field to given value.
 

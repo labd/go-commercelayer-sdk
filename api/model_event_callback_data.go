@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the EventCallbackData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &EventCallbackData{}
+
 // EventCallbackData struct for EventCallbackData
 type EventCallbackData struct {
 	// The resource's type
-	Type          string                                          `json:"type"`
-	Attributes    GETEventCallbacks200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *EventCallbackDataRelationships                 `json:"relationships,omitempty"`
+	Type          interface{}                                               `json:"type"`
+	Attributes    GETEventCallbacksEventCallbackId200ResponseDataAttributes `json:"attributes"`
+	Relationships *EventCallbackDataRelationships                           `json:"relationships,omitempty"`
 }
 
 // NewEventCallbackData instantiates a new EventCallbackData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewEventCallbackData(type_ string, attributes GETEventCallbacks200ResponseDataInnerAttributes) *EventCallbackData {
+func NewEventCallbackData(type_ interface{}, attributes GETEventCallbacksEventCallbackId200ResponseDataAttributes) *EventCallbackData {
 	this := EventCallbackData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -43,9 +46,10 @@ func NewEventCallbackDataWithDefaults() *EventCallbackData {
 }
 
 // GetType returns the Type field value
-func (o *EventCallbackData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *EventCallbackData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -54,22 +58,23 @@ func (o *EventCallbackData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *EventCallbackData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *EventCallbackData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *EventCallbackData) SetType(v string) {
+func (o *EventCallbackData) SetType(v interface{}) {
 	o.Type = v
 }
 
 // GetAttributes returns the Attributes field value
-func (o *EventCallbackData) GetAttributes() GETEventCallbacks200ResponseDataInnerAttributes {
+func (o *EventCallbackData) GetAttributes() GETEventCallbacksEventCallbackId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETEventCallbacks200ResponseDataInnerAttributes
+		var ret GETEventCallbacksEventCallbackId200ResponseDataAttributes
 		return ret
 	}
 
@@ -78,7 +83,7 @@ func (o *EventCallbackData) GetAttributes() GETEventCallbacks200ResponseDataInne
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *EventCallbackData) GetAttributesOk() (*GETEventCallbacks200ResponseDataInnerAttributes, bool) {
+func (o *EventCallbackData) GetAttributesOk() (*GETEventCallbacksEventCallbackId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,13 +91,13 @@ func (o *EventCallbackData) GetAttributesOk() (*GETEventCallbacks200ResponseData
 }
 
 // SetAttributes sets field value
-func (o *EventCallbackData) SetAttributes(v GETEventCallbacks200ResponseDataInnerAttributes) {
+func (o *EventCallbackData) SetAttributes(v GETEventCallbacksEventCallbackId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *EventCallbackData) GetRelationships() EventCallbackDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret EventCallbackDataRelationships
 		return ret
 	}
@@ -102,7 +107,7 @@ func (o *EventCallbackData) GetRelationships() EventCallbackDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventCallbackData) GetRelationshipsOk() (*EventCallbackDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -110,7 +115,7 @@ func (o *EventCallbackData) GetRelationshipsOk() (*EventCallbackDataRelationship
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *EventCallbackData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -123,17 +128,23 @@ func (o *EventCallbackData) SetRelationships(v EventCallbackDataRelationships) {
 }
 
 func (o EventCallbackData) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
-		toSerialize["relationships"] = o.Relationships
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o EventCallbackData) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
+		toSerialize["relationships"] = o.Relationships
+	}
+	return toSerialize, nil
 }
 
 type NullableEventCallbackData struct {

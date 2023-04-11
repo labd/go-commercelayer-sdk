@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**MarketDataRelationshipsMerchantData**](MarketDataRelationshipsMerchantData.md) |  | [optional] 
+**Data** | Pointer to [**POSTMarketsRequestDataRelationshipsMerchantData**](POSTMarketsRequestDataRelationshipsMerchantData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *MarketDataRelationshipsMerchant) GetData() MarketDataRelationshipsMerchantData`
+`func (o *MarketDataRelationshipsMerchant) GetData() POSTMarketsRequestDataRelationshipsMerchantData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *MarketDataRelationshipsMerchant) GetDataOk() (*MarketDataRelationshipsMerchantData, bool)`
+`func (o *MarketDataRelationshipsMerchant) GetDataOk() (*POSTMarketsRequestDataRelationshipsMerchantData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *MarketDataRelationshipsMerchant) SetData(v MarketDataRelationshipsMerchantData)`
+`func (o *MarketDataRelationshipsMerchant) SetData(v POSTMarketsRequestDataRelationshipsMerchantData)`
 
 SetData sets Data field to given value.
 

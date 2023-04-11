@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**CheckoutComGatewayDataRelationshipsCheckoutComPaymentsData**](CheckoutComGatewayDataRelationshipsCheckoutComPaymentsData.md) |  | [optional] 
+**Data** | Pointer to [**POSTCheckoutComGatewaysRequestDataRelationshipsCheckoutComPaymentsData**](POSTCheckoutComGatewaysRequestDataRelationshipsCheckoutComPaymentsData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *CheckoutComGatewayDataRelationshipsCheckoutComPayments) GetData() CheckoutComGatewayDataRelationshipsCheckoutComPaymentsData`
+`func (o *CheckoutComGatewayDataRelationshipsCheckoutComPayments) GetData() POSTCheckoutComGatewaysRequestDataRelationshipsCheckoutComPaymentsData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *CheckoutComGatewayDataRelationshipsCheckoutComPayments) GetDataOk() (*CheckoutComGatewayDataRelationshipsCheckoutComPaymentsData, bool)`
+`func (o *CheckoutComGatewayDataRelationshipsCheckoutComPayments) GetDataOk() (*POSTCheckoutComGatewaysRequestDataRelationshipsCheckoutComPaymentsData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *CheckoutComGatewayDataRelationshipsCheckoutComPayments) SetData(v CheckoutComGatewayDataRelationshipsCheckoutComPaymentsData)`
+`func (o *CheckoutComGatewayDataRelationshipsCheckoutComPayments) SetData(v POSTCheckoutComGatewaysRequestDataRelationshipsCheckoutComPaymentsData)`
 
 SetData sets Data field to given value.
 

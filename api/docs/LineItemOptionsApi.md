@@ -1,6 +1,6 @@
 # \LineItemOptionsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,15 +30,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    lineItemOptionId := "lineItemOptionId_example" // string | The resource's id
+    lineItemOptionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LineItemOptionsApi.DELETELineItemOptionsLineItemOptionId(context.Background(), lineItemOptionId).Execute()
+    r, err := apiClient.LineItemOptionsApi.DELETELineItemOptionsLineItemOptionId(context.Background(), lineItemOptionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LineItemOptionsApi.DELETELineItemOptionsLineItemOptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -52,7 +52,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**lineItemOptionId** | **string** | The resource&#39;s id | 
+**lineItemOptionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -98,15 +98,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    lineItemId := "lineItemId_example" // string | The resource's id
+    lineItemId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LineItemOptionsApi.GETLineItemIdLineItemOptions(context.Background(), lineItemId).Execute()
+    r, err := apiClient.LineItemOptionsApi.GETLineItemIdLineItemOptions(context.Background(), lineItemId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LineItemOptionsApi.GETLineItemIdLineItemOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -120,7 +120,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**lineItemId** | **string** | The resource&#39;s id | 
+**lineItemId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -166,7 +166,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -227,11 +227,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    lineItemOptionId := "lineItemOptionId_example" // string | The resource's id
+    lineItemOptionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -251,7 +251,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**lineItemOptionId** | **string** | The resource&#39;s id | 
+**lineItemOptionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHLineItemOptionsLineItemOptionId
 
-> PATCHLineItemOptionsLineItemOptionId200Response PATCHLineItemOptionsLineItemOptionId(ctx, lineItemOptionId).LineItemOptionUpdate(lineItemOptionUpdate).Execute()
+> PATCHLineItemOptionsLineItemOptionId200Response PATCHLineItemOptionsLineItemOptionId(ctx, lineItemOptionId).PATCHLineItemOptionsLineItemOptionIdRequest(pATCHLineItemOptionsLineItemOptionIdRequest).Execute()
 
 Update a line item option
 
@@ -297,16 +297,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    lineItemOptionUpdate := *openapiclient.NewLineItemOptionUpdate(*openapiclient.NewLineItemOptionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes())) // LineItemOptionUpdate | 
-    lineItemOptionId := "lineItemOptionId_example" // string | The resource's id
+    pATCHLineItemOptionsLineItemOptionIdRequest := *openapiclient.NewPATCHLineItemOptionsLineItemOptionIdRequest(*openapiclient.NewPATCHLineItemOptionsLineItemOptionIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHLineItemOptionsLineItemOptionIdRequestDataAttributes())) // PATCHLineItemOptionsLineItemOptionIdRequest | 
+    lineItemOptionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LineItemOptionsApi.PATCHLineItemOptionsLineItemOptionId(context.Background(), lineItemOptionId).LineItemOptionUpdate(lineItemOptionUpdate).Execute()
+    resp, r, err := apiClient.LineItemOptionsApi.PATCHLineItemOptionsLineItemOptionId(context.Background(), lineItemOptionId).PATCHLineItemOptionsLineItemOptionIdRequest(pATCHLineItemOptionsLineItemOptionIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LineItemOptionsApi.PATCHLineItemOptionsLineItemOptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -322,7 +322,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**lineItemOptionId** | **string** | The resource&#39;s id | 
+**lineItemOptionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -331,7 +331,7 @@ Other parameters are passed through a pointer to a apiPATCHLineItemOptionsLineIt
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lineItemOptionUpdate** | [**LineItemOptionUpdate**](LineItemOptionUpdate.md) |  | 
+ **pATCHLineItemOptionsLineItemOptionIdRequest** | [**PATCHLineItemOptionsLineItemOptionIdRequest**](PATCHLineItemOptionsLineItemOptionIdRequest.md) |  | 
 
 
 ### Return type
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTLineItemOptions
 
-> POSTLineItemOptions201Response POSTLineItemOptions(ctx).LineItemOptionCreate(lineItemOptionCreate).Execute()
+> POSTLineItemOptions201Response POSTLineItemOptions(ctx).POSTLineItemOptionsRequest(pOSTLineItemOptionsRequest).Execute()
 
 Create a line item option
 
@@ -369,15 +369,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    lineItemOptionCreate := *openapiclient.NewLineItemOptionCreate(*openapiclient.NewLineItemOptionCreateData("Type_example", *openapiclient.NewPOSTLineItemOptions201ResponseDataAttributes(int32(2), map[string]interface{}({"embossing_text":"Happy Birthday!"})))) // LineItemOptionCreate | 
+    pOSTLineItemOptionsRequest := *openapiclient.NewPOSTLineItemOptionsRequest(*openapiclient.NewPOSTLineItemOptionsRequestData(interface{}(123), *openapiclient.NewPOSTLineItemOptionsRequestDataAttributes(interface{}(2), interface{}({"embossing_text":"Happy Birthday!"})))) // POSTLineItemOptionsRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.LineItemOptionsApi.POSTLineItemOptions(context.Background()).LineItemOptionCreate(lineItemOptionCreate).Execute()
+    resp, r, err := apiClient.LineItemOptionsApi.POSTLineItemOptions(context.Background()).POSTLineItemOptionsRequest(pOSTLineItemOptionsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `LineItemOptionsApi.POSTLineItemOptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +398,7 @@ Other parameters are passed through a pointer to a apiPOSTLineItemOptionsRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **lineItemOptionCreate** | [**LineItemOptionCreate**](LineItemOptionCreate.md) |  | 
+ **pOSTLineItemOptionsRequest** | [**POSTLineItemOptionsRequest**](POSTLineItemOptionsRequest.md) |  | 
 
 ### Return type
 

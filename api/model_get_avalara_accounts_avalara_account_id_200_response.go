@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETAvalaraAccountsAvalaraAccountId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETAvalaraAccountsAvalaraAccountId200Response{}
+
 // GETAvalaraAccountsAvalaraAccountId200Response struct for GETAvalaraAccountsAvalaraAccountId200Response
 type GETAvalaraAccountsAvalaraAccountId200Response struct {
-	Data *GETAvalaraAccounts200ResponseDataInner `json:"data,omitempty"`
+	Data *GETAvalaraAccountsAvalaraAccountId200ResponseData `json:"data,omitempty"`
 }
 
 // NewGETAvalaraAccountsAvalaraAccountId200Response instantiates a new GETAvalaraAccountsAvalaraAccountId200Response object
@@ -38,9 +41,9 @@ func NewGETAvalaraAccountsAvalaraAccountId200ResponseWithDefaults() *GETAvalaraA
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETAvalaraAccountsAvalaraAccountId200Response) GetData() GETAvalaraAccounts200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret GETAvalaraAccounts200ResponseDataInner
+func (o *GETAvalaraAccountsAvalaraAccountId200Response) GetData() GETAvalaraAccountsAvalaraAccountId200ResponseData {
+	if o == nil || IsNil(o.Data) {
+		var ret GETAvalaraAccountsAvalaraAccountId200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *GETAvalaraAccountsAvalaraAccountId200Response) GetData() GETAvalaraAcco
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETAvalaraAccountsAvalaraAccountId200Response) GetDataOk() (*GETAvalaraAccounts200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+func (o *GETAvalaraAccountsAvalaraAccountId200Response) GetDataOk() (*GETAvalaraAccountsAvalaraAccountId200ResponseData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *GETAvalaraAccountsAvalaraAccountId200Response) GetDataOk() (*GETAvalara
 
 // HasData returns a boolean if a field has been set.
 func (o *GETAvalaraAccountsAvalaraAccountId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETAvalaraAccounts200ResponseDataInner and assigns it to the Data field.
-func (o *GETAvalaraAccountsAvalaraAccountId200Response) SetData(v GETAvalaraAccounts200ResponseDataInner) {
+// SetData gets a reference to the given GETAvalaraAccountsAvalaraAccountId200ResponseData and assigns it to the Data field.
+func (o *GETAvalaraAccountsAvalaraAccountId200Response) SetData(v GETAvalaraAccountsAvalaraAccountId200ResponseData) {
 	o.Data = &v
 }
 
 func (o GETAvalaraAccountsAvalaraAccountId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GETAvalaraAccountsAvalaraAccountId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGETAvalaraAccountsAvalaraAccountId200Response struct {

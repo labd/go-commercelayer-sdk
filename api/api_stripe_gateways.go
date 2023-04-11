@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type StripeGatewaysApiService service
 type StripeGatewaysApiDELETEStripeGatewaysStripeGatewayIdRequest struct {
 	ctx             context.Context
 	ApiService      *StripeGatewaysApiService
-	stripeGatewayId string
+	stripeGatewayId interface{}
 }
 
 func (r StripeGatewaysApiDELETEStripeGatewaysStripeGatewayIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a stripe gateway
 	@param stripeGatewayId The resource's id
 	@return StripeGatewaysApiDELETEStripeGatewaysStripeGatewayIdRequest
 */
-func (a *StripeGatewaysApiService) DELETEStripeGatewaysStripeGatewayId(ctx context.Context, stripeGatewayId string) StripeGatewaysApiDELETEStripeGatewaysStripeGatewayIdRequest {
+func (a *StripeGatewaysApiService) DELETEStripeGatewaysStripeGatewayId(ctx context.Context, stripeGatewayId interface{}) StripeGatewaysApiDELETEStripeGatewaysStripeGatewayIdRequest {
 	return StripeGatewaysApiDELETEStripeGatewaysStripeGatewayIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -64,7 +64,7 @@ func (a *StripeGatewaysApiService) DELETEStripeGatewaysStripeGatewayIdExecute(r 
 	}
 
 	localVarPath := localBasePath + "/stripe_gateways/{stripeGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"stripeGatewayId"+"}", url.PathEscape(parameterToString(r.stripeGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stripeGatewayId"+"}", url.PathEscape(parameterValueToString(r.stripeGatewayId, "stripeGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *StripeGatewaysApiService) DELETEStripeGatewaysStripeGatewayIdExecute(r 
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *StripeGatewaysApiService) GETStripeGatewaysExecute(r StripeGatewaysApiG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -218,7 +218,7 @@ func (a *StripeGatewaysApiService) GETStripeGatewaysExecute(r StripeGatewaysApiG
 type StripeGatewaysApiGETStripeGatewaysStripeGatewayIdRequest struct {
 	ctx             context.Context
 	ApiService      *StripeGatewaysApiService
-	stripeGatewayId string
+	stripeGatewayId interface{}
 }
 
 func (r StripeGatewaysApiGETStripeGatewaysStripeGatewayIdRequest) Execute() (*GETStripeGatewaysStripeGatewayId200Response, *http.Response, error) {
@@ -234,7 +234,7 @@ Retrieve a stripe gateway
 	@param stripeGatewayId The resource's id
 	@return StripeGatewaysApiGETStripeGatewaysStripeGatewayIdRequest
 */
-func (a *StripeGatewaysApiService) GETStripeGatewaysStripeGatewayId(ctx context.Context, stripeGatewayId string) StripeGatewaysApiGETStripeGatewaysStripeGatewayIdRequest {
+func (a *StripeGatewaysApiService) GETStripeGatewaysStripeGatewayId(ctx context.Context, stripeGatewayId interface{}) StripeGatewaysApiGETStripeGatewaysStripeGatewayIdRequest {
 	return StripeGatewaysApiGETStripeGatewaysStripeGatewayIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -259,7 +259,7 @@ func (a *StripeGatewaysApiService) GETStripeGatewaysStripeGatewayIdExecute(r Str
 	}
 
 	localVarPath := localBasePath + "/stripe_gateways/{stripeGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"stripeGatewayId"+"}", url.PathEscape(parameterToString(r.stripeGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stripeGatewayId"+"}", url.PathEscape(parameterValueToString(r.stripeGatewayId, "stripeGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *StripeGatewaysApiService) GETStripeGatewaysStripeGatewayIdExecute(r Str
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -320,14 +320,14 @@ func (a *StripeGatewaysApiService) GETStripeGatewaysStripeGatewayIdExecute(r Str
 }
 
 type StripeGatewaysApiPATCHStripeGatewaysStripeGatewayIdRequest struct {
-	ctx                 context.Context
-	ApiService          *StripeGatewaysApiService
-	stripeGatewayUpdate *StripeGatewayUpdate
-	stripeGatewayId     string
+	ctx                                       context.Context
+	ApiService                                *StripeGatewaysApiService
+	pATCHStripeGatewaysStripeGatewayIdRequest *PATCHStripeGatewaysStripeGatewayIdRequest
+	stripeGatewayId                           interface{}
 }
 
-func (r StripeGatewaysApiPATCHStripeGatewaysStripeGatewayIdRequest) StripeGatewayUpdate(stripeGatewayUpdate StripeGatewayUpdate) StripeGatewaysApiPATCHStripeGatewaysStripeGatewayIdRequest {
-	r.stripeGatewayUpdate = &stripeGatewayUpdate
+func (r StripeGatewaysApiPATCHStripeGatewaysStripeGatewayIdRequest) PATCHStripeGatewaysStripeGatewayIdRequest(pATCHStripeGatewaysStripeGatewayIdRequest PATCHStripeGatewaysStripeGatewayIdRequest) StripeGatewaysApiPATCHStripeGatewaysStripeGatewayIdRequest {
+	r.pATCHStripeGatewaysStripeGatewayIdRequest = &pATCHStripeGatewaysStripeGatewayIdRequest
 	return r
 }
 
@@ -344,7 +344,7 @@ Update a stripe gateway
 	@param stripeGatewayId The resource's id
 	@return StripeGatewaysApiPATCHStripeGatewaysStripeGatewayIdRequest
 */
-func (a *StripeGatewaysApiService) PATCHStripeGatewaysStripeGatewayId(ctx context.Context, stripeGatewayId string) StripeGatewaysApiPATCHStripeGatewaysStripeGatewayIdRequest {
+func (a *StripeGatewaysApiService) PATCHStripeGatewaysStripeGatewayId(ctx context.Context, stripeGatewayId interface{}) StripeGatewaysApiPATCHStripeGatewaysStripeGatewayIdRequest {
 	return StripeGatewaysApiPATCHStripeGatewaysStripeGatewayIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -369,13 +369,13 @@ func (a *StripeGatewaysApiService) PATCHStripeGatewaysStripeGatewayIdExecute(r S
 	}
 
 	localVarPath := localBasePath + "/stripe_gateways/{stripeGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"stripeGatewayId"+"}", url.PathEscape(parameterToString(r.stripeGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stripeGatewayId"+"}", url.PathEscape(parameterValueToString(r.stripeGatewayId, "stripeGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.stripeGatewayUpdate == nil {
-		return localVarReturnValue, nil, reportError("stripeGatewayUpdate is required and must be specified")
+	if r.pATCHStripeGatewaysStripeGatewayIdRequest == nil {
+		return localVarReturnValue, nil, reportError("pATCHStripeGatewaysStripeGatewayIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -396,7 +396,7 @@ func (a *StripeGatewaysApiService) PATCHStripeGatewaysStripeGatewayIdExecute(r S
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.stripeGatewayUpdate
+	localVarPostBody = r.pATCHStripeGatewaysStripeGatewayIdRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -407,9 +407,9 @@ func (a *StripeGatewaysApiService) PATCHStripeGatewaysStripeGatewayIdExecute(r S
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -435,13 +435,13 @@ func (a *StripeGatewaysApiService) PATCHStripeGatewaysStripeGatewayIdExecute(r S
 }
 
 type StripeGatewaysApiPOSTStripeGatewaysRequest struct {
-	ctx                 context.Context
-	ApiService          *StripeGatewaysApiService
-	stripeGatewayCreate *StripeGatewayCreate
+	ctx                       context.Context
+	ApiService                *StripeGatewaysApiService
+	pOSTStripeGatewaysRequest *POSTStripeGatewaysRequest
 }
 
-func (r StripeGatewaysApiPOSTStripeGatewaysRequest) StripeGatewayCreate(stripeGatewayCreate StripeGatewayCreate) StripeGatewaysApiPOSTStripeGatewaysRequest {
-	r.stripeGatewayCreate = &stripeGatewayCreate
+func (r StripeGatewaysApiPOSTStripeGatewaysRequest) POSTStripeGatewaysRequest(pOSTStripeGatewaysRequest POSTStripeGatewaysRequest) StripeGatewaysApiPOSTStripeGatewaysRequest {
+	r.pOSTStripeGatewaysRequest = &pOSTStripeGatewaysRequest
 	return r
 }
 
@@ -485,8 +485,8 @@ func (a *StripeGatewaysApiService) POSTStripeGatewaysExecute(r StripeGatewaysApi
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.stripeGatewayCreate == nil {
-		return localVarReturnValue, nil, reportError("stripeGatewayCreate is required and must be specified")
+	if r.pOSTStripeGatewaysRequest == nil {
+		return localVarReturnValue, nil, reportError("pOSTStripeGatewaysRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -507,7 +507,7 @@ func (a *StripeGatewaysApiService) POSTStripeGatewaysExecute(r StripeGatewaysApi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.stripeGatewayCreate
+	localVarPostBody = r.pOSTStripeGatewaysRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -518,9 +518,9 @@ func (a *StripeGatewaysApiService) POSTStripeGatewaysExecute(r StripeGatewaysApi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

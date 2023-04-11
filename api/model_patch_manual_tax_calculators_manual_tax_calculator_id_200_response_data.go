@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,15 +15,18 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData{}
+
 // PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData struct for PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData
 type PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData struct {
 	// The resource's id
-	Id *string `json:"id,omitempty"`
+	Id interface{} `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                                                  `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks                                   `json:"links,omitempty"`
-	Attributes    *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETManualTaxCalculators200ResponseDataInnerRelationships                `json:"relationships,omitempty"`
+	Type          interface{}                                                          `json:"type,omitempty"`
+	Links         *POSTAddresses201ResponseDataLinks                                   `json:"links,omitempty"`
+	Attributes    *PATCHManualTaxCalculatorsManualTaxCalculatorIdRequestDataAttributes `json:"attributes,omitempty"`
+	Relationships *POSTManualTaxCalculators201ResponseDataRelationships                `json:"relationships,omitempty"`
 }
 
 // NewPATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData instantiates a new PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData object
@@ -43,74 +46,76 @@ func NewPATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataWithDefault
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetId() string {
-	if o == nil || o.Id == nil {
-		var ret string
+// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetId() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Id
+	return o.Id
 }
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) HasId() bool {
-	if o != nil && o.Id != nil {
+	if o != nil && IsNil(o.Id) {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) SetId(v string) {
-	o.Id = &v
+// SetId gets a reference to the given interface{} and assigns it to the Id field.
+func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) SetId(v interface{}) {
+	o.Id = v
 }
 
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetType() string {
-	if o == nil || o.Type == nil {
-		var ret string
+// GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetType() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Type
+	return o.Type
 }
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetTypeOk() (*string, bool) {
-	if o == nil || o.Type == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
-	return o.Type, true
+	return &o.Type, true
 }
 
 // HasType returns a boolean if a field has been set.
 func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) HasType() bool {
-	if o != nil && o.Type != nil {
+	if o != nil && IsNil(o.Type) {
 		return true
 	}
 
 	return false
 }
 
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) SetType(v string) {
-	o.Type = &v
+// SetType gets a reference to the given interface{} and assigns it to the Type field.
+func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) SetType(v interface{}) {
+	o.Type = v
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks {
-	if o == nil || o.Links == nil {
-		var ret GETAddresses200ResponseDataInnerLinks
+func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetLinks() POSTAddresses201ResponseDataLinks {
+	if o == nil || IsNil(o.Links) {
+		var ret POSTAddresses201ResponseDataLinks
 		return ret
 	}
 	return *o.Links
@@ -118,8 +123,8 @@ func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetLinks
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool) {
-	if o == nil || o.Links == nil {
+func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool) {
+	if o == nil || IsNil(o.Links) {
 		return nil, false
 	}
 	return o.Links, true
@@ -127,22 +132,22 @@ func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetLinks
 
 // HasLinks returns a boolean if a field has been set.
 func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) HasLinks() bool {
-	if o != nil && o.Links != nil {
+	if o != nil && !IsNil(o.Links) {
 		return true
 	}
 
 	return false
 }
 
-// SetLinks gets a reference to the given GETAddresses200ResponseDataInnerLinks and assigns it to the Links field.
-func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks) {
+// SetLinks gets a reference to the given POSTAddresses201ResponseDataLinks and assigns it to the Links field.
+func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks) {
 	o.Links = &v
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetAttributes() PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes {
-	if o == nil || o.Attributes == nil {
-		var ret PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes
+func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetAttributes() PATCHManualTaxCalculatorsManualTaxCalculatorIdRequestDataAttributes {
+	if o == nil || IsNil(o.Attributes) {
+		var ret PATCHManualTaxCalculatorsManualTaxCalculatorIdRequestDataAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -150,8 +155,8 @@ func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetAttri
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetAttributesOk() (*PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes, bool) {
-	if o == nil || o.Attributes == nil {
+func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetAttributesOk() (*PATCHManualTaxCalculatorsManualTaxCalculatorIdRequestDataAttributes, bool) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -159,22 +164,22 @@ func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetAttri
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) HasAttributes() bool {
-	if o != nil && o.Attributes != nil {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes and assigns it to the Attributes field.
-func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) SetAttributes(v PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes) {
+// SetAttributes gets a reference to the given PATCHManualTaxCalculatorsManualTaxCalculatorIdRequestDataAttributes and assigns it to the Attributes field.
+func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) SetAttributes(v PATCHManualTaxCalculatorsManualTaxCalculatorIdRequestDataAttributes) {
 	o.Attributes = &v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetRelationships() GETManualTaxCalculators200ResponseDataInnerRelationships {
-	if o == nil || o.Relationships == nil {
-		var ret GETManualTaxCalculators200ResponseDataInnerRelationships
+func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetRelationships() POSTManualTaxCalculators201ResponseDataRelationships {
+	if o == nil || IsNil(o.Relationships) {
+		var ret POSTManualTaxCalculators201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -182,8 +187,8 @@ func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetRelat
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetRelationshipsOk() (*GETManualTaxCalculators200ResponseDataInnerRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetRelationshipsOk() (*POSTManualTaxCalculators201ResponseDataRelationships, bool) {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -191,19 +196,27 @@ func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) GetRelat
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
 	return false
 }
 
-// SetRelationships gets a reference to the given GETManualTaxCalculators200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) SetRelationships(v GETManualTaxCalculators200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given POSTManualTaxCalculators201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) SetRelationships(v POSTManualTaxCalculators201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 
 func (o PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
@@ -211,16 +224,16 @@ func (o PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData) MarshalJS
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if o.Links != nil {
+	if !IsNil(o.Links) {
 		toSerialize["links"] = o.Links
 	}
-	if o.Attributes != nil {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if o.Relationships != nil {
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseData struct {

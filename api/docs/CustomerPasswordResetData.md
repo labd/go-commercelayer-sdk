@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETCustomerPasswordResets200ResponseDataInnerAttributes**](GETCustomerPasswordResets200ResponseDataInnerAttributes.md) |  | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Attributes** | [**GETCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes**](GETCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CustomerPasswordResetDataRelationships**](CustomerPasswordResetDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCustomerPasswordResetData
 
-`func NewCustomerPasswordResetData(type_ string, attributes GETCustomerPasswordResets200ResponseDataInnerAttributes, ) *CustomerPasswordResetData`
+`func NewCustomerPasswordResetData(type_ interface{}, attributes GETCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes, ) *CustomerPasswordResetData`
 
 NewCustomerPasswordResetData instantiates a new CustomerPasswordResetData object
 This constructor will assign default values to properties that have it defined,
@@ -29,40 +29,50 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *CustomerPasswordResetData) GetType() string`
+`func (o *CustomerPasswordResetData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *CustomerPasswordResetData) GetTypeOk() (*string, bool)`
+`func (o *CustomerPasswordResetData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *CustomerPasswordResetData) SetType(v string)`
+`func (o *CustomerPasswordResetData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *CustomerPasswordResetData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *CustomerPasswordResetData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *CustomerPasswordResetData) GetAttributes() GETCustomerPasswordResets200ResponseDataInnerAttributes`
+`func (o *CustomerPasswordResetData) GetAttributes() GETCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CustomerPasswordResetData) GetAttributesOk() (*GETCustomerPasswordResets200ResponseDataInnerAttributes, bool)`
+`func (o *CustomerPasswordResetData) GetAttributesOk() (*GETCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CustomerPasswordResetData) SetAttributes(v GETCustomerPasswordResets200ResponseDataInnerAttributes)`
+`func (o *CustomerPasswordResetData) SetAttributes(v GETCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

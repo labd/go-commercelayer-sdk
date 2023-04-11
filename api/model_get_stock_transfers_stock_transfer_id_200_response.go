@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETStockTransfersStockTransferId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETStockTransfersStockTransferId200Response{}
+
 // GETStockTransfersStockTransferId200Response struct for GETStockTransfersStockTransferId200Response
 type GETStockTransfersStockTransferId200Response struct {
-	Data *GETStockTransfers200ResponseDataInner `json:"data,omitempty"`
+	Data *GETStockTransfersStockTransferId200ResponseData `json:"data,omitempty"`
 }
 
 // NewGETStockTransfersStockTransferId200Response instantiates a new GETStockTransfersStockTransferId200Response object
@@ -38,9 +41,9 @@ func NewGETStockTransfersStockTransferId200ResponseWithDefaults() *GETStockTrans
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETStockTransfersStockTransferId200Response) GetData() GETStockTransfers200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret GETStockTransfers200ResponseDataInner
+func (o *GETStockTransfersStockTransferId200Response) GetData() GETStockTransfersStockTransferId200ResponseData {
+	if o == nil || IsNil(o.Data) {
+		var ret GETStockTransfersStockTransferId200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *GETStockTransfersStockTransferId200Response) GetData() GETStockTransfer
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETStockTransfersStockTransferId200Response) GetDataOk() (*GETStockTransfers200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+func (o *GETStockTransfersStockTransferId200Response) GetDataOk() (*GETStockTransfersStockTransferId200ResponseData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *GETStockTransfersStockTransferId200Response) GetDataOk() (*GETStockTran
 
 // HasData returns a boolean if a field has been set.
 func (o *GETStockTransfersStockTransferId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETStockTransfers200ResponseDataInner and assigns it to the Data field.
-func (o *GETStockTransfersStockTransferId200Response) SetData(v GETStockTransfers200ResponseDataInner) {
+// SetData gets a reference to the given GETStockTransfersStockTransferId200ResponseData and assigns it to the Data field.
+func (o *GETStockTransfersStockTransferId200Response) SetData(v GETStockTransfersStockTransferId200ResponseData) {
 	o.Data = &v
 }
 
 func (o GETStockTransfersStockTransferId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GETStockTransfersStockTransferId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGETStockTransfersStockTransferId200Response struct {

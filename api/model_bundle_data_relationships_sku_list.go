@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the BundleDataRelationshipsSkuList type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BundleDataRelationshipsSkuList{}
+
 // BundleDataRelationshipsSkuList struct for BundleDataRelationshipsSkuList
 type BundleDataRelationshipsSkuList struct {
-	Data *BundleDataRelationshipsSkuListData `json:"data,omitempty"`
+	Data *POSTBundlesRequestDataRelationshipsSkuListData `json:"data,omitempty"`
 }
 
 // NewBundleDataRelationshipsSkuList instantiates a new BundleDataRelationshipsSkuList object
@@ -38,9 +41,9 @@ func NewBundleDataRelationshipsSkuListWithDefaults() *BundleDataRelationshipsSku
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *BundleDataRelationshipsSkuList) GetData() BundleDataRelationshipsSkuListData {
-	if o == nil || o.Data == nil {
-		var ret BundleDataRelationshipsSkuListData
+func (o *BundleDataRelationshipsSkuList) GetData() POSTBundlesRequestDataRelationshipsSkuListData {
+	if o == nil || IsNil(o.Data) {
+		var ret POSTBundlesRequestDataRelationshipsSkuListData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *BundleDataRelationshipsSkuList) GetData() BundleDataRelationshipsSkuLis
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BundleDataRelationshipsSkuList) GetDataOk() (*BundleDataRelationshipsSkuListData, bool) {
-	if o == nil || o.Data == nil {
+func (o *BundleDataRelationshipsSkuList) GetDataOk() (*POSTBundlesRequestDataRelationshipsSkuListData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *BundleDataRelationshipsSkuList) GetDataOk() (*BundleDataRelationshipsSk
 
 // HasData returns a boolean if a field has been set.
 func (o *BundleDataRelationshipsSkuList) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given BundleDataRelationshipsSkuListData and assigns it to the Data field.
-func (o *BundleDataRelationshipsSkuList) SetData(v BundleDataRelationshipsSkuListData) {
+// SetData gets a reference to the given POSTBundlesRequestDataRelationshipsSkuListData and assigns it to the Data field.
+func (o *BundleDataRelationshipsSkuList) SetData(v POSTBundlesRequestDataRelationshipsSkuListData) {
 	o.Data = &v
 }
 
 func (o BundleDataRelationshipsSkuList) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o BundleDataRelationshipsSkuList) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableBundleDataRelationshipsSkuList struct {

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**ExternalGatewayUpdateData**](ExternalGatewayUpdateData.md) |  | 
+**Data** | [**PATCHExternalGatewaysExternalGatewayIdRequestData**](PATCHExternalGatewaysExternalGatewayIdRequestData.md) |  | 
 
 ## Methods
 
 ### NewExternalGatewayUpdate
 
-`func NewExternalGatewayUpdate(data ExternalGatewayUpdateData, ) *ExternalGatewayUpdate`
+`func NewExternalGatewayUpdate(data PATCHExternalGatewaysExternalGatewayIdRequestData, ) *ExternalGatewayUpdate`
 
 NewExternalGatewayUpdate instantiates a new ExternalGatewayUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *ExternalGatewayUpdate) GetData() ExternalGatewayUpdateData`
+`func (o *ExternalGatewayUpdate) GetData() PATCHExternalGatewaysExternalGatewayIdRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ExternalGatewayUpdate) GetDataOk() (*ExternalGatewayUpdateData, bool)`
+`func (o *ExternalGatewayUpdate) GetDataOk() (*PATCHExternalGatewaysExternalGatewayIdRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ExternalGatewayUpdate) SetData(v ExternalGatewayUpdateData)`
+`func (o *ExternalGatewayUpdate) SetData(v PATCHExternalGatewaysExternalGatewayIdRequestData)`
 
 SetData sets Data field to given value.
 

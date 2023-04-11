@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**MarketUpdateData**](MarketUpdateData.md) |  | 
+**Data** | [**PATCHMarketsMarketIdRequestData**](PATCHMarketsMarketIdRequestData.md) |  | 
 
 ## Methods
 
 ### NewMarketUpdate
 
-`func NewMarketUpdate(data MarketUpdateData, ) *MarketUpdate`
+`func NewMarketUpdate(data PATCHMarketsMarketIdRequestData, ) *MarketUpdate`
 
 NewMarketUpdate instantiates a new MarketUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *MarketUpdate) GetData() MarketUpdateData`
+`func (o *MarketUpdate) GetData() PATCHMarketsMarketIdRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *MarketUpdate) GetDataOk() (*MarketUpdateData, bool)`
+`func (o *MarketUpdate) GetDataOk() (*PATCHMarketsMarketIdRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *MarketUpdate) SetData(v MarketUpdateData)`
+`func (o *MarketUpdate) SetData(v PATCHMarketsMarketIdRequestData)`
 
 SetData sets Data field to given value.
 

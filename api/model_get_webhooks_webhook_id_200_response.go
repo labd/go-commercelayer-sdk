@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETWebhooksWebhookId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETWebhooksWebhookId200Response{}
+
 // GETWebhooksWebhookId200Response struct for GETWebhooksWebhookId200Response
 type GETWebhooksWebhookId200Response struct {
-	Data *GETWebhooks200ResponseDataInner `json:"data,omitempty"`
+	Data *GETWebhooksWebhookId200ResponseData `json:"data,omitempty"`
 }
 
 // NewGETWebhooksWebhookId200Response instantiates a new GETWebhooksWebhookId200Response object
@@ -38,9 +41,9 @@ func NewGETWebhooksWebhookId200ResponseWithDefaults() *GETWebhooksWebhookId200Re
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETWebhooksWebhookId200Response) GetData() GETWebhooks200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret GETWebhooks200ResponseDataInner
+func (o *GETWebhooksWebhookId200Response) GetData() GETWebhooksWebhookId200ResponseData {
+	if o == nil || IsNil(o.Data) {
+		var ret GETWebhooksWebhookId200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *GETWebhooksWebhookId200Response) GetData() GETWebhooks200ResponseDataIn
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETWebhooksWebhookId200Response) GetDataOk() (*GETWebhooks200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+func (o *GETWebhooksWebhookId200Response) GetDataOk() (*GETWebhooksWebhookId200ResponseData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *GETWebhooksWebhookId200Response) GetDataOk() (*GETWebhooks200ResponseDa
 
 // HasData returns a boolean if a field has been set.
 func (o *GETWebhooksWebhookId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETWebhooks200ResponseDataInner and assigns it to the Data field.
-func (o *GETWebhooksWebhookId200Response) SetData(v GETWebhooks200ResponseDataInner) {
+// SetData gets a reference to the given GETWebhooksWebhookId200ResponseData and assigns it to the Data field.
+func (o *GETWebhooksWebhookId200Response) SetData(v GETWebhooksWebhookId200ResponseData) {
 	o.Data = &v
 }
 
 func (o GETWebhooksWebhookId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GETWebhooksWebhookId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGETWebhooksWebhookId200Response struct {

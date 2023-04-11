@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the InventoryReturnLocationCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &InventoryReturnLocationCreate{}
+
 // InventoryReturnLocationCreate struct for InventoryReturnLocationCreate
 type InventoryReturnLocationCreate struct {
-	Data InventoryReturnLocationCreateData `json:"data"`
+	Data POSTInventoryReturnLocationsRequestData `json:"data"`
 }
 
 // NewInventoryReturnLocationCreate instantiates a new InventoryReturnLocationCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInventoryReturnLocationCreate(data InventoryReturnLocationCreateData) *InventoryReturnLocationCreate {
+func NewInventoryReturnLocationCreate(data POSTInventoryReturnLocationsRequestData) *InventoryReturnLocationCreate {
 	this := InventoryReturnLocationCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewInventoryReturnLocationCreateWithDefaults() *InventoryReturnLocationCrea
 }
 
 // GetData returns the Data field value
-func (o *InventoryReturnLocationCreate) GetData() InventoryReturnLocationCreateData {
+func (o *InventoryReturnLocationCreate) GetData() POSTInventoryReturnLocationsRequestData {
 	if o == nil {
-		var ret InventoryReturnLocationCreateData
+		var ret POSTInventoryReturnLocationsRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *InventoryReturnLocationCreate) GetData() InventoryReturnLocationCreateD
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *InventoryReturnLocationCreate) GetDataOk() (*InventoryReturnLocationCreateData, bool) {
+func (o *InventoryReturnLocationCreate) GetDataOk() (*POSTInventoryReturnLocationsRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *InventoryReturnLocationCreate) GetDataOk() (*InventoryReturnLocationCre
 }
 
 // SetData sets field value
-func (o *InventoryReturnLocationCreate) SetData(v InventoryReturnLocationCreateData) {
+func (o *InventoryReturnLocationCreate) SetData(v POSTInventoryReturnLocationsRequestData) {
 	o.Data = v
 }
 
 func (o InventoryReturnLocationCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o InventoryReturnLocationCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableInventoryReturnLocationCreate struct {

@@ -1,6 +1,6 @@
 # \CouponRecipientsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,15 +29,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    couponRecipientId := "couponRecipientId_example" // string | The resource's id
+    couponRecipientId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CouponRecipientsApi.DELETECouponRecipientsCouponRecipientId(context.Background(), couponRecipientId).Execute()
+    r, err := apiClient.CouponRecipientsApi.DELETECouponRecipientsCouponRecipientId(context.Background(), couponRecipientId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponRecipientsApi.DELETECouponRecipientsCouponRecipientId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -51,7 +51,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**couponRecipientId** | **string** | The resource&#39;s id | 
+**couponRecipientId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -158,11 +158,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    couponRecipientId := "couponRecipientId_example" // string | The resource's id
+    couponRecipientId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -182,7 +182,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**couponRecipientId** | **string** | The resource&#39;s id | 
+**couponRecipientId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHCouponRecipientsCouponRecipientId
 
-> PATCHCouponRecipientsCouponRecipientId200Response PATCHCouponRecipientsCouponRecipientId(ctx, couponRecipientId).CouponRecipientUpdate(couponRecipientUpdate).Execute()
+> PATCHCouponRecipientsCouponRecipientId200Response PATCHCouponRecipientsCouponRecipientId(ctx, couponRecipientId).PATCHCouponRecipientsCouponRecipientIdRequest(pATCHCouponRecipientsCouponRecipientIdRequest).Execute()
 
 Update a coupon recipient
 
@@ -228,16 +228,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    couponRecipientUpdate := *openapiclient.NewCouponRecipientUpdate(*openapiclient.NewCouponRecipientUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHCouponRecipientsCouponRecipientId200ResponseDataAttributes())) // CouponRecipientUpdate | 
-    couponRecipientId := "couponRecipientId_example" // string | The resource's id
+    pATCHCouponRecipientsCouponRecipientIdRequest := *openapiclient.NewPATCHCouponRecipientsCouponRecipientIdRequest(*openapiclient.NewPATCHCouponRecipientsCouponRecipientIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHCouponRecipientsCouponRecipientIdRequestDataAttributes())) // PATCHCouponRecipientsCouponRecipientIdRequest | 
+    couponRecipientId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CouponRecipientsApi.PATCHCouponRecipientsCouponRecipientId(context.Background(), couponRecipientId).CouponRecipientUpdate(couponRecipientUpdate).Execute()
+    resp, r, err := apiClient.CouponRecipientsApi.PATCHCouponRecipientsCouponRecipientId(context.Background(), couponRecipientId).PATCHCouponRecipientsCouponRecipientIdRequest(pATCHCouponRecipientsCouponRecipientIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponRecipientsApi.PATCHCouponRecipientsCouponRecipientId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -253,7 +253,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**couponRecipientId** | **string** | The resource&#39;s id | 
+**couponRecipientId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -262,7 +262,7 @@ Other parameters are passed through a pointer to a apiPATCHCouponRecipientsCoupo
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **couponRecipientUpdate** | [**CouponRecipientUpdate**](CouponRecipientUpdate.md) |  | 
+ **pATCHCouponRecipientsCouponRecipientIdRequest** | [**PATCHCouponRecipientsCouponRecipientIdRequest**](PATCHCouponRecipientsCouponRecipientIdRequest.md) |  | 
 
 
 ### Return type
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTCouponRecipients
 
-> POSTCouponRecipients201Response POSTCouponRecipients(ctx).CouponRecipientCreate(couponRecipientCreate).Execute()
+> POSTCouponRecipients201Response POSTCouponRecipients(ctx).POSTCouponRecipientsRequest(pOSTCouponRecipientsRequest).Execute()
 
 Create a coupon recipient
 
@@ -300,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    couponRecipientCreate := *openapiclient.NewCouponRecipientCreate(*openapiclient.NewCouponRecipientCreateData("Type_example", *openapiclient.NewPOSTCouponRecipients201ResponseDataAttributes("john@example.com"))) // CouponRecipientCreate | 
+    pOSTCouponRecipientsRequest := *openapiclient.NewPOSTCouponRecipientsRequest(*openapiclient.NewPOSTCouponRecipientsRequestData(interface{}(123), *openapiclient.NewPOSTCouponRecipientsRequestDataAttributes(interface{}(john@example.com)))) // POSTCouponRecipientsRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CouponRecipientsApi.POSTCouponRecipients(context.Background()).CouponRecipientCreate(couponRecipientCreate).Execute()
+    resp, r, err := apiClient.CouponRecipientsApi.POSTCouponRecipients(context.Background()).POSTCouponRecipientsRequest(pOSTCouponRecipientsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CouponRecipientsApi.POSTCouponRecipients``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiPOSTCouponRecipientsReques
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **couponRecipientCreate** | [**CouponRecipientCreate**](CouponRecipientCreate.md) |  | 
+ **pOSTCouponRecipientsRequest** | [**POSTCouponRecipientsRequest**](POSTCouponRecipientsRequest.md) |  | 
 
 ### Return type
 

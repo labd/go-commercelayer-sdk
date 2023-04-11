@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type BundlesApiService service
 type BundlesApiDELETEBundlesBundleIdRequest struct {
 	ctx        context.Context
 	ApiService *BundlesApiService
-	bundleId   string
+	bundleId   interface{}
 }
 
 func (r BundlesApiDELETEBundlesBundleIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a bundle
 	@param bundleId The resource's id
 	@return BundlesApiDELETEBundlesBundleIdRequest
 */
-func (a *BundlesApiService) DELETEBundlesBundleId(ctx context.Context, bundleId string) BundlesApiDELETEBundlesBundleIdRequest {
+func (a *BundlesApiService) DELETEBundlesBundleId(ctx context.Context, bundleId interface{}) BundlesApiDELETEBundlesBundleIdRequest {
 	return BundlesApiDELETEBundlesBundleIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -64,7 +64,7 @@ func (a *BundlesApiService) DELETEBundlesBundleIdExecute(r BundlesApiDELETEBundl
 	}
 
 	localVarPath := localBasePath + "/bundles/{bundleId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterToString(r.bundleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterValueToString(r.bundleId, "bundleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *BundlesApiService) DELETEBundlesBundleIdExecute(r BundlesApiDELETEBundl
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *BundlesApiService) GETBundlesExecute(r BundlesApiGETBundlesRequest) (*G
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -218,7 +218,7 @@ func (a *BundlesApiService) GETBundlesExecute(r BundlesApiGETBundlesRequest) (*G
 type BundlesApiGETBundlesBundleIdRequest struct {
 	ctx        context.Context
 	ApiService *BundlesApiService
-	bundleId   string
+	bundleId   interface{}
 }
 
 func (r BundlesApiGETBundlesBundleIdRequest) Execute() (*GETBundlesBundleId200Response, *http.Response, error) {
@@ -234,7 +234,7 @@ Retrieve a bundle
 	@param bundleId The resource's id
 	@return BundlesApiGETBundlesBundleIdRequest
 */
-func (a *BundlesApiService) GETBundlesBundleId(ctx context.Context, bundleId string) BundlesApiGETBundlesBundleIdRequest {
+func (a *BundlesApiService) GETBundlesBundleId(ctx context.Context, bundleId interface{}) BundlesApiGETBundlesBundleIdRequest {
 	return BundlesApiGETBundlesBundleIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -259,7 +259,7 @@ func (a *BundlesApiService) GETBundlesBundleIdExecute(r BundlesApiGETBundlesBund
 	}
 
 	localVarPath := localBasePath + "/bundles/{bundleId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterToString(r.bundleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterValueToString(r.bundleId, "bundleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *BundlesApiService) GETBundlesBundleIdExecute(r BundlesApiGETBundlesBund
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -322,7 +322,7 @@ func (a *BundlesApiService) GETBundlesBundleIdExecute(r BundlesApiGETBundlesBund
 type BundlesApiGETOrderIdAvailableFreeBundlesRequest struct {
 	ctx        context.Context
 	ApiService *BundlesApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r BundlesApiGETOrderIdAvailableFreeBundlesRequest) Execute() (*http.Response, error) {
@@ -338,7 +338,7 @@ Retrieve the available free bundles associated to the order
 	@param orderId The resource's id
 	@return BundlesApiGETOrderIdAvailableFreeBundlesRequest
 */
-func (a *BundlesApiService) GETOrderIdAvailableFreeBundles(ctx context.Context, orderId string) BundlesApiGETOrderIdAvailableFreeBundlesRequest {
+func (a *BundlesApiService) GETOrderIdAvailableFreeBundles(ctx context.Context, orderId interface{}) BundlesApiGETOrderIdAvailableFreeBundlesRequest {
 	return BundlesApiGETOrderIdAvailableFreeBundlesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -360,7 +360,7 @@ func (a *BundlesApiService) GETOrderIdAvailableFreeBundlesExecute(r BundlesApiGE
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/available_free_bundles"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -393,9 +393,9 @@ func (a *BundlesApiService) GETOrderIdAvailableFreeBundlesExecute(r BundlesApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -414,7 +414,7 @@ func (a *BundlesApiService) GETOrderIdAvailableFreeBundlesExecute(r BundlesApiGE
 type BundlesApiGETSkuListIdBundlesRequest struct {
 	ctx        context.Context
 	ApiService *BundlesApiService
-	skuListId  string
+	skuListId  interface{}
 }
 
 func (r BundlesApiGETSkuListIdBundlesRequest) Execute() (*http.Response, error) {
@@ -430,7 +430,7 @@ Retrieve the bundles associated to the SKU list
 	@param skuListId The resource's id
 	@return BundlesApiGETSkuListIdBundlesRequest
 */
-func (a *BundlesApiService) GETSkuListIdBundles(ctx context.Context, skuListId string) BundlesApiGETSkuListIdBundlesRequest {
+func (a *BundlesApiService) GETSkuListIdBundles(ctx context.Context, skuListId interface{}) BundlesApiGETSkuListIdBundlesRequest {
 	return BundlesApiGETSkuListIdBundlesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -452,7 +452,7 @@ func (a *BundlesApiService) GETSkuListIdBundlesExecute(r BundlesApiGETSkuListIdB
 	}
 
 	localVarPath := localBasePath + "/sku_lists/{skuListId}/bundles"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuListId"+"}", url.PathEscape(parameterToString(r.skuListId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListId"+"}", url.PathEscape(parameterValueToString(r.skuListId, "skuListId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -485,9 +485,9 @@ func (a *BundlesApiService) GETSkuListIdBundlesExecute(r BundlesApiGETSkuListIdB
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -504,14 +504,14 @@ func (a *BundlesApiService) GETSkuListIdBundlesExecute(r BundlesApiGETSkuListIdB
 }
 
 type BundlesApiPATCHBundlesBundleIdRequest struct {
-	ctx          context.Context
-	ApiService   *BundlesApiService
-	bundleUpdate *BundleUpdate
-	bundleId     string
+	ctx                         context.Context
+	ApiService                  *BundlesApiService
+	pATCHBundlesBundleIdRequest *PATCHBundlesBundleIdRequest
+	bundleId                    interface{}
 }
 
-func (r BundlesApiPATCHBundlesBundleIdRequest) BundleUpdate(bundleUpdate BundleUpdate) BundlesApiPATCHBundlesBundleIdRequest {
-	r.bundleUpdate = &bundleUpdate
+func (r BundlesApiPATCHBundlesBundleIdRequest) PATCHBundlesBundleIdRequest(pATCHBundlesBundleIdRequest PATCHBundlesBundleIdRequest) BundlesApiPATCHBundlesBundleIdRequest {
+	r.pATCHBundlesBundleIdRequest = &pATCHBundlesBundleIdRequest
 	return r
 }
 
@@ -528,7 +528,7 @@ Update a bundle
 	@param bundleId The resource's id
 	@return BundlesApiPATCHBundlesBundleIdRequest
 */
-func (a *BundlesApiService) PATCHBundlesBundleId(ctx context.Context, bundleId string) BundlesApiPATCHBundlesBundleIdRequest {
+func (a *BundlesApiService) PATCHBundlesBundleId(ctx context.Context, bundleId interface{}) BundlesApiPATCHBundlesBundleIdRequest {
 	return BundlesApiPATCHBundlesBundleIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -553,13 +553,13 @@ func (a *BundlesApiService) PATCHBundlesBundleIdExecute(r BundlesApiPATCHBundles
 	}
 
 	localVarPath := localBasePath + "/bundles/{bundleId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterToString(r.bundleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterValueToString(r.bundleId, "bundleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.bundleUpdate == nil {
-		return localVarReturnValue, nil, reportError("bundleUpdate is required and must be specified")
+	if r.pATCHBundlesBundleIdRequest == nil {
+		return localVarReturnValue, nil, reportError("pATCHBundlesBundleIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -580,7 +580,7 @@ func (a *BundlesApiService) PATCHBundlesBundleIdExecute(r BundlesApiPATCHBundles
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.bundleUpdate
+	localVarPostBody = r.pATCHBundlesBundleIdRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -591,9 +591,9 @@ func (a *BundlesApiService) PATCHBundlesBundleIdExecute(r BundlesApiPATCHBundles
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -619,13 +619,13 @@ func (a *BundlesApiService) PATCHBundlesBundleIdExecute(r BundlesApiPATCHBundles
 }
 
 type BundlesApiPOSTBundlesRequest struct {
-	ctx          context.Context
-	ApiService   *BundlesApiService
-	bundleCreate *BundleCreate
+	ctx                context.Context
+	ApiService         *BundlesApiService
+	pOSTBundlesRequest *POSTBundlesRequest
 }
 
-func (r BundlesApiPOSTBundlesRequest) BundleCreate(bundleCreate BundleCreate) BundlesApiPOSTBundlesRequest {
-	r.bundleCreate = &bundleCreate
+func (r BundlesApiPOSTBundlesRequest) POSTBundlesRequest(pOSTBundlesRequest POSTBundlesRequest) BundlesApiPOSTBundlesRequest {
+	r.pOSTBundlesRequest = &pOSTBundlesRequest
 	return r
 }
 
@@ -669,8 +669,8 @@ func (a *BundlesApiService) POSTBundlesExecute(r BundlesApiPOSTBundlesRequest) (
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.bundleCreate == nil {
-		return localVarReturnValue, nil, reportError("bundleCreate is required and must be specified")
+	if r.pOSTBundlesRequest == nil {
+		return localVarReturnValue, nil, reportError("pOSTBundlesRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -691,7 +691,7 @@ func (a *BundlesApiService) POSTBundlesExecute(r BundlesApiPOSTBundlesRequest) (
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.bundleCreate
+	localVarPostBody = r.pOSTBundlesRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -702,9 +702,9 @@ func (a *BundlesApiService) POSTBundlesExecute(r BundlesApiPOSTBundlesRequest) (
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**FreeShippingPromotionUpdateData**](FreeShippingPromotionUpdateData.md) |  | 
+**Data** | [**PATCHFreeShippingPromotionsFreeShippingPromotionIdRequestData**](PATCHFreeShippingPromotionsFreeShippingPromotionIdRequestData.md) |  | 
 
 ## Methods
 
 ### NewFreeShippingPromotionUpdate
 
-`func NewFreeShippingPromotionUpdate(data FreeShippingPromotionUpdateData, ) *FreeShippingPromotionUpdate`
+`func NewFreeShippingPromotionUpdate(data PATCHFreeShippingPromotionsFreeShippingPromotionIdRequestData, ) *FreeShippingPromotionUpdate`
 
 NewFreeShippingPromotionUpdate instantiates a new FreeShippingPromotionUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *FreeShippingPromotionUpdate) GetData() FreeShippingPromotionUpdateData`
+`func (o *FreeShippingPromotionUpdate) GetData() PATCHFreeShippingPromotionsFreeShippingPromotionIdRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *FreeShippingPromotionUpdate) GetDataOk() (*FreeShippingPromotionUpdateData, bool)`
+`func (o *FreeShippingPromotionUpdate) GetDataOk() (*PATCHFreeShippingPromotionsFreeShippingPromotionIdRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *FreeShippingPromotionUpdate) SetData(v FreeShippingPromotionUpdateData)`
+`func (o *FreeShippingPromotionUpdate) SetData(v PATCHFreeShippingPromotionsFreeShippingPromotionIdRequestData)`
 
 SetData sets Data field to given value.
 

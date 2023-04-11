@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**WebhookUpdateData**](WebhookUpdateData.md) |  | 
+**Data** | [**PATCHWebhooksWebhookIdRequestData**](PATCHWebhooksWebhookIdRequestData.md) |  | 
 
 ## Methods
 
 ### NewWebhookUpdate
 
-`func NewWebhookUpdate(data WebhookUpdateData, ) *WebhookUpdate`
+`func NewWebhookUpdate(data PATCHWebhooksWebhookIdRequestData, ) *WebhookUpdate`
 
 NewWebhookUpdate instantiates a new WebhookUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *WebhookUpdate) GetData() WebhookUpdateData`
+`func (o *WebhookUpdate) GetData() PATCHWebhooksWebhookIdRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *WebhookUpdate) GetDataOk() (*WebhookUpdateData, bool)`
+`func (o *WebhookUpdate) GetDataOk() (*PATCHWebhooksWebhookIdRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *WebhookUpdate) SetData(v WebhookUpdateData)`
+`func (o *WebhookUpdate) SetData(v PATCHWebhooksWebhookIdRequestData)`
 
 SetData sets Data field to given value.
 

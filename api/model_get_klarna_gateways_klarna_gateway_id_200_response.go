@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETKlarnaGatewaysKlarnaGatewayId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETKlarnaGatewaysKlarnaGatewayId200Response{}
+
 // GETKlarnaGatewaysKlarnaGatewayId200Response struct for GETKlarnaGatewaysKlarnaGatewayId200Response
 type GETKlarnaGatewaysKlarnaGatewayId200Response struct {
-	Data *GETKlarnaGateways200ResponseDataInner `json:"data,omitempty"`
+	Data *GETKlarnaGatewaysKlarnaGatewayId200ResponseData `json:"data,omitempty"`
 }
 
 // NewGETKlarnaGatewaysKlarnaGatewayId200Response instantiates a new GETKlarnaGatewaysKlarnaGatewayId200Response object
@@ -38,9 +41,9 @@ func NewGETKlarnaGatewaysKlarnaGatewayId200ResponseWithDefaults() *GETKlarnaGate
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETKlarnaGatewaysKlarnaGatewayId200Response) GetData() GETKlarnaGateways200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret GETKlarnaGateways200ResponseDataInner
+func (o *GETKlarnaGatewaysKlarnaGatewayId200Response) GetData() GETKlarnaGatewaysKlarnaGatewayId200ResponseData {
+	if o == nil || IsNil(o.Data) {
+		var ret GETKlarnaGatewaysKlarnaGatewayId200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *GETKlarnaGatewaysKlarnaGatewayId200Response) GetData() GETKlarnaGateway
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETKlarnaGatewaysKlarnaGatewayId200Response) GetDataOk() (*GETKlarnaGateways200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+func (o *GETKlarnaGatewaysKlarnaGatewayId200Response) GetDataOk() (*GETKlarnaGatewaysKlarnaGatewayId200ResponseData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *GETKlarnaGatewaysKlarnaGatewayId200Response) GetDataOk() (*GETKlarnaGat
 
 // HasData returns a boolean if a field has been set.
 func (o *GETKlarnaGatewaysKlarnaGatewayId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETKlarnaGateways200ResponseDataInner and assigns it to the Data field.
-func (o *GETKlarnaGatewaysKlarnaGatewayId200Response) SetData(v GETKlarnaGateways200ResponseDataInner) {
+// SetData gets a reference to the given GETKlarnaGatewaysKlarnaGatewayId200ResponseData and assigns it to the Data field.
+func (o *GETKlarnaGatewaysKlarnaGatewayId200Response) SetData(v GETKlarnaGatewaysKlarnaGatewayId200ResponseData) {
 	o.Data = &v
 }
 
 func (o GETKlarnaGatewaysKlarnaGatewayId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GETKlarnaGatewaysKlarnaGatewayId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGETKlarnaGatewaysKlarnaGatewayId200Response struct {

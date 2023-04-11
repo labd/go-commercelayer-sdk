@@ -1,6 +1,6 @@
 # \BingGeocodersApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,15 +29,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    bingGeocoderId := "bingGeocoderId_example" // string | The resource's id
+    bingGeocoderId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BingGeocodersApi.DELETEBingGeocodersBingGeocoderId(context.Background(), bingGeocoderId).Execute()
+    r, err := apiClient.BingGeocodersApi.DELETEBingGeocodersBingGeocoderId(context.Background(), bingGeocoderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BingGeocodersApi.DELETEBingGeocodersBingGeocoderId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -51,7 +51,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bingGeocoderId** | **string** | The resource&#39;s id | 
+**bingGeocoderId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -158,11 +158,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    bingGeocoderId := "bingGeocoderId_example" // string | The resource's id
+    bingGeocoderId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -182,7 +182,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bingGeocoderId** | **string** | The resource&#39;s id | 
+**bingGeocoderId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHBingGeocodersBingGeocoderId
 
-> PATCHBingGeocodersBingGeocoderId200Response PATCHBingGeocodersBingGeocoderId(ctx, bingGeocoderId).BingGeocoderUpdate(bingGeocoderUpdate).Execute()
+> PATCHBingGeocodersBingGeocoderId200Response PATCHBingGeocodersBingGeocoderId(ctx, bingGeocoderId).PATCHBingGeocodersBingGeocoderIdRequest(pATCHBingGeocodersBingGeocoderIdRequest).Execute()
 
 Update a bing geocoder
 
@@ -228,16 +228,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    bingGeocoderUpdate := *openapiclient.NewBingGeocoderUpdate(*openapiclient.NewBingGeocoderUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHBingGeocodersBingGeocoderId200ResponseDataAttributes())) // BingGeocoderUpdate | 
-    bingGeocoderId := "bingGeocoderId_example" // string | The resource's id
+    pATCHBingGeocodersBingGeocoderIdRequest := *openapiclient.NewPATCHBingGeocodersBingGeocoderIdRequest(*openapiclient.NewPATCHBingGeocodersBingGeocoderIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBingGeocodersBingGeocoderIdRequestDataAttributes())) // PATCHBingGeocodersBingGeocoderIdRequest | 
+    bingGeocoderId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BingGeocodersApi.PATCHBingGeocodersBingGeocoderId(context.Background(), bingGeocoderId).BingGeocoderUpdate(bingGeocoderUpdate).Execute()
+    resp, r, err := apiClient.BingGeocodersApi.PATCHBingGeocodersBingGeocoderId(context.Background(), bingGeocoderId).PATCHBingGeocodersBingGeocoderIdRequest(pATCHBingGeocodersBingGeocoderIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BingGeocodersApi.PATCHBingGeocodersBingGeocoderId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -253,7 +253,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bingGeocoderId** | **string** | The resource&#39;s id | 
+**bingGeocoderId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -262,7 +262,7 @@ Other parameters are passed through a pointer to a apiPATCHBingGeocodersBingGeoc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bingGeocoderUpdate** | [**BingGeocoderUpdate**](BingGeocoderUpdate.md) |  | 
+ **pATCHBingGeocodersBingGeocoderIdRequest** | [**PATCHBingGeocodersBingGeocoderIdRequest**](PATCHBingGeocodersBingGeocoderIdRequest.md) |  | 
 
 
 ### Return type
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTBingGeocoders
 
-> POSTBingGeocoders201Response POSTBingGeocoders(ctx).BingGeocoderCreate(bingGeocoderCreate).Execute()
+> POSTBingGeocoders201Response POSTBingGeocoders(ctx).POSTBingGeocodersRequest(pOSTBingGeocodersRequest).Execute()
 
 Create a bing geocoder
 
@@ -300,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    bingGeocoderCreate := *openapiclient.NewBingGeocoderCreate(*openapiclient.NewBingGeocoderCreateData("Type_example", *openapiclient.NewPOSTBingGeocoders201ResponseDataAttributes("Default geocoder", "xxxx-yyyy-zzzz"))) // BingGeocoderCreate | 
+    pOSTBingGeocodersRequest := *openapiclient.NewPOSTBingGeocodersRequest(*openapiclient.NewPOSTBingGeocodersRequestData(interface{}(123), *openapiclient.NewPOSTBingGeocodersRequestDataAttributes(interface{}(Default geocoder), interface{}(xxxx-yyyy-zzzz)))) // POSTBingGeocodersRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BingGeocodersApi.POSTBingGeocoders(context.Background()).BingGeocoderCreate(bingGeocoderCreate).Execute()
+    resp, r, err := apiClient.BingGeocodersApi.POSTBingGeocoders(context.Background()).POSTBingGeocodersRequest(pOSTBingGeocodersRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BingGeocodersApi.POSTBingGeocoders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiPOSTBingGeocodersRequest s
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **bingGeocoderCreate** | [**BingGeocoderCreate**](BingGeocoderCreate.md) |  | 
+ **pOSTBingGeocodersRequest** | [**POSTBingGeocodersRequest**](POSTBingGeocodersRequest.md) |  | 
 
 ### Return type
 

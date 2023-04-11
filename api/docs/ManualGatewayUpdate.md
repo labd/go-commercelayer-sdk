@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**ManualGatewayUpdateData**](ManualGatewayUpdateData.md) |  | 
+**Data** | [**PATCHManualGatewaysManualGatewayIdRequestData**](PATCHManualGatewaysManualGatewayIdRequestData.md) |  | 
 
 ## Methods
 
 ### NewManualGatewayUpdate
 
-`func NewManualGatewayUpdate(data ManualGatewayUpdateData, ) *ManualGatewayUpdate`
+`func NewManualGatewayUpdate(data PATCHManualGatewaysManualGatewayIdRequestData, ) *ManualGatewayUpdate`
 
 NewManualGatewayUpdate instantiates a new ManualGatewayUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *ManualGatewayUpdate) GetData() ManualGatewayUpdateData`
+`func (o *ManualGatewayUpdate) GetData() PATCHManualGatewaysManualGatewayIdRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ManualGatewayUpdate) GetDataOk() (*ManualGatewayUpdateData, bool)`
+`func (o *ManualGatewayUpdate) GetDataOk() (*PATCHManualGatewaysManualGatewayIdRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ManualGatewayUpdate) SetData(v ManualGatewayUpdateData)`
+`func (o *ManualGatewayUpdate) SetData(v PATCHManualGatewaysManualGatewayIdRequestData)`
 
 SetData sets Data field to given value.
 

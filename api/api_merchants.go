@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type MerchantsApiService service
 type MerchantsApiDELETEMerchantsMerchantIdRequest struct {
 	ctx        context.Context
 	ApiService *MerchantsApiService
-	merchantId string
+	merchantId interface{}
 }
 
 func (r MerchantsApiDELETEMerchantsMerchantIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a merchant
 	@param merchantId The resource's id
 	@return MerchantsApiDELETEMerchantsMerchantIdRequest
 */
-func (a *MerchantsApiService) DELETEMerchantsMerchantId(ctx context.Context, merchantId string) MerchantsApiDELETEMerchantsMerchantIdRequest {
+func (a *MerchantsApiService) DELETEMerchantsMerchantId(ctx context.Context, merchantId interface{}) MerchantsApiDELETEMerchantsMerchantIdRequest {
 	return MerchantsApiDELETEMerchantsMerchantIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -64,7 +64,7 @@ func (a *MerchantsApiService) DELETEMerchantsMerchantIdExecute(r MerchantsApiDEL
 	}
 
 	localVarPath := localBasePath + "/merchants/{merchantId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"merchantId"+"}", url.PathEscape(parameterToString(r.merchantId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"merchantId"+"}", url.PathEscape(parameterValueToString(r.merchantId, "merchantId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *MerchantsApiService) DELETEMerchantsMerchantIdExecute(r MerchantsApiDEL
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *MerchantsApiService) DELETEMerchantsMerchantIdExecute(r MerchantsApiDEL
 type MerchantsApiGETMarketIdMerchantRequest struct {
 	ctx        context.Context
 	ApiService *MerchantsApiService
-	marketId   string
+	marketId   interface{}
 }
 
 func (r MerchantsApiGETMarketIdMerchantRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the merchant associated to the market
 	@param marketId The resource's id
 	@return MerchantsApiGETMarketIdMerchantRequest
 */
-func (a *MerchantsApiService) GETMarketIdMerchant(ctx context.Context, marketId string) MerchantsApiGETMarketIdMerchantRequest {
+func (a *MerchantsApiService) GETMarketIdMerchant(ctx context.Context, marketId interface{}) MerchantsApiGETMarketIdMerchantRequest {
 	return MerchantsApiGETMarketIdMerchantRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -156,7 +156,7 @@ func (a *MerchantsApiService) GETMarketIdMerchantExecute(r MerchantsApiGETMarket
 	}
 
 	localVarPath := localBasePath + "/markets/{marketId}/merchant"
-	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterToString(r.marketId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *MerchantsApiService) GETMarketIdMerchantExecute(r MerchantsApiGETMarket
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *MerchantsApiService) GETMerchantsExecute(r MerchantsApiGETMerchantsRequ
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -310,7 +310,7 @@ func (a *MerchantsApiService) GETMerchantsExecute(r MerchantsApiGETMerchantsRequ
 type MerchantsApiGETMerchantsMerchantIdRequest struct {
 	ctx        context.Context
 	ApiService *MerchantsApiService
-	merchantId string
+	merchantId interface{}
 }
 
 func (r MerchantsApiGETMerchantsMerchantIdRequest) Execute() (*GETMerchantsMerchantId200Response, *http.Response, error) {
@@ -326,7 +326,7 @@ Retrieve a merchant
 	@param merchantId The resource's id
 	@return MerchantsApiGETMerchantsMerchantIdRequest
 */
-func (a *MerchantsApiService) GETMerchantsMerchantId(ctx context.Context, merchantId string) MerchantsApiGETMerchantsMerchantIdRequest {
+func (a *MerchantsApiService) GETMerchantsMerchantId(ctx context.Context, merchantId interface{}) MerchantsApiGETMerchantsMerchantIdRequest {
 	return MerchantsApiGETMerchantsMerchantIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -351,7 +351,7 @@ func (a *MerchantsApiService) GETMerchantsMerchantIdExecute(r MerchantsApiGETMer
 	}
 
 	localVarPath := localBasePath + "/merchants/{merchantId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"merchantId"+"}", url.PathEscape(parameterToString(r.merchantId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"merchantId"+"}", url.PathEscape(parameterValueToString(r.merchantId, "merchantId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *MerchantsApiService) GETMerchantsMerchantIdExecute(r MerchantsApiGETMer
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -412,14 +412,14 @@ func (a *MerchantsApiService) GETMerchantsMerchantIdExecute(r MerchantsApiGETMer
 }
 
 type MerchantsApiPATCHMerchantsMerchantIdRequest struct {
-	ctx            context.Context
-	ApiService     *MerchantsApiService
-	merchantUpdate *MerchantUpdate
-	merchantId     string
+	ctx                             context.Context
+	ApiService                      *MerchantsApiService
+	pATCHMerchantsMerchantIdRequest *PATCHMerchantsMerchantIdRequest
+	merchantId                      interface{}
 }
 
-func (r MerchantsApiPATCHMerchantsMerchantIdRequest) MerchantUpdate(merchantUpdate MerchantUpdate) MerchantsApiPATCHMerchantsMerchantIdRequest {
-	r.merchantUpdate = &merchantUpdate
+func (r MerchantsApiPATCHMerchantsMerchantIdRequest) PATCHMerchantsMerchantIdRequest(pATCHMerchantsMerchantIdRequest PATCHMerchantsMerchantIdRequest) MerchantsApiPATCHMerchantsMerchantIdRequest {
+	r.pATCHMerchantsMerchantIdRequest = &pATCHMerchantsMerchantIdRequest
 	return r
 }
 
@@ -436,7 +436,7 @@ Update a merchant
 	@param merchantId The resource's id
 	@return MerchantsApiPATCHMerchantsMerchantIdRequest
 */
-func (a *MerchantsApiService) PATCHMerchantsMerchantId(ctx context.Context, merchantId string) MerchantsApiPATCHMerchantsMerchantIdRequest {
+func (a *MerchantsApiService) PATCHMerchantsMerchantId(ctx context.Context, merchantId interface{}) MerchantsApiPATCHMerchantsMerchantIdRequest {
 	return MerchantsApiPATCHMerchantsMerchantIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -461,13 +461,13 @@ func (a *MerchantsApiService) PATCHMerchantsMerchantIdExecute(r MerchantsApiPATC
 	}
 
 	localVarPath := localBasePath + "/merchants/{merchantId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"merchantId"+"}", url.PathEscape(parameterToString(r.merchantId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"merchantId"+"}", url.PathEscape(parameterValueToString(r.merchantId, "merchantId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.merchantUpdate == nil {
-		return localVarReturnValue, nil, reportError("merchantUpdate is required and must be specified")
+	if r.pATCHMerchantsMerchantIdRequest == nil {
+		return localVarReturnValue, nil, reportError("pATCHMerchantsMerchantIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -488,7 +488,7 @@ func (a *MerchantsApiService) PATCHMerchantsMerchantIdExecute(r MerchantsApiPATC
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.merchantUpdate
+	localVarPostBody = r.pATCHMerchantsMerchantIdRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -499,9 +499,9 @@ func (a *MerchantsApiService) PATCHMerchantsMerchantIdExecute(r MerchantsApiPATC
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -527,13 +527,13 @@ func (a *MerchantsApiService) PATCHMerchantsMerchantIdExecute(r MerchantsApiPATC
 }
 
 type MerchantsApiPOSTMerchantsRequest struct {
-	ctx            context.Context
-	ApiService     *MerchantsApiService
-	merchantCreate *MerchantCreate
+	ctx                  context.Context
+	ApiService           *MerchantsApiService
+	pOSTMerchantsRequest *POSTMerchantsRequest
 }
 
-func (r MerchantsApiPOSTMerchantsRequest) MerchantCreate(merchantCreate MerchantCreate) MerchantsApiPOSTMerchantsRequest {
-	r.merchantCreate = &merchantCreate
+func (r MerchantsApiPOSTMerchantsRequest) POSTMerchantsRequest(pOSTMerchantsRequest POSTMerchantsRequest) MerchantsApiPOSTMerchantsRequest {
+	r.pOSTMerchantsRequest = &pOSTMerchantsRequest
 	return r
 }
 
@@ -577,8 +577,8 @@ func (a *MerchantsApiService) POSTMerchantsExecute(r MerchantsApiPOSTMerchantsRe
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.merchantCreate == nil {
-		return localVarReturnValue, nil, reportError("merchantCreate is required and must be specified")
+	if r.pOSTMerchantsRequest == nil {
+		return localVarReturnValue, nil, reportError("pOSTMerchantsRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -599,7 +599,7 @@ func (a *MerchantsApiService) POSTMerchantsExecute(r MerchantsApiPOSTMerchantsRe
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.merchantCreate
+	localVarPostBody = r.pOSTMerchantsRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -610,9 +610,9 @@ func (a *MerchantsApiService) POSTMerchantsExecute(r MerchantsApiPOSTMerchantsRe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

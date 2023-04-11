@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETAttachments200ResponseDataInnerAttributes**](GETAttachments200ResponseDataInnerAttributes.md) |  | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Attributes** | [**GETAttachmentsAttachmentId200ResponseDataAttributes**](GETAttachmentsAttachmentId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AttachmentDataRelationships**](AttachmentDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewAttachmentData
 
-`func NewAttachmentData(type_ string, attributes GETAttachments200ResponseDataInnerAttributes, ) *AttachmentData`
+`func NewAttachmentData(type_ interface{}, attributes GETAttachmentsAttachmentId200ResponseDataAttributes, ) *AttachmentData`
 
 NewAttachmentData instantiates a new AttachmentData object
 This constructor will assign default values to properties that have it defined,
@@ -29,40 +29,50 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *AttachmentData) GetType() string`
+`func (o *AttachmentData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *AttachmentData) GetTypeOk() (*string, bool)`
+`func (o *AttachmentData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *AttachmentData) SetType(v string)`
+`func (o *AttachmentData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *AttachmentData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *AttachmentData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *AttachmentData) GetAttributes() GETAttachments200ResponseDataInnerAttributes`
+`func (o *AttachmentData) GetAttributes() GETAttachmentsAttachmentId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *AttachmentData) GetAttributesOk() (*GETAttachments200ResponseDataInnerAttributes, bool)`
+`func (o *AttachmentData) GetAttributesOk() (*GETAttachmentsAttachmentId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *AttachmentData) SetAttributes(v GETAttachments200ResponseDataInnerAttributes)`
+`func (o *AttachmentData) SetAttributes(v GETAttachmentsAttachmentId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

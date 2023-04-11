@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the CheckoutComGatewayData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CheckoutComGatewayData{}
+
 // CheckoutComGatewayData struct for CheckoutComGatewayData
 type CheckoutComGatewayData struct {
 	// The resource's type
-	Type          string                                               `json:"type"`
-	Attributes    GETCheckoutComGateways200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *CheckoutComGatewayDataRelationships                 `json:"relationships,omitempty"`
+	Type          interface{}                                                         `json:"type"`
+	Attributes    GETCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes `json:"attributes"`
+	Relationships *CheckoutComGatewayDataRelationships                                `json:"relationships,omitempty"`
 }
 
 // NewCheckoutComGatewayData instantiates a new CheckoutComGatewayData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCheckoutComGatewayData(type_ string, attributes GETCheckoutComGateways200ResponseDataInnerAttributes) *CheckoutComGatewayData {
+func NewCheckoutComGatewayData(type_ interface{}, attributes GETCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) *CheckoutComGatewayData {
 	this := CheckoutComGatewayData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -43,9 +46,10 @@ func NewCheckoutComGatewayDataWithDefaults() *CheckoutComGatewayData {
 }
 
 // GetType returns the Type field value
-func (o *CheckoutComGatewayData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *CheckoutComGatewayData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -54,22 +58,23 @@ func (o *CheckoutComGatewayData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *CheckoutComGatewayData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CheckoutComGatewayData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *CheckoutComGatewayData) SetType(v string) {
+func (o *CheckoutComGatewayData) SetType(v interface{}) {
 	o.Type = v
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CheckoutComGatewayData) GetAttributes() GETCheckoutComGateways200ResponseDataInnerAttributes {
+func (o *CheckoutComGatewayData) GetAttributes() GETCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETCheckoutComGateways200ResponseDataInnerAttributes
+		var ret GETCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes
 		return ret
 	}
 
@@ -78,7 +83,7 @@ func (o *CheckoutComGatewayData) GetAttributes() GETCheckoutComGateways200Respon
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CheckoutComGatewayData) GetAttributesOk() (*GETCheckoutComGateways200ResponseDataInnerAttributes, bool) {
+func (o *CheckoutComGatewayData) GetAttributesOk() (*GETCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,13 +91,13 @@ func (o *CheckoutComGatewayData) GetAttributesOk() (*GETCheckoutComGateways200Re
 }
 
 // SetAttributes sets field value
-func (o *CheckoutComGatewayData) SetAttributes(v GETCheckoutComGateways200ResponseDataInnerAttributes) {
+func (o *CheckoutComGatewayData) SetAttributes(v GETCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *CheckoutComGatewayData) GetRelationships() CheckoutComGatewayDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret CheckoutComGatewayDataRelationships
 		return ret
 	}
@@ -102,7 +107,7 @@ func (o *CheckoutComGatewayData) GetRelationships() CheckoutComGatewayDataRelati
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CheckoutComGatewayData) GetRelationshipsOk() (*CheckoutComGatewayDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -110,7 +115,7 @@ func (o *CheckoutComGatewayData) GetRelationshipsOk() (*CheckoutComGatewayDataRe
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *CheckoutComGatewayData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -123,17 +128,23 @@ func (o *CheckoutComGatewayData) SetRelationships(v CheckoutComGatewayDataRelati
 }
 
 func (o CheckoutComGatewayData) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
-		toSerialize["relationships"] = o.Relationships
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CheckoutComGatewayData) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
+		toSerialize["relationships"] = o.Relationships
+	}
+	return toSerialize, nil
 }
 
 type NullableCheckoutComGatewayData struct {

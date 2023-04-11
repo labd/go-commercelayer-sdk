@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**TaxRuleCreateData**](TaxRuleCreateData.md) |  | 
+**Data** | [**POSTTaxRulesRequestData**](POSTTaxRulesRequestData.md) |  | 
 
 ## Methods
 
 ### NewTaxRuleCreate
 
-`func NewTaxRuleCreate(data TaxRuleCreateData, ) *TaxRuleCreate`
+`func NewTaxRuleCreate(data POSTTaxRulesRequestData, ) *TaxRuleCreate`
 
 NewTaxRuleCreate instantiates a new TaxRuleCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *TaxRuleCreate) GetData() TaxRuleCreateData`
+`func (o *TaxRuleCreate) GetData() POSTTaxRulesRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *TaxRuleCreate) GetDataOk() (*TaxRuleCreateData, bool)`
+`func (o *TaxRuleCreate) GetDataOk() (*POSTTaxRulesRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *TaxRuleCreate) SetData(v TaxRuleCreateData)`
+`func (o *TaxRuleCreate) SetData(v POSTTaxRulesRequestData)`
 
 SetData sets Data field to given value.
 

@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**BundleCreateData**](BundleCreateData.md) |  | 
+**Data** | [**POSTBundlesRequestData**](POSTBundlesRequestData.md) |  | 
 
 ## Methods
 
 ### NewBundleCreate
 
-`func NewBundleCreate(data BundleCreateData, ) *BundleCreate`
+`func NewBundleCreate(data POSTBundlesRequestData, ) *BundleCreate`
 
 NewBundleCreate instantiates a new BundleCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *BundleCreate) GetData() BundleCreateData`
+`func (o *BundleCreate) GetData() POSTBundlesRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *BundleCreate) GetDataOk() (*BundleCreateData, bool)`
+`func (o *BundleCreate) GetDataOk() (*POSTBundlesRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *BundleCreate) SetData(v BundleCreateData)`
+`func (o *BundleCreate) SetData(v POSTBundlesRequestData)`
 
 SetData sets Data field to given value.
 

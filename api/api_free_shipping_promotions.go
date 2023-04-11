@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type FreeShippingPromotionsApiService service
 type FreeShippingPromotionsApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest struct {
 	ctx                     context.Context
 	ApiService              *FreeShippingPromotionsApiService
-	freeShippingPromotionId string
+	freeShippingPromotionId interface{}
 }
 
 func (r FreeShippingPromotionsApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a free shipping promotion
 	@param freeShippingPromotionId The resource's id
 	@return FreeShippingPromotionsApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest
 */
-func (a *FreeShippingPromotionsApiService) DELETEFreeShippingPromotionsFreeShippingPromotionId(ctx context.Context, freeShippingPromotionId string) FreeShippingPromotionsApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest {
+func (a *FreeShippingPromotionsApiService) DELETEFreeShippingPromotionsFreeShippingPromotionId(ctx context.Context, freeShippingPromotionId interface{}) FreeShippingPromotionsApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest {
 	return FreeShippingPromotionsApiDELETEFreeShippingPromotionsFreeShippingPromotionIdRequest{
 		ApiService:              a,
 		ctx:                     ctx,
@@ -64,7 +64,7 @@ func (a *FreeShippingPromotionsApiService) DELETEFreeShippingPromotionsFreeShipp
 	}
 
 	localVarPath := localBasePath + "/free_shipping_promotions/{freeShippingPromotionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterToString(r.freeShippingPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeShippingPromotionId, "freeShippingPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *FreeShippingPromotionsApiService) DELETEFreeShippingPromotionsFreeShipp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotionsExecute(r Fr
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -218,7 +218,7 @@ func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotionsExecute(r Fr
 type FreeShippingPromotionsApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest struct {
 	ctx                     context.Context
 	ApiService              *FreeShippingPromotionsApiService
-	freeShippingPromotionId string
+	freeShippingPromotionId interface{}
 }
 
 func (r FreeShippingPromotionsApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest) Execute() (*GETFreeShippingPromotionsFreeShippingPromotionId200Response, *http.Response, error) {
@@ -234,7 +234,7 @@ Retrieve a free shipping promotion
 	@param freeShippingPromotionId The resource's id
 	@return FreeShippingPromotionsApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest
 */
-func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotionsFreeShippingPromotionId(ctx context.Context, freeShippingPromotionId string) FreeShippingPromotionsApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest {
+func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotionsFreeShippingPromotionId(ctx context.Context, freeShippingPromotionId interface{}) FreeShippingPromotionsApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest {
 	return FreeShippingPromotionsApiGETFreeShippingPromotionsFreeShippingPromotionIdRequest{
 		ApiService:              a,
 		ctx:                     ctx,
@@ -259,7 +259,7 @@ func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotionsFreeShipping
 	}
 
 	localVarPath := localBasePath + "/free_shipping_promotions/{freeShippingPromotionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterToString(r.freeShippingPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeShippingPromotionId, "freeShippingPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotionsFreeShipping
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -320,14 +320,14 @@ func (a *FreeShippingPromotionsApiService) GETFreeShippingPromotionsFreeShipping
 }
 
 type FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest struct {
-	ctx                         context.Context
-	ApiService                  *FreeShippingPromotionsApiService
-	freeShippingPromotionUpdate *FreeShippingPromotionUpdate
-	freeShippingPromotionId     string
+	ctx                                                       context.Context
+	ApiService                                                *FreeShippingPromotionsApiService
+	pATCHFreeShippingPromotionsFreeShippingPromotionIdRequest *PATCHFreeShippingPromotionsFreeShippingPromotionIdRequest
+	freeShippingPromotionId                                   interface{}
 }
 
-func (r FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest) FreeShippingPromotionUpdate(freeShippingPromotionUpdate FreeShippingPromotionUpdate) FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest {
-	r.freeShippingPromotionUpdate = &freeShippingPromotionUpdate
+func (r FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest) PATCHFreeShippingPromotionsFreeShippingPromotionIdRequest(pATCHFreeShippingPromotionsFreeShippingPromotionIdRequest PATCHFreeShippingPromotionsFreeShippingPromotionIdRequest) FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest {
+	r.pATCHFreeShippingPromotionsFreeShippingPromotionIdRequest = &pATCHFreeShippingPromotionsFreeShippingPromotionIdRequest
 	return r
 }
 
@@ -344,7 +344,7 @@ Update a free shipping promotion
 	@param freeShippingPromotionId The resource's id
 	@return FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest
 */
-func (a *FreeShippingPromotionsApiService) PATCHFreeShippingPromotionsFreeShippingPromotionId(ctx context.Context, freeShippingPromotionId string) FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest {
+func (a *FreeShippingPromotionsApiService) PATCHFreeShippingPromotionsFreeShippingPromotionId(ctx context.Context, freeShippingPromotionId interface{}) FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest {
 	return FreeShippingPromotionsApiPATCHFreeShippingPromotionsFreeShippingPromotionIdRequest{
 		ApiService:              a,
 		ctx:                     ctx,
@@ -369,13 +369,13 @@ func (a *FreeShippingPromotionsApiService) PATCHFreeShippingPromotionsFreeShippi
 	}
 
 	localVarPath := localBasePath + "/free_shipping_promotions/{freeShippingPromotionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterToString(r.freeShippingPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeShippingPromotionId, "freeShippingPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.freeShippingPromotionUpdate == nil {
-		return localVarReturnValue, nil, reportError("freeShippingPromotionUpdate is required and must be specified")
+	if r.pATCHFreeShippingPromotionsFreeShippingPromotionIdRequest == nil {
+		return localVarReturnValue, nil, reportError("pATCHFreeShippingPromotionsFreeShippingPromotionIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -396,7 +396,7 @@ func (a *FreeShippingPromotionsApiService) PATCHFreeShippingPromotionsFreeShippi
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.freeShippingPromotionUpdate
+	localVarPostBody = r.pATCHFreeShippingPromotionsFreeShippingPromotionIdRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -407,9 +407,9 @@ func (a *FreeShippingPromotionsApiService) PATCHFreeShippingPromotionsFreeShippi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -435,13 +435,13 @@ func (a *FreeShippingPromotionsApiService) PATCHFreeShippingPromotionsFreeShippi
 }
 
 type FreeShippingPromotionsApiPOSTFreeShippingPromotionsRequest struct {
-	ctx                         context.Context
-	ApiService                  *FreeShippingPromotionsApiService
-	freeShippingPromotionCreate *FreeShippingPromotionCreate
+	ctx                               context.Context
+	ApiService                        *FreeShippingPromotionsApiService
+	pOSTFreeShippingPromotionsRequest *POSTFreeShippingPromotionsRequest
 }
 
-func (r FreeShippingPromotionsApiPOSTFreeShippingPromotionsRequest) FreeShippingPromotionCreate(freeShippingPromotionCreate FreeShippingPromotionCreate) FreeShippingPromotionsApiPOSTFreeShippingPromotionsRequest {
-	r.freeShippingPromotionCreate = &freeShippingPromotionCreate
+func (r FreeShippingPromotionsApiPOSTFreeShippingPromotionsRequest) POSTFreeShippingPromotionsRequest(pOSTFreeShippingPromotionsRequest POSTFreeShippingPromotionsRequest) FreeShippingPromotionsApiPOSTFreeShippingPromotionsRequest {
+	r.pOSTFreeShippingPromotionsRequest = &pOSTFreeShippingPromotionsRequest
 	return r
 }
 
@@ -485,8 +485,8 @@ func (a *FreeShippingPromotionsApiService) POSTFreeShippingPromotionsExecute(r F
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.freeShippingPromotionCreate == nil {
-		return localVarReturnValue, nil, reportError("freeShippingPromotionCreate is required and must be specified")
+	if r.pOSTFreeShippingPromotionsRequest == nil {
+		return localVarReturnValue, nil, reportError("pOSTFreeShippingPromotionsRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -507,7 +507,7 @@ func (a *FreeShippingPromotionsApiService) POSTFreeShippingPromotionsExecute(r F
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.freeShippingPromotionCreate
+	localVarPostBody = r.pOSTFreeShippingPromotionsRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -518,9 +518,9 @@ func (a *FreeShippingPromotionsApiService) POSTFreeShippingPromotionsExecute(r F
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

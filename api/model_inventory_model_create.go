@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the InventoryModelCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &InventoryModelCreate{}
+
 // InventoryModelCreate struct for InventoryModelCreate
 type InventoryModelCreate struct {
-	Data InventoryModelCreateData `json:"data"`
+	Data POSTInventoryModelsRequestData `json:"data"`
 }
 
 // NewInventoryModelCreate instantiates a new InventoryModelCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInventoryModelCreate(data InventoryModelCreateData) *InventoryModelCreate {
+func NewInventoryModelCreate(data POSTInventoryModelsRequestData) *InventoryModelCreate {
 	this := InventoryModelCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewInventoryModelCreateWithDefaults() *InventoryModelCreate {
 }
 
 // GetData returns the Data field value
-func (o *InventoryModelCreate) GetData() InventoryModelCreateData {
+func (o *InventoryModelCreate) GetData() POSTInventoryModelsRequestData {
 	if o == nil {
-		var ret InventoryModelCreateData
+		var ret POSTInventoryModelsRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *InventoryModelCreate) GetData() InventoryModelCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *InventoryModelCreate) GetDataOk() (*InventoryModelCreateData, bool) {
+func (o *InventoryModelCreate) GetDataOk() (*POSTInventoryModelsRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *InventoryModelCreate) GetDataOk() (*InventoryModelCreateData, bool) {
 }
 
 // SetData sets field value
-func (o *InventoryModelCreate) SetData(v InventoryModelCreateData) {
+func (o *InventoryModelCreate) SetData(v POSTInventoryModelsRequestData) {
 	o.Data = v
 }
 
 func (o InventoryModelCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o InventoryModelCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableInventoryModelCreate struct {

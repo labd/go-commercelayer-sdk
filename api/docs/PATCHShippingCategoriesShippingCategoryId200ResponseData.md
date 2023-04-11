@@ -4,11 +4,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Id** | Pointer to **string** | The resource&#39;s id | [optional] 
-**Type** | Pointer to **string** | The resource&#39;s type | [optional] 
-**Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
-**Attributes** | Pointer to [**PATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes**](PATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**GETShippingCategories200ResponseDataInnerRelationships**](GETShippingCategories200ResponseDataInnerRelationships.md) |  | [optional] 
+**Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
+**Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
+**Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
+**Attributes** | Pointer to [**PATCHShippingCategoriesShippingCategoryIdRequestDataAttributes**](PATCHShippingCategoriesShippingCategoryIdRequestDataAttributes.md) |  | [optional] 
+**Relationships** | Pointer to [**POSTShippingCategories201ResponseDataRelationships**](POSTShippingCategories201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -31,20 +31,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetId
 
-`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetId() string`
+`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetId() interface{}`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetIdOk() (*string, bool)`
+`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetIdOk() (*interface{}, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) SetId(v string)`
+`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) SetId(v interface{})`
 
 SetId sets Id field to given value.
 
@@ -54,22 +54,32 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
+### SetIdNil
+
+`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetType
 
-`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetType() string`
+`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetTypeOk() (*string, bool)`
+`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) SetType(v string)`
+`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
@@ -79,22 +89,32 @@ SetType sets Type field to given value.
 
 HasType returns a boolean if a field has been set.
 
+### SetTypeNil
+
+`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetLinks
 
-`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks`
+`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetLinks() POSTAddresses201ResponseDataLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool)`
+`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks)`
+`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks)`
 
 SetLinks sets Links field to given value.
 
@@ -106,20 +126,20 @@ HasLinks returns a boolean if a field has been set.
 
 ### GetAttributes
 
-`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetAttributes() PATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes`
+`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetAttributes() PATCHShippingCategoriesShippingCategoryIdRequestDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetAttributesOk() (*PATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes, bool)`
+`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetAttributesOk() (*PATCHShippingCategoriesShippingCategoryIdRequestDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) SetAttributes(v PATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes)`
+`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) SetAttributes(v PATCHShippingCategoriesShippingCategoryIdRequestDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
@@ -131,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetRelationships() GETShippingCategories200ResponseDataInnerRelationships`
+`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetRelationships() POSTShippingCategories201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetRelationshipsOk() (*GETShippingCategories200ResponseDataInnerRelationships, bool)`
+`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) GetRelationshipsOk() (*POSTShippingCategories201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) SetRelationships(v GETShippingCategories200ResponseDataInnerRelationships)`
+`func (o *PATCHShippingCategoriesShippingCategoryId200ResponseData) SetRelationships(v POSTShippingCategories201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the BraintreePaymentCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BraintreePaymentCreate{}
+
 // BraintreePaymentCreate struct for BraintreePaymentCreate
 type BraintreePaymentCreate struct {
-	Data BraintreePaymentCreateData `json:"data"`
+	Data POSTBraintreePaymentsRequestData `json:"data"`
 }
 
 // NewBraintreePaymentCreate instantiates a new BraintreePaymentCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBraintreePaymentCreate(data BraintreePaymentCreateData) *BraintreePaymentCreate {
+func NewBraintreePaymentCreate(data POSTBraintreePaymentsRequestData) *BraintreePaymentCreate {
 	this := BraintreePaymentCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewBraintreePaymentCreateWithDefaults() *BraintreePaymentCreate {
 }
 
 // GetData returns the Data field value
-func (o *BraintreePaymentCreate) GetData() BraintreePaymentCreateData {
+func (o *BraintreePaymentCreate) GetData() POSTBraintreePaymentsRequestData {
 	if o == nil {
-		var ret BraintreePaymentCreateData
+		var ret POSTBraintreePaymentsRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *BraintreePaymentCreate) GetData() BraintreePaymentCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *BraintreePaymentCreate) GetDataOk() (*BraintreePaymentCreateData, bool) {
+func (o *BraintreePaymentCreate) GetDataOk() (*POSTBraintreePaymentsRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *BraintreePaymentCreate) GetDataOk() (*BraintreePaymentCreateData, bool)
 }
 
 // SetData sets field value
-func (o *BraintreePaymentCreate) SetData(v BraintreePaymentCreateData) {
+func (o *BraintreePaymentCreate) SetData(v POSTBraintreePaymentsRequestData) {
 	o.Data = v
 }
 
 func (o BraintreePaymentCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o BraintreePaymentCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableBraintreePaymentCreate struct {

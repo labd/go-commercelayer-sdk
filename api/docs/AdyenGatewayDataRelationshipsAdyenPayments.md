@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**AdyenGatewayDataRelationshipsAdyenPaymentsData**](AdyenGatewayDataRelationshipsAdyenPaymentsData.md) |  | [optional] 
+**Data** | Pointer to [**POSTAdyenGatewaysRequestDataRelationshipsAdyenPaymentsData**](POSTAdyenGatewaysRequestDataRelationshipsAdyenPaymentsData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *AdyenGatewayDataRelationshipsAdyenPayments) GetData() AdyenGatewayDataRelationshipsAdyenPaymentsData`
+`func (o *AdyenGatewayDataRelationshipsAdyenPayments) GetData() POSTAdyenGatewaysRequestDataRelationshipsAdyenPaymentsData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *AdyenGatewayDataRelationshipsAdyenPayments) GetDataOk() (*AdyenGatewayDataRelationshipsAdyenPaymentsData, bool)`
+`func (o *AdyenGatewayDataRelationshipsAdyenPayments) GetDataOk() (*POSTAdyenGatewaysRequestDataRelationshipsAdyenPaymentsData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *AdyenGatewayDataRelationshipsAdyenPayments) SetData(v AdyenGatewayDataRelationshipsAdyenPaymentsData)`
+`func (o *AdyenGatewayDataRelationshipsAdyenPayments) SetData(v POSTAdyenGatewaysRequestDataRelationshipsAdyenPaymentsData)`
 
 SetData sets Data field to given value.
 

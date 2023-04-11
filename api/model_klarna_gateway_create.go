@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the KlarnaGatewayCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &KlarnaGatewayCreate{}
+
 // KlarnaGatewayCreate struct for KlarnaGatewayCreate
 type KlarnaGatewayCreate struct {
-	Data KlarnaGatewayCreateData `json:"data"`
+	Data POSTKlarnaGatewaysRequestData `json:"data"`
 }
 
 // NewKlarnaGatewayCreate instantiates a new KlarnaGatewayCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKlarnaGatewayCreate(data KlarnaGatewayCreateData) *KlarnaGatewayCreate {
+func NewKlarnaGatewayCreate(data POSTKlarnaGatewaysRequestData) *KlarnaGatewayCreate {
 	this := KlarnaGatewayCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewKlarnaGatewayCreateWithDefaults() *KlarnaGatewayCreate {
 }
 
 // GetData returns the Data field value
-func (o *KlarnaGatewayCreate) GetData() KlarnaGatewayCreateData {
+func (o *KlarnaGatewayCreate) GetData() POSTKlarnaGatewaysRequestData {
 	if o == nil {
-		var ret KlarnaGatewayCreateData
+		var ret POSTKlarnaGatewaysRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *KlarnaGatewayCreate) GetData() KlarnaGatewayCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *KlarnaGatewayCreate) GetDataOk() (*KlarnaGatewayCreateData, bool) {
+func (o *KlarnaGatewayCreate) GetDataOk() (*POSTKlarnaGatewaysRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *KlarnaGatewayCreate) GetDataOk() (*KlarnaGatewayCreateData, bool) {
 }
 
 // SetData sets field value
-func (o *KlarnaGatewayCreate) SetData(v KlarnaGatewayCreateData) {
+func (o *KlarnaGatewayCreate) SetData(v POSTKlarnaGatewaysRequestData) {
 	o.Data = v
 }
 
 func (o KlarnaGatewayCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o KlarnaGatewayCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableKlarnaGatewayCreate struct {

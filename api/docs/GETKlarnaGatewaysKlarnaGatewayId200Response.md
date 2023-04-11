@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETKlarnaGateways200ResponseDataInner**](GETKlarnaGateways200ResponseDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETKlarnaGatewaysKlarnaGatewayId200ResponseData**](GETKlarnaGatewaysKlarnaGatewayId200ResponseData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETKlarnaGatewaysKlarnaGatewayId200Response) GetData() GETKlarnaGateways200ResponseDataInner`
+`func (o *GETKlarnaGatewaysKlarnaGatewayId200Response) GetData() GETKlarnaGatewaysKlarnaGatewayId200ResponseData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETKlarnaGatewaysKlarnaGatewayId200Response) GetDataOk() (*GETKlarnaGateways200ResponseDataInner, bool)`
+`func (o *GETKlarnaGatewaysKlarnaGatewayId200Response) GetDataOk() (*GETKlarnaGatewaysKlarnaGatewayId200ResponseData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETKlarnaGatewaysKlarnaGatewayId200Response) SetData(v GETKlarnaGateways200ResponseDataInner)`
+`func (o *GETKlarnaGatewaysKlarnaGatewayId200Response) SetData(v GETKlarnaGatewaysKlarnaGatewayId200ResponseData)`
 
 SetData sets Data field to given value.
 

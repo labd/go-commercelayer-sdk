@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETWebhooks200ResponseDataInner**](GETWebhooks200ResponseDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETWebhooksWebhookId200ResponseData**](GETWebhooksWebhookId200ResponseData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETWebhooksWebhookId200Response) GetData() GETWebhooks200ResponseDataInner`
+`func (o *GETWebhooksWebhookId200Response) GetData() GETWebhooksWebhookId200ResponseData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETWebhooksWebhookId200Response) GetDataOk() (*GETWebhooks200ResponseDataInner, bool)`
+`func (o *GETWebhooksWebhookId200Response) GetDataOk() (*GETWebhooksWebhookId200ResponseData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETWebhooksWebhookId200Response) SetData(v GETWebhooks200ResponseDataInner)`
+`func (o *GETWebhooksWebhookId200Response) SetData(v GETWebhooksWebhookId200ResponseData)`
 
 SetData sets Data field to given value.
 

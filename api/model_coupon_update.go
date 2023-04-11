@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the CouponUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CouponUpdate{}
+
 // CouponUpdate struct for CouponUpdate
 type CouponUpdate struct {
-	Data CouponUpdateData `json:"data"`
+	Data PATCHCouponsCouponIdRequestData `json:"data"`
 }
 
 // NewCouponUpdate instantiates a new CouponUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCouponUpdate(data CouponUpdateData) *CouponUpdate {
+func NewCouponUpdate(data PATCHCouponsCouponIdRequestData) *CouponUpdate {
 	this := CouponUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewCouponUpdateWithDefaults() *CouponUpdate {
 }
 
 // GetData returns the Data field value
-func (o *CouponUpdate) GetData() CouponUpdateData {
+func (o *CouponUpdate) GetData() PATCHCouponsCouponIdRequestData {
 	if o == nil {
-		var ret CouponUpdateData
+		var ret PATCHCouponsCouponIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *CouponUpdate) GetData() CouponUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CouponUpdate) GetDataOk() (*CouponUpdateData, bool) {
+func (o *CouponUpdate) GetDataOk() (*PATCHCouponsCouponIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *CouponUpdate) GetDataOk() (*CouponUpdateData, bool) {
 }
 
 // SetData sets field value
-func (o *CouponUpdate) SetData(v CouponUpdateData) {
+func (o *CouponUpdate) SetData(v PATCHCouponsCouponIdRequestData) {
 	o.Data = v
 }
 
 func (o CouponUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CouponUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableCouponUpdate struct {

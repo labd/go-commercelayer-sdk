@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the CouponCodesPromotionRuleCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CouponCodesPromotionRuleCreate{}
+
 // CouponCodesPromotionRuleCreate struct for CouponCodesPromotionRuleCreate
 type CouponCodesPromotionRuleCreate struct {
-	Data CouponCodesPromotionRuleCreateData `json:"data"`
+	Data POSTCouponCodesPromotionRulesRequestData `json:"data"`
 }
 
 // NewCouponCodesPromotionRuleCreate instantiates a new CouponCodesPromotionRuleCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCouponCodesPromotionRuleCreate(data CouponCodesPromotionRuleCreateData) *CouponCodesPromotionRuleCreate {
+func NewCouponCodesPromotionRuleCreate(data POSTCouponCodesPromotionRulesRequestData) *CouponCodesPromotionRuleCreate {
 	this := CouponCodesPromotionRuleCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewCouponCodesPromotionRuleCreateWithDefaults() *CouponCodesPromotionRuleCr
 }
 
 // GetData returns the Data field value
-func (o *CouponCodesPromotionRuleCreate) GetData() CouponCodesPromotionRuleCreateData {
+func (o *CouponCodesPromotionRuleCreate) GetData() POSTCouponCodesPromotionRulesRequestData {
 	if o == nil {
-		var ret CouponCodesPromotionRuleCreateData
+		var ret POSTCouponCodesPromotionRulesRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *CouponCodesPromotionRuleCreate) GetData() CouponCodesPromotionRuleCreat
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CouponCodesPromotionRuleCreate) GetDataOk() (*CouponCodesPromotionRuleCreateData, bool) {
+func (o *CouponCodesPromotionRuleCreate) GetDataOk() (*POSTCouponCodesPromotionRulesRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *CouponCodesPromotionRuleCreate) GetDataOk() (*CouponCodesPromotionRuleC
 }
 
 // SetData sets field value
-func (o *CouponCodesPromotionRuleCreate) SetData(v CouponCodesPromotionRuleCreateData) {
+func (o *CouponCodesPromotionRuleCreate) SetData(v POSTCouponCodesPromotionRulesRequestData) {
 	o.Data = v
 }
 
 func (o CouponCodesPromotionRuleCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CouponCodesPromotionRuleCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableCouponCodesPromotionRuleCreate struct {

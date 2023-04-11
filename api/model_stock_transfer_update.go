@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the StockTransferUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &StockTransferUpdate{}
+
 // StockTransferUpdate struct for StockTransferUpdate
 type StockTransferUpdate struct {
-	Data StockTransferUpdateData `json:"data"`
+	Data PATCHStockTransfersStockTransferIdRequestData `json:"data"`
 }
 
 // NewStockTransferUpdate instantiates a new StockTransferUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewStockTransferUpdate(data StockTransferUpdateData) *StockTransferUpdate {
+func NewStockTransferUpdate(data PATCHStockTransfersStockTransferIdRequestData) *StockTransferUpdate {
 	this := StockTransferUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewStockTransferUpdateWithDefaults() *StockTransferUpdate {
 }
 
 // GetData returns the Data field value
-func (o *StockTransferUpdate) GetData() StockTransferUpdateData {
+func (o *StockTransferUpdate) GetData() PATCHStockTransfersStockTransferIdRequestData {
 	if o == nil {
-		var ret StockTransferUpdateData
+		var ret PATCHStockTransfersStockTransferIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *StockTransferUpdate) GetData() StockTransferUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *StockTransferUpdate) GetDataOk() (*StockTransferUpdateData, bool) {
+func (o *StockTransferUpdate) GetDataOk() (*PATCHStockTransfersStockTransferIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *StockTransferUpdate) GetDataOk() (*StockTransferUpdateData, bool) {
 }
 
 // SetData sets field value
-func (o *StockTransferUpdate) SetData(v StockTransferUpdateData) {
+func (o *StockTransferUpdate) SetData(v PATCHStockTransfersStockTransferIdRequestData) {
 	o.Data = v
 }
 
 func (o StockTransferUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o StockTransferUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableStockTransferUpdate struct {

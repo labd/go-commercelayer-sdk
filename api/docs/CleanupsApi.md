@@ -1,6 +1,6 @@
 # \CleanupsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -28,15 +28,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    cleanupId := "cleanupId_example" // string | The resource's id
+    cleanupId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CleanupsApi.DELETECleanupsCleanupId(context.Background(), cleanupId).Execute()
+    r, err := apiClient.CleanupsApi.DELETECleanupsCleanupId(context.Background(), cleanupId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CleanupsApi.DELETECleanupsCleanupId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -50,7 +50,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**cleanupId** | **string** | The resource&#39;s id | 
+**cleanupId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -96,7 +96,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -157,11 +157,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    cleanupId := "cleanupId_example" // string | The resource's id
+    cleanupId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -181,7 +181,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**cleanupId** | **string** | The resource&#39;s id | 
+**cleanupId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ## POSTCleanups
 
-> POSTCleanups201Response POSTCleanups(ctx).CleanupCreate(cleanupCreate).Execute()
+> POSTCleanups201Response POSTCleanups(ctx).POSTCleanupsRequest(pOSTCleanupsRequest).Execute()
 
 Create a cleanup
 
@@ -227,15 +227,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    cleanupCreate := *openapiclient.NewCleanupCreate(*openapiclient.NewCleanupCreateData("Type_example", *openapiclient.NewPOSTCleanups201ResponseDataAttributes("skus"))) // CleanupCreate | 
+    pOSTCleanupsRequest := *openapiclient.NewPOSTCleanupsRequest(*openapiclient.NewPOSTCleanupsRequestData(interface{}(123), *openapiclient.NewPOSTCleanupsRequestDataAttributes(interface{}(skus)))) // POSTCleanupsRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CleanupsApi.POSTCleanups(context.Background()).CleanupCreate(cleanupCreate).Execute()
+    resp, r, err := apiClient.CleanupsApi.POSTCleanups(context.Background()).POSTCleanupsRequest(pOSTCleanupsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CleanupsApi.POSTCleanups``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -256,7 +256,7 @@ Other parameters are passed through a pointer to a apiPOSTCleanupsRequest struct
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **cleanupCreate** | [**CleanupCreate**](CleanupCreate.md) |  | 
+ **pOSTCleanupsRequest** | [**POSTCleanupsRequest**](POSTCleanupsRequest.md) |  | 
 
 ### Return type
 

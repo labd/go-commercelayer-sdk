@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the SkuListItemUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SkuListItemUpdate{}
+
 // SkuListItemUpdate struct for SkuListItemUpdate
 type SkuListItemUpdate struct {
-	Data SkuListItemUpdateData `json:"data"`
+	Data PATCHSkuListItemsSkuListItemIdRequestData `json:"data"`
 }
 
 // NewSkuListItemUpdate instantiates a new SkuListItemUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuListItemUpdate(data SkuListItemUpdateData) *SkuListItemUpdate {
+func NewSkuListItemUpdate(data PATCHSkuListItemsSkuListItemIdRequestData) *SkuListItemUpdate {
 	this := SkuListItemUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewSkuListItemUpdateWithDefaults() *SkuListItemUpdate {
 }
 
 // GetData returns the Data field value
-func (o *SkuListItemUpdate) GetData() SkuListItemUpdateData {
+func (o *SkuListItemUpdate) GetData() PATCHSkuListItemsSkuListItemIdRequestData {
 	if o == nil {
-		var ret SkuListItemUpdateData
+		var ret PATCHSkuListItemsSkuListItemIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *SkuListItemUpdate) GetData() SkuListItemUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *SkuListItemUpdate) GetDataOk() (*SkuListItemUpdateData, bool) {
+func (o *SkuListItemUpdate) GetDataOk() (*PATCHSkuListItemsSkuListItemIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *SkuListItemUpdate) GetDataOk() (*SkuListItemUpdateData, bool) {
 }
 
 // SetData sets field value
-func (o *SkuListItemUpdate) SetData(v SkuListItemUpdateData) {
+func (o *SkuListItemUpdate) SetData(v PATCHSkuListItemsSkuListItemIdRequestData) {
 	o.Data = v
 }
 
 func (o SkuListItemUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o SkuListItemUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableSkuListItemUpdate struct {

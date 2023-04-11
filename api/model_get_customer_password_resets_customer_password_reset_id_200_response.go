@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETCustomerPasswordResetsCustomerPasswordResetId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETCustomerPasswordResetsCustomerPasswordResetId200Response{}
+
 // GETCustomerPasswordResetsCustomerPasswordResetId200Response struct for GETCustomerPasswordResetsCustomerPasswordResetId200Response
 type GETCustomerPasswordResetsCustomerPasswordResetId200Response struct {
-	Data *GETCustomerPasswordResets200ResponseDataInner `json:"data,omitempty"`
+	Data *GETCustomerPasswordResetsCustomerPasswordResetId200ResponseData `json:"data,omitempty"`
 }
 
 // NewGETCustomerPasswordResetsCustomerPasswordResetId200Response instantiates a new GETCustomerPasswordResetsCustomerPasswordResetId200Response object
@@ -38,9 +41,9 @@ func NewGETCustomerPasswordResetsCustomerPasswordResetId200ResponseWithDefaults(
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETCustomerPasswordResetsCustomerPasswordResetId200Response) GetData() GETCustomerPasswordResets200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret GETCustomerPasswordResets200ResponseDataInner
+func (o *GETCustomerPasswordResetsCustomerPasswordResetId200Response) GetData() GETCustomerPasswordResetsCustomerPasswordResetId200ResponseData {
+	if o == nil || IsNil(o.Data) {
+		var ret GETCustomerPasswordResetsCustomerPasswordResetId200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *GETCustomerPasswordResetsCustomerPasswordResetId200Response) GetData() 
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCustomerPasswordResetsCustomerPasswordResetId200Response) GetDataOk() (*GETCustomerPasswordResets200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+func (o *GETCustomerPasswordResetsCustomerPasswordResetId200Response) GetDataOk() (*GETCustomerPasswordResetsCustomerPasswordResetId200ResponseData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *GETCustomerPasswordResetsCustomerPasswordResetId200Response) GetDataOk(
 
 // HasData returns a boolean if a field has been set.
 func (o *GETCustomerPasswordResetsCustomerPasswordResetId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETCustomerPasswordResets200ResponseDataInner and assigns it to the Data field.
-func (o *GETCustomerPasswordResetsCustomerPasswordResetId200Response) SetData(v GETCustomerPasswordResets200ResponseDataInner) {
+// SetData gets a reference to the given GETCustomerPasswordResetsCustomerPasswordResetId200ResponseData and assigns it to the Data field.
+func (o *GETCustomerPasswordResetsCustomerPasswordResetId200Response) SetData(v GETCustomerPasswordResetsCustomerPasswordResetId200ResponseData) {
 	o.Data = &v
 }
 
 func (o GETCustomerPasswordResetsCustomerPasswordResetId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GETCustomerPasswordResetsCustomerPasswordResetId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGETCustomerPasswordResetsCustomerPasswordResetId200Response struct {

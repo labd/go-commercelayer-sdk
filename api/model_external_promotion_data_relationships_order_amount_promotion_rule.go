@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the ExternalPromotionDataRelationshipsOrderAmountPromotionRule type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ExternalPromotionDataRelationshipsOrderAmountPromotionRule{}
+
 // ExternalPromotionDataRelationshipsOrderAmountPromotionRule struct for ExternalPromotionDataRelationshipsOrderAmountPromotionRule
 type ExternalPromotionDataRelationshipsOrderAmountPromotionRule struct {
-	Data *ExternalPromotionDataRelationshipsOrderAmountPromotionRuleData `json:"data,omitempty"`
+	Data *POSTExternalPromotionsRequestDataRelationshipsOrderAmountPromotionRuleData `json:"data,omitempty"`
 }
 
 // NewExternalPromotionDataRelationshipsOrderAmountPromotionRule instantiates a new ExternalPromotionDataRelationshipsOrderAmountPromotionRule object
@@ -38,9 +41,9 @@ func NewExternalPromotionDataRelationshipsOrderAmountPromotionRuleWithDefaults()
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *ExternalPromotionDataRelationshipsOrderAmountPromotionRule) GetData() ExternalPromotionDataRelationshipsOrderAmountPromotionRuleData {
-	if o == nil || o.Data == nil {
-		var ret ExternalPromotionDataRelationshipsOrderAmountPromotionRuleData
+func (o *ExternalPromotionDataRelationshipsOrderAmountPromotionRule) GetData() POSTExternalPromotionsRequestDataRelationshipsOrderAmountPromotionRuleData {
+	if o == nil || IsNil(o.Data) {
+		var ret POSTExternalPromotionsRequestDataRelationshipsOrderAmountPromotionRuleData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *ExternalPromotionDataRelationshipsOrderAmountPromotionRule) GetData() E
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *ExternalPromotionDataRelationshipsOrderAmountPromotionRule) GetDataOk() (*ExternalPromotionDataRelationshipsOrderAmountPromotionRuleData, bool) {
-	if o == nil || o.Data == nil {
+func (o *ExternalPromotionDataRelationshipsOrderAmountPromotionRule) GetDataOk() (*POSTExternalPromotionsRequestDataRelationshipsOrderAmountPromotionRuleData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *ExternalPromotionDataRelationshipsOrderAmountPromotionRule) GetDataOk()
 
 // HasData returns a boolean if a field has been set.
 func (o *ExternalPromotionDataRelationshipsOrderAmountPromotionRule) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given ExternalPromotionDataRelationshipsOrderAmountPromotionRuleData and assigns it to the Data field.
-func (o *ExternalPromotionDataRelationshipsOrderAmountPromotionRule) SetData(v ExternalPromotionDataRelationshipsOrderAmountPromotionRuleData) {
+// SetData gets a reference to the given POSTExternalPromotionsRequestDataRelationshipsOrderAmountPromotionRuleData and assigns it to the Data field.
+func (o *ExternalPromotionDataRelationshipsOrderAmountPromotionRule) SetData(v POSTExternalPromotionsRequestDataRelationshipsOrderAmountPromotionRuleData) {
 	o.Data = &v
 }
 
 func (o ExternalPromotionDataRelationshipsOrderAmountPromotionRule) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ExternalPromotionDataRelationshipsOrderAmountPromotionRule) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableExternalPromotionDataRelationshipsOrderAmountPromotionRule struct {

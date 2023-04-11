@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,11 +15,14 @@ import (
 	"encoding/json"
 )
 
+// checks if the CustomerPaymentSourceCreateData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CustomerPaymentSourceCreateData{}
+
 // CustomerPaymentSourceCreateData struct for CustomerPaymentSourceCreateData
 type CustomerPaymentSourceCreateData struct {
 	// The resource's type
-	Type          string                                        `json:"type"`
-	Attributes    POSTAdyenPayments201ResponseDataAttributes    `json:"attributes"`
+	Type          interface{}                                   `json:"type"`
+	Attributes    POSTAdyenPaymentsRequestDataAttributes        `json:"attributes"`
 	Relationships *CustomerPaymentSourceCreateDataRelationships `json:"relationships,omitempty"`
 }
 
@@ -27,7 +30,7 @@ type CustomerPaymentSourceCreateData struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerPaymentSourceCreateData(type_ string, attributes POSTAdyenPayments201ResponseDataAttributes) *CustomerPaymentSourceCreateData {
+func NewCustomerPaymentSourceCreateData(type_ interface{}, attributes POSTAdyenPaymentsRequestDataAttributes) *CustomerPaymentSourceCreateData {
 	this := CustomerPaymentSourceCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -43,9 +46,10 @@ func NewCustomerPaymentSourceCreateDataWithDefaults() *CustomerPaymentSourceCrea
 }
 
 // GetType returns the Type field value
-func (o *CustomerPaymentSourceCreateData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *CustomerPaymentSourceCreateData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -54,22 +58,23 @@ func (o *CustomerPaymentSourceCreateData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *CustomerPaymentSourceCreateData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CustomerPaymentSourceCreateData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *CustomerPaymentSourceCreateData) SetType(v string) {
+func (o *CustomerPaymentSourceCreateData) SetType(v interface{}) {
 	o.Type = v
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CustomerPaymentSourceCreateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes {
+func (o *CustomerPaymentSourceCreateData) GetAttributes() POSTAdyenPaymentsRequestDataAttributes {
 	if o == nil {
-		var ret POSTAdyenPayments201ResponseDataAttributes
+		var ret POSTAdyenPaymentsRequestDataAttributes
 		return ret
 	}
 
@@ -78,7 +83,7 @@ func (o *CustomerPaymentSourceCreateData) GetAttributes() POSTAdyenPayments201Re
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CustomerPaymentSourceCreateData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool) {
+func (o *CustomerPaymentSourceCreateData) GetAttributesOk() (*POSTAdyenPaymentsRequestDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,13 +91,13 @@ func (o *CustomerPaymentSourceCreateData) GetAttributesOk() (*POSTAdyenPayments2
 }
 
 // SetAttributes sets field value
-func (o *CustomerPaymentSourceCreateData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes) {
+func (o *CustomerPaymentSourceCreateData) SetAttributes(v POSTAdyenPaymentsRequestDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *CustomerPaymentSourceCreateData) GetRelationships() CustomerPaymentSourceCreateDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret CustomerPaymentSourceCreateDataRelationships
 		return ret
 	}
@@ -102,7 +107,7 @@ func (o *CustomerPaymentSourceCreateData) GetRelationships() CustomerPaymentSour
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerPaymentSourceCreateData) GetRelationshipsOk() (*CustomerPaymentSourceCreateDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -110,7 +115,7 @@ func (o *CustomerPaymentSourceCreateData) GetRelationshipsOk() (*CustomerPayment
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *CustomerPaymentSourceCreateData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -123,17 +128,23 @@ func (o *CustomerPaymentSourceCreateData) SetRelationships(v CustomerPaymentSour
 }
 
 func (o CustomerPaymentSourceCreateData) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
-		toSerialize["relationships"] = o.Relationships
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CustomerPaymentSourceCreateData) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
+		toSerialize["relationships"] = o.Relationships
+	}
+	return toSerialize, nil
 }
 
 type NullableCustomerPaymentSourceCreateData struct {

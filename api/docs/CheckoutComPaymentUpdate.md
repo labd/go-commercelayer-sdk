@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**CheckoutComPaymentUpdateData**](CheckoutComPaymentUpdateData.md) |  | 
+**Data** | [**PATCHCheckoutComPaymentsCheckoutComPaymentIdRequestData**](PATCHCheckoutComPaymentsCheckoutComPaymentIdRequestData.md) |  | 
 
 ## Methods
 
 ### NewCheckoutComPaymentUpdate
 
-`func NewCheckoutComPaymentUpdate(data CheckoutComPaymentUpdateData, ) *CheckoutComPaymentUpdate`
+`func NewCheckoutComPaymentUpdate(data PATCHCheckoutComPaymentsCheckoutComPaymentIdRequestData, ) *CheckoutComPaymentUpdate`
 
 NewCheckoutComPaymentUpdate instantiates a new CheckoutComPaymentUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *CheckoutComPaymentUpdate) GetData() CheckoutComPaymentUpdateData`
+`func (o *CheckoutComPaymentUpdate) GetData() PATCHCheckoutComPaymentsCheckoutComPaymentIdRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *CheckoutComPaymentUpdate) GetDataOk() (*CheckoutComPaymentUpdateData, bool)`
+`func (o *CheckoutComPaymentUpdate) GetDataOk() (*PATCHCheckoutComPaymentsCheckoutComPaymentIdRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *CheckoutComPaymentUpdate) SetData(v CheckoutComPaymentUpdateData)`
+`func (o *CheckoutComPaymentUpdate) SetData(v PATCHCheckoutComPaymentsCheckoutComPaymentIdRequestData)`
 
 SetData sets Data field to given value.
 

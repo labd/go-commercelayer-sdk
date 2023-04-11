@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**AvalaraAccountDataRelationshipsTaxCategoriesData**](AvalaraAccountDataRelationshipsTaxCategoriesData.md) |  | [optional] 
+**Data** | Pointer to [**POSTAvalaraAccountsRequestDataRelationshipsTaxCategoriesData**](POSTAvalaraAccountsRequestDataRelationshipsTaxCategoriesData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *AvalaraAccountDataRelationshipsTaxCategories) GetData() AvalaraAccountDataRelationshipsTaxCategoriesData`
+`func (o *AvalaraAccountDataRelationshipsTaxCategories) GetData() POSTAvalaraAccountsRequestDataRelationshipsTaxCategoriesData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *AvalaraAccountDataRelationshipsTaxCategories) GetDataOk() (*AvalaraAccountDataRelationshipsTaxCategoriesData, bool)`
+`func (o *AvalaraAccountDataRelationshipsTaxCategories) GetDataOk() (*POSTAvalaraAccountsRequestDataRelationshipsTaxCategoriesData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *AvalaraAccountDataRelationshipsTaxCategories) SetData(v AvalaraAccountDataRelationshipsTaxCategoriesData)`
+`func (o *AvalaraAccountDataRelationshipsTaxCategories) SetData(v POSTAvalaraAccountsRequestDataRelationshipsTaxCategoriesData)`
 
 SetData sets Data field to given value.
 

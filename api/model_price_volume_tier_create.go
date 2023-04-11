@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the PriceVolumeTierCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PriceVolumeTierCreate{}
+
 // PriceVolumeTierCreate struct for PriceVolumeTierCreate
 type PriceVolumeTierCreate struct {
-	Data PriceVolumeTierCreateData `json:"data"`
+	Data POSTPriceVolumeTiersRequestData `json:"data"`
 }
 
 // NewPriceVolumeTierCreate instantiates a new PriceVolumeTierCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPriceVolumeTierCreate(data PriceVolumeTierCreateData) *PriceVolumeTierCreate {
+func NewPriceVolumeTierCreate(data POSTPriceVolumeTiersRequestData) *PriceVolumeTierCreate {
 	this := PriceVolumeTierCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewPriceVolumeTierCreateWithDefaults() *PriceVolumeTierCreate {
 }
 
 // GetData returns the Data field value
-func (o *PriceVolumeTierCreate) GetData() PriceVolumeTierCreateData {
+func (o *PriceVolumeTierCreate) GetData() POSTPriceVolumeTiersRequestData {
 	if o == nil {
-		var ret PriceVolumeTierCreateData
+		var ret POSTPriceVolumeTiersRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *PriceVolumeTierCreate) GetData() PriceVolumeTierCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *PriceVolumeTierCreate) GetDataOk() (*PriceVolumeTierCreateData, bool) {
+func (o *PriceVolumeTierCreate) GetDataOk() (*POSTPriceVolumeTiersRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *PriceVolumeTierCreate) GetDataOk() (*PriceVolumeTierCreateData, bool) {
 }
 
 // SetData sets field value
-func (o *PriceVolumeTierCreate) SetData(v PriceVolumeTierCreateData) {
+func (o *PriceVolumeTierCreate) SetData(v POSTPriceVolumeTiersRequestData) {
 	o.Data = v
 }
 
 func (o PriceVolumeTierCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PriceVolumeTierCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullablePriceVolumeTierCreate struct {

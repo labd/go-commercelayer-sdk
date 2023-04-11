@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the ExternalGatewayUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ExternalGatewayUpdate{}
+
 // ExternalGatewayUpdate struct for ExternalGatewayUpdate
 type ExternalGatewayUpdate struct {
-	Data ExternalGatewayUpdateData `json:"data"`
+	Data PATCHExternalGatewaysExternalGatewayIdRequestData `json:"data"`
 }
 
 // NewExternalGatewayUpdate instantiates a new ExternalGatewayUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalGatewayUpdate(data ExternalGatewayUpdateData) *ExternalGatewayUpdate {
+func NewExternalGatewayUpdate(data PATCHExternalGatewaysExternalGatewayIdRequestData) *ExternalGatewayUpdate {
 	this := ExternalGatewayUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewExternalGatewayUpdateWithDefaults() *ExternalGatewayUpdate {
 }
 
 // GetData returns the Data field value
-func (o *ExternalGatewayUpdate) GetData() ExternalGatewayUpdateData {
+func (o *ExternalGatewayUpdate) GetData() PATCHExternalGatewaysExternalGatewayIdRequestData {
 	if o == nil {
-		var ret ExternalGatewayUpdateData
+		var ret PATCHExternalGatewaysExternalGatewayIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *ExternalGatewayUpdate) GetData() ExternalGatewayUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ExternalGatewayUpdate) GetDataOk() (*ExternalGatewayUpdateData, bool) {
+func (o *ExternalGatewayUpdate) GetDataOk() (*PATCHExternalGatewaysExternalGatewayIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *ExternalGatewayUpdate) GetDataOk() (*ExternalGatewayUpdateData, bool) {
 }
 
 // SetData sets field value
-func (o *ExternalGatewayUpdate) SetData(v ExternalGatewayUpdateData) {
+func (o *ExternalGatewayUpdate) SetData(v PATCHExternalGatewaysExternalGatewayIdRequestData) {
 	o.Data = v
 }
 
 func (o ExternalGatewayUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ExternalGatewayUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableExternalGatewayUpdate struct {

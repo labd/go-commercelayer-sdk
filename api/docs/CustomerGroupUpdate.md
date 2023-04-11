@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**CustomerGroupUpdateData**](CustomerGroupUpdateData.md) |  | 
+**Data** | [**PATCHCustomerGroupsCustomerGroupIdRequestData**](PATCHCustomerGroupsCustomerGroupIdRequestData.md) |  | 
 
 ## Methods
 
 ### NewCustomerGroupUpdate
 
-`func NewCustomerGroupUpdate(data CustomerGroupUpdateData, ) *CustomerGroupUpdate`
+`func NewCustomerGroupUpdate(data PATCHCustomerGroupsCustomerGroupIdRequestData, ) *CustomerGroupUpdate`
 
 NewCustomerGroupUpdate instantiates a new CustomerGroupUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *CustomerGroupUpdate) GetData() CustomerGroupUpdateData`
+`func (o *CustomerGroupUpdate) GetData() PATCHCustomerGroupsCustomerGroupIdRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *CustomerGroupUpdate) GetDataOk() (*CustomerGroupUpdateData, bool)`
+`func (o *CustomerGroupUpdate) GetDataOk() (*PATCHCustomerGroupsCustomerGroupIdRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *CustomerGroupUpdate) SetData(v CustomerGroupUpdateData)`
+`func (o *CustomerGroupUpdate) SetData(v PATCHCustomerGroupsCustomerGroupIdRequestData)`
 
 SetData sets Data field to given value.
 

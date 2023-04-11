@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**BundleUpdateData**](BundleUpdateData.md) |  | 
+**Data** | [**PATCHBundlesBundleIdRequestData**](PATCHBundlesBundleIdRequestData.md) |  | 
 
 ## Methods
 
 ### NewBundleUpdate
 
-`func NewBundleUpdate(data BundleUpdateData, ) *BundleUpdate`
+`func NewBundleUpdate(data PATCHBundlesBundleIdRequestData, ) *BundleUpdate`
 
 NewBundleUpdate instantiates a new BundleUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *BundleUpdate) GetData() BundleUpdateData`
+`func (o *BundleUpdate) GetData() PATCHBundlesBundleIdRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *BundleUpdate) GetDataOk() (*BundleUpdateData, bool)`
+`func (o *BundleUpdate) GetDataOk() (*PATCHBundlesBundleIdRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *BundleUpdate) SetData(v BundleUpdateData)`
+`func (o *BundleUpdate) SetData(v PATCHBundlesBundleIdRequestData)`
 
 SetData sets Data field to given value.
 

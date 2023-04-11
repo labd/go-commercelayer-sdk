@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the FreeGiftPromotionCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &FreeGiftPromotionCreate{}
+
 // FreeGiftPromotionCreate struct for FreeGiftPromotionCreate
 type FreeGiftPromotionCreate struct {
-	Data FreeGiftPromotionCreateData `json:"data"`
+	Data POSTFreeGiftPromotionsRequestData `json:"data"`
 }
 
 // NewFreeGiftPromotionCreate instantiates a new FreeGiftPromotionCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFreeGiftPromotionCreate(data FreeGiftPromotionCreateData) *FreeGiftPromotionCreate {
+func NewFreeGiftPromotionCreate(data POSTFreeGiftPromotionsRequestData) *FreeGiftPromotionCreate {
 	this := FreeGiftPromotionCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewFreeGiftPromotionCreateWithDefaults() *FreeGiftPromotionCreate {
 }
 
 // GetData returns the Data field value
-func (o *FreeGiftPromotionCreate) GetData() FreeGiftPromotionCreateData {
+func (o *FreeGiftPromotionCreate) GetData() POSTFreeGiftPromotionsRequestData {
 	if o == nil {
-		var ret FreeGiftPromotionCreateData
+		var ret POSTFreeGiftPromotionsRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *FreeGiftPromotionCreate) GetData() FreeGiftPromotionCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *FreeGiftPromotionCreate) GetDataOk() (*FreeGiftPromotionCreateData, bool) {
+func (o *FreeGiftPromotionCreate) GetDataOk() (*POSTFreeGiftPromotionsRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *FreeGiftPromotionCreate) GetDataOk() (*FreeGiftPromotionCreateData, boo
 }
 
 // SetData sets field value
-func (o *FreeGiftPromotionCreate) SetData(v FreeGiftPromotionCreateData) {
+func (o *FreeGiftPromotionCreate) SetData(v POSTFreeGiftPromotionsRequestData) {
 	o.Data = v
 }
 
 func (o FreeGiftPromotionCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o FreeGiftPromotionCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableFreeGiftPromotionCreate struct {

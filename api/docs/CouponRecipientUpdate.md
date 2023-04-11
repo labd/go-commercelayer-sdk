@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**CouponRecipientUpdateData**](CouponRecipientUpdateData.md) |  | 
+**Data** | [**PATCHCouponRecipientsCouponRecipientIdRequestData**](PATCHCouponRecipientsCouponRecipientIdRequestData.md) |  | 
 
 ## Methods
 
 ### NewCouponRecipientUpdate
 
-`func NewCouponRecipientUpdate(data CouponRecipientUpdateData, ) *CouponRecipientUpdate`
+`func NewCouponRecipientUpdate(data PATCHCouponRecipientsCouponRecipientIdRequestData, ) *CouponRecipientUpdate`
 
 NewCouponRecipientUpdate instantiates a new CouponRecipientUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *CouponRecipientUpdate) GetData() CouponRecipientUpdateData`
+`func (o *CouponRecipientUpdate) GetData() PATCHCouponRecipientsCouponRecipientIdRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *CouponRecipientUpdate) GetDataOk() (*CouponRecipientUpdateData, bool)`
+`func (o *CouponRecipientUpdate) GetDataOk() (*PATCHCouponRecipientsCouponRecipientIdRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *CouponRecipientUpdate) SetData(v CouponRecipientUpdateData)`
+`func (o *CouponRecipientUpdate) SetData(v PATCHCouponRecipientsCouponRecipientIdRequestData)`
 
 SetData sets Data field to given value.
 

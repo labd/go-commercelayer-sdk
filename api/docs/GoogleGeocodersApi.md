@@ -1,6 +1,6 @@
 # \GoogleGeocodersApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,15 +29,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    googleGeocoderId := "googleGeocoderId_example" // string | The resource's id
+    googleGeocoderId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GoogleGeocodersApi.DELETEGoogleGeocodersGoogleGeocoderId(context.Background(), googleGeocoderId).Execute()
+    r, err := apiClient.GoogleGeocodersApi.DELETEGoogleGeocodersGoogleGeocoderId(context.Background(), googleGeocoderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GoogleGeocodersApi.DELETEGoogleGeocodersGoogleGeocoderId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -51,7 +51,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**googleGeocoderId** | **string** | The resource&#39;s id | 
+**googleGeocoderId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -158,11 +158,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    googleGeocoderId := "googleGeocoderId_example" // string | The resource's id
+    googleGeocoderId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -182,7 +182,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**googleGeocoderId** | **string** | The resource&#39;s id | 
+**googleGeocoderId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHGoogleGeocodersGoogleGeocoderId
 
-> PATCHGoogleGeocodersGoogleGeocoderId200Response PATCHGoogleGeocodersGoogleGeocoderId(ctx, googleGeocoderId).GoogleGeocoderUpdate(googleGeocoderUpdate).Execute()
+> PATCHGoogleGeocodersGoogleGeocoderId200Response PATCHGoogleGeocodersGoogleGeocoderId(ctx, googleGeocoderId).PATCHGoogleGeocodersGoogleGeocoderIdRequest(pATCHGoogleGeocodersGoogleGeocoderIdRequest).Execute()
 
 Update a google geocoder
 
@@ -228,16 +228,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    googleGeocoderUpdate := *openapiclient.NewGoogleGeocoderUpdate(*openapiclient.NewGoogleGeocoderUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHGoogleGeocodersGoogleGeocoderId200ResponseDataAttributes())) // GoogleGeocoderUpdate | 
-    googleGeocoderId := "googleGeocoderId_example" // string | The resource's id
+    pATCHGoogleGeocodersGoogleGeocoderIdRequest := *openapiclient.NewPATCHGoogleGeocodersGoogleGeocoderIdRequest(*openapiclient.NewPATCHGoogleGeocodersGoogleGeocoderIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHGoogleGeocodersGoogleGeocoderIdRequestDataAttributes())) // PATCHGoogleGeocodersGoogleGeocoderIdRequest | 
+    googleGeocoderId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GoogleGeocodersApi.PATCHGoogleGeocodersGoogleGeocoderId(context.Background(), googleGeocoderId).GoogleGeocoderUpdate(googleGeocoderUpdate).Execute()
+    resp, r, err := apiClient.GoogleGeocodersApi.PATCHGoogleGeocodersGoogleGeocoderId(context.Background(), googleGeocoderId).PATCHGoogleGeocodersGoogleGeocoderIdRequest(pATCHGoogleGeocodersGoogleGeocoderIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GoogleGeocodersApi.PATCHGoogleGeocodersGoogleGeocoderId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -253,7 +253,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**googleGeocoderId** | **string** | The resource&#39;s id | 
+**googleGeocoderId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -262,7 +262,7 @@ Other parameters are passed through a pointer to a apiPATCHGoogleGeocodersGoogle
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **googleGeocoderUpdate** | [**GoogleGeocoderUpdate**](GoogleGeocoderUpdate.md) |  | 
+ **pATCHGoogleGeocodersGoogleGeocoderIdRequest** | [**PATCHGoogleGeocodersGoogleGeocoderIdRequest**](PATCHGoogleGeocodersGoogleGeocoderIdRequest.md) |  | 
 
 
 ### Return type
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTGoogleGeocoders
 
-> POSTGoogleGeocoders201Response POSTGoogleGeocoders(ctx).GoogleGeocoderCreate(googleGeocoderCreate).Execute()
+> POSTGoogleGeocoders201Response POSTGoogleGeocoders(ctx).POSTGoogleGeocodersRequest(pOSTGoogleGeocodersRequest).Execute()
 
 Create a google geocoder
 
@@ -300,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    googleGeocoderCreate := *openapiclient.NewGoogleGeocoderCreate(*openapiclient.NewGoogleGeocoderCreateData("Type_example", *openapiclient.NewPOSTGoogleGeocoders201ResponseDataAttributes("Default geocoder", "xxxx-yyyy-zzzz"))) // GoogleGeocoderCreate | 
+    pOSTGoogleGeocodersRequest := *openapiclient.NewPOSTGoogleGeocodersRequest(*openapiclient.NewPOSTGoogleGeocodersRequestData(interface{}(123), *openapiclient.NewPOSTGoogleGeocodersRequestDataAttributes(interface{}(Default geocoder), interface{}(xxxx-yyyy-zzzz)))) // POSTGoogleGeocodersRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GoogleGeocodersApi.POSTGoogleGeocoders(context.Background()).GoogleGeocoderCreate(googleGeocoderCreate).Execute()
+    resp, r, err := apiClient.GoogleGeocodersApi.POSTGoogleGeocoders(context.Background()).POSTGoogleGeocodersRequest(pOSTGoogleGeocodersRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GoogleGeocodersApi.POSTGoogleGeocoders``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiPOSTGoogleGeocodersRequest
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **googleGeocoderCreate** | [**GoogleGeocoderCreate**](GoogleGeocoderCreate.md) |  | 
+ **pOSTGoogleGeocodersRequest** | [**POSTGoogleGeocodersRequest**](POSTGoogleGeocodersRequest.md) |  | 
 
 ### Return type
 

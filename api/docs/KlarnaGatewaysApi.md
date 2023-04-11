@@ -1,6 +1,6 @@
 # \KlarnaGatewaysApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,15 +29,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    klarnaGatewayId := "klarnaGatewayId_example" // string | The resource's id
+    klarnaGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KlarnaGatewaysApi.DELETEKlarnaGatewaysKlarnaGatewayId(context.Background(), klarnaGatewayId).Execute()
+    r, err := apiClient.KlarnaGatewaysApi.DELETEKlarnaGatewaysKlarnaGatewayId(context.Background(), klarnaGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KlarnaGatewaysApi.DELETEKlarnaGatewaysKlarnaGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -51,7 +51,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**klarnaGatewayId** | **string** | The resource&#39;s id | 
+**klarnaGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -158,11 +158,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    klarnaGatewayId := "klarnaGatewayId_example" // string | The resource's id
+    klarnaGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -182,7 +182,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**klarnaGatewayId** | **string** | The resource&#39;s id | 
+**klarnaGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHKlarnaGatewaysKlarnaGatewayId
 
-> PATCHKlarnaGatewaysKlarnaGatewayId200Response PATCHKlarnaGatewaysKlarnaGatewayId(ctx, klarnaGatewayId).KlarnaGatewayUpdate(klarnaGatewayUpdate).Execute()
+> PATCHKlarnaGatewaysKlarnaGatewayId200Response PATCHKlarnaGatewaysKlarnaGatewayId(ctx, klarnaGatewayId).PATCHKlarnaGatewaysKlarnaGatewayIdRequest(pATCHKlarnaGatewaysKlarnaGatewayIdRequest).Execute()
 
 Update a klarna gateway
 
@@ -228,16 +228,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    klarnaGatewayUpdate := *openapiclient.NewKlarnaGatewayUpdate(*openapiclient.NewKlarnaGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes())) // KlarnaGatewayUpdate | 
-    klarnaGatewayId := "klarnaGatewayId_example" // string | The resource's id
+    pATCHKlarnaGatewaysKlarnaGatewayIdRequest := *openapiclient.NewPATCHKlarnaGatewaysKlarnaGatewayIdRequest(*openapiclient.NewPATCHKlarnaGatewaysKlarnaGatewayIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHKlarnaGatewaysKlarnaGatewayIdRequestDataAttributes())) // PATCHKlarnaGatewaysKlarnaGatewayIdRequest | 
+    klarnaGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KlarnaGatewaysApi.PATCHKlarnaGatewaysKlarnaGatewayId(context.Background(), klarnaGatewayId).KlarnaGatewayUpdate(klarnaGatewayUpdate).Execute()
+    resp, r, err := apiClient.KlarnaGatewaysApi.PATCHKlarnaGatewaysKlarnaGatewayId(context.Background(), klarnaGatewayId).PATCHKlarnaGatewaysKlarnaGatewayIdRequest(pATCHKlarnaGatewaysKlarnaGatewayIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KlarnaGatewaysApi.PATCHKlarnaGatewaysKlarnaGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -253,7 +253,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**klarnaGatewayId** | **string** | The resource&#39;s id | 
+**klarnaGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -262,7 +262,7 @@ Other parameters are passed through a pointer to a apiPATCHKlarnaGatewaysKlarnaG
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **klarnaGatewayUpdate** | [**KlarnaGatewayUpdate**](KlarnaGatewayUpdate.md) |  | 
+ **pATCHKlarnaGatewaysKlarnaGatewayIdRequest** | [**PATCHKlarnaGatewaysKlarnaGatewayIdRequest**](PATCHKlarnaGatewaysKlarnaGatewayIdRequest.md) |  | 
 
 
 ### Return type
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTKlarnaGateways
 
-> POSTKlarnaGateways201Response POSTKlarnaGateways(ctx).KlarnaGatewayCreate(klarnaGatewayCreate).Execute()
+> POSTKlarnaGateways201Response POSTKlarnaGateways(ctx).POSTKlarnaGatewaysRequest(pOSTKlarnaGatewaysRequest).Execute()
 
 Create a klarna gateway
 
@@ -300,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    klarnaGatewayCreate := *openapiclient.NewKlarnaGatewayCreate(*openapiclient.NewKlarnaGatewayCreateData("Type_example", *openapiclient.NewPOSTKlarnaGateways201ResponseDataAttributes("US payment gateway", "EU", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz"))) // KlarnaGatewayCreate | 
+    pOSTKlarnaGatewaysRequest := *openapiclient.NewPOSTKlarnaGatewaysRequest(*openapiclient.NewPOSTKlarnaGatewaysRequestData(interface{}(123), *openapiclient.NewPOSTKlarnaGatewaysRequestDataAttributes(interface{}(US payment gateway), interface{}(EU), interface{}(xxxx-yyyy-zzzz), interface{}(xxxx-yyyy-zzzz)))) // POSTKlarnaGatewaysRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.KlarnaGatewaysApi.POSTKlarnaGateways(context.Background()).KlarnaGatewayCreate(klarnaGatewayCreate).Execute()
+    resp, r, err := apiClient.KlarnaGatewaysApi.POSTKlarnaGateways(context.Background()).POSTKlarnaGatewaysRequest(pOSTKlarnaGatewaysRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `KlarnaGatewaysApi.POSTKlarnaGateways``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiPOSTKlarnaGatewaysRequest 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **klarnaGatewayCreate** | [**KlarnaGatewayCreate**](KlarnaGatewayCreate.md) |  | 
+ **pOSTKlarnaGatewaysRequest** | [**POSTKlarnaGatewaysRequest**](POSTKlarnaGatewaysRequest.md) |  | 
 
 ### Return type
 

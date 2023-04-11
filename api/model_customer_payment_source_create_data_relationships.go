@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the CustomerPaymentSourceCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CustomerPaymentSourceCreateDataRelationships{}
+
 // CustomerPaymentSourceCreateDataRelationships struct for CustomerPaymentSourceCreateDataRelationships
 type CustomerPaymentSourceCreateDataRelationships struct {
-	Customer      CouponRecipientCreateDataRelationshipsCustomer            `json:"customer"`
+	Customer      POSTCouponRecipientsRequestDataRelationshipsCustomer      `json:"customer"`
 	PaymentSource CustomerPaymentSourceCreateDataRelationshipsPaymentSource `json:"payment_source"`
 }
 
@@ -25,7 +28,7 @@ type CustomerPaymentSourceCreateDataRelationships struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerPaymentSourceCreateDataRelationships(customer CouponRecipientCreateDataRelationshipsCustomer, paymentSource CustomerPaymentSourceCreateDataRelationshipsPaymentSource) *CustomerPaymentSourceCreateDataRelationships {
+func NewCustomerPaymentSourceCreateDataRelationships(customer POSTCouponRecipientsRequestDataRelationshipsCustomer, paymentSource CustomerPaymentSourceCreateDataRelationshipsPaymentSource) *CustomerPaymentSourceCreateDataRelationships {
 	this := CustomerPaymentSourceCreateDataRelationships{}
 	this.Customer = customer
 	this.PaymentSource = paymentSource
@@ -41,9 +44,9 @@ func NewCustomerPaymentSourceCreateDataRelationshipsWithDefaults() *CustomerPaym
 }
 
 // GetCustomer returns the Customer field value
-func (o *CustomerPaymentSourceCreateDataRelationships) GetCustomer() CouponRecipientCreateDataRelationshipsCustomer {
+func (o *CustomerPaymentSourceCreateDataRelationships) GetCustomer() POSTCouponRecipientsRequestDataRelationshipsCustomer {
 	if o == nil {
-		var ret CouponRecipientCreateDataRelationshipsCustomer
+		var ret POSTCouponRecipientsRequestDataRelationshipsCustomer
 		return ret
 	}
 
@@ -52,7 +55,7 @@ func (o *CustomerPaymentSourceCreateDataRelationships) GetCustomer() CouponRecip
 
 // GetCustomerOk returns a tuple with the Customer field value
 // and a boolean to check if the value has been set.
-func (o *CustomerPaymentSourceCreateDataRelationships) GetCustomerOk() (*CouponRecipientCreateDataRelationshipsCustomer, bool) {
+func (o *CustomerPaymentSourceCreateDataRelationships) GetCustomerOk() (*POSTCouponRecipientsRequestDataRelationshipsCustomer, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -60,7 +63,7 @@ func (o *CustomerPaymentSourceCreateDataRelationships) GetCustomerOk() (*CouponR
 }
 
 // SetCustomer sets field value
-func (o *CustomerPaymentSourceCreateDataRelationships) SetCustomer(v CouponRecipientCreateDataRelationshipsCustomer) {
+func (o *CustomerPaymentSourceCreateDataRelationships) SetCustomer(v POSTCouponRecipientsRequestDataRelationshipsCustomer) {
 	o.Customer = v
 }
 
@@ -89,14 +92,18 @@ func (o *CustomerPaymentSourceCreateDataRelationships) SetPaymentSource(v Custom
 }
 
 func (o CustomerPaymentSourceCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["customer"] = o.Customer
-	}
-	if true {
-		toSerialize["payment_source"] = o.PaymentSource
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CustomerPaymentSourceCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["customer"] = o.Customer
+	toSerialize["payment_source"] = o.PaymentSource
+	return toSerialize, nil
 }
 
 type NullableCustomerPaymentSourceCreateDataRelationships struct {

@@ -1,6 +1,6 @@
 # \BillingInfoValidationRulesApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,15 +29,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    billingInfoValidationRuleId := "billingInfoValidationRuleId_example" // string | The resource's id
+    billingInfoValidationRuleId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BillingInfoValidationRulesApi.DELETEBillingInfoValidationRulesBillingInfoValidationRuleId(context.Background(), billingInfoValidationRuleId).Execute()
+    r, err := apiClient.BillingInfoValidationRulesApi.DELETEBillingInfoValidationRulesBillingInfoValidationRuleId(context.Background(), billingInfoValidationRuleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingInfoValidationRulesApi.DELETEBillingInfoValidationRulesBillingInfoValidationRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -51,7 +51,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**billingInfoValidationRuleId** | **string** | The resource&#39;s id | 
+**billingInfoValidationRuleId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -158,11 +158,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    billingInfoValidationRuleId := "billingInfoValidationRuleId_example" // string | The resource's id
+    billingInfoValidationRuleId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -182,7 +182,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**billingInfoValidationRuleId** | **string** | The resource&#39;s id | 
+**billingInfoValidationRuleId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -213,7 +213,7 @@ Name | Type | Description  | Notes
 
 ## PATCHBillingInfoValidationRulesBillingInfoValidationRuleId
 
-> POSTBillingInfoValidationRules201Response PATCHBillingInfoValidationRulesBillingInfoValidationRuleId(ctx, billingInfoValidationRuleId).BillingInfoValidationRuleUpdate(billingInfoValidationRuleUpdate).Execute()
+> PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200Response PATCHBillingInfoValidationRulesBillingInfoValidationRuleId(ctx, billingInfoValidationRuleId).PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest(pATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest).Execute()
 
 Update a billing info validation rule
 
@@ -228,21 +228,21 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    billingInfoValidationRuleUpdate := *openapiclient.NewBillingInfoValidationRuleUpdate(*openapiclient.NewBillingInfoValidationRuleUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // BillingInfoValidationRuleUpdate | 
-    billingInfoValidationRuleId := "billingInfoValidationRuleId_example" // string | The resource's id
+    pATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest := *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest(*openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequestDataAttributes())) // PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest | 
+    billingInfoValidationRuleId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BillingInfoValidationRulesApi.PATCHBillingInfoValidationRulesBillingInfoValidationRuleId(context.Background(), billingInfoValidationRuleId).BillingInfoValidationRuleUpdate(billingInfoValidationRuleUpdate).Execute()
+    resp, r, err := apiClient.BillingInfoValidationRulesApi.PATCHBillingInfoValidationRulesBillingInfoValidationRuleId(context.Background(), billingInfoValidationRuleId).PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest(pATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingInfoValidationRulesApi.PATCHBillingInfoValidationRulesBillingInfoValidationRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHBillingInfoValidationRulesBillingInfoValidationRuleId`: POSTBillingInfoValidationRules201Response
+    // response from `PATCHBillingInfoValidationRulesBillingInfoValidationRuleId`: PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200Response
     fmt.Fprintf(os.Stdout, "Response from `BillingInfoValidationRulesApi.PATCHBillingInfoValidationRulesBillingInfoValidationRuleId`: %v\n", resp)
 }
 ```
@@ -253,7 +253,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**billingInfoValidationRuleId** | **string** | The resource&#39;s id | 
+**billingInfoValidationRuleId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -262,12 +262,12 @@ Other parameters are passed through a pointer to a apiPATCHBillingInfoValidation
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **billingInfoValidationRuleUpdate** | [**BillingInfoValidationRuleUpdate**](BillingInfoValidationRuleUpdate.md) |  | 
+ **pATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest** | [**PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest**](PATCHBillingInfoValidationRulesBillingInfoValidationRuleIdRequest.md) |  | 
 
 
 ### Return type
 
-[**POSTBillingInfoValidationRules201Response**](POSTBillingInfoValidationRules201Response.md)
+[**PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200Response**](PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200Response.md)
 
 ### Authorization
 
@@ -285,7 +285,7 @@ Name | Type | Description  | Notes
 
 ## POSTBillingInfoValidationRules
 
-> POSTBillingInfoValidationRules201Response POSTBillingInfoValidationRules(ctx).BillingInfoValidationRuleCreate(billingInfoValidationRuleCreate).Execute()
+> POSTBillingInfoValidationRules201Response POSTBillingInfoValidationRules(ctx).POSTBillingInfoValidationRulesRequest(pOSTBillingInfoValidationRulesRequest).Execute()
 
 Create a billing info validation rule
 
@@ -300,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    billingInfoValidationRuleCreate := *openapiclient.NewBillingInfoValidationRuleCreate(*openapiclient.NewBillingInfoValidationRuleCreateData("Type_example", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // BillingInfoValidationRuleCreate | 
+    pOSTBillingInfoValidationRulesRequest := *openapiclient.NewPOSTBillingInfoValidationRulesRequest(*openapiclient.NewPOSTBillingInfoValidationRulesRequestData(interface{}(123), *openapiclient.NewPOSTAdyenPaymentsRequestDataAttributes())) // POSTBillingInfoValidationRulesRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BillingInfoValidationRulesApi.POSTBillingInfoValidationRules(context.Background()).BillingInfoValidationRuleCreate(billingInfoValidationRuleCreate).Execute()
+    resp, r, err := apiClient.BillingInfoValidationRulesApi.POSTBillingInfoValidationRules(context.Background()).POSTBillingInfoValidationRulesRequest(pOSTBillingInfoValidationRulesRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BillingInfoValidationRulesApi.POSTBillingInfoValidationRules``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -329,7 +329,7 @@ Other parameters are passed through a pointer to a apiPOSTBillingInfoValidationR
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **billingInfoValidationRuleCreate** | [**BillingInfoValidationRuleCreate**](BillingInfoValidationRuleCreate.md) |  | 
+ **pOSTBillingInfoValidationRulesRequest** | [**POSTBillingInfoValidationRulesRequest**](POSTBillingInfoValidationRulesRequest.md) |  | 
 
 ### Return type
 

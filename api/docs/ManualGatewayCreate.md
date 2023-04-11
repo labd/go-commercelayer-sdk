@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**ManualGatewayCreateData**](ManualGatewayCreateData.md) |  | 
+**Data** | [**POSTManualGatewaysRequestData**](POSTManualGatewaysRequestData.md) |  | 
 
 ## Methods
 
 ### NewManualGatewayCreate
 
-`func NewManualGatewayCreate(data ManualGatewayCreateData, ) *ManualGatewayCreate`
+`func NewManualGatewayCreate(data POSTManualGatewaysRequestData, ) *ManualGatewayCreate`
 
 NewManualGatewayCreate instantiates a new ManualGatewayCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *ManualGatewayCreate) GetData() ManualGatewayCreateData`
+`func (o *ManualGatewayCreate) GetData() POSTManualGatewaysRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ManualGatewayCreate) GetDataOk() (*ManualGatewayCreateData, bool)`
+`func (o *ManualGatewayCreate) GetDataOk() (*POSTManualGatewaysRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ManualGatewayCreate) SetData(v ManualGatewayCreateData)`
+`func (o *ManualGatewayCreate) SetData(v POSTManualGatewaysRequestData)`
 
 SetData sets Data field to given value.
 

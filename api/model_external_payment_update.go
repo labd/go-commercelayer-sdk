@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the ExternalPaymentUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ExternalPaymentUpdate{}
+
 // ExternalPaymentUpdate struct for ExternalPaymentUpdate
 type ExternalPaymentUpdate struct {
-	Data ExternalPaymentUpdateData `json:"data"`
+	Data PATCHExternalPaymentsExternalPaymentIdRequestData `json:"data"`
 }
 
 // NewExternalPaymentUpdate instantiates a new ExternalPaymentUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalPaymentUpdate(data ExternalPaymentUpdateData) *ExternalPaymentUpdate {
+func NewExternalPaymentUpdate(data PATCHExternalPaymentsExternalPaymentIdRequestData) *ExternalPaymentUpdate {
 	this := ExternalPaymentUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewExternalPaymentUpdateWithDefaults() *ExternalPaymentUpdate {
 }
 
 // GetData returns the Data field value
-func (o *ExternalPaymentUpdate) GetData() ExternalPaymentUpdateData {
+func (o *ExternalPaymentUpdate) GetData() PATCHExternalPaymentsExternalPaymentIdRequestData {
 	if o == nil {
-		var ret ExternalPaymentUpdateData
+		var ret PATCHExternalPaymentsExternalPaymentIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *ExternalPaymentUpdate) GetData() ExternalPaymentUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ExternalPaymentUpdate) GetDataOk() (*ExternalPaymentUpdateData, bool) {
+func (o *ExternalPaymentUpdate) GetDataOk() (*PATCHExternalPaymentsExternalPaymentIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *ExternalPaymentUpdate) GetDataOk() (*ExternalPaymentUpdateData, bool) {
 }
 
 // SetData sets field value
-func (o *ExternalPaymentUpdate) SetData(v ExternalPaymentUpdateData) {
+func (o *ExternalPaymentUpdate) SetData(v PATCHExternalPaymentsExternalPaymentIdRequestData) {
 	o.Data = v
 }
 
 func (o ExternalPaymentUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ExternalPaymentUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableExternalPaymentUpdate struct {

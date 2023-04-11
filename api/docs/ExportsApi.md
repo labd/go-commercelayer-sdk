@@ -1,6 +1,6 @@
 # \ExportsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -28,15 +28,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    exportId := "exportId_example" // string | The resource's id
+    exportId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExportsApi.DELETEExportsExportId(context.Background(), exportId).Execute()
+    r, err := apiClient.ExportsApi.DELETEExportsExportId(context.Background(), exportId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExportsApi.DELETEExportsExportId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -50,7 +50,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**exportId** | **string** | The resource&#39;s id | 
+**exportId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -96,7 +96,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -157,11 +157,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    exportId := "exportId_example" // string | The resource's id
+    exportId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -181,7 +181,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**exportId** | **string** | The resource&#39;s id | 
+**exportId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -212,7 +212,7 @@ Name | Type | Description  | Notes
 
 ## POSTExports
 
-> POSTExports201Response POSTExports(ctx).ExportCreate(exportCreate).Execute()
+> POSTExports201Response POSTExports(ctx).POSTExportsRequest(pOSTExportsRequest).Execute()
 
 Create an export
 
@@ -227,15 +227,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    exportCreate := *openapiclient.NewExportCreate(*openapiclient.NewExportCreateData("Type_example", *openapiclient.NewPOSTExports201ResponseDataAttributes("skus"))) // ExportCreate | 
+    pOSTExportsRequest := *openapiclient.NewPOSTExportsRequest(*openapiclient.NewPOSTExportsRequestData(interface{}(123), *openapiclient.NewPOSTExportsRequestDataAttributes(interface{}(skus)))) // POSTExportsRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExportsApi.POSTExports(context.Background()).ExportCreate(exportCreate).Execute()
+    resp, r, err := apiClient.ExportsApi.POSTExports(context.Background()).POSTExportsRequest(pOSTExportsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExportsApi.POSTExports``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -256,7 +256,7 @@ Other parameters are passed through a pointer to a apiPOSTExportsRequest struct 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **exportCreate** | [**ExportCreate**](ExportCreate.md) |  | 
+ **pOSTExportsRequest** | [**POSTExportsRequest**](POSTExportsRequest.md) |  | 
 
 ### Return type
 

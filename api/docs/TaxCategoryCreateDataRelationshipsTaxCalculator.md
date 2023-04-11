@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**TaxCategoryDataRelationshipsTaxCalculatorData**](TaxCategoryDataRelationshipsTaxCalculatorData.md) |  | 
+**Data** | [**POSTTaxCategoriesRequestDataRelationshipsTaxCalculatorData**](POSTTaxCategoriesRequestDataRelationshipsTaxCalculatorData.md) |  | 
 
 ## Methods
 
 ### NewTaxCategoryCreateDataRelationshipsTaxCalculator
 
-`func NewTaxCategoryCreateDataRelationshipsTaxCalculator(data TaxCategoryDataRelationshipsTaxCalculatorData, ) *TaxCategoryCreateDataRelationshipsTaxCalculator`
+`func NewTaxCategoryCreateDataRelationshipsTaxCalculator(data POSTTaxCategoriesRequestDataRelationshipsTaxCalculatorData, ) *TaxCategoryCreateDataRelationshipsTaxCalculator`
 
 NewTaxCategoryCreateDataRelationshipsTaxCalculator instantiates a new TaxCategoryCreateDataRelationshipsTaxCalculator object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *TaxCategoryCreateDataRelationshipsTaxCalculator) GetData() TaxCategoryDataRelationshipsTaxCalculatorData`
+`func (o *TaxCategoryCreateDataRelationshipsTaxCalculator) GetData() POSTTaxCategoriesRequestDataRelationshipsTaxCalculatorData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *TaxCategoryCreateDataRelationshipsTaxCalculator) GetDataOk() (*TaxCategoryDataRelationshipsTaxCalculatorData, bool)`
+`func (o *TaxCategoryCreateDataRelationshipsTaxCalculator) GetDataOk() (*POSTTaxCategoriesRequestDataRelationshipsTaxCalculatorData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *TaxCategoryCreateDataRelationshipsTaxCalculator) SetData(v TaxCategoryDataRelationshipsTaxCalculatorData)`
+`func (o *TaxCategoryCreateDataRelationshipsTaxCalculator) SetData(v POSTTaxCategoriesRequestDataRelationshipsTaxCalculatorData)`
 
 SetData sets Data field to given value.
 

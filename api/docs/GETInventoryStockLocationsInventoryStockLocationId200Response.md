@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETInventoryStockLocations200ResponseDataInner**](GETInventoryStockLocations200ResponseDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETInventoryStockLocationsInventoryStockLocationId200ResponseData**](GETInventoryStockLocationsInventoryStockLocationId200ResponseData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETInventoryStockLocationsInventoryStockLocationId200Response) GetData() GETInventoryStockLocations200ResponseDataInner`
+`func (o *GETInventoryStockLocationsInventoryStockLocationId200Response) GetData() GETInventoryStockLocationsInventoryStockLocationId200ResponseData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETInventoryStockLocationsInventoryStockLocationId200Response) GetDataOk() (*GETInventoryStockLocations200ResponseDataInner, bool)`
+`func (o *GETInventoryStockLocationsInventoryStockLocationId200Response) GetDataOk() (*GETInventoryStockLocationsInventoryStockLocationId200ResponseData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETInventoryStockLocationsInventoryStockLocationId200Response) SetData(v GETInventoryStockLocations200ResponseDataInner)`
+`func (o *GETInventoryStockLocationsInventoryStockLocationId200Response) SetData(v GETInventoryStockLocationsInventoryStockLocationId200ResponseData)`
 
 SetData sets Data field to given value.
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the ExternalPromotionCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ExternalPromotionCreate{}
+
 // ExternalPromotionCreate struct for ExternalPromotionCreate
 type ExternalPromotionCreate struct {
-	Data ExternalPromotionCreateData `json:"data"`
+	Data POSTExternalPromotionsRequestData `json:"data"`
 }
 
 // NewExternalPromotionCreate instantiates a new ExternalPromotionCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalPromotionCreate(data ExternalPromotionCreateData) *ExternalPromotionCreate {
+func NewExternalPromotionCreate(data POSTExternalPromotionsRequestData) *ExternalPromotionCreate {
 	this := ExternalPromotionCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewExternalPromotionCreateWithDefaults() *ExternalPromotionCreate {
 }
 
 // GetData returns the Data field value
-func (o *ExternalPromotionCreate) GetData() ExternalPromotionCreateData {
+func (o *ExternalPromotionCreate) GetData() POSTExternalPromotionsRequestData {
 	if o == nil {
-		var ret ExternalPromotionCreateData
+		var ret POSTExternalPromotionsRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *ExternalPromotionCreate) GetData() ExternalPromotionCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ExternalPromotionCreate) GetDataOk() (*ExternalPromotionCreateData, bool) {
+func (o *ExternalPromotionCreate) GetDataOk() (*POSTExternalPromotionsRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *ExternalPromotionCreate) GetDataOk() (*ExternalPromotionCreateData, boo
 }
 
 // SetData sets field value
-func (o *ExternalPromotionCreate) SetData(v ExternalPromotionCreateData) {
+func (o *ExternalPromotionCreate) SetData(v POSTExternalPromotionsRequestData) {
 	o.Data = v
 }
 
 func (o ExternalPromotionCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ExternalPromotionCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableExternalPromotionCreate struct {

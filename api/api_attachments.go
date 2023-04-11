@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type AttachmentsApiService service
 type AttachmentsApiDELETEAttachmentsAttachmentIdRequest struct {
 	ctx          context.Context
 	ApiService   *AttachmentsApiService
-	attachmentId string
+	attachmentId interface{}
 }
 
 func (r AttachmentsApiDELETEAttachmentsAttachmentIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete an attachment
 	@param attachmentId The resource's id
 	@return AttachmentsApiDELETEAttachmentsAttachmentIdRequest
 */
-func (a *AttachmentsApiService) DELETEAttachmentsAttachmentId(ctx context.Context, attachmentId string) AttachmentsApiDELETEAttachmentsAttachmentIdRequest {
+func (a *AttachmentsApiService) DELETEAttachmentsAttachmentId(ctx context.Context, attachmentId interface{}) AttachmentsApiDELETEAttachmentsAttachmentIdRequest {
 	return AttachmentsApiDELETEAttachmentsAttachmentIdRequest{
 		ApiService:   a,
 		ctx:          ctx,
@@ -64,7 +64,7 @@ func (a *AttachmentsApiService) DELETEAttachmentsAttachmentIdExecute(r Attachmen
 	}
 
 	localVarPath := localBasePath + "/attachments/{attachmentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"attachmentId"+"}", url.PathEscape(parameterToString(r.attachmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"attachmentId"+"}", url.PathEscape(parameterValueToString(r.attachmentId, "attachmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *AttachmentsApiService) DELETEAttachmentsAttachmentIdExecute(r Attachmen
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *AttachmentsApiService) GETAttachmentsExecute(r AttachmentsApiGETAttachm
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -218,7 +218,7 @@ func (a *AttachmentsApiService) GETAttachmentsExecute(r AttachmentsApiGETAttachm
 type AttachmentsApiGETAttachmentsAttachmentIdRequest struct {
 	ctx          context.Context
 	ApiService   *AttachmentsApiService
-	attachmentId string
+	attachmentId interface{}
 }
 
 func (r AttachmentsApiGETAttachmentsAttachmentIdRequest) Execute() (*GETAttachmentsAttachmentId200Response, *http.Response, error) {
@@ -234,7 +234,7 @@ Retrieve an attachment
 	@param attachmentId The resource's id
 	@return AttachmentsApiGETAttachmentsAttachmentIdRequest
 */
-func (a *AttachmentsApiService) GETAttachmentsAttachmentId(ctx context.Context, attachmentId string) AttachmentsApiGETAttachmentsAttachmentIdRequest {
+func (a *AttachmentsApiService) GETAttachmentsAttachmentId(ctx context.Context, attachmentId interface{}) AttachmentsApiGETAttachmentsAttachmentIdRequest {
 	return AttachmentsApiGETAttachmentsAttachmentIdRequest{
 		ApiService:   a,
 		ctx:          ctx,
@@ -259,7 +259,7 @@ func (a *AttachmentsApiService) GETAttachmentsAttachmentIdExecute(r AttachmentsA
 	}
 
 	localVarPath := localBasePath + "/attachments/{attachmentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"attachmentId"+"}", url.PathEscape(parameterToString(r.attachmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"attachmentId"+"}", url.PathEscape(parameterValueToString(r.attachmentId, "attachmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *AttachmentsApiService) GETAttachmentsAttachmentIdExecute(r AttachmentsA
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -322,7 +322,7 @@ func (a *AttachmentsApiService) GETAttachmentsAttachmentIdExecute(r AttachmentsA
 type AttachmentsApiGETAvalaraAccountIdAttachmentsRequest struct {
 	ctx              context.Context
 	ApiService       *AttachmentsApiService
-	avalaraAccountId string
+	avalaraAccountId interface{}
 }
 
 func (r AttachmentsApiGETAvalaraAccountIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -338,7 +338,7 @@ Retrieve the attachments associated to the avalara account
 	@param avalaraAccountId The resource's id
 	@return AttachmentsApiGETAvalaraAccountIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETAvalaraAccountIdAttachments(ctx context.Context, avalaraAccountId string) AttachmentsApiGETAvalaraAccountIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETAvalaraAccountIdAttachments(ctx context.Context, avalaraAccountId interface{}) AttachmentsApiGETAvalaraAccountIdAttachmentsRequest {
 	return AttachmentsApiGETAvalaraAccountIdAttachmentsRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -360,7 +360,7 @@ func (a *AttachmentsApiService) GETAvalaraAccountIdAttachmentsExecute(r Attachme
 	}
 
 	localVarPath := localBasePath + "/avalara_accounts/{avalaraAccountId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"avalaraAccountId"+"}", url.PathEscape(parameterToString(r.avalaraAccountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"avalaraAccountId"+"}", url.PathEscape(parameterValueToString(r.avalaraAccountId, "avalaraAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -393,9 +393,9 @@ func (a *AttachmentsApiService) GETAvalaraAccountIdAttachmentsExecute(r Attachme
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -414,7 +414,7 @@ func (a *AttachmentsApiService) GETAvalaraAccountIdAttachmentsExecute(r Attachme
 type AttachmentsApiGETBillingInfoValidationRuleIdAttachmentsRequest struct {
 	ctx                         context.Context
 	ApiService                  *AttachmentsApiService
-	billingInfoValidationRuleId string
+	billingInfoValidationRuleId interface{}
 }
 
 func (r AttachmentsApiGETBillingInfoValidationRuleIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -430,7 +430,7 @@ Retrieve the attachments associated to the billing info validation rule
 	@param billingInfoValidationRuleId The resource's id
 	@return AttachmentsApiGETBillingInfoValidationRuleIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETBillingInfoValidationRuleIdAttachments(ctx context.Context, billingInfoValidationRuleId string) AttachmentsApiGETBillingInfoValidationRuleIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETBillingInfoValidationRuleIdAttachments(ctx context.Context, billingInfoValidationRuleId interface{}) AttachmentsApiGETBillingInfoValidationRuleIdAttachmentsRequest {
 	return AttachmentsApiGETBillingInfoValidationRuleIdAttachmentsRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
@@ -452,7 +452,7 @@ func (a *AttachmentsApiService) GETBillingInfoValidationRuleIdAttachmentsExecute
 	}
 
 	localVarPath := localBasePath + "/billing_info_validation_rules/{billingInfoValidationRuleId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterToString(r.billingInfoValidationRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterValueToString(r.billingInfoValidationRuleId, "billingInfoValidationRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -485,9 +485,9 @@ func (a *AttachmentsApiService) GETBillingInfoValidationRuleIdAttachmentsExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -506,7 +506,7 @@ func (a *AttachmentsApiService) GETBillingInfoValidationRuleIdAttachmentsExecute
 type AttachmentsApiGETBingGeocoderIdAttachmentsRequest struct {
 	ctx            context.Context
 	ApiService     *AttachmentsApiService
-	bingGeocoderId string
+	bingGeocoderId interface{}
 }
 
 func (r AttachmentsApiGETBingGeocoderIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -522,7 +522,7 @@ Retrieve the attachments associated to the bing geocoder
 	@param bingGeocoderId The resource's id
 	@return AttachmentsApiGETBingGeocoderIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETBingGeocoderIdAttachments(ctx context.Context, bingGeocoderId string) AttachmentsApiGETBingGeocoderIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETBingGeocoderIdAttachments(ctx context.Context, bingGeocoderId interface{}) AttachmentsApiGETBingGeocoderIdAttachmentsRequest {
 	return AttachmentsApiGETBingGeocoderIdAttachmentsRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -544,7 +544,7 @@ func (a *AttachmentsApiService) GETBingGeocoderIdAttachmentsExecute(r Attachment
 	}
 
 	localVarPath := localBasePath + "/bing_geocoders/{bingGeocoderId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"bingGeocoderId"+"}", url.PathEscape(parameterToString(r.bingGeocoderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"bingGeocoderId"+"}", url.PathEscape(parameterValueToString(r.bingGeocoderId, "bingGeocoderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -577,9 +577,9 @@ func (a *AttachmentsApiService) GETBingGeocoderIdAttachmentsExecute(r Attachment
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -598,7 +598,7 @@ func (a *AttachmentsApiService) GETBingGeocoderIdAttachmentsExecute(r Attachment
 type AttachmentsApiGETBundleIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *AttachmentsApiService
-	bundleId   string
+	bundleId   interface{}
 }
 
 func (r AttachmentsApiGETBundleIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -614,7 +614,7 @@ Retrieve the attachments associated to the bundle
 	@param bundleId The resource's id
 	@return AttachmentsApiGETBundleIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETBundleIdAttachments(ctx context.Context, bundleId string) AttachmentsApiGETBundleIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETBundleIdAttachments(ctx context.Context, bundleId interface{}) AttachmentsApiGETBundleIdAttachmentsRequest {
 	return AttachmentsApiGETBundleIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -636,7 +636,7 @@ func (a *AttachmentsApiService) GETBundleIdAttachmentsExecute(r AttachmentsApiGE
 	}
 
 	localVarPath := localBasePath + "/bundles/{bundleId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterToString(r.bundleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterValueToString(r.bundleId, "bundleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -669,9 +669,9 @@ func (a *AttachmentsApiService) GETBundleIdAttachmentsExecute(r AttachmentsApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -690,7 +690,7 @@ func (a *AttachmentsApiService) GETBundleIdAttachmentsExecute(r AttachmentsApiGE
 type AttachmentsApiGETCarrierAccountIdAttachmentsRequest struct {
 	ctx              context.Context
 	ApiService       *AttachmentsApiService
-	carrierAccountId string
+	carrierAccountId interface{}
 }
 
 func (r AttachmentsApiGETCarrierAccountIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -706,7 +706,7 @@ Retrieve the attachments associated to the carrier account
 	@param carrierAccountId The resource's id
 	@return AttachmentsApiGETCarrierAccountIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETCarrierAccountIdAttachments(ctx context.Context, carrierAccountId string) AttachmentsApiGETCarrierAccountIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETCarrierAccountIdAttachments(ctx context.Context, carrierAccountId interface{}) AttachmentsApiGETCarrierAccountIdAttachmentsRequest {
 	return AttachmentsApiGETCarrierAccountIdAttachmentsRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -728,7 +728,7 @@ func (a *AttachmentsApiService) GETCarrierAccountIdAttachmentsExecute(r Attachme
 	}
 
 	localVarPath := localBasePath + "/carrier_accounts/{carrierAccountId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"carrierAccountId"+"}", url.PathEscape(parameterToString(r.carrierAccountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"carrierAccountId"+"}", url.PathEscape(parameterValueToString(r.carrierAccountId, "carrierAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -761,9 +761,9 @@ func (a *AttachmentsApiService) GETCarrierAccountIdAttachmentsExecute(r Attachme
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -782,7 +782,7 @@ func (a *AttachmentsApiService) GETCarrierAccountIdAttachmentsExecute(r Attachme
 type AttachmentsApiGETCouponRecipientIdAttachmentsRequest struct {
 	ctx               context.Context
 	ApiService        *AttachmentsApiService
-	couponRecipientId string
+	couponRecipientId interface{}
 }
 
 func (r AttachmentsApiGETCouponRecipientIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -798,7 +798,7 @@ Retrieve the attachments associated to the coupon recipient
 	@param couponRecipientId The resource's id
 	@return AttachmentsApiGETCouponRecipientIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETCouponRecipientIdAttachments(ctx context.Context, couponRecipientId string) AttachmentsApiGETCouponRecipientIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETCouponRecipientIdAttachments(ctx context.Context, couponRecipientId interface{}) AttachmentsApiGETCouponRecipientIdAttachmentsRequest {
 	return AttachmentsApiGETCouponRecipientIdAttachmentsRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -820,7 +820,7 @@ func (a *AttachmentsApiService) GETCouponRecipientIdAttachmentsExecute(r Attachm
 	}
 
 	localVarPath := localBasePath + "/coupon_recipients/{couponRecipientId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"couponRecipientId"+"}", url.PathEscape(parameterToString(r.couponRecipientId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"couponRecipientId"+"}", url.PathEscape(parameterValueToString(r.couponRecipientId, "couponRecipientId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -853,9 +853,9 @@ func (a *AttachmentsApiService) GETCouponRecipientIdAttachmentsExecute(r Attachm
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -874,7 +874,7 @@ func (a *AttachmentsApiService) GETCouponRecipientIdAttachmentsExecute(r Attachm
 type AttachmentsApiGETCustomerGroupIdAttachmentsRequest struct {
 	ctx             context.Context
 	ApiService      *AttachmentsApiService
-	customerGroupId string
+	customerGroupId interface{}
 }
 
 func (r AttachmentsApiGETCustomerGroupIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -890,7 +890,7 @@ Retrieve the attachments associated to the customer group
 	@param customerGroupId The resource's id
 	@return AttachmentsApiGETCustomerGroupIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETCustomerGroupIdAttachments(ctx context.Context, customerGroupId string) AttachmentsApiGETCustomerGroupIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETCustomerGroupIdAttachments(ctx context.Context, customerGroupId interface{}) AttachmentsApiGETCustomerGroupIdAttachmentsRequest {
 	return AttachmentsApiGETCustomerGroupIdAttachmentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -912,7 +912,7 @@ func (a *AttachmentsApiService) GETCustomerGroupIdAttachmentsExecute(r Attachmen
 	}
 
 	localVarPath := localBasePath + "/customer_groups/{customerGroupId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerGroupId"+"}", url.PathEscape(parameterToString(r.customerGroupId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerGroupId"+"}", url.PathEscape(parameterValueToString(r.customerGroupId, "customerGroupId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -945,9 +945,9 @@ func (a *AttachmentsApiService) GETCustomerGroupIdAttachmentsExecute(r Attachmen
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -966,7 +966,7 @@ func (a *AttachmentsApiService) GETCustomerGroupIdAttachmentsExecute(r Attachmen
 type AttachmentsApiGETCustomerIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *AttachmentsApiService
-	customerId string
+	customerId interface{}
 }
 
 func (r AttachmentsApiGETCustomerIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -982,7 +982,7 @@ Retrieve the attachments associated to the customer
 	@param customerId The resource's id
 	@return AttachmentsApiGETCustomerIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETCustomerIdAttachments(ctx context.Context, customerId string) AttachmentsApiGETCustomerIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETCustomerIdAttachments(ctx context.Context, customerId interface{}) AttachmentsApiGETCustomerIdAttachmentsRequest {
 	return AttachmentsApiGETCustomerIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1004,7 +1004,7 @@ func (a *AttachmentsApiService) GETCustomerIdAttachmentsExecute(r AttachmentsApi
 	}
 
 	localVarPath := localBasePath + "/customers/{customerId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterToString(r.customerId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1037,9 +1037,9 @@ func (a *AttachmentsApiService) GETCustomerIdAttachmentsExecute(r AttachmentsApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1058,7 +1058,7 @@ func (a *AttachmentsApiService) GETCustomerIdAttachmentsExecute(r AttachmentsApi
 type AttachmentsApiGETDeliveryLeadTimeIdAttachmentsRequest struct {
 	ctx                context.Context
 	ApiService         *AttachmentsApiService
-	deliveryLeadTimeId string
+	deliveryLeadTimeId interface{}
 }
 
 func (r AttachmentsApiGETDeliveryLeadTimeIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -1074,7 +1074,7 @@ Retrieve the attachments associated to the delivery lead time
 	@param deliveryLeadTimeId The resource's id
 	@return AttachmentsApiGETDeliveryLeadTimeIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETDeliveryLeadTimeIdAttachments(ctx context.Context, deliveryLeadTimeId string) AttachmentsApiGETDeliveryLeadTimeIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETDeliveryLeadTimeIdAttachments(ctx context.Context, deliveryLeadTimeId interface{}) AttachmentsApiGETDeliveryLeadTimeIdAttachmentsRequest {
 	return AttachmentsApiGETDeliveryLeadTimeIdAttachmentsRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -1096,7 +1096,7 @@ func (a *AttachmentsApiService) GETDeliveryLeadTimeIdAttachmentsExecute(r Attach
 	}
 
 	localVarPath := localBasePath + "/delivery_lead_times/{deliveryLeadTimeId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"deliveryLeadTimeId"+"}", url.PathEscape(parameterToString(r.deliveryLeadTimeId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"deliveryLeadTimeId"+"}", url.PathEscape(parameterValueToString(r.deliveryLeadTimeId, "deliveryLeadTimeId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1129,9 +1129,9 @@ func (a *AttachmentsApiService) GETDeliveryLeadTimeIdAttachmentsExecute(r Attach
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1150,7 +1150,7 @@ func (a *AttachmentsApiService) GETDeliveryLeadTimeIdAttachmentsExecute(r Attach
 type AttachmentsApiGETExternalPromotionIdAttachmentsRequest struct {
 	ctx                 context.Context
 	ApiService          *AttachmentsApiService
-	externalPromotionId string
+	externalPromotionId interface{}
 }
 
 func (r AttachmentsApiGETExternalPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -1166,7 +1166,7 @@ Retrieve the attachments associated to the external promotion
 	@param externalPromotionId The resource's id
 	@return AttachmentsApiGETExternalPromotionIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETExternalPromotionIdAttachments(ctx context.Context, externalPromotionId string) AttachmentsApiGETExternalPromotionIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETExternalPromotionIdAttachments(ctx context.Context, externalPromotionId interface{}) AttachmentsApiGETExternalPromotionIdAttachmentsRequest {
 	return AttachmentsApiGETExternalPromotionIdAttachmentsRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -1188,7 +1188,7 @@ func (a *AttachmentsApiService) GETExternalPromotionIdAttachmentsExecute(r Attac
 	}
 
 	localVarPath := localBasePath + "/external_promotions/{externalPromotionId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterToString(r.externalPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterValueToString(r.externalPromotionId, "externalPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1221,9 +1221,9 @@ func (a *AttachmentsApiService) GETExternalPromotionIdAttachmentsExecute(r Attac
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1242,7 +1242,7 @@ func (a *AttachmentsApiService) GETExternalPromotionIdAttachmentsExecute(r Attac
 type AttachmentsApiGETExternalTaxCalculatorIdAttachmentsRequest struct {
 	ctx                     context.Context
 	ApiService              *AttachmentsApiService
-	externalTaxCalculatorId string
+	externalTaxCalculatorId interface{}
 }
 
 func (r AttachmentsApiGETExternalTaxCalculatorIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -1258,7 +1258,7 @@ Retrieve the attachments associated to the external tax calculator
 	@param externalTaxCalculatorId The resource's id
 	@return AttachmentsApiGETExternalTaxCalculatorIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETExternalTaxCalculatorIdAttachments(ctx context.Context, externalTaxCalculatorId string) AttachmentsApiGETExternalTaxCalculatorIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETExternalTaxCalculatorIdAttachments(ctx context.Context, externalTaxCalculatorId interface{}) AttachmentsApiGETExternalTaxCalculatorIdAttachmentsRequest {
 	return AttachmentsApiGETExternalTaxCalculatorIdAttachmentsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
@@ -1280,7 +1280,7 @@ func (a *AttachmentsApiService) GETExternalTaxCalculatorIdAttachmentsExecute(r A
 	}
 
 	localVarPath := localBasePath + "/external_tax_calculators/{externalTaxCalculatorId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalTaxCalculatorId"+"}", url.PathEscape(parameterToString(r.externalTaxCalculatorId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalTaxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.externalTaxCalculatorId, "externalTaxCalculatorId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1313,9 +1313,9 @@ func (a *AttachmentsApiService) GETExternalTaxCalculatorIdAttachmentsExecute(r A
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1334,7 +1334,7 @@ func (a *AttachmentsApiService) GETExternalTaxCalculatorIdAttachmentsExecute(r A
 type AttachmentsApiGETFixedAmountPromotionIdAttachmentsRequest struct {
 	ctx                    context.Context
 	ApiService             *AttachmentsApiService
-	fixedAmountPromotionId string
+	fixedAmountPromotionId interface{}
 }
 
 func (r AttachmentsApiGETFixedAmountPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -1350,7 +1350,7 @@ Retrieve the attachments associated to the fixed amount promotion
 	@param fixedAmountPromotionId The resource's id
 	@return AttachmentsApiGETFixedAmountPromotionIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETFixedAmountPromotionIdAttachments(ctx context.Context, fixedAmountPromotionId string) AttachmentsApiGETFixedAmountPromotionIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETFixedAmountPromotionIdAttachments(ctx context.Context, fixedAmountPromotionId interface{}) AttachmentsApiGETFixedAmountPromotionIdAttachmentsRequest {
 	return AttachmentsApiGETFixedAmountPromotionIdAttachmentsRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -1372,7 +1372,7 @@ func (a *AttachmentsApiService) GETFixedAmountPromotionIdAttachmentsExecute(r At
 	}
 
 	localVarPath := localBasePath + "/fixed_amount_promotions/{fixedAmountPromotionId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterToString(r.fixedAmountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedAmountPromotionId, "fixedAmountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1405,9 +1405,9 @@ func (a *AttachmentsApiService) GETFixedAmountPromotionIdAttachmentsExecute(r At
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1426,7 +1426,7 @@ func (a *AttachmentsApiService) GETFixedAmountPromotionIdAttachmentsExecute(r At
 type AttachmentsApiGETFixedPricePromotionIdAttachmentsRequest struct {
 	ctx                   context.Context
 	ApiService            *AttachmentsApiService
-	fixedPricePromotionId string
+	fixedPricePromotionId interface{}
 }
 
 func (r AttachmentsApiGETFixedPricePromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -1442,7 +1442,7 @@ Retrieve the attachments associated to the fixed price promotion
 	@param fixedPricePromotionId The resource's id
 	@return AttachmentsApiGETFixedPricePromotionIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETFixedPricePromotionIdAttachments(ctx context.Context, fixedPricePromotionId string) AttachmentsApiGETFixedPricePromotionIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETFixedPricePromotionIdAttachments(ctx context.Context, fixedPricePromotionId interface{}) AttachmentsApiGETFixedPricePromotionIdAttachmentsRequest {
 	return AttachmentsApiGETFixedPricePromotionIdAttachmentsRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -1464,7 +1464,7 @@ func (a *AttachmentsApiService) GETFixedPricePromotionIdAttachmentsExecute(r Att
 	}
 
 	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterToString(r.fixedPricePromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1497,9 +1497,9 @@ func (a *AttachmentsApiService) GETFixedPricePromotionIdAttachmentsExecute(r Att
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1518,7 +1518,7 @@ func (a *AttachmentsApiService) GETFixedPricePromotionIdAttachmentsExecute(r Att
 type AttachmentsApiGETFreeGiftPromotionIdAttachmentsRequest struct {
 	ctx                 context.Context
 	ApiService          *AttachmentsApiService
-	freeGiftPromotionId string
+	freeGiftPromotionId interface{}
 }
 
 func (r AttachmentsApiGETFreeGiftPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -1534,7 +1534,7 @@ Retrieve the attachments associated to the free gift promotion
 	@param freeGiftPromotionId The resource's id
 	@return AttachmentsApiGETFreeGiftPromotionIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETFreeGiftPromotionIdAttachments(ctx context.Context, freeGiftPromotionId string) AttachmentsApiGETFreeGiftPromotionIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETFreeGiftPromotionIdAttachments(ctx context.Context, freeGiftPromotionId interface{}) AttachmentsApiGETFreeGiftPromotionIdAttachmentsRequest {
 	return AttachmentsApiGETFreeGiftPromotionIdAttachmentsRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -1556,7 +1556,7 @@ func (a *AttachmentsApiService) GETFreeGiftPromotionIdAttachmentsExecute(r Attac
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterToString(r.freeGiftPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1589,9 +1589,9 @@ func (a *AttachmentsApiService) GETFreeGiftPromotionIdAttachmentsExecute(r Attac
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1610,7 +1610,7 @@ func (a *AttachmentsApiService) GETFreeGiftPromotionIdAttachmentsExecute(r Attac
 type AttachmentsApiGETFreeShippingPromotionIdAttachmentsRequest struct {
 	ctx                     context.Context
 	ApiService              *AttachmentsApiService
-	freeShippingPromotionId string
+	freeShippingPromotionId interface{}
 }
 
 func (r AttachmentsApiGETFreeShippingPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -1626,7 +1626,7 @@ Retrieve the attachments associated to the free shipping promotion
 	@param freeShippingPromotionId The resource's id
 	@return AttachmentsApiGETFreeShippingPromotionIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETFreeShippingPromotionIdAttachments(ctx context.Context, freeShippingPromotionId string) AttachmentsApiGETFreeShippingPromotionIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETFreeShippingPromotionIdAttachments(ctx context.Context, freeShippingPromotionId interface{}) AttachmentsApiGETFreeShippingPromotionIdAttachmentsRequest {
 	return AttachmentsApiGETFreeShippingPromotionIdAttachmentsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
@@ -1648,7 +1648,7 @@ func (a *AttachmentsApiService) GETFreeShippingPromotionIdAttachmentsExecute(r A
 	}
 
 	localVarPath := localBasePath + "/free_shipping_promotions/{freeShippingPromotionId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterToString(r.freeShippingPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeShippingPromotionId, "freeShippingPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1681,9 +1681,9 @@ func (a *AttachmentsApiService) GETFreeShippingPromotionIdAttachmentsExecute(r A
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1702,7 +1702,7 @@ func (a *AttachmentsApiService) GETFreeShippingPromotionIdAttachmentsExecute(r A
 type AttachmentsApiGETGeocoderIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *AttachmentsApiService
-	geocoderId string
+	geocoderId interface{}
 }
 
 func (r AttachmentsApiGETGeocoderIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -1718,7 +1718,7 @@ Retrieve the attachments associated to the geocoder
 	@param geocoderId The resource's id
 	@return AttachmentsApiGETGeocoderIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETGeocoderIdAttachments(ctx context.Context, geocoderId string) AttachmentsApiGETGeocoderIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETGeocoderIdAttachments(ctx context.Context, geocoderId interface{}) AttachmentsApiGETGeocoderIdAttachmentsRequest {
 	return AttachmentsApiGETGeocoderIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1740,7 +1740,7 @@ func (a *AttachmentsApiService) GETGeocoderIdAttachmentsExecute(r AttachmentsApi
 	}
 
 	localVarPath := localBasePath + "/geocoders/{geocoderId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"geocoderId"+"}", url.PathEscape(parameterToString(r.geocoderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"geocoderId"+"}", url.PathEscape(parameterValueToString(r.geocoderId, "geocoderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1773,9 +1773,9 @@ func (a *AttachmentsApiService) GETGeocoderIdAttachmentsExecute(r AttachmentsApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1794,7 +1794,7 @@ func (a *AttachmentsApiService) GETGeocoderIdAttachmentsExecute(r AttachmentsApi
 type AttachmentsApiGETGiftCardIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *AttachmentsApiService
-	giftCardId string
+	giftCardId interface{}
 }
 
 func (r AttachmentsApiGETGiftCardIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -1810,7 +1810,7 @@ Retrieve the attachments associated to the gift card
 	@param giftCardId The resource's id
 	@return AttachmentsApiGETGiftCardIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETGiftCardIdAttachments(ctx context.Context, giftCardId string) AttachmentsApiGETGiftCardIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETGiftCardIdAttachments(ctx context.Context, giftCardId interface{}) AttachmentsApiGETGiftCardIdAttachmentsRequest {
 	return AttachmentsApiGETGiftCardIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1832,7 +1832,7 @@ func (a *AttachmentsApiService) GETGiftCardIdAttachmentsExecute(r AttachmentsApi
 	}
 
 	localVarPath := localBasePath + "/gift_cards/{giftCardId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterToString(r.giftCardId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterValueToString(r.giftCardId, "giftCardId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1865,9 +1865,9 @@ func (a *AttachmentsApiService) GETGiftCardIdAttachmentsExecute(r AttachmentsApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1886,7 +1886,7 @@ func (a *AttachmentsApiService) GETGiftCardIdAttachmentsExecute(r AttachmentsApi
 type AttachmentsApiGETGiftCardRecipientIdAttachmentsRequest struct {
 	ctx                 context.Context
 	ApiService          *AttachmentsApiService
-	giftCardRecipientId string
+	giftCardRecipientId interface{}
 }
 
 func (r AttachmentsApiGETGiftCardRecipientIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -1902,7 +1902,7 @@ Retrieve the attachments associated to the gift card recipient
 	@param giftCardRecipientId The resource's id
 	@return AttachmentsApiGETGiftCardRecipientIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETGiftCardRecipientIdAttachments(ctx context.Context, giftCardRecipientId string) AttachmentsApiGETGiftCardRecipientIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETGiftCardRecipientIdAttachments(ctx context.Context, giftCardRecipientId interface{}) AttachmentsApiGETGiftCardRecipientIdAttachmentsRequest {
 	return AttachmentsApiGETGiftCardRecipientIdAttachmentsRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -1924,7 +1924,7 @@ func (a *AttachmentsApiService) GETGiftCardRecipientIdAttachmentsExecute(r Attac
 	}
 
 	localVarPath := localBasePath + "/gift_card_recipients/{giftCardRecipientId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"giftCardRecipientId"+"}", url.PathEscape(parameterToString(r.giftCardRecipientId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"giftCardRecipientId"+"}", url.PathEscape(parameterValueToString(r.giftCardRecipientId, "giftCardRecipientId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1957,9 +1957,9 @@ func (a *AttachmentsApiService) GETGiftCardRecipientIdAttachmentsExecute(r Attac
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1978,7 +1978,7 @@ func (a *AttachmentsApiService) GETGiftCardRecipientIdAttachmentsExecute(r Attac
 type AttachmentsApiGETGoogleGeocoderIdAttachmentsRequest struct {
 	ctx              context.Context
 	ApiService       *AttachmentsApiService
-	googleGeocoderId string
+	googleGeocoderId interface{}
 }
 
 func (r AttachmentsApiGETGoogleGeocoderIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -1994,7 +1994,7 @@ Retrieve the attachments associated to the google geocoder
 	@param googleGeocoderId The resource's id
 	@return AttachmentsApiGETGoogleGeocoderIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETGoogleGeocoderIdAttachments(ctx context.Context, googleGeocoderId string) AttachmentsApiGETGoogleGeocoderIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETGoogleGeocoderIdAttachments(ctx context.Context, googleGeocoderId interface{}) AttachmentsApiGETGoogleGeocoderIdAttachmentsRequest {
 	return AttachmentsApiGETGoogleGeocoderIdAttachmentsRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -2016,7 +2016,7 @@ func (a *AttachmentsApiService) GETGoogleGeocoderIdAttachmentsExecute(r Attachme
 	}
 
 	localVarPath := localBasePath + "/google_geocoders/{googleGeocoderId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"googleGeocoderId"+"}", url.PathEscape(parameterToString(r.googleGeocoderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"googleGeocoderId"+"}", url.PathEscape(parameterValueToString(r.googleGeocoderId, "googleGeocoderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2049,9 +2049,9 @@ func (a *AttachmentsApiService) GETGoogleGeocoderIdAttachmentsExecute(r Attachme
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2070,7 +2070,7 @@ func (a *AttachmentsApiService) GETGoogleGeocoderIdAttachmentsExecute(r Attachme
 type AttachmentsApiGETInventoryModelIdAttachmentsRequest struct {
 	ctx              context.Context
 	ApiService       *AttachmentsApiService
-	inventoryModelId string
+	inventoryModelId interface{}
 }
 
 func (r AttachmentsApiGETInventoryModelIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -2086,7 +2086,7 @@ Retrieve the attachments associated to the inventory model
 	@param inventoryModelId The resource's id
 	@return AttachmentsApiGETInventoryModelIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETInventoryModelIdAttachments(ctx context.Context, inventoryModelId string) AttachmentsApiGETInventoryModelIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETInventoryModelIdAttachments(ctx context.Context, inventoryModelId interface{}) AttachmentsApiGETInventoryModelIdAttachmentsRequest {
 	return AttachmentsApiGETInventoryModelIdAttachmentsRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -2108,7 +2108,7 @@ func (a *AttachmentsApiService) GETInventoryModelIdAttachmentsExecute(r Attachme
 	}
 
 	localVarPath := localBasePath + "/inventory_models/{inventoryModelId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"inventoryModelId"+"}", url.PathEscape(parameterToString(r.inventoryModelId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inventoryModelId"+"}", url.PathEscape(parameterValueToString(r.inventoryModelId, "inventoryModelId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2141,9 +2141,9 @@ func (a *AttachmentsApiService) GETInventoryModelIdAttachmentsExecute(r Attachme
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2162,7 +2162,7 @@ func (a *AttachmentsApiService) GETInventoryModelIdAttachmentsExecute(r Attachme
 type AttachmentsApiGETManualTaxCalculatorIdAttachmentsRequest struct {
 	ctx                   context.Context
 	ApiService            *AttachmentsApiService
-	manualTaxCalculatorId string
+	manualTaxCalculatorId interface{}
 }
 
 func (r AttachmentsApiGETManualTaxCalculatorIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -2178,7 +2178,7 @@ Retrieve the attachments associated to the manual tax calculator
 	@param manualTaxCalculatorId The resource's id
 	@return AttachmentsApiGETManualTaxCalculatorIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETManualTaxCalculatorIdAttachments(ctx context.Context, manualTaxCalculatorId string) AttachmentsApiGETManualTaxCalculatorIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETManualTaxCalculatorIdAttachments(ctx context.Context, manualTaxCalculatorId interface{}) AttachmentsApiGETManualTaxCalculatorIdAttachmentsRequest {
 	return AttachmentsApiGETManualTaxCalculatorIdAttachmentsRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -2200,7 +2200,7 @@ func (a *AttachmentsApiService) GETManualTaxCalculatorIdAttachmentsExecute(r Att
 	}
 
 	localVarPath := localBasePath + "/manual_tax_calculators/{manualTaxCalculatorId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"manualTaxCalculatorId"+"}", url.PathEscape(parameterToString(r.manualTaxCalculatorId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"manualTaxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.manualTaxCalculatorId, "manualTaxCalculatorId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2233,9 +2233,9 @@ func (a *AttachmentsApiService) GETManualTaxCalculatorIdAttachmentsExecute(r Att
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2254,7 +2254,7 @@ func (a *AttachmentsApiService) GETManualTaxCalculatorIdAttachmentsExecute(r Att
 type AttachmentsApiGETMarketIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *AttachmentsApiService
-	marketId   string
+	marketId   interface{}
 }
 
 func (r AttachmentsApiGETMarketIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -2270,7 +2270,7 @@ Retrieve the attachments associated to the market
 	@param marketId The resource's id
 	@return AttachmentsApiGETMarketIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETMarketIdAttachments(ctx context.Context, marketId string) AttachmentsApiGETMarketIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETMarketIdAttachments(ctx context.Context, marketId interface{}) AttachmentsApiGETMarketIdAttachmentsRequest {
 	return AttachmentsApiGETMarketIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2292,7 +2292,7 @@ func (a *AttachmentsApiService) GETMarketIdAttachmentsExecute(r AttachmentsApiGE
 	}
 
 	localVarPath := localBasePath + "/markets/{marketId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterToString(r.marketId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2325,9 +2325,9 @@ func (a *AttachmentsApiService) GETMarketIdAttachmentsExecute(r AttachmentsApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2346,7 +2346,7 @@ func (a *AttachmentsApiService) GETMarketIdAttachmentsExecute(r AttachmentsApiGE
 type AttachmentsApiGETMerchantIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *AttachmentsApiService
-	merchantId string
+	merchantId interface{}
 }
 
 func (r AttachmentsApiGETMerchantIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -2362,7 +2362,7 @@ Retrieve the attachments associated to the merchant
 	@param merchantId The resource's id
 	@return AttachmentsApiGETMerchantIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETMerchantIdAttachments(ctx context.Context, merchantId string) AttachmentsApiGETMerchantIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETMerchantIdAttachments(ctx context.Context, merchantId interface{}) AttachmentsApiGETMerchantIdAttachmentsRequest {
 	return AttachmentsApiGETMerchantIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2384,7 +2384,7 @@ func (a *AttachmentsApiService) GETMerchantIdAttachmentsExecute(r AttachmentsApi
 	}
 
 	localVarPath := localBasePath + "/merchants/{merchantId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"merchantId"+"}", url.PathEscape(parameterToString(r.merchantId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"merchantId"+"}", url.PathEscape(parameterValueToString(r.merchantId, "merchantId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2417,9 +2417,9 @@ func (a *AttachmentsApiService) GETMerchantIdAttachmentsExecute(r AttachmentsApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2438,7 +2438,7 @@ func (a *AttachmentsApiService) GETMerchantIdAttachmentsExecute(r AttachmentsApi
 type AttachmentsApiGETOrderIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *AttachmentsApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r AttachmentsApiGETOrderIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -2454,7 +2454,7 @@ Retrieve the attachments associated to the order
 	@param orderId The resource's id
 	@return AttachmentsApiGETOrderIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETOrderIdAttachments(ctx context.Context, orderId string) AttachmentsApiGETOrderIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETOrderIdAttachments(ctx context.Context, orderId interface{}) AttachmentsApiGETOrderIdAttachmentsRequest {
 	return AttachmentsApiGETOrderIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2476,7 +2476,7 @@ func (a *AttachmentsApiService) GETOrderIdAttachmentsExecute(r AttachmentsApiGET
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2509,9 +2509,9 @@ func (a *AttachmentsApiService) GETOrderIdAttachmentsExecute(r AttachmentsApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2530,7 +2530,7 @@ func (a *AttachmentsApiService) GETOrderIdAttachmentsExecute(r AttachmentsApiGET
 type AttachmentsApiGETOrderValidationRuleIdAttachmentsRequest struct {
 	ctx                   context.Context
 	ApiService            *AttachmentsApiService
-	orderValidationRuleId string
+	orderValidationRuleId interface{}
 }
 
 func (r AttachmentsApiGETOrderValidationRuleIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -2546,7 +2546,7 @@ Retrieve the attachments associated to the order validation rule
 	@param orderValidationRuleId The resource's id
 	@return AttachmentsApiGETOrderValidationRuleIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETOrderValidationRuleIdAttachments(ctx context.Context, orderValidationRuleId string) AttachmentsApiGETOrderValidationRuleIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETOrderValidationRuleIdAttachments(ctx context.Context, orderValidationRuleId interface{}) AttachmentsApiGETOrderValidationRuleIdAttachmentsRequest {
 	return AttachmentsApiGETOrderValidationRuleIdAttachmentsRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -2568,7 +2568,7 @@ func (a *AttachmentsApiService) GETOrderValidationRuleIdAttachmentsExecute(r Att
 	}
 
 	localVarPath := localBasePath + "/order_validation_rules/{orderValidationRuleId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderValidationRuleId"+"}", url.PathEscape(parameterToString(r.orderValidationRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderValidationRuleId"+"}", url.PathEscape(parameterValueToString(r.orderValidationRuleId, "orderValidationRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2601,9 +2601,9 @@ func (a *AttachmentsApiService) GETOrderValidationRuleIdAttachmentsExecute(r Att
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2622,7 +2622,7 @@ func (a *AttachmentsApiService) GETOrderValidationRuleIdAttachmentsExecute(r Att
 type AttachmentsApiGETPackageIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *AttachmentsApiService
-	packageId  string
+	packageId  interface{}
 }
 
 func (r AttachmentsApiGETPackageIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -2638,7 +2638,7 @@ Retrieve the attachments associated to the package
 	@param packageId The resource's id
 	@return AttachmentsApiGETPackageIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETPackageIdAttachments(ctx context.Context, packageId string) AttachmentsApiGETPackageIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETPackageIdAttachments(ctx context.Context, packageId interface{}) AttachmentsApiGETPackageIdAttachmentsRequest {
 	return AttachmentsApiGETPackageIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2660,7 +2660,7 @@ func (a *AttachmentsApiService) GETPackageIdAttachmentsExecute(r AttachmentsApiG
 	}
 
 	localVarPath := localBasePath + "/packages/{packageId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"packageId"+"}", url.PathEscape(parameterToString(r.packageId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"packageId"+"}", url.PathEscape(parameterValueToString(r.packageId, "packageId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2693,9 +2693,9 @@ func (a *AttachmentsApiService) GETPackageIdAttachmentsExecute(r AttachmentsApiG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2714,7 +2714,7 @@ func (a *AttachmentsApiService) GETPackageIdAttachmentsExecute(r AttachmentsApiG
 type AttachmentsApiGETParcelIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *AttachmentsApiService
-	parcelId   string
+	parcelId   interface{}
 }
 
 func (r AttachmentsApiGETParcelIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -2730,7 +2730,7 @@ Retrieve the attachments associated to the parcel
 	@param parcelId The resource's id
 	@return AttachmentsApiGETParcelIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETParcelIdAttachments(ctx context.Context, parcelId string) AttachmentsApiGETParcelIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETParcelIdAttachments(ctx context.Context, parcelId interface{}) AttachmentsApiGETParcelIdAttachmentsRequest {
 	return AttachmentsApiGETParcelIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2752,7 +2752,7 @@ func (a *AttachmentsApiService) GETParcelIdAttachmentsExecute(r AttachmentsApiGE
 	}
 
 	localVarPath := localBasePath + "/parcels/{parcelId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterToString(r.parcelId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterValueToString(r.parcelId, "parcelId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2785,9 +2785,9 @@ func (a *AttachmentsApiService) GETParcelIdAttachmentsExecute(r AttachmentsApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2806,7 +2806,7 @@ func (a *AttachmentsApiService) GETParcelIdAttachmentsExecute(r AttachmentsApiGE
 type AttachmentsApiGETPaymentMethodIdAttachmentsRequest struct {
 	ctx             context.Context
 	ApiService      *AttachmentsApiService
-	paymentMethodId string
+	paymentMethodId interface{}
 }
 
 func (r AttachmentsApiGETPaymentMethodIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -2822,7 +2822,7 @@ Retrieve the attachments associated to the payment method
 	@param paymentMethodId The resource's id
 	@return AttachmentsApiGETPaymentMethodIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETPaymentMethodIdAttachments(ctx context.Context, paymentMethodId string) AttachmentsApiGETPaymentMethodIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETPaymentMethodIdAttachments(ctx context.Context, paymentMethodId interface{}) AttachmentsApiGETPaymentMethodIdAttachmentsRequest {
 	return AttachmentsApiGETPaymentMethodIdAttachmentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -2844,7 +2844,7 @@ func (a *AttachmentsApiService) GETPaymentMethodIdAttachmentsExecute(r Attachmen
 	}
 
 	localVarPath := localBasePath + "/payment_methods/{paymentMethodId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"paymentMethodId"+"}", url.PathEscape(parameterToString(r.paymentMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"paymentMethodId"+"}", url.PathEscape(parameterValueToString(r.paymentMethodId, "paymentMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2877,9 +2877,9 @@ func (a *AttachmentsApiService) GETPaymentMethodIdAttachmentsExecute(r Attachmen
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2898,7 +2898,7 @@ func (a *AttachmentsApiService) GETPaymentMethodIdAttachmentsExecute(r Attachmen
 type AttachmentsApiGETPercentageDiscountPromotionIdAttachmentsRequest struct {
 	ctx                           context.Context
 	ApiService                    *AttachmentsApiService
-	percentageDiscountPromotionId string
+	percentageDiscountPromotionId interface{}
 }
 
 func (r AttachmentsApiGETPercentageDiscountPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -2914,7 +2914,7 @@ Retrieve the attachments associated to the percentage discount promotion
 	@param percentageDiscountPromotionId The resource's id
 	@return AttachmentsApiGETPercentageDiscountPromotionIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETPercentageDiscountPromotionIdAttachments(ctx context.Context, percentageDiscountPromotionId string) AttachmentsApiGETPercentageDiscountPromotionIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETPercentageDiscountPromotionIdAttachments(ctx context.Context, percentageDiscountPromotionId interface{}) AttachmentsApiGETPercentageDiscountPromotionIdAttachmentsRequest {
 	return AttachmentsApiGETPercentageDiscountPromotionIdAttachmentsRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
@@ -2936,7 +2936,7 @@ func (a *AttachmentsApiService) GETPercentageDiscountPromotionIdAttachmentsExecu
 	}
 
 	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterToString(r.percentageDiscountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2969,9 +2969,101 @@ func (a *AttachmentsApiService) GETPercentageDiscountPromotionIdAttachmentsExecu
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type AttachmentsApiGETPriceFrequencyTierIdAttachmentsRequest struct {
+	ctx                  context.Context
+	ApiService           *AttachmentsApiService
+	priceFrequencyTierId interface{}
+}
+
+func (r AttachmentsApiGETPriceFrequencyTierIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPriceFrequencyTierIdAttachmentsExecute(r)
+}
+
+/*
+GETPriceFrequencyTierIdAttachments Retrieve the attachments associated to the price frequency tier
+
+Retrieve the attachments associated to the price frequency tier
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceFrequencyTierId The resource's id
+	@return AttachmentsApiGETPriceFrequencyTierIdAttachmentsRequest
+*/
+func (a *AttachmentsApiService) GETPriceFrequencyTierIdAttachments(ctx context.Context, priceFrequencyTierId interface{}) AttachmentsApiGETPriceFrequencyTierIdAttachmentsRequest {
+	return AttachmentsApiGETPriceFrequencyTierIdAttachmentsRequest{
+		ApiService:           a,
+		ctx:                  ctx,
+		priceFrequencyTierId: priceFrequencyTierId,
+	}
+}
+
+// Execute executes the request
+func (a *AttachmentsApiService) GETPriceFrequencyTierIdAttachmentsExecute(r AttachmentsApiGETPriceFrequencyTierIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETPriceFrequencyTierIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/price_frequency_tiers/{priceFrequencyTierId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"priceFrequencyTierId"+"}", url.PathEscape(parameterValueToString(r.priceFrequencyTierId, "priceFrequencyTierId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2990,7 +3082,7 @@ func (a *AttachmentsApiService) GETPercentageDiscountPromotionIdAttachmentsExecu
 type AttachmentsApiGETPriceIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *AttachmentsApiService
-	priceId    string
+	priceId    interface{}
 }
 
 func (r AttachmentsApiGETPriceIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -3006,7 +3098,7 @@ Retrieve the attachments associated to the price
 	@param priceId The resource's id
 	@return AttachmentsApiGETPriceIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETPriceIdAttachments(ctx context.Context, priceId string) AttachmentsApiGETPriceIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETPriceIdAttachments(ctx context.Context, priceId interface{}) AttachmentsApiGETPriceIdAttachmentsRequest {
 	return AttachmentsApiGETPriceIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3028,7 +3120,7 @@ func (a *AttachmentsApiService) GETPriceIdAttachmentsExecute(r AttachmentsApiGET
 	}
 
 	localVarPath := localBasePath + "/prices/{priceId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterToString(r.priceId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterValueToString(r.priceId, "priceId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3061,9 +3153,9 @@ func (a *AttachmentsApiService) GETPriceIdAttachmentsExecute(r AttachmentsApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3082,7 +3174,7 @@ func (a *AttachmentsApiService) GETPriceIdAttachmentsExecute(r AttachmentsApiGET
 type AttachmentsApiGETPriceListIdAttachmentsRequest struct {
 	ctx         context.Context
 	ApiService  *AttachmentsApiService
-	priceListId string
+	priceListId interface{}
 }
 
 func (r AttachmentsApiGETPriceListIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -3098,7 +3190,7 @@ Retrieve the attachments associated to the price list
 	@param priceListId The resource's id
 	@return AttachmentsApiGETPriceListIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETPriceListIdAttachments(ctx context.Context, priceListId string) AttachmentsApiGETPriceListIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETPriceListIdAttachments(ctx context.Context, priceListId interface{}) AttachmentsApiGETPriceListIdAttachmentsRequest {
 	return AttachmentsApiGETPriceListIdAttachmentsRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -3120,7 +3212,7 @@ func (a *AttachmentsApiService) GETPriceListIdAttachmentsExecute(r AttachmentsAp
 	}
 
 	localVarPath := localBasePath + "/price_lists/{priceListId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceListId"+"}", url.PathEscape(parameterToString(r.priceListId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceListId"+"}", url.PathEscape(parameterValueToString(r.priceListId, "priceListId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3153,9 +3245,9 @@ func (a *AttachmentsApiService) GETPriceListIdAttachmentsExecute(r AttachmentsAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3174,7 +3266,7 @@ func (a *AttachmentsApiService) GETPriceListIdAttachmentsExecute(r AttachmentsAp
 type AttachmentsApiGETPriceTierIdAttachmentsRequest struct {
 	ctx         context.Context
 	ApiService  *AttachmentsApiService
-	priceTierId string
+	priceTierId interface{}
 }
 
 func (r AttachmentsApiGETPriceTierIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -3190,7 +3282,7 @@ Retrieve the attachments associated to the price tier
 	@param priceTierId The resource's id
 	@return AttachmentsApiGETPriceTierIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETPriceTierIdAttachments(ctx context.Context, priceTierId string) AttachmentsApiGETPriceTierIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETPriceTierIdAttachments(ctx context.Context, priceTierId interface{}) AttachmentsApiGETPriceTierIdAttachmentsRequest {
 	return AttachmentsApiGETPriceTierIdAttachmentsRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -3212,7 +3304,7 @@ func (a *AttachmentsApiService) GETPriceTierIdAttachmentsExecute(r AttachmentsAp
 	}
 
 	localVarPath := localBasePath + "/price_tiers/{priceTierId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceTierId"+"}", url.PathEscape(parameterToString(r.priceTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceTierId"+"}", url.PathEscape(parameterValueToString(r.priceTierId, "priceTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3245,9 +3337,9 @@ func (a *AttachmentsApiService) GETPriceTierIdAttachmentsExecute(r AttachmentsAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3266,7 +3358,7 @@ func (a *AttachmentsApiService) GETPriceTierIdAttachmentsExecute(r AttachmentsAp
 type AttachmentsApiGETPriceVolumeTierIdAttachmentsRequest struct {
 	ctx               context.Context
 	ApiService        *AttachmentsApiService
-	priceVolumeTierId string
+	priceVolumeTierId interface{}
 }
 
 func (r AttachmentsApiGETPriceVolumeTierIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -3282,7 +3374,7 @@ Retrieve the attachments associated to the price volume tier
 	@param priceVolumeTierId The resource's id
 	@return AttachmentsApiGETPriceVolumeTierIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETPriceVolumeTierIdAttachments(ctx context.Context, priceVolumeTierId string) AttachmentsApiGETPriceVolumeTierIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETPriceVolumeTierIdAttachments(ctx context.Context, priceVolumeTierId interface{}) AttachmentsApiGETPriceVolumeTierIdAttachmentsRequest {
 	return AttachmentsApiGETPriceVolumeTierIdAttachmentsRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -3304,7 +3396,7 @@ func (a *AttachmentsApiService) GETPriceVolumeTierIdAttachmentsExecute(r Attachm
 	}
 
 	localVarPath := localBasePath + "/price_volume_tiers/{priceVolumeTierId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceVolumeTierId"+"}", url.PathEscape(parameterToString(r.priceVolumeTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceVolumeTierId"+"}", url.PathEscape(parameterValueToString(r.priceVolumeTierId, "priceVolumeTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3337,9 +3429,9 @@ func (a *AttachmentsApiService) GETPriceVolumeTierIdAttachmentsExecute(r Attachm
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3358,7 +3450,7 @@ func (a *AttachmentsApiService) GETPriceVolumeTierIdAttachmentsExecute(r Attachm
 type AttachmentsApiGETPromotionIdAttachmentsRequest struct {
 	ctx         context.Context
 	ApiService  *AttachmentsApiService
-	promotionId string
+	promotionId interface{}
 }
 
 func (r AttachmentsApiGETPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -3374,7 +3466,7 @@ Retrieve the attachments associated to the promotion
 	@param promotionId The resource's id
 	@return AttachmentsApiGETPromotionIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETPromotionIdAttachments(ctx context.Context, promotionId string) AttachmentsApiGETPromotionIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETPromotionIdAttachments(ctx context.Context, promotionId interface{}) AttachmentsApiGETPromotionIdAttachmentsRequest {
 	return AttachmentsApiGETPromotionIdAttachmentsRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -3396,7 +3488,7 @@ func (a *AttachmentsApiService) GETPromotionIdAttachmentsExecute(r AttachmentsAp
 	}
 
 	localVarPath := localBasePath + "/promotions/{promotionId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterToString(r.promotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterValueToString(r.promotionId, "promotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3429,9 +3521,9 @@ func (a *AttachmentsApiService) GETPromotionIdAttachmentsExecute(r AttachmentsAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3450,7 +3542,7 @@ func (a *AttachmentsApiService) GETPromotionIdAttachmentsExecute(r AttachmentsAp
 type AttachmentsApiGETReturnIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *AttachmentsApiService
-	returnId   string
+	returnId   interface{}
 }
 
 func (r AttachmentsApiGETReturnIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -3466,7 +3558,7 @@ Retrieve the attachments associated to the return
 	@param returnId The resource's id
 	@return AttachmentsApiGETReturnIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETReturnIdAttachments(ctx context.Context, returnId string) AttachmentsApiGETReturnIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETReturnIdAttachments(ctx context.Context, returnId interface{}) AttachmentsApiGETReturnIdAttachmentsRequest {
 	return AttachmentsApiGETReturnIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3488,7 +3580,7 @@ func (a *AttachmentsApiService) GETReturnIdAttachmentsExecute(r AttachmentsApiGE
 	}
 
 	localVarPath := localBasePath + "/returns/{returnId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterToString(r.returnId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3521,9 +3613,9 @@ func (a *AttachmentsApiService) GETReturnIdAttachmentsExecute(r AttachmentsApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3542,7 +3634,7 @@ func (a *AttachmentsApiService) GETReturnIdAttachmentsExecute(r AttachmentsApiGE
 type AttachmentsApiGETShipmentIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *AttachmentsApiService
-	shipmentId string
+	shipmentId interface{}
 }
 
 func (r AttachmentsApiGETShipmentIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -3558,7 +3650,7 @@ Retrieve the attachments associated to the shipment
 	@param shipmentId The resource's id
 	@return AttachmentsApiGETShipmentIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETShipmentIdAttachments(ctx context.Context, shipmentId string) AttachmentsApiGETShipmentIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETShipmentIdAttachments(ctx context.Context, shipmentId interface{}) AttachmentsApiGETShipmentIdAttachmentsRequest {
 	return AttachmentsApiGETShipmentIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3580,7 +3672,7 @@ func (a *AttachmentsApiService) GETShipmentIdAttachmentsExecute(r AttachmentsApi
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3613,9 +3705,9 @@ func (a *AttachmentsApiService) GETShipmentIdAttachmentsExecute(r AttachmentsApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3634,7 +3726,7 @@ func (a *AttachmentsApiService) GETShipmentIdAttachmentsExecute(r AttachmentsApi
 type AttachmentsApiGETShippingCategoryIdAttachmentsRequest struct {
 	ctx                context.Context
 	ApiService         *AttachmentsApiService
-	shippingCategoryId string
+	shippingCategoryId interface{}
 }
 
 func (r AttachmentsApiGETShippingCategoryIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -3650,7 +3742,7 @@ Retrieve the attachments associated to the shipping category
 	@param shippingCategoryId The resource's id
 	@return AttachmentsApiGETShippingCategoryIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETShippingCategoryIdAttachments(ctx context.Context, shippingCategoryId string) AttachmentsApiGETShippingCategoryIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETShippingCategoryIdAttachments(ctx context.Context, shippingCategoryId interface{}) AttachmentsApiGETShippingCategoryIdAttachmentsRequest {
 	return AttachmentsApiGETShippingCategoryIdAttachmentsRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -3672,7 +3764,7 @@ func (a *AttachmentsApiService) GETShippingCategoryIdAttachmentsExecute(r Attach
 	}
 
 	localVarPath := localBasePath + "/shipping_categories/{shippingCategoryId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingCategoryId"+"}", url.PathEscape(parameterToString(r.shippingCategoryId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingCategoryId"+"}", url.PathEscape(parameterValueToString(r.shippingCategoryId, "shippingCategoryId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3705,9 +3797,9 @@ func (a *AttachmentsApiService) GETShippingCategoryIdAttachmentsExecute(r Attach
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3726,7 +3818,7 @@ func (a *AttachmentsApiService) GETShippingCategoryIdAttachmentsExecute(r Attach
 type AttachmentsApiGETShippingMethodIdAttachmentsRequest struct {
 	ctx              context.Context
 	ApiService       *AttachmentsApiService
-	shippingMethodId string
+	shippingMethodId interface{}
 }
 
 func (r AttachmentsApiGETShippingMethodIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -3742,7 +3834,7 @@ Retrieve the attachments associated to the shipping method
 	@param shippingMethodId The resource's id
 	@return AttachmentsApiGETShippingMethodIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETShippingMethodIdAttachments(ctx context.Context, shippingMethodId string) AttachmentsApiGETShippingMethodIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETShippingMethodIdAttachments(ctx context.Context, shippingMethodId interface{}) AttachmentsApiGETShippingMethodIdAttachmentsRequest {
 	return AttachmentsApiGETShippingMethodIdAttachmentsRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -3764,7 +3856,7 @@ func (a *AttachmentsApiService) GETShippingMethodIdAttachmentsExecute(r Attachme
 	}
 
 	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodId, "shippingMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3797,9 +3889,9 @@ func (a *AttachmentsApiService) GETShippingMethodIdAttachmentsExecute(r Attachme
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3818,7 +3910,7 @@ func (a *AttachmentsApiService) GETShippingMethodIdAttachmentsExecute(r Attachme
 type AttachmentsApiGETShippingMethodTierIdAttachmentsRequest struct {
 	ctx                  context.Context
 	ApiService           *AttachmentsApiService
-	shippingMethodTierId string
+	shippingMethodTierId interface{}
 }
 
 func (r AttachmentsApiGETShippingMethodTierIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -3834,7 +3926,7 @@ Retrieve the attachments associated to the shipping method tier
 	@param shippingMethodTierId The resource's id
 	@return AttachmentsApiGETShippingMethodTierIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETShippingMethodTierIdAttachments(ctx context.Context, shippingMethodTierId string) AttachmentsApiGETShippingMethodTierIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETShippingMethodTierIdAttachments(ctx context.Context, shippingMethodTierId interface{}) AttachmentsApiGETShippingMethodTierIdAttachmentsRequest {
 	return AttachmentsApiGETShippingMethodTierIdAttachmentsRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -3856,7 +3948,7 @@ func (a *AttachmentsApiService) GETShippingMethodTierIdAttachmentsExecute(r Atta
 	}
 
 	localVarPath := localBasePath + "/shipping_method_tiers/{shippingMethodTierId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodTierId"+"}", url.PathEscape(parameterToString(r.shippingMethodTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodTierId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodTierId, "shippingMethodTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3889,9 +3981,9 @@ func (a *AttachmentsApiService) GETShippingMethodTierIdAttachmentsExecute(r Atta
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3910,7 +4002,7 @@ func (a *AttachmentsApiService) GETShippingMethodTierIdAttachmentsExecute(r Atta
 type AttachmentsApiGETShippingWeightTierIdAttachmentsRequest struct {
 	ctx                  context.Context
 	ApiService           *AttachmentsApiService
-	shippingWeightTierId string
+	shippingWeightTierId interface{}
 }
 
 func (r AttachmentsApiGETShippingWeightTierIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -3926,7 +4018,7 @@ Retrieve the attachments associated to the shipping weight tier
 	@param shippingWeightTierId The resource's id
 	@return AttachmentsApiGETShippingWeightTierIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETShippingWeightTierIdAttachments(ctx context.Context, shippingWeightTierId string) AttachmentsApiGETShippingWeightTierIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETShippingWeightTierIdAttachments(ctx context.Context, shippingWeightTierId interface{}) AttachmentsApiGETShippingWeightTierIdAttachmentsRequest {
 	return AttachmentsApiGETShippingWeightTierIdAttachmentsRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -3948,7 +4040,7 @@ func (a *AttachmentsApiService) GETShippingWeightTierIdAttachmentsExecute(r Atta
 	}
 
 	localVarPath := localBasePath + "/shipping_weight_tiers/{shippingWeightTierId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingWeightTierId"+"}", url.PathEscape(parameterToString(r.shippingWeightTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingWeightTierId"+"}", url.PathEscape(parameterValueToString(r.shippingWeightTierId, "shippingWeightTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3981,9 +4073,9 @@ func (a *AttachmentsApiService) GETShippingWeightTierIdAttachmentsExecute(r Atta
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4002,7 +4094,7 @@ func (a *AttachmentsApiService) GETShippingWeightTierIdAttachmentsExecute(r Atta
 type AttachmentsApiGETShippingZoneIdAttachmentsRequest struct {
 	ctx            context.Context
 	ApiService     *AttachmentsApiService
-	shippingZoneId string
+	shippingZoneId interface{}
 }
 
 func (r AttachmentsApiGETShippingZoneIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -4018,7 +4110,7 @@ Retrieve the attachments associated to the shipping zone
 	@param shippingZoneId The resource's id
 	@return AttachmentsApiGETShippingZoneIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETShippingZoneIdAttachments(ctx context.Context, shippingZoneId string) AttachmentsApiGETShippingZoneIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETShippingZoneIdAttachments(ctx context.Context, shippingZoneId interface{}) AttachmentsApiGETShippingZoneIdAttachmentsRequest {
 	return AttachmentsApiGETShippingZoneIdAttachmentsRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -4040,7 +4132,7 @@ func (a *AttachmentsApiService) GETShippingZoneIdAttachmentsExecute(r Attachment
 	}
 
 	localVarPath := localBasePath + "/shipping_zones/{shippingZoneId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingZoneId"+"}", url.PathEscape(parameterToString(r.shippingZoneId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingZoneId"+"}", url.PathEscape(parameterValueToString(r.shippingZoneId, "shippingZoneId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4073,9 +4165,9 @@ func (a *AttachmentsApiService) GETShippingZoneIdAttachmentsExecute(r Attachment
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4094,7 +4186,7 @@ func (a *AttachmentsApiService) GETShippingZoneIdAttachmentsExecute(r Attachment
 type AttachmentsApiGETSkuIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *AttachmentsApiService
-	skuId      string
+	skuId      interface{}
 }
 
 func (r AttachmentsApiGETSkuIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -4110,7 +4202,7 @@ Retrieve the attachments associated to the SKU
 	@param skuId The resource's id
 	@return AttachmentsApiGETSkuIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETSkuIdAttachments(ctx context.Context, skuId string) AttachmentsApiGETSkuIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETSkuIdAttachments(ctx context.Context, skuId interface{}) AttachmentsApiGETSkuIdAttachmentsRequest {
 	return AttachmentsApiGETSkuIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4132,7 +4224,7 @@ func (a *AttachmentsApiService) GETSkuIdAttachmentsExecute(r AttachmentsApiGETSk
 	}
 
 	localVarPath := localBasePath + "/skus/{skuId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterToString(r.skuId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4165,9 +4257,9 @@ func (a *AttachmentsApiService) GETSkuIdAttachmentsExecute(r AttachmentsApiGETSk
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4186,7 +4278,7 @@ func (a *AttachmentsApiService) GETSkuIdAttachmentsExecute(r AttachmentsApiGETSk
 type AttachmentsApiGETSkuListIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *AttachmentsApiService
-	skuListId  string
+	skuListId  interface{}
 }
 
 func (r AttachmentsApiGETSkuListIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -4202,7 +4294,7 @@ Retrieve the attachments associated to the SKU list
 	@param skuListId The resource's id
 	@return AttachmentsApiGETSkuListIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETSkuListIdAttachments(ctx context.Context, skuListId string) AttachmentsApiGETSkuListIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETSkuListIdAttachments(ctx context.Context, skuListId interface{}) AttachmentsApiGETSkuListIdAttachmentsRequest {
 	return AttachmentsApiGETSkuListIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -4224,7 +4316,7 @@ func (a *AttachmentsApiService) GETSkuListIdAttachmentsExecute(r AttachmentsApiG
 	}
 
 	localVarPath := localBasePath + "/sku_lists/{skuListId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuListId"+"}", url.PathEscape(parameterToString(r.skuListId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListId"+"}", url.PathEscape(parameterValueToString(r.skuListId, "skuListId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4257,9 +4349,9 @@ func (a *AttachmentsApiService) GETSkuListIdAttachmentsExecute(r AttachmentsApiG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4278,7 +4370,7 @@ func (a *AttachmentsApiService) GETSkuListIdAttachmentsExecute(r AttachmentsApiG
 type AttachmentsApiGETSkuOptionIdAttachmentsRequest struct {
 	ctx         context.Context
 	ApiService  *AttachmentsApiService
-	skuOptionId string
+	skuOptionId interface{}
 }
 
 func (r AttachmentsApiGETSkuOptionIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -4294,7 +4386,7 @@ Retrieve the attachments associated to the SKU option
 	@param skuOptionId The resource's id
 	@return AttachmentsApiGETSkuOptionIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETSkuOptionIdAttachments(ctx context.Context, skuOptionId string) AttachmentsApiGETSkuOptionIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETSkuOptionIdAttachments(ctx context.Context, skuOptionId interface{}) AttachmentsApiGETSkuOptionIdAttachmentsRequest {
 	return AttachmentsApiGETSkuOptionIdAttachmentsRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -4316,7 +4408,7 @@ func (a *AttachmentsApiService) GETSkuOptionIdAttachmentsExecute(r AttachmentsAp
 	}
 
 	localVarPath := localBasePath + "/sku_options/{skuOptionId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuOptionId"+"}", url.PathEscape(parameterToString(r.skuOptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuOptionId"+"}", url.PathEscape(parameterValueToString(r.skuOptionId, "skuOptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4349,9 +4441,9 @@ func (a *AttachmentsApiService) GETSkuOptionIdAttachmentsExecute(r AttachmentsAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4370,7 +4462,7 @@ func (a *AttachmentsApiService) GETSkuOptionIdAttachmentsExecute(r AttachmentsAp
 type AttachmentsApiGETStockItemIdAttachmentsRequest struct {
 	ctx         context.Context
 	ApiService  *AttachmentsApiService
-	stockItemId string
+	stockItemId interface{}
 }
 
 func (r AttachmentsApiGETStockItemIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -4386,7 +4478,7 @@ Retrieve the attachments associated to the stock item
 	@param stockItemId The resource's id
 	@return AttachmentsApiGETStockItemIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETStockItemIdAttachments(ctx context.Context, stockItemId string) AttachmentsApiGETStockItemIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETStockItemIdAttachments(ctx context.Context, stockItemId interface{}) AttachmentsApiGETStockItemIdAttachmentsRequest {
 	return AttachmentsApiGETStockItemIdAttachmentsRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -4408,7 +4500,7 @@ func (a *AttachmentsApiService) GETStockItemIdAttachmentsExecute(r AttachmentsAp
 	}
 
 	localVarPath := localBasePath + "/stock_items/{stockItemId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockItemId"+"}", url.PathEscape(parameterToString(r.stockItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockItemId"+"}", url.PathEscape(parameterValueToString(r.stockItemId, "stockItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4441,9 +4533,9 @@ func (a *AttachmentsApiService) GETStockItemIdAttachmentsExecute(r AttachmentsAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4462,7 +4554,7 @@ func (a *AttachmentsApiService) GETStockItemIdAttachmentsExecute(r AttachmentsAp
 type AttachmentsApiGETStockLocationIdAttachmentsRequest struct {
 	ctx             context.Context
 	ApiService      *AttachmentsApiService
-	stockLocationId string
+	stockLocationId interface{}
 }
 
 func (r AttachmentsApiGETStockLocationIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -4478,7 +4570,7 @@ Retrieve the attachments associated to the stock location
 	@param stockLocationId The resource's id
 	@return AttachmentsApiGETStockLocationIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETStockLocationIdAttachments(ctx context.Context, stockLocationId string) AttachmentsApiGETStockLocationIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETStockLocationIdAttachments(ctx context.Context, stockLocationId interface{}) AttachmentsApiGETStockLocationIdAttachmentsRequest {
 	return AttachmentsApiGETStockLocationIdAttachmentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -4500,7 +4592,7 @@ func (a *AttachmentsApiService) GETStockLocationIdAttachmentsExecute(r Attachmen
 	}
 
 	localVarPath := localBasePath + "/stock_locations/{stockLocationId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterToString(r.stockLocationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterValueToString(r.stockLocationId, "stockLocationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4533,9 +4625,101 @@ func (a *AttachmentsApiService) GETStockLocationIdAttachmentsExecute(r Attachmen
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type AttachmentsApiGETSubscriptionModelIdAttachmentsRequest struct {
+	ctx                 context.Context
+	ApiService          *AttachmentsApiService
+	subscriptionModelId interface{}
+}
+
+func (r AttachmentsApiGETSubscriptionModelIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSubscriptionModelIdAttachmentsExecute(r)
+}
+
+/*
+GETSubscriptionModelIdAttachments Retrieve the attachments associated to the subscription model
+
+Retrieve the attachments associated to the subscription model
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionModelId The resource's id
+	@return AttachmentsApiGETSubscriptionModelIdAttachmentsRequest
+*/
+func (a *AttachmentsApiService) GETSubscriptionModelIdAttachments(ctx context.Context, subscriptionModelId interface{}) AttachmentsApiGETSubscriptionModelIdAttachmentsRequest {
+	return AttachmentsApiGETSubscriptionModelIdAttachmentsRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		subscriptionModelId: subscriptionModelId,
+	}
+}
+
+// Execute executes the request
+func (a *AttachmentsApiService) GETSubscriptionModelIdAttachmentsExecute(r AttachmentsApiGETSubscriptionModelIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "AttachmentsApiService.GETSubscriptionModelIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/subscription_models/{subscriptionModelId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"subscriptionModelId"+"}", url.PathEscape(parameterValueToString(r.subscriptionModelId, "subscriptionModelId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4554,7 +4738,7 @@ func (a *AttachmentsApiService) GETStockLocationIdAttachmentsExecute(r Attachmen
 type AttachmentsApiGETTaxCalculatorIdAttachmentsRequest struct {
 	ctx             context.Context
 	ApiService      *AttachmentsApiService
-	taxCalculatorId string
+	taxCalculatorId interface{}
 }
 
 func (r AttachmentsApiGETTaxCalculatorIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -4570,7 +4754,7 @@ Retrieve the attachments associated to the tax calculator
 	@param taxCalculatorId The resource's id
 	@return AttachmentsApiGETTaxCalculatorIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETTaxCalculatorIdAttachments(ctx context.Context, taxCalculatorId string) AttachmentsApiGETTaxCalculatorIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETTaxCalculatorIdAttachments(ctx context.Context, taxCalculatorId interface{}) AttachmentsApiGETTaxCalculatorIdAttachmentsRequest {
 	return AttachmentsApiGETTaxCalculatorIdAttachmentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -4592,7 +4776,7 @@ func (a *AttachmentsApiService) GETTaxCalculatorIdAttachmentsExecute(r Attachmen
 	}
 
 	localVarPath := localBasePath + "/tax_calculators/{taxCalculatorId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxCalculatorId"+"}", url.PathEscape(parameterToString(r.taxCalculatorId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.taxCalculatorId, "taxCalculatorId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4625,9 +4809,9 @@ func (a *AttachmentsApiService) GETTaxCalculatorIdAttachmentsExecute(r Attachmen
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4646,7 +4830,7 @@ func (a *AttachmentsApiService) GETTaxCalculatorIdAttachmentsExecute(r Attachmen
 type AttachmentsApiGETTaxCategoryIdAttachmentsRequest struct {
 	ctx           context.Context
 	ApiService    *AttachmentsApiService
-	taxCategoryId string
+	taxCategoryId interface{}
 }
 
 func (r AttachmentsApiGETTaxCategoryIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -4662,7 +4846,7 @@ Retrieve the attachments associated to the tax category
 	@param taxCategoryId The resource's id
 	@return AttachmentsApiGETTaxCategoryIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETTaxCategoryIdAttachments(ctx context.Context, taxCategoryId string) AttachmentsApiGETTaxCategoryIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETTaxCategoryIdAttachments(ctx context.Context, taxCategoryId interface{}) AttachmentsApiGETTaxCategoryIdAttachmentsRequest {
 	return AttachmentsApiGETTaxCategoryIdAttachmentsRequest{
 		ApiService:    a,
 		ctx:           ctx,
@@ -4684,7 +4868,7 @@ func (a *AttachmentsApiService) GETTaxCategoryIdAttachmentsExecute(r Attachments
 	}
 
 	localVarPath := localBasePath + "/tax_categories/{taxCategoryId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxCategoryId"+"}", url.PathEscape(parameterToString(r.taxCategoryId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxCategoryId"+"}", url.PathEscape(parameterValueToString(r.taxCategoryId, "taxCategoryId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4717,9 +4901,9 @@ func (a *AttachmentsApiService) GETTaxCategoryIdAttachmentsExecute(r Attachments
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4738,7 +4922,7 @@ func (a *AttachmentsApiService) GETTaxCategoryIdAttachmentsExecute(r Attachments
 type AttachmentsApiGETTaxjarAccountIdAttachmentsRequest struct {
 	ctx             context.Context
 	ApiService      *AttachmentsApiService
-	taxjarAccountId string
+	taxjarAccountId interface{}
 }
 
 func (r AttachmentsApiGETTaxjarAccountIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -4754,7 +4938,7 @@ Retrieve the attachments associated to the taxjar account
 	@param taxjarAccountId The resource's id
 	@return AttachmentsApiGETTaxjarAccountIdAttachmentsRequest
 */
-func (a *AttachmentsApiService) GETTaxjarAccountIdAttachments(ctx context.Context, taxjarAccountId string) AttachmentsApiGETTaxjarAccountIdAttachmentsRequest {
+func (a *AttachmentsApiService) GETTaxjarAccountIdAttachments(ctx context.Context, taxjarAccountId interface{}) AttachmentsApiGETTaxjarAccountIdAttachmentsRequest {
 	return AttachmentsApiGETTaxjarAccountIdAttachmentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -4776,7 +4960,7 @@ func (a *AttachmentsApiService) GETTaxjarAccountIdAttachmentsExecute(r Attachmen
 	}
 
 	localVarPath := localBasePath + "/taxjar_accounts/{taxjarAccountId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxjarAccountId"+"}", url.PathEscape(parameterToString(r.taxjarAccountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxjarAccountId"+"}", url.PathEscape(parameterValueToString(r.taxjarAccountId, "taxjarAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4809,9 +4993,9 @@ func (a *AttachmentsApiService) GETTaxjarAccountIdAttachmentsExecute(r Attachmen
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4828,14 +5012,14 @@ func (a *AttachmentsApiService) GETTaxjarAccountIdAttachmentsExecute(r Attachmen
 }
 
 type AttachmentsApiPATCHAttachmentsAttachmentIdRequest struct {
-	ctx              context.Context
-	ApiService       *AttachmentsApiService
-	attachmentUpdate *AttachmentUpdate
-	attachmentId     string
+	ctx                                 context.Context
+	ApiService                          *AttachmentsApiService
+	pATCHAttachmentsAttachmentIdRequest *PATCHAttachmentsAttachmentIdRequest
+	attachmentId                        interface{}
 }
 
-func (r AttachmentsApiPATCHAttachmentsAttachmentIdRequest) AttachmentUpdate(attachmentUpdate AttachmentUpdate) AttachmentsApiPATCHAttachmentsAttachmentIdRequest {
-	r.attachmentUpdate = &attachmentUpdate
+func (r AttachmentsApiPATCHAttachmentsAttachmentIdRequest) PATCHAttachmentsAttachmentIdRequest(pATCHAttachmentsAttachmentIdRequest PATCHAttachmentsAttachmentIdRequest) AttachmentsApiPATCHAttachmentsAttachmentIdRequest {
+	r.pATCHAttachmentsAttachmentIdRequest = &pATCHAttachmentsAttachmentIdRequest
 	return r
 }
 
@@ -4852,7 +5036,7 @@ Update an attachment
 	@param attachmentId The resource's id
 	@return AttachmentsApiPATCHAttachmentsAttachmentIdRequest
 */
-func (a *AttachmentsApiService) PATCHAttachmentsAttachmentId(ctx context.Context, attachmentId string) AttachmentsApiPATCHAttachmentsAttachmentIdRequest {
+func (a *AttachmentsApiService) PATCHAttachmentsAttachmentId(ctx context.Context, attachmentId interface{}) AttachmentsApiPATCHAttachmentsAttachmentIdRequest {
 	return AttachmentsApiPATCHAttachmentsAttachmentIdRequest{
 		ApiService:   a,
 		ctx:          ctx,
@@ -4877,13 +5061,13 @@ func (a *AttachmentsApiService) PATCHAttachmentsAttachmentIdExecute(r Attachment
 	}
 
 	localVarPath := localBasePath + "/attachments/{attachmentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"attachmentId"+"}", url.PathEscape(parameterToString(r.attachmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"attachmentId"+"}", url.PathEscape(parameterValueToString(r.attachmentId, "attachmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.attachmentUpdate == nil {
-		return localVarReturnValue, nil, reportError("attachmentUpdate is required and must be specified")
+	if r.pATCHAttachmentsAttachmentIdRequest == nil {
+		return localVarReturnValue, nil, reportError("pATCHAttachmentsAttachmentIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -4904,7 +5088,7 @@ func (a *AttachmentsApiService) PATCHAttachmentsAttachmentIdExecute(r Attachment
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.attachmentUpdate
+	localVarPostBody = r.pATCHAttachmentsAttachmentIdRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -4915,9 +5099,9 @@ func (a *AttachmentsApiService) PATCHAttachmentsAttachmentIdExecute(r Attachment
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -4943,13 +5127,13 @@ func (a *AttachmentsApiService) PATCHAttachmentsAttachmentIdExecute(r Attachment
 }
 
 type AttachmentsApiPOSTAttachmentsRequest struct {
-	ctx              context.Context
-	ApiService       *AttachmentsApiService
-	attachmentCreate *AttachmentCreate
+	ctx                    context.Context
+	ApiService             *AttachmentsApiService
+	pOSTAttachmentsRequest *POSTAttachmentsRequest
 }
 
-func (r AttachmentsApiPOSTAttachmentsRequest) AttachmentCreate(attachmentCreate AttachmentCreate) AttachmentsApiPOSTAttachmentsRequest {
-	r.attachmentCreate = &attachmentCreate
+func (r AttachmentsApiPOSTAttachmentsRequest) POSTAttachmentsRequest(pOSTAttachmentsRequest POSTAttachmentsRequest) AttachmentsApiPOSTAttachmentsRequest {
+	r.pOSTAttachmentsRequest = &pOSTAttachmentsRequest
 	return r
 }
 
@@ -4993,8 +5177,8 @@ func (a *AttachmentsApiService) POSTAttachmentsExecute(r AttachmentsApiPOSTAttac
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.attachmentCreate == nil {
-		return localVarReturnValue, nil, reportError("attachmentCreate is required and must be specified")
+	if r.pOSTAttachmentsRequest == nil {
+		return localVarReturnValue, nil, reportError("pOSTAttachmentsRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -5015,7 +5199,7 @@ func (a *AttachmentsApiService) POSTAttachmentsExecute(r AttachmentsApiPOSTAttac
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.attachmentCreate
+	localVarPostBody = r.pOSTAttachmentsRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -5026,9 +5210,9 @@ func (a *AttachmentsApiService) POSTAttachmentsExecute(r AttachmentsApiPOSTAttac
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the CheckoutComPaymentUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CheckoutComPaymentUpdate{}
+
 // CheckoutComPaymentUpdate struct for CheckoutComPaymentUpdate
 type CheckoutComPaymentUpdate struct {
-	Data CheckoutComPaymentUpdateData `json:"data"`
+	Data PATCHCheckoutComPaymentsCheckoutComPaymentIdRequestData `json:"data"`
 }
 
 // NewCheckoutComPaymentUpdate instantiates a new CheckoutComPaymentUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCheckoutComPaymentUpdate(data CheckoutComPaymentUpdateData) *CheckoutComPaymentUpdate {
+func NewCheckoutComPaymentUpdate(data PATCHCheckoutComPaymentsCheckoutComPaymentIdRequestData) *CheckoutComPaymentUpdate {
 	this := CheckoutComPaymentUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewCheckoutComPaymentUpdateWithDefaults() *CheckoutComPaymentUpdate {
 }
 
 // GetData returns the Data field value
-func (o *CheckoutComPaymentUpdate) GetData() CheckoutComPaymentUpdateData {
+func (o *CheckoutComPaymentUpdate) GetData() PATCHCheckoutComPaymentsCheckoutComPaymentIdRequestData {
 	if o == nil {
-		var ret CheckoutComPaymentUpdateData
+		var ret PATCHCheckoutComPaymentsCheckoutComPaymentIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *CheckoutComPaymentUpdate) GetData() CheckoutComPaymentUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *CheckoutComPaymentUpdate) GetDataOk() (*CheckoutComPaymentUpdateData, bool) {
+func (o *CheckoutComPaymentUpdate) GetDataOk() (*PATCHCheckoutComPaymentsCheckoutComPaymentIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *CheckoutComPaymentUpdate) GetDataOk() (*CheckoutComPaymentUpdateData, b
 }
 
 // SetData sets field value
-func (o *CheckoutComPaymentUpdate) SetData(v CheckoutComPaymentUpdateData) {
+func (o *CheckoutComPaymentUpdate) SetData(v PATCHCheckoutComPaymentsCheckoutComPaymentIdRequestData) {
 	o.Data = v
 }
 
 func (o CheckoutComPaymentUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CheckoutComPaymentUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableCheckoutComPaymentUpdate struct {

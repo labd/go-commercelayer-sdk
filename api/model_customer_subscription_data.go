@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the CustomerSubscriptionData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CustomerSubscriptionData{}
+
 // CustomerSubscriptionData struct for CustomerSubscriptionData
 type CustomerSubscriptionData struct {
 	// The resource's type
-	Type          string                                                 `json:"type"`
-	Attributes    GETCustomerSubscriptions200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *CustomerPasswordResetDataRelationships                `json:"relationships,omitempty"`
+	Type          interface{}                                                             `json:"type"`
+	Attributes    GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes `json:"attributes"`
+	Relationships *CustomerPasswordResetDataRelationships                                 `json:"relationships,omitempty"`
 }
 
 // NewCustomerSubscriptionData instantiates a new CustomerSubscriptionData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerSubscriptionData(type_ string, attributes GETCustomerSubscriptions200ResponseDataInnerAttributes) *CustomerSubscriptionData {
+func NewCustomerSubscriptionData(type_ interface{}, attributes GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes) *CustomerSubscriptionData {
 	this := CustomerSubscriptionData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -43,9 +46,10 @@ func NewCustomerSubscriptionDataWithDefaults() *CustomerSubscriptionData {
 }
 
 // GetType returns the Type field value
-func (o *CustomerSubscriptionData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *CustomerSubscriptionData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -54,22 +58,23 @@ func (o *CustomerSubscriptionData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *CustomerSubscriptionData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CustomerSubscriptionData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *CustomerSubscriptionData) SetType(v string) {
+func (o *CustomerSubscriptionData) SetType(v interface{}) {
 	o.Type = v
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CustomerSubscriptionData) GetAttributes() GETCustomerSubscriptions200ResponseDataInnerAttributes {
+func (o *CustomerSubscriptionData) GetAttributes() GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETCustomerSubscriptions200ResponseDataInnerAttributes
+		var ret GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes
 		return ret
 	}
 
@@ -78,7 +83,7 @@ func (o *CustomerSubscriptionData) GetAttributes() GETCustomerSubscriptions200Re
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CustomerSubscriptionData) GetAttributesOk() (*GETCustomerSubscriptions200ResponseDataInnerAttributes, bool) {
+func (o *CustomerSubscriptionData) GetAttributesOk() (*GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,13 +91,13 @@ func (o *CustomerSubscriptionData) GetAttributesOk() (*GETCustomerSubscriptions2
 }
 
 // SetAttributes sets field value
-func (o *CustomerSubscriptionData) SetAttributes(v GETCustomerSubscriptions200ResponseDataInnerAttributes) {
+func (o *CustomerSubscriptionData) SetAttributes(v GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *CustomerSubscriptionData) GetRelationships() CustomerPasswordResetDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret CustomerPasswordResetDataRelationships
 		return ret
 	}
@@ -102,7 +107,7 @@ func (o *CustomerSubscriptionData) GetRelationships() CustomerPasswordResetDataR
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerSubscriptionData) GetRelationshipsOk() (*CustomerPasswordResetDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -110,7 +115,7 @@ func (o *CustomerSubscriptionData) GetRelationshipsOk() (*CustomerPasswordResetD
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *CustomerSubscriptionData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -123,17 +128,23 @@ func (o *CustomerSubscriptionData) SetRelationships(v CustomerPasswordResetDataR
 }
 
 func (o CustomerSubscriptionData) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
-		toSerialize["relationships"] = o.Relationships
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CustomerSubscriptionData) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
+		toSerialize["relationships"] = o.Relationships
+	}
+	return toSerialize, nil
 }
 
 type NullableCustomerSubscriptionData struct {

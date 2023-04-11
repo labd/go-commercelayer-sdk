@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -13,160 +13,70 @@ package api
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
-// TaxCategoryCreateDataRelationshipsTaxCalculator - struct for TaxCategoryCreateDataRelationshipsTaxCalculator
+// checks if the TaxCategoryCreateDataRelationshipsTaxCalculator type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &TaxCategoryCreateDataRelationshipsTaxCalculator{}
+
+// TaxCategoryCreateDataRelationshipsTaxCalculator struct for TaxCategoryCreateDataRelationshipsTaxCalculator
 type TaxCategoryCreateDataRelationshipsTaxCalculator struct {
-	AvalaraAccount        *AvalaraAccount
-	ExternalTaxCalculator *ExternalTaxCalculator
-	ManualTaxCalculator   *ManualTaxCalculator
-	TaxjarAccount         *TaxjarAccount
+	Data POSTTaxCategoriesRequestDataRelationshipsTaxCalculatorData `json:"data"`
 }
 
-// AvalaraAccountAsTaxCategoryCreateDataRelationshipsTaxCalculator is a convenience function that returns AvalaraAccount wrapped in TaxCategoryCreateDataRelationshipsTaxCalculator
-func AvalaraAccountAsTaxCategoryCreateDataRelationshipsTaxCalculator(v *AvalaraAccount) TaxCategoryCreateDataRelationshipsTaxCalculator {
-	return TaxCategoryCreateDataRelationshipsTaxCalculator{
-		AvalaraAccount: v,
-	}
+// NewTaxCategoryCreateDataRelationshipsTaxCalculator instantiates a new TaxCategoryCreateDataRelationshipsTaxCalculator object
+// This constructor will assign default values to properties that have it defined,
+// and makes sure properties required by API are set, but the set of arguments
+// will change when the set of required properties is changed
+func NewTaxCategoryCreateDataRelationshipsTaxCalculator(data POSTTaxCategoriesRequestDataRelationshipsTaxCalculatorData) *TaxCategoryCreateDataRelationshipsTaxCalculator {
+	this := TaxCategoryCreateDataRelationshipsTaxCalculator{}
+	this.Data = data
+	return &this
 }
 
-// ExternalTaxCalculatorAsTaxCategoryCreateDataRelationshipsTaxCalculator is a convenience function that returns ExternalTaxCalculator wrapped in TaxCategoryCreateDataRelationshipsTaxCalculator
-func ExternalTaxCalculatorAsTaxCategoryCreateDataRelationshipsTaxCalculator(v *ExternalTaxCalculator) TaxCategoryCreateDataRelationshipsTaxCalculator {
-	return TaxCategoryCreateDataRelationshipsTaxCalculator{
-		ExternalTaxCalculator: v,
-	}
+// NewTaxCategoryCreateDataRelationshipsTaxCalculatorWithDefaults instantiates a new TaxCategoryCreateDataRelationshipsTaxCalculator object
+// This constructor will only assign default values to properties that have it defined,
+// but it doesn't guarantee that properties required by API are set
+func NewTaxCategoryCreateDataRelationshipsTaxCalculatorWithDefaults() *TaxCategoryCreateDataRelationshipsTaxCalculator {
+	this := TaxCategoryCreateDataRelationshipsTaxCalculator{}
+	return &this
 }
 
-// ManualTaxCalculatorAsTaxCategoryCreateDataRelationshipsTaxCalculator is a convenience function that returns ManualTaxCalculator wrapped in TaxCategoryCreateDataRelationshipsTaxCalculator
-func ManualTaxCalculatorAsTaxCategoryCreateDataRelationshipsTaxCalculator(v *ManualTaxCalculator) TaxCategoryCreateDataRelationshipsTaxCalculator {
-	return TaxCategoryCreateDataRelationshipsTaxCalculator{
-		ManualTaxCalculator: v,
+// GetData returns the Data field value
+func (o *TaxCategoryCreateDataRelationshipsTaxCalculator) GetData() POSTTaxCategoriesRequestDataRelationshipsTaxCalculatorData {
+	if o == nil {
+		var ret POSTTaxCategoriesRequestDataRelationshipsTaxCalculatorData
+		return ret
 	}
+
+	return o.Data
 }
 
-// TaxjarAccountAsTaxCategoryCreateDataRelationshipsTaxCalculator is a convenience function that returns TaxjarAccount wrapped in TaxCategoryCreateDataRelationshipsTaxCalculator
-func TaxjarAccountAsTaxCategoryCreateDataRelationshipsTaxCalculator(v *TaxjarAccount) TaxCategoryCreateDataRelationshipsTaxCalculator {
-	return TaxCategoryCreateDataRelationshipsTaxCalculator{
-		TaxjarAccount: v,
+// GetDataOk returns a tuple with the Data field value
+// and a boolean to check if the value has been set.
+func (o *TaxCategoryCreateDataRelationshipsTaxCalculator) GetDataOk() (*POSTTaxCategoriesRequestDataRelationshipsTaxCalculatorData, bool) {
+	if o == nil {
+		return nil, false
 	}
+	return &o.Data, true
 }
 
-// Unmarshal JSON data into one of the pointers in the struct
-func (dst *TaxCategoryCreateDataRelationshipsTaxCalculator) UnmarshalJSON(data []byte) error {
-	var err error
-	match := 0
-	// try to unmarshal data into AvalaraAccount
-	err = newStrictDecoder(data).Decode(&dst.AvalaraAccount)
-	if err == nil {
-		jsonAvalaraAccount, _ := json.Marshal(dst.AvalaraAccount)
-		if string(jsonAvalaraAccount) == "{}" { // empty struct
-			dst.AvalaraAccount = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.AvalaraAccount = nil
-	}
-
-	// try to unmarshal data into ExternalTaxCalculator
-	err = newStrictDecoder(data).Decode(&dst.ExternalTaxCalculator)
-	if err == nil {
-		jsonExternalTaxCalculator, _ := json.Marshal(dst.ExternalTaxCalculator)
-		if string(jsonExternalTaxCalculator) == "{}" { // empty struct
-			dst.ExternalTaxCalculator = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.ExternalTaxCalculator = nil
-	}
-
-	// try to unmarshal data into ManualTaxCalculator
-	err = newStrictDecoder(data).Decode(&dst.ManualTaxCalculator)
-	if err == nil {
-		jsonManualTaxCalculator, _ := json.Marshal(dst.ManualTaxCalculator)
-		if string(jsonManualTaxCalculator) == "{}" { // empty struct
-			dst.ManualTaxCalculator = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.ManualTaxCalculator = nil
-	}
-
-	// try to unmarshal data into TaxjarAccount
-	err = newStrictDecoder(data).Decode(&dst.TaxjarAccount)
-	if err == nil {
-		jsonTaxjarAccount, _ := json.Marshal(dst.TaxjarAccount)
-		if string(jsonTaxjarAccount) == "{}" { // empty struct
-			dst.TaxjarAccount = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.TaxjarAccount = nil
-	}
-
-	if match > 1 { // more than 1 match
-		// reset to nil
-		dst.AvalaraAccount = nil
-		dst.ExternalTaxCalculator = nil
-		dst.ManualTaxCalculator = nil
-		dst.TaxjarAccount = nil
-
-		return fmt.Errorf("Data matches more than one schema in oneOf(TaxCategoryCreateDataRelationshipsTaxCalculator)")
-	} else if match == 1 {
-		return nil // exactly one match
-	} else { // no match
-		return fmt.Errorf("Data failed to match schemas in oneOf(TaxCategoryCreateDataRelationshipsTaxCalculator)")
-	}
+// SetData sets field value
+func (o *TaxCategoryCreateDataRelationshipsTaxCalculator) SetData(v POSTTaxCategoriesRequestDataRelationshipsTaxCalculatorData) {
+	o.Data = v
 }
 
-// Marshal data from the first non-nil pointers in the struct to JSON
-func (src TaxCategoryCreateDataRelationshipsTaxCalculator) MarshalJSON() ([]byte, error) {
-	if src.AvalaraAccount != nil {
-		return json.Marshal(&src.AvalaraAccount)
+func (o TaxCategoryCreateDataRelationshipsTaxCalculator) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
-
-	if src.ExternalTaxCalculator != nil {
-		return json.Marshal(&src.ExternalTaxCalculator)
-	}
-
-	if src.ManualTaxCalculator != nil {
-		return json.Marshal(&src.ManualTaxCalculator)
-	}
-
-	if src.TaxjarAccount != nil {
-		return json.Marshal(&src.TaxjarAccount)
-	}
-
-	return nil, nil // no data in oneOf schemas
+	return json.Marshal(toSerialize)
 }
 
-// Get the actual instance
-func (obj *TaxCategoryCreateDataRelationshipsTaxCalculator) GetActualInstance() interface{} {
-	if obj == nil {
-		return nil
-	}
-	if obj.AvalaraAccount != nil {
-		return obj.AvalaraAccount
-	}
-
-	if obj.ExternalTaxCalculator != nil {
-		return obj.ExternalTaxCalculator
-	}
-
-	if obj.ManualTaxCalculator != nil {
-		return obj.ManualTaxCalculator
-	}
-
-	if obj.TaxjarAccount != nil {
-		return obj.TaxjarAccount
-	}
-
-	// all schemas are nil
-	return nil
+func (o TaxCategoryCreateDataRelationshipsTaxCalculator) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableTaxCategoryCreateDataRelationshipsTaxCalculator struct {

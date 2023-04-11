@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the LineItemUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &LineItemUpdate{}
+
 // LineItemUpdate struct for LineItemUpdate
 type LineItemUpdate struct {
-	Data LineItemUpdateData `json:"data"`
+	Data PATCHLineItemsLineItemIdRequestData `json:"data"`
 }
 
 // NewLineItemUpdate instantiates a new LineItemUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewLineItemUpdate(data LineItemUpdateData) *LineItemUpdate {
+func NewLineItemUpdate(data PATCHLineItemsLineItemIdRequestData) *LineItemUpdate {
 	this := LineItemUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewLineItemUpdateWithDefaults() *LineItemUpdate {
 }
 
 // GetData returns the Data field value
-func (o *LineItemUpdate) GetData() LineItemUpdateData {
+func (o *LineItemUpdate) GetData() PATCHLineItemsLineItemIdRequestData {
 	if o == nil {
-		var ret LineItemUpdateData
+		var ret PATCHLineItemsLineItemIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *LineItemUpdate) GetData() LineItemUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *LineItemUpdate) GetDataOk() (*LineItemUpdateData, bool) {
+func (o *LineItemUpdate) GetDataOk() (*PATCHLineItemsLineItemIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *LineItemUpdate) GetDataOk() (*LineItemUpdateData, bool) {
 }
 
 // SetData sets field value
-func (o *LineItemUpdate) SetData(v LineItemUpdateData) {
+func (o *LineItemUpdate) SetData(v PATCHLineItemsLineItemIdRequestData) {
 	o.Data = v
 }
 
 func (o LineItemUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o LineItemUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableLineItemUpdate struct {

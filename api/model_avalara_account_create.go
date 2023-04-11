@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the AvalaraAccountCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AvalaraAccountCreate{}
+
 // AvalaraAccountCreate struct for AvalaraAccountCreate
 type AvalaraAccountCreate struct {
-	Data AvalaraAccountCreateData `json:"data"`
+	Data POSTAvalaraAccountsRequestData `json:"data"`
 }
 
 // NewAvalaraAccountCreate instantiates a new AvalaraAccountCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAvalaraAccountCreate(data AvalaraAccountCreateData) *AvalaraAccountCreate {
+func NewAvalaraAccountCreate(data POSTAvalaraAccountsRequestData) *AvalaraAccountCreate {
 	this := AvalaraAccountCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewAvalaraAccountCreateWithDefaults() *AvalaraAccountCreate {
 }
 
 // GetData returns the Data field value
-func (o *AvalaraAccountCreate) GetData() AvalaraAccountCreateData {
+func (o *AvalaraAccountCreate) GetData() POSTAvalaraAccountsRequestData {
 	if o == nil {
-		var ret AvalaraAccountCreateData
+		var ret POSTAvalaraAccountsRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *AvalaraAccountCreate) GetData() AvalaraAccountCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *AvalaraAccountCreate) GetDataOk() (*AvalaraAccountCreateData, bool) {
+func (o *AvalaraAccountCreate) GetDataOk() (*POSTAvalaraAccountsRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *AvalaraAccountCreate) GetDataOk() (*AvalaraAccountCreateData, bool) {
 }
 
 // SetData sets field value
-func (o *AvalaraAccountCreate) SetData(v AvalaraAccountCreateData) {
+func (o *AvalaraAccountCreate) SetData(v POSTAvalaraAccountsRequestData) {
 	o.Data = v
 }
 
 func (o AvalaraAccountCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AvalaraAccountCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableAvalaraAccountCreate struct {

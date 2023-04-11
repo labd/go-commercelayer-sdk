@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type TaxCalculatorsApiService service
 type TaxCalculatorsApiGETMarketIdTaxCalculatorRequest struct {
 	ctx        context.Context
 	ApiService *TaxCalculatorsApiService
-	marketId   string
+	marketId   interface{}
 }
 
 func (r TaxCalculatorsApiGETMarketIdTaxCalculatorRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Retrieve the tax calculator associated to the market
 	@param marketId The resource's id
 	@return TaxCalculatorsApiGETMarketIdTaxCalculatorRequest
 */
-func (a *TaxCalculatorsApiService) GETMarketIdTaxCalculator(ctx context.Context, marketId string) TaxCalculatorsApiGETMarketIdTaxCalculatorRequest {
+func (a *TaxCalculatorsApiService) GETMarketIdTaxCalculator(ctx context.Context, marketId interface{}) TaxCalculatorsApiGETMarketIdTaxCalculatorRequest {
 	return TaxCalculatorsApiGETMarketIdTaxCalculatorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -64,7 +64,7 @@ func (a *TaxCalculatorsApiService) GETMarketIdTaxCalculatorExecute(r TaxCalculat
 	}
 
 	localVarPath := localBasePath + "/markets/{marketId}/tax_calculator"
-	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterToString(r.marketId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *TaxCalculatorsApiService) GETMarketIdTaxCalculatorExecute(r TaxCalculat
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *TaxCalculatorsApiService) GETTaxCalculatorsExecute(r TaxCalculatorsApiG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -218,7 +218,7 @@ func (a *TaxCalculatorsApiService) GETTaxCalculatorsExecute(r TaxCalculatorsApiG
 type TaxCalculatorsApiGETTaxCalculatorsTaxCalculatorIdRequest struct {
 	ctx             context.Context
 	ApiService      *TaxCalculatorsApiService
-	taxCalculatorId string
+	taxCalculatorId interface{}
 }
 
 func (r TaxCalculatorsApiGETTaxCalculatorsTaxCalculatorIdRequest) Execute() (*GETTaxCalculatorsTaxCalculatorId200Response, *http.Response, error) {
@@ -234,7 +234,7 @@ Retrieve a tax calculator
 	@param taxCalculatorId The resource's id
 	@return TaxCalculatorsApiGETTaxCalculatorsTaxCalculatorIdRequest
 */
-func (a *TaxCalculatorsApiService) GETTaxCalculatorsTaxCalculatorId(ctx context.Context, taxCalculatorId string) TaxCalculatorsApiGETTaxCalculatorsTaxCalculatorIdRequest {
+func (a *TaxCalculatorsApiService) GETTaxCalculatorsTaxCalculatorId(ctx context.Context, taxCalculatorId interface{}) TaxCalculatorsApiGETTaxCalculatorsTaxCalculatorIdRequest {
 	return TaxCalculatorsApiGETTaxCalculatorsTaxCalculatorIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -259,7 +259,7 @@ func (a *TaxCalculatorsApiService) GETTaxCalculatorsTaxCalculatorIdExecute(r Tax
 	}
 
 	localVarPath := localBasePath + "/tax_calculators/{taxCalculatorId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxCalculatorId"+"}", url.PathEscape(parameterToString(r.taxCalculatorId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.taxCalculatorId, "taxCalculatorId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *TaxCalculatorsApiService) GETTaxCalculatorsTaxCalculatorIdExecute(r Tax
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

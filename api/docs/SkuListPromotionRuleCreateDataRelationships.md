@@ -4,14 +4,14 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Promotion** | [**CouponCodesPromotionRuleCreateDataRelationshipsPromotion**](CouponCodesPromotionRuleCreateDataRelationshipsPromotion.md) |  | 
-**SkuList** | Pointer to [**BundleCreateDataRelationshipsSkuList**](BundleCreateDataRelationshipsSkuList.md) |  | [optional] 
+**Promotion** | [**OrderAmountPromotionRuleCreateDataRelationshipsPromotion**](OrderAmountPromotionRuleCreateDataRelationshipsPromotion.md) |  | 
+**SkuList** | Pointer to [**POSTBundlesRequestDataRelationshipsSkuList**](POSTBundlesRequestDataRelationshipsSkuList.md) |  | [optional] 
 
 ## Methods
 
 ### NewSkuListPromotionRuleCreateDataRelationships
 
-`func NewSkuListPromotionRuleCreateDataRelationships(promotion CouponCodesPromotionRuleCreateDataRelationshipsPromotion, ) *SkuListPromotionRuleCreateDataRelationships`
+`func NewSkuListPromotionRuleCreateDataRelationships(promotion OrderAmountPromotionRuleCreateDataRelationshipsPromotion, ) *SkuListPromotionRuleCreateDataRelationships`
 
 NewSkuListPromotionRuleCreateDataRelationships instantiates a new SkuListPromotionRuleCreateDataRelationships object
 This constructor will assign default values to properties that have it defined,
@@ -28,40 +28,40 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPromotion
 
-`func (o *SkuListPromotionRuleCreateDataRelationships) GetPromotion() CouponCodesPromotionRuleCreateDataRelationshipsPromotion`
+`func (o *SkuListPromotionRuleCreateDataRelationships) GetPromotion() OrderAmountPromotionRuleCreateDataRelationshipsPromotion`
 
 GetPromotion returns the Promotion field if non-nil, zero value otherwise.
 
 ### GetPromotionOk
 
-`func (o *SkuListPromotionRuleCreateDataRelationships) GetPromotionOk() (*CouponCodesPromotionRuleCreateDataRelationshipsPromotion, bool)`
+`func (o *SkuListPromotionRuleCreateDataRelationships) GetPromotionOk() (*OrderAmountPromotionRuleCreateDataRelationshipsPromotion, bool)`
 
 GetPromotionOk returns a tuple with the Promotion field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPromotion
 
-`func (o *SkuListPromotionRuleCreateDataRelationships) SetPromotion(v CouponCodesPromotionRuleCreateDataRelationshipsPromotion)`
+`func (o *SkuListPromotionRuleCreateDataRelationships) SetPromotion(v OrderAmountPromotionRuleCreateDataRelationshipsPromotion)`
 
 SetPromotion sets Promotion field to given value.
 
 
 ### GetSkuList
 
-`func (o *SkuListPromotionRuleCreateDataRelationships) GetSkuList() BundleCreateDataRelationshipsSkuList`
+`func (o *SkuListPromotionRuleCreateDataRelationships) GetSkuList() POSTBundlesRequestDataRelationshipsSkuList`
 
 GetSkuList returns the SkuList field if non-nil, zero value otherwise.
 
 ### GetSkuListOk
 
-`func (o *SkuListPromotionRuleCreateDataRelationships) GetSkuListOk() (*BundleCreateDataRelationshipsSkuList, bool)`
+`func (o *SkuListPromotionRuleCreateDataRelationships) GetSkuListOk() (*POSTBundlesRequestDataRelationshipsSkuList, bool)`
 
 GetSkuListOk returns a tuple with the SkuList field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetSkuList
 
-`func (o *SkuListPromotionRuleCreateDataRelationships) SetSkuList(v BundleCreateDataRelationshipsSkuList)`
+`func (o *SkuListPromotionRuleCreateDataRelationships) SetSkuList(v POSTBundlesRequestDataRelationshipsSkuList)`
 
 SetSkuList sets SkuList field to given value.
 

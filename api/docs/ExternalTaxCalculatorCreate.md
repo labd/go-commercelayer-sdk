@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**ExternalTaxCalculatorCreateData**](ExternalTaxCalculatorCreateData.md) |  | 
+**Data** | [**POSTExternalTaxCalculatorsRequestData**](POSTExternalTaxCalculatorsRequestData.md) |  | 
 
 ## Methods
 
 ### NewExternalTaxCalculatorCreate
 
-`func NewExternalTaxCalculatorCreate(data ExternalTaxCalculatorCreateData, ) *ExternalTaxCalculatorCreate`
+`func NewExternalTaxCalculatorCreate(data POSTExternalTaxCalculatorsRequestData, ) *ExternalTaxCalculatorCreate`
 
 NewExternalTaxCalculatorCreate instantiates a new ExternalTaxCalculatorCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *ExternalTaxCalculatorCreate) GetData() ExternalTaxCalculatorCreateData`
+`func (o *ExternalTaxCalculatorCreate) GetData() POSTExternalTaxCalculatorsRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ExternalTaxCalculatorCreate) GetDataOk() (*ExternalTaxCalculatorCreateData, bool)`
+`func (o *ExternalTaxCalculatorCreate) GetDataOk() (*POSTExternalTaxCalculatorsRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ExternalTaxCalculatorCreate) SetData(v ExternalTaxCalculatorCreateData)`
+`func (o *ExternalTaxCalculatorCreate) SetData(v POSTExternalTaxCalculatorsRequestData)`
 
 SetData sets Data field to given value.
 

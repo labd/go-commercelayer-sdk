@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**TaxRuleDataRelationshipsManualTaxCalculatorData**](TaxRuleDataRelationshipsManualTaxCalculatorData.md) |  | [optional] 
+**Data** | Pointer to [**POSTTaxRulesRequestDataRelationshipsManualTaxCalculatorData**](POSTTaxRulesRequestDataRelationshipsManualTaxCalculatorData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *TaxRuleDataRelationshipsManualTaxCalculator) GetData() TaxRuleDataRelationshipsManualTaxCalculatorData`
+`func (o *TaxRuleDataRelationshipsManualTaxCalculator) GetData() POSTTaxRulesRequestDataRelationshipsManualTaxCalculatorData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *TaxRuleDataRelationshipsManualTaxCalculator) GetDataOk() (*TaxRuleDataRelationshipsManualTaxCalculatorData, bool)`
+`func (o *TaxRuleDataRelationshipsManualTaxCalculator) GetDataOk() (*POSTTaxRulesRequestDataRelationshipsManualTaxCalculatorData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *TaxRuleDataRelationshipsManualTaxCalculator) SetData(v TaxRuleDataRelationshipsManualTaxCalculatorData)`
+`func (o *TaxRuleDataRelationshipsManualTaxCalculator) SetData(v POSTTaxRulesRequestDataRelationshipsManualTaxCalculatorData)`
 
 SetData sets Data field to given value.
 

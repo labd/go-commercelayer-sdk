@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the AdyenPaymentDataRelationshipsOrder type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AdyenPaymentDataRelationshipsOrder{}
+
 // AdyenPaymentDataRelationshipsOrder struct for AdyenPaymentDataRelationshipsOrder
 type AdyenPaymentDataRelationshipsOrder struct {
-	Data *AdyenPaymentDataRelationshipsOrderData `json:"data,omitempty"`
+	Data *POSTAdyenPaymentsRequestDataRelationshipsOrderData `json:"data,omitempty"`
 }
 
 // NewAdyenPaymentDataRelationshipsOrder instantiates a new AdyenPaymentDataRelationshipsOrder object
@@ -38,9 +41,9 @@ func NewAdyenPaymentDataRelationshipsOrderWithDefaults() *AdyenPaymentDataRelati
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *AdyenPaymentDataRelationshipsOrder) GetData() AdyenPaymentDataRelationshipsOrderData {
-	if o == nil || o.Data == nil {
-		var ret AdyenPaymentDataRelationshipsOrderData
+func (o *AdyenPaymentDataRelationshipsOrder) GetData() POSTAdyenPaymentsRequestDataRelationshipsOrderData {
+	if o == nil || IsNil(o.Data) {
+		var ret POSTAdyenPaymentsRequestDataRelationshipsOrderData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *AdyenPaymentDataRelationshipsOrder) GetData() AdyenPaymentDataRelations
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *AdyenPaymentDataRelationshipsOrder) GetDataOk() (*AdyenPaymentDataRelationshipsOrderData, bool) {
-	if o == nil || o.Data == nil {
+func (o *AdyenPaymentDataRelationshipsOrder) GetDataOk() (*POSTAdyenPaymentsRequestDataRelationshipsOrderData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *AdyenPaymentDataRelationshipsOrder) GetDataOk() (*AdyenPaymentDataRelat
 
 // HasData returns a boolean if a field has been set.
 func (o *AdyenPaymentDataRelationshipsOrder) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given AdyenPaymentDataRelationshipsOrderData and assigns it to the Data field.
-func (o *AdyenPaymentDataRelationshipsOrder) SetData(v AdyenPaymentDataRelationshipsOrderData) {
+// SetData gets a reference to the given POSTAdyenPaymentsRequestDataRelationshipsOrderData and assigns it to the Data field.
+func (o *AdyenPaymentDataRelationshipsOrder) SetData(v POSTAdyenPaymentsRequestDataRelationshipsOrderData) {
 	o.Data = &v
 }
 
 func (o AdyenPaymentDataRelationshipsOrder) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AdyenPaymentDataRelationshipsOrder) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableAdyenPaymentDataRelationshipsOrder struct {

@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETSkus200ResponseDataInnerAttributes**](GETSkus200ResponseDataInnerAttributes.md) |  | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Attributes** | [**GETSkusSkuId200ResponseDataAttributes**](GETSkusSkuId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**SkuDataRelationships**](SkuDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewSkuData
 
-`func NewSkuData(type_ string, attributes GETSkus200ResponseDataInnerAttributes, ) *SkuData`
+`func NewSkuData(type_ interface{}, attributes GETSkusSkuId200ResponseDataAttributes, ) *SkuData`
 
 NewSkuData instantiates a new SkuData object
 This constructor will assign default values to properties that have it defined,
@@ -29,40 +29,50 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *SkuData) GetType() string`
+`func (o *SkuData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *SkuData) GetTypeOk() (*string, bool)`
+`func (o *SkuData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *SkuData) SetType(v string)`
+`func (o *SkuData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *SkuData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *SkuData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *SkuData) GetAttributes() GETSkus200ResponseDataInnerAttributes`
+`func (o *SkuData) GetAttributes() GETSkusSkuId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *SkuData) GetAttributesOk() (*GETSkus200ResponseDataInnerAttributes, bool)`
+`func (o *SkuData) GetAttributesOk() (*GETSkusSkuId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *SkuData) SetAttributes(v GETSkus200ResponseDataInnerAttributes)`
+`func (o *SkuData) SetAttributes(v GETSkusSkuId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

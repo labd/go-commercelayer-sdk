@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETBingGeocoders200ResponseDataInnerAttributes**](GETBingGeocoders200ResponseDataInnerAttributes.md) |  | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Attributes** | [**GETBingGeocodersBingGeocoderId200ResponseDataAttributes**](GETBingGeocodersBingGeocoderId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**BingGeocoderDataRelationships**](BingGeocoderDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewGeocoderData
 
-`func NewGeocoderData(type_ string, attributes GETBingGeocoders200ResponseDataInnerAttributes, ) *GeocoderData`
+`func NewGeocoderData(type_ interface{}, attributes GETBingGeocodersBingGeocoderId200ResponseDataAttributes, ) *GeocoderData`
 
 NewGeocoderData instantiates a new GeocoderData object
 This constructor will assign default values to properties that have it defined,
@@ -29,40 +29,50 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *GeocoderData) GetType() string`
+`func (o *GeocoderData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *GeocoderData) GetTypeOk() (*string, bool)`
+`func (o *GeocoderData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *GeocoderData) SetType(v string)`
+`func (o *GeocoderData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *GeocoderData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *GeocoderData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *GeocoderData) GetAttributes() GETBingGeocoders200ResponseDataInnerAttributes`
+`func (o *GeocoderData) GetAttributes() GETBingGeocodersBingGeocoderId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *GeocoderData) GetAttributesOk() (*GETBingGeocoders200ResponseDataInnerAttributes, bool)`
+`func (o *GeocoderData) GetAttributesOk() (*GETBingGeocodersBingGeocoderId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *GeocoderData) SetAttributes(v GETBingGeocoders200ResponseDataInnerAttributes)`
+`func (o *GeocoderData) SetAttributes(v GETBingGeocodersBingGeocoderId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

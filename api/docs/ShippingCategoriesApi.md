@@ -1,6 +1,6 @@
 # \ShippingCategoriesApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -32,15 +32,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    shippingCategoryId := "shippingCategoryId_example" // string | The resource's id
+    shippingCategoryId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShippingCategoriesApi.DELETEShippingCategoriesShippingCategoryId(context.Background(), shippingCategoryId).Execute()
+    r, err := apiClient.ShippingCategoriesApi.DELETEShippingCategoriesShippingCategoryId(context.Background(), shippingCategoryId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingCategoriesApi.DELETEShippingCategoriesShippingCategoryId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -54,7 +54,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**shippingCategoryId** | **string** | The resource&#39;s id | 
+**shippingCategoryId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -100,15 +100,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    shipmentId := "shipmentId_example" // string | The resource's id
+    shipmentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShippingCategoriesApi.GETShipmentIdShippingCategory(context.Background(), shipmentId).Execute()
+    r, err := apiClient.ShippingCategoriesApi.GETShipmentIdShippingCategory(context.Background(), shipmentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingCategoriesApi.GETShipmentIdShippingCategory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -122,7 +122,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**shipmentId** | **string** | The resource&#39;s id | 
+**shipmentId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -168,7 +168,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -229,11 +229,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    shippingCategoryId := "shippingCategoryId_example" // string | The resource's id
+    shippingCategoryId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -253,7 +253,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**shippingCategoryId** | **string** | The resource&#39;s id | 
+**shippingCategoryId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -299,15 +299,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    shippingMethodId := "shippingMethodId_example" // string | The resource's id
+    shippingMethodId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShippingCategoriesApi.GETShippingMethodIdShippingCategory(context.Background(), shippingMethodId).Execute()
+    r, err := apiClient.ShippingCategoriesApi.GETShippingMethodIdShippingCategory(context.Background(), shippingMethodId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingCategoriesApi.GETShippingMethodIdShippingCategory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -321,7 +321,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**shippingMethodId** | **string** | The resource&#39;s id | 
+**shippingMethodId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -367,15 +367,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    skuId := "skuId_example" // string | The resource's id
+    skuId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShippingCategoriesApi.GETSkuIdShippingCategory(context.Background(), skuId).Execute()
+    r, err := apiClient.ShippingCategoriesApi.GETSkuIdShippingCategory(context.Background(), skuId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingCategoriesApi.GETSkuIdShippingCategory``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -389,7 +389,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**skuId** | **string** | The resource&#39;s id | 
+**skuId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -420,7 +420,7 @@ Name | Type | Description  | Notes
 
 ## PATCHShippingCategoriesShippingCategoryId
 
-> PATCHShippingCategoriesShippingCategoryId200Response PATCHShippingCategoriesShippingCategoryId(ctx, shippingCategoryId).ShippingCategoryUpdate(shippingCategoryUpdate).Execute()
+> PATCHShippingCategoriesShippingCategoryId200Response PATCHShippingCategoriesShippingCategoryId(ctx, shippingCategoryId).PATCHShippingCategoriesShippingCategoryIdRequest(pATCHShippingCategoriesShippingCategoryIdRequest).Execute()
 
 Update a shipping category
 
@@ -435,16 +435,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    shippingCategoryUpdate := *openapiclient.NewShippingCategoryUpdate(*openapiclient.NewShippingCategoryUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHShippingCategoriesShippingCategoryId200ResponseDataAttributes())) // ShippingCategoryUpdate | 
-    shippingCategoryId := "shippingCategoryId_example" // string | The resource's id
+    pATCHShippingCategoriesShippingCategoryIdRequest := *openapiclient.NewPATCHShippingCategoriesShippingCategoryIdRequest(*openapiclient.NewPATCHShippingCategoriesShippingCategoryIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHShippingCategoriesShippingCategoryIdRequestDataAttributes())) // PATCHShippingCategoriesShippingCategoryIdRequest | 
+    shippingCategoryId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShippingCategoriesApi.PATCHShippingCategoriesShippingCategoryId(context.Background(), shippingCategoryId).ShippingCategoryUpdate(shippingCategoryUpdate).Execute()
+    resp, r, err := apiClient.ShippingCategoriesApi.PATCHShippingCategoriesShippingCategoryId(context.Background(), shippingCategoryId).PATCHShippingCategoriesShippingCategoryIdRequest(pATCHShippingCategoriesShippingCategoryIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingCategoriesApi.PATCHShippingCategoriesShippingCategoryId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -460,7 +460,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**shippingCategoryId** | **string** | The resource&#39;s id | 
+**shippingCategoryId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -469,7 +469,7 @@ Other parameters are passed through a pointer to a apiPATCHShippingCategoriesShi
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **shippingCategoryUpdate** | [**ShippingCategoryUpdate**](ShippingCategoryUpdate.md) |  | 
+ **pATCHShippingCategoriesShippingCategoryIdRequest** | [**PATCHShippingCategoriesShippingCategoryIdRequest**](PATCHShippingCategoriesShippingCategoryIdRequest.md) |  | 
 
 
 ### Return type
@@ -492,7 +492,7 @@ Name | Type | Description  | Notes
 
 ## POSTShippingCategories
 
-> POSTShippingCategories201Response POSTShippingCategories(ctx).ShippingCategoryCreate(shippingCategoryCreate).Execute()
+> POSTShippingCategories201Response POSTShippingCategories(ctx).POSTShippingCategoriesRequest(pOSTShippingCategoriesRequest).Execute()
 
 Create a shipping category
 
@@ -507,15 +507,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    shippingCategoryCreate := *openapiclient.NewShippingCategoryCreate(*openapiclient.NewShippingCategoryCreateData("Type_example", *openapiclient.NewPOSTShippingCategories201ResponseDataAttributes("Merchandise"))) // ShippingCategoryCreate | 
+    pOSTShippingCategoriesRequest := *openapiclient.NewPOSTShippingCategoriesRequest(*openapiclient.NewPOSTShippingCategoriesRequestData(interface{}(123), *openapiclient.NewPOSTShippingCategoriesRequestDataAttributes(interface{}(Merchandise)))) // POSTShippingCategoriesRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShippingCategoriesApi.POSTShippingCategories(context.Background()).ShippingCategoryCreate(shippingCategoryCreate).Execute()
+    resp, r, err := apiClient.ShippingCategoriesApi.POSTShippingCategories(context.Background()).POSTShippingCategoriesRequest(pOSTShippingCategoriesRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingCategoriesApi.POSTShippingCategories``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -536,7 +536,7 @@ Other parameters are passed through a pointer to a apiPOSTShippingCategoriesRequ
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **shippingCategoryCreate** | [**ShippingCategoryCreate**](ShippingCategoryCreate.md) |  | 
+ **pOSTShippingCategoriesRequest** | [**POSTShippingCategoriesRequest**](POSTShippingCategoriesRequest.md) |  | 
 
 ### Return type
 

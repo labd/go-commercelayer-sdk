@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**InStockSubscriptionCreateData**](InStockSubscriptionCreateData.md) |  | 
+**Data** | [**POSTInStockSubscriptionsRequestData**](POSTInStockSubscriptionsRequestData.md) |  | 
 
 ## Methods
 
 ### NewInStockSubscriptionCreate
 
-`func NewInStockSubscriptionCreate(data InStockSubscriptionCreateData, ) *InStockSubscriptionCreate`
+`func NewInStockSubscriptionCreate(data POSTInStockSubscriptionsRequestData, ) *InStockSubscriptionCreate`
 
 NewInStockSubscriptionCreate instantiates a new InStockSubscriptionCreate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *InStockSubscriptionCreate) GetData() InStockSubscriptionCreateData`
+`func (o *InStockSubscriptionCreate) GetData() POSTInStockSubscriptionsRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *InStockSubscriptionCreate) GetDataOk() (*InStockSubscriptionCreateData, bool)`
+`func (o *InStockSubscriptionCreate) GetDataOk() (*POSTInStockSubscriptionsRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *InStockSubscriptionCreate) SetData(v InStockSubscriptionCreateData)`
+`func (o *InStockSubscriptionCreate) SetData(v POSTInStockSubscriptionsRequestData)`
 
 SetData sets Data field to given value.
 

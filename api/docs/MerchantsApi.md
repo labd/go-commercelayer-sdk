@@ -1,6 +1,6 @@
 # \MerchantsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,15 +30,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    merchantId := "merchantId_example" // string | The resource's id
+    merchantId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MerchantsApi.DELETEMerchantsMerchantId(context.Background(), merchantId).Execute()
+    r, err := apiClient.MerchantsApi.DELETEMerchantsMerchantId(context.Background(), merchantId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MerchantsApi.DELETEMerchantsMerchantId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -52,7 +52,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**merchantId** | **string** | The resource&#39;s id | 
+**merchantId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -98,15 +98,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    marketId := "marketId_example" // string | The resource's id
+    marketId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MerchantsApi.GETMarketIdMerchant(context.Background(), marketId).Execute()
+    r, err := apiClient.MerchantsApi.GETMarketIdMerchant(context.Background(), marketId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MerchantsApi.GETMarketIdMerchant``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -120,7 +120,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**marketId** | **string** | The resource&#39;s id | 
+**marketId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -166,7 +166,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -227,11 +227,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    merchantId := "merchantId_example" // string | The resource's id
+    merchantId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -251,7 +251,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**merchantId** | **string** | The resource&#39;s id | 
+**merchantId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHMerchantsMerchantId
 
-> PATCHMerchantsMerchantId200Response PATCHMerchantsMerchantId(ctx, merchantId).MerchantUpdate(merchantUpdate).Execute()
+> PATCHMerchantsMerchantId200Response PATCHMerchantsMerchantId(ctx, merchantId).PATCHMerchantsMerchantIdRequest(pATCHMerchantsMerchantIdRequest).Execute()
 
 Update a merchant
 
@@ -297,16 +297,16 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    merchantUpdate := *openapiclient.NewMerchantUpdate(*openapiclient.NewMerchantUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHMerchantsMerchantId200ResponseDataAttributes())) // MerchantUpdate | 
-    merchantId := "merchantId_example" // string | The resource's id
+    pATCHMerchantsMerchantIdRequest := *openapiclient.NewPATCHMerchantsMerchantIdRequest(*openapiclient.NewPATCHMerchantsMerchantIdRequestData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHMerchantsMerchantIdRequestDataAttributes())) // PATCHMerchantsMerchantIdRequest | 
+    merchantId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MerchantsApi.PATCHMerchantsMerchantId(context.Background(), merchantId).MerchantUpdate(merchantUpdate).Execute()
+    resp, r, err := apiClient.MerchantsApi.PATCHMerchantsMerchantId(context.Background(), merchantId).PATCHMerchantsMerchantIdRequest(pATCHMerchantsMerchantIdRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MerchantsApi.PATCHMerchantsMerchantId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -322,7 +322,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**merchantId** | **string** | The resource&#39;s id | 
+**merchantId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -331,7 +331,7 @@ Other parameters are passed through a pointer to a apiPATCHMerchantsMerchantIdRe
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchantUpdate** | [**MerchantUpdate**](MerchantUpdate.md) |  | 
+ **pATCHMerchantsMerchantIdRequest** | [**PATCHMerchantsMerchantIdRequest**](PATCHMerchantsMerchantIdRequest.md) |  | 
 
 
 ### Return type
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 ## POSTMerchants
 
-> POSTMerchants201Response POSTMerchants(ctx).MerchantCreate(merchantCreate).Execute()
+> POSTMerchants201Response POSTMerchants(ctx).POSTMerchantsRequest(pOSTMerchantsRequest).Execute()
 
 Create a merchant
 
@@ -369,15 +369,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    merchantCreate := *openapiclient.NewMerchantCreate(*openapiclient.NewMerchantCreateData("Type_example", *openapiclient.NewPOSTMerchants201ResponseDataAttributes("The Brand Inc."))) // MerchantCreate | 
+    pOSTMerchantsRequest := *openapiclient.NewPOSTMerchantsRequest(*openapiclient.NewPOSTMerchantsRequestData(interface{}(123), *openapiclient.NewPOSTMerchantsRequestDataAttributes(interface{}(The Brand Inc.)))) // POSTMerchantsRequest | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.MerchantsApi.POSTMerchants(context.Background()).MerchantCreate(merchantCreate).Execute()
+    resp, r, err := apiClient.MerchantsApi.POSTMerchants(context.Background()).POSTMerchantsRequest(pOSTMerchantsRequest).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `MerchantsApi.POSTMerchants``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -398,7 +398,7 @@ Other parameters are passed through a pointer to a apiPOSTMerchantsRequest struc
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **merchantCreate** | [**MerchantCreate**](MerchantCreate.md) |  | 
+ **pOSTMerchantsRequest** | [**POSTMerchantsRequest**](POSTMerchantsRequest.md) |  | 
 
 ### Return type
 

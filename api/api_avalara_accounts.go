@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type AvalaraAccountsApiService service
 type AvalaraAccountsApiDELETEAvalaraAccountsAvalaraAccountIdRequest struct {
 	ctx              context.Context
 	ApiService       *AvalaraAccountsApiService
-	avalaraAccountId string
+	avalaraAccountId interface{}
 }
 
 func (r AvalaraAccountsApiDELETEAvalaraAccountsAvalaraAccountIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete an avalara account
 	@param avalaraAccountId The resource's id
 	@return AvalaraAccountsApiDELETEAvalaraAccountsAvalaraAccountIdRequest
 */
-func (a *AvalaraAccountsApiService) DELETEAvalaraAccountsAvalaraAccountId(ctx context.Context, avalaraAccountId string) AvalaraAccountsApiDELETEAvalaraAccountsAvalaraAccountIdRequest {
+func (a *AvalaraAccountsApiService) DELETEAvalaraAccountsAvalaraAccountId(ctx context.Context, avalaraAccountId interface{}) AvalaraAccountsApiDELETEAvalaraAccountsAvalaraAccountIdRequest {
 	return AvalaraAccountsApiDELETEAvalaraAccountsAvalaraAccountIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -64,7 +64,7 @@ func (a *AvalaraAccountsApiService) DELETEAvalaraAccountsAvalaraAccountIdExecute
 	}
 
 	localVarPath := localBasePath + "/avalara_accounts/{avalaraAccountId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"avalaraAccountId"+"}", url.PathEscape(parameterToString(r.avalaraAccountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"avalaraAccountId"+"}", url.PathEscape(parameterValueToString(r.avalaraAccountId, "avalaraAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *AvalaraAccountsApiService) DELETEAvalaraAccountsAvalaraAccountIdExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *AvalaraAccountsApiService) GETAvalaraAccountsExecute(r AvalaraAccountsA
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -218,7 +218,7 @@ func (a *AvalaraAccountsApiService) GETAvalaraAccountsExecute(r AvalaraAccountsA
 type AvalaraAccountsApiGETAvalaraAccountsAvalaraAccountIdRequest struct {
 	ctx              context.Context
 	ApiService       *AvalaraAccountsApiService
-	avalaraAccountId string
+	avalaraAccountId interface{}
 }
 
 func (r AvalaraAccountsApiGETAvalaraAccountsAvalaraAccountIdRequest) Execute() (*GETAvalaraAccountsAvalaraAccountId200Response, *http.Response, error) {
@@ -234,7 +234,7 @@ Retrieve an avalara account
 	@param avalaraAccountId The resource's id
 	@return AvalaraAccountsApiGETAvalaraAccountsAvalaraAccountIdRequest
 */
-func (a *AvalaraAccountsApiService) GETAvalaraAccountsAvalaraAccountId(ctx context.Context, avalaraAccountId string) AvalaraAccountsApiGETAvalaraAccountsAvalaraAccountIdRequest {
+func (a *AvalaraAccountsApiService) GETAvalaraAccountsAvalaraAccountId(ctx context.Context, avalaraAccountId interface{}) AvalaraAccountsApiGETAvalaraAccountsAvalaraAccountIdRequest {
 	return AvalaraAccountsApiGETAvalaraAccountsAvalaraAccountIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -259,7 +259,7 @@ func (a *AvalaraAccountsApiService) GETAvalaraAccountsAvalaraAccountIdExecute(r 
 	}
 
 	localVarPath := localBasePath + "/avalara_accounts/{avalaraAccountId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"avalaraAccountId"+"}", url.PathEscape(parameterToString(r.avalaraAccountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"avalaraAccountId"+"}", url.PathEscape(parameterValueToString(r.avalaraAccountId, "avalaraAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *AvalaraAccountsApiService) GETAvalaraAccountsAvalaraAccountIdExecute(r 
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -320,14 +320,14 @@ func (a *AvalaraAccountsApiService) GETAvalaraAccountsAvalaraAccountIdExecute(r 
 }
 
 type AvalaraAccountsApiPATCHAvalaraAccountsAvalaraAccountIdRequest struct {
-	ctx                  context.Context
-	ApiService           *AvalaraAccountsApiService
-	avalaraAccountUpdate *AvalaraAccountUpdate
-	avalaraAccountId     string
+	ctx                                         context.Context
+	ApiService                                  *AvalaraAccountsApiService
+	pATCHAvalaraAccountsAvalaraAccountIdRequest *PATCHAvalaraAccountsAvalaraAccountIdRequest
+	avalaraAccountId                            interface{}
 }
 
-func (r AvalaraAccountsApiPATCHAvalaraAccountsAvalaraAccountIdRequest) AvalaraAccountUpdate(avalaraAccountUpdate AvalaraAccountUpdate) AvalaraAccountsApiPATCHAvalaraAccountsAvalaraAccountIdRequest {
-	r.avalaraAccountUpdate = &avalaraAccountUpdate
+func (r AvalaraAccountsApiPATCHAvalaraAccountsAvalaraAccountIdRequest) PATCHAvalaraAccountsAvalaraAccountIdRequest(pATCHAvalaraAccountsAvalaraAccountIdRequest PATCHAvalaraAccountsAvalaraAccountIdRequest) AvalaraAccountsApiPATCHAvalaraAccountsAvalaraAccountIdRequest {
+	r.pATCHAvalaraAccountsAvalaraAccountIdRequest = &pATCHAvalaraAccountsAvalaraAccountIdRequest
 	return r
 }
 
@@ -344,7 +344,7 @@ Update an avalara account
 	@param avalaraAccountId The resource's id
 	@return AvalaraAccountsApiPATCHAvalaraAccountsAvalaraAccountIdRequest
 */
-func (a *AvalaraAccountsApiService) PATCHAvalaraAccountsAvalaraAccountId(ctx context.Context, avalaraAccountId string) AvalaraAccountsApiPATCHAvalaraAccountsAvalaraAccountIdRequest {
+func (a *AvalaraAccountsApiService) PATCHAvalaraAccountsAvalaraAccountId(ctx context.Context, avalaraAccountId interface{}) AvalaraAccountsApiPATCHAvalaraAccountsAvalaraAccountIdRequest {
 	return AvalaraAccountsApiPATCHAvalaraAccountsAvalaraAccountIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -369,13 +369,13 @@ func (a *AvalaraAccountsApiService) PATCHAvalaraAccountsAvalaraAccountIdExecute(
 	}
 
 	localVarPath := localBasePath + "/avalara_accounts/{avalaraAccountId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"avalaraAccountId"+"}", url.PathEscape(parameterToString(r.avalaraAccountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"avalaraAccountId"+"}", url.PathEscape(parameterValueToString(r.avalaraAccountId, "avalaraAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.avalaraAccountUpdate == nil {
-		return localVarReturnValue, nil, reportError("avalaraAccountUpdate is required and must be specified")
+	if r.pATCHAvalaraAccountsAvalaraAccountIdRequest == nil {
+		return localVarReturnValue, nil, reportError("pATCHAvalaraAccountsAvalaraAccountIdRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -396,7 +396,7 @@ func (a *AvalaraAccountsApiService) PATCHAvalaraAccountsAvalaraAccountIdExecute(
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.avalaraAccountUpdate
+	localVarPostBody = r.pATCHAvalaraAccountsAvalaraAccountIdRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -407,9 +407,9 @@ func (a *AvalaraAccountsApiService) PATCHAvalaraAccountsAvalaraAccountIdExecute(
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -435,13 +435,13 @@ func (a *AvalaraAccountsApiService) PATCHAvalaraAccountsAvalaraAccountIdExecute(
 }
 
 type AvalaraAccountsApiPOSTAvalaraAccountsRequest struct {
-	ctx                  context.Context
-	ApiService           *AvalaraAccountsApiService
-	avalaraAccountCreate *AvalaraAccountCreate
+	ctx                        context.Context
+	ApiService                 *AvalaraAccountsApiService
+	pOSTAvalaraAccountsRequest *POSTAvalaraAccountsRequest
 }
 
-func (r AvalaraAccountsApiPOSTAvalaraAccountsRequest) AvalaraAccountCreate(avalaraAccountCreate AvalaraAccountCreate) AvalaraAccountsApiPOSTAvalaraAccountsRequest {
-	r.avalaraAccountCreate = &avalaraAccountCreate
+func (r AvalaraAccountsApiPOSTAvalaraAccountsRequest) POSTAvalaraAccountsRequest(pOSTAvalaraAccountsRequest POSTAvalaraAccountsRequest) AvalaraAccountsApiPOSTAvalaraAccountsRequest {
+	r.pOSTAvalaraAccountsRequest = &pOSTAvalaraAccountsRequest
 	return r
 }
 
@@ -485,8 +485,8 @@ func (a *AvalaraAccountsApiService) POSTAvalaraAccountsExecute(r AvalaraAccounts
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
 	localVarFormParams := url.Values{}
-	if r.avalaraAccountCreate == nil {
-		return localVarReturnValue, nil, reportError("avalaraAccountCreate is required and must be specified")
+	if r.pOSTAvalaraAccountsRequest == nil {
+		return localVarReturnValue, nil, reportError("pOSTAvalaraAccountsRequest is required and must be specified")
 	}
 
 	// to determine the Content-Type header
@@ -507,7 +507,7 @@ func (a *AvalaraAccountsApiService) POSTAvalaraAccountsExecute(r AvalaraAccounts
 		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
 	}
 	// body params
-	localVarPostBody = r.avalaraAccountCreate
+	localVarPostBody = r.pOSTAvalaraAccountsRequest
 	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
 	if err != nil {
 		return localVarReturnValue, nil, err
@@ -518,9 +518,9 @@ func (a *AvalaraAccountsApiService) POSTAvalaraAccountsExecute(r AvalaraAccounts
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

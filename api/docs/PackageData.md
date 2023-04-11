@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETPackages200ResponseDataInnerAttributes**](GETPackages200ResponseDataInnerAttributes.md) |  | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Attributes** | [**GETPackagesPackageId200ResponseDataAttributes**](GETPackagesPackageId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**PackageDataRelationships**](PackageDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPackageData
 
-`func NewPackageData(type_ string, attributes GETPackages200ResponseDataInnerAttributes, ) *PackageData`
+`func NewPackageData(type_ interface{}, attributes GETPackagesPackageId200ResponseDataAttributes, ) *PackageData`
 
 NewPackageData instantiates a new PackageData object
 This constructor will assign default values to properties that have it defined,
@@ -29,40 +29,50 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *PackageData) GetType() string`
+`func (o *PackageData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *PackageData) GetTypeOk() (*string, bool)`
+`func (o *PackageData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *PackageData) SetType(v string)`
+`func (o *PackageData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *PackageData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *PackageData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *PackageData) GetAttributes() GETPackages200ResponseDataInnerAttributes`
+`func (o *PackageData) GetAttributes() GETPackagesPackageId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PackageData) GetAttributesOk() (*GETPackages200ResponseDataInnerAttributes, bool)`
+`func (o *PackageData) GetAttributesOk() (*GETPackagesPackageId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PackageData) SetAttributes(v GETPackages200ResponseDataInnerAttributes)`
+`func (o *PackageData) SetAttributes(v GETPackagesPackageId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

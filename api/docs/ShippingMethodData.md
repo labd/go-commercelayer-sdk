@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETShippingMethods200ResponseDataInnerAttributes**](GETShippingMethods200ResponseDataInnerAttributes.md) |  | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Attributes** | [**GETShippingMethodsShippingMethodId200ResponseDataAttributes**](GETShippingMethodsShippingMethodId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ShippingMethodDataRelationships**](ShippingMethodDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewShippingMethodData
 
-`func NewShippingMethodData(type_ string, attributes GETShippingMethods200ResponseDataInnerAttributes, ) *ShippingMethodData`
+`func NewShippingMethodData(type_ interface{}, attributes GETShippingMethodsShippingMethodId200ResponseDataAttributes, ) *ShippingMethodData`
 
 NewShippingMethodData instantiates a new ShippingMethodData object
 This constructor will assign default values to properties that have it defined,
@@ -29,40 +29,50 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *ShippingMethodData) GetType() string`
+`func (o *ShippingMethodData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *ShippingMethodData) GetTypeOk() (*string, bool)`
+`func (o *ShippingMethodData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *ShippingMethodData) SetType(v string)`
+`func (o *ShippingMethodData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *ShippingMethodData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *ShippingMethodData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *ShippingMethodData) GetAttributes() GETShippingMethods200ResponseDataInnerAttributes`
+`func (o *ShippingMethodData) GetAttributes() GETShippingMethodsShippingMethodId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ShippingMethodData) GetAttributesOk() (*GETShippingMethods200ResponseDataInnerAttributes, bool)`
+`func (o *ShippingMethodData) GetAttributesOk() (*GETShippingMethodsShippingMethodId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ShippingMethodData) SetAttributes(v GETShippingMethods200ResponseDataInnerAttributes)`
+`func (o *ShippingMethodData) SetAttributes(v GETShippingMethodsShippingMethodId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

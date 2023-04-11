@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**ExternalPromotionUpdateData**](ExternalPromotionUpdateData.md) |  | 
+**Data** | [**PATCHExternalPromotionsExternalPromotionIdRequestData**](PATCHExternalPromotionsExternalPromotionIdRequestData.md) |  | 
 
 ## Methods
 
 ### NewExternalPromotionUpdate
 
-`func NewExternalPromotionUpdate(data ExternalPromotionUpdateData, ) *ExternalPromotionUpdate`
+`func NewExternalPromotionUpdate(data PATCHExternalPromotionsExternalPromotionIdRequestData, ) *ExternalPromotionUpdate`
 
 NewExternalPromotionUpdate instantiates a new ExternalPromotionUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *ExternalPromotionUpdate) GetData() ExternalPromotionUpdateData`
+`func (o *ExternalPromotionUpdate) GetData() PATCHExternalPromotionsExternalPromotionIdRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ExternalPromotionUpdate) GetDataOk() (*ExternalPromotionUpdateData, bool)`
+`func (o *ExternalPromotionUpdate) GetDataOk() (*PATCHExternalPromotionsExternalPromotionIdRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ExternalPromotionUpdate) SetData(v ExternalPromotionUpdateData)`
+`func (o *ExternalPromotionUpdate) SetData(v PATCHExternalPromotionsExternalPromotionIdRequestData)`
 
 SetData sets Data field to given value.
 

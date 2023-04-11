@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the PriceCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PriceCreate{}
+
 // PriceCreate struct for PriceCreate
 type PriceCreate struct {
-	Data PriceCreateData `json:"data"`
+	Data POSTPricesRequestData `json:"data"`
 }
 
 // NewPriceCreate instantiates a new PriceCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPriceCreate(data PriceCreateData) *PriceCreate {
+func NewPriceCreate(data POSTPricesRequestData) *PriceCreate {
 	this := PriceCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewPriceCreateWithDefaults() *PriceCreate {
 }
 
 // GetData returns the Data field value
-func (o *PriceCreate) GetData() PriceCreateData {
+func (o *PriceCreate) GetData() POSTPricesRequestData {
 	if o == nil {
-		var ret PriceCreateData
+		var ret POSTPricesRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *PriceCreate) GetData() PriceCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *PriceCreate) GetDataOk() (*PriceCreateData, bool) {
+func (o *PriceCreate) GetDataOk() (*POSTPricesRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *PriceCreate) GetDataOk() (*PriceCreateData, bool) {
 }
 
 // SetData sets field value
-func (o *PriceCreate) SetData(v PriceCreateData) {
+func (o *PriceCreate) SetData(v POSTPricesRequestData) {
 	o.Data = v
 }
 
 func (o PriceCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PriceCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullablePriceCreate struct {

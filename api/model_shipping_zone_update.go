@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the ShippingZoneUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ShippingZoneUpdate{}
+
 // ShippingZoneUpdate struct for ShippingZoneUpdate
 type ShippingZoneUpdate struct {
-	Data ShippingZoneUpdateData `json:"data"`
+	Data PATCHShippingZonesShippingZoneIdRequestData `json:"data"`
 }
 
 // NewShippingZoneUpdate instantiates a new ShippingZoneUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShippingZoneUpdate(data ShippingZoneUpdateData) *ShippingZoneUpdate {
+func NewShippingZoneUpdate(data PATCHShippingZonesShippingZoneIdRequestData) *ShippingZoneUpdate {
 	this := ShippingZoneUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewShippingZoneUpdateWithDefaults() *ShippingZoneUpdate {
 }
 
 // GetData returns the Data field value
-func (o *ShippingZoneUpdate) GetData() ShippingZoneUpdateData {
+func (o *ShippingZoneUpdate) GetData() PATCHShippingZonesShippingZoneIdRequestData {
 	if o == nil {
-		var ret ShippingZoneUpdateData
+		var ret PATCHShippingZonesShippingZoneIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *ShippingZoneUpdate) GetData() ShippingZoneUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ShippingZoneUpdate) GetDataOk() (*ShippingZoneUpdateData, bool) {
+func (o *ShippingZoneUpdate) GetDataOk() (*PATCHShippingZonesShippingZoneIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *ShippingZoneUpdate) GetDataOk() (*ShippingZoneUpdateData, bool) {
 }
 
 // SetData sets field value
-func (o *ShippingZoneUpdate) SetData(v ShippingZoneUpdateData) {
+func (o *ShippingZoneUpdate) SetData(v PATCHShippingZonesShippingZoneIdRequestData) {
 	o.Data = v
 }
 
 func (o ShippingZoneUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ShippingZoneUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableShippingZoneUpdate struct {

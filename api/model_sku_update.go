@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the SkuUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SkuUpdate{}
+
 // SkuUpdate struct for SkuUpdate
 type SkuUpdate struct {
-	Data SkuUpdateData `json:"data"`
+	Data PATCHSkusSkuIdRequestData `json:"data"`
 }
 
 // NewSkuUpdate instantiates a new SkuUpdate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuUpdate(data SkuUpdateData) *SkuUpdate {
+func NewSkuUpdate(data PATCHSkusSkuIdRequestData) *SkuUpdate {
 	this := SkuUpdate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewSkuUpdateWithDefaults() *SkuUpdate {
 }
 
 // GetData returns the Data field value
-func (o *SkuUpdate) GetData() SkuUpdateData {
+func (o *SkuUpdate) GetData() PATCHSkusSkuIdRequestData {
 	if o == nil {
-		var ret SkuUpdateData
+		var ret PATCHSkusSkuIdRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *SkuUpdate) GetData() SkuUpdateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *SkuUpdate) GetDataOk() (*SkuUpdateData, bool) {
+func (o *SkuUpdate) GetDataOk() (*PATCHSkusSkuIdRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *SkuUpdate) GetDataOk() (*SkuUpdateData, bool) {
 }
 
 // SetData sets field value
-func (o *SkuUpdate) SetData(v SkuUpdateData) {
+func (o *SkuUpdate) SetData(v PATCHSkusSkuIdRequestData) {
 	o.Data = v
 }
 
 func (o SkuUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o SkuUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableSkuUpdate struct {

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the ExportCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ExportCreate{}
+
 // ExportCreate struct for ExportCreate
 type ExportCreate struct {
-	Data ExportCreateData `json:"data"`
+	Data POSTExportsRequestData `json:"data"`
 }
 
 // NewExportCreate instantiates a new ExportCreate object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExportCreate(data ExportCreateData) *ExportCreate {
+func NewExportCreate(data POSTExportsRequestData) *ExportCreate {
 	this := ExportCreate{}
 	this.Data = data
 	return &this
@@ -39,9 +42,9 @@ func NewExportCreateWithDefaults() *ExportCreate {
 }
 
 // GetData returns the Data field value
-func (o *ExportCreate) GetData() ExportCreateData {
+func (o *ExportCreate) GetData() POSTExportsRequestData {
 	if o == nil {
-		var ret ExportCreateData
+		var ret POSTExportsRequestData
 		return ret
 	}
 
@@ -50,7 +53,7 @@ func (o *ExportCreate) GetData() ExportCreateData {
 
 // GetDataOk returns a tuple with the Data field value
 // and a boolean to check if the value has been set.
-func (o *ExportCreate) GetDataOk() (*ExportCreateData, bool) {
+func (o *ExportCreate) GetDataOk() (*POSTExportsRequestData, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -58,16 +61,22 @@ func (o *ExportCreate) GetDataOk() (*ExportCreateData, bool) {
 }
 
 // SetData sets field value
-func (o *ExportCreate) SetData(v ExportCreateData) {
+func (o *ExportCreate) SetData(v POSTExportsRequestData) {
 	o.Data = v
 }
 
 func (o ExportCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ExportCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableExportCreate struct {

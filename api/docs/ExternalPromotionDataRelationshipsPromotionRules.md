@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**ExternalPromotionDataRelationshipsPromotionRulesData**](ExternalPromotionDataRelationshipsPromotionRulesData.md) |  | [optional] 
+**Data** | Pointer to [**POSTExternalPromotionsRequestDataRelationshipsPromotionRulesData**](POSTExternalPromotionsRequestDataRelationshipsPromotionRulesData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *ExternalPromotionDataRelationshipsPromotionRules) GetData() ExternalPromotionDataRelationshipsPromotionRulesData`
+`func (o *ExternalPromotionDataRelationshipsPromotionRules) GetData() POSTExternalPromotionsRequestDataRelationshipsPromotionRulesData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *ExternalPromotionDataRelationshipsPromotionRules) GetDataOk() (*ExternalPromotionDataRelationshipsPromotionRulesData, bool)`
+`func (o *ExternalPromotionDataRelationshipsPromotionRules) GetDataOk() (*POSTExternalPromotionsRequestDataRelationshipsPromotionRulesData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *ExternalPromotionDataRelationshipsPromotionRules) SetData(v ExternalPromotionDataRelationshipsPromotionRulesData)`
+`func (o *ExternalPromotionDataRelationshipsPromotionRules) SetData(v POSTExternalPromotionsRequestDataRelationshipsPromotionRulesData)`
 
 SetData sets Data field to given value.
 

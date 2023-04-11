@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type HasManyApiService service
 type HasManyApiGETAdyenGatewayIdAdyenPaymentsRequest struct {
 	ctx            context.Context
 	ApiService     *HasManyApiService
-	adyenGatewayId string
+	adyenGatewayId interface{}
 }
 
 func (r HasManyApiGETAdyenGatewayIdAdyenPaymentsRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Retrieve the adyen payments associated to the adyen gateway
 	@param adyenGatewayId The resource's id
 	@return HasManyApiGETAdyenGatewayIdAdyenPaymentsRequest
 */
-func (a *HasManyApiService) GETAdyenGatewayIdAdyenPayments(ctx context.Context, adyenGatewayId string) HasManyApiGETAdyenGatewayIdAdyenPaymentsRequest {
+func (a *HasManyApiService) GETAdyenGatewayIdAdyenPayments(ctx context.Context, adyenGatewayId interface{}) HasManyApiGETAdyenGatewayIdAdyenPaymentsRequest {
 	return HasManyApiGETAdyenGatewayIdAdyenPaymentsRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -64,7 +64,7 @@ func (a *HasManyApiService) GETAdyenGatewayIdAdyenPaymentsExecute(r HasManyApiGE
 	}
 
 	localVarPath := localBasePath + "/adyen_gateways/{adyenGatewayId}/adyen_payments"
-	localVarPath = strings.Replace(localVarPath, "{"+"adyenGatewayId"+"}", url.PathEscape(parameterToString(r.adyenGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"adyenGatewayId"+"}", url.PathEscape(parameterValueToString(r.adyenGatewayId, "adyenGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *HasManyApiService) GETAdyenGatewayIdAdyenPaymentsExecute(r HasManyApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *HasManyApiService) GETAdyenGatewayIdAdyenPaymentsExecute(r HasManyApiGE
 type HasManyApiGETAdyenGatewayIdPaymentMethodsRequest struct {
 	ctx            context.Context
 	ApiService     *HasManyApiService
-	adyenGatewayId string
+	adyenGatewayId interface{}
 }
 
 func (r HasManyApiGETAdyenGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the payment methods associated to the adyen gateway
 	@param adyenGatewayId The resource's id
 	@return HasManyApiGETAdyenGatewayIdPaymentMethodsRequest
 */
-func (a *HasManyApiService) GETAdyenGatewayIdPaymentMethods(ctx context.Context, adyenGatewayId string) HasManyApiGETAdyenGatewayIdPaymentMethodsRequest {
+func (a *HasManyApiService) GETAdyenGatewayIdPaymentMethods(ctx context.Context, adyenGatewayId interface{}) HasManyApiGETAdyenGatewayIdPaymentMethodsRequest {
 	return HasManyApiGETAdyenGatewayIdPaymentMethodsRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -156,7 +156,7 @@ func (a *HasManyApiService) GETAdyenGatewayIdPaymentMethodsExecute(r HasManyApiG
 	}
 
 	localVarPath := localBasePath + "/adyen_gateways/{adyenGatewayId}/payment_methods"
-	localVarPath = strings.Replace(localVarPath, "{"+"adyenGatewayId"+"}", url.PathEscape(parameterToString(r.adyenGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"adyenGatewayId"+"}", url.PathEscape(parameterValueToString(r.adyenGatewayId, "adyenGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *HasManyApiService) GETAdyenGatewayIdPaymentMethodsExecute(r HasManyApiG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -210,7 +210,7 @@ func (a *HasManyApiService) GETAdyenGatewayIdPaymentMethodsExecute(r HasManyApiG
 type HasManyApiGETAuthorizationIdCapturesRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
-	authorizationId string
+	authorizationId interface{}
 }
 
 func (r HasManyApiGETAuthorizationIdCapturesRequest) Execute() (*http.Response, error) {
@@ -226,7 +226,7 @@ Retrieve the captures associated to the authorization
 	@param authorizationId The resource's id
 	@return HasManyApiGETAuthorizationIdCapturesRequest
 */
-func (a *HasManyApiService) GETAuthorizationIdCaptures(ctx context.Context, authorizationId string) HasManyApiGETAuthorizationIdCapturesRequest {
+func (a *HasManyApiService) GETAuthorizationIdCaptures(ctx context.Context, authorizationId interface{}) HasManyApiGETAuthorizationIdCapturesRequest {
 	return HasManyApiGETAuthorizationIdCapturesRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -248,7 +248,7 @@ func (a *HasManyApiService) GETAuthorizationIdCapturesExecute(r HasManyApiGETAut
 	}
 
 	localVarPath := localBasePath + "/authorizations/{authorizationId}/captures"
-	localVarPath = strings.Replace(localVarPath, "{"+"authorizationId"+"}", url.PathEscape(parameterToString(r.authorizationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"authorizationId"+"}", url.PathEscape(parameterValueToString(r.authorizationId, "authorizationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -281,9 +281,9 @@ func (a *HasManyApiService) GETAuthorizationIdCapturesExecute(r HasManyApiGETAut
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -302,7 +302,7 @@ func (a *HasManyApiService) GETAuthorizationIdCapturesExecute(r HasManyApiGETAut
 type HasManyApiGETAuthorizationIdEventsRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
-	authorizationId string
+	authorizationId interface{}
 }
 
 func (r HasManyApiGETAuthorizationIdEventsRequest) Execute() (*http.Response, error) {
@@ -318,7 +318,7 @@ Retrieve the events associated to the authorization
 	@param authorizationId The resource's id
 	@return HasManyApiGETAuthorizationIdEventsRequest
 */
-func (a *HasManyApiService) GETAuthorizationIdEvents(ctx context.Context, authorizationId string) HasManyApiGETAuthorizationIdEventsRequest {
+func (a *HasManyApiService) GETAuthorizationIdEvents(ctx context.Context, authorizationId interface{}) HasManyApiGETAuthorizationIdEventsRequest {
 	return HasManyApiGETAuthorizationIdEventsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -340,7 +340,7 @@ func (a *HasManyApiService) GETAuthorizationIdEventsExecute(r HasManyApiGETAutho
 	}
 
 	localVarPath := localBasePath + "/authorizations/{authorizationId}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"authorizationId"+"}", url.PathEscape(parameterToString(r.authorizationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"authorizationId"+"}", url.PathEscape(parameterValueToString(r.authorizationId, "authorizationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -373,9 +373,9 @@ func (a *HasManyApiService) GETAuthorizationIdEventsExecute(r HasManyApiGETAutho
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -394,7 +394,7 @@ func (a *HasManyApiService) GETAuthorizationIdEventsExecute(r HasManyApiGETAutho
 type HasManyApiGETAuthorizationIdVoidsRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
-	authorizationId string
+	authorizationId interface{}
 }
 
 func (r HasManyApiGETAuthorizationIdVoidsRequest) Execute() (*http.Response, error) {
@@ -410,7 +410,7 @@ Retrieve the voids associated to the authorization
 	@param authorizationId The resource's id
 	@return HasManyApiGETAuthorizationIdVoidsRequest
 */
-func (a *HasManyApiService) GETAuthorizationIdVoids(ctx context.Context, authorizationId string) HasManyApiGETAuthorizationIdVoidsRequest {
+func (a *HasManyApiService) GETAuthorizationIdVoids(ctx context.Context, authorizationId interface{}) HasManyApiGETAuthorizationIdVoidsRequest {
 	return HasManyApiGETAuthorizationIdVoidsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -432,7 +432,7 @@ func (a *HasManyApiService) GETAuthorizationIdVoidsExecute(r HasManyApiGETAuthor
 	}
 
 	localVarPath := localBasePath + "/authorizations/{authorizationId}/voids"
-	localVarPath = strings.Replace(localVarPath, "{"+"authorizationId"+"}", url.PathEscape(parameterToString(r.authorizationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"authorizationId"+"}", url.PathEscape(parameterValueToString(r.authorizationId, "authorizationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -465,9 +465,9 @@ func (a *HasManyApiService) GETAuthorizationIdVoidsExecute(r HasManyApiGETAuthor
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -486,7 +486,7 @@ func (a *HasManyApiService) GETAuthorizationIdVoidsExecute(r HasManyApiGETAuthor
 type HasManyApiGETAvalaraAccountIdAttachmentsRequest struct {
 	ctx              context.Context
 	ApiService       *HasManyApiService
-	avalaraAccountId string
+	avalaraAccountId interface{}
 }
 
 func (r HasManyApiGETAvalaraAccountIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -502,7 +502,7 @@ Retrieve the attachments associated to the avalara account
 	@param avalaraAccountId The resource's id
 	@return HasManyApiGETAvalaraAccountIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETAvalaraAccountIdAttachments(ctx context.Context, avalaraAccountId string) HasManyApiGETAvalaraAccountIdAttachmentsRequest {
+func (a *HasManyApiService) GETAvalaraAccountIdAttachments(ctx context.Context, avalaraAccountId interface{}) HasManyApiGETAvalaraAccountIdAttachmentsRequest {
 	return HasManyApiGETAvalaraAccountIdAttachmentsRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -524,7 +524,7 @@ func (a *HasManyApiService) GETAvalaraAccountIdAttachmentsExecute(r HasManyApiGE
 	}
 
 	localVarPath := localBasePath + "/avalara_accounts/{avalaraAccountId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"avalaraAccountId"+"}", url.PathEscape(parameterToString(r.avalaraAccountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"avalaraAccountId"+"}", url.PathEscape(parameterValueToString(r.avalaraAccountId, "avalaraAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -557,9 +557,9 @@ func (a *HasManyApiService) GETAvalaraAccountIdAttachmentsExecute(r HasManyApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -578,7 +578,7 @@ func (a *HasManyApiService) GETAvalaraAccountIdAttachmentsExecute(r HasManyApiGE
 type HasManyApiGETAvalaraAccountIdMarketsRequest struct {
 	ctx              context.Context
 	ApiService       *HasManyApiService
-	avalaraAccountId string
+	avalaraAccountId interface{}
 }
 
 func (r HasManyApiGETAvalaraAccountIdMarketsRequest) Execute() (*http.Response, error) {
@@ -594,7 +594,7 @@ Retrieve the markets associated to the avalara account
 	@param avalaraAccountId The resource's id
 	@return HasManyApiGETAvalaraAccountIdMarketsRequest
 */
-func (a *HasManyApiService) GETAvalaraAccountIdMarkets(ctx context.Context, avalaraAccountId string) HasManyApiGETAvalaraAccountIdMarketsRequest {
+func (a *HasManyApiService) GETAvalaraAccountIdMarkets(ctx context.Context, avalaraAccountId interface{}) HasManyApiGETAvalaraAccountIdMarketsRequest {
 	return HasManyApiGETAvalaraAccountIdMarketsRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -616,7 +616,7 @@ func (a *HasManyApiService) GETAvalaraAccountIdMarketsExecute(r HasManyApiGETAva
 	}
 
 	localVarPath := localBasePath + "/avalara_accounts/{avalaraAccountId}/markets"
-	localVarPath = strings.Replace(localVarPath, "{"+"avalaraAccountId"+"}", url.PathEscape(parameterToString(r.avalaraAccountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"avalaraAccountId"+"}", url.PathEscape(parameterValueToString(r.avalaraAccountId, "avalaraAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -649,9 +649,9 @@ func (a *HasManyApiService) GETAvalaraAccountIdMarketsExecute(r HasManyApiGETAva
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -670,7 +670,7 @@ func (a *HasManyApiService) GETAvalaraAccountIdMarketsExecute(r HasManyApiGETAva
 type HasManyApiGETAvalaraAccountIdTaxCategoriesRequest struct {
 	ctx              context.Context
 	ApiService       *HasManyApiService
-	avalaraAccountId string
+	avalaraAccountId interface{}
 }
 
 func (r HasManyApiGETAvalaraAccountIdTaxCategoriesRequest) Execute() (*http.Response, error) {
@@ -686,7 +686,7 @@ Retrieve the tax categories associated to the avalara account
 	@param avalaraAccountId The resource's id
 	@return HasManyApiGETAvalaraAccountIdTaxCategoriesRequest
 */
-func (a *HasManyApiService) GETAvalaraAccountIdTaxCategories(ctx context.Context, avalaraAccountId string) HasManyApiGETAvalaraAccountIdTaxCategoriesRequest {
+func (a *HasManyApiService) GETAvalaraAccountIdTaxCategories(ctx context.Context, avalaraAccountId interface{}) HasManyApiGETAvalaraAccountIdTaxCategoriesRequest {
 	return HasManyApiGETAvalaraAccountIdTaxCategoriesRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -708,7 +708,7 @@ func (a *HasManyApiService) GETAvalaraAccountIdTaxCategoriesExecute(r HasManyApi
 	}
 
 	localVarPath := localBasePath + "/avalara_accounts/{avalaraAccountId}/tax_categories"
-	localVarPath = strings.Replace(localVarPath, "{"+"avalaraAccountId"+"}", url.PathEscape(parameterToString(r.avalaraAccountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"avalaraAccountId"+"}", url.PathEscape(parameterValueToString(r.avalaraAccountId, "avalaraAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -741,9 +741,193 @@ func (a *HasManyApiService) GETAvalaraAccountIdTaxCategoriesExecute(r HasManyApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETAxerveGatewayIdAxervePaymentsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	axerveGatewayId interface{}
+}
+
+func (r HasManyApiGETAxerveGatewayIdAxervePaymentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETAxerveGatewayIdAxervePaymentsExecute(r)
+}
+
+/*
+GETAxerveGatewayIdAxervePayments Retrieve the axerve payments associated to the axerve gateway
+
+Retrieve the axerve payments associated to the axerve gateway
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param axerveGatewayId The resource's id
+	@return HasManyApiGETAxerveGatewayIdAxervePaymentsRequest
+*/
+func (a *HasManyApiService) GETAxerveGatewayIdAxervePayments(ctx context.Context, axerveGatewayId interface{}) HasManyApiGETAxerveGatewayIdAxervePaymentsRequest {
+	return HasManyApiGETAxerveGatewayIdAxervePaymentsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		axerveGatewayId: axerveGatewayId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETAxerveGatewayIdAxervePaymentsExecute(r HasManyApiGETAxerveGatewayIdAxervePaymentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETAxerveGatewayIdAxervePayments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/axerve_gateways/{axerveGatewayId}/axerve_payments"
+	localVarPath = strings.Replace(localVarPath, "{"+"axerveGatewayId"+"}", url.PathEscape(parameterValueToString(r.axerveGatewayId, "axerveGatewayId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETAxerveGatewayIdPaymentMethodsRequest struct {
+	ctx             context.Context
+	ApiService      *HasManyApiService
+	axerveGatewayId interface{}
+}
+
+func (r HasManyApiGETAxerveGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETAxerveGatewayIdPaymentMethodsExecute(r)
+}
+
+/*
+GETAxerveGatewayIdPaymentMethods Retrieve the payment methods associated to the axerve gateway
+
+Retrieve the payment methods associated to the axerve gateway
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param axerveGatewayId The resource's id
+	@return HasManyApiGETAxerveGatewayIdPaymentMethodsRequest
+*/
+func (a *HasManyApiService) GETAxerveGatewayIdPaymentMethods(ctx context.Context, axerveGatewayId interface{}) HasManyApiGETAxerveGatewayIdPaymentMethodsRequest {
+	return HasManyApiGETAxerveGatewayIdPaymentMethodsRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		axerveGatewayId: axerveGatewayId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETAxerveGatewayIdPaymentMethodsExecute(r HasManyApiGETAxerveGatewayIdPaymentMethodsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETAxerveGatewayIdPaymentMethods")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/axerve_gateways/{axerveGatewayId}/payment_methods"
+	localVarPath = strings.Replace(localVarPath, "{"+"axerveGatewayId"+"}", url.PathEscape(parameterValueToString(r.axerveGatewayId, "axerveGatewayId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -762,7 +946,7 @@ func (a *HasManyApiService) GETAvalaraAccountIdTaxCategoriesExecute(r HasManyApi
 type HasManyApiGETBillingInfoValidationRuleIdAttachmentsRequest struct {
 	ctx                         context.Context
 	ApiService                  *HasManyApiService
-	billingInfoValidationRuleId string
+	billingInfoValidationRuleId interface{}
 }
 
 func (r HasManyApiGETBillingInfoValidationRuleIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -778,7 +962,7 @@ Retrieve the attachments associated to the billing info validation rule
 	@param billingInfoValidationRuleId The resource's id
 	@return HasManyApiGETBillingInfoValidationRuleIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETBillingInfoValidationRuleIdAttachments(ctx context.Context, billingInfoValidationRuleId string) HasManyApiGETBillingInfoValidationRuleIdAttachmentsRequest {
+func (a *HasManyApiService) GETBillingInfoValidationRuleIdAttachments(ctx context.Context, billingInfoValidationRuleId interface{}) HasManyApiGETBillingInfoValidationRuleIdAttachmentsRequest {
 	return HasManyApiGETBillingInfoValidationRuleIdAttachmentsRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
@@ -800,7 +984,7 @@ func (a *HasManyApiService) GETBillingInfoValidationRuleIdAttachmentsExecute(r H
 	}
 
 	localVarPath := localBasePath + "/billing_info_validation_rules/{billingInfoValidationRuleId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterToString(r.billingInfoValidationRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterValueToString(r.billingInfoValidationRuleId, "billingInfoValidationRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -833,9 +1017,9 @@ func (a *HasManyApiService) GETBillingInfoValidationRuleIdAttachmentsExecute(r H
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -854,7 +1038,7 @@ func (a *HasManyApiService) GETBillingInfoValidationRuleIdAttachmentsExecute(r H
 type HasManyApiGETBingGeocoderIdAddressesRequest struct {
 	ctx            context.Context
 	ApiService     *HasManyApiService
-	bingGeocoderId string
+	bingGeocoderId interface{}
 }
 
 func (r HasManyApiGETBingGeocoderIdAddressesRequest) Execute() (*http.Response, error) {
@@ -870,7 +1054,7 @@ Retrieve the addresses associated to the bing geocoder
 	@param bingGeocoderId The resource's id
 	@return HasManyApiGETBingGeocoderIdAddressesRequest
 */
-func (a *HasManyApiService) GETBingGeocoderIdAddresses(ctx context.Context, bingGeocoderId string) HasManyApiGETBingGeocoderIdAddressesRequest {
+func (a *HasManyApiService) GETBingGeocoderIdAddresses(ctx context.Context, bingGeocoderId interface{}) HasManyApiGETBingGeocoderIdAddressesRequest {
 	return HasManyApiGETBingGeocoderIdAddressesRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -892,7 +1076,7 @@ func (a *HasManyApiService) GETBingGeocoderIdAddressesExecute(r HasManyApiGETBin
 	}
 
 	localVarPath := localBasePath + "/bing_geocoders/{bingGeocoderId}/addresses"
-	localVarPath = strings.Replace(localVarPath, "{"+"bingGeocoderId"+"}", url.PathEscape(parameterToString(r.bingGeocoderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"bingGeocoderId"+"}", url.PathEscape(parameterValueToString(r.bingGeocoderId, "bingGeocoderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -925,9 +1109,9 @@ func (a *HasManyApiService) GETBingGeocoderIdAddressesExecute(r HasManyApiGETBin
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -946,7 +1130,7 @@ func (a *HasManyApiService) GETBingGeocoderIdAddressesExecute(r HasManyApiGETBin
 type HasManyApiGETBingGeocoderIdAttachmentsRequest struct {
 	ctx            context.Context
 	ApiService     *HasManyApiService
-	bingGeocoderId string
+	bingGeocoderId interface{}
 }
 
 func (r HasManyApiGETBingGeocoderIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -962,7 +1146,7 @@ Retrieve the attachments associated to the bing geocoder
 	@param bingGeocoderId The resource's id
 	@return HasManyApiGETBingGeocoderIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETBingGeocoderIdAttachments(ctx context.Context, bingGeocoderId string) HasManyApiGETBingGeocoderIdAttachmentsRequest {
+func (a *HasManyApiService) GETBingGeocoderIdAttachments(ctx context.Context, bingGeocoderId interface{}) HasManyApiGETBingGeocoderIdAttachmentsRequest {
 	return HasManyApiGETBingGeocoderIdAttachmentsRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -984,7 +1168,7 @@ func (a *HasManyApiService) GETBingGeocoderIdAttachmentsExecute(r HasManyApiGETB
 	}
 
 	localVarPath := localBasePath + "/bing_geocoders/{bingGeocoderId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"bingGeocoderId"+"}", url.PathEscape(parameterToString(r.bingGeocoderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"bingGeocoderId"+"}", url.PathEscape(parameterValueToString(r.bingGeocoderId, "bingGeocoderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1017,9 +1201,9 @@ func (a *HasManyApiService) GETBingGeocoderIdAttachmentsExecute(r HasManyApiGETB
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1038,7 +1222,7 @@ func (a *HasManyApiService) GETBingGeocoderIdAttachmentsExecute(r HasManyApiGETB
 type HasManyApiGETBraintreeGatewayIdBraintreePaymentsRequest struct {
 	ctx                context.Context
 	ApiService         *HasManyApiService
-	braintreeGatewayId string
+	braintreeGatewayId interface{}
 }
 
 func (r HasManyApiGETBraintreeGatewayIdBraintreePaymentsRequest) Execute() (*http.Response, error) {
@@ -1054,7 +1238,7 @@ Retrieve the braintree payments associated to the braintree gateway
 	@param braintreeGatewayId The resource's id
 	@return HasManyApiGETBraintreeGatewayIdBraintreePaymentsRequest
 */
-func (a *HasManyApiService) GETBraintreeGatewayIdBraintreePayments(ctx context.Context, braintreeGatewayId string) HasManyApiGETBraintreeGatewayIdBraintreePaymentsRequest {
+func (a *HasManyApiService) GETBraintreeGatewayIdBraintreePayments(ctx context.Context, braintreeGatewayId interface{}) HasManyApiGETBraintreeGatewayIdBraintreePaymentsRequest {
 	return HasManyApiGETBraintreeGatewayIdBraintreePaymentsRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -1076,7 +1260,7 @@ func (a *HasManyApiService) GETBraintreeGatewayIdBraintreePaymentsExecute(r HasM
 	}
 
 	localVarPath := localBasePath + "/braintree_gateways/{braintreeGatewayId}/braintree_payments"
-	localVarPath = strings.Replace(localVarPath, "{"+"braintreeGatewayId"+"}", url.PathEscape(parameterToString(r.braintreeGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"braintreeGatewayId"+"}", url.PathEscape(parameterValueToString(r.braintreeGatewayId, "braintreeGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1109,9 +1293,9 @@ func (a *HasManyApiService) GETBraintreeGatewayIdBraintreePaymentsExecute(r HasM
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1130,7 +1314,7 @@ func (a *HasManyApiService) GETBraintreeGatewayIdBraintreePaymentsExecute(r HasM
 type HasManyApiGETBraintreeGatewayIdPaymentMethodsRequest struct {
 	ctx                context.Context
 	ApiService         *HasManyApiService
-	braintreeGatewayId string
+	braintreeGatewayId interface{}
 }
 
 func (r HasManyApiGETBraintreeGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
@@ -1146,7 +1330,7 @@ Retrieve the payment methods associated to the braintree gateway
 	@param braintreeGatewayId The resource's id
 	@return HasManyApiGETBraintreeGatewayIdPaymentMethodsRequest
 */
-func (a *HasManyApiService) GETBraintreeGatewayIdPaymentMethods(ctx context.Context, braintreeGatewayId string) HasManyApiGETBraintreeGatewayIdPaymentMethodsRequest {
+func (a *HasManyApiService) GETBraintreeGatewayIdPaymentMethods(ctx context.Context, braintreeGatewayId interface{}) HasManyApiGETBraintreeGatewayIdPaymentMethodsRequest {
 	return HasManyApiGETBraintreeGatewayIdPaymentMethodsRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -1168,7 +1352,7 @@ func (a *HasManyApiService) GETBraintreeGatewayIdPaymentMethodsExecute(r HasMany
 	}
 
 	localVarPath := localBasePath + "/braintree_gateways/{braintreeGatewayId}/payment_methods"
-	localVarPath = strings.Replace(localVarPath, "{"+"braintreeGatewayId"+"}", url.PathEscape(parameterToString(r.braintreeGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"braintreeGatewayId"+"}", url.PathEscape(parameterValueToString(r.braintreeGatewayId, "braintreeGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1201,9 +1385,9 @@ func (a *HasManyApiService) GETBraintreeGatewayIdPaymentMethodsExecute(r HasMany
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1222,7 +1406,7 @@ func (a *HasManyApiService) GETBraintreeGatewayIdPaymentMethodsExecute(r HasMany
 type HasManyApiGETBundleIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	bundleId   string
+	bundleId   interface{}
 }
 
 func (r HasManyApiGETBundleIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -1238,7 +1422,7 @@ Retrieve the attachments associated to the bundle
 	@param bundleId The resource's id
 	@return HasManyApiGETBundleIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETBundleIdAttachments(ctx context.Context, bundleId string) HasManyApiGETBundleIdAttachmentsRequest {
+func (a *HasManyApiService) GETBundleIdAttachments(ctx context.Context, bundleId interface{}) HasManyApiGETBundleIdAttachmentsRequest {
 	return HasManyApiGETBundleIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1260,7 +1444,7 @@ func (a *HasManyApiService) GETBundleIdAttachmentsExecute(r HasManyApiGETBundleI
 	}
 
 	localVarPath := localBasePath + "/bundles/{bundleId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterToString(r.bundleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterValueToString(r.bundleId, "bundleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1293,9 +1477,9 @@ func (a *HasManyApiService) GETBundleIdAttachmentsExecute(r HasManyApiGETBundleI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1314,7 +1498,7 @@ func (a *HasManyApiService) GETBundleIdAttachmentsExecute(r HasManyApiGETBundleI
 type HasManyApiGETBundleIdSkusRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	bundleId   string
+	bundleId   interface{}
 }
 
 func (r HasManyApiGETBundleIdSkusRequest) Execute() (*http.Response, error) {
@@ -1330,7 +1514,7 @@ Retrieve the skus associated to the bundle
 	@param bundleId The resource's id
 	@return HasManyApiGETBundleIdSkusRequest
 */
-func (a *HasManyApiService) GETBundleIdSkus(ctx context.Context, bundleId string) HasManyApiGETBundleIdSkusRequest {
+func (a *HasManyApiService) GETBundleIdSkus(ctx context.Context, bundleId interface{}) HasManyApiGETBundleIdSkusRequest {
 	return HasManyApiGETBundleIdSkusRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1352,7 +1536,7 @@ func (a *HasManyApiService) GETBundleIdSkusExecute(r HasManyApiGETBundleIdSkusRe
 	}
 
 	localVarPath := localBasePath + "/bundles/{bundleId}/skus"
-	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterToString(r.bundleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterValueToString(r.bundleId, "bundleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1385,9 +1569,9 @@ func (a *HasManyApiService) GETBundleIdSkusExecute(r HasManyApiGETBundleIdSkusRe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1406,7 +1590,7 @@ func (a *HasManyApiService) GETBundleIdSkusExecute(r HasManyApiGETBundleIdSkusRe
 type HasManyApiGETCaptureIdEventsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	captureId  string
+	captureId  interface{}
 }
 
 func (r HasManyApiGETCaptureIdEventsRequest) Execute() (*http.Response, error) {
@@ -1422,7 +1606,7 @@ Retrieve the events associated to the capture
 	@param captureId The resource's id
 	@return HasManyApiGETCaptureIdEventsRequest
 */
-func (a *HasManyApiService) GETCaptureIdEvents(ctx context.Context, captureId string) HasManyApiGETCaptureIdEventsRequest {
+func (a *HasManyApiService) GETCaptureIdEvents(ctx context.Context, captureId interface{}) HasManyApiGETCaptureIdEventsRequest {
 	return HasManyApiGETCaptureIdEventsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1444,7 +1628,7 @@ func (a *HasManyApiService) GETCaptureIdEventsExecute(r HasManyApiGETCaptureIdEv
 	}
 
 	localVarPath := localBasePath + "/captures/{captureId}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"captureId"+"}", url.PathEscape(parameterToString(r.captureId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"captureId"+"}", url.PathEscape(parameterValueToString(r.captureId, "captureId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1477,9 +1661,9 @@ func (a *HasManyApiService) GETCaptureIdEventsExecute(r HasManyApiGETCaptureIdEv
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1498,7 +1682,7 @@ func (a *HasManyApiService) GETCaptureIdEventsExecute(r HasManyApiGETCaptureIdEv
 type HasManyApiGETCaptureIdRefundsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	captureId  string
+	captureId  interface{}
 }
 
 func (r HasManyApiGETCaptureIdRefundsRequest) Execute() (*http.Response, error) {
@@ -1514,7 +1698,7 @@ Retrieve the refunds associated to the capture
 	@param captureId The resource's id
 	@return HasManyApiGETCaptureIdRefundsRequest
 */
-func (a *HasManyApiService) GETCaptureIdRefunds(ctx context.Context, captureId string) HasManyApiGETCaptureIdRefundsRequest {
+func (a *HasManyApiService) GETCaptureIdRefunds(ctx context.Context, captureId interface{}) HasManyApiGETCaptureIdRefundsRequest {
 	return HasManyApiGETCaptureIdRefundsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1536,7 +1720,7 @@ func (a *HasManyApiService) GETCaptureIdRefundsExecute(r HasManyApiGETCaptureIdR
 	}
 
 	localVarPath := localBasePath + "/captures/{captureId}/refunds"
-	localVarPath = strings.Replace(localVarPath, "{"+"captureId"+"}", url.PathEscape(parameterToString(r.captureId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"captureId"+"}", url.PathEscape(parameterValueToString(r.captureId, "captureId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1569,9 +1753,9 @@ func (a *HasManyApiService) GETCaptureIdRefundsExecute(r HasManyApiGETCaptureIdR
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1590,7 +1774,7 @@ func (a *HasManyApiService) GETCaptureIdRefundsExecute(r HasManyApiGETCaptureIdR
 type HasManyApiGETCarrierAccountIdAttachmentsRequest struct {
 	ctx              context.Context
 	ApiService       *HasManyApiService
-	carrierAccountId string
+	carrierAccountId interface{}
 }
 
 func (r HasManyApiGETCarrierAccountIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -1606,7 +1790,7 @@ Retrieve the attachments associated to the carrier account
 	@param carrierAccountId The resource's id
 	@return HasManyApiGETCarrierAccountIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETCarrierAccountIdAttachments(ctx context.Context, carrierAccountId string) HasManyApiGETCarrierAccountIdAttachmentsRequest {
+func (a *HasManyApiService) GETCarrierAccountIdAttachments(ctx context.Context, carrierAccountId interface{}) HasManyApiGETCarrierAccountIdAttachmentsRequest {
 	return HasManyApiGETCarrierAccountIdAttachmentsRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -1628,7 +1812,7 @@ func (a *HasManyApiService) GETCarrierAccountIdAttachmentsExecute(r HasManyApiGE
 	}
 
 	localVarPath := localBasePath + "/carrier_accounts/{carrierAccountId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"carrierAccountId"+"}", url.PathEscape(parameterToString(r.carrierAccountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"carrierAccountId"+"}", url.PathEscape(parameterValueToString(r.carrierAccountId, "carrierAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1661,9 +1845,9 @@ func (a *HasManyApiService) GETCarrierAccountIdAttachmentsExecute(r HasManyApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1682,7 +1866,7 @@ func (a *HasManyApiService) GETCarrierAccountIdAttachmentsExecute(r HasManyApiGE
 type HasManyApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest struct {
 	ctx                  context.Context
 	ApiService           *HasManyApiService
-	checkoutComGatewayId string
+	checkoutComGatewayId interface{}
 }
 
 func (r HasManyApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest) Execute() (*http.Response, error) {
@@ -1698,7 +1882,7 @@ Retrieve the checkout com payments associated to the checkout.com gateway
 	@param checkoutComGatewayId The resource's id
 	@return HasManyApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest
 */
-func (a *HasManyApiService) GETCheckoutComGatewayIdCheckoutComPayments(ctx context.Context, checkoutComGatewayId string) HasManyApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest {
+func (a *HasManyApiService) GETCheckoutComGatewayIdCheckoutComPayments(ctx context.Context, checkoutComGatewayId interface{}) HasManyApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest {
 	return HasManyApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -1720,7 +1904,7 @@ func (a *HasManyApiService) GETCheckoutComGatewayIdCheckoutComPaymentsExecute(r 
 	}
 
 	localVarPath := localBasePath + "/checkout_com_gateways/{checkoutComGatewayId}/checkout_com_payments"
-	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComGatewayId"+"}", url.PathEscape(parameterToString(r.checkoutComGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComGatewayId"+"}", url.PathEscape(parameterValueToString(r.checkoutComGatewayId, "checkoutComGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1753,9 +1937,9 @@ func (a *HasManyApiService) GETCheckoutComGatewayIdCheckoutComPaymentsExecute(r 
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1774,7 +1958,7 @@ func (a *HasManyApiService) GETCheckoutComGatewayIdCheckoutComPaymentsExecute(r 
 type HasManyApiGETCheckoutComGatewayIdPaymentMethodsRequest struct {
 	ctx                  context.Context
 	ApiService           *HasManyApiService
-	checkoutComGatewayId string
+	checkoutComGatewayId interface{}
 }
 
 func (r HasManyApiGETCheckoutComGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
@@ -1790,7 +1974,7 @@ Retrieve the payment methods associated to the checkout.com gateway
 	@param checkoutComGatewayId The resource's id
 	@return HasManyApiGETCheckoutComGatewayIdPaymentMethodsRequest
 */
-func (a *HasManyApiService) GETCheckoutComGatewayIdPaymentMethods(ctx context.Context, checkoutComGatewayId string) HasManyApiGETCheckoutComGatewayIdPaymentMethodsRequest {
+func (a *HasManyApiService) GETCheckoutComGatewayIdPaymentMethods(ctx context.Context, checkoutComGatewayId interface{}) HasManyApiGETCheckoutComGatewayIdPaymentMethodsRequest {
 	return HasManyApiGETCheckoutComGatewayIdPaymentMethodsRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -1812,7 +1996,7 @@ func (a *HasManyApiService) GETCheckoutComGatewayIdPaymentMethodsExecute(r HasMa
 	}
 
 	localVarPath := localBasePath + "/checkout_com_gateways/{checkoutComGatewayId}/payment_methods"
-	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComGatewayId"+"}", url.PathEscape(parameterToString(r.checkoutComGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComGatewayId"+"}", url.PathEscape(parameterValueToString(r.checkoutComGatewayId, "checkoutComGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1845,9 +2029,9 @@ func (a *HasManyApiService) GETCheckoutComGatewayIdPaymentMethodsExecute(r HasMa
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1866,7 +2050,7 @@ func (a *HasManyApiService) GETCheckoutComGatewayIdPaymentMethodsExecute(r HasMa
 type HasManyApiGETCleanupIdEventsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	cleanupId  string
+	cleanupId  interface{}
 }
 
 func (r HasManyApiGETCleanupIdEventsRequest) Execute() (*http.Response, error) {
@@ -1882,7 +2066,7 @@ Retrieve the events associated to the cleanup
 	@param cleanupId The resource's id
 	@return HasManyApiGETCleanupIdEventsRequest
 */
-func (a *HasManyApiService) GETCleanupIdEvents(ctx context.Context, cleanupId string) HasManyApiGETCleanupIdEventsRequest {
+func (a *HasManyApiService) GETCleanupIdEvents(ctx context.Context, cleanupId interface{}) HasManyApiGETCleanupIdEventsRequest {
 	return HasManyApiGETCleanupIdEventsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1904,7 +2088,7 @@ func (a *HasManyApiService) GETCleanupIdEventsExecute(r HasManyApiGETCleanupIdEv
 	}
 
 	localVarPath := localBasePath + "/cleanups/{cleanupId}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"cleanupId"+"}", url.PathEscape(parameterToString(r.cleanupId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"cleanupId"+"}", url.PathEscape(parameterValueToString(r.cleanupId, "cleanupId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1937,9 +2121,9 @@ func (a *HasManyApiService) GETCleanupIdEventsExecute(r HasManyApiGETCleanupIdEv
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1958,7 +2142,7 @@ func (a *HasManyApiService) GETCleanupIdEventsExecute(r HasManyApiGETCleanupIdEv
 type HasManyApiGETCouponCodesPromotionRuleIdCouponsRequest struct {
 	ctx                        context.Context
 	ApiService                 *HasManyApiService
-	couponCodesPromotionRuleId string
+	couponCodesPromotionRuleId interface{}
 }
 
 func (r HasManyApiGETCouponCodesPromotionRuleIdCouponsRequest) Execute() (*http.Response, error) {
@@ -1974,7 +2158,7 @@ Retrieve the coupons associated to the coupon codes promotion rule
 	@param couponCodesPromotionRuleId The resource's id
 	@return HasManyApiGETCouponCodesPromotionRuleIdCouponsRequest
 */
-func (a *HasManyApiService) GETCouponCodesPromotionRuleIdCoupons(ctx context.Context, couponCodesPromotionRuleId string) HasManyApiGETCouponCodesPromotionRuleIdCouponsRequest {
+func (a *HasManyApiService) GETCouponCodesPromotionRuleIdCoupons(ctx context.Context, couponCodesPromotionRuleId interface{}) HasManyApiGETCouponCodesPromotionRuleIdCouponsRequest {
 	return HasManyApiGETCouponCodesPromotionRuleIdCouponsRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
@@ -1996,7 +2180,7 @@ func (a *HasManyApiService) GETCouponCodesPromotionRuleIdCouponsExecute(r HasMan
 	}
 
 	localVarPath := localBasePath + "/coupon_codes_promotion_rules/{couponCodesPromotionRuleId}/coupons"
-	localVarPath = strings.Replace(localVarPath, "{"+"couponCodesPromotionRuleId"+"}", url.PathEscape(parameterToString(r.couponCodesPromotionRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"couponCodesPromotionRuleId"+"}", url.PathEscape(parameterValueToString(r.couponCodesPromotionRuleId, "couponCodesPromotionRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2029,9 +2213,9 @@ func (a *HasManyApiService) GETCouponCodesPromotionRuleIdCouponsExecute(r HasMan
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2050,7 +2234,7 @@ func (a *HasManyApiService) GETCouponCodesPromotionRuleIdCouponsExecute(r HasMan
 type HasManyApiGETCouponRecipientIdAttachmentsRequest struct {
 	ctx               context.Context
 	ApiService        *HasManyApiService
-	couponRecipientId string
+	couponRecipientId interface{}
 }
 
 func (r HasManyApiGETCouponRecipientIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -2066,7 +2250,7 @@ Retrieve the attachments associated to the coupon recipient
 	@param couponRecipientId The resource's id
 	@return HasManyApiGETCouponRecipientIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETCouponRecipientIdAttachments(ctx context.Context, couponRecipientId string) HasManyApiGETCouponRecipientIdAttachmentsRequest {
+func (a *HasManyApiService) GETCouponRecipientIdAttachments(ctx context.Context, couponRecipientId interface{}) HasManyApiGETCouponRecipientIdAttachmentsRequest {
 	return HasManyApiGETCouponRecipientIdAttachmentsRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -2088,7 +2272,7 @@ func (a *HasManyApiService) GETCouponRecipientIdAttachmentsExecute(r HasManyApiG
 	}
 
 	localVarPath := localBasePath + "/coupon_recipients/{couponRecipientId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"couponRecipientId"+"}", url.PathEscape(parameterToString(r.couponRecipientId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"couponRecipientId"+"}", url.PathEscape(parameterValueToString(r.couponRecipientId, "couponRecipientId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2121,9 +2305,9 @@ func (a *HasManyApiService) GETCouponRecipientIdAttachmentsExecute(r HasManyApiG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2142,7 +2326,7 @@ func (a *HasManyApiService) GETCouponRecipientIdAttachmentsExecute(r HasManyApiG
 type HasManyApiGETCustomerAddressIdEventsRequest struct {
 	ctx               context.Context
 	ApiService        *HasManyApiService
-	customerAddressId string
+	customerAddressId interface{}
 }
 
 func (r HasManyApiGETCustomerAddressIdEventsRequest) Execute() (*http.Response, error) {
@@ -2158,7 +2342,7 @@ Retrieve the events associated to the customer address
 	@param customerAddressId The resource's id
 	@return HasManyApiGETCustomerAddressIdEventsRequest
 */
-func (a *HasManyApiService) GETCustomerAddressIdEvents(ctx context.Context, customerAddressId string) HasManyApiGETCustomerAddressIdEventsRequest {
+func (a *HasManyApiService) GETCustomerAddressIdEvents(ctx context.Context, customerAddressId interface{}) HasManyApiGETCustomerAddressIdEventsRequest {
 	return HasManyApiGETCustomerAddressIdEventsRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -2180,7 +2364,7 @@ func (a *HasManyApiService) GETCustomerAddressIdEventsExecute(r HasManyApiGETCus
 	}
 
 	localVarPath := localBasePath + "/customer_addresses/{customerAddressId}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterToString(r.customerAddressId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterValueToString(r.customerAddressId, "customerAddressId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2213,9 +2397,9 @@ func (a *HasManyApiService) GETCustomerAddressIdEventsExecute(r HasManyApiGETCus
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2234,7 +2418,7 @@ func (a *HasManyApiService) GETCustomerAddressIdEventsExecute(r HasManyApiGETCus
 type HasManyApiGETCustomerGroupIdAttachmentsRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
-	customerGroupId string
+	customerGroupId interface{}
 }
 
 func (r HasManyApiGETCustomerGroupIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -2250,7 +2434,7 @@ Retrieve the attachments associated to the customer group
 	@param customerGroupId The resource's id
 	@return HasManyApiGETCustomerGroupIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETCustomerGroupIdAttachments(ctx context.Context, customerGroupId string) HasManyApiGETCustomerGroupIdAttachmentsRequest {
+func (a *HasManyApiService) GETCustomerGroupIdAttachments(ctx context.Context, customerGroupId interface{}) HasManyApiGETCustomerGroupIdAttachmentsRequest {
 	return HasManyApiGETCustomerGroupIdAttachmentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -2272,7 +2456,7 @@ func (a *HasManyApiService) GETCustomerGroupIdAttachmentsExecute(r HasManyApiGET
 	}
 
 	localVarPath := localBasePath + "/customer_groups/{customerGroupId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerGroupId"+"}", url.PathEscape(parameterToString(r.customerGroupId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerGroupId"+"}", url.PathEscape(parameterValueToString(r.customerGroupId, "customerGroupId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2305,9 +2489,9 @@ func (a *HasManyApiService) GETCustomerGroupIdAttachmentsExecute(r HasManyApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2326,7 +2510,7 @@ func (a *HasManyApiService) GETCustomerGroupIdAttachmentsExecute(r HasManyApiGET
 type HasManyApiGETCustomerGroupIdCustomersRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
-	customerGroupId string
+	customerGroupId interface{}
 }
 
 func (r HasManyApiGETCustomerGroupIdCustomersRequest) Execute() (*http.Response, error) {
@@ -2342,7 +2526,7 @@ Retrieve the customers associated to the customer group
 	@param customerGroupId The resource's id
 	@return HasManyApiGETCustomerGroupIdCustomersRequest
 */
-func (a *HasManyApiService) GETCustomerGroupIdCustomers(ctx context.Context, customerGroupId string) HasManyApiGETCustomerGroupIdCustomersRequest {
+func (a *HasManyApiService) GETCustomerGroupIdCustomers(ctx context.Context, customerGroupId interface{}) HasManyApiGETCustomerGroupIdCustomersRequest {
 	return HasManyApiGETCustomerGroupIdCustomersRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -2364,7 +2548,7 @@ func (a *HasManyApiService) GETCustomerGroupIdCustomersExecute(r HasManyApiGETCu
 	}
 
 	localVarPath := localBasePath + "/customer_groups/{customerGroupId}/customers"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerGroupId"+"}", url.PathEscape(parameterToString(r.customerGroupId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerGroupId"+"}", url.PathEscape(parameterValueToString(r.customerGroupId, "customerGroupId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2397,9 +2581,9 @@ func (a *HasManyApiService) GETCustomerGroupIdCustomersExecute(r HasManyApiGETCu
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2418,7 +2602,7 @@ func (a *HasManyApiService) GETCustomerGroupIdCustomersExecute(r HasManyApiGETCu
 type HasManyApiGETCustomerGroupIdMarketsRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
-	customerGroupId string
+	customerGroupId interface{}
 }
 
 func (r HasManyApiGETCustomerGroupIdMarketsRequest) Execute() (*http.Response, error) {
@@ -2434,7 +2618,7 @@ Retrieve the markets associated to the customer group
 	@param customerGroupId The resource's id
 	@return HasManyApiGETCustomerGroupIdMarketsRequest
 */
-func (a *HasManyApiService) GETCustomerGroupIdMarkets(ctx context.Context, customerGroupId string) HasManyApiGETCustomerGroupIdMarketsRequest {
+func (a *HasManyApiService) GETCustomerGroupIdMarkets(ctx context.Context, customerGroupId interface{}) HasManyApiGETCustomerGroupIdMarketsRequest {
 	return HasManyApiGETCustomerGroupIdMarketsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -2456,7 +2640,7 @@ func (a *HasManyApiService) GETCustomerGroupIdMarketsExecute(r HasManyApiGETCust
 	}
 
 	localVarPath := localBasePath + "/customer_groups/{customerGroupId}/markets"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerGroupId"+"}", url.PathEscape(parameterToString(r.customerGroupId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerGroupId"+"}", url.PathEscape(parameterValueToString(r.customerGroupId, "customerGroupId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2489,9 +2673,9 @@ func (a *HasManyApiService) GETCustomerGroupIdMarketsExecute(r HasManyApiGETCust
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2510,7 +2694,7 @@ func (a *HasManyApiService) GETCustomerGroupIdMarketsExecute(r HasManyApiGETCust
 type HasManyApiGETCustomerIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	customerId string
+	customerId interface{}
 }
 
 func (r HasManyApiGETCustomerIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -2526,7 +2710,7 @@ Retrieve the attachments associated to the customer
 	@param customerId The resource's id
 	@return HasManyApiGETCustomerIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETCustomerIdAttachments(ctx context.Context, customerId string) HasManyApiGETCustomerIdAttachmentsRequest {
+func (a *HasManyApiService) GETCustomerIdAttachments(ctx context.Context, customerId interface{}) HasManyApiGETCustomerIdAttachmentsRequest {
 	return HasManyApiGETCustomerIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2548,7 +2732,7 @@ func (a *HasManyApiService) GETCustomerIdAttachmentsExecute(r HasManyApiGETCusto
 	}
 
 	localVarPath := localBasePath + "/customers/{customerId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterToString(r.customerId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2581,9 +2765,9 @@ func (a *HasManyApiService) GETCustomerIdAttachmentsExecute(r HasManyApiGETCusto
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2602,7 +2786,7 @@ func (a *HasManyApiService) GETCustomerIdAttachmentsExecute(r HasManyApiGETCusto
 type HasManyApiGETCustomerIdCustomerAddressesRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	customerId string
+	customerId interface{}
 }
 
 func (r HasManyApiGETCustomerIdCustomerAddressesRequest) Execute() (*http.Response, error) {
@@ -2618,7 +2802,7 @@ Retrieve the customer addresses associated to the customer
 	@param customerId The resource's id
 	@return HasManyApiGETCustomerIdCustomerAddressesRequest
 */
-func (a *HasManyApiService) GETCustomerIdCustomerAddresses(ctx context.Context, customerId string) HasManyApiGETCustomerIdCustomerAddressesRequest {
+func (a *HasManyApiService) GETCustomerIdCustomerAddresses(ctx context.Context, customerId interface{}) HasManyApiGETCustomerIdCustomerAddressesRequest {
 	return HasManyApiGETCustomerIdCustomerAddressesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2640,7 +2824,7 @@ func (a *HasManyApiService) GETCustomerIdCustomerAddressesExecute(r HasManyApiGE
 	}
 
 	localVarPath := localBasePath + "/customers/{customerId}/customer_addresses"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterToString(r.customerId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2673,9 +2857,9 @@ func (a *HasManyApiService) GETCustomerIdCustomerAddressesExecute(r HasManyApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2694,7 +2878,7 @@ func (a *HasManyApiService) GETCustomerIdCustomerAddressesExecute(r HasManyApiGE
 type HasManyApiGETCustomerIdCustomerPaymentSourcesRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	customerId string
+	customerId interface{}
 }
 
 func (r HasManyApiGETCustomerIdCustomerPaymentSourcesRequest) Execute() (*http.Response, error) {
@@ -2710,7 +2894,7 @@ Retrieve the customer payment sources associated to the customer
 	@param customerId The resource's id
 	@return HasManyApiGETCustomerIdCustomerPaymentSourcesRequest
 */
-func (a *HasManyApiService) GETCustomerIdCustomerPaymentSources(ctx context.Context, customerId string) HasManyApiGETCustomerIdCustomerPaymentSourcesRequest {
+func (a *HasManyApiService) GETCustomerIdCustomerPaymentSources(ctx context.Context, customerId interface{}) HasManyApiGETCustomerIdCustomerPaymentSourcesRequest {
 	return HasManyApiGETCustomerIdCustomerPaymentSourcesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2732,7 +2916,7 @@ func (a *HasManyApiService) GETCustomerIdCustomerPaymentSourcesExecute(r HasMany
 	}
 
 	localVarPath := localBasePath + "/customers/{customerId}/customer_payment_sources"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterToString(r.customerId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2765,9 +2949,9 @@ func (a *HasManyApiService) GETCustomerIdCustomerPaymentSourcesExecute(r HasMany
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2786,7 +2970,7 @@ func (a *HasManyApiService) GETCustomerIdCustomerPaymentSourcesExecute(r HasMany
 type HasManyApiGETCustomerIdCustomerSubscriptionsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	customerId string
+	customerId interface{}
 }
 
 func (r HasManyApiGETCustomerIdCustomerSubscriptionsRequest) Execute() (*http.Response, error) {
@@ -2802,7 +2986,7 @@ Retrieve the customer subscriptions associated to the customer
 	@param customerId The resource's id
 	@return HasManyApiGETCustomerIdCustomerSubscriptionsRequest
 */
-func (a *HasManyApiService) GETCustomerIdCustomerSubscriptions(ctx context.Context, customerId string) HasManyApiGETCustomerIdCustomerSubscriptionsRequest {
+func (a *HasManyApiService) GETCustomerIdCustomerSubscriptions(ctx context.Context, customerId interface{}) HasManyApiGETCustomerIdCustomerSubscriptionsRequest {
 	return HasManyApiGETCustomerIdCustomerSubscriptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2824,7 +3008,7 @@ func (a *HasManyApiService) GETCustomerIdCustomerSubscriptionsExecute(r HasManyA
 	}
 
 	localVarPath := localBasePath + "/customers/{customerId}/customer_subscriptions"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterToString(r.customerId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2857,9 +3041,9 @@ func (a *HasManyApiService) GETCustomerIdCustomerSubscriptionsExecute(r HasManyA
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2878,7 +3062,7 @@ func (a *HasManyApiService) GETCustomerIdCustomerSubscriptionsExecute(r HasManyA
 type HasManyApiGETCustomerIdEventsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	customerId string
+	customerId interface{}
 }
 
 func (r HasManyApiGETCustomerIdEventsRequest) Execute() (*http.Response, error) {
@@ -2894,7 +3078,7 @@ Retrieve the events associated to the customer
 	@param customerId The resource's id
 	@return HasManyApiGETCustomerIdEventsRequest
 */
-func (a *HasManyApiService) GETCustomerIdEvents(ctx context.Context, customerId string) HasManyApiGETCustomerIdEventsRequest {
+func (a *HasManyApiService) GETCustomerIdEvents(ctx context.Context, customerId interface{}) HasManyApiGETCustomerIdEventsRequest {
 	return HasManyApiGETCustomerIdEventsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2916,7 +3100,7 @@ func (a *HasManyApiService) GETCustomerIdEventsExecute(r HasManyApiGETCustomerId
 	}
 
 	localVarPath := localBasePath + "/customers/{customerId}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterToString(r.customerId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2949,9 +3133,9 @@ func (a *HasManyApiService) GETCustomerIdEventsExecute(r HasManyApiGETCustomerId
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2970,7 +3154,7 @@ func (a *HasManyApiService) GETCustomerIdEventsExecute(r HasManyApiGETCustomerId
 type HasManyApiGETCustomerIdOrderSubscriptionsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	customerId string
+	customerId interface{}
 }
 
 func (r HasManyApiGETCustomerIdOrderSubscriptionsRequest) Execute() (*http.Response, error) {
@@ -2986,7 +3170,7 @@ Retrieve the order subscriptions associated to the customer
 	@param customerId The resource's id
 	@return HasManyApiGETCustomerIdOrderSubscriptionsRequest
 */
-func (a *HasManyApiService) GETCustomerIdOrderSubscriptions(ctx context.Context, customerId string) HasManyApiGETCustomerIdOrderSubscriptionsRequest {
+func (a *HasManyApiService) GETCustomerIdOrderSubscriptions(ctx context.Context, customerId interface{}) HasManyApiGETCustomerIdOrderSubscriptionsRequest {
 	return HasManyApiGETCustomerIdOrderSubscriptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3008,7 +3192,7 @@ func (a *HasManyApiService) GETCustomerIdOrderSubscriptionsExecute(r HasManyApiG
 	}
 
 	localVarPath := localBasePath + "/customers/{customerId}/order_subscriptions"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterToString(r.customerId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3041,9 +3225,9 @@ func (a *HasManyApiService) GETCustomerIdOrderSubscriptionsExecute(r HasManyApiG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3062,7 +3246,7 @@ func (a *HasManyApiService) GETCustomerIdOrderSubscriptionsExecute(r HasManyApiG
 type HasManyApiGETCustomerIdOrdersRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	customerId string
+	customerId interface{}
 }
 
 func (r HasManyApiGETCustomerIdOrdersRequest) Execute() (*http.Response, error) {
@@ -3078,7 +3262,7 @@ Retrieve the orders associated to the customer
 	@param customerId The resource's id
 	@return HasManyApiGETCustomerIdOrdersRequest
 */
-func (a *HasManyApiService) GETCustomerIdOrders(ctx context.Context, customerId string) HasManyApiGETCustomerIdOrdersRequest {
+func (a *HasManyApiService) GETCustomerIdOrders(ctx context.Context, customerId interface{}) HasManyApiGETCustomerIdOrdersRequest {
 	return HasManyApiGETCustomerIdOrdersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3100,7 +3284,7 @@ func (a *HasManyApiService) GETCustomerIdOrdersExecute(r HasManyApiGETCustomerId
 	}
 
 	localVarPath := localBasePath + "/customers/{customerId}/orders"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterToString(r.customerId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3133,9 +3317,9 @@ func (a *HasManyApiService) GETCustomerIdOrdersExecute(r HasManyApiGETCustomerId
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3154,7 +3338,7 @@ func (a *HasManyApiService) GETCustomerIdOrdersExecute(r HasManyApiGETCustomerId
 type HasManyApiGETCustomerIdReturnsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	customerId string
+	customerId interface{}
 }
 
 func (r HasManyApiGETCustomerIdReturnsRequest) Execute() (*http.Response, error) {
@@ -3170,7 +3354,7 @@ Retrieve the returns associated to the customer
 	@param customerId The resource's id
 	@return HasManyApiGETCustomerIdReturnsRequest
 */
-func (a *HasManyApiService) GETCustomerIdReturns(ctx context.Context, customerId string) HasManyApiGETCustomerIdReturnsRequest {
+func (a *HasManyApiService) GETCustomerIdReturns(ctx context.Context, customerId interface{}) HasManyApiGETCustomerIdReturnsRequest {
 	return HasManyApiGETCustomerIdReturnsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3192,7 +3376,7 @@ func (a *HasManyApiService) GETCustomerIdReturnsExecute(r HasManyApiGETCustomerI
 	}
 
 	localVarPath := localBasePath + "/customers/{customerId}/returns"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterToString(r.customerId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3225,9 +3409,9 @@ func (a *HasManyApiService) GETCustomerIdReturnsExecute(r HasManyApiGETCustomerI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3246,7 +3430,7 @@ func (a *HasManyApiService) GETCustomerIdReturnsExecute(r HasManyApiGETCustomerI
 type HasManyApiGETCustomerIdSkuListsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	customerId string
+	customerId interface{}
 }
 
 func (r HasManyApiGETCustomerIdSkuListsRequest) Execute() (*http.Response, error) {
@@ -3262,7 +3446,7 @@ Retrieve the sku lists associated to the customer
 	@param customerId The resource's id
 	@return HasManyApiGETCustomerIdSkuListsRequest
 */
-func (a *HasManyApiService) GETCustomerIdSkuLists(ctx context.Context, customerId string) HasManyApiGETCustomerIdSkuListsRequest {
+func (a *HasManyApiService) GETCustomerIdSkuLists(ctx context.Context, customerId interface{}) HasManyApiGETCustomerIdSkuListsRequest {
 	return HasManyApiGETCustomerIdSkuListsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3284,7 +3468,7 @@ func (a *HasManyApiService) GETCustomerIdSkuListsExecute(r HasManyApiGETCustomer
 	}
 
 	localVarPath := localBasePath + "/customers/{customerId}/sku_lists"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterToString(r.customerId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3317,9 +3501,9 @@ func (a *HasManyApiService) GETCustomerIdSkuListsExecute(r HasManyApiGETCustomer
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3338,7 +3522,7 @@ func (a *HasManyApiService) GETCustomerIdSkuListsExecute(r HasManyApiGETCustomer
 type HasManyApiGETCustomerPasswordResetIdEventsRequest struct {
 	ctx                     context.Context
 	ApiService              *HasManyApiService
-	customerPasswordResetId string
+	customerPasswordResetId interface{}
 }
 
 func (r HasManyApiGETCustomerPasswordResetIdEventsRequest) Execute() (*http.Response, error) {
@@ -3354,7 +3538,7 @@ Retrieve the events associated to the customer password reset
 	@param customerPasswordResetId The resource's id
 	@return HasManyApiGETCustomerPasswordResetIdEventsRequest
 */
-func (a *HasManyApiService) GETCustomerPasswordResetIdEvents(ctx context.Context, customerPasswordResetId string) HasManyApiGETCustomerPasswordResetIdEventsRequest {
+func (a *HasManyApiService) GETCustomerPasswordResetIdEvents(ctx context.Context, customerPasswordResetId interface{}) HasManyApiGETCustomerPasswordResetIdEventsRequest {
 	return HasManyApiGETCustomerPasswordResetIdEventsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
@@ -3376,7 +3560,7 @@ func (a *HasManyApiService) GETCustomerPasswordResetIdEventsExecute(r HasManyApi
 	}
 
 	localVarPath := localBasePath + "/customer_password_resets/{customerPasswordResetId}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerPasswordResetId"+"}", url.PathEscape(parameterToString(r.customerPasswordResetId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerPasswordResetId"+"}", url.PathEscape(parameterValueToString(r.customerPasswordResetId, "customerPasswordResetId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3409,9 +3593,9 @@ func (a *HasManyApiService) GETCustomerPasswordResetIdEventsExecute(r HasManyApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3430,7 +3614,7 @@ func (a *HasManyApiService) GETCustomerPasswordResetIdEventsExecute(r HasManyApi
 type HasManyApiGETCustomerSubscriptionIdEventsRequest struct {
 	ctx                    context.Context
 	ApiService             *HasManyApiService
-	customerSubscriptionId string
+	customerSubscriptionId interface{}
 }
 
 func (r HasManyApiGETCustomerSubscriptionIdEventsRequest) Execute() (*http.Response, error) {
@@ -3446,7 +3630,7 @@ Retrieve the events associated to the customer subscription
 	@param customerSubscriptionId The resource's id
 	@return HasManyApiGETCustomerSubscriptionIdEventsRequest
 */
-func (a *HasManyApiService) GETCustomerSubscriptionIdEvents(ctx context.Context, customerSubscriptionId string) HasManyApiGETCustomerSubscriptionIdEventsRequest {
+func (a *HasManyApiService) GETCustomerSubscriptionIdEvents(ctx context.Context, customerSubscriptionId interface{}) HasManyApiGETCustomerSubscriptionIdEventsRequest {
 	return HasManyApiGETCustomerSubscriptionIdEventsRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -3468,7 +3652,7 @@ func (a *HasManyApiService) GETCustomerSubscriptionIdEventsExecute(r HasManyApiG
 	}
 
 	localVarPath := localBasePath + "/customer_subscriptions/{customerSubscriptionId}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerSubscriptionId"+"}", url.PathEscape(parameterToString(r.customerSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.customerSubscriptionId, "customerSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3501,9 +3685,9 @@ func (a *HasManyApiService) GETCustomerSubscriptionIdEventsExecute(r HasManyApiG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3522,7 +3706,7 @@ func (a *HasManyApiService) GETCustomerSubscriptionIdEventsExecute(r HasManyApiG
 type HasManyApiGETDeliveryLeadTimeIdAttachmentsRequest struct {
 	ctx                context.Context
 	ApiService         *HasManyApiService
-	deliveryLeadTimeId string
+	deliveryLeadTimeId interface{}
 }
 
 func (r HasManyApiGETDeliveryLeadTimeIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -3538,7 +3722,7 @@ Retrieve the attachments associated to the delivery lead time
 	@param deliveryLeadTimeId The resource's id
 	@return HasManyApiGETDeliveryLeadTimeIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETDeliveryLeadTimeIdAttachments(ctx context.Context, deliveryLeadTimeId string) HasManyApiGETDeliveryLeadTimeIdAttachmentsRequest {
+func (a *HasManyApiService) GETDeliveryLeadTimeIdAttachments(ctx context.Context, deliveryLeadTimeId interface{}) HasManyApiGETDeliveryLeadTimeIdAttachmentsRequest {
 	return HasManyApiGETDeliveryLeadTimeIdAttachmentsRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -3560,7 +3744,7 @@ func (a *HasManyApiService) GETDeliveryLeadTimeIdAttachmentsExecute(r HasManyApi
 	}
 
 	localVarPath := localBasePath + "/delivery_lead_times/{deliveryLeadTimeId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"deliveryLeadTimeId"+"}", url.PathEscape(parameterToString(r.deliveryLeadTimeId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"deliveryLeadTimeId"+"}", url.PathEscape(parameterValueToString(r.deliveryLeadTimeId, "deliveryLeadTimeId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3593,9 +3777,9 @@ func (a *HasManyApiService) GETDeliveryLeadTimeIdAttachmentsExecute(r HasManyApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3614,7 +3798,7 @@ func (a *HasManyApiService) GETDeliveryLeadTimeIdAttachmentsExecute(r HasManyApi
 type HasManyApiGETEventIdLastEventCallbacksRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	eventId    string
+	eventId    interface{}
 }
 
 func (r HasManyApiGETEventIdLastEventCallbacksRequest) Execute() (*http.Response, error) {
@@ -3630,7 +3814,7 @@ Retrieve the last event callbacks associated to the event
 	@param eventId The resource's id
 	@return HasManyApiGETEventIdLastEventCallbacksRequest
 */
-func (a *HasManyApiService) GETEventIdLastEventCallbacks(ctx context.Context, eventId string) HasManyApiGETEventIdLastEventCallbacksRequest {
+func (a *HasManyApiService) GETEventIdLastEventCallbacks(ctx context.Context, eventId interface{}) HasManyApiGETEventIdLastEventCallbacksRequest {
 	return HasManyApiGETEventIdLastEventCallbacksRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3652,7 +3836,7 @@ func (a *HasManyApiService) GETEventIdLastEventCallbacksExecute(r HasManyApiGETE
 	}
 
 	localVarPath := localBasePath + "/events/{eventId}/last_event_callbacks"
-	localVarPath = strings.Replace(localVarPath, "{"+"eventId"+"}", url.PathEscape(parameterToString(r.eventId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"eventId"+"}", url.PathEscape(parameterValueToString(r.eventId, "eventId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3685,9 +3869,9 @@ func (a *HasManyApiService) GETEventIdLastEventCallbacksExecute(r HasManyApiGETE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3706,7 +3890,7 @@ func (a *HasManyApiService) GETEventIdLastEventCallbacksExecute(r HasManyApiGETE
 type HasManyApiGETEventIdWebhooksRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	eventId    string
+	eventId    interface{}
 }
 
 func (r HasManyApiGETEventIdWebhooksRequest) Execute() (*http.Response, error) {
@@ -3722,7 +3906,7 @@ Retrieve the webhooks associated to the event
 	@param eventId The resource's id
 	@return HasManyApiGETEventIdWebhooksRequest
 */
-func (a *HasManyApiService) GETEventIdWebhooks(ctx context.Context, eventId string) HasManyApiGETEventIdWebhooksRequest {
+func (a *HasManyApiService) GETEventIdWebhooks(ctx context.Context, eventId interface{}) HasManyApiGETEventIdWebhooksRequest {
 	return HasManyApiGETEventIdWebhooksRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3744,7 +3928,7 @@ func (a *HasManyApiService) GETEventIdWebhooksExecute(r HasManyApiGETEventIdWebh
 	}
 
 	localVarPath := localBasePath + "/events/{eventId}/webhooks"
-	localVarPath = strings.Replace(localVarPath, "{"+"eventId"+"}", url.PathEscape(parameterToString(r.eventId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"eventId"+"}", url.PathEscape(parameterValueToString(r.eventId, "eventId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3777,9 +3961,9 @@ func (a *HasManyApiService) GETEventIdWebhooksExecute(r HasManyApiGETEventIdWebh
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3798,7 +3982,7 @@ func (a *HasManyApiService) GETEventIdWebhooksExecute(r HasManyApiGETEventIdWebh
 type HasManyApiGETExportIdEventsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	exportId   string
+	exportId   interface{}
 }
 
 func (r HasManyApiGETExportIdEventsRequest) Execute() (*http.Response, error) {
@@ -3814,7 +3998,7 @@ Retrieve the events associated to the export
 	@param exportId The resource's id
 	@return HasManyApiGETExportIdEventsRequest
 */
-func (a *HasManyApiService) GETExportIdEvents(ctx context.Context, exportId string) HasManyApiGETExportIdEventsRequest {
+func (a *HasManyApiService) GETExportIdEvents(ctx context.Context, exportId interface{}) HasManyApiGETExportIdEventsRequest {
 	return HasManyApiGETExportIdEventsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -3836,7 +4020,7 @@ func (a *HasManyApiService) GETExportIdEventsExecute(r HasManyApiGETExportIdEven
 	}
 
 	localVarPath := localBasePath + "/exports/{exportId}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"exportId"+"}", url.PathEscape(parameterToString(r.exportId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"exportId"+"}", url.PathEscape(parameterValueToString(r.exportId, "exportId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3869,9 +4053,9 @@ func (a *HasManyApiService) GETExportIdEventsExecute(r HasManyApiGETExportIdEven
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3890,7 +4074,7 @@ func (a *HasManyApiService) GETExportIdEventsExecute(r HasManyApiGETExportIdEven
 type HasManyApiGETExternalGatewayIdExternalPaymentsRequest struct {
 	ctx               context.Context
 	ApiService        *HasManyApiService
-	externalGatewayId string
+	externalGatewayId interface{}
 }
 
 func (r HasManyApiGETExternalGatewayIdExternalPaymentsRequest) Execute() (*http.Response, error) {
@@ -3906,7 +4090,7 @@ Retrieve the external payments associated to the external gateway
 	@param externalGatewayId The resource's id
 	@return HasManyApiGETExternalGatewayIdExternalPaymentsRequest
 */
-func (a *HasManyApiService) GETExternalGatewayIdExternalPayments(ctx context.Context, externalGatewayId string) HasManyApiGETExternalGatewayIdExternalPaymentsRequest {
+func (a *HasManyApiService) GETExternalGatewayIdExternalPayments(ctx context.Context, externalGatewayId interface{}) HasManyApiGETExternalGatewayIdExternalPaymentsRequest {
 	return HasManyApiGETExternalGatewayIdExternalPaymentsRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -3928,7 +4112,7 @@ func (a *HasManyApiService) GETExternalGatewayIdExternalPaymentsExecute(r HasMan
 	}
 
 	localVarPath := localBasePath + "/external_gateways/{externalGatewayId}/external_payments"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalGatewayId"+"}", url.PathEscape(parameterToString(r.externalGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalGatewayId"+"}", url.PathEscape(parameterValueToString(r.externalGatewayId, "externalGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3961,9 +4145,9 @@ func (a *HasManyApiService) GETExternalGatewayIdExternalPaymentsExecute(r HasMan
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3982,7 +4166,7 @@ func (a *HasManyApiService) GETExternalGatewayIdExternalPaymentsExecute(r HasMan
 type HasManyApiGETExternalGatewayIdPaymentMethodsRequest struct {
 	ctx               context.Context
 	ApiService        *HasManyApiService
-	externalGatewayId string
+	externalGatewayId interface{}
 }
 
 func (r HasManyApiGETExternalGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
@@ -3998,7 +4182,7 @@ Retrieve the payment methods associated to the external gateway
 	@param externalGatewayId The resource's id
 	@return HasManyApiGETExternalGatewayIdPaymentMethodsRequest
 */
-func (a *HasManyApiService) GETExternalGatewayIdPaymentMethods(ctx context.Context, externalGatewayId string) HasManyApiGETExternalGatewayIdPaymentMethodsRequest {
+func (a *HasManyApiService) GETExternalGatewayIdPaymentMethods(ctx context.Context, externalGatewayId interface{}) HasManyApiGETExternalGatewayIdPaymentMethodsRequest {
 	return HasManyApiGETExternalGatewayIdPaymentMethodsRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -4020,7 +4204,7 @@ func (a *HasManyApiService) GETExternalGatewayIdPaymentMethodsExecute(r HasManyA
 	}
 
 	localVarPath := localBasePath + "/external_gateways/{externalGatewayId}/payment_methods"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalGatewayId"+"}", url.PathEscape(parameterToString(r.externalGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalGatewayId"+"}", url.PathEscape(parameterValueToString(r.externalGatewayId, "externalGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4053,9 +4237,9 @@ func (a *HasManyApiService) GETExternalGatewayIdPaymentMethodsExecute(r HasManyA
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4074,7 +4258,7 @@ func (a *HasManyApiService) GETExternalGatewayIdPaymentMethodsExecute(r HasManyA
 type HasManyApiGETExternalPromotionIdAttachmentsRequest struct {
 	ctx                 context.Context
 	ApiService          *HasManyApiService
-	externalPromotionId string
+	externalPromotionId interface{}
 }
 
 func (r HasManyApiGETExternalPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -4090,7 +4274,7 @@ Retrieve the attachments associated to the external promotion
 	@param externalPromotionId The resource's id
 	@return HasManyApiGETExternalPromotionIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETExternalPromotionIdAttachments(ctx context.Context, externalPromotionId string) HasManyApiGETExternalPromotionIdAttachmentsRequest {
+func (a *HasManyApiService) GETExternalPromotionIdAttachments(ctx context.Context, externalPromotionId interface{}) HasManyApiGETExternalPromotionIdAttachmentsRequest {
 	return HasManyApiGETExternalPromotionIdAttachmentsRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -4112,7 +4296,7 @@ func (a *HasManyApiService) GETExternalPromotionIdAttachmentsExecute(r HasManyAp
 	}
 
 	localVarPath := localBasePath + "/external_promotions/{externalPromotionId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterToString(r.externalPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterValueToString(r.externalPromotionId, "externalPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4145,9 +4329,9 @@ func (a *HasManyApiService) GETExternalPromotionIdAttachmentsExecute(r HasManyAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4166,7 +4350,7 @@ func (a *HasManyApiService) GETExternalPromotionIdAttachmentsExecute(r HasManyAp
 type HasManyApiGETExternalPromotionIdEventsRequest struct {
 	ctx                 context.Context
 	ApiService          *HasManyApiService
-	externalPromotionId string
+	externalPromotionId interface{}
 }
 
 func (r HasManyApiGETExternalPromotionIdEventsRequest) Execute() (*http.Response, error) {
@@ -4182,7 +4366,7 @@ Retrieve the events associated to the external promotion
 	@param externalPromotionId The resource's id
 	@return HasManyApiGETExternalPromotionIdEventsRequest
 */
-func (a *HasManyApiService) GETExternalPromotionIdEvents(ctx context.Context, externalPromotionId string) HasManyApiGETExternalPromotionIdEventsRequest {
+func (a *HasManyApiService) GETExternalPromotionIdEvents(ctx context.Context, externalPromotionId interface{}) HasManyApiGETExternalPromotionIdEventsRequest {
 	return HasManyApiGETExternalPromotionIdEventsRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -4204,7 +4388,7 @@ func (a *HasManyApiService) GETExternalPromotionIdEventsExecute(r HasManyApiGETE
 	}
 
 	localVarPath := localBasePath + "/external_promotions/{externalPromotionId}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterToString(r.externalPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterValueToString(r.externalPromotionId, "externalPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4237,9 +4421,9 @@ func (a *HasManyApiService) GETExternalPromotionIdEventsExecute(r HasManyApiGETE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4258,7 +4442,7 @@ func (a *HasManyApiService) GETExternalPromotionIdEventsExecute(r HasManyApiGETE
 type HasManyApiGETExternalTaxCalculatorIdAttachmentsRequest struct {
 	ctx                     context.Context
 	ApiService              *HasManyApiService
-	externalTaxCalculatorId string
+	externalTaxCalculatorId interface{}
 }
 
 func (r HasManyApiGETExternalTaxCalculatorIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -4274,7 +4458,7 @@ Retrieve the attachments associated to the external tax calculator
 	@param externalTaxCalculatorId The resource's id
 	@return HasManyApiGETExternalTaxCalculatorIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETExternalTaxCalculatorIdAttachments(ctx context.Context, externalTaxCalculatorId string) HasManyApiGETExternalTaxCalculatorIdAttachmentsRequest {
+func (a *HasManyApiService) GETExternalTaxCalculatorIdAttachments(ctx context.Context, externalTaxCalculatorId interface{}) HasManyApiGETExternalTaxCalculatorIdAttachmentsRequest {
 	return HasManyApiGETExternalTaxCalculatorIdAttachmentsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
@@ -4296,7 +4480,7 @@ func (a *HasManyApiService) GETExternalTaxCalculatorIdAttachmentsExecute(r HasMa
 	}
 
 	localVarPath := localBasePath + "/external_tax_calculators/{externalTaxCalculatorId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalTaxCalculatorId"+"}", url.PathEscape(parameterToString(r.externalTaxCalculatorId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalTaxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.externalTaxCalculatorId, "externalTaxCalculatorId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4329,9 +4513,9 @@ func (a *HasManyApiService) GETExternalTaxCalculatorIdAttachmentsExecute(r HasMa
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4350,7 +4534,7 @@ func (a *HasManyApiService) GETExternalTaxCalculatorIdAttachmentsExecute(r HasMa
 type HasManyApiGETExternalTaxCalculatorIdMarketsRequest struct {
 	ctx                     context.Context
 	ApiService              *HasManyApiService
-	externalTaxCalculatorId string
+	externalTaxCalculatorId interface{}
 }
 
 func (r HasManyApiGETExternalTaxCalculatorIdMarketsRequest) Execute() (*http.Response, error) {
@@ -4366,7 +4550,7 @@ Retrieve the markets associated to the external tax calculator
 	@param externalTaxCalculatorId The resource's id
 	@return HasManyApiGETExternalTaxCalculatorIdMarketsRequest
 */
-func (a *HasManyApiService) GETExternalTaxCalculatorIdMarkets(ctx context.Context, externalTaxCalculatorId string) HasManyApiGETExternalTaxCalculatorIdMarketsRequest {
+func (a *HasManyApiService) GETExternalTaxCalculatorIdMarkets(ctx context.Context, externalTaxCalculatorId interface{}) HasManyApiGETExternalTaxCalculatorIdMarketsRequest {
 	return HasManyApiGETExternalTaxCalculatorIdMarketsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
@@ -4388,7 +4572,7 @@ func (a *HasManyApiService) GETExternalTaxCalculatorIdMarketsExecute(r HasManyAp
 	}
 
 	localVarPath := localBasePath + "/external_tax_calculators/{externalTaxCalculatorId}/markets"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalTaxCalculatorId"+"}", url.PathEscape(parameterToString(r.externalTaxCalculatorId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalTaxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.externalTaxCalculatorId, "externalTaxCalculatorId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4421,9 +4605,9 @@ func (a *HasManyApiService) GETExternalTaxCalculatorIdMarketsExecute(r HasManyAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4442,7 +4626,7 @@ func (a *HasManyApiService) GETExternalTaxCalculatorIdMarketsExecute(r HasManyAp
 type HasManyApiGETFixedAmountPromotionIdAttachmentsRequest struct {
 	ctx                    context.Context
 	ApiService             *HasManyApiService
-	fixedAmountPromotionId string
+	fixedAmountPromotionId interface{}
 }
 
 func (r HasManyApiGETFixedAmountPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -4458,7 +4642,7 @@ Retrieve the attachments associated to the fixed amount promotion
 	@param fixedAmountPromotionId The resource's id
 	@return HasManyApiGETFixedAmountPromotionIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETFixedAmountPromotionIdAttachments(ctx context.Context, fixedAmountPromotionId string) HasManyApiGETFixedAmountPromotionIdAttachmentsRequest {
+func (a *HasManyApiService) GETFixedAmountPromotionIdAttachments(ctx context.Context, fixedAmountPromotionId interface{}) HasManyApiGETFixedAmountPromotionIdAttachmentsRequest {
 	return HasManyApiGETFixedAmountPromotionIdAttachmentsRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -4480,7 +4664,7 @@ func (a *HasManyApiService) GETFixedAmountPromotionIdAttachmentsExecute(r HasMan
 	}
 
 	localVarPath := localBasePath + "/fixed_amount_promotions/{fixedAmountPromotionId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterToString(r.fixedAmountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedAmountPromotionId, "fixedAmountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4513,9 +4697,9 @@ func (a *HasManyApiService) GETFixedAmountPromotionIdAttachmentsExecute(r HasMan
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4534,7 +4718,7 @@ func (a *HasManyApiService) GETFixedAmountPromotionIdAttachmentsExecute(r HasMan
 type HasManyApiGETFixedAmountPromotionIdEventsRequest struct {
 	ctx                    context.Context
 	ApiService             *HasManyApiService
-	fixedAmountPromotionId string
+	fixedAmountPromotionId interface{}
 }
 
 func (r HasManyApiGETFixedAmountPromotionIdEventsRequest) Execute() (*http.Response, error) {
@@ -4550,7 +4734,7 @@ Retrieve the events associated to the fixed amount promotion
 	@param fixedAmountPromotionId The resource's id
 	@return HasManyApiGETFixedAmountPromotionIdEventsRequest
 */
-func (a *HasManyApiService) GETFixedAmountPromotionIdEvents(ctx context.Context, fixedAmountPromotionId string) HasManyApiGETFixedAmountPromotionIdEventsRequest {
+func (a *HasManyApiService) GETFixedAmountPromotionIdEvents(ctx context.Context, fixedAmountPromotionId interface{}) HasManyApiGETFixedAmountPromotionIdEventsRequest {
 	return HasManyApiGETFixedAmountPromotionIdEventsRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -4572,7 +4756,7 @@ func (a *HasManyApiService) GETFixedAmountPromotionIdEventsExecute(r HasManyApiG
 	}
 
 	localVarPath := localBasePath + "/fixed_amount_promotions/{fixedAmountPromotionId}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterToString(r.fixedAmountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedAmountPromotionId, "fixedAmountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4605,9 +4789,9 @@ func (a *HasManyApiService) GETFixedAmountPromotionIdEventsExecute(r HasManyApiG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4626,7 +4810,7 @@ func (a *HasManyApiService) GETFixedAmountPromotionIdEventsExecute(r HasManyApiG
 type HasManyApiGETFixedPricePromotionIdAttachmentsRequest struct {
 	ctx                   context.Context
 	ApiService            *HasManyApiService
-	fixedPricePromotionId string
+	fixedPricePromotionId interface{}
 }
 
 func (r HasManyApiGETFixedPricePromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -4642,7 +4826,7 @@ Retrieve the attachments associated to the fixed price promotion
 	@param fixedPricePromotionId The resource's id
 	@return HasManyApiGETFixedPricePromotionIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETFixedPricePromotionIdAttachments(ctx context.Context, fixedPricePromotionId string) HasManyApiGETFixedPricePromotionIdAttachmentsRequest {
+func (a *HasManyApiService) GETFixedPricePromotionIdAttachments(ctx context.Context, fixedPricePromotionId interface{}) HasManyApiGETFixedPricePromotionIdAttachmentsRequest {
 	return HasManyApiGETFixedPricePromotionIdAttachmentsRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -4664,7 +4848,7 @@ func (a *HasManyApiService) GETFixedPricePromotionIdAttachmentsExecute(r HasMany
 	}
 
 	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterToString(r.fixedPricePromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4697,9 +4881,9 @@ func (a *HasManyApiService) GETFixedPricePromotionIdAttachmentsExecute(r HasMany
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4718,7 +4902,7 @@ func (a *HasManyApiService) GETFixedPricePromotionIdAttachmentsExecute(r HasMany
 type HasManyApiGETFixedPricePromotionIdEventsRequest struct {
 	ctx                   context.Context
 	ApiService            *HasManyApiService
-	fixedPricePromotionId string
+	fixedPricePromotionId interface{}
 }
 
 func (r HasManyApiGETFixedPricePromotionIdEventsRequest) Execute() (*http.Response, error) {
@@ -4734,7 +4918,7 @@ Retrieve the events associated to the fixed price promotion
 	@param fixedPricePromotionId The resource's id
 	@return HasManyApiGETFixedPricePromotionIdEventsRequest
 */
-func (a *HasManyApiService) GETFixedPricePromotionIdEvents(ctx context.Context, fixedPricePromotionId string) HasManyApiGETFixedPricePromotionIdEventsRequest {
+func (a *HasManyApiService) GETFixedPricePromotionIdEvents(ctx context.Context, fixedPricePromotionId interface{}) HasManyApiGETFixedPricePromotionIdEventsRequest {
 	return HasManyApiGETFixedPricePromotionIdEventsRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -4756,7 +4940,7 @@ func (a *HasManyApiService) GETFixedPricePromotionIdEventsExecute(r HasManyApiGE
 	}
 
 	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterToString(r.fixedPricePromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4789,9 +4973,9 @@ func (a *HasManyApiService) GETFixedPricePromotionIdEventsExecute(r HasManyApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4810,7 +4994,7 @@ func (a *HasManyApiService) GETFixedPricePromotionIdEventsExecute(r HasManyApiGE
 type HasManyApiGETFixedPricePromotionIdSkusRequest struct {
 	ctx                   context.Context
 	ApiService            *HasManyApiService
-	fixedPricePromotionId string
+	fixedPricePromotionId interface{}
 }
 
 func (r HasManyApiGETFixedPricePromotionIdSkusRequest) Execute() (*http.Response, error) {
@@ -4826,7 +5010,7 @@ Retrieve the skus associated to the fixed price promotion
 	@param fixedPricePromotionId The resource's id
 	@return HasManyApiGETFixedPricePromotionIdSkusRequest
 */
-func (a *HasManyApiService) GETFixedPricePromotionIdSkus(ctx context.Context, fixedPricePromotionId string) HasManyApiGETFixedPricePromotionIdSkusRequest {
+func (a *HasManyApiService) GETFixedPricePromotionIdSkus(ctx context.Context, fixedPricePromotionId interface{}) HasManyApiGETFixedPricePromotionIdSkusRequest {
 	return HasManyApiGETFixedPricePromotionIdSkusRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -4848,7 +5032,7 @@ func (a *HasManyApiService) GETFixedPricePromotionIdSkusExecute(r HasManyApiGETF
 	}
 
 	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}/skus"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterToString(r.fixedPricePromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4881,9 +5065,9 @@ func (a *HasManyApiService) GETFixedPricePromotionIdSkusExecute(r HasManyApiGETF
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4902,7 +5086,7 @@ func (a *HasManyApiService) GETFixedPricePromotionIdSkusExecute(r HasManyApiGETF
 type HasManyApiGETFreeGiftPromotionIdAttachmentsRequest struct {
 	ctx                 context.Context
 	ApiService          *HasManyApiService
-	freeGiftPromotionId string
+	freeGiftPromotionId interface{}
 }
 
 func (r HasManyApiGETFreeGiftPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -4918,7 +5102,7 @@ Retrieve the attachments associated to the free gift promotion
 	@param freeGiftPromotionId The resource's id
 	@return HasManyApiGETFreeGiftPromotionIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETFreeGiftPromotionIdAttachments(ctx context.Context, freeGiftPromotionId string) HasManyApiGETFreeGiftPromotionIdAttachmentsRequest {
+func (a *HasManyApiService) GETFreeGiftPromotionIdAttachments(ctx context.Context, freeGiftPromotionId interface{}) HasManyApiGETFreeGiftPromotionIdAttachmentsRequest {
 	return HasManyApiGETFreeGiftPromotionIdAttachmentsRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -4940,7 +5124,7 @@ func (a *HasManyApiService) GETFreeGiftPromotionIdAttachmentsExecute(r HasManyAp
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterToString(r.freeGiftPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4973,9 +5157,9 @@ func (a *HasManyApiService) GETFreeGiftPromotionIdAttachmentsExecute(r HasManyAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4994,7 +5178,7 @@ func (a *HasManyApiService) GETFreeGiftPromotionIdAttachmentsExecute(r HasManyAp
 type HasManyApiGETFreeGiftPromotionIdEventsRequest struct {
 	ctx                 context.Context
 	ApiService          *HasManyApiService
-	freeGiftPromotionId string
+	freeGiftPromotionId interface{}
 }
 
 func (r HasManyApiGETFreeGiftPromotionIdEventsRequest) Execute() (*http.Response, error) {
@@ -5010,7 +5194,7 @@ Retrieve the events associated to the free gift promotion
 	@param freeGiftPromotionId The resource's id
 	@return HasManyApiGETFreeGiftPromotionIdEventsRequest
 */
-func (a *HasManyApiService) GETFreeGiftPromotionIdEvents(ctx context.Context, freeGiftPromotionId string) HasManyApiGETFreeGiftPromotionIdEventsRequest {
+func (a *HasManyApiService) GETFreeGiftPromotionIdEvents(ctx context.Context, freeGiftPromotionId interface{}) HasManyApiGETFreeGiftPromotionIdEventsRequest {
 	return HasManyApiGETFreeGiftPromotionIdEventsRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -5032,7 +5216,7 @@ func (a *HasManyApiService) GETFreeGiftPromotionIdEventsExecute(r HasManyApiGETF
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterToString(r.freeGiftPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5065,9 +5249,9 @@ func (a *HasManyApiService) GETFreeGiftPromotionIdEventsExecute(r HasManyApiGETF
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5086,7 +5270,7 @@ func (a *HasManyApiService) GETFreeGiftPromotionIdEventsExecute(r HasManyApiGETF
 type HasManyApiGETFreeGiftPromotionIdSkusRequest struct {
 	ctx                 context.Context
 	ApiService          *HasManyApiService
-	freeGiftPromotionId string
+	freeGiftPromotionId interface{}
 }
 
 func (r HasManyApiGETFreeGiftPromotionIdSkusRequest) Execute() (*http.Response, error) {
@@ -5102,7 +5286,7 @@ Retrieve the skus associated to the free gift promotion
 	@param freeGiftPromotionId The resource's id
 	@return HasManyApiGETFreeGiftPromotionIdSkusRequest
 */
-func (a *HasManyApiService) GETFreeGiftPromotionIdSkus(ctx context.Context, freeGiftPromotionId string) HasManyApiGETFreeGiftPromotionIdSkusRequest {
+func (a *HasManyApiService) GETFreeGiftPromotionIdSkus(ctx context.Context, freeGiftPromotionId interface{}) HasManyApiGETFreeGiftPromotionIdSkusRequest {
 	return HasManyApiGETFreeGiftPromotionIdSkusRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -5124,7 +5308,7 @@ func (a *HasManyApiService) GETFreeGiftPromotionIdSkusExecute(r HasManyApiGETFre
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}/skus"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterToString(r.freeGiftPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5157,9 +5341,9 @@ func (a *HasManyApiService) GETFreeGiftPromotionIdSkusExecute(r HasManyApiGETFre
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5178,7 +5362,7 @@ func (a *HasManyApiService) GETFreeGiftPromotionIdSkusExecute(r HasManyApiGETFre
 type HasManyApiGETFreeShippingPromotionIdAttachmentsRequest struct {
 	ctx                     context.Context
 	ApiService              *HasManyApiService
-	freeShippingPromotionId string
+	freeShippingPromotionId interface{}
 }
 
 func (r HasManyApiGETFreeShippingPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -5194,7 +5378,7 @@ Retrieve the attachments associated to the free shipping promotion
 	@param freeShippingPromotionId The resource's id
 	@return HasManyApiGETFreeShippingPromotionIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETFreeShippingPromotionIdAttachments(ctx context.Context, freeShippingPromotionId string) HasManyApiGETFreeShippingPromotionIdAttachmentsRequest {
+func (a *HasManyApiService) GETFreeShippingPromotionIdAttachments(ctx context.Context, freeShippingPromotionId interface{}) HasManyApiGETFreeShippingPromotionIdAttachmentsRequest {
 	return HasManyApiGETFreeShippingPromotionIdAttachmentsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
@@ -5216,7 +5400,7 @@ func (a *HasManyApiService) GETFreeShippingPromotionIdAttachmentsExecute(r HasMa
 	}
 
 	localVarPath := localBasePath + "/free_shipping_promotions/{freeShippingPromotionId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterToString(r.freeShippingPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeShippingPromotionId, "freeShippingPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5249,9 +5433,101 @@ func (a *HasManyApiService) GETFreeShippingPromotionIdAttachmentsExecute(r HasMa
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETFreeShippingPromotionIdEventsRequest struct {
+	ctx                     context.Context
+	ApiService              *HasManyApiService
+	freeShippingPromotionId interface{}
+}
+
+func (r HasManyApiGETFreeShippingPromotionIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETFreeShippingPromotionIdEventsExecute(r)
+}
+
+/*
+GETFreeShippingPromotionIdEvents Retrieve the events associated to the free shipping promotion
+
+Retrieve the events associated to the free shipping promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param freeShippingPromotionId The resource's id
+	@return HasManyApiGETFreeShippingPromotionIdEventsRequest
+*/
+func (a *HasManyApiService) GETFreeShippingPromotionIdEvents(ctx context.Context, freeShippingPromotionId interface{}) HasManyApiGETFreeShippingPromotionIdEventsRequest {
+	return HasManyApiGETFreeShippingPromotionIdEventsRequest{
+		ApiService:              a,
+		ctx:                     ctx,
+		freeShippingPromotionId: freeShippingPromotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETFreeShippingPromotionIdEventsExecute(r HasManyApiGETFreeShippingPromotionIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETFreeShippingPromotionIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/free_shipping_promotions/{freeShippingPromotionId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeShippingPromotionId, "freeShippingPromotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5270,7 +5546,7 @@ func (a *HasManyApiService) GETFreeShippingPromotionIdAttachmentsExecute(r HasMa
 type HasManyApiGETGeocoderIdAddressesRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	geocoderId string
+	geocoderId interface{}
 }
 
 func (r HasManyApiGETGeocoderIdAddressesRequest) Execute() (*http.Response, error) {
@@ -5286,7 +5562,7 @@ Retrieve the addresses associated to the geocoder
 	@param geocoderId The resource's id
 	@return HasManyApiGETGeocoderIdAddressesRequest
 */
-func (a *HasManyApiService) GETGeocoderIdAddresses(ctx context.Context, geocoderId string) HasManyApiGETGeocoderIdAddressesRequest {
+func (a *HasManyApiService) GETGeocoderIdAddresses(ctx context.Context, geocoderId interface{}) HasManyApiGETGeocoderIdAddressesRequest {
 	return HasManyApiGETGeocoderIdAddressesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -5308,7 +5584,7 @@ func (a *HasManyApiService) GETGeocoderIdAddressesExecute(r HasManyApiGETGeocode
 	}
 
 	localVarPath := localBasePath + "/geocoders/{geocoderId}/addresses"
-	localVarPath = strings.Replace(localVarPath, "{"+"geocoderId"+"}", url.PathEscape(parameterToString(r.geocoderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"geocoderId"+"}", url.PathEscape(parameterValueToString(r.geocoderId, "geocoderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5341,9 +5617,9 @@ func (a *HasManyApiService) GETGeocoderIdAddressesExecute(r HasManyApiGETGeocode
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5362,7 +5638,7 @@ func (a *HasManyApiService) GETGeocoderIdAddressesExecute(r HasManyApiGETGeocode
 type HasManyApiGETGeocoderIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	geocoderId string
+	geocoderId interface{}
 }
 
 func (r HasManyApiGETGeocoderIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -5378,7 +5654,7 @@ Retrieve the attachments associated to the geocoder
 	@param geocoderId The resource's id
 	@return HasManyApiGETGeocoderIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETGeocoderIdAttachments(ctx context.Context, geocoderId string) HasManyApiGETGeocoderIdAttachmentsRequest {
+func (a *HasManyApiService) GETGeocoderIdAttachments(ctx context.Context, geocoderId interface{}) HasManyApiGETGeocoderIdAttachmentsRequest {
 	return HasManyApiGETGeocoderIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -5400,7 +5676,7 @@ func (a *HasManyApiService) GETGeocoderIdAttachmentsExecute(r HasManyApiGETGeoco
 	}
 
 	localVarPath := localBasePath + "/geocoders/{geocoderId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"geocoderId"+"}", url.PathEscape(parameterToString(r.geocoderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"geocoderId"+"}", url.PathEscape(parameterValueToString(r.geocoderId, "geocoderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5433,9 +5709,9 @@ func (a *HasManyApiService) GETGeocoderIdAttachmentsExecute(r HasManyApiGETGeoco
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5454,7 +5730,7 @@ func (a *HasManyApiService) GETGeocoderIdAttachmentsExecute(r HasManyApiGETGeoco
 type HasManyApiGETGiftCardIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	giftCardId string
+	giftCardId interface{}
 }
 
 func (r HasManyApiGETGiftCardIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -5470,7 +5746,7 @@ Retrieve the attachments associated to the gift card
 	@param giftCardId The resource's id
 	@return HasManyApiGETGiftCardIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETGiftCardIdAttachments(ctx context.Context, giftCardId string) HasManyApiGETGiftCardIdAttachmentsRequest {
+func (a *HasManyApiService) GETGiftCardIdAttachments(ctx context.Context, giftCardId interface{}) HasManyApiGETGiftCardIdAttachmentsRequest {
 	return HasManyApiGETGiftCardIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -5492,7 +5768,7 @@ func (a *HasManyApiService) GETGiftCardIdAttachmentsExecute(r HasManyApiGETGiftC
 	}
 
 	localVarPath := localBasePath + "/gift_cards/{giftCardId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterToString(r.giftCardId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterValueToString(r.giftCardId, "giftCardId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5525,9 +5801,9 @@ func (a *HasManyApiService) GETGiftCardIdAttachmentsExecute(r HasManyApiGETGiftC
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5546,7 +5822,7 @@ func (a *HasManyApiService) GETGiftCardIdAttachmentsExecute(r HasManyApiGETGiftC
 type HasManyApiGETGiftCardIdEventsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	giftCardId string
+	giftCardId interface{}
 }
 
 func (r HasManyApiGETGiftCardIdEventsRequest) Execute() (*http.Response, error) {
@@ -5562,7 +5838,7 @@ Retrieve the events associated to the gift card
 	@param giftCardId The resource's id
 	@return HasManyApiGETGiftCardIdEventsRequest
 */
-func (a *HasManyApiService) GETGiftCardIdEvents(ctx context.Context, giftCardId string) HasManyApiGETGiftCardIdEventsRequest {
+func (a *HasManyApiService) GETGiftCardIdEvents(ctx context.Context, giftCardId interface{}) HasManyApiGETGiftCardIdEventsRequest {
 	return HasManyApiGETGiftCardIdEventsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -5584,7 +5860,7 @@ func (a *HasManyApiService) GETGiftCardIdEventsExecute(r HasManyApiGETGiftCardId
 	}
 
 	localVarPath := localBasePath + "/gift_cards/{giftCardId}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterToString(r.giftCardId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterValueToString(r.giftCardId, "giftCardId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5617,9 +5893,9 @@ func (a *HasManyApiService) GETGiftCardIdEventsExecute(r HasManyApiGETGiftCardId
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5638,7 +5914,7 @@ func (a *HasManyApiService) GETGiftCardIdEventsExecute(r HasManyApiGETGiftCardId
 type HasManyApiGETGiftCardRecipientIdAttachmentsRequest struct {
 	ctx                 context.Context
 	ApiService          *HasManyApiService
-	giftCardRecipientId string
+	giftCardRecipientId interface{}
 }
 
 func (r HasManyApiGETGiftCardRecipientIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -5654,7 +5930,7 @@ Retrieve the attachments associated to the gift card recipient
 	@param giftCardRecipientId The resource's id
 	@return HasManyApiGETGiftCardRecipientIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETGiftCardRecipientIdAttachments(ctx context.Context, giftCardRecipientId string) HasManyApiGETGiftCardRecipientIdAttachmentsRequest {
+func (a *HasManyApiService) GETGiftCardRecipientIdAttachments(ctx context.Context, giftCardRecipientId interface{}) HasManyApiGETGiftCardRecipientIdAttachmentsRequest {
 	return HasManyApiGETGiftCardRecipientIdAttachmentsRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -5676,7 +5952,7 @@ func (a *HasManyApiService) GETGiftCardRecipientIdAttachmentsExecute(r HasManyAp
 	}
 
 	localVarPath := localBasePath + "/gift_card_recipients/{giftCardRecipientId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"giftCardRecipientId"+"}", url.PathEscape(parameterToString(r.giftCardRecipientId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"giftCardRecipientId"+"}", url.PathEscape(parameterValueToString(r.giftCardRecipientId, "giftCardRecipientId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5709,9 +5985,9 @@ func (a *HasManyApiService) GETGiftCardRecipientIdAttachmentsExecute(r HasManyAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5730,7 +6006,7 @@ func (a *HasManyApiService) GETGiftCardRecipientIdAttachmentsExecute(r HasManyAp
 type HasManyApiGETGoogleGeocoderIdAddressesRequest struct {
 	ctx              context.Context
 	ApiService       *HasManyApiService
-	googleGeocoderId string
+	googleGeocoderId interface{}
 }
 
 func (r HasManyApiGETGoogleGeocoderIdAddressesRequest) Execute() (*http.Response, error) {
@@ -5746,7 +6022,7 @@ Retrieve the addresses associated to the google geocoder
 	@param googleGeocoderId The resource's id
 	@return HasManyApiGETGoogleGeocoderIdAddressesRequest
 */
-func (a *HasManyApiService) GETGoogleGeocoderIdAddresses(ctx context.Context, googleGeocoderId string) HasManyApiGETGoogleGeocoderIdAddressesRequest {
+func (a *HasManyApiService) GETGoogleGeocoderIdAddresses(ctx context.Context, googleGeocoderId interface{}) HasManyApiGETGoogleGeocoderIdAddressesRequest {
 	return HasManyApiGETGoogleGeocoderIdAddressesRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -5768,7 +6044,7 @@ func (a *HasManyApiService) GETGoogleGeocoderIdAddressesExecute(r HasManyApiGETG
 	}
 
 	localVarPath := localBasePath + "/google_geocoders/{googleGeocoderId}/addresses"
-	localVarPath = strings.Replace(localVarPath, "{"+"googleGeocoderId"+"}", url.PathEscape(parameterToString(r.googleGeocoderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"googleGeocoderId"+"}", url.PathEscape(parameterValueToString(r.googleGeocoderId, "googleGeocoderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5801,9 +6077,9 @@ func (a *HasManyApiService) GETGoogleGeocoderIdAddressesExecute(r HasManyApiGETG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5822,7 +6098,7 @@ func (a *HasManyApiService) GETGoogleGeocoderIdAddressesExecute(r HasManyApiGETG
 type HasManyApiGETGoogleGeocoderIdAttachmentsRequest struct {
 	ctx              context.Context
 	ApiService       *HasManyApiService
-	googleGeocoderId string
+	googleGeocoderId interface{}
 }
 
 func (r HasManyApiGETGoogleGeocoderIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -5838,7 +6114,7 @@ Retrieve the attachments associated to the google geocoder
 	@param googleGeocoderId The resource's id
 	@return HasManyApiGETGoogleGeocoderIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETGoogleGeocoderIdAttachments(ctx context.Context, googleGeocoderId string) HasManyApiGETGoogleGeocoderIdAttachmentsRequest {
+func (a *HasManyApiService) GETGoogleGeocoderIdAttachments(ctx context.Context, googleGeocoderId interface{}) HasManyApiGETGoogleGeocoderIdAttachmentsRequest {
 	return HasManyApiGETGoogleGeocoderIdAttachmentsRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -5860,7 +6136,7 @@ func (a *HasManyApiService) GETGoogleGeocoderIdAttachmentsExecute(r HasManyApiGE
 	}
 
 	localVarPath := localBasePath + "/google_geocoders/{googleGeocoderId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"googleGeocoderId"+"}", url.PathEscape(parameterToString(r.googleGeocoderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"googleGeocoderId"+"}", url.PathEscape(parameterValueToString(r.googleGeocoderId, "googleGeocoderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5893,9 +6169,9 @@ func (a *HasManyApiService) GETGoogleGeocoderIdAttachmentsExecute(r HasManyApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5914,7 +6190,7 @@ func (a *HasManyApiService) GETGoogleGeocoderIdAttachmentsExecute(r HasManyApiGE
 type HasManyApiGETImportIdEventsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	importId   string
+	importId   interface{}
 }
 
 func (r HasManyApiGETImportIdEventsRequest) Execute() (*http.Response, error) {
@@ -5930,7 +6206,7 @@ Retrieve the events associated to the import
 	@param importId The resource's id
 	@return HasManyApiGETImportIdEventsRequest
 */
-func (a *HasManyApiService) GETImportIdEvents(ctx context.Context, importId string) HasManyApiGETImportIdEventsRequest {
+func (a *HasManyApiService) GETImportIdEvents(ctx context.Context, importId interface{}) HasManyApiGETImportIdEventsRequest {
 	return HasManyApiGETImportIdEventsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -5952,7 +6228,7 @@ func (a *HasManyApiService) GETImportIdEventsExecute(r HasManyApiGETImportIdEven
 	}
 
 	localVarPath := localBasePath + "/imports/{importId}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"importId"+"}", url.PathEscape(parameterToString(r.importId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"importId"+"}", url.PathEscape(parameterValueToString(r.importId, "importId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5985,9 +6261,9 @@ func (a *HasManyApiService) GETImportIdEventsExecute(r HasManyApiGETImportIdEven
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6006,7 +6282,7 @@ func (a *HasManyApiService) GETImportIdEventsExecute(r HasManyApiGETImportIdEven
 type HasManyApiGETInStockSubscriptionIdEventsRequest struct {
 	ctx                   context.Context
 	ApiService            *HasManyApiService
-	inStockSubscriptionId string
+	inStockSubscriptionId interface{}
 }
 
 func (r HasManyApiGETInStockSubscriptionIdEventsRequest) Execute() (*http.Response, error) {
@@ -6022,7 +6298,7 @@ Retrieve the events associated to the in stock subscription
 	@param inStockSubscriptionId The resource's id
 	@return HasManyApiGETInStockSubscriptionIdEventsRequest
 */
-func (a *HasManyApiService) GETInStockSubscriptionIdEvents(ctx context.Context, inStockSubscriptionId string) HasManyApiGETInStockSubscriptionIdEventsRequest {
+func (a *HasManyApiService) GETInStockSubscriptionIdEvents(ctx context.Context, inStockSubscriptionId interface{}) HasManyApiGETInStockSubscriptionIdEventsRequest {
 	return HasManyApiGETInStockSubscriptionIdEventsRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -6044,7 +6320,7 @@ func (a *HasManyApiService) GETInStockSubscriptionIdEventsExecute(r HasManyApiGE
 	}
 
 	localVarPath := localBasePath + "/in_stock_subscriptions/{inStockSubscriptionId}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"inStockSubscriptionId"+"}", url.PathEscape(parameterToString(r.inStockSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inStockSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.inStockSubscriptionId, "inStockSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6077,9 +6353,9 @@ func (a *HasManyApiService) GETInStockSubscriptionIdEventsExecute(r HasManyApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6098,7 +6374,7 @@ func (a *HasManyApiService) GETInStockSubscriptionIdEventsExecute(r HasManyApiGE
 type HasManyApiGETInventoryModelIdAttachmentsRequest struct {
 	ctx              context.Context
 	ApiService       *HasManyApiService
-	inventoryModelId string
+	inventoryModelId interface{}
 }
 
 func (r HasManyApiGETInventoryModelIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -6114,7 +6390,7 @@ Retrieve the attachments associated to the inventory model
 	@param inventoryModelId The resource's id
 	@return HasManyApiGETInventoryModelIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETInventoryModelIdAttachments(ctx context.Context, inventoryModelId string) HasManyApiGETInventoryModelIdAttachmentsRequest {
+func (a *HasManyApiService) GETInventoryModelIdAttachments(ctx context.Context, inventoryModelId interface{}) HasManyApiGETInventoryModelIdAttachmentsRequest {
 	return HasManyApiGETInventoryModelIdAttachmentsRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -6136,7 +6412,7 @@ func (a *HasManyApiService) GETInventoryModelIdAttachmentsExecute(r HasManyApiGE
 	}
 
 	localVarPath := localBasePath + "/inventory_models/{inventoryModelId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"inventoryModelId"+"}", url.PathEscape(parameterToString(r.inventoryModelId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inventoryModelId"+"}", url.PathEscape(parameterValueToString(r.inventoryModelId, "inventoryModelId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6169,9 +6445,9 @@ func (a *HasManyApiService) GETInventoryModelIdAttachmentsExecute(r HasManyApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6190,7 +6466,7 @@ func (a *HasManyApiService) GETInventoryModelIdAttachmentsExecute(r HasManyApiGE
 type HasManyApiGETInventoryModelIdInventoryReturnLocationsRequest struct {
 	ctx              context.Context
 	ApiService       *HasManyApiService
-	inventoryModelId string
+	inventoryModelId interface{}
 }
 
 func (r HasManyApiGETInventoryModelIdInventoryReturnLocationsRequest) Execute() (*http.Response, error) {
@@ -6206,7 +6482,7 @@ Retrieve the inventory return locations associated to the inventory model
 	@param inventoryModelId The resource's id
 	@return HasManyApiGETInventoryModelIdInventoryReturnLocationsRequest
 */
-func (a *HasManyApiService) GETInventoryModelIdInventoryReturnLocations(ctx context.Context, inventoryModelId string) HasManyApiGETInventoryModelIdInventoryReturnLocationsRequest {
+func (a *HasManyApiService) GETInventoryModelIdInventoryReturnLocations(ctx context.Context, inventoryModelId interface{}) HasManyApiGETInventoryModelIdInventoryReturnLocationsRequest {
 	return HasManyApiGETInventoryModelIdInventoryReturnLocationsRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -6228,7 +6504,7 @@ func (a *HasManyApiService) GETInventoryModelIdInventoryReturnLocationsExecute(r
 	}
 
 	localVarPath := localBasePath + "/inventory_models/{inventoryModelId}/inventory_return_locations"
-	localVarPath = strings.Replace(localVarPath, "{"+"inventoryModelId"+"}", url.PathEscape(parameterToString(r.inventoryModelId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inventoryModelId"+"}", url.PathEscape(parameterValueToString(r.inventoryModelId, "inventoryModelId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6261,9 +6537,9 @@ func (a *HasManyApiService) GETInventoryModelIdInventoryReturnLocationsExecute(r
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6282,7 +6558,7 @@ func (a *HasManyApiService) GETInventoryModelIdInventoryReturnLocationsExecute(r
 type HasManyApiGETInventoryModelIdInventoryStockLocationsRequest struct {
 	ctx              context.Context
 	ApiService       *HasManyApiService
-	inventoryModelId string
+	inventoryModelId interface{}
 }
 
 func (r HasManyApiGETInventoryModelIdInventoryStockLocationsRequest) Execute() (*http.Response, error) {
@@ -6298,7 +6574,7 @@ Retrieve the inventory stock locations associated to the inventory model
 	@param inventoryModelId The resource's id
 	@return HasManyApiGETInventoryModelIdInventoryStockLocationsRequest
 */
-func (a *HasManyApiService) GETInventoryModelIdInventoryStockLocations(ctx context.Context, inventoryModelId string) HasManyApiGETInventoryModelIdInventoryStockLocationsRequest {
+func (a *HasManyApiService) GETInventoryModelIdInventoryStockLocations(ctx context.Context, inventoryModelId interface{}) HasManyApiGETInventoryModelIdInventoryStockLocationsRequest {
 	return HasManyApiGETInventoryModelIdInventoryStockLocationsRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -6320,7 +6596,7 @@ func (a *HasManyApiService) GETInventoryModelIdInventoryStockLocationsExecute(r 
 	}
 
 	localVarPath := localBasePath + "/inventory_models/{inventoryModelId}/inventory_stock_locations"
-	localVarPath = strings.Replace(localVarPath, "{"+"inventoryModelId"+"}", url.PathEscape(parameterToString(r.inventoryModelId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inventoryModelId"+"}", url.PathEscape(parameterValueToString(r.inventoryModelId, "inventoryModelId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6353,9 +6629,9 @@ func (a *HasManyApiService) GETInventoryModelIdInventoryStockLocationsExecute(r 
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6374,7 +6650,7 @@ func (a *HasManyApiService) GETInventoryModelIdInventoryStockLocationsExecute(r 
 type HasManyApiGETKlarnaGatewayIdKlarnaPaymentsRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
-	klarnaGatewayId string
+	klarnaGatewayId interface{}
 }
 
 func (r HasManyApiGETKlarnaGatewayIdKlarnaPaymentsRequest) Execute() (*http.Response, error) {
@@ -6390,7 +6666,7 @@ Retrieve the klarna payments associated to the klarna gateway
 	@param klarnaGatewayId The resource's id
 	@return HasManyApiGETKlarnaGatewayIdKlarnaPaymentsRequest
 */
-func (a *HasManyApiService) GETKlarnaGatewayIdKlarnaPayments(ctx context.Context, klarnaGatewayId string) HasManyApiGETKlarnaGatewayIdKlarnaPaymentsRequest {
+func (a *HasManyApiService) GETKlarnaGatewayIdKlarnaPayments(ctx context.Context, klarnaGatewayId interface{}) HasManyApiGETKlarnaGatewayIdKlarnaPaymentsRequest {
 	return HasManyApiGETKlarnaGatewayIdKlarnaPaymentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -6412,7 +6688,7 @@ func (a *HasManyApiService) GETKlarnaGatewayIdKlarnaPaymentsExecute(r HasManyApi
 	}
 
 	localVarPath := localBasePath + "/klarna_gateways/{klarnaGatewayId}/klarna_payments"
-	localVarPath = strings.Replace(localVarPath, "{"+"klarnaGatewayId"+"}", url.PathEscape(parameterToString(r.klarnaGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"klarnaGatewayId"+"}", url.PathEscape(parameterValueToString(r.klarnaGatewayId, "klarnaGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6445,9 +6721,9 @@ func (a *HasManyApiService) GETKlarnaGatewayIdKlarnaPaymentsExecute(r HasManyApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6466,7 +6742,7 @@ func (a *HasManyApiService) GETKlarnaGatewayIdKlarnaPaymentsExecute(r HasManyApi
 type HasManyApiGETKlarnaGatewayIdPaymentMethodsRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
-	klarnaGatewayId string
+	klarnaGatewayId interface{}
 }
 
 func (r HasManyApiGETKlarnaGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
@@ -6482,7 +6758,7 @@ Retrieve the payment methods associated to the klarna gateway
 	@param klarnaGatewayId The resource's id
 	@return HasManyApiGETKlarnaGatewayIdPaymentMethodsRequest
 */
-func (a *HasManyApiService) GETKlarnaGatewayIdPaymentMethods(ctx context.Context, klarnaGatewayId string) HasManyApiGETKlarnaGatewayIdPaymentMethodsRequest {
+func (a *HasManyApiService) GETKlarnaGatewayIdPaymentMethods(ctx context.Context, klarnaGatewayId interface{}) HasManyApiGETKlarnaGatewayIdPaymentMethodsRequest {
 	return HasManyApiGETKlarnaGatewayIdPaymentMethodsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -6504,7 +6780,7 @@ func (a *HasManyApiService) GETKlarnaGatewayIdPaymentMethodsExecute(r HasManyApi
 	}
 
 	localVarPath := localBasePath + "/klarna_gateways/{klarnaGatewayId}/payment_methods"
-	localVarPath = strings.Replace(localVarPath, "{"+"klarnaGatewayId"+"}", url.PathEscape(parameterToString(r.klarnaGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"klarnaGatewayId"+"}", url.PathEscape(parameterValueToString(r.klarnaGatewayId, "klarnaGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6537,9 +6813,9 @@ func (a *HasManyApiService) GETKlarnaGatewayIdPaymentMethodsExecute(r HasManyApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6558,7 +6834,7 @@ func (a *HasManyApiService) GETKlarnaGatewayIdPaymentMethodsExecute(r HasManyApi
 type HasManyApiGETLineItemIdLineItemOptionsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	lineItemId string
+	lineItemId interface{}
 }
 
 func (r HasManyApiGETLineItemIdLineItemOptionsRequest) Execute() (*http.Response, error) {
@@ -6574,7 +6850,7 @@ Retrieve the line item options associated to the line item
 	@param lineItemId The resource's id
 	@return HasManyApiGETLineItemIdLineItemOptionsRequest
 */
-func (a *HasManyApiService) GETLineItemIdLineItemOptions(ctx context.Context, lineItemId string) HasManyApiGETLineItemIdLineItemOptionsRequest {
+func (a *HasManyApiService) GETLineItemIdLineItemOptions(ctx context.Context, lineItemId interface{}) HasManyApiGETLineItemIdLineItemOptionsRequest {
 	return HasManyApiGETLineItemIdLineItemOptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -6596,7 +6872,7 @@ func (a *HasManyApiService) GETLineItemIdLineItemOptionsExecute(r HasManyApiGETL
 	}
 
 	localVarPath := localBasePath + "/line_items/{lineItemId}/line_item_options"
-	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterToString(r.lineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterValueToString(r.lineItemId, "lineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6629,9 +6905,9 @@ func (a *HasManyApiService) GETLineItemIdLineItemOptionsExecute(r HasManyApiGETL
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6650,7 +6926,7 @@ func (a *HasManyApiService) GETLineItemIdLineItemOptionsExecute(r HasManyApiGETL
 type HasManyApiGETLineItemIdStockLineItemsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	lineItemId string
+	lineItemId interface{}
 }
 
 func (r HasManyApiGETLineItemIdStockLineItemsRequest) Execute() (*http.Response, error) {
@@ -6666,7 +6942,7 @@ Retrieve the stock line items associated to the line item
 	@param lineItemId The resource's id
 	@return HasManyApiGETLineItemIdStockLineItemsRequest
 */
-func (a *HasManyApiService) GETLineItemIdStockLineItems(ctx context.Context, lineItemId string) HasManyApiGETLineItemIdStockLineItemsRequest {
+func (a *HasManyApiService) GETLineItemIdStockLineItems(ctx context.Context, lineItemId interface{}) HasManyApiGETLineItemIdStockLineItemsRequest {
 	return HasManyApiGETLineItemIdStockLineItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -6688,7 +6964,7 @@ func (a *HasManyApiService) GETLineItemIdStockLineItemsExecute(r HasManyApiGETLi
 	}
 
 	localVarPath := localBasePath + "/line_items/{lineItemId}/stock_line_items"
-	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterToString(r.lineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterValueToString(r.lineItemId, "lineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6721,9 +6997,9 @@ func (a *HasManyApiService) GETLineItemIdStockLineItemsExecute(r HasManyApiGETLi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6742,7 +7018,7 @@ func (a *HasManyApiService) GETLineItemIdStockLineItemsExecute(r HasManyApiGETLi
 type HasManyApiGETLineItemIdStockTransfersRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	lineItemId string
+	lineItemId interface{}
 }
 
 func (r HasManyApiGETLineItemIdStockTransfersRequest) Execute() (*http.Response, error) {
@@ -6758,7 +7034,7 @@ Retrieve the stock transfers associated to the line item
 	@param lineItemId The resource's id
 	@return HasManyApiGETLineItemIdStockTransfersRequest
 */
-func (a *HasManyApiService) GETLineItemIdStockTransfers(ctx context.Context, lineItemId string) HasManyApiGETLineItemIdStockTransfersRequest {
+func (a *HasManyApiService) GETLineItemIdStockTransfers(ctx context.Context, lineItemId interface{}) HasManyApiGETLineItemIdStockTransfersRequest {
 	return HasManyApiGETLineItemIdStockTransfersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -6780,7 +7056,7 @@ func (a *HasManyApiService) GETLineItemIdStockTransfersExecute(r HasManyApiGETLi
 	}
 
 	localVarPath := localBasePath + "/line_items/{lineItemId}/stock_transfers"
-	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterToString(r.lineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterValueToString(r.lineItemId, "lineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6813,9 +7089,9 @@ func (a *HasManyApiService) GETLineItemIdStockTransfersExecute(r HasManyApiGETLi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6834,7 +7110,7 @@ func (a *HasManyApiService) GETLineItemIdStockTransfersExecute(r HasManyApiGETLi
 type HasManyApiGETManualGatewayIdPaymentMethodsRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
-	manualGatewayId string
+	manualGatewayId interface{}
 }
 
 func (r HasManyApiGETManualGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
@@ -6850,7 +7126,7 @@ Retrieve the payment methods associated to the manual gateway
 	@param manualGatewayId The resource's id
 	@return HasManyApiGETManualGatewayIdPaymentMethodsRequest
 */
-func (a *HasManyApiService) GETManualGatewayIdPaymentMethods(ctx context.Context, manualGatewayId string) HasManyApiGETManualGatewayIdPaymentMethodsRequest {
+func (a *HasManyApiService) GETManualGatewayIdPaymentMethods(ctx context.Context, manualGatewayId interface{}) HasManyApiGETManualGatewayIdPaymentMethodsRequest {
 	return HasManyApiGETManualGatewayIdPaymentMethodsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -6872,7 +7148,7 @@ func (a *HasManyApiService) GETManualGatewayIdPaymentMethodsExecute(r HasManyApi
 	}
 
 	localVarPath := localBasePath + "/manual_gateways/{manualGatewayId}/payment_methods"
-	localVarPath = strings.Replace(localVarPath, "{"+"manualGatewayId"+"}", url.PathEscape(parameterToString(r.manualGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"manualGatewayId"+"}", url.PathEscape(parameterValueToString(r.manualGatewayId, "manualGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6905,9 +7181,9 @@ func (a *HasManyApiService) GETManualGatewayIdPaymentMethodsExecute(r HasManyApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6926,7 +7202,7 @@ func (a *HasManyApiService) GETManualGatewayIdPaymentMethodsExecute(r HasManyApi
 type HasManyApiGETManualTaxCalculatorIdAttachmentsRequest struct {
 	ctx                   context.Context
 	ApiService            *HasManyApiService
-	manualTaxCalculatorId string
+	manualTaxCalculatorId interface{}
 }
 
 func (r HasManyApiGETManualTaxCalculatorIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -6942,7 +7218,7 @@ Retrieve the attachments associated to the manual tax calculator
 	@param manualTaxCalculatorId The resource's id
 	@return HasManyApiGETManualTaxCalculatorIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETManualTaxCalculatorIdAttachments(ctx context.Context, manualTaxCalculatorId string) HasManyApiGETManualTaxCalculatorIdAttachmentsRequest {
+func (a *HasManyApiService) GETManualTaxCalculatorIdAttachments(ctx context.Context, manualTaxCalculatorId interface{}) HasManyApiGETManualTaxCalculatorIdAttachmentsRequest {
 	return HasManyApiGETManualTaxCalculatorIdAttachmentsRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -6964,7 +7240,7 @@ func (a *HasManyApiService) GETManualTaxCalculatorIdAttachmentsExecute(r HasMany
 	}
 
 	localVarPath := localBasePath + "/manual_tax_calculators/{manualTaxCalculatorId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"manualTaxCalculatorId"+"}", url.PathEscape(parameterToString(r.manualTaxCalculatorId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"manualTaxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.manualTaxCalculatorId, "manualTaxCalculatorId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6997,9 +7273,9 @@ func (a *HasManyApiService) GETManualTaxCalculatorIdAttachmentsExecute(r HasMany
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7018,7 +7294,7 @@ func (a *HasManyApiService) GETManualTaxCalculatorIdAttachmentsExecute(r HasMany
 type HasManyApiGETManualTaxCalculatorIdMarketsRequest struct {
 	ctx                   context.Context
 	ApiService            *HasManyApiService
-	manualTaxCalculatorId string
+	manualTaxCalculatorId interface{}
 }
 
 func (r HasManyApiGETManualTaxCalculatorIdMarketsRequest) Execute() (*http.Response, error) {
@@ -7034,7 +7310,7 @@ Retrieve the markets associated to the manual tax calculator
 	@param manualTaxCalculatorId The resource's id
 	@return HasManyApiGETManualTaxCalculatorIdMarketsRequest
 */
-func (a *HasManyApiService) GETManualTaxCalculatorIdMarkets(ctx context.Context, manualTaxCalculatorId string) HasManyApiGETManualTaxCalculatorIdMarketsRequest {
+func (a *HasManyApiService) GETManualTaxCalculatorIdMarkets(ctx context.Context, manualTaxCalculatorId interface{}) HasManyApiGETManualTaxCalculatorIdMarketsRequest {
 	return HasManyApiGETManualTaxCalculatorIdMarketsRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -7056,7 +7332,7 @@ func (a *HasManyApiService) GETManualTaxCalculatorIdMarketsExecute(r HasManyApiG
 	}
 
 	localVarPath := localBasePath + "/manual_tax_calculators/{manualTaxCalculatorId}/markets"
-	localVarPath = strings.Replace(localVarPath, "{"+"manualTaxCalculatorId"+"}", url.PathEscape(parameterToString(r.manualTaxCalculatorId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"manualTaxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.manualTaxCalculatorId, "manualTaxCalculatorId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7089,9 +7365,9 @@ func (a *HasManyApiService) GETManualTaxCalculatorIdMarketsExecute(r HasManyApiG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7110,7 +7386,7 @@ func (a *HasManyApiService) GETManualTaxCalculatorIdMarketsExecute(r HasManyApiG
 type HasManyApiGETManualTaxCalculatorIdTaxRulesRequest struct {
 	ctx                   context.Context
 	ApiService            *HasManyApiService
-	manualTaxCalculatorId string
+	manualTaxCalculatorId interface{}
 }
 
 func (r HasManyApiGETManualTaxCalculatorIdTaxRulesRequest) Execute() (*http.Response, error) {
@@ -7126,7 +7402,7 @@ Retrieve the tax rules associated to the manual tax calculator
 	@param manualTaxCalculatorId The resource's id
 	@return HasManyApiGETManualTaxCalculatorIdTaxRulesRequest
 */
-func (a *HasManyApiService) GETManualTaxCalculatorIdTaxRules(ctx context.Context, manualTaxCalculatorId string) HasManyApiGETManualTaxCalculatorIdTaxRulesRequest {
+func (a *HasManyApiService) GETManualTaxCalculatorIdTaxRules(ctx context.Context, manualTaxCalculatorId interface{}) HasManyApiGETManualTaxCalculatorIdTaxRulesRequest {
 	return HasManyApiGETManualTaxCalculatorIdTaxRulesRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -7148,7 +7424,7 @@ func (a *HasManyApiService) GETManualTaxCalculatorIdTaxRulesExecute(r HasManyApi
 	}
 
 	localVarPath := localBasePath + "/manual_tax_calculators/{manualTaxCalculatorId}/tax_rules"
-	localVarPath = strings.Replace(localVarPath, "{"+"manualTaxCalculatorId"+"}", url.PathEscape(parameterToString(r.manualTaxCalculatorId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"manualTaxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.manualTaxCalculatorId, "manualTaxCalculatorId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7181,9 +7457,9 @@ func (a *HasManyApiService) GETManualTaxCalculatorIdTaxRulesExecute(r HasManyApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7202,7 +7478,7 @@ func (a *HasManyApiService) GETManualTaxCalculatorIdTaxRulesExecute(r HasManyApi
 type HasManyApiGETMarketIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	marketId   string
+	marketId   interface{}
 }
 
 func (r HasManyApiGETMarketIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -7218,7 +7494,7 @@ Retrieve the attachments associated to the market
 	@param marketId The resource's id
 	@return HasManyApiGETMarketIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETMarketIdAttachments(ctx context.Context, marketId string) HasManyApiGETMarketIdAttachmentsRequest {
+func (a *HasManyApiService) GETMarketIdAttachments(ctx context.Context, marketId interface{}) HasManyApiGETMarketIdAttachmentsRequest {
 	return HasManyApiGETMarketIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -7240,7 +7516,7 @@ func (a *HasManyApiService) GETMarketIdAttachmentsExecute(r HasManyApiGETMarketI
 	}
 
 	localVarPath := localBasePath + "/markets/{marketId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterToString(r.marketId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7273,9 +7549,9 @@ func (a *HasManyApiService) GETMarketIdAttachmentsExecute(r HasManyApiGETMarketI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7294,7 +7570,7 @@ func (a *HasManyApiService) GETMarketIdAttachmentsExecute(r HasManyApiGETMarketI
 type HasManyApiGETMerchantIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	merchantId string
+	merchantId interface{}
 }
 
 func (r HasManyApiGETMerchantIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -7310,7 +7586,7 @@ Retrieve the attachments associated to the merchant
 	@param merchantId The resource's id
 	@return HasManyApiGETMerchantIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETMerchantIdAttachments(ctx context.Context, merchantId string) HasManyApiGETMerchantIdAttachmentsRequest {
+func (a *HasManyApiService) GETMerchantIdAttachments(ctx context.Context, merchantId interface{}) HasManyApiGETMerchantIdAttachmentsRequest {
 	return HasManyApiGETMerchantIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -7332,7 +7608,7 @@ func (a *HasManyApiService) GETMerchantIdAttachmentsExecute(r HasManyApiGETMerch
 	}
 
 	localVarPath := localBasePath + "/merchants/{merchantId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"merchantId"+"}", url.PathEscape(parameterToString(r.merchantId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"merchantId"+"}", url.PathEscape(parameterValueToString(r.merchantId, "merchantId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7365,9 +7641,9 @@ func (a *HasManyApiService) GETMerchantIdAttachmentsExecute(r HasManyApiGETMerch
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7386,7 +7662,7 @@ func (a *HasManyApiService) GETMerchantIdAttachmentsExecute(r HasManyApiGETMerch
 type HasManyApiGETOrderCopyIdEventsRequest struct {
 	ctx         context.Context
 	ApiService  *HasManyApiService
-	orderCopyId string
+	orderCopyId interface{}
 }
 
 func (r HasManyApiGETOrderCopyIdEventsRequest) Execute() (*http.Response, error) {
@@ -7402,7 +7678,7 @@ Retrieve the events associated to the order copy
 	@param orderCopyId The resource's id
 	@return HasManyApiGETOrderCopyIdEventsRequest
 */
-func (a *HasManyApiService) GETOrderCopyIdEvents(ctx context.Context, orderCopyId string) HasManyApiGETOrderCopyIdEventsRequest {
+func (a *HasManyApiService) GETOrderCopyIdEvents(ctx context.Context, orderCopyId interface{}) HasManyApiGETOrderCopyIdEventsRequest {
 	return HasManyApiGETOrderCopyIdEventsRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -7424,7 +7700,7 @@ func (a *HasManyApiService) GETOrderCopyIdEventsExecute(r HasManyApiGETOrderCopy
 	}
 
 	localVarPath := localBasePath + "/order_copies/{orderCopyId}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterToString(r.orderCopyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterValueToString(r.orderCopyId, "orderCopyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7457,9 +7733,101 @@ func (a *HasManyApiService) GETOrderCopyIdEventsExecute(r HasManyApiGETOrderCopy
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETOrderFactoryIdEventsRequest struct {
+	ctx            context.Context
+	ApiService     *HasManyApiService
+	orderFactoryId interface{}
+}
+
+func (r HasManyApiGETOrderFactoryIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderFactoryIdEventsExecute(r)
+}
+
+/*
+GETOrderFactoryIdEvents Retrieve the events associated to the order factory
+
+Retrieve the events associated to the order factory
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderFactoryId The resource's id
+	@return HasManyApiGETOrderFactoryIdEventsRequest
+*/
+func (a *HasManyApiService) GETOrderFactoryIdEvents(ctx context.Context, orderFactoryId interface{}) HasManyApiGETOrderFactoryIdEventsRequest {
+	return HasManyApiGETOrderFactoryIdEventsRequest{
+		ApiService:     a,
+		ctx:            ctx,
+		orderFactoryId: orderFactoryId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETOrderFactoryIdEventsExecute(r HasManyApiGETOrderFactoryIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderFactoryIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/order_factories/{orderFactoryId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderFactoryId"+"}", url.PathEscape(parameterValueToString(r.orderFactoryId, "orderFactoryId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7478,7 +7846,7 @@ func (a *HasManyApiService) GETOrderCopyIdEventsExecute(r HasManyApiGETOrderCopy
 type HasManyApiGETOrderIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r HasManyApiGETOrderIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -7494,7 +7862,7 @@ Retrieve the attachments associated to the order
 	@param orderId The resource's id
 	@return HasManyApiGETOrderIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETOrderIdAttachments(ctx context.Context, orderId string) HasManyApiGETOrderIdAttachmentsRequest {
+func (a *HasManyApiService) GETOrderIdAttachments(ctx context.Context, orderId interface{}) HasManyApiGETOrderIdAttachmentsRequest {
 	return HasManyApiGETOrderIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -7516,7 +7884,7 @@ func (a *HasManyApiService) GETOrderIdAttachmentsExecute(r HasManyApiGETOrderIdA
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7549,9 +7917,9 @@ func (a *HasManyApiService) GETOrderIdAttachmentsExecute(r HasManyApiGETOrderIdA
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7570,7 +7938,7 @@ func (a *HasManyApiService) GETOrderIdAttachmentsExecute(r HasManyApiGETOrderIdA
 type HasManyApiGETOrderIdAuthorizationsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r HasManyApiGETOrderIdAuthorizationsRequest) Execute() (*http.Response, error) {
@@ -7586,7 +7954,7 @@ Retrieve the authorizations associated to the order
 	@param orderId The resource's id
 	@return HasManyApiGETOrderIdAuthorizationsRequest
 */
-func (a *HasManyApiService) GETOrderIdAuthorizations(ctx context.Context, orderId string) HasManyApiGETOrderIdAuthorizationsRequest {
+func (a *HasManyApiService) GETOrderIdAuthorizations(ctx context.Context, orderId interface{}) HasManyApiGETOrderIdAuthorizationsRequest {
 	return HasManyApiGETOrderIdAuthorizationsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -7608,7 +7976,7 @@ func (a *HasManyApiService) GETOrderIdAuthorizationsExecute(r HasManyApiGETOrder
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/authorizations"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7641,9 +8009,9 @@ func (a *HasManyApiService) GETOrderIdAuthorizationsExecute(r HasManyApiGETOrder
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7662,7 +8030,7 @@ func (a *HasManyApiService) GETOrderIdAuthorizationsExecute(r HasManyApiGETOrder
 type HasManyApiGETOrderIdAvailableCustomerPaymentSourcesRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r HasManyApiGETOrderIdAvailableCustomerPaymentSourcesRequest) Execute() (*http.Response, error) {
@@ -7678,7 +8046,7 @@ Retrieve the available customer payment sources associated to the order
 	@param orderId The resource's id
 	@return HasManyApiGETOrderIdAvailableCustomerPaymentSourcesRequest
 */
-func (a *HasManyApiService) GETOrderIdAvailableCustomerPaymentSources(ctx context.Context, orderId string) HasManyApiGETOrderIdAvailableCustomerPaymentSourcesRequest {
+func (a *HasManyApiService) GETOrderIdAvailableCustomerPaymentSources(ctx context.Context, orderId interface{}) HasManyApiGETOrderIdAvailableCustomerPaymentSourcesRequest {
 	return HasManyApiGETOrderIdAvailableCustomerPaymentSourcesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -7700,7 +8068,7 @@ func (a *HasManyApiService) GETOrderIdAvailableCustomerPaymentSourcesExecute(r H
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/available_customer_payment_sources"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7733,9 +8101,9 @@ func (a *HasManyApiService) GETOrderIdAvailableCustomerPaymentSourcesExecute(r H
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7754,7 +8122,7 @@ func (a *HasManyApiService) GETOrderIdAvailableCustomerPaymentSourcesExecute(r H
 type HasManyApiGETOrderIdAvailableFreeBundlesRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r HasManyApiGETOrderIdAvailableFreeBundlesRequest) Execute() (*http.Response, error) {
@@ -7770,7 +8138,7 @@ Retrieve the available free bundles associated to the order
 	@param orderId The resource's id
 	@return HasManyApiGETOrderIdAvailableFreeBundlesRequest
 */
-func (a *HasManyApiService) GETOrderIdAvailableFreeBundles(ctx context.Context, orderId string) HasManyApiGETOrderIdAvailableFreeBundlesRequest {
+func (a *HasManyApiService) GETOrderIdAvailableFreeBundles(ctx context.Context, orderId interface{}) HasManyApiGETOrderIdAvailableFreeBundlesRequest {
 	return HasManyApiGETOrderIdAvailableFreeBundlesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -7792,7 +8160,7 @@ func (a *HasManyApiService) GETOrderIdAvailableFreeBundlesExecute(r HasManyApiGE
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/available_free_bundles"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7825,9 +8193,9 @@ func (a *HasManyApiService) GETOrderIdAvailableFreeBundlesExecute(r HasManyApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7846,7 +8214,7 @@ func (a *HasManyApiService) GETOrderIdAvailableFreeBundlesExecute(r HasManyApiGE
 type HasManyApiGETOrderIdAvailableFreeSkusRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r HasManyApiGETOrderIdAvailableFreeSkusRequest) Execute() (*http.Response, error) {
@@ -7862,7 +8230,7 @@ Retrieve the available free skus associated to the order
 	@param orderId The resource's id
 	@return HasManyApiGETOrderIdAvailableFreeSkusRequest
 */
-func (a *HasManyApiService) GETOrderIdAvailableFreeSkus(ctx context.Context, orderId string) HasManyApiGETOrderIdAvailableFreeSkusRequest {
+func (a *HasManyApiService) GETOrderIdAvailableFreeSkus(ctx context.Context, orderId interface{}) HasManyApiGETOrderIdAvailableFreeSkusRequest {
 	return HasManyApiGETOrderIdAvailableFreeSkusRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -7884,7 +8252,7 @@ func (a *HasManyApiService) GETOrderIdAvailableFreeSkusExecute(r HasManyApiGETOr
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/available_free_skus"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7917,9 +8285,9 @@ func (a *HasManyApiService) GETOrderIdAvailableFreeSkusExecute(r HasManyApiGETOr
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7938,7 +8306,7 @@ func (a *HasManyApiService) GETOrderIdAvailableFreeSkusExecute(r HasManyApiGETOr
 type HasManyApiGETOrderIdAvailablePaymentMethodsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r HasManyApiGETOrderIdAvailablePaymentMethodsRequest) Execute() (*http.Response, error) {
@@ -7954,7 +8322,7 @@ Retrieve the available payment methods associated to the order
 	@param orderId The resource's id
 	@return HasManyApiGETOrderIdAvailablePaymentMethodsRequest
 */
-func (a *HasManyApiService) GETOrderIdAvailablePaymentMethods(ctx context.Context, orderId string) HasManyApiGETOrderIdAvailablePaymentMethodsRequest {
+func (a *HasManyApiService) GETOrderIdAvailablePaymentMethods(ctx context.Context, orderId interface{}) HasManyApiGETOrderIdAvailablePaymentMethodsRequest {
 	return HasManyApiGETOrderIdAvailablePaymentMethodsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -7976,7 +8344,7 @@ func (a *HasManyApiService) GETOrderIdAvailablePaymentMethodsExecute(r HasManyAp
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/available_payment_methods"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8009,9 +8377,9 @@ func (a *HasManyApiService) GETOrderIdAvailablePaymentMethodsExecute(r HasManyAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8030,7 +8398,7 @@ func (a *HasManyApiService) GETOrderIdAvailablePaymentMethodsExecute(r HasManyAp
 type HasManyApiGETOrderIdCapturesRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r HasManyApiGETOrderIdCapturesRequest) Execute() (*http.Response, error) {
@@ -8046,7 +8414,7 @@ Retrieve the captures associated to the order
 	@param orderId The resource's id
 	@return HasManyApiGETOrderIdCapturesRequest
 */
-func (a *HasManyApiService) GETOrderIdCaptures(ctx context.Context, orderId string) HasManyApiGETOrderIdCapturesRequest {
+func (a *HasManyApiService) GETOrderIdCaptures(ctx context.Context, orderId interface{}) HasManyApiGETOrderIdCapturesRequest {
 	return HasManyApiGETOrderIdCapturesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -8068,7 +8436,7 @@ func (a *HasManyApiService) GETOrderIdCapturesExecute(r HasManyApiGETOrderIdCapt
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/captures"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8101,9 +8469,9 @@ func (a *HasManyApiService) GETOrderIdCapturesExecute(r HasManyApiGETOrderIdCapt
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8122,7 +8490,7 @@ func (a *HasManyApiService) GETOrderIdCapturesExecute(r HasManyApiGETOrderIdCapt
 type HasManyApiGETOrderIdEventsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r HasManyApiGETOrderIdEventsRequest) Execute() (*http.Response, error) {
@@ -8138,7 +8506,7 @@ Retrieve the events associated to the order
 	@param orderId The resource's id
 	@return HasManyApiGETOrderIdEventsRequest
 */
-func (a *HasManyApiService) GETOrderIdEvents(ctx context.Context, orderId string) HasManyApiGETOrderIdEventsRequest {
+func (a *HasManyApiService) GETOrderIdEvents(ctx context.Context, orderId interface{}) HasManyApiGETOrderIdEventsRequest {
 	return HasManyApiGETOrderIdEventsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -8160,7 +8528,7 @@ func (a *HasManyApiService) GETOrderIdEventsExecute(r HasManyApiGETOrderIdEvents
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8193,9 +8561,9 @@ func (a *HasManyApiService) GETOrderIdEventsExecute(r HasManyApiGETOrderIdEvents
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8214,7 +8582,7 @@ func (a *HasManyApiService) GETOrderIdEventsExecute(r HasManyApiGETOrderIdEvents
 type HasManyApiGETOrderIdLineItemsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r HasManyApiGETOrderIdLineItemsRequest) Execute() (*http.Response, error) {
@@ -8230,7 +8598,7 @@ Retrieve the line items associated to the order
 	@param orderId The resource's id
 	@return HasManyApiGETOrderIdLineItemsRequest
 */
-func (a *HasManyApiService) GETOrderIdLineItems(ctx context.Context, orderId string) HasManyApiGETOrderIdLineItemsRequest {
+func (a *HasManyApiService) GETOrderIdLineItems(ctx context.Context, orderId interface{}) HasManyApiGETOrderIdLineItemsRequest {
 	return HasManyApiGETOrderIdLineItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -8252,7 +8620,7 @@ func (a *HasManyApiService) GETOrderIdLineItemsExecute(r HasManyApiGETOrderIdLin
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/line_items"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8285,9 +8653,9 @@ func (a *HasManyApiService) GETOrderIdLineItemsExecute(r HasManyApiGETOrderIdLin
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8306,7 +8674,7 @@ func (a *HasManyApiService) GETOrderIdLineItemsExecute(r HasManyApiGETOrderIdLin
 type HasManyApiGETOrderIdOrderCopiesRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r HasManyApiGETOrderIdOrderCopiesRequest) Execute() (*http.Response, error) {
@@ -8322,7 +8690,7 @@ Retrieve the order copies associated to the order
 	@param orderId The resource's id
 	@return HasManyApiGETOrderIdOrderCopiesRequest
 */
-func (a *HasManyApiService) GETOrderIdOrderCopies(ctx context.Context, orderId string) HasManyApiGETOrderIdOrderCopiesRequest {
+func (a *HasManyApiService) GETOrderIdOrderCopies(ctx context.Context, orderId interface{}) HasManyApiGETOrderIdOrderCopiesRequest {
 	return HasManyApiGETOrderIdOrderCopiesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -8344,7 +8712,7 @@ func (a *HasManyApiService) GETOrderIdOrderCopiesExecute(r HasManyApiGETOrderIdO
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/order_copies"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8377,9 +8745,101 @@ func (a *HasManyApiService) GETOrderIdOrderCopiesExecute(r HasManyApiGETOrderIdO
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETOrderIdOrderFactoriesRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	orderId    interface{}
+}
+
+func (r HasManyApiGETOrderIdOrderFactoriesRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderIdOrderFactoriesExecute(r)
+}
+
+/*
+GETOrderIdOrderFactories Retrieve the order factories associated to the order
+
+Retrieve the order factories associated to the order
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return HasManyApiGETOrderIdOrderFactoriesRequest
+*/
+func (a *HasManyApiService) GETOrderIdOrderFactories(ctx context.Context, orderId interface{}) HasManyApiGETOrderIdOrderFactoriesRequest {
+	return HasManyApiGETOrderIdOrderFactoriesRequest{
+		ApiService: a,
+		ctx:        ctx,
+		orderId:    orderId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETOrderIdOrderFactoriesExecute(r HasManyApiGETOrderIdOrderFactoriesRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderIdOrderFactories")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/orders/{orderId}/order_factories"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8398,7 +8858,7 @@ func (a *HasManyApiService) GETOrderIdOrderCopiesExecute(r HasManyApiGETOrderIdO
 type HasManyApiGETOrderIdOrderSubscriptionsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r HasManyApiGETOrderIdOrderSubscriptionsRequest) Execute() (*http.Response, error) {
@@ -8414,7 +8874,7 @@ Retrieve the order subscriptions associated to the order
 	@param orderId The resource's id
 	@return HasManyApiGETOrderIdOrderSubscriptionsRequest
 */
-func (a *HasManyApiService) GETOrderIdOrderSubscriptions(ctx context.Context, orderId string) HasManyApiGETOrderIdOrderSubscriptionsRequest {
+func (a *HasManyApiService) GETOrderIdOrderSubscriptions(ctx context.Context, orderId interface{}) HasManyApiGETOrderIdOrderSubscriptionsRequest {
 	return HasManyApiGETOrderIdOrderSubscriptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -8436,7 +8896,7 @@ func (a *HasManyApiService) GETOrderIdOrderSubscriptionsExecute(r HasManyApiGETO
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/order_subscriptions"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8469,9 +8929,101 @@ func (a *HasManyApiService) GETOrderIdOrderSubscriptionsExecute(r HasManyApiGETO
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETOrderIdRecurringOrderCopiesRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	orderId    interface{}
+}
+
+func (r HasManyApiGETOrderIdRecurringOrderCopiesRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderIdRecurringOrderCopiesExecute(r)
+}
+
+/*
+GETOrderIdRecurringOrderCopies Retrieve the recurring order copies associated to the order
+
+Retrieve the recurring order copies associated to the order
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderId The resource's id
+	@return HasManyApiGETOrderIdRecurringOrderCopiesRequest
+*/
+func (a *HasManyApiService) GETOrderIdRecurringOrderCopies(ctx context.Context, orderId interface{}) HasManyApiGETOrderIdRecurringOrderCopiesRequest {
+	return HasManyApiGETOrderIdRecurringOrderCopiesRequest{
+		ApiService: a,
+		ctx:        ctx,
+		orderId:    orderId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETOrderIdRecurringOrderCopiesExecute(r HasManyApiGETOrderIdRecurringOrderCopiesRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderIdRecurringOrderCopies")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/orders/{orderId}/recurring_order_copies"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8490,7 +9042,7 @@ func (a *HasManyApiService) GETOrderIdOrderSubscriptionsExecute(r HasManyApiGETO
 type HasManyApiGETOrderIdRefundsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r HasManyApiGETOrderIdRefundsRequest) Execute() (*http.Response, error) {
@@ -8506,7 +9058,7 @@ Retrieve the refunds associated to the order
 	@param orderId The resource's id
 	@return HasManyApiGETOrderIdRefundsRequest
 */
-func (a *HasManyApiService) GETOrderIdRefunds(ctx context.Context, orderId string) HasManyApiGETOrderIdRefundsRequest {
+func (a *HasManyApiService) GETOrderIdRefunds(ctx context.Context, orderId interface{}) HasManyApiGETOrderIdRefundsRequest {
 	return HasManyApiGETOrderIdRefundsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -8528,7 +9080,7 @@ func (a *HasManyApiService) GETOrderIdRefundsExecute(r HasManyApiGETOrderIdRefun
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/refunds"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8561,9 +9113,9 @@ func (a *HasManyApiService) GETOrderIdRefundsExecute(r HasManyApiGETOrderIdRefun
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8582,7 +9134,7 @@ func (a *HasManyApiService) GETOrderIdRefundsExecute(r HasManyApiGETOrderIdRefun
 type HasManyApiGETOrderIdReturnsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r HasManyApiGETOrderIdReturnsRequest) Execute() (*http.Response, error) {
@@ -8598,7 +9150,7 @@ Retrieve the returns associated to the order
 	@param orderId The resource's id
 	@return HasManyApiGETOrderIdReturnsRequest
 */
-func (a *HasManyApiService) GETOrderIdReturns(ctx context.Context, orderId string) HasManyApiGETOrderIdReturnsRequest {
+func (a *HasManyApiService) GETOrderIdReturns(ctx context.Context, orderId interface{}) HasManyApiGETOrderIdReturnsRequest {
 	return HasManyApiGETOrderIdReturnsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -8620,7 +9172,7 @@ func (a *HasManyApiService) GETOrderIdReturnsExecute(r HasManyApiGETOrderIdRetur
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/returns"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8653,9 +9205,9 @@ func (a *HasManyApiService) GETOrderIdReturnsExecute(r HasManyApiGETOrderIdRetur
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8674,7 +9226,7 @@ func (a *HasManyApiService) GETOrderIdReturnsExecute(r HasManyApiGETOrderIdRetur
 type HasManyApiGETOrderIdShipmentsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r HasManyApiGETOrderIdShipmentsRequest) Execute() (*http.Response, error) {
@@ -8690,7 +9242,7 @@ Retrieve the shipments associated to the order
 	@param orderId The resource's id
 	@return HasManyApiGETOrderIdShipmentsRequest
 */
-func (a *HasManyApiService) GETOrderIdShipments(ctx context.Context, orderId string) HasManyApiGETOrderIdShipmentsRequest {
+func (a *HasManyApiService) GETOrderIdShipments(ctx context.Context, orderId interface{}) HasManyApiGETOrderIdShipmentsRequest {
 	return HasManyApiGETOrderIdShipmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -8712,7 +9264,7 @@ func (a *HasManyApiService) GETOrderIdShipmentsExecute(r HasManyApiGETOrderIdShi
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/shipments"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8745,9 +9297,9 @@ func (a *HasManyApiService) GETOrderIdShipmentsExecute(r HasManyApiGETOrderIdShi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8766,7 +9318,7 @@ func (a *HasManyApiService) GETOrderIdShipmentsExecute(r HasManyApiGETOrderIdShi
 type HasManyApiGETOrderIdVoidsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r HasManyApiGETOrderIdVoidsRequest) Execute() (*http.Response, error) {
@@ -8782,7 +9334,7 @@ Retrieve the voids associated to the order
 	@param orderId The resource's id
 	@return HasManyApiGETOrderIdVoidsRequest
 */
-func (a *HasManyApiService) GETOrderIdVoids(ctx context.Context, orderId string) HasManyApiGETOrderIdVoidsRequest {
+func (a *HasManyApiService) GETOrderIdVoids(ctx context.Context, orderId interface{}) HasManyApiGETOrderIdVoidsRequest {
 	return HasManyApiGETOrderIdVoidsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -8804,7 +9356,7 @@ func (a *HasManyApiService) GETOrderIdVoidsExecute(r HasManyApiGETOrderIdVoidsRe
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/voids"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8837,9 +9389,9 @@ func (a *HasManyApiService) GETOrderIdVoidsExecute(r HasManyApiGETOrderIdVoidsRe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8858,7 +9410,7 @@ func (a *HasManyApiService) GETOrderIdVoidsExecute(r HasManyApiGETOrderIdVoidsRe
 type HasManyApiGETOrderSubscriptionIdEventsRequest struct {
 	ctx                 context.Context
 	ApiService          *HasManyApiService
-	orderSubscriptionId string
+	orderSubscriptionId interface{}
 }
 
 func (r HasManyApiGETOrderSubscriptionIdEventsRequest) Execute() (*http.Response, error) {
@@ -8874,7 +9426,7 @@ Retrieve the events associated to the order subscription
 	@param orderSubscriptionId The resource's id
 	@return HasManyApiGETOrderSubscriptionIdEventsRequest
 */
-func (a *HasManyApiService) GETOrderSubscriptionIdEvents(ctx context.Context, orderSubscriptionId string) HasManyApiGETOrderSubscriptionIdEventsRequest {
+func (a *HasManyApiService) GETOrderSubscriptionIdEvents(ctx context.Context, orderSubscriptionId interface{}) HasManyApiGETOrderSubscriptionIdEventsRequest {
 	return HasManyApiGETOrderSubscriptionIdEventsRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -8896,7 +9448,7 @@ func (a *HasManyApiService) GETOrderSubscriptionIdEventsExecute(r HasManyApiGETO
 	}
 
 	localVarPath := localBasePath + "/order_subscriptions/{orderSubscriptionId}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterToString(r.orderSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionId, "orderSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8929,9 +9481,9 @@ func (a *HasManyApiService) GETOrderSubscriptionIdEventsExecute(r HasManyApiGETO
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8947,27 +9499,27 @@ func (a *HasManyApiService) GETOrderSubscriptionIdEventsExecute(r HasManyApiGETO
 	return localVarHTTPResponse, nil
 }
 
-type HasManyApiGETOrderSubscriptionIdOrderCopiesRequest struct {
+type HasManyApiGETOrderSubscriptionIdOrderFactoriesRequest struct {
 	ctx                 context.Context
 	ApiService          *HasManyApiService
-	orderSubscriptionId string
+	orderSubscriptionId interface{}
 }
 
-func (r HasManyApiGETOrderSubscriptionIdOrderCopiesRequest) Execute() (*http.Response, error) {
-	return r.ApiService.GETOrderSubscriptionIdOrderCopiesExecute(r)
+func (r HasManyApiGETOrderSubscriptionIdOrderFactoriesRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderSubscriptionIdOrderFactoriesExecute(r)
 }
 
 /*
-GETOrderSubscriptionIdOrderCopies Retrieve the order copies associated to the order subscription
+GETOrderSubscriptionIdOrderFactories Retrieve the order factories associated to the order subscription
 
-Retrieve the order copies associated to the order subscription
+Retrieve the order factories associated to the order subscription
 
 	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
 	@param orderSubscriptionId The resource's id
-	@return HasManyApiGETOrderSubscriptionIdOrderCopiesRequest
+	@return HasManyApiGETOrderSubscriptionIdOrderFactoriesRequest
 */
-func (a *HasManyApiService) GETOrderSubscriptionIdOrderCopies(ctx context.Context, orderSubscriptionId string) HasManyApiGETOrderSubscriptionIdOrderCopiesRequest {
-	return HasManyApiGETOrderSubscriptionIdOrderCopiesRequest{
+func (a *HasManyApiService) GETOrderSubscriptionIdOrderFactories(ctx context.Context, orderSubscriptionId interface{}) HasManyApiGETOrderSubscriptionIdOrderFactoriesRequest {
+	return HasManyApiGETOrderSubscriptionIdOrderFactoriesRequest{
 		ApiService:          a,
 		ctx:                 ctx,
 		orderSubscriptionId: orderSubscriptionId,
@@ -8975,20 +9527,20 @@ func (a *HasManyApiService) GETOrderSubscriptionIdOrderCopies(ctx context.Contex
 }
 
 // Execute executes the request
-func (a *HasManyApiService) GETOrderSubscriptionIdOrderCopiesExecute(r HasManyApiGETOrderSubscriptionIdOrderCopiesRequest) (*http.Response, error) {
+func (a *HasManyApiService) GETOrderSubscriptionIdOrderFactoriesExecute(r HasManyApiGETOrderSubscriptionIdOrderFactoriesRequest) (*http.Response, error) {
 	var (
 		localVarHTTPMethod = http.MethodGet
 		localVarPostBody   interface{}
 		formFiles          []formFile
 	)
 
-	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderSubscriptionIdOrderCopies")
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderSubscriptionIdOrderFactories")
 	if err != nil {
 		return nil, &GenericOpenAPIError{error: err.Error()}
 	}
 
-	localVarPath := localBasePath + "/order_subscriptions/{orderSubscriptionId}/order_copies"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterToString(r.orderSubscriptionId, "")), -1)
+	localVarPath := localBasePath + "/order_subscriptions/{orderSubscriptionId}/order_factories"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionId, "orderSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9021,9 +9573,101 @@ func (a *HasManyApiService) GETOrderSubscriptionIdOrderCopiesExecute(r HasManyAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETOrderSubscriptionIdOrderSubscriptionItemsRequest struct {
+	ctx                 context.Context
+	ApiService          *HasManyApiService
+	orderSubscriptionId interface{}
+}
+
+func (r HasManyApiGETOrderSubscriptionIdOrderSubscriptionItemsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderSubscriptionIdOrderSubscriptionItemsExecute(r)
+}
+
+/*
+GETOrderSubscriptionIdOrderSubscriptionItems Retrieve the order subscription items associated to the order subscription
+
+Retrieve the order subscription items associated to the order subscription
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderSubscriptionId The resource's id
+	@return HasManyApiGETOrderSubscriptionIdOrderSubscriptionItemsRequest
+*/
+func (a *HasManyApiService) GETOrderSubscriptionIdOrderSubscriptionItems(ctx context.Context, orderSubscriptionId interface{}) HasManyApiGETOrderSubscriptionIdOrderSubscriptionItemsRequest {
+	return HasManyApiGETOrderSubscriptionIdOrderSubscriptionItemsRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		orderSubscriptionId: orderSubscriptionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETOrderSubscriptionIdOrderSubscriptionItemsExecute(r HasManyApiGETOrderSubscriptionIdOrderSubscriptionItemsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderSubscriptionIdOrderSubscriptionItems")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/order_subscriptions/{orderSubscriptionId}/order_subscription_items"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionId, "orderSubscriptionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9042,7 +9686,7 @@ func (a *HasManyApiService) GETOrderSubscriptionIdOrderCopiesExecute(r HasManyAp
 type HasManyApiGETOrderSubscriptionIdOrdersRequest struct {
 	ctx                 context.Context
 	ApiService          *HasManyApiService
-	orderSubscriptionId string
+	orderSubscriptionId interface{}
 }
 
 func (r HasManyApiGETOrderSubscriptionIdOrdersRequest) Execute() (*http.Response, error) {
@@ -9058,7 +9702,7 @@ Retrieve the orders associated to the order subscription
 	@param orderSubscriptionId The resource's id
 	@return HasManyApiGETOrderSubscriptionIdOrdersRequest
 */
-func (a *HasManyApiService) GETOrderSubscriptionIdOrders(ctx context.Context, orderSubscriptionId string) HasManyApiGETOrderSubscriptionIdOrdersRequest {
+func (a *HasManyApiService) GETOrderSubscriptionIdOrders(ctx context.Context, orderSubscriptionId interface{}) HasManyApiGETOrderSubscriptionIdOrdersRequest {
 	return HasManyApiGETOrderSubscriptionIdOrdersRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -9080,7 +9724,7 @@ func (a *HasManyApiService) GETOrderSubscriptionIdOrdersExecute(r HasManyApiGETO
 	}
 
 	localVarPath := localBasePath + "/order_subscriptions/{orderSubscriptionId}/orders"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterToString(r.orderSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionId, "orderSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9113,9 +9757,101 @@ func (a *HasManyApiService) GETOrderSubscriptionIdOrdersExecute(r HasManyApiGETO
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETOrderSubscriptionIdRecurringOrderCopiesRequest struct {
+	ctx                 context.Context
+	ApiService          *HasManyApiService
+	orderSubscriptionId interface{}
+}
+
+func (r HasManyApiGETOrderSubscriptionIdRecurringOrderCopiesRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderSubscriptionIdRecurringOrderCopiesExecute(r)
+}
+
+/*
+GETOrderSubscriptionIdRecurringOrderCopies Retrieve the recurring order copies associated to the order subscription
+
+Retrieve the recurring order copies associated to the order subscription
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderSubscriptionId The resource's id
+	@return HasManyApiGETOrderSubscriptionIdRecurringOrderCopiesRequest
+*/
+func (a *HasManyApiService) GETOrderSubscriptionIdRecurringOrderCopies(ctx context.Context, orderSubscriptionId interface{}) HasManyApiGETOrderSubscriptionIdRecurringOrderCopiesRequest {
+	return HasManyApiGETOrderSubscriptionIdRecurringOrderCopiesRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		orderSubscriptionId: orderSubscriptionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETOrderSubscriptionIdRecurringOrderCopiesExecute(r HasManyApiGETOrderSubscriptionIdRecurringOrderCopiesRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETOrderSubscriptionIdRecurringOrderCopies")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/order_subscriptions/{orderSubscriptionId}/recurring_order_copies"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionId, "orderSubscriptionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9134,7 +9870,7 @@ func (a *HasManyApiService) GETOrderSubscriptionIdOrdersExecute(r HasManyApiGETO
 type HasManyApiGETOrderValidationRuleIdAttachmentsRequest struct {
 	ctx                   context.Context
 	ApiService            *HasManyApiService
-	orderValidationRuleId string
+	orderValidationRuleId interface{}
 }
 
 func (r HasManyApiGETOrderValidationRuleIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -9150,7 +9886,7 @@ Retrieve the attachments associated to the order validation rule
 	@param orderValidationRuleId The resource's id
 	@return HasManyApiGETOrderValidationRuleIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETOrderValidationRuleIdAttachments(ctx context.Context, orderValidationRuleId string) HasManyApiGETOrderValidationRuleIdAttachmentsRequest {
+func (a *HasManyApiService) GETOrderValidationRuleIdAttachments(ctx context.Context, orderValidationRuleId interface{}) HasManyApiGETOrderValidationRuleIdAttachmentsRequest {
 	return HasManyApiGETOrderValidationRuleIdAttachmentsRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -9172,7 +9908,7 @@ func (a *HasManyApiService) GETOrderValidationRuleIdAttachmentsExecute(r HasMany
 	}
 
 	localVarPath := localBasePath + "/order_validation_rules/{orderValidationRuleId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderValidationRuleId"+"}", url.PathEscape(parameterToString(r.orderValidationRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderValidationRuleId"+"}", url.PathEscape(parameterValueToString(r.orderValidationRuleId, "orderValidationRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9205,9 +9941,9 @@ func (a *HasManyApiService) GETOrderValidationRuleIdAttachmentsExecute(r HasMany
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9226,7 +9962,7 @@ func (a *HasManyApiService) GETOrderValidationRuleIdAttachmentsExecute(r HasMany
 type HasManyApiGETPackageIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	packageId  string
+	packageId  interface{}
 }
 
 func (r HasManyApiGETPackageIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -9242,7 +9978,7 @@ Retrieve the attachments associated to the package
 	@param packageId The resource's id
 	@return HasManyApiGETPackageIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETPackageIdAttachments(ctx context.Context, packageId string) HasManyApiGETPackageIdAttachmentsRequest {
+func (a *HasManyApiService) GETPackageIdAttachments(ctx context.Context, packageId interface{}) HasManyApiGETPackageIdAttachmentsRequest {
 	return HasManyApiGETPackageIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -9264,7 +10000,7 @@ func (a *HasManyApiService) GETPackageIdAttachmentsExecute(r HasManyApiGETPackag
 	}
 
 	localVarPath := localBasePath + "/packages/{packageId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"packageId"+"}", url.PathEscape(parameterToString(r.packageId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"packageId"+"}", url.PathEscape(parameterValueToString(r.packageId, "packageId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9297,9 +10033,9 @@ func (a *HasManyApiService) GETPackageIdAttachmentsExecute(r HasManyApiGETPackag
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9318,7 +10054,7 @@ func (a *HasManyApiService) GETPackageIdAttachmentsExecute(r HasManyApiGETPackag
 type HasManyApiGETPackageIdParcelsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	packageId  string
+	packageId  interface{}
 }
 
 func (r HasManyApiGETPackageIdParcelsRequest) Execute() (*http.Response, error) {
@@ -9334,7 +10070,7 @@ Retrieve the parcels associated to the package
 	@param packageId The resource's id
 	@return HasManyApiGETPackageIdParcelsRequest
 */
-func (a *HasManyApiService) GETPackageIdParcels(ctx context.Context, packageId string) HasManyApiGETPackageIdParcelsRequest {
+func (a *HasManyApiService) GETPackageIdParcels(ctx context.Context, packageId interface{}) HasManyApiGETPackageIdParcelsRequest {
 	return HasManyApiGETPackageIdParcelsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -9356,7 +10092,7 @@ func (a *HasManyApiService) GETPackageIdParcelsExecute(r HasManyApiGETPackageIdP
 	}
 
 	localVarPath := localBasePath + "/packages/{packageId}/parcels"
-	localVarPath = strings.Replace(localVarPath, "{"+"packageId"+"}", url.PathEscape(parameterToString(r.packageId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"packageId"+"}", url.PathEscape(parameterValueToString(r.packageId, "packageId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9389,9 +10125,9 @@ func (a *HasManyApiService) GETPackageIdParcelsExecute(r HasManyApiGETPackageIdP
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9410,7 +10146,7 @@ func (a *HasManyApiService) GETPackageIdParcelsExecute(r HasManyApiGETPackageIdP
 type HasManyApiGETParcelIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	parcelId   string
+	parcelId   interface{}
 }
 
 func (r HasManyApiGETParcelIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -9426,7 +10162,7 @@ Retrieve the attachments associated to the parcel
 	@param parcelId The resource's id
 	@return HasManyApiGETParcelIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETParcelIdAttachments(ctx context.Context, parcelId string) HasManyApiGETParcelIdAttachmentsRequest {
+func (a *HasManyApiService) GETParcelIdAttachments(ctx context.Context, parcelId interface{}) HasManyApiGETParcelIdAttachmentsRequest {
 	return HasManyApiGETParcelIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -9448,7 +10184,7 @@ func (a *HasManyApiService) GETParcelIdAttachmentsExecute(r HasManyApiGETParcelI
 	}
 
 	localVarPath := localBasePath + "/parcels/{parcelId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterToString(r.parcelId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterValueToString(r.parcelId, "parcelId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9481,9 +10217,9 @@ func (a *HasManyApiService) GETParcelIdAttachmentsExecute(r HasManyApiGETParcelI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9502,7 +10238,7 @@ func (a *HasManyApiService) GETParcelIdAttachmentsExecute(r HasManyApiGETParcelI
 type HasManyApiGETParcelIdEventsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	parcelId   string
+	parcelId   interface{}
 }
 
 func (r HasManyApiGETParcelIdEventsRequest) Execute() (*http.Response, error) {
@@ -9518,7 +10254,7 @@ Retrieve the events associated to the parcel
 	@param parcelId The resource's id
 	@return HasManyApiGETParcelIdEventsRequest
 */
-func (a *HasManyApiService) GETParcelIdEvents(ctx context.Context, parcelId string) HasManyApiGETParcelIdEventsRequest {
+func (a *HasManyApiService) GETParcelIdEvents(ctx context.Context, parcelId interface{}) HasManyApiGETParcelIdEventsRequest {
 	return HasManyApiGETParcelIdEventsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -9540,7 +10276,7 @@ func (a *HasManyApiService) GETParcelIdEventsExecute(r HasManyApiGETParcelIdEven
 	}
 
 	localVarPath := localBasePath + "/parcels/{parcelId}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterToString(r.parcelId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterValueToString(r.parcelId, "parcelId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9573,9 +10309,9 @@ func (a *HasManyApiService) GETParcelIdEventsExecute(r HasManyApiGETParcelIdEven
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9594,7 +10330,7 @@ func (a *HasManyApiService) GETParcelIdEventsExecute(r HasManyApiGETParcelIdEven
 type HasManyApiGETParcelIdParcelLineItemsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	parcelId   string
+	parcelId   interface{}
 }
 
 func (r HasManyApiGETParcelIdParcelLineItemsRequest) Execute() (*http.Response, error) {
@@ -9610,7 +10346,7 @@ Retrieve the parcel line items associated to the parcel
 	@param parcelId The resource's id
 	@return HasManyApiGETParcelIdParcelLineItemsRequest
 */
-func (a *HasManyApiService) GETParcelIdParcelLineItems(ctx context.Context, parcelId string) HasManyApiGETParcelIdParcelLineItemsRequest {
+func (a *HasManyApiService) GETParcelIdParcelLineItems(ctx context.Context, parcelId interface{}) HasManyApiGETParcelIdParcelLineItemsRequest {
 	return HasManyApiGETParcelIdParcelLineItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -9632,7 +10368,7 @@ func (a *HasManyApiService) GETParcelIdParcelLineItemsExecute(r HasManyApiGETPar
 	}
 
 	localVarPath := localBasePath + "/parcels/{parcelId}/parcel_line_items"
-	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterToString(r.parcelId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterValueToString(r.parcelId, "parcelId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9665,9 +10401,9 @@ func (a *HasManyApiService) GETParcelIdParcelLineItemsExecute(r HasManyApiGETPar
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9686,7 +10422,7 @@ func (a *HasManyApiService) GETParcelIdParcelLineItemsExecute(r HasManyApiGETPar
 type HasManyApiGETPaymentGatewayIdPaymentMethodsRequest struct {
 	ctx              context.Context
 	ApiService       *HasManyApiService
-	paymentGatewayId string
+	paymentGatewayId interface{}
 }
 
 func (r HasManyApiGETPaymentGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
@@ -9702,7 +10438,7 @@ Retrieve the payment methods associated to the payment gateway
 	@param paymentGatewayId The resource's id
 	@return HasManyApiGETPaymentGatewayIdPaymentMethodsRequest
 */
-func (a *HasManyApiService) GETPaymentGatewayIdPaymentMethods(ctx context.Context, paymentGatewayId string) HasManyApiGETPaymentGatewayIdPaymentMethodsRequest {
+func (a *HasManyApiService) GETPaymentGatewayIdPaymentMethods(ctx context.Context, paymentGatewayId interface{}) HasManyApiGETPaymentGatewayIdPaymentMethodsRequest {
 	return HasManyApiGETPaymentGatewayIdPaymentMethodsRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -9724,7 +10460,7 @@ func (a *HasManyApiService) GETPaymentGatewayIdPaymentMethodsExecute(r HasManyAp
 	}
 
 	localVarPath := localBasePath + "/payment_gateways/{paymentGatewayId}/payment_methods"
-	localVarPath = strings.Replace(localVarPath, "{"+"paymentGatewayId"+"}", url.PathEscape(parameterToString(r.paymentGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"paymentGatewayId"+"}", url.PathEscape(parameterValueToString(r.paymentGatewayId, "paymentGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9757,9 +10493,9 @@ func (a *HasManyApiService) GETPaymentGatewayIdPaymentMethodsExecute(r HasManyAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9778,7 +10514,7 @@ func (a *HasManyApiService) GETPaymentGatewayIdPaymentMethodsExecute(r HasManyAp
 type HasManyApiGETPaymentMethodIdAttachmentsRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
-	paymentMethodId string
+	paymentMethodId interface{}
 }
 
 func (r HasManyApiGETPaymentMethodIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -9794,7 +10530,7 @@ Retrieve the attachments associated to the payment method
 	@param paymentMethodId The resource's id
 	@return HasManyApiGETPaymentMethodIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETPaymentMethodIdAttachments(ctx context.Context, paymentMethodId string) HasManyApiGETPaymentMethodIdAttachmentsRequest {
+func (a *HasManyApiService) GETPaymentMethodIdAttachments(ctx context.Context, paymentMethodId interface{}) HasManyApiGETPaymentMethodIdAttachmentsRequest {
 	return HasManyApiGETPaymentMethodIdAttachmentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -9816,7 +10552,7 @@ func (a *HasManyApiService) GETPaymentMethodIdAttachmentsExecute(r HasManyApiGET
 	}
 
 	localVarPath := localBasePath + "/payment_methods/{paymentMethodId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"paymentMethodId"+"}", url.PathEscape(parameterToString(r.paymentMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"paymentMethodId"+"}", url.PathEscape(parameterValueToString(r.paymentMethodId, "paymentMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9849,9 +10585,9 @@ func (a *HasManyApiService) GETPaymentMethodIdAttachmentsExecute(r HasManyApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9870,7 +10606,7 @@ func (a *HasManyApiService) GETPaymentMethodIdAttachmentsExecute(r HasManyApiGET
 type HasManyApiGETPaypalGatewayIdPaymentMethodsRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
-	paypalGatewayId string
+	paypalGatewayId interface{}
 }
 
 func (r HasManyApiGETPaypalGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
@@ -9886,7 +10622,7 @@ Retrieve the payment methods associated to the paypal gateway
 	@param paypalGatewayId The resource's id
 	@return HasManyApiGETPaypalGatewayIdPaymentMethodsRequest
 */
-func (a *HasManyApiService) GETPaypalGatewayIdPaymentMethods(ctx context.Context, paypalGatewayId string) HasManyApiGETPaypalGatewayIdPaymentMethodsRequest {
+func (a *HasManyApiService) GETPaypalGatewayIdPaymentMethods(ctx context.Context, paypalGatewayId interface{}) HasManyApiGETPaypalGatewayIdPaymentMethodsRequest {
 	return HasManyApiGETPaypalGatewayIdPaymentMethodsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -9908,7 +10644,7 @@ func (a *HasManyApiService) GETPaypalGatewayIdPaymentMethodsExecute(r HasManyApi
 	}
 
 	localVarPath := localBasePath + "/paypal_gateways/{paypalGatewayId}/payment_methods"
-	localVarPath = strings.Replace(localVarPath, "{"+"paypalGatewayId"+"}", url.PathEscape(parameterToString(r.paypalGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"paypalGatewayId"+"}", url.PathEscape(parameterValueToString(r.paypalGatewayId, "paypalGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9941,9 +10677,9 @@ func (a *HasManyApiService) GETPaypalGatewayIdPaymentMethodsExecute(r HasManyApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9962,7 +10698,7 @@ func (a *HasManyApiService) GETPaypalGatewayIdPaymentMethodsExecute(r HasManyApi
 type HasManyApiGETPaypalGatewayIdPaypalPaymentsRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
-	paypalGatewayId string
+	paypalGatewayId interface{}
 }
 
 func (r HasManyApiGETPaypalGatewayIdPaypalPaymentsRequest) Execute() (*http.Response, error) {
@@ -9978,7 +10714,7 @@ Retrieve the paypal payments associated to the paypal gateway
 	@param paypalGatewayId The resource's id
 	@return HasManyApiGETPaypalGatewayIdPaypalPaymentsRequest
 */
-func (a *HasManyApiService) GETPaypalGatewayIdPaypalPayments(ctx context.Context, paypalGatewayId string) HasManyApiGETPaypalGatewayIdPaypalPaymentsRequest {
+func (a *HasManyApiService) GETPaypalGatewayIdPaypalPayments(ctx context.Context, paypalGatewayId interface{}) HasManyApiGETPaypalGatewayIdPaypalPaymentsRequest {
 	return HasManyApiGETPaypalGatewayIdPaypalPaymentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -10000,7 +10736,7 @@ func (a *HasManyApiService) GETPaypalGatewayIdPaypalPaymentsExecute(r HasManyApi
 	}
 
 	localVarPath := localBasePath + "/paypal_gateways/{paypalGatewayId}/paypal_payments"
-	localVarPath = strings.Replace(localVarPath, "{"+"paypalGatewayId"+"}", url.PathEscape(parameterToString(r.paypalGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"paypalGatewayId"+"}", url.PathEscape(parameterValueToString(r.paypalGatewayId, "paypalGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10033,9 +10769,9 @@ func (a *HasManyApiService) GETPaypalGatewayIdPaypalPaymentsExecute(r HasManyApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10054,7 +10790,7 @@ func (a *HasManyApiService) GETPaypalGatewayIdPaypalPaymentsExecute(r HasManyApi
 type HasManyApiGETPercentageDiscountPromotionIdAttachmentsRequest struct {
 	ctx                           context.Context
 	ApiService                    *HasManyApiService
-	percentageDiscountPromotionId string
+	percentageDiscountPromotionId interface{}
 }
 
 func (r HasManyApiGETPercentageDiscountPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -10070,7 +10806,7 @@ Retrieve the attachments associated to the percentage discount promotion
 	@param percentageDiscountPromotionId The resource's id
 	@return HasManyApiGETPercentageDiscountPromotionIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETPercentageDiscountPromotionIdAttachments(ctx context.Context, percentageDiscountPromotionId string) HasManyApiGETPercentageDiscountPromotionIdAttachmentsRequest {
+func (a *HasManyApiService) GETPercentageDiscountPromotionIdAttachments(ctx context.Context, percentageDiscountPromotionId interface{}) HasManyApiGETPercentageDiscountPromotionIdAttachmentsRequest {
 	return HasManyApiGETPercentageDiscountPromotionIdAttachmentsRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
@@ -10092,7 +10828,7 @@ func (a *HasManyApiService) GETPercentageDiscountPromotionIdAttachmentsExecute(r
 	}
 
 	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterToString(r.percentageDiscountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10125,9 +10861,9 @@ func (a *HasManyApiService) GETPercentageDiscountPromotionIdAttachmentsExecute(r
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10146,7 +10882,7 @@ func (a *HasManyApiService) GETPercentageDiscountPromotionIdAttachmentsExecute(r
 type HasManyApiGETPercentageDiscountPromotionIdEventsRequest struct {
 	ctx                           context.Context
 	ApiService                    *HasManyApiService
-	percentageDiscountPromotionId string
+	percentageDiscountPromotionId interface{}
 }
 
 func (r HasManyApiGETPercentageDiscountPromotionIdEventsRequest) Execute() (*http.Response, error) {
@@ -10162,7 +10898,7 @@ Retrieve the events associated to the percentage discount promotion
 	@param percentageDiscountPromotionId The resource's id
 	@return HasManyApiGETPercentageDiscountPromotionIdEventsRequest
 */
-func (a *HasManyApiService) GETPercentageDiscountPromotionIdEvents(ctx context.Context, percentageDiscountPromotionId string) HasManyApiGETPercentageDiscountPromotionIdEventsRequest {
+func (a *HasManyApiService) GETPercentageDiscountPromotionIdEvents(ctx context.Context, percentageDiscountPromotionId interface{}) HasManyApiGETPercentageDiscountPromotionIdEventsRequest {
 	return HasManyApiGETPercentageDiscountPromotionIdEventsRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
@@ -10184,7 +10920,7 @@ func (a *HasManyApiService) GETPercentageDiscountPromotionIdEventsExecute(r HasM
 	}
 
 	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterToString(r.percentageDiscountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10217,9 +10953,9 @@ func (a *HasManyApiService) GETPercentageDiscountPromotionIdEventsExecute(r HasM
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10238,7 +10974,7 @@ func (a *HasManyApiService) GETPercentageDiscountPromotionIdEventsExecute(r HasM
 type HasManyApiGETPercentageDiscountPromotionIdSkusRequest struct {
 	ctx                           context.Context
 	ApiService                    *HasManyApiService
-	percentageDiscountPromotionId string
+	percentageDiscountPromotionId interface{}
 }
 
 func (r HasManyApiGETPercentageDiscountPromotionIdSkusRequest) Execute() (*http.Response, error) {
@@ -10254,7 +10990,7 @@ Retrieve the skus associated to the percentage discount promotion
 	@param percentageDiscountPromotionId The resource's id
 	@return HasManyApiGETPercentageDiscountPromotionIdSkusRequest
 */
-func (a *HasManyApiService) GETPercentageDiscountPromotionIdSkus(ctx context.Context, percentageDiscountPromotionId string) HasManyApiGETPercentageDiscountPromotionIdSkusRequest {
+func (a *HasManyApiService) GETPercentageDiscountPromotionIdSkus(ctx context.Context, percentageDiscountPromotionId interface{}) HasManyApiGETPercentageDiscountPromotionIdSkusRequest {
 	return HasManyApiGETPercentageDiscountPromotionIdSkusRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
@@ -10276,7 +11012,7 @@ func (a *HasManyApiService) GETPercentageDiscountPromotionIdSkusExecute(r HasMan
 	}
 
 	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}/skus"
-	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterToString(r.percentageDiscountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10309,9 +11045,193 @@ func (a *HasManyApiService) GETPercentageDiscountPromotionIdSkusExecute(r HasMan
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETPriceFrequencyTierIdAttachmentsRequest struct {
+	ctx                  context.Context
+	ApiService           *HasManyApiService
+	priceFrequencyTierId interface{}
+}
+
+func (r HasManyApiGETPriceFrequencyTierIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPriceFrequencyTierIdAttachmentsExecute(r)
+}
+
+/*
+GETPriceFrequencyTierIdAttachments Retrieve the attachments associated to the price frequency tier
+
+Retrieve the attachments associated to the price frequency tier
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceFrequencyTierId The resource's id
+	@return HasManyApiGETPriceFrequencyTierIdAttachmentsRequest
+*/
+func (a *HasManyApiService) GETPriceFrequencyTierIdAttachments(ctx context.Context, priceFrequencyTierId interface{}) HasManyApiGETPriceFrequencyTierIdAttachmentsRequest {
+	return HasManyApiGETPriceFrequencyTierIdAttachmentsRequest{
+		ApiService:           a,
+		ctx:                  ctx,
+		priceFrequencyTierId: priceFrequencyTierId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPriceFrequencyTierIdAttachmentsExecute(r HasManyApiGETPriceFrequencyTierIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPriceFrequencyTierIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/price_frequency_tiers/{priceFrequencyTierId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"priceFrequencyTierId"+"}", url.PathEscape(parameterValueToString(r.priceFrequencyTierId, "priceFrequencyTierId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETPriceFrequencyTierIdEventsRequest struct {
+	ctx                  context.Context
+	ApiService           *HasManyApiService
+	priceFrequencyTierId interface{}
+}
+
+func (r HasManyApiGETPriceFrequencyTierIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPriceFrequencyTierIdEventsExecute(r)
+}
+
+/*
+GETPriceFrequencyTierIdEvents Retrieve the events associated to the price frequency tier
+
+Retrieve the events associated to the price frequency tier
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceFrequencyTierId The resource's id
+	@return HasManyApiGETPriceFrequencyTierIdEventsRequest
+*/
+func (a *HasManyApiService) GETPriceFrequencyTierIdEvents(ctx context.Context, priceFrequencyTierId interface{}) HasManyApiGETPriceFrequencyTierIdEventsRequest {
+	return HasManyApiGETPriceFrequencyTierIdEventsRequest{
+		ApiService:           a,
+		ctx:                  ctx,
+		priceFrequencyTierId: priceFrequencyTierId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPriceFrequencyTierIdEventsExecute(r HasManyApiGETPriceFrequencyTierIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPriceFrequencyTierIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/price_frequency_tiers/{priceFrequencyTierId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"priceFrequencyTierId"+"}", url.PathEscape(parameterValueToString(r.priceFrequencyTierId, "priceFrequencyTierId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10330,7 +11250,7 @@ func (a *HasManyApiService) GETPercentageDiscountPromotionIdSkusExecute(r HasMan
 type HasManyApiGETPriceIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	priceId    string
+	priceId    interface{}
 }
 
 func (r HasManyApiGETPriceIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -10346,7 +11266,7 @@ Retrieve the attachments associated to the price
 	@param priceId The resource's id
 	@return HasManyApiGETPriceIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETPriceIdAttachments(ctx context.Context, priceId string) HasManyApiGETPriceIdAttachmentsRequest {
+func (a *HasManyApiService) GETPriceIdAttachments(ctx context.Context, priceId interface{}) HasManyApiGETPriceIdAttachmentsRequest {
 	return HasManyApiGETPriceIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -10368,7 +11288,7 @@ func (a *HasManyApiService) GETPriceIdAttachmentsExecute(r HasManyApiGETPriceIdA
 	}
 
 	localVarPath := localBasePath + "/prices/{priceId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterToString(r.priceId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterValueToString(r.priceId, "priceId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10401,9 +11321,101 @@ func (a *HasManyApiService) GETPriceIdAttachmentsExecute(r HasManyApiGETPriceIdA
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETPriceIdPriceFrequencyTiersRequest struct {
+	ctx        context.Context
+	ApiService *HasManyApiService
+	priceId    interface{}
+}
+
+func (r HasManyApiGETPriceIdPriceFrequencyTiersRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPriceIdPriceFrequencyTiersExecute(r)
+}
+
+/*
+GETPriceIdPriceFrequencyTiers Retrieve the price frequency tiers associated to the price
+
+Retrieve the price frequency tiers associated to the price
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceId The resource's id
+	@return HasManyApiGETPriceIdPriceFrequencyTiersRequest
+*/
+func (a *HasManyApiService) GETPriceIdPriceFrequencyTiers(ctx context.Context, priceId interface{}) HasManyApiGETPriceIdPriceFrequencyTiersRequest {
+	return HasManyApiGETPriceIdPriceFrequencyTiersRequest{
+		ApiService: a,
+		ctx:        ctx,
+		priceId:    priceId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPriceIdPriceFrequencyTiersExecute(r HasManyApiGETPriceIdPriceFrequencyTiersRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPriceIdPriceFrequencyTiers")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/prices/{priceId}/price_frequency_tiers"
+	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterValueToString(r.priceId, "priceId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10422,7 +11434,7 @@ func (a *HasManyApiService) GETPriceIdAttachmentsExecute(r HasManyApiGETPriceIdA
 type HasManyApiGETPriceIdPriceTiersRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	priceId    string
+	priceId    interface{}
 }
 
 func (r HasManyApiGETPriceIdPriceTiersRequest) Execute() (*http.Response, error) {
@@ -10438,7 +11450,7 @@ Retrieve the price tiers associated to the price
 	@param priceId The resource's id
 	@return HasManyApiGETPriceIdPriceTiersRequest
 */
-func (a *HasManyApiService) GETPriceIdPriceTiers(ctx context.Context, priceId string) HasManyApiGETPriceIdPriceTiersRequest {
+func (a *HasManyApiService) GETPriceIdPriceTiers(ctx context.Context, priceId interface{}) HasManyApiGETPriceIdPriceTiersRequest {
 	return HasManyApiGETPriceIdPriceTiersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -10460,7 +11472,7 @@ func (a *HasManyApiService) GETPriceIdPriceTiersExecute(r HasManyApiGETPriceIdPr
 	}
 
 	localVarPath := localBasePath + "/prices/{priceId}/price_tiers"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterToString(r.priceId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterValueToString(r.priceId, "priceId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10493,9 +11505,9 @@ func (a *HasManyApiService) GETPriceIdPriceTiersExecute(r HasManyApiGETPriceIdPr
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10514,7 +11526,7 @@ func (a *HasManyApiService) GETPriceIdPriceTiersExecute(r HasManyApiGETPriceIdPr
 type HasManyApiGETPriceIdPriceVolumeTiersRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	priceId    string
+	priceId    interface{}
 }
 
 func (r HasManyApiGETPriceIdPriceVolumeTiersRequest) Execute() (*http.Response, error) {
@@ -10530,7 +11542,7 @@ Retrieve the price volume tiers associated to the price
 	@param priceId The resource's id
 	@return HasManyApiGETPriceIdPriceVolumeTiersRequest
 */
-func (a *HasManyApiService) GETPriceIdPriceVolumeTiers(ctx context.Context, priceId string) HasManyApiGETPriceIdPriceVolumeTiersRequest {
+func (a *HasManyApiService) GETPriceIdPriceVolumeTiers(ctx context.Context, priceId interface{}) HasManyApiGETPriceIdPriceVolumeTiersRequest {
 	return HasManyApiGETPriceIdPriceVolumeTiersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -10552,7 +11564,7 @@ func (a *HasManyApiService) GETPriceIdPriceVolumeTiersExecute(r HasManyApiGETPri
 	}
 
 	localVarPath := localBasePath + "/prices/{priceId}/price_volume_tiers"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterToString(r.priceId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterValueToString(r.priceId, "priceId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10585,9 +11597,9 @@ func (a *HasManyApiService) GETPriceIdPriceVolumeTiersExecute(r HasManyApiGETPri
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10606,7 +11618,7 @@ func (a *HasManyApiService) GETPriceIdPriceVolumeTiersExecute(r HasManyApiGETPri
 type HasManyApiGETPriceListIdAttachmentsRequest struct {
 	ctx         context.Context
 	ApiService  *HasManyApiService
-	priceListId string
+	priceListId interface{}
 }
 
 func (r HasManyApiGETPriceListIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -10622,7 +11634,7 @@ Retrieve the attachments associated to the price list
 	@param priceListId The resource's id
 	@return HasManyApiGETPriceListIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETPriceListIdAttachments(ctx context.Context, priceListId string) HasManyApiGETPriceListIdAttachmentsRequest {
+func (a *HasManyApiService) GETPriceListIdAttachments(ctx context.Context, priceListId interface{}) HasManyApiGETPriceListIdAttachmentsRequest {
 	return HasManyApiGETPriceListIdAttachmentsRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -10644,7 +11656,7 @@ func (a *HasManyApiService) GETPriceListIdAttachmentsExecute(r HasManyApiGETPric
 	}
 
 	localVarPath := localBasePath + "/price_lists/{priceListId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceListId"+"}", url.PathEscape(parameterToString(r.priceListId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceListId"+"}", url.PathEscape(parameterValueToString(r.priceListId, "priceListId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10677,9 +11689,9 @@ func (a *HasManyApiService) GETPriceListIdAttachmentsExecute(r HasManyApiGETPric
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10698,7 +11710,7 @@ func (a *HasManyApiService) GETPriceListIdAttachmentsExecute(r HasManyApiGETPric
 type HasManyApiGETPriceListIdPricesRequest struct {
 	ctx         context.Context
 	ApiService  *HasManyApiService
-	priceListId string
+	priceListId interface{}
 }
 
 func (r HasManyApiGETPriceListIdPricesRequest) Execute() (*http.Response, error) {
@@ -10714,7 +11726,7 @@ Retrieve the prices associated to the price list
 	@param priceListId The resource's id
 	@return HasManyApiGETPriceListIdPricesRequest
 */
-func (a *HasManyApiService) GETPriceListIdPrices(ctx context.Context, priceListId string) HasManyApiGETPriceListIdPricesRequest {
+func (a *HasManyApiService) GETPriceListIdPrices(ctx context.Context, priceListId interface{}) HasManyApiGETPriceListIdPricesRequest {
 	return HasManyApiGETPriceListIdPricesRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -10736,7 +11748,7 @@ func (a *HasManyApiService) GETPriceListIdPricesExecute(r HasManyApiGETPriceList
 	}
 
 	localVarPath := localBasePath + "/price_lists/{priceListId}/prices"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceListId"+"}", url.PathEscape(parameterToString(r.priceListId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceListId"+"}", url.PathEscape(parameterValueToString(r.priceListId, "priceListId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10769,9 +11781,9 @@ func (a *HasManyApiService) GETPriceListIdPricesExecute(r HasManyApiGETPriceList
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10790,7 +11802,7 @@ func (a *HasManyApiService) GETPriceListIdPricesExecute(r HasManyApiGETPriceList
 type HasManyApiGETPriceTierIdAttachmentsRequest struct {
 	ctx         context.Context
 	ApiService  *HasManyApiService
-	priceTierId string
+	priceTierId interface{}
 }
 
 func (r HasManyApiGETPriceTierIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -10806,7 +11818,7 @@ Retrieve the attachments associated to the price tier
 	@param priceTierId The resource's id
 	@return HasManyApiGETPriceTierIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETPriceTierIdAttachments(ctx context.Context, priceTierId string) HasManyApiGETPriceTierIdAttachmentsRequest {
+func (a *HasManyApiService) GETPriceTierIdAttachments(ctx context.Context, priceTierId interface{}) HasManyApiGETPriceTierIdAttachmentsRequest {
 	return HasManyApiGETPriceTierIdAttachmentsRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -10828,7 +11840,7 @@ func (a *HasManyApiService) GETPriceTierIdAttachmentsExecute(r HasManyApiGETPric
 	}
 
 	localVarPath := localBasePath + "/price_tiers/{priceTierId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceTierId"+"}", url.PathEscape(parameterToString(r.priceTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceTierId"+"}", url.PathEscape(parameterValueToString(r.priceTierId, "priceTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10861,9 +11873,9 @@ func (a *HasManyApiService) GETPriceTierIdAttachmentsExecute(r HasManyApiGETPric
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10882,7 +11894,7 @@ func (a *HasManyApiService) GETPriceTierIdAttachmentsExecute(r HasManyApiGETPric
 type HasManyApiGETPriceVolumeTierIdAttachmentsRequest struct {
 	ctx               context.Context
 	ApiService        *HasManyApiService
-	priceVolumeTierId string
+	priceVolumeTierId interface{}
 }
 
 func (r HasManyApiGETPriceVolumeTierIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -10898,7 +11910,7 @@ Retrieve the attachments associated to the price volume tier
 	@param priceVolumeTierId The resource's id
 	@return HasManyApiGETPriceVolumeTierIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETPriceVolumeTierIdAttachments(ctx context.Context, priceVolumeTierId string) HasManyApiGETPriceVolumeTierIdAttachmentsRequest {
+func (a *HasManyApiService) GETPriceVolumeTierIdAttachments(ctx context.Context, priceVolumeTierId interface{}) HasManyApiGETPriceVolumeTierIdAttachmentsRequest {
 	return HasManyApiGETPriceVolumeTierIdAttachmentsRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -10920,7 +11932,7 @@ func (a *HasManyApiService) GETPriceVolumeTierIdAttachmentsExecute(r HasManyApiG
 	}
 
 	localVarPath := localBasePath + "/price_volume_tiers/{priceVolumeTierId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceVolumeTierId"+"}", url.PathEscape(parameterToString(r.priceVolumeTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceVolumeTierId"+"}", url.PathEscape(parameterValueToString(r.priceVolumeTierId, "priceVolumeTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10953,9 +11965,101 @@ func (a *HasManyApiService) GETPriceVolumeTierIdAttachmentsExecute(r HasManyApiG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETPriceVolumeTierIdEventsRequest struct {
+	ctx               context.Context
+	ApiService        *HasManyApiService
+	priceVolumeTierId interface{}
+}
+
+func (r HasManyApiGETPriceVolumeTierIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPriceVolumeTierIdEventsExecute(r)
+}
+
+/*
+GETPriceVolumeTierIdEvents Retrieve the events associated to the price volume tier
+
+Retrieve the events associated to the price volume tier
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceVolumeTierId The resource's id
+	@return HasManyApiGETPriceVolumeTierIdEventsRequest
+*/
+func (a *HasManyApiService) GETPriceVolumeTierIdEvents(ctx context.Context, priceVolumeTierId interface{}) HasManyApiGETPriceVolumeTierIdEventsRequest {
+	return HasManyApiGETPriceVolumeTierIdEventsRequest{
+		ApiService:        a,
+		ctx:               ctx,
+		priceVolumeTierId: priceVolumeTierId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPriceVolumeTierIdEventsExecute(r HasManyApiGETPriceVolumeTierIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPriceVolumeTierIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/price_volume_tiers/{priceVolumeTierId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"priceVolumeTierId"+"}", url.PathEscape(parameterValueToString(r.priceVolumeTierId, "priceVolumeTierId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10974,7 +12078,7 @@ func (a *HasManyApiService) GETPriceVolumeTierIdAttachmentsExecute(r HasManyApiG
 type HasManyApiGETPromotionIdAttachmentsRequest struct {
 	ctx         context.Context
 	ApiService  *HasManyApiService
-	promotionId string
+	promotionId interface{}
 }
 
 func (r HasManyApiGETPromotionIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -10990,7 +12094,7 @@ Retrieve the attachments associated to the promotion
 	@param promotionId The resource's id
 	@return HasManyApiGETPromotionIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETPromotionIdAttachments(ctx context.Context, promotionId string) HasManyApiGETPromotionIdAttachmentsRequest {
+func (a *HasManyApiService) GETPromotionIdAttachments(ctx context.Context, promotionId interface{}) HasManyApiGETPromotionIdAttachmentsRequest {
 	return HasManyApiGETPromotionIdAttachmentsRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -11012,7 +12116,7 @@ func (a *HasManyApiService) GETPromotionIdAttachmentsExecute(r HasManyApiGETProm
 	}
 
 	localVarPath := localBasePath + "/promotions/{promotionId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterToString(r.promotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterValueToString(r.promotionId, "promotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11045,9 +12149,193 @@ func (a *HasManyApiService) GETPromotionIdAttachmentsExecute(r HasManyApiGETProm
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETPromotionIdEventsRequest struct {
+	ctx         context.Context
+	ApiService  *HasManyApiService
+	promotionId interface{}
+}
+
+func (r HasManyApiGETPromotionIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPromotionIdEventsExecute(r)
+}
+
+/*
+GETPromotionIdEvents Retrieve the events associated to the promotion
+
+Retrieve the events associated to the promotion
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param promotionId The resource's id
+	@return HasManyApiGETPromotionIdEventsRequest
+*/
+func (a *HasManyApiService) GETPromotionIdEvents(ctx context.Context, promotionId interface{}) HasManyApiGETPromotionIdEventsRequest {
+	return HasManyApiGETPromotionIdEventsRequest{
+		ApiService:  a,
+		ctx:         ctx,
+		promotionId: promotionId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETPromotionIdEventsExecute(r HasManyApiGETPromotionIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETPromotionIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/promotions/{promotionId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterValueToString(r.promotionId, "promotionId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETRecurringOrderCopyIdEventsRequest struct {
+	ctx                  context.Context
+	ApiService           *HasManyApiService
+	recurringOrderCopyId interface{}
+}
+
+func (r HasManyApiGETRecurringOrderCopyIdEventsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETRecurringOrderCopyIdEventsExecute(r)
+}
+
+/*
+GETRecurringOrderCopyIdEvents Retrieve the events associated to the recurring order copy
+
+Retrieve the events associated to the recurring order copy
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param recurringOrderCopyId The resource's id
+	@return HasManyApiGETRecurringOrderCopyIdEventsRequest
+*/
+func (a *HasManyApiService) GETRecurringOrderCopyIdEvents(ctx context.Context, recurringOrderCopyId interface{}) HasManyApiGETRecurringOrderCopyIdEventsRequest {
+	return HasManyApiGETRecurringOrderCopyIdEventsRequest{
+		ApiService:           a,
+		ctx:                  ctx,
+		recurringOrderCopyId: recurringOrderCopyId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETRecurringOrderCopyIdEventsExecute(r HasManyApiGETRecurringOrderCopyIdEventsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETRecurringOrderCopyIdEvents")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/recurring_order_copies/{recurringOrderCopyId}/events"
+	localVarPath = strings.Replace(localVarPath, "{"+"recurringOrderCopyId"+"}", url.PathEscape(parameterValueToString(r.recurringOrderCopyId, "recurringOrderCopyId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11066,7 +12354,7 @@ func (a *HasManyApiService) GETPromotionIdAttachmentsExecute(r HasManyApiGETProm
 type HasManyApiGETRefundIdEventsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	refundId   string
+	refundId   interface{}
 }
 
 func (r HasManyApiGETRefundIdEventsRequest) Execute() (*http.Response, error) {
@@ -11082,7 +12370,7 @@ Retrieve the events associated to the refund
 	@param refundId The resource's id
 	@return HasManyApiGETRefundIdEventsRequest
 */
-func (a *HasManyApiService) GETRefundIdEvents(ctx context.Context, refundId string) HasManyApiGETRefundIdEventsRequest {
+func (a *HasManyApiService) GETRefundIdEvents(ctx context.Context, refundId interface{}) HasManyApiGETRefundIdEventsRequest {
 	return HasManyApiGETRefundIdEventsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -11104,7 +12392,7 @@ func (a *HasManyApiService) GETRefundIdEventsExecute(r HasManyApiGETRefundIdEven
 	}
 
 	localVarPath := localBasePath + "/refunds/{refundId}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"refundId"+"}", url.PathEscape(parameterToString(r.refundId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"refundId"+"}", url.PathEscape(parameterValueToString(r.refundId, "refundId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11137,9 +12425,9 @@ func (a *HasManyApiService) GETRefundIdEventsExecute(r HasManyApiGETRefundIdEven
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11158,7 +12446,7 @@ func (a *HasManyApiService) GETRefundIdEventsExecute(r HasManyApiGETRefundIdEven
 type HasManyApiGETReturnIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	returnId   string
+	returnId   interface{}
 }
 
 func (r HasManyApiGETReturnIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -11174,7 +12462,7 @@ Retrieve the attachments associated to the return
 	@param returnId The resource's id
 	@return HasManyApiGETReturnIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETReturnIdAttachments(ctx context.Context, returnId string) HasManyApiGETReturnIdAttachmentsRequest {
+func (a *HasManyApiService) GETReturnIdAttachments(ctx context.Context, returnId interface{}) HasManyApiGETReturnIdAttachmentsRequest {
 	return HasManyApiGETReturnIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -11196,7 +12484,7 @@ func (a *HasManyApiService) GETReturnIdAttachmentsExecute(r HasManyApiGETReturnI
 	}
 
 	localVarPath := localBasePath + "/returns/{returnId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterToString(r.returnId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11229,9 +12517,9 @@ func (a *HasManyApiService) GETReturnIdAttachmentsExecute(r HasManyApiGETReturnI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11250,7 +12538,7 @@ func (a *HasManyApiService) GETReturnIdAttachmentsExecute(r HasManyApiGETReturnI
 type HasManyApiGETReturnIdEventsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	returnId   string
+	returnId   interface{}
 }
 
 func (r HasManyApiGETReturnIdEventsRequest) Execute() (*http.Response, error) {
@@ -11266,7 +12554,7 @@ Retrieve the events associated to the return
 	@param returnId The resource's id
 	@return HasManyApiGETReturnIdEventsRequest
 */
-func (a *HasManyApiService) GETReturnIdEvents(ctx context.Context, returnId string) HasManyApiGETReturnIdEventsRequest {
+func (a *HasManyApiService) GETReturnIdEvents(ctx context.Context, returnId interface{}) HasManyApiGETReturnIdEventsRequest {
 	return HasManyApiGETReturnIdEventsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -11288,7 +12576,7 @@ func (a *HasManyApiService) GETReturnIdEventsExecute(r HasManyApiGETReturnIdEven
 	}
 
 	localVarPath := localBasePath + "/returns/{returnId}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterToString(r.returnId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11321,9 +12609,9 @@ func (a *HasManyApiService) GETReturnIdEventsExecute(r HasManyApiGETReturnIdEven
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11342,7 +12630,7 @@ func (a *HasManyApiService) GETReturnIdEventsExecute(r HasManyApiGETReturnIdEven
 type HasManyApiGETReturnIdReturnLineItemsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	returnId   string
+	returnId   interface{}
 }
 
 func (r HasManyApiGETReturnIdReturnLineItemsRequest) Execute() (*http.Response, error) {
@@ -11358,7 +12646,7 @@ Retrieve the return line items associated to the return
 	@param returnId The resource's id
 	@return HasManyApiGETReturnIdReturnLineItemsRequest
 */
-func (a *HasManyApiService) GETReturnIdReturnLineItems(ctx context.Context, returnId string) HasManyApiGETReturnIdReturnLineItemsRequest {
+func (a *HasManyApiService) GETReturnIdReturnLineItems(ctx context.Context, returnId interface{}) HasManyApiGETReturnIdReturnLineItemsRequest {
 	return HasManyApiGETReturnIdReturnLineItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -11380,7 +12668,7 @@ func (a *HasManyApiService) GETReturnIdReturnLineItemsExecute(r HasManyApiGETRet
 	}
 
 	localVarPath := localBasePath + "/returns/{returnId}/return_line_items"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterToString(r.returnId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11413,9 +12701,193 @@ func (a *HasManyApiService) GETReturnIdReturnLineItemsExecute(r HasManyApiGETRet
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETSatispayGatewayIdPaymentMethodsRequest struct {
+	ctx               context.Context
+	ApiService        *HasManyApiService
+	satispayGatewayId interface{}
+}
+
+func (r HasManyApiGETSatispayGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSatispayGatewayIdPaymentMethodsExecute(r)
+}
+
+/*
+GETSatispayGatewayIdPaymentMethods Retrieve the payment methods associated to the satispay gateway
+
+Retrieve the payment methods associated to the satispay gateway
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param satispayGatewayId The resource's id
+	@return HasManyApiGETSatispayGatewayIdPaymentMethodsRequest
+*/
+func (a *HasManyApiService) GETSatispayGatewayIdPaymentMethods(ctx context.Context, satispayGatewayId interface{}) HasManyApiGETSatispayGatewayIdPaymentMethodsRequest {
+	return HasManyApiGETSatispayGatewayIdPaymentMethodsRequest{
+		ApiService:        a,
+		ctx:               ctx,
+		satispayGatewayId: satispayGatewayId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETSatispayGatewayIdPaymentMethodsExecute(r HasManyApiGETSatispayGatewayIdPaymentMethodsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSatispayGatewayIdPaymentMethods")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/satispay_gateways/{satispayGatewayId}/payment_methods"
+	localVarPath = strings.Replace(localVarPath, "{"+"satispayGatewayId"+"}", url.PathEscape(parameterValueToString(r.satispayGatewayId, "satispayGatewayId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETSatispayGatewayIdSatispayPaymentsRequest struct {
+	ctx               context.Context
+	ApiService        *HasManyApiService
+	satispayGatewayId interface{}
+}
+
+func (r HasManyApiGETSatispayGatewayIdSatispayPaymentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSatispayGatewayIdSatispayPaymentsExecute(r)
+}
+
+/*
+GETSatispayGatewayIdSatispayPayments Retrieve the satispay payments associated to the satispay gateway
+
+Retrieve the satispay payments associated to the satispay gateway
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param satispayGatewayId The resource's id
+	@return HasManyApiGETSatispayGatewayIdSatispayPaymentsRequest
+*/
+func (a *HasManyApiService) GETSatispayGatewayIdSatispayPayments(ctx context.Context, satispayGatewayId interface{}) HasManyApiGETSatispayGatewayIdSatispayPaymentsRequest {
+	return HasManyApiGETSatispayGatewayIdSatispayPaymentsRequest{
+		ApiService:        a,
+		ctx:               ctx,
+		satispayGatewayId: satispayGatewayId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETSatispayGatewayIdSatispayPaymentsExecute(r HasManyApiGETSatispayGatewayIdSatispayPaymentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSatispayGatewayIdSatispayPayments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/satispay_gateways/{satispayGatewayId}/satispay_payments"
+	localVarPath = strings.Replace(localVarPath, "{"+"satispayGatewayId"+"}", url.PathEscape(parameterValueToString(r.satispayGatewayId, "satispayGatewayId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11434,7 +12906,7 @@ func (a *HasManyApiService) GETReturnIdReturnLineItemsExecute(r HasManyApiGETRet
 type HasManyApiGETShipmentIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	shipmentId string
+	shipmentId interface{}
 }
 
 func (r HasManyApiGETShipmentIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -11450,7 +12922,7 @@ Retrieve the attachments associated to the shipment
 	@param shipmentId The resource's id
 	@return HasManyApiGETShipmentIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETShipmentIdAttachments(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdAttachmentsRequest {
+func (a *HasManyApiService) GETShipmentIdAttachments(ctx context.Context, shipmentId interface{}) HasManyApiGETShipmentIdAttachmentsRequest {
 	return HasManyApiGETShipmentIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -11472,7 +12944,7 @@ func (a *HasManyApiService) GETShipmentIdAttachmentsExecute(r HasManyApiGETShipm
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11505,9 +12977,9 @@ func (a *HasManyApiService) GETShipmentIdAttachmentsExecute(r HasManyApiGETShipm
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11526,7 +12998,7 @@ func (a *HasManyApiService) GETShipmentIdAttachmentsExecute(r HasManyApiGETShipm
 type HasManyApiGETShipmentIdAvailableShippingMethodsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	shipmentId string
+	shipmentId interface{}
 }
 
 func (r HasManyApiGETShipmentIdAvailableShippingMethodsRequest) Execute() (*http.Response, error) {
@@ -11542,7 +13014,7 @@ Retrieve the available shipping methods associated to the shipment
 	@param shipmentId The resource's id
 	@return HasManyApiGETShipmentIdAvailableShippingMethodsRequest
 */
-func (a *HasManyApiService) GETShipmentIdAvailableShippingMethods(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdAvailableShippingMethodsRequest {
+func (a *HasManyApiService) GETShipmentIdAvailableShippingMethods(ctx context.Context, shipmentId interface{}) HasManyApiGETShipmentIdAvailableShippingMethodsRequest {
 	return HasManyApiGETShipmentIdAvailableShippingMethodsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -11564,7 +13036,7 @@ func (a *HasManyApiService) GETShipmentIdAvailableShippingMethodsExecute(r HasMa
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/available_shipping_methods"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11597,9 +13069,9 @@ func (a *HasManyApiService) GETShipmentIdAvailableShippingMethodsExecute(r HasMa
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11618,7 +13090,7 @@ func (a *HasManyApiService) GETShipmentIdAvailableShippingMethodsExecute(r HasMa
 type HasManyApiGETShipmentIdCarrierAccountsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	shipmentId string
+	shipmentId interface{}
 }
 
 func (r HasManyApiGETShipmentIdCarrierAccountsRequest) Execute() (*http.Response, error) {
@@ -11634,7 +13106,7 @@ Retrieve the carrier accounts associated to the shipment
 	@param shipmentId The resource's id
 	@return HasManyApiGETShipmentIdCarrierAccountsRequest
 */
-func (a *HasManyApiService) GETShipmentIdCarrierAccounts(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdCarrierAccountsRequest {
+func (a *HasManyApiService) GETShipmentIdCarrierAccounts(ctx context.Context, shipmentId interface{}) HasManyApiGETShipmentIdCarrierAccountsRequest {
 	return HasManyApiGETShipmentIdCarrierAccountsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -11656,7 +13128,7 @@ func (a *HasManyApiService) GETShipmentIdCarrierAccountsExecute(r HasManyApiGETS
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/carrier_accounts"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11689,9 +13161,9 @@ func (a *HasManyApiService) GETShipmentIdCarrierAccountsExecute(r HasManyApiGETS
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11710,7 +13182,7 @@ func (a *HasManyApiService) GETShipmentIdCarrierAccountsExecute(r HasManyApiGETS
 type HasManyApiGETShipmentIdEventsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	shipmentId string
+	shipmentId interface{}
 }
 
 func (r HasManyApiGETShipmentIdEventsRequest) Execute() (*http.Response, error) {
@@ -11726,7 +13198,7 @@ Retrieve the events associated to the shipment
 	@param shipmentId The resource's id
 	@return HasManyApiGETShipmentIdEventsRequest
 */
-func (a *HasManyApiService) GETShipmentIdEvents(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdEventsRequest {
+func (a *HasManyApiService) GETShipmentIdEvents(ctx context.Context, shipmentId interface{}) HasManyApiGETShipmentIdEventsRequest {
 	return HasManyApiGETShipmentIdEventsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -11748,7 +13220,7 @@ func (a *HasManyApiService) GETShipmentIdEventsExecute(r HasManyApiGETShipmentId
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11781,9 +13253,9 @@ func (a *HasManyApiService) GETShipmentIdEventsExecute(r HasManyApiGETShipmentId
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11802,7 +13274,7 @@ func (a *HasManyApiService) GETShipmentIdEventsExecute(r HasManyApiGETShipmentId
 type HasManyApiGETShipmentIdParcelsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	shipmentId string
+	shipmentId interface{}
 }
 
 func (r HasManyApiGETShipmentIdParcelsRequest) Execute() (*http.Response, error) {
@@ -11818,7 +13290,7 @@ Retrieve the parcels associated to the shipment
 	@param shipmentId The resource's id
 	@return HasManyApiGETShipmentIdParcelsRequest
 */
-func (a *HasManyApiService) GETShipmentIdParcels(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdParcelsRequest {
+func (a *HasManyApiService) GETShipmentIdParcels(ctx context.Context, shipmentId interface{}) HasManyApiGETShipmentIdParcelsRequest {
 	return HasManyApiGETShipmentIdParcelsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -11840,7 +13312,7 @@ func (a *HasManyApiService) GETShipmentIdParcelsExecute(r HasManyApiGETShipmentI
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/parcels"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11873,9 +13345,9 @@ func (a *HasManyApiService) GETShipmentIdParcelsExecute(r HasManyApiGETShipmentI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11894,7 +13366,7 @@ func (a *HasManyApiService) GETShipmentIdParcelsExecute(r HasManyApiGETShipmentI
 type HasManyApiGETShipmentIdStockLineItemsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	shipmentId string
+	shipmentId interface{}
 }
 
 func (r HasManyApiGETShipmentIdStockLineItemsRequest) Execute() (*http.Response, error) {
@@ -11910,7 +13382,7 @@ Retrieve the stock line items associated to the shipment
 	@param shipmentId The resource's id
 	@return HasManyApiGETShipmentIdStockLineItemsRequest
 */
-func (a *HasManyApiService) GETShipmentIdStockLineItems(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdStockLineItemsRequest {
+func (a *HasManyApiService) GETShipmentIdStockLineItems(ctx context.Context, shipmentId interface{}) HasManyApiGETShipmentIdStockLineItemsRequest {
 	return HasManyApiGETShipmentIdStockLineItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -11932,7 +13404,7 @@ func (a *HasManyApiService) GETShipmentIdStockLineItemsExecute(r HasManyApiGETSh
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/stock_line_items"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11965,9 +13437,9 @@ func (a *HasManyApiService) GETShipmentIdStockLineItemsExecute(r HasManyApiGETSh
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11986,7 +13458,7 @@ func (a *HasManyApiService) GETShipmentIdStockLineItemsExecute(r HasManyApiGETSh
 type HasManyApiGETShipmentIdStockTransfersRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	shipmentId string
+	shipmentId interface{}
 }
 
 func (r HasManyApiGETShipmentIdStockTransfersRequest) Execute() (*http.Response, error) {
@@ -12002,7 +13474,7 @@ Retrieve the stock transfers associated to the shipment
 	@param shipmentId The resource's id
 	@return HasManyApiGETShipmentIdStockTransfersRequest
 */
-func (a *HasManyApiService) GETShipmentIdStockTransfers(ctx context.Context, shipmentId string) HasManyApiGETShipmentIdStockTransfersRequest {
+func (a *HasManyApiService) GETShipmentIdStockTransfers(ctx context.Context, shipmentId interface{}) HasManyApiGETShipmentIdStockTransfersRequest {
 	return HasManyApiGETShipmentIdStockTransfersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -12024,7 +13496,7 @@ func (a *HasManyApiService) GETShipmentIdStockTransfersExecute(r HasManyApiGETSh
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/stock_transfers"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12057,9 +13529,9 @@ func (a *HasManyApiService) GETShipmentIdStockTransfersExecute(r HasManyApiGETSh
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12078,7 +13550,7 @@ func (a *HasManyApiService) GETShipmentIdStockTransfersExecute(r HasManyApiGETSh
 type HasManyApiGETShippingCategoryIdAttachmentsRequest struct {
 	ctx                context.Context
 	ApiService         *HasManyApiService
-	shippingCategoryId string
+	shippingCategoryId interface{}
 }
 
 func (r HasManyApiGETShippingCategoryIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -12094,7 +13566,7 @@ Retrieve the attachments associated to the shipping category
 	@param shippingCategoryId The resource's id
 	@return HasManyApiGETShippingCategoryIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETShippingCategoryIdAttachments(ctx context.Context, shippingCategoryId string) HasManyApiGETShippingCategoryIdAttachmentsRequest {
+func (a *HasManyApiService) GETShippingCategoryIdAttachments(ctx context.Context, shippingCategoryId interface{}) HasManyApiGETShippingCategoryIdAttachmentsRequest {
 	return HasManyApiGETShippingCategoryIdAttachmentsRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -12116,7 +13588,7 @@ func (a *HasManyApiService) GETShippingCategoryIdAttachmentsExecute(r HasManyApi
 	}
 
 	localVarPath := localBasePath + "/shipping_categories/{shippingCategoryId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingCategoryId"+"}", url.PathEscape(parameterToString(r.shippingCategoryId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingCategoryId"+"}", url.PathEscape(parameterValueToString(r.shippingCategoryId, "shippingCategoryId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12149,9 +13621,9 @@ func (a *HasManyApiService) GETShippingCategoryIdAttachmentsExecute(r HasManyApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12170,7 +13642,7 @@ func (a *HasManyApiService) GETShippingCategoryIdAttachmentsExecute(r HasManyApi
 type HasManyApiGETShippingCategoryIdSkusRequest struct {
 	ctx                context.Context
 	ApiService         *HasManyApiService
-	shippingCategoryId string
+	shippingCategoryId interface{}
 }
 
 func (r HasManyApiGETShippingCategoryIdSkusRequest) Execute() (*http.Response, error) {
@@ -12186,7 +13658,7 @@ Retrieve the skus associated to the shipping category
 	@param shippingCategoryId The resource's id
 	@return HasManyApiGETShippingCategoryIdSkusRequest
 */
-func (a *HasManyApiService) GETShippingCategoryIdSkus(ctx context.Context, shippingCategoryId string) HasManyApiGETShippingCategoryIdSkusRequest {
+func (a *HasManyApiService) GETShippingCategoryIdSkus(ctx context.Context, shippingCategoryId interface{}) HasManyApiGETShippingCategoryIdSkusRequest {
 	return HasManyApiGETShippingCategoryIdSkusRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -12208,7 +13680,7 @@ func (a *HasManyApiService) GETShippingCategoryIdSkusExecute(r HasManyApiGETShip
 	}
 
 	localVarPath := localBasePath + "/shipping_categories/{shippingCategoryId}/skus"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingCategoryId"+"}", url.PathEscape(parameterToString(r.shippingCategoryId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingCategoryId"+"}", url.PathEscape(parameterValueToString(r.shippingCategoryId, "shippingCategoryId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12241,9 +13713,9 @@ func (a *HasManyApiService) GETShippingCategoryIdSkusExecute(r HasManyApiGETShip
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12262,7 +13734,7 @@ func (a *HasManyApiService) GETShippingCategoryIdSkusExecute(r HasManyApiGETShip
 type HasManyApiGETShippingMethodIdAttachmentsRequest struct {
 	ctx              context.Context
 	ApiService       *HasManyApiService
-	shippingMethodId string
+	shippingMethodId interface{}
 }
 
 func (r HasManyApiGETShippingMethodIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -12278,7 +13750,7 @@ Retrieve the attachments associated to the shipping method
 	@param shippingMethodId The resource's id
 	@return HasManyApiGETShippingMethodIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETShippingMethodIdAttachments(ctx context.Context, shippingMethodId string) HasManyApiGETShippingMethodIdAttachmentsRequest {
+func (a *HasManyApiService) GETShippingMethodIdAttachments(ctx context.Context, shippingMethodId interface{}) HasManyApiGETShippingMethodIdAttachmentsRequest {
 	return HasManyApiGETShippingMethodIdAttachmentsRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -12300,7 +13772,7 @@ func (a *HasManyApiService) GETShippingMethodIdAttachmentsExecute(r HasManyApiGE
 	}
 
 	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodId, "shippingMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12333,9 +13805,9 @@ func (a *HasManyApiService) GETShippingMethodIdAttachmentsExecute(r HasManyApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12354,7 +13826,7 @@ func (a *HasManyApiService) GETShippingMethodIdAttachmentsExecute(r HasManyApiGE
 type HasManyApiGETShippingMethodIdShippingMethodTiersRequest struct {
 	ctx              context.Context
 	ApiService       *HasManyApiService
-	shippingMethodId string
+	shippingMethodId interface{}
 }
 
 func (r HasManyApiGETShippingMethodIdShippingMethodTiersRequest) Execute() (*http.Response, error) {
@@ -12370,7 +13842,7 @@ Retrieve the shipping method tiers associated to the shipping method
 	@param shippingMethodId The resource's id
 	@return HasManyApiGETShippingMethodIdShippingMethodTiersRequest
 */
-func (a *HasManyApiService) GETShippingMethodIdShippingMethodTiers(ctx context.Context, shippingMethodId string) HasManyApiGETShippingMethodIdShippingMethodTiersRequest {
+func (a *HasManyApiService) GETShippingMethodIdShippingMethodTiers(ctx context.Context, shippingMethodId interface{}) HasManyApiGETShippingMethodIdShippingMethodTiersRequest {
 	return HasManyApiGETShippingMethodIdShippingMethodTiersRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -12392,7 +13864,7 @@ func (a *HasManyApiService) GETShippingMethodIdShippingMethodTiersExecute(r HasM
 	}
 
 	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}/shipping_method_tiers"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodId, "shippingMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12425,9 +13897,9 @@ func (a *HasManyApiService) GETShippingMethodIdShippingMethodTiersExecute(r HasM
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12446,7 +13918,7 @@ func (a *HasManyApiService) GETShippingMethodIdShippingMethodTiersExecute(r HasM
 type HasManyApiGETShippingMethodIdShippingWeightTiersRequest struct {
 	ctx              context.Context
 	ApiService       *HasManyApiService
-	shippingMethodId string
+	shippingMethodId interface{}
 }
 
 func (r HasManyApiGETShippingMethodIdShippingWeightTiersRequest) Execute() (*http.Response, error) {
@@ -12462,7 +13934,7 @@ Retrieve the shipping weight tiers associated to the shipping method
 	@param shippingMethodId The resource's id
 	@return HasManyApiGETShippingMethodIdShippingWeightTiersRequest
 */
-func (a *HasManyApiService) GETShippingMethodIdShippingWeightTiers(ctx context.Context, shippingMethodId string) HasManyApiGETShippingMethodIdShippingWeightTiersRequest {
+func (a *HasManyApiService) GETShippingMethodIdShippingWeightTiers(ctx context.Context, shippingMethodId interface{}) HasManyApiGETShippingMethodIdShippingWeightTiersRequest {
 	return HasManyApiGETShippingMethodIdShippingWeightTiersRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -12484,7 +13956,7 @@ func (a *HasManyApiService) GETShippingMethodIdShippingWeightTiersExecute(r HasM
 	}
 
 	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}/shipping_weight_tiers"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodId, "shippingMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12517,9 +13989,9 @@ func (a *HasManyApiService) GETShippingMethodIdShippingWeightTiersExecute(r HasM
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12538,7 +14010,7 @@ func (a *HasManyApiService) GETShippingMethodIdShippingWeightTiersExecute(r HasM
 type HasManyApiGETShippingMethodTierIdAttachmentsRequest struct {
 	ctx                  context.Context
 	ApiService           *HasManyApiService
-	shippingMethodTierId string
+	shippingMethodTierId interface{}
 }
 
 func (r HasManyApiGETShippingMethodTierIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -12554,7 +14026,7 @@ Retrieve the attachments associated to the shipping method tier
 	@param shippingMethodTierId The resource's id
 	@return HasManyApiGETShippingMethodTierIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETShippingMethodTierIdAttachments(ctx context.Context, shippingMethodTierId string) HasManyApiGETShippingMethodTierIdAttachmentsRequest {
+func (a *HasManyApiService) GETShippingMethodTierIdAttachments(ctx context.Context, shippingMethodTierId interface{}) HasManyApiGETShippingMethodTierIdAttachmentsRequest {
 	return HasManyApiGETShippingMethodTierIdAttachmentsRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -12576,7 +14048,7 @@ func (a *HasManyApiService) GETShippingMethodTierIdAttachmentsExecute(r HasManyA
 	}
 
 	localVarPath := localBasePath + "/shipping_method_tiers/{shippingMethodTierId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodTierId"+"}", url.PathEscape(parameterToString(r.shippingMethodTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodTierId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodTierId, "shippingMethodTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12609,9 +14081,9 @@ func (a *HasManyApiService) GETShippingMethodTierIdAttachmentsExecute(r HasManyA
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12630,7 +14102,7 @@ func (a *HasManyApiService) GETShippingMethodTierIdAttachmentsExecute(r HasManyA
 type HasManyApiGETShippingWeightTierIdAttachmentsRequest struct {
 	ctx                  context.Context
 	ApiService           *HasManyApiService
-	shippingWeightTierId string
+	shippingWeightTierId interface{}
 }
 
 func (r HasManyApiGETShippingWeightTierIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -12646,7 +14118,7 @@ Retrieve the attachments associated to the shipping weight tier
 	@param shippingWeightTierId The resource's id
 	@return HasManyApiGETShippingWeightTierIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETShippingWeightTierIdAttachments(ctx context.Context, shippingWeightTierId string) HasManyApiGETShippingWeightTierIdAttachmentsRequest {
+func (a *HasManyApiService) GETShippingWeightTierIdAttachments(ctx context.Context, shippingWeightTierId interface{}) HasManyApiGETShippingWeightTierIdAttachmentsRequest {
 	return HasManyApiGETShippingWeightTierIdAttachmentsRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -12668,7 +14140,7 @@ func (a *HasManyApiService) GETShippingWeightTierIdAttachmentsExecute(r HasManyA
 	}
 
 	localVarPath := localBasePath + "/shipping_weight_tiers/{shippingWeightTierId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingWeightTierId"+"}", url.PathEscape(parameterToString(r.shippingWeightTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingWeightTierId"+"}", url.PathEscape(parameterValueToString(r.shippingWeightTierId, "shippingWeightTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12701,9 +14173,9 @@ func (a *HasManyApiService) GETShippingWeightTierIdAttachmentsExecute(r HasManyA
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12722,7 +14194,7 @@ func (a *HasManyApiService) GETShippingWeightTierIdAttachmentsExecute(r HasManyA
 type HasManyApiGETShippingZoneIdAttachmentsRequest struct {
 	ctx            context.Context
 	ApiService     *HasManyApiService
-	shippingZoneId string
+	shippingZoneId interface{}
 }
 
 func (r HasManyApiGETShippingZoneIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -12738,7 +14210,7 @@ Retrieve the attachments associated to the shipping zone
 	@param shippingZoneId The resource's id
 	@return HasManyApiGETShippingZoneIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETShippingZoneIdAttachments(ctx context.Context, shippingZoneId string) HasManyApiGETShippingZoneIdAttachmentsRequest {
+func (a *HasManyApiService) GETShippingZoneIdAttachments(ctx context.Context, shippingZoneId interface{}) HasManyApiGETShippingZoneIdAttachmentsRequest {
 	return HasManyApiGETShippingZoneIdAttachmentsRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -12760,7 +14232,7 @@ func (a *HasManyApiService) GETShippingZoneIdAttachmentsExecute(r HasManyApiGETS
 	}
 
 	localVarPath := localBasePath + "/shipping_zones/{shippingZoneId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingZoneId"+"}", url.PathEscape(parameterToString(r.shippingZoneId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingZoneId"+"}", url.PathEscape(parameterValueToString(r.shippingZoneId, "shippingZoneId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12793,9 +14265,9 @@ func (a *HasManyApiService) GETShippingZoneIdAttachmentsExecute(r HasManyApiGETS
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12814,7 +14286,7 @@ func (a *HasManyApiService) GETShippingZoneIdAttachmentsExecute(r HasManyApiGETS
 type HasManyApiGETSkuIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	skuId      string
+	skuId      interface{}
 }
 
 func (r HasManyApiGETSkuIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -12830,7 +14302,7 @@ Retrieve the attachments associated to the SKU
 	@param skuId The resource's id
 	@return HasManyApiGETSkuIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETSkuIdAttachments(ctx context.Context, skuId string) HasManyApiGETSkuIdAttachmentsRequest {
+func (a *HasManyApiService) GETSkuIdAttachments(ctx context.Context, skuId interface{}) HasManyApiGETSkuIdAttachmentsRequest {
 	return HasManyApiGETSkuIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -12852,7 +14324,7 @@ func (a *HasManyApiService) GETSkuIdAttachmentsExecute(r HasManyApiGETSkuIdAttac
 	}
 
 	localVarPath := localBasePath + "/skus/{skuId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterToString(r.skuId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12885,9 +14357,9 @@ func (a *HasManyApiService) GETSkuIdAttachmentsExecute(r HasManyApiGETSkuIdAttac
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12906,7 +14378,7 @@ func (a *HasManyApiService) GETSkuIdAttachmentsExecute(r HasManyApiGETSkuIdAttac
 type HasManyApiGETSkuIdDeliveryLeadTimesRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	skuId      string
+	skuId      interface{}
 }
 
 func (r HasManyApiGETSkuIdDeliveryLeadTimesRequest) Execute() (*http.Response, error) {
@@ -12922,7 +14394,7 @@ Retrieve the delivery lead times associated to the SKU
 	@param skuId The resource's id
 	@return HasManyApiGETSkuIdDeliveryLeadTimesRequest
 */
-func (a *HasManyApiService) GETSkuIdDeliveryLeadTimes(ctx context.Context, skuId string) HasManyApiGETSkuIdDeliveryLeadTimesRequest {
+func (a *HasManyApiService) GETSkuIdDeliveryLeadTimes(ctx context.Context, skuId interface{}) HasManyApiGETSkuIdDeliveryLeadTimesRequest {
 	return HasManyApiGETSkuIdDeliveryLeadTimesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -12944,7 +14416,7 @@ func (a *HasManyApiService) GETSkuIdDeliveryLeadTimesExecute(r HasManyApiGETSkuI
 	}
 
 	localVarPath := localBasePath + "/skus/{skuId}/delivery_lead_times"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterToString(r.skuId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12977,9 +14449,9 @@ func (a *HasManyApiService) GETSkuIdDeliveryLeadTimesExecute(r HasManyApiGETSkuI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12998,7 +14470,7 @@ func (a *HasManyApiService) GETSkuIdDeliveryLeadTimesExecute(r HasManyApiGETSkuI
 type HasManyApiGETSkuIdPricesRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	skuId      string
+	skuId      interface{}
 }
 
 func (r HasManyApiGETSkuIdPricesRequest) Execute() (*http.Response, error) {
@@ -13014,7 +14486,7 @@ Retrieve the prices associated to the SKU
 	@param skuId The resource's id
 	@return HasManyApiGETSkuIdPricesRequest
 */
-func (a *HasManyApiService) GETSkuIdPrices(ctx context.Context, skuId string) HasManyApiGETSkuIdPricesRequest {
+func (a *HasManyApiService) GETSkuIdPrices(ctx context.Context, skuId interface{}) HasManyApiGETSkuIdPricesRequest {
 	return HasManyApiGETSkuIdPricesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -13036,7 +14508,7 @@ func (a *HasManyApiService) GETSkuIdPricesExecute(r HasManyApiGETSkuIdPricesRequ
 	}
 
 	localVarPath := localBasePath + "/skus/{skuId}/prices"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterToString(r.skuId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13069,9 +14541,9 @@ func (a *HasManyApiService) GETSkuIdPricesExecute(r HasManyApiGETSkuIdPricesRequ
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13090,7 +14562,7 @@ func (a *HasManyApiService) GETSkuIdPricesExecute(r HasManyApiGETSkuIdPricesRequ
 type HasManyApiGETSkuIdSkuOptionsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	skuId      string
+	skuId      interface{}
 }
 
 func (r HasManyApiGETSkuIdSkuOptionsRequest) Execute() (*http.Response, error) {
@@ -13106,7 +14578,7 @@ Retrieve the sku options associated to the SKU
 	@param skuId The resource's id
 	@return HasManyApiGETSkuIdSkuOptionsRequest
 */
-func (a *HasManyApiService) GETSkuIdSkuOptions(ctx context.Context, skuId string) HasManyApiGETSkuIdSkuOptionsRequest {
+func (a *HasManyApiService) GETSkuIdSkuOptions(ctx context.Context, skuId interface{}) HasManyApiGETSkuIdSkuOptionsRequest {
 	return HasManyApiGETSkuIdSkuOptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -13128,7 +14600,7 @@ func (a *HasManyApiService) GETSkuIdSkuOptionsExecute(r HasManyApiGETSkuIdSkuOpt
 	}
 
 	localVarPath := localBasePath + "/skus/{skuId}/sku_options"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterToString(r.skuId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13161,9 +14633,9 @@ func (a *HasManyApiService) GETSkuIdSkuOptionsExecute(r HasManyApiGETSkuIdSkuOpt
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13182,7 +14654,7 @@ func (a *HasManyApiService) GETSkuIdSkuOptionsExecute(r HasManyApiGETSkuIdSkuOpt
 type HasManyApiGETSkuIdStockItemsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	skuId      string
+	skuId      interface{}
 }
 
 func (r HasManyApiGETSkuIdStockItemsRequest) Execute() (*http.Response, error) {
@@ -13198,7 +14670,7 @@ Retrieve the stock items associated to the SKU
 	@param skuId The resource's id
 	@return HasManyApiGETSkuIdStockItemsRequest
 */
-func (a *HasManyApiService) GETSkuIdStockItems(ctx context.Context, skuId string) HasManyApiGETSkuIdStockItemsRequest {
+func (a *HasManyApiService) GETSkuIdStockItems(ctx context.Context, skuId interface{}) HasManyApiGETSkuIdStockItemsRequest {
 	return HasManyApiGETSkuIdStockItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -13220,7 +14692,7 @@ func (a *HasManyApiService) GETSkuIdStockItemsExecute(r HasManyApiGETSkuIdStockI
 	}
 
 	localVarPath := localBasePath + "/skus/{skuId}/stock_items"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterToString(r.skuId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13253,9 +14725,9 @@ func (a *HasManyApiService) GETSkuIdStockItemsExecute(r HasManyApiGETSkuIdStockI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13274,7 +14746,7 @@ func (a *HasManyApiService) GETSkuIdStockItemsExecute(r HasManyApiGETSkuIdStockI
 type HasManyApiGETSkuListIdAttachmentsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	skuListId  string
+	skuListId  interface{}
 }
 
 func (r HasManyApiGETSkuListIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -13290,7 +14762,7 @@ Retrieve the attachments associated to the SKU list
 	@param skuListId The resource's id
 	@return HasManyApiGETSkuListIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETSkuListIdAttachments(ctx context.Context, skuListId string) HasManyApiGETSkuListIdAttachmentsRequest {
+func (a *HasManyApiService) GETSkuListIdAttachments(ctx context.Context, skuListId interface{}) HasManyApiGETSkuListIdAttachmentsRequest {
 	return HasManyApiGETSkuListIdAttachmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -13312,7 +14784,7 @@ func (a *HasManyApiService) GETSkuListIdAttachmentsExecute(r HasManyApiGETSkuLis
 	}
 
 	localVarPath := localBasePath + "/sku_lists/{skuListId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuListId"+"}", url.PathEscape(parameterToString(r.skuListId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListId"+"}", url.PathEscape(parameterValueToString(r.skuListId, "skuListId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13345,9 +14817,9 @@ func (a *HasManyApiService) GETSkuListIdAttachmentsExecute(r HasManyApiGETSkuLis
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13366,7 +14838,7 @@ func (a *HasManyApiService) GETSkuListIdAttachmentsExecute(r HasManyApiGETSkuLis
 type HasManyApiGETSkuListIdBundlesRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	skuListId  string
+	skuListId  interface{}
 }
 
 func (r HasManyApiGETSkuListIdBundlesRequest) Execute() (*http.Response, error) {
@@ -13382,7 +14854,7 @@ Retrieve the bundles associated to the SKU list
 	@param skuListId The resource's id
 	@return HasManyApiGETSkuListIdBundlesRequest
 */
-func (a *HasManyApiService) GETSkuListIdBundles(ctx context.Context, skuListId string) HasManyApiGETSkuListIdBundlesRequest {
+func (a *HasManyApiService) GETSkuListIdBundles(ctx context.Context, skuListId interface{}) HasManyApiGETSkuListIdBundlesRequest {
 	return HasManyApiGETSkuListIdBundlesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -13404,7 +14876,7 @@ func (a *HasManyApiService) GETSkuListIdBundlesExecute(r HasManyApiGETSkuListIdB
 	}
 
 	localVarPath := localBasePath + "/sku_lists/{skuListId}/bundles"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuListId"+"}", url.PathEscape(parameterToString(r.skuListId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListId"+"}", url.PathEscape(parameterValueToString(r.skuListId, "skuListId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13437,9 +14909,9 @@ func (a *HasManyApiService) GETSkuListIdBundlesExecute(r HasManyApiGETSkuListIdB
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13458,7 +14930,7 @@ func (a *HasManyApiService) GETSkuListIdBundlesExecute(r HasManyApiGETSkuListIdB
 type HasManyApiGETSkuListIdSkuListItemsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	skuListId  string
+	skuListId  interface{}
 }
 
 func (r HasManyApiGETSkuListIdSkuListItemsRequest) Execute() (*http.Response, error) {
@@ -13474,7 +14946,7 @@ Retrieve the sku list items associated to the SKU list
 	@param skuListId The resource's id
 	@return HasManyApiGETSkuListIdSkuListItemsRequest
 */
-func (a *HasManyApiService) GETSkuListIdSkuListItems(ctx context.Context, skuListId string) HasManyApiGETSkuListIdSkuListItemsRequest {
+func (a *HasManyApiService) GETSkuListIdSkuListItems(ctx context.Context, skuListId interface{}) HasManyApiGETSkuListIdSkuListItemsRequest {
 	return HasManyApiGETSkuListIdSkuListItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -13496,7 +14968,7 @@ func (a *HasManyApiService) GETSkuListIdSkuListItemsExecute(r HasManyApiGETSkuLi
 	}
 
 	localVarPath := localBasePath + "/sku_lists/{skuListId}/sku_list_items"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuListId"+"}", url.PathEscape(parameterToString(r.skuListId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListId"+"}", url.PathEscape(parameterValueToString(r.skuListId, "skuListId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13529,9 +15001,9 @@ func (a *HasManyApiService) GETSkuListIdSkuListItemsExecute(r HasManyApiGETSkuLi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13550,7 +15022,7 @@ func (a *HasManyApiService) GETSkuListIdSkuListItemsExecute(r HasManyApiGETSkuLi
 type HasManyApiGETSkuListIdSkusRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	skuListId  string
+	skuListId  interface{}
 }
 
 func (r HasManyApiGETSkuListIdSkusRequest) Execute() (*http.Response, error) {
@@ -13566,7 +15038,7 @@ Retrieve the skus associated to the SKU list
 	@param skuListId The resource's id
 	@return HasManyApiGETSkuListIdSkusRequest
 */
-func (a *HasManyApiService) GETSkuListIdSkus(ctx context.Context, skuListId string) HasManyApiGETSkuListIdSkusRequest {
+func (a *HasManyApiService) GETSkuListIdSkus(ctx context.Context, skuListId interface{}) HasManyApiGETSkuListIdSkusRequest {
 	return HasManyApiGETSkuListIdSkusRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -13588,7 +15060,7 @@ func (a *HasManyApiService) GETSkuListIdSkusExecute(r HasManyApiGETSkuListIdSkus
 	}
 
 	localVarPath := localBasePath + "/sku_lists/{skuListId}/skus"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuListId"+"}", url.PathEscape(parameterToString(r.skuListId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListId"+"}", url.PathEscape(parameterValueToString(r.skuListId, "skuListId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13621,9 +15093,9 @@ func (a *HasManyApiService) GETSkuListIdSkusExecute(r HasManyApiGETSkuListIdSkus
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13642,7 +15114,7 @@ func (a *HasManyApiService) GETSkuListIdSkusExecute(r HasManyApiGETSkuListIdSkus
 type HasManyApiGETSkuListPromotionRuleIdSkusRequest struct {
 	ctx                    context.Context
 	ApiService             *HasManyApiService
-	skuListPromotionRuleId string
+	skuListPromotionRuleId interface{}
 }
 
 func (r HasManyApiGETSkuListPromotionRuleIdSkusRequest) Execute() (*http.Response, error) {
@@ -13658,7 +15130,7 @@ Retrieve the skus associated to the SKU list promotion rule
 	@param skuListPromotionRuleId The resource's id
 	@return HasManyApiGETSkuListPromotionRuleIdSkusRequest
 */
-func (a *HasManyApiService) GETSkuListPromotionRuleIdSkus(ctx context.Context, skuListPromotionRuleId string) HasManyApiGETSkuListPromotionRuleIdSkusRequest {
+func (a *HasManyApiService) GETSkuListPromotionRuleIdSkus(ctx context.Context, skuListPromotionRuleId interface{}) HasManyApiGETSkuListPromotionRuleIdSkusRequest {
 	return HasManyApiGETSkuListPromotionRuleIdSkusRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -13680,7 +15152,7 @@ func (a *HasManyApiService) GETSkuListPromotionRuleIdSkusExecute(r HasManyApiGET
 	}
 
 	localVarPath := localBasePath + "/sku_list_promotion_rules/{skuListPromotionRuleId}/skus"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuListPromotionRuleId"+"}", url.PathEscape(parameterToString(r.skuListPromotionRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListPromotionRuleId"+"}", url.PathEscape(parameterValueToString(r.skuListPromotionRuleId, "skuListPromotionRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13713,9 +15185,9 @@ func (a *HasManyApiService) GETSkuListPromotionRuleIdSkusExecute(r HasManyApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13734,7 +15206,7 @@ func (a *HasManyApiService) GETSkuListPromotionRuleIdSkusExecute(r HasManyApiGET
 type HasManyApiGETSkuOptionIdAttachmentsRequest struct {
 	ctx         context.Context
 	ApiService  *HasManyApiService
-	skuOptionId string
+	skuOptionId interface{}
 }
 
 func (r HasManyApiGETSkuOptionIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -13750,7 +15222,7 @@ Retrieve the attachments associated to the SKU option
 	@param skuOptionId The resource's id
 	@return HasManyApiGETSkuOptionIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETSkuOptionIdAttachments(ctx context.Context, skuOptionId string) HasManyApiGETSkuOptionIdAttachmentsRequest {
+func (a *HasManyApiService) GETSkuOptionIdAttachments(ctx context.Context, skuOptionId interface{}) HasManyApiGETSkuOptionIdAttachmentsRequest {
 	return HasManyApiGETSkuOptionIdAttachmentsRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -13772,7 +15244,7 @@ func (a *HasManyApiService) GETSkuOptionIdAttachmentsExecute(r HasManyApiGETSkuO
 	}
 
 	localVarPath := localBasePath + "/sku_options/{skuOptionId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuOptionId"+"}", url.PathEscape(parameterToString(r.skuOptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuOptionId"+"}", url.PathEscape(parameterValueToString(r.skuOptionId, "skuOptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13805,9 +15277,9 @@ func (a *HasManyApiService) GETSkuOptionIdAttachmentsExecute(r HasManyApiGETSkuO
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13826,7 +15298,7 @@ func (a *HasManyApiService) GETSkuOptionIdAttachmentsExecute(r HasManyApiGETSkuO
 type HasManyApiGETStockItemIdAttachmentsRequest struct {
 	ctx         context.Context
 	ApiService  *HasManyApiService
-	stockItemId string
+	stockItemId interface{}
 }
 
 func (r HasManyApiGETStockItemIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -13842,7 +15314,7 @@ Retrieve the attachments associated to the stock item
 	@param stockItemId The resource's id
 	@return HasManyApiGETStockItemIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETStockItemIdAttachments(ctx context.Context, stockItemId string) HasManyApiGETStockItemIdAttachmentsRequest {
+func (a *HasManyApiService) GETStockItemIdAttachments(ctx context.Context, stockItemId interface{}) HasManyApiGETStockItemIdAttachmentsRequest {
 	return HasManyApiGETStockItemIdAttachmentsRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -13864,7 +15336,7 @@ func (a *HasManyApiService) GETStockItemIdAttachmentsExecute(r HasManyApiGETStoc
 	}
 
 	localVarPath := localBasePath + "/stock_items/{stockItemId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockItemId"+"}", url.PathEscape(parameterToString(r.stockItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockItemId"+"}", url.PathEscape(parameterValueToString(r.stockItemId, "stockItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13897,9 +15369,9 @@ func (a *HasManyApiService) GETStockItemIdAttachmentsExecute(r HasManyApiGETStoc
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13918,7 +15390,7 @@ func (a *HasManyApiService) GETStockItemIdAttachmentsExecute(r HasManyApiGETStoc
 type HasManyApiGETStockLocationIdAttachmentsRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
-	stockLocationId string
+	stockLocationId interface{}
 }
 
 func (r HasManyApiGETStockLocationIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -13934,7 +15406,7 @@ Retrieve the attachments associated to the stock location
 	@param stockLocationId The resource's id
 	@return HasManyApiGETStockLocationIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETStockLocationIdAttachments(ctx context.Context, stockLocationId string) HasManyApiGETStockLocationIdAttachmentsRequest {
+func (a *HasManyApiService) GETStockLocationIdAttachments(ctx context.Context, stockLocationId interface{}) HasManyApiGETStockLocationIdAttachmentsRequest {
 	return HasManyApiGETStockLocationIdAttachmentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -13956,7 +15428,7 @@ func (a *HasManyApiService) GETStockLocationIdAttachmentsExecute(r HasManyApiGET
 	}
 
 	localVarPath := localBasePath + "/stock_locations/{stockLocationId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterToString(r.stockLocationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterValueToString(r.stockLocationId, "stockLocationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13989,9 +15461,9 @@ func (a *HasManyApiService) GETStockLocationIdAttachmentsExecute(r HasManyApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -14010,7 +15482,7 @@ func (a *HasManyApiService) GETStockLocationIdAttachmentsExecute(r HasManyApiGET
 type HasManyApiGETStockLocationIdInventoryReturnLocationsRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
-	stockLocationId string
+	stockLocationId interface{}
 }
 
 func (r HasManyApiGETStockLocationIdInventoryReturnLocationsRequest) Execute() (*http.Response, error) {
@@ -14026,7 +15498,7 @@ Retrieve the inventory return locations associated to the stock location
 	@param stockLocationId The resource's id
 	@return HasManyApiGETStockLocationIdInventoryReturnLocationsRequest
 */
-func (a *HasManyApiService) GETStockLocationIdInventoryReturnLocations(ctx context.Context, stockLocationId string) HasManyApiGETStockLocationIdInventoryReturnLocationsRequest {
+func (a *HasManyApiService) GETStockLocationIdInventoryReturnLocations(ctx context.Context, stockLocationId interface{}) HasManyApiGETStockLocationIdInventoryReturnLocationsRequest {
 	return HasManyApiGETStockLocationIdInventoryReturnLocationsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -14048,7 +15520,7 @@ func (a *HasManyApiService) GETStockLocationIdInventoryReturnLocationsExecute(r 
 	}
 
 	localVarPath := localBasePath + "/stock_locations/{stockLocationId}/inventory_return_locations"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterToString(r.stockLocationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterValueToString(r.stockLocationId, "stockLocationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14081,9 +15553,9 @@ func (a *HasManyApiService) GETStockLocationIdInventoryReturnLocationsExecute(r 
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -14102,7 +15574,7 @@ func (a *HasManyApiService) GETStockLocationIdInventoryReturnLocationsExecute(r 
 type HasManyApiGETStockLocationIdInventoryStockLocationsRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
-	stockLocationId string
+	stockLocationId interface{}
 }
 
 func (r HasManyApiGETStockLocationIdInventoryStockLocationsRequest) Execute() (*http.Response, error) {
@@ -14118,7 +15590,7 @@ Retrieve the inventory stock locations associated to the stock location
 	@param stockLocationId The resource's id
 	@return HasManyApiGETStockLocationIdInventoryStockLocationsRequest
 */
-func (a *HasManyApiService) GETStockLocationIdInventoryStockLocations(ctx context.Context, stockLocationId string) HasManyApiGETStockLocationIdInventoryStockLocationsRequest {
+func (a *HasManyApiService) GETStockLocationIdInventoryStockLocations(ctx context.Context, stockLocationId interface{}) HasManyApiGETStockLocationIdInventoryStockLocationsRequest {
 	return HasManyApiGETStockLocationIdInventoryStockLocationsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -14140,7 +15612,7 @@ func (a *HasManyApiService) GETStockLocationIdInventoryStockLocationsExecute(r H
 	}
 
 	localVarPath := localBasePath + "/stock_locations/{stockLocationId}/inventory_stock_locations"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterToString(r.stockLocationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterValueToString(r.stockLocationId, "stockLocationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14173,9 +15645,9 @@ func (a *HasManyApiService) GETStockLocationIdInventoryStockLocationsExecute(r H
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -14194,7 +15666,7 @@ func (a *HasManyApiService) GETStockLocationIdInventoryStockLocationsExecute(r H
 type HasManyApiGETStockLocationIdStockItemsRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
-	stockLocationId string
+	stockLocationId interface{}
 }
 
 func (r HasManyApiGETStockLocationIdStockItemsRequest) Execute() (*http.Response, error) {
@@ -14210,7 +15682,7 @@ Retrieve the stock items associated to the stock location
 	@param stockLocationId The resource's id
 	@return HasManyApiGETStockLocationIdStockItemsRequest
 */
-func (a *HasManyApiService) GETStockLocationIdStockItems(ctx context.Context, stockLocationId string) HasManyApiGETStockLocationIdStockItemsRequest {
+func (a *HasManyApiService) GETStockLocationIdStockItems(ctx context.Context, stockLocationId interface{}) HasManyApiGETStockLocationIdStockItemsRequest {
 	return HasManyApiGETStockLocationIdStockItemsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -14232,7 +15704,7 @@ func (a *HasManyApiService) GETStockLocationIdStockItemsExecute(r HasManyApiGETS
 	}
 
 	localVarPath := localBasePath + "/stock_locations/{stockLocationId}/stock_items"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterToString(r.stockLocationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterValueToString(r.stockLocationId, "stockLocationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14265,9 +15737,9 @@ func (a *HasManyApiService) GETStockLocationIdStockItemsExecute(r HasManyApiGETS
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -14286,7 +15758,7 @@ func (a *HasManyApiService) GETStockLocationIdStockItemsExecute(r HasManyApiGETS
 type HasManyApiGETStockLocationIdStockTransfersRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
-	stockLocationId string
+	stockLocationId interface{}
 }
 
 func (r HasManyApiGETStockLocationIdStockTransfersRequest) Execute() (*http.Response, error) {
@@ -14302,7 +15774,7 @@ Retrieve the stock transfers associated to the stock location
 	@param stockLocationId The resource's id
 	@return HasManyApiGETStockLocationIdStockTransfersRequest
 */
-func (a *HasManyApiService) GETStockLocationIdStockTransfers(ctx context.Context, stockLocationId string) HasManyApiGETStockLocationIdStockTransfersRequest {
+func (a *HasManyApiService) GETStockLocationIdStockTransfers(ctx context.Context, stockLocationId interface{}) HasManyApiGETStockLocationIdStockTransfersRequest {
 	return HasManyApiGETStockLocationIdStockTransfersRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -14324,7 +15796,7 @@ func (a *HasManyApiService) GETStockLocationIdStockTransfersExecute(r HasManyApi
 	}
 
 	localVarPath := localBasePath + "/stock_locations/{stockLocationId}/stock_transfers"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterToString(r.stockLocationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterValueToString(r.stockLocationId, "stockLocationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14357,9 +15829,9 @@ func (a *HasManyApiService) GETStockLocationIdStockTransfersExecute(r HasManyApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -14378,7 +15850,7 @@ func (a *HasManyApiService) GETStockLocationIdStockTransfersExecute(r HasManyApi
 type HasManyApiGETStockTransferIdEventsRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
-	stockTransferId string
+	stockTransferId interface{}
 }
 
 func (r HasManyApiGETStockTransferIdEventsRequest) Execute() (*http.Response, error) {
@@ -14394,7 +15866,7 @@ Retrieve the events associated to the stock transfer
 	@param stockTransferId The resource's id
 	@return HasManyApiGETStockTransferIdEventsRequest
 */
-func (a *HasManyApiService) GETStockTransferIdEvents(ctx context.Context, stockTransferId string) HasManyApiGETStockTransferIdEventsRequest {
+func (a *HasManyApiService) GETStockTransferIdEvents(ctx context.Context, stockTransferId interface{}) HasManyApiGETStockTransferIdEventsRequest {
 	return HasManyApiGETStockTransferIdEventsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -14416,7 +15888,7 @@ func (a *HasManyApiService) GETStockTransferIdEventsExecute(r HasManyApiGETStock
 	}
 
 	localVarPath := localBasePath + "/stock_transfers/{stockTransferId}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterToString(r.stockTransferId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterValueToString(r.stockTransferId, "stockTransferId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14449,9 +15921,9 @@ func (a *HasManyApiService) GETStockTransferIdEventsExecute(r HasManyApiGETStock
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -14470,7 +15942,7 @@ func (a *HasManyApiService) GETStockTransferIdEventsExecute(r HasManyApiGETStock
 type HasManyApiGETStripeGatewayIdPaymentMethodsRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
-	stripeGatewayId string
+	stripeGatewayId interface{}
 }
 
 func (r HasManyApiGETStripeGatewayIdPaymentMethodsRequest) Execute() (*http.Response, error) {
@@ -14486,7 +15958,7 @@ Retrieve the payment methods associated to the stripe gateway
 	@param stripeGatewayId The resource's id
 	@return HasManyApiGETStripeGatewayIdPaymentMethodsRequest
 */
-func (a *HasManyApiService) GETStripeGatewayIdPaymentMethods(ctx context.Context, stripeGatewayId string) HasManyApiGETStripeGatewayIdPaymentMethodsRequest {
+func (a *HasManyApiService) GETStripeGatewayIdPaymentMethods(ctx context.Context, stripeGatewayId interface{}) HasManyApiGETStripeGatewayIdPaymentMethodsRequest {
 	return HasManyApiGETStripeGatewayIdPaymentMethodsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -14508,7 +15980,7 @@ func (a *HasManyApiService) GETStripeGatewayIdPaymentMethodsExecute(r HasManyApi
 	}
 
 	localVarPath := localBasePath + "/stripe_gateways/{stripeGatewayId}/payment_methods"
-	localVarPath = strings.Replace(localVarPath, "{"+"stripeGatewayId"+"}", url.PathEscape(parameterToString(r.stripeGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stripeGatewayId"+"}", url.PathEscape(parameterValueToString(r.stripeGatewayId, "stripeGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14541,9 +16013,9 @@ func (a *HasManyApiService) GETStripeGatewayIdPaymentMethodsExecute(r HasManyApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -14562,7 +16034,7 @@ func (a *HasManyApiService) GETStripeGatewayIdPaymentMethodsExecute(r HasManyApi
 type HasManyApiGETStripeGatewayIdStripePaymentsRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
-	stripeGatewayId string
+	stripeGatewayId interface{}
 }
 
 func (r HasManyApiGETStripeGatewayIdStripePaymentsRequest) Execute() (*http.Response, error) {
@@ -14578,7 +16050,7 @@ Retrieve the stripe payments associated to the stripe gateway
 	@param stripeGatewayId The resource's id
 	@return HasManyApiGETStripeGatewayIdStripePaymentsRequest
 */
-func (a *HasManyApiService) GETStripeGatewayIdStripePayments(ctx context.Context, stripeGatewayId string) HasManyApiGETStripeGatewayIdStripePaymentsRequest {
+func (a *HasManyApiService) GETStripeGatewayIdStripePayments(ctx context.Context, stripeGatewayId interface{}) HasManyApiGETStripeGatewayIdStripePaymentsRequest {
 	return HasManyApiGETStripeGatewayIdStripePaymentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -14600,7 +16072,7 @@ func (a *HasManyApiService) GETStripeGatewayIdStripePaymentsExecute(r HasManyApi
 	}
 
 	localVarPath := localBasePath + "/stripe_gateways/{stripeGatewayId}/stripe_payments"
-	localVarPath = strings.Replace(localVarPath, "{"+"stripeGatewayId"+"}", url.PathEscape(parameterToString(r.stripeGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stripeGatewayId"+"}", url.PathEscape(parameterValueToString(r.stripeGatewayId, "stripeGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14633,9 +16105,285 @@ func (a *HasManyApiService) GETStripeGatewayIdStripePaymentsExecute(r HasManyApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETSubscriptionModelIdAttachmentsRequest struct {
+	ctx                 context.Context
+	ApiService          *HasManyApiService
+	subscriptionModelId interface{}
+}
+
+func (r HasManyApiGETSubscriptionModelIdAttachmentsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSubscriptionModelIdAttachmentsExecute(r)
+}
+
+/*
+GETSubscriptionModelIdAttachments Retrieve the attachments associated to the subscription model
+
+Retrieve the attachments associated to the subscription model
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionModelId The resource's id
+	@return HasManyApiGETSubscriptionModelIdAttachmentsRequest
+*/
+func (a *HasManyApiService) GETSubscriptionModelIdAttachments(ctx context.Context, subscriptionModelId interface{}) HasManyApiGETSubscriptionModelIdAttachmentsRequest {
+	return HasManyApiGETSubscriptionModelIdAttachmentsRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		subscriptionModelId: subscriptionModelId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETSubscriptionModelIdAttachmentsExecute(r HasManyApiGETSubscriptionModelIdAttachmentsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSubscriptionModelIdAttachments")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/subscription_models/{subscriptionModelId}/attachments"
+	localVarPath = strings.Replace(localVarPath, "{"+"subscriptionModelId"+"}", url.PathEscape(parameterValueToString(r.subscriptionModelId, "subscriptionModelId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETSubscriptionModelIdMarketsRequest struct {
+	ctx                 context.Context
+	ApiService          *HasManyApiService
+	subscriptionModelId interface{}
+}
+
+func (r HasManyApiGETSubscriptionModelIdMarketsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSubscriptionModelIdMarketsExecute(r)
+}
+
+/*
+GETSubscriptionModelIdMarkets Retrieve the markets associated to the subscription model
+
+Retrieve the markets associated to the subscription model
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionModelId The resource's id
+	@return HasManyApiGETSubscriptionModelIdMarketsRequest
+*/
+func (a *HasManyApiService) GETSubscriptionModelIdMarkets(ctx context.Context, subscriptionModelId interface{}) HasManyApiGETSubscriptionModelIdMarketsRequest {
+	return HasManyApiGETSubscriptionModelIdMarketsRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		subscriptionModelId: subscriptionModelId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETSubscriptionModelIdMarketsExecute(r HasManyApiGETSubscriptionModelIdMarketsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSubscriptionModelIdMarkets")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/subscription_models/{subscriptionModelId}/markets"
+	localVarPath = strings.Replace(localVarPath, "{"+"subscriptionModelId"+"}", url.PathEscape(parameterValueToString(r.subscriptionModelId, "subscriptionModelId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type HasManyApiGETSubscriptionModelIdOrderSubscriptionsRequest struct {
+	ctx                 context.Context
+	ApiService          *HasManyApiService
+	subscriptionModelId interface{}
+}
+
+func (r HasManyApiGETSubscriptionModelIdOrderSubscriptionsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSubscriptionModelIdOrderSubscriptionsExecute(r)
+}
+
+/*
+GETSubscriptionModelIdOrderSubscriptions Retrieve the order subscriptions associated to the subscription model
+
+Retrieve the order subscriptions associated to the subscription model
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionModelId The resource's id
+	@return HasManyApiGETSubscriptionModelIdOrderSubscriptionsRequest
+*/
+func (a *HasManyApiService) GETSubscriptionModelIdOrderSubscriptions(ctx context.Context, subscriptionModelId interface{}) HasManyApiGETSubscriptionModelIdOrderSubscriptionsRequest {
+	return HasManyApiGETSubscriptionModelIdOrderSubscriptionsRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		subscriptionModelId: subscriptionModelId,
+	}
+}
+
+// Execute executes the request
+func (a *HasManyApiService) GETSubscriptionModelIdOrderSubscriptionsExecute(r HasManyApiGETSubscriptionModelIdOrderSubscriptionsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "HasManyApiService.GETSubscriptionModelIdOrderSubscriptions")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/subscription_models/{subscriptionModelId}/order_subscriptions"
+	localVarPath = strings.Replace(localVarPath, "{"+"subscriptionModelId"+"}", url.PathEscape(parameterValueToString(r.subscriptionModelId, "subscriptionModelId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -14654,7 +16402,7 @@ func (a *HasManyApiService) GETStripeGatewayIdStripePaymentsExecute(r HasManyApi
 type HasManyApiGETTaxCalculatorIdAttachmentsRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
-	taxCalculatorId string
+	taxCalculatorId interface{}
 }
 
 func (r HasManyApiGETTaxCalculatorIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -14670,7 +16418,7 @@ Retrieve the attachments associated to the tax calculator
 	@param taxCalculatorId The resource's id
 	@return HasManyApiGETTaxCalculatorIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETTaxCalculatorIdAttachments(ctx context.Context, taxCalculatorId string) HasManyApiGETTaxCalculatorIdAttachmentsRequest {
+func (a *HasManyApiService) GETTaxCalculatorIdAttachments(ctx context.Context, taxCalculatorId interface{}) HasManyApiGETTaxCalculatorIdAttachmentsRequest {
 	return HasManyApiGETTaxCalculatorIdAttachmentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -14692,7 +16440,7 @@ func (a *HasManyApiService) GETTaxCalculatorIdAttachmentsExecute(r HasManyApiGET
 	}
 
 	localVarPath := localBasePath + "/tax_calculators/{taxCalculatorId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxCalculatorId"+"}", url.PathEscape(parameterToString(r.taxCalculatorId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.taxCalculatorId, "taxCalculatorId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14725,9 +16473,9 @@ func (a *HasManyApiService) GETTaxCalculatorIdAttachmentsExecute(r HasManyApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -14746,7 +16494,7 @@ func (a *HasManyApiService) GETTaxCalculatorIdAttachmentsExecute(r HasManyApiGET
 type HasManyApiGETTaxCalculatorIdMarketsRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
-	taxCalculatorId string
+	taxCalculatorId interface{}
 }
 
 func (r HasManyApiGETTaxCalculatorIdMarketsRequest) Execute() (*http.Response, error) {
@@ -14762,7 +16510,7 @@ Retrieve the markets associated to the tax calculator
 	@param taxCalculatorId The resource's id
 	@return HasManyApiGETTaxCalculatorIdMarketsRequest
 */
-func (a *HasManyApiService) GETTaxCalculatorIdMarkets(ctx context.Context, taxCalculatorId string) HasManyApiGETTaxCalculatorIdMarketsRequest {
+func (a *HasManyApiService) GETTaxCalculatorIdMarkets(ctx context.Context, taxCalculatorId interface{}) HasManyApiGETTaxCalculatorIdMarketsRequest {
 	return HasManyApiGETTaxCalculatorIdMarketsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -14784,7 +16532,7 @@ func (a *HasManyApiService) GETTaxCalculatorIdMarketsExecute(r HasManyApiGETTaxC
 	}
 
 	localVarPath := localBasePath + "/tax_calculators/{taxCalculatorId}/markets"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxCalculatorId"+"}", url.PathEscape(parameterToString(r.taxCalculatorId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.taxCalculatorId, "taxCalculatorId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14817,9 +16565,9 @@ func (a *HasManyApiService) GETTaxCalculatorIdMarketsExecute(r HasManyApiGETTaxC
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -14838,7 +16586,7 @@ func (a *HasManyApiService) GETTaxCalculatorIdMarketsExecute(r HasManyApiGETTaxC
 type HasManyApiGETTaxCategoryIdAttachmentsRequest struct {
 	ctx           context.Context
 	ApiService    *HasManyApiService
-	taxCategoryId string
+	taxCategoryId interface{}
 }
 
 func (r HasManyApiGETTaxCategoryIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -14854,7 +16602,7 @@ Retrieve the attachments associated to the tax category
 	@param taxCategoryId The resource's id
 	@return HasManyApiGETTaxCategoryIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETTaxCategoryIdAttachments(ctx context.Context, taxCategoryId string) HasManyApiGETTaxCategoryIdAttachmentsRequest {
+func (a *HasManyApiService) GETTaxCategoryIdAttachments(ctx context.Context, taxCategoryId interface{}) HasManyApiGETTaxCategoryIdAttachmentsRequest {
 	return HasManyApiGETTaxCategoryIdAttachmentsRequest{
 		ApiService:    a,
 		ctx:           ctx,
@@ -14876,7 +16624,7 @@ func (a *HasManyApiService) GETTaxCategoryIdAttachmentsExecute(r HasManyApiGETTa
 	}
 
 	localVarPath := localBasePath + "/tax_categories/{taxCategoryId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxCategoryId"+"}", url.PathEscape(parameterToString(r.taxCategoryId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxCategoryId"+"}", url.PathEscape(parameterValueToString(r.taxCategoryId, "taxCategoryId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14909,9 +16657,9 @@ func (a *HasManyApiService) GETTaxCategoryIdAttachmentsExecute(r HasManyApiGETTa
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -14930,7 +16678,7 @@ func (a *HasManyApiService) GETTaxCategoryIdAttachmentsExecute(r HasManyApiGETTa
 type HasManyApiGETTaxjarAccountIdAttachmentsRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
-	taxjarAccountId string
+	taxjarAccountId interface{}
 }
 
 func (r HasManyApiGETTaxjarAccountIdAttachmentsRequest) Execute() (*http.Response, error) {
@@ -14946,7 +16694,7 @@ Retrieve the attachments associated to the taxjar account
 	@param taxjarAccountId The resource's id
 	@return HasManyApiGETTaxjarAccountIdAttachmentsRequest
 */
-func (a *HasManyApiService) GETTaxjarAccountIdAttachments(ctx context.Context, taxjarAccountId string) HasManyApiGETTaxjarAccountIdAttachmentsRequest {
+func (a *HasManyApiService) GETTaxjarAccountIdAttachments(ctx context.Context, taxjarAccountId interface{}) HasManyApiGETTaxjarAccountIdAttachmentsRequest {
 	return HasManyApiGETTaxjarAccountIdAttachmentsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -14968,7 +16716,7 @@ func (a *HasManyApiService) GETTaxjarAccountIdAttachmentsExecute(r HasManyApiGET
 	}
 
 	localVarPath := localBasePath + "/taxjar_accounts/{taxjarAccountId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxjarAccountId"+"}", url.PathEscape(parameterToString(r.taxjarAccountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxjarAccountId"+"}", url.PathEscape(parameterValueToString(r.taxjarAccountId, "taxjarAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15001,9 +16749,9 @@ func (a *HasManyApiService) GETTaxjarAccountIdAttachmentsExecute(r HasManyApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -15022,7 +16770,7 @@ func (a *HasManyApiService) GETTaxjarAccountIdAttachmentsExecute(r HasManyApiGET
 type HasManyApiGETTaxjarAccountIdMarketsRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
-	taxjarAccountId string
+	taxjarAccountId interface{}
 }
 
 func (r HasManyApiGETTaxjarAccountIdMarketsRequest) Execute() (*http.Response, error) {
@@ -15038,7 +16786,7 @@ Retrieve the markets associated to the taxjar account
 	@param taxjarAccountId The resource's id
 	@return HasManyApiGETTaxjarAccountIdMarketsRequest
 */
-func (a *HasManyApiService) GETTaxjarAccountIdMarkets(ctx context.Context, taxjarAccountId string) HasManyApiGETTaxjarAccountIdMarketsRequest {
+func (a *HasManyApiService) GETTaxjarAccountIdMarkets(ctx context.Context, taxjarAccountId interface{}) HasManyApiGETTaxjarAccountIdMarketsRequest {
 	return HasManyApiGETTaxjarAccountIdMarketsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -15060,7 +16808,7 @@ func (a *HasManyApiService) GETTaxjarAccountIdMarketsExecute(r HasManyApiGETTaxj
 	}
 
 	localVarPath := localBasePath + "/taxjar_accounts/{taxjarAccountId}/markets"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxjarAccountId"+"}", url.PathEscape(parameterToString(r.taxjarAccountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxjarAccountId"+"}", url.PathEscape(parameterValueToString(r.taxjarAccountId, "taxjarAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15093,9 +16841,9 @@ func (a *HasManyApiService) GETTaxjarAccountIdMarketsExecute(r HasManyApiGETTaxj
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -15114,7 +16862,7 @@ func (a *HasManyApiService) GETTaxjarAccountIdMarketsExecute(r HasManyApiGETTaxj
 type HasManyApiGETTaxjarAccountIdTaxCategoriesRequest struct {
 	ctx             context.Context
 	ApiService      *HasManyApiService
-	taxjarAccountId string
+	taxjarAccountId interface{}
 }
 
 func (r HasManyApiGETTaxjarAccountIdTaxCategoriesRequest) Execute() (*http.Response, error) {
@@ -15130,7 +16878,7 @@ Retrieve the tax categories associated to the taxjar account
 	@param taxjarAccountId The resource's id
 	@return HasManyApiGETTaxjarAccountIdTaxCategoriesRequest
 */
-func (a *HasManyApiService) GETTaxjarAccountIdTaxCategories(ctx context.Context, taxjarAccountId string) HasManyApiGETTaxjarAccountIdTaxCategoriesRequest {
+func (a *HasManyApiService) GETTaxjarAccountIdTaxCategories(ctx context.Context, taxjarAccountId interface{}) HasManyApiGETTaxjarAccountIdTaxCategoriesRequest {
 	return HasManyApiGETTaxjarAccountIdTaxCategoriesRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -15152,7 +16900,7 @@ func (a *HasManyApiService) GETTaxjarAccountIdTaxCategoriesExecute(r HasManyApiG
 	}
 
 	localVarPath := localBasePath + "/taxjar_accounts/{taxjarAccountId}/tax_categories"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxjarAccountId"+"}", url.PathEscape(parameterToString(r.taxjarAccountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxjarAccountId"+"}", url.PathEscape(parameterValueToString(r.taxjarAccountId, "taxjarAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15185,9 +16933,9 @@ func (a *HasManyApiService) GETTaxjarAccountIdTaxCategoriesExecute(r HasManyApiG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -15206,7 +16954,7 @@ func (a *HasManyApiService) GETTaxjarAccountIdTaxCategoriesExecute(r HasManyApiG
 type HasManyApiGETVoidIdEventsRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	voidId     string
+	voidId     interface{}
 }
 
 func (r HasManyApiGETVoidIdEventsRequest) Execute() (*http.Response, error) {
@@ -15222,7 +16970,7 @@ Retrieve the events associated to the void
 	@param voidId The resource's id
 	@return HasManyApiGETVoidIdEventsRequest
 */
-func (a *HasManyApiService) GETVoidIdEvents(ctx context.Context, voidId string) HasManyApiGETVoidIdEventsRequest {
+func (a *HasManyApiService) GETVoidIdEvents(ctx context.Context, voidId interface{}) HasManyApiGETVoidIdEventsRequest {
 	return HasManyApiGETVoidIdEventsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -15244,7 +16992,7 @@ func (a *HasManyApiService) GETVoidIdEventsExecute(r HasManyApiGETVoidIdEventsRe
 	}
 
 	localVarPath := localBasePath + "/voids/{voidId}/events"
-	localVarPath = strings.Replace(localVarPath, "{"+"voidId"+"}", url.PathEscape(parameterToString(r.voidId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"voidId"+"}", url.PathEscape(parameterValueToString(r.voidId, "voidId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15277,9 +17025,9 @@ func (a *HasManyApiService) GETVoidIdEventsExecute(r HasManyApiGETVoidIdEventsRe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -15298,7 +17046,7 @@ func (a *HasManyApiService) GETVoidIdEventsExecute(r HasManyApiGETVoidIdEventsRe
 type HasManyApiGETWebhookIdLastEventCallbacksRequest struct {
 	ctx        context.Context
 	ApiService *HasManyApiService
-	webhookId  string
+	webhookId  interface{}
 }
 
 func (r HasManyApiGETWebhookIdLastEventCallbacksRequest) Execute() (*http.Response, error) {
@@ -15314,7 +17062,7 @@ Retrieve the last event callbacks associated to the webhook
 	@param webhookId The resource's id
 	@return HasManyApiGETWebhookIdLastEventCallbacksRequest
 */
-func (a *HasManyApiService) GETWebhookIdLastEventCallbacks(ctx context.Context, webhookId string) HasManyApiGETWebhookIdLastEventCallbacksRequest {
+func (a *HasManyApiService) GETWebhookIdLastEventCallbacks(ctx context.Context, webhookId interface{}) HasManyApiGETWebhookIdLastEventCallbacksRequest {
 	return HasManyApiGETWebhookIdLastEventCallbacksRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -15336,7 +17084,7 @@ func (a *HasManyApiService) GETWebhookIdLastEventCallbacksExecute(r HasManyApiGE
 	}
 
 	localVarPath := localBasePath + "/webhooks/{webhookId}/last_event_callbacks"
-	localVarPath = strings.Replace(localVarPath, "{"+"webhookId"+"}", url.PathEscape(parameterToString(r.webhookId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"webhookId"+"}", url.PathEscape(parameterValueToString(r.webhookId, "webhookId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15369,9 +17117,9 @@ func (a *HasManyApiService) GETWebhookIdLastEventCallbacksExecute(r HasManyApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

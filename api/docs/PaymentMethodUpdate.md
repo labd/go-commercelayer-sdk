@@ -4,13 +4,13 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | [**PaymentMethodUpdateData**](PaymentMethodUpdateData.md) |  | 
+**Data** | [**PATCHPaymentMethodsPaymentMethodIdRequestData**](PATCHPaymentMethodsPaymentMethodIdRequestData.md) |  | 
 
 ## Methods
 
 ### NewPaymentMethodUpdate
 
-`func NewPaymentMethodUpdate(data PaymentMethodUpdateData, ) *PaymentMethodUpdate`
+`func NewPaymentMethodUpdate(data PATCHPaymentMethodsPaymentMethodIdRequestData, ) *PaymentMethodUpdate`
 
 NewPaymentMethodUpdate instantiates a new PaymentMethodUpdate object
 This constructor will assign default values to properties that have it defined,
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *PaymentMethodUpdate) GetData() PaymentMethodUpdateData`
+`func (o *PaymentMethodUpdate) GetData() PATCHPaymentMethodsPaymentMethodIdRequestData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *PaymentMethodUpdate) GetDataOk() (*PaymentMethodUpdateData, bool)`
+`func (o *PaymentMethodUpdate) GetDataOk() (*PATCHPaymentMethodsPaymentMethodIdRequestData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *PaymentMethodUpdate) SetData(v PaymentMethodUpdateData)`
+`func (o *PaymentMethodUpdate) SetData(v PATCHPaymentMethodsPaymentMethodIdRequestData)`
 
 SetData sets Data field to given value.
 
