@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHShippingMethodsShippingMethodId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHShippingMethodsShippingMethodId200ResponseDataAttributes{}
+
 // PATCHShippingMethodsShippingMethodId200ResponseDataAttributes struct for PATCHShippingMethodsShippingMethodId200ResponseDataAttributes
 type PATCHShippingMethodsShippingMethodId200ResponseDataAttributes struct {
 	// The shipping method's name
@@ -75,7 +78,7 @@ func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetName(
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -83,7 +86,7 @@ func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetNameO
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
@@ -108,7 +111,7 @@ func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetSchem
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetSchemeOk() (*interface{}, bool) {
-	if o == nil || o.Scheme == nil {
+	if o == nil || IsNil(o.Scheme) {
 		return nil, false
 	}
 	return &o.Scheme, true
@@ -116,7 +119,7 @@ func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetSchem
 
 // HasScheme returns a boolean if a field has been set.
 func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) HasScheme() bool {
-	if o != nil && o.Scheme != nil {
+	if o != nil && IsNil(o.Scheme) {
 		return true
 	}
 
@@ -141,7 +144,7 @@ func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetCurre
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetCurrencyCodeOk() (*interface{}, bool) {
-	if o == nil || o.CurrencyCode == nil {
+	if o == nil || IsNil(o.CurrencyCode) {
 		return nil, false
 	}
 	return &o.CurrencyCode, true
@@ -149,7 +152,7 @@ func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetCurre
 
 // HasCurrencyCode returns a boolean if a field has been set.
 func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) HasCurrencyCode() bool {
-	if o != nil && o.CurrencyCode != nil {
+	if o != nil && IsNil(o.CurrencyCode) {
 		return true
 	}
 
@@ -174,7 +177,7 @@ func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetDisab
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetDisableOk() (*interface{}, bool) {
-	if o == nil || o.Disable == nil {
+	if o == nil || IsNil(o.Disable) {
 		return nil, false
 	}
 	return &o.Disable, true
@@ -182,7 +185,7 @@ func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetDisab
 
 // HasDisable returns a boolean if a field has been set.
 func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) HasDisable() bool {
-	if o != nil && o.Disable != nil {
+	if o != nil && IsNil(o.Disable) {
 		return true
 	}
 
@@ -207,7 +210,7 @@ func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetEnabl
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetEnableOk() (*interface{}, bool) {
-	if o == nil || o.Enable == nil {
+	if o == nil || IsNil(o.Enable) {
 		return nil, false
 	}
 	return &o.Enable, true
@@ -215,7 +218,7 @@ func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetEnabl
 
 // HasEnable returns a boolean if a field has been set.
 func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) HasEnable() bool {
-	if o != nil && o.Enable != nil {
+	if o != nil && IsNil(o.Enable) {
 		return true
 	}
 
@@ -240,7 +243,7 @@ func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetPrice
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetPriceAmountCentsOk() (*interface{}, bool) {
-	if o == nil || o.PriceAmountCents == nil {
+	if o == nil || IsNil(o.PriceAmountCents) {
 		return nil, false
 	}
 	return &o.PriceAmountCents, true
@@ -248,7 +251,7 @@ func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetPrice
 
 // HasPriceAmountCents returns a boolean if a field has been set.
 func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) HasPriceAmountCents() bool {
-	if o != nil && o.PriceAmountCents != nil {
+	if o != nil && IsNil(o.PriceAmountCents) {
 		return true
 	}
 
@@ -273,7 +276,7 @@ func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetFreeO
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetFreeOverAmountCentsOk() (*interface{}, bool) {
-	if o == nil || o.FreeOverAmountCents == nil {
+	if o == nil || IsNil(o.FreeOverAmountCents) {
 		return nil, false
 	}
 	return &o.FreeOverAmountCents, true
@@ -281,7 +284,7 @@ func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetFreeO
 
 // HasFreeOverAmountCents returns a boolean if a field has been set.
 func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) HasFreeOverAmountCents() bool {
-	if o != nil && o.FreeOverAmountCents != nil {
+	if o != nil && IsNil(o.FreeOverAmountCents) {
 		return true
 	}
 
@@ -306,7 +309,7 @@ func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetMinWe
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetMinWeightOk() (*interface{}, bool) {
-	if o == nil || o.MinWeight == nil {
+	if o == nil || IsNil(o.MinWeight) {
 		return nil, false
 	}
 	return &o.MinWeight, true
@@ -314,7 +317,7 @@ func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetMinWe
 
 // HasMinWeight returns a boolean if a field has been set.
 func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) HasMinWeight() bool {
-	if o != nil && o.MinWeight != nil {
+	if o != nil && IsNil(o.MinWeight) {
 		return true
 	}
 
@@ -339,7 +342,7 @@ func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetMaxWe
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetMaxWeightOk() (*interface{}, bool) {
-	if o == nil || o.MaxWeight == nil {
+	if o == nil || IsNil(o.MaxWeight) {
 		return nil, false
 	}
 	return &o.MaxWeight, true
@@ -347,7 +350,7 @@ func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetMaxWe
 
 // HasMaxWeight returns a boolean if a field has been set.
 func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) HasMaxWeight() bool {
-	if o != nil && o.MaxWeight != nil {
+	if o != nil && IsNil(o.MaxWeight) {
 		return true
 	}
 
@@ -372,7 +375,7 @@ func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetUnitO
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetUnitOfWeightOk() (*interface{}, bool) {
-	if o == nil || o.UnitOfWeight == nil {
+	if o == nil || IsNil(o.UnitOfWeight) {
 		return nil, false
 	}
 	return &o.UnitOfWeight, true
@@ -380,7 +383,7 @@ func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetUnitO
 
 // HasUnitOfWeight returns a boolean if a field has been set.
 func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) HasUnitOfWeight() bool {
-	if o != nil && o.UnitOfWeight != nil {
+	if o != nil && IsNil(o.UnitOfWeight) {
 		return true
 	}
 
@@ -405,7 +408,7 @@ func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetRefer
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -413,7 +416,7 @@ func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetRefer
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -438,7 +441,7 @@ func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetRefer
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -446,7 +449,7 @@ func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetRefer
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -471,7 +474,7 @@ func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetMetad
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -479,7 +482,7 @@ func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) GetMetad
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -492,6 +495,14 @@ func (o *PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) SetMetad
 }
 
 func (o PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -532,7 +543,7 @@ func (o PATCHShippingMethodsShippingMethodId200ResponseDataAttributes) MarshalJS
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHShippingMethodsShippingMethodId200ResponseDataAttributes struct {

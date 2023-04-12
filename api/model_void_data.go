@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the VoidData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &VoidData{}
+
 // VoidData struct for VoidData
 type VoidData struct {
 	// The resource's type
-	Type          interface{}                              `json:"type"`
-	Attributes    GETRefunds200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *VoidDataRelationships                   `json:"relationships,omitempty"`
+	Type          interface{}                                 `json:"type"`
+	Attributes    GETRefundsRefundId200ResponseDataAttributes `json:"attributes"`
+	Relationships *VoidDataRelationships                      `json:"relationships,omitempty"`
 }
 
 // NewVoidData instantiates a new VoidData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewVoidData(type_ interface{}, attributes GETRefunds200ResponseDataInnerAttributes) *VoidData {
+func NewVoidData(type_ interface{}, attributes GETRefundsRefundId200ResponseDataAttributes) *VoidData {
 	this := VoidData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -57,7 +60,7 @@ func (o *VoidData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *VoidData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -69,9 +72,9 @@ func (o *VoidData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *VoidData) GetAttributes() GETRefunds200ResponseDataInnerAttributes {
+func (o *VoidData) GetAttributes() GETRefundsRefundId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETRefunds200ResponseDataInnerAttributes
+		var ret GETRefundsRefundId200ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +83,7 @@ func (o *VoidData) GetAttributes() GETRefunds200ResponseDataInnerAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *VoidData) GetAttributesOk() (*GETRefunds200ResponseDataInnerAttributes, bool) {
+func (o *VoidData) GetAttributesOk() (*GETRefundsRefundId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,13 +91,13 @@ func (o *VoidData) GetAttributesOk() (*GETRefunds200ResponseDataInnerAttributes,
 }
 
 // SetAttributes sets field value
-func (o *VoidData) SetAttributes(v GETRefunds200ResponseDataInnerAttributes) {
+func (o *VoidData) SetAttributes(v GETRefundsRefundId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *VoidData) GetRelationships() VoidDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret VoidDataRelationships
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *VoidData) GetRelationships() VoidDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *VoidData) GetRelationshipsOk() (*VoidDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -112,7 +115,7 @@ func (o *VoidData) GetRelationshipsOk() (*VoidDataRelationships, bool) {
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *VoidData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -125,17 +128,23 @@ func (o *VoidData) SetRelationships(v VoidDataRelationships) {
 }
 
 func (o VoidData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o VoidData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableVoidData struct {

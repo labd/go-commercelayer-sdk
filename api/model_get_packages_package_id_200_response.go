@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETPackagesPackageId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETPackagesPackageId200Response{}
+
 // GETPackagesPackageId200Response struct for GETPackagesPackageId200Response
 type GETPackagesPackageId200Response struct {
-	Data *GETPackages200ResponseDataInner `json:"data,omitempty"`
+	Data *GETPackagesPackageId200ResponseData `json:"data,omitempty"`
 }
 
 // NewGETPackagesPackageId200Response instantiates a new GETPackagesPackageId200Response object
@@ -38,9 +41,9 @@ func NewGETPackagesPackageId200ResponseWithDefaults() *GETPackagesPackageId200Re
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETPackagesPackageId200Response) GetData() GETPackages200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret GETPackages200ResponseDataInner
+func (o *GETPackagesPackageId200Response) GetData() GETPackagesPackageId200ResponseData {
+	if o == nil || IsNil(o.Data) {
+		var ret GETPackagesPackageId200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *GETPackagesPackageId200Response) GetData() GETPackages200ResponseDataIn
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETPackagesPackageId200Response) GetDataOk() (*GETPackages200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+func (o *GETPackagesPackageId200Response) GetDataOk() (*GETPackagesPackageId200ResponseData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *GETPackagesPackageId200Response) GetDataOk() (*GETPackages200ResponseDa
 
 // HasData returns a boolean if a field has been set.
 func (o *GETPackagesPackageId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETPackages200ResponseDataInner and assigns it to the Data field.
-func (o *GETPackagesPackageId200Response) SetData(v GETPackages200ResponseDataInner) {
+// SetData gets a reference to the given GETPackagesPackageId200ResponseData and assigns it to the Data field.
+func (o *GETPackagesPackageId200Response) SetData(v GETPackagesPackageId200ResponseData) {
 	o.Data = &v
 }
 
 func (o GETPackagesPackageId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GETPackagesPackageId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGETPackagesPackageId200Response struct {

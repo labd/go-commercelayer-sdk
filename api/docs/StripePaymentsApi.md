@@ -30,7 +30,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -38,7 +38,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.StripePaymentsApi.DELETEStripePaymentsStripePaymentId(context.Background(), stripePaymentId).Execute()
+    r, err := apiClient.StripePaymentsApi.DELETEStripePaymentsStripePaymentId(context.Background(), stripePaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StripePaymentsApi.DELETEStripePaymentsStripePaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -98,7 +98,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -106,7 +106,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.StripePaymentsApi.GETStripeGatewayIdStripePayments(context.Background(), stripeGatewayId).Execute()
+    r, err := apiClient.StripePaymentsApi.GETStripeGatewayIdStripePayments(context.Background(), stripeGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StripePaymentsApi.GETStripeGatewayIdStripePayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -166,7 +166,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -227,7 +227,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -297,7 +297,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -369,7 +369,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {

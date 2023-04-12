@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PriceListCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PriceListCreate{}
+
 // PriceListCreate struct for PriceListCreate
 type PriceListCreate struct {
 	Data PriceListCreateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *PriceListCreate) SetData(v PriceListCreateData) {
 }
 
 func (o PriceListCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PriceListCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullablePriceListCreate struct {

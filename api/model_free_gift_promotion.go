@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the FreeGiftPromotion type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &FreeGiftPromotion{}
+
 // FreeGiftPromotion struct for FreeGiftPromotion
 type FreeGiftPromotion struct {
 	Data *FreeGiftPromotionData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewFreeGiftPromotionWithDefaults() *FreeGiftPromotion {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *FreeGiftPromotion) GetData() FreeGiftPromotionData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret FreeGiftPromotionData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *FreeGiftPromotion) GetData() FreeGiftPromotionData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FreeGiftPromotion) GetDataOk() (*FreeGiftPromotionData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *FreeGiftPromotion) GetDataOk() (*FreeGiftPromotionData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *FreeGiftPromotion) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *FreeGiftPromotion) SetData(v FreeGiftPromotionData) {
 }
 
 func (o FreeGiftPromotion) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o FreeGiftPromotion) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableFreeGiftPromotion struct {

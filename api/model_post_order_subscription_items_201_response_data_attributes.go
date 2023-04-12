@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTOrderSubscriptionItems201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTOrderSubscriptionItems201ResponseDataAttributes{}
+
 // POSTOrderSubscriptionItems201ResponseDataAttributes struct for POSTOrderSubscriptionItems201ResponseDataAttributes
 type POSTOrderSubscriptionItems201ResponseDataAttributes struct {
 	// The code of the associated SKU.
@@ -64,7 +67,7 @@ func (o *POSTOrderSubscriptionItems201ResponseDataAttributes) GetSkuCode() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrderSubscriptionItems201ResponseDataAttributes) GetSkuCodeOk() (*interface{}, bool) {
-	if o == nil || o.SkuCode == nil {
+	if o == nil || IsNil(o.SkuCode) {
 		return nil, false
 	}
 	return &o.SkuCode, true
@@ -72,7 +75,7 @@ func (o *POSTOrderSubscriptionItems201ResponseDataAttributes) GetSkuCodeOk() (*i
 
 // HasSkuCode returns a boolean if a field has been set.
 func (o *POSTOrderSubscriptionItems201ResponseDataAttributes) HasSkuCode() bool {
-	if o != nil && o.SkuCode != nil {
+	if o != nil && IsNil(o.SkuCode) {
 		return true
 	}
 
@@ -97,7 +100,7 @@ func (o *POSTOrderSubscriptionItems201ResponseDataAttributes) GetBundleCode() in
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrderSubscriptionItems201ResponseDataAttributes) GetBundleCodeOk() (*interface{}, bool) {
-	if o == nil || o.BundleCode == nil {
+	if o == nil || IsNil(o.BundleCode) {
 		return nil, false
 	}
 	return &o.BundleCode, true
@@ -105,7 +108,7 @@ func (o *POSTOrderSubscriptionItems201ResponseDataAttributes) GetBundleCodeOk() 
 
 // HasBundleCode returns a boolean if a field has been set.
 func (o *POSTOrderSubscriptionItems201ResponseDataAttributes) HasBundleCode() bool {
-	if o != nil && o.BundleCode != nil {
+	if o != nil && IsNil(o.BundleCode) {
 		return true
 	}
 
@@ -132,7 +135,7 @@ func (o *POSTOrderSubscriptionItems201ResponseDataAttributes) GetQuantity() inte
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrderSubscriptionItems201ResponseDataAttributes) GetQuantityOk() (*interface{}, bool) {
-	if o == nil || o.Quantity == nil {
+	if o == nil || IsNil(o.Quantity) {
 		return nil, false
 	}
 	return &o.Quantity, true
@@ -156,7 +159,7 @@ func (o *POSTOrderSubscriptionItems201ResponseDataAttributes) GetUnitAmountCents
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrderSubscriptionItems201ResponseDataAttributes) GetUnitAmountCentsOk() (*interface{}, bool) {
-	if o == nil || o.UnitAmountCents == nil {
+	if o == nil || IsNil(o.UnitAmountCents) {
 		return nil, false
 	}
 	return &o.UnitAmountCents, true
@@ -164,7 +167,7 @@ func (o *POSTOrderSubscriptionItems201ResponseDataAttributes) GetUnitAmountCents
 
 // HasUnitAmountCents returns a boolean if a field has been set.
 func (o *POSTOrderSubscriptionItems201ResponseDataAttributes) HasUnitAmountCents() bool {
-	if o != nil && o.UnitAmountCents != nil {
+	if o != nil && IsNil(o.UnitAmountCents) {
 		return true
 	}
 
@@ -189,7 +192,7 @@ func (o *POSTOrderSubscriptionItems201ResponseDataAttributes) GetReference() int
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrderSubscriptionItems201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -197,7 +200,7 @@ func (o *POSTOrderSubscriptionItems201ResponseDataAttributes) GetReferenceOk() (
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTOrderSubscriptionItems201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -222,7 +225,7 @@ func (o *POSTOrderSubscriptionItems201ResponseDataAttributes) GetReferenceOrigin
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrderSubscriptionItems201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -230,7 +233,7 @@ func (o *POSTOrderSubscriptionItems201ResponseDataAttributes) GetReferenceOrigin
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTOrderSubscriptionItems201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -255,7 +258,7 @@ func (o *POSTOrderSubscriptionItems201ResponseDataAttributes) GetMetadata() inte
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrderSubscriptionItems201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -263,7 +266,7 @@ func (o *POSTOrderSubscriptionItems201ResponseDataAttributes) GetMetadataOk() (*
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTOrderSubscriptionItems201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -276,6 +279,14 @@ func (o *POSTOrderSubscriptionItems201ResponseDataAttributes) SetMetadata(v inte
 }
 
 func (o POSTOrderSubscriptionItems201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTOrderSubscriptionItems201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.SkuCode != nil {
 		toSerialize["sku_code"] = o.SkuCode
@@ -298,7 +309,7 @@ func (o POSTOrderSubscriptionItems201ResponseDataAttributes) MarshalJSON() ([]by
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTOrderSubscriptionItems201ResponseDataAttributes struct {

@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTOrderCopies201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTOrderCopies201ResponseDataAttributes{}
+
 // POSTOrderCopies201ResponseDataAttributes struct for POSTOrderCopies201ResponseDataAttributes
 type POSTOrderCopies201ResponseDataAttributes struct {
 	// Indicates if the target order must be placed upon copy.
@@ -61,7 +64,7 @@ func (o *POSTOrderCopies201ResponseDataAttributes) GetPlaceTargetOrder() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrderCopies201ResponseDataAttributes) GetPlaceTargetOrderOk() (*interface{}, bool) {
-	if o == nil || o.PlaceTargetOrder == nil {
+	if o == nil || IsNil(o.PlaceTargetOrder) {
 		return nil, false
 	}
 	return &o.PlaceTargetOrder, true
@@ -69,7 +72,7 @@ func (o *POSTOrderCopies201ResponseDataAttributes) GetPlaceTargetOrderOk() (*int
 
 // HasPlaceTargetOrder returns a boolean if a field has been set.
 func (o *POSTOrderCopies201ResponseDataAttributes) HasPlaceTargetOrder() bool {
-	if o != nil && o.PlaceTargetOrder != nil {
+	if o != nil && IsNil(o.PlaceTargetOrder) {
 		return true
 	}
 
@@ -94,7 +97,7 @@ func (o *POSTOrderCopies201ResponseDataAttributes) GetReuseWallet() interface{} 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrderCopies201ResponseDataAttributes) GetReuseWalletOk() (*interface{}, bool) {
-	if o == nil || o.ReuseWallet == nil {
+	if o == nil || IsNil(o.ReuseWallet) {
 		return nil, false
 	}
 	return &o.ReuseWallet, true
@@ -102,7 +105,7 @@ func (o *POSTOrderCopies201ResponseDataAttributes) GetReuseWalletOk() (*interfac
 
 // HasReuseWallet returns a boolean if a field has been set.
 func (o *POSTOrderCopies201ResponseDataAttributes) HasReuseWallet() bool {
-	if o != nil && o.ReuseWallet != nil {
+	if o != nil && IsNil(o.ReuseWallet) {
 		return true
 	}
 
@@ -127,7 +130,7 @@ func (o *POSTOrderCopies201ResponseDataAttributes) GetReference() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrderCopies201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -135,7 +138,7 @@ func (o *POSTOrderCopies201ResponseDataAttributes) GetReferenceOk() (*interface{
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTOrderCopies201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -160,7 +163,7 @@ func (o *POSTOrderCopies201ResponseDataAttributes) GetReferenceOrigin() interfac
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrderCopies201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -168,7 +171,7 @@ func (o *POSTOrderCopies201ResponseDataAttributes) GetReferenceOriginOk() (*inte
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTOrderCopies201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -193,7 +196,7 @@ func (o *POSTOrderCopies201ResponseDataAttributes) GetMetadata() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrderCopies201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -201,7 +204,7 @@ func (o *POSTOrderCopies201ResponseDataAttributes) GetMetadataOk() (*interface{}
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTOrderCopies201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -226,7 +229,7 @@ func (o *POSTOrderCopies201ResponseDataAttributes) GetCancelSourceOrder() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrderCopies201ResponseDataAttributes) GetCancelSourceOrderOk() (*interface{}, bool) {
-	if o == nil || o.CancelSourceOrder == nil {
+	if o == nil || IsNil(o.CancelSourceOrder) {
 		return nil, false
 	}
 	return &o.CancelSourceOrder, true
@@ -234,7 +237,7 @@ func (o *POSTOrderCopies201ResponseDataAttributes) GetCancelSourceOrderOk() (*in
 
 // HasCancelSourceOrder returns a boolean if a field has been set.
 func (o *POSTOrderCopies201ResponseDataAttributes) HasCancelSourceOrder() bool {
-	if o != nil && o.CancelSourceOrder != nil {
+	if o != nil && IsNil(o.CancelSourceOrder) {
 		return true
 	}
 
@@ -247,6 +250,14 @@ func (o *POSTOrderCopies201ResponseDataAttributes) SetCancelSourceOrder(v interf
 }
 
 func (o POSTOrderCopies201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTOrderCopies201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.PlaceTargetOrder != nil {
 		toSerialize["place_target_order"] = o.PlaceTargetOrder
@@ -266,7 +277,7 @@ func (o POSTOrderCopies201ResponseDataAttributes) MarshalJSON() ([]byte, error) 
 	if o.CancelSourceOrder != nil {
 		toSerialize["cancel_source_order"] = o.CancelSourceOrder
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTOrderCopies201ResponseDataAttributes struct {

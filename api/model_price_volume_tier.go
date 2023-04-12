@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PriceVolumeTier type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PriceVolumeTier{}
+
 // PriceVolumeTier struct for PriceVolumeTier
 type PriceVolumeTier struct {
 	Data *PriceVolumeTierData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewPriceVolumeTierWithDefaults() *PriceVolumeTier {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *PriceVolumeTier) GetData() PriceVolumeTierData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret PriceVolumeTierData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *PriceVolumeTier) GetData() PriceVolumeTierData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PriceVolumeTier) GetDataOk() (*PriceVolumeTierData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *PriceVolumeTier) GetDataOk() (*PriceVolumeTierData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *PriceVolumeTier) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *PriceVolumeTier) SetData(v PriceVolumeTierData) {
 }
 
 func (o PriceVolumeTier) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PriceVolumeTier) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullablePriceVolumeTier struct {

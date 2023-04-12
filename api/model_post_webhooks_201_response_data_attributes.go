@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTWebhooks201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTWebhooks201ResponseDataAttributes{}
+
 // POSTWebhooks201ResponseDataAttributes struct for POSTWebhooks201ResponseDataAttributes
 type POSTWebhooks201ResponseDataAttributes struct {
 	// Unique name for the webhook.
@@ -65,7 +68,7 @@ func (o *POSTWebhooks201ResponseDataAttributes) GetName() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTWebhooks201ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -73,7 +76,7 @@ func (o *POSTWebhooks201ResponseDataAttributes) GetNameOk() (*interface{}, bool)
 
 // HasName returns a boolean if a field has been set.
 func (o *POSTWebhooks201ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
@@ -100,7 +103,7 @@ func (o *POSTWebhooks201ResponseDataAttributes) GetTopic() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTWebhooks201ResponseDataAttributes) GetTopicOk() (*interface{}, bool) {
-	if o == nil || o.Topic == nil {
+	if o == nil || IsNil(o.Topic) {
 		return nil, false
 	}
 	return &o.Topic, true
@@ -126,7 +129,7 @@ func (o *POSTWebhooks201ResponseDataAttributes) GetCallbackUrl() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTWebhooks201ResponseDataAttributes) GetCallbackUrlOk() (*interface{}, bool) {
-	if o == nil || o.CallbackUrl == nil {
+	if o == nil || IsNil(o.CallbackUrl) {
 		return nil, false
 	}
 	return &o.CallbackUrl, true
@@ -150,7 +153,7 @@ func (o *POSTWebhooks201ResponseDataAttributes) GetIncludeResources() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTWebhooks201ResponseDataAttributes) GetIncludeResourcesOk() (*interface{}, bool) {
-	if o == nil || o.IncludeResources == nil {
+	if o == nil || IsNil(o.IncludeResources) {
 		return nil, false
 	}
 	return &o.IncludeResources, true
@@ -158,7 +161,7 @@ func (o *POSTWebhooks201ResponseDataAttributes) GetIncludeResourcesOk() (*interf
 
 // HasIncludeResources returns a boolean if a field has been set.
 func (o *POSTWebhooks201ResponseDataAttributes) HasIncludeResources() bool {
-	if o != nil && o.IncludeResources != nil {
+	if o != nil && IsNil(o.IncludeResources) {
 		return true
 	}
 
@@ -183,7 +186,7 @@ func (o *POSTWebhooks201ResponseDataAttributes) GetReference() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTWebhooks201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -191,7 +194,7 @@ func (o *POSTWebhooks201ResponseDataAttributes) GetReferenceOk() (*interface{}, 
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTWebhooks201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -216,7 +219,7 @@ func (o *POSTWebhooks201ResponseDataAttributes) GetReferenceOrigin() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTWebhooks201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -224,7 +227,7 @@ func (o *POSTWebhooks201ResponseDataAttributes) GetReferenceOriginOk() (*interfa
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTWebhooks201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -249,7 +252,7 @@ func (o *POSTWebhooks201ResponseDataAttributes) GetMetadata() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTWebhooks201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -257,7 +260,7 @@ func (o *POSTWebhooks201ResponseDataAttributes) GetMetadataOk() (*interface{}, b
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTWebhooks201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -270,6 +273,14 @@ func (o *POSTWebhooks201ResponseDataAttributes) SetMetadata(v interface{}) {
 }
 
 func (o POSTWebhooks201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTWebhooks201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -292,7 +303,7 @@ func (o POSTWebhooks201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTWebhooks201ResponseDataAttributes struct {

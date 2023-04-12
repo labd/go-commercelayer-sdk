@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes{}
+
 // PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes struct for PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes
 type PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes struct {
 	// The url to redirect the customer after the payment flow is completed.
@@ -59,7 +62,7 @@ func (o *PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetRed
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetRedirectUrlOk() (*interface{}, bool) {
-	if o == nil || o.RedirectUrl == nil {
+	if o == nil || IsNil(o.RedirectUrl) {
 		return nil, false
 	}
 	return &o.RedirectUrl, true
@@ -67,7 +70,7 @@ func (o *PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetRed
 
 // HasRedirectUrl returns a boolean if a field has been set.
 func (o *PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) HasRedirectUrl() bool {
-	if o != nil && o.RedirectUrl != nil {
+	if o != nil && IsNil(o.RedirectUrl) {
 		return true
 	}
 
@@ -92,7 +95,7 @@ func (o *PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetRef
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetRefreshOk() (*interface{}, bool) {
-	if o == nil || o.Refresh == nil {
+	if o == nil || IsNil(o.Refresh) {
 		return nil, false
 	}
 	return &o.Refresh, true
@@ -100,7 +103,7 @@ func (o *PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetRef
 
 // HasRefresh returns a boolean if a field has been set.
 func (o *PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) HasRefresh() bool {
-	if o != nil && o.Refresh != nil {
+	if o != nil && IsNil(o.Refresh) {
 		return true
 	}
 
@@ -125,7 +128,7 @@ func (o *PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetRef
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -133,7 +136,7 @@ func (o *PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetRef
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -158,7 +161,7 @@ func (o *PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetRef
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -166,7 +169,7 @@ func (o *PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetRef
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -191,7 +194,7 @@ func (o *PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetMet
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -199,7 +202,7 @@ func (o *PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) GetMet
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -212,6 +215,14 @@ func (o *PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) SetMet
 }
 
 func (o PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.RedirectUrl != nil {
 		toSerialize["redirect_url"] = o.RedirectUrl
@@ -228,7 +239,7 @@ func (o PATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes) Marshal
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHSatispayPaymentsSatispayPaymentId200ResponseDataAttributes struct {

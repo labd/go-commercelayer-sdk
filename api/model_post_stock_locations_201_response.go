@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTStockLocations201Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTStockLocations201Response{}
+
 // POSTStockLocations201Response struct for POSTStockLocations201Response
 type POSTStockLocations201Response struct {
 	Data *POSTStockLocations201ResponseData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewPOSTStockLocations201ResponseWithDefaults() *POSTStockLocations201Respon
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTStockLocations201Response) GetData() POSTStockLocations201ResponseData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret POSTStockLocations201ResponseData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *POSTStockLocations201Response) GetData() POSTStockLocations201ResponseD
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTStockLocations201Response) GetDataOk() (*POSTStockLocations201ResponseData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *POSTStockLocations201Response) GetDataOk() (*POSTStockLocations201Respo
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTStockLocations201Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *POSTStockLocations201Response) SetData(v POSTStockLocations201ResponseD
 }
 
 func (o POSTStockLocations201Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o POSTStockLocations201Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullablePOSTStockLocations201Response struct {

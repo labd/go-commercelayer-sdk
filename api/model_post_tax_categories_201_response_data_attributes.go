@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTTaxCategories201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTTaxCategories201ResponseDataAttributes{}
+
 // POSTTaxCategories201ResponseDataAttributes struct for POSTTaxCategories201ResponseDataAttributes
 type POSTTaxCategories201ResponseDataAttributes struct {
 	// The tax category identifier code, specific for a particular tax calculator.
@@ -62,7 +65,7 @@ func (o *POSTTaxCategories201ResponseDataAttributes) GetCode() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTTaxCategories201ResponseDataAttributes) GetCodeOk() (*interface{}, bool) {
-	if o == nil || o.Code == nil {
+	if o == nil || IsNil(o.Code) {
 		return nil, false
 	}
 	return &o.Code, true
@@ -86,7 +89,7 @@ func (o *POSTTaxCategories201ResponseDataAttributes) GetSkuCode() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTTaxCategories201ResponseDataAttributes) GetSkuCodeOk() (*interface{}, bool) {
-	if o == nil || o.SkuCode == nil {
+	if o == nil || IsNil(o.SkuCode) {
 		return nil, false
 	}
 	return &o.SkuCode, true
@@ -94,7 +97,7 @@ func (o *POSTTaxCategories201ResponseDataAttributes) GetSkuCodeOk() (*interface{
 
 // HasSkuCode returns a boolean if a field has been set.
 func (o *POSTTaxCategories201ResponseDataAttributes) HasSkuCode() bool {
-	if o != nil && o.SkuCode != nil {
+	if o != nil && IsNil(o.SkuCode) {
 		return true
 	}
 
@@ -119,7 +122,7 @@ func (o *POSTTaxCategories201ResponseDataAttributes) GetReference() interface{} 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTTaxCategories201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -127,7 +130,7 @@ func (o *POSTTaxCategories201ResponseDataAttributes) GetReferenceOk() (*interfac
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTTaxCategories201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -152,7 +155,7 @@ func (o *POSTTaxCategories201ResponseDataAttributes) GetReferenceOrigin() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTTaxCategories201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -160,7 +163,7 @@ func (o *POSTTaxCategories201ResponseDataAttributes) GetReferenceOriginOk() (*in
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTTaxCategories201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -185,7 +188,7 @@ func (o *POSTTaxCategories201ResponseDataAttributes) GetMetadata() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTTaxCategories201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -193,7 +196,7 @@ func (o *POSTTaxCategories201ResponseDataAttributes) GetMetadataOk() (*interface
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTTaxCategories201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -206,6 +209,14 @@ func (o *POSTTaxCategories201ResponseDataAttributes) SetMetadata(v interface{}) 
 }
 
 func (o POSTTaxCategories201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTTaxCategories201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Code != nil {
 		toSerialize["code"] = o.Code
@@ -222,7 +233,7 @@ func (o POSTTaxCategories201ResponseDataAttributes) MarshalJSON() ([]byte, error
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTTaxCategories201ResponseDataAttributes struct {

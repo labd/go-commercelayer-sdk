@@ -31,7 +31,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -39,7 +39,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TaxCategoriesApi.DELETETaxCategoriesTaxCategoryId(context.Background(), taxCategoryId).Execute()
+    r, err := apiClient.TaxCategoriesApi.DELETETaxCategoriesTaxCategoryId(context.Background(), taxCategoryId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxCategoriesApi.DELETETaxCategoriesTaxCategoryId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -99,7 +99,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -107,7 +107,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TaxCategoriesApi.GETAvalaraAccountIdTaxCategories(context.Background(), avalaraAccountId).Execute()
+    r, err := apiClient.TaxCategoriesApi.GETAvalaraAccountIdTaxCategories(context.Background(), avalaraAccountId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxCategoriesApi.GETAvalaraAccountIdTaxCategories``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -167,7 +167,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -228,7 +228,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -298,7 +298,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -306,7 +306,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.TaxCategoriesApi.GETTaxjarAccountIdTaxCategories(context.Background(), taxjarAccountId).Execute()
+    r, err := apiClient.TaxCategoriesApi.GETTaxjarAccountIdTaxCategories(context.Background(), taxjarAccountId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `TaxCategoriesApi.GETTaxjarAccountIdTaxCategories``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -366,7 +366,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -438,7 +438,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {

@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PaymentMethodUpdateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PaymentMethodUpdateDataRelationships{}
+
 // PaymentMethodUpdateDataRelationships struct for PaymentMethodUpdateDataRelationships
 type PaymentMethodUpdateDataRelationships struct {
 	Market         *BillingInfoValidationRuleCreateDataRelationshipsMarket `json:"market,omitempty"`
@@ -40,7 +43,7 @@ func NewPaymentMethodUpdateDataRelationshipsWithDefaults() *PaymentMethodUpdateD
 
 // GetMarket returns the Market field value if set, zero value otherwise.
 func (o *PaymentMethodUpdateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket {
-	if o == nil || o.Market == nil {
+	if o == nil || IsNil(o.Market) {
 		var ret BillingInfoValidationRuleCreateDataRelationshipsMarket
 		return ret
 	}
@@ -50,7 +53,7 @@ func (o *PaymentMethodUpdateDataRelationships) GetMarket() BillingInfoValidation
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PaymentMethodUpdateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool) {
-	if o == nil || o.Market == nil {
+	if o == nil || IsNil(o.Market) {
 		return nil, false
 	}
 	return o.Market, true
@@ -58,7 +61,7 @@ func (o *PaymentMethodUpdateDataRelationships) GetMarketOk() (*BillingInfoValida
 
 // HasMarket returns a boolean if a field has been set.
 func (o *PaymentMethodUpdateDataRelationships) HasMarket() bool {
-	if o != nil && o.Market != nil {
+	if o != nil && !IsNil(o.Market) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *PaymentMethodUpdateDataRelationships) SetMarket(v BillingInfoValidation
 
 // GetPaymentGateway returns the PaymentGateway field value if set, zero value otherwise.
 func (o *PaymentMethodUpdateDataRelationships) GetPaymentGateway() PaymentMethodCreateDataRelationshipsPaymentGateway {
-	if o == nil || o.PaymentGateway == nil {
+	if o == nil || IsNil(o.PaymentGateway) {
 		var ret PaymentMethodCreateDataRelationshipsPaymentGateway
 		return ret
 	}
@@ -82,7 +85,7 @@ func (o *PaymentMethodUpdateDataRelationships) GetPaymentGateway() PaymentMethod
 // GetPaymentGatewayOk returns a tuple with the PaymentGateway field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PaymentMethodUpdateDataRelationships) GetPaymentGatewayOk() (*PaymentMethodCreateDataRelationshipsPaymentGateway, bool) {
-	if o == nil || o.PaymentGateway == nil {
+	if o == nil || IsNil(o.PaymentGateway) {
 		return nil, false
 	}
 	return o.PaymentGateway, true
@@ -90,7 +93,7 @@ func (o *PaymentMethodUpdateDataRelationships) GetPaymentGatewayOk() (*PaymentMe
 
 // HasPaymentGateway returns a boolean if a field has been set.
 func (o *PaymentMethodUpdateDataRelationships) HasPaymentGateway() bool {
-	if o != nil && o.PaymentGateway != nil {
+	if o != nil && !IsNil(o.PaymentGateway) {
 		return true
 	}
 
@@ -103,14 +106,22 @@ func (o *PaymentMethodUpdateDataRelationships) SetPaymentGateway(v PaymentMethod
 }
 
 func (o PaymentMethodUpdateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Market != nil {
-		toSerialize["market"] = o.Market
-	}
-	if o.PaymentGateway != nil {
-		toSerialize["payment_gateway"] = o.PaymentGateway
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PaymentMethodUpdateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Market) {
+		toSerialize["market"] = o.Market
+	}
+	if !IsNil(o.PaymentGateway) {
+		toSerialize["payment_gateway"] = o.PaymentGateway
+	}
+	return toSerialize, nil
 }
 
 type NullablePaymentMethodUpdateDataRelationships struct {

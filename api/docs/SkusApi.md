@@ -43,7 +43,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -51,7 +51,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkusApi.DELETESkusSkuId(context.Background(), skuId).Execute()
+    r, err := apiClient.SkusApi.DELETESkusSkuId(context.Background(), skuId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.DELETESkusSkuId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -111,7 +111,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -119,7 +119,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkusApi.GETBundleIdSkus(context.Background(), bundleId).Execute()
+    r, err := apiClient.SkusApi.GETBundleIdSkus(context.Background(), bundleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.GETBundleIdSkus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -179,7 +179,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -187,7 +187,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkusApi.GETFixedPricePromotionIdSkus(context.Background(), fixedPricePromotionId).Execute()
+    r, err := apiClient.SkusApi.GETFixedPricePromotionIdSkus(context.Background(), fixedPricePromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.GETFixedPricePromotionIdSkus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -247,7 +247,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -255,7 +255,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkusApi.GETFreeGiftPromotionIdSkus(context.Background(), freeGiftPromotionId).Execute()
+    r, err := apiClient.SkusApi.GETFreeGiftPromotionIdSkus(context.Background(), freeGiftPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.GETFreeGiftPromotionIdSkus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -315,7 +315,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -323,7 +323,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkusApi.GETInStockSubscriptionIdSku(context.Background(), inStockSubscriptionId).Execute()
+    r, err := apiClient.SkusApi.GETInStockSubscriptionIdSku(context.Background(), inStockSubscriptionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.GETInStockSubscriptionIdSku``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -383,7 +383,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -391,7 +391,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkusApi.GETOrderIdAvailableFreeSkus(context.Background(), orderId).Execute()
+    r, err := apiClient.SkusApi.GETOrderIdAvailableFreeSkus(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.GETOrderIdAvailableFreeSkus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -451,7 +451,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -459,7 +459,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkusApi.GETPercentageDiscountPromotionIdSkus(context.Background(), percentageDiscountPromotionId).Execute()
+    r, err := apiClient.SkusApi.GETPercentageDiscountPromotionIdSkus(context.Background(), percentageDiscountPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.GETPercentageDiscountPromotionIdSkus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -519,7 +519,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -527,7 +527,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkusApi.GETPriceIdSku(context.Background(), priceId).Execute()
+    r, err := apiClient.SkusApi.GETPriceIdSku(context.Background(), priceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.GETPriceIdSku``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -587,7 +587,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -595,7 +595,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkusApi.GETShippingCategoryIdSkus(context.Background(), shippingCategoryId).Execute()
+    r, err := apiClient.SkusApi.GETShippingCategoryIdSkus(context.Background(), shippingCategoryId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.GETShippingCategoryIdSkus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -655,7 +655,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -663,7 +663,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkusApi.GETSkuListIdSkus(context.Background(), skuListId).Execute()
+    r, err := apiClient.SkusApi.GETSkuListIdSkus(context.Background(), skuListId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.GETSkuListIdSkus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -723,7 +723,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -731,7 +731,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkusApi.GETSkuListItemIdSku(context.Background(), skuListItemId).Execute()
+    r, err := apiClient.SkusApi.GETSkuListItemIdSku(context.Background(), skuListItemId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.GETSkuListItemIdSku``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -791,7 +791,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -799,7 +799,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkusApi.GETSkuListPromotionRuleIdSkus(context.Background(), skuListPromotionRuleId).Execute()
+    r, err := apiClient.SkusApi.GETSkuListPromotionRuleIdSkus(context.Background(), skuListPromotionRuleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.GETSkuListPromotionRuleIdSkus``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -859,7 +859,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -920,7 +920,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -990,7 +990,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -998,7 +998,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkusApi.GETStockItemIdSku(context.Background(), stockItemId).Execute()
+    r, err := apiClient.SkusApi.GETStockItemIdSku(context.Background(), stockItemId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.GETStockItemIdSku``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1058,7 +1058,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -1066,7 +1066,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkusApi.GETStockTransferIdSku(context.Background(), stockTransferId).Execute()
+    r, err := apiClient.SkusApi.GETStockTransferIdSku(context.Background(), stockTransferId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.GETStockTransferIdSku``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1126,7 +1126,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -1134,7 +1134,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkusApi.GETTaxCategoryIdSku(context.Background(), taxCategoryId).Execute()
+    r, err := apiClient.SkusApi.GETTaxCategoryIdSku(context.Background(), taxCategoryId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkusApi.GETTaxCategoryIdSku``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1194,7 +1194,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -1266,7 +1266,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {

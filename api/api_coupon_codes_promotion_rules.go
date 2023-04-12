@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *CouponCodesPromotionRulesApiService) DELETECouponCodesPromotionRulesCou
 	}
 
 	localVarPath := localBasePath + "/coupon_codes_promotion_rules/{couponCodesPromotionRuleId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"couponCodesPromotionRuleId"+"}", url.PathEscape(parameterToString(r.couponCodesPromotionRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"couponCodesPromotionRuleId"+"}", url.PathEscape(parameterValueToString(r.couponCodesPromotionRuleId, "couponCodesPromotionRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *CouponCodesPromotionRulesApiService) DELETECouponCodesPromotionRulesCou
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *CouponCodesPromotionRulesApiService) GETCouponCodesPromotionRulesExecut
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *CouponCodesPromotionRulesApiService) GETCouponCodesPromotionRulesCoupon
 	}
 
 	localVarPath := localBasePath + "/coupon_codes_promotion_rules/{couponCodesPromotionRuleId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"couponCodesPromotionRuleId"+"}", url.PathEscape(parameterToString(r.couponCodesPromotionRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"couponCodesPromotionRuleId"+"}", url.PathEscape(parameterValueToString(r.couponCodesPromotionRuleId, "couponCodesPromotionRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *CouponCodesPromotionRulesApiService) GETCouponCodesPromotionRulesCoupon
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -360,7 +360,7 @@ func (a *CouponCodesPromotionRulesApiService) GETCouponIdPromotionRuleExecute(r 
 	}
 
 	localVarPath := localBasePath + "/coupons/{couponId}/promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"couponId"+"}", url.PathEscape(parameterToString(r.couponId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"couponId"+"}", url.PathEscape(parameterValueToString(r.couponId, "couponId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -393,9 +393,9 @@ func (a *CouponCodesPromotionRulesApiService) GETCouponIdPromotionRuleExecute(r 
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -452,7 +452,7 @@ func (a *CouponCodesPromotionRulesApiService) GETExternalPromotionIdCouponCodesP
 	}
 
 	localVarPath := localBasePath + "/external_promotions/{externalPromotionId}/coupon_codes_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterToString(r.externalPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterValueToString(r.externalPromotionId, "externalPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -485,9 +485,9 @@ func (a *CouponCodesPromotionRulesApiService) GETExternalPromotionIdCouponCodesP
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -544,7 +544,7 @@ func (a *CouponCodesPromotionRulesApiService) GETFixedAmountPromotionIdCouponCod
 	}
 
 	localVarPath := localBasePath + "/fixed_amount_promotions/{fixedAmountPromotionId}/coupon_codes_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterToString(r.fixedAmountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedAmountPromotionId, "fixedAmountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -577,9 +577,9 @@ func (a *CouponCodesPromotionRulesApiService) GETFixedAmountPromotionIdCouponCod
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -636,7 +636,7 @@ func (a *CouponCodesPromotionRulesApiService) GETFixedPricePromotionIdCouponCode
 	}
 
 	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}/coupon_codes_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterToString(r.fixedPricePromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -669,9 +669,9 @@ func (a *CouponCodesPromotionRulesApiService) GETFixedPricePromotionIdCouponCode
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -728,7 +728,7 @@ func (a *CouponCodesPromotionRulesApiService) GETFreeGiftPromotionIdCouponCodesP
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}/coupon_codes_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterToString(r.freeGiftPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -761,9 +761,9 @@ func (a *CouponCodesPromotionRulesApiService) GETFreeGiftPromotionIdCouponCodesP
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -820,7 +820,7 @@ func (a *CouponCodesPromotionRulesApiService) GETFreeShippingPromotionIdCouponCo
 	}
 
 	localVarPath := localBasePath + "/free_shipping_promotions/{freeShippingPromotionId}/coupon_codes_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterToString(r.freeShippingPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeShippingPromotionId, "freeShippingPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -853,9 +853,9 @@ func (a *CouponCodesPromotionRulesApiService) GETFreeShippingPromotionIdCouponCo
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -912,7 +912,7 @@ func (a *CouponCodesPromotionRulesApiService) GETPercentageDiscountPromotionIdCo
 	}
 
 	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}/coupon_codes_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterToString(r.percentageDiscountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -945,9 +945,9 @@ func (a *CouponCodesPromotionRulesApiService) GETPercentageDiscountPromotionIdCo
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1004,7 +1004,7 @@ func (a *CouponCodesPromotionRulesApiService) GETPromotionIdCouponCodesPromotion
 	}
 
 	localVarPath := localBasePath + "/promotions/{promotionId}/coupon_codes_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterToString(r.promotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterValueToString(r.promotionId, "promotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1037,9 +1037,9 @@ func (a *CouponCodesPromotionRulesApiService) GETPromotionIdCouponCodesPromotion
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1105,7 +1105,7 @@ func (a *CouponCodesPromotionRulesApiService) PATCHCouponCodesPromotionRulesCoup
 	}
 
 	localVarPath := localBasePath + "/coupon_codes_promotion_rules/{couponCodesPromotionRuleId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"couponCodesPromotionRuleId"+"}", url.PathEscape(parameterToString(r.couponCodesPromotionRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"couponCodesPromotionRuleId"+"}", url.PathEscape(parameterValueToString(r.couponCodesPromotionRuleId, "couponCodesPromotionRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1143,9 +1143,9 @@ func (a *CouponCodesPromotionRulesApiService) PATCHCouponCodesPromotionRulesCoup
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -1254,9 +1254,9 @@ func (a *CouponCodesPromotionRulesApiService) POSTCouponCodesPromotionRulesExecu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

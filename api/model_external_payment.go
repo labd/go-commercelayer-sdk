@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ExternalPayment type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ExternalPayment{}
+
 // ExternalPayment struct for ExternalPayment
 type ExternalPayment struct {
 	Data *ExternalPaymentData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewExternalPaymentWithDefaults() *ExternalPayment {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *ExternalPayment) GetData() ExternalPaymentData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret ExternalPaymentData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *ExternalPayment) GetData() ExternalPaymentData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalPayment) GetDataOk() (*ExternalPaymentData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *ExternalPayment) GetDataOk() (*ExternalPaymentData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *ExternalPayment) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *ExternalPayment) SetData(v ExternalPaymentData) {
 }
 
 func (o ExternalPayment) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ExternalPayment) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableExternalPayment struct {

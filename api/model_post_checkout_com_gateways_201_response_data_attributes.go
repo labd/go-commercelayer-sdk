@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTCheckoutComGateways201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTCheckoutComGateways201ResponseDataAttributes{}
+
 // POSTCheckoutComGateways201ResponseDataAttributes struct for POSTCheckoutComGateways201ResponseDataAttributes
 type POSTCheckoutComGateways201ResponseDataAttributes struct {
 	// The payment gateway's internal name.
@@ -66,7 +69,7 @@ func (o *POSTCheckoutComGateways201ResponseDataAttributes) GetName() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTCheckoutComGateways201ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -90,7 +93,7 @@ func (o *POSTCheckoutComGateways201ResponseDataAttributes) GetReference() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTCheckoutComGateways201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -98,7 +101,7 @@ func (o *POSTCheckoutComGateways201ResponseDataAttributes) GetReferenceOk() (*in
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTCheckoutComGateways201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -123,7 +126,7 @@ func (o *POSTCheckoutComGateways201ResponseDataAttributes) GetReferenceOrigin() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTCheckoutComGateways201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -131,7 +134,7 @@ func (o *POSTCheckoutComGateways201ResponseDataAttributes) GetReferenceOriginOk(
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTCheckoutComGateways201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -156,7 +159,7 @@ func (o *POSTCheckoutComGateways201ResponseDataAttributes) GetMetadata() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTCheckoutComGateways201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -164,7 +167,7 @@ func (o *POSTCheckoutComGateways201ResponseDataAttributes) GetMetadataOk() (*int
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTCheckoutComGateways201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -191,7 +194,7 @@ func (o *POSTCheckoutComGateways201ResponseDataAttributes) GetSecretKey() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTCheckoutComGateways201ResponseDataAttributes) GetSecretKeyOk() (*interface{}, bool) {
-	if o == nil || o.SecretKey == nil {
+	if o == nil || IsNil(o.SecretKey) {
 		return nil, false
 	}
 	return &o.SecretKey, true
@@ -217,7 +220,7 @@ func (o *POSTCheckoutComGateways201ResponseDataAttributes) GetPublicKey() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTCheckoutComGateways201ResponseDataAttributes) GetPublicKeyOk() (*interface{}, bool) {
-	if o == nil || o.PublicKey == nil {
+	if o == nil || IsNil(o.PublicKey) {
 		return nil, false
 	}
 	return &o.PublicKey, true
@@ -229,6 +232,14 @@ func (o *POSTCheckoutComGateways201ResponseDataAttributes) SetPublicKey(v interf
 }
 
 func (o POSTCheckoutComGateways201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTCheckoutComGateways201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -248,7 +259,7 @@ func (o POSTCheckoutComGateways201ResponseDataAttributes) MarshalJSON() ([]byte,
 	if o.PublicKey != nil {
 		toSerialize["public_key"] = o.PublicKey
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTCheckoutComGateways201ResponseDataAttributes struct {

@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the FixedPricePromotion type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &FixedPricePromotion{}
+
 // FixedPricePromotion struct for FixedPricePromotion
 type FixedPricePromotion struct {
 	Data *FixedPricePromotionData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewFixedPricePromotionWithDefaults() *FixedPricePromotion {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *FixedPricePromotion) GetData() FixedPricePromotionData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret FixedPricePromotionData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *FixedPricePromotion) GetData() FixedPricePromotionData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FixedPricePromotion) GetDataOk() (*FixedPricePromotionData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *FixedPricePromotion) GetDataOk() (*FixedPricePromotionData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *FixedPricePromotion) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *FixedPricePromotion) SetData(v FixedPricePromotionData) {
 }
 
 func (o FixedPricePromotion) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o FixedPricePromotion) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableFixedPricePromotion struct {

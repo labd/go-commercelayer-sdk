@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *WebhooksApiService) DELETEWebhooksWebhookIdExecute(r WebhooksApiDELETEW
 	}
 
 	localVarPath := localBasePath + "/webhooks/{webhookId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"webhookId"+"}", url.PathEscape(parameterToString(r.webhookId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"webhookId"+"}", url.PathEscape(parameterValueToString(r.webhookId, "webhookId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *WebhooksApiService) DELETEWebhooksWebhookIdExecute(r WebhooksApiDELETEW
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -156,7 +156,7 @@ func (a *WebhooksApiService) GETEventCallbackIdWebhookExecute(r WebhooksApiGETEv
 	}
 
 	localVarPath := localBasePath + "/event_callbacks/{eventCallbackId}/webhook"
-	localVarPath = strings.Replace(localVarPath, "{"+"eventCallbackId"+"}", url.PathEscape(parameterToString(r.eventCallbackId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"eventCallbackId"+"}", url.PathEscape(parameterValueToString(r.eventCallbackId, "eventCallbackId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *WebhooksApiService) GETEventCallbackIdWebhookExecute(r WebhooksApiGETEv
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -248,7 +248,7 @@ func (a *WebhooksApiService) GETEventIdWebhooksExecute(r WebhooksApiGETEventIdWe
 	}
 
 	localVarPath := localBasePath + "/events/{eventId}/webhooks"
-	localVarPath = strings.Replace(localVarPath, "{"+"eventId"+"}", url.PathEscape(parameterToString(r.eventId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"eventId"+"}", url.PathEscape(parameterValueToString(r.eventId, "eventId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -281,9 +281,9 @@ func (a *WebhooksApiService) GETEventIdWebhooksExecute(r WebhooksApiGETEventIdWe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -372,9 +372,9 @@ func (a *WebhooksApiService) GETWebhooksExecute(r WebhooksApiGETWebhooksRequest)
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -443,7 +443,7 @@ func (a *WebhooksApiService) GETWebhooksWebhookIdExecute(r WebhooksApiGETWebhook
 	}
 
 	localVarPath := localBasePath + "/webhooks/{webhookId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"webhookId"+"}", url.PathEscape(parameterToString(r.webhookId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"webhookId"+"}", url.PathEscape(parameterValueToString(r.webhookId, "webhookId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -476,9 +476,9 @@ func (a *WebhooksApiService) GETWebhooksWebhookIdExecute(r WebhooksApiGETWebhook
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -553,7 +553,7 @@ func (a *WebhooksApiService) PATCHWebhooksWebhookIdExecute(r WebhooksApiPATCHWeb
 	}
 
 	localVarPath := localBasePath + "/webhooks/{webhookId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"webhookId"+"}", url.PathEscape(parameterToString(r.webhookId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"webhookId"+"}", url.PathEscape(parameterValueToString(r.webhookId, "webhookId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -591,9 +591,9 @@ func (a *WebhooksApiService) PATCHWebhooksWebhookIdExecute(r WebhooksApiPATCHWeb
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -702,9 +702,9 @@ func (a *WebhooksApiService) POSTWebhooksExecute(r WebhooksApiPOSTWebhooksReques
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

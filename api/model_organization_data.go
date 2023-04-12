@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the OrganizationData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &OrganizationData{}
+
 // OrganizationData struct for OrganizationData
 type OrganizationData struct {
 	// The resource's type
@@ -57,7 +60,7 @@ func (o *OrganizationData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrganizationData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -105,7 +108,7 @@ func (o *OrganizationData) GetRelationships() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrganizationData) GetRelationshipsOk() (*interface{}, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return &o.Relationships, true
@@ -113,7 +116,7 @@ func (o *OrganizationData) GetRelationshipsOk() (*interface{}, bool) {
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *OrganizationData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && IsNil(o.Relationships) {
 		return true
 	}
 
@@ -126,17 +129,23 @@ func (o *OrganizationData) SetRelationships(v interface{}) {
 }
 
 func (o OrganizationData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o OrganizationData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
+	toSerialize["attributes"] = o.Attributes
 	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableOrganizationData struct {

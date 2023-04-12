@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *OrderCopiesApiService) DELETEOrderCopiesOrderCopyIdExecute(r OrderCopie
 	}
 
 	localVarPath := localBasePath + "/order_copies/{orderCopyId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterToString(r.orderCopyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterValueToString(r.orderCopyId, "orderCopyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *OrderCopiesApiService) DELETEOrderCopiesOrderCopyIdExecute(r OrderCopie
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *OrderCopiesApiService) GETOrderCopiesExecute(r OrderCopiesApiGETOrderCo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *OrderCopiesApiService) GETOrderCopiesOrderCopyIdExecute(r OrderCopiesAp
 	}
 
 	localVarPath := localBasePath + "/order_copies/{orderCopyId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterToString(r.orderCopyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterValueToString(r.orderCopyId, "orderCopyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *OrderCopiesApiService) GETOrderCopiesOrderCopyIdExecute(r OrderCopiesAp
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -360,7 +360,7 @@ func (a *OrderCopiesApiService) GETOrderIdOrderCopiesExecute(r OrderCopiesApiGET
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/order_copies"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -393,9 +393,9 @@ func (a *OrderCopiesApiService) GETOrderIdOrderCopiesExecute(r OrderCopiesApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -461,7 +461,7 @@ func (a *OrderCopiesApiService) PATCHOrderCopiesOrderCopyIdExecute(r OrderCopies
 	}
 
 	localVarPath := localBasePath + "/order_copies/{orderCopyId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterToString(r.orderCopyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterValueToString(r.orderCopyId, "orderCopyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -499,9 +499,9 @@ func (a *OrderCopiesApiService) PATCHOrderCopiesOrderCopyIdExecute(r OrderCopies
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -610,9 +610,9 @@ func (a *OrderCopiesApiService) POSTOrderCopiesExecute(r OrderCopiesApiPOSTOrder
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

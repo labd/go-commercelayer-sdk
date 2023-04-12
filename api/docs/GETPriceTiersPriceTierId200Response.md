@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETPriceTiers200ResponseDataInner**](GETPriceTiers200ResponseDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETPriceTiersPriceTierId200ResponseData**](GETPriceTiersPriceTierId200ResponseData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETPriceTiersPriceTierId200Response) GetData() GETPriceTiers200ResponseDataInner`
+`func (o *GETPriceTiersPriceTierId200Response) GetData() GETPriceTiersPriceTierId200ResponseData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETPriceTiersPriceTierId200Response) GetDataOk() (*GETPriceTiers200ResponseDataInner, bool)`
+`func (o *GETPriceTiersPriceTierId200Response) GetDataOk() (*GETPriceTiersPriceTierId200ResponseData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETPriceTiersPriceTierId200Response) SetData(v GETPriceTiers200ResponseDataInner)`
+`func (o *GETPriceTiersPriceTierId200Response) SetData(v GETPriceTiersPriceTierId200ResponseData)`
 
 SetData sets Data field to given value.
 

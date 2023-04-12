@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTSkuListItems201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTSkuListItems201ResponseDataAttributes{}
+
 // POSTSkuListItems201ResponseDataAttributes struct for POSTSkuListItems201ResponseDataAttributes
 type POSTSkuListItems201ResponseDataAttributes struct {
 	// The SKU list item's position.
@@ -61,7 +64,7 @@ func (o *POSTSkuListItems201ResponseDataAttributes) GetPosition() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTSkuListItems201ResponseDataAttributes) GetPositionOk() (*interface{}, bool) {
-	if o == nil || o.Position == nil {
+	if o == nil || IsNil(o.Position) {
 		return nil, false
 	}
 	return &o.Position, true
@@ -69,7 +72,7 @@ func (o *POSTSkuListItems201ResponseDataAttributes) GetPositionOk() (*interface{
 
 // HasPosition returns a boolean if a field has been set.
 func (o *POSTSkuListItems201ResponseDataAttributes) HasPosition() bool {
-	if o != nil && o.Position != nil {
+	if o != nil && IsNil(o.Position) {
 		return true
 	}
 
@@ -94,7 +97,7 @@ func (o *POSTSkuListItems201ResponseDataAttributes) GetSkuCode() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTSkuListItems201ResponseDataAttributes) GetSkuCodeOk() (*interface{}, bool) {
-	if o == nil || o.SkuCode == nil {
+	if o == nil || IsNil(o.SkuCode) {
 		return nil, false
 	}
 	return &o.SkuCode, true
@@ -102,7 +105,7 @@ func (o *POSTSkuListItems201ResponseDataAttributes) GetSkuCodeOk() (*interface{}
 
 // HasSkuCode returns a boolean if a field has been set.
 func (o *POSTSkuListItems201ResponseDataAttributes) HasSkuCode() bool {
-	if o != nil && o.SkuCode != nil {
+	if o != nil && IsNil(o.SkuCode) {
 		return true
 	}
 
@@ -127,7 +130,7 @@ func (o *POSTSkuListItems201ResponseDataAttributes) GetQuantity() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTSkuListItems201ResponseDataAttributes) GetQuantityOk() (*interface{}, bool) {
-	if o == nil || o.Quantity == nil {
+	if o == nil || IsNil(o.Quantity) {
 		return nil, false
 	}
 	return &o.Quantity, true
@@ -135,7 +138,7 @@ func (o *POSTSkuListItems201ResponseDataAttributes) GetQuantityOk() (*interface{
 
 // HasQuantity returns a boolean if a field has been set.
 func (o *POSTSkuListItems201ResponseDataAttributes) HasQuantity() bool {
-	if o != nil && o.Quantity != nil {
+	if o != nil && IsNil(o.Quantity) {
 		return true
 	}
 
@@ -160,7 +163,7 @@ func (o *POSTSkuListItems201ResponseDataAttributes) GetReference() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTSkuListItems201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -168,7 +171,7 @@ func (o *POSTSkuListItems201ResponseDataAttributes) GetReferenceOk() (*interface
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTSkuListItems201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -193,7 +196,7 @@ func (o *POSTSkuListItems201ResponseDataAttributes) GetReferenceOrigin() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTSkuListItems201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -201,7 +204,7 @@ func (o *POSTSkuListItems201ResponseDataAttributes) GetReferenceOriginOk() (*int
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTSkuListItems201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -226,7 +229,7 @@ func (o *POSTSkuListItems201ResponseDataAttributes) GetMetadata() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTSkuListItems201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -234,7 +237,7 @@ func (o *POSTSkuListItems201ResponseDataAttributes) GetMetadataOk() (*interface{
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTSkuListItems201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -247,6 +250,14 @@ func (o *POSTSkuListItems201ResponseDataAttributes) SetMetadata(v interface{}) {
 }
 
 func (o POSTSkuListItems201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTSkuListItems201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Position != nil {
 		toSerialize["position"] = o.Position
@@ -266,7 +277,7 @@ func (o POSTSkuListItems201ResponseDataAttributes) MarshalJSON() ([]byte, error)
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTSkuListItems201ResponseDataAttributes struct {

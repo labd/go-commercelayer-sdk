@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETGeocoders200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETGeocoders200Response{}
+
 // GETGeocoders200Response struct for GETGeocoders200Response
 type GETGeocoders200Response struct {
-	Data []GETGeocoders200ResponseDataInner `json:"data,omitempty"`
+	Data interface{} `json:"data,omitempty"`
 }
 
 // NewGETGeocoders200Response instantiates a new GETGeocoders200Response object
@@ -37,10 +40,10 @@ func NewGETGeocoders200ResponseWithDefaults() *GETGeocoders200Response {
 	return &this
 }
 
-// GetData returns the Data field value if set, zero value otherwise.
-func (o *GETGeocoders200Response) GetData() []GETGeocoders200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret []GETGeocoders200ResponseDataInner
+// GetData returns the Data field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETGeocoders200Response) GetData() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Data
@@ -48,33 +51,42 @@ func (o *GETGeocoders200Response) GetData() []GETGeocoders200ResponseDataInner {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETGeocoders200Response) GetDataOk() ([]GETGeocoders200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETGeocoders200Response) GetDataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
-	return o.Data, true
+	return &o.Data, true
 }
 
 // HasData returns a boolean if a field has been set.
 func (o *GETGeocoders200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given []GETGeocoders200ResponseDataInner and assigns it to the Data field.
-func (o *GETGeocoders200Response) SetData(v []GETGeocoders200ResponseDataInner) {
+// SetData gets a reference to the given interface{} and assigns it to the Data field.
+func (o *GETGeocoders200Response) SetData(v interface{}) {
 	o.Data = v
 }
 
 func (o GETGeocoders200Response) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o GETGeocoders200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableGETGeocoders200Response struct {

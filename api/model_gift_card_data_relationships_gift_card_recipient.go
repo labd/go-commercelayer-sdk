@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the GiftCardDataRelationshipsGiftCardRecipient type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GiftCardDataRelationshipsGiftCardRecipient{}
+
 // GiftCardDataRelationshipsGiftCardRecipient struct for GiftCardDataRelationshipsGiftCardRecipient
 type GiftCardDataRelationshipsGiftCardRecipient struct {
 	Data *GiftCardDataRelationshipsGiftCardRecipientData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewGiftCardDataRelationshipsGiftCardRecipientWithDefaults() *GiftCardDataRe
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *GiftCardDataRelationshipsGiftCardRecipient) GetData() GiftCardDataRelationshipsGiftCardRecipientData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret GiftCardDataRelationshipsGiftCardRecipientData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *GiftCardDataRelationshipsGiftCardRecipient) GetData() GiftCardDataRelat
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GiftCardDataRelationshipsGiftCardRecipient) GetDataOk() (*GiftCardDataRelationshipsGiftCardRecipientData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *GiftCardDataRelationshipsGiftCardRecipient) GetDataOk() (*GiftCardDataR
 
 // HasData returns a boolean if a field has been set.
 func (o *GiftCardDataRelationshipsGiftCardRecipient) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *GiftCardDataRelationshipsGiftCardRecipient) SetData(v GiftCardDataRelat
 }
 
 func (o GiftCardDataRelationshipsGiftCardRecipient) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GiftCardDataRelationshipsGiftCardRecipient) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGiftCardDataRelationshipsGiftCardRecipient struct {

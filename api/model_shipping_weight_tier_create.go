@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ShippingWeightTierCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ShippingWeightTierCreate{}
+
 // ShippingWeightTierCreate struct for ShippingWeightTierCreate
 type ShippingWeightTierCreate struct {
 	Data ShippingWeightTierCreateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *ShippingWeightTierCreate) SetData(v ShippingWeightTierCreateData) {
 }
 
 func (o ShippingWeightTierCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ShippingWeightTierCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableShippingWeightTierCreate struct {

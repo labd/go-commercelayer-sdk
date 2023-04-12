@@ -15,15 +15,18 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTManualGateways201ResponseData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTManualGateways201ResponseData{}
+
 // POSTManualGateways201ResponseData struct for POSTManualGateways201ResponseData
 type POSTManualGateways201ResponseData struct {
 	// The resource's id
 	Id interface{} `json:"id,omitempty"`
 	// The resource's type
-	Type          interface{}                                         `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks              `json:"links,omitempty"`
-	Attributes    *POSTManualGateways201ResponseDataAttributes        `json:"attributes,omitempty"`
-	Relationships *GETManualGateways200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          interface{}                                     `json:"type,omitempty"`
+	Links         *POSTAddresses201ResponseDataLinks              `json:"links,omitempty"`
+	Attributes    *POSTManualGateways201ResponseDataAttributes    `json:"attributes,omitempty"`
+	Relationships *POSTManualGateways201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewPOSTManualGateways201ResponseData instantiates a new POSTManualGateways201ResponseData object
@@ -56,7 +59,7 @@ func (o *POSTManualGateways201ResponseData) GetId() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTManualGateways201ResponseData) GetIdOk() (*interface{}, bool) {
-	if o == nil || o.Id == nil {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return &o.Id, true
@@ -64,7 +67,7 @@ func (o *POSTManualGateways201ResponseData) GetIdOk() (*interface{}, bool) {
 
 // HasId returns a boolean if a field has been set.
 func (o *POSTManualGateways201ResponseData) HasId() bool {
-	if o != nil && o.Id != nil {
+	if o != nil && IsNil(o.Id) {
 		return true
 	}
 
@@ -89,7 +92,7 @@ func (o *POSTManualGateways201ResponseData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTManualGateways201ResponseData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -97,7 +100,7 @@ func (o *POSTManualGateways201ResponseData) GetTypeOk() (*interface{}, bool) {
 
 // HasType returns a boolean if a field has been set.
 func (o *POSTManualGateways201ResponseData) HasType() bool {
-	if o != nil && o.Type != nil {
+	if o != nil && IsNil(o.Type) {
 		return true
 	}
 
@@ -110,9 +113,9 @@ func (o *POSTManualGateways201ResponseData) SetType(v interface{}) {
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *POSTManualGateways201ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks {
-	if o == nil || o.Links == nil {
-		var ret GETAddresses200ResponseDataInnerLinks
+func (o *POSTManualGateways201ResponseData) GetLinks() POSTAddresses201ResponseDataLinks {
+	if o == nil || IsNil(o.Links) {
+		var ret POSTAddresses201ResponseDataLinks
 		return ret
 	}
 	return *o.Links
@@ -120,8 +123,8 @@ func (o *POSTManualGateways201ResponseData) GetLinks() GETAddresses200ResponseDa
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTManualGateways201ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool) {
-	if o == nil || o.Links == nil {
+func (o *POSTManualGateways201ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool) {
+	if o == nil || IsNil(o.Links) {
 		return nil, false
 	}
 	return o.Links, true
@@ -129,21 +132,21 @@ func (o *POSTManualGateways201ResponseData) GetLinksOk() (*GETAddresses200Respon
 
 // HasLinks returns a boolean if a field has been set.
 func (o *POSTManualGateways201ResponseData) HasLinks() bool {
-	if o != nil && o.Links != nil {
+	if o != nil && !IsNil(o.Links) {
 		return true
 	}
 
 	return false
 }
 
-// SetLinks gets a reference to the given GETAddresses200ResponseDataInnerLinks and assigns it to the Links field.
-func (o *POSTManualGateways201ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks) {
+// SetLinks gets a reference to the given POSTAddresses201ResponseDataLinks and assigns it to the Links field.
+func (o *POSTManualGateways201ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks) {
 	o.Links = &v
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *POSTManualGateways201ResponseData) GetAttributes() POSTManualGateways201ResponseDataAttributes {
-	if o == nil || o.Attributes == nil {
+	if o == nil || IsNil(o.Attributes) {
 		var ret POSTManualGateways201ResponseDataAttributes
 		return ret
 	}
@@ -153,7 +156,7 @@ func (o *POSTManualGateways201ResponseData) GetAttributes() POSTManualGateways20
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTManualGateways201ResponseData) GetAttributesOk() (*POSTManualGateways201ResponseDataAttributes, bool) {
-	if o == nil || o.Attributes == nil {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -161,7 +164,7 @@ func (o *POSTManualGateways201ResponseData) GetAttributesOk() (*POSTManualGatewa
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *POSTManualGateways201ResponseData) HasAttributes() bool {
-	if o != nil && o.Attributes != nil {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
@@ -174,9 +177,9 @@ func (o *POSTManualGateways201ResponseData) SetAttributes(v POSTManualGateways20
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *POSTManualGateways201ResponseData) GetRelationships() GETManualGateways200ResponseDataInnerRelationships {
-	if o == nil || o.Relationships == nil {
-		var ret GETManualGateways200ResponseDataInnerRelationships
+func (o *POSTManualGateways201ResponseData) GetRelationships() POSTManualGateways201ResponseDataRelationships {
+	if o == nil || IsNil(o.Relationships) {
+		var ret POSTManualGateways201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -184,8 +187,8 @@ func (o *POSTManualGateways201ResponseData) GetRelationships() GETManualGateways
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTManualGateways201ResponseData) GetRelationshipsOk() (*GETManualGateways200ResponseDataInnerRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+func (o *POSTManualGateways201ResponseData) GetRelationshipsOk() (*POSTManualGateways201ResponseDataRelationships, bool) {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -193,19 +196,27 @@ func (o *POSTManualGateways201ResponseData) GetRelationshipsOk() (*GETManualGate
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *POSTManualGateways201ResponseData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
 	return false
 }
 
-// SetRelationships gets a reference to the given GETManualGateways200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *POSTManualGateways201ResponseData) SetRelationships(v GETManualGateways200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given POSTManualGateways201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *POSTManualGateways201ResponseData) SetRelationships(v POSTManualGateways201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 
 func (o POSTManualGateways201ResponseData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTManualGateways201ResponseData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
@@ -213,16 +224,16 @@ func (o POSTManualGateways201ResponseData) MarshalJSON() ([]byte, error) {
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if o.Links != nil {
+	if !IsNil(o.Links) {
 		toSerialize["links"] = o.Links
 	}
-	if o.Attributes != nil {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if o.Relationships != nil {
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTManualGateways201ResponseData struct {

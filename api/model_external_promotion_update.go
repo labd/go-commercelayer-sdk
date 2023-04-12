@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ExternalPromotionUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ExternalPromotionUpdate{}
+
 // ExternalPromotionUpdate struct for ExternalPromotionUpdate
 type ExternalPromotionUpdate struct {
 	Data ExternalPromotionUpdateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *ExternalPromotionUpdate) SetData(v ExternalPromotionUpdateData) {
 }
 
 func (o ExternalPromotionUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ExternalPromotionUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableExternalPromotionUpdate struct {

@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the InventoryStockLocationUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &InventoryStockLocationUpdate{}
+
 // InventoryStockLocationUpdate struct for InventoryStockLocationUpdate
 type InventoryStockLocationUpdate struct {
 	Data InventoryStockLocationUpdateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *InventoryStockLocationUpdate) SetData(v InventoryStockLocationUpdateDat
 }
 
 func (o InventoryStockLocationUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o InventoryStockLocationUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableInventoryStockLocationUpdate struct {

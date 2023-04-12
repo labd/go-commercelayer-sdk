@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the GiftCardCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GiftCardCreateDataRelationships{}
+
 // GiftCardCreateDataRelationships struct for GiftCardCreateDataRelationships
 type GiftCardCreateDataRelationships struct {
 	Market            *BillingInfoValidationRuleCreateDataRelationshipsMarket `json:"market,omitempty"`
@@ -40,7 +43,7 @@ func NewGiftCardCreateDataRelationshipsWithDefaults() *GiftCardCreateDataRelatio
 
 // GetMarket returns the Market field value if set, zero value otherwise.
 func (o *GiftCardCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket {
-	if o == nil || o.Market == nil {
+	if o == nil || IsNil(o.Market) {
 		var ret BillingInfoValidationRuleCreateDataRelationshipsMarket
 		return ret
 	}
@@ -50,7 +53,7 @@ func (o *GiftCardCreateDataRelationships) GetMarket() BillingInfoValidationRuleC
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GiftCardCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool) {
-	if o == nil || o.Market == nil {
+	if o == nil || IsNil(o.Market) {
 		return nil, false
 	}
 	return o.Market, true
@@ -58,7 +61,7 @@ func (o *GiftCardCreateDataRelationships) GetMarketOk() (*BillingInfoValidationR
 
 // HasMarket returns a boolean if a field has been set.
 func (o *GiftCardCreateDataRelationships) HasMarket() bool {
-	if o != nil && o.Market != nil {
+	if o != nil && !IsNil(o.Market) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *GiftCardCreateDataRelationships) SetMarket(v BillingInfoValidationRuleC
 
 // GetGiftCardRecipient returns the GiftCardRecipient field value if set, zero value otherwise.
 func (o *GiftCardCreateDataRelationships) GetGiftCardRecipient() GiftCardCreateDataRelationshipsGiftCardRecipient {
-	if o == nil || o.GiftCardRecipient == nil {
+	if o == nil || IsNil(o.GiftCardRecipient) {
 		var ret GiftCardCreateDataRelationshipsGiftCardRecipient
 		return ret
 	}
@@ -82,7 +85,7 @@ func (o *GiftCardCreateDataRelationships) GetGiftCardRecipient() GiftCardCreateD
 // GetGiftCardRecipientOk returns a tuple with the GiftCardRecipient field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GiftCardCreateDataRelationships) GetGiftCardRecipientOk() (*GiftCardCreateDataRelationshipsGiftCardRecipient, bool) {
-	if o == nil || o.GiftCardRecipient == nil {
+	if o == nil || IsNil(o.GiftCardRecipient) {
 		return nil, false
 	}
 	return o.GiftCardRecipient, true
@@ -90,7 +93,7 @@ func (o *GiftCardCreateDataRelationships) GetGiftCardRecipientOk() (*GiftCardCre
 
 // HasGiftCardRecipient returns a boolean if a field has been set.
 func (o *GiftCardCreateDataRelationships) HasGiftCardRecipient() bool {
-	if o != nil && o.GiftCardRecipient != nil {
+	if o != nil && !IsNil(o.GiftCardRecipient) {
 		return true
 	}
 
@@ -103,14 +106,22 @@ func (o *GiftCardCreateDataRelationships) SetGiftCardRecipient(v GiftCardCreateD
 }
 
 func (o GiftCardCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Market != nil {
-		toSerialize["market"] = o.Market
-	}
-	if o.GiftCardRecipient != nil {
-		toSerialize["gift_card_recipient"] = o.GiftCardRecipient
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GiftCardCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Market) {
+		toSerialize["market"] = o.Market
+	}
+	if !IsNil(o.GiftCardRecipient) {
+		toSerialize["gift_card_recipient"] = o.GiftCardRecipient
+	}
+	return toSerialize, nil
 }
 
 type NullableGiftCardCreateDataRelationships struct {

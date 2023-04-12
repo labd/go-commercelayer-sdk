@@ -30,7 +30,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -91,7 +91,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -161,7 +161,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -169,7 +169,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthorizationsApi.GETCaptureIdReferenceAuthorization(context.Background(), captureId).Execute()
+    r, err := apiClient.AuthorizationsApi.GETCaptureIdReferenceAuthorization(context.Background(), captureId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthorizationsApi.GETCaptureIdReferenceAuthorization``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -229,7 +229,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -237,7 +237,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthorizationsApi.GETOrderIdAuthorizations(context.Background(), orderId).Execute()
+    r, err := apiClient.AuthorizationsApi.GETOrderIdAuthorizations(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthorizationsApi.GETOrderIdAuthorizations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -297,7 +297,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -305,7 +305,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AuthorizationsApi.GETVoidIdReferenceAuthorization(context.Background(), voidId).Execute()
+    r, err := apiClient.AuthorizationsApi.GETVoidIdReferenceAuthorization(context.Background(), voidId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AuthorizationsApi.GETVoidIdReferenceAuthorization``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -365,7 +365,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {

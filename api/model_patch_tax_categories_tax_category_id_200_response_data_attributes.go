@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes{}
+
 // PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes struct for PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes
 type PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes struct {
 	// The tax category identifier code, specific for a particular tax calculator.
@@ -59,7 +62,7 @@ func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetCode() int
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetCodeOk() (*interface{}, bool) {
-	if o == nil || o.Code == nil {
+	if o == nil || IsNil(o.Code) {
 		return nil, false
 	}
 	return &o.Code, true
@@ -67,7 +70,7 @@ func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetCodeOk() (
 
 // HasCode returns a boolean if a field has been set.
 func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) HasCode() bool {
-	if o != nil && o.Code != nil {
+	if o != nil && IsNil(o.Code) {
 		return true
 	}
 
@@ -92,7 +95,7 @@ func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetSkuCode() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetSkuCodeOk() (*interface{}, bool) {
-	if o == nil || o.SkuCode == nil {
+	if o == nil || IsNil(o.SkuCode) {
 		return nil, false
 	}
 	return &o.SkuCode, true
@@ -100,7 +103,7 @@ func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetSkuCodeOk(
 
 // HasSkuCode returns a boolean if a field has been set.
 func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) HasSkuCode() bool {
-	if o != nil && o.SkuCode != nil {
+	if o != nil && IsNil(o.SkuCode) {
 		return true
 	}
 
@@ -125,7 +128,7 @@ func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetReference(
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -133,7 +136,7 @@ func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetReferenceO
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -158,7 +161,7 @@ func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetReferenceO
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -166,7 +169,7 @@ func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetReferenceO
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -191,7 +194,7 @@ func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetMetadata()
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -199,7 +202,7 @@ func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetMetadataOk
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -212,6 +215,14 @@ func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) SetMetadata(v
 }
 
 func (o PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Code != nil {
 		toSerialize["code"] = o.Code
@@ -228,7 +239,7 @@ func (o PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) MarshalJSON() 
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes struct {

@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the LineItemOptionDataRelationshipsLineItem type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &LineItemOptionDataRelationshipsLineItem{}
+
 // LineItemOptionDataRelationshipsLineItem struct for LineItemOptionDataRelationshipsLineItem
 type LineItemOptionDataRelationshipsLineItem struct {
 	Data *LineItemOptionDataRelationshipsLineItemData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewLineItemOptionDataRelationshipsLineItemWithDefaults() *LineItemOptionDat
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *LineItemOptionDataRelationshipsLineItem) GetData() LineItemOptionDataRelationshipsLineItemData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret LineItemOptionDataRelationshipsLineItemData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *LineItemOptionDataRelationshipsLineItem) GetData() LineItemOptionDataRe
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LineItemOptionDataRelationshipsLineItem) GetDataOk() (*LineItemOptionDataRelationshipsLineItemData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *LineItemOptionDataRelationshipsLineItem) GetDataOk() (*LineItemOptionDa
 
 // HasData returns a boolean if a field has been set.
 func (o *LineItemOptionDataRelationshipsLineItem) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *LineItemOptionDataRelationshipsLineItem) SetData(v LineItemOptionDataRe
 }
 
 func (o LineItemOptionDataRelationshipsLineItem) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o LineItemOptionDataRelationshipsLineItem) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableLineItemOptionDataRelationshipsLineItem struct {

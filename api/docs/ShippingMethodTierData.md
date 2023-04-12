@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETShippingMethodTiers200ResponseDataInnerAttributes**](GETShippingMethodTiers200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**GETShippingMethodTiersShippingMethodTierId200ResponseDataAttributes**](GETShippingMethodTiersShippingMethodTierId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ShippingMethodTierDataRelationships**](ShippingMethodTierDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewShippingMethodTierData
 
-`func NewShippingMethodTierData(type_ interface{}, attributes GETShippingMethodTiers200ResponseDataInnerAttributes, ) *ShippingMethodTierData`
+`func NewShippingMethodTierData(type_ interface{}, attributes GETShippingMethodTiersShippingMethodTierId200ResponseDataAttributes, ) *ShippingMethodTierData`
 
 NewShippingMethodTierData instantiates a new ShippingMethodTierData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *ShippingMethodTierData) GetAttributes() GETShippingMethodTiers200ResponseDataInnerAttributes`
+`func (o *ShippingMethodTierData) GetAttributes() GETShippingMethodTiersShippingMethodTierId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ShippingMethodTierData) GetAttributesOk() (*GETShippingMethodTiers200ResponseDataInnerAttributes, bool)`
+`func (o *ShippingMethodTierData) GetAttributesOk() (*GETShippingMethodTiersShippingMethodTierId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ShippingMethodTierData) SetAttributes(v GETShippingMethodTiers200ResponseDataInnerAttributes)`
+`func (o *ShippingMethodTierData) SetAttributes(v GETShippingMethodTiersShippingMethodTierId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

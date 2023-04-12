@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the TaxRuleData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &TaxRuleData{}
+
 // TaxRuleData struct for TaxRuleData
 type TaxRuleData struct {
 	// The resource's type
-	Type          interface{}                               `json:"type"`
-	Attributes    GETTaxRules200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *TaxRuleDataRelationships                 `json:"relationships,omitempty"`
+	Type          interface{}                                   `json:"type"`
+	Attributes    GETTaxRulesTaxRuleId200ResponseDataAttributes `json:"attributes"`
+	Relationships *TaxRuleDataRelationships                     `json:"relationships,omitempty"`
 }
 
 // NewTaxRuleData instantiates a new TaxRuleData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTaxRuleData(type_ interface{}, attributes GETTaxRules200ResponseDataInnerAttributes) *TaxRuleData {
+func NewTaxRuleData(type_ interface{}, attributes GETTaxRulesTaxRuleId200ResponseDataAttributes) *TaxRuleData {
 	this := TaxRuleData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -57,7 +60,7 @@ func (o *TaxRuleData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TaxRuleData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -69,9 +72,9 @@ func (o *TaxRuleData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *TaxRuleData) GetAttributes() GETTaxRules200ResponseDataInnerAttributes {
+func (o *TaxRuleData) GetAttributes() GETTaxRulesTaxRuleId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETTaxRules200ResponseDataInnerAttributes
+		var ret GETTaxRulesTaxRuleId200ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +83,7 @@ func (o *TaxRuleData) GetAttributes() GETTaxRules200ResponseDataInnerAttributes 
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *TaxRuleData) GetAttributesOk() (*GETTaxRules200ResponseDataInnerAttributes, bool) {
+func (o *TaxRuleData) GetAttributesOk() (*GETTaxRulesTaxRuleId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,13 +91,13 @@ func (o *TaxRuleData) GetAttributesOk() (*GETTaxRules200ResponseDataInnerAttribu
 }
 
 // SetAttributes sets field value
-func (o *TaxRuleData) SetAttributes(v GETTaxRules200ResponseDataInnerAttributes) {
+func (o *TaxRuleData) SetAttributes(v GETTaxRulesTaxRuleId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *TaxRuleData) GetRelationships() TaxRuleDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret TaxRuleDataRelationships
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *TaxRuleData) GetRelationships() TaxRuleDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaxRuleData) GetRelationshipsOk() (*TaxRuleDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -112,7 +115,7 @@ func (o *TaxRuleData) GetRelationshipsOk() (*TaxRuleDataRelationships, bool) {
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *TaxRuleData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -125,17 +128,23 @@ func (o *TaxRuleData) SetRelationships(v TaxRuleDataRelationships) {
 }
 
 func (o TaxRuleData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o TaxRuleData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableTaxRuleData struct {

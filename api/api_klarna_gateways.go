@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *KlarnaGatewaysApiService) DELETEKlarnaGatewaysKlarnaGatewayIdExecute(r 
 	}
 
 	localVarPath := localBasePath + "/klarna_gateways/{klarnaGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"klarnaGatewayId"+"}", url.PathEscape(parameterToString(r.klarnaGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"klarnaGatewayId"+"}", url.PathEscape(parameterValueToString(r.klarnaGatewayId, "klarnaGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *KlarnaGatewaysApiService) DELETEKlarnaGatewaysKlarnaGatewayIdExecute(r 
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysExecute(r KlarnaGatewaysApiG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysKlarnaGatewayIdExecute(r Kla
 	}
 
 	localVarPath := localBasePath + "/klarna_gateways/{klarnaGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"klarnaGatewayId"+"}", url.PathEscape(parameterToString(r.klarnaGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"klarnaGatewayId"+"}", url.PathEscape(parameterValueToString(r.klarnaGatewayId, "klarnaGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysKlarnaGatewayIdExecute(r Kla
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -369,7 +369,7 @@ func (a *KlarnaGatewaysApiService) PATCHKlarnaGatewaysKlarnaGatewayIdExecute(r K
 	}
 
 	localVarPath := localBasePath + "/klarna_gateways/{klarnaGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"klarnaGatewayId"+"}", url.PathEscape(parameterToString(r.klarnaGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"klarnaGatewayId"+"}", url.PathEscape(parameterValueToString(r.klarnaGatewayId, "klarnaGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -407,9 +407,9 @@ func (a *KlarnaGatewaysApiService) PATCHKlarnaGatewaysKlarnaGatewayIdExecute(r K
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -518,9 +518,9 @@ func (a *KlarnaGatewaysApiService) POSTKlarnaGatewaysExecute(r KlarnaGatewaysApi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes{}
+
 // PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes struct for PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes
 type PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes struct {
 	// The payment gateway's internal name.
@@ -61,7 +64,7 @@ func (o *PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) GetName() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -69,7 +72,7 @@ func (o *PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) GetNameOk(
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
@@ -94,7 +97,7 @@ func (o *PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) GetReferen
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -102,7 +105,7 @@ func (o *PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) GetReferen
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -127,7 +130,7 @@ func (o *PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) GetReferen
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -135,7 +138,7 @@ func (o *PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) GetReferen
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -160,7 +163,7 @@ func (o *PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) GetMetadat
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -168,7 +171,7 @@ func (o *PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) GetMetadat
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -193,7 +196,7 @@ func (o *PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) GetClientI
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) GetClientIdOk() (*interface{}, bool) {
-	if o == nil || o.ClientId == nil {
+	if o == nil || IsNil(o.ClientId) {
 		return nil, false
 	}
 	return &o.ClientId, true
@@ -201,7 +204,7 @@ func (o *PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) GetClientI
 
 // HasClientId returns a boolean if a field has been set.
 func (o *PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) HasClientId() bool {
-	if o != nil && o.ClientId != nil {
+	if o != nil && IsNil(o.ClientId) {
 		return true
 	}
 
@@ -226,7 +229,7 @@ func (o *PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) GetClientS
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) GetClientSecretOk() (*interface{}, bool) {
-	if o == nil || o.ClientSecret == nil {
+	if o == nil || IsNil(o.ClientSecret) {
 		return nil, false
 	}
 	return &o.ClientSecret, true
@@ -234,7 +237,7 @@ func (o *PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) GetClientS
 
 // HasClientSecret returns a boolean if a field has been set.
 func (o *PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) HasClientSecret() bool {
-	if o != nil && o.ClientSecret != nil {
+	if o != nil && IsNil(o.ClientSecret) {
 		return true
 	}
 
@@ -247,6 +250,14 @@ func (o *PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) SetClientS
 }
 
 func (o PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -266,7 +277,7 @@ func (o PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) MarshalJSON
 	if o.ClientSecret != nil {
 		toSerialize["client_secret"] = o.ClientSecret
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes struct {

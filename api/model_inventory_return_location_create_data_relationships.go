@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the InventoryReturnLocationCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &InventoryReturnLocationCreateDataRelationships{}
+
 // InventoryReturnLocationCreateDataRelationships struct for InventoryReturnLocationCreateDataRelationships
 type InventoryReturnLocationCreateDataRelationships struct {
 	StockLocation  DeliveryLeadTimeCreateDataRelationshipsStockLocation         `json:"stock_location"`
@@ -89,14 +92,18 @@ func (o *InventoryReturnLocationCreateDataRelationships) SetInventoryModel(v Inv
 }
 
 func (o InventoryReturnLocationCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["stock_location"] = o.StockLocation
-	}
-	if true {
-		toSerialize["inventory_model"] = o.InventoryModel
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o InventoryReturnLocationCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["stock_location"] = o.StockLocation
+	toSerialize["inventory_model"] = o.InventoryModel
+	return toSerialize, nil
 }
 
 type NullableInventoryReturnLocationCreateDataRelationships struct {

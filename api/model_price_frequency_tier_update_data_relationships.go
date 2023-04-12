@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PriceFrequencyTierUpdateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PriceFrequencyTierUpdateDataRelationships{}
+
 // PriceFrequencyTierUpdateDataRelationships struct for PriceFrequencyTierUpdateDataRelationships
 type PriceFrequencyTierUpdateDataRelationships struct {
 	Price *PriceFrequencyTierCreateDataRelationshipsPrice `json:"price,omitempty"`
@@ -39,7 +42,7 @@ func NewPriceFrequencyTierUpdateDataRelationshipsWithDefaults() *PriceFrequencyT
 
 // GetPrice returns the Price field value if set, zero value otherwise.
 func (o *PriceFrequencyTierUpdateDataRelationships) GetPrice() PriceFrequencyTierCreateDataRelationshipsPrice {
-	if o == nil || o.Price == nil {
+	if o == nil || IsNil(o.Price) {
 		var ret PriceFrequencyTierCreateDataRelationshipsPrice
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *PriceFrequencyTierUpdateDataRelationships) GetPrice() PriceFrequencyTie
 // GetPriceOk returns a tuple with the Price field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PriceFrequencyTierUpdateDataRelationships) GetPriceOk() (*PriceFrequencyTierCreateDataRelationshipsPrice, bool) {
-	if o == nil || o.Price == nil {
+	if o == nil || IsNil(o.Price) {
 		return nil, false
 	}
 	return o.Price, true
@@ -57,7 +60,7 @@ func (o *PriceFrequencyTierUpdateDataRelationships) GetPriceOk() (*PriceFrequenc
 
 // HasPrice returns a boolean if a field has been set.
 func (o *PriceFrequencyTierUpdateDataRelationships) HasPrice() bool {
-	if o != nil && o.Price != nil {
+	if o != nil && !IsNil(o.Price) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *PriceFrequencyTierUpdateDataRelationships) SetPrice(v PriceFrequencyTie
 }
 
 func (o PriceFrequencyTierUpdateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Price != nil {
-		toSerialize["price"] = o.Price
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PriceFrequencyTierUpdateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Price) {
+		toSerialize["price"] = o.Price
+	}
+	return toSerialize, nil
 }
 
 type NullablePriceFrequencyTierUpdateDataRelationships struct {

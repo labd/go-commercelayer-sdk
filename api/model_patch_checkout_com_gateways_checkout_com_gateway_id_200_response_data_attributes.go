@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes{}
+
 // PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes struct for PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes
 type PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes struct {
 	// The payment gateway's internal name.
@@ -61,7 +64,7 @@ func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -69,7 +72,7 @@ func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) 
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
@@ -94,7 +97,7 @@ func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -102,7 +105,7 @@ func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) 
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -127,7 +130,7 @@ func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -135,7 +138,7 @@ func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) 
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -160,7 +163,7 @@ func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -168,7 +171,7 @@ func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) 
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -193,7 +196,7 @@ func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) GetSecretKeyOk() (*interface{}, bool) {
-	if o == nil || o.SecretKey == nil {
+	if o == nil || IsNil(o.SecretKey) {
 		return nil, false
 	}
 	return &o.SecretKey, true
@@ -201,7 +204,7 @@ func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) 
 
 // HasSecretKey returns a boolean if a field has been set.
 func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) HasSecretKey() bool {
-	if o != nil && o.SecretKey != nil {
+	if o != nil && IsNil(o.SecretKey) {
 		return true
 	}
 
@@ -226,7 +229,7 @@ func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) GetPublicKeyOk() (*interface{}, bool) {
-	if o == nil || o.PublicKey == nil {
+	if o == nil || IsNil(o.PublicKey) {
 		return nil, false
 	}
 	return &o.PublicKey, true
@@ -234,7 +237,7 @@ func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) 
 
 // HasPublicKey returns a boolean if a field has been set.
 func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) HasPublicKey() bool {
-	if o != nil && o.PublicKey != nil {
+	if o != nil && IsNil(o.PublicKey) {
 		return true
 	}
 
@@ -247,6 +250,14 @@ func (o *PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) 
 }
 
 func (o PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -266,7 +277,7 @@ func (o PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes) M
 	if o.PublicKey != nil {
 		toSerialize["public_key"] = o.PublicKey
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes struct {

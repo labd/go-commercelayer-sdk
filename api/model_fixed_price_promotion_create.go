@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the FixedPricePromotionCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &FixedPricePromotionCreate{}
+
 // FixedPricePromotionCreate struct for FixedPricePromotionCreate
 type FixedPricePromotionCreate struct {
 	Data FixedPricePromotionCreateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *FixedPricePromotionCreate) SetData(v FixedPricePromotionCreateData) {
 }
 
 func (o FixedPricePromotionCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o FixedPricePromotionCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableFixedPricePromotionCreate struct {

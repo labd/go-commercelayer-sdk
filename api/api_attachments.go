@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *AttachmentsApiService) DELETEAttachmentsAttachmentIdExecute(r Attachmen
 	}
 
 	localVarPath := localBasePath + "/attachments/{attachmentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"attachmentId"+"}", url.PathEscape(parameterToString(r.attachmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"attachmentId"+"}", url.PathEscape(parameterValueToString(r.attachmentId, "attachmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *AttachmentsApiService) DELETEAttachmentsAttachmentIdExecute(r Attachmen
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *AttachmentsApiService) GETAttachmentsExecute(r AttachmentsApiGETAttachm
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *AttachmentsApiService) GETAttachmentsAttachmentIdExecute(r AttachmentsA
 	}
 
 	localVarPath := localBasePath + "/attachments/{attachmentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"attachmentId"+"}", url.PathEscape(parameterToString(r.attachmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"attachmentId"+"}", url.PathEscape(parameterValueToString(r.attachmentId, "attachmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *AttachmentsApiService) GETAttachmentsAttachmentIdExecute(r AttachmentsA
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -360,7 +360,7 @@ func (a *AttachmentsApiService) GETAvalaraAccountIdAttachmentsExecute(r Attachme
 	}
 
 	localVarPath := localBasePath + "/avalara_accounts/{avalaraAccountId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"avalaraAccountId"+"}", url.PathEscape(parameterToString(r.avalaraAccountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"avalaraAccountId"+"}", url.PathEscape(parameterValueToString(r.avalaraAccountId, "avalaraAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -393,9 +393,9 @@ func (a *AttachmentsApiService) GETAvalaraAccountIdAttachmentsExecute(r Attachme
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -452,7 +452,7 @@ func (a *AttachmentsApiService) GETBillingInfoValidationRuleIdAttachmentsExecute
 	}
 
 	localVarPath := localBasePath + "/billing_info_validation_rules/{billingInfoValidationRuleId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterToString(r.billingInfoValidationRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterValueToString(r.billingInfoValidationRuleId, "billingInfoValidationRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -485,9 +485,9 @@ func (a *AttachmentsApiService) GETBillingInfoValidationRuleIdAttachmentsExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -544,7 +544,7 @@ func (a *AttachmentsApiService) GETBingGeocoderIdAttachmentsExecute(r Attachment
 	}
 
 	localVarPath := localBasePath + "/bing_geocoders/{bingGeocoderId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"bingGeocoderId"+"}", url.PathEscape(parameterToString(r.bingGeocoderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"bingGeocoderId"+"}", url.PathEscape(parameterValueToString(r.bingGeocoderId, "bingGeocoderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -577,9 +577,9 @@ func (a *AttachmentsApiService) GETBingGeocoderIdAttachmentsExecute(r Attachment
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -636,7 +636,7 @@ func (a *AttachmentsApiService) GETBundleIdAttachmentsExecute(r AttachmentsApiGE
 	}
 
 	localVarPath := localBasePath + "/bundles/{bundleId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterToString(r.bundleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterValueToString(r.bundleId, "bundleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -669,9 +669,9 @@ func (a *AttachmentsApiService) GETBundleIdAttachmentsExecute(r AttachmentsApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -728,7 +728,7 @@ func (a *AttachmentsApiService) GETCarrierAccountIdAttachmentsExecute(r Attachme
 	}
 
 	localVarPath := localBasePath + "/carrier_accounts/{carrierAccountId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"carrierAccountId"+"}", url.PathEscape(parameterToString(r.carrierAccountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"carrierAccountId"+"}", url.PathEscape(parameterValueToString(r.carrierAccountId, "carrierAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -761,9 +761,9 @@ func (a *AttachmentsApiService) GETCarrierAccountIdAttachmentsExecute(r Attachme
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -820,7 +820,7 @@ func (a *AttachmentsApiService) GETCouponRecipientIdAttachmentsExecute(r Attachm
 	}
 
 	localVarPath := localBasePath + "/coupon_recipients/{couponRecipientId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"couponRecipientId"+"}", url.PathEscape(parameterToString(r.couponRecipientId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"couponRecipientId"+"}", url.PathEscape(parameterValueToString(r.couponRecipientId, "couponRecipientId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -853,9 +853,9 @@ func (a *AttachmentsApiService) GETCouponRecipientIdAttachmentsExecute(r Attachm
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -912,7 +912,7 @@ func (a *AttachmentsApiService) GETCustomerGroupIdAttachmentsExecute(r Attachmen
 	}
 
 	localVarPath := localBasePath + "/customer_groups/{customerGroupId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerGroupId"+"}", url.PathEscape(parameterToString(r.customerGroupId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerGroupId"+"}", url.PathEscape(parameterValueToString(r.customerGroupId, "customerGroupId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -945,9 +945,9 @@ func (a *AttachmentsApiService) GETCustomerGroupIdAttachmentsExecute(r Attachmen
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1004,7 +1004,7 @@ func (a *AttachmentsApiService) GETCustomerIdAttachmentsExecute(r AttachmentsApi
 	}
 
 	localVarPath := localBasePath + "/customers/{customerId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterToString(r.customerId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1037,9 +1037,9 @@ func (a *AttachmentsApiService) GETCustomerIdAttachmentsExecute(r AttachmentsApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1096,7 +1096,7 @@ func (a *AttachmentsApiService) GETDeliveryLeadTimeIdAttachmentsExecute(r Attach
 	}
 
 	localVarPath := localBasePath + "/delivery_lead_times/{deliveryLeadTimeId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"deliveryLeadTimeId"+"}", url.PathEscape(parameterToString(r.deliveryLeadTimeId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"deliveryLeadTimeId"+"}", url.PathEscape(parameterValueToString(r.deliveryLeadTimeId, "deliveryLeadTimeId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1129,9 +1129,9 @@ func (a *AttachmentsApiService) GETDeliveryLeadTimeIdAttachmentsExecute(r Attach
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1188,7 +1188,7 @@ func (a *AttachmentsApiService) GETExternalPromotionIdAttachmentsExecute(r Attac
 	}
 
 	localVarPath := localBasePath + "/external_promotions/{externalPromotionId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterToString(r.externalPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterValueToString(r.externalPromotionId, "externalPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1221,9 +1221,9 @@ func (a *AttachmentsApiService) GETExternalPromotionIdAttachmentsExecute(r Attac
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1280,7 +1280,7 @@ func (a *AttachmentsApiService) GETExternalTaxCalculatorIdAttachmentsExecute(r A
 	}
 
 	localVarPath := localBasePath + "/external_tax_calculators/{externalTaxCalculatorId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalTaxCalculatorId"+"}", url.PathEscape(parameterToString(r.externalTaxCalculatorId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalTaxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.externalTaxCalculatorId, "externalTaxCalculatorId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1313,9 +1313,9 @@ func (a *AttachmentsApiService) GETExternalTaxCalculatorIdAttachmentsExecute(r A
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1372,7 +1372,7 @@ func (a *AttachmentsApiService) GETFixedAmountPromotionIdAttachmentsExecute(r At
 	}
 
 	localVarPath := localBasePath + "/fixed_amount_promotions/{fixedAmountPromotionId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterToString(r.fixedAmountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedAmountPromotionId, "fixedAmountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1405,9 +1405,9 @@ func (a *AttachmentsApiService) GETFixedAmountPromotionIdAttachmentsExecute(r At
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1464,7 +1464,7 @@ func (a *AttachmentsApiService) GETFixedPricePromotionIdAttachmentsExecute(r Att
 	}
 
 	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterToString(r.fixedPricePromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1497,9 +1497,9 @@ func (a *AttachmentsApiService) GETFixedPricePromotionIdAttachmentsExecute(r Att
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1556,7 +1556,7 @@ func (a *AttachmentsApiService) GETFreeGiftPromotionIdAttachmentsExecute(r Attac
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterToString(r.freeGiftPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1589,9 +1589,9 @@ func (a *AttachmentsApiService) GETFreeGiftPromotionIdAttachmentsExecute(r Attac
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1648,7 +1648,7 @@ func (a *AttachmentsApiService) GETFreeShippingPromotionIdAttachmentsExecute(r A
 	}
 
 	localVarPath := localBasePath + "/free_shipping_promotions/{freeShippingPromotionId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterToString(r.freeShippingPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeShippingPromotionId, "freeShippingPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1681,9 +1681,9 @@ func (a *AttachmentsApiService) GETFreeShippingPromotionIdAttachmentsExecute(r A
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1740,7 +1740,7 @@ func (a *AttachmentsApiService) GETGeocoderIdAttachmentsExecute(r AttachmentsApi
 	}
 
 	localVarPath := localBasePath + "/geocoders/{geocoderId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"geocoderId"+"}", url.PathEscape(parameterToString(r.geocoderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"geocoderId"+"}", url.PathEscape(parameterValueToString(r.geocoderId, "geocoderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1773,9 +1773,9 @@ func (a *AttachmentsApiService) GETGeocoderIdAttachmentsExecute(r AttachmentsApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1832,7 +1832,7 @@ func (a *AttachmentsApiService) GETGiftCardIdAttachmentsExecute(r AttachmentsApi
 	}
 
 	localVarPath := localBasePath + "/gift_cards/{giftCardId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterToString(r.giftCardId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterValueToString(r.giftCardId, "giftCardId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1865,9 +1865,9 @@ func (a *AttachmentsApiService) GETGiftCardIdAttachmentsExecute(r AttachmentsApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1924,7 +1924,7 @@ func (a *AttachmentsApiService) GETGiftCardRecipientIdAttachmentsExecute(r Attac
 	}
 
 	localVarPath := localBasePath + "/gift_card_recipients/{giftCardRecipientId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"giftCardRecipientId"+"}", url.PathEscape(parameterToString(r.giftCardRecipientId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"giftCardRecipientId"+"}", url.PathEscape(parameterValueToString(r.giftCardRecipientId, "giftCardRecipientId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1957,9 +1957,9 @@ func (a *AttachmentsApiService) GETGiftCardRecipientIdAttachmentsExecute(r Attac
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2016,7 +2016,7 @@ func (a *AttachmentsApiService) GETGoogleGeocoderIdAttachmentsExecute(r Attachme
 	}
 
 	localVarPath := localBasePath + "/google_geocoders/{googleGeocoderId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"googleGeocoderId"+"}", url.PathEscape(parameterToString(r.googleGeocoderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"googleGeocoderId"+"}", url.PathEscape(parameterValueToString(r.googleGeocoderId, "googleGeocoderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2049,9 +2049,9 @@ func (a *AttachmentsApiService) GETGoogleGeocoderIdAttachmentsExecute(r Attachme
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2108,7 +2108,7 @@ func (a *AttachmentsApiService) GETInventoryModelIdAttachmentsExecute(r Attachme
 	}
 
 	localVarPath := localBasePath + "/inventory_models/{inventoryModelId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"inventoryModelId"+"}", url.PathEscape(parameterToString(r.inventoryModelId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inventoryModelId"+"}", url.PathEscape(parameterValueToString(r.inventoryModelId, "inventoryModelId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2141,9 +2141,9 @@ func (a *AttachmentsApiService) GETInventoryModelIdAttachmentsExecute(r Attachme
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2200,7 +2200,7 @@ func (a *AttachmentsApiService) GETManualTaxCalculatorIdAttachmentsExecute(r Att
 	}
 
 	localVarPath := localBasePath + "/manual_tax_calculators/{manualTaxCalculatorId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"manualTaxCalculatorId"+"}", url.PathEscape(parameterToString(r.manualTaxCalculatorId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"manualTaxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.manualTaxCalculatorId, "manualTaxCalculatorId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2233,9 +2233,9 @@ func (a *AttachmentsApiService) GETManualTaxCalculatorIdAttachmentsExecute(r Att
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2292,7 +2292,7 @@ func (a *AttachmentsApiService) GETMarketIdAttachmentsExecute(r AttachmentsApiGE
 	}
 
 	localVarPath := localBasePath + "/markets/{marketId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterToString(r.marketId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2325,9 +2325,9 @@ func (a *AttachmentsApiService) GETMarketIdAttachmentsExecute(r AttachmentsApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2384,7 +2384,7 @@ func (a *AttachmentsApiService) GETMerchantIdAttachmentsExecute(r AttachmentsApi
 	}
 
 	localVarPath := localBasePath + "/merchants/{merchantId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"merchantId"+"}", url.PathEscape(parameterToString(r.merchantId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"merchantId"+"}", url.PathEscape(parameterValueToString(r.merchantId, "merchantId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2417,9 +2417,9 @@ func (a *AttachmentsApiService) GETMerchantIdAttachmentsExecute(r AttachmentsApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2476,7 +2476,7 @@ func (a *AttachmentsApiService) GETOrderIdAttachmentsExecute(r AttachmentsApiGET
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2509,9 +2509,9 @@ func (a *AttachmentsApiService) GETOrderIdAttachmentsExecute(r AttachmentsApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2568,7 +2568,7 @@ func (a *AttachmentsApiService) GETOrderValidationRuleIdAttachmentsExecute(r Att
 	}
 
 	localVarPath := localBasePath + "/order_validation_rules/{orderValidationRuleId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderValidationRuleId"+"}", url.PathEscape(parameterToString(r.orderValidationRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderValidationRuleId"+"}", url.PathEscape(parameterValueToString(r.orderValidationRuleId, "orderValidationRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2601,9 +2601,9 @@ func (a *AttachmentsApiService) GETOrderValidationRuleIdAttachmentsExecute(r Att
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2660,7 +2660,7 @@ func (a *AttachmentsApiService) GETPackageIdAttachmentsExecute(r AttachmentsApiG
 	}
 
 	localVarPath := localBasePath + "/packages/{packageId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"packageId"+"}", url.PathEscape(parameterToString(r.packageId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"packageId"+"}", url.PathEscape(parameterValueToString(r.packageId, "packageId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2693,9 +2693,9 @@ func (a *AttachmentsApiService) GETPackageIdAttachmentsExecute(r AttachmentsApiG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2752,7 +2752,7 @@ func (a *AttachmentsApiService) GETParcelIdAttachmentsExecute(r AttachmentsApiGE
 	}
 
 	localVarPath := localBasePath + "/parcels/{parcelId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterToString(r.parcelId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterValueToString(r.parcelId, "parcelId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2785,9 +2785,9 @@ func (a *AttachmentsApiService) GETParcelIdAttachmentsExecute(r AttachmentsApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2844,7 +2844,7 @@ func (a *AttachmentsApiService) GETPaymentMethodIdAttachmentsExecute(r Attachmen
 	}
 
 	localVarPath := localBasePath + "/payment_methods/{paymentMethodId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"paymentMethodId"+"}", url.PathEscape(parameterToString(r.paymentMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"paymentMethodId"+"}", url.PathEscape(parameterValueToString(r.paymentMethodId, "paymentMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2877,9 +2877,9 @@ func (a *AttachmentsApiService) GETPaymentMethodIdAttachmentsExecute(r Attachmen
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2936,7 +2936,7 @@ func (a *AttachmentsApiService) GETPercentageDiscountPromotionIdAttachmentsExecu
 	}
 
 	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterToString(r.percentageDiscountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2969,9 +2969,9 @@ func (a *AttachmentsApiService) GETPercentageDiscountPromotionIdAttachmentsExecu
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3028,7 +3028,7 @@ func (a *AttachmentsApiService) GETPriceFrequencyTierIdAttachmentsExecute(r Atta
 	}
 
 	localVarPath := localBasePath + "/price_frequency_tiers/{priceFrequencyTierId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceFrequencyTierId"+"}", url.PathEscape(parameterToString(r.priceFrequencyTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceFrequencyTierId"+"}", url.PathEscape(parameterValueToString(r.priceFrequencyTierId, "priceFrequencyTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3061,9 +3061,9 @@ func (a *AttachmentsApiService) GETPriceFrequencyTierIdAttachmentsExecute(r Atta
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3120,7 +3120,7 @@ func (a *AttachmentsApiService) GETPriceIdAttachmentsExecute(r AttachmentsApiGET
 	}
 
 	localVarPath := localBasePath + "/prices/{priceId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterToString(r.priceId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterValueToString(r.priceId, "priceId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3153,9 +3153,9 @@ func (a *AttachmentsApiService) GETPriceIdAttachmentsExecute(r AttachmentsApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3212,7 +3212,7 @@ func (a *AttachmentsApiService) GETPriceListIdAttachmentsExecute(r AttachmentsAp
 	}
 
 	localVarPath := localBasePath + "/price_lists/{priceListId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceListId"+"}", url.PathEscape(parameterToString(r.priceListId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceListId"+"}", url.PathEscape(parameterValueToString(r.priceListId, "priceListId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3245,9 +3245,9 @@ func (a *AttachmentsApiService) GETPriceListIdAttachmentsExecute(r AttachmentsAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3304,7 +3304,7 @@ func (a *AttachmentsApiService) GETPriceTierIdAttachmentsExecute(r AttachmentsAp
 	}
 
 	localVarPath := localBasePath + "/price_tiers/{priceTierId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceTierId"+"}", url.PathEscape(parameterToString(r.priceTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceTierId"+"}", url.PathEscape(parameterValueToString(r.priceTierId, "priceTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3337,9 +3337,9 @@ func (a *AttachmentsApiService) GETPriceTierIdAttachmentsExecute(r AttachmentsAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3396,7 +3396,7 @@ func (a *AttachmentsApiService) GETPriceVolumeTierIdAttachmentsExecute(r Attachm
 	}
 
 	localVarPath := localBasePath + "/price_volume_tiers/{priceVolumeTierId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceVolumeTierId"+"}", url.PathEscape(parameterToString(r.priceVolumeTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceVolumeTierId"+"}", url.PathEscape(parameterValueToString(r.priceVolumeTierId, "priceVolumeTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3429,9 +3429,9 @@ func (a *AttachmentsApiService) GETPriceVolumeTierIdAttachmentsExecute(r Attachm
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3488,7 +3488,7 @@ func (a *AttachmentsApiService) GETPromotionIdAttachmentsExecute(r AttachmentsAp
 	}
 
 	localVarPath := localBasePath + "/promotions/{promotionId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterToString(r.promotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterValueToString(r.promotionId, "promotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3521,9 +3521,9 @@ func (a *AttachmentsApiService) GETPromotionIdAttachmentsExecute(r AttachmentsAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3580,7 +3580,7 @@ func (a *AttachmentsApiService) GETReturnIdAttachmentsExecute(r AttachmentsApiGE
 	}
 
 	localVarPath := localBasePath + "/returns/{returnId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterToString(r.returnId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3613,9 +3613,9 @@ func (a *AttachmentsApiService) GETReturnIdAttachmentsExecute(r AttachmentsApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3672,7 +3672,7 @@ func (a *AttachmentsApiService) GETShipmentIdAttachmentsExecute(r AttachmentsApi
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3705,9 +3705,9 @@ func (a *AttachmentsApiService) GETShipmentIdAttachmentsExecute(r AttachmentsApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3764,7 +3764,7 @@ func (a *AttachmentsApiService) GETShippingCategoryIdAttachmentsExecute(r Attach
 	}
 
 	localVarPath := localBasePath + "/shipping_categories/{shippingCategoryId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingCategoryId"+"}", url.PathEscape(parameterToString(r.shippingCategoryId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingCategoryId"+"}", url.PathEscape(parameterValueToString(r.shippingCategoryId, "shippingCategoryId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3797,9 +3797,9 @@ func (a *AttachmentsApiService) GETShippingCategoryIdAttachmentsExecute(r Attach
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3856,7 +3856,7 @@ func (a *AttachmentsApiService) GETShippingMethodIdAttachmentsExecute(r Attachme
 	}
 
 	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodId, "shippingMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3889,9 +3889,9 @@ func (a *AttachmentsApiService) GETShippingMethodIdAttachmentsExecute(r Attachme
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3948,7 +3948,7 @@ func (a *AttachmentsApiService) GETShippingMethodTierIdAttachmentsExecute(r Atta
 	}
 
 	localVarPath := localBasePath + "/shipping_method_tiers/{shippingMethodTierId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodTierId"+"}", url.PathEscape(parameterToString(r.shippingMethodTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodTierId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodTierId, "shippingMethodTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3981,9 +3981,9 @@ func (a *AttachmentsApiService) GETShippingMethodTierIdAttachmentsExecute(r Atta
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4040,7 +4040,7 @@ func (a *AttachmentsApiService) GETShippingWeightTierIdAttachmentsExecute(r Atta
 	}
 
 	localVarPath := localBasePath + "/shipping_weight_tiers/{shippingWeightTierId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingWeightTierId"+"}", url.PathEscape(parameterToString(r.shippingWeightTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingWeightTierId"+"}", url.PathEscape(parameterValueToString(r.shippingWeightTierId, "shippingWeightTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4073,9 +4073,9 @@ func (a *AttachmentsApiService) GETShippingWeightTierIdAttachmentsExecute(r Atta
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4132,7 +4132,7 @@ func (a *AttachmentsApiService) GETShippingZoneIdAttachmentsExecute(r Attachment
 	}
 
 	localVarPath := localBasePath + "/shipping_zones/{shippingZoneId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingZoneId"+"}", url.PathEscape(parameterToString(r.shippingZoneId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingZoneId"+"}", url.PathEscape(parameterValueToString(r.shippingZoneId, "shippingZoneId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4165,9 +4165,9 @@ func (a *AttachmentsApiService) GETShippingZoneIdAttachmentsExecute(r Attachment
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4224,7 +4224,7 @@ func (a *AttachmentsApiService) GETSkuIdAttachmentsExecute(r AttachmentsApiGETSk
 	}
 
 	localVarPath := localBasePath + "/skus/{skuId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterToString(r.skuId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4257,9 +4257,9 @@ func (a *AttachmentsApiService) GETSkuIdAttachmentsExecute(r AttachmentsApiGETSk
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4316,7 +4316,7 @@ func (a *AttachmentsApiService) GETSkuListIdAttachmentsExecute(r AttachmentsApiG
 	}
 
 	localVarPath := localBasePath + "/sku_lists/{skuListId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuListId"+"}", url.PathEscape(parameterToString(r.skuListId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListId"+"}", url.PathEscape(parameterValueToString(r.skuListId, "skuListId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4349,9 +4349,9 @@ func (a *AttachmentsApiService) GETSkuListIdAttachmentsExecute(r AttachmentsApiG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4408,7 +4408,7 @@ func (a *AttachmentsApiService) GETSkuOptionIdAttachmentsExecute(r AttachmentsAp
 	}
 
 	localVarPath := localBasePath + "/sku_options/{skuOptionId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuOptionId"+"}", url.PathEscape(parameterToString(r.skuOptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuOptionId"+"}", url.PathEscape(parameterValueToString(r.skuOptionId, "skuOptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4441,9 +4441,9 @@ func (a *AttachmentsApiService) GETSkuOptionIdAttachmentsExecute(r AttachmentsAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4500,7 +4500,7 @@ func (a *AttachmentsApiService) GETStockItemIdAttachmentsExecute(r AttachmentsAp
 	}
 
 	localVarPath := localBasePath + "/stock_items/{stockItemId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockItemId"+"}", url.PathEscape(parameterToString(r.stockItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockItemId"+"}", url.PathEscape(parameterValueToString(r.stockItemId, "stockItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4533,9 +4533,9 @@ func (a *AttachmentsApiService) GETStockItemIdAttachmentsExecute(r AttachmentsAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4592,7 +4592,7 @@ func (a *AttachmentsApiService) GETStockLocationIdAttachmentsExecute(r Attachmen
 	}
 
 	localVarPath := localBasePath + "/stock_locations/{stockLocationId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterToString(r.stockLocationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterValueToString(r.stockLocationId, "stockLocationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4625,9 +4625,9 @@ func (a *AttachmentsApiService) GETStockLocationIdAttachmentsExecute(r Attachmen
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4684,7 +4684,7 @@ func (a *AttachmentsApiService) GETSubscriptionModelIdAttachmentsExecute(r Attac
 	}
 
 	localVarPath := localBasePath + "/subscription_models/{subscriptionModelId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"subscriptionModelId"+"}", url.PathEscape(parameterToString(r.subscriptionModelId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"subscriptionModelId"+"}", url.PathEscape(parameterValueToString(r.subscriptionModelId, "subscriptionModelId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4717,9 +4717,9 @@ func (a *AttachmentsApiService) GETSubscriptionModelIdAttachmentsExecute(r Attac
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4776,7 +4776,7 @@ func (a *AttachmentsApiService) GETTaxCalculatorIdAttachmentsExecute(r Attachmen
 	}
 
 	localVarPath := localBasePath + "/tax_calculators/{taxCalculatorId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxCalculatorId"+"}", url.PathEscape(parameterToString(r.taxCalculatorId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.taxCalculatorId, "taxCalculatorId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4809,9 +4809,9 @@ func (a *AttachmentsApiService) GETTaxCalculatorIdAttachmentsExecute(r Attachmen
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4868,7 +4868,7 @@ func (a *AttachmentsApiService) GETTaxCategoryIdAttachmentsExecute(r Attachments
 	}
 
 	localVarPath := localBasePath + "/tax_categories/{taxCategoryId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxCategoryId"+"}", url.PathEscape(parameterToString(r.taxCategoryId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxCategoryId"+"}", url.PathEscape(parameterValueToString(r.taxCategoryId, "taxCategoryId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4901,9 +4901,9 @@ func (a *AttachmentsApiService) GETTaxCategoryIdAttachmentsExecute(r Attachments
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4960,7 +4960,7 @@ func (a *AttachmentsApiService) GETTaxjarAccountIdAttachmentsExecute(r Attachmen
 	}
 
 	localVarPath := localBasePath + "/taxjar_accounts/{taxjarAccountId}/attachments"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxjarAccountId"+"}", url.PathEscape(parameterToString(r.taxjarAccountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxjarAccountId"+"}", url.PathEscape(parameterValueToString(r.taxjarAccountId, "taxjarAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4993,9 +4993,9 @@ func (a *AttachmentsApiService) GETTaxjarAccountIdAttachmentsExecute(r Attachmen
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5061,7 +5061,7 @@ func (a *AttachmentsApiService) PATCHAttachmentsAttachmentIdExecute(r Attachment
 	}
 
 	localVarPath := localBasePath + "/attachments/{attachmentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"attachmentId"+"}", url.PathEscape(parameterToString(r.attachmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"attachmentId"+"}", url.PathEscape(parameterValueToString(r.attachmentId, "attachmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5099,9 +5099,9 @@ func (a *AttachmentsApiService) PATCHAttachmentsAttachmentIdExecute(r Attachment
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -5210,9 +5210,9 @@ func (a *AttachmentsApiService) POSTAttachmentsExecute(r AttachmentsApiPOSTAttac
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

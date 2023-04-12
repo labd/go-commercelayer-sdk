@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes{}
+
 // PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes struct for PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes
 type PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes struct {
 	// The payment source type.
@@ -69,7 +72,7 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetPaymentTypeOk() (*interface{}, bool) {
-	if o == nil || o.PaymentType == nil {
+	if o == nil || IsNil(o.PaymentType) {
 		return nil, false
 	}
 	return &o.PaymentType, true
@@ -77,7 +80,7 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) 
 
 // HasPaymentType returns a boolean if a field has been set.
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) HasPaymentType() bool {
-	if o != nil && o.PaymentType != nil {
+	if o != nil && IsNil(o.PaymentType) {
 		return true
 	}
 
@@ -102,7 +105,7 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetTokenOk() (*interface{}, bool) {
-	if o == nil || o.Token == nil {
+	if o == nil || IsNil(o.Token) {
 		return nil, false
 	}
 	return &o.Token, true
@@ -110,7 +113,7 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) 
 
 // HasToken returns a boolean if a field has been set.
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) HasToken() bool {
-	if o != nil && o.Token != nil {
+	if o != nil && IsNil(o.Token) {
 		return true
 	}
 
@@ -135,7 +138,7 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetSessionIdOk() (*interface{}, bool) {
-	if o == nil || o.SessionId == nil {
+	if o == nil || IsNil(o.SessionId) {
 		return nil, false
 	}
 	return &o.SessionId, true
@@ -143,7 +146,7 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) 
 
 // HasSessionId returns a boolean if a field has been set.
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) HasSessionId() bool {
-	if o != nil && o.SessionId != nil {
+	if o != nil && IsNil(o.SessionId) {
 		return true
 	}
 
@@ -168,7 +171,7 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetSuccessUrlOk() (*interface{}, bool) {
-	if o == nil || o.SuccessUrl == nil {
+	if o == nil || IsNil(o.SuccessUrl) {
 		return nil, false
 	}
 	return &o.SuccessUrl, true
@@ -176,7 +179,7 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) 
 
 // HasSuccessUrl returns a boolean if a field has been set.
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) HasSuccessUrl() bool {
-	if o != nil && o.SuccessUrl != nil {
+	if o != nil && IsNil(o.SuccessUrl) {
 		return true
 	}
 
@@ -201,7 +204,7 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetFailureUrlOk() (*interface{}, bool) {
-	if o == nil || o.FailureUrl == nil {
+	if o == nil || IsNil(o.FailureUrl) {
 		return nil, false
 	}
 	return &o.FailureUrl, true
@@ -209,7 +212,7 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) 
 
 // HasFailureUrl returns a boolean if a field has been set.
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) HasFailureUrl() bool {
-	if o != nil && o.FailureUrl != nil {
+	if o != nil && IsNil(o.FailureUrl) {
 		return true
 	}
 
@@ -234,7 +237,7 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetDetailsOk() (*interface{}, bool) {
-	if o == nil || o.Details == nil {
+	if o == nil || IsNil(o.Details) {
 		return nil, false
 	}
 	return &o.Details, true
@@ -242,7 +245,7 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) 
 
 // HasDetails returns a boolean if a field has been set.
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) HasDetails() bool {
-	if o != nil && o.Details != nil {
+	if o != nil && IsNil(o.Details) {
 		return true
 	}
 
@@ -267,7 +270,7 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetRefreshOk() (*interface{}, bool) {
-	if o == nil || o.Refresh == nil {
+	if o == nil || IsNil(o.Refresh) {
 		return nil, false
 	}
 	return &o.Refresh, true
@@ -275,7 +278,7 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) 
 
 // HasRefresh returns a boolean if a field has been set.
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) HasRefresh() bool {
-	if o != nil && o.Refresh != nil {
+	if o != nil && IsNil(o.Refresh) {
 		return true
 	}
 
@@ -300,7 +303,7 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -308,7 +311,7 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) 
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -333,7 +336,7 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -341,7 +344,7 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) 
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -366,7 +369,7 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -374,7 +377,7 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) 
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -387,6 +390,14 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) 
 }
 
 func (o PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.PaymentType != nil {
 		toSerialize["payment_type"] = o.PaymentType
@@ -418,7 +429,7 @@ func (o PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) M
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes struct {

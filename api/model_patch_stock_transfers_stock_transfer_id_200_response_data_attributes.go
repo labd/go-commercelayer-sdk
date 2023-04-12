@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHStockTransfersStockTransferId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHStockTransfersStockTransferId200ResponseDataAttributes{}
+
 // PATCHStockTransfersStockTransferId200ResponseDataAttributes struct for PATCHStockTransfersStockTransferId200ResponseDataAttributes
 type PATCHStockTransfersStockTransferId200ResponseDataAttributes struct {
 	// The code of the associated SKU.
@@ -67,7 +70,7 @@ func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetSkuCode
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetSkuCodeOk() (*interface{}, bool) {
-	if o == nil || o.SkuCode == nil {
+	if o == nil || IsNil(o.SkuCode) {
 		return nil, false
 	}
 	return &o.SkuCode, true
@@ -75,7 +78,7 @@ func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetSkuCode
 
 // HasSkuCode returns a boolean if a field has been set.
 func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) HasSkuCode() bool {
-	if o != nil && o.SkuCode != nil {
+	if o != nil && IsNil(o.SkuCode) {
 		return true
 	}
 
@@ -100,7 +103,7 @@ func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetUpcomin
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetUpcomingOk() (*interface{}, bool) {
-	if o == nil || o.Upcoming == nil {
+	if o == nil || IsNil(o.Upcoming) {
 		return nil, false
 	}
 	return &o.Upcoming, true
@@ -108,7 +111,7 @@ func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetUpcomin
 
 // HasUpcoming returns a boolean if a field has been set.
 func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) HasUpcoming() bool {
-	if o != nil && o.Upcoming != nil {
+	if o != nil && IsNil(o.Upcoming) {
 		return true
 	}
 
@@ -133,7 +136,7 @@ func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetPicking
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetPickingOk() (*interface{}, bool) {
-	if o == nil || o.Picking == nil {
+	if o == nil || IsNil(o.Picking) {
 		return nil, false
 	}
 	return &o.Picking, true
@@ -141,7 +144,7 @@ func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetPicking
 
 // HasPicking returns a boolean if a field has been set.
 func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) HasPicking() bool {
-	if o != nil && o.Picking != nil {
+	if o != nil && IsNil(o.Picking) {
 		return true
 	}
 
@@ -166,7 +169,7 @@ func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetInTrans
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetInTransitOk() (*interface{}, bool) {
-	if o == nil || o.InTransit == nil {
+	if o == nil || IsNil(o.InTransit) {
 		return nil, false
 	}
 	return &o.InTransit, true
@@ -174,7 +177,7 @@ func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetInTrans
 
 // HasInTransit returns a boolean if a field has been set.
 func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) HasInTransit() bool {
-	if o != nil && o.InTransit != nil {
+	if o != nil && IsNil(o.InTransit) {
 		return true
 	}
 
@@ -199,7 +202,7 @@ func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetComplet
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetCompleteOk() (*interface{}, bool) {
-	if o == nil || o.Complete == nil {
+	if o == nil || IsNil(o.Complete) {
 		return nil, false
 	}
 	return &o.Complete, true
@@ -207,7 +210,7 @@ func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetComplet
 
 // HasComplete returns a boolean if a field has been set.
 func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) HasComplete() bool {
-	if o != nil && o.Complete != nil {
+	if o != nil && IsNil(o.Complete) {
 		return true
 	}
 
@@ -232,7 +235,7 @@ func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetCancel(
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetCancelOk() (*interface{}, bool) {
-	if o == nil || o.Cancel == nil {
+	if o == nil || IsNil(o.Cancel) {
 		return nil, false
 	}
 	return &o.Cancel, true
@@ -240,7 +243,7 @@ func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetCancelO
 
 // HasCancel returns a boolean if a field has been set.
 func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) HasCancel() bool {
-	if o != nil && o.Cancel != nil {
+	if o != nil && IsNil(o.Cancel) {
 		return true
 	}
 
@@ -265,7 +268,7 @@ func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetReferen
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -273,7 +276,7 @@ func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetReferen
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -298,7 +301,7 @@ func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetReferen
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -306,7 +309,7 @@ func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetReferen
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -331,7 +334,7 @@ func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetMetadat
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -339,7 +342,7 @@ func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) GetMetadat
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -352,6 +355,14 @@ func (o *PATCHStockTransfersStockTransferId200ResponseDataAttributes) SetMetadat
 }
 
 func (o PATCHStockTransfersStockTransferId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHStockTransfersStockTransferId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.SkuCode != nil {
 		toSerialize["sku_code"] = o.SkuCode
@@ -380,7 +391,7 @@ func (o PATCHStockTransfersStockTransferId200ResponseDataAttributes) MarshalJSON
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHStockTransfersStockTransferId200ResponseDataAttributes struct {

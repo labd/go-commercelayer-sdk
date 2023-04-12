@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the SatispayGatewayCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SatispayGatewayCreateDataRelationships{}
+
 // SatispayGatewayCreateDataRelationships struct for SatispayGatewayCreateDataRelationships
 type SatispayGatewayCreateDataRelationships struct {
 	SatispayPayments *SatispayGatewayCreateDataRelationshipsSatispayPayments `json:"satispay_payments,omitempty"`
@@ -39,7 +42,7 @@ func NewSatispayGatewayCreateDataRelationshipsWithDefaults() *SatispayGatewayCre
 
 // GetSatispayPayments returns the SatispayPayments field value if set, zero value otherwise.
 func (o *SatispayGatewayCreateDataRelationships) GetSatispayPayments() SatispayGatewayCreateDataRelationshipsSatispayPayments {
-	if o == nil || o.SatispayPayments == nil {
+	if o == nil || IsNil(o.SatispayPayments) {
 		var ret SatispayGatewayCreateDataRelationshipsSatispayPayments
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *SatispayGatewayCreateDataRelationships) GetSatispayPayments() SatispayG
 // GetSatispayPaymentsOk returns a tuple with the SatispayPayments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SatispayGatewayCreateDataRelationships) GetSatispayPaymentsOk() (*SatispayGatewayCreateDataRelationshipsSatispayPayments, bool) {
-	if o == nil || o.SatispayPayments == nil {
+	if o == nil || IsNil(o.SatispayPayments) {
 		return nil, false
 	}
 	return o.SatispayPayments, true
@@ -57,7 +60,7 @@ func (o *SatispayGatewayCreateDataRelationships) GetSatispayPaymentsOk() (*Satis
 
 // HasSatispayPayments returns a boolean if a field has been set.
 func (o *SatispayGatewayCreateDataRelationships) HasSatispayPayments() bool {
-	if o != nil && o.SatispayPayments != nil {
+	if o != nil && !IsNil(o.SatispayPayments) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *SatispayGatewayCreateDataRelationships) SetSatispayPayments(v SatispayG
 }
 
 func (o SatispayGatewayCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.SatispayPayments != nil {
-		toSerialize["satispay_payments"] = o.SatispayPayments
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o SatispayGatewayCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.SatispayPayments) {
+		toSerialize["satispay_payments"] = o.SatispayPayments
+	}
+	return toSerialize, nil
 }
 
 type NullableSatispayGatewayCreateDataRelationships struct {

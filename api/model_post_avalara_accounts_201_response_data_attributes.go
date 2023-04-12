@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTAvalaraAccounts201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTAvalaraAccounts201ResponseDataAttributes{}
+
 // POSTAvalaraAccounts201ResponseDataAttributes struct for POSTAvalaraAccounts201ResponseDataAttributes
 type POSTAvalaraAccounts201ResponseDataAttributes struct {
 	// The tax calculator's internal name.
@@ -73,7 +76,7 @@ func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetName() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -97,7 +100,7 @@ func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetReference() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -105,7 +108,7 @@ func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetReferenceOk() (*interf
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTAvalaraAccounts201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -130,7 +133,7 @@ func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetReferenceOrigin() inte
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -138,7 +141,7 @@ func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetReferenceOriginOk() (*
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTAvalaraAccounts201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -163,7 +166,7 @@ func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetMetadata() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -171,7 +174,7 @@ func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetMetadataOk() (*interfa
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTAvalaraAccounts201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -198,7 +201,7 @@ func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetUsername() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetUsernameOk() (*interface{}, bool) {
-	if o == nil || o.Username == nil {
+	if o == nil || IsNil(o.Username) {
 		return nil, false
 	}
 	return &o.Username, true
@@ -224,7 +227,7 @@ func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetPassword() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetPasswordOk() (*interface{}, bool) {
-	if o == nil || o.Password == nil {
+	if o == nil || IsNil(o.Password) {
 		return nil, false
 	}
 	return &o.Password, true
@@ -250,7 +253,7 @@ func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetCompanyCode() interfac
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetCompanyCodeOk() (*interface{}, bool) {
-	if o == nil || o.CompanyCode == nil {
+	if o == nil || IsNil(o.CompanyCode) {
 		return nil, false
 	}
 	return &o.CompanyCode, true
@@ -274,7 +277,7 @@ func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetCommitInvoice() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetCommitInvoiceOk() (*interface{}, bool) {
-	if o == nil || o.CommitInvoice == nil {
+	if o == nil || IsNil(o.CommitInvoice) {
 		return nil, false
 	}
 	return &o.CommitInvoice, true
@@ -282,7 +285,7 @@ func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetCommitInvoiceOk() (*in
 
 // HasCommitInvoice returns a boolean if a field has been set.
 func (o *POSTAvalaraAccounts201ResponseDataAttributes) HasCommitInvoice() bool {
-	if o != nil && o.CommitInvoice != nil {
+	if o != nil && IsNil(o.CommitInvoice) {
 		return true
 	}
 
@@ -307,7 +310,7 @@ func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetDdp() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetDdpOk() (*interface{}, bool) {
-	if o == nil || o.Ddp == nil {
+	if o == nil || IsNil(o.Ddp) {
 		return nil, false
 	}
 	return &o.Ddp, true
@@ -315,7 +318,7 @@ func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetDdpOk() (*interface{},
 
 // HasDdp returns a boolean if a field has been set.
 func (o *POSTAvalaraAccounts201ResponseDataAttributes) HasDdp() bool {
-	if o != nil && o.Ddp != nil {
+	if o != nil && IsNil(o.Ddp) {
 		return true
 	}
 
@@ -328,6 +331,14 @@ func (o *POSTAvalaraAccounts201ResponseDataAttributes) SetDdp(v interface{}) {
 }
 
 func (o POSTAvalaraAccounts201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTAvalaraAccounts201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -356,7 +367,7 @@ func (o POSTAvalaraAccounts201ResponseDataAttributes) MarshalJSON() ([]byte, err
 	if o.Ddp != nil {
 		toSerialize["ddp"] = o.Ddp
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTAvalaraAccounts201ResponseDataAttributes struct {

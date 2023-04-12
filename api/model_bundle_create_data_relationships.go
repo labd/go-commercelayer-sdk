@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the BundleCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BundleCreateDataRelationships{}
+
 // BundleCreateDataRelationships struct for BundleCreateDataRelationships
 type BundleCreateDataRelationships struct {
 	Market  *BillingInfoValidationRuleCreateDataRelationshipsMarket `json:"market,omitempty"`
@@ -41,7 +44,7 @@ func NewBundleCreateDataRelationshipsWithDefaults() *BundleCreateDataRelationshi
 
 // GetMarket returns the Market field value if set, zero value otherwise.
 func (o *BundleCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket {
-	if o == nil || o.Market == nil {
+	if o == nil || IsNil(o.Market) {
 		var ret BillingInfoValidationRuleCreateDataRelationshipsMarket
 		return ret
 	}
@@ -51,7 +54,7 @@ func (o *BundleCreateDataRelationships) GetMarket() BillingInfoValidationRuleCre
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BundleCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool) {
-	if o == nil || o.Market == nil {
+	if o == nil || IsNil(o.Market) {
 		return nil, false
 	}
 	return o.Market, true
@@ -59,7 +62,7 @@ func (o *BundleCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRul
 
 // HasMarket returns a boolean if a field has been set.
 func (o *BundleCreateDataRelationships) HasMarket() bool {
-	if o != nil && o.Market != nil {
+	if o != nil && !IsNil(o.Market) {
 		return true
 	}
 
@@ -96,14 +99,20 @@ func (o *BundleCreateDataRelationships) SetSkuList(v BundleCreateDataRelationshi
 }
 
 func (o BundleCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Market != nil {
-		toSerialize["market"] = o.Market
-	}
-	if true {
-		toSerialize["sku_list"] = o.SkuList
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o BundleCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Market) {
+		toSerialize["market"] = o.Market
+	}
+	toSerialize["sku_list"] = o.SkuList
+	return toSerialize, nil
 }
 
 type NullableBundleCreateDataRelationships struct {

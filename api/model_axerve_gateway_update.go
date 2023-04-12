@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AxerveGatewayUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AxerveGatewayUpdate{}
+
 // AxerveGatewayUpdate struct for AxerveGatewayUpdate
 type AxerveGatewayUpdate struct {
 	Data AxerveGatewayUpdateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *AxerveGatewayUpdate) SetData(v AxerveGatewayUpdateData) {
 }
 
 func (o AxerveGatewayUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AxerveGatewayUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableAxerveGatewayUpdate struct {

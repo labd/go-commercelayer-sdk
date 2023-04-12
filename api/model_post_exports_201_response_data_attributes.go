@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTExports201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTExports201ResponseDataAttributes{}
+
 // POSTExports201ResponseDataAttributes struct for POSTExports201ResponseDataAttributes
 type POSTExports201ResponseDataAttributes struct {
 	// The type of resource being exported.
@@ -68,7 +71,7 @@ func (o *POSTExports201ResponseDataAttributes) GetResourceType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTExports201ResponseDataAttributes) GetResourceTypeOk() (*interface{}, bool) {
-	if o == nil || o.ResourceType == nil {
+	if o == nil || IsNil(o.ResourceType) {
 		return nil, false
 	}
 	return &o.ResourceType, true
@@ -92,7 +95,7 @@ func (o *POSTExports201ResponseDataAttributes) GetFormat() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTExports201ResponseDataAttributes) GetFormatOk() (*interface{}, bool) {
-	if o == nil || o.Format == nil {
+	if o == nil || IsNil(o.Format) {
 		return nil, false
 	}
 	return &o.Format, true
@@ -100,7 +103,7 @@ func (o *POSTExports201ResponseDataAttributes) GetFormatOk() (*interface{}, bool
 
 // HasFormat returns a boolean if a field has been set.
 func (o *POSTExports201ResponseDataAttributes) HasFormat() bool {
-	if o != nil && o.Format != nil {
+	if o != nil && IsNil(o.Format) {
 		return true
 	}
 
@@ -125,7 +128,7 @@ func (o *POSTExports201ResponseDataAttributes) GetIncludes() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTExports201ResponseDataAttributes) GetIncludesOk() (*interface{}, bool) {
-	if o == nil || o.Includes == nil {
+	if o == nil || IsNil(o.Includes) {
 		return nil, false
 	}
 	return &o.Includes, true
@@ -133,7 +136,7 @@ func (o *POSTExports201ResponseDataAttributes) GetIncludesOk() (*interface{}, bo
 
 // HasIncludes returns a boolean if a field has been set.
 func (o *POSTExports201ResponseDataAttributes) HasIncludes() bool {
-	if o != nil && o.Includes != nil {
+	if o != nil && IsNil(o.Includes) {
 		return true
 	}
 
@@ -158,7 +161,7 @@ func (o *POSTExports201ResponseDataAttributes) GetFilters() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTExports201ResponseDataAttributes) GetFiltersOk() (*interface{}, bool) {
-	if o == nil || o.Filters == nil {
+	if o == nil || IsNil(o.Filters) {
 		return nil, false
 	}
 	return &o.Filters, true
@@ -166,7 +169,7 @@ func (o *POSTExports201ResponseDataAttributes) GetFiltersOk() (*interface{}, boo
 
 // HasFilters returns a boolean if a field has been set.
 func (o *POSTExports201ResponseDataAttributes) HasFilters() bool {
-	if o != nil && o.Filters != nil {
+	if o != nil && IsNil(o.Filters) {
 		return true
 	}
 
@@ -191,7 +194,7 @@ func (o *POSTExports201ResponseDataAttributes) GetDryData() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTExports201ResponseDataAttributes) GetDryDataOk() (*interface{}, bool) {
-	if o == nil || o.DryData == nil {
+	if o == nil || IsNil(o.DryData) {
 		return nil, false
 	}
 	return &o.DryData, true
@@ -199,7 +202,7 @@ func (o *POSTExports201ResponseDataAttributes) GetDryDataOk() (*interface{}, boo
 
 // HasDryData returns a boolean if a field has been set.
 func (o *POSTExports201ResponseDataAttributes) HasDryData() bool {
-	if o != nil && o.DryData != nil {
+	if o != nil && IsNil(o.DryData) {
 		return true
 	}
 
@@ -224,7 +227,7 @@ func (o *POSTExports201ResponseDataAttributes) GetReference() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTExports201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -232,7 +235,7 @@ func (o *POSTExports201ResponseDataAttributes) GetReferenceOk() (*interface{}, b
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTExports201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -257,7 +260,7 @@ func (o *POSTExports201ResponseDataAttributes) GetReferenceOrigin() interface{} 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTExports201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -265,7 +268,7 @@ func (o *POSTExports201ResponseDataAttributes) GetReferenceOriginOk() (*interfac
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTExports201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -290,7 +293,7 @@ func (o *POSTExports201ResponseDataAttributes) GetMetadata() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTExports201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -298,7 +301,7 @@ func (o *POSTExports201ResponseDataAttributes) GetMetadataOk() (*interface{}, bo
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTExports201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -311,6 +314,14 @@ func (o *POSTExports201ResponseDataAttributes) SetMetadata(v interface{}) {
 }
 
 func (o POSTExports201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTExports201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.ResourceType != nil {
 		toSerialize["resource_type"] = o.ResourceType
@@ -336,7 +347,7 @@ func (o POSTExports201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTExports201ResponseDataAttributes struct {

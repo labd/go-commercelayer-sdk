@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *PaypalPaymentsApiService) DELETEPaypalPaymentsPaypalPaymentIdExecute(r 
 	}
 
 	localVarPath := localBasePath + "/paypal_payments/{paypalPaymentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"paypalPaymentId"+"}", url.PathEscape(parameterToString(r.paypalPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"paypalPaymentId"+"}", url.PathEscape(parameterValueToString(r.paypalPaymentId, "paypalPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *PaypalPaymentsApiService) DELETEPaypalPaymentsPaypalPaymentIdExecute(r 
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -156,7 +156,7 @@ func (a *PaypalPaymentsApiService) GETPaypalGatewayIdPaypalPaymentsExecute(r Pay
 	}
 
 	localVarPath := localBasePath + "/paypal_gateways/{paypalGatewayId}/paypal_payments"
-	localVarPath = strings.Replace(localVarPath, "{"+"paypalGatewayId"+"}", url.PathEscape(parameterToString(r.paypalGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"paypalGatewayId"+"}", url.PathEscape(parameterValueToString(r.paypalGatewayId, "paypalGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *PaypalPaymentsApiService) GETPaypalGatewayIdPaypalPaymentsExecute(r Pay
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *PaypalPaymentsApiService) GETPaypalPaymentsExecute(r PaypalPaymentsApiG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -351,7 +351,7 @@ func (a *PaypalPaymentsApiService) GETPaypalPaymentsPaypalPaymentIdExecute(r Pay
 	}
 
 	localVarPath := localBasePath + "/paypal_payments/{paypalPaymentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"paypalPaymentId"+"}", url.PathEscape(parameterToString(r.paypalPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"paypalPaymentId"+"}", url.PathEscape(parameterValueToString(r.paypalPaymentId, "paypalPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *PaypalPaymentsApiService) GETPaypalPaymentsPaypalPaymentIdExecute(r Pay
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -461,7 +461,7 @@ func (a *PaypalPaymentsApiService) PATCHPaypalPaymentsPaypalPaymentIdExecute(r P
 	}
 
 	localVarPath := localBasePath + "/paypal_payments/{paypalPaymentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"paypalPaymentId"+"}", url.PathEscape(parameterToString(r.paypalPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"paypalPaymentId"+"}", url.PathEscape(parameterValueToString(r.paypalPaymentId, "paypalPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -499,9 +499,9 @@ func (a *PaypalPaymentsApiService) PATCHPaypalPaymentsPaypalPaymentIdExecute(r P
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -610,9 +610,9 @@ func (a *PaypalPaymentsApiService) POSTPaypalPaymentsExecute(r PaypalPaymentsApi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

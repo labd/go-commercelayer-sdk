@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTCouponRecipients201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTCouponRecipients201ResponseDataAttributes{}
+
 // POSTCouponRecipients201ResponseDataAttributes struct for POSTCouponRecipients201ResponseDataAttributes
 type POSTCouponRecipients201ResponseDataAttributes struct {
 	// The recipient email address
@@ -64,7 +67,7 @@ func (o *POSTCouponRecipients201ResponseDataAttributes) GetEmail() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTCouponRecipients201ResponseDataAttributes) GetEmailOk() (*interface{}, bool) {
-	if o == nil || o.Email == nil {
+	if o == nil || IsNil(o.Email) {
 		return nil, false
 	}
 	return &o.Email, true
@@ -88,7 +91,7 @@ func (o *POSTCouponRecipients201ResponseDataAttributes) GetFirstName() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTCouponRecipients201ResponseDataAttributes) GetFirstNameOk() (*interface{}, bool) {
-	if o == nil || o.FirstName == nil {
+	if o == nil || IsNil(o.FirstName) {
 		return nil, false
 	}
 	return &o.FirstName, true
@@ -96,7 +99,7 @@ func (o *POSTCouponRecipients201ResponseDataAttributes) GetFirstNameOk() (*inter
 
 // HasFirstName returns a boolean if a field has been set.
 func (o *POSTCouponRecipients201ResponseDataAttributes) HasFirstName() bool {
-	if o != nil && o.FirstName != nil {
+	if o != nil && IsNil(o.FirstName) {
 		return true
 	}
 
@@ -121,7 +124,7 @@ func (o *POSTCouponRecipients201ResponseDataAttributes) GetLastName() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTCouponRecipients201ResponseDataAttributes) GetLastNameOk() (*interface{}, bool) {
-	if o == nil || o.LastName == nil {
+	if o == nil || IsNil(o.LastName) {
 		return nil, false
 	}
 	return &o.LastName, true
@@ -129,7 +132,7 @@ func (o *POSTCouponRecipients201ResponseDataAttributes) GetLastNameOk() (*interf
 
 // HasLastName returns a boolean if a field has been set.
 func (o *POSTCouponRecipients201ResponseDataAttributes) HasLastName() bool {
-	if o != nil && o.LastName != nil {
+	if o != nil && IsNil(o.LastName) {
 		return true
 	}
 
@@ -154,7 +157,7 @@ func (o *POSTCouponRecipients201ResponseDataAttributes) GetReference() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTCouponRecipients201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -162,7 +165,7 @@ func (o *POSTCouponRecipients201ResponseDataAttributes) GetReferenceOk() (*inter
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTCouponRecipients201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -187,7 +190,7 @@ func (o *POSTCouponRecipients201ResponseDataAttributes) GetReferenceOrigin() int
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTCouponRecipients201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -195,7 +198,7 @@ func (o *POSTCouponRecipients201ResponseDataAttributes) GetReferenceOriginOk() (
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTCouponRecipients201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -220,7 +223,7 @@ func (o *POSTCouponRecipients201ResponseDataAttributes) GetMetadata() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTCouponRecipients201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -228,7 +231,7 @@ func (o *POSTCouponRecipients201ResponseDataAttributes) GetMetadataOk() (*interf
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTCouponRecipients201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -241,6 +244,14 @@ func (o *POSTCouponRecipients201ResponseDataAttributes) SetMetadata(v interface{
 }
 
 func (o POSTCouponRecipients201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTCouponRecipients201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Email != nil {
 		toSerialize["email"] = o.Email
@@ -260,7 +271,7 @@ func (o POSTCouponRecipients201ResponseDataAttributes) MarshalJSON() ([]byte, er
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTCouponRecipients201ResponseDataAttributes struct {

@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes{}
+
 // PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes struct for PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes
 type PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes struct {
 	// The inventory return location priority within the associated invetory model.
@@ -57,7 +60,7 @@ func (o *PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAt
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes) GetPriorityOk() (*interface{}, bool) {
-	if o == nil || o.Priority == nil {
+	if o == nil || IsNil(o.Priority) {
 		return nil, false
 	}
 	return &o.Priority, true
@@ -65,7 +68,7 @@ func (o *PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAt
 
 // HasPriority returns a boolean if a field has been set.
 func (o *PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes) HasPriority() bool {
-	if o != nil && o.Priority != nil {
+	if o != nil && IsNil(o.Priority) {
 		return true
 	}
 
@@ -90,7 +93,7 @@ func (o *PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAt
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -98,7 +101,7 @@ func (o *PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAt
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -123,7 +126,7 @@ func (o *PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAt
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -131,7 +134,7 @@ func (o *PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAt
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -156,7 +159,7 @@ func (o *PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAt
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -164,7 +167,7 @@ func (o *PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAt
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -177,6 +180,14 @@ func (o *PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAt
 }
 
 func (o PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Priority != nil {
 		toSerialize["priority"] = o.Priority
@@ -190,7 +201,7 @@ func (o PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAtt
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes struct {

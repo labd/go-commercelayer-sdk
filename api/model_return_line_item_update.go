@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ReturnLineItemUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ReturnLineItemUpdate{}
+
 // ReturnLineItemUpdate struct for ReturnLineItemUpdate
 type ReturnLineItemUpdate struct {
 	Data ReturnLineItemUpdateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *ReturnLineItemUpdate) SetData(v ReturnLineItemUpdateData) {
 }
 
 func (o ReturnLineItemUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ReturnLineItemUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableReturnLineItemUpdate struct {

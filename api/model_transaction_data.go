@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the TransactionData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &TransactionData{}
+
 // TransactionData struct for TransactionData
 type TransactionData struct {
 	// The resource's type
-	Type          interface{}                              `json:"type"`
-	Attributes    GETRefunds200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *TransactionDataRelationships            `json:"relationships,omitempty"`
+	Type          interface{}                                 `json:"type"`
+	Attributes    GETRefundsRefundId200ResponseDataAttributes `json:"attributes"`
+	Relationships *TransactionDataRelationships               `json:"relationships,omitempty"`
 }
 
 // NewTransactionData instantiates a new TransactionData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTransactionData(type_ interface{}, attributes GETRefunds200ResponseDataInnerAttributes) *TransactionData {
+func NewTransactionData(type_ interface{}, attributes GETRefundsRefundId200ResponseDataAttributes) *TransactionData {
 	this := TransactionData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -57,7 +60,7 @@ func (o *TransactionData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *TransactionData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -69,9 +72,9 @@ func (o *TransactionData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *TransactionData) GetAttributes() GETRefunds200ResponseDataInnerAttributes {
+func (o *TransactionData) GetAttributes() GETRefundsRefundId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETRefunds200ResponseDataInnerAttributes
+		var ret GETRefundsRefundId200ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +83,7 @@ func (o *TransactionData) GetAttributes() GETRefunds200ResponseDataInnerAttribut
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *TransactionData) GetAttributesOk() (*GETRefunds200ResponseDataInnerAttributes, bool) {
+func (o *TransactionData) GetAttributesOk() (*GETRefundsRefundId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,13 +91,13 @@ func (o *TransactionData) GetAttributesOk() (*GETRefunds200ResponseDataInnerAttr
 }
 
 // SetAttributes sets field value
-func (o *TransactionData) SetAttributes(v GETRefunds200ResponseDataInnerAttributes) {
+func (o *TransactionData) SetAttributes(v GETRefundsRefundId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *TransactionData) GetRelationships() TransactionDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret TransactionDataRelationships
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *TransactionData) GetRelationships() TransactionDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TransactionData) GetRelationshipsOk() (*TransactionDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -112,7 +115,7 @@ func (o *TransactionData) GetRelationshipsOk() (*TransactionDataRelationships, b
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *TransactionData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -125,17 +128,23 @@ func (o *TransactionData) SetRelationships(v TransactionDataRelationships) {
 }
 
 func (o TransactionData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o TransactionData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableTransactionData struct {

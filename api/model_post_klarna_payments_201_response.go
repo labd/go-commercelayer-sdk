@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTKlarnaPayments201Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTKlarnaPayments201Response{}
+
 // POSTKlarnaPayments201Response struct for POSTKlarnaPayments201Response
 type POSTKlarnaPayments201Response struct {
 	Data *POSTKlarnaPayments201ResponseData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewPOSTKlarnaPayments201ResponseWithDefaults() *POSTKlarnaPayments201Respon
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTKlarnaPayments201Response) GetData() POSTKlarnaPayments201ResponseData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret POSTKlarnaPayments201ResponseData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *POSTKlarnaPayments201Response) GetData() POSTKlarnaPayments201ResponseD
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTKlarnaPayments201Response) GetDataOk() (*POSTKlarnaPayments201ResponseData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *POSTKlarnaPayments201Response) GetDataOk() (*POSTKlarnaPayments201Respo
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTKlarnaPayments201Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *POSTKlarnaPayments201Response) SetData(v POSTKlarnaPayments201ResponseD
 }
 
 func (o POSTKlarnaPayments201Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o POSTKlarnaPayments201Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullablePOSTKlarnaPayments201Response struct {

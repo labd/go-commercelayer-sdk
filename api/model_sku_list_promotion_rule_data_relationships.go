@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the SkuListPromotionRuleDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SkuListPromotionRuleDataRelationships{}
+
 // SkuListPromotionRuleDataRelationships struct for SkuListPromotionRuleDataRelationships
 type SkuListPromotionRuleDataRelationships struct {
 	Promotion *CouponCodesPromotionRuleDataRelationshipsPromotion `json:"promotion,omitempty"`
@@ -41,7 +44,7 @@ func NewSkuListPromotionRuleDataRelationshipsWithDefaults() *SkuListPromotionRul
 
 // GetPromotion returns the Promotion field value if set, zero value otherwise.
 func (o *SkuListPromotionRuleDataRelationships) GetPromotion() CouponCodesPromotionRuleDataRelationshipsPromotion {
-	if o == nil || o.Promotion == nil {
+	if o == nil || IsNil(o.Promotion) {
 		var ret CouponCodesPromotionRuleDataRelationshipsPromotion
 		return ret
 	}
@@ -51,7 +54,7 @@ func (o *SkuListPromotionRuleDataRelationships) GetPromotion() CouponCodesPromot
 // GetPromotionOk returns a tuple with the Promotion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SkuListPromotionRuleDataRelationships) GetPromotionOk() (*CouponCodesPromotionRuleDataRelationshipsPromotion, bool) {
-	if o == nil || o.Promotion == nil {
+	if o == nil || IsNil(o.Promotion) {
 		return nil, false
 	}
 	return o.Promotion, true
@@ -59,7 +62,7 @@ func (o *SkuListPromotionRuleDataRelationships) GetPromotionOk() (*CouponCodesPr
 
 // HasPromotion returns a boolean if a field has been set.
 func (o *SkuListPromotionRuleDataRelationships) HasPromotion() bool {
-	if o != nil && o.Promotion != nil {
+	if o != nil && !IsNil(o.Promotion) {
 		return true
 	}
 
@@ -73,7 +76,7 @@ func (o *SkuListPromotionRuleDataRelationships) SetPromotion(v CouponCodesPromot
 
 // GetSkuList returns the SkuList field value if set, zero value otherwise.
 func (o *SkuListPromotionRuleDataRelationships) GetSkuList() BundleDataRelationshipsSkuList {
-	if o == nil || o.SkuList == nil {
+	if o == nil || IsNil(o.SkuList) {
 		var ret BundleDataRelationshipsSkuList
 		return ret
 	}
@@ -83,7 +86,7 @@ func (o *SkuListPromotionRuleDataRelationships) GetSkuList() BundleDataRelations
 // GetSkuListOk returns a tuple with the SkuList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SkuListPromotionRuleDataRelationships) GetSkuListOk() (*BundleDataRelationshipsSkuList, bool) {
-	if o == nil || o.SkuList == nil {
+	if o == nil || IsNil(o.SkuList) {
 		return nil, false
 	}
 	return o.SkuList, true
@@ -91,7 +94,7 @@ func (o *SkuListPromotionRuleDataRelationships) GetSkuListOk() (*BundleDataRelat
 
 // HasSkuList returns a boolean if a field has been set.
 func (o *SkuListPromotionRuleDataRelationships) HasSkuList() bool {
-	if o != nil && o.SkuList != nil {
+	if o != nil && !IsNil(o.SkuList) {
 		return true
 	}
 
@@ -105,7 +108,7 @@ func (o *SkuListPromotionRuleDataRelationships) SetSkuList(v BundleDataRelations
 
 // GetSkus returns the Skus field value if set, zero value otherwise.
 func (o *SkuListPromotionRuleDataRelationships) GetSkus() BundleDataRelationshipsSkus {
-	if o == nil || o.Skus == nil {
+	if o == nil || IsNil(o.Skus) {
 		var ret BundleDataRelationshipsSkus
 		return ret
 	}
@@ -115,7 +118,7 @@ func (o *SkuListPromotionRuleDataRelationships) GetSkus() BundleDataRelationship
 // GetSkusOk returns a tuple with the Skus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SkuListPromotionRuleDataRelationships) GetSkusOk() (*BundleDataRelationshipsSkus, bool) {
-	if o == nil || o.Skus == nil {
+	if o == nil || IsNil(o.Skus) {
 		return nil, false
 	}
 	return o.Skus, true
@@ -123,7 +126,7 @@ func (o *SkuListPromotionRuleDataRelationships) GetSkusOk() (*BundleDataRelation
 
 // HasSkus returns a boolean if a field has been set.
 func (o *SkuListPromotionRuleDataRelationships) HasSkus() bool {
-	if o != nil && o.Skus != nil {
+	if o != nil && !IsNil(o.Skus) {
 		return true
 	}
 
@@ -136,17 +139,25 @@ func (o *SkuListPromotionRuleDataRelationships) SetSkus(v BundleDataRelationship
 }
 
 func (o SkuListPromotionRuleDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Promotion != nil {
-		toSerialize["promotion"] = o.Promotion
-	}
-	if o.SkuList != nil {
-		toSerialize["sku_list"] = o.SkuList
-	}
-	if o.Skus != nil {
-		toSerialize["skus"] = o.Skus
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o SkuListPromotionRuleDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Promotion) {
+		toSerialize["promotion"] = o.Promotion
+	}
+	if !IsNil(o.SkuList) {
+		toSerialize["sku_list"] = o.SkuList
+	}
+	if !IsNil(o.Skus) {
+		toSerialize["skus"] = o.Skus
+	}
+	return toSerialize, nil
 }
 
 type NullableSkuListPromotionRuleDataRelationships struct {

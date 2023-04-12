@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETFreeShippingPromotions200ResponseDataInnerAttributes**](GETFreeShippingPromotions200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**GETFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes**](GETFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ExternalPromotionDataRelationships**](ExternalPromotionDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPromotionData
 
-`func NewPromotionData(type_ interface{}, attributes GETFreeShippingPromotions200ResponseDataInnerAttributes, ) *PromotionData`
+`func NewPromotionData(type_ interface{}, attributes GETFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes, ) *PromotionData`
 
 NewPromotionData instantiates a new PromotionData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *PromotionData) GetAttributes() GETFreeShippingPromotions200ResponseDataInnerAttributes`
+`func (o *PromotionData) GetAttributes() GETFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PromotionData) GetAttributesOk() (*GETFreeShippingPromotions200ResponseDataInnerAttributes, bool)`
+`func (o *PromotionData) GetAttributesOk() (*GETFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PromotionData) SetAttributes(v GETFreeShippingPromotions200ResponseDataInnerAttributes)`
+`func (o *PromotionData) SetAttributes(v GETFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

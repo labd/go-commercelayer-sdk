@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHCustomersCustomerId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHCustomersCustomerId200ResponseDataAttributes{}
+
 // PATCHCustomersCustomerId200ResponseDataAttributes struct for PATCHCustomersCustomerId200ResponseDataAttributes
 type PATCHCustomersCustomerId200ResponseDataAttributes struct {
 	// The customer's email address
@@ -59,7 +62,7 @@ func (o *PATCHCustomersCustomerId200ResponseDataAttributes) GetEmail() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCustomersCustomerId200ResponseDataAttributes) GetEmailOk() (*interface{}, bool) {
-	if o == nil || o.Email == nil {
+	if o == nil || IsNil(o.Email) {
 		return nil, false
 	}
 	return &o.Email, true
@@ -67,7 +70,7 @@ func (o *PATCHCustomersCustomerId200ResponseDataAttributes) GetEmailOk() (*inter
 
 // HasEmail returns a boolean if a field has been set.
 func (o *PATCHCustomersCustomerId200ResponseDataAttributes) HasEmail() bool {
-	if o != nil && o.Email != nil {
+	if o != nil && IsNil(o.Email) {
 		return true
 	}
 
@@ -92,7 +95,7 @@ func (o *PATCHCustomersCustomerId200ResponseDataAttributes) GetPassword() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCustomersCustomerId200ResponseDataAttributes) GetPasswordOk() (*interface{}, bool) {
-	if o == nil || o.Password == nil {
+	if o == nil || IsNil(o.Password) {
 		return nil, false
 	}
 	return &o.Password, true
@@ -100,7 +103,7 @@ func (o *PATCHCustomersCustomerId200ResponseDataAttributes) GetPasswordOk() (*in
 
 // HasPassword returns a boolean if a field has been set.
 func (o *PATCHCustomersCustomerId200ResponseDataAttributes) HasPassword() bool {
-	if o != nil && o.Password != nil {
+	if o != nil && IsNil(o.Password) {
 		return true
 	}
 
@@ -125,7 +128,7 @@ func (o *PATCHCustomersCustomerId200ResponseDataAttributes) GetReference() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCustomersCustomerId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -133,7 +136,7 @@ func (o *PATCHCustomersCustomerId200ResponseDataAttributes) GetReferenceOk() (*i
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHCustomersCustomerId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -158,7 +161,7 @@ func (o *PATCHCustomersCustomerId200ResponseDataAttributes) GetReferenceOrigin()
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCustomersCustomerId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -166,7 +169,7 @@ func (o *PATCHCustomersCustomerId200ResponseDataAttributes) GetReferenceOriginOk
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHCustomersCustomerId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -191,7 +194,7 @@ func (o *PATCHCustomersCustomerId200ResponseDataAttributes) GetMetadata() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCustomersCustomerId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -199,7 +202,7 @@ func (o *PATCHCustomersCustomerId200ResponseDataAttributes) GetMetadataOk() (*in
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHCustomersCustomerId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -212,6 +215,14 @@ func (o *PATCHCustomersCustomerId200ResponseDataAttributes) SetMetadata(v interf
 }
 
 func (o PATCHCustomersCustomerId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHCustomersCustomerId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Email != nil {
 		toSerialize["email"] = o.Email
@@ -228,7 +239,7 @@ func (o PATCHCustomersCustomerId200ResponseDataAttributes) MarshalJSON() ([]byte
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHCustomersCustomerId200ResponseDataAttributes struct {

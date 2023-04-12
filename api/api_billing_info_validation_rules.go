@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *BillingInfoValidationRulesApiService) DELETEBillingInfoValidationRulesB
 	}
 
 	localVarPath := localBasePath + "/billing_info_validation_rules/{billingInfoValidationRuleId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterToString(r.billingInfoValidationRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterValueToString(r.billingInfoValidationRuleId, "billingInfoValidationRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *BillingInfoValidationRulesApiService) DELETEBillingInfoValidationRulesB
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesExec
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesBill
 	}
 
 	localVarPath := localBasePath + "/billing_info_validation_rules/{billingInfoValidationRuleId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterToString(r.billingInfoValidationRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterValueToString(r.billingInfoValidationRuleId, "billingInfoValidationRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *BillingInfoValidationRulesApiService) GETBillingInfoValidationRulesBill
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -369,7 +369,7 @@ func (a *BillingInfoValidationRulesApiService) PATCHBillingInfoValidationRulesBi
 	}
 
 	localVarPath := localBasePath + "/billing_info_validation_rules/{billingInfoValidationRuleId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterToString(r.billingInfoValidationRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterValueToString(r.billingInfoValidationRuleId, "billingInfoValidationRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -407,9 +407,9 @@ func (a *BillingInfoValidationRulesApiService) PATCHBillingInfoValidationRulesBi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -518,9 +518,9 @@ func (a *BillingInfoValidationRulesApiService) POSTBillingInfoValidationRulesExe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

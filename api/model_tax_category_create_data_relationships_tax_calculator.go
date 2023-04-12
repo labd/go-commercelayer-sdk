@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the TaxCategoryCreateDataRelationshipsTaxCalculator type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &TaxCategoryCreateDataRelationshipsTaxCalculator{}
+
 // TaxCategoryCreateDataRelationshipsTaxCalculator struct for TaxCategoryCreateDataRelationshipsTaxCalculator
 type TaxCategoryCreateDataRelationshipsTaxCalculator struct {
 	Data TaxCategoryDataRelationshipsTaxCalculatorData `json:"data"`
@@ -63,11 +66,17 @@ func (o *TaxCategoryCreateDataRelationshipsTaxCalculator) SetData(v TaxCategoryD
 }
 
 func (o TaxCategoryCreateDataRelationshipsTaxCalculator) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o TaxCategoryCreateDataRelationshipsTaxCalculator) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableTaxCategoryCreateDataRelationshipsTaxCalculator struct {

@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHAttachmentsAttachmentId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHAttachmentsAttachmentId200ResponseDataAttributes{}
+
 // PATCHAttachmentsAttachmentId200ResponseDataAttributes struct for PATCHAttachmentsAttachmentId200ResponseDataAttributes
 type PATCHAttachmentsAttachmentId200ResponseDataAttributes struct {
 	// The internal name of the attachment.
@@ -61,7 +64,7 @@ func (o *PATCHAttachmentsAttachmentId200ResponseDataAttributes) GetName() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAttachmentsAttachmentId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -69,7 +72,7 @@ func (o *PATCHAttachmentsAttachmentId200ResponseDataAttributes) GetNameOk() (*in
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHAttachmentsAttachmentId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
@@ -94,7 +97,7 @@ func (o *PATCHAttachmentsAttachmentId200ResponseDataAttributes) GetDescription()
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAttachmentsAttachmentId200ResponseDataAttributes) GetDescriptionOk() (*interface{}, bool) {
-	if o == nil || o.Description == nil {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return &o.Description, true
@@ -102,7 +105,7 @@ func (o *PATCHAttachmentsAttachmentId200ResponseDataAttributes) GetDescriptionOk
 
 // HasDescription returns a boolean if a field has been set.
 func (o *PATCHAttachmentsAttachmentId200ResponseDataAttributes) HasDescription() bool {
-	if o != nil && o.Description != nil {
+	if o != nil && IsNil(o.Description) {
 		return true
 	}
 
@@ -127,7 +130,7 @@ func (o *PATCHAttachmentsAttachmentId200ResponseDataAttributes) GetUrl() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAttachmentsAttachmentId200ResponseDataAttributes) GetUrlOk() (*interface{}, bool) {
-	if o == nil || o.Url == nil {
+	if o == nil || IsNil(o.Url) {
 		return nil, false
 	}
 	return &o.Url, true
@@ -135,7 +138,7 @@ func (o *PATCHAttachmentsAttachmentId200ResponseDataAttributes) GetUrlOk() (*int
 
 // HasUrl returns a boolean if a field has been set.
 func (o *PATCHAttachmentsAttachmentId200ResponseDataAttributes) HasUrl() bool {
-	if o != nil && o.Url != nil {
+	if o != nil && IsNil(o.Url) {
 		return true
 	}
 
@@ -160,7 +163,7 @@ func (o *PATCHAttachmentsAttachmentId200ResponseDataAttributes) GetReference() i
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAttachmentsAttachmentId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -168,7 +171,7 @@ func (o *PATCHAttachmentsAttachmentId200ResponseDataAttributes) GetReferenceOk()
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHAttachmentsAttachmentId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -193,7 +196,7 @@ func (o *PATCHAttachmentsAttachmentId200ResponseDataAttributes) GetReferenceOrig
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAttachmentsAttachmentId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -201,7 +204,7 @@ func (o *PATCHAttachmentsAttachmentId200ResponseDataAttributes) GetReferenceOrig
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHAttachmentsAttachmentId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -226,7 +229,7 @@ func (o *PATCHAttachmentsAttachmentId200ResponseDataAttributes) GetMetadata() in
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAttachmentsAttachmentId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -234,7 +237,7 @@ func (o *PATCHAttachmentsAttachmentId200ResponseDataAttributes) GetMetadataOk() 
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHAttachmentsAttachmentId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -247,6 +250,14 @@ func (o *PATCHAttachmentsAttachmentId200ResponseDataAttributes) SetMetadata(v in
 }
 
 func (o PATCHAttachmentsAttachmentId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHAttachmentsAttachmentId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -266,7 +277,7 @@ func (o PATCHAttachmentsAttachmentId200ResponseDataAttributes) MarshalJSON() ([]
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHAttachmentsAttachmentId200ResponseDataAttributes struct {

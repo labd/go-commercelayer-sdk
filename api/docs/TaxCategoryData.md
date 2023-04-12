@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETTaxCategories200ResponseDataInnerAttributes**](GETTaxCategories200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**GETTaxCategoriesTaxCategoryId200ResponseDataAttributes**](GETTaxCategoriesTaxCategoryId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**TaxCategoryDataRelationships**](TaxCategoryDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewTaxCategoryData
 
-`func NewTaxCategoryData(type_ interface{}, attributes GETTaxCategories200ResponseDataInnerAttributes, ) *TaxCategoryData`
+`func NewTaxCategoryData(type_ interface{}, attributes GETTaxCategoriesTaxCategoryId200ResponseDataAttributes, ) *TaxCategoryData`
 
 NewTaxCategoryData instantiates a new TaxCategoryData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *TaxCategoryData) GetAttributes() GETTaxCategories200ResponseDataInnerAttributes`
+`func (o *TaxCategoryData) GetAttributes() GETTaxCategoriesTaxCategoryId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *TaxCategoryData) GetAttributesOk() (*GETTaxCategories200ResponseDataInnerAttributes, bool)`
+`func (o *TaxCategoryData) GetAttributesOk() (*GETTaxCategoriesTaxCategoryId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *TaxCategoryData) SetAttributes(v GETTaxCategories200ResponseDataInnerAttributes)`
+`func (o *TaxCategoryData) SetAttributes(v GETTaxCategoriesTaxCategoryId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

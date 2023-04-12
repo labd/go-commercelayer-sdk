@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETKlarnaGateways200ResponseDataInnerAttributes**](GETKlarnaGateways200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**GETKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes**](GETKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**PaypalGatewayDataRelationships**](PaypalGatewayDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPaypalGatewayData
 
-`func NewPaypalGatewayData(type_ interface{}, attributes GETKlarnaGateways200ResponseDataInnerAttributes, ) *PaypalGatewayData`
+`func NewPaypalGatewayData(type_ interface{}, attributes GETKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes, ) *PaypalGatewayData`
 
 NewPaypalGatewayData instantiates a new PaypalGatewayData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *PaypalGatewayData) GetAttributes() GETKlarnaGateways200ResponseDataInnerAttributes`
+`func (o *PaypalGatewayData) GetAttributes() GETKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PaypalGatewayData) GetAttributesOk() (*GETKlarnaGateways200ResponseDataInnerAttributes, bool)`
+`func (o *PaypalGatewayData) GetAttributesOk() (*GETKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PaypalGatewayData) SetAttributes(v GETKlarnaGateways200ResponseDataInnerAttributes)`
+`func (o *PaypalGatewayData) SetAttributes(v GETKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

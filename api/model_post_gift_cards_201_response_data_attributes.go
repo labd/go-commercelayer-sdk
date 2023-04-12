@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTGiftCards201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTGiftCards201ResponseDataAttributes{}
+
 // POSTGiftCards201ResponseDataAttributes struct for POSTGiftCards201ResponseDataAttributes
 type POSTGiftCards201ResponseDataAttributes struct {
 	// The gift card code UUID. If not set, it's automatically generated.
@@ -74,7 +77,7 @@ func (o *POSTGiftCards201ResponseDataAttributes) GetCode() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTGiftCards201ResponseDataAttributes) GetCodeOk() (*interface{}, bool) {
-	if o == nil || o.Code == nil {
+	if o == nil || IsNil(o.Code) {
 		return nil, false
 	}
 	return &o.Code, true
@@ -82,7 +85,7 @@ func (o *POSTGiftCards201ResponseDataAttributes) GetCodeOk() (*interface{}, bool
 
 // HasCode returns a boolean if a field has been set.
 func (o *POSTGiftCards201ResponseDataAttributes) HasCode() bool {
-	if o != nil && o.Code != nil {
+	if o != nil && IsNil(o.Code) {
 		return true
 	}
 
@@ -107,7 +110,7 @@ func (o *POSTGiftCards201ResponseDataAttributes) GetCurrencyCode() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTGiftCards201ResponseDataAttributes) GetCurrencyCodeOk() (*interface{}, bool) {
-	if o == nil || o.CurrencyCode == nil {
+	if o == nil || IsNil(o.CurrencyCode) {
 		return nil, false
 	}
 	return &o.CurrencyCode, true
@@ -115,7 +118,7 @@ func (o *POSTGiftCards201ResponseDataAttributes) GetCurrencyCodeOk() (*interface
 
 // HasCurrencyCode returns a boolean if a field has been set.
 func (o *POSTGiftCards201ResponseDataAttributes) HasCurrencyCode() bool {
-	if o != nil && o.CurrencyCode != nil {
+	if o != nil && IsNil(o.CurrencyCode) {
 		return true
 	}
 
@@ -142,7 +145,7 @@ func (o *POSTGiftCards201ResponseDataAttributes) GetBalanceCents() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTGiftCards201ResponseDataAttributes) GetBalanceCentsOk() (*interface{}, bool) {
-	if o == nil || o.BalanceCents == nil {
+	if o == nil || IsNil(o.BalanceCents) {
 		return nil, false
 	}
 	return &o.BalanceCents, true
@@ -166,7 +169,7 @@ func (o *POSTGiftCards201ResponseDataAttributes) GetBalanceMaxCents() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTGiftCards201ResponseDataAttributes) GetBalanceMaxCentsOk() (*interface{}, bool) {
-	if o == nil || o.BalanceMaxCents == nil {
+	if o == nil || IsNil(o.BalanceMaxCents) {
 		return nil, false
 	}
 	return &o.BalanceMaxCents, true
@@ -174,7 +177,7 @@ func (o *POSTGiftCards201ResponseDataAttributes) GetBalanceMaxCentsOk() (*interf
 
 // HasBalanceMaxCents returns a boolean if a field has been set.
 func (o *POSTGiftCards201ResponseDataAttributes) HasBalanceMaxCents() bool {
-	if o != nil && o.BalanceMaxCents != nil {
+	if o != nil && IsNil(o.BalanceMaxCents) {
 		return true
 	}
 
@@ -199,7 +202,7 @@ func (o *POSTGiftCards201ResponseDataAttributes) GetSingleUse() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTGiftCards201ResponseDataAttributes) GetSingleUseOk() (*interface{}, bool) {
-	if o == nil || o.SingleUse == nil {
+	if o == nil || IsNil(o.SingleUse) {
 		return nil, false
 	}
 	return &o.SingleUse, true
@@ -207,7 +210,7 @@ func (o *POSTGiftCards201ResponseDataAttributes) GetSingleUseOk() (*interface{},
 
 // HasSingleUse returns a boolean if a field has been set.
 func (o *POSTGiftCards201ResponseDataAttributes) HasSingleUse() bool {
-	if o != nil && o.SingleUse != nil {
+	if o != nil && IsNil(o.SingleUse) {
 		return true
 	}
 
@@ -232,7 +235,7 @@ func (o *POSTGiftCards201ResponseDataAttributes) GetRechargeable() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTGiftCards201ResponseDataAttributes) GetRechargeableOk() (*interface{}, bool) {
-	if o == nil || o.Rechargeable == nil {
+	if o == nil || IsNil(o.Rechargeable) {
 		return nil, false
 	}
 	return &o.Rechargeable, true
@@ -240,7 +243,7 @@ func (o *POSTGiftCards201ResponseDataAttributes) GetRechargeableOk() (*interface
 
 // HasRechargeable returns a boolean if a field has been set.
 func (o *POSTGiftCards201ResponseDataAttributes) HasRechargeable() bool {
-	if o != nil && o.Rechargeable != nil {
+	if o != nil && IsNil(o.Rechargeable) {
 		return true
 	}
 
@@ -265,7 +268,7 @@ func (o *POSTGiftCards201ResponseDataAttributes) GetImageUrl() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTGiftCards201ResponseDataAttributes) GetImageUrlOk() (*interface{}, bool) {
-	if o == nil || o.ImageUrl == nil {
+	if o == nil || IsNil(o.ImageUrl) {
 		return nil, false
 	}
 	return &o.ImageUrl, true
@@ -273,7 +276,7 @@ func (o *POSTGiftCards201ResponseDataAttributes) GetImageUrlOk() (*interface{}, 
 
 // HasImageUrl returns a boolean if a field has been set.
 func (o *POSTGiftCards201ResponseDataAttributes) HasImageUrl() bool {
-	if o != nil && o.ImageUrl != nil {
+	if o != nil && IsNil(o.ImageUrl) {
 		return true
 	}
 
@@ -298,7 +301,7 @@ func (o *POSTGiftCards201ResponseDataAttributes) GetExpiresAt() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTGiftCards201ResponseDataAttributes) GetExpiresAtOk() (*interface{}, bool) {
-	if o == nil || o.ExpiresAt == nil {
+	if o == nil || IsNil(o.ExpiresAt) {
 		return nil, false
 	}
 	return &o.ExpiresAt, true
@@ -306,7 +309,7 @@ func (o *POSTGiftCards201ResponseDataAttributes) GetExpiresAtOk() (*interface{},
 
 // HasExpiresAt returns a boolean if a field has been set.
 func (o *POSTGiftCards201ResponseDataAttributes) HasExpiresAt() bool {
-	if o != nil && o.ExpiresAt != nil {
+	if o != nil && IsNil(o.ExpiresAt) {
 		return true
 	}
 
@@ -331,7 +334,7 @@ func (o *POSTGiftCards201ResponseDataAttributes) GetRecipientEmail() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTGiftCards201ResponseDataAttributes) GetRecipientEmailOk() (*interface{}, bool) {
-	if o == nil || o.RecipientEmail == nil {
+	if o == nil || IsNil(o.RecipientEmail) {
 		return nil, false
 	}
 	return &o.RecipientEmail, true
@@ -339,7 +342,7 @@ func (o *POSTGiftCards201ResponseDataAttributes) GetRecipientEmailOk() (*interfa
 
 // HasRecipientEmail returns a boolean if a field has been set.
 func (o *POSTGiftCards201ResponseDataAttributes) HasRecipientEmail() bool {
-	if o != nil && o.RecipientEmail != nil {
+	if o != nil && IsNil(o.RecipientEmail) {
 		return true
 	}
 
@@ -364,7 +367,7 @@ func (o *POSTGiftCards201ResponseDataAttributes) GetReference() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTGiftCards201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -372,7 +375,7 @@ func (o *POSTGiftCards201ResponseDataAttributes) GetReferenceOk() (*interface{},
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTGiftCards201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -397,7 +400,7 @@ func (o *POSTGiftCards201ResponseDataAttributes) GetReferenceOrigin() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTGiftCards201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -405,7 +408,7 @@ func (o *POSTGiftCards201ResponseDataAttributes) GetReferenceOriginOk() (*interf
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTGiftCards201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -430,7 +433,7 @@ func (o *POSTGiftCards201ResponseDataAttributes) GetMetadata() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTGiftCards201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -438,7 +441,7 @@ func (o *POSTGiftCards201ResponseDataAttributes) GetMetadataOk() (*interface{}, 
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTGiftCards201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -451,6 +454,14 @@ func (o *POSTGiftCards201ResponseDataAttributes) SetMetadata(v interface{}) {
 }
 
 func (o POSTGiftCards201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTGiftCards201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Code != nil {
 		toSerialize["code"] = o.Code
@@ -488,7 +499,7 @@ func (o POSTGiftCards201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTGiftCards201ResponseDataAttributes struct {

@@ -32,7 +32,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -40,7 +40,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReturnsApi.DELETEReturnsReturnId(context.Background(), returnId).Execute()
+    r, err := apiClient.ReturnsApi.DELETEReturnsReturnId(context.Background(), returnId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnsApi.DELETEReturnsReturnId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -100,7 +100,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -108,7 +108,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReturnsApi.GETCustomerIdReturns(context.Background(), customerId).Execute()
+    r, err := apiClient.ReturnsApi.GETCustomerIdReturns(context.Background(), customerId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnsApi.GETCustomerIdReturns``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -168,7 +168,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -176,7 +176,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReturnsApi.GETOrderIdReturns(context.Background(), orderId).Execute()
+    r, err := apiClient.ReturnsApi.GETOrderIdReturns(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnsApi.GETOrderIdReturns``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -236,7 +236,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -244,7 +244,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ReturnsApi.GETReturnLineItemIdReturn(context.Background(), returnLineItemId).Execute()
+    r, err := apiClient.ReturnsApi.GETReturnLineItemIdReturn(context.Background(), returnLineItemId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ReturnsApi.GETReturnLineItemIdReturn``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -304,7 +304,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -365,7 +365,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -435,7 +435,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -507,7 +507,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {

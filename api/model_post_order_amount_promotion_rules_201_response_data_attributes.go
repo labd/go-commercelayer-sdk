@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTOrderAmountPromotionRules201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTOrderAmountPromotionRules201ResponseDataAttributes{}
+
 // POSTOrderAmountPromotionRules201ResponseDataAttributes struct for POSTOrderAmountPromotionRules201ResponseDataAttributes
 type POSTOrderAmountPromotionRules201ResponseDataAttributes struct {
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
@@ -57,7 +60,7 @@ func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) GetReference() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -65,7 +68,7 @@ func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) GetReferenceOk(
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -90,7 +93,7 @@ func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) GetReferenceOri
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -98,7 +101,7 @@ func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) GetReferenceOri
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -123,7 +126,7 @@ func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) GetMetadata() i
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -131,7 +134,7 @@ func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) GetMetadataOk()
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -156,7 +159,7 @@ func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) GetOrderAmountC
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) GetOrderAmountCentsOk() (*interface{}, bool) {
-	if o == nil || o.OrderAmountCents == nil {
+	if o == nil || IsNil(o.OrderAmountCents) {
 		return nil, false
 	}
 	return &o.OrderAmountCents, true
@@ -164,7 +167,7 @@ func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) GetOrderAmountC
 
 // HasOrderAmountCents returns a boolean if a field has been set.
 func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) HasOrderAmountCents() bool {
-	if o != nil && o.OrderAmountCents != nil {
+	if o != nil && IsNil(o.OrderAmountCents) {
 		return true
 	}
 
@@ -177,6 +180,14 @@ func (o *POSTOrderAmountPromotionRules201ResponseDataAttributes) SetOrderAmountC
 }
 
 func (o POSTOrderAmountPromotionRules201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTOrderAmountPromotionRules201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference
@@ -190,7 +201,7 @@ func (o POSTOrderAmountPromotionRules201ResponseDataAttributes) MarshalJSON() ([
 	if o.OrderAmountCents != nil {
 		toSerialize["order_amount_cents"] = o.OrderAmountCents
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTOrderAmountPromotionRules201ResponseDataAttributes struct {

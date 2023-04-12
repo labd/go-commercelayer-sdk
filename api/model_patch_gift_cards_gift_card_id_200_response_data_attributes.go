@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHGiftCardsGiftCardId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHGiftCardsGiftCardId200ResponseDataAttributes{}
+
 // PATCHGiftCardsGiftCardId200ResponseDataAttributes struct for PATCHGiftCardsGiftCardId200ResponseDataAttributes
 type PATCHGiftCardsGiftCardId200ResponseDataAttributes struct {
 	// The international 3-letter currency code as defined by the ISO 4217 standard.
@@ -79,7 +82,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetCurrencyCode() in
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetCurrencyCodeOk() (*interface{}, bool) {
-	if o == nil || o.CurrencyCode == nil {
+	if o == nil || IsNil(o.CurrencyCode) {
 		return nil, false
 	}
 	return &o.CurrencyCode, true
@@ -87,7 +90,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetCurrencyCodeOk() 
 
 // HasCurrencyCode returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasCurrencyCode() bool {
-	if o != nil && o.CurrencyCode != nil {
+	if o != nil && IsNil(o.CurrencyCode) {
 		return true
 	}
 
@@ -112,7 +115,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetBalanceCents() in
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetBalanceCentsOk() (*interface{}, bool) {
-	if o == nil || o.BalanceCents == nil {
+	if o == nil || IsNil(o.BalanceCents) {
 		return nil, false
 	}
 	return &o.BalanceCents, true
@@ -120,7 +123,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetBalanceCentsOk() 
 
 // HasBalanceCents returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasBalanceCents() bool {
-	if o != nil && o.BalanceCents != nil {
+	if o != nil && IsNil(o.BalanceCents) {
 		return true
 	}
 
@@ -145,7 +148,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetBalanceMaxCents()
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetBalanceMaxCentsOk() (*interface{}, bool) {
-	if o == nil || o.BalanceMaxCents == nil {
+	if o == nil || IsNil(o.BalanceMaxCents) {
 		return nil, false
 	}
 	return &o.BalanceMaxCents, true
@@ -153,7 +156,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetBalanceMaxCentsOk
 
 // HasBalanceMaxCents returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasBalanceMaxCents() bool {
-	if o != nil && o.BalanceMaxCents != nil {
+	if o != nil && IsNil(o.BalanceMaxCents) {
 		return true
 	}
 
@@ -178,7 +181,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetSingleUse() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetSingleUseOk() (*interface{}, bool) {
-	if o == nil || o.SingleUse == nil {
+	if o == nil || IsNil(o.SingleUse) {
 		return nil, false
 	}
 	return &o.SingleUse, true
@@ -186,7 +189,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetSingleUseOk() (*i
 
 // HasSingleUse returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasSingleUse() bool {
-	if o != nil && o.SingleUse != nil {
+	if o != nil && IsNil(o.SingleUse) {
 		return true
 	}
 
@@ -211,7 +214,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetRechargeable() in
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetRechargeableOk() (*interface{}, bool) {
-	if o == nil || o.Rechargeable == nil {
+	if o == nil || IsNil(o.Rechargeable) {
 		return nil, false
 	}
 	return &o.Rechargeable, true
@@ -219,7 +222,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetRechargeableOk() 
 
 // HasRechargeable returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasRechargeable() bool {
-	if o != nil && o.Rechargeable != nil {
+	if o != nil && IsNil(o.Rechargeable) {
 		return true
 	}
 
@@ -244,7 +247,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetImageUrl() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetImageUrlOk() (*interface{}, bool) {
-	if o == nil || o.ImageUrl == nil {
+	if o == nil || IsNil(o.ImageUrl) {
 		return nil, false
 	}
 	return &o.ImageUrl, true
@@ -252,7 +255,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetImageUrlOk() (*in
 
 // HasImageUrl returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasImageUrl() bool {
-	if o != nil && o.ImageUrl != nil {
+	if o != nil && IsNil(o.ImageUrl) {
 		return true
 	}
 
@@ -277,7 +280,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetExpiresAt() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetExpiresAtOk() (*interface{}, bool) {
-	if o == nil || o.ExpiresAt == nil {
+	if o == nil || IsNil(o.ExpiresAt) {
 		return nil, false
 	}
 	return &o.ExpiresAt, true
@@ -285,7 +288,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetExpiresAtOk() (*i
 
 // HasExpiresAt returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasExpiresAt() bool {
-	if o != nil && o.ExpiresAt != nil {
+	if o != nil && IsNil(o.ExpiresAt) {
 		return true
 	}
 
@@ -310,7 +313,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetRecipientEmail() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetRecipientEmailOk() (*interface{}, bool) {
-	if o == nil || o.RecipientEmail == nil {
+	if o == nil || IsNil(o.RecipientEmail) {
 		return nil, false
 	}
 	return &o.RecipientEmail, true
@@ -318,7 +321,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetRecipientEmailOk(
 
 // HasRecipientEmail returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasRecipientEmail() bool {
-	if o != nil && o.RecipientEmail != nil {
+	if o != nil && IsNil(o.RecipientEmail) {
 		return true
 	}
 
@@ -343,7 +346,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetPurchase() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetPurchaseOk() (*interface{}, bool) {
-	if o == nil || o.Purchase == nil {
+	if o == nil || IsNil(o.Purchase) {
 		return nil, false
 	}
 	return &o.Purchase, true
@@ -351,7 +354,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetPurchaseOk() (*in
 
 // HasPurchase returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasPurchase() bool {
-	if o != nil && o.Purchase != nil {
+	if o != nil && IsNil(o.Purchase) {
 		return true
 	}
 
@@ -376,7 +379,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetActivate() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetActivateOk() (*interface{}, bool) {
-	if o == nil || o.Activate == nil {
+	if o == nil || IsNil(o.Activate) {
 		return nil, false
 	}
 	return &o.Activate, true
@@ -384,7 +387,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetActivateOk() (*in
 
 // HasActivate returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasActivate() bool {
-	if o != nil && o.Activate != nil {
+	if o != nil && IsNil(o.Activate) {
 		return true
 	}
 
@@ -409,7 +412,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetDeactivate() inte
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetDeactivateOk() (*interface{}, bool) {
-	if o == nil || o.Deactivate == nil {
+	if o == nil || IsNil(o.Deactivate) {
 		return nil, false
 	}
 	return &o.Deactivate, true
@@ -417,7 +420,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetDeactivateOk() (*
 
 // HasDeactivate returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasDeactivate() bool {
-	if o != nil && o.Deactivate != nil {
+	if o != nil && IsNil(o.Deactivate) {
 		return true
 	}
 
@@ -442,7 +445,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetBalanceChangeCent
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetBalanceChangeCentsOk() (*interface{}, bool) {
-	if o == nil || o.BalanceChangeCents == nil {
+	if o == nil || IsNil(o.BalanceChangeCents) {
 		return nil, false
 	}
 	return &o.BalanceChangeCents, true
@@ -450,7 +453,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetBalanceChangeCent
 
 // HasBalanceChangeCents returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasBalanceChangeCents() bool {
-	if o != nil && o.BalanceChangeCents != nil {
+	if o != nil && IsNil(o.BalanceChangeCents) {
 		return true
 	}
 
@@ -475,7 +478,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetReference() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -483,7 +486,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetReferenceOk() (*i
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -508,7 +511,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetReferenceOrigin()
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -516,7 +519,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetReferenceOriginOk
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -541,7 +544,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetMetadata() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -549,7 +552,7 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetMetadataOk() (*in
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -562,6 +565,14 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetMetadata(v interf
 }
 
 func (o PATCHGiftCardsGiftCardId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHGiftCardsGiftCardId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.CurrencyCode != nil {
 		toSerialize["currency_code"] = o.CurrencyCode
@@ -608,7 +619,7 @@ func (o PATCHGiftCardsGiftCardId200ResponseDataAttributes) MarshalJSON() ([]byte
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHGiftCardsGiftCardId200ResponseDataAttributes struct {

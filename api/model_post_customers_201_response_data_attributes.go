@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTCustomers201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTCustomers201ResponseDataAttributes{}
+
 // POSTCustomers201ResponseDataAttributes struct for POSTCustomers201ResponseDataAttributes
 type POSTCustomers201ResponseDataAttributes struct {
 	// The customer's email address
@@ -62,7 +65,7 @@ func (o *POSTCustomers201ResponseDataAttributes) GetEmail() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTCustomers201ResponseDataAttributes) GetEmailOk() (*interface{}, bool) {
-	if o == nil || o.Email == nil {
+	if o == nil || IsNil(o.Email) {
 		return nil, false
 	}
 	return &o.Email, true
@@ -86,7 +89,7 @@ func (o *POSTCustomers201ResponseDataAttributes) GetPassword() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTCustomers201ResponseDataAttributes) GetPasswordOk() (*interface{}, bool) {
-	if o == nil || o.Password == nil {
+	if o == nil || IsNil(o.Password) {
 		return nil, false
 	}
 	return &o.Password, true
@@ -94,7 +97,7 @@ func (o *POSTCustomers201ResponseDataAttributes) GetPasswordOk() (*interface{}, 
 
 // HasPassword returns a boolean if a field has been set.
 func (o *POSTCustomers201ResponseDataAttributes) HasPassword() bool {
-	if o != nil && o.Password != nil {
+	if o != nil && IsNil(o.Password) {
 		return true
 	}
 
@@ -119,7 +122,7 @@ func (o *POSTCustomers201ResponseDataAttributes) GetReference() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTCustomers201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -127,7 +130,7 @@ func (o *POSTCustomers201ResponseDataAttributes) GetReferenceOk() (*interface{},
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTCustomers201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -152,7 +155,7 @@ func (o *POSTCustomers201ResponseDataAttributes) GetReferenceOrigin() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTCustomers201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -160,7 +163,7 @@ func (o *POSTCustomers201ResponseDataAttributes) GetReferenceOriginOk() (*interf
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTCustomers201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -185,7 +188,7 @@ func (o *POSTCustomers201ResponseDataAttributes) GetMetadata() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTCustomers201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -193,7 +196,7 @@ func (o *POSTCustomers201ResponseDataAttributes) GetMetadataOk() (*interface{}, 
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTCustomers201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -206,6 +209,14 @@ func (o *POSTCustomers201ResponseDataAttributes) SetMetadata(v interface{}) {
 }
 
 func (o POSTCustomers201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTCustomers201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Email != nil {
 		toSerialize["email"] = o.Email
@@ -222,7 +233,7 @@ func (o POSTCustomers201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTCustomers201ResponseDataAttributes struct {

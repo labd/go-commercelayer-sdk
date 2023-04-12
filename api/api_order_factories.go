@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -96,9 +96,9 @@ func (a *OrderFactoriesApiService) GETOrderFactoriesExecute(r OrderFactoriesApiG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -167,7 +167,7 @@ func (a *OrderFactoriesApiService) GETOrderFactoriesOrderFactoryIdExecute(r Orde
 	}
 
 	localVarPath := localBasePath + "/order_factories/{orderFactoryId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderFactoryId"+"}", url.PathEscape(parameterToString(r.orderFactoryId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderFactoryId"+"}", url.PathEscape(parameterValueToString(r.orderFactoryId, "orderFactoryId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -200,9 +200,9 @@ func (a *OrderFactoriesApiService) GETOrderFactoriesOrderFactoryIdExecute(r Orde
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -268,7 +268,7 @@ func (a *OrderFactoriesApiService) GETOrderIdOrderFactoriesExecute(r OrderFactor
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/order_factories"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -301,9 +301,9 @@ func (a *OrderFactoriesApiService) GETOrderIdOrderFactoriesExecute(r OrderFactor
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -360,7 +360,7 @@ func (a *OrderFactoriesApiService) GETOrderSubscriptionIdOrderFactoriesExecute(r
 	}
 
 	localVarPath := localBasePath + "/order_subscriptions/{orderSubscriptionId}/order_factories"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterToString(r.orderSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionId, "orderSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -393,9 +393,9 @@ func (a *OrderFactoriesApiService) GETOrderSubscriptionIdOrderFactoriesExecute(r
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

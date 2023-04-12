@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the CheckoutComGatewayCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CheckoutComGatewayCreate{}
+
 // CheckoutComGatewayCreate struct for CheckoutComGatewayCreate
 type CheckoutComGatewayCreate struct {
 	Data CheckoutComGatewayCreateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *CheckoutComGatewayCreate) SetData(v CheckoutComGatewayCreateData) {
 }
 
 func (o CheckoutComGatewayCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CheckoutComGatewayCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableCheckoutComGatewayCreate struct {

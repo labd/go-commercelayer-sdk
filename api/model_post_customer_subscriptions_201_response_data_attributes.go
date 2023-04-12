@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTCustomerSubscriptions201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTCustomerSubscriptions201ResponseDataAttributes{}
+
 // POSTCustomerSubscriptions201ResponseDataAttributes struct for POSTCustomerSubscriptions201ResponseDataAttributes
 type POSTCustomerSubscriptions201ResponseDataAttributes struct {
 	// The email of the customer that owns the subscription
@@ -60,7 +63,7 @@ func (o *POSTCustomerSubscriptions201ResponseDataAttributes) GetCustomerEmail() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTCustomerSubscriptions201ResponseDataAttributes) GetCustomerEmailOk() (*interface{}, bool) {
-	if o == nil || o.CustomerEmail == nil {
+	if o == nil || IsNil(o.CustomerEmail) {
 		return nil, false
 	}
 	return &o.CustomerEmail, true
@@ -84,7 +87,7 @@ func (o *POSTCustomerSubscriptions201ResponseDataAttributes) GetReference() inte
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTCustomerSubscriptions201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -92,7 +95,7 @@ func (o *POSTCustomerSubscriptions201ResponseDataAttributes) GetReferenceOk() (*
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTCustomerSubscriptions201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -117,7 +120,7 @@ func (o *POSTCustomerSubscriptions201ResponseDataAttributes) GetReferenceOrigin(
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTCustomerSubscriptions201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -125,7 +128,7 @@ func (o *POSTCustomerSubscriptions201ResponseDataAttributes) GetReferenceOriginO
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTCustomerSubscriptions201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -150,7 +153,7 @@ func (o *POSTCustomerSubscriptions201ResponseDataAttributes) GetMetadata() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTCustomerSubscriptions201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -158,7 +161,7 @@ func (o *POSTCustomerSubscriptions201ResponseDataAttributes) GetMetadataOk() (*i
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTCustomerSubscriptions201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -171,6 +174,14 @@ func (o *POSTCustomerSubscriptions201ResponseDataAttributes) SetMetadata(v inter
 }
 
 func (o POSTCustomerSubscriptions201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTCustomerSubscriptions201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.CustomerEmail != nil {
 		toSerialize["customer_email"] = o.CustomerEmail
@@ -184,7 +195,7 @@ func (o POSTCustomerSubscriptions201ResponseDataAttributes) MarshalJSON() ([]byt
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTCustomerSubscriptions201ResponseDataAttributes struct {

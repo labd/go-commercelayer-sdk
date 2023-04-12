@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETStockTransfers200ResponseDataInnerAttributes**](GETStockTransfers200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**GETStockTransfersStockTransferId200ResponseDataAttributes**](GETStockTransfersStockTransferId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**StockTransferDataRelationships**](StockTransferDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewStockTransferData
 
-`func NewStockTransferData(type_ interface{}, attributes GETStockTransfers200ResponseDataInnerAttributes, ) *StockTransferData`
+`func NewStockTransferData(type_ interface{}, attributes GETStockTransfersStockTransferId200ResponseDataAttributes, ) *StockTransferData`
 
 NewStockTransferData instantiates a new StockTransferData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *StockTransferData) GetAttributes() GETStockTransfers200ResponseDataInnerAttributes`
+`func (o *StockTransferData) GetAttributes() GETStockTransfersStockTransferId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *StockTransferData) GetAttributesOk() (*GETStockTransfers200ResponseDataInnerAttributes, bool)`
+`func (o *StockTransferData) GetAttributesOk() (*GETStockTransfersStockTransferId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *StockTransferData) SetAttributes(v GETStockTransfers200ResponseDataInnerAttributes)`
+`func (o *StockTransferData) SetAttributes(v GETStockTransfersStockTransferId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

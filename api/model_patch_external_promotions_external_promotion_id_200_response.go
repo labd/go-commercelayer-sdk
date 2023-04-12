@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHExternalPromotionsExternalPromotionId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHExternalPromotionsExternalPromotionId200Response{}
+
 // PATCHExternalPromotionsExternalPromotionId200Response struct for PATCHExternalPromotionsExternalPromotionId200Response
 type PATCHExternalPromotionsExternalPromotionId200Response struct {
 	Data *PATCHExternalPromotionsExternalPromotionId200ResponseData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewPATCHExternalPromotionsExternalPromotionId200ResponseWithDefaults() *PAT
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *PATCHExternalPromotionsExternalPromotionId200Response) GetData() PATCHExternalPromotionsExternalPromotionId200ResponseData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret PATCHExternalPromotionsExternalPromotionId200ResponseData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *PATCHExternalPromotionsExternalPromotionId200Response) GetData() PATCHE
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHExternalPromotionsExternalPromotionId200Response) GetDataOk() (*PATCHExternalPromotionsExternalPromotionId200ResponseData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *PATCHExternalPromotionsExternalPromotionId200Response) GetDataOk() (*PA
 
 // HasData returns a boolean if a field has been set.
 func (o *PATCHExternalPromotionsExternalPromotionId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *PATCHExternalPromotionsExternalPromotionId200Response) SetData(v PATCHE
 }
 
 func (o PATCHExternalPromotionsExternalPromotionId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PATCHExternalPromotionsExternalPromotionId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullablePATCHExternalPromotionsExternalPromotionId200Response struct {

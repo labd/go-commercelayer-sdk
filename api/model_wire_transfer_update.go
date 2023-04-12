@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the WireTransferUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &WireTransferUpdate{}
+
 // WireTransferUpdate struct for WireTransferUpdate
 type WireTransferUpdate struct {
 	Data WireTransferUpdateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *WireTransferUpdate) SetData(v WireTransferUpdateData) {
 }
 
 func (o WireTransferUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o WireTransferUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableWireTransferUpdate struct {

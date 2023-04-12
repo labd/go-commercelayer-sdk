@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHAdjustmentsAdjustmentId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHAdjustmentsAdjustmentId200ResponseDataAttributes{}
+
 // PATCHAdjustmentsAdjustmentId200ResponseDataAttributes struct for PATCHAdjustmentsAdjustmentId200ResponseDataAttributes
 type PATCHAdjustmentsAdjustmentId200ResponseDataAttributes struct {
 	// The adjustment name
@@ -61,7 +64,7 @@ func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) GetName() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -69,7 +72,7 @@ func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) GetNameOk() (*in
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
@@ -94,7 +97,7 @@ func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) GetCurrencyCode(
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) GetCurrencyCodeOk() (*interface{}, bool) {
-	if o == nil || o.CurrencyCode == nil {
+	if o == nil || IsNil(o.CurrencyCode) {
 		return nil, false
 	}
 	return &o.CurrencyCode, true
@@ -102,7 +105,7 @@ func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) GetCurrencyCodeO
 
 // HasCurrencyCode returns a boolean if a field has been set.
 func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) HasCurrencyCode() bool {
-	if o != nil && o.CurrencyCode != nil {
+	if o != nil && IsNil(o.CurrencyCode) {
 		return true
 	}
 
@@ -127,7 +130,7 @@ func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) GetAmountCents()
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) GetAmountCentsOk() (*interface{}, bool) {
-	if o == nil || o.AmountCents == nil {
+	if o == nil || IsNil(o.AmountCents) {
 		return nil, false
 	}
 	return &o.AmountCents, true
@@ -135,7 +138,7 @@ func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) GetAmountCentsOk
 
 // HasAmountCents returns a boolean if a field has been set.
 func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) HasAmountCents() bool {
-	if o != nil && o.AmountCents != nil {
+	if o != nil && IsNil(o.AmountCents) {
 		return true
 	}
 
@@ -160,7 +163,7 @@ func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) GetReference() i
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -168,7 +171,7 @@ func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) GetReferenceOk()
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -193,7 +196,7 @@ func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) GetReferenceOrig
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -201,7 +204,7 @@ func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) GetReferenceOrig
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -226,7 +229,7 @@ func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) GetMetadata() in
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -234,7 +237,7 @@ func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) GetMetadataOk() 
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -247,6 +250,14 @@ func (o *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) SetMetadata(v in
 }
 
 func (o PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -266,7 +277,7 @@ func (o PATCHAdjustmentsAdjustmentId200ResponseDataAttributes) MarshalJSON() ([]
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHAdjustmentsAdjustmentId200ResponseDataAttributes struct {

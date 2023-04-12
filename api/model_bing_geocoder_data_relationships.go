@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the BingGeocoderDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BingGeocoderDataRelationships{}
+
 // BingGeocoderDataRelationships struct for BingGeocoderDataRelationships
 type BingGeocoderDataRelationships struct {
 	Addresses   *BingGeocoderDataRelationshipsAddresses     `json:"addresses,omitempty"`
@@ -40,7 +43,7 @@ func NewBingGeocoderDataRelationshipsWithDefaults() *BingGeocoderDataRelationshi
 
 // GetAddresses returns the Addresses field value if set, zero value otherwise.
 func (o *BingGeocoderDataRelationships) GetAddresses() BingGeocoderDataRelationshipsAddresses {
-	if o == nil || o.Addresses == nil {
+	if o == nil || IsNil(o.Addresses) {
 		var ret BingGeocoderDataRelationshipsAddresses
 		return ret
 	}
@@ -50,7 +53,7 @@ func (o *BingGeocoderDataRelationships) GetAddresses() BingGeocoderDataRelations
 // GetAddressesOk returns a tuple with the Addresses field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BingGeocoderDataRelationships) GetAddressesOk() (*BingGeocoderDataRelationshipsAddresses, bool) {
-	if o == nil || o.Addresses == nil {
+	if o == nil || IsNil(o.Addresses) {
 		return nil, false
 	}
 	return o.Addresses, true
@@ -58,7 +61,7 @@ func (o *BingGeocoderDataRelationships) GetAddressesOk() (*BingGeocoderDataRelat
 
 // HasAddresses returns a boolean if a field has been set.
 func (o *BingGeocoderDataRelationships) HasAddresses() bool {
-	if o != nil && o.Addresses != nil {
+	if o != nil && !IsNil(o.Addresses) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *BingGeocoderDataRelationships) SetAddresses(v BingGeocoderDataRelations
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *BingGeocoderDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
-	if o == nil || o.Attachments == nil {
+	if o == nil || IsNil(o.Attachments) {
 		var ret AvalaraAccountDataRelationshipsAttachments
 		return ret
 	}
@@ -82,7 +85,7 @@ func (o *BingGeocoderDataRelationships) GetAttachments() AvalaraAccountDataRelat
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BingGeocoderDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
-	if o == nil || o.Attachments == nil {
+	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
 	return o.Attachments, true
@@ -90,7 +93,7 @@ func (o *BingGeocoderDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataR
 
 // HasAttachments returns a boolean if a field has been set.
 func (o *BingGeocoderDataRelationships) HasAttachments() bool {
-	if o != nil && o.Attachments != nil {
+	if o != nil && !IsNil(o.Attachments) {
 		return true
 	}
 
@@ -103,14 +106,22 @@ func (o *BingGeocoderDataRelationships) SetAttachments(v AvalaraAccountDataRelat
 }
 
 func (o BingGeocoderDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Addresses != nil {
-		toSerialize["addresses"] = o.Addresses
-	}
-	if o.Attachments != nil {
-		toSerialize["attachments"] = o.Attachments
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o BingGeocoderDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Addresses) {
+		toSerialize["addresses"] = o.Addresses
+	}
+	if !IsNil(o.Attachments) {
+		toSerialize["attachments"] = o.Attachments
+	}
+	return toSerialize, nil
 }
 
 type NullableBingGeocoderDataRelationships struct {

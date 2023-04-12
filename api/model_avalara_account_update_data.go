@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AvalaraAccountUpdateData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AvalaraAccountUpdateData{}
+
 // AvalaraAccountUpdateData struct for AvalaraAccountUpdateData
 type AvalaraAccountUpdateData struct {
 	// The resource's type
@@ -60,7 +63,7 @@ func (o *AvalaraAccountUpdateData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AvalaraAccountUpdateData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -86,7 +89,7 @@ func (o *AvalaraAccountUpdateData) GetId() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AvalaraAccountUpdateData) GetIdOk() (*interface{}, bool) {
-	if o == nil || o.Id == nil {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return &o.Id, true
@@ -123,7 +126,7 @@ func (o *AvalaraAccountUpdateData) SetAttributes(v PATCHAvalaraAccountsAvalaraAc
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *AvalaraAccountUpdateData) GetRelationships() AvalaraAccountCreateDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret AvalaraAccountCreateDataRelationships
 		return ret
 	}
@@ -133,7 +136,7 @@ func (o *AvalaraAccountUpdateData) GetRelationships() AvalaraAccountCreateDataRe
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AvalaraAccountUpdateData) GetRelationshipsOk() (*AvalaraAccountCreateDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -141,7 +144,7 @@ func (o *AvalaraAccountUpdateData) GetRelationshipsOk() (*AvalaraAccountCreateDa
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *AvalaraAccountUpdateData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -154,6 +157,14 @@ func (o *AvalaraAccountUpdateData) SetRelationships(v AvalaraAccountCreateDataRe
 }
 
 func (o AvalaraAccountUpdateData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o AvalaraAccountUpdateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
@@ -161,13 +172,11 @@ func (o AvalaraAccountUpdateData) MarshalJSON() ([]byte, error) {
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableAvalaraAccountUpdateData struct {

@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *MerchantsApiService) DELETEMerchantsMerchantIdExecute(r MerchantsApiDEL
 	}
 
 	localVarPath := localBasePath + "/merchants/{merchantId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"merchantId"+"}", url.PathEscape(parameterToString(r.merchantId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"merchantId"+"}", url.PathEscape(parameterValueToString(r.merchantId, "merchantId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *MerchantsApiService) DELETEMerchantsMerchantIdExecute(r MerchantsApiDEL
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -156,7 +156,7 @@ func (a *MerchantsApiService) GETMarketIdMerchantExecute(r MerchantsApiGETMarket
 	}
 
 	localVarPath := localBasePath + "/markets/{marketId}/merchant"
-	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterToString(r.marketId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *MerchantsApiService) GETMarketIdMerchantExecute(r MerchantsApiGETMarket
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *MerchantsApiService) GETMerchantsExecute(r MerchantsApiGETMerchantsRequ
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -351,7 +351,7 @@ func (a *MerchantsApiService) GETMerchantsMerchantIdExecute(r MerchantsApiGETMer
 	}
 
 	localVarPath := localBasePath + "/merchants/{merchantId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"merchantId"+"}", url.PathEscape(parameterToString(r.merchantId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"merchantId"+"}", url.PathEscape(parameterValueToString(r.merchantId, "merchantId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *MerchantsApiService) GETMerchantsMerchantIdExecute(r MerchantsApiGETMer
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -461,7 +461,7 @@ func (a *MerchantsApiService) PATCHMerchantsMerchantIdExecute(r MerchantsApiPATC
 	}
 
 	localVarPath := localBasePath + "/merchants/{merchantId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"merchantId"+"}", url.PathEscape(parameterToString(r.merchantId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"merchantId"+"}", url.PathEscape(parameterValueToString(r.merchantId, "merchantId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -499,9 +499,9 @@ func (a *MerchantsApiService) PATCHMerchantsMerchantIdExecute(r MerchantsApiPATC
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -610,9 +610,9 @@ func (a *MerchantsApiService) POSTMerchantsExecute(r MerchantsApiPOSTMerchantsRe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

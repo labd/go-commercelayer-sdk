@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the CouponRecipientCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CouponRecipientCreateDataRelationships{}
+
 // CouponRecipientCreateDataRelationships struct for CouponRecipientCreateDataRelationships
 type CouponRecipientCreateDataRelationships struct {
 	Customer *CouponRecipientCreateDataRelationshipsCustomer `json:"customer,omitempty"`
@@ -39,7 +42,7 @@ func NewCouponRecipientCreateDataRelationshipsWithDefaults() *CouponRecipientCre
 
 // GetCustomer returns the Customer field value if set, zero value otherwise.
 func (o *CouponRecipientCreateDataRelationships) GetCustomer() CouponRecipientCreateDataRelationshipsCustomer {
-	if o == nil || o.Customer == nil {
+	if o == nil || IsNil(o.Customer) {
 		var ret CouponRecipientCreateDataRelationshipsCustomer
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *CouponRecipientCreateDataRelationships) GetCustomer() CouponRecipientCr
 // GetCustomerOk returns a tuple with the Customer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CouponRecipientCreateDataRelationships) GetCustomerOk() (*CouponRecipientCreateDataRelationshipsCustomer, bool) {
-	if o == nil || o.Customer == nil {
+	if o == nil || IsNil(o.Customer) {
 		return nil, false
 	}
 	return o.Customer, true
@@ -57,7 +60,7 @@ func (o *CouponRecipientCreateDataRelationships) GetCustomerOk() (*CouponRecipie
 
 // HasCustomer returns a boolean if a field has been set.
 func (o *CouponRecipientCreateDataRelationships) HasCustomer() bool {
-	if o != nil && o.Customer != nil {
+	if o != nil && !IsNil(o.Customer) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *CouponRecipientCreateDataRelationships) SetCustomer(v CouponRecipientCr
 }
 
 func (o CouponRecipientCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Customer != nil {
-		toSerialize["customer"] = o.Customer
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CouponRecipientCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Customer) {
+		toSerialize["customer"] = o.Customer
+	}
+	return toSerialize, nil
 }
 
 type NullableCouponRecipientCreateDataRelationships struct {

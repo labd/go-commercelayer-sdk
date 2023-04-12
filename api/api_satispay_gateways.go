@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *SatispayGatewaysApiService) DELETESatispayGatewaysSatispayGatewayIdExec
 	}
 
 	localVarPath := localBasePath + "/satispay_gateways/{satispayGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"satispayGatewayId"+"}", url.PathEscape(parameterToString(r.satispayGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"satispayGatewayId"+"}", url.PathEscape(parameterValueToString(r.satispayGatewayId, "satispayGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *SatispayGatewaysApiService) DELETESatispayGatewaysSatispayGatewayIdExec
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *SatispayGatewaysApiService) GETSatispayGatewaysExecute(r SatispayGatewa
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *SatispayGatewaysApiService) GETSatispayGatewaysSatispayGatewayIdExecute
 	}
 
 	localVarPath := localBasePath + "/satispay_gateways/{satispayGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"satispayGatewayId"+"}", url.PathEscape(parameterToString(r.satispayGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"satispayGatewayId"+"}", url.PathEscape(parameterValueToString(r.satispayGatewayId, "satispayGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *SatispayGatewaysApiService) GETSatispayGatewaysSatispayGatewayIdExecute
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -369,7 +369,7 @@ func (a *SatispayGatewaysApiService) PATCHSatispayGatewaysSatispayGatewayIdExecu
 	}
 
 	localVarPath := localBasePath + "/satispay_gateways/{satispayGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"satispayGatewayId"+"}", url.PathEscape(parameterToString(r.satispayGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"satispayGatewayId"+"}", url.PathEscape(parameterValueToString(r.satispayGatewayId, "satispayGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -407,9 +407,9 @@ func (a *SatispayGatewaysApiService) PATCHSatispayGatewaysSatispayGatewayIdExecu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -518,9 +518,9 @@ func (a *SatispayGatewaysApiService) POSTSatispayGatewaysExecute(r SatispayGatew
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

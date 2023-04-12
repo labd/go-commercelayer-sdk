@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ParcelUpdateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ParcelUpdateDataRelationships{}
+
 // ParcelUpdateDataRelationships struct for ParcelUpdateDataRelationships
 type ParcelUpdateDataRelationships struct {
 	Shipment *ParcelCreateDataRelationshipsShipment `json:"shipment,omitempty"`
@@ -40,7 +43,7 @@ func NewParcelUpdateDataRelationshipsWithDefaults() *ParcelUpdateDataRelationshi
 
 // GetShipment returns the Shipment field value if set, zero value otherwise.
 func (o *ParcelUpdateDataRelationships) GetShipment() ParcelCreateDataRelationshipsShipment {
-	if o == nil || o.Shipment == nil {
+	if o == nil || IsNil(o.Shipment) {
 		var ret ParcelCreateDataRelationshipsShipment
 		return ret
 	}
@@ -50,7 +53,7 @@ func (o *ParcelUpdateDataRelationships) GetShipment() ParcelCreateDataRelationsh
 // GetShipmentOk returns a tuple with the Shipment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParcelUpdateDataRelationships) GetShipmentOk() (*ParcelCreateDataRelationshipsShipment, bool) {
-	if o == nil || o.Shipment == nil {
+	if o == nil || IsNil(o.Shipment) {
 		return nil, false
 	}
 	return o.Shipment, true
@@ -58,7 +61,7 @@ func (o *ParcelUpdateDataRelationships) GetShipmentOk() (*ParcelCreateDataRelati
 
 // HasShipment returns a boolean if a field has been set.
 func (o *ParcelUpdateDataRelationships) HasShipment() bool {
-	if o != nil && o.Shipment != nil {
+	if o != nil && !IsNil(o.Shipment) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *ParcelUpdateDataRelationships) SetShipment(v ParcelCreateDataRelationsh
 
 // GetPackage returns the Package field value if set, zero value otherwise.
 func (o *ParcelUpdateDataRelationships) GetPackage() ParcelCreateDataRelationshipsPackage {
-	if o == nil || o.Package == nil {
+	if o == nil || IsNil(o.Package) {
 		var ret ParcelCreateDataRelationshipsPackage
 		return ret
 	}
@@ -82,7 +85,7 @@ func (o *ParcelUpdateDataRelationships) GetPackage() ParcelCreateDataRelationshi
 // GetPackageOk returns a tuple with the Package field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParcelUpdateDataRelationships) GetPackageOk() (*ParcelCreateDataRelationshipsPackage, bool) {
-	if o == nil || o.Package == nil {
+	if o == nil || IsNil(o.Package) {
 		return nil, false
 	}
 	return o.Package, true
@@ -90,7 +93,7 @@ func (o *ParcelUpdateDataRelationships) GetPackageOk() (*ParcelCreateDataRelatio
 
 // HasPackage returns a boolean if a field has been set.
 func (o *ParcelUpdateDataRelationships) HasPackage() bool {
-	if o != nil && o.Package != nil {
+	if o != nil && !IsNil(o.Package) {
 		return true
 	}
 
@@ -103,14 +106,22 @@ func (o *ParcelUpdateDataRelationships) SetPackage(v ParcelCreateDataRelationshi
 }
 
 func (o ParcelUpdateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Shipment != nil {
-		toSerialize["shipment"] = o.Shipment
-	}
-	if o.Package != nil {
-		toSerialize["package"] = o.Package
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ParcelUpdateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Shipment) {
+		toSerialize["shipment"] = o.Shipment
+	}
+	if !IsNil(o.Package) {
+		toSerialize["package"] = o.Package
+	}
+	return toSerialize, nil
 }
 
 type NullableParcelUpdateDataRelationships struct {

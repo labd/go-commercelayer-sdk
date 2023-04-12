@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the ExternalGatewayData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ExternalGatewayData{}
+
 // ExternalGatewayData struct for ExternalGatewayData
 type ExternalGatewayData struct {
 	// The resource's type
-	Type          interface{}                                       `json:"type"`
-	Attributes    GETExternalGateways200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *ExternalGatewayDataRelationships                 `json:"relationships,omitempty"`
+	Type          interface{}                                                   `json:"type"`
+	Attributes    GETExternalGatewaysExternalGatewayId200ResponseDataAttributes `json:"attributes"`
+	Relationships *ExternalGatewayDataRelationships                             `json:"relationships,omitempty"`
 }
 
 // NewExternalGatewayData instantiates a new ExternalGatewayData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewExternalGatewayData(type_ interface{}, attributes GETExternalGateways200ResponseDataInnerAttributes) *ExternalGatewayData {
+func NewExternalGatewayData(type_ interface{}, attributes GETExternalGatewaysExternalGatewayId200ResponseDataAttributes) *ExternalGatewayData {
 	this := ExternalGatewayData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -57,7 +60,7 @@ func (o *ExternalGatewayData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ExternalGatewayData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -69,9 +72,9 @@ func (o *ExternalGatewayData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ExternalGatewayData) GetAttributes() GETExternalGateways200ResponseDataInnerAttributes {
+func (o *ExternalGatewayData) GetAttributes() GETExternalGatewaysExternalGatewayId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETExternalGateways200ResponseDataInnerAttributes
+		var ret GETExternalGatewaysExternalGatewayId200ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +83,7 @@ func (o *ExternalGatewayData) GetAttributes() GETExternalGateways200ResponseData
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ExternalGatewayData) GetAttributesOk() (*GETExternalGateways200ResponseDataInnerAttributes, bool) {
+func (o *ExternalGatewayData) GetAttributesOk() (*GETExternalGatewaysExternalGatewayId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,13 +91,13 @@ func (o *ExternalGatewayData) GetAttributesOk() (*GETExternalGateways200Response
 }
 
 // SetAttributes sets field value
-func (o *ExternalGatewayData) SetAttributes(v GETExternalGateways200ResponseDataInnerAttributes) {
+func (o *ExternalGatewayData) SetAttributes(v GETExternalGatewaysExternalGatewayId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *ExternalGatewayData) GetRelationships() ExternalGatewayDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret ExternalGatewayDataRelationships
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *ExternalGatewayData) GetRelationships() ExternalGatewayDataRelationship
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalGatewayData) GetRelationshipsOk() (*ExternalGatewayDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -112,7 +115,7 @@ func (o *ExternalGatewayData) GetRelationshipsOk() (*ExternalGatewayDataRelation
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *ExternalGatewayData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -125,17 +128,23 @@ func (o *ExternalGatewayData) SetRelationships(v ExternalGatewayDataRelationship
 }
 
 func (o ExternalGatewayData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ExternalGatewayData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableExternalGatewayData struct {

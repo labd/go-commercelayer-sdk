@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**[]GETImports200ResponseDataInner**](GETImports200ResponseDataInner.md) |  | [optional] 
+**Data** | Pointer to **interface{}** |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETImports200Response) GetData() []GETImports200ResponseDataInner`
+`func (o *GETImports200Response) GetData() interface{}`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETImports200Response) GetDataOk() (*[]GETImports200ResponseDataInner, bool)`
+`func (o *GETImports200Response) GetDataOk() (*interface{}, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETImports200Response) SetData(v []GETImports200ResponseDataInner)`
+`func (o *GETImports200Response) SetData(v interface{})`
 
 SetData sets Data field to given value.
 
@@ -50,6 +50,16 @@ SetData sets Data field to given value.
 
 HasData returns a boolean if a field has been set.
 
+### SetDataNil
+
+`func (o *GETImports200Response) SetDataNil(b bool)`
+
+ SetDataNil sets the value for Data to be an explicit nil
+
+### UnsetData
+`func (o *GETImports200Response) UnsetData()`
+
+UnsetData ensures that no value is present for Data, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHMarketsMarketId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHMarketsMarketId200ResponseDataAttributes{}
+
 // PATCHMarketsMarketId200ResponseDataAttributes struct for PATCHMarketsMarketId200ResponseDataAttributes
 type PATCHMarketsMarketId200ResponseDataAttributes struct {
 	// The market's internal name
@@ -69,7 +72,7 @@ func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetName() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -77,7 +80,7 @@ func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetNameOk() (*interface{
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
@@ -102,7 +105,7 @@ func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetFacebookPixelId() int
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetFacebookPixelIdOk() (*interface{}, bool) {
-	if o == nil || o.FacebookPixelId == nil {
+	if o == nil || IsNil(o.FacebookPixelId) {
 		return nil, false
 	}
 	return &o.FacebookPixelId, true
@@ -110,7 +113,7 @@ func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetFacebookPixelIdOk() (
 
 // HasFacebookPixelId returns a boolean if a field has been set.
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasFacebookPixelId() bool {
-	if o != nil && o.FacebookPixelId != nil {
+	if o != nil && IsNil(o.FacebookPixelId) {
 		return true
 	}
 
@@ -135,7 +138,7 @@ func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetCheckoutUrl() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetCheckoutUrlOk() (*interface{}, bool) {
-	if o == nil || o.CheckoutUrl == nil {
+	if o == nil || IsNil(o.CheckoutUrl) {
 		return nil, false
 	}
 	return &o.CheckoutUrl, true
@@ -143,7 +146,7 @@ func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetCheckoutUrlOk() (*int
 
 // HasCheckoutUrl returns a boolean if a field has been set.
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasCheckoutUrl() bool {
-	if o != nil && o.CheckoutUrl != nil {
+	if o != nil && IsNil(o.CheckoutUrl) {
 		return true
 	}
 
@@ -168,7 +171,7 @@ func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetExternalPricesUrl() i
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetExternalPricesUrlOk() (*interface{}, bool) {
-	if o == nil || o.ExternalPricesUrl == nil {
+	if o == nil || IsNil(o.ExternalPricesUrl) {
 		return nil, false
 	}
 	return &o.ExternalPricesUrl, true
@@ -176,7 +179,7 @@ func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetExternalPricesUrlOk()
 
 // HasExternalPricesUrl returns a boolean if a field has been set.
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasExternalPricesUrl() bool {
-	if o != nil && o.ExternalPricesUrl != nil {
+	if o != nil && IsNil(o.ExternalPricesUrl) {
 		return true
 	}
 
@@ -201,7 +204,7 @@ func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetExternalOrderValidati
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetExternalOrderValidationUrlOk() (*interface{}, bool) {
-	if o == nil || o.ExternalOrderValidationUrl == nil {
+	if o == nil || IsNil(o.ExternalOrderValidationUrl) {
 		return nil, false
 	}
 	return &o.ExternalOrderValidationUrl, true
@@ -209,7 +212,7 @@ func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetExternalOrderValidati
 
 // HasExternalOrderValidationUrl returns a boolean if a field has been set.
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasExternalOrderValidationUrl() bool {
-	if o != nil && o.ExternalOrderValidationUrl != nil {
+	if o != nil && IsNil(o.ExternalOrderValidationUrl) {
 		return true
 	}
 
@@ -234,7 +237,7 @@ func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetDisable() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetDisableOk() (*interface{}, bool) {
-	if o == nil || o.Disable == nil {
+	if o == nil || IsNil(o.Disable) {
 		return nil, false
 	}
 	return &o.Disable, true
@@ -242,7 +245,7 @@ func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetDisableOk() (*interfa
 
 // HasDisable returns a boolean if a field has been set.
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasDisable() bool {
-	if o != nil && o.Disable != nil {
+	if o != nil && IsNil(o.Disable) {
 		return true
 	}
 
@@ -267,7 +270,7 @@ func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetEnable() interface{} 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetEnableOk() (*interface{}, bool) {
-	if o == nil || o.Enable == nil {
+	if o == nil || IsNil(o.Enable) {
 		return nil, false
 	}
 	return &o.Enable, true
@@ -275,7 +278,7 @@ func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetEnableOk() (*interfac
 
 // HasEnable returns a boolean if a field has been set.
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasEnable() bool {
-	if o != nil && o.Enable != nil {
+	if o != nil && IsNil(o.Enable) {
 		return true
 	}
 
@@ -300,7 +303,7 @@ func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetReference() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -308,7 +311,7 @@ func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetReferenceOk() (*inter
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -333,7 +336,7 @@ func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetReferenceOrigin() int
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -341,7 +344,7 @@ func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetReferenceOriginOk() (
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -366,7 +369,7 @@ func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetMetadata() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -374,7 +377,7 @@ func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetMetadataOk() (*interf
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -387,6 +390,14 @@ func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetMetadata(v interface{
 }
 
 func (o PATCHMarketsMarketId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHMarketsMarketId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -418,7 +429,7 @@ func (o PATCHMarketsMarketId200ResponseDataAttributes) MarshalJSON() ([]byte, er
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHMarketsMarketId200ResponseDataAttributes struct {

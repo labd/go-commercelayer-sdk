@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETGiftCardRecipientsGiftCardRecipientId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETGiftCardRecipientsGiftCardRecipientId200Response{}
+
 // GETGiftCardRecipientsGiftCardRecipientId200Response struct for GETGiftCardRecipientsGiftCardRecipientId200Response
 type GETGiftCardRecipientsGiftCardRecipientId200Response struct {
-	Data *GETGiftCardRecipients200ResponseDataInner `json:"data,omitempty"`
+	Data *GETGiftCardRecipientsGiftCardRecipientId200ResponseData `json:"data,omitempty"`
 }
 
 // NewGETGiftCardRecipientsGiftCardRecipientId200Response instantiates a new GETGiftCardRecipientsGiftCardRecipientId200Response object
@@ -38,9 +41,9 @@ func NewGETGiftCardRecipientsGiftCardRecipientId200ResponseWithDefaults() *GETGi
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETGiftCardRecipientsGiftCardRecipientId200Response) GetData() GETGiftCardRecipients200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret GETGiftCardRecipients200ResponseDataInner
+func (o *GETGiftCardRecipientsGiftCardRecipientId200Response) GetData() GETGiftCardRecipientsGiftCardRecipientId200ResponseData {
+	if o == nil || IsNil(o.Data) {
+		var ret GETGiftCardRecipientsGiftCardRecipientId200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *GETGiftCardRecipientsGiftCardRecipientId200Response) GetData() GETGiftC
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETGiftCardRecipientsGiftCardRecipientId200Response) GetDataOk() (*GETGiftCardRecipients200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+func (o *GETGiftCardRecipientsGiftCardRecipientId200Response) GetDataOk() (*GETGiftCardRecipientsGiftCardRecipientId200ResponseData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *GETGiftCardRecipientsGiftCardRecipientId200Response) GetDataOk() (*GETG
 
 // HasData returns a boolean if a field has been set.
 func (o *GETGiftCardRecipientsGiftCardRecipientId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETGiftCardRecipients200ResponseDataInner and assigns it to the Data field.
-func (o *GETGiftCardRecipientsGiftCardRecipientId200Response) SetData(v GETGiftCardRecipients200ResponseDataInner) {
+// SetData gets a reference to the given GETGiftCardRecipientsGiftCardRecipientId200ResponseData and assigns it to the Data field.
+func (o *GETGiftCardRecipientsGiftCardRecipientId200Response) SetData(v GETGiftCardRecipientsGiftCardRecipientId200ResponseData) {
 	o.Data = &v
 }
 
 func (o GETGiftCardRecipientsGiftCardRecipientId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GETGiftCardRecipientsGiftCardRecipientId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGETGiftCardRecipientsGiftCardRecipientId200Response struct {

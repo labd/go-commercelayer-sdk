@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the EventDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &EventDataRelationships{}
+
 // EventDataRelationships struct for EventDataRelationships
 type EventDataRelationships struct {
 	LastEventCallbacks *EventDataRelationshipsLastEventCallbacks `json:"last_event_callbacks,omitempty"`
@@ -40,7 +43,7 @@ func NewEventDataRelationshipsWithDefaults() *EventDataRelationships {
 
 // GetLastEventCallbacks returns the LastEventCallbacks field value if set, zero value otherwise.
 func (o *EventDataRelationships) GetLastEventCallbacks() EventDataRelationshipsLastEventCallbacks {
-	if o == nil || o.LastEventCallbacks == nil {
+	if o == nil || IsNil(o.LastEventCallbacks) {
 		var ret EventDataRelationshipsLastEventCallbacks
 		return ret
 	}
@@ -50,7 +53,7 @@ func (o *EventDataRelationships) GetLastEventCallbacks() EventDataRelationshipsL
 // GetLastEventCallbacksOk returns a tuple with the LastEventCallbacks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventDataRelationships) GetLastEventCallbacksOk() (*EventDataRelationshipsLastEventCallbacks, bool) {
-	if o == nil || o.LastEventCallbacks == nil {
+	if o == nil || IsNil(o.LastEventCallbacks) {
 		return nil, false
 	}
 	return o.LastEventCallbacks, true
@@ -58,7 +61,7 @@ func (o *EventDataRelationships) GetLastEventCallbacksOk() (*EventDataRelationsh
 
 // HasLastEventCallbacks returns a boolean if a field has been set.
 func (o *EventDataRelationships) HasLastEventCallbacks() bool {
-	if o != nil && o.LastEventCallbacks != nil {
+	if o != nil && !IsNil(o.LastEventCallbacks) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *EventDataRelationships) SetLastEventCallbacks(v EventDataRelationshipsL
 
 // GetWebhooks returns the Webhooks field value if set, zero value otherwise.
 func (o *EventDataRelationships) GetWebhooks() EventCallbackDataRelationshipsWebhook {
-	if o == nil || o.Webhooks == nil {
+	if o == nil || IsNil(o.Webhooks) {
 		var ret EventCallbackDataRelationshipsWebhook
 		return ret
 	}
@@ -82,7 +85,7 @@ func (o *EventDataRelationships) GetWebhooks() EventCallbackDataRelationshipsWeb
 // GetWebhooksOk returns a tuple with the Webhooks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventDataRelationships) GetWebhooksOk() (*EventCallbackDataRelationshipsWebhook, bool) {
-	if o == nil || o.Webhooks == nil {
+	if o == nil || IsNil(o.Webhooks) {
 		return nil, false
 	}
 	return o.Webhooks, true
@@ -90,7 +93,7 @@ func (o *EventDataRelationships) GetWebhooksOk() (*EventCallbackDataRelationship
 
 // HasWebhooks returns a boolean if a field has been set.
 func (o *EventDataRelationships) HasWebhooks() bool {
-	if o != nil && o.Webhooks != nil {
+	if o != nil && !IsNil(o.Webhooks) {
 		return true
 	}
 
@@ -103,14 +106,22 @@ func (o *EventDataRelationships) SetWebhooks(v EventCallbackDataRelationshipsWeb
 }
 
 func (o EventDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.LastEventCallbacks != nil {
-		toSerialize["last_event_callbacks"] = o.LastEventCallbacks
-	}
-	if o.Webhooks != nil {
-		toSerialize["webhooks"] = o.Webhooks
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o EventDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.LastEventCallbacks) {
+		toSerialize["last_event_callbacks"] = o.LastEventCallbacks
+	}
+	if !IsNil(o.Webhooks) {
+		toSerialize["webhooks"] = o.Webhooks
+	}
+	return toSerialize, nil
 }
 
 type NullableEventDataRelationships struct {

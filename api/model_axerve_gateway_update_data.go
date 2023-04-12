@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AxerveGatewayUpdateData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AxerveGatewayUpdateData{}
+
 // AxerveGatewayUpdateData struct for AxerveGatewayUpdateData
 type AxerveGatewayUpdateData struct {
 	// The resource's type
@@ -60,7 +63,7 @@ func (o *AxerveGatewayUpdateData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AxerveGatewayUpdateData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -86,7 +89,7 @@ func (o *AxerveGatewayUpdateData) GetId() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AxerveGatewayUpdateData) GetIdOk() (*interface{}, bool) {
-	if o == nil || o.Id == nil {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return &o.Id, true
@@ -123,7 +126,7 @@ func (o *AxerveGatewayUpdateData) SetAttributes(v PATCHAxerveGatewaysAxerveGatew
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *AxerveGatewayUpdateData) GetRelationships() AxerveGatewayCreateDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret AxerveGatewayCreateDataRelationships
 		return ret
 	}
@@ -133,7 +136,7 @@ func (o *AxerveGatewayUpdateData) GetRelationships() AxerveGatewayCreateDataRela
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AxerveGatewayUpdateData) GetRelationshipsOk() (*AxerveGatewayCreateDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -141,7 +144,7 @@ func (o *AxerveGatewayUpdateData) GetRelationshipsOk() (*AxerveGatewayCreateData
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *AxerveGatewayUpdateData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -154,6 +157,14 @@ func (o *AxerveGatewayUpdateData) SetRelationships(v AxerveGatewayCreateDataRela
 }
 
 func (o AxerveGatewayUpdateData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o AxerveGatewayUpdateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
@@ -161,13 +172,11 @@ func (o AxerveGatewayUpdateData) MarshalJSON() ([]byte, error) {
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableAxerveGatewayUpdateData struct {

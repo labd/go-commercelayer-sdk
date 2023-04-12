@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the FreeShippingPromotionUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &FreeShippingPromotionUpdate{}
+
 // FreeShippingPromotionUpdate struct for FreeShippingPromotionUpdate
 type FreeShippingPromotionUpdate struct {
 	Data FreeShippingPromotionUpdateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *FreeShippingPromotionUpdate) SetData(v FreeShippingPromotionUpdateData)
 }
 
 func (o FreeShippingPromotionUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o FreeShippingPromotionUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableFreeShippingPromotionUpdate struct {

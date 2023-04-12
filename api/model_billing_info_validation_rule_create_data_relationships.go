@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the BillingInfoValidationRuleCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BillingInfoValidationRuleCreateDataRelationships{}
+
 // BillingInfoValidationRuleCreateDataRelationships struct for BillingInfoValidationRuleCreateDataRelationships
 type BillingInfoValidationRuleCreateDataRelationships struct {
 	Market BillingInfoValidationRuleCreateDataRelationshipsMarket `json:"market"`
@@ -63,11 +66,17 @@ func (o *BillingInfoValidationRuleCreateDataRelationships) SetMarket(v BillingIn
 }
 
 func (o BillingInfoValidationRuleCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["market"] = o.Market
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o BillingInfoValidationRuleCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["market"] = o.Market
+	return toSerialize, nil
 }
 
 type NullableBillingInfoValidationRuleCreateDataRelationships struct {

@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHWebhooksWebhookId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHWebhooksWebhookId200ResponseDataAttributes{}
+
 // PATCHWebhooksWebhookId200ResponseDataAttributes struct for PATCHWebhooksWebhookId200ResponseDataAttributes
 type PATCHWebhooksWebhookId200ResponseDataAttributes struct {
 	// Unique name for the webhook.
@@ -65,7 +68,7 @@ func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetName() interface{} 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -73,7 +76,7 @@ func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetNameOk() (*interfac
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
@@ -98,7 +101,7 @@ func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetTopic() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetTopicOk() (*interface{}, bool) {
-	if o == nil || o.Topic == nil {
+	if o == nil || IsNil(o.Topic) {
 		return nil, false
 	}
 	return &o.Topic, true
@@ -106,7 +109,7 @@ func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetTopicOk() (*interfa
 
 // HasTopic returns a boolean if a field has been set.
 func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) HasTopic() bool {
-	if o != nil && o.Topic != nil {
+	if o != nil && IsNil(o.Topic) {
 		return true
 	}
 
@@ -131,7 +134,7 @@ func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetCallbackUrl() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetCallbackUrlOk() (*interface{}, bool) {
-	if o == nil || o.CallbackUrl == nil {
+	if o == nil || IsNil(o.CallbackUrl) {
 		return nil, false
 	}
 	return &o.CallbackUrl, true
@@ -139,7 +142,7 @@ func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetCallbackUrlOk() (*i
 
 // HasCallbackUrl returns a boolean if a field has been set.
 func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) HasCallbackUrl() bool {
-	if o != nil && o.CallbackUrl != nil {
+	if o != nil && IsNil(o.CallbackUrl) {
 		return true
 	}
 
@@ -164,7 +167,7 @@ func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetIncludeResources() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetIncludeResourcesOk() (*interface{}, bool) {
-	if o == nil || o.IncludeResources == nil {
+	if o == nil || IsNil(o.IncludeResources) {
 		return nil, false
 	}
 	return &o.IncludeResources, true
@@ -172,7 +175,7 @@ func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetIncludeResourcesOk(
 
 // HasIncludeResources returns a boolean if a field has been set.
 func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) HasIncludeResources() bool {
-	if o != nil && o.IncludeResources != nil {
+	if o != nil && IsNil(o.IncludeResources) {
 		return true
 	}
 
@@ -197,7 +200,7 @@ func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetResetCircuit() inte
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetResetCircuitOk() (*interface{}, bool) {
-	if o == nil || o.ResetCircuit == nil {
+	if o == nil || IsNil(o.ResetCircuit) {
 		return nil, false
 	}
 	return &o.ResetCircuit, true
@@ -205,7 +208,7 @@ func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetResetCircuitOk() (*
 
 // HasResetCircuit returns a boolean if a field has been set.
 func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) HasResetCircuit() bool {
-	if o != nil && o.ResetCircuit != nil {
+	if o != nil && IsNil(o.ResetCircuit) {
 		return true
 	}
 
@@ -230,7 +233,7 @@ func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetReference() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -238,7 +241,7 @@ func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetReferenceOk() (*int
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -263,7 +266,7 @@ func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetReferenceOrigin() i
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -271,7 +274,7 @@ func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetReferenceOriginOk()
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -296,7 +299,7 @@ func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetMetadata() interfac
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -304,7 +307,7 @@ func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetMetadataOk() (*inte
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -317,6 +320,14 @@ func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) SetMetadata(v interfac
 }
 
 func (o PATCHWebhooksWebhookId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHWebhooksWebhookId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -342,7 +353,7 @@ func (o PATCHWebhooksWebhookId200ResponseDataAttributes) MarshalJSON() ([]byte, 
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHWebhooksWebhookId200ResponseDataAttributes struct {

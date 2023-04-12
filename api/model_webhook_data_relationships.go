@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the WebhookDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &WebhookDataRelationships{}
+
 // WebhookDataRelationships struct for WebhookDataRelationships
 type WebhookDataRelationships struct {
 	LastEventCallbacks *EventDataRelationshipsLastEventCallbacks `json:"last_event_callbacks,omitempty"`
@@ -39,7 +42,7 @@ func NewWebhookDataRelationshipsWithDefaults() *WebhookDataRelationships {
 
 // GetLastEventCallbacks returns the LastEventCallbacks field value if set, zero value otherwise.
 func (o *WebhookDataRelationships) GetLastEventCallbacks() EventDataRelationshipsLastEventCallbacks {
-	if o == nil || o.LastEventCallbacks == nil {
+	if o == nil || IsNil(o.LastEventCallbacks) {
 		var ret EventDataRelationshipsLastEventCallbacks
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *WebhookDataRelationships) GetLastEventCallbacks() EventDataRelationship
 // GetLastEventCallbacksOk returns a tuple with the LastEventCallbacks field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WebhookDataRelationships) GetLastEventCallbacksOk() (*EventDataRelationshipsLastEventCallbacks, bool) {
-	if o == nil || o.LastEventCallbacks == nil {
+	if o == nil || IsNil(o.LastEventCallbacks) {
 		return nil, false
 	}
 	return o.LastEventCallbacks, true
@@ -57,7 +60,7 @@ func (o *WebhookDataRelationships) GetLastEventCallbacksOk() (*EventDataRelation
 
 // HasLastEventCallbacks returns a boolean if a field has been set.
 func (o *WebhookDataRelationships) HasLastEventCallbacks() bool {
-	if o != nil && o.LastEventCallbacks != nil {
+	if o != nil && !IsNil(o.LastEventCallbacks) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *WebhookDataRelationships) SetLastEventCallbacks(v EventDataRelationship
 }
 
 func (o WebhookDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.LastEventCallbacks != nil {
-		toSerialize["last_event_callbacks"] = o.LastEventCallbacks
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o WebhookDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.LastEventCallbacks) {
+		toSerialize["last_event_callbacks"] = o.LastEventCallbacks
+	}
+	return toSerialize, nil
 }
 
 type NullableWebhookDataRelationships struct {

@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the BundleUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BundleUpdate{}
+
 // BundleUpdate struct for BundleUpdate
 type BundleUpdate struct {
 	Data BundleUpdateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *BundleUpdate) SetData(v BundleUpdateData) {
 }
 
 func (o BundleUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o BundleUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableBundleUpdate struct {

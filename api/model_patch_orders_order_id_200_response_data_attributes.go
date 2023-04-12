@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHOrdersOrderId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHOrdersOrderId200ResponseDataAttributes{}
+
 // PATCHOrdersOrderId200ResponseDataAttributes struct for PATCHOrdersOrderId200ResponseDataAttributes
 type PATCHOrdersOrderId200ResponseDataAttributes struct {
 	// Save this attribute as 'false' if you want prevent the order to be refreshed automatically at each change (much faster).
@@ -131,7 +134,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetAutorefresh() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetAutorefreshOk() (*interface{}, bool) {
-	if o == nil || o.Autorefresh == nil {
+	if o == nil || IsNil(o.Autorefresh) {
 		return nil, false
 	}
 	return &o.Autorefresh, true
@@ -139,7 +142,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetAutorefreshOk() (*inter
 
 // HasAutorefresh returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasAutorefresh() bool {
-	if o != nil && o.Autorefresh != nil {
+	if o != nil && IsNil(o.Autorefresh) {
 		return true
 	}
 
@@ -164,7 +167,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetGuest() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetGuestOk() (*interface{}, bool) {
-	if o == nil || o.Guest == nil {
+	if o == nil || IsNil(o.Guest) {
 		return nil, false
 	}
 	return &o.Guest, true
@@ -172,7 +175,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetGuestOk() (*interface{}
 
 // HasGuest returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasGuest() bool {
-	if o != nil && o.Guest != nil {
+	if o != nil && IsNil(o.Guest) {
 		return true
 	}
 
@@ -197,7 +200,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCustomerEmail() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCustomerEmailOk() (*interface{}, bool) {
-	if o == nil || o.CustomerEmail == nil {
+	if o == nil || IsNil(o.CustomerEmail) {
 		return nil, false
 	}
 	return &o.CustomerEmail, true
@@ -205,7 +208,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCustomerEmailOk() (*int
 
 // HasCustomerEmail returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasCustomerEmail() bool {
-	if o != nil && o.CustomerEmail != nil {
+	if o != nil && IsNil(o.CustomerEmail) {
 		return true
 	}
 
@@ -230,7 +233,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCustomerPassword() inte
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCustomerPasswordOk() (*interface{}, bool) {
-	if o == nil || o.CustomerPassword == nil {
+	if o == nil || IsNil(o.CustomerPassword) {
 		return nil, false
 	}
 	return &o.CustomerPassword, true
@@ -238,7 +241,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCustomerPasswordOk() (*
 
 // HasCustomerPassword returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasCustomerPassword() bool {
-	if o != nil && o.CustomerPassword != nil {
+	if o != nil && IsNil(o.CustomerPassword) {
 		return true
 	}
 
@@ -263,7 +266,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetLanguageCode() interfac
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetLanguageCodeOk() (*interface{}, bool) {
-	if o == nil || o.LanguageCode == nil {
+	if o == nil || IsNil(o.LanguageCode) {
 		return nil, false
 	}
 	return &o.LanguageCode, true
@@ -271,7 +274,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetLanguageCodeOk() (*inte
 
 // HasLanguageCode returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasLanguageCode() bool {
-	if o != nil && o.LanguageCode != nil {
+	if o != nil && IsNil(o.LanguageCode) {
 		return true
 	}
 
@@ -296,7 +299,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetShippingCountryCodeLock
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetShippingCountryCodeLockOk() (*interface{}, bool) {
-	if o == nil || o.ShippingCountryCodeLock == nil {
+	if o == nil || IsNil(o.ShippingCountryCodeLock) {
 		return nil, false
 	}
 	return &o.ShippingCountryCodeLock, true
@@ -304,7 +307,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetShippingCountryCodeLock
 
 // HasShippingCountryCodeLock returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasShippingCountryCodeLock() bool {
-	if o != nil && o.ShippingCountryCodeLock != nil {
+	if o != nil && IsNil(o.ShippingCountryCodeLock) {
 		return true
 	}
 
@@ -329,7 +332,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCouponCode() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCouponCodeOk() (*interface{}, bool) {
-	if o == nil || o.CouponCode == nil {
+	if o == nil || IsNil(o.CouponCode) {
 		return nil, false
 	}
 	return &o.CouponCode, true
@@ -337,7 +340,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCouponCodeOk() (*interf
 
 // HasCouponCode returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasCouponCode() bool {
-	if o != nil && o.CouponCode != nil {
+	if o != nil && IsNil(o.CouponCode) {
 		return true
 	}
 
@@ -362,7 +365,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetGiftCardCode() interfac
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetGiftCardCodeOk() (*interface{}, bool) {
-	if o == nil || o.GiftCardCode == nil {
+	if o == nil || IsNil(o.GiftCardCode) {
 		return nil, false
 	}
 	return &o.GiftCardCode, true
@@ -370,7 +373,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetGiftCardCodeOk() (*inte
 
 // HasGiftCardCode returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasGiftCardCode() bool {
-	if o != nil && o.GiftCardCode != nil {
+	if o != nil && IsNil(o.GiftCardCode) {
 		return true
 	}
 
@@ -395,7 +398,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetGiftCardOrCouponCode() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetGiftCardOrCouponCodeOk() (*interface{}, bool) {
-	if o == nil || o.GiftCardOrCouponCode == nil {
+	if o == nil || IsNil(o.GiftCardOrCouponCode) {
 		return nil, false
 	}
 	return &o.GiftCardOrCouponCode, true
@@ -403,7 +406,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetGiftCardOrCouponCodeOk(
 
 // HasGiftCardOrCouponCode returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasGiftCardOrCouponCode() bool {
-	if o != nil && o.GiftCardOrCouponCode != nil {
+	if o != nil && IsNil(o.GiftCardOrCouponCode) {
 		return true
 	}
 
@@ -428,7 +431,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCartUrl() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCartUrlOk() (*interface{}, bool) {
-	if o == nil || o.CartUrl == nil {
+	if o == nil || IsNil(o.CartUrl) {
 		return nil, false
 	}
 	return &o.CartUrl, true
@@ -436,7 +439,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCartUrlOk() (*interface
 
 // HasCartUrl returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasCartUrl() bool {
-	if o != nil && o.CartUrl != nil {
+	if o != nil && IsNil(o.CartUrl) {
 		return true
 	}
 
@@ -461,7 +464,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetReturnUrl() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetReturnUrlOk() (*interface{}, bool) {
-	if o == nil || o.ReturnUrl == nil {
+	if o == nil || IsNil(o.ReturnUrl) {
 		return nil, false
 	}
 	return &o.ReturnUrl, true
@@ -469,7 +472,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetReturnUrlOk() (*interfa
 
 // HasReturnUrl returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasReturnUrl() bool {
-	if o != nil && o.ReturnUrl != nil {
+	if o != nil && IsNil(o.ReturnUrl) {
 		return true
 	}
 
@@ -494,7 +497,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetTermsUrl() interface{} 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetTermsUrlOk() (*interface{}, bool) {
-	if o == nil || o.TermsUrl == nil {
+	if o == nil || IsNil(o.TermsUrl) {
 		return nil, false
 	}
 	return &o.TermsUrl, true
@@ -502,7 +505,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetTermsUrlOk() (*interfac
 
 // HasTermsUrl returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasTermsUrl() bool {
-	if o != nil && o.TermsUrl != nil {
+	if o != nil && IsNil(o.TermsUrl) {
 		return true
 	}
 
@@ -527,7 +530,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetPrivacyUrl() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetPrivacyUrlOk() (*interface{}, bool) {
-	if o == nil || o.PrivacyUrl == nil {
+	if o == nil || IsNil(o.PrivacyUrl) {
 		return nil, false
 	}
 	return &o.PrivacyUrl, true
@@ -535,7 +538,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetPrivacyUrlOk() (*interf
 
 // HasPrivacyUrl returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasPrivacyUrl() bool {
-	if o != nil && o.PrivacyUrl != nil {
+	if o != nil && IsNil(o.PrivacyUrl) {
 		return true
 	}
 
@@ -560,7 +563,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetArchive() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetArchiveOk() (*interface{}, bool) {
-	if o == nil || o.Archive == nil {
+	if o == nil || IsNil(o.Archive) {
 		return nil, false
 	}
 	return &o.Archive, true
@@ -568,7 +571,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetArchiveOk() (*interface
 
 // HasArchive returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasArchive() bool {
-	if o != nil && o.Archive != nil {
+	if o != nil && IsNil(o.Archive) {
 		return true
 	}
 
@@ -593,7 +596,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetUnarchive() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetUnarchiveOk() (*interface{}, bool) {
-	if o == nil || o.Unarchive == nil {
+	if o == nil || IsNil(o.Unarchive) {
 		return nil, false
 	}
 	return &o.Unarchive, true
@@ -601,7 +604,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetUnarchiveOk() (*interfa
 
 // HasUnarchive returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasUnarchive() bool {
-	if o != nil && o.Unarchive != nil {
+	if o != nil && IsNil(o.Unarchive) {
 		return true
 	}
 
@@ -626,7 +629,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetPlace() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetPlaceOk() (*interface{}, bool) {
-	if o == nil || o.Place == nil {
+	if o == nil || IsNil(o.Place) {
 		return nil, false
 	}
 	return &o.Place, true
@@ -634,7 +637,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetPlaceOk() (*interface{}
 
 // HasPlace returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasPlace() bool {
-	if o != nil && o.Place != nil {
+	if o != nil && IsNil(o.Place) {
 		return true
 	}
 
@@ -659,7 +662,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCancel() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCancelOk() (*interface{}, bool) {
-	if o == nil || o.Cancel == nil {
+	if o == nil || IsNil(o.Cancel) {
 		return nil, false
 	}
 	return &o.Cancel, true
@@ -667,7 +670,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCancelOk() (*interface{
 
 // HasCancel returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasCancel() bool {
-	if o != nil && o.Cancel != nil {
+	if o != nil && IsNil(o.Cancel) {
 		return true
 	}
 
@@ -692,7 +695,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetApprove() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetApproveOk() (*interface{}, bool) {
-	if o == nil || o.Approve == nil {
+	if o == nil || IsNil(o.Approve) {
 		return nil, false
 	}
 	return &o.Approve, true
@@ -700,7 +703,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetApproveOk() (*interface
 
 // HasApprove returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasApprove() bool {
-	if o != nil && o.Approve != nil {
+	if o != nil && IsNil(o.Approve) {
 		return true
 	}
 
@@ -725,7 +728,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetApproveAndCapture() int
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetApproveAndCaptureOk() (*interface{}, bool) {
-	if o == nil || o.ApproveAndCapture == nil {
+	if o == nil || IsNil(o.ApproveAndCapture) {
 		return nil, false
 	}
 	return &o.ApproveAndCapture, true
@@ -733,7 +736,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetApproveAndCaptureOk() (
 
 // HasApproveAndCapture returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasApproveAndCapture() bool {
-	if o != nil && o.ApproveAndCapture != nil {
+	if o != nil && IsNil(o.ApproveAndCapture) {
 		return true
 	}
 
@@ -758,7 +761,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetAuthorize() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetAuthorizeOk() (*interface{}, bool) {
-	if o == nil || o.Authorize == nil {
+	if o == nil || IsNil(o.Authorize) {
 		return nil, false
 	}
 	return &o.Authorize, true
@@ -766,7 +769,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetAuthorizeOk() (*interfa
 
 // HasAuthorize returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasAuthorize() bool {
-	if o != nil && o.Authorize != nil {
+	if o != nil && IsNil(o.Authorize) {
 		return true
 	}
 
@@ -791,7 +794,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetAuthorizationAmountCent
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetAuthorizationAmountCentsOk() (*interface{}, bool) {
-	if o == nil || o.AuthorizationAmountCents == nil {
+	if o == nil || IsNil(o.AuthorizationAmountCents) {
 		return nil, false
 	}
 	return &o.AuthorizationAmountCents, true
@@ -799,7 +802,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetAuthorizationAmountCent
 
 // HasAuthorizationAmountCents returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasAuthorizationAmountCents() bool {
-	if o != nil && o.AuthorizationAmountCents != nil {
+	if o != nil && IsNil(o.AuthorizationAmountCents) {
 		return true
 	}
 
@@ -824,7 +827,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCapture() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCaptureOk() (*interface{}, bool) {
-	if o == nil || o.Capture == nil {
+	if o == nil || IsNil(o.Capture) {
 		return nil, false
 	}
 	return &o.Capture, true
@@ -832,7 +835,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCaptureOk() (*interface
 
 // HasCapture returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasCapture() bool {
-	if o != nil && o.Capture != nil {
+	if o != nil && IsNil(o.Capture) {
 		return true
 	}
 
@@ -857,7 +860,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetRefund() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetRefundOk() (*interface{}, bool) {
-	if o == nil || o.Refund == nil {
+	if o == nil || IsNil(o.Refund) {
 		return nil, false
 	}
 	return &o.Refund, true
@@ -865,7 +868,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetRefundOk() (*interface{
 
 // HasRefund returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasRefund() bool {
-	if o != nil && o.Refund != nil {
+	if o != nil && IsNil(o.Refund) {
 		return true
 	}
 
@@ -890,7 +893,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetUpdateTaxes() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetUpdateTaxesOk() (*interface{}, bool) {
-	if o == nil || o.UpdateTaxes == nil {
+	if o == nil || IsNil(o.UpdateTaxes) {
 		return nil, false
 	}
 	return &o.UpdateTaxes, true
@@ -898,7 +901,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetUpdateTaxesOk() (*inter
 
 // HasUpdateTaxes returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasUpdateTaxes() bool {
-	if o != nil && o.UpdateTaxes != nil {
+	if o != nil && IsNil(o.UpdateTaxes) {
 		return true
 	}
 
@@ -923,7 +926,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetNullifyPaymentSource() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetNullifyPaymentSourceOk() (*interface{}, bool) {
-	if o == nil || o.NullifyPaymentSource == nil {
+	if o == nil || IsNil(o.NullifyPaymentSource) {
 		return nil, false
 	}
 	return &o.NullifyPaymentSource, true
@@ -931,7 +934,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetNullifyPaymentSourceOk(
 
 // HasNullifyPaymentSource returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasNullifyPaymentSource() bool {
-	if o != nil && o.NullifyPaymentSource != nil {
+	if o != nil && IsNil(o.NullifyPaymentSource) {
 		return true
 	}
 
@@ -956,7 +959,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetBillingAddressCloneId()
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetBillingAddressCloneIdOk() (*interface{}, bool) {
-	if o == nil || o.BillingAddressCloneId == nil {
+	if o == nil || IsNil(o.BillingAddressCloneId) {
 		return nil, false
 	}
 	return &o.BillingAddressCloneId, true
@@ -964,7 +967,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetBillingAddressCloneIdOk
 
 // HasBillingAddressCloneId returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasBillingAddressCloneId() bool {
-	if o != nil && o.BillingAddressCloneId != nil {
+	if o != nil && IsNil(o.BillingAddressCloneId) {
 		return true
 	}
 
@@ -989,7 +992,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetShippingAddressCloneId(
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetShippingAddressCloneIdOk() (*interface{}, bool) {
-	if o == nil || o.ShippingAddressCloneId == nil {
+	if o == nil || IsNil(o.ShippingAddressCloneId) {
 		return nil, false
 	}
 	return &o.ShippingAddressCloneId, true
@@ -997,7 +1000,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetShippingAddressCloneIdO
 
 // HasShippingAddressCloneId returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasShippingAddressCloneId() bool {
-	if o != nil && o.ShippingAddressCloneId != nil {
+	if o != nil && IsNil(o.ShippingAddressCloneId) {
 		return true
 	}
 
@@ -1022,7 +1025,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCustomerPaymentSourceId
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCustomerPaymentSourceIdOk() (*interface{}, bool) {
-	if o == nil || o.CustomerPaymentSourceId == nil {
+	if o == nil || IsNil(o.CustomerPaymentSourceId) {
 		return nil, false
 	}
 	return &o.CustomerPaymentSourceId, true
@@ -1030,7 +1033,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCustomerPaymentSourceId
 
 // HasCustomerPaymentSourceId returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasCustomerPaymentSourceId() bool {
-	if o != nil && o.CustomerPaymentSourceId != nil {
+	if o != nil && IsNil(o.CustomerPaymentSourceId) {
 		return true
 	}
 
@@ -1055,7 +1058,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetShippingAddressSameAsBi
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetShippingAddressSameAsBillingOk() (*interface{}, bool) {
-	if o == nil || o.ShippingAddressSameAsBilling == nil {
+	if o == nil || IsNil(o.ShippingAddressSameAsBilling) {
 		return nil, false
 	}
 	return &o.ShippingAddressSameAsBilling, true
@@ -1063,7 +1066,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetShippingAddressSameAsBi
 
 // HasShippingAddressSameAsBilling returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasShippingAddressSameAsBilling() bool {
-	if o != nil && o.ShippingAddressSameAsBilling != nil {
+	if o != nil && IsNil(o.ShippingAddressSameAsBilling) {
 		return true
 	}
 
@@ -1088,7 +1091,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetBillingAddressSameAsShi
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetBillingAddressSameAsShippingOk() (*interface{}, bool) {
-	if o == nil || o.BillingAddressSameAsShipping == nil {
+	if o == nil || IsNil(o.BillingAddressSameAsShipping) {
 		return nil, false
 	}
 	return &o.BillingAddressSameAsShipping, true
@@ -1096,7 +1099,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetBillingAddressSameAsShi
 
 // HasBillingAddressSameAsShipping returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasBillingAddressSameAsShipping() bool {
-	if o != nil && o.BillingAddressSameAsShipping != nil {
+	if o != nil && IsNil(o.BillingAddressSameAsShipping) {
 		return true
 	}
 
@@ -1121,7 +1124,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCommitInvoice() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCommitInvoiceOk() (*interface{}, bool) {
-	if o == nil || o.CommitInvoice == nil {
+	if o == nil || IsNil(o.CommitInvoice) {
 		return nil, false
 	}
 	return &o.CommitInvoice, true
@@ -1129,7 +1132,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCommitInvoiceOk() (*int
 
 // HasCommitInvoice returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasCommitInvoice() bool {
-	if o != nil && o.CommitInvoice != nil {
+	if o != nil && IsNil(o.CommitInvoice) {
 		return true
 	}
 
@@ -1154,7 +1157,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetRefundInvoice() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetRefundInvoiceOk() (*interface{}, bool) {
-	if o == nil || o.RefundInvoice == nil {
+	if o == nil || IsNil(o.RefundInvoice) {
 		return nil, false
 	}
 	return &o.RefundInvoice, true
@@ -1162,7 +1165,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetRefundInvoiceOk() (*int
 
 // HasRefundInvoice returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasRefundInvoice() bool {
-	if o != nil && o.RefundInvoice != nil {
+	if o != nil && IsNil(o.RefundInvoice) {
 		return true
 	}
 
@@ -1187,7 +1190,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetSavePaymentSourceToCust
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetSavePaymentSourceToCustomerWalletOk() (*interface{}, bool) {
-	if o == nil || o.SavePaymentSourceToCustomerWallet == nil {
+	if o == nil || IsNil(o.SavePaymentSourceToCustomerWallet) {
 		return nil, false
 	}
 	return &o.SavePaymentSourceToCustomerWallet, true
@@ -1195,7 +1198,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetSavePaymentSourceToCust
 
 // HasSavePaymentSourceToCustomerWallet returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasSavePaymentSourceToCustomerWallet() bool {
-	if o != nil && o.SavePaymentSourceToCustomerWallet != nil {
+	if o != nil && IsNil(o.SavePaymentSourceToCustomerWallet) {
 		return true
 	}
 
@@ -1220,7 +1223,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetSaveShippingAddressToCu
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetSaveShippingAddressToCustomerAddressBookOk() (*interface{}, bool) {
-	if o == nil || o.SaveShippingAddressToCustomerAddressBook == nil {
+	if o == nil || IsNil(o.SaveShippingAddressToCustomerAddressBook) {
 		return nil, false
 	}
 	return &o.SaveShippingAddressToCustomerAddressBook, true
@@ -1228,7 +1231,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetSaveShippingAddressToCu
 
 // HasSaveShippingAddressToCustomerAddressBook returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasSaveShippingAddressToCustomerAddressBook() bool {
-	if o != nil && o.SaveShippingAddressToCustomerAddressBook != nil {
+	if o != nil && IsNil(o.SaveShippingAddressToCustomerAddressBook) {
 		return true
 	}
 
@@ -1253,7 +1256,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetSaveBillingAddressToCus
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetSaveBillingAddressToCustomerAddressBookOk() (*interface{}, bool) {
-	if o == nil || o.SaveBillingAddressToCustomerAddressBook == nil {
+	if o == nil || IsNil(o.SaveBillingAddressToCustomerAddressBook) {
 		return nil, false
 	}
 	return &o.SaveBillingAddressToCustomerAddressBook, true
@@ -1261,7 +1264,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetSaveBillingAddressToCus
 
 // HasSaveBillingAddressToCustomerAddressBook returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasSaveBillingAddressToCustomerAddressBook() bool {
-	if o != nil && o.SaveBillingAddressToCustomerAddressBook != nil {
+	if o != nil && IsNil(o.SaveBillingAddressToCustomerAddressBook) {
 		return true
 	}
 
@@ -1286,7 +1289,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetRefresh() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetRefreshOk() (*interface{}, bool) {
-	if o == nil || o.Refresh == nil {
+	if o == nil || IsNil(o.Refresh) {
 		return nil, false
 	}
 	return &o.Refresh, true
@@ -1294,7 +1297,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetRefreshOk() (*interface
 
 // HasRefresh returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasRefresh() bool {
-	if o != nil && o.Refresh != nil {
+	if o != nil && IsNil(o.Refresh) {
 		return true
 	}
 
@@ -1319,7 +1322,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetValidate() interface{} 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetValidateOk() (*interface{}, bool) {
-	if o == nil || o.Validate == nil {
+	if o == nil || IsNil(o.Validate) {
 		return nil, false
 	}
 	return &o.Validate, true
@@ -1327,7 +1330,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetValidateOk() (*interfac
 
 // HasValidate returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasValidate() bool {
-	if o != nil && o.Validate != nil {
+	if o != nil && IsNil(o.Validate) {
 		return true
 	}
 
@@ -1352,7 +1355,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCreateSubscriptions() i
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCreateSubscriptionsOk() (*interface{}, bool) {
-	if o == nil || o.CreateSubscriptions == nil {
+	if o == nil || IsNil(o.CreateSubscriptions) {
 		return nil, false
 	}
 	return &o.CreateSubscriptions, true
@@ -1360,7 +1363,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCreateSubscriptionsOk()
 
 // HasCreateSubscriptions returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasCreateSubscriptions() bool {
-	if o != nil && o.CreateSubscriptions != nil {
+	if o != nil && IsNil(o.CreateSubscriptions) {
 		return true
 	}
 
@@ -1385,7 +1388,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetReference() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -1393,7 +1396,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetReferenceOk() (*interfa
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -1418,7 +1421,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetReferenceOrigin() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -1426,7 +1429,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetReferenceOriginOk() (*i
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -1451,7 +1454,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetMetadata() interface{} 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -1459,7 +1462,7 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetMetadataOk() (*interfac
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -1472,6 +1475,14 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetMetadata(v interface{})
 }
 
 func (o PATCHOrdersOrderId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHOrdersOrderId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Autorefresh != nil {
 		toSerialize["autorefresh"] = o.Autorefresh
@@ -1596,7 +1607,7 @@ func (o PATCHOrdersOrderId200ResponseDataAttributes) MarshalJSON() ([]byte, erro
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHOrdersOrderId200ResponseDataAttributes struct {

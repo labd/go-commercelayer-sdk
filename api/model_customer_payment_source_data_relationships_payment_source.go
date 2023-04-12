@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the CustomerPaymentSourceDataRelationshipsPaymentSource type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CustomerPaymentSourceDataRelationshipsPaymentSource{}
+
 // CustomerPaymentSourceDataRelationshipsPaymentSource struct for CustomerPaymentSourceDataRelationshipsPaymentSource
 type CustomerPaymentSourceDataRelationshipsPaymentSource struct {
 	Data *CustomerPaymentSourceDataRelationshipsPaymentSourceData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewCustomerPaymentSourceDataRelationshipsPaymentSourceWithDefaults() *Custo
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *CustomerPaymentSourceDataRelationshipsPaymentSource) GetData() CustomerPaymentSourceDataRelationshipsPaymentSourceData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret CustomerPaymentSourceDataRelationshipsPaymentSourceData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *CustomerPaymentSourceDataRelationshipsPaymentSource) GetData() Customer
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerPaymentSourceDataRelationshipsPaymentSource) GetDataOk() (*CustomerPaymentSourceDataRelationshipsPaymentSourceData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *CustomerPaymentSourceDataRelationshipsPaymentSource) GetDataOk() (*Cust
 
 // HasData returns a boolean if a field has been set.
 func (o *CustomerPaymentSourceDataRelationshipsPaymentSource) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *CustomerPaymentSourceDataRelationshipsPaymentSource) SetData(v Customer
 }
 
 func (o CustomerPaymentSourceDataRelationshipsPaymentSource) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CustomerPaymentSourceDataRelationshipsPaymentSource) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableCustomerPaymentSourceDataRelationshipsPaymentSource struct {

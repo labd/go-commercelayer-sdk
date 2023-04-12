@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes{}
+
 // PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes struct for PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes
 type PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes struct {
 	// The payment gateway's internal name.
@@ -71,7 +74,7 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetName() in
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -79,7 +82,7 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetNameOk() 
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
@@ -104,7 +107,7 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetReference
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -112,7 +115,7 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetReference
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -137,7 +140,7 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetReference
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -145,7 +148,7 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetReference
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -170,7 +173,7 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetMetadata(
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -178,7 +181,7 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetMetadataO
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -203,7 +206,7 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetMerchantA
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetMerchantAccountOk() (*interface{}, bool) {
-	if o == nil || o.MerchantAccount == nil {
+	if o == nil || IsNil(o.MerchantAccount) {
 		return nil, false
 	}
 	return &o.MerchantAccount, true
@@ -211,7 +214,7 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetMerchantA
 
 // HasMerchantAccount returns a boolean if a field has been set.
 func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) HasMerchantAccount() bool {
-	if o != nil && o.MerchantAccount != nil {
+	if o != nil && IsNil(o.MerchantAccount) {
 		return true
 	}
 
@@ -236,7 +239,7 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetApiKey() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetApiKeyOk() (*interface{}, bool) {
-	if o == nil || o.ApiKey == nil {
+	if o == nil || IsNil(o.ApiKey) {
 		return nil, false
 	}
 	return &o.ApiKey, true
@@ -244,7 +247,7 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetApiKeyOk(
 
 // HasApiKey returns a boolean if a field has been set.
 func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) HasApiKey() bool {
-	if o != nil && o.ApiKey != nil {
+	if o != nil && IsNil(o.ApiKey) {
 		return true
 	}
 
@@ -269,7 +272,7 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetPublicKey
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetPublicKeyOk() (*interface{}, bool) {
-	if o == nil || o.PublicKey == nil {
+	if o == nil || IsNil(o.PublicKey) {
 		return nil, false
 	}
 	return &o.PublicKey, true
@@ -277,7 +280,7 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetPublicKey
 
 // HasPublicKey returns a boolean if a field has been set.
 func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) HasPublicKey() bool {
-	if o != nil && o.PublicKey != nil {
+	if o != nil && IsNil(o.PublicKey) {
 		return true
 	}
 
@@ -302,7 +305,7 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetLiveUrlPr
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetLiveUrlPrefixOk() (*interface{}, bool) {
-	if o == nil || o.LiveUrlPrefix == nil {
+	if o == nil || IsNil(o.LiveUrlPrefix) {
 		return nil, false
 	}
 	return &o.LiveUrlPrefix, true
@@ -310,7 +313,7 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetLiveUrlPr
 
 // HasLiveUrlPrefix returns a boolean if a field has been set.
 func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) HasLiveUrlPrefix() bool {
-	if o != nil && o.LiveUrlPrefix != nil {
+	if o != nil && IsNil(o.LiveUrlPrefix) {
 		return true
 	}
 
@@ -335,7 +338,7 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetApiVersio
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetApiVersionOk() (*interface{}, bool) {
-	if o == nil || o.ApiVersion == nil {
+	if o == nil || IsNil(o.ApiVersion) {
 		return nil, false
 	}
 	return &o.ApiVersion, true
@@ -343,7 +346,7 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetApiVersio
 
 // HasApiVersion returns a boolean if a field has been set.
 func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) HasApiVersion() bool {
-	if o != nil && o.ApiVersion != nil {
+	if o != nil && IsNil(o.ApiVersion) {
 		return true
 	}
 
@@ -368,7 +371,7 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetAsyncApi(
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetAsyncApiOk() (*interface{}, bool) {
-	if o == nil || o.AsyncApi == nil {
+	if o == nil || IsNil(o.AsyncApi) {
 		return nil, false
 	}
 	return &o.AsyncApi, true
@@ -376,7 +379,7 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetAsyncApiO
 
 // HasAsyncApi returns a boolean if a field has been set.
 func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) HasAsyncApi() bool {
-	if o != nil && o.AsyncApi != nil {
+	if o != nil && IsNil(o.AsyncApi) {
 		return true
 	}
 
@@ -401,7 +404,7 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetWebhookEn
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetWebhookEndpointSecretOk() (*interface{}, bool) {
-	if o == nil || o.WebhookEndpointSecret == nil {
+	if o == nil || IsNil(o.WebhookEndpointSecret) {
 		return nil, false
 	}
 	return &o.WebhookEndpointSecret, true
@@ -409,7 +412,7 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) GetWebhookEn
 
 // HasWebhookEndpointSecret returns a boolean if a field has been set.
 func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) HasWebhookEndpointSecret() bool {
-	if o != nil && o.WebhookEndpointSecret != nil {
+	if o != nil && IsNil(o.WebhookEndpointSecret) {
 		return true
 	}
 
@@ -422,6 +425,14 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) SetWebhookEn
 }
 
 func (o PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -456,7 +467,7 @@ func (o PATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes) MarshalJSON()
 	if o.WebhookEndpointSecret != nil {
 		toSerialize["webhook_endpoint_secret"] = o.WebhookEndpointSecret
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHAdyenGatewaysAdyenGatewayId200ResponseDataAttributes struct {

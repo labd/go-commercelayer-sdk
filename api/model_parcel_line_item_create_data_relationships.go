@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ParcelLineItemCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ParcelLineItemCreateDataRelationships{}
+
 // ParcelLineItemCreateDataRelationships struct for ParcelLineItemCreateDataRelationships
 type ParcelLineItemCreateDataRelationships struct {
 	Parcel        ParcelLineItemCreateDataRelationshipsParcel        `json:"parcel"`
@@ -93,7 +96,7 @@ func (o *ParcelLineItemCreateDataRelationships) SetStockLineItem(v ParcelLineIte
 // GetShipmentLineItem returns the ShipmentLineItem field value if set, zero value otherwise.
 // Deprecated
 func (o *ParcelLineItemCreateDataRelationships) GetShipmentLineItem() ParcelLineItemCreateDataRelationshipsShipmentLineItem {
-	if o == nil || o.ShipmentLineItem == nil {
+	if o == nil || IsNil(o.ShipmentLineItem) {
 		var ret ParcelLineItemCreateDataRelationshipsShipmentLineItem
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *ParcelLineItemCreateDataRelationships) GetShipmentLineItem() ParcelLine
 // and a boolean to check if the value has been set.
 // Deprecated
 func (o *ParcelLineItemCreateDataRelationships) GetShipmentLineItemOk() (*ParcelLineItemCreateDataRelationshipsShipmentLineItem, bool) {
-	if o == nil || o.ShipmentLineItem == nil {
+	if o == nil || IsNil(o.ShipmentLineItem) {
 		return nil, false
 	}
 	return o.ShipmentLineItem, true
@@ -112,7 +115,7 @@ func (o *ParcelLineItemCreateDataRelationships) GetShipmentLineItemOk() (*Parcel
 
 // HasShipmentLineItem returns a boolean if a field has been set.
 func (o *ParcelLineItemCreateDataRelationships) HasShipmentLineItem() bool {
-	if o != nil && o.ShipmentLineItem != nil {
+	if o != nil && !IsNil(o.ShipmentLineItem) {
 		return true
 	}
 
@@ -126,17 +129,21 @@ func (o *ParcelLineItemCreateDataRelationships) SetShipmentLineItem(v ParcelLine
 }
 
 func (o ParcelLineItemCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["parcel"] = o.Parcel
-	}
-	if true {
-		toSerialize["stock_line_item"] = o.StockLineItem
-	}
-	if o.ShipmentLineItem != nil {
-		toSerialize["shipment_line_item"] = o.ShipmentLineItem
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ParcelLineItemCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["parcel"] = o.Parcel
+	toSerialize["stock_line_item"] = o.StockLineItem
+	if !IsNil(o.ShipmentLineItem) {
+		toSerialize["shipment_line_item"] = o.ShipmentLineItem
+	}
+	return toSerialize, nil
 }
 
 type NullableParcelLineItemCreateDataRelationships struct {

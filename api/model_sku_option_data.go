@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the SkuOptionData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SkuOptionData{}
+
 // SkuOptionData struct for SkuOptionData
 type SkuOptionData struct {
 	// The resource's type
-	Type          interface{}                                 `json:"type"`
-	Attributes    GETSkuOptions200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *BillingInfoValidationRuleDataRelationships `json:"relationships,omitempty"`
+	Type          interface{}                                       `json:"type"`
+	Attributes    GETSkuOptionsSkuOptionId200ResponseDataAttributes `json:"attributes"`
+	Relationships *BillingInfoValidationRuleDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewSkuOptionData instantiates a new SkuOptionData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuOptionData(type_ interface{}, attributes GETSkuOptions200ResponseDataInnerAttributes) *SkuOptionData {
+func NewSkuOptionData(type_ interface{}, attributes GETSkuOptionsSkuOptionId200ResponseDataAttributes) *SkuOptionData {
 	this := SkuOptionData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -57,7 +60,7 @@ func (o *SkuOptionData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SkuOptionData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -69,9 +72,9 @@ func (o *SkuOptionData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *SkuOptionData) GetAttributes() GETSkuOptions200ResponseDataInnerAttributes {
+func (o *SkuOptionData) GetAttributes() GETSkuOptionsSkuOptionId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETSkuOptions200ResponseDataInnerAttributes
+		var ret GETSkuOptionsSkuOptionId200ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +83,7 @@ func (o *SkuOptionData) GetAttributes() GETSkuOptions200ResponseDataInnerAttribu
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *SkuOptionData) GetAttributesOk() (*GETSkuOptions200ResponseDataInnerAttributes, bool) {
+func (o *SkuOptionData) GetAttributesOk() (*GETSkuOptionsSkuOptionId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,13 +91,13 @@ func (o *SkuOptionData) GetAttributesOk() (*GETSkuOptions200ResponseDataInnerAtt
 }
 
 // SetAttributes sets field value
-func (o *SkuOptionData) SetAttributes(v GETSkuOptions200ResponseDataInnerAttributes) {
+func (o *SkuOptionData) SetAttributes(v GETSkuOptionsSkuOptionId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *SkuOptionData) GetRelationships() BillingInfoValidationRuleDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret BillingInfoValidationRuleDataRelationships
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *SkuOptionData) GetRelationships() BillingInfoValidationRuleDataRelation
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SkuOptionData) GetRelationshipsOk() (*BillingInfoValidationRuleDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -112,7 +115,7 @@ func (o *SkuOptionData) GetRelationshipsOk() (*BillingInfoValidationRuleDataRela
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *SkuOptionData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -125,17 +128,23 @@ func (o *SkuOptionData) SetRelationships(v BillingInfoValidationRuleDataRelation
 }
 
 func (o SkuOptionData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o SkuOptionData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableSkuOptionData struct {

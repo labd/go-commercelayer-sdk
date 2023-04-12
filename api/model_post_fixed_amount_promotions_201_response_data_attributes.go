@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTFixedAmountPromotions201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTFixedAmountPromotions201ResponseDataAttributes{}
+
 // POSTFixedAmountPromotions201ResponseDataAttributes struct for POSTFixedAmountPromotions201ResponseDataAttributes
 type POSTFixedAmountPromotions201ResponseDataAttributes struct {
 	// The promotion's internal name.
@@ -74,7 +77,7 @@ func (o *POSTFixedAmountPromotions201ResponseDataAttributes) GetName() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTFixedAmountPromotions201ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -98,7 +101,7 @@ func (o *POSTFixedAmountPromotions201ResponseDataAttributes) GetCurrencyCode() i
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTFixedAmountPromotions201ResponseDataAttributes) GetCurrencyCodeOk() (*interface{}, bool) {
-	if o == nil || o.CurrencyCode == nil {
+	if o == nil || IsNil(o.CurrencyCode) {
 		return nil, false
 	}
 	return &o.CurrencyCode, true
@@ -106,7 +109,7 @@ func (o *POSTFixedAmountPromotions201ResponseDataAttributes) GetCurrencyCodeOk()
 
 // HasCurrencyCode returns a boolean if a field has been set.
 func (o *POSTFixedAmountPromotions201ResponseDataAttributes) HasCurrencyCode() bool {
-	if o != nil && o.CurrencyCode != nil {
+	if o != nil && IsNil(o.CurrencyCode) {
 		return true
 	}
 
@@ -133,7 +136,7 @@ func (o *POSTFixedAmountPromotions201ResponseDataAttributes) GetStartsAt() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTFixedAmountPromotions201ResponseDataAttributes) GetStartsAtOk() (*interface{}, bool) {
-	if o == nil || o.StartsAt == nil {
+	if o == nil || IsNil(o.StartsAt) {
 		return nil, false
 	}
 	return &o.StartsAt, true
@@ -159,7 +162,7 @@ func (o *POSTFixedAmountPromotions201ResponseDataAttributes) GetExpiresAt() inte
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTFixedAmountPromotions201ResponseDataAttributes) GetExpiresAtOk() (*interface{}, bool) {
-	if o == nil || o.ExpiresAt == nil {
+	if o == nil || IsNil(o.ExpiresAt) {
 		return nil, false
 	}
 	return &o.ExpiresAt, true
@@ -185,7 +188,7 @@ func (o *POSTFixedAmountPromotions201ResponseDataAttributes) GetTotalUsageLimit(
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTFixedAmountPromotions201ResponseDataAttributes) GetTotalUsageLimitOk() (*interface{}, bool) {
-	if o == nil || o.TotalUsageLimit == nil {
+	if o == nil || IsNil(o.TotalUsageLimit) {
 		return nil, false
 	}
 	return &o.TotalUsageLimit, true
@@ -209,7 +212,7 @@ func (o *POSTFixedAmountPromotions201ResponseDataAttributes) GetReference() inte
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTFixedAmountPromotions201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -217,7 +220,7 @@ func (o *POSTFixedAmountPromotions201ResponseDataAttributes) GetReferenceOk() (*
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTFixedAmountPromotions201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -242,7 +245,7 @@ func (o *POSTFixedAmountPromotions201ResponseDataAttributes) GetReferenceOrigin(
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTFixedAmountPromotions201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -250,7 +253,7 @@ func (o *POSTFixedAmountPromotions201ResponseDataAttributes) GetReferenceOriginO
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTFixedAmountPromotions201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -275,7 +278,7 @@ func (o *POSTFixedAmountPromotions201ResponseDataAttributes) GetMetadata() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTFixedAmountPromotions201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -283,7 +286,7 @@ func (o *POSTFixedAmountPromotions201ResponseDataAttributes) GetMetadataOk() (*i
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTFixedAmountPromotions201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -310,7 +313,7 @@ func (o *POSTFixedAmountPromotions201ResponseDataAttributes) GetFixedAmountCents
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTFixedAmountPromotions201ResponseDataAttributes) GetFixedAmountCentsOk() (*interface{}, bool) {
-	if o == nil || o.FixedAmountCents == nil {
+	if o == nil || IsNil(o.FixedAmountCents) {
 		return nil, false
 	}
 	return &o.FixedAmountCents, true
@@ -322,6 +325,14 @@ func (o *POSTFixedAmountPromotions201ResponseDataAttributes) SetFixedAmountCents
 }
 
 func (o POSTFixedAmountPromotions201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTFixedAmountPromotions201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -350,7 +361,7 @@ func (o POSTFixedAmountPromotions201ResponseDataAttributes) MarshalJSON() ([]byt
 	if o.FixedAmountCents != nil {
 		toSerialize["fixed_amount_cents"] = o.FixedAmountCents
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTFixedAmountPromotions201ResponseDataAttributes struct {

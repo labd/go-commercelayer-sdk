@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes{}
+
 // PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes struct for PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes
 type PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes struct {
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
@@ -59,7 +62,7 @@ func (o *PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttribut
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -67,7 +70,7 @@ func (o *PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttribut
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -92,7 +95,7 @@ func (o *PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttribut
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -100,7 +103,7 @@ func (o *PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttribut
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -125,7 +128,7 @@ func (o *PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttribut
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -133,7 +136,7 @@ func (o *PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttribut
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -158,7 +161,7 @@ func (o *PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttribut
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes) GetAllSkusOk() (*interface{}, bool) {
-	if o == nil || o.AllSkus == nil {
+	if o == nil || IsNil(o.AllSkus) {
 		return nil, false
 	}
 	return &o.AllSkus, true
@@ -166,7 +169,7 @@ func (o *PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttribut
 
 // HasAllSkus returns a boolean if a field has been set.
 func (o *PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes) HasAllSkus() bool {
-	if o != nil && o.AllSkus != nil {
+	if o != nil && IsNil(o.AllSkus) {
 		return true
 	}
 
@@ -191,7 +194,7 @@ func (o *PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttribut
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes) GetMinQuantityOk() (*interface{}, bool) {
-	if o == nil || o.MinQuantity == nil {
+	if o == nil || IsNil(o.MinQuantity) {
 		return nil, false
 	}
 	return &o.MinQuantity, true
@@ -199,7 +202,7 @@ func (o *PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttribut
 
 // HasMinQuantity returns a boolean if a field has been set.
 func (o *PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes) HasMinQuantity() bool {
-	if o != nil && o.MinQuantity != nil {
+	if o != nil && IsNil(o.MinQuantity) {
 		return true
 	}
 
@@ -212,6 +215,14 @@ func (o *PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttribut
 }
 
 func (o PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference
@@ -228,7 +239,7 @@ func (o PATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttribute
 	if o.MinQuantity != nil {
 		toSerialize["min_quantity"] = o.MinQuantity
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHSkuListPromotionRulesSkuListPromotionRuleId200ResponseDataAttributes struct {

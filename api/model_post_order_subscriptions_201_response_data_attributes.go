@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTOrderSubscriptions201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTOrderSubscriptions201ResponseDataAttributes{}
+
 // POSTOrderSubscriptions201ResponseDataAttributes struct for POSTOrderSubscriptions201ResponseDataAttributes
 type POSTOrderSubscriptions201ResponseDataAttributes struct {
 	// The frequency of the subscription. Use one of the supported within 'hourly', 'daily', 'weekly', 'monthly', 'two-month', 'three-month', 'four-month', 'six-month', 'yearly', or provide your custom crontab expression (min unit is hour). Must be supported by existing associated subscription_model.
@@ -68,7 +71,7 @@ func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetFrequency() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetFrequencyOk() (*interface{}, bool) {
-	if o == nil || o.Frequency == nil {
+	if o == nil || IsNil(o.Frequency) {
 		return nil, false
 	}
 	return &o.Frequency, true
@@ -92,7 +95,7 @@ func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetActivateBySourceOrd
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetActivateBySourceOrderOk() (*interface{}, bool) {
-	if o == nil || o.ActivateBySourceOrder == nil {
+	if o == nil || IsNil(o.ActivateBySourceOrder) {
 		return nil, false
 	}
 	return &o.ActivateBySourceOrder, true
@@ -100,7 +103,7 @@ func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetActivateBySourceOrd
 
 // HasActivateBySourceOrder returns a boolean if a field has been set.
 func (o *POSTOrderSubscriptions201ResponseDataAttributes) HasActivateBySourceOrder() bool {
-	if o != nil && o.ActivateBySourceOrder != nil {
+	if o != nil && IsNil(o.ActivateBySourceOrder) {
 		return true
 	}
 
@@ -125,7 +128,7 @@ func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetStartsAt() interfac
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetStartsAtOk() (*interface{}, bool) {
-	if o == nil || o.StartsAt == nil {
+	if o == nil || IsNil(o.StartsAt) {
 		return nil, false
 	}
 	return &o.StartsAt, true
@@ -133,7 +136,7 @@ func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetStartsAtOk() (*inte
 
 // HasStartsAt returns a boolean if a field has been set.
 func (o *POSTOrderSubscriptions201ResponseDataAttributes) HasStartsAt() bool {
-	if o != nil && o.StartsAt != nil {
+	if o != nil && IsNil(o.StartsAt) {
 		return true
 	}
 
@@ -158,7 +161,7 @@ func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetExpiresAt() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetExpiresAtOk() (*interface{}, bool) {
-	if o == nil || o.ExpiresAt == nil {
+	if o == nil || IsNil(o.ExpiresAt) {
 		return nil, false
 	}
 	return &o.ExpiresAt, true
@@ -166,7 +169,7 @@ func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetExpiresAtOk() (*int
 
 // HasExpiresAt returns a boolean if a field has been set.
 func (o *POSTOrderSubscriptions201ResponseDataAttributes) HasExpiresAt() bool {
-	if o != nil && o.ExpiresAt != nil {
+	if o != nil && IsNil(o.ExpiresAt) {
 		return true
 	}
 
@@ -191,7 +194,7 @@ func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetOptions() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetOptionsOk() (*interface{}, bool) {
-	if o == nil || o.Options == nil {
+	if o == nil || IsNil(o.Options) {
 		return nil, false
 	}
 	return &o.Options, true
@@ -199,7 +202,7 @@ func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetOptionsOk() (*inter
 
 // HasOptions returns a boolean if a field has been set.
 func (o *POSTOrderSubscriptions201ResponseDataAttributes) HasOptions() bool {
-	if o != nil && o.Options != nil {
+	if o != nil && IsNil(o.Options) {
 		return true
 	}
 
@@ -224,7 +227,7 @@ func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetReference() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -232,7 +235,7 @@ func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetReferenceOk() (*int
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTOrderSubscriptions201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -257,7 +260,7 @@ func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetReferenceOrigin() i
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -265,7 +268,7 @@ func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetReferenceOriginOk()
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTOrderSubscriptions201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -290,7 +293,7 @@ func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetMetadata() interfac
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -298,7 +301,7 @@ func (o *POSTOrderSubscriptions201ResponseDataAttributes) GetMetadataOk() (*inte
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTOrderSubscriptions201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -311,6 +314,14 @@ func (o *POSTOrderSubscriptions201ResponseDataAttributes) SetMetadata(v interfac
 }
 
 func (o POSTOrderSubscriptions201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTOrderSubscriptions201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Frequency != nil {
 		toSerialize["frequency"] = o.Frequency
@@ -336,7 +347,7 @@ func (o POSTOrderSubscriptions201ResponseDataAttributes) MarshalJSON() ([]byte, 
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTOrderSubscriptions201ResponseDataAttributes struct {

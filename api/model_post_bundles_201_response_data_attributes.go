@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTBundles201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTBundles201ResponseDataAttributes{}
+
 // POSTBundles201ResponseDataAttributes struct for POSTBundles201ResponseDataAttributes
 type POSTBundles201ResponseDataAttributes struct {
 	// The bundle code, that uniquely identifies the bundle within the market.
@@ -79,7 +82,7 @@ func (o *POSTBundles201ResponseDataAttributes) GetCode() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBundles201ResponseDataAttributes) GetCodeOk() (*interface{}, bool) {
-	if o == nil || o.Code == nil {
+	if o == nil || IsNil(o.Code) {
 		return nil, false
 	}
 	return &o.Code, true
@@ -105,7 +108,7 @@ func (o *POSTBundles201ResponseDataAttributes) GetName() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBundles201ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -129,7 +132,7 @@ func (o *POSTBundles201ResponseDataAttributes) GetCurrencyCode() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBundles201ResponseDataAttributes) GetCurrencyCodeOk() (*interface{}, bool) {
-	if o == nil || o.CurrencyCode == nil {
+	if o == nil || IsNil(o.CurrencyCode) {
 		return nil, false
 	}
 	return &o.CurrencyCode, true
@@ -137,7 +140,7 @@ func (o *POSTBundles201ResponseDataAttributes) GetCurrencyCodeOk() (*interface{}
 
 // HasCurrencyCode returns a boolean if a field has been set.
 func (o *POSTBundles201ResponseDataAttributes) HasCurrencyCode() bool {
-	if o != nil && o.CurrencyCode != nil {
+	if o != nil && IsNil(o.CurrencyCode) {
 		return true
 	}
 
@@ -162,7 +165,7 @@ func (o *POSTBundles201ResponseDataAttributes) GetDescription() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBundles201ResponseDataAttributes) GetDescriptionOk() (*interface{}, bool) {
-	if o == nil || o.Description == nil {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return &o.Description, true
@@ -170,7 +173,7 @@ func (o *POSTBundles201ResponseDataAttributes) GetDescriptionOk() (*interface{},
 
 // HasDescription returns a boolean if a field has been set.
 func (o *POSTBundles201ResponseDataAttributes) HasDescription() bool {
-	if o != nil && o.Description != nil {
+	if o != nil && IsNil(o.Description) {
 		return true
 	}
 
@@ -195,7 +198,7 @@ func (o *POSTBundles201ResponseDataAttributes) GetImageUrl() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBundles201ResponseDataAttributes) GetImageUrlOk() (*interface{}, bool) {
-	if o == nil || o.ImageUrl == nil {
+	if o == nil || IsNil(o.ImageUrl) {
 		return nil, false
 	}
 	return &o.ImageUrl, true
@@ -203,7 +206,7 @@ func (o *POSTBundles201ResponseDataAttributes) GetImageUrlOk() (*interface{}, bo
 
 // HasImageUrl returns a boolean if a field has been set.
 func (o *POSTBundles201ResponseDataAttributes) HasImageUrl() bool {
-	if o != nil && o.ImageUrl != nil {
+	if o != nil && IsNil(o.ImageUrl) {
 		return true
 	}
 
@@ -230,7 +233,7 @@ func (o *POSTBundles201ResponseDataAttributes) GetPriceAmountCents() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBundles201ResponseDataAttributes) GetPriceAmountCentsOk() (*interface{}, bool) {
-	if o == nil || o.PriceAmountCents == nil {
+	if o == nil || IsNil(o.PriceAmountCents) {
 		return nil, false
 	}
 	return &o.PriceAmountCents, true
@@ -256,7 +259,7 @@ func (o *POSTBundles201ResponseDataAttributes) GetCompareAtAmountCents() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBundles201ResponseDataAttributes) GetCompareAtAmountCentsOk() (*interface{}, bool) {
-	if o == nil || o.CompareAtAmountCents == nil {
+	if o == nil || IsNil(o.CompareAtAmountCents) {
 		return nil, false
 	}
 	return &o.CompareAtAmountCents, true
@@ -280,7 +283,7 @@ func (o *POSTBundles201ResponseDataAttributes) GetComputePriceAmount() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBundles201ResponseDataAttributes) GetComputePriceAmountOk() (*interface{}, bool) {
-	if o == nil || o.ComputePriceAmount == nil {
+	if o == nil || IsNil(o.ComputePriceAmount) {
 		return nil, false
 	}
 	return &o.ComputePriceAmount, true
@@ -288,7 +291,7 @@ func (o *POSTBundles201ResponseDataAttributes) GetComputePriceAmountOk() (*inter
 
 // HasComputePriceAmount returns a boolean if a field has been set.
 func (o *POSTBundles201ResponseDataAttributes) HasComputePriceAmount() bool {
-	if o != nil && o.ComputePriceAmount != nil {
+	if o != nil && IsNil(o.ComputePriceAmount) {
 		return true
 	}
 
@@ -313,7 +316,7 @@ func (o *POSTBundles201ResponseDataAttributes) GetComputeCompareAtAmount() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBundles201ResponseDataAttributes) GetComputeCompareAtAmountOk() (*interface{}, bool) {
-	if o == nil || o.ComputeCompareAtAmount == nil {
+	if o == nil || IsNil(o.ComputeCompareAtAmount) {
 		return nil, false
 	}
 	return &o.ComputeCompareAtAmount, true
@@ -321,7 +324,7 @@ func (o *POSTBundles201ResponseDataAttributes) GetComputeCompareAtAmountOk() (*i
 
 // HasComputeCompareAtAmount returns a boolean if a field has been set.
 func (o *POSTBundles201ResponseDataAttributes) HasComputeCompareAtAmount() bool {
-	if o != nil && o.ComputeCompareAtAmount != nil {
+	if o != nil && IsNil(o.ComputeCompareAtAmount) {
 		return true
 	}
 
@@ -346,7 +349,7 @@ func (o *POSTBundles201ResponseDataAttributes) GetReference() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBundles201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -354,7 +357,7 @@ func (o *POSTBundles201ResponseDataAttributes) GetReferenceOk() (*interface{}, b
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTBundles201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -379,7 +382,7 @@ func (o *POSTBundles201ResponseDataAttributes) GetReferenceOrigin() interface{} 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBundles201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -387,7 +390,7 @@ func (o *POSTBundles201ResponseDataAttributes) GetReferenceOriginOk() (*interfac
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTBundles201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -412,7 +415,7 @@ func (o *POSTBundles201ResponseDataAttributes) GetMetadata() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBundles201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -420,7 +423,7 @@ func (o *POSTBundles201ResponseDataAttributes) GetMetadataOk() (*interface{}, bo
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTBundles201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -433,6 +436,14 @@ func (o *POSTBundles201ResponseDataAttributes) SetMetadata(v interface{}) {
 }
 
 func (o POSTBundles201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTBundles201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Code != nil {
 		toSerialize["code"] = o.Code
@@ -470,7 +481,7 @@ func (o POSTBundles201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTBundles201ResponseDataAttributes struct {

@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the AdjustmentData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AdjustmentData{}
+
 // AdjustmentData struct for AdjustmentData
 type AdjustmentData struct {
 	// The resource's type
-	Type          interface{}                                  `json:"type"`
-	Attributes    GETAdjustments200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships interface{}                                  `json:"relationships,omitempty"`
+	Type          interface{}                                         `json:"type"`
+	Attributes    GETAdjustmentsAdjustmentId200ResponseDataAttributes `json:"attributes"`
+	Relationships interface{}                                         `json:"relationships,omitempty"`
 }
 
 // NewAdjustmentData instantiates a new AdjustmentData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAdjustmentData(type_ interface{}, attributes GETAdjustments200ResponseDataInnerAttributes) *AdjustmentData {
+func NewAdjustmentData(type_ interface{}, attributes GETAdjustmentsAdjustmentId200ResponseDataAttributes) *AdjustmentData {
 	this := AdjustmentData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -57,7 +60,7 @@ func (o *AdjustmentData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AdjustmentData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -69,9 +72,9 @@ func (o *AdjustmentData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AdjustmentData) GetAttributes() GETAdjustments200ResponseDataInnerAttributes {
+func (o *AdjustmentData) GetAttributes() GETAdjustmentsAdjustmentId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETAdjustments200ResponseDataInnerAttributes
+		var ret GETAdjustmentsAdjustmentId200ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +83,7 @@ func (o *AdjustmentData) GetAttributes() GETAdjustments200ResponseDataInnerAttri
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AdjustmentData) GetAttributesOk() (*GETAdjustments200ResponseDataInnerAttributes, bool) {
+func (o *AdjustmentData) GetAttributesOk() (*GETAdjustmentsAdjustmentId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,7 +91,7 @@ func (o *AdjustmentData) GetAttributesOk() (*GETAdjustments200ResponseDataInnerA
 }
 
 // SetAttributes sets field value
-func (o *AdjustmentData) SetAttributes(v GETAdjustments200ResponseDataInnerAttributes) {
+func (o *AdjustmentData) SetAttributes(v GETAdjustmentsAdjustmentId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
@@ -105,7 +108,7 @@ func (o *AdjustmentData) GetRelationships() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AdjustmentData) GetRelationshipsOk() (*interface{}, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return &o.Relationships, true
@@ -113,7 +116,7 @@ func (o *AdjustmentData) GetRelationshipsOk() (*interface{}, bool) {
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *AdjustmentData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && IsNil(o.Relationships) {
 		return true
 	}
 
@@ -126,17 +129,23 @@ func (o *AdjustmentData) SetRelationships(v interface{}) {
 }
 
 func (o AdjustmentData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o AdjustmentData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
+	toSerialize["attributes"] = o.Attributes
 	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableAdjustmentData struct {

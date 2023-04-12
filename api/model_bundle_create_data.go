@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the BundleCreateData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BundleCreateData{}
+
 // BundleCreateData struct for BundleCreateData
 type BundleCreateData struct {
 	// The resource's type
@@ -57,7 +60,7 @@ func (o *BundleCreateData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BundleCreateData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -94,7 +97,7 @@ func (o *BundleCreateData) SetAttributes(v POSTBundles201ResponseDataAttributes)
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *BundleCreateData) GetRelationships() BundleCreateDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret BundleCreateDataRelationships
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *BundleCreateData) GetRelationships() BundleCreateDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BundleCreateData) GetRelationshipsOk() (*BundleCreateDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -112,7 +115,7 @@ func (o *BundleCreateData) GetRelationshipsOk() (*BundleCreateDataRelationships,
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *BundleCreateData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -125,17 +128,23 @@ func (o *BundleCreateData) SetRelationships(v BundleCreateDataRelationships) {
 }
 
 func (o BundleCreateData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o BundleCreateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableBundleCreateData struct {

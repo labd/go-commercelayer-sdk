@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETDeliveryLeadTimes200ResponseDataInnerAttributes**](GETDeliveryLeadTimes200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**GETDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes**](GETDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**DeliveryLeadTimeDataRelationships**](DeliveryLeadTimeDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewDeliveryLeadTimeData
 
-`func NewDeliveryLeadTimeData(type_ interface{}, attributes GETDeliveryLeadTimes200ResponseDataInnerAttributes, ) *DeliveryLeadTimeData`
+`func NewDeliveryLeadTimeData(type_ interface{}, attributes GETDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes, ) *DeliveryLeadTimeData`
 
 NewDeliveryLeadTimeData instantiates a new DeliveryLeadTimeData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *DeliveryLeadTimeData) GetAttributes() GETDeliveryLeadTimes200ResponseDataInnerAttributes`
+`func (o *DeliveryLeadTimeData) GetAttributes() GETDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *DeliveryLeadTimeData) GetAttributesOk() (*GETDeliveryLeadTimes200ResponseDataInnerAttributes, bool)`
+`func (o *DeliveryLeadTimeData) GetAttributesOk() (*GETDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *DeliveryLeadTimeData) SetAttributes(v GETDeliveryLeadTimes200ResponseDataInnerAttributes)`
+`func (o *DeliveryLeadTimeData) SetAttributes(v GETDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

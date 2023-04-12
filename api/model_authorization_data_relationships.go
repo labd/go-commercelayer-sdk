@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AuthorizationDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AuthorizationDataRelationships{}
+
 // AuthorizationDataRelationships struct for AuthorizationDataRelationships
 type AuthorizationDataRelationships struct {
 	Order    *AdyenPaymentDataRelationshipsOrder     `json:"order,omitempty"`
@@ -42,7 +45,7 @@ func NewAuthorizationDataRelationshipsWithDefaults() *AuthorizationDataRelations
 
 // GetOrder returns the Order field value if set, zero value otherwise.
 func (o *AuthorizationDataRelationships) GetOrder() AdyenPaymentDataRelationshipsOrder {
-	if o == nil || o.Order == nil {
+	if o == nil || IsNil(o.Order) {
 		var ret AdyenPaymentDataRelationshipsOrder
 		return ret
 	}
@@ -52,7 +55,7 @@ func (o *AuthorizationDataRelationships) GetOrder() AdyenPaymentDataRelationship
 // GetOrderOk returns a tuple with the Order field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationDataRelationships) GetOrderOk() (*AdyenPaymentDataRelationshipsOrder, bool) {
-	if o == nil || o.Order == nil {
+	if o == nil || IsNil(o.Order) {
 		return nil, false
 	}
 	return o.Order, true
@@ -60,7 +63,7 @@ func (o *AuthorizationDataRelationships) GetOrderOk() (*AdyenPaymentDataRelation
 
 // HasOrder returns a boolean if a field has been set.
 func (o *AuthorizationDataRelationships) HasOrder() bool {
-	if o != nil && o.Order != nil {
+	if o != nil && !IsNil(o.Order) {
 		return true
 	}
 
@@ -74,7 +77,7 @@ func (o *AuthorizationDataRelationships) SetOrder(v AdyenPaymentDataRelationship
 
 // GetCaptures returns the Captures field value if set, zero value otherwise.
 func (o *AuthorizationDataRelationships) GetCaptures() AuthorizationDataRelationshipsCaptures {
-	if o == nil || o.Captures == nil {
+	if o == nil || IsNil(o.Captures) {
 		var ret AuthorizationDataRelationshipsCaptures
 		return ret
 	}
@@ -84,7 +87,7 @@ func (o *AuthorizationDataRelationships) GetCaptures() AuthorizationDataRelation
 // GetCapturesOk returns a tuple with the Captures field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationDataRelationships) GetCapturesOk() (*AuthorizationDataRelationshipsCaptures, bool) {
-	if o == nil || o.Captures == nil {
+	if o == nil || IsNil(o.Captures) {
 		return nil, false
 	}
 	return o.Captures, true
@@ -92,7 +95,7 @@ func (o *AuthorizationDataRelationships) GetCapturesOk() (*AuthorizationDataRela
 
 // HasCaptures returns a boolean if a field has been set.
 func (o *AuthorizationDataRelationships) HasCaptures() bool {
-	if o != nil && o.Captures != nil {
+	if o != nil && !IsNil(o.Captures) {
 		return true
 	}
 
@@ -106,7 +109,7 @@ func (o *AuthorizationDataRelationships) SetCaptures(v AuthorizationDataRelation
 
 // GetVoids returns the Voids field value if set, zero value otherwise.
 func (o *AuthorizationDataRelationships) GetVoids() AuthorizationDataRelationshipsVoids {
-	if o == nil || o.Voids == nil {
+	if o == nil || IsNil(o.Voids) {
 		var ret AuthorizationDataRelationshipsVoids
 		return ret
 	}
@@ -116,7 +119,7 @@ func (o *AuthorizationDataRelationships) GetVoids() AuthorizationDataRelationshi
 // GetVoidsOk returns a tuple with the Voids field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationDataRelationships) GetVoidsOk() (*AuthorizationDataRelationshipsVoids, bool) {
-	if o == nil || o.Voids == nil {
+	if o == nil || IsNil(o.Voids) {
 		return nil, false
 	}
 	return o.Voids, true
@@ -124,7 +127,7 @@ func (o *AuthorizationDataRelationships) GetVoidsOk() (*AuthorizationDataRelatio
 
 // HasVoids returns a boolean if a field has been set.
 func (o *AuthorizationDataRelationships) HasVoids() bool {
-	if o != nil && o.Voids != nil {
+	if o != nil && !IsNil(o.Voids) {
 		return true
 	}
 
@@ -138,7 +141,7 @@ func (o *AuthorizationDataRelationships) SetVoids(v AuthorizationDataRelationshi
 
 // GetEvents returns the Events field value if set, zero value otherwise.
 func (o *AuthorizationDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
-	if o == nil || o.Events == nil {
+	if o == nil || IsNil(o.Events) {
 		var ret AuthorizationDataRelationshipsEvents
 		return ret
 	}
@@ -148,7 +151,7 @@ func (o *AuthorizationDataRelationships) GetEvents() AuthorizationDataRelationsh
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
-	if o == nil || o.Events == nil {
+	if o == nil || IsNil(o.Events) {
 		return nil, false
 	}
 	return o.Events, true
@@ -156,7 +159,7 @@ func (o *AuthorizationDataRelationships) GetEventsOk() (*AuthorizationDataRelati
 
 // HasEvents returns a boolean if a field has been set.
 func (o *AuthorizationDataRelationships) HasEvents() bool {
-	if o != nil && o.Events != nil {
+	if o != nil && !IsNil(o.Events) {
 		return true
 	}
 
@@ -169,20 +172,28 @@ func (o *AuthorizationDataRelationships) SetEvents(v AuthorizationDataRelationsh
 }
 
 func (o AuthorizationDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Order != nil {
-		toSerialize["order"] = o.Order
-	}
-	if o.Captures != nil {
-		toSerialize["captures"] = o.Captures
-	}
-	if o.Voids != nil {
-		toSerialize["voids"] = o.Voids
-	}
-	if o.Events != nil {
-		toSerialize["events"] = o.Events
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AuthorizationDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Order) {
+		toSerialize["order"] = o.Order
+	}
+	if !IsNil(o.Captures) {
+		toSerialize["captures"] = o.Captures
+	}
+	if !IsNil(o.Voids) {
+		toSerialize["voids"] = o.Voids
+	}
+	if !IsNil(o.Events) {
+		toSerialize["events"] = o.Events
+	}
+	return toSerialize, nil
 }
 
 type NullableAuthorizationDataRelationships struct {

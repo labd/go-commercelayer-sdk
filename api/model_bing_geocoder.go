@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the BingGeocoder type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BingGeocoder{}
+
 // BingGeocoder struct for BingGeocoder
 type BingGeocoder struct {
 	Data *BingGeocoderData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewBingGeocoderWithDefaults() *BingGeocoder {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *BingGeocoder) GetData() BingGeocoderData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret BingGeocoderData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *BingGeocoder) GetData() BingGeocoderData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BingGeocoder) GetDataOk() (*BingGeocoderData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *BingGeocoder) GetDataOk() (*BingGeocoderData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *BingGeocoder) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *BingGeocoder) SetData(v BingGeocoderData) {
 }
 
 func (o BingGeocoder) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o BingGeocoder) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableBingGeocoder struct {

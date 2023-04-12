@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTStockLocations201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTStockLocations201ResponseDataAttributes{}
+
 // POSTStockLocations201ResponseDataAttributes struct for POSTStockLocations201ResponseDataAttributes
 type POSTStockLocations201ResponseDataAttributes struct {
 	// The stock location's internal name.
@@ -64,7 +67,7 @@ func (o *POSTStockLocations201ResponseDataAttributes) GetName() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTStockLocations201ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -88,7 +91,7 @@ func (o *POSTStockLocations201ResponseDataAttributes) GetLabelFormat() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTStockLocations201ResponseDataAttributes) GetLabelFormatOk() (*interface{}, bool) {
-	if o == nil || o.LabelFormat == nil {
+	if o == nil || IsNil(o.LabelFormat) {
 		return nil, false
 	}
 	return &o.LabelFormat, true
@@ -96,7 +99,7 @@ func (o *POSTStockLocations201ResponseDataAttributes) GetLabelFormatOk() (*inter
 
 // HasLabelFormat returns a boolean if a field has been set.
 func (o *POSTStockLocations201ResponseDataAttributes) HasLabelFormat() bool {
-	if o != nil && o.LabelFormat != nil {
+	if o != nil && IsNil(o.LabelFormat) {
 		return true
 	}
 
@@ -121,7 +124,7 @@ func (o *POSTStockLocations201ResponseDataAttributes) GetSuppressEtd() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTStockLocations201ResponseDataAttributes) GetSuppressEtdOk() (*interface{}, bool) {
-	if o == nil || o.SuppressEtd == nil {
+	if o == nil || IsNil(o.SuppressEtd) {
 		return nil, false
 	}
 	return &o.SuppressEtd, true
@@ -129,7 +132,7 @@ func (o *POSTStockLocations201ResponseDataAttributes) GetSuppressEtdOk() (*inter
 
 // HasSuppressEtd returns a boolean if a field has been set.
 func (o *POSTStockLocations201ResponseDataAttributes) HasSuppressEtd() bool {
-	if o != nil && o.SuppressEtd != nil {
+	if o != nil && IsNil(o.SuppressEtd) {
 		return true
 	}
 
@@ -154,7 +157,7 @@ func (o *POSTStockLocations201ResponseDataAttributes) GetReference() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTStockLocations201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -162,7 +165,7 @@ func (o *POSTStockLocations201ResponseDataAttributes) GetReferenceOk() (*interfa
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTStockLocations201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -187,7 +190,7 @@ func (o *POSTStockLocations201ResponseDataAttributes) GetReferenceOrigin() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTStockLocations201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -195,7 +198,7 @@ func (o *POSTStockLocations201ResponseDataAttributes) GetReferenceOriginOk() (*i
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTStockLocations201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -220,7 +223,7 @@ func (o *POSTStockLocations201ResponseDataAttributes) GetMetadata() interface{} 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTStockLocations201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -228,7 +231,7 @@ func (o *POSTStockLocations201ResponseDataAttributes) GetMetadataOk() (*interfac
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTStockLocations201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -241,6 +244,14 @@ func (o *POSTStockLocations201ResponseDataAttributes) SetMetadata(v interface{})
 }
 
 func (o POSTStockLocations201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTStockLocations201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -260,7 +271,7 @@ func (o POSTStockLocations201ResponseDataAttributes) MarshalJSON() ([]byte, erro
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTStockLocations201ResponseDataAttributes struct {

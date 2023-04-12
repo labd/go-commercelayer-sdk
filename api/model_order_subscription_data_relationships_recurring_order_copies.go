@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the OrderSubscriptionDataRelationshipsRecurringOrderCopies type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &OrderSubscriptionDataRelationshipsRecurringOrderCopies{}
+
 // OrderSubscriptionDataRelationshipsRecurringOrderCopies struct for OrderSubscriptionDataRelationshipsRecurringOrderCopies
 type OrderSubscriptionDataRelationshipsRecurringOrderCopies struct {
 	Data *OrderSubscriptionDataRelationshipsRecurringOrderCopiesData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewOrderSubscriptionDataRelationshipsRecurringOrderCopiesWithDefaults() *Or
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *OrderSubscriptionDataRelationshipsRecurringOrderCopies) GetData() OrderSubscriptionDataRelationshipsRecurringOrderCopiesData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret OrderSubscriptionDataRelationshipsRecurringOrderCopiesData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *OrderSubscriptionDataRelationshipsRecurringOrderCopies) GetData() Order
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OrderSubscriptionDataRelationshipsRecurringOrderCopies) GetDataOk() (*OrderSubscriptionDataRelationshipsRecurringOrderCopiesData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *OrderSubscriptionDataRelationshipsRecurringOrderCopies) GetDataOk() (*O
 
 // HasData returns a boolean if a field has been set.
 func (o *OrderSubscriptionDataRelationshipsRecurringOrderCopies) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *OrderSubscriptionDataRelationshipsRecurringOrderCopies) SetData(v Order
 }
 
 func (o OrderSubscriptionDataRelationshipsRecurringOrderCopies) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o OrderSubscriptionDataRelationshipsRecurringOrderCopies) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableOrderSubscriptionDataRelationshipsRecurringOrderCopies struct {

@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHInventoryModelsInventoryModelId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHInventoryModelsInventoryModelId200Response{}
+
 // PATCHInventoryModelsInventoryModelId200Response struct for PATCHInventoryModelsInventoryModelId200Response
 type PATCHInventoryModelsInventoryModelId200Response struct {
 	Data *PATCHInventoryModelsInventoryModelId200ResponseData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewPATCHInventoryModelsInventoryModelId200ResponseWithDefaults() *PATCHInve
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *PATCHInventoryModelsInventoryModelId200Response) GetData() PATCHInventoryModelsInventoryModelId200ResponseData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret PATCHInventoryModelsInventoryModelId200ResponseData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *PATCHInventoryModelsInventoryModelId200Response) GetData() PATCHInvento
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHInventoryModelsInventoryModelId200Response) GetDataOk() (*PATCHInventoryModelsInventoryModelId200ResponseData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *PATCHInventoryModelsInventoryModelId200Response) GetDataOk() (*PATCHInv
 
 // HasData returns a boolean if a field has been set.
 func (o *PATCHInventoryModelsInventoryModelId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *PATCHInventoryModelsInventoryModelId200Response) SetData(v PATCHInvento
 }
 
 func (o PATCHInventoryModelsInventoryModelId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PATCHInventoryModelsInventoryModelId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullablePATCHInventoryModelsInventoryModelId200Response struct {

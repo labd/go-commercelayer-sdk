@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes{}
+
 // PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes struct for PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes
 type PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes struct {
 	// The geocoder's internal name
@@ -59,7 +62,7 @@ func (o *PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes) GetName() in
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -67,7 +70,7 @@ func (o *PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes) GetNameOk() 
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
@@ -92,7 +95,7 @@ func (o *PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes) GetReference
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -100,7 +103,7 @@ func (o *PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes) GetReference
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -125,7 +128,7 @@ func (o *PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes) GetReference
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -133,7 +136,7 @@ func (o *PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes) GetReference
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -158,7 +161,7 @@ func (o *PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes) GetMetadata(
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -166,7 +169,7 @@ func (o *PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes) GetMetadataO
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -191,7 +194,7 @@ func (o *PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes) GetKey() int
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes) GetKeyOk() (*interface{}, bool) {
-	if o == nil || o.Key == nil {
+	if o == nil || IsNil(o.Key) {
 		return nil, false
 	}
 	return &o.Key, true
@@ -199,7 +202,7 @@ func (o *PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes) GetKeyOk() (
 
 // HasKey returns a boolean if a field has been set.
 func (o *PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes) HasKey() bool {
-	if o != nil && o.Key != nil {
+	if o != nil && IsNil(o.Key) {
 		return true
 	}
 
@@ -212,6 +215,14 @@ func (o *PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes) SetKey(v int
 }
 
 func (o PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -228,7 +239,7 @@ func (o PATCHBingGeocodersBingGeocoderId200ResponseDataAttributes) MarshalJSON()
 	if o.Key != nil {
 		toSerialize["key"] = o.Key
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHBingGeocodersBingGeocoderId200ResponseDataAttributes struct {

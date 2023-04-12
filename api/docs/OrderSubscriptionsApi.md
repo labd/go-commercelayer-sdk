@@ -35,7 +35,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -43,7 +43,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrderSubscriptionsApi.DELETEOrderSubscriptionsOrderSubscriptionId(context.Background(), orderSubscriptionId).Execute()
+    r, err := apiClient.OrderSubscriptionsApi.DELETEOrderSubscriptionsOrderSubscriptionId(context.Background(), orderSubscriptionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderSubscriptionsApi.DELETEOrderSubscriptionsOrderSubscriptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -103,7 +103,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -111,7 +111,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrderSubscriptionsApi.GETCustomerIdOrderSubscriptions(context.Background(), customerId).Execute()
+    r, err := apiClient.OrderSubscriptionsApi.GETCustomerIdOrderSubscriptions(context.Background(), customerId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderSubscriptionsApi.GETCustomerIdOrderSubscriptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -171,7 +171,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -179,7 +179,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrderSubscriptionsApi.GETOrderCopyIdOrderSubscription(context.Background(), orderCopyId).Execute()
+    r, err := apiClient.OrderSubscriptionsApi.GETOrderCopyIdOrderSubscription(context.Background(), orderCopyId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderSubscriptionsApi.GETOrderCopyIdOrderSubscription``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -239,7 +239,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -247,7 +247,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrderSubscriptionsApi.GETOrderIdOrderSubscriptions(context.Background(), orderId).Execute()
+    r, err := apiClient.OrderSubscriptionsApi.GETOrderIdOrderSubscriptions(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderSubscriptionsApi.GETOrderIdOrderSubscriptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -307,7 +307,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -315,7 +315,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrderSubscriptionsApi.GETOrderSubscriptionItemIdOrderSubscription(context.Background(), orderSubscriptionItemId).Execute()
+    r, err := apiClient.OrderSubscriptionsApi.GETOrderSubscriptionItemIdOrderSubscription(context.Background(), orderSubscriptionItemId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderSubscriptionsApi.GETOrderSubscriptionItemIdOrderSubscription``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -375,7 +375,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -436,7 +436,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -506,7 +506,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -514,7 +514,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrderSubscriptionsApi.GETRecurringOrderCopyIdOrderSubscription(context.Background(), recurringOrderCopyId).Execute()
+    r, err := apiClient.OrderSubscriptionsApi.GETRecurringOrderCopyIdOrderSubscription(context.Background(), recurringOrderCopyId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderSubscriptionsApi.GETRecurringOrderCopyIdOrderSubscription``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -574,7 +574,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -582,7 +582,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrderSubscriptionsApi.GETSubscriptionModelIdOrderSubscriptions(context.Background(), subscriptionModelId).Execute()
+    r, err := apiClient.OrderSubscriptionsApi.GETSubscriptionModelIdOrderSubscriptions(context.Background(), subscriptionModelId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderSubscriptionsApi.GETSubscriptionModelIdOrderSubscriptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -642,7 +642,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -714,7 +714,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {

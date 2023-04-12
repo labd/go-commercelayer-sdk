@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHBundlesBundleId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHBundlesBundleId200ResponseDataAttributes{}
+
 // PATCHBundlesBundleId200ResponseDataAttributes struct for PATCHBundlesBundleId200ResponseDataAttributes
 type PATCHBundlesBundleId200ResponseDataAttributes struct {
 	// The bundle code, that uniquely identifies the bundle within the market.
@@ -73,7 +76,7 @@ func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetCode() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetCodeOk() (*interface{}, bool) {
-	if o == nil || o.Code == nil {
+	if o == nil || IsNil(o.Code) {
 		return nil, false
 	}
 	return &o.Code, true
@@ -81,7 +84,7 @@ func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetCodeOk() (*interface{
 
 // HasCode returns a boolean if a field has been set.
 func (o *PATCHBundlesBundleId200ResponseDataAttributes) HasCode() bool {
-	if o != nil && o.Code != nil {
+	if o != nil && IsNil(o.Code) {
 		return true
 	}
 
@@ -106,7 +109,7 @@ func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetName() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -114,7 +117,7 @@ func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetNameOk() (*interface{
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHBundlesBundleId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
@@ -139,7 +142,7 @@ func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetCurrencyCode() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetCurrencyCodeOk() (*interface{}, bool) {
-	if o == nil || o.CurrencyCode == nil {
+	if o == nil || IsNil(o.CurrencyCode) {
 		return nil, false
 	}
 	return &o.CurrencyCode, true
@@ -147,7 +150,7 @@ func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetCurrencyCodeOk() (*in
 
 // HasCurrencyCode returns a boolean if a field has been set.
 func (o *PATCHBundlesBundleId200ResponseDataAttributes) HasCurrencyCode() bool {
-	if o != nil && o.CurrencyCode != nil {
+	if o != nil && IsNil(o.CurrencyCode) {
 		return true
 	}
 
@@ -172,7 +175,7 @@ func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetDescription() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetDescriptionOk() (*interface{}, bool) {
-	if o == nil || o.Description == nil {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
 	return &o.Description, true
@@ -180,7 +183,7 @@ func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetDescriptionOk() (*int
 
 // HasDescription returns a boolean if a field has been set.
 func (o *PATCHBundlesBundleId200ResponseDataAttributes) HasDescription() bool {
-	if o != nil && o.Description != nil {
+	if o != nil && IsNil(o.Description) {
 		return true
 	}
 
@@ -205,7 +208,7 @@ func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetImageUrl() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetImageUrlOk() (*interface{}, bool) {
-	if o == nil || o.ImageUrl == nil {
+	if o == nil || IsNil(o.ImageUrl) {
 		return nil, false
 	}
 	return &o.ImageUrl, true
@@ -213,7 +216,7 @@ func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetImageUrlOk() (*interf
 
 // HasImageUrl returns a boolean if a field has been set.
 func (o *PATCHBundlesBundleId200ResponseDataAttributes) HasImageUrl() bool {
-	if o != nil && o.ImageUrl != nil {
+	if o != nil && IsNil(o.ImageUrl) {
 		return true
 	}
 
@@ -238,7 +241,7 @@ func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetPriceAmountCents() in
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetPriceAmountCentsOk() (*interface{}, bool) {
-	if o == nil || o.PriceAmountCents == nil {
+	if o == nil || IsNil(o.PriceAmountCents) {
 		return nil, false
 	}
 	return &o.PriceAmountCents, true
@@ -246,7 +249,7 @@ func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetPriceAmountCentsOk() 
 
 // HasPriceAmountCents returns a boolean if a field has been set.
 func (o *PATCHBundlesBundleId200ResponseDataAttributes) HasPriceAmountCents() bool {
-	if o != nil && o.PriceAmountCents != nil {
+	if o != nil && IsNil(o.PriceAmountCents) {
 		return true
 	}
 
@@ -271,7 +274,7 @@ func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetCompareAtAmountCents(
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetCompareAtAmountCentsOk() (*interface{}, bool) {
-	if o == nil || o.CompareAtAmountCents == nil {
+	if o == nil || IsNil(o.CompareAtAmountCents) {
 		return nil, false
 	}
 	return &o.CompareAtAmountCents, true
@@ -279,7 +282,7 @@ func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetCompareAtAmountCentsO
 
 // HasCompareAtAmountCents returns a boolean if a field has been set.
 func (o *PATCHBundlesBundleId200ResponseDataAttributes) HasCompareAtAmountCents() bool {
-	if o != nil && o.CompareAtAmountCents != nil {
+	if o != nil && IsNil(o.CompareAtAmountCents) {
 		return true
 	}
 
@@ -304,7 +307,7 @@ func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetComputePriceAmount() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetComputePriceAmountOk() (*interface{}, bool) {
-	if o == nil || o.ComputePriceAmount == nil {
+	if o == nil || IsNil(o.ComputePriceAmount) {
 		return nil, false
 	}
 	return &o.ComputePriceAmount, true
@@ -312,7 +315,7 @@ func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetComputePriceAmountOk(
 
 // HasComputePriceAmount returns a boolean if a field has been set.
 func (o *PATCHBundlesBundleId200ResponseDataAttributes) HasComputePriceAmount() bool {
-	if o != nil && o.ComputePriceAmount != nil {
+	if o != nil && IsNil(o.ComputePriceAmount) {
 		return true
 	}
 
@@ -337,7 +340,7 @@ func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetComputeCompareAtAmoun
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetComputeCompareAtAmountOk() (*interface{}, bool) {
-	if o == nil || o.ComputeCompareAtAmount == nil {
+	if o == nil || IsNil(o.ComputeCompareAtAmount) {
 		return nil, false
 	}
 	return &o.ComputeCompareAtAmount, true
@@ -345,7 +348,7 @@ func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetComputeCompareAtAmoun
 
 // HasComputeCompareAtAmount returns a boolean if a field has been set.
 func (o *PATCHBundlesBundleId200ResponseDataAttributes) HasComputeCompareAtAmount() bool {
-	if o != nil && o.ComputeCompareAtAmount != nil {
+	if o != nil && IsNil(o.ComputeCompareAtAmount) {
 		return true
 	}
 
@@ -370,7 +373,7 @@ func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetReference() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -378,7 +381,7 @@ func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetReferenceOk() (*inter
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHBundlesBundleId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -403,7 +406,7 @@ func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetReferenceOrigin() int
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -411,7 +414,7 @@ func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetReferenceOriginOk() (
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHBundlesBundleId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -436,7 +439,7 @@ func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetMetadata() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -444,7 +447,7 @@ func (o *PATCHBundlesBundleId200ResponseDataAttributes) GetMetadataOk() (*interf
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHBundlesBundleId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -457,6 +460,14 @@ func (o *PATCHBundlesBundleId200ResponseDataAttributes) SetMetadata(v interface{
 }
 
 func (o PATCHBundlesBundleId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHBundlesBundleId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Code != nil {
 		toSerialize["code"] = o.Code
@@ -494,7 +505,7 @@ func (o PATCHBundlesBundleId200ResponseDataAttributes) MarshalJSON() ([]byte, er
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHBundlesBundleId200ResponseDataAttributes struct {

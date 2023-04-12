@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes{}
+
 // PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes struct for PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes
 type PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes struct {
 	// The payment source type, can be one of: 'AdyenPayment', 'AxervePayment', 'BraintreePayment', 'CheckoutComPayment', 'CreditCard', 'ExternalPayment', 'KlarnaPayment', 'PaypalPayment', 'SatispayPayment', 'StripePayment', or 'WireTransfer'.
@@ -73,7 +76,7 @@ func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetPayment
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetPaymentSourceTypeOk() (*interface{}, bool) {
-	if o == nil || o.PaymentSourceType == nil {
+	if o == nil || IsNil(o.PaymentSourceType) {
 		return nil, false
 	}
 	return &o.PaymentSourceType, true
@@ -81,7 +84,7 @@ func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetPayment
 
 // HasPaymentSourceType returns a boolean if a field has been set.
 func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) HasPaymentSourceType() bool {
-	if o != nil && o.PaymentSourceType != nil {
+	if o != nil && IsNil(o.PaymentSourceType) {
 		return true
 	}
 
@@ -106,7 +109,7 @@ func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetCurrenc
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetCurrencyCodeOk() (*interface{}, bool) {
-	if o == nil || o.CurrencyCode == nil {
+	if o == nil || IsNil(o.CurrencyCode) {
 		return nil, false
 	}
 	return &o.CurrencyCode, true
@@ -114,7 +117,7 @@ func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetCurrenc
 
 // HasCurrencyCode returns a boolean if a field has been set.
 func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) HasCurrencyCode() bool {
-	if o != nil && o.CurrencyCode != nil {
+	if o != nil && IsNil(o.CurrencyCode) {
 		return true
 	}
 
@@ -139,7 +142,7 @@ func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetMoto() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetMotoOk() (*interface{}, bool) {
-	if o == nil || o.Moto == nil {
+	if o == nil || IsNil(o.Moto) {
 		return nil, false
 	}
 	return &o.Moto, true
@@ -147,7 +150,7 @@ func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetMotoOk(
 
 // HasMoto returns a boolean if a field has been set.
 func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) HasMoto() bool {
-	if o != nil && o.Moto != nil {
+	if o != nil && IsNil(o.Moto) {
 		return true
 	}
 
@@ -172,7 +175,7 @@ func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetRequire
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetRequireCaptureOk() (*interface{}, bool) {
-	if o == nil || o.RequireCapture == nil {
+	if o == nil || IsNil(o.RequireCapture) {
 		return nil, false
 	}
 	return &o.RequireCapture, true
@@ -180,7 +183,7 @@ func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetRequire
 
 // HasRequireCapture returns a boolean if a field has been set.
 func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) HasRequireCapture() bool {
-	if o != nil && o.RequireCapture != nil {
+	if o != nil && IsNil(o.RequireCapture) {
 		return true
 	}
 
@@ -205,7 +208,7 @@ func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetAutoCap
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetAutoCaptureOk() (*interface{}, bool) {
-	if o == nil || o.AutoCapture == nil {
+	if o == nil || IsNil(o.AutoCapture) {
 		return nil, false
 	}
 	return &o.AutoCapture, true
@@ -213,7 +216,7 @@ func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetAutoCap
 
 // HasAutoCapture returns a boolean if a field has been set.
 func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) HasAutoCapture() bool {
-	if o != nil && o.AutoCapture != nil {
+	if o != nil && IsNil(o.AutoCapture) {
 		return true
 	}
 
@@ -238,7 +241,7 @@ func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetDisable
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetDisableOk() (*interface{}, bool) {
-	if o == nil || o.Disable == nil {
+	if o == nil || IsNil(o.Disable) {
 		return nil, false
 	}
 	return &o.Disable, true
@@ -246,7 +249,7 @@ func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetDisable
 
 // HasDisable returns a boolean if a field has been set.
 func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) HasDisable() bool {
-	if o != nil && o.Disable != nil {
+	if o != nil && IsNil(o.Disable) {
 		return true
 	}
 
@@ -271,7 +274,7 @@ func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetEnable(
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetEnableOk() (*interface{}, bool) {
-	if o == nil || o.Enable == nil {
+	if o == nil || IsNil(o.Enable) {
 		return nil, false
 	}
 	return &o.Enable, true
@@ -279,7 +282,7 @@ func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetEnableO
 
 // HasEnable returns a boolean if a field has been set.
 func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) HasEnable() bool {
-	if o != nil && o.Enable != nil {
+	if o != nil && IsNil(o.Enable) {
 		return true
 	}
 
@@ -304,7 +307,7 @@ func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetPriceAm
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetPriceAmountCentsOk() (*interface{}, bool) {
-	if o == nil || o.PriceAmountCents == nil {
+	if o == nil || IsNil(o.PriceAmountCents) {
 		return nil, false
 	}
 	return &o.PriceAmountCents, true
@@ -312,7 +315,7 @@ func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetPriceAm
 
 // HasPriceAmountCents returns a boolean if a field has been set.
 func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) HasPriceAmountCents() bool {
-	if o != nil && o.PriceAmountCents != nil {
+	if o != nil && IsNil(o.PriceAmountCents) {
 		return true
 	}
 
@@ -337,7 +340,7 @@ func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetAutoCap
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetAutoCaptureMaxAmountCentsOk() (*interface{}, bool) {
-	if o == nil || o.AutoCaptureMaxAmountCents == nil {
+	if o == nil || IsNil(o.AutoCaptureMaxAmountCents) {
 		return nil, false
 	}
 	return &o.AutoCaptureMaxAmountCents, true
@@ -345,7 +348,7 @@ func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetAutoCap
 
 // HasAutoCaptureMaxAmountCents returns a boolean if a field has been set.
 func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) HasAutoCaptureMaxAmountCents() bool {
-	if o != nil && o.AutoCaptureMaxAmountCents != nil {
+	if o != nil && IsNil(o.AutoCaptureMaxAmountCents) {
 		return true
 	}
 
@@ -370,7 +373,7 @@ func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetReferen
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -378,7 +381,7 @@ func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetReferen
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -403,7 +406,7 @@ func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetReferen
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -411,7 +414,7 @@ func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetReferen
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -436,7 +439,7 @@ func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetMetadat
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -444,7 +447,7 @@ func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) GetMetadat
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -457,6 +460,14 @@ func (o *PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) SetMetadat
 }
 
 func (o PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.PaymentSourceType != nil {
 		toSerialize["payment_source_type"] = o.PaymentSourceType
@@ -494,7 +505,7 @@ func (o PATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes) MarshalJSON
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes struct {

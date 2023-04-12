@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AxerveGateway type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AxerveGateway{}
+
 // AxerveGateway struct for AxerveGateway
 type AxerveGateway struct {
 	Data *AxerveGatewayData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewAxerveGatewayWithDefaults() *AxerveGateway {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *AxerveGateway) GetData() AxerveGatewayData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret AxerveGatewayData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *AxerveGateway) GetData() AxerveGatewayData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AxerveGateway) GetDataOk() (*AxerveGatewayData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *AxerveGateway) GetDataOk() (*AxerveGatewayData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *AxerveGateway) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *AxerveGateway) SetData(v AxerveGatewayData) {
 }
 
 func (o AxerveGateway) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AxerveGateway) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableAxerveGateway struct {

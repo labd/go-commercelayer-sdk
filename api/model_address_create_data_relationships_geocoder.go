@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddressCreateDataRelationshipsGeocoder type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddressCreateDataRelationshipsGeocoder{}
+
 // AddressCreateDataRelationshipsGeocoder struct for AddressCreateDataRelationshipsGeocoder
 type AddressCreateDataRelationshipsGeocoder struct {
 	Data AddressDataRelationshipsGeocoderData `json:"data"`
@@ -63,11 +66,17 @@ func (o *AddressCreateDataRelationshipsGeocoder) SetData(v AddressDataRelationsh
 }
 
 func (o AddressCreateDataRelationshipsGeocoder) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddressCreateDataRelationshipsGeocoder) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableAddressCreateDataRelationshipsGeocoder struct {

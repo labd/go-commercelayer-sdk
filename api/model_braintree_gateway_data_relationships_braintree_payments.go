@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the BraintreeGatewayDataRelationshipsBraintreePayments type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BraintreeGatewayDataRelationshipsBraintreePayments{}
+
 // BraintreeGatewayDataRelationshipsBraintreePayments struct for BraintreeGatewayDataRelationshipsBraintreePayments
 type BraintreeGatewayDataRelationshipsBraintreePayments struct {
 	Data *BraintreeGatewayDataRelationshipsBraintreePaymentsData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewBraintreeGatewayDataRelationshipsBraintreePaymentsWithDefaults() *Braint
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *BraintreeGatewayDataRelationshipsBraintreePayments) GetData() BraintreeGatewayDataRelationshipsBraintreePaymentsData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret BraintreeGatewayDataRelationshipsBraintreePaymentsData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *BraintreeGatewayDataRelationshipsBraintreePayments) GetData() Braintree
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BraintreeGatewayDataRelationshipsBraintreePayments) GetDataOk() (*BraintreeGatewayDataRelationshipsBraintreePaymentsData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *BraintreeGatewayDataRelationshipsBraintreePayments) GetDataOk() (*Brain
 
 // HasData returns a boolean if a field has been set.
 func (o *BraintreeGatewayDataRelationshipsBraintreePayments) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *BraintreeGatewayDataRelationshipsBraintreePayments) SetData(v Braintree
 }
 
 func (o BraintreeGatewayDataRelationshipsBraintreePayments) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o BraintreeGatewayDataRelationshipsBraintreePayments) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableBraintreeGatewayDataRelationshipsBraintreePayments struct {

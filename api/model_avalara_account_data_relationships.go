@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AvalaraAccountDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AvalaraAccountDataRelationships{}
+
 // AvalaraAccountDataRelationships struct for AvalaraAccountDataRelationships
 type AvalaraAccountDataRelationships struct {
 	Markets       *AvalaraAccountDataRelationshipsMarkets       `json:"markets,omitempty"`
@@ -41,7 +44,7 @@ func NewAvalaraAccountDataRelationshipsWithDefaults() *AvalaraAccountDataRelatio
 
 // GetMarkets returns the Markets field value if set, zero value otherwise.
 func (o *AvalaraAccountDataRelationships) GetMarkets() AvalaraAccountDataRelationshipsMarkets {
-	if o == nil || o.Markets == nil {
+	if o == nil || IsNil(o.Markets) {
 		var ret AvalaraAccountDataRelationshipsMarkets
 		return ret
 	}
@@ -51,7 +54,7 @@ func (o *AvalaraAccountDataRelationships) GetMarkets() AvalaraAccountDataRelatio
 // GetMarketsOk returns a tuple with the Markets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AvalaraAccountDataRelationships) GetMarketsOk() (*AvalaraAccountDataRelationshipsMarkets, bool) {
-	if o == nil || o.Markets == nil {
+	if o == nil || IsNil(o.Markets) {
 		return nil, false
 	}
 	return o.Markets, true
@@ -59,7 +62,7 @@ func (o *AvalaraAccountDataRelationships) GetMarketsOk() (*AvalaraAccountDataRel
 
 // HasMarkets returns a boolean if a field has been set.
 func (o *AvalaraAccountDataRelationships) HasMarkets() bool {
-	if o != nil && o.Markets != nil {
+	if o != nil && !IsNil(o.Markets) {
 		return true
 	}
 
@@ -73,7 +76,7 @@ func (o *AvalaraAccountDataRelationships) SetMarkets(v AvalaraAccountDataRelatio
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *AvalaraAccountDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
-	if o == nil || o.Attachments == nil {
+	if o == nil || IsNil(o.Attachments) {
 		var ret AvalaraAccountDataRelationshipsAttachments
 		return ret
 	}
@@ -83,7 +86,7 @@ func (o *AvalaraAccountDataRelationships) GetAttachments() AvalaraAccountDataRel
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AvalaraAccountDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
-	if o == nil || o.Attachments == nil {
+	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
 	return o.Attachments, true
@@ -91,7 +94,7 @@ func (o *AvalaraAccountDataRelationships) GetAttachmentsOk() (*AvalaraAccountDat
 
 // HasAttachments returns a boolean if a field has been set.
 func (o *AvalaraAccountDataRelationships) HasAttachments() bool {
-	if o != nil && o.Attachments != nil {
+	if o != nil && !IsNil(o.Attachments) {
 		return true
 	}
 
@@ -105,7 +108,7 @@ func (o *AvalaraAccountDataRelationships) SetAttachments(v AvalaraAccountDataRel
 
 // GetTaxCategories returns the TaxCategories field value if set, zero value otherwise.
 func (o *AvalaraAccountDataRelationships) GetTaxCategories() AvalaraAccountDataRelationshipsTaxCategories {
-	if o == nil || o.TaxCategories == nil {
+	if o == nil || IsNil(o.TaxCategories) {
 		var ret AvalaraAccountDataRelationshipsTaxCategories
 		return ret
 	}
@@ -115,7 +118,7 @@ func (o *AvalaraAccountDataRelationships) GetTaxCategories() AvalaraAccountDataR
 // GetTaxCategoriesOk returns a tuple with the TaxCategories field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AvalaraAccountDataRelationships) GetTaxCategoriesOk() (*AvalaraAccountDataRelationshipsTaxCategories, bool) {
-	if o == nil || o.TaxCategories == nil {
+	if o == nil || IsNil(o.TaxCategories) {
 		return nil, false
 	}
 	return o.TaxCategories, true
@@ -123,7 +126,7 @@ func (o *AvalaraAccountDataRelationships) GetTaxCategoriesOk() (*AvalaraAccountD
 
 // HasTaxCategories returns a boolean if a field has been set.
 func (o *AvalaraAccountDataRelationships) HasTaxCategories() bool {
-	if o != nil && o.TaxCategories != nil {
+	if o != nil && !IsNil(o.TaxCategories) {
 		return true
 	}
 
@@ -136,17 +139,25 @@ func (o *AvalaraAccountDataRelationships) SetTaxCategories(v AvalaraAccountDataR
 }
 
 func (o AvalaraAccountDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Markets != nil {
-		toSerialize["markets"] = o.Markets
-	}
-	if o.Attachments != nil {
-		toSerialize["attachments"] = o.Attachments
-	}
-	if o.TaxCategories != nil {
-		toSerialize["tax_categories"] = o.TaxCategories
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AvalaraAccountDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Markets) {
+		toSerialize["markets"] = o.Markets
+	}
+	if !IsNil(o.Attachments) {
+		toSerialize["attachments"] = o.Attachments
+	}
+	if !IsNil(o.TaxCategories) {
+		toSerialize["tax_categories"] = o.TaxCategories
+	}
+	return toSerialize, nil
 }
 
 type NullableAvalaraAccountDataRelationships struct {

@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *WireTransfersApiService) DELETEWireTransfersWireTransferIdExecute(r Wir
 	}
 
 	localVarPath := localBasePath + "/wire_transfers/{wireTransferId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"wireTransferId"+"}", url.PathEscape(parameterToString(r.wireTransferId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wireTransferId"+"}", url.PathEscape(parameterValueToString(r.wireTransferId, "wireTransferId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *WireTransfersApiService) DELETEWireTransfersWireTransferIdExecute(r Wir
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *WireTransfersApiService) GETWireTransfersExecute(r WireTransfersApiGETW
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *WireTransfersApiService) GETWireTransfersWireTransferIdExecute(r WireTr
 	}
 
 	localVarPath := localBasePath + "/wire_transfers/{wireTransferId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"wireTransferId"+"}", url.PathEscape(parameterToString(r.wireTransferId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wireTransferId"+"}", url.PathEscape(parameterValueToString(r.wireTransferId, "wireTransferId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *WireTransfersApiService) GETWireTransfersWireTransferIdExecute(r WireTr
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -369,7 +369,7 @@ func (a *WireTransfersApiService) PATCHWireTransfersWireTransferIdExecute(r Wire
 	}
 
 	localVarPath := localBasePath + "/wire_transfers/{wireTransferId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"wireTransferId"+"}", url.PathEscape(parameterToString(r.wireTransferId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wireTransferId"+"}", url.PathEscape(parameterValueToString(r.wireTransferId, "wireTransferId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -407,9 +407,9 @@ func (a *WireTransfersApiService) PATCHWireTransfersWireTransferIdExecute(r Wire
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -518,9 +518,9 @@ func (a *WireTransfersApiService) POSTWireTransfersExecute(r WireTransfersApiPOS
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

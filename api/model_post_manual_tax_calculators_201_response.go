@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTManualTaxCalculators201Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTManualTaxCalculators201Response{}
+
 // POSTManualTaxCalculators201Response struct for POSTManualTaxCalculators201Response
 type POSTManualTaxCalculators201Response struct {
 	Data *POSTManualTaxCalculators201ResponseData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewPOSTManualTaxCalculators201ResponseWithDefaults() *POSTManualTaxCalculat
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTManualTaxCalculators201Response) GetData() POSTManualTaxCalculators201ResponseData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret POSTManualTaxCalculators201ResponseData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *POSTManualTaxCalculators201Response) GetData() POSTManualTaxCalculators
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTManualTaxCalculators201Response) GetDataOk() (*POSTManualTaxCalculators201ResponseData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *POSTManualTaxCalculators201Response) GetDataOk() (*POSTManualTaxCalcula
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTManualTaxCalculators201Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *POSTManualTaxCalculators201Response) SetData(v POSTManualTaxCalculators
 }
 
 func (o POSTManualTaxCalculators201Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o POSTManualTaxCalculators201Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullablePOSTManualTaxCalculators201Response struct {

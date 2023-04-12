@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AdyenPaymentCreateDataRelationshipsOrder type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AdyenPaymentCreateDataRelationshipsOrder{}
+
 // AdyenPaymentCreateDataRelationshipsOrder struct for AdyenPaymentCreateDataRelationshipsOrder
 type AdyenPaymentCreateDataRelationshipsOrder struct {
 	Data AdyenPaymentDataRelationshipsOrderData `json:"data"`
@@ -63,11 +66,17 @@ func (o *AdyenPaymentCreateDataRelationshipsOrder) SetData(v AdyenPaymentDataRel
 }
 
 func (o AdyenPaymentCreateDataRelationshipsOrder) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AdyenPaymentCreateDataRelationshipsOrder) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableAdyenPaymentCreateDataRelationshipsOrder struct {

@@ -15,11 +15,14 @@ import (
 	"encoding/json"
 )
 
+// checks if the SkuData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SkuData{}
+
 // SkuData struct for SkuData
 type SkuData struct {
 	// The resource's type
 	Type          interface{}                           `json:"type"`
-	Attributes    GETSkus200ResponseDataInnerAttributes `json:"attributes"`
+	Attributes    GETSkusSkuId200ResponseDataAttributes `json:"attributes"`
 	Relationships *SkuDataRelationships                 `json:"relationships,omitempty"`
 }
 
@@ -27,7 +30,7 @@ type SkuData struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuData(type_ interface{}, attributes GETSkus200ResponseDataInnerAttributes) *SkuData {
+func NewSkuData(type_ interface{}, attributes GETSkusSkuId200ResponseDataAttributes) *SkuData {
 	this := SkuData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -57,7 +60,7 @@ func (o *SkuData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SkuData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -69,9 +72,9 @@ func (o *SkuData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *SkuData) GetAttributes() GETSkus200ResponseDataInnerAttributes {
+func (o *SkuData) GetAttributes() GETSkusSkuId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETSkus200ResponseDataInnerAttributes
+		var ret GETSkusSkuId200ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +83,7 @@ func (o *SkuData) GetAttributes() GETSkus200ResponseDataInnerAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *SkuData) GetAttributesOk() (*GETSkus200ResponseDataInnerAttributes, bool) {
+func (o *SkuData) GetAttributesOk() (*GETSkusSkuId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,13 +91,13 @@ func (o *SkuData) GetAttributesOk() (*GETSkus200ResponseDataInnerAttributes, boo
 }
 
 // SetAttributes sets field value
-func (o *SkuData) SetAttributes(v GETSkus200ResponseDataInnerAttributes) {
+func (o *SkuData) SetAttributes(v GETSkusSkuId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *SkuData) GetRelationships() SkuDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret SkuDataRelationships
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *SkuData) GetRelationships() SkuDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SkuData) GetRelationshipsOk() (*SkuDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -112,7 +115,7 @@ func (o *SkuData) GetRelationshipsOk() (*SkuDataRelationships, bool) {
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *SkuData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -125,17 +128,23 @@ func (o *SkuData) SetRelationships(v SkuDataRelationships) {
 }
 
 func (o SkuData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o SkuData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableSkuData struct {

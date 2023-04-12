@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes{}
+
 // PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes struct for PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes
 type PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes struct {
 	// The Adyen payment request data, collected by client.
@@ -63,7 +66,7 @@ func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetPaymentRe
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetPaymentRequestDataOk() (*interface{}, bool) {
-	if o == nil || o.PaymentRequestData == nil {
+	if o == nil || IsNil(o.PaymentRequestData) {
 		return nil, false
 	}
 	return &o.PaymentRequestData, true
@@ -71,7 +74,7 @@ func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetPaymentRe
 
 // HasPaymentRequestData returns a boolean if a field has been set.
 func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) HasPaymentRequestData() bool {
-	if o != nil && o.PaymentRequestData != nil {
+	if o != nil && IsNil(o.PaymentRequestData) {
 		return true
 	}
 
@@ -96,7 +99,7 @@ func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetPaymentRe
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetPaymentRequestDetailsOk() (*interface{}, bool) {
-	if o == nil || o.PaymentRequestDetails == nil {
+	if o == nil || IsNil(o.PaymentRequestDetails) {
 		return nil, false
 	}
 	return &o.PaymentRequestDetails, true
@@ -104,7 +107,7 @@ func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetPaymentRe
 
 // HasPaymentRequestDetails returns a boolean if a field has been set.
 func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) HasPaymentRequestDetails() bool {
-	if o != nil && o.PaymentRequestDetails != nil {
+	if o != nil && IsNil(o.PaymentRequestDetails) {
 		return true
 	}
 
@@ -129,7 +132,7 @@ func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetPaymentRe
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetPaymentResponseOk() (*interface{}, bool) {
-	if o == nil || o.PaymentResponse == nil {
+	if o == nil || IsNil(o.PaymentResponse) {
 		return nil, false
 	}
 	return &o.PaymentResponse, true
@@ -137,7 +140,7 @@ func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetPaymentRe
 
 // HasPaymentResponse returns a boolean if a field has been set.
 func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) HasPaymentResponse() bool {
-	if o != nil && o.PaymentResponse != nil {
+	if o != nil && IsNil(o.PaymentResponse) {
 		return true
 	}
 
@@ -162,7 +165,7 @@ func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetDetails()
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetDetailsOk() (*interface{}, bool) {
-	if o == nil || o.Details == nil {
+	if o == nil || IsNil(o.Details) {
 		return nil, false
 	}
 	return &o.Details, true
@@ -170,7 +173,7 @@ func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetDetailsOk
 
 // HasDetails returns a boolean if a field has been set.
 func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) HasDetails() bool {
-	if o != nil && o.Details != nil {
+	if o != nil && IsNil(o.Details) {
 		return true
 	}
 
@@ -195,7 +198,7 @@ func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetReference
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -203,7 +206,7 @@ func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetReference
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -228,7 +231,7 @@ func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetReference
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -236,7 +239,7 @@ func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetReference
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -261,7 +264,7 @@ func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetMetadata(
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -269,7 +272,7 @@ func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetMetadataO
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -282,6 +285,14 @@ func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) SetMetadata(
 }
 
 func (o PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.PaymentRequestData != nil {
 		toSerialize["payment_request_data"] = o.PaymentRequestData
@@ -304,7 +315,7 @@ func (o PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) MarshalJSON()
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes struct {

@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTShippingMethods201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTShippingMethods201ResponseDataAttributes{}
+
 // POSTShippingMethods201ResponseDataAttributes struct for POSTShippingMethods201ResponseDataAttributes
 type POSTShippingMethods201ResponseDataAttributes struct {
 	// The shipping method's name
@@ -75,7 +78,7 @@ func (o *POSTShippingMethods201ResponseDataAttributes) GetName() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTShippingMethods201ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -99,7 +102,7 @@ func (o *POSTShippingMethods201ResponseDataAttributes) GetScheme() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTShippingMethods201ResponseDataAttributes) GetSchemeOk() (*interface{}, bool) {
-	if o == nil || o.Scheme == nil {
+	if o == nil || IsNil(o.Scheme) {
 		return nil, false
 	}
 	return &o.Scheme, true
@@ -107,7 +110,7 @@ func (o *POSTShippingMethods201ResponseDataAttributes) GetSchemeOk() (*interface
 
 // HasScheme returns a boolean if a field has been set.
 func (o *POSTShippingMethods201ResponseDataAttributes) HasScheme() bool {
-	if o != nil && o.Scheme != nil {
+	if o != nil && IsNil(o.Scheme) {
 		return true
 	}
 
@@ -132,7 +135,7 @@ func (o *POSTShippingMethods201ResponseDataAttributes) GetCurrencyCode() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTShippingMethods201ResponseDataAttributes) GetCurrencyCodeOk() (*interface{}, bool) {
-	if o == nil || o.CurrencyCode == nil {
+	if o == nil || IsNil(o.CurrencyCode) {
 		return nil, false
 	}
 	return &o.CurrencyCode, true
@@ -140,7 +143,7 @@ func (o *POSTShippingMethods201ResponseDataAttributes) GetCurrencyCodeOk() (*int
 
 // HasCurrencyCode returns a boolean if a field has been set.
 func (o *POSTShippingMethods201ResponseDataAttributes) HasCurrencyCode() bool {
-	if o != nil && o.CurrencyCode != nil {
+	if o != nil && IsNil(o.CurrencyCode) {
 		return true
 	}
 
@@ -167,7 +170,7 @@ func (o *POSTShippingMethods201ResponseDataAttributes) GetPriceAmountCents() int
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTShippingMethods201ResponseDataAttributes) GetPriceAmountCentsOk() (*interface{}, bool) {
-	if o == nil || o.PriceAmountCents == nil {
+	if o == nil || IsNil(o.PriceAmountCents) {
 		return nil, false
 	}
 	return &o.PriceAmountCents, true
@@ -191,7 +194,7 @@ func (o *POSTShippingMethods201ResponseDataAttributes) GetFreeOverAmountCents() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTShippingMethods201ResponseDataAttributes) GetFreeOverAmountCentsOk() (*interface{}, bool) {
-	if o == nil || o.FreeOverAmountCents == nil {
+	if o == nil || IsNil(o.FreeOverAmountCents) {
 		return nil, false
 	}
 	return &o.FreeOverAmountCents, true
@@ -199,7 +202,7 @@ func (o *POSTShippingMethods201ResponseDataAttributes) GetFreeOverAmountCentsOk(
 
 // HasFreeOverAmountCents returns a boolean if a field has been set.
 func (o *POSTShippingMethods201ResponseDataAttributes) HasFreeOverAmountCents() bool {
-	if o != nil && o.FreeOverAmountCents != nil {
+	if o != nil && IsNil(o.FreeOverAmountCents) {
 		return true
 	}
 
@@ -224,7 +227,7 @@ func (o *POSTShippingMethods201ResponseDataAttributes) GetMinWeight() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTShippingMethods201ResponseDataAttributes) GetMinWeightOk() (*interface{}, bool) {
-	if o == nil || o.MinWeight == nil {
+	if o == nil || IsNil(o.MinWeight) {
 		return nil, false
 	}
 	return &o.MinWeight, true
@@ -232,7 +235,7 @@ func (o *POSTShippingMethods201ResponseDataAttributes) GetMinWeightOk() (*interf
 
 // HasMinWeight returns a boolean if a field has been set.
 func (o *POSTShippingMethods201ResponseDataAttributes) HasMinWeight() bool {
-	if o != nil && o.MinWeight != nil {
+	if o != nil && IsNil(o.MinWeight) {
 		return true
 	}
 
@@ -257,7 +260,7 @@ func (o *POSTShippingMethods201ResponseDataAttributes) GetMaxWeight() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTShippingMethods201ResponseDataAttributes) GetMaxWeightOk() (*interface{}, bool) {
-	if o == nil || o.MaxWeight == nil {
+	if o == nil || IsNil(o.MaxWeight) {
 		return nil, false
 	}
 	return &o.MaxWeight, true
@@ -265,7 +268,7 @@ func (o *POSTShippingMethods201ResponseDataAttributes) GetMaxWeightOk() (*interf
 
 // HasMaxWeight returns a boolean if a field has been set.
 func (o *POSTShippingMethods201ResponseDataAttributes) HasMaxWeight() bool {
-	if o != nil && o.MaxWeight != nil {
+	if o != nil && IsNil(o.MaxWeight) {
 		return true
 	}
 
@@ -290,7 +293,7 @@ func (o *POSTShippingMethods201ResponseDataAttributes) GetUnitOfWeight() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTShippingMethods201ResponseDataAttributes) GetUnitOfWeightOk() (*interface{}, bool) {
-	if o == nil || o.UnitOfWeight == nil {
+	if o == nil || IsNil(o.UnitOfWeight) {
 		return nil, false
 	}
 	return &o.UnitOfWeight, true
@@ -298,7 +301,7 @@ func (o *POSTShippingMethods201ResponseDataAttributes) GetUnitOfWeightOk() (*int
 
 // HasUnitOfWeight returns a boolean if a field has been set.
 func (o *POSTShippingMethods201ResponseDataAttributes) HasUnitOfWeight() bool {
-	if o != nil && o.UnitOfWeight != nil {
+	if o != nil && IsNil(o.UnitOfWeight) {
 		return true
 	}
 
@@ -323,7 +326,7 @@ func (o *POSTShippingMethods201ResponseDataAttributes) GetReference() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTShippingMethods201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -331,7 +334,7 @@ func (o *POSTShippingMethods201ResponseDataAttributes) GetReferenceOk() (*interf
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTShippingMethods201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -356,7 +359,7 @@ func (o *POSTShippingMethods201ResponseDataAttributes) GetReferenceOrigin() inte
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTShippingMethods201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -364,7 +367,7 @@ func (o *POSTShippingMethods201ResponseDataAttributes) GetReferenceOriginOk() (*
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTShippingMethods201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -389,7 +392,7 @@ func (o *POSTShippingMethods201ResponseDataAttributes) GetMetadata() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTShippingMethods201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -397,7 +400,7 @@ func (o *POSTShippingMethods201ResponseDataAttributes) GetMetadataOk() (*interfa
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTShippingMethods201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -410,6 +413,14 @@ func (o *POSTShippingMethods201ResponseDataAttributes) SetMetadata(v interface{}
 }
 
 func (o POSTShippingMethods201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTShippingMethods201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -444,7 +455,7 @@ func (o POSTShippingMethods201ResponseDataAttributes) MarshalJSON() ([]byte, err
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTShippingMethods201ResponseDataAttributes struct {

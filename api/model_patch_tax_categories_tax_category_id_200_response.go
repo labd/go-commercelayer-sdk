@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHTaxCategoriesTaxCategoryId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHTaxCategoriesTaxCategoryId200Response{}
+
 // PATCHTaxCategoriesTaxCategoryId200Response struct for PATCHTaxCategoriesTaxCategoryId200Response
 type PATCHTaxCategoriesTaxCategoryId200Response struct {
 	Data *PATCHTaxCategoriesTaxCategoryId200ResponseData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewPATCHTaxCategoriesTaxCategoryId200ResponseWithDefaults() *PATCHTaxCatego
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *PATCHTaxCategoriesTaxCategoryId200Response) GetData() PATCHTaxCategoriesTaxCategoryId200ResponseData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret PATCHTaxCategoriesTaxCategoryId200ResponseData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *PATCHTaxCategoriesTaxCategoryId200Response) GetData() PATCHTaxCategorie
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHTaxCategoriesTaxCategoryId200Response) GetDataOk() (*PATCHTaxCategoriesTaxCategoryId200ResponseData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *PATCHTaxCategoriesTaxCategoryId200Response) GetDataOk() (*PATCHTaxCateg
 
 // HasData returns a boolean if a field has been set.
 func (o *PATCHTaxCategoriesTaxCategoryId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *PATCHTaxCategoriesTaxCategoryId200Response) SetData(v PATCHTaxCategorie
 }
 
 func (o PATCHTaxCategoriesTaxCategoryId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PATCHTaxCategoriesTaxCategoryId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullablePATCHTaxCategoriesTaxCategoryId200Response struct {

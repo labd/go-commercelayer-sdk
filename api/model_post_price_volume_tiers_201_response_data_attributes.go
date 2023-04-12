@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTPriceVolumeTiers201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTPriceVolumeTiers201ResponseDataAttributes{}
+
 // POSTPriceVolumeTiers201ResponseDataAttributes struct for POSTPriceVolumeTiers201ResponseDataAttributes
 type POSTPriceVolumeTiers201ResponseDataAttributes struct {
 	// The price tier's name
@@ -65,7 +68,7 @@ func (o *POSTPriceVolumeTiers201ResponseDataAttributes) GetName() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTPriceVolumeTiers201ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -89,7 +92,7 @@ func (o *POSTPriceVolumeTiers201ResponseDataAttributes) GetUpTo() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTPriceVolumeTiers201ResponseDataAttributes) GetUpToOk() (*interface{}, bool) {
-	if o == nil || o.UpTo == nil {
+	if o == nil || IsNil(o.UpTo) {
 		return nil, false
 	}
 	return &o.UpTo, true
@@ -97,7 +100,7 @@ func (o *POSTPriceVolumeTiers201ResponseDataAttributes) GetUpToOk() (*interface{
 
 // HasUpTo returns a boolean if a field has been set.
 func (o *POSTPriceVolumeTiers201ResponseDataAttributes) HasUpTo() bool {
-	if o != nil && o.UpTo != nil {
+	if o != nil && IsNil(o.UpTo) {
 		return true
 	}
 
@@ -124,7 +127,7 @@ func (o *POSTPriceVolumeTiers201ResponseDataAttributes) GetPriceAmountCents() in
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTPriceVolumeTiers201ResponseDataAttributes) GetPriceAmountCentsOk() (*interface{}, bool) {
-	if o == nil || o.PriceAmountCents == nil {
+	if o == nil || IsNil(o.PriceAmountCents) {
 		return nil, false
 	}
 	return &o.PriceAmountCents, true
@@ -148,7 +151,7 @@ func (o *POSTPriceVolumeTiers201ResponseDataAttributes) GetReference() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTPriceVolumeTiers201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -156,7 +159,7 @@ func (o *POSTPriceVolumeTiers201ResponseDataAttributes) GetReferenceOk() (*inter
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTPriceVolumeTiers201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -181,7 +184,7 @@ func (o *POSTPriceVolumeTiers201ResponseDataAttributes) GetReferenceOrigin() int
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTPriceVolumeTiers201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -189,7 +192,7 @@ func (o *POSTPriceVolumeTiers201ResponseDataAttributes) GetReferenceOriginOk() (
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTPriceVolumeTiers201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -214,7 +217,7 @@ func (o *POSTPriceVolumeTiers201ResponseDataAttributes) GetMetadata() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTPriceVolumeTiers201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -222,7 +225,7 @@ func (o *POSTPriceVolumeTiers201ResponseDataAttributes) GetMetadataOk() (*interf
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTPriceVolumeTiers201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -235,6 +238,14 @@ func (o *POSTPriceVolumeTiers201ResponseDataAttributes) SetMetadata(v interface{
 }
 
 func (o POSTPriceVolumeTiers201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTPriceVolumeTiers201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -254,7 +265,7 @@ func (o POSTPriceVolumeTiers201ResponseDataAttributes) MarshalJSON() ([]byte, er
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTPriceVolumeTiers201ResponseDataAttributes struct {

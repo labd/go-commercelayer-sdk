@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes{}
+
 // PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes struct for PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes
 type PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes struct {
 	// The name of the line item option. When blank, it gets populated with the name of the associated SKU option.
@@ -61,7 +64,7 @@ func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetName(
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -69,7 +72,7 @@ func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetNameO
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
@@ -94,7 +97,7 @@ func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetQuant
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetQuantityOk() (*interface{}, bool) {
-	if o == nil || o.Quantity == nil {
+	if o == nil || IsNil(o.Quantity) {
 		return nil, false
 	}
 	return &o.Quantity, true
@@ -102,7 +105,7 @@ func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetQuant
 
 // HasQuantity returns a boolean if a field has been set.
 func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) HasQuantity() bool {
-	if o != nil && o.Quantity != nil {
+	if o != nil && IsNil(o.Quantity) {
 		return true
 	}
 
@@ -127,7 +130,7 @@ func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetOptio
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetOptionsOk() (*interface{}, bool) {
-	if o == nil || o.Options == nil {
+	if o == nil || IsNil(o.Options) {
 		return nil, false
 	}
 	return &o.Options, true
@@ -135,7 +138,7 @@ func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetOptio
 
 // HasOptions returns a boolean if a field has been set.
 func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) HasOptions() bool {
-	if o != nil && o.Options != nil {
+	if o != nil && IsNil(o.Options) {
 		return true
 	}
 
@@ -160,7 +163,7 @@ func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetRefer
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -168,7 +171,7 @@ func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetRefer
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -193,7 +196,7 @@ func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetRefer
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -201,7 +204,7 @@ func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetRefer
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -226,7 +229,7 @@ func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetMetad
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -234,7 +237,7 @@ func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetMetad
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -247,6 +250,14 @@ func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) SetMetad
 }
 
 func (o PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -266,7 +277,7 @@ func (o PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) MarshalJS
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes struct {

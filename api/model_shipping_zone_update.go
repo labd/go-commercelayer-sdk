@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ShippingZoneUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ShippingZoneUpdate{}
+
 // ShippingZoneUpdate struct for ShippingZoneUpdate
 type ShippingZoneUpdate struct {
 	Data ShippingZoneUpdateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *ShippingZoneUpdate) SetData(v ShippingZoneUpdateData) {
 }
 
 func (o ShippingZoneUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ShippingZoneUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableShippingZoneUpdate struct {

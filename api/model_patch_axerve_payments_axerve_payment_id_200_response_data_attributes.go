@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes{}
+
 // PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes struct for PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes
 type PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes struct {
 	// The Axerve payment request data, collected by client.
@@ -59,7 +62,7 @@ func (o *PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetPayment
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetPaymentRequestDataOk() (*interface{}, bool) {
-	if o == nil || o.PaymentRequestData == nil {
+	if o == nil || IsNil(o.PaymentRequestData) {
 		return nil, false
 	}
 	return &o.PaymentRequestData, true
@@ -67,7 +70,7 @@ func (o *PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetPayment
 
 // HasPaymentRequestData returns a boolean if a field has been set.
 func (o *PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes) HasPaymentRequestData() bool {
-	if o != nil && o.PaymentRequestData != nil {
+	if o != nil && IsNil(o.PaymentRequestData) {
 		return true
 	}
 
@@ -92,7 +95,7 @@ func (o *PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetUpdate(
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetUpdateOk() (*interface{}, bool) {
-	if o == nil || o.Update == nil {
+	if o == nil || IsNil(o.Update) {
 		return nil, false
 	}
 	return &o.Update, true
@@ -100,7 +103,7 @@ func (o *PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetUpdateO
 
 // HasUpdate returns a boolean if a field has been set.
 func (o *PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes) HasUpdate() bool {
-	if o != nil && o.Update != nil {
+	if o != nil && IsNil(o.Update) {
 		return true
 	}
 
@@ -125,7 +128,7 @@ func (o *PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetReferen
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -133,7 +136,7 @@ func (o *PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetReferen
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -158,7 +161,7 @@ func (o *PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetReferen
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -166,7 +169,7 @@ func (o *PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetReferen
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -191,7 +194,7 @@ func (o *PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetMetadat
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -199,7 +202,7 @@ func (o *PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes) GetMetadat
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -212,6 +215,14 @@ func (o *PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes) SetMetadat
 }
 
 func (o PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.PaymentRequestData != nil {
 		toSerialize["payment_request_data"] = o.PaymentRequestData
@@ -228,7 +239,7 @@ func (o PATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes) MarshalJSON
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHAxervePaymentsAxervePaymentId200ResponseDataAttributes struct {

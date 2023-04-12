@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes{}
+
 // PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes struct for PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes
 type PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes struct {
 	// The payment gateway's internal name.
@@ -67,7 +70,7 @@ func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetNam
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -75,7 +78,7 @@ func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetNam
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
@@ -100,7 +103,7 @@ func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetRef
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -108,7 +111,7 @@ func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetRef
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -133,7 +136,7 @@ func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetRef
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -141,7 +144,7 @@ func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetRef
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -166,7 +169,7 @@ func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetMet
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -174,7 +177,7 @@ func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetMet
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -199,7 +202,7 @@ func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetAut
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetAuthorizeUrlOk() (*interface{}, bool) {
-	if o == nil || o.AuthorizeUrl == nil {
+	if o == nil || IsNil(o.AuthorizeUrl) {
 		return nil, false
 	}
 	return &o.AuthorizeUrl, true
@@ -207,7 +210,7 @@ func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetAut
 
 // HasAuthorizeUrl returns a boolean if a field has been set.
 func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) HasAuthorizeUrl() bool {
-	if o != nil && o.AuthorizeUrl != nil {
+	if o != nil && IsNil(o.AuthorizeUrl) {
 		return true
 	}
 
@@ -232,7 +235,7 @@ func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetCap
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetCaptureUrlOk() (*interface{}, bool) {
-	if o == nil || o.CaptureUrl == nil {
+	if o == nil || IsNil(o.CaptureUrl) {
 		return nil, false
 	}
 	return &o.CaptureUrl, true
@@ -240,7 +243,7 @@ func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetCap
 
 // HasCaptureUrl returns a boolean if a field has been set.
 func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) HasCaptureUrl() bool {
-	if o != nil && o.CaptureUrl != nil {
+	if o != nil && IsNil(o.CaptureUrl) {
 		return true
 	}
 
@@ -265,7 +268,7 @@ func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetVoi
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetVoidUrlOk() (*interface{}, bool) {
-	if o == nil || o.VoidUrl == nil {
+	if o == nil || IsNil(o.VoidUrl) {
 		return nil, false
 	}
 	return &o.VoidUrl, true
@@ -273,7 +276,7 @@ func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetVoi
 
 // HasVoidUrl returns a boolean if a field has been set.
 func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) HasVoidUrl() bool {
-	if o != nil && o.VoidUrl != nil {
+	if o != nil && IsNil(o.VoidUrl) {
 		return true
 	}
 
@@ -298,7 +301,7 @@ func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetRef
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetRefundUrlOk() (*interface{}, bool) {
-	if o == nil || o.RefundUrl == nil {
+	if o == nil || IsNil(o.RefundUrl) {
 		return nil, false
 	}
 	return &o.RefundUrl, true
@@ -306,7 +309,7 @@ func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetRef
 
 // HasRefundUrl returns a boolean if a field has been set.
 func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) HasRefundUrl() bool {
-	if o != nil && o.RefundUrl != nil {
+	if o != nil && IsNil(o.RefundUrl) {
 		return true
 	}
 
@@ -331,7 +334,7 @@ func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetTok
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetTokenUrlOk() (*interface{}, bool) {
-	if o == nil || o.TokenUrl == nil {
+	if o == nil || IsNil(o.TokenUrl) {
 		return nil, false
 	}
 	return &o.TokenUrl, true
@@ -339,7 +342,7 @@ func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetTok
 
 // HasTokenUrl returns a boolean if a field has been set.
 func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) HasTokenUrl() bool {
-	if o != nil && o.TokenUrl != nil {
+	if o != nil && IsNil(o.TokenUrl) {
 		return true
 	}
 
@@ -352,6 +355,14 @@ func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) SetTok
 }
 
 func (o PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -380,7 +391,7 @@ func (o PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) Marshal
 	if o.TokenUrl != nil {
 		toSerialize["token_url"] = o.TokenUrl
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes struct {

@@ -36,7 +36,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -44,7 +44,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentGatewaysApi.GETAdyenPaymentIdPaymentGateway(context.Background(), adyenPaymentId).Execute()
+    r, err := apiClient.PaymentGatewaysApi.GETAdyenPaymentIdPaymentGateway(context.Background(), adyenPaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentGatewaysApi.GETAdyenPaymentIdPaymentGateway``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -104,7 +104,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -112,7 +112,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentGatewaysApi.GETAxervePaymentIdPaymentGateway(context.Background(), axervePaymentId).Execute()
+    r, err := apiClient.PaymentGatewaysApi.GETAxervePaymentIdPaymentGateway(context.Background(), axervePaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentGatewaysApi.GETAxervePaymentIdPaymentGateway``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -172,7 +172,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -180,7 +180,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentGatewaysApi.GETBraintreePaymentIdPaymentGateway(context.Background(), braintreePaymentId).Execute()
+    r, err := apiClient.PaymentGatewaysApi.GETBraintreePaymentIdPaymentGateway(context.Background(), braintreePaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentGatewaysApi.GETBraintreePaymentIdPaymentGateway``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -240,7 +240,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -248,7 +248,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentGatewaysApi.GETCheckoutComPaymentIdPaymentGateway(context.Background(), checkoutComPaymentId).Execute()
+    r, err := apiClient.PaymentGatewaysApi.GETCheckoutComPaymentIdPaymentGateway(context.Background(), checkoutComPaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentGatewaysApi.GETCheckoutComPaymentIdPaymentGateway``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -308,7 +308,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -316,7 +316,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentGatewaysApi.GETExternalPaymentIdPaymentGateway(context.Background(), externalPaymentId).Execute()
+    r, err := apiClient.PaymentGatewaysApi.GETExternalPaymentIdPaymentGateway(context.Background(), externalPaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentGatewaysApi.GETExternalPaymentIdPaymentGateway``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -376,7 +376,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -384,7 +384,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentGatewaysApi.GETKlarnaPaymentIdPaymentGateway(context.Background(), klarnaPaymentId).Execute()
+    r, err := apiClient.PaymentGatewaysApi.GETKlarnaPaymentIdPaymentGateway(context.Background(), klarnaPaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentGatewaysApi.GETKlarnaPaymentIdPaymentGateway``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -444,7 +444,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -505,7 +505,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -575,7 +575,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -583,7 +583,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentGatewaysApi.GETPaymentMethodIdPaymentGateway(context.Background(), paymentMethodId).Execute()
+    r, err := apiClient.PaymentGatewaysApi.GETPaymentMethodIdPaymentGateway(context.Background(), paymentMethodId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentGatewaysApi.GETPaymentMethodIdPaymentGateway``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -643,7 +643,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -651,7 +651,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentGatewaysApi.GETPaypalPaymentIdPaymentGateway(context.Background(), paypalPaymentId).Execute()
+    r, err := apiClient.PaymentGatewaysApi.GETPaypalPaymentIdPaymentGateway(context.Background(), paypalPaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentGatewaysApi.GETPaypalPaymentIdPaymentGateway``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -711,7 +711,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -719,7 +719,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentGatewaysApi.GETSatispayPaymentIdPaymentGateway(context.Background(), satispayPaymentId).Execute()
+    r, err := apiClient.PaymentGatewaysApi.GETSatispayPaymentIdPaymentGateway(context.Background(), satispayPaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentGatewaysApi.GETSatispayPaymentIdPaymentGateway``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -779,7 +779,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -787,7 +787,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentGatewaysApi.GETStripePaymentIdPaymentGateway(context.Background(), stripePaymentId).Execute()
+    r, err := apiClient.PaymentGatewaysApi.GETStripePaymentIdPaymentGateway(context.Background(), stripePaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentGatewaysApi.GETStripePaymentIdPaymentGateway``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

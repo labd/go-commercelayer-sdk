@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTPaypalPayments201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTPaypalPayments201ResponseDataAttributes{}
+
 // POSTPaypalPayments201ResponseDataAttributes struct for POSTPaypalPayments201ResponseDataAttributes
 type POSTPaypalPayments201ResponseDataAttributes struct {
 	// The URL where the payer is redirected after they approve the payment.
@@ -65,7 +68,7 @@ func (o *POSTPaypalPayments201ResponseDataAttributes) GetReturnUrl() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTPaypalPayments201ResponseDataAttributes) GetReturnUrlOk() (*interface{}, bool) {
-	if o == nil || o.ReturnUrl == nil {
+	if o == nil || IsNil(o.ReturnUrl) {
 		return nil, false
 	}
 	return &o.ReturnUrl, true
@@ -91,7 +94,7 @@ func (o *POSTPaypalPayments201ResponseDataAttributes) GetCancelUrl() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTPaypalPayments201ResponseDataAttributes) GetCancelUrlOk() (*interface{}, bool) {
-	if o == nil || o.CancelUrl == nil {
+	if o == nil || IsNil(o.CancelUrl) {
 		return nil, false
 	}
 	return &o.CancelUrl, true
@@ -115,7 +118,7 @@ func (o *POSTPaypalPayments201ResponseDataAttributes) GetNoteToPayer() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTPaypalPayments201ResponseDataAttributes) GetNoteToPayerOk() (*interface{}, bool) {
-	if o == nil || o.NoteToPayer == nil {
+	if o == nil || IsNil(o.NoteToPayer) {
 		return nil, false
 	}
 	return &o.NoteToPayer, true
@@ -123,7 +126,7 @@ func (o *POSTPaypalPayments201ResponseDataAttributes) GetNoteToPayerOk() (*inter
 
 // HasNoteToPayer returns a boolean if a field has been set.
 func (o *POSTPaypalPayments201ResponseDataAttributes) HasNoteToPayer() bool {
-	if o != nil && o.NoteToPayer != nil {
+	if o != nil && IsNil(o.NoteToPayer) {
 		return true
 	}
 
@@ -148,7 +151,7 @@ func (o *POSTPaypalPayments201ResponseDataAttributes) GetReference() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTPaypalPayments201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -156,7 +159,7 @@ func (o *POSTPaypalPayments201ResponseDataAttributes) GetReferenceOk() (*interfa
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTPaypalPayments201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -181,7 +184,7 @@ func (o *POSTPaypalPayments201ResponseDataAttributes) GetReferenceOrigin() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTPaypalPayments201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -189,7 +192,7 @@ func (o *POSTPaypalPayments201ResponseDataAttributes) GetReferenceOriginOk() (*i
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTPaypalPayments201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -214,7 +217,7 @@ func (o *POSTPaypalPayments201ResponseDataAttributes) GetMetadata() interface{} 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTPaypalPayments201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -222,7 +225,7 @@ func (o *POSTPaypalPayments201ResponseDataAttributes) GetMetadataOk() (*interfac
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTPaypalPayments201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -235,6 +238,14 @@ func (o *POSTPaypalPayments201ResponseDataAttributes) SetMetadata(v interface{})
 }
 
 func (o POSTPaypalPayments201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTPaypalPayments201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.ReturnUrl != nil {
 		toSerialize["return_url"] = o.ReturnUrl
@@ -254,7 +265,7 @@ func (o POSTPaypalPayments201ResponseDataAttributes) MarshalJSON() ([]byte, erro
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTPaypalPayments201ResponseDataAttributes struct {

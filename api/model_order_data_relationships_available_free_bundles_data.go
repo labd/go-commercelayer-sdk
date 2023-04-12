@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the OrderDataRelationshipsAvailableFreeBundlesData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &OrderDataRelationshipsAvailableFreeBundlesData{}
+
 // OrderDataRelationshipsAvailableFreeBundlesData struct for OrderDataRelationshipsAvailableFreeBundlesData
 type OrderDataRelationshipsAvailableFreeBundlesData struct {
 	// The resource's type
@@ -53,7 +56,7 @@ func (o *OrderDataRelationshipsAvailableFreeBundlesData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderDataRelationshipsAvailableFreeBundlesData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -61,7 +64,7 @@ func (o *OrderDataRelationshipsAvailableFreeBundlesData) GetTypeOk() (*interface
 
 // HasType returns a boolean if a field has been set.
 func (o *OrderDataRelationshipsAvailableFreeBundlesData) HasType() bool {
-	if o != nil && o.Type != nil {
+	if o != nil && IsNil(o.Type) {
 		return true
 	}
 
@@ -86,7 +89,7 @@ func (o *OrderDataRelationshipsAvailableFreeBundlesData) GetId() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderDataRelationshipsAvailableFreeBundlesData) GetIdOk() (*interface{}, bool) {
-	if o == nil || o.Id == nil {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return &o.Id, true
@@ -94,7 +97,7 @@ func (o *OrderDataRelationshipsAvailableFreeBundlesData) GetIdOk() (*interface{}
 
 // HasId returns a boolean if a field has been set.
 func (o *OrderDataRelationshipsAvailableFreeBundlesData) HasId() bool {
-	if o != nil && o.Id != nil {
+	if o != nil && IsNil(o.Id) {
 		return true
 	}
 
@@ -107,6 +110,14 @@ func (o *OrderDataRelationshipsAvailableFreeBundlesData) SetId(v interface{}) {
 }
 
 func (o OrderDataRelationshipsAvailableFreeBundlesData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o OrderDataRelationshipsAvailableFreeBundlesData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
@@ -114,7 +125,7 @@ func (o OrderDataRelationshipsAvailableFreeBundlesData) MarshalJSON() ([]byte, e
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableOrderDataRelationshipsAvailableFreeBundlesData struct {

@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETFixedPricePromotions200ResponseDataInnerAttributes**](GETFixedPricePromotions200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**GETFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes**](GETFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**FixedPricePromotionDataRelationships**](FixedPricePromotionDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewFixedPricePromotionData
 
-`func NewFixedPricePromotionData(type_ interface{}, attributes GETFixedPricePromotions200ResponseDataInnerAttributes, ) *FixedPricePromotionData`
+`func NewFixedPricePromotionData(type_ interface{}, attributes GETFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes, ) *FixedPricePromotionData`
 
 NewFixedPricePromotionData instantiates a new FixedPricePromotionData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *FixedPricePromotionData) GetAttributes() GETFixedPricePromotions200ResponseDataInnerAttributes`
+`func (o *FixedPricePromotionData) GetAttributes() GETFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *FixedPricePromotionData) GetAttributesOk() (*GETFixedPricePromotions200ResponseDataInnerAttributes, bool)`
+`func (o *FixedPricePromotionData) GetAttributesOk() (*GETFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *FixedPricePromotionData) SetAttributes(v GETFixedPricePromotions200ResponseDataInnerAttributes)`
+`func (o *FixedPricePromotionData) SetAttributes(v GETFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

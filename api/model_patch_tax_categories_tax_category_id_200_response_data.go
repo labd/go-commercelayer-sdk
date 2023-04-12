@@ -15,15 +15,18 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHTaxCategoriesTaxCategoryId200ResponseData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHTaxCategoriesTaxCategoryId200ResponseData{}
+
 // PATCHTaxCategoriesTaxCategoryId200ResponseData struct for PATCHTaxCategoriesTaxCategoryId200ResponseData
 type PATCHTaxCategoriesTaxCategoryId200ResponseData struct {
 	// The resource's id
 	Id interface{} `json:"id,omitempty"`
 	// The resource's type
 	Type          interface{}                                               `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks                    `json:"links,omitempty"`
+	Links         *POSTAddresses201ResponseDataLinks                        `json:"links,omitempty"`
 	Attributes    *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETTaxCategories200ResponseDataInnerRelationships        `json:"relationships,omitempty"`
+	Relationships *POSTTaxCategories201ResponseDataRelationships            `json:"relationships,omitempty"`
 }
 
 // NewPATCHTaxCategoriesTaxCategoryId200ResponseData instantiates a new PATCHTaxCategoriesTaxCategoryId200ResponseData object
@@ -56,7 +59,7 @@ func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) GetId() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) GetIdOk() (*interface{}, bool) {
-	if o == nil || o.Id == nil {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return &o.Id, true
@@ -64,7 +67,7 @@ func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) GetIdOk() (*interface{}
 
 // HasId returns a boolean if a field has been set.
 func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) HasId() bool {
-	if o != nil && o.Id != nil {
+	if o != nil && IsNil(o.Id) {
 		return true
 	}
 
@@ -89,7 +92,7 @@ func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -97,7 +100,7 @@ func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) GetTypeOk() (*interface
 
 // HasType returns a boolean if a field has been set.
 func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) HasType() bool {
-	if o != nil && o.Type != nil {
+	if o != nil && IsNil(o.Type) {
 		return true
 	}
 
@@ -110,9 +113,9 @@ func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) SetType(v interface{}) 
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks {
-	if o == nil || o.Links == nil {
-		var ret GETAddresses200ResponseDataInnerLinks
+func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) GetLinks() POSTAddresses201ResponseDataLinks {
+	if o == nil || IsNil(o.Links) {
+		var ret POSTAddresses201ResponseDataLinks
 		return ret
 	}
 	return *o.Links
@@ -120,8 +123,8 @@ func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) GetLinks() GETAddresses
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool) {
-	if o == nil || o.Links == nil {
+func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool) {
+	if o == nil || IsNil(o.Links) {
 		return nil, false
 	}
 	return o.Links, true
@@ -129,21 +132,21 @@ func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) GetLinksOk() (*GETAddre
 
 // HasLinks returns a boolean if a field has been set.
 func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) HasLinks() bool {
-	if o != nil && o.Links != nil {
+	if o != nil && !IsNil(o.Links) {
 		return true
 	}
 
 	return false
 }
 
-// SetLinks gets a reference to the given GETAddresses200ResponseDataInnerLinks and assigns it to the Links field.
-func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks) {
+// SetLinks gets a reference to the given POSTAddresses201ResponseDataLinks and assigns it to the Links field.
+func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks) {
 	o.Links = &v
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) GetAttributes() PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes {
-	if o == nil || o.Attributes == nil {
+	if o == nil || IsNil(o.Attributes) {
 		var ret PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes
 		return ret
 	}
@@ -153,7 +156,7 @@ func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) GetAttributes() PATCHTa
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) GetAttributesOk() (*PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes, bool) {
-	if o == nil || o.Attributes == nil {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -161,7 +164,7 @@ func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) GetAttributesOk() (*PAT
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) HasAttributes() bool {
-	if o != nil && o.Attributes != nil {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
@@ -174,9 +177,9 @@ func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) SetAttributes(v PATCHTa
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) GetRelationships() GETTaxCategories200ResponseDataInnerRelationships {
-	if o == nil || o.Relationships == nil {
-		var ret GETTaxCategories200ResponseDataInnerRelationships
+func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) GetRelationships() POSTTaxCategories201ResponseDataRelationships {
+	if o == nil || IsNil(o.Relationships) {
+		var ret POSTTaxCategories201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -184,8 +187,8 @@ func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) GetRelationships() GETT
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) GetRelationshipsOk() (*GETTaxCategories200ResponseDataInnerRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) GetRelationshipsOk() (*POSTTaxCategories201ResponseDataRelationships, bool) {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -193,19 +196,27 @@ func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) GetRelationshipsOk() (*
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
 	return false
 }
 
-// SetRelationships gets a reference to the given GETTaxCategories200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) SetRelationships(v GETTaxCategories200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given POSTTaxCategories201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *PATCHTaxCategoriesTaxCategoryId200ResponseData) SetRelationships(v POSTTaxCategories201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 
 func (o PATCHTaxCategoriesTaxCategoryId200ResponseData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHTaxCategoriesTaxCategoryId200ResponseData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
@@ -213,16 +224,16 @@ func (o PATCHTaxCategoriesTaxCategoryId200ResponseData) MarshalJSON() ([]byte, e
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if o.Links != nil {
+	if !IsNil(o.Links) {
 		toSerialize["links"] = o.Links
 	}
-	if o.Attributes != nil {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if o.Relationships != nil {
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHTaxCategoriesTaxCategoryId200ResponseData struct {

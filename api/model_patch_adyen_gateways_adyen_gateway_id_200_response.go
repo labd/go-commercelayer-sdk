@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHAdyenGatewaysAdyenGatewayId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHAdyenGatewaysAdyenGatewayId200Response{}
+
 // PATCHAdyenGatewaysAdyenGatewayId200Response struct for PATCHAdyenGatewaysAdyenGatewayId200Response
 type PATCHAdyenGatewaysAdyenGatewayId200Response struct {
 	Data *PATCHAdyenGatewaysAdyenGatewayId200ResponseData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewPATCHAdyenGatewaysAdyenGatewayId200ResponseWithDefaults() *PATCHAdyenGat
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *PATCHAdyenGatewaysAdyenGatewayId200Response) GetData() PATCHAdyenGatewaysAdyenGatewayId200ResponseData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret PATCHAdyenGatewaysAdyenGatewayId200ResponseData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200Response) GetData() PATCHAdyenGatewa
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHAdyenGatewaysAdyenGatewayId200Response) GetDataOk() (*PATCHAdyenGatewaysAdyenGatewayId200ResponseData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200Response) GetDataOk() (*PATCHAdyenGa
 
 // HasData returns a boolean if a field has been set.
 func (o *PATCHAdyenGatewaysAdyenGatewayId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *PATCHAdyenGatewaysAdyenGatewayId200Response) SetData(v PATCHAdyenGatewa
 }
 
 func (o PATCHAdyenGatewaysAdyenGatewayId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PATCHAdyenGatewaysAdyenGatewayId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullablePATCHAdyenGatewaysAdyenGatewayId200Response struct {

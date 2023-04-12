@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the KlarnaGatewayCreateData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &KlarnaGatewayCreateData{}
+
 // KlarnaGatewayCreateData struct for KlarnaGatewayCreateData
 type KlarnaGatewayCreateData struct {
 	// The resource's type
@@ -57,7 +60,7 @@ func (o *KlarnaGatewayCreateData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *KlarnaGatewayCreateData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -94,7 +97,7 @@ func (o *KlarnaGatewayCreateData) SetAttributes(v POSTKlarnaGateways201ResponseD
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *KlarnaGatewayCreateData) GetRelationships() KlarnaGatewayCreateDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret KlarnaGatewayCreateDataRelationships
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *KlarnaGatewayCreateData) GetRelationships() KlarnaGatewayCreateDataRela
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KlarnaGatewayCreateData) GetRelationshipsOk() (*KlarnaGatewayCreateDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -112,7 +115,7 @@ func (o *KlarnaGatewayCreateData) GetRelationshipsOk() (*KlarnaGatewayCreateData
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *KlarnaGatewayCreateData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -125,17 +128,23 @@ func (o *KlarnaGatewayCreateData) SetRelationships(v KlarnaGatewayCreateDataRela
 }
 
 func (o KlarnaGatewayCreateData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o KlarnaGatewayCreateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableKlarnaGatewayCreateData struct {

@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the StockTransferUpdateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &StockTransferUpdateDataRelationships{}
+
 // StockTransferUpdateDataRelationships struct for StockTransferUpdateDataRelationships
 type StockTransferUpdateDataRelationships struct {
 	Sku                      *InStockSubscriptionCreateDataRelationshipsSku        `json:"sku,omitempty"`
@@ -41,7 +44,7 @@ func NewStockTransferUpdateDataRelationshipsWithDefaults() *StockTransferUpdateD
 
 // GetSku returns the Sku field value if set, zero value otherwise.
 func (o *StockTransferUpdateDataRelationships) GetSku() InStockSubscriptionCreateDataRelationshipsSku {
-	if o == nil || o.Sku == nil {
+	if o == nil || IsNil(o.Sku) {
 		var ret InStockSubscriptionCreateDataRelationshipsSku
 		return ret
 	}
@@ -51,7 +54,7 @@ func (o *StockTransferUpdateDataRelationships) GetSku() InStockSubscriptionCreat
 // GetSkuOk returns a tuple with the Sku field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StockTransferUpdateDataRelationships) GetSkuOk() (*InStockSubscriptionCreateDataRelationshipsSku, bool) {
-	if o == nil || o.Sku == nil {
+	if o == nil || IsNil(o.Sku) {
 		return nil, false
 	}
 	return o.Sku, true
@@ -59,7 +62,7 @@ func (o *StockTransferUpdateDataRelationships) GetSkuOk() (*InStockSubscriptionC
 
 // HasSku returns a boolean if a field has been set.
 func (o *StockTransferUpdateDataRelationships) HasSku() bool {
-	if o != nil && o.Sku != nil {
+	if o != nil && !IsNil(o.Sku) {
 		return true
 	}
 
@@ -73,7 +76,7 @@ func (o *StockTransferUpdateDataRelationships) SetSku(v InStockSubscriptionCreat
 
 // GetOriginStockLocation returns the OriginStockLocation field value if set, zero value otherwise.
 func (o *StockTransferUpdateDataRelationships) GetOriginStockLocation() DeliveryLeadTimeCreateDataRelationshipsStockLocation {
-	if o == nil || o.OriginStockLocation == nil {
+	if o == nil || IsNil(o.OriginStockLocation) {
 		var ret DeliveryLeadTimeCreateDataRelationshipsStockLocation
 		return ret
 	}
@@ -83,7 +86,7 @@ func (o *StockTransferUpdateDataRelationships) GetOriginStockLocation() Delivery
 // GetOriginStockLocationOk returns a tuple with the OriginStockLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StockTransferUpdateDataRelationships) GetOriginStockLocationOk() (*DeliveryLeadTimeCreateDataRelationshipsStockLocation, bool) {
-	if o == nil || o.OriginStockLocation == nil {
+	if o == nil || IsNil(o.OriginStockLocation) {
 		return nil, false
 	}
 	return o.OriginStockLocation, true
@@ -91,7 +94,7 @@ func (o *StockTransferUpdateDataRelationships) GetOriginStockLocationOk() (*Deli
 
 // HasOriginStockLocation returns a boolean if a field has been set.
 func (o *StockTransferUpdateDataRelationships) HasOriginStockLocation() bool {
-	if o != nil && o.OriginStockLocation != nil {
+	if o != nil && !IsNil(o.OriginStockLocation) {
 		return true
 	}
 
@@ -105,7 +108,7 @@ func (o *StockTransferUpdateDataRelationships) SetOriginStockLocation(v Delivery
 
 // GetDestinationStockLocation returns the DestinationStockLocation field value if set, zero value otherwise.
 func (o *StockTransferUpdateDataRelationships) GetDestinationStockLocation() DeliveryLeadTimeCreateDataRelationshipsStockLocation {
-	if o == nil || o.DestinationStockLocation == nil {
+	if o == nil || IsNil(o.DestinationStockLocation) {
 		var ret DeliveryLeadTimeCreateDataRelationshipsStockLocation
 		return ret
 	}
@@ -115,7 +118,7 @@ func (o *StockTransferUpdateDataRelationships) GetDestinationStockLocation() Del
 // GetDestinationStockLocationOk returns a tuple with the DestinationStockLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StockTransferUpdateDataRelationships) GetDestinationStockLocationOk() (*DeliveryLeadTimeCreateDataRelationshipsStockLocation, bool) {
-	if o == nil || o.DestinationStockLocation == nil {
+	if o == nil || IsNil(o.DestinationStockLocation) {
 		return nil, false
 	}
 	return o.DestinationStockLocation, true
@@ -123,7 +126,7 @@ func (o *StockTransferUpdateDataRelationships) GetDestinationStockLocationOk() (
 
 // HasDestinationStockLocation returns a boolean if a field has been set.
 func (o *StockTransferUpdateDataRelationships) HasDestinationStockLocation() bool {
-	if o != nil && o.DestinationStockLocation != nil {
+	if o != nil && !IsNil(o.DestinationStockLocation) {
 		return true
 	}
 
@@ -136,17 +139,25 @@ func (o *StockTransferUpdateDataRelationships) SetDestinationStockLocation(v Del
 }
 
 func (o StockTransferUpdateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Sku != nil {
-		toSerialize["sku"] = o.Sku
-	}
-	if o.OriginStockLocation != nil {
-		toSerialize["origin_stock_location"] = o.OriginStockLocation
-	}
-	if o.DestinationStockLocation != nil {
-		toSerialize["destination_stock_location"] = o.DestinationStockLocation
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o StockTransferUpdateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Sku) {
+		toSerialize["sku"] = o.Sku
+	}
+	if !IsNil(o.OriginStockLocation) {
+		toSerialize["origin_stock_location"] = o.OriginStockLocation
+	}
+	if !IsNil(o.DestinationStockLocation) {
+		toSerialize["destination_stock_location"] = o.DestinationStockLocation
+	}
+	return toSerialize, nil
 }
 
 type NullableStockTransferUpdateDataRelationships struct {

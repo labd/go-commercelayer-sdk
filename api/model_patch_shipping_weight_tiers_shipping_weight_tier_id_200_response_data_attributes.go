@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes{}
+
 // PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes struct for PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes
 type PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes struct {
 	// The shipping method tier's name
@@ -61,7 +64,7 @@ func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -69,7 +72,7 @@ func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) 
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
@@ -94,7 +97,7 @@ func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) GetUpToOk() (*interface{}, bool) {
-	if o == nil || o.UpTo == nil {
+	if o == nil || IsNil(o.UpTo) {
 		return nil, false
 	}
 	return &o.UpTo, true
@@ -102,7 +105,7 @@ func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) 
 
 // HasUpTo returns a boolean if a field has been set.
 func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) HasUpTo() bool {
-	if o != nil && o.UpTo != nil {
+	if o != nil && IsNil(o.UpTo) {
 		return true
 	}
 
@@ -127,7 +130,7 @@ func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) GetPriceAmountCentsOk() (*interface{}, bool) {
-	if o == nil || o.PriceAmountCents == nil {
+	if o == nil || IsNil(o.PriceAmountCents) {
 		return nil, false
 	}
 	return &o.PriceAmountCents, true
@@ -135,7 +138,7 @@ func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) 
 
 // HasPriceAmountCents returns a boolean if a field has been set.
 func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) HasPriceAmountCents() bool {
-	if o != nil && o.PriceAmountCents != nil {
+	if o != nil && IsNil(o.PriceAmountCents) {
 		return true
 	}
 
@@ -160,7 +163,7 @@ func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -168,7 +171,7 @@ func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) 
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -193,7 +196,7 @@ func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -201,7 +204,7 @@ func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) 
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -226,7 +229,7 @@ func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -234,7 +237,7 @@ func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) 
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -247,6 +250,14 @@ func (o *PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) 
 }
 
 func (o PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -266,7 +277,7 @@ func (o PATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes) M
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHShippingWeightTiersShippingWeightTierId200ResponseDataAttributes struct {

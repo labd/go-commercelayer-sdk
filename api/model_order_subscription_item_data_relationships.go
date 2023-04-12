@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the OrderSubscriptionItemDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &OrderSubscriptionItemDataRelationships{}
+
 // OrderSubscriptionItemDataRelationships struct for OrderSubscriptionItemDataRelationships
 type OrderSubscriptionItemDataRelationships struct {
 	OrderSubscription *CustomerDataRelationshipsOrderSubscriptions `json:"order_subscription,omitempty"`
@@ -40,7 +43,7 @@ func NewOrderSubscriptionItemDataRelationshipsWithDefaults() *OrderSubscriptionI
 
 // GetOrderSubscription returns the OrderSubscription field value if set, zero value otherwise.
 func (o *OrderSubscriptionItemDataRelationships) GetOrderSubscription() CustomerDataRelationshipsOrderSubscriptions {
-	if o == nil || o.OrderSubscription == nil {
+	if o == nil || IsNil(o.OrderSubscription) {
 		var ret CustomerDataRelationshipsOrderSubscriptions
 		return ret
 	}
@@ -50,7 +53,7 @@ func (o *OrderSubscriptionItemDataRelationships) GetOrderSubscription() Customer
 // GetOrderSubscriptionOk returns a tuple with the OrderSubscription field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OrderSubscriptionItemDataRelationships) GetOrderSubscriptionOk() (*CustomerDataRelationshipsOrderSubscriptions, bool) {
-	if o == nil || o.OrderSubscription == nil {
+	if o == nil || IsNil(o.OrderSubscription) {
 		return nil, false
 	}
 	return o.OrderSubscription, true
@@ -58,7 +61,7 @@ func (o *OrderSubscriptionItemDataRelationships) GetOrderSubscriptionOk() (*Cust
 
 // HasOrderSubscription returns a boolean if a field has been set.
 func (o *OrderSubscriptionItemDataRelationships) HasOrderSubscription() bool {
-	if o != nil && o.OrderSubscription != nil {
+	if o != nil && !IsNil(o.OrderSubscription) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *OrderSubscriptionItemDataRelationships) SetOrderSubscription(v Customer
 
 // GetItem returns the Item field value if set, zero value otherwise.
 func (o *OrderSubscriptionItemDataRelationships) GetItem() OrderSubscriptionItemDataRelationshipsItem {
-	if o == nil || o.Item == nil {
+	if o == nil || IsNil(o.Item) {
 		var ret OrderSubscriptionItemDataRelationshipsItem
 		return ret
 	}
@@ -82,7 +85,7 @@ func (o *OrderSubscriptionItemDataRelationships) GetItem() OrderSubscriptionItem
 // GetItemOk returns a tuple with the Item field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OrderSubscriptionItemDataRelationships) GetItemOk() (*OrderSubscriptionItemDataRelationshipsItem, bool) {
-	if o == nil || o.Item == nil {
+	if o == nil || IsNil(o.Item) {
 		return nil, false
 	}
 	return o.Item, true
@@ -90,7 +93,7 @@ func (o *OrderSubscriptionItemDataRelationships) GetItemOk() (*OrderSubscription
 
 // HasItem returns a boolean if a field has been set.
 func (o *OrderSubscriptionItemDataRelationships) HasItem() bool {
-	if o != nil && o.Item != nil {
+	if o != nil && !IsNil(o.Item) {
 		return true
 	}
 
@@ -103,14 +106,22 @@ func (o *OrderSubscriptionItemDataRelationships) SetItem(v OrderSubscriptionItem
 }
 
 func (o OrderSubscriptionItemDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.OrderSubscription != nil {
-		toSerialize["order_subscription"] = o.OrderSubscription
-	}
-	if o.Item != nil {
-		toSerialize["item"] = o.Item
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o OrderSubscriptionItemDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.OrderSubscription) {
+		toSerialize["order_subscription"] = o.OrderSubscription
+	}
+	if !IsNil(o.Item) {
+		toSerialize["item"] = o.Item
+	}
+	return toSerialize, nil
 }
 
 type NullableOrderSubscriptionItemDataRelationships struct {

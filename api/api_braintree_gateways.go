@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *BraintreeGatewaysApiService) DELETEBraintreeGatewaysBraintreeGatewayIdE
 	}
 
 	localVarPath := localBasePath + "/braintree_gateways/{braintreeGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"braintreeGatewayId"+"}", url.PathEscape(parameterToString(r.braintreeGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"braintreeGatewayId"+"}", url.PathEscape(parameterValueToString(r.braintreeGatewayId, "braintreeGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *BraintreeGatewaysApiService) DELETEBraintreeGatewaysBraintreeGatewayIdE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *BraintreeGatewaysApiService) GETBraintreeGatewaysExecute(r BraintreeGat
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *BraintreeGatewaysApiService) GETBraintreeGatewaysBraintreeGatewayIdExec
 	}
 
 	localVarPath := localBasePath + "/braintree_gateways/{braintreeGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"braintreeGatewayId"+"}", url.PathEscape(parameterToString(r.braintreeGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"braintreeGatewayId"+"}", url.PathEscape(parameterValueToString(r.braintreeGatewayId, "braintreeGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *BraintreeGatewaysApiService) GETBraintreeGatewaysBraintreeGatewayIdExec
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -369,7 +369,7 @@ func (a *BraintreeGatewaysApiService) PATCHBraintreeGatewaysBraintreeGatewayIdEx
 	}
 
 	localVarPath := localBasePath + "/braintree_gateways/{braintreeGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"braintreeGatewayId"+"}", url.PathEscape(parameterToString(r.braintreeGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"braintreeGatewayId"+"}", url.PathEscape(parameterValueToString(r.braintreeGatewayId, "braintreeGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -407,9 +407,9 @@ func (a *BraintreeGatewaysApiService) PATCHBraintreeGatewaysBraintreeGatewayIdEx
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -518,9 +518,9 @@ func (a *BraintreeGatewaysApiService) POSTBraintreeGatewaysExecute(r BraintreeGa
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

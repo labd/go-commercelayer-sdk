@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETAddresses200ResponseDataInnerAttributes**](GETAddresses200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**GETAddressesAddressId200ResponseDataAttributes**](GETAddressesAddressId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AddressDataRelationships**](AddressDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewAddressData
 
-`func NewAddressData(type_ interface{}, attributes GETAddresses200ResponseDataInnerAttributes, ) *AddressData`
+`func NewAddressData(type_ interface{}, attributes GETAddressesAddressId200ResponseDataAttributes, ) *AddressData`
 
 NewAddressData instantiates a new AddressData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *AddressData) GetAttributes() GETAddresses200ResponseDataInnerAttributes`
+`func (o *AddressData) GetAttributes() GETAddressesAddressId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *AddressData) GetAttributesOk() (*GETAddresses200ResponseDataInnerAttributes, bool)`
+`func (o *AddressData) GetAttributesOk() (*GETAddressesAddressId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *AddressData) SetAttributes(v GETAddresses200ResponseDataInnerAttributes)`
+`func (o *AddressData) SetAttributes(v GETAddressesAddressId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the TaxjarAccountUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &TaxjarAccountUpdate{}
+
 // TaxjarAccountUpdate struct for TaxjarAccountUpdate
 type TaxjarAccountUpdate struct {
 	Data TaxjarAccountUpdateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *TaxjarAccountUpdate) SetData(v TaxjarAccountUpdateData) {
 }
 
 func (o TaxjarAccountUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o TaxjarAccountUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableTaxjarAccountUpdate struct {

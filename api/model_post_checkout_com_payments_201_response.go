@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTCheckoutComPayments201Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTCheckoutComPayments201Response{}
+
 // POSTCheckoutComPayments201Response struct for POSTCheckoutComPayments201Response
 type POSTCheckoutComPayments201Response struct {
 	Data *POSTCheckoutComPayments201ResponseData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewPOSTCheckoutComPayments201ResponseWithDefaults() *POSTCheckoutComPayment
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTCheckoutComPayments201Response) GetData() POSTCheckoutComPayments201ResponseData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret POSTCheckoutComPayments201ResponseData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *POSTCheckoutComPayments201Response) GetData() POSTCheckoutComPayments20
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTCheckoutComPayments201Response) GetDataOk() (*POSTCheckoutComPayments201ResponseData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *POSTCheckoutComPayments201Response) GetDataOk() (*POSTCheckoutComPaymen
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTCheckoutComPayments201Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *POSTCheckoutComPayments201Response) SetData(v POSTCheckoutComPayments20
 }
 
 func (o POSTCheckoutComPayments201Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o POSTCheckoutComPayments201Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullablePOSTCheckoutComPayments201Response struct {

@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the CustomerDataRelationshipsCustomerAddresses type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CustomerDataRelationshipsCustomerAddresses{}
+
 // CustomerDataRelationshipsCustomerAddresses struct for CustomerDataRelationshipsCustomerAddresses
 type CustomerDataRelationshipsCustomerAddresses struct {
 	Data *CustomerDataRelationshipsCustomerAddressesData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewCustomerDataRelationshipsCustomerAddressesWithDefaults() *CustomerDataRe
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *CustomerDataRelationshipsCustomerAddresses) GetData() CustomerDataRelationshipsCustomerAddressesData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret CustomerDataRelationshipsCustomerAddressesData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *CustomerDataRelationshipsCustomerAddresses) GetData() CustomerDataRelat
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerDataRelationshipsCustomerAddresses) GetDataOk() (*CustomerDataRelationshipsCustomerAddressesData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *CustomerDataRelationshipsCustomerAddresses) GetDataOk() (*CustomerDataR
 
 // HasData returns a boolean if a field has been set.
 func (o *CustomerDataRelationshipsCustomerAddresses) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *CustomerDataRelationshipsCustomerAddresses) SetData(v CustomerDataRelat
 }
 
 func (o CustomerDataRelationshipsCustomerAddresses) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CustomerDataRelationshipsCustomerAddresses) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableCustomerDataRelationshipsCustomerAddresses struct {

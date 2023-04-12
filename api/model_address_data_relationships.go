@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddressDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddressDataRelationships{}
+
 // AddressDataRelationships struct for AddressDataRelationships
 type AddressDataRelationships struct {
 	Geocoder *AddressDataRelationshipsGeocoder `json:"geocoder,omitempty"`
@@ -39,7 +42,7 @@ func NewAddressDataRelationshipsWithDefaults() *AddressDataRelationships {
 
 // GetGeocoder returns the Geocoder field value if set, zero value otherwise.
 func (o *AddressDataRelationships) GetGeocoder() AddressDataRelationshipsGeocoder {
-	if o == nil || o.Geocoder == nil {
+	if o == nil || IsNil(o.Geocoder) {
 		var ret AddressDataRelationshipsGeocoder
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *AddressDataRelationships) GetGeocoder() AddressDataRelationshipsGeocode
 // GetGeocoderOk returns a tuple with the Geocoder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddressDataRelationships) GetGeocoderOk() (*AddressDataRelationshipsGeocoder, bool) {
-	if o == nil || o.Geocoder == nil {
+	if o == nil || IsNil(o.Geocoder) {
 		return nil, false
 	}
 	return o.Geocoder, true
@@ -57,7 +60,7 @@ func (o *AddressDataRelationships) GetGeocoderOk() (*AddressDataRelationshipsGeo
 
 // HasGeocoder returns a boolean if a field has been set.
 func (o *AddressDataRelationships) HasGeocoder() bool {
-	if o != nil && o.Geocoder != nil {
+	if o != nil && !IsNil(o.Geocoder) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *AddressDataRelationships) SetGeocoder(v AddressDataRelationshipsGeocode
 }
 
 func (o AddressDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Geocoder != nil {
-		toSerialize["geocoder"] = o.Geocoder
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddressDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Geocoder) {
+		toSerialize["geocoder"] = o.Geocoder
+	}
+	return toSerialize, nil
 }
 
 type NullableAddressDataRelationships struct {

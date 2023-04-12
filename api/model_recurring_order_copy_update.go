@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the RecurringOrderCopyUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RecurringOrderCopyUpdate{}
+
 // RecurringOrderCopyUpdate struct for RecurringOrderCopyUpdate
 type RecurringOrderCopyUpdate struct {
 	Data RecurringOrderCopyUpdateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *RecurringOrderCopyUpdate) SetData(v RecurringOrderCopyUpdateData) {
 }
 
 func (o RecurringOrderCopyUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o RecurringOrderCopyUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableRecurringOrderCopyUpdate struct {

@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PriceUpdateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PriceUpdateDataRelationships{}
+
 // PriceUpdateDataRelationships struct for PriceUpdateDataRelationships
 type PriceUpdateDataRelationships struct {
 	PriceList  *MarketCreateDataRelationshipsPriceList        `json:"price_list,omitempty"`
@@ -41,7 +44,7 @@ func NewPriceUpdateDataRelationshipsWithDefaults() *PriceUpdateDataRelationships
 
 // GetPriceList returns the PriceList field value if set, zero value otherwise.
 func (o *PriceUpdateDataRelationships) GetPriceList() MarketCreateDataRelationshipsPriceList {
-	if o == nil || o.PriceList == nil {
+	if o == nil || IsNil(o.PriceList) {
 		var ret MarketCreateDataRelationshipsPriceList
 		return ret
 	}
@@ -51,7 +54,7 @@ func (o *PriceUpdateDataRelationships) GetPriceList() MarketCreateDataRelationsh
 // GetPriceListOk returns a tuple with the PriceList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PriceUpdateDataRelationships) GetPriceListOk() (*MarketCreateDataRelationshipsPriceList, bool) {
-	if o == nil || o.PriceList == nil {
+	if o == nil || IsNil(o.PriceList) {
 		return nil, false
 	}
 	return o.PriceList, true
@@ -59,7 +62,7 @@ func (o *PriceUpdateDataRelationships) GetPriceListOk() (*MarketCreateDataRelati
 
 // HasPriceList returns a boolean if a field has been set.
 func (o *PriceUpdateDataRelationships) HasPriceList() bool {
-	if o != nil && o.PriceList != nil {
+	if o != nil && !IsNil(o.PriceList) {
 		return true
 	}
 
@@ -73,7 +76,7 @@ func (o *PriceUpdateDataRelationships) SetPriceList(v MarketCreateDataRelationsh
 
 // GetSku returns the Sku field value if set, zero value otherwise.
 func (o *PriceUpdateDataRelationships) GetSku() InStockSubscriptionCreateDataRelationshipsSku {
-	if o == nil || o.Sku == nil {
+	if o == nil || IsNil(o.Sku) {
 		var ret InStockSubscriptionCreateDataRelationshipsSku
 		return ret
 	}
@@ -83,7 +86,7 @@ func (o *PriceUpdateDataRelationships) GetSku() InStockSubscriptionCreateDataRel
 // GetSkuOk returns a tuple with the Sku field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PriceUpdateDataRelationships) GetSkuOk() (*InStockSubscriptionCreateDataRelationshipsSku, bool) {
-	if o == nil || o.Sku == nil {
+	if o == nil || IsNil(o.Sku) {
 		return nil, false
 	}
 	return o.Sku, true
@@ -91,7 +94,7 @@ func (o *PriceUpdateDataRelationships) GetSkuOk() (*InStockSubscriptionCreateDat
 
 // HasSku returns a boolean if a field has been set.
 func (o *PriceUpdateDataRelationships) HasSku() bool {
-	if o != nil && o.Sku != nil {
+	if o != nil && !IsNil(o.Sku) {
 		return true
 	}
 
@@ -105,7 +108,7 @@ func (o *PriceUpdateDataRelationships) SetSku(v InStockSubscriptionCreateDataRel
 
 // GetPriceTiers returns the PriceTiers field value if set, zero value otherwise.
 func (o *PriceUpdateDataRelationships) GetPriceTiers() PriceCreateDataRelationshipsPriceTiers {
-	if o == nil || o.PriceTiers == nil {
+	if o == nil || IsNil(o.PriceTiers) {
 		var ret PriceCreateDataRelationshipsPriceTiers
 		return ret
 	}
@@ -115,7 +118,7 @@ func (o *PriceUpdateDataRelationships) GetPriceTiers() PriceCreateDataRelationsh
 // GetPriceTiersOk returns a tuple with the PriceTiers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PriceUpdateDataRelationships) GetPriceTiersOk() (*PriceCreateDataRelationshipsPriceTiers, bool) {
-	if o == nil || o.PriceTiers == nil {
+	if o == nil || IsNil(o.PriceTiers) {
 		return nil, false
 	}
 	return o.PriceTiers, true
@@ -123,7 +126,7 @@ func (o *PriceUpdateDataRelationships) GetPriceTiersOk() (*PriceCreateDataRelati
 
 // HasPriceTiers returns a boolean if a field has been set.
 func (o *PriceUpdateDataRelationships) HasPriceTiers() bool {
-	if o != nil && o.PriceTiers != nil {
+	if o != nil && !IsNil(o.PriceTiers) {
 		return true
 	}
 
@@ -136,17 +139,25 @@ func (o *PriceUpdateDataRelationships) SetPriceTiers(v PriceCreateDataRelationsh
 }
 
 func (o PriceUpdateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.PriceList != nil {
-		toSerialize["price_list"] = o.PriceList
-	}
-	if o.Sku != nil {
-		toSerialize["sku"] = o.Sku
-	}
-	if o.PriceTiers != nil {
-		toSerialize["price_tiers"] = o.PriceTiers
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PriceUpdateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.PriceList) {
+		toSerialize["price_list"] = o.PriceList
+	}
+	if !IsNil(o.Sku) {
+		toSerialize["sku"] = o.Sku
+	}
+	if !IsNil(o.PriceTiers) {
+		toSerialize["price_tiers"] = o.PriceTiers
+	}
+	return toSerialize, nil
 }
 
 type NullablePriceUpdateDataRelationships struct {

@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETInStockSubscriptionsInStockSubscriptionId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETInStockSubscriptionsInStockSubscriptionId200Response{}
+
 // GETInStockSubscriptionsInStockSubscriptionId200Response struct for GETInStockSubscriptionsInStockSubscriptionId200Response
 type GETInStockSubscriptionsInStockSubscriptionId200Response struct {
-	Data *GETInStockSubscriptions200ResponseDataInner `json:"data,omitempty"`
+	Data *GETInStockSubscriptionsInStockSubscriptionId200ResponseData `json:"data,omitempty"`
 }
 
 // NewGETInStockSubscriptionsInStockSubscriptionId200Response instantiates a new GETInStockSubscriptionsInStockSubscriptionId200Response object
@@ -38,9 +41,9 @@ func NewGETInStockSubscriptionsInStockSubscriptionId200ResponseWithDefaults() *G
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETInStockSubscriptionsInStockSubscriptionId200Response) GetData() GETInStockSubscriptions200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret GETInStockSubscriptions200ResponseDataInner
+func (o *GETInStockSubscriptionsInStockSubscriptionId200Response) GetData() GETInStockSubscriptionsInStockSubscriptionId200ResponseData {
+	if o == nil || IsNil(o.Data) {
+		var ret GETInStockSubscriptionsInStockSubscriptionId200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *GETInStockSubscriptionsInStockSubscriptionId200Response) GetData() GETI
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETInStockSubscriptionsInStockSubscriptionId200Response) GetDataOk() (*GETInStockSubscriptions200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+func (o *GETInStockSubscriptionsInStockSubscriptionId200Response) GetDataOk() (*GETInStockSubscriptionsInStockSubscriptionId200ResponseData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *GETInStockSubscriptionsInStockSubscriptionId200Response) GetDataOk() (*
 
 // HasData returns a boolean if a field has been set.
 func (o *GETInStockSubscriptionsInStockSubscriptionId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETInStockSubscriptions200ResponseDataInner and assigns it to the Data field.
-func (o *GETInStockSubscriptionsInStockSubscriptionId200Response) SetData(v GETInStockSubscriptions200ResponseDataInner) {
+// SetData gets a reference to the given GETInStockSubscriptionsInStockSubscriptionId200ResponseData and assigns it to the Data field.
+func (o *GETInStockSubscriptionsInStockSubscriptionId200Response) SetData(v GETInStockSubscriptionsInStockSubscriptionId200ResponseData) {
 	o.Data = &v
 }
 
 func (o GETInStockSubscriptionsInStockSubscriptionId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GETInStockSubscriptionsInStockSubscriptionId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGETInStockSubscriptionsInStockSubscriptionId200Response struct {

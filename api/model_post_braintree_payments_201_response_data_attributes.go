@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTBraintreePayments201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTBraintreePayments201ResponseDataAttributes{}
+
 // POSTBraintreePayments201ResponseDataAttributes struct for POSTBraintreePayments201ResponseDataAttributes
 type POSTBraintreePayments201ResponseDataAttributes struct {
 	// The Braintree payment ID used by local payment and sent by the Braintree JS SDK.
@@ -61,7 +64,7 @@ func (o *POSTBraintreePayments201ResponseDataAttributes) GetPaymentId() interfac
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBraintreePayments201ResponseDataAttributes) GetPaymentIdOk() (*interface{}, bool) {
-	if o == nil || o.PaymentId == nil {
+	if o == nil || IsNil(o.PaymentId) {
 		return nil, false
 	}
 	return &o.PaymentId, true
@@ -69,7 +72,7 @@ func (o *POSTBraintreePayments201ResponseDataAttributes) GetPaymentIdOk() (*inte
 
 // HasPaymentId returns a boolean if a field has been set.
 func (o *POSTBraintreePayments201ResponseDataAttributes) HasPaymentId() bool {
-	if o != nil && o.PaymentId != nil {
+	if o != nil && IsNil(o.PaymentId) {
 		return true
 	}
 
@@ -94,7 +97,7 @@ func (o *POSTBraintreePayments201ResponseDataAttributes) GetLocal() interface{} 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBraintreePayments201ResponseDataAttributes) GetLocalOk() (*interface{}, bool) {
-	if o == nil || o.Local == nil {
+	if o == nil || IsNil(o.Local) {
 		return nil, false
 	}
 	return &o.Local, true
@@ -102,7 +105,7 @@ func (o *POSTBraintreePayments201ResponseDataAttributes) GetLocalOk() (*interfac
 
 // HasLocal returns a boolean if a field has been set.
 func (o *POSTBraintreePayments201ResponseDataAttributes) HasLocal() bool {
-	if o != nil && o.Local != nil {
+	if o != nil && IsNil(o.Local) {
 		return true
 	}
 
@@ -127,7 +130,7 @@ func (o *POSTBraintreePayments201ResponseDataAttributes) GetOptions() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBraintreePayments201ResponseDataAttributes) GetOptionsOk() (*interface{}, bool) {
-	if o == nil || o.Options == nil {
+	if o == nil || IsNil(o.Options) {
 		return nil, false
 	}
 	return &o.Options, true
@@ -135,7 +138,7 @@ func (o *POSTBraintreePayments201ResponseDataAttributes) GetOptionsOk() (*interf
 
 // HasOptions returns a boolean if a field has been set.
 func (o *POSTBraintreePayments201ResponseDataAttributes) HasOptions() bool {
-	if o != nil && o.Options != nil {
+	if o != nil && IsNil(o.Options) {
 		return true
 	}
 
@@ -160,7 +163,7 @@ func (o *POSTBraintreePayments201ResponseDataAttributes) GetReference() interfac
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBraintreePayments201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -168,7 +171,7 @@ func (o *POSTBraintreePayments201ResponseDataAttributes) GetReferenceOk() (*inte
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTBraintreePayments201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -193,7 +196,7 @@ func (o *POSTBraintreePayments201ResponseDataAttributes) GetReferenceOrigin() in
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBraintreePayments201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -201,7 +204,7 @@ func (o *POSTBraintreePayments201ResponseDataAttributes) GetReferenceOriginOk() 
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTBraintreePayments201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -226,7 +229,7 @@ func (o *POSTBraintreePayments201ResponseDataAttributes) GetMetadata() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBraintreePayments201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -234,7 +237,7 @@ func (o *POSTBraintreePayments201ResponseDataAttributes) GetMetadataOk() (*inter
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTBraintreePayments201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -247,6 +250,14 @@ func (o *POSTBraintreePayments201ResponseDataAttributes) SetMetadata(v interface
 }
 
 func (o POSTBraintreePayments201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTBraintreePayments201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.PaymentId != nil {
 		toSerialize["payment_id"] = o.PaymentId
@@ -266,7 +277,7 @@ func (o POSTBraintreePayments201ResponseDataAttributes) MarshalJSON() ([]byte, e
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTBraintreePayments201ResponseDataAttributes struct {

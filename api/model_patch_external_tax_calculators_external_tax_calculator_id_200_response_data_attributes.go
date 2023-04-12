@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes{}
+
 // PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes struct for PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes
 type PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes struct {
 	// The tax calculator's internal name.
@@ -59,7 +62,7 @@ func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttrib
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -67,7 +70,7 @@ func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttrib
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
@@ -92,7 +95,7 @@ func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttrib
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -100,7 +103,7 @@ func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttrib
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -125,7 +128,7 @@ func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttrib
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -133,7 +136,7 @@ func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttrib
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -158,7 +161,7 @@ func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttrib
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -166,7 +169,7 @@ func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttrib
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -191,7 +194,7 @@ func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttrib
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) GetTaxCalculatorUrlOk() (*interface{}, bool) {
-	if o == nil || o.TaxCalculatorUrl == nil {
+	if o == nil || IsNil(o.TaxCalculatorUrl) {
 		return nil, false
 	}
 	return &o.TaxCalculatorUrl, true
@@ -199,7 +202,7 @@ func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttrib
 
 // HasTaxCalculatorUrl returns a boolean if a field has been set.
 func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) HasTaxCalculatorUrl() bool {
-	if o != nil && o.TaxCalculatorUrl != nil {
+	if o != nil && IsNil(o.TaxCalculatorUrl) {
 		return true
 	}
 
@@ -212,6 +215,14 @@ func (o *PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttrib
 }
 
 func (o PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -228,7 +239,7 @@ func (o PATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttribu
 	if o.TaxCalculatorUrl != nil {
 		toSerialize["tax_calculator_url"] = o.TaxCalculatorUrl
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHExternalTaxCalculatorsExternalTaxCalculatorId200ResponseDataAttributes struct {

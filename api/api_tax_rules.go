@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *TaxRulesApiService) DELETETaxRulesTaxRuleIdExecute(r TaxRulesApiDELETET
 	}
 
 	localVarPath := localBasePath + "/tax_rules/{taxRuleId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxRuleId"+"}", url.PathEscape(parameterToString(r.taxRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxRuleId"+"}", url.PathEscape(parameterValueToString(r.taxRuleId, "taxRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *TaxRulesApiService) DELETETaxRulesTaxRuleIdExecute(r TaxRulesApiDELETET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -156,7 +156,7 @@ func (a *TaxRulesApiService) GETManualTaxCalculatorIdTaxRulesExecute(r TaxRulesA
 	}
 
 	localVarPath := localBasePath + "/manual_tax_calculators/{manualTaxCalculatorId}/tax_rules"
-	localVarPath = strings.Replace(localVarPath, "{"+"manualTaxCalculatorId"+"}", url.PathEscape(parameterToString(r.manualTaxCalculatorId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"manualTaxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.manualTaxCalculatorId, "manualTaxCalculatorId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *TaxRulesApiService) GETManualTaxCalculatorIdTaxRulesExecute(r TaxRulesA
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *TaxRulesApiService) GETTaxRulesExecute(r TaxRulesApiGETTaxRulesRequest)
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -351,7 +351,7 @@ func (a *TaxRulesApiService) GETTaxRulesTaxRuleIdExecute(r TaxRulesApiGETTaxRule
 	}
 
 	localVarPath := localBasePath + "/tax_rules/{taxRuleId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxRuleId"+"}", url.PathEscape(parameterToString(r.taxRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxRuleId"+"}", url.PathEscape(parameterValueToString(r.taxRuleId, "taxRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *TaxRulesApiService) GETTaxRulesTaxRuleIdExecute(r TaxRulesApiGETTaxRule
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -461,7 +461,7 @@ func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleIdExecute(r TaxRulesApiPATCHTax
 	}
 
 	localVarPath := localBasePath + "/tax_rules/{taxRuleId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxRuleId"+"}", url.PathEscape(parameterToString(r.taxRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxRuleId"+"}", url.PathEscape(parameterValueToString(r.taxRuleId, "taxRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -499,9 +499,9 @@ func (a *TaxRulesApiService) PATCHTaxRulesTaxRuleIdExecute(r TaxRulesApiPATCHTax
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -610,9 +610,9 @@ func (a *TaxRulesApiService) POSTTaxRulesExecute(r TaxRulesApiPOSTTaxRulesReques
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

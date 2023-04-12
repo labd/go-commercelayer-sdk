@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTGiftCards201Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTGiftCards201Response{}
+
 // POSTGiftCards201Response struct for POSTGiftCards201Response
 type POSTGiftCards201Response struct {
 	Data *POSTGiftCards201ResponseData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewPOSTGiftCards201ResponseWithDefaults() *POSTGiftCards201Response {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTGiftCards201Response) GetData() POSTGiftCards201ResponseData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret POSTGiftCards201ResponseData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *POSTGiftCards201Response) GetData() POSTGiftCards201ResponseData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTGiftCards201Response) GetDataOk() (*POSTGiftCards201ResponseData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *POSTGiftCards201Response) GetDataOk() (*POSTGiftCards201ResponseData, b
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTGiftCards201Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *POSTGiftCards201Response) SetData(v POSTGiftCards201ResponseData) {
 }
 
 func (o POSTGiftCards201Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o POSTGiftCards201Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullablePOSTGiftCards201Response struct {

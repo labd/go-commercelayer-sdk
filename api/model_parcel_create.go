@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ParcelCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ParcelCreate{}
+
 // ParcelCreate struct for ParcelCreate
 type ParcelCreate struct {
 	Data ParcelCreateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *ParcelCreate) SetData(v ParcelCreateData) {
 }
 
 func (o ParcelCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ParcelCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableParcelCreate struct {

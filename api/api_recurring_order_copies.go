@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *RecurringOrderCopiesApiService) DELETERecurringOrderCopiesRecurringOrde
 	}
 
 	localVarPath := localBasePath + "/recurring_order_copies/{recurringOrderCopyId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"recurringOrderCopyId"+"}", url.PathEscape(parameterToString(r.recurringOrderCopyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"recurringOrderCopyId"+"}", url.PathEscape(parameterValueToString(r.recurringOrderCopyId, "recurringOrderCopyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *RecurringOrderCopiesApiService) DELETERecurringOrderCopiesRecurringOrde
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -156,7 +156,7 @@ func (a *RecurringOrderCopiesApiService) GETOrderIdRecurringOrderCopiesExecute(r
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/recurring_order_copies"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *RecurringOrderCopiesApiService) GETOrderIdRecurringOrderCopiesExecute(r
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -248,7 +248,7 @@ func (a *RecurringOrderCopiesApiService) GETOrderSubscriptionIdRecurringOrderCop
 	}
 
 	localVarPath := localBasePath + "/order_subscriptions/{orderSubscriptionId}/recurring_order_copies"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterToString(r.orderSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionId, "orderSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -281,9 +281,9 @@ func (a *RecurringOrderCopiesApiService) GETOrderSubscriptionIdRecurringOrderCop
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -372,9 +372,9 @@ func (a *RecurringOrderCopiesApiService) GETRecurringOrderCopiesExecute(r Recurr
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -443,7 +443,7 @@ func (a *RecurringOrderCopiesApiService) GETRecurringOrderCopiesRecurringOrderCo
 	}
 
 	localVarPath := localBasePath + "/recurring_order_copies/{recurringOrderCopyId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"recurringOrderCopyId"+"}", url.PathEscape(parameterToString(r.recurringOrderCopyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"recurringOrderCopyId"+"}", url.PathEscape(parameterValueToString(r.recurringOrderCopyId, "recurringOrderCopyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -476,9 +476,9 @@ func (a *RecurringOrderCopiesApiService) GETRecurringOrderCopiesRecurringOrderCo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -553,7 +553,7 @@ func (a *RecurringOrderCopiesApiService) PATCHRecurringOrderCopiesRecurringOrder
 	}
 
 	localVarPath := localBasePath + "/recurring_order_copies/{recurringOrderCopyId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"recurringOrderCopyId"+"}", url.PathEscape(parameterToString(r.recurringOrderCopyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"recurringOrderCopyId"+"}", url.PathEscape(parameterValueToString(r.recurringOrderCopyId, "recurringOrderCopyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -591,9 +591,9 @@ func (a *RecurringOrderCopiesApiService) PATCHRecurringOrderCopiesRecurringOrder
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -702,9 +702,9 @@ func (a *RecurringOrderCopiesApiService) POSTRecurringOrderCopiesExecute(r Recur
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHMerchantsMerchantId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHMerchantsMerchantId200ResponseDataAttributes{}
+
 // PATCHMerchantsMerchantId200ResponseDataAttributes struct for PATCHMerchantsMerchantId200ResponseDataAttributes
 type PATCHMerchantsMerchantId200ResponseDataAttributes struct {
 	// The merchant's internal name.
@@ -57,7 +60,7 @@ func (o *PATCHMerchantsMerchantId200ResponseDataAttributes) GetName() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHMerchantsMerchantId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -65,7 +68,7 @@ func (o *PATCHMerchantsMerchantId200ResponseDataAttributes) GetNameOk() (*interf
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHMerchantsMerchantId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
@@ -90,7 +93,7 @@ func (o *PATCHMerchantsMerchantId200ResponseDataAttributes) GetReference() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHMerchantsMerchantId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -98,7 +101,7 @@ func (o *PATCHMerchantsMerchantId200ResponseDataAttributes) GetReferenceOk() (*i
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHMerchantsMerchantId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -123,7 +126,7 @@ func (o *PATCHMerchantsMerchantId200ResponseDataAttributes) GetReferenceOrigin()
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHMerchantsMerchantId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -131,7 +134,7 @@ func (o *PATCHMerchantsMerchantId200ResponseDataAttributes) GetReferenceOriginOk
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHMerchantsMerchantId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -156,7 +159,7 @@ func (o *PATCHMerchantsMerchantId200ResponseDataAttributes) GetMetadata() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHMerchantsMerchantId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -164,7 +167,7 @@ func (o *PATCHMerchantsMerchantId200ResponseDataAttributes) GetMetadataOk() (*in
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHMerchantsMerchantId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -177,6 +180,14 @@ func (o *PATCHMerchantsMerchantId200ResponseDataAttributes) SetMetadata(v interf
 }
 
 func (o PATCHMerchantsMerchantId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHMerchantsMerchantId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -190,7 +201,7 @@ func (o PATCHMerchantsMerchantId200ResponseDataAttributes) MarshalJSON() ([]byte
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHMerchantsMerchantId200ResponseDataAttributes struct {

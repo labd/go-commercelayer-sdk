@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHPricesPriceId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHPricesPriceId200ResponseDataAttributes{}
+
 // PATCHPricesPriceId200ResponseDataAttributes struct for PATCHPricesPriceId200ResponseDataAttributes
 type PATCHPricesPriceId200ResponseDataAttributes struct {
 	// The code of the associated SKU. When creating a price, either a valid sku_code or a SKU relationship must be present.
@@ -61,7 +64,7 @@ func (o *PATCHPricesPriceId200ResponseDataAttributes) GetSkuCode() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPricesPriceId200ResponseDataAttributes) GetSkuCodeOk() (*interface{}, bool) {
-	if o == nil || o.SkuCode == nil {
+	if o == nil || IsNil(o.SkuCode) {
 		return nil, false
 	}
 	return &o.SkuCode, true
@@ -69,7 +72,7 @@ func (o *PATCHPricesPriceId200ResponseDataAttributes) GetSkuCodeOk() (*interface
 
 // HasSkuCode returns a boolean if a field has been set.
 func (o *PATCHPricesPriceId200ResponseDataAttributes) HasSkuCode() bool {
-	if o != nil && o.SkuCode != nil {
+	if o != nil && IsNil(o.SkuCode) {
 		return true
 	}
 
@@ -94,7 +97,7 @@ func (o *PATCHPricesPriceId200ResponseDataAttributes) GetAmountCents() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPricesPriceId200ResponseDataAttributes) GetAmountCentsOk() (*interface{}, bool) {
-	if o == nil || o.AmountCents == nil {
+	if o == nil || IsNil(o.AmountCents) {
 		return nil, false
 	}
 	return &o.AmountCents, true
@@ -102,7 +105,7 @@ func (o *PATCHPricesPriceId200ResponseDataAttributes) GetAmountCentsOk() (*inter
 
 // HasAmountCents returns a boolean if a field has been set.
 func (o *PATCHPricesPriceId200ResponseDataAttributes) HasAmountCents() bool {
-	if o != nil && o.AmountCents != nil {
+	if o != nil && IsNil(o.AmountCents) {
 		return true
 	}
 
@@ -127,7 +130,7 @@ func (o *PATCHPricesPriceId200ResponseDataAttributes) GetCompareAtAmountCents() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPricesPriceId200ResponseDataAttributes) GetCompareAtAmountCentsOk() (*interface{}, bool) {
-	if o == nil || o.CompareAtAmountCents == nil {
+	if o == nil || IsNil(o.CompareAtAmountCents) {
 		return nil, false
 	}
 	return &o.CompareAtAmountCents, true
@@ -135,7 +138,7 @@ func (o *PATCHPricesPriceId200ResponseDataAttributes) GetCompareAtAmountCentsOk(
 
 // HasCompareAtAmountCents returns a boolean if a field has been set.
 func (o *PATCHPricesPriceId200ResponseDataAttributes) HasCompareAtAmountCents() bool {
-	if o != nil && o.CompareAtAmountCents != nil {
+	if o != nil && IsNil(o.CompareAtAmountCents) {
 		return true
 	}
 
@@ -160,7 +163,7 @@ func (o *PATCHPricesPriceId200ResponseDataAttributes) GetReference() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPricesPriceId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -168,7 +171,7 @@ func (o *PATCHPricesPriceId200ResponseDataAttributes) GetReferenceOk() (*interfa
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHPricesPriceId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -193,7 +196,7 @@ func (o *PATCHPricesPriceId200ResponseDataAttributes) GetReferenceOrigin() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPricesPriceId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -201,7 +204,7 @@ func (o *PATCHPricesPriceId200ResponseDataAttributes) GetReferenceOriginOk() (*i
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHPricesPriceId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -226,7 +229,7 @@ func (o *PATCHPricesPriceId200ResponseDataAttributes) GetMetadata() interface{} 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPricesPriceId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -234,7 +237,7 @@ func (o *PATCHPricesPriceId200ResponseDataAttributes) GetMetadataOk() (*interfac
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHPricesPriceId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -247,6 +250,14 @@ func (o *PATCHPricesPriceId200ResponseDataAttributes) SetMetadata(v interface{})
 }
 
 func (o PATCHPricesPriceId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHPricesPriceId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.SkuCode != nil {
 		toSerialize["sku_code"] = o.SkuCode
@@ -266,7 +277,7 @@ func (o PATCHPricesPriceId200ResponseDataAttributes) MarshalJSON() ([]byte, erro
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHPricesPriceId200ResponseDataAttributes struct {

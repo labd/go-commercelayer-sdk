@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the PromotionData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PromotionData{}
+
 // PromotionData struct for PromotionData
 type PromotionData struct {
 	// The resource's type
-	Type          interface{}                                             `json:"type"`
-	Attributes    GETFreeShippingPromotions200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *ExternalPromotionDataRelationships                     `json:"relationships,omitempty"`
+	Type          interface{}                                                               `json:"type"`
+	Attributes    GETFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes `json:"attributes"`
+	Relationships *ExternalPromotionDataRelationships                                       `json:"relationships,omitempty"`
 }
 
 // NewPromotionData instantiates a new PromotionData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPromotionData(type_ interface{}, attributes GETFreeShippingPromotions200ResponseDataInnerAttributes) *PromotionData {
+func NewPromotionData(type_ interface{}, attributes GETFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes) *PromotionData {
 	this := PromotionData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -57,7 +60,7 @@ func (o *PromotionData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PromotionData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -69,9 +72,9 @@ func (o *PromotionData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PromotionData) GetAttributes() GETFreeShippingPromotions200ResponseDataInnerAttributes {
+func (o *PromotionData) GetAttributes() GETFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETFreeShippingPromotions200ResponseDataInnerAttributes
+		var ret GETFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +83,7 @@ func (o *PromotionData) GetAttributes() GETFreeShippingPromotions200ResponseData
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PromotionData) GetAttributesOk() (*GETFreeShippingPromotions200ResponseDataInnerAttributes, bool) {
+func (o *PromotionData) GetAttributesOk() (*GETFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,13 +91,13 @@ func (o *PromotionData) GetAttributesOk() (*GETFreeShippingPromotions200Response
 }
 
 // SetAttributes sets field value
-func (o *PromotionData) SetAttributes(v GETFreeShippingPromotions200ResponseDataInnerAttributes) {
+func (o *PromotionData) SetAttributes(v GETFreeShippingPromotionsFreeShippingPromotionId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *PromotionData) GetRelationships() ExternalPromotionDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret ExternalPromotionDataRelationships
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *PromotionData) GetRelationships() ExternalPromotionDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PromotionData) GetRelationshipsOk() (*ExternalPromotionDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -112,7 +115,7 @@ func (o *PromotionData) GetRelationshipsOk() (*ExternalPromotionDataRelationship
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *PromotionData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -125,17 +128,23 @@ func (o *PromotionData) SetRelationships(v ExternalPromotionDataRelationships) {
 }
 
 func (o PromotionData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PromotionData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePromotionData struct {

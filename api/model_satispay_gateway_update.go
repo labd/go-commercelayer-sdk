@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the SatispayGatewayUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SatispayGatewayUpdate{}
+
 // SatispayGatewayUpdate struct for SatispayGatewayUpdate
 type SatispayGatewayUpdate struct {
 	Data SatispayGatewayUpdateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *SatispayGatewayUpdate) SetData(v SatispayGatewayUpdateData) {
 }
 
 func (o SatispayGatewayUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o SatispayGatewayUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableSatispayGatewayUpdate struct {

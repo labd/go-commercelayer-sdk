@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETShippingZones200ResponseDataInnerAttributes**](GETShippingZones200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**GETShippingZonesShippingZoneId200ResponseDataAttributes**](GETShippingZonesShippingZoneId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ShippingZoneDataRelationships**](ShippingZoneDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewShippingZoneData
 
-`func NewShippingZoneData(type_ interface{}, attributes GETShippingZones200ResponseDataInnerAttributes, ) *ShippingZoneData`
+`func NewShippingZoneData(type_ interface{}, attributes GETShippingZonesShippingZoneId200ResponseDataAttributes, ) *ShippingZoneData`
 
 NewShippingZoneData instantiates a new ShippingZoneData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *ShippingZoneData) GetAttributes() GETShippingZones200ResponseDataInnerAttributes`
+`func (o *ShippingZoneData) GetAttributes() GETShippingZonesShippingZoneId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ShippingZoneData) GetAttributesOk() (*GETShippingZones200ResponseDataInnerAttributes, bool)`
+`func (o *ShippingZoneData) GetAttributesOk() (*GETShippingZonesShippingZoneId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ShippingZoneData) SetAttributes(v GETShippingZones200ResponseDataInnerAttributes)`
+`func (o *ShippingZoneData) SetAttributes(v GETShippingZonesShippingZoneId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

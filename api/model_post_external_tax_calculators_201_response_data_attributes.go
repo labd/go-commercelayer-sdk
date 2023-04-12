@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTExternalTaxCalculators201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTExternalTaxCalculators201ResponseDataAttributes{}
+
 // POSTExternalTaxCalculators201ResponseDataAttributes struct for POSTExternalTaxCalculators201ResponseDataAttributes
 type POSTExternalTaxCalculators201ResponseDataAttributes struct {
 	// The tax calculator's internal name.
@@ -63,7 +66,7 @@ func (o *POSTExternalTaxCalculators201ResponseDataAttributes) GetName() interfac
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTExternalTaxCalculators201ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -87,7 +90,7 @@ func (o *POSTExternalTaxCalculators201ResponseDataAttributes) GetReference() int
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTExternalTaxCalculators201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -95,7 +98,7 @@ func (o *POSTExternalTaxCalculators201ResponseDataAttributes) GetReferenceOk() (
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTExternalTaxCalculators201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -120,7 +123,7 @@ func (o *POSTExternalTaxCalculators201ResponseDataAttributes) GetReferenceOrigin
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTExternalTaxCalculators201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -128,7 +131,7 @@ func (o *POSTExternalTaxCalculators201ResponseDataAttributes) GetReferenceOrigin
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTExternalTaxCalculators201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -153,7 +156,7 @@ func (o *POSTExternalTaxCalculators201ResponseDataAttributes) GetMetadata() inte
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTExternalTaxCalculators201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -161,7 +164,7 @@ func (o *POSTExternalTaxCalculators201ResponseDataAttributes) GetMetadataOk() (*
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTExternalTaxCalculators201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -188,7 +191,7 @@ func (o *POSTExternalTaxCalculators201ResponseDataAttributes) GetTaxCalculatorUr
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTExternalTaxCalculators201ResponseDataAttributes) GetTaxCalculatorUrlOk() (*interface{}, bool) {
-	if o == nil || o.TaxCalculatorUrl == nil {
+	if o == nil || IsNil(o.TaxCalculatorUrl) {
 		return nil, false
 	}
 	return &o.TaxCalculatorUrl, true
@@ -200,6 +203,14 @@ func (o *POSTExternalTaxCalculators201ResponseDataAttributes) SetTaxCalculatorUr
 }
 
 func (o POSTExternalTaxCalculators201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTExternalTaxCalculators201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -216,7 +227,7 @@ func (o POSTExternalTaxCalculators201ResponseDataAttributes) MarshalJSON() ([]by
 	if o.TaxCalculatorUrl != nil {
 		toSerialize["tax_calculator_url"] = o.TaxCalculatorUrl
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTExternalTaxCalculators201ResponseDataAttributes struct {

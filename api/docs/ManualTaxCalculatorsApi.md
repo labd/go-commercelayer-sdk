@@ -30,7 +30,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -38,7 +38,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ManualTaxCalculatorsApi.DELETEManualTaxCalculatorsManualTaxCalculatorId(context.Background(), manualTaxCalculatorId).Execute()
+    r, err := apiClient.ManualTaxCalculatorsApi.DELETEManualTaxCalculatorsManualTaxCalculatorId(context.Background(), manualTaxCalculatorId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ManualTaxCalculatorsApi.DELETEManualTaxCalculatorsManualTaxCalculatorId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -98,7 +98,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -159,7 +159,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -229,7 +229,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -237,7 +237,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ManualTaxCalculatorsApi.GETTaxRuleIdManualTaxCalculator(context.Background(), taxRuleId).Execute()
+    r, err := apiClient.ManualTaxCalculatorsApi.GETTaxRuleIdManualTaxCalculator(context.Background(), taxRuleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ManualTaxCalculatorsApi.GETTaxRuleIdManualTaxCalculator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -297,7 +297,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -369,7 +369,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {

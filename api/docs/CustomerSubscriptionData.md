@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETCustomerSubscriptions200ResponseDataInnerAttributes**](GETCustomerSubscriptions200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes**](GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CustomerPasswordResetDataRelationships**](CustomerPasswordResetDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCustomerSubscriptionData
 
-`func NewCustomerSubscriptionData(type_ interface{}, attributes GETCustomerSubscriptions200ResponseDataInnerAttributes, ) *CustomerSubscriptionData`
+`func NewCustomerSubscriptionData(type_ interface{}, attributes GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes, ) *CustomerSubscriptionData`
 
 NewCustomerSubscriptionData instantiates a new CustomerSubscriptionData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *CustomerSubscriptionData) GetAttributes() GETCustomerSubscriptions200ResponseDataInnerAttributes`
+`func (o *CustomerSubscriptionData) GetAttributes() GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CustomerSubscriptionData) GetAttributesOk() (*GETCustomerSubscriptions200ResponseDataInnerAttributes, bool)`
+`func (o *CustomerSubscriptionData) GetAttributesOk() (*GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CustomerSubscriptionData) SetAttributes(v GETCustomerSubscriptions200ResponseDataInnerAttributes)`
+`func (o *CustomerSubscriptionData) SetAttributes(v GETCustomerSubscriptionsCustomerSubscriptionId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

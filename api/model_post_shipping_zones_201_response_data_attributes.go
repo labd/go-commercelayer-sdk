@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTShippingZones201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTShippingZones201ResponseDataAttributes{}
+
 // POSTShippingZones201ResponseDataAttributes struct for POSTShippingZones201ResponseDataAttributes
 type POSTShippingZones201ResponseDataAttributes struct {
 	// The shipping zone's internal name.
@@ -72,7 +75,7 @@ func (o *POSTShippingZones201ResponseDataAttributes) GetName() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTShippingZones201ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -96,7 +99,7 @@ func (o *POSTShippingZones201ResponseDataAttributes) GetCountryCodeRegex() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTShippingZones201ResponseDataAttributes) GetCountryCodeRegexOk() (*interface{}, bool) {
-	if o == nil || o.CountryCodeRegex == nil {
+	if o == nil || IsNil(o.CountryCodeRegex) {
 		return nil, false
 	}
 	return &o.CountryCodeRegex, true
@@ -104,7 +107,7 @@ func (o *POSTShippingZones201ResponseDataAttributes) GetCountryCodeRegexOk() (*i
 
 // HasCountryCodeRegex returns a boolean if a field has been set.
 func (o *POSTShippingZones201ResponseDataAttributes) HasCountryCodeRegex() bool {
-	if o != nil && o.CountryCodeRegex != nil {
+	if o != nil && IsNil(o.CountryCodeRegex) {
 		return true
 	}
 
@@ -129,7 +132,7 @@ func (o *POSTShippingZones201ResponseDataAttributes) GetNotCountryCodeRegex() in
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTShippingZones201ResponseDataAttributes) GetNotCountryCodeRegexOk() (*interface{}, bool) {
-	if o == nil || o.NotCountryCodeRegex == nil {
+	if o == nil || IsNil(o.NotCountryCodeRegex) {
 		return nil, false
 	}
 	return &o.NotCountryCodeRegex, true
@@ -137,7 +140,7 @@ func (o *POSTShippingZones201ResponseDataAttributes) GetNotCountryCodeRegexOk() 
 
 // HasNotCountryCodeRegex returns a boolean if a field has been set.
 func (o *POSTShippingZones201ResponseDataAttributes) HasNotCountryCodeRegex() bool {
-	if o != nil && o.NotCountryCodeRegex != nil {
+	if o != nil && IsNil(o.NotCountryCodeRegex) {
 		return true
 	}
 
@@ -162,7 +165,7 @@ func (o *POSTShippingZones201ResponseDataAttributes) GetStateCodeRegex() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTShippingZones201ResponseDataAttributes) GetStateCodeRegexOk() (*interface{}, bool) {
-	if o == nil || o.StateCodeRegex == nil {
+	if o == nil || IsNil(o.StateCodeRegex) {
 		return nil, false
 	}
 	return &o.StateCodeRegex, true
@@ -170,7 +173,7 @@ func (o *POSTShippingZones201ResponseDataAttributes) GetStateCodeRegexOk() (*int
 
 // HasStateCodeRegex returns a boolean if a field has been set.
 func (o *POSTShippingZones201ResponseDataAttributes) HasStateCodeRegex() bool {
-	if o != nil && o.StateCodeRegex != nil {
+	if o != nil && IsNil(o.StateCodeRegex) {
 		return true
 	}
 
@@ -195,7 +198,7 @@ func (o *POSTShippingZones201ResponseDataAttributes) GetNotStateCodeRegex() inte
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTShippingZones201ResponseDataAttributes) GetNotStateCodeRegexOk() (*interface{}, bool) {
-	if o == nil || o.NotStateCodeRegex == nil {
+	if o == nil || IsNil(o.NotStateCodeRegex) {
 		return nil, false
 	}
 	return &o.NotStateCodeRegex, true
@@ -203,7 +206,7 @@ func (o *POSTShippingZones201ResponseDataAttributes) GetNotStateCodeRegexOk() (*
 
 // HasNotStateCodeRegex returns a boolean if a field has been set.
 func (o *POSTShippingZones201ResponseDataAttributes) HasNotStateCodeRegex() bool {
-	if o != nil && o.NotStateCodeRegex != nil {
+	if o != nil && IsNil(o.NotStateCodeRegex) {
 		return true
 	}
 
@@ -228,7 +231,7 @@ func (o *POSTShippingZones201ResponseDataAttributes) GetZipCodeRegex() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTShippingZones201ResponseDataAttributes) GetZipCodeRegexOk() (*interface{}, bool) {
-	if o == nil || o.ZipCodeRegex == nil {
+	if o == nil || IsNil(o.ZipCodeRegex) {
 		return nil, false
 	}
 	return &o.ZipCodeRegex, true
@@ -236,7 +239,7 @@ func (o *POSTShippingZones201ResponseDataAttributes) GetZipCodeRegexOk() (*inter
 
 // HasZipCodeRegex returns a boolean if a field has been set.
 func (o *POSTShippingZones201ResponseDataAttributes) HasZipCodeRegex() bool {
-	if o != nil && o.ZipCodeRegex != nil {
+	if o != nil && IsNil(o.ZipCodeRegex) {
 		return true
 	}
 
@@ -261,7 +264,7 @@ func (o *POSTShippingZones201ResponseDataAttributes) GetNotZipCodeRegex() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTShippingZones201ResponseDataAttributes) GetNotZipCodeRegexOk() (*interface{}, bool) {
-	if o == nil || o.NotZipCodeRegex == nil {
+	if o == nil || IsNil(o.NotZipCodeRegex) {
 		return nil, false
 	}
 	return &o.NotZipCodeRegex, true
@@ -269,7 +272,7 @@ func (o *POSTShippingZones201ResponseDataAttributes) GetNotZipCodeRegexOk() (*in
 
 // HasNotZipCodeRegex returns a boolean if a field has been set.
 func (o *POSTShippingZones201ResponseDataAttributes) HasNotZipCodeRegex() bool {
-	if o != nil && o.NotZipCodeRegex != nil {
+	if o != nil && IsNil(o.NotZipCodeRegex) {
 		return true
 	}
 
@@ -294,7 +297,7 @@ func (o *POSTShippingZones201ResponseDataAttributes) GetReference() interface{} 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTShippingZones201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -302,7 +305,7 @@ func (o *POSTShippingZones201ResponseDataAttributes) GetReferenceOk() (*interfac
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTShippingZones201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -327,7 +330,7 @@ func (o *POSTShippingZones201ResponseDataAttributes) GetReferenceOrigin() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTShippingZones201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -335,7 +338,7 @@ func (o *POSTShippingZones201ResponseDataAttributes) GetReferenceOriginOk() (*in
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTShippingZones201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -360,7 +363,7 @@ func (o *POSTShippingZones201ResponseDataAttributes) GetMetadata() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTShippingZones201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -368,7 +371,7 @@ func (o *POSTShippingZones201ResponseDataAttributes) GetMetadataOk() (*interface
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTShippingZones201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -381,6 +384,14 @@ func (o *POSTShippingZones201ResponseDataAttributes) SetMetadata(v interface{}) 
 }
 
 func (o POSTShippingZones201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTShippingZones201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -412,7 +423,7 @@ func (o POSTShippingZones201ResponseDataAttributes) MarshalJSON() ([]byte, error
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTShippingZones201ResponseDataAttributes struct {

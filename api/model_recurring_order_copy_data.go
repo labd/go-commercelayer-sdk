@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the RecurringOrderCopyData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RecurringOrderCopyData{}
+
 // RecurringOrderCopyData struct for RecurringOrderCopyData
 type RecurringOrderCopyData struct {
 	// The resource's type
-	Type          interface{}                                     `json:"type"`
-	Attributes    GETOrderFactories200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *OrderCopyDataRelationships                     `json:"relationships,omitempty"`
+	Type          interface{}                                              `json:"type"`
+	Attributes    GETOrderFactoriesOrderFactoryId200ResponseDataAttributes `json:"attributes"`
+	Relationships *OrderCopyDataRelationships                              `json:"relationships,omitempty"`
 }
 
 // NewRecurringOrderCopyData instantiates a new RecurringOrderCopyData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewRecurringOrderCopyData(type_ interface{}, attributes GETOrderFactories200ResponseDataInnerAttributes) *RecurringOrderCopyData {
+func NewRecurringOrderCopyData(type_ interface{}, attributes GETOrderFactoriesOrderFactoryId200ResponseDataAttributes) *RecurringOrderCopyData {
 	this := RecurringOrderCopyData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -57,7 +60,7 @@ func (o *RecurringOrderCopyData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *RecurringOrderCopyData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -69,9 +72,9 @@ func (o *RecurringOrderCopyData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *RecurringOrderCopyData) GetAttributes() GETOrderFactories200ResponseDataInnerAttributes {
+func (o *RecurringOrderCopyData) GetAttributes() GETOrderFactoriesOrderFactoryId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETOrderFactories200ResponseDataInnerAttributes
+		var ret GETOrderFactoriesOrderFactoryId200ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +83,7 @@ func (o *RecurringOrderCopyData) GetAttributes() GETOrderFactories200ResponseDat
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *RecurringOrderCopyData) GetAttributesOk() (*GETOrderFactories200ResponseDataInnerAttributes, bool) {
+func (o *RecurringOrderCopyData) GetAttributesOk() (*GETOrderFactoriesOrderFactoryId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,13 +91,13 @@ func (o *RecurringOrderCopyData) GetAttributesOk() (*GETOrderFactories200Respons
 }
 
 // SetAttributes sets field value
-func (o *RecurringOrderCopyData) SetAttributes(v GETOrderFactories200ResponseDataInnerAttributes) {
+func (o *RecurringOrderCopyData) SetAttributes(v GETOrderFactoriesOrderFactoryId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *RecurringOrderCopyData) GetRelationships() OrderCopyDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret OrderCopyDataRelationships
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *RecurringOrderCopyData) GetRelationships() OrderCopyDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *RecurringOrderCopyData) GetRelationshipsOk() (*OrderCopyDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -112,7 +115,7 @@ func (o *RecurringOrderCopyData) GetRelationshipsOk() (*OrderCopyDataRelationshi
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *RecurringOrderCopyData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -125,17 +128,23 @@ func (o *RecurringOrderCopyData) SetRelationships(v OrderCopyDataRelationships) 
 }
 
 func (o RecurringOrderCopyData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o RecurringOrderCopyData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableRecurringOrderCopyData struct {

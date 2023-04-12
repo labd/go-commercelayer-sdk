@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETOrganizationOrganizationId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETOrganizationOrganizationId200ResponseDataAttributes{}
+
 // GETOrganizationOrganizationId200ResponseDataAttributes struct for GETOrganizationOrganizationId200ResponseDataAttributes
 type GETOrganizationOrganizationId200ResponseDataAttributes struct {
 	// The organization's internal name.
@@ -91,7 +94,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetName() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -99,7 +102,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetNameOk() (*i
 
 // HasName returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
@@ -124,7 +127,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetSlug() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetSlugOk() (*interface{}, bool) {
-	if o == nil || o.Slug == nil {
+	if o == nil || IsNil(o.Slug) {
 		return nil, false
 	}
 	return &o.Slug, true
@@ -132,7 +135,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetSlugOk() (*i
 
 // HasSlug returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasSlug() bool {
-	if o != nil && o.Slug != nil {
+	if o != nil && IsNil(o.Slug) {
 		return true
 	}
 
@@ -157,7 +160,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetDomain() int
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetDomainOk() (*interface{}, bool) {
-	if o == nil || o.Domain == nil {
+	if o == nil || IsNil(o.Domain) {
 		return nil, false
 	}
 	return &o.Domain, true
@@ -165,7 +168,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetDomainOk() (
 
 // HasDomain returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasDomain() bool {
-	if o != nil && o.Domain != nil {
+	if o != nil && IsNil(o.Domain) {
 		return true
 	}
 
@@ -190,7 +193,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetSupportPhone
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetSupportPhoneOk() (*interface{}, bool) {
-	if o == nil || o.SupportPhone == nil {
+	if o == nil || IsNil(o.SupportPhone) {
 		return nil, false
 	}
 	return &o.SupportPhone, true
@@ -198,7 +201,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetSupportPhone
 
 // HasSupportPhone returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasSupportPhone() bool {
-	if o != nil && o.SupportPhone != nil {
+	if o != nil && IsNil(o.SupportPhone) {
 		return true
 	}
 
@@ -223,7 +226,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetSupportEmail
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetSupportEmailOk() (*interface{}, bool) {
-	if o == nil || o.SupportEmail == nil {
+	if o == nil || IsNil(o.SupportEmail) {
 		return nil, false
 	}
 	return &o.SupportEmail, true
@@ -231,7 +234,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetSupportEmail
 
 // HasSupportEmail returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasSupportEmail() bool {
-	if o != nil && o.SupportEmail != nil {
+	if o != nil && IsNil(o.SupportEmail) {
 		return true
 	}
 
@@ -256,7 +259,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetLogoUrl() in
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetLogoUrlOk() (*interface{}, bool) {
-	if o == nil || o.LogoUrl == nil {
+	if o == nil || IsNil(o.LogoUrl) {
 		return nil, false
 	}
 	return &o.LogoUrl, true
@@ -264,7 +267,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetLogoUrlOk() 
 
 // HasLogoUrl returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasLogoUrl() bool {
-	if o != nil && o.LogoUrl != nil {
+	if o != nil && IsNil(o.LogoUrl) {
 		return true
 	}
 
@@ -289,7 +292,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetFaviconUrl()
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetFaviconUrlOk() (*interface{}, bool) {
-	if o == nil || o.FaviconUrl == nil {
+	if o == nil || IsNil(o.FaviconUrl) {
 		return nil, false
 	}
 	return &o.FaviconUrl, true
@@ -297,7 +300,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetFaviconUrlOk
 
 // HasFaviconUrl returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasFaviconUrl() bool {
-	if o != nil && o.FaviconUrl != nil {
+	if o != nil && IsNil(o.FaviconUrl) {
 		return true
 	}
 
@@ -322,7 +325,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetPrimaryColor
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetPrimaryColorOk() (*interface{}, bool) {
-	if o == nil || o.PrimaryColor == nil {
+	if o == nil || IsNil(o.PrimaryColor) {
 		return nil, false
 	}
 	return &o.PrimaryColor, true
@@ -330,7 +333,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetPrimaryColor
 
 // HasPrimaryColor returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasPrimaryColor() bool {
-	if o != nil && o.PrimaryColor != nil {
+	if o != nil && IsNil(o.PrimaryColor) {
 		return true
 	}
 
@@ -355,7 +358,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetContrastColo
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetContrastColorOk() (*interface{}, bool) {
-	if o == nil || o.ContrastColor == nil {
+	if o == nil || IsNil(o.ContrastColor) {
 		return nil, false
 	}
 	return &o.ContrastColor, true
@@ -363,7 +366,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetContrastColo
 
 // HasContrastColor returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasContrastColor() bool {
-	if o != nil && o.ContrastColor != nil {
+	if o != nil && IsNil(o.ContrastColor) {
 		return true
 	}
 
@@ -388,7 +391,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetGtmId() inte
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetGtmIdOk() (*interface{}, bool) {
-	if o == nil || o.GtmId == nil {
+	if o == nil || IsNil(o.GtmId) {
 		return nil, false
 	}
 	return &o.GtmId, true
@@ -396,7 +399,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetGtmIdOk() (*
 
 // HasGtmId returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasGtmId() bool {
-	if o != nil && o.GtmId != nil {
+	if o != nil && IsNil(o.GtmId) {
 		return true
 	}
 
@@ -421,7 +424,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetGtmIdTest() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetGtmIdTestOk() (*interface{}, bool) {
-	if o == nil || o.GtmIdTest == nil {
+	if o == nil || IsNil(o.GtmIdTest) {
 		return nil, false
 	}
 	return &o.GtmIdTest, true
@@ -429,7 +432,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetGtmIdTestOk(
 
 // HasGtmIdTest returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasGtmIdTest() bool {
-	if o != nil && o.GtmIdTest != nil {
+	if o != nil && IsNil(o.GtmIdTest) {
 		return true
 	}
 
@@ -454,7 +457,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetDiscountDisa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetDiscountDisabledOk() (*interface{}, bool) {
-	if o == nil || o.DiscountDisabled == nil {
+	if o == nil || IsNil(o.DiscountDisabled) {
 		return nil, false
 	}
 	return &o.DiscountDisabled, true
@@ -462,7 +465,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetDiscountDisa
 
 // HasDiscountDisabled returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasDiscountDisabled() bool {
-	if o != nil && o.DiscountDisabled != nil {
+	if o != nil && IsNil(o.DiscountDisabled) {
 		return true
 	}
 
@@ -487,7 +490,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetAccountDisab
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetAccountDisabledOk() (*interface{}, bool) {
-	if o == nil || o.AccountDisabled == nil {
+	if o == nil || IsNil(o.AccountDisabled) {
 		return nil, false
 	}
 	return &o.AccountDisabled, true
@@ -495,7 +498,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetAccountDisab
 
 // HasAccountDisabled returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasAccountDisabled() bool {
-	if o != nil && o.AccountDisabled != nil {
+	if o != nil && IsNil(o.AccountDisabled) {
 		return true
 	}
 
@@ -520,7 +523,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetAcceptanceDi
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetAcceptanceDisabledOk() (*interface{}, bool) {
-	if o == nil || o.AcceptanceDisabled == nil {
+	if o == nil || IsNil(o.AcceptanceDisabled) {
 		return nil, false
 	}
 	return &o.AcceptanceDisabled, true
@@ -528,7 +531,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetAcceptanceDi
 
 // HasAcceptanceDisabled returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasAcceptanceDisabled() bool {
-	if o != nil && o.AcceptanceDisabled != nil {
+	if o != nil && IsNil(o.AcceptanceDisabled) {
 		return true
 	}
 
@@ -553,7 +556,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetMaxConcurren
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetMaxConcurrentPromotionsOk() (*interface{}, bool) {
-	if o == nil || o.MaxConcurrentPromotions == nil {
+	if o == nil || IsNil(o.MaxConcurrentPromotions) {
 		return nil, false
 	}
 	return &o.MaxConcurrentPromotions, true
@@ -561,7 +564,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetMaxConcurren
 
 // HasMaxConcurrentPromotions returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasMaxConcurrentPromotions() bool {
-	if o != nil && o.MaxConcurrentPromotions != nil {
+	if o != nil && IsNil(o.MaxConcurrentPromotions) {
 		return true
 	}
 
@@ -586,7 +589,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetMaxConcurren
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetMaxConcurrentImportsOk() (*interface{}, bool) {
-	if o == nil || o.MaxConcurrentImports == nil {
+	if o == nil || IsNil(o.MaxConcurrentImports) {
 		return nil, false
 	}
 	return &o.MaxConcurrentImports, true
@@ -594,7 +597,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetMaxConcurren
 
 // HasMaxConcurrentImports returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasMaxConcurrentImports() bool {
-	if o != nil && o.MaxConcurrentImports != nil {
+	if o != nil && IsNil(o.MaxConcurrentImports) {
 		return true
 	}
 
@@ -619,7 +622,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetCreatedAt() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetCreatedAtOk() (*interface{}, bool) {
-	if o == nil || o.CreatedAt == nil {
+	if o == nil || IsNil(o.CreatedAt) {
 		return nil, false
 	}
 	return &o.CreatedAt, true
@@ -627,7 +630,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetCreatedAtOk(
 
 // HasCreatedAt returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasCreatedAt() bool {
-	if o != nil && o.CreatedAt != nil {
+	if o != nil && IsNil(o.CreatedAt) {
 		return true
 	}
 
@@ -652,7 +655,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetUpdatedAt() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetUpdatedAtOk() (*interface{}, bool) {
-	if o == nil || o.UpdatedAt == nil {
+	if o == nil || IsNil(o.UpdatedAt) {
 		return nil, false
 	}
 	return &o.UpdatedAt, true
@@ -660,7 +663,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetUpdatedAtOk(
 
 // HasUpdatedAt returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasUpdatedAt() bool {
-	if o != nil && o.UpdatedAt != nil {
+	if o != nil && IsNil(o.UpdatedAt) {
 		return true
 	}
 
@@ -685,7 +688,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetReference() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -693,7 +696,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetReferenceOk(
 
 // HasReference returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -718,7 +721,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetReferenceOri
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -726,7 +729,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetReferenceOri
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -751,7 +754,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetMetadata() i
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -759,7 +762,7 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) GetMetadataOk()
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *GETOrganizationOrganizationId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -772,6 +775,14 @@ func (o *GETOrganizationOrganizationId200ResponseDataAttributes) SetMetadata(v i
 }
 
 func (o GETOrganizationOrganizationId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o GETOrganizationOrganizationId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -836,7 +847,7 @@ func (o GETOrganizationOrganizationId200ResponseDataAttributes) MarshalJSON() ([
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableGETOrganizationOrganizationId200ResponseDataAttributes struct {

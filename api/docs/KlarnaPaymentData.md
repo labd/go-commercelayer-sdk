@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETKlarnaPayments200ResponseDataInnerAttributes**](GETKlarnaPayments200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes**](GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentDataRelationships**](AdyenPaymentDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewKlarnaPaymentData
 
-`func NewKlarnaPaymentData(type_ interface{}, attributes GETKlarnaPayments200ResponseDataInnerAttributes, ) *KlarnaPaymentData`
+`func NewKlarnaPaymentData(type_ interface{}, attributes GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes, ) *KlarnaPaymentData`
 
 NewKlarnaPaymentData instantiates a new KlarnaPaymentData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *KlarnaPaymentData) GetAttributes() GETKlarnaPayments200ResponseDataInnerAttributes`
+`func (o *KlarnaPaymentData) GetAttributes() GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *KlarnaPaymentData) GetAttributesOk() (*GETKlarnaPayments200ResponseDataInnerAttributes, bool)`
+`func (o *KlarnaPaymentData) GetAttributesOk() (*GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *KlarnaPaymentData) SetAttributes(v GETKlarnaPayments200ResponseDataInnerAttributes)`
+`func (o *KlarnaPaymentData) SetAttributes(v GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

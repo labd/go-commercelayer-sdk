@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETParcelsParcelId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETParcelsParcelId200Response{}
+
 // GETParcelsParcelId200Response struct for GETParcelsParcelId200Response
 type GETParcelsParcelId200Response struct {
-	Data *GETParcels200ResponseDataInner `json:"data,omitempty"`
+	Data *GETParcelsParcelId200ResponseData `json:"data,omitempty"`
 }
 
 // NewGETParcelsParcelId200Response instantiates a new GETParcelsParcelId200Response object
@@ -38,9 +41,9 @@ func NewGETParcelsParcelId200ResponseWithDefaults() *GETParcelsParcelId200Respon
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETParcelsParcelId200Response) GetData() GETParcels200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret GETParcels200ResponseDataInner
+func (o *GETParcelsParcelId200Response) GetData() GETParcelsParcelId200ResponseData {
+	if o == nil || IsNil(o.Data) {
+		var ret GETParcelsParcelId200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *GETParcelsParcelId200Response) GetData() GETParcels200ResponseDataInner
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETParcelsParcelId200Response) GetDataOk() (*GETParcels200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+func (o *GETParcelsParcelId200Response) GetDataOk() (*GETParcelsParcelId200ResponseData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *GETParcelsParcelId200Response) GetDataOk() (*GETParcels200ResponseDataI
 
 // HasData returns a boolean if a field has been set.
 func (o *GETParcelsParcelId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETParcels200ResponseDataInner and assigns it to the Data field.
-func (o *GETParcelsParcelId200Response) SetData(v GETParcels200ResponseDataInner) {
+// SetData gets a reference to the given GETParcelsParcelId200ResponseData and assigns it to the Data field.
+func (o *GETParcelsParcelId200Response) SetData(v GETParcelsParcelId200ResponseData) {
 	o.Data = &v
 }
 
 func (o GETParcelsParcelId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GETParcelsParcelId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGETParcelsParcelId200Response struct {

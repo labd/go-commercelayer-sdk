@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes{}
+
 // PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes struct for PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes
 type PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes struct {
 	// The promotion's internal name.
@@ -67,7 +70,7 @@ func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Respon
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -75,7 +78,7 @@ func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Respon
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
@@ -100,7 +103,7 @@ func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Respon
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetCurrencyCodeOk() (*interface{}, bool) {
-	if o == nil || o.CurrencyCode == nil {
+	if o == nil || IsNil(o.CurrencyCode) {
 		return nil, false
 	}
 	return &o.CurrencyCode, true
@@ -108,7 +111,7 @@ func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Respon
 
 // HasCurrencyCode returns a boolean if a field has been set.
 func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) HasCurrencyCode() bool {
-	if o != nil && o.CurrencyCode != nil {
+	if o != nil && IsNil(o.CurrencyCode) {
 		return true
 	}
 
@@ -133,7 +136,7 @@ func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Respon
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetStartsAtOk() (*interface{}, bool) {
-	if o == nil || o.StartsAt == nil {
+	if o == nil || IsNil(o.StartsAt) {
 		return nil, false
 	}
 	return &o.StartsAt, true
@@ -141,7 +144,7 @@ func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Respon
 
 // HasStartsAt returns a boolean if a field has been set.
 func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) HasStartsAt() bool {
-	if o != nil && o.StartsAt != nil {
+	if o != nil && IsNil(o.StartsAt) {
 		return true
 	}
 
@@ -166,7 +169,7 @@ func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Respon
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetExpiresAtOk() (*interface{}, bool) {
-	if o == nil || o.ExpiresAt == nil {
+	if o == nil || IsNil(o.ExpiresAt) {
 		return nil, false
 	}
 	return &o.ExpiresAt, true
@@ -174,7 +177,7 @@ func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Respon
 
 // HasExpiresAt returns a boolean if a field has been set.
 func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) HasExpiresAt() bool {
-	if o != nil && o.ExpiresAt != nil {
+	if o != nil && IsNil(o.ExpiresAt) {
 		return true
 	}
 
@@ -199,7 +202,7 @@ func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Respon
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetTotalUsageLimitOk() (*interface{}, bool) {
-	if o == nil || o.TotalUsageLimit == nil {
+	if o == nil || IsNil(o.TotalUsageLimit) {
 		return nil, false
 	}
 	return &o.TotalUsageLimit, true
@@ -207,7 +210,7 @@ func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Respon
 
 // HasTotalUsageLimit returns a boolean if a field has been set.
 func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) HasTotalUsageLimit() bool {
-	if o != nil && o.TotalUsageLimit != nil {
+	if o != nil && IsNil(o.TotalUsageLimit) {
 		return true
 	}
 
@@ -232,7 +235,7 @@ func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Respon
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -240,7 +243,7 @@ func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Respon
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -265,7 +268,7 @@ func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Respon
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -273,7 +276,7 @@ func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Respon
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -298,7 +301,7 @@ func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Respon
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -306,7 +309,7 @@ func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Respon
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -331,7 +334,7 @@ func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Respon
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) GetPercentageOk() (*interface{}, bool) {
-	if o == nil || o.Percentage == nil {
+	if o == nil || IsNil(o.Percentage) {
 		return nil, false
 	}
 	return &o.Percentage, true
@@ -339,7 +342,7 @@ func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Respon
 
 // HasPercentage returns a boolean if a field has been set.
 func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) HasPercentage() bool {
-	if o != nil && o.Percentage != nil {
+	if o != nil && IsNil(o.Percentage) {
 		return true
 	}
 
@@ -352,6 +355,14 @@ func (o *PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Respon
 }
 
 func (o PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -380,7 +391,7 @@ func (o PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200Respons
 	if o.Percentage != nil {
 		toSerialize["percentage"] = o.Percentage
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes struct {

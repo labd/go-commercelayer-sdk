@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the CustomerAddressCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CustomerAddressCreate{}
+
 // CustomerAddressCreate struct for CustomerAddressCreate
 type CustomerAddressCreate struct {
 	Data CustomerAddressCreateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *CustomerAddressCreate) SetData(v CustomerAddressCreateData) {
 }
 
 func (o CustomerAddressCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CustomerAddressCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableCustomerAddressCreate struct {

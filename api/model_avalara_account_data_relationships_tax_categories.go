@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AvalaraAccountDataRelationshipsTaxCategories type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AvalaraAccountDataRelationshipsTaxCategories{}
+
 // AvalaraAccountDataRelationshipsTaxCategories struct for AvalaraAccountDataRelationshipsTaxCategories
 type AvalaraAccountDataRelationshipsTaxCategories struct {
 	Data *AvalaraAccountDataRelationshipsTaxCategoriesData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewAvalaraAccountDataRelationshipsTaxCategoriesWithDefaults() *AvalaraAccou
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *AvalaraAccountDataRelationshipsTaxCategories) GetData() AvalaraAccountDataRelationshipsTaxCategoriesData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret AvalaraAccountDataRelationshipsTaxCategoriesData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *AvalaraAccountDataRelationshipsTaxCategories) GetData() AvalaraAccountD
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AvalaraAccountDataRelationshipsTaxCategories) GetDataOk() (*AvalaraAccountDataRelationshipsTaxCategoriesData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *AvalaraAccountDataRelationshipsTaxCategories) GetDataOk() (*AvalaraAcco
 
 // HasData returns a boolean if a field has been set.
 func (o *AvalaraAccountDataRelationshipsTaxCategories) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *AvalaraAccountDataRelationshipsTaxCategories) SetData(v AvalaraAccountD
 }
 
 func (o AvalaraAccountDataRelationshipsTaxCategories) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AvalaraAccountDataRelationshipsTaxCategories) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableAvalaraAccountDataRelationshipsTaxCategories struct {

@@ -32,7 +32,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -40,7 +40,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InventoryModelsApi.DELETEInventoryModelsInventoryModelId(context.Background(), inventoryModelId).Execute()
+    r, err := apiClient.InventoryModelsApi.DELETEInventoryModelsInventoryModelId(context.Background(), inventoryModelId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryModelsApi.DELETEInventoryModelsInventoryModelId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -100,7 +100,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -161,7 +161,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -231,7 +231,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -239,7 +239,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InventoryModelsApi.GETInventoryReturnLocationIdInventoryModel(context.Background(), inventoryReturnLocationId).Execute()
+    r, err := apiClient.InventoryModelsApi.GETInventoryReturnLocationIdInventoryModel(context.Background(), inventoryReturnLocationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryModelsApi.GETInventoryReturnLocationIdInventoryModel``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -299,7 +299,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -307,7 +307,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InventoryModelsApi.GETInventoryStockLocationIdInventoryModel(context.Background(), inventoryStockLocationId).Execute()
+    r, err := apiClient.InventoryModelsApi.GETInventoryStockLocationIdInventoryModel(context.Background(), inventoryStockLocationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryModelsApi.GETInventoryStockLocationIdInventoryModel``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -367,7 +367,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -375,7 +375,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InventoryModelsApi.GETMarketIdInventoryModel(context.Background(), marketId).Execute()
+    r, err := apiClient.InventoryModelsApi.GETMarketIdInventoryModel(context.Background(), marketId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryModelsApi.GETMarketIdInventoryModel``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -435,7 +435,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -507,7 +507,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {

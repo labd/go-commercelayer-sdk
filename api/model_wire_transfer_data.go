@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the WireTransferData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &WireTransferData{}
+
 // WireTransferData struct for WireTransferData
 type WireTransferData struct {
 	// The resource's type
-	Type          interface{}                                    `json:"type"`
-	Attributes    GETWireTransfers200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *TransactionDataRelationships                  `json:"relationships,omitempty"`
+	Type          interface{}                                             `json:"type"`
+	Attributes    GETWireTransfersWireTransferId200ResponseDataAttributes `json:"attributes"`
+	Relationships *TransactionDataRelationships                           `json:"relationships,omitempty"`
 }
 
 // NewWireTransferData instantiates a new WireTransferData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWireTransferData(type_ interface{}, attributes GETWireTransfers200ResponseDataInnerAttributes) *WireTransferData {
+func NewWireTransferData(type_ interface{}, attributes GETWireTransfersWireTransferId200ResponseDataAttributes) *WireTransferData {
 	this := WireTransferData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -57,7 +60,7 @@ func (o *WireTransferData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *WireTransferData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -69,9 +72,9 @@ func (o *WireTransferData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *WireTransferData) GetAttributes() GETWireTransfers200ResponseDataInnerAttributes {
+func (o *WireTransferData) GetAttributes() GETWireTransfersWireTransferId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETWireTransfers200ResponseDataInnerAttributes
+		var ret GETWireTransfersWireTransferId200ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +83,7 @@ func (o *WireTransferData) GetAttributes() GETWireTransfers200ResponseDataInnerA
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *WireTransferData) GetAttributesOk() (*GETWireTransfers200ResponseDataInnerAttributes, bool) {
+func (o *WireTransferData) GetAttributesOk() (*GETWireTransfersWireTransferId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,13 +91,13 @@ func (o *WireTransferData) GetAttributesOk() (*GETWireTransfers200ResponseDataIn
 }
 
 // SetAttributes sets field value
-func (o *WireTransferData) SetAttributes(v GETWireTransfers200ResponseDataInnerAttributes) {
+func (o *WireTransferData) SetAttributes(v GETWireTransfersWireTransferId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *WireTransferData) GetRelationships() TransactionDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret TransactionDataRelationships
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *WireTransferData) GetRelationships() TransactionDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WireTransferData) GetRelationshipsOk() (*TransactionDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -112,7 +115,7 @@ func (o *WireTransferData) GetRelationshipsOk() (*TransactionDataRelationships, 
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *WireTransferData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -125,17 +128,23 @@ func (o *WireTransferData) SetRelationships(v TransactionDataRelationships) {
 }
 
 func (o WireTransferData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o WireTransferData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableWireTransferData struct {

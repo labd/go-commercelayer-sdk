@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHParcelsParcelId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHParcelsParcelId200ResponseDataAttributes{}
+
 // PATCHParcelsParcelId200ResponseDataAttributes struct for PATCHParcelsParcelId200ResponseDataAttributes
 type PATCHParcelsParcelId200ResponseDataAttributes struct {
 	// The parcel weight, used to automatically calculate the tax rates from the available carrier accounts.
@@ -101,7 +104,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetWeight() interface{} 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetWeightOk() (*interface{}, bool) {
-	if o == nil || o.Weight == nil {
+	if o == nil || IsNil(o.Weight) {
 		return nil, false
 	}
 	return &o.Weight, true
@@ -109,7 +112,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetWeightOk() (*interfac
 
 // HasWeight returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasWeight() bool {
-	if o != nil && o.Weight != nil {
+	if o != nil && IsNil(o.Weight) {
 		return true
 	}
 
@@ -134,7 +137,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetUnitOfWeight() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetUnitOfWeightOk() (*interface{}, bool) {
-	if o == nil || o.UnitOfWeight == nil {
+	if o == nil || IsNil(o.UnitOfWeight) {
 		return nil, false
 	}
 	return &o.UnitOfWeight, true
@@ -142,7 +145,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetUnitOfWeightOk() (*in
 
 // HasUnitOfWeight returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasUnitOfWeight() bool {
-	if o != nil && o.UnitOfWeight != nil {
+	if o != nil && IsNil(o.UnitOfWeight) {
 		return true
 	}
 
@@ -167,7 +170,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetEelPfc() interface{} 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetEelPfcOk() (*interface{}, bool) {
-	if o == nil || o.EelPfc == nil {
+	if o == nil || IsNil(o.EelPfc) {
 		return nil, false
 	}
 	return &o.EelPfc, true
@@ -175,7 +178,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetEelPfcOk() (*interfac
 
 // HasEelPfc returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasEelPfc() bool {
-	if o != nil && o.EelPfc != nil {
+	if o != nil && IsNil(o.EelPfc) {
 		return true
 	}
 
@@ -200,7 +203,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetContentsType() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetContentsTypeOk() (*interface{}, bool) {
-	if o == nil || o.ContentsType == nil {
+	if o == nil || IsNil(o.ContentsType) {
 		return nil, false
 	}
 	return &o.ContentsType, true
@@ -208,7 +211,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetContentsTypeOk() (*in
 
 // HasContentsType returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasContentsType() bool {
-	if o != nil && o.ContentsType != nil {
+	if o != nil && IsNil(o.ContentsType) {
 		return true
 	}
 
@@ -233,7 +236,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetContentsExplanation()
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetContentsExplanationOk() (*interface{}, bool) {
-	if o == nil || o.ContentsExplanation == nil {
+	if o == nil || IsNil(o.ContentsExplanation) {
 		return nil, false
 	}
 	return &o.ContentsExplanation, true
@@ -241,7 +244,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetContentsExplanationOk
 
 // HasContentsExplanation returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasContentsExplanation() bool {
-	if o != nil && o.ContentsExplanation != nil {
+	if o != nil && IsNil(o.ContentsExplanation) {
 		return true
 	}
 
@@ -266,7 +269,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCustomsCertify() inte
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCustomsCertifyOk() (*interface{}, bool) {
-	if o == nil || o.CustomsCertify == nil {
+	if o == nil || IsNil(o.CustomsCertify) {
 		return nil, false
 	}
 	return &o.CustomsCertify, true
@@ -274,7 +277,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCustomsCertifyOk() (*
 
 // HasCustomsCertify returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasCustomsCertify() bool {
-	if o != nil && o.CustomsCertify != nil {
+	if o != nil && IsNil(o.CustomsCertify) {
 		return true
 	}
 
@@ -299,7 +302,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCustomsSigner() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCustomsSignerOk() (*interface{}, bool) {
-	if o == nil || o.CustomsSigner == nil {
+	if o == nil || IsNil(o.CustomsSigner) {
 		return nil, false
 	}
 	return &o.CustomsSigner, true
@@ -307,7 +310,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCustomsSignerOk() (*i
 
 // HasCustomsSigner returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasCustomsSigner() bool {
-	if o != nil && o.CustomsSigner != nil {
+	if o != nil && IsNil(o.CustomsSigner) {
 		return true
 	}
 
@@ -332,7 +335,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetNonDeliveryOption() i
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetNonDeliveryOptionOk() (*interface{}, bool) {
-	if o == nil || o.NonDeliveryOption == nil {
+	if o == nil || IsNil(o.NonDeliveryOption) {
 		return nil, false
 	}
 	return &o.NonDeliveryOption, true
@@ -340,7 +343,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetNonDeliveryOptionOk()
 
 // HasNonDeliveryOption returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasNonDeliveryOption() bool {
-	if o != nil && o.NonDeliveryOption != nil {
+	if o != nil && IsNil(o.NonDeliveryOption) {
 		return true
 	}
 
@@ -365,7 +368,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetRestrictionType() int
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetRestrictionTypeOk() (*interface{}, bool) {
-	if o == nil || o.RestrictionType == nil {
+	if o == nil || IsNil(o.RestrictionType) {
 		return nil, false
 	}
 	return &o.RestrictionType, true
@@ -373,7 +376,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetRestrictionTypeOk() (
 
 // HasRestrictionType returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasRestrictionType() bool {
-	if o != nil && o.RestrictionType != nil {
+	if o != nil && IsNil(o.RestrictionType) {
 		return true
 	}
 
@@ -398,7 +401,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetRestrictionComments()
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetRestrictionCommentsOk() (*interface{}, bool) {
-	if o == nil || o.RestrictionComments == nil {
+	if o == nil || IsNil(o.RestrictionComments) {
 		return nil, false
 	}
 	return &o.RestrictionComments, true
@@ -406,7 +409,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetRestrictionCommentsOk
 
 // HasRestrictionComments returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasRestrictionComments() bool {
-	if o != nil && o.RestrictionComments != nil {
+	if o != nil && IsNil(o.RestrictionComments) {
 		return true
 	}
 
@@ -431,7 +434,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCustomsInfoRequired()
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCustomsInfoRequiredOk() (*interface{}, bool) {
-	if o == nil || o.CustomsInfoRequired == nil {
+	if o == nil || IsNil(o.CustomsInfoRequired) {
 		return nil, false
 	}
 	return &o.CustomsInfoRequired, true
@@ -439,7 +442,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCustomsInfoRequiredOk
 
 // HasCustomsInfoRequired returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasCustomsInfoRequired() bool {
-	if o != nil && o.CustomsInfoRequired != nil {
+	if o != nil && IsNil(o.CustomsInfoRequired) {
 		return true
 	}
 
@@ -464,7 +467,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelUrl() in
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelUrlOk() (*interface{}, bool) {
-	if o == nil || o.ShippingLabelUrl == nil {
+	if o == nil || IsNil(o.ShippingLabelUrl) {
 		return nil, false
 	}
 	return &o.ShippingLabelUrl, true
@@ -472,7 +475,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelUrlOk() 
 
 // HasShippingLabelUrl returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasShippingLabelUrl() bool {
-	if o != nil && o.ShippingLabelUrl != nil {
+	if o != nil && IsNil(o.ShippingLabelUrl) {
 		return true
 	}
 
@@ -497,7 +500,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelFileType
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelFileTypeOk() (*interface{}, bool) {
-	if o == nil || o.ShippingLabelFileType == nil {
+	if o == nil || IsNil(o.ShippingLabelFileType) {
 		return nil, false
 	}
 	return &o.ShippingLabelFileType, true
@@ -505,7 +508,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelFileType
 
 // HasShippingLabelFileType returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasShippingLabelFileType() bool {
-	if o != nil && o.ShippingLabelFileType != nil {
+	if o != nil && IsNil(o.ShippingLabelFileType) {
 		return true
 	}
 
@@ -530,7 +533,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelSize() i
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelSizeOk() (*interface{}, bool) {
-	if o == nil || o.ShippingLabelSize == nil {
+	if o == nil || IsNil(o.ShippingLabelSize) {
 		return nil, false
 	}
 	return &o.ShippingLabelSize, true
@@ -538,7 +541,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelSizeOk()
 
 // HasShippingLabelSize returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasShippingLabelSize() bool {
-	if o != nil && o.ShippingLabelSize != nil {
+	if o != nil && IsNil(o.ShippingLabelSize) {
 		return true
 	}
 
@@ -563,7 +566,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelResoluti
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelResolutionOk() (*interface{}, bool) {
-	if o == nil || o.ShippingLabelResolution == nil {
+	if o == nil || IsNil(o.ShippingLabelResolution) {
 		return nil, false
 	}
 	return &o.ShippingLabelResolution, true
@@ -571,7 +574,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelResoluti
 
 // HasShippingLabelResolution returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasShippingLabelResolution() bool {
-	if o != nil && o.ShippingLabelResolution != nil {
+	if o != nil && IsNil(o.ShippingLabelResolution) {
 		return true
 	}
 
@@ -596,7 +599,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingNumber() inte
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingNumberOk() (*interface{}, bool) {
-	if o == nil || o.TrackingNumber == nil {
+	if o == nil || IsNil(o.TrackingNumber) {
 		return nil, false
 	}
 	return &o.TrackingNumber, true
@@ -604,7 +607,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingNumberOk() (*
 
 // HasTrackingNumber returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasTrackingNumber() bool {
-	if o != nil && o.TrackingNumber != nil {
+	if o != nil && IsNil(o.TrackingNumber) {
 		return true
 	}
 
@@ -629,7 +632,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingStatus() inte
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingStatusOk() (*interface{}, bool) {
-	if o == nil || o.TrackingStatus == nil {
+	if o == nil || IsNil(o.TrackingStatus) {
 		return nil, false
 	}
 	return &o.TrackingStatus, true
@@ -637,7 +640,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingStatusOk() (*
 
 // HasTrackingStatus returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasTrackingStatus() bool {
-	if o != nil && o.TrackingStatus != nil {
+	if o != nil && IsNil(o.TrackingStatus) {
 		return true
 	}
 
@@ -662,7 +665,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingStatusDetail(
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingStatusDetailOk() (*interface{}, bool) {
-	if o == nil || o.TrackingStatusDetail == nil {
+	if o == nil || IsNil(o.TrackingStatusDetail) {
 		return nil, false
 	}
 	return &o.TrackingStatusDetail, true
@@ -670,7 +673,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingStatusDetailO
 
 // HasTrackingStatusDetail returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasTrackingStatusDetail() bool {
-	if o != nil && o.TrackingStatusDetail != nil {
+	if o != nil && IsNil(o.TrackingStatusDetail) {
 		return true
 	}
 
@@ -695,7 +698,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingStatusUpdated
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingStatusUpdatedAtOk() (*interface{}, bool) {
-	if o == nil || o.TrackingStatusUpdatedAt == nil {
+	if o == nil || IsNil(o.TrackingStatusUpdatedAt) {
 		return nil, false
 	}
 	return &o.TrackingStatusUpdatedAt, true
@@ -703,7 +706,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingStatusUpdated
 
 // HasTrackingStatusUpdatedAt returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasTrackingStatusUpdatedAt() bool {
-	if o != nil && o.TrackingStatusUpdatedAt != nil {
+	if o != nil && IsNil(o.TrackingStatusUpdatedAt) {
 		return true
 	}
 
@@ -728,7 +731,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingDetails() int
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingDetailsOk() (*interface{}, bool) {
-	if o == nil || o.TrackingDetails == nil {
+	if o == nil || IsNil(o.TrackingDetails) {
 		return nil, false
 	}
 	return &o.TrackingDetails, true
@@ -736,7 +739,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingDetailsOk() (
 
 // HasTrackingDetails returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasTrackingDetails() bool {
-	if o != nil && o.TrackingDetails != nil {
+	if o != nil && IsNil(o.TrackingDetails) {
 		return true
 	}
 
@@ -761,7 +764,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCarrierWeightOz() int
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCarrierWeightOzOk() (*interface{}, bool) {
-	if o == nil || o.CarrierWeightOz == nil {
+	if o == nil || IsNil(o.CarrierWeightOz) {
 		return nil, false
 	}
 	return &o.CarrierWeightOz, true
@@ -769,7 +772,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCarrierWeightOzOk() (
 
 // HasCarrierWeightOz returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasCarrierWeightOz() bool {
-	if o != nil && o.CarrierWeightOz != nil {
+	if o != nil && IsNil(o.CarrierWeightOz) {
 		return true
 	}
 
@@ -794,7 +797,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetSignedBy() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetSignedByOk() (*interface{}, bool) {
-	if o == nil || o.SignedBy == nil {
+	if o == nil || IsNil(o.SignedBy) {
 		return nil, false
 	}
 	return &o.SignedBy, true
@@ -802,7 +805,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetSignedByOk() (*interf
 
 // HasSignedBy returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasSignedBy() bool {
-	if o != nil && o.SignedBy != nil {
+	if o != nil && IsNil(o.SignedBy) {
 		return true
 	}
 
@@ -827,7 +830,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetIncoterm() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetIncotermOk() (*interface{}, bool) {
-	if o == nil || o.Incoterm == nil {
+	if o == nil || IsNil(o.Incoterm) {
 		return nil, false
 	}
 	return &o.Incoterm, true
@@ -835,7 +838,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetIncotermOk() (*interf
 
 // HasIncoterm returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasIncoterm() bool {
-	if o != nil && o.Incoterm != nil {
+	if o != nil && IsNil(o.Incoterm) {
 		return true
 	}
 
@@ -860,7 +863,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetReference() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -868,7 +871,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetReferenceOk() (*inter
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -893,7 +896,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetReferenceOrigin() int
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -901,7 +904,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetReferenceOriginOk() (
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -926,7 +929,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetMetadata() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -934,7 +937,7 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetMetadataOk() (*interf
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -947,6 +950,14 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetMetadata(v interface{
 }
 
 func (o PATCHParcelsParcelId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHParcelsParcelId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Weight != nil {
 		toSerialize["weight"] = o.Weight
@@ -1026,7 +1037,7 @@ func (o PATCHParcelsParcelId200ResponseDataAttributes) MarshalJSON() ([]byte, er
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHParcelsParcelId200ResponseDataAttributes struct {

@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the LineItemCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &LineItemCreate{}
+
 // LineItemCreate struct for LineItemCreate
 type LineItemCreate struct {
 	Data LineItemCreateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *LineItemCreate) SetData(v LineItemCreateData) {
 }
 
 func (o LineItemCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o LineItemCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableLineItemCreate struct {

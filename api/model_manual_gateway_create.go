@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ManualGatewayCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ManualGatewayCreate{}
+
 // ManualGatewayCreate struct for ManualGatewayCreate
 type ManualGatewayCreate struct {
 	Data ManualGatewayCreateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *ManualGatewayCreate) SetData(v ManualGatewayCreateData) {
 }
 
 func (o ManualGatewayCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ManualGatewayCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableManualGatewayCreate struct {

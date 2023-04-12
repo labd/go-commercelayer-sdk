@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETOrderSubscriptionItems200ResponseDataInnerAttributes**](GETOrderSubscriptionItems200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes**](GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**OrderSubscriptionItemDataRelationships**](OrderSubscriptionItemDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewOrderSubscriptionItemData
 
-`func NewOrderSubscriptionItemData(type_ interface{}, attributes GETOrderSubscriptionItems200ResponseDataInnerAttributes, ) *OrderSubscriptionItemData`
+`func NewOrderSubscriptionItemData(type_ interface{}, attributes GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes, ) *OrderSubscriptionItemData`
 
 NewOrderSubscriptionItemData instantiates a new OrderSubscriptionItemData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *OrderSubscriptionItemData) GetAttributes() GETOrderSubscriptionItems200ResponseDataInnerAttributes`
+`func (o *OrderSubscriptionItemData) GetAttributes() GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *OrderSubscriptionItemData) GetAttributesOk() (*GETOrderSubscriptionItems200ResponseDataInnerAttributes, bool)`
+`func (o *OrderSubscriptionItemData) GetAttributesOk() (*GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *OrderSubscriptionItemData) SetAttributes(v GETOrderSubscriptionItems200ResponseDataInnerAttributes)`
+`func (o *OrderSubscriptionItemData) SetAttributes(v GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

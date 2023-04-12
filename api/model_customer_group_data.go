@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the CustomerGroupData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CustomerGroupData{}
+
 // CustomerGroupData struct for CustomerGroupData
 type CustomerGroupData struct {
 	// The resource's type
-	Type          interface{}                                     `json:"type"`
-	Attributes    GETCustomerGroups200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *CustomerGroupDataRelationships                 `json:"relationships,omitempty"`
+	Type          interface{}                                               `json:"type"`
+	Attributes    GETCustomerGroupsCustomerGroupId200ResponseDataAttributes `json:"attributes"`
+	Relationships *CustomerGroupDataRelationships                           `json:"relationships,omitempty"`
 }
 
 // NewCustomerGroupData instantiates a new CustomerGroupData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerGroupData(type_ interface{}, attributes GETCustomerGroups200ResponseDataInnerAttributes) *CustomerGroupData {
+func NewCustomerGroupData(type_ interface{}, attributes GETCustomerGroupsCustomerGroupId200ResponseDataAttributes) *CustomerGroupData {
 	this := CustomerGroupData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -57,7 +60,7 @@ func (o *CustomerGroupData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CustomerGroupData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -69,9 +72,9 @@ func (o *CustomerGroupData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CustomerGroupData) GetAttributes() GETCustomerGroups200ResponseDataInnerAttributes {
+func (o *CustomerGroupData) GetAttributes() GETCustomerGroupsCustomerGroupId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETCustomerGroups200ResponseDataInnerAttributes
+		var ret GETCustomerGroupsCustomerGroupId200ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +83,7 @@ func (o *CustomerGroupData) GetAttributes() GETCustomerGroups200ResponseDataInne
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CustomerGroupData) GetAttributesOk() (*GETCustomerGroups200ResponseDataInnerAttributes, bool) {
+func (o *CustomerGroupData) GetAttributesOk() (*GETCustomerGroupsCustomerGroupId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,13 +91,13 @@ func (o *CustomerGroupData) GetAttributesOk() (*GETCustomerGroups200ResponseData
 }
 
 // SetAttributes sets field value
-func (o *CustomerGroupData) SetAttributes(v GETCustomerGroups200ResponseDataInnerAttributes) {
+func (o *CustomerGroupData) SetAttributes(v GETCustomerGroupsCustomerGroupId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *CustomerGroupData) GetRelationships() CustomerGroupDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret CustomerGroupDataRelationships
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *CustomerGroupData) GetRelationships() CustomerGroupDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerGroupData) GetRelationshipsOk() (*CustomerGroupDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -112,7 +115,7 @@ func (o *CustomerGroupData) GetRelationshipsOk() (*CustomerGroupDataRelationship
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *CustomerGroupData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -125,17 +128,23 @@ func (o *CustomerGroupData) SetRelationships(v CustomerGroupDataRelationships) {
 }
 
 func (o CustomerGroupData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o CustomerGroupData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableCustomerGroupData struct {

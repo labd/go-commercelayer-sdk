@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the CaptureUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CaptureUpdate{}
+
 // CaptureUpdate struct for CaptureUpdate
 type CaptureUpdate struct {
 	Data CaptureUpdateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *CaptureUpdate) SetData(v CaptureUpdateData) {
 }
 
 func (o CaptureUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CaptureUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableCaptureUpdate struct {

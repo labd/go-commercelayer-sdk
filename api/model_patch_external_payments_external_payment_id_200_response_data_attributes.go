@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes{}
+
 // PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes struct for PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes
 type PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes struct {
 	// External payment options.
@@ -57,7 +60,7 @@ func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetOpt
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetOptionsOk() (*interface{}, bool) {
-	if o == nil || o.Options == nil {
+	if o == nil || IsNil(o.Options) {
 		return nil, false
 	}
 	return &o.Options, true
@@ -65,7 +68,7 @@ func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetOpt
 
 // HasOptions returns a boolean if a field has been set.
 func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) HasOptions() bool {
-	if o != nil && o.Options != nil {
+	if o != nil && IsNil(o.Options) {
 		return true
 	}
 
@@ -90,7 +93,7 @@ func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetRef
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -98,7 +101,7 @@ func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetRef
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -123,7 +126,7 @@ func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetRef
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -131,7 +134,7 @@ func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetRef
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -156,7 +159,7 @@ func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetMet
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -164,7 +167,7 @@ func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetMet
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -177,6 +180,14 @@ func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) SetMet
 }
 
 func (o PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Options != nil {
 		toSerialize["options"] = o.Options
@@ -190,7 +201,7 @@ func (o PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) Marshal
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes struct {

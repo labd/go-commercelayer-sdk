@@ -34,7 +34,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -42,7 +42,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PricesApi.DELETEPricesPriceId(context.Background(), priceId).Execute()
+    r, err := apiClient.PricesApi.DELETEPricesPriceId(context.Background(), priceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PricesApi.DELETEPricesPriceId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -102,7 +102,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -110,7 +110,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PricesApi.GETPriceFrequencyTierIdPrice(context.Background(), priceFrequencyTierId).Execute()
+    r, err := apiClient.PricesApi.GETPriceFrequencyTierIdPrice(context.Background(), priceFrequencyTierId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PricesApi.GETPriceFrequencyTierIdPrice``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -170,7 +170,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -178,7 +178,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PricesApi.GETPriceListIdPrices(context.Background(), priceListId).Execute()
+    r, err := apiClient.PricesApi.GETPriceListIdPrices(context.Background(), priceListId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PricesApi.GETPriceListIdPrices``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -238,7 +238,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -246,7 +246,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PricesApi.GETPriceTierIdPrice(context.Background(), priceTierId).Execute()
+    r, err := apiClient.PricesApi.GETPriceTierIdPrice(context.Background(), priceTierId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PricesApi.GETPriceTierIdPrice``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -306,7 +306,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -314,7 +314,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PricesApi.GETPriceVolumeTierIdPrice(context.Background(), priceVolumeTierId).Execute()
+    r, err := apiClient.PricesApi.GETPriceVolumeTierIdPrice(context.Background(), priceVolumeTierId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PricesApi.GETPriceVolumeTierIdPrice``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -374,7 +374,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -435,7 +435,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -505,7 +505,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -513,7 +513,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PricesApi.GETSkuIdPrices(context.Background(), skuId).Execute()
+    r, err := apiClient.PricesApi.GETSkuIdPrices(context.Background(), skuId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PricesApi.GETSkuIdPrices``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -573,7 +573,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -645,7 +645,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {

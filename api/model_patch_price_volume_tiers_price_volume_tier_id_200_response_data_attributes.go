@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes{}
+
 // PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes struct for PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes
 type PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes struct {
 	// The price tier's name
@@ -61,7 +64,7 @@ func (o *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) GetNam
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -69,7 +72,7 @@ func (o *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) GetNam
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
@@ -94,7 +97,7 @@ func (o *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) GetUpT
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) GetUpToOk() (*interface{}, bool) {
-	if o == nil || o.UpTo == nil {
+	if o == nil || IsNil(o.UpTo) {
 		return nil, false
 	}
 	return &o.UpTo, true
@@ -102,7 +105,7 @@ func (o *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) GetUpT
 
 // HasUpTo returns a boolean if a field has been set.
 func (o *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) HasUpTo() bool {
-	if o != nil && o.UpTo != nil {
+	if o != nil && IsNil(o.UpTo) {
 		return true
 	}
 
@@ -127,7 +130,7 @@ func (o *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) GetPri
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) GetPriceAmountCentsOk() (*interface{}, bool) {
-	if o == nil || o.PriceAmountCents == nil {
+	if o == nil || IsNil(o.PriceAmountCents) {
 		return nil, false
 	}
 	return &o.PriceAmountCents, true
@@ -135,7 +138,7 @@ func (o *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) GetPri
 
 // HasPriceAmountCents returns a boolean if a field has been set.
 func (o *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) HasPriceAmountCents() bool {
-	if o != nil && o.PriceAmountCents != nil {
+	if o != nil && IsNil(o.PriceAmountCents) {
 		return true
 	}
 
@@ -160,7 +163,7 @@ func (o *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) GetRef
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -168,7 +171,7 @@ func (o *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) GetRef
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -193,7 +196,7 @@ func (o *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) GetRef
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -201,7 +204,7 @@ func (o *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) GetRef
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -226,7 +229,7 @@ func (o *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) GetMet
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -234,7 +237,7 @@ func (o *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) GetMet
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -247,6 +250,14 @@ func (o *PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) SetMet
 }
 
 func (o PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -266,7 +277,7 @@ func (o PATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) Marshal
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes struct {

@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETLineItemOptions200ResponseDataInnerAttributes**](GETLineItemOptions200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**GETLineItemOptionsLineItemOptionId200ResponseDataAttributes**](GETLineItemOptionsLineItemOptionId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**LineItemOptionDataRelationships**](LineItemOptionDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewLineItemOptionData
 
-`func NewLineItemOptionData(type_ interface{}, attributes GETLineItemOptions200ResponseDataInnerAttributes, ) *LineItemOptionData`
+`func NewLineItemOptionData(type_ interface{}, attributes GETLineItemOptionsLineItemOptionId200ResponseDataAttributes, ) *LineItemOptionData`
 
 NewLineItemOptionData instantiates a new LineItemOptionData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *LineItemOptionData) GetAttributes() GETLineItemOptions200ResponseDataInnerAttributes`
+`func (o *LineItemOptionData) GetAttributes() GETLineItemOptionsLineItemOptionId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *LineItemOptionData) GetAttributesOk() (*GETLineItemOptions200ResponseDataInnerAttributes, bool)`
+`func (o *LineItemOptionData) GetAttributesOk() (*GETLineItemOptionsLineItemOptionId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *LineItemOptionData) SetAttributes(v GETLineItemOptions200ResponseDataInnerAttributes)`
+`func (o *LineItemOptionData) SetAttributes(v GETLineItemOptionsLineItemOptionId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

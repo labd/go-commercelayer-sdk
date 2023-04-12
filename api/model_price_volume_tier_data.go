@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the PriceVolumeTierData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PriceVolumeTierData{}
+
 // PriceVolumeTierData struct for PriceVolumeTierData
 type PriceVolumeTierData struct {
 	// The resource's type
-	Type          interface{}                                       `json:"type"`
-	Attributes    GETPriceVolumeTiers200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *PriceFrequencyTierDataRelationships              `json:"relationships,omitempty"`
+	Type          interface{}                                                   `json:"type"`
+	Attributes    GETPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes `json:"attributes"`
+	Relationships *PriceFrequencyTierDataRelationships                          `json:"relationships,omitempty"`
 }
 
 // NewPriceVolumeTierData instantiates a new PriceVolumeTierData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPriceVolumeTierData(type_ interface{}, attributes GETPriceVolumeTiers200ResponseDataInnerAttributes) *PriceVolumeTierData {
+func NewPriceVolumeTierData(type_ interface{}, attributes GETPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) *PriceVolumeTierData {
 	this := PriceVolumeTierData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -57,7 +60,7 @@ func (o *PriceVolumeTierData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PriceVolumeTierData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -69,9 +72,9 @@ func (o *PriceVolumeTierData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PriceVolumeTierData) GetAttributes() GETPriceVolumeTiers200ResponseDataInnerAttributes {
+func (o *PriceVolumeTierData) GetAttributes() GETPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETPriceVolumeTiers200ResponseDataInnerAttributes
+		var ret GETPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +83,7 @@ func (o *PriceVolumeTierData) GetAttributes() GETPriceVolumeTiers200ResponseData
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PriceVolumeTierData) GetAttributesOk() (*GETPriceVolumeTiers200ResponseDataInnerAttributes, bool) {
+func (o *PriceVolumeTierData) GetAttributesOk() (*GETPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,13 +91,13 @@ func (o *PriceVolumeTierData) GetAttributesOk() (*GETPriceVolumeTiers200Response
 }
 
 // SetAttributes sets field value
-func (o *PriceVolumeTierData) SetAttributes(v GETPriceVolumeTiers200ResponseDataInnerAttributes) {
+func (o *PriceVolumeTierData) SetAttributes(v GETPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *PriceVolumeTierData) GetRelationships() PriceFrequencyTierDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret PriceFrequencyTierDataRelationships
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *PriceVolumeTierData) GetRelationships() PriceFrequencyTierDataRelations
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PriceVolumeTierData) GetRelationshipsOk() (*PriceFrequencyTierDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -112,7 +115,7 @@ func (o *PriceVolumeTierData) GetRelationshipsOk() (*PriceFrequencyTierDataRelat
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *PriceVolumeTierData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -125,17 +128,23 @@ func (o *PriceVolumeTierData) SetRelationships(v PriceFrequencyTierDataRelations
 }
 
 func (o PriceVolumeTierData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PriceVolumeTierData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePriceVolumeTierData struct {

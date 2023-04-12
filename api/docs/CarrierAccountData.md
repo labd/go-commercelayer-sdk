@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETCarrierAccounts200ResponseDataInnerAttributes**](GETCarrierAccounts200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**GETCarrierAccountsCarrierAccountId200ResponseDataAttributes**](GETCarrierAccountsCarrierAccountId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**BillingInfoValidationRuleDataRelationships**](BillingInfoValidationRuleDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCarrierAccountData
 
-`func NewCarrierAccountData(type_ interface{}, attributes GETCarrierAccounts200ResponseDataInnerAttributes, ) *CarrierAccountData`
+`func NewCarrierAccountData(type_ interface{}, attributes GETCarrierAccountsCarrierAccountId200ResponseDataAttributes, ) *CarrierAccountData`
 
 NewCarrierAccountData instantiates a new CarrierAccountData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *CarrierAccountData) GetAttributes() GETCarrierAccounts200ResponseDataInnerAttributes`
+`func (o *CarrierAccountData) GetAttributes() GETCarrierAccountsCarrierAccountId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CarrierAccountData) GetAttributesOk() (*GETCarrierAccounts200ResponseDataInnerAttributes, bool)`
+`func (o *CarrierAccountData) GetAttributesOk() (*GETCarrierAccountsCarrierAccountId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CarrierAccountData) SetAttributes(v GETCarrierAccounts200ResponseDataInnerAttributes)`
+`func (o *CarrierAccountData) SetAttributes(v GETCarrierAccountsCarrierAccountId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

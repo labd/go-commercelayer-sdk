@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETPaymentMethods200ResponseDataInnerAttributes**](GETPaymentMethods200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**GETPaymentMethodsPaymentMethodId200ResponseDataAttributes**](GETPaymentMethodsPaymentMethodId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**PaymentMethodDataRelationships**](PaymentMethodDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPaymentMethodData
 
-`func NewPaymentMethodData(type_ interface{}, attributes GETPaymentMethods200ResponseDataInnerAttributes, ) *PaymentMethodData`
+`func NewPaymentMethodData(type_ interface{}, attributes GETPaymentMethodsPaymentMethodId200ResponseDataAttributes, ) *PaymentMethodData`
 
 NewPaymentMethodData instantiates a new PaymentMethodData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *PaymentMethodData) GetAttributes() GETPaymentMethods200ResponseDataInnerAttributes`
+`func (o *PaymentMethodData) GetAttributes() GETPaymentMethodsPaymentMethodId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PaymentMethodData) GetAttributesOk() (*GETPaymentMethods200ResponseDataInnerAttributes, bool)`
+`func (o *PaymentMethodData) GetAttributesOk() (*GETPaymentMethodsPaymentMethodId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PaymentMethodData) SetAttributes(v GETPaymentMethods200ResponseDataInnerAttributes)`
+`func (o *PaymentMethodData) SetAttributes(v GETPaymentMethodsPaymentMethodId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

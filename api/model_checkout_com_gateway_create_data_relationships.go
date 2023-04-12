@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the CheckoutComGatewayCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CheckoutComGatewayCreateDataRelationships{}
+
 // CheckoutComGatewayCreateDataRelationships struct for CheckoutComGatewayCreateDataRelationships
 type CheckoutComGatewayCreateDataRelationships struct {
 	CheckoutComPayments *CheckoutComGatewayCreateDataRelationshipsCheckoutComPayments `json:"checkout_com_payments,omitempty"`
@@ -39,7 +42,7 @@ func NewCheckoutComGatewayCreateDataRelationshipsWithDefaults() *CheckoutComGate
 
 // GetCheckoutComPayments returns the CheckoutComPayments field value if set, zero value otherwise.
 func (o *CheckoutComGatewayCreateDataRelationships) GetCheckoutComPayments() CheckoutComGatewayCreateDataRelationshipsCheckoutComPayments {
-	if o == nil || o.CheckoutComPayments == nil {
+	if o == nil || IsNil(o.CheckoutComPayments) {
 		var ret CheckoutComGatewayCreateDataRelationshipsCheckoutComPayments
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *CheckoutComGatewayCreateDataRelationships) GetCheckoutComPayments() Che
 // GetCheckoutComPaymentsOk returns a tuple with the CheckoutComPayments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CheckoutComGatewayCreateDataRelationships) GetCheckoutComPaymentsOk() (*CheckoutComGatewayCreateDataRelationshipsCheckoutComPayments, bool) {
-	if o == nil || o.CheckoutComPayments == nil {
+	if o == nil || IsNil(o.CheckoutComPayments) {
 		return nil, false
 	}
 	return o.CheckoutComPayments, true
@@ -57,7 +60,7 @@ func (o *CheckoutComGatewayCreateDataRelationships) GetCheckoutComPaymentsOk() (
 
 // HasCheckoutComPayments returns a boolean if a field has been set.
 func (o *CheckoutComGatewayCreateDataRelationships) HasCheckoutComPayments() bool {
-	if o != nil && o.CheckoutComPayments != nil {
+	if o != nil && !IsNil(o.CheckoutComPayments) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *CheckoutComGatewayCreateDataRelationships) SetCheckoutComPayments(v Che
 }
 
 func (o CheckoutComGatewayCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.CheckoutComPayments != nil {
-		toSerialize["checkout_com_payments"] = o.CheckoutComPayments
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CheckoutComGatewayCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.CheckoutComPayments) {
+		toSerialize["checkout_com_payments"] = o.CheckoutComPayments
+	}
+	return toSerialize, nil
 }
 
 type NullableCheckoutComGatewayCreateDataRelationships struct {

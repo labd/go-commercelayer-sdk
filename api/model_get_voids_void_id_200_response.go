@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETVoidsVoidId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETVoidsVoidId200Response{}
+
 // GETVoidsVoidId200Response struct for GETVoidsVoidId200Response
 type GETVoidsVoidId200Response struct {
-	Data *GETVoids200ResponseDataInner `json:"data,omitempty"`
+	Data *GETVoidsVoidId200ResponseData `json:"data,omitempty"`
 }
 
 // NewGETVoidsVoidId200Response instantiates a new GETVoidsVoidId200Response object
@@ -38,9 +41,9 @@ func NewGETVoidsVoidId200ResponseWithDefaults() *GETVoidsVoidId200Response {
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETVoidsVoidId200Response) GetData() GETVoids200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret GETVoids200ResponseDataInner
+func (o *GETVoidsVoidId200Response) GetData() GETVoidsVoidId200ResponseData {
+	if o == nil || IsNil(o.Data) {
+		var ret GETVoidsVoidId200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *GETVoidsVoidId200Response) GetData() GETVoids200ResponseDataInner {
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETVoidsVoidId200Response) GetDataOk() (*GETVoids200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+func (o *GETVoidsVoidId200Response) GetDataOk() (*GETVoidsVoidId200ResponseData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *GETVoidsVoidId200Response) GetDataOk() (*GETVoids200ResponseDataInner, 
 
 // HasData returns a boolean if a field has been set.
 func (o *GETVoidsVoidId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETVoids200ResponseDataInner and assigns it to the Data field.
-func (o *GETVoidsVoidId200Response) SetData(v GETVoids200ResponseDataInner) {
+// SetData gets a reference to the given GETVoidsVoidId200ResponseData and assigns it to the Data field.
+func (o *GETVoidsVoidId200Response) SetData(v GETVoidsVoidId200ResponseData) {
 	o.Data = &v
 }
 
 func (o GETVoidsVoidId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GETVoidsVoidId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGETVoidsVoidId200Response struct {

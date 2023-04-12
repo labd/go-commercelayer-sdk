@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes{}
+
 // PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes struct for PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes
 type PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes struct {
 	// The stock location priority within the associated invetory model.
@@ -59,7 +62,7 @@ func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttr
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes) GetPriorityOk() (*interface{}, bool) {
-	if o == nil || o.Priority == nil {
+	if o == nil || IsNil(o.Priority) {
 		return nil, false
 	}
 	return &o.Priority, true
@@ -67,7 +70,7 @@ func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttr
 
 // HasPriority returns a boolean if a field has been set.
 func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes) HasPriority() bool {
-	if o != nil && o.Priority != nil {
+	if o != nil && IsNil(o.Priority) {
 		return true
 	}
 
@@ -92,7 +95,7 @@ func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttr
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes) GetOnHoldOk() (*interface{}, bool) {
-	if o == nil || o.OnHold == nil {
+	if o == nil || IsNil(o.OnHold) {
 		return nil, false
 	}
 	return &o.OnHold, true
@@ -100,7 +103,7 @@ func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttr
 
 // HasOnHold returns a boolean if a field has been set.
 func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes) HasOnHold() bool {
-	if o != nil && o.OnHold != nil {
+	if o != nil && IsNil(o.OnHold) {
 		return true
 	}
 
@@ -125,7 +128,7 @@ func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttr
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -133,7 +136,7 @@ func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttr
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -158,7 +161,7 @@ func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttr
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -166,7 +169,7 @@ func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttr
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -191,7 +194,7 @@ func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttr
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -199,7 +202,7 @@ func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttr
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -212,6 +215,14 @@ func (o *PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttr
 }
 
 func (o PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Priority != nil {
 		toSerialize["priority"] = o.Priority
@@ -228,7 +239,7 @@ func (o PATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttri
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes struct {

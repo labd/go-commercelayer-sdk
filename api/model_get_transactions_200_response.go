@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETTransactions200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETTransactions200Response{}
+
 // GETTransactions200Response struct for GETTransactions200Response
 type GETTransactions200Response struct {
-	Data []GETTransactions200ResponseDataInner `json:"data,omitempty"`
+	Data interface{} `json:"data,omitempty"`
 }
 
 // NewGETTransactions200Response instantiates a new GETTransactions200Response object
@@ -37,10 +40,10 @@ func NewGETTransactions200ResponseWithDefaults() *GETTransactions200Response {
 	return &this
 }
 
-// GetData returns the Data field value if set, zero value otherwise.
-func (o *GETTransactions200Response) GetData() []GETTransactions200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret []GETTransactions200ResponseDataInner
+// GetData returns the Data field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETTransactions200Response) GetData() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Data
@@ -48,33 +51,42 @@ func (o *GETTransactions200Response) GetData() []GETTransactions200ResponseDataI
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETTransactions200Response) GetDataOk() ([]GETTransactions200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETTransactions200Response) GetDataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
-	return o.Data, true
+	return &o.Data, true
 }
 
 // HasData returns a boolean if a field has been set.
 func (o *GETTransactions200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given []GETTransactions200ResponseDataInner and assigns it to the Data field.
-func (o *GETTransactions200Response) SetData(v []GETTransactions200ResponseDataInner) {
+// SetData gets a reference to the given interface{} and assigns it to the Data field.
+func (o *GETTransactions200Response) SetData(v interface{}) {
 	o.Data = v
 }
 
 func (o GETTransactions200Response) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o GETTransactions200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableGETTransactions200Response struct {

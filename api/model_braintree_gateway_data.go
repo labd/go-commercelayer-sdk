@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the BraintreeGatewayData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BraintreeGatewayData{}
+
 // BraintreeGatewayData struct for BraintreeGatewayData
 type BraintreeGatewayData struct {
 	// The resource's type
-	Type          interface{}                                        `json:"type"`
-	Attributes    GETBraintreeGateways200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *BraintreeGatewayDataRelationships                 `json:"relationships,omitempty"`
+	Type          interface{}                                                     `json:"type"`
+	Attributes    GETBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes `json:"attributes"`
+	Relationships *BraintreeGatewayDataRelationships                              `json:"relationships,omitempty"`
 }
 
 // NewBraintreeGatewayData instantiates a new BraintreeGatewayData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBraintreeGatewayData(type_ interface{}, attributes GETBraintreeGateways200ResponseDataInnerAttributes) *BraintreeGatewayData {
+func NewBraintreeGatewayData(type_ interface{}, attributes GETBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) *BraintreeGatewayData {
 	this := BraintreeGatewayData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -57,7 +60,7 @@ func (o *BraintreeGatewayData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BraintreeGatewayData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -69,9 +72,9 @@ func (o *BraintreeGatewayData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *BraintreeGatewayData) GetAttributes() GETBraintreeGateways200ResponseDataInnerAttributes {
+func (o *BraintreeGatewayData) GetAttributes() GETBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETBraintreeGateways200ResponseDataInnerAttributes
+		var ret GETBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +83,7 @@ func (o *BraintreeGatewayData) GetAttributes() GETBraintreeGateways200ResponseDa
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *BraintreeGatewayData) GetAttributesOk() (*GETBraintreeGateways200ResponseDataInnerAttributes, bool) {
+func (o *BraintreeGatewayData) GetAttributesOk() (*GETBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,13 +91,13 @@ func (o *BraintreeGatewayData) GetAttributesOk() (*GETBraintreeGateways200Respon
 }
 
 // SetAttributes sets field value
-func (o *BraintreeGatewayData) SetAttributes(v GETBraintreeGateways200ResponseDataInnerAttributes) {
+func (o *BraintreeGatewayData) SetAttributes(v GETBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *BraintreeGatewayData) GetRelationships() BraintreeGatewayDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret BraintreeGatewayDataRelationships
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *BraintreeGatewayData) GetRelationships() BraintreeGatewayDataRelationsh
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BraintreeGatewayData) GetRelationshipsOk() (*BraintreeGatewayDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -112,7 +115,7 @@ func (o *BraintreeGatewayData) GetRelationshipsOk() (*BraintreeGatewayDataRelati
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *BraintreeGatewayData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -125,17 +128,23 @@ func (o *BraintreeGatewayData) SetRelationships(v BraintreeGatewayDataRelationsh
 }
 
 func (o BraintreeGatewayData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o BraintreeGatewayData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableBraintreeGatewayData struct {

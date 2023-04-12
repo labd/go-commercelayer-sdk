@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHAddressesAddressId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHAddressesAddressId200Response{}
+
 // PATCHAddressesAddressId200Response struct for PATCHAddressesAddressId200Response
 type PATCHAddressesAddressId200Response struct {
 	Data *PATCHAddressesAddressId200ResponseData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewPATCHAddressesAddressId200ResponseWithDefaults() *PATCHAddressesAddressI
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *PATCHAddressesAddressId200Response) GetData() PATCHAddressesAddressId200ResponseData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret PATCHAddressesAddressId200ResponseData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *PATCHAddressesAddressId200Response) GetData() PATCHAddressesAddressId20
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHAddressesAddressId200Response) GetDataOk() (*PATCHAddressesAddressId200ResponseData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *PATCHAddressesAddressId200Response) GetDataOk() (*PATCHAddressesAddress
 
 // HasData returns a boolean if a field has been set.
 func (o *PATCHAddressesAddressId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *PATCHAddressesAddressId200Response) SetData(v PATCHAddressesAddressId20
 }
 
 func (o PATCHAddressesAddressId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PATCHAddressesAddressId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullablePATCHAddressesAddressId200Response struct {

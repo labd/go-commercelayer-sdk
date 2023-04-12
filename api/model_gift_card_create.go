@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the GiftCardCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GiftCardCreate{}
+
 // GiftCardCreate struct for GiftCardCreate
 type GiftCardCreate struct {
 	Data GiftCardCreateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *GiftCardCreate) SetData(v GiftCardCreateData) {
 }
 
 func (o GiftCardCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GiftCardCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableGiftCardCreate struct {

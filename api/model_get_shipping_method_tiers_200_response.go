@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETShippingMethodTiers200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETShippingMethodTiers200Response{}
+
 // GETShippingMethodTiers200Response struct for GETShippingMethodTiers200Response
 type GETShippingMethodTiers200Response struct {
-	Data []GETShippingMethodTiers200ResponseDataInner `json:"data,omitempty"`
+	Data interface{} `json:"data,omitempty"`
 }
 
 // NewGETShippingMethodTiers200Response instantiates a new GETShippingMethodTiers200Response object
@@ -37,10 +40,10 @@ func NewGETShippingMethodTiers200ResponseWithDefaults() *GETShippingMethodTiers2
 	return &this
 }
 
-// GetData returns the Data field value if set, zero value otherwise.
-func (o *GETShippingMethodTiers200Response) GetData() []GETShippingMethodTiers200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret []GETShippingMethodTiers200ResponseDataInner
+// GetData returns the Data field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETShippingMethodTiers200Response) GetData() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Data
@@ -48,33 +51,42 @@ func (o *GETShippingMethodTiers200Response) GetData() []GETShippingMethodTiers20
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETShippingMethodTiers200Response) GetDataOk() ([]GETShippingMethodTiers200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETShippingMethodTiers200Response) GetDataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
-	return o.Data, true
+	return &o.Data, true
 }
 
 // HasData returns a boolean if a field has been set.
 func (o *GETShippingMethodTiers200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given []GETShippingMethodTiers200ResponseDataInner and assigns it to the Data field.
-func (o *GETShippingMethodTiers200Response) SetData(v []GETShippingMethodTiers200ResponseDataInner) {
+// SetData gets a reference to the given interface{} and assigns it to the Data field.
+func (o *GETShippingMethodTiers200Response) SetData(v interface{}) {
 	o.Data = v
 }
 
 func (o GETShippingMethodTiers200Response) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o GETShippingMethodTiers200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableGETShippingMethodTiers200Response struct {

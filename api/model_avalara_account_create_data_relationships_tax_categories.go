@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AvalaraAccountCreateDataRelationshipsTaxCategories type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AvalaraAccountCreateDataRelationshipsTaxCategories{}
+
 // AvalaraAccountCreateDataRelationshipsTaxCategories struct for AvalaraAccountCreateDataRelationshipsTaxCategories
 type AvalaraAccountCreateDataRelationshipsTaxCategories struct {
 	Data AvalaraAccountDataRelationshipsTaxCategoriesData `json:"data"`
@@ -63,11 +66,17 @@ func (o *AvalaraAccountCreateDataRelationshipsTaxCategories) SetData(v AvalaraAc
 }
 
 func (o AvalaraAccountCreateDataRelationshipsTaxCategories) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AvalaraAccountCreateDataRelationshipsTaxCategories) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableAvalaraAccountCreateDataRelationshipsTaxCategories struct {

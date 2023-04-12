@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the SubscriptionModelDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SubscriptionModelDataRelationships{}
+
 // SubscriptionModelDataRelationships struct for SubscriptionModelDataRelationships
 type SubscriptionModelDataRelationships struct {
 	Markets            *AvalaraAccountDataRelationshipsMarkets      `json:"markets,omitempty"`
@@ -41,7 +44,7 @@ func NewSubscriptionModelDataRelationshipsWithDefaults() *SubscriptionModelDataR
 
 // GetMarkets returns the Markets field value if set, zero value otherwise.
 func (o *SubscriptionModelDataRelationships) GetMarkets() AvalaraAccountDataRelationshipsMarkets {
-	if o == nil || o.Markets == nil {
+	if o == nil || IsNil(o.Markets) {
 		var ret AvalaraAccountDataRelationshipsMarkets
 		return ret
 	}
@@ -51,7 +54,7 @@ func (o *SubscriptionModelDataRelationships) GetMarkets() AvalaraAccountDataRela
 // GetMarketsOk returns a tuple with the Markets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionModelDataRelationships) GetMarketsOk() (*AvalaraAccountDataRelationshipsMarkets, bool) {
-	if o == nil || o.Markets == nil {
+	if o == nil || IsNil(o.Markets) {
 		return nil, false
 	}
 	return o.Markets, true
@@ -59,7 +62,7 @@ func (o *SubscriptionModelDataRelationships) GetMarketsOk() (*AvalaraAccountData
 
 // HasMarkets returns a boolean if a field has been set.
 func (o *SubscriptionModelDataRelationships) HasMarkets() bool {
-	if o != nil && o.Markets != nil {
+	if o != nil && !IsNil(o.Markets) {
 		return true
 	}
 
@@ -73,7 +76,7 @@ func (o *SubscriptionModelDataRelationships) SetMarkets(v AvalaraAccountDataRela
 
 // GetOrderSubscriptions returns the OrderSubscriptions field value if set, zero value otherwise.
 func (o *SubscriptionModelDataRelationships) GetOrderSubscriptions() CustomerDataRelationshipsOrderSubscriptions {
-	if o == nil || o.OrderSubscriptions == nil {
+	if o == nil || IsNil(o.OrderSubscriptions) {
 		var ret CustomerDataRelationshipsOrderSubscriptions
 		return ret
 	}
@@ -83,7 +86,7 @@ func (o *SubscriptionModelDataRelationships) GetOrderSubscriptions() CustomerDat
 // GetOrderSubscriptionsOk returns a tuple with the OrderSubscriptions field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionModelDataRelationships) GetOrderSubscriptionsOk() (*CustomerDataRelationshipsOrderSubscriptions, bool) {
-	if o == nil || o.OrderSubscriptions == nil {
+	if o == nil || IsNil(o.OrderSubscriptions) {
 		return nil, false
 	}
 	return o.OrderSubscriptions, true
@@ -91,7 +94,7 @@ func (o *SubscriptionModelDataRelationships) GetOrderSubscriptionsOk() (*Custome
 
 // HasOrderSubscriptions returns a boolean if a field has been set.
 func (o *SubscriptionModelDataRelationships) HasOrderSubscriptions() bool {
-	if o != nil && o.OrderSubscriptions != nil {
+	if o != nil && !IsNil(o.OrderSubscriptions) {
 		return true
 	}
 
@@ -105,7 +108,7 @@ func (o *SubscriptionModelDataRelationships) SetOrderSubscriptions(v CustomerDat
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *SubscriptionModelDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
-	if o == nil || o.Attachments == nil {
+	if o == nil || IsNil(o.Attachments) {
 		var ret AvalaraAccountDataRelationshipsAttachments
 		return ret
 	}
@@ -115,7 +118,7 @@ func (o *SubscriptionModelDataRelationships) GetAttachments() AvalaraAccountData
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SubscriptionModelDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
-	if o == nil || o.Attachments == nil {
+	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
 	return o.Attachments, true
@@ -123,7 +126,7 @@ func (o *SubscriptionModelDataRelationships) GetAttachmentsOk() (*AvalaraAccount
 
 // HasAttachments returns a boolean if a field has been set.
 func (o *SubscriptionModelDataRelationships) HasAttachments() bool {
-	if o != nil && o.Attachments != nil {
+	if o != nil && !IsNil(o.Attachments) {
 		return true
 	}
 
@@ -136,17 +139,25 @@ func (o *SubscriptionModelDataRelationships) SetAttachments(v AvalaraAccountData
 }
 
 func (o SubscriptionModelDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Markets != nil {
-		toSerialize["markets"] = o.Markets
-	}
-	if o.OrderSubscriptions != nil {
-		toSerialize["order_subscriptions"] = o.OrderSubscriptions
-	}
-	if o.Attachments != nil {
-		toSerialize["attachments"] = o.Attachments
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o SubscriptionModelDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Markets) {
+		toSerialize["markets"] = o.Markets
+	}
+	if !IsNil(o.OrderSubscriptions) {
+		toSerialize["order_subscriptions"] = o.OrderSubscriptions
+	}
+	if !IsNil(o.Attachments) {
+		toSerialize["attachments"] = o.Attachments
+	}
+	return toSerialize, nil
 }
 
 type NullableSubscriptionModelDataRelationships struct {

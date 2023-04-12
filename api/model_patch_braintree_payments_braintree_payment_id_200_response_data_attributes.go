@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes{}
+
 // PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes struct for PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes
 type PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes struct {
 	// The Braintree payment method nonce. Sent by the Braintree JS SDK.
@@ -63,7 +66,7 @@ func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) GetP
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) GetPaymentMethodNonceOk() (*interface{}, bool) {
-	if o == nil || o.PaymentMethodNonce == nil {
+	if o == nil || IsNil(o.PaymentMethodNonce) {
 		return nil, false
 	}
 	return &o.PaymentMethodNonce, true
@@ -71,7 +74,7 @@ func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) GetP
 
 // HasPaymentMethodNonce returns a boolean if a field has been set.
 func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) HasPaymentMethodNonce() bool {
-	if o != nil && o.PaymentMethodNonce != nil {
+	if o != nil && IsNil(o.PaymentMethodNonce) {
 		return true
 	}
 
@@ -96,7 +99,7 @@ func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) GetP
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) GetPaymentIdOk() (*interface{}, bool) {
-	if o == nil || o.PaymentId == nil {
+	if o == nil || IsNil(o.PaymentId) {
 		return nil, false
 	}
 	return &o.PaymentId, true
@@ -104,7 +107,7 @@ func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) GetP
 
 // HasPaymentId returns a boolean if a field has been set.
 func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) HasPaymentId() bool {
-	if o != nil && o.PaymentId != nil {
+	if o != nil && IsNil(o.PaymentId) {
 		return true
 	}
 
@@ -129,7 +132,7 @@ func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) GetL
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) GetLocalOk() (*interface{}, bool) {
-	if o == nil || o.Local == nil {
+	if o == nil || IsNil(o.Local) {
 		return nil, false
 	}
 	return &o.Local, true
@@ -137,7 +140,7 @@ func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) GetL
 
 // HasLocal returns a boolean if a field has been set.
 func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) HasLocal() bool {
-	if o != nil && o.Local != nil {
+	if o != nil && IsNil(o.Local) {
 		return true
 	}
 
@@ -162,7 +165,7 @@ func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) GetO
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) GetOptionsOk() (*interface{}, bool) {
-	if o == nil || o.Options == nil {
+	if o == nil || IsNil(o.Options) {
 		return nil, false
 	}
 	return &o.Options, true
@@ -170,7 +173,7 @@ func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) GetO
 
 // HasOptions returns a boolean if a field has been set.
 func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) HasOptions() bool {
-	if o != nil && o.Options != nil {
+	if o != nil && IsNil(o.Options) {
 		return true
 	}
 
@@ -195,7 +198,7 @@ func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) GetR
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -203,7 +206,7 @@ func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) GetR
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -228,7 +231,7 @@ func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) GetR
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -236,7 +239,7 @@ func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) GetR
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -261,7 +264,7 @@ func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) GetM
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -269,7 +272,7 @@ func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) GetM
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -282,6 +285,14 @@ func (o *PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) SetM
 }
 
 func (o PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.PaymentMethodNonce != nil {
 		toSerialize["payment_method_nonce"] = o.PaymentMethodNonce
@@ -304,7 +315,7 @@ func (o PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) Marsh
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes struct {

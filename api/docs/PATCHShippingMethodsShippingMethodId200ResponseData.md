@@ -6,9 +6,9 @@ Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
 **Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
-**Links** | Pointer to [**GETAddresses200ResponseDataInnerLinks**](GETAddresses200ResponseDataInnerLinks.md) |  | [optional] 
+**Links** | Pointer to [**POSTAddresses201ResponseDataLinks**](POSTAddresses201ResponseDataLinks.md) |  | [optional] 
 **Attributes** | Pointer to [**PATCHShippingMethodsShippingMethodId200ResponseDataAttributes**](PATCHShippingMethodsShippingMethodId200ResponseDataAttributes.md) |  | [optional] 
-**Relationships** | Pointer to [**GETShippingMethods200ResponseDataInnerRelationships**](GETShippingMethods200ResponseDataInnerRelationships.md) |  | [optional] 
+**Relationships** | Pointer to [**POSTShippingMethods201ResponseDataRelationships**](POSTShippingMethods201ResponseDataRelationships.md) |  | [optional] 
 
 ## Methods
 
@@ -101,20 +101,20 @@ HasType returns a boolean if a field has been set.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetLinks
 
-`func (o *PATCHShippingMethodsShippingMethodId200ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks`
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseData) GetLinks() POSTAddresses201ResponseDataLinks`
 
 GetLinks returns the Links field if non-nil, zero value otherwise.
 
 ### GetLinksOk
 
-`func (o *PATCHShippingMethodsShippingMethodId200ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool)`
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool)`
 
 GetLinksOk returns a tuple with the Links field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetLinks
 
-`func (o *PATCHShippingMethodsShippingMethodId200ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks)`
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks)`
 
 SetLinks sets Links field to given value.
 
@@ -151,20 +151,20 @@ HasAttributes returns a boolean if a field has been set.
 
 ### GetRelationships
 
-`func (o *PATCHShippingMethodsShippingMethodId200ResponseData) GetRelationships() GETShippingMethods200ResponseDataInnerRelationships`
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseData) GetRelationships() POSTShippingMethods201ResponseDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PATCHShippingMethodsShippingMethodId200ResponseData) GetRelationshipsOk() (*GETShippingMethods200ResponseDataInnerRelationships, bool)`
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseData) GetRelationshipsOk() (*POSTShippingMethods201ResponseDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PATCHShippingMethodsShippingMethodId200ResponseData) SetRelationships(v GETShippingMethods200ResponseDataInnerRelationships)`
+`func (o *PATCHShippingMethodsShippingMethodId200ResponseData) SetRelationships(v POSTShippingMethods201ResponseDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

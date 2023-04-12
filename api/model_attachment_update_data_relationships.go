@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AttachmentUpdateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AttachmentUpdateDataRelationships{}
+
 // AttachmentUpdateDataRelationships struct for AttachmentUpdateDataRelationships
 type AttachmentUpdateDataRelationships struct {
 	Attachable *AttachmentCreateDataRelationshipsAttachable `json:"attachable,omitempty"`
@@ -39,7 +42,7 @@ func NewAttachmentUpdateDataRelationshipsWithDefaults() *AttachmentUpdateDataRel
 
 // GetAttachable returns the Attachable field value if set, zero value otherwise.
 func (o *AttachmentUpdateDataRelationships) GetAttachable() AttachmentCreateDataRelationshipsAttachable {
-	if o == nil || o.Attachable == nil {
+	if o == nil || IsNil(o.Attachable) {
 		var ret AttachmentCreateDataRelationshipsAttachable
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *AttachmentUpdateDataRelationships) GetAttachable() AttachmentCreateData
 // GetAttachableOk returns a tuple with the Attachable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttachmentUpdateDataRelationships) GetAttachableOk() (*AttachmentCreateDataRelationshipsAttachable, bool) {
-	if o == nil || o.Attachable == nil {
+	if o == nil || IsNil(o.Attachable) {
 		return nil, false
 	}
 	return o.Attachable, true
@@ -57,7 +60,7 @@ func (o *AttachmentUpdateDataRelationships) GetAttachableOk() (*AttachmentCreate
 
 // HasAttachable returns a boolean if a field has been set.
 func (o *AttachmentUpdateDataRelationships) HasAttachable() bool {
-	if o != nil && o.Attachable != nil {
+	if o != nil && !IsNil(o.Attachable) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *AttachmentUpdateDataRelationships) SetAttachable(v AttachmentCreateData
 }
 
 func (o AttachmentUpdateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Attachable != nil {
-		toSerialize["attachable"] = o.Attachable
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AttachmentUpdateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Attachable) {
+		toSerialize["attachable"] = o.Attachable
+	}
+	return toSerialize, nil
 }
 
 type NullableAttachmentUpdateDataRelationships struct {

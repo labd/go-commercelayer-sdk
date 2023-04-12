@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the StockLineItem type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &StockLineItem{}
+
 // StockLineItem struct for StockLineItem
 type StockLineItem struct {
 	Data *StockLineItemData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewStockLineItemWithDefaults() *StockLineItem {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *StockLineItem) GetData() StockLineItemData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret StockLineItemData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *StockLineItem) GetData() StockLineItemData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StockLineItem) GetDataOk() (*StockLineItemData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *StockLineItem) GetDataOk() (*StockLineItemData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *StockLineItem) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *StockLineItem) SetData(v StockLineItemData) {
 }
 
 func (o StockLineItem) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o StockLineItem) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableStockLineItem struct {

@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes{}
+
 // PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes struct for PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes
 type PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes struct {
 	// The payment gateway's internal name.
@@ -63,7 +66,7 @@ func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetName() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -71,7 +74,7 @@ func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetNameOk(
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
@@ -96,7 +99,7 @@ func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetReferen
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -104,7 +107,7 @@ func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetReferen
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -129,7 +132,7 @@ func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetReferen
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -137,7 +140,7 @@ func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetReferen
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -162,7 +165,7 @@ func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetMetadat
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -170,7 +173,7 @@ func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetMetadat
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -195,7 +198,7 @@ func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetCountry
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetCountryCodeOk() (*interface{}, bool) {
-	if o == nil || o.CountryCode == nil {
+	if o == nil || IsNil(o.CountryCode) {
 		return nil, false
 	}
 	return &o.CountryCode, true
@@ -203,7 +206,7 @@ func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetCountry
 
 // HasCountryCode returns a boolean if a field has been set.
 func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) HasCountryCode() bool {
-	if o != nil && o.CountryCode != nil {
+	if o != nil && IsNil(o.CountryCode) {
 		return true
 	}
 
@@ -228,7 +231,7 @@ func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetApiKey(
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetApiKeyOk() (*interface{}, bool) {
-	if o == nil || o.ApiKey == nil {
+	if o == nil || IsNil(o.ApiKey) {
 		return nil, false
 	}
 	return &o.ApiKey, true
@@ -236,7 +239,7 @@ func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetApiKeyO
 
 // HasApiKey returns a boolean if a field has been set.
 func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) HasApiKey() bool {
-	if o != nil && o.ApiKey != nil {
+	if o != nil && IsNil(o.ApiKey) {
 		return true
 	}
 
@@ -261,7 +264,7 @@ func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetApiSecr
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetApiSecretOk() (*interface{}, bool) {
-	if o == nil || o.ApiSecret == nil {
+	if o == nil || IsNil(o.ApiSecret) {
 		return nil, false
 	}
 	return &o.ApiSecret, true
@@ -269,7 +272,7 @@ func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetApiSecr
 
 // HasApiSecret returns a boolean if a field has been set.
 func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) HasApiSecret() bool {
-	if o != nil && o.ApiSecret != nil {
+	if o != nil && IsNil(o.ApiSecret) {
 		return true
 	}
 
@@ -282,6 +285,14 @@ func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) SetApiSecr
 }
 
 func (o PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -304,7 +315,7 @@ func (o PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) MarshalJSON
 	if o.ApiSecret != nil {
 		toSerialize["api_secret"] = o.ApiSecret
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes struct {

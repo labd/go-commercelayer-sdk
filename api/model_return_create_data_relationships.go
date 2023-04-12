@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ReturnCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ReturnCreateDataRelationships{}
+
 // ReturnCreateDataRelationships struct for ReturnCreateDataRelationships
 type ReturnCreateDataRelationships struct {
 	Order         AdyenPaymentCreateDataRelationshipsOrder              `json:"order"`
@@ -65,7 +68,7 @@ func (o *ReturnCreateDataRelationships) SetOrder(v AdyenPaymentCreateDataRelatio
 
 // GetStockLocation returns the StockLocation field value if set, zero value otherwise.
 func (o *ReturnCreateDataRelationships) GetStockLocation() DeliveryLeadTimeCreateDataRelationshipsStockLocation {
-	if o == nil || o.StockLocation == nil {
+	if o == nil || IsNil(o.StockLocation) {
 		var ret DeliveryLeadTimeCreateDataRelationshipsStockLocation
 		return ret
 	}
@@ -75,7 +78,7 @@ func (o *ReturnCreateDataRelationships) GetStockLocation() DeliveryLeadTimeCreat
 // GetStockLocationOk returns a tuple with the StockLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ReturnCreateDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeCreateDataRelationshipsStockLocation, bool) {
-	if o == nil || o.StockLocation == nil {
+	if o == nil || IsNil(o.StockLocation) {
 		return nil, false
 	}
 	return o.StockLocation, true
@@ -83,7 +86,7 @@ func (o *ReturnCreateDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeC
 
 // HasStockLocation returns a boolean if a field has been set.
 func (o *ReturnCreateDataRelationships) HasStockLocation() bool {
-	if o != nil && o.StockLocation != nil {
+	if o != nil && !IsNil(o.StockLocation) {
 		return true
 	}
 
@@ -96,14 +99,20 @@ func (o *ReturnCreateDataRelationships) SetStockLocation(v DeliveryLeadTimeCreat
 }
 
 func (o ReturnCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["order"] = o.Order
-	}
-	if o.StockLocation != nil {
-		toSerialize["stock_location"] = o.StockLocation
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ReturnCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["order"] = o.Order
+	if !IsNil(o.StockLocation) {
+		toSerialize["stock_location"] = o.StockLocation
+	}
+	return toSerialize, nil
 }
 
 type NullableReturnCreateDataRelationships struct {

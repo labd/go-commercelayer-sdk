@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETBillingInfoValidationRules200ResponseDataInner**](GETBillingInfoValidationRules200ResponseDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseData**](GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETBillingInfoValidationRulesBillingInfoValidationRuleId200Response) GetData() GETBillingInfoValidationRules200ResponseDataInner`
+`func (o *GETBillingInfoValidationRulesBillingInfoValidationRuleId200Response) GetData() GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETBillingInfoValidationRulesBillingInfoValidationRuleId200Response) GetDataOk() (*GETBillingInfoValidationRules200ResponseDataInner, bool)`
+`func (o *GETBillingInfoValidationRulesBillingInfoValidationRuleId200Response) GetDataOk() (*GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETBillingInfoValidationRulesBillingInfoValidationRuleId200Response) SetData(v GETBillingInfoValidationRules200ResponseDataInner)`
+`func (o *GETBillingInfoValidationRulesBillingInfoValidationRuleId200Response) SetData(v GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseData)`
 
 SetData sets Data field to given value.
 

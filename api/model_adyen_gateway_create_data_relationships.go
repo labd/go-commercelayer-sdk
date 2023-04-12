@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AdyenGatewayCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AdyenGatewayCreateDataRelationships{}
+
 // AdyenGatewayCreateDataRelationships struct for AdyenGatewayCreateDataRelationships
 type AdyenGatewayCreateDataRelationships struct {
 	AdyenPayments *AdyenGatewayCreateDataRelationshipsAdyenPayments `json:"adyen_payments,omitempty"`
@@ -39,7 +42,7 @@ func NewAdyenGatewayCreateDataRelationshipsWithDefaults() *AdyenGatewayCreateDat
 
 // GetAdyenPayments returns the AdyenPayments field value if set, zero value otherwise.
 func (o *AdyenGatewayCreateDataRelationships) GetAdyenPayments() AdyenGatewayCreateDataRelationshipsAdyenPayments {
-	if o == nil || o.AdyenPayments == nil {
+	if o == nil || IsNil(o.AdyenPayments) {
 		var ret AdyenGatewayCreateDataRelationshipsAdyenPayments
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *AdyenGatewayCreateDataRelationships) GetAdyenPayments() AdyenGatewayCre
 // GetAdyenPaymentsOk returns a tuple with the AdyenPayments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AdyenGatewayCreateDataRelationships) GetAdyenPaymentsOk() (*AdyenGatewayCreateDataRelationshipsAdyenPayments, bool) {
-	if o == nil || o.AdyenPayments == nil {
+	if o == nil || IsNil(o.AdyenPayments) {
 		return nil, false
 	}
 	return o.AdyenPayments, true
@@ -57,7 +60,7 @@ func (o *AdyenGatewayCreateDataRelationships) GetAdyenPaymentsOk() (*AdyenGatewa
 
 // HasAdyenPayments returns a boolean if a field has been set.
 func (o *AdyenGatewayCreateDataRelationships) HasAdyenPayments() bool {
-	if o != nil && o.AdyenPayments != nil {
+	if o != nil && !IsNil(o.AdyenPayments) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *AdyenGatewayCreateDataRelationships) SetAdyenPayments(v AdyenGatewayCre
 }
 
 func (o AdyenGatewayCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.AdyenPayments != nil {
-		toSerialize["adyen_payments"] = o.AdyenPayments
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AdyenGatewayCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.AdyenPayments) {
+		toSerialize["adyen_payments"] = o.AdyenPayments
+	}
+	return toSerialize, nil
 }
 
 type NullableAdyenGatewayCreateDataRelationships struct {

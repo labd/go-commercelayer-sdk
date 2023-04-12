@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AuthorizationDataRelationshipsVoids type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AuthorizationDataRelationshipsVoids{}
+
 // AuthorizationDataRelationshipsVoids struct for AuthorizationDataRelationshipsVoids
 type AuthorizationDataRelationshipsVoids struct {
 	Data *AuthorizationDataRelationshipsVoidsData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewAuthorizationDataRelationshipsVoidsWithDefaults() *AuthorizationDataRela
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *AuthorizationDataRelationshipsVoids) GetData() AuthorizationDataRelationshipsVoidsData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret AuthorizationDataRelationshipsVoidsData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *AuthorizationDataRelationshipsVoids) GetData() AuthorizationDataRelatio
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AuthorizationDataRelationshipsVoids) GetDataOk() (*AuthorizationDataRelationshipsVoidsData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *AuthorizationDataRelationshipsVoids) GetDataOk() (*AuthorizationDataRel
 
 // HasData returns a boolean if a field has been set.
 func (o *AuthorizationDataRelationshipsVoids) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *AuthorizationDataRelationshipsVoids) SetData(v AuthorizationDataRelatio
 }
 
 func (o AuthorizationDataRelationshipsVoids) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AuthorizationDataRelationshipsVoids) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableAuthorizationDataRelationshipsVoids struct {

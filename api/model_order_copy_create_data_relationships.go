@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the OrderCopyCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &OrderCopyCreateDataRelationships{}
+
 // OrderCopyCreateDataRelationships struct for OrderCopyCreateDataRelationships
 type OrderCopyCreateDataRelationships struct {
 	SourceOrder AdyenPaymentCreateDataRelationshipsOrder `json:"source_order"`
@@ -63,11 +66,17 @@ func (o *OrderCopyCreateDataRelationships) SetSourceOrder(v AdyenPaymentCreateDa
 }
 
 func (o OrderCopyCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["source_order"] = o.SourceOrder
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o OrderCopyCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["source_order"] = o.SourceOrder
+	return toSerialize, nil
 }
 
 type NullableOrderCopyCreateDataRelationships struct {

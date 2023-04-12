@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTPaymentMethods201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTPaymentMethods201ResponseDataAttributes{}
+
 // POSTPaymentMethods201ResponseDataAttributes struct for POSTPaymentMethods201ResponseDataAttributes
 type POSTPaymentMethods201ResponseDataAttributes struct {
 	// The payment source type, can be one of: 'AdyenPayment', 'AxervePayment', 'BraintreePayment', 'CheckoutComPayment', 'CreditCard', 'ExternalPayment', 'KlarnaPayment', 'PaypalPayment', 'SatispayPayment', 'StripePayment', or 'WireTransfer'.
@@ -73,7 +76,7 @@ func (o *POSTPaymentMethods201ResponseDataAttributes) GetPaymentSourceType() int
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTPaymentMethods201ResponseDataAttributes) GetPaymentSourceTypeOk() (*interface{}, bool) {
-	if o == nil || o.PaymentSourceType == nil {
+	if o == nil || IsNil(o.PaymentSourceType) {
 		return nil, false
 	}
 	return &o.PaymentSourceType, true
@@ -97,7 +100,7 @@ func (o *POSTPaymentMethods201ResponseDataAttributes) GetCurrencyCode() interfac
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTPaymentMethods201ResponseDataAttributes) GetCurrencyCodeOk() (*interface{}, bool) {
-	if o == nil || o.CurrencyCode == nil {
+	if o == nil || IsNil(o.CurrencyCode) {
 		return nil, false
 	}
 	return &o.CurrencyCode, true
@@ -105,7 +108,7 @@ func (o *POSTPaymentMethods201ResponseDataAttributes) GetCurrencyCodeOk() (*inte
 
 // HasCurrencyCode returns a boolean if a field has been set.
 func (o *POSTPaymentMethods201ResponseDataAttributes) HasCurrencyCode() bool {
-	if o != nil && o.CurrencyCode != nil {
+	if o != nil && IsNil(o.CurrencyCode) {
 		return true
 	}
 
@@ -130,7 +133,7 @@ func (o *POSTPaymentMethods201ResponseDataAttributes) GetMoto() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTPaymentMethods201ResponseDataAttributes) GetMotoOk() (*interface{}, bool) {
-	if o == nil || o.Moto == nil {
+	if o == nil || IsNil(o.Moto) {
 		return nil, false
 	}
 	return &o.Moto, true
@@ -138,7 +141,7 @@ func (o *POSTPaymentMethods201ResponseDataAttributes) GetMotoOk() (*interface{},
 
 // HasMoto returns a boolean if a field has been set.
 func (o *POSTPaymentMethods201ResponseDataAttributes) HasMoto() bool {
-	if o != nil && o.Moto != nil {
+	if o != nil && IsNil(o.Moto) {
 		return true
 	}
 
@@ -163,7 +166,7 @@ func (o *POSTPaymentMethods201ResponseDataAttributes) GetRequireCapture() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTPaymentMethods201ResponseDataAttributes) GetRequireCaptureOk() (*interface{}, bool) {
-	if o == nil || o.RequireCapture == nil {
+	if o == nil || IsNil(o.RequireCapture) {
 		return nil, false
 	}
 	return &o.RequireCapture, true
@@ -171,7 +174,7 @@ func (o *POSTPaymentMethods201ResponseDataAttributes) GetRequireCaptureOk() (*in
 
 // HasRequireCapture returns a boolean if a field has been set.
 func (o *POSTPaymentMethods201ResponseDataAttributes) HasRequireCapture() bool {
-	if o != nil && o.RequireCapture != nil {
+	if o != nil && IsNil(o.RequireCapture) {
 		return true
 	}
 
@@ -196,7 +199,7 @@ func (o *POSTPaymentMethods201ResponseDataAttributes) GetAutoCapture() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTPaymentMethods201ResponseDataAttributes) GetAutoCaptureOk() (*interface{}, bool) {
-	if o == nil || o.AutoCapture == nil {
+	if o == nil || IsNil(o.AutoCapture) {
 		return nil, false
 	}
 	return &o.AutoCapture, true
@@ -204,7 +207,7 @@ func (o *POSTPaymentMethods201ResponseDataAttributes) GetAutoCaptureOk() (*inter
 
 // HasAutoCapture returns a boolean if a field has been set.
 func (o *POSTPaymentMethods201ResponseDataAttributes) HasAutoCapture() bool {
-	if o != nil && o.AutoCapture != nil {
+	if o != nil && IsNil(o.AutoCapture) {
 		return true
 	}
 
@@ -231,7 +234,7 @@ func (o *POSTPaymentMethods201ResponseDataAttributes) GetPriceAmountCents() inte
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTPaymentMethods201ResponseDataAttributes) GetPriceAmountCentsOk() (*interface{}, bool) {
-	if o == nil || o.PriceAmountCents == nil {
+	if o == nil || IsNil(o.PriceAmountCents) {
 		return nil, false
 	}
 	return &o.PriceAmountCents, true
@@ -255,7 +258,7 @@ func (o *POSTPaymentMethods201ResponseDataAttributes) GetAutoCaptureMaxAmountCen
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTPaymentMethods201ResponseDataAttributes) GetAutoCaptureMaxAmountCentsOk() (*interface{}, bool) {
-	if o == nil || o.AutoCaptureMaxAmountCents == nil {
+	if o == nil || IsNil(o.AutoCaptureMaxAmountCents) {
 		return nil, false
 	}
 	return &o.AutoCaptureMaxAmountCents, true
@@ -263,7 +266,7 @@ func (o *POSTPaymentMethods201ResponseDataAttributes) GetAutoCaptureMaxAmountCen
 
 // HasAutoCaptureMaxAmountCents returns a boolean if a field has been set.
 func (o *POSTPaymentMethods201ResponseDataAttributes) HasAutoCaptureMaxAmountCents() bool {
-	if o != nil && o.AutoCaptureMaxAmountCents != nil {
+	if o != nil && IsNil(o.AutoCaptureMaxAmountCents) {
 		return true
 	}
 
@@ -288,7 +291,7 @@ func (o *POSTPaymentMethods201ResponseDataAttributes) GetReference() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTPaymentMethods201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -296,7 +299,7 @@ func (o *POSTPaymentMethods201ResponseDataAttributes) GetReferenceOk() (*interfa
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTPaymentMethods201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -321,7 +324,7 @@ func (o *POSTPaymentMethods201ResponseDataAttributes) GetReferenceOrigin() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTPaymentMethods201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -329,7 +332,7 @@ func (o *POSTPaymentMethods201ResponseDataAttributes) GetReferenceOriginOk() (*i
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTPaymentMethods201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -354,7 +357,7 @@ func (o *POSTPaymentMethods201ResponseDataAttributes) GetMetadata() interface{} 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTPaymentMethods201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -362,7 +365,7 @@ func (o *POSTPaymentMethods201ResponseDataAttributes) GetMetadataOk() (*interfac
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTPaymentMethods201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -375,6 +378,14 @@ func (o *POSTPaymentMethods201ResponseDataAttributes) SetMetadata(v interface{})
 }
 
 func (o POSTPaymentMethods201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTPaymentMethods201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.PaymentSourceType != nil {
 		toSerialize["payment_source_type"] = o.PaymentSourceType
@@ -406,7 +417,7 @@ func (o POSTPaymentMethods201ResponseDataAttributes) MarshalJSON() ([]byte, erro
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTPaymentMethods201ResponseDataAttributes struct {

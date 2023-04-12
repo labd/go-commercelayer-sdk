@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PaymentMethodCreateDataRelationshipsPaymentGateway type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PaymentMethodCreateDataRelationshipsPaymentGateway{}
+
 // PaymentMethodCreateDataRelationshipsPaymentGateway struct for PaymentMethodCreateDataRelationshipsPaymentGateway
 type PaymentMethodCreateDataRelationshipsPaymentGateway struct {
 	Data AdyenPaymentDataRelationshipsPaymentGatewayData `json:"data"`
@@ -63,11 +66,17 @@ func (o *PaymentMethodCreateDataRelationshipsPaymentGateway) SetData(v AdyenPaym
 }
 
 func (o PaymentMethodCreateDataRelationshipsPaymentGateway) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PaymentMethodCreateDataRelationshipsPaymentGateway) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullablePaymentMethodCreateDataRelationshipsPaymentGateway struct {

@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETParcelLineItems200ResponseDataInnerAttributes**](GETParcelLineItems200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**GETParcelLineItemsParcelLineItemId200ResponseDataAttributes**](GETParcelLineItemsParcelLineItemId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ParcelLineItemDataRelationships**](ParcelLineItemDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewParcelLineItemData
 
-`func NewParcelLineItemData(type_ interface{}, attributes GETParcelLineItems200ResponseDataInnerAttributes, ) *ParcelLineItemData`
+`func NewParcelLineItemData(type_ interface{}, attributes GETParcelLineItemsParcelLineItemId200ResponseDataAttributes, ) *ParcelLineItemData`
 
 NewParcelLineItemData instantiates a new ParcelLineItemData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *ParcelLineItemData) GetAttributes() GETParcelLineItems200ResponseDataInnerAttributes`
+`func (o *ParcelLineItemData) GetAttributes() GETParcelLineItemsParcelLineItemId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ParcelLineItemData) GetAttributesOk() (*GETParcelLineItems200ResponseDataInnerAttributes, bool)`
+`func (o *ParcelLineItemData) GetAttributesOk() (*GETParcelLineItemsParcelLineItemId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ParcelLineItemData) SetAttributes(v GETParcelLineItems200ResponseDataInnerAttributes)`
+`func (o *ParcelLineItemData) SetAttributes(v GETParcelLineItemsParcelLineItemId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

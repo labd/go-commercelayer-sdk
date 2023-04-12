@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PriceDataRelationshipsPriceTiers type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PriceDataRelationshipsPriceTiers{}
+
 // PriceDataRelationshipsPriceTiers struct for PriceDataRelationshipsPriceTiers
 type PriceDataRelationshipsPriceTiers struct {
 	Data *PriceDataRelationshipsPriceTiersData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewPriceDataRelationshipsPriceTiersWithDefaults() *PriceDataRelationshipsPr
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *PriceDataRelationshipsPriceTiers) GetData() PriceDataRelationshipsPriceTiersData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret PriceDataRelationshipsPriceTiersData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *PriceDataRelationshipsPriceTiers) GetData() PriceDataRelationshipsPrice
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PriceDataRelationshipsPriceTiers) GetDataOk() (*PriceDataRelationshipsPriceTiersData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *PriceDataRelationshipsPriceTiers) GetDataOk() (*PriceDataRelationshipsP
 
 // HasData returns a boolean if a field has been set.
 func (o *PriceDataRelationshipsPriceTiers) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *PriceDataRelationshipsPriceTiers) SetData(v PriceDataRelationshipsPrice
 }
 
 func (o PriceDataRelationshipsPriceTiers) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PriceDataRelationshipsPriceTiers) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullablePriceDataRelationshipsPriceTiers struct {

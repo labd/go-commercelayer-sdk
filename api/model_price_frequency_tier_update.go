@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PriceFrequencyTierUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PriceFrequencyTierUpdate{}
+
 // PriceFrequencyTierUpdate struct for PriceFrequencyTierUpdate
 type PriceFrequencyTierUpdate struct {
 	Data PriceFrequencyTierUpdateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *PriceFrequencyTierUpdate) SetData(v PriceFrequencyTierUpdateData) {
 }
 
 func (o PriceFrequencyTierUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PriceFrequencyTierUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullablePriceFrequencyTierUpdate struct {

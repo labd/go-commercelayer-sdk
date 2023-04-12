@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ManualTaxCalculatorUpdateData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ManualTaxCalculatorUpdateData{}
+
 // ManualTaxCalculatorUpdateData struct for ManualTaxCalculatorUpdateData
 type ManualTaxCalculatorUpdateData struct {
 	// The resource's type
@@ -60,7 +63,7 @@ func (o *ManualTaxCalculatorUpdateData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ManualTaxCalculatorUpdateData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -86,7 +89,7 @@ func (o *ManualTaxCalculatorUpdateData) GetId() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ManualTaxCalculatorUpdateData) GetIdOk() (*interface{}, bool) {
-	if o == nil || o.Id == nil {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return &o.Id, true
@@ -123,7 +126,7 @@ func (o *ManualTaxCalculatorUpdateData) SetAttributes(v PATCHManualTaxCalculator
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *ManualTaxCalculatorUpdateData) GetRelationships() ManualTaxCalculatorCreateDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret ManualTaxCalculatorCreateDataRelationships
 		return ret
 	}
@@ -133,7 +136,7 @@ func (o *ManualTaxCalculatorUpdateData) GetRelationships() ManualTaxCalculatorCr
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManualTaxCalculatorUpdateData) GetRelationshipsOk() (*ManualTaxCalculatorCreateDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -141,7 +144,7 @@ func (o *ManualTaxCalculatorUpdateData) GetRelationshipsOk() (*ManualTaxCalculat
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *ManualTaxCalculatorUpdateData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -154,6 +157,14 @@ func (o *ManualTaxCalculatorUpdateData) SetRelationships(v ManualTaxCalculatorCr
 }
 
 func (o ManualTaxCalculatorUpdateData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ManualTaxCalculatorUpdateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
@@ -161,13 +172,11 @@ func (o ManualTaxCalculatorUpdateData) MarshalJSON() ([]byte, error) {
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableManualTaxCalculatorUpdateData struct {

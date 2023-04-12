@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the CouponCodesPromotionRuleDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CouponCodesPromotionRuleDataRelationships{}
+
 // CouponCodesPromotionRuleDataRelationships struct for CouponCodesPromotionRuleDataRelationships
 type CouponCodesPromotionRuleDataRelationships struct {
 	Promotion *CouponCodesPromotionRuleDataRelationshipsPromotion `json:"promotion,omitempty"`
@@ -40,7 +43,7 @@ func NewCouponCodesPromotionRuleDataRelationshipsWithDefaults() *CouponCodesProm
 
 // GetPromotion returns the Promotion field value if set, zero value otherwise.
 func (o *CouponCodesPromotionRuleDataRelationships) GetPromotion() CouponCodesPromotionRuleDataRelationshipsPromotion {
-	if o == nil || o.Promotion == nil {
+	if o == nil || IsNil(o.Promotion) {
 		var ret CouponCodesPromotionRuleDataRelationshipsPromotion
 		return ret
 	}
@@ -50,7 +53,7 @@ func (o *CouponCodesPromotionRuleDataRelationships) GetPromotion() CouponCodesPr
 // GetPromotionOk returns a tuple with the Promotion field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CouponCodesPromotionRuleDataRelationships) GetPromotionOk() (*CouponCodesPromotionRuleDataRelationshipsPromotion, bool) {
-	if o == nil || o.Promotion == nil {
+	if o == nil || IsNil(o.Promotion) {
 		return nil, false
 	}
 	return o.Promotion, true
@@ -58,7 +61,7 @@ func (o *CouponCodesPromotionRuleDataRelationships) GetPromotionOk() (*CouponCod
 
 // HasPromotion returns a boolean if a field has been set.
 func (o *CouponCodesPromotionRuleDataRelationships) HasPromotion() bool {
-	if o != nil && o.Promotion != nil {
+	if o != nil && !IsNil(o.Promotion) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *CouponCodesPromotionRuleDataRelationships) SetPromotion(v CouponCodesPr
 
 // GetCoupons returns the Coupons field value if set, zero value otherwise.
 func (o *CouponCodesPromotionRuleDataRelationships) GetCoupons() CouponCodesPromotionRuleDataRelationshipsCoupons {
-	if o == nil || o.Coupons == nil {
+	if o == nil || IsNil(o.Coupons) {
 		var ret CouponCodesPromotionRuleDataRelationshipsCoupons
 		return ret
 	}
@@ -82,7 +85,7 @@ func (o *CouponCodesPromotionRuleDataRelationships) GetCoupons() CouponCodesProm
 // GetCouponsOk returns a tuple with the Coupons field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CouponCodesPromotionRuleDataRelationships) GetCouponsOk() (*CouponCodesPromotionRuleDataRelationshipsCoupons, bool) {
-	if o == nil || o.Coupons == nil {
+	if o == nil || IsNil(o.Coupons) {
 		return nil, false
 	}
 	return o.Coupons, true
@@ -90,7 +93,7 @@ func (o *CouponCodesPromotionRuleDataRelationships) GetCouponsOk() (*CouponCodes
 
 // HasCoupons returns a boolean if a field has been set.
 func (o *CouponCodesPromotionRuleDataRelationships) HasCoupons() bool {
-	if o != nil && o.Coupons != nil {
+	if o != nil && !IsNil(o.Coupons) {
 		return true
 	}
 
@@ -103,14 +106,22 @@ func (o *CouponCodesPromotionRuleDataRelationships) SetCoupons(v CouponCodesProm
 }
 
 func (o CouponCodesPromotionRuleDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Promotion != nil {
-		toSerialize["promotion"] = o.Promotion
-	}
-	if o.Coupons != nil {
-		toSerialize["coupons"] = o.Coupons
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CouponCodesPromotionRuleDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Promotion) {
+		toSerialize["promotion"] = o.Promotion
+	}
+	if !IsNil(o.Coupons) {
+		toSerialize["coupons"] = o.Coupons
+	}
+	return toSerialize, nil
 }
 
 type NullableCouponCodesPromotionRuleDataRelationships struct {

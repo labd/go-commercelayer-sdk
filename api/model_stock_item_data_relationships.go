@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the StockItemDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &StockItemDataRelationships{}
+
 // StockItemDataRelationships struct for StockItemDataRelationships
 type StockItemDataRelationships struct {
 	StockLocation *DeliveryLeadTimeDataRelationshipsStockLocation `json:"stock_location,omitempty"`
@@ -41,7 +44,7 @@ func NewStockItemDataRelationshipsWithDefaults() *StockItemDataRelationships {
 
 // GetStockLocation returns the StockLocation field value if set, zero value otherwise.
 func (o *StockItemDataRelationships) GetStockLocation() DeliveryLeadTimeDataRelationshipsStockLocation {
-	if o == nil || o.StockLocation == nil {
+	if o == nil || IsNil(o.StockLocation) {
 		var ret DeliveryLeadTimeDataRelationshipsStockLocation
 		return ret
 	}
@@ -51,7 +54,7 @@ func (o *StockItemDataRelationships) GetStockLocation() DeliveryLeadTimeDataRela
 // GetStockLocationOk returns a tuple with the StockLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StockItemDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeDataRelationshipsStockLocation, bool) {
-	if o == nil || o.StockLocation == nil {
+	if o == nil || IsNil(o.StockLocation) {
 		return nil, false
 	}
 	return o.StockLocation, true
@@ -59,7 +62,7 @@ func (o *StockItemDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeData
 
 // HasStockLocation returns a boolean if a field has been set.
 func (o *StockItemDataRelationships) HasStockLocation() bool {
-	if o != nil && o.StockLocation != nil {
+	if o != nil && !IsNil(o.StockLocation) {
 		return true
 	}
 
@@ -73,7 +76,7 @@ func (o *StockItemDataRelationships) SetStockLocation(v DeliveryLeadTimeDataRela
 
 // GetSku returns the Sku field value if set, zero value otherwise.
 func (o *StockItemDataRelationships) GetSku() BundleDataRelationshipsSkus {
-	if o == nil || o.Sku == nil {
+	if o == nil || IsNil(o.Sku) {
 		var ret BundleDataRelationshipsSkus
 		return ret
 	}
@@ -83,7 +86,7 @@ func (o *StockItemDataRelationships) GetSku() BundleDataRelationshipsSkus {
 // GetSkuOk returns a tuple with the Sku field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StockItemDataRelationships) GetSkuOk() (*BundleDataRelationshipsSkus, bool) {
-	if o == nil || o.Sku == nil {
+	if o == nil || IsNil(o.Sku) {
 		return nil, false
 	}
 	return o.Sku, true
@@ -91,7 +94,7 @@ func (o *StockItemDataRelationships) GetSkuOk() (*BundleDataRelationshipsSkus, b
 
 // HasSku returns a boolean if a field has been set.
 func (o *StockItemDataRelationships) HasSku() bool {
-	if o != nil && o.Sku != nil {
+	if o != nil && !IsNil(o.Sku) {
 		return true
 	}
 
@@ -105,7 +108,7 @@ func (o *StockItemDataRelationships) SetSku(v BundleDataRelationshipsSkus) {
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *StockItemDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
-	if o == nil || o.Attachments == nil {
+	if o == nil || IsNil(o.Attachments) {
 		var ret AvalaraAccountDataRelationshipsAttachments
 		return ret
 	}
@@ -115,7 +118,7 @@ func (o *StockItemDataRelationships) GetAttachments() AvalaraAccountDataRelation
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StockItemDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
-	if o == nil || o.Attachments == nil {
+	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
 	return o.Attachments, true
@@ -123,7 +126,7 @@ func (o *StockItemDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRela
 
 // HasAttachments returns a boolean if a field has been set.
 func (o *StockItemDataRelationships) HasAttachments() bool {
-	if o != nil && o.Attachments != nil {
+	if o != nil && !IsNil(o.Attachments) {
 		return true
 	}
 
@@ -136,17 +139,25 @@ func (o *StockItemDataRelationships) SetAttachments(v AvalaraAccountDataRelation
 }
 
 func (o StockItemDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.StockLocation != nil {
-		toSerialize["stock_location"] = o.StockLocation
-	}
-	if o.Sku != nil {
-		toSerialize["sku"] = o.Sku
-	}
-	if o.Attachments != nil {
-		toSerialize["attachments"] = o.Attachments
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o StockItemDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.StockLocation) {
+		toSerialize["stock_location"] = o.StockLocation
+	}
+	if !IsNil(o.Sku) {
+		toSerialize["sku"] = o.Sku
+	}
+	if !IsNil(o.Attachments) {
+		toSerialize["attachments"] = o.Attachments
+	}
+	return toSerialize, nil
 }
 
 type NullableStockItemDataRelationships struct {

@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTOrders201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTOrders201ResponseDataAttributes{}
+
 // POSTOrders201ResponseDataAttributes struct for POSTOrders201ResponseDataAttributes
 type POSTOrders201ResponseDataAttributes struct {
 	// Save this attribute as 'false' if you want prevent the order to be refreshed automatically at each change (much faster).
@@ -81,7 +84,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetAutorefresh() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrders201ResponseDataAttributes) GetAutorefreshOk() (*interface{}, bool) {
-	if o == nil || o.Autorefresh == nil {
+	if o == nil || IsNil(o.Autorefresh) {
 		return nil, false
 	}
 	return &o.Autorefresh, true
@@ -89,7 +92,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetAutorefreshOk() (*interface{}, 
 
 // HasAutorefresh returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasAutorefresh() bool {
-	if o != nil && o.Autorefresh != nil {
+	if o != nil && IsNil(o.Autorefresh) {
 		return true
 	}
 
@@ -114,7 +117,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetGuest() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrders201ResponseDataAttributes) GetGuestOk() (*interface{}, bool) {
-	if o == nil || o.Guest == nil {
+	if o == nil || IsNil(o.Guest) {
 		return nil, false
 	}
 	return &o.Guest, true
@@ -122,7 +125,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetGuestOk() (*interface{}, bool) 
 
 // HasGuest returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasGuest() bool {
-	if o != nil && o.Guest != nil {
+	if o != nil && IsNil(o.Guest) {
 		return true
 	}
 
@@ -147,7 +150,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetCustomerEmail() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrders201ResponseDataAttributes) GetCustomerEmailOk() (*interface{}, bool) {
-	if o == nil || o.CustomerEmail == nil {
+	if o == nil || IsNil(o.CustomerEmail) {
 		return nil, false
 	}
 	return &o.CustomerEmail, true
@@ -155,7 +158,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetCustomerEmailOk() (*interface{}
 
 // HasCustomerEmail returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasCustomerEmail() bool {
-	if o != nil && o.CustomerEmail != nil {
+	if o != nil && IsNil(o.CustomerEmail) {
 		return true
 	}
 
@@ -180,7 +183,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetCustomerPassword() interface{} 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrders201ResponseDataAttributes) GetCustomerPasswordOk() (*interface{}, bool) {
-	if o == nil || o.CustomerPassword == nil {
+	if o == nil || IsNil(o.CustomerPassword) {
 		return nil, false
 	}
 	return &o.CustomerPassword, true
@@ -188,7 +191,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetCustomerPasswordOk() (*interfac
 
 // HasCustomerPassword returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasCustomerPassword() bool {
-	if o != nil && o.CustomerPassword != nil {
+	if o != nil && IsNil(o.CustomerPassword) {
 		return true
 	}
 
@@ -213,7 +216,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetLanguageCode() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrders201ResponseDataAttributes) GetLanguageCodeOk() (*interface{}, bool) {
-	if o == nil || o.LanguageCode == nil {
+	if o == nil || IsNil(o.LanguageCode) {
 		return nil, false
 	}
 	return &o.LanguageCode, true
@@ -221,7 +224,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetLanguageCodeOk() (*interface{},
 
 // HasLanguageCode returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasLanguageCode() bool {
-	if o != nil && o.LanguageCode != nil {
+	if o != nil && IsNil(o.LanguageCode) {
 		return true
 	}
 
@@ -246,7 +249,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetShippingCountryCodeLock() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrders201ResponseDataAttributes) GetShippingCountryCodeLockOk() (*interface{}, bool) {
-	if o == nil || o.ShippingCountryCodeLock == nil {
+	if o == nil || IsNil(o.ShippingCountryCodeLock) {
 		return nil, false
 	}
 	return &o.ShippingCountryCodeLock, true
@@ -254,7 +257,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetShippingCountryCodeLockOk() (*i
 
 // HasShippingCountryCodeLock returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasShippingCountryCodeLock() bool {
-	if o != nil && o.ShippingCountryCodeLock != nil {
+	if o != nil && IsNil(o.ShippingCountryCodeLock) {
 		return true
 	}
 
@@ -279,7 +282,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetCouponCode() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrders201ResponseDataAttributes) GetCouponCodeOk() (*interface{}, bool) {
-	if o == nil || o.CouponCode == nil {
+	if o == nil || IsNil(o.CouponCode) {
 		return nil, false
 	}
 	return &o.CouponCode, true
@@ -287,7 +290,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetCouponCodeOk() (*interface{}, b
 
 // HasCouponCode returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasCouponCode() bool {
-	if o != nil && o.CouponCode != nil {
+	if o != nil && IsNil(o.CouponCode) {
 		return true
 	}
 
@@ -312,7 +315,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetGiftCardCode() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrders201ResponseDataAttributes) GetGiftCardCodeOk() (*interface{}, bool) {
-	if o == nil || o.GiftCardCode == nil {
+	if o == nil || IsNil(o.GiftCardCode) {
 		return nil, false
 	}
 	return &o.GiftCardCode, true
@@ -320,7 +323,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetGiftCardCodeOk() (*interface{},
 
 // HasGiftCardCode returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasGiftCardCode() bool {
-	if o != nil && o.GiftCardCode != nil {
+	if o != nil && IsNil(o.GiftCardCode) {
 		return true
 	}
 
@@ -345,7 +348,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetGiftCardOrCouponCode() interfac
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrders201ResponseDataAttributes) GetGiftCardOrCouponCodeOk() (*interface{}, bool) {
-	if o == nil || o.GiftCardOrCouponCode == nil {
+	if o == nil || IsNil(o.GiftCardOrCouponCode) {
 		return nil, false
 	}
 	return &o.GiftCardOrCouponCode, true
@@ -353,7 +356,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetGiftCardOrCouponCodeOk() (*inte
 
 // HasGiftCardOrCouponCode returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasGiftCardOrCouponCode() bool {
-	if o != nil && o.GiftCardOrCouponCode != nil {
+	if o != nil && IsNil(o.GiftCardOrCouponCode) {
 		return true
 	}
 
@@ -378,7 +381,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetCartUrl() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrders201ResponseDataAttributes) GetCartUrlOk() (*interface{}, bool) {
-	if o == nil || o.CartUrl == nil {
+	if o == nil || IsNil(o.CartUrl) {
 		return nil, false
 	}
 	return &o.CartUrl, true
@@ -386,7 +389,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetCartUrlOk() (*interface{}, bool
 
 // HasCartUrl returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasCartUrl() bool {
-	if o != nil && o.CartUrl != nil {
+	if o != nil && IsNil(o.CartUrl) {
 		return true
 	}
 
@@ -411,7 +414,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetReturnUrl() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrders201ResponseDataAttributes) GetReturnUrlOk() (*interface{}, bool) {
-	if o == nil || o.ReturnUrl == nil {
+	if o == nil || IsNil(o.ReturnUrl) {
 		return nil, false
 	}
 	return &o.ReturnUrl, true
@@ -419,7 +422,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetReturnUrlOk() (*interface{}, bo
 
 // HasReturnUrl returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasReturnUrl() bool {
-	if o != nil && o.ReturnUrl != nil {
+	if o != nil && IsNil(o.ReturnUrl) {
 		return true
 	}
 
@@ -444,7 +447,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetTermsUrl() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrders201ResponseDataAttributes) GetTermsUrlOk() (*interface{}, bool) {
-	if o == nil || o.TermsUrl == nil {
+	if o == nil || IsNil(o.TermsUrl) {
 		return nil, false
 	}
 	return &o.TermsUrl, true
@@ -452,7 +455,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetTermsUrlOk() (*interface{}, boo
 
 // HasTermsUrl returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasTermsUrl() bool {
-	if o != nil && o.TermsUrl != nil {
+	if o != nil && IsNil(o.TermsUrl) {
 		return true
 	}
 
@@ -477,7 +480,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetPrivacyUrl() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrders201ResponseDataAttributes) GetPrivacyUrlOk() (*interface{}, bool) {
-	if o == nil || o.PrivacyUrl == nil {
+	if o == nil || IsNil(o.PrivacyUrl) {
 		return nil, false
 	}
 	return &o.PrivacyUrl, true
@@ -485,7 +488,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetPrivacyUrlOk() (*interface{}, b
 
 // HasPrivacyUrl returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasPrivacyUrl() bool {
-	if o != nil && o.PrivacyUrl != nil {
+	if o != nil && IsNil(o.PrivacyUrl) {
 		return true
 	}
 
@@ -510,7 +513,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetReference() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrders201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -518,7 +521,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetReferenceOk() (*interface{}, bo
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -543,7 +546,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetReferenceOrigin() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrders201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -551,7 +554,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetReferenceOriginOk() (*interface
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -576,7 +579,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetMetadata() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTOrders201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -584,7 +587,7 @@ func (o *POSTOrders201ResponseDataAttributes) GetMetadataOk() (*interface{}, boo
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -597,6 +600,14 @@ func (o *POSTOrders201ResponseDataAttributes) SetMetadata(v interface{}) {
 }
 
 func (o POSTOrders201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTOrders201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Autorefresh != nil {
 		toSerialize["autorefresh"] = o.Autorefresh
@@ -646,7 +657,7 @@ func (o POSTOrders201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTOrders201ResponseDataAttributes struct {

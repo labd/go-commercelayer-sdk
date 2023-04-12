@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTInventoryReturnLocations201Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTInventoryReturnLocations201Response{}
+
 // POSTInventoryReturnLocations201Response struct for POSTInventoryReturnLocations201Response
 type POSTInventoryReturnLocations201Response struct {
 	Data *POSTInventoryReturnLocations201ResponseData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewPOSTInventoryReturnLocations201ResponseWithDefaults() *POSTInventoryRetu
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTInventoryReturnLocations201Response) GetData() POSTInventoryReturnLocations201ResponseData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret POSTInventoryReturnLocations201ResponseData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *POSTInventoryReturnLocations201Response) GetData() POSTInventoryReturnL
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTInventoryReturnLocations201Response) GetDataOk() (*POSTInventoryReturnLocations201ResponseData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *POSTInventoryReturnLocations201Response) GetDataOk() (*POSTInventoryRet
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTInventoryReturnLocations201Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *POSTInventoryReturnLocations201Response) SetData(v POSTInventoryReturnL
 }
 
 func (o POSTInventoryReturnLocations201Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o POSTInventoryReturnLocations201Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullablePOSTInventoryReturnLocations201Response struct {

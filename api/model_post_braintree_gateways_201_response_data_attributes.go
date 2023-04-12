@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTBraintreeGateways201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTBraintreeGateways201ResponseDataAttributes{}
+
 // POSTBraintreeGateways201ResponseDataAttributes struct for POSTBraintreeGateways201ResponseDataAttributes
 type POSTBraintreeGateways201ResponseDataAttributes struct {
 	// The payment gateway's internal name.
@@ -78,7 +81,7 @@ func (o *POSTBraintreeGateways201ResponseDataAttributes) GetName() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBraintreeGateways201ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -102,7 +105,7 @@ func (o *POSTBraintreeGateways201ResponseDataAttributes) GetReference() interfac
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBraintreeGateways201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -110,7 +113,7 @@ func (o *POSTBraintreeGateways201ResponseDataAttributes) GetReferenceOk() (*inte
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTBraintreeGateways201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -135,7 +138,7 @@ func (o *POSTBraintreeGateways201ResponseDataAttributes) GetReferenceOrigin() in
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBraintreeGateways201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -143,7 +146,7 @@ func (o *POSTBraintreeGateways201ResponseDataAttributes) GetReferenceOriginOk() 
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTBraintreeGateways201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -168,7 +171,7 @@ func (o *POSTBraintreeGateways201ResponseDataAttributes) GetMetadata() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBraintreeGateways201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -176,7 +179,7 @@ func (o *POSTBraintreeGateways201ResponseDataAttributes) GetMetadataOk() (*inter
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTBraintreeGateways201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -203,7 +206,7 @@ func (o *POSTBraintreeGateways201ResponseDataAttributes) GetMerchantAccountId() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBraintreeGateways201ResponseDataAttributes) GetMerchantAccountIdOk() (*interface{}, bool) {
-	if o == nil || o.MerchantAccountId == nil {
+	if o == nil || IsNil(o.MerchantAccountId) {
 		return nil, false
 	}
 	return &o.MerchantAccountId, true
@@ -229,7 +232,7 @@ func (o *POSTBraintreeGateways201ResponseDataAttributes) GetMerchantId() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBraintreeGateways201ResponseDataAttributes) GetMerchantIdOk() (*interface{}, bool) {
-	if o == nil || o.MerchantId == nil {
+	if o == nil || IsNil(o.MerchantId) {
 		return nil, false
 	}
 	return &o.MerchantId, true
@@ -255,7 +258,7 @@ func (o *POSTBraintreeGateways201ResponseDataAttributes) GetPublicKey() interfac
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBraintreeGateways201ResponseDataAttributes) GetPublicKeyOk() (*interface{}, bool) {
-	if o == nil || o.PublicKey == nil {
+	if o == nil || IsNil(o.PublicKey) {
 		return nil, false
 	}
 	return &o.PublicKey, true
@@ -281,7 +284,7 @@ func (o *POSTBraintreeGateways201ResponseDataAttributes) GetPrivateKey() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBraintreeGateways201ResponseDataAttributes) GetPrivateKeyOk() (*interface{}, bool) {
-	if o == nil || o.PrivateKey == nil {
+	if o == nil || IsNil(o.PrivateKey) {
 		return nil, false
 	}
 	return &o.PrivateKey, true
@@ -305,7 +308,7 @@ func (o *POSTBraintreeGateways201ResponseDataAttributes) GetDescriptorName() int
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBraintreeGateways201ResponseDataAttributes) GetDescriptorNameOk() (*interface{}, bool) {
-	if o == nil || o.DescriptorName == nil {
+	if o == nil || IsNil(o.DescriptorName) {
 		return nil, false
 	}
 	return &o.DescriptorName, true
@@ -313,7 +316,7 @@ func (o *POSTBraintreeGateways201ResponseDataAttributes) GetDescriptorNameOk() (
 
 // HasDescriptorName returns a boolean if a field has been set.
 func (o *POSTBraintreeGateways201ResponseDataAttributes) HasDescriptorName() bool {
-	if o != nil && o.DescriptorName != nil {
+	if o != nil && IsNil(o.DescriptorName) {
 		return true
 	}
 
@@ -338,7 +341,7 @@ func (o *POSTBraintreeGateways201ResponseDataAttributes) GetDescriptorPhone() in
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBraintreeGateways201ResponseDataAttributes) GetDescriptorPhoneOk() (*interface{}, bool) {
-	if o == nil || o.DescriptorPhone == nil {
+	if o == nil || IsNil(o.DescriptorPhone) {
 		return nil, false
 	}
 	return &o.DescriptorPhone, true
@@ -346,7 +349,7 @@ func (o *POSTBraintreeGateways201ResponseDataAttributes) GetDescriptorPhoneOk() 
 
 // HasDescriptorPhone returns a boolean if a field has been set.
 func (o *POSTBraintreeGateways201ResponseDataAttributes) HasDescriptorPhone() bool {
-	if o != nil && o.DescriptorPhone != nil {
+	if o != nil && IsNil(o.DescriptorPhone) {
 		return true
 	}
 
@@ -371,7 +374,7 @@ func (o *POSTBraintreeGateways201ResponseDataAttributes) GetDescriptorUrl() inte
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTBraintreeGateways201ResponseDataAttributes) GetDescriptorUrlOk() (*interface{}, bool) {
-	if o == nil || o.DescriptorUrl == nil {
+	if o == nil || IsNil(o.DescriptorUrl) {
 		return nil, false
 	}
 	return &o.DescriptorUrl, true
@@ -379,7 +382,7 @@ func (o *POSTBraintreeGateways201ResponseDataAttributes) GetDescriptorUrlOk() (*
 
 // HasDescriptorUrl returns a boolean if a field has been set.
 func (o *POSTBraintreeGateways201ResponseDataAttributes) HasDescriptorUrl() bool {
-	if o != nil && o.DescriptorUrl != nil {
+	if o != nil && IsNil(o.DescriptorUrl) {
 		return true
 	}
 
@@ -392,6 +395,14 @@ func (o *POSTBraintreeGateways201ResponseDataAttributes) SetDescriptorUrl(v inte
 }
 
 func (o POSTBraintreeGateways201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTBraintreeGateways201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -426,7 +437,7 @@ func (o POSTBraintreeGateways201ResponseDataAttributes) MarshalJSON() ([]byte, e
 	if o.DescriptorUrl != nil {
 		toSerialize["descriptor_url"] = o.DescriptorUrl
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTBraintreeGateways201ResponseDataAttributes struct {

@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the BraintreeGatewayCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BraintreeGatewayCreate{}
+
 // BraintreeGatewayCreate struct for BraintreeGatewayCreate
 type BraintreeGatewayCreate struct {
 	Data BraintreeGatewayCreateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *BraintreeGatewayCreate) SetData(v BraintreeGatewayCreateData) {
 }
 
 func (o BraintreeGatewayCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o BraintreeGatewayCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableBraintreeGatewayCreate struct {

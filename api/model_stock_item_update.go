@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the StockItemUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &StockItemUpdate{}
+
 // StockItemUpdate struct for StockItemUpdate
 type StockItemUpdate struct {
 	Data StockItemUpdateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *StockItemUpdate) SetData(v StockItemUpdateData) {
 }
 
 func (o StockItemUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o StockItemUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableStockItemUpdate struct {

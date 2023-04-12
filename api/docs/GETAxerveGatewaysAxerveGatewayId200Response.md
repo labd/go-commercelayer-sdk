@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETAxerveGateways200ResponseDataInner**](GETAxerveGateways200ResponseDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETAxerveGatewaysAxerveGatewayId200ResponseData**](GETAxerveGatewaysAxerveGatewayId200ResponseData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETAxerveGatewaysAxerveGatewayId200Response) GetData() GETAxerveGateways200ResponseDataInner`
+`func (o *GETAxerveGatewaysAxerveGatewayId200Response) GetData() GETAxerveGatewaysAxerveGatewayId200ResponseData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETAxerveGatewaysAxerveGatewayId200Response) GetDataOk() (*GETAxerveGateways200ResponseDataInner, bool)`
+`func (o *GETAxerveGatewaysAxerveGatewayId200Response) GetDataOk() (*GETAxerveGatewaysAxerveGatewayId200ResponseData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETAxerveGatewaysAxerveGatewayId200Response) SetData(v GETAxerveGateways200ResponseDataInner)`
+`func (o *GETAxerveGatewaysAxerveGatewayId200Response) SetData(v GETAxerveGatewaysAxerveGatewayId200ResponseData)`
 
 SetData sets Data field to given value.
 

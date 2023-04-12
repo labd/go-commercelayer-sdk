@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the KlarnaGatewayCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &KlarnaGatewayCreate{}
+
 // KlarnaGatewayCreate struct for KlarnaGatewayCreate
 type KlarnaGatewayCreate struct {
 	Data KlarnaGatewayCreateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *KlarnaGatewayCreate) SetData(v KlarnaGatewayCreateData) {
 }
 
 func (o KlarnaGatewayCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o KlarnaGatewayCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableKlarnaGatewayCreate struct {

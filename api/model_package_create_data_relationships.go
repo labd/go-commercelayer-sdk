@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PackageCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PackageCreateDataRelationships{}
+
 // PackageCreateDataRelationships struct for PackageCreateDataRelationships
 type PackageCreateDataRelationships struct {
 	StockLocation DeliveryLeadTimeCreateDataRelationshipsStockLocation `json:"stock_location"`
@@ -63,11 +66,17 @@ func (o *PackageCreateDataRelationships) SetStockLocation(v DeliveryLeadTimeCrea
 }
 
 func (o PackageCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["stock_location"] = o.StockLocation
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PackageCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["stock_location"] = o.StockLocation
+	return toSerialize, nil
 }
 
 type NullablePackageCreateDataRelationships struct {

@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the StockLocationCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &StockLocationCreate{}
+
 // StockLocationCreate struct for StockLocationCreate
 type StockLocationCreate struct {
 	Data StockLocationCreateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *StockLocationCreate) SetData(v StockLocationCreateData) {
 }
 
 func (o StockLocationCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o StockLocationCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableStockLocationCreate struct {

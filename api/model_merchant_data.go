@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the MerchantData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &MerchantData{}
+
 // MerchantData struct for MerchantData
 type MerchantData struct {
 	// The resource's type
-	Type          interface{}                                `json:"type"`
-	Attributes    GETMerchants200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *MerchantDataRelationships                 `json:"relationships,omitempty"`
+	Type          interface{}                                     `json:"type"`
+	Attributes    GETMerchantsMerchantId200ResponseDataAttributes `json:"attributes"`
+	Relationships *MerchantDataRelationships                      `json:"relationships,omitempty"`
 }
 
 // NewMerchantData instantiates a new MerchantData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewMerchantData(type_ interface{}, attributes GETMerchants200ResponseDataInnerAttributes) *MerchantData {
+func NewMerchantData(type_ interface{}, attributes GETMerchantsMerchantId200ResponseDataAttributes) *MerchantData {
 	this := MerchantData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -57,7 +60,7 @@ func (o *MerchantData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *MerchantData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -69,9 +72,9 @@ func (o *MerchantData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *MerchantData) GetAttributes() GETMerchants200ResponseDataInnerAttributes {
+func (o *MerchantData) GetAttributes() GETMerchantsMerchantId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETMerchants200ResponseDataInnerAttributes
+		var ret GETMerchantsMerchantId200ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +83,7 @@ func (o *MerchantData) GetAttributes() GETMerchants200ResponseDataInnerAttribute
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *MerchantData) GetAttributesOk() (*GETMerchants200ResponseDataInnerAttributes, bool) {
+func (o *MerchantData) GetAttributesOk() (*GETMerchantsMerchantId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,13 +91,13 @@ func (o *MerchantData) GetAttributesOk() (*GETMerchants200ResponseDataInnerAttri
 }
 
 // SetAttributes sets field value
-func (o *MerchantData) SetAttributes(v GETMerchants200ResponseDataInnerAttributes) {
+func (o *MerchantData) SetAttributes(v GETMerchantsMerchantId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *MerchantData) GetRelationships() MerchantDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret MerchantDataRelationships
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *MerchantData) GetRelationships() MerchantDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MerchantData) GetRelationshipsOk() (*MerchantDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -112,7 +115,7 @@ func (o *MerchantData) GetRelationshipsOk() (*MerchantDataRelationships, bool) {
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *MerchantData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -125,17 +128,23 @@ func (o *MerchantData) SetRelationships(v MerchantDataRelationships) {
 }
 
 func (o MerchantData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o MerchantData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableMerchantData struct {

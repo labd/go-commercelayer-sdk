@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the CustomerAddressUpdateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CustomerAddressUpdateDataRelationships{}
+
 // CustomerAddressUpdateDataRelationships struct for CustomerAddressUpdateDataRelationships
 type CustomerAddressUpdateDataRelationships struct {
 	Customer *CouponRecipientCreateDataRelationshipsCustomer `json:"customer,omitempty"`
@@ -40,7 +43,7 @@ func NewCustomerAddressUpdateDataRelationshipsWithDefaults() *CustomerAddressUpd
 
 // GetCustomer returns the Customer field value if set, zero value otherwise.
 func (o *CustomerAddressUpdateDataRelationships) GetCustomer() CouponRecipientCreateDataRelationshipsCustomer {
-	if o == nil || o.Customer == nil {
+	if o == nil || IsNil(o.Customer) {
 		var ret CouponRecipientCreateDataRelationshipsCustomer
 		return ret
 	}
@@ -50,7 +53,7 @@ func (o *CustomerAddressUpdateDataRelationships) GetCustomer() CouponRecipientCr
 // GetCustomerOk returns a tuple with the Customer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerAddressUpdateDataRelationships) GetCustomerOk() (*CouponRecipientCreateDataRelationshipsCustomer, bool) {
-	if o == nil || o.Customer == nil {
+	if o == nil || IsNil(o.Customer) {
 		return nil, false
 	}
 	return o.Customer, true
@@ -58,7 +61,7 @@ func (o *CustomerAddressUpdateDataRelationships) GetCustomerOk() (*CouponRecipie
 
 // HasCustomer returns a boolean if a field has been set.
 func (o *CustomerAddressUpdateDataRelationships) HasCustomer() bool {
-	if o != nil && o.Customer != nil {
+	if o != nil && !IsNil(o.Customer) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *CustomerAddressUpdateDataRelationships) SetCustomer(v CouponRecipientCr
 
 // GetAddress returns the Address field value if set, zero value otherwise.
 func (o *CustomerAddressUpdateDataRelationships) GetAddress() CustomerAddressCreateDataRelationshipsAddress {
-	if o == nil || o.Address == nil {
+	if o == nil || IsNil(o.Address) {
 		var ret CustomerAddressCreateDataRelationshipsAddress
 		return ret
 	}
@@ -82,7 +85,7 @@ func (o *CustomerAddressUpdateDataRelationships) GetAddress() CustomerAddressCre
 // GetAddressOk returns a tuple with the Address field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerAddressUpdateDataRelationships) GetAddressOk() (*CustomerAddressCreateDataRelationshipsAddress, bool) {
-	if o == nil || o.Address == nil {
+	if o == nil || IsNil(o.Address) {
 		return nil, false
 	}
 	return o.Address, true
@@ -90,7 +93,7 @@ func (o *CustomerAddressUpdateDataRelationships) GetAddressOk() (*CustomerAddres
 
 // HasAddress returns a boolean if a field has been set.
 func (o *CustomerAddressUpdateDataRelationships) HasAddress() bool {
-	if o != nil && o.Address != nil {
+	if o != nil && !IsNil(o.Address) {
 		return true
 	}
 
@@ -103,14 +106,22 @@ func (o *CustomerAddressUpdateDataRelationships) SetAddress(v CustomerAddressCre
 }
 
 func (o CustomerAddressUpdateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Customer != nil {
-		toSerialize["customer"] = o.Customer
-	}
-	if o.Address != nil {
-		toSerialize["address"] = o.Address
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CustomerAddressUpdateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Customer) {
+		toSerialize["customer"] = o.Customer
+	}
+	if !IsNil(o.Address) {
+		toSerialize["address"] = o.Address
+	}
+	return toSerialize, nil
 }
 
 type NullableCustomerAddressUpdateDataRelationships struct {

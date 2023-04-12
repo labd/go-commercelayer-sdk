@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETAuthorizations200ResponseDataInnerAttributes**](GETAuthorizations200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**GETAuthorizationsAuthorizationId200ResponseDataAttributes**](GETAuthorizationsAuthorizationId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AuthorizationDataRelationships**](AuthorizationDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewAuthorizationData
 
-`func NewAuthorizationData(type_ interface{}, attributes GETAuthorizations200ResponseDataInnerAttributes, ) *AuthorizationData`
+`func NewAuthorizationData(type_ interface{}, attributes GETAuthorizationsAuthorizationId200ResponseDataAttributes, ) *AuthorizationData`
 
 NewAuthorizationData instantiates a new AuthorizationData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *AuthorizationData) GetAttributes() GETAuthorizations200ResponseDataInnerAttributes`
+`func (o *AuthorizationData) GetAttributes() GETAuthorizationsAuthorizationId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *AuthorizationData) GetAttributesOk() (*GETAuthorizations200ResponseDataInnerAttributes, bool)`
+`func (o *AuthorizationData) GetAttributesOk() (*GETAuthorizationsAuthorizationId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *AuthorizationData) SetAttributes(v GETAuthorizations200ResponseDataInnerAttributes)`
+`func (o *AuthorizationData) SetAttributes(v GETAuthorizationsAuthorizationId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

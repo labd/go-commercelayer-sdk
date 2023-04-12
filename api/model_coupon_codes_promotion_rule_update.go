@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the CouponCodesPromotionRuleUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CouponCodesPromotionRuleUpdate{}
+
 // CouponCodesPromotionRuleUpdate struct for CouponCodesPromotionRuleUpdate
 type CouponCodesPromotionRuleUpdate struct {
 	Data CouponCodesPromotionRuleUpdateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *CouponCodesPromotionRuleUpdate) SetData(v CouponCodesPromotionRuleUpdat
 }
 
 func (o CouponCodesPromotionRuleUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CouponCodesPromotionRuleUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableCouponCodesPromotionRuleUpdate struct {

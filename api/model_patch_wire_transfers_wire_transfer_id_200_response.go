@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHWireTransfersWireTransferId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHWireTransfersWireTransferId200Response{}
+
 // PATCHWireTransfersWireTransferId200Response struct for PATCHWireTransfersWireTransferId200Response
 type PATCHWireTransfersWireTransferId200Response struct {
 	Data *PATCHWireTransfersWireTransferId200ResponseData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewPATCHWireTransfersWireTransferId200ResponseWithDefaults() *PATCHWireTran
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *PATCHWireTransfersWireTransferId200Response) GetData() PATCHWireTransfersWireTransferId200ResponseData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret PATCHWireTransfersWireTransferId200ResponseData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *PATCHWireTransfersWireTransferId200Response) GetData() PATCHWireTransfe
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHWireTransfersWireTransferId200Response) GetDataOk() (*PATCHWireTransfersWireTransferId200ResponseData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *PATCHWireTransfersWireTransferId200Response) GetDataOk() (*PATCHWireTra
 
 // HasData returns a boolean if a field has been set.
 func (o *PATCHWireTransfersWireTransferId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *PATCHWireTransfersWireTransferId200Response) SetData(v PATCHWireTransfe
 }
 
 func (o PATCHWireTransfersWireTransferId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PATCHWireTransfersWireTransferId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullablePATCHWireTransfersWireTransferId200Response struct {

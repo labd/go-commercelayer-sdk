@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETBillingInfoValidationRules200ResponseDataInnerAttributes**](GETBillingInfoValidationRules200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes**](GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CouponCodesPromotionRuleDataRelationships**](CouponCodesPromotionRuleDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCouponCodesPromotionRuleData
 
-`func NewCouponCodesPromotionRuleData(type_ interface{}, attributes GETBillingInfoValidationRules200ResponseDataInnerAttributes, ) *CouponCodesPromotionRuleData`
+`func NewCouponCodesPromotionRuleData(type_ interface{}, attributes GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, ) *CouponCodesPromotionRuleData`
 
 NewCouponCodesPromotionRuleData instantiates a new CouponCodesPromotionRuleData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *CouponCodesPromotionRuleData) GetAttributes() GETBillingInfoValidationRules200ResponseDataInnerAttributes`
+`func (o *CouponCodesPromotionRuleData) GetAttributes() GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CouponCodesPromotionRuleData) GetAttributesOk() (*GETBillingInfoValidationRules200ResponseDataInnerAttributes, bool)`
+`func (o *CouponCodesPromotionRuleData) GetAttributesOk() (*GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CouponCodesPromotionRuleData) SetAttributes(v GETBillingInfoValidationRules200ResponseDataInnerAttributes)`
+`func (o *CouponCodesPromotionRuleData) SetAttributes(v GETBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

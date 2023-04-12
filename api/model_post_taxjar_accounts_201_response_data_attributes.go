@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTTaxjarAccounts201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTTaxjarAccounts201ResponseDataAttributes{}
+
 // POSTTaxjarAccounts201ResponseDataAttributes struct for POSTTaxjarAccounts201ResponseDataAttributes
 type POSTTaxjarAccounts201ResponseDataAttributes struct {
 	// The tax calculator's internal name.
@@ -63,7 +66,7 @@ func (o *POSTTaxjarAccounts201ResponseDataAttributes) GetName() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTTaxjarAccounts201ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -87,7 +90,7 @@ func (o *POSTTaxjarAccounts201ResponseDataAttributes) GetReference() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTTaxjarAccounts201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -95,7 +98,7 @@ func (o *POSTTaxjarAccounts201ResponseDataAttributes) GetReferenceOk() (*interfa
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTTaxjarAccounts201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -120,7 +123,7 @@ func (o *POSTTaxjarAccounts201ResponseDataAttributes) GetReferenceOrigin() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTTaxjarAccounts201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -128,7 +131,7 @@ func (o *POSTTaxjarAccounts201ResponseDataAttributes) GetReferenceOriginOk() (*i
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTTaxjarAccounts201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -153,7 +156,7 @@ func (o *POSTTaxjarAccounts201ResponseDataAttributes) GetMetadata() interface{} 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTTaxjarAccounts201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -161,7 +164,7 @@ func (o *POSTTaxjarAccounts201ResponseDataAttributes) GetMetadataOk() (*interfac
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTTaxjarAccounts201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -188,7 +191,7 @@ func (o *POSTTaxjarAccounts201ResponseDataAttributes) GetApiKey() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTTaxjarAccounts201ResponseDataAttributes) GetApiKeyOk() (*interface{}, bool) {
-	if o == nil || o.ApiKey == nil {
+	if o == nil || IsNil(o.ApiKey) {
 		return nil, false
 	}
 	return &o.ApiKey, true
@@ -200,6 +203,14 @@ func (o *POSTTaxjarAccounts201ResponseDataAttributes) SetApiKey(v interface{}) {
 }
 
 func (o POSTTaxjarAccounts201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTTaxjarAccounts201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -216,7 +227,7 @@ func (o POSTTaxjarAccounts201ResponseDataAttributes) MarshalJSON() ([]byte, erro
 	if o.ApiKey != nil {
 		toSerialize["api_key"] = o.ApiKey
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTTaxjarAccounts201ResponseDataAttributes struct {

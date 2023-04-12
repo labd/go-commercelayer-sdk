@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHLineItemsLineItemId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHLineItemsLineItemId200ResponseDataAttributes{}
+
 // PATCHLineItemsLineItemId200ResponseDataAttributes struct for PATCHLineItemsLineItemId200ResponseDataAttributes
 type PATCHLineItemsLineItemId200ResponseDataAttributes struct {
 	// The code of the associated SKU.
@@ -69,7 +72,7 @@ func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetSkuCode() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetSkuCodeOk() (*interface{}, bool) {
-	if o == nil || o.SkuCode == nil {
+	if o == nil || IsNil(o.SkuCode) {
 		return nil, false
 	}
 	return &o.SkuCode, true
@@ -77,7 +80,7 @@ func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetSkuCodeOk() (*int
 
 // HasSkuCode returns a boolean if a field has been set.
 func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) HasSkuCode() bool {
-	if o != nil && o.SkuCode != nil {
+	if o != nil && IsNil(o.SkuCode) {
 		return true
 	}
 
@@ -102,7 +105,7 @@ func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetBundleCode() inte
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetBundleCodeOk() (*interface{}, bool) {
-	if o == nil || o.BundleCode == nil {
+	if o == nil || IsNil(o.BundleCode) {
 		return nil, false
 	}
 	return &o.BundleCode, true
@@ -110,7 +113,7 @@ func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetBundleCodeOk() (*
 
 // HasBundleCode returns a boolean if a field has been set.
 func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) HasBundleCode() bool {
-	if o != nil && o.BundleCode != nil {
+	if o != nil && IsNil(o.BundleCode) {
 		return true
 	}
 
@@ -135,7 +138,7 @@ func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetQuantity() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetQuantityOk() (*interface{}, bool) {
-	if o == nil || o.Quantity == nil {
+	if o == nil || IsNil(o.Quantity) {
 		return nil, false
 	}
 	return &o.Quantity, true
@@ -143,7 +146,7 @@ func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetQuantityOk() (*in
 
 // HasQuantity returns a boolean if a field has been set.
 func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) HasQuantity() bool {
-	if o != nil && o.Quantity != nil {
+	if o != nil && IsNil(o.Quantity) {
 		return true
 	}
 
@@ -168,7 +171,7 @@ func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetExternalPrice() i
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetExternalPriceOk() (*interface{}, bool) {
-	if o == nil || o.ExternalPrice == nil {
+	if o == nil || IsNil(o.ExternalPrice) {
 		return nil, false
 	}
 	return &o.ExternalPrice, true
@@ -176,7 +179,7 @@ func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetExternalPriceOk()
 
 // HasExternalPrice returns a boolean if a field has been set.
 func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) HasExternalPrice() bool {
-	if o != nil && o.ExternalPrice != nil {
+	if o != nil && IsNil(o.ExternalPrice) {
 		return true
 	}
 
@@ -201,7 +204,7 @@ func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetName() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -209,7 +212,7 @@ func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetNameOk() (*interf
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
@@ -234,7 +237,7 @@ func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetImageUrl() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetImageUrlOk() (*interface{}, bool) {
-	if o == nil || o.ImageUrl == nil {
+	if o == nil || IsNil(o.ImageUrl) {
 		return nil, false
 	}
 	return &o.ImageUrl, true
@@ -242,7 +245,7 @@ func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetImageUrlOk() (*in
 
 // HasImageUrl returns a boolean if a field has been set.
 func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) HasImageUrl() bool {
-	if o != nil && o.ImageUrl != nil {
+	if o != nil && IsNil(o.ImageUrl) {
 		return true
 	}
 
@@ -267,7 +270,7 @@ func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetFrequency() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetFrequencyOk() (*interface{}, bool) {
-	if o == nil || o.Frequency == nil {
+	if o == nil || IsNil(o.Frequency) {
 		return nil, false
 	}
 	return &o.Frequency, true
@@ -275,7 +278,7 @@ func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetFrequencyOk() (*i
 
 // HasFrequency returns a boolean if a field has been set.
 func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) HasFrequency() bool {
-	if o != nil && o.Frequency != nil {
+	if o != nil && IsNil(o.Frequency) {
 		return true
 	}
 
@@ -300,7 +303,7 @@ func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetReference() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -308,7 +311,7 @@ func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetReferenceOk() (*i
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -333,7 +336,7 @@ func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetReferenceOrigin()
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -341,7 +344,7 @@ func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetReferenceOriginOk
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -366,7 +369,7 @@ func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetMetadata() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -374,7 +377,7 @@ func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) GetMetadataOk() (*in
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -387,6 +390,14 @@ func (o *PATCHLineItemsLineItemId200ResponseDataAttributes) SetMetadata(v interf
 }
 
 func (o PATCHLineItemsLineItemId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHLineItemsLineItemId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.SkuCode != nil {
 		toSerialize["sku_code"] = o.SkuCode
@@ -418,7 +429,7 @@ func (o PATCHLineItemsLineItemId200ResponseDataAttributes) MarshalJSON() ([]byte
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHLineItemsLineItemId200ResponseDataAttributes struct {

@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *AxervePaymentsApiService) DELETEAxervePaymentsAxervePaymentIdExecute(r 
 	}
 
 	localVarPath := localBasePath + "/axerve_payments/{axervePaymentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"axervePaymentId"+"}", url.PathEscape(parameterToString(r.axervePaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"axervePaymentId"+"}", url.PathEscape(parameterValueToString(r.axervePaymentId, "axervePaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *AxervePaymentsApiService) DELETEAxervePaymentsAxervePaymentIdExecute(r 
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -156,7 +156,7 @@ func (a *AxervePaymentsApiService) GETAxerveGatewayIdAxervePaymentsExecute(r Axe
 	}
 
 	localVarPath := localBasePath + "/axerve_gateways/{axerveGatewayId}/axerve_payments"
-	localVarPath = strings.Replace(localVarPath, "{"+"axerveGatewayId"+"}", url.PathEscape(parameterToString(r.axerveGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"axerveGatewayId"+"}", url.PathEscape(parameterValueToString(r.axerveGatewayId, "axerveGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *AxervePaymentsApiService) GETAxerveGatewayIdAxervePaymentsExecute(r Axe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *AxervePaymentsApiService) GETAxervePaymentsExecute(r AxervePaymentsApiG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -351,7 +351,7 @@ func (a *AxervePaymentsApiService) GETAxervePaymentsAxervePaymentIdExecute(r Axe
 	}
 
 	localVarPath := localBasePath + "/axerve_payments/{axervePaymentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"axervePaymentId"+"}", url.PathEscape(parameterToString(r.axervePaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"axervePaymentId"+"}", url.PathEscape(parameterValueToString(r.axervePaymentId, "axervePaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *AxervePaymentsApiService) GETAxervePaymentsAxervePaymentIdExecute(r Axe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -461,7 +461,7 @@ func (a *AxervePaymentsApiService) PATCHAxervePaymentsAxervePaymentIdExecute(r A
 	}
 
 	localVarPath := localBasePath + "/axerve_payments/{axervePaymentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"axervePaymentId"+"}", url.PathEscape(parameterToString(r.axervePaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"axervePaymentId"+"}", url.PathEscape(parameterValueToString(r.axervePaymentId, "axervePaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -499,9 +499,9 @@ func (a *AxervePaymentsApiService) PATCHAxervePaymentsAxervePaymentIdExecute(r A
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -610,9 +610,9 @@ func (a *AxervePaymentsApiService) POSTAxervePaymentsExecute(r AxervePaymentsApi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTPriceVolumeTiers201Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTPriceVolumeTiers201Response{}
+
 // POSTPriceVolumeTiers201Response struct for POSTPriceVolumeTiers201Response
 type POSTPriceVolumeTiers201Response struct {
 	Data *POSTPriceVolumeTiers201ResponseData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewPOSTPriceVolumeTiers201ResponseWithDefaults() *POSTPriceVolumeTiers201Re
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTPriceVolumeTiers201Response) GetData() POSTPriceVolumeTiers201ResponseData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret POSTPriceVolumeTiers201ResponseData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *POSTPriceVolumeTiers201Response) GetData() POSTPriceVolumeTiers201Respo
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTPriceVolumeTiers201Response) GetDataOk() (*POSTPriceVolumeTiers201ResponseData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *POSTPriceVolumeTiers201Response) GetDataOk() (*POSTPriceVolumeTiers201R
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTPriceVolumeTiers201Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *POSTPriceVolumeTiers201Response) SetData(v POSTPriceVolumeTiers201Respo
 }
 
 func (o POSTPriceVolumeTiers201Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o POSTPriceVolumeTiers201Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullablePOSTPriceVolumeTiers201Response struct {

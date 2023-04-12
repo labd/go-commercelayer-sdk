@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETBundlesBundleId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETBundlesBundleId200Response{}
+
 // GETBundlesBundleId200Response struct for GETBundlesBundleId200Response
 type GETBundlesBundleId200Response struct {
-	Data *GETBundles200ResponseDataInner `json:"data,omitempty"`
+	Data *GETBundlesBundleId200ResponseData `json:"data,omitempty"`
 }
 
 // NewGETBundlesBundleId200Response instantiates a new GETBundlesBundleId200Response object
@@ -38,9 +41,9 @@ func NewGETBundlesBundleId200ResponseWithDefaults() *GETBundlesBundleId200Respon
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETBundlesBundleId200Response) GetData() GETBundles200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret GETBundles200ResponseDataInner
+func (o *GETBundlesBundleId200Response) GetData() GETBundlesBundleId200ResponseData {
+	if o == nil || IsNil(o.Data) {
+		var ret GETBundlesBundleId200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *GETBundlesBundleId200Response) GetData() GETBundles200ResponseDataInner
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETBundlesBundleId200Response) GetDataOk() (*GETBundles200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+func (o *GETBundlesBundleId200Response) GetDataOk() (*GETBundlesBundleId200ResponseData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *GETBundlesBundleId200Response) GetDataOk() (*GETBundles200ResponseDataI
 
 // HasData returns a boolean if a field has been set.
 func (o *GETBundlesBundleId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETBundles200ResponseDataInner and assigns it to the Data field.
-func (o *GETBundlesBundleId200Response) SetData(v GETBundles200ResponseDataInner) {
+// SetData gets a reference to the given GETBundlesBundleId200ResponseData and assigns it to the Data field.
+func (o *GETBundlesBundleId200Response) SetData(v GETBundlesBundleId200ResponseData) {
 	o.Data = &v
 }
 
 func (o GETBundlesBundleId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GETBundlesBundleId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGETBundlesBundleId200Response struct {

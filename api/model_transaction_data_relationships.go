@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the TransactionDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &TransactionDataRelationships{}
+
 // TransactionDataRelationships struct for TransactionDataRelationships
 type TransactionDataRelationships struct {
 	Order *AdyenPaymentDataRelationshipsOrder `json:"order,omitempty"`
@@ -39,7 +42,7 @@ func NewTransactionDataRelationshipsWithDefaults() *TransactionDataRelationships
 
 // GetOrder returns the Order field value if set, zero value otherwise.
 func (o *TransactionDataRelationships) GetOrder() AdyenPaymentDataRelationshipsOrder {
-	if o == nil || o.Order == nil {
+	if o == nil || IsNil(o.Order) {
 		var ret AdyenPaymentDataRelationshipsOrder
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *TransactionDataRelationships) GetOrder() AdyenPaymentDataRelationshipsO
 // GetOrderOk returns a tuple with the Order field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TransactionDataRelationships) GetOrderOk() (*AdyenPaymentDataRelationshipsOrder, bool) {
-	if o == nil || o.Order == nil {
+	if o == nil || IsNil(o.Order) {
 		return nil, false
 	}
 	return o.Order, true
@@ -57,7 +60,7 @@ func (o *TransactionDataRelationships) GetOrderOk() (*AdyenPaymentDataRelationsh
 
 // HasOrder returns a boolean if a field has been set.
 func (o *TransactionDataRelationships) HasOrder() bool {
-	if o != nil && o.Order != nil {
+	if o != nil && !IsNil(o.Order) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *TransactionDataRelationships) SetOrder(v AdyenPaymentDataRelationshipsO
 }
 
 func (o TransactionDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Order != nil {
-		toSerialize["order"] = o.Order
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o TransactionDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Order) {
+		toSerialize["order"] = o.Order
+	}
+	return toSerialize, nil
 }
 
 type NullableTransactionDataRelationships struct {

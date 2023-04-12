@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTOrderAmountPromotionRules201Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTOrderAmountPromotionRules201Response{}
+
 // POSTOrderAmountPromotionRules201Response struct for POSTOrderAmountPromotionRules201Response
 type POSTOrderAmountPromotionRules201Response struct {
 	Data *POSTOrderAmountPromotionRules201ResponseData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewPOSTOrderAmountPromotionRules201ResponseWithDefaults() *POSTOrderAmountP
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTOrderAmountPromotionRules201Response) GetData() POSTOrderAmountPromotionRules201ResponseData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret POSTOrderAmountPromotionRules201ResponseData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *POSTOrderAmountPromotionRules201Response) GetData() POSTOrderAmountProm
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTOrderAmountPromotionRules201Response) GetDataOk() (*POSTOrderAmountPromotionRules201ResponseData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *POSTOrderAmountPromotionRules201Response) GetDataOk() (*POSTOrderAmount
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTOrderAmountPromotionRules201Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *POSTOrderAmountPromotionRules201Response) SetData(v POSTOrderAmountProm
 }
 
 func (o POSTOrderAmountPromotionRules201Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o POSTOrderAmountPromotionRules201Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullablePOSTOrderAmountPromotionRules201Response struct {

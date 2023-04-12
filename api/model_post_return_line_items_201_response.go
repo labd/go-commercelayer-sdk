@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTReturnLineItems201Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTReturnLineItems201Response{}
+
 // POSTReturnLineItems201Response struct for POSTReturnLineItems201Response
 type POSTReturnLineItems201Response struct {
 	Data *POSTReturnLineItems201ResponseData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewPOSTReturnLineItems201ResponseWithDefaults() *POSTReturnLineItems201Resp
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTReturnLineItems201Response) GetData() POSTReturnLineItems201ResponseData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret POSTReturnLineItems201ResponseData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *POSTReturnLineItems201Response) GetData() POSTReturnLineItems201Respons
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTReturnLineItems201Response) GetDataOk() (*POSTReturnLineItems201ResponseData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *POSTReturnLineItems201Response) GetDataOk() (*POSTReturnLineItems201Res
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTReturnLineItems201Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *POSTReturnLineItems201Response) SetData(v POSTReturnLineItems201Respons
 }
 
 func (o POSTReturnLineItems201Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o POSTReturnLineItems201Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullablePOSTReturnLineItems201Response struct {

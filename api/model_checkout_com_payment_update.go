@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the CheckoutComPaymentUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CheckoutComPaymentUpdate{}
+
 // CheckoutComPaymentUpdate struct for CheckoutComPaymentUpdate
 type CheckoutComPaymentUpdate struct {
 	Data CheckoutComPaymentUpdateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *CheckoutComPaymentUpdate) SetData(v CheckoutComPaymentUpdateData) {
 }
 
 func (o CheckoutComPaymentUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CheckoutComPaymentUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableCheckoutComPaymentUpdate struct {

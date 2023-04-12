@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the OrderSubscriptionItemData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &OrderSubscriptionItemData{}
+
 // OrderSubscriptionItemData struct for OrderSubscriptionItemData
 type OrderSubscriptionItemData struct {
 	// The resource's type
-	Type          interface{}                                             `json:"type"`
-	Attributes    GETOrderSubscriptionItems200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *OrderSubscriptionItemDataRelationships                 `json:"relationships,omitempty"`
+	Type          interface{}                                                               `json:"type"`
+	Attributes    GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes `json:"attributes"`
+	Relationships *OrderSubscriptionItemDataRelationships                                   `json:"relationships,omitempty"`
 }
 
 // NewOrderSubscriptionItemData instantiates a new OrderSubscriptionItemData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewOrderSubscriptionItemData(type_ interface{}, attributes GETOrderSubscriptionItems200ResponseDataInnerAttributes) *OrderSubscriptionItemData {
+func NewOrderSubscriptionItemData(type_ interface{}, attributes GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes) *OrderSubscriptionItemData {
 	this := OrderSubscriptionItemData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -57,7 +60,7 @@ func (o *OrderSubscriptionItemData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *OrderSubscriptionItemData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -69,9 +72,9 @@ func (o *OrderSubscriptionItemData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *OrderSubscriptionItemData) GetAttributes() GETOrderSubscriptionItems200ResponseDataInnerAttributes {
+func (o *OrderSubscriptionItemData) GetAttributes() GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETOrderSubscriptionItems200ResponseDataInnerAttributes
+		var ret GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +83,7 @@ func (o *OrderSubscriptionItemData) GetAttributes() GETOrderSubscriptionItems200
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *OrderSubscriptionItemData) GetAttributesOk() (*GETOrderSubscriptionItems200ResponseDataInnerAttributes, bool) {
+func (o *OrderSubscriptionItemData) GetAttributesOk() (*GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,13 +91,13 @@ func (o *OrderSubscriptionItemData) GetAttributesOk() (*GETOrderSubscriptionItem
 }
 
 // SetAttributes sets field value
-func (o *OrderSubscriptionItemData) SetAttributes(v GETOrderSubscriptionItems200ResponseDataInnerAttributes) {
+func (o *OrderSubscriptionItemData) SetAttributes(v GETOrderSubscriptionItemsOrderSubscriptionItemId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *OrderSubscriptionItemData) GetRelationships() OrderSubscriptionItemDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret OrderSubscriptionItemDataRelationships
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *OrderSubscriptionItemData) GetRelationships() OrderSubscriptionItemData
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OrderSubscriptionItemData) GetRelationshipsOk() (*OrderSubscriptionItemDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -112,7 +115,7 @@ func (o *OrderSubscriptionItemData) GetRelationshipsOk() (*OrderSubscriptionItem
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *OrderSubscriptionItemData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -125,17 +128,23 @@ func (o *OrderSubscriptionItemData) SetRelationships(v OrderSubscriptionItemData
 }
 
 func (o OrderSubscriptionItemData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o OrderSubscriptionItemData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableOrderSubscriptionItemData struct {

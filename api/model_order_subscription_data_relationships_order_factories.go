@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the OrderSubscriptionDataRelationshipsOrderFactories type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &OrderSubscriptionDataRelationshipsOrderFactories{}
+
 // OrderSubscriptionDataRelationshipsOrderFactories struct for OrderSubscriptionDataRelationshipsOrderFactories
 type OrderSubscriptionDataRelationshipsOrderFactories struct {
 	Data *OrderSubscriptionDataRelationshipsOrderFactoriesData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewOrderSubscriptionDataRelationshipsOrderFactoriesWithDefaults() *OrderSub
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *OrderSubscriptionDataRelationshipsOrderFactories) GetData() OrderSubscriptionDataRelationshipsOrderFactoriesData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret OrderSubscriptionDataRelationshipsOrderFactoriesData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *OrderSubscriptionDataRelationshipsOrderFactories) GetData() OrderSubscr
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OrderSubscriptionDataRelationshipsOrderFactories) GetDataOk() (*OrderSubscriptionDataRelationshipsOrderFactoriesData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *OrderSubscriptionDataRelationshipsOrderFactories) GetDataOk() (*OrderSu
 
 // HasData returns a boolean if a field has been set.
 func (o *OrderSubscriptionDataRelationshipsOrderFactories) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *OrderSubscriptionDataRelationshipsOrderFactories) SetData(v OrderSubscr
 }
 
 func (o OrderSubscriptionDataRelationshipsOrderFactories) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o OrderSubscriptionDataRelationshipsOrderFactories) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableOrderSubscriptionDataRelationshipsOrderFactories struct {

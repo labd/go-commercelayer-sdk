@@ -15,15 +15,18 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTWebhooks201ResponseData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTWebhooks201ResponseData{}
+
 // POSTWebhooks201ResponseData struct for POSTWebhooks201ResponseData
 type POSTWebhooks201ResponseData struct {
 	// The resource's id
 	Id interface{} `json:"id,omitempty"`
 	// The resource's type
-	Type          interface{}                                   `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks        `json:"links,omitempty"`
-	Attributes    *POSTWebhooks201ResponseDataAttributes        `json:"attributes,omitempty"`
-	Relationships *GETWebhooks200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          interface{}                               `json:"type,omitempty"`
+	Links         *POSTAddresses201ResponseDataLinks        `json:"links,omitempty"`
+	Attributes    *POSTWebhooks201ResponseDataAttributes    `json:"attributes,omitempty"`
+	Relationships *POSTWebhooks201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewPOSTWebhooks201ResponseData instantiates a new POSTWebhooks201ResponseData object
@@ -56,7 +59,7 @@ func (o *POSTWebhooks201ResponseData) GetId() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTWebhooks201ResponseData) GetIdOk() (*interface{}, bool) {
-	if o == nil || o.Id == nil {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return &o.Id, true
@@ -64,7 +67,7 @@ func (o *POSTWebhooks201ResponseData) GetIdOk() (*interface{}, bool) {
 
 // HasId returns a boolean if a field has been set.
 func (o *POSTWebhooks201ResponseData) HasId() bool {
-	if o != nil && o.Id != nil {
+	if o != nil && IsNil(o.Id) {
 		return true
 	}
 
@@ -89,7 +92,7 @@ func (o *POSTWebhooks201ResponseData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTWebhooks201ResponseData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -97,7 +100,7 @@ func (o *POSTWebhooks201ResponseData) GetTypeOk() (*interface{}, bool) {
 
 // HasType returns a boolean if a field has been set.
 func (o *POSTWebhooks201ResponseData) HasType() bool {
-	if o != nil && o.Type != nil {
+	if o != nil && IsNil(o.Type) {
 		return true
 	}
 
@@ -110,9 +113,9 @@ func (o *POSTWebhooks201ResponseData) SetType(v interface{}) {
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *POSTWebhooks201ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks {
-	if o == nil || o.Links == nil {
-		var ret GETAddresses200ResponseDataInnerLinks
+func (o *POSTWebhooks201ResponseData) GetLinks() POSTAddresses201ResponseDataLinks {
+	if o == nil || IsNil(o.Links) {
+		var ret POSTAddresses201ResponseDataLinks
 		return ret
 	}
 	return *o.Links
@@ -120,8 +123,8 @@ func (o *POSTWebhooks201ResponseData) GetLinks() GETAddresses200ResponseDataInne
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTWebhooks201ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool) {
-	if o == nil || o.Links == nil {
+func (o *POSTWebhooks201ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool) {
+	if o == nil || IsNil(o.Links) {
 		return nil, false
 	}
 	return o.Links, true
@@ -129,21 +132,21 @@ func (o *POSTWebhooks201ResponseData) GetLinksOk() (*GETAddresses200ResponseData
 
 // HasLinks returns a boolean if a field has been set.
 func (o *POSTWebhooks201ResponseData) HasLinks() bool {
-	if o != nil && o.Links != nil {
+	if o != nil && !IsNil(o.Links) {
 		return true
 	}
 
 	return false
 }
 
-// SetLinks gets a reference to the given GETAddresses200ResponseDataInnerLinks and assigns it to the Links field.
-func (o *POSTWebhooks201ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks) {
+// SetLinks gets a reference to the given POSTAddresses201ResponseDataLinks and assigns it to the Links field.
+func (o *POSTWebhooks201ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks) {
 	o.Links = &v
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *POSTWebhooks201ResponseData) GetAttributes() POSTWebhooks201ResponseDataAttributes {
-	if o == nil || o.Attributes == nil {
+	if o == nil || IsNil(o.Attributes) {
 		var ret POSTWebhooks201ResponseDataAttributes
 		return ret
 	}
@@ -153,7 +156,7 @@ func (o *POSTWebhooks201ResponseData) GetAttributes() POSTWebhooks201ResponseDat
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTWebhooks201ResponseData) GetAttributesOk() (*POSTWebhooks201ResponseDataAttributes, bool) {
-	if o == nil || o.Attributes == nil {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -161,7 +164,7 @@ func (o *POSTWebhooks201ResponseData) GetAttributesOk() (*POSTWebhooks201Respons
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *POSTWebhooks201ResponseData) HasAttributes() bool {
-	if o != nil && o.Attributes != nil {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
@@ -174,9 +177,9 @@ func (o *POSTWebhooks201ResponseData) SetAttributes(v POSTWebhooks201ResponseDat
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *POSTWebhooks201ResponseData) GetRelationships() GETWebhooks200ResponseDataInnerRelationships {
-	if o == nil || o.Relationships == nil {
-		var ret GETWebhooks200ResponseDataInnerRelationships
+func (o *POSTWebhooks201ResponseData) GetRelationships() POSTWebhooks201ResponseDataRelationships {
+	if o == nil || IsNil(o.Relationships) {
+		var ret POSTWebhooks201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -184,8 +187,8 @@ func (o *POSTWebhooks201ResponseData) GetRelationships() GETWebhooks200ResponseD
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTWebhooks201ResponseData) GetRelationshipsOk() (*GETWebhooks200ResponseDataInnerRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+func (o *POSTWebhooks201ResponseData) GetRelationshipsOk() (*POSTWebhooks201ResponseDataRelationships, bool) {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -193,19 +196,27 @@ func (o *POSTWebhooks201ResponseData) GetRelationshipsOk() (*GETWebhooks200Respo
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *POSTWebhooks201ResponseData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
 	return false
 }
 
-// SetRelationships gets a reference to the given GETWebhooks200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *POSTWebhooks201ResponseData) SetRelationships(v GETWebhooks200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given POSTWebhooks201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *POSTWebhooks201ResponseData) SetRelationships(v POSTWebhooks201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 
 func (o POSTWebhooks201ResponseData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTWebhooks201ResponseData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
@@ -213,16 +224,16 @@ func (o POSTWebhooks201ResponseData) MarshalJSON() ([]byte, error) {
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if o.Links != nil {
+	if !IsNil(o.Links) {
 		toSerialize["links"] = o.Links
 	}
-	if o.Attributes != nil {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if o.Relationships != nil {
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTWebhooks201ResponseData struct {

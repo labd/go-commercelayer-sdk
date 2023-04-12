@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes{}
+
 // PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes struct for PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes
 type PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes struct {
 	// The token returned by a successful client authorization, mandatory to place the order.
@@ -59,7 +62,7 @@ func (o *PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) GetAuthTok
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) GetAuthTokenOk() (*interface{}, bool) {
-	if o == nil || o.AuthToken == nil {
+	if o == nil || IsNil(o.AuthToken) {
 		return nil, false
 	}
 	return &o.AuthToken, true
@@ -67,7 +70,7 @@ func (o *PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) GetAuthTok
 
 // HasAuthToken returns a boolean if a field has been set.
 func (o *PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) HasAuthToken() bool {
-	if o != nil && o.AuthToken != nil {
+	if o != nil && IsNil(o.AuthToken) {
 		return true
 	}
 
@@ -92,7 +95,7 @@ func (o *PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) GetUpdate(
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) GetUpdateOk() (*interface{}, bool) {
-	if o == nil || o.Update == nil {
+	if o == nil || IsNil(o.Update) {
 		return nil, false
 	}
 	return &o.Update, true
@@ -100,7 +103,7 @@ func (o *PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) GetUpdateO
 
 // HasUpdate returns a boolean if a field has been set.
 func (o *PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) HasUpdate() bool {
-	if o != nil && o.Update != nil {
+	if o != nil && IsNil(o.Update) {
 		return true
 	}
 
@@ -125,7 +128,7 @@ func (o *PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) GetReferen
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -133,7 +136,7 @@ func (o *PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) GetReferen
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -158,7 +161,7 @@ func (o *PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) GetReferen
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -166,7 +169,7 @@ func (o *PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) GetReferen
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -191,7 +194,7 @@ func (o *PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) GetMetadat
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -199,7 +202,7 @@ func (o *PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) GetMetadat
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -212,6 +215,14 @@ func (o *PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) SetMetadat
 }
 
 func (o PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.AuthToken != nil {
 		toSerialize["auth_token"] = o.AuthToken
@@ -228,7 +239,7 @@ func (o PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) MarshalJSON
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes struct {

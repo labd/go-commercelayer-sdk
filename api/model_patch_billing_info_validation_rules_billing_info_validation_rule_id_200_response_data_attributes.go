@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes{}
+
 // PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes struct for PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes
 type PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes struct {
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
@@ -55,7 +58,7 @@ func (o *PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -63,7 +66,7 @@ func (o *PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDa
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -88,7 +91,7 @@ func (o *PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -96,7 +99,7 @@ func (o *PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDa
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -121,7 +124,7 @@ func (o *PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -129,7 +132,7 @@ func (o *PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDa
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -142,6 +145,14 @@ func (o *PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDa
 }
 
 func (o PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference
@@ -152,7 +163,7 @@ func (o PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDat
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes struct {

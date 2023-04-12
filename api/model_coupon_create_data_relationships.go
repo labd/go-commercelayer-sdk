@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the CouponCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CouponCreateDataRelationships{}
+
 // CouponCreateDataRelationships struct for CouponCreateDataRelationships
 type CouponCreateDataRelationships struct {
 	PromotionRule CouponCreateDataRelationshipsPromotionRule `json:"promotion_rule"`
@@ -63,11 +66,17 @@ func (o *CouponCreateDataRelationships) SetPromotionRule(v CouponCreateDataRelat
 }
 
 func (o CouponCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["promotion_rule"] = o.PromotionRule
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CouponCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["promotion_rule"] = o.PromotionRule
+	return toSerialize, nil
 }
 
 type NullableCouponCreateDataRelationships struct {

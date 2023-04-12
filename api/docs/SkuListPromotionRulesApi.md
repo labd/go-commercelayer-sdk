@@ -36,7 +36,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -44,7 +44,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListPromotionRulesApi.DELETESkuListPromotionRulesSkuListPromotionRuleId(context.Background(), skuListPromotionRuleId).Execute()
+    r, err := apiClient.SkuListPromotionRulesApi.DELETESkuListPromotionRulesSkuListPromotionRuleId(context.Background(), skuListPromotionRuleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.DELETESkuListPromotionRulesSkuListPromotionRuleId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -104,7 +104,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -112,7 +112,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListPromotionRulesApi.GETExternalPromotionIdSkuListPromotionRule(context.Background(), externalPromotionId).Execute()
+    r, err := apiClient.SkuListPromotionRulesApi.GETExternalPromotionIdSkuListPromotionRule(context.Background(), externalPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.GETExternalPromotionIdSkuListPromotionRule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -172,7 +172,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -180,7 +180,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListPromotionRulesApi.GETFixedAmountPromotionIdSkuListPromotionRule(context.Background(), fixedAmountPromotionId).Execute()
+    r, err := apiClient.SkuListPromotionRulesApi.GETFixedAmountPromotionIdSkuListPromotionRule(context.Background(), fixedAmountPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.GETFixedAmountPromotionIdSkuListPromotionRule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -240,7 +240,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -248,7 +248,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListPromotionRulesApi.GETFixedPricePromotionIdSkuListPromotionRule(context.Background(), fixedPricePromotionId).Execute()
+    r, err := apiClient.SkuListPromotionRulesApi.GETFixedPricePromotionIdSkuListPromotionRule(context.Background(), fixedPricePromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.GETFixedPricePromotionIdSkuListPromotionRule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -308,7 +308,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -316,7 +316,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListPromotionRulesApi.GETFreeGiftPromotionIdSkuListPromotionRule(context.Background(), freeGiftPromotionId).Execute()
+    r, err := apiClient.SkuListPromotionRulesApi.GETFreeGiftPromotionIdSkuListPromotionRule(context.Background(), freeGiftPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.GETFreeGiftPromotionIdSkuListPromotionRule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -376,7 +376,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -384,7 +384,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListPromotionRulesApi.GETFreeShippingPromotionIdSkuListPromotionRule(context.Background(), freeShippingPromotionId).Execute()
+    r, err := apiClient.SkuListPromotionRulesApi.GETFreeShippingPromotionIdSkuListPromotionRule(context.Background(), freeShippingPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.GETFreeShippingPromotionIdSkuListPromotionRule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -444,7 +444,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -452,7 +452,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListPromotionRulesApi.GETPercentageDiscountPromotionIdSkuListPromotionRule(context.Background(), percentageDiscountPromotionId).Execute()
+    r, err := apiClient.SkuListPromotionRulesApi.GETPercentageDiscountPromotionIdSkuListPromotionRule(context.Background(), percentageDiscountPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.GETPercentageDiscountPromotionIdSkuListPromotionRule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -512,7 +512,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -520,7 +520,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListPromotionRulesApi.GETPromotionIdSkuListPromotionRule(context.Background(), promotionId).Execute()
+    r, err := apiClient.SkuListPromotionRulesApi.GETPromotionIdSkuListPromotionRule(context.Background(), promotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListPromotionRulesApi.GETPromotionIdSkuListPromotionRule``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -580,7 +580,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -641,7 +641,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -711,7 +711,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -783,7 +783,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {

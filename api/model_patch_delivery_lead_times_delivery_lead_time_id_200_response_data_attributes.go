@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes{}
+
 // PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes struct for PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes
 type PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes struct {
 	// The delivery lead minimum time (in hours) when shipping from the associated stock location with the associated shipping method.
@@ -59,7 +62,7 @@ func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes) GetM
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes) GetMinHoursOk() (*interface{}, bool) {
-	if o == nil || o.MinHours == nil {
+	if o == nil || IsNil(o.MinHours) {
 		return nil, false
 	}
 	return &o.MinHours, true
@@ -67,7 +70,7 @@ func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes) GetM
 
 // HasMinHours returns a boolean if a field has been set.
 func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes) HasMinHours() bool {
-	if o != nil && o.MinHours != nil {
+	if o != nil && IsNil(o.MinHours) {
 		return true
 	}
 
@@ -92,7 +95,7 @@ func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes) GetM
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes) GetMaxHoursOk() (*interface{}, bool) {
-	if o == nil || o.MaxHours == nil {
+	if o == nil || IsNil(o.MaxHours) {
 		return nil, false
 	}
 	return &o.MaxHours, true
@@ -100,7 +103,7 @@ func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes) GetM
 
 // HasMaxHours returns a boolean if a field has been set.
 func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes) HasMaxHours() bool {
-	if o != nil && o.MaxHours != nil {
+	if o != nil && IsNil(o.MaxHours) {
 		return true
 	}
 
@@ -125,7 +128,7 @@ func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes) GetR
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -133,7 +136,7 @@ func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes) GetR
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -158,7 +161,7 @@ func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes) GetR
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -166,7 +169,7 @@ func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes) GetR
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -191,7 +194,7 @@ func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes) GetM
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -199,7 +202,7 @@ func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes) GetM
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -212,6 +215,14 @@ func (o *PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes) SetM
 }
 
 func (o PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.MinHours != nil {
 		toSerialize["min_hours"] = o.MinHours
@@ -228,7 +239,7 @@ func (o PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes) Marsh
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes struct {

@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the InventoryReturnLocation type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &InventoryReturnLocation{}
+
 // InventoryReturnLocation struct for InventoryReturnLocation
 type InventoryReturnLocation struct {
 	Data *InventoryReturnLocationData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewInventoryReturnLocationWithDefaults() *InventoryReturnLocation {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *InventoryReturnLocation) GetData() InventoryReturnLocationData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret InventoryReturnLocationData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *InventoryReturnLocation) GetData() InventoryReturnLocationData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InventoryReturnLocation) GetDataOk() (*InventoryReturnLocationData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *InventoryReturnLocation) GetDataOk() (*InventoryReturnLocationData, boo
 
 // HasData returns a boolean if a field has been set.
 func (o *InventoryReturnLocation) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *InventoryReturnLocation) SetData(v InventoryReturnLocationData) {
 }
 
 func (o InventoryReturnLocation) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o InventoryReturnLocation) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableInventoryReturnLocation struct {

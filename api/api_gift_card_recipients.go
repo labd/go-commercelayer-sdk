@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *GiftCardRecipientsApiService) DELETEGiftCardRecipientsGiftCardRecipient
 	}
 
 	localVarPath := localBasePath + "/gift_card_recipients/{giftCardRecipientId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"giftCardRecipientId"+"}", url.PathEscape(parameterToString(r.giftCardRecipientId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"giftCardRecipientId"+"}", url.PathEscape(parameterValueToString(r.giftCardRecipientId, "giftCardRecipientId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *GiftCardRecipientsApiService) DELETEGiftCardRecipientsGiftCardRecipient
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -156,7 +156,7 @@ func (a *GiftCardRecipientsApiService) GETGiftCardIdGiftCardRecipientExecute(r G
 	}
 
 	localVarPath := localBasePath + "/gift_cards/{giftCardId}/gift_card_recipient"
-	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterToString(r.giftCardId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterValueToString(r.giftCardId, "giftCardId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *GiftCardRecipientsApiService) GETGiftCardIdGiftCardRecipientExecute(r G
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *GiftCardRecipientsApiService) GETGiftCardRecipientsExecute(r GiftCardRe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -351,7 +351,7 @@ func (a *GiftCardRecipientsApiService) GETGiftCardRecipientsGiftCardRecipientIdE
 	}
 
 	localVarPath := localBasePath + "/gift_card_recipients/{giftCardRecipientId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"giftCardRecipientId"+"}", url.PathEscape(parameterToString(r.giftCardRecipientId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"giftCardRecipientId"+"}", url.PathEscape(parameterValueToString(r.giftCardRecipientId, "giftCardRecipientId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *GiftCardRecipientsApiService) GETGiftCardRecipientsGiftCardRecipientIdE
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -461,7 +461,7 @@ func (a *GiftCardRecipientsApiService) PATCHGiftCardRecipientsGiftCardRecipientI
 	}
 
 	localVarPath := localBasePath + "/gift_card_recipients/{giftCardRecipientId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"giftCardRecipientId"+"}", url.PathEscape(parameterToString(r.giftCardRecipientId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"giftCardRecipientId"+"}", url.PathEscape(parameterValueToString(r.giftCardRecipientId, "giftCardRecipientId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -499,9 +499,9 @@ func (a *GiftCardRecipientsApiService) PATCHGiftCardRecipientsGiftCardRecipientI
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -610,9 +610,9 @@ func (a *GiftCardRecipientsApiService) POSTGiftCardRecipientsExecute(r GiftCardR
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

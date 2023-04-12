@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHReturnsReturnId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHReturnsReturnId200ResponseDataAttributes{}
+
 // PATCHReturnsReturnId200ResponseDataAttributes struct for PATCHReturnsReturnId200ResponseDataAttributes
 type PATCHReturnsReturnId200ResponseDataAttributes struct {
 	// Send this attribute if you want to activate this return.
@@ -73,7 +76,7 @@ func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetRequest() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetRequestOk() (*interface{}, bool) {
-	if o == nil || o.Request == nil {
+	if o == nil || IsNil(o.Request) {
 		return nil, false
 	}
 	return &o.Request, true
@@ -81,7 +84,7 @@ func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetRequestOk() (*interfa
 
 // HasRequest returns a boolean if a field has been set.
 func (o *PATCHReturnsReturnId200ResponseDataAttributes) HasRequest() bool {
-	if o != nil && o.Request != nil {
+	if o != nil && IsNil(o.Request) {
 		return true
 	}
 
@@ -106,7 +109,7 @@ func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetApprove() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetApproveOk() (*interface{}, bool) {
-	if o == nil || o.Approve == nil {
+	if o == nil || IsNil(o.Approve) {
 		return nil, false
 	}
 	return &o.Approve, true
@@ -114,7 +117,7 @@ func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetApproveOk() (*interfa
 
 // HasApprove returns a boolean if a field has been set.
 func (o *PATCHReturnsReturnId200ResponseDataAttributes) HasApprove() bool {
-	if o != nil && o.Approve != nil {
+	if o != nil && IsNil(o.Approve) {
 		return true
 	}
 
@@ -139,7 +142,7 @@ func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetCancel() interface{} 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetCancelOk() (*interface{}, bool) {
-	if o == nil || o.Cancel == nil {
+	if o == nil || IsNil(o.Cancel) {
 		return nil, false
 	}
 	return &o.Cancel, true
@@ -147,7 +150,7 @@ func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetCancelOk() (*interfac
 
 // HasCancel returns a boolean if a field has been set.
 func (o *PATCHReturnsReturnId200ResponseDataAttributes) HasCancel() bool {
-	if o != nil && o.Cancel != nil {
+	if o != nil && IsNil(o.Cancel) {
 		return true
 	}
 
@@ -172,7 +175,7 @@ func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetShip() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetShipOk() (*interface{}, bool) {
-	if o == nil || o.Ship == nil {
+	if o == nil || IsNil(o.Ship) {
 		return nil, false
 	}
 	return &o.Ship, true
@@ -180,7 +183,7 @@ func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetShipOk() (*interface{
 
 // HasShip returns a boolean if a field has been set.
 func (o *PATCHReturnsReturnId200ResponseDataAttributes) HasShip() bool {
-	if o != nil && o.Ship != nil {
+	if o != nil && IsNil(o.Ship) {
 		return true
 	}
 
@@ -205,7 +208,7 @@ func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetReject() interface{} 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetRejectOk() (*interface{}, bool) {
-	if o == nil || o.Reject == nil {
+	if o == nil || IsNil(o.Reject) {
 		return nil, false
 	}
 	return &o.Reject, true
@@ -213,7 +216,7 @@ func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetRejectOk() (*interfac
 
 // HasReject returns a boolean if a field has been set.
 func (o *PATCHReturnsReturnId200ResponseDataAttributes) HasReject() bool {
-	if o != nil && o.Reject != nil {
+	if o != nil && IsNil(o.Reject) {
 		return true
 	}
 
@@ -238,7 +241,7 @@ func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetReceive() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetReceiveOk() (*interface{}, bool) {
-	if o == nil || o.Receive == nil {
+	if o == nil || IsNil(o.Receive) {
 		return nil, false
 	}
 	return &o.Receive, true
@@ -246,7 +249,7 @@ func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetReceiveOk() (*interfa
 
 // HasReceive returns a boolean if a field has been set.
 func (o *PATCHReturnsReturnId200ResponseDataAttributes) HasReceive() bool {
-	if o != nil && o.Receive != nil {
+	if o != nil && IsNil(o.Receive) {
 		return true
 	}
 
@@ -271,7 +274,7 @@ func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetRestock() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetRestockOk() (*interface{}, bool) {
-	if o == nil || o.Restock == nil {
+	if o == nil || IsNil(o.Restock) {
 		return nil, false
 	}
 	return &o.Restock, true
@@ -279,7 +282,7 @@ func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetRestockOk() (*interfa
 
 // HasRestock returns a boolean if a field has been set.
 func (o *PATCHReturnsReturnId200ResponseDataAttributes) HasRestock() bool {
-	if o != nil && o.Restock != nil {
+	if o != nil && IsNil(o.Restock) {
 		return true
 	}
 
@@ -304,7 +307,7 @@ func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetArchive() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetArchiveOk() (*interface{}, bool) {
-	if o == nil || o.Archive == nil {
+	if o == nil || IsNil(o.Archive) {
 		return nil, false
 	}
 	return &o.Archive, true
@@ -312,7 +315,7 @@ func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetArchiveOk() (*interfa
 
 // HasArchive returns a boolean if a field has been set.
 func (o *PATCHReturnsReturnId200ResponseDataAttributes) HasArchive() bool {
-	if o != nil && o.Archive != nil {
+	if o != nil && IsNil(o.Archive) {
 		return true
 	}
 
@@ -337,7 +340,7 @@ func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetUnarchive() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetUnarchiveOk() (*interface{}, bool) {
-	if o == nil || o.Unarchive == nil {
+	if o == nil || IsNil(o.Unarchive) {
 		return nil, false
 	}
 	return &o.Unarchive, true
@@ -345,7 +348,7 @@ func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetUnarchiveOk() (*inter
 
 // HasUnarchive returns a boolean if a field has been set.
 func (o *PATCHReturnsReturnId200ResponseDataAttributes) HasUnarchive() bool {
-	if o != nil && o.Unarchive != nil {
+	if o != nil && IsNil(o.Unarchive) {
 		return true
 	}
 
@@ -370,7 +373,7 @@ func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetReference() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -378,7 +381,7 @@ func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetReferenceOk() (*inter
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHReturnsReturnId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -403,7 +406,7 @@ func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetReferenceOrigin() int
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -411,7 +414,7 @@ func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetReferenceOriginOk() (
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHReturnsReturnId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -436,7 +439,7 @@ func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetMetadata() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -444,7 +447,7 @@ func (o *PATCHReturnsReturnId200ResponseDataAttributes) GetMetadataOk() (*interf
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHReturnsReturnId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -457,6 +460,14 @@ func (o *PATCHReturnsReturnId200ResponseDataAttributes) SetMetadata(v interface{
 }
 
 func (o PATCHReturnsReturnId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHReturnsReturnId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Request != nil {
 		toSerialize["_request"] = o.Request
@@ -494,7 +505,7 @@ func (o PATCHReturnsReturnId200ResponseDataAttributes) MarshalJSON() ([]byte, er
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHReturnsReturnId200ResponseDataAttributes struct {

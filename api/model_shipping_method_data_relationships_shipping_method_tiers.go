@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ShippingMethodDataRelationshipsShippingMethodTiers type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ShippingMethodDataRelationshipsShippingMethodTiers{}
+
 // ShippingMethodDataRelationshipsShippingMethodTiers struct for ShippingMethodDataRelationshipsShippingMethodTiers
 type ShippingMethodDataRelationshipsShippingMethodTiers struct {
 	Data *ShippingMethodDataRelationshipsShippingMethodTiersData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewShippingMethodDataRelationshipsShippingMethodTiersWithDefaults() *Shippi
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *ShippingMethodDataRelationshipsShippingMethodTiers) GetData() ShippingMethodDataRelationshipsShippingMethodTiersData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret ShippingMethodDataRelationshipsShippingMethodTiersData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *ShippingMethodDataRelationshipsShippingMethodTiers) GetData() ShippingM
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ShippingMethodDataRelationshipsShippingMethodTiers) GetDataOk() (*ShippingMethodDataRelationshipsShippingMethodTiersData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *ShippingMethodDataRelationshipsShippingMethodTiers) GetDataOk() (*Shipp
 
 // HasData returns a boolean if a field has been set.
 func (o *ShippingMethodDataRelationshipsShippingMethodTiers) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *ShippingMethodDataRelationshipsShippingMethodTiers) SetData(v ShippingM
 }
 
 func (o ShippingMethodDataRelationshipsShippingMethodTiers) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ShippingMethodDataRelationshipsShippingMethodTiers) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableShippingMethodDataRelationshipsShippingMethodTiers struct {

@@ -28,7 +28,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -89,7 +89,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -159,7 +159,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -167,7 +167,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventCallbacksApi.GETEventIdLastEventCallbacks(context.Background(), eventId).Execute()
+    r, err := apiClient.EventCallbacksApi.GETEventIdLastEventCallbacks(context.Background(), eventId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EventCallbacksApi.GETEventIdLastEventCallbacks``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -227,7 +227,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -235,7 +235,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.EventCallbacksApi.GETWebhookIdLastEventCallbacks(context.Background(), webhookId).Execute()
+    r, err := apiClient.EventCallbacksApi.GETWebhookIdLastEventCallbacks(context.Background(), webhookId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `EventCallbacksApi.GETWebhookIdLastEventCallbacks``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)

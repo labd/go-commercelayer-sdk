@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ShipmentUpdateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ShipmentUpdateDataRelationships{}
+
 // ShipmentUpdateDataRelationships struct for ShipmentUpdateDataRelationships
 type ShipmentUpdateDataRelationships struct {
 	ShippingMethod *DeliveryLeadTimeCreateDataRelationshipsShippingMethod `json:"shipping_method,omitempty"`
@@ -39,7 +42,7 @@ func NewShipmentUpdateDataRelationshipsWithDefaults() *ShipmentUpdateDataRelatio
 
 // GetShippingMethod returns the ShippingMethod field value if set, zero value otherwise.
 func (o *ShipmentUpdateDataRelationships) GetShippingMethod() DeliveryLeadTimeCreateDataRelationshipsShippingMethod {
-	if o == nil || o.ShippingMethod == nil {
+	if o == nil || IsNil(o.ShippingMethod) {
 		var ret DeliveryLeadTimeCreateDataRelationshipsShippingMethod
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *ShipmentUpdateDataRelationships) GetShippingMethod() DeliveryLeadTimeCr
 // GetShippingMethodOk returns a tuple with the ShippingMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ShipmentUpdateDataRelationships) GetShippingMethodOk() (*DeliveryLeadTimeCreateDataRelationshipsShippingMethod, bool) {
-	if o == nil || o.ShippingMethod == nil {
+	if o == nil || IsNil(o.ShippingMethod) {
 		return nil, false
 	}
 	return o.ShippingMethod, true
@@ -57,7 +60,7 @@ func (o *ShipmentUpdateDataRelationships) GetShippingMethodOk() (*DeliveryLeadTi
 
 // HasShippingMethod returns a boolean if a field has been set.
 func (o *ShipmentUpdateDataRelationships) HasShippingMethod() bool {
-	if o != nil && o.ShippingMethod != nil {
+	if o != nil && !IsNil(o.ShippingMethod) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *ShipmentUpdateDataRelationships) SetShippingMethod(v DeliveryLeadTimeCr
 }
 
 func (o ShipmentUpdateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.ShippingMethod != nil {
-		toSerialize["shipping_method"] = o.ShippingMethod
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ShipmentUpdateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.ShippingMethod) {
+		toSerialize["shipping_method"] = o.ShippingMethod
+	}
+	return toSerialize, nil
 }
 
 type NullableShipmentUpdateDataRelationships struct {

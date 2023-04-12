@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETCarrierAccountsCarrierAccountId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETCarrierAccountsCarrierAccountId200Response{}
+
 // GETCarrierAccountsCarrierAccountId200Response struct for GETCarrierAccountsCarrierAccountId200Response
 type GETCarrierAccountsCarrierAccountId200Response struct {
-	Data *GETCarrierAccounts200ResponseDataInner `json:"data,omitempty"`
+	Data *GETCarrierAccountsCarrierAccountId200ResponseData `json:"data,omitempty"`
 }
 
 // NewGETCarrierAccountsCarrierAccountId200Response instantiates a new GETCarrierAccountsCarrierAccountId200Response object
@@ -38,9 +41,9 @@ func NewGETCarrierAccountsCarrierAccountId200ResponseWithDefaults() *GETCarrierA
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETCarrierAccountsCarrierAccountId200Response) GetData() GETCarrierAccounts200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret GETCarrierAccounts200ResponseDataInner
+func (o *GETCarrierAccountsCarrierAccountId200Response) GetData() GETCarrierAccountsCarrierAccountId200ResponseData {
+	if o == nil || IsNil(o.Data) {
+		var ret GETCarrierAccountsCarrierAccountId200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *GETCarrierAccountsCarrierAccountId200Response) GetData() GETCarrierAcco
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCarrierAccountsCarrierAccountId200Response) GetDataOk() (*GETCarrierAccounts200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+func (o *GETCarrierAccountsCarrierAccountId200Response) GetDataOk() (*GETCarrierAccountsCarrierAccountId200ResponseData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *GETCarrierAccountsCarrierAccountId200Response) GetDataOk() (*GETCarrier
 
 // HasData returns a boolean if a field has been set.
 func (o *GETCarrierAccountsCarrierAccountId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETCarrierAccounts200ResponseDataInner and assigns it to the Data field.
-func (o *GETCarrierAccountsCarrierAccountId200Response) SetData(v GETCarrierAccounts200ResponseDataInner) {
+// SetData gets a reference to the given GETCarrierAccountsCarrierAccountId200ResponseData and assigns it to the Data field.
+func (o *GETCarrierAccountsCarrierAccountId200Response) SetData(v GETCarrierAccountsCarrierAccountId200ResponseData) {
 	o.Data = &v
 }
 
 func (o GETCarrierAccountsCarrierAccountId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GETCarrierAccountsCarrierAccountId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGETCarrierAccountsCarrierAccountId200Response struct {

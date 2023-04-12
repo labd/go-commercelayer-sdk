@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHAuthorizationsAuthorizationId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHAuthorizationsAuthorizationId200ResponseDataAttributes{}
+
 // PATCHAuthorizationsAuthorizationId200ResponseDataAttributes struct for PATCHAuthorizationsAuthorizationId200ResponseDataAttributes
 type PATCHAuthorizationsAuthorizationId200ResponseDataAttributes struct {
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
@@ -61,7 +64,7 @@ func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetReferen
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -69,7 +72,7 @@ func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetReferen
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -94,7 +97,7 @@ func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetReferen
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -102,7 +105,7 @@ func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetReferen
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -127,7 +130,7 @@ func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetMetadat
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -135,7 +138,7 @@ func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetMetadat
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -160,7 +163,7 @@ func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetCapture
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetCaptureOk() (*interface{}, bool) {
-	if o == nil || o.Capture == nil {
+	if o == nil || IsNil(o.Capture) {
 		return nil, false
 	}
 	return &o.Capture, true
@@ -168,7 +171,7 @@ func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetCapture
 
 // HasCapture returns a boolean if a field has been set.
 func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) HasCapture() bool {
-	if o != nil && o.Capture != nil {
+	if o != nil && IsNil(o.Capture) {
 		return true
 	}
 
@@ -193,7 +196,7 @@ func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetCapture
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetCaptureAmountCentsOk() (*interface{}, bool) {
-	if o == nil || o.CaptureAmountCents == nil {
+	if o == nil || IsNil(o.CaptureAmountCents) {
 		return nil, false
 	}
 	return &o.CaptureAmountCents, true
@@ -201,7 +204,7 @@ func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetCapture
 
 // HasCaptureAmountCents returns a boolean if a field has been set.
 func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) HasCaptureAmountCents() bool {
-	if o != nil && o.CaptureAmountCents != nil {
+	if o != nil && IsNil(o.CaptureAmountCents) {
 		return true
 	}
 
@@ -226,7 +229,7 @@ func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetVoid() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetVoidOk() (*interface{}, bool) {
-	if o == nil || o.Void == nil {
+	if o == nil || IsNil(o.Void) {
 		return nil, false
 	}
 	return &o.Void, true
@@ -234,7 +237,7 @@ func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetVoidOk(
 
 // HasVoid returns a boolean if a field has been set.
 func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) HasVoid() bool {
-	if o != nil && o.Void != nil {
+	if o != nil && IsNil(o.Void) {
 		return true
 	}
 
@@ -247,6 +250,14 @@ func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) SetVoid(v 
 }
 
 func (o PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference
@@ -266,7 +277,7 @@ func (o PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) MarshalJSON
 	if o.Void != nil {
 		toSerialize["_void"] = o.Void
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHAuthorizationsAuthorizationId200ResponseDataAttributes struct {

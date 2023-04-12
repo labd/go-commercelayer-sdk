@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the PaypalPaymentData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PaypalPaymentData{}
+
 // PaypalPaymentData struct for PaypalPaymentData
 type PaypalPaymentData struct {
 	// The resource's type
-	Type          interface{}                                     `json:"type"`
-	Attributes    GETPaypalPayments200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *AdyenPaymentDataRelationships                  `json:"relationships,omitempty"`
+	Type          interface{}                                               `json:"type"`
+	Attributes    GETPaypalPaymentsPaypalPaymentId200ResponseDataAttributes `json:"attributes"`
+	Relationships *AdyenPaymentDataRelationships                            `json:"relationships,omitempty"`
 }
 
 // NewPaypalPaymentData instantiates a new PaypalPaymentData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaypalPaymentData(type_ interface{}, attributes GETPaypalPayments200ResponseDataInnerAttributes) *PaypalPaymentData {
+func NewPaypalPaymentData(type_ interface{}, attributes GETPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) *PaypalPaymentData {
 	this := PaypalPaymentData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -57,7 +60,7 @@ func (o *PaypalPaymentData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PaypalPaymentData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -69,9 +72,9 @@ func (o *PaypalPaymentData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *PaypalPaymentData) GetAttributes() GETPaypalPayments200ResponseDataInnerAttributes {
+func (o *PaypalPaymentData) GetAttributes() GETPaypalPaymentsPaypalPaymentId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETPaypalPayments200ResponseDataInnerAttributes
+		var ret GETPaypalPaymentsPaypalPaymentId200ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +83,7 @@ func (o *PaypalPaymentData) GetAttributes() GETPaypalPayments200ResponseDataInne
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *PaypalPaymentData) GetAttributesOk() (*GETPaypalPayments200ResponseDataInnerAttributes, bool) {
+func (o *PaypalPaymentData) GetAttributesOk() (*GETPaypalPaymentsPaypalPaymentId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,13 +91,13 @@ func (o *PaypalPaymentData) GetAttributesOk() (*GETPaypalPayments200ResponseData
 }
 
 // SetAttributes sets field value
-func (o *PaypalPaymentData) SetAttributes(v GETPaypalPayments200ResponseDataInnerAttributes) {
+func (o *PaypalPaymentData) SetAttributes(v GETPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *PaypalPaymentData) GetRelationships() AdyenPaymentDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret AdyenPaymentDataRelationships
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *PaypalPaymentData) GetRelationships() AdyenPaymentDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PaypalPaymentData) GetRelationshipsOk() (*AdyenPaymentDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -112,7 +115,7 @@ func (o *PaypalPaymentData) GetRelationshipsOk() (*AdyenPaymentDataRelationships
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *PaypalPaymentData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -125,17 +128,23 @@ func (o *PaypalPaymentData) SetRelationships(v AdyenPaymentDataRelationships) {
 }
 
 func (o PaypalPaymentData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PaypalPaymentData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePaypalPaymentData struct {

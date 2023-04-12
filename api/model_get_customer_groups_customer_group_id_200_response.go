@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETCustomerGroupsCustomerGroupId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETCustomerGroupsCustomerGroupId200Response{}
+
 // GETCustomerGroupsCustomerGroupId200Response struct for GETCustomerGroupsCustomerGroupId200Response
 type GETCustomerGroupsCustomerGroupId200Response struct {
-	Data *GETCustomerGroups200ResponseDataInner `json:"data,omitempty"`
+	Data *GETCustomerGroupsCustomerGroupId200ResponseData `json:"data,omitempty"`
 }
 
 // NewGETCustomerGroupsCustomerGroupId200Response instantiates a new GETCustomerGroupsCustomerGroupId200Response object
@@ -38,9 +41,9 @@ func NewGETCustomerGroupsCustomerGroupId200ResponseWithDefaults() *GETCustomerGr
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETCustomerGroupsCustomerGroupId200Response) GetData() GETCustomerGroups200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret GETCustomerGroups200ResponseDataInner
+func (o *GETCustomerGroupsCustomerGroupId200Response) GetData() GETCustomerGroupsCustomerGroupId200ResponseData {
+	if o == nil || IsNil(o.Data) {
+		var ret GETCustomerGroupsCustomerGroupId200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *GETCustomerGroupsCustomerGroupId200Response) GetData() GETCustomerGroup
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCustomerGroupsCustomerGroupId200Response) GetDataOk() (*GETCustomerGroups200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+func (o *GETCustomerGroupsCustomerGroupId200Response) GetDataOk() (*GETCustomerGroupsCustomerGroupId200ResponseData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *GETCustomerGroupsCustomerGroupId200Response) GetDataOk() (*GETCustomerG
 
 // HasData returns a boolean if a field has been set.
 func (o *GETCustomerGroupsCustomerGroupId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETCustomerGroups200ResponseDataInner and assigns it to the Data field.
-func (o *GETCustomerGroupsCustomerGroupId200Response) SetData(v GETCustomerGroups200ResponseDataInner) {
+// SetData gets a reference to the given GETCustomerGroupsCustomerGroupId200ResponseData and assigns it to the Data field.
+func (o *GETCustomerGroupsCustomerGroupId200Response) SetData(v GETCustomerGroupsCustomerGroupId200ResponseData) {
 	o.Data = &v
 }
 
 func (o GETCustomerGroupsCustomerGroupId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GETCustomerGroupsCustomerGroupId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGETCustomerGroupsCustomerGroupId200Response struct {

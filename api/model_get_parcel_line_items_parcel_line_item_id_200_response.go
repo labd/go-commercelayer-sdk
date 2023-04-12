@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETParcelLineItemsParcelLineItemId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETParcelLineItemsParcelLineItemId200Response{}
+
 // GETParcelLineItemsParcelLineItemId200Response struct for GETParcelLineItemsParcelLineItemId200Response
 type GETParcelLineItemsParcelLineItemId200Response struct {
-	Data *GETParcelLineItems200ResponseDataInner `json:"data,omitempty"`
+	Data *GETParcelLineItemsParcelLineItemId200ResponseData `json:"data,omitempty"`
 }
 
 // NewGETParcelLineItemsParcelLineItemId200Response instantiates a new GETParcelLineItemsParcelLineItemId200Response object
@@ -38,9 +41,9 @@ func NewGETParcelLineItemsParcelLineItemId200ResponseWithDefaults() *GETParcelLi
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETParcelLineItemsParcelLineItemId200Response) GetData() GETParcelLineItems200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret GETParcelLineItems200ResponseDataInner
+func (o *GETParcelLineItemsParcelLineItemId200Response) GetData() GETParcelLineItemsParcelLineItemId200ResponseData {
+	if o == nil || IsNil(o.Data) {
+		var ret GETParcelLineItemsParcelLineItemId200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *GETParcelLineItemsParcelLineItemId200Response) GetData() GETParcelLineI
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETParcelLineItemsParcelLineItemId200Response) GetDataOk() (*GETParcelLineItems200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+func (o *GETParcelLineItemsParcelLineItemId200Response) GetDataOk() (*GETParcelLineItemsParcelLineItemId200ResponseData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *GETParcelLineItemsParcelLineItemId200Response) GetDataOk() (*GETParcelL
 
 // HasData returns a boolean if a field has been set.
 func (o *GETParcelLineItemsParcelLineItemId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETParcelLineItems200ResponseDataInner and assigns it to the Data field.
-func (o *GETParcelLineItemsParcelLineItemId200Response) SetData(v GETParcelLineItems200ResponseDataInner) {
+// SetData gets a reference to the given GETParcelLineItemsParcelLineItemId200ResponseData and assigns it to the Data field.
+func (o *GETParcelLineItemsParcelLineItemId200Response) SetData(v GETParcelLineItemsParcelLineItemId200ResponseData) {
 	o.Data = &v
 }
 
 func (o GETParcelLineItemsParcelLineItemId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GETParcelLineItemsParcelLineItemId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGETParcelLineItemsParcelLineItemId200Response struct {

@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the DeliveryLeadTimeUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DeliveryLeadTimeUpdate{}
+
 // DeliveryLeadTimeUpdate struct for DeliveryLeadTimeUpdate
 type DeliveryLeadTimeUpdate struct {
 	Data DeliveryLeadTimeUpdateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *DeliveryLeadTimeUpdate) SetData(v DeliveryLeadTimeUpdateData) {
 }
 
 func (o DeliveryLeadTimeUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o DeliveryLeadTimeUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableDeliveryLeadTimeUpdate struct {

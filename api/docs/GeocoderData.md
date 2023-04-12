@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETBingGeocoders200ResponseDataInnerAttributes**](GETBingGeocoders200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**GETBingGeocodersBingGeocoderId200ResponseDataAttributes**](GETBingGeocodersBingGeocoderId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**BingGeocoderDataRelationships**](BingGeocoderDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewGeocoderData
 
-`func NewGeocoderData(type_ interface{}, attributes GETBingGeocoders200ResponseDataInnerAttributes, ) *GeocoderData`
+`func NewGeocoderData(type_ interface{}, attributes GETBingGeocodersBingGeocoderId200ResponseDataAttributes, ) *GeocoderData`
 
 NewGeocoderData instantiates a new GeocoderData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *GeocoderData) GetAttributes() GETBingGeocoders200ResponseDataInnerAttributes`
+`func (o *GeocoderData) GetAttributes() GETBingGeocodersBingGeocoderId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *GeocoderData) GetAttributesOk() (*GETBingGeocoders200ResponseDataInnerAttributes, bool)`
+`func (o *GeocoderData) GetAttributesOk() (*GETBingGeocodersBingGeocoderId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *GeocoderData) SetAttributes(v GETBingGeocoders200ResponseDataInnerAttributes)`
+`func (o *GeocoderData) SetAttributes(v GETBingGeocodersBingGeocoderId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

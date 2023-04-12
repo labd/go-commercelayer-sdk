@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the Geocoder type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &Geocoder{}
+
 // Geocoder struct for Geocoder
 type Geocoder struct {
 	Data *GeocoderData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewGeocoderWithDefaults() *Geocoder {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *Geocoder) GetData() GeocoderData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret GeocoderData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *Geocoder) GetData() GeocoderData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Geocoder) GetDataOk() (*GeocoderData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *Geocoder) GetDataOk() (*GeocoderData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *Geocoder) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *Geocoder) SetData(v GeocoderData) {
 }
 
 func (o Geocoder) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o Geocoder) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGeocoder struct {

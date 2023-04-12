@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the InStockSubscriptionCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &InStockSubscriptionCreateDataRelationships{}
+
 // InStockSubscriptionCreateDataRelationships struct for InStockSubscriptionCreateDataRelationships
 type InStockSubscriptionCreateDataRelationships struct {
 	Market   BillingInfoValidationRuleCreateDataRelationshipsMarket `json:"market"`
@@ -115,17 +118,19 @@ func (o *InStockSubscriptionCreateDataRelationships) SetSku(v InStockSubscriptio
 }
 
 func (o InStockSubscriptionCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["market"] = o.Market
-	}
-	if true {
-		toSerialize["customer"] = o.Customer
-	}
-	if true {
-		toSerialize["sku"] = o.Sku
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o InStockSubscriptionCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["market"] = o.Market
+	toSerialize["customer"] = o.Customer
+	toSerialize["sku"] = o.Sku
+	return toSerialize, nil
 }
 
 type NullableInStockSubscriptionCreateDataRelationships struct {

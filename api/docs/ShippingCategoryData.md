@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETShippingCategories200ResponseDataInnerAttributes**](GETShippingCategories200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**GETShippingCategoriesShippingCategoryId200ResponseDataAttributes**](GETShippingCategoriesShippingCategoryId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ShippingCategoryDataRelationships**](ShippingCategoryDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewShippingCategoryData
 
-`func NewShippingCategoryData(type_ interface{}, attributes GETShippingCategories200ResponseDataInnerAttributes, ) *ShippingCategoryData`
+`func NewShippingCategoryData(type_ interface{}, attributes GETShippingCategoriesShippingCategoryId200ResponseDataAttributes, ) *ShippingCategoryData`
 
 NewShippingCategoryData instantiates a new ShippingCategoryData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *ShippingCategoryData) GetAttributes() GETShippingCategories200ResponseDataInnerAttributes`
+`func (o *ShippingCategoryData) GetAttributes() GETShippingCategoriesShippingCategoryId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ShippingCategoryData) GetAttributesOk() (*GETShippingCategories200ResponseDataInnerAttributes, bool)`
+`func (o *ShippingCategoryData) GetAttributesOk() (*GETShippingCategoriesShippingCategoryId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ShippingCategoryData) SetAttributes(v GETShippingCategories200ResponseDataInnerAttributes)`
+`func (o *ShippingCategoryData) SetAttributes(v GETShippingCategoriesShippingCategoryId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

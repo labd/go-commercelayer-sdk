@@ -15,15 +15,18 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData{}
+
 // PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData struct for PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData
 type PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData struct {
 	// The resource's id
 	Id interface{} `json:"id,omitempty"`
 	// The resource's type
 	Type          interface{}                                                            `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks                                 `json:"links,omitempty"`
+	Links         *POSTAddresses201ResponseDataLinks                                     `json:"links,omitempty"`
 	Attributes    *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETAdyenPayments200ResponseDataInnerRelationships                     `json:"relationships,omitempty"`
+	Relationships *POSTAdyenPayments201ResponseDataRelationships                         `json:"relationships,omitempty"`
 }
 
 // NewPATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData instantiates a new PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData object
@@ -56,7 +59,7 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) GetId() in
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) GetIdOk() (*interface{}, bool) {
-	if o == nil || o.Id == nil {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return &o.Id, true
@@ -64,7 +67,7 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) GetIdOk() 
 
 // HasId returns a boolean if a field has been set.
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) HasId() bool {
-	if o != nil && o.Id != nil {
+	if o != nil && IsNil(o.Id) {
 		return true
 	}
 
@@ -89,7 +92,7 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) GetType() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -97,7 +100,7 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) GetTypeOk(
 
 // HasType returns a boolean if a field has been set.
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) HasType() bool {
-	if o != nil && o.Type != nil {
+	if o != nil && IsNil(o.Type) {
 		return true
 	}
 
@@ -110,9 +113,9 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) SetType(v 
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks {
-	if o == nil || o.Links == nil {
-		var ret GETAddresses200ResponseDataInnerLinks
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) GetLinks() POSTAddresses201ResponseDataLinks {
+	if o == nil || IsNil(o.Links) {
+		var ret POSTAddresses201ResponseDataLinks
 		return ret
 	}
 	return *o.Links
@@ -120,8 +123,8 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) GetLinks()
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool) {
-	if o == nil || o.Links == nil {
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool) {
+	if o == nil || IsNil(o.Links) {
 		return nil, false
 	}
 	return o.Links, true
@@ -129,21 +132,21 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) GetLinksOk
 
 // HasLinks returns a boolean if a field has been set.
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) HasLinks() bool {
-	if o != nil && o.Links != nil {
+	if o != nil && !IsNil(o.Links) {
 		return true
 	}
 
 	return false
 }
 
-// SetLinks gets a reference to the given GETAddresses200ResponseDataInnerLinks and assigns it to the Links field.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks) {
+// SetLinks gets a reference to the given POSTAddresses201ResponseDataLinks and assigns it to the Links field.
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks) {
 	o.Links = &v
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) GetAttributes() PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes {
-	if o == nil || o.Attributes == nil {
+	if o == nil || IsNil(o.Attributes) {
 		var ret PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes
 		return ret
 	}
@@ -153,7 +156,7 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) GetAttribu
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) GetAttributesOk() (*PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes, bool) {
-	if o == nil || o.Attributes == nil {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -161,7 +164,7 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) GetAttribu
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) HasAttributes() bool {
-	if o != nil && o.Attributes != nil {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
@@ -174,9 +177,9 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) SetAttribu
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) GetRelationships() GETAdyenPayments200ResponseDataInnerRelationships {
-	if o == nil || o.Relationships == nil {
-		var ret GETAdyenPayments200ResponseDataInnerRelationships
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) GetRelationships() POSTAdyenPayments201ResponseDataRelationships {
+	if o == nil || IsNil(o.Relationships) {
+		var ret POSTAdyenPayments201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -184,8 +187,8 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) GetRelatio
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) GetRelationshipsOk() (*GETAdyenPayments200ResponseDataInnerRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) GetRelationshipsOk() (*POSTAdyenPayments201ResponseDataRelationships, bool) {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -193,19 +196,27 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) GetRelatio
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
 	return false
 }
 
-// SetRelationships gets a reference to the given GETAdyenPayments200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) SetRelationships(v GETAdyenPayments200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given POSTAdyenPayments201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) SetRelationships(v POSTAdyenPayments201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 
 func (o PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
@@ -213,16 +224,16 @@ func (o PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData) MarshalJSON
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if o.Links != nil {
+	if !IsNil(o.Links) {
 		toSerialize["links"] = o.Links
 	}
-	if o.Attributes != nil {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if o.Relationships != nil {
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseData struct {

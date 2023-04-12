@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ExternalPromotionCreateDataRelationshipsPromotionRules type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ExternalPromotionCreateDataRelationshipsPromotionRules{}
+
 // ExternalPromotionCreateDataRelationshipsPromotionRules struct for ExternalPromotionCreateDataRelationshipsPromotionRules
 type ExternalPromotionCreateDataRelationshipsPromotionRules struct {
 	Data ExternalPromotionDataRelationshipsPromotionRulesData `json:"data"`
@@ -63,11 +66,17 @@ func (o *ExternalPromotionCreateDataRelationshipsPromotionRules) SetData(v Exter
 }
 
 func (o ExternalPromotionCreateDataRelationshipsPromotionRules) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ExternalPromotionCreateDataRelationshipsPromotionRules) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableExternalPromotionCreateDataRelationshipsPromotionRules struct {

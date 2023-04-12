@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *PriceFrequencyTiersApiService) DELETEPriceFrequencyTiersPriceFrequencyT
 	}
 
 	localVarPath := localBasePath + "/price_frequency_tiers/{priceFrequencyTierId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceFrequencyTierId"+"}", url.PathEscape(parameterToString(r.priceFrequencyTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceFrequencyTierId"+"}", url.PathEscape(parameterValueToString(r.priceFrequencyTierId, "priceFrequencyTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *PriceFrequencyTiersApiService) DELETEPriceFrequencyTiersPriceFrequencyT
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *PriceFrequencyTiersApiService) GETPriceFrequencyTiersExecute(r PriceFre
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *PriceFrequencyTiersApiService) GETPriceFrequencyTiersPriceFrequencyTier
 	}
 
 	localVarPath := localBasePath + "/price_frequency_tiers/{priceFrequencyTierId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceFrequencyTierId"+"}", url.PathEscape(parameterToString(r.priceFrequencyTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceFrequencyTierId"+"}", url.PathEscape(parameterValueToString(r.priceFrequencyTierId, "priceFrequencyTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *PriceFrequencyTiersApiService) GETPriceFrequencyTiersPriceFrequencyTier
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -360,7 +360,7 @@ func (a *PriceFrequencyTiersApiService) GETPriceIdPriceFrequencyTiersExecute(r P
 	}
 
 	localVarPath := localBasePath + "/prices/{priceId}/price_frequency_tiers"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterToString(r.priceId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterValueToString(r.priceId, "priceId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -393,9 +393,9 @@ func (a *PriceFrequencyTiersApiService) GETPriceIdPriceFrequencyTiersExecute(r P
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -461,7 +461,7 @@ func (a *PriceFrequencyTiersApiService) PATCHPriceFrequencyTiersPriceFrequencyTi
 	}
 
 	localVarPath := localBasePath + "/price_frequency_tiers/{priceFrequencyTierId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceFrequencyTierId"+"}", url.PathEscape(parameterToString(r.priceFrequencyTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceFrequencyTierId"+"}", url.PathEscape(parameterValueToString(r.priceFrequencyTierId, "priceFrequencyTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -499,9 +499,9 @@ func (a *PriceFrequencyTiersApiService) PATCHPriceFrequencyTiersPriceFrequencyTi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -610,9 +610,9 @@ func (a *PriceFrequencyTiersApiService) POSTPriceFrequencyTiersExecute(r PriceFr
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

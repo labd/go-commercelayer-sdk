@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTSatispayPayments201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTSatispayPayments201ResponseDataAttributes{}
+
 // POSTSatispayPayments201ResponseDataAttributes struct for POSTSatispayPayments201ResponseDataAttributes
 type POSTSatispayPayments201ResponseDataAttributes struct {
 	// Activation code generated from the Satispay Dashboard.
@@ -59,7 +62,7 @@ func (o *POSTSatispayPayments201ResponseDataAttributes) GetToken() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTSatispayPayments201ResponseDataAttributes) GetTokenOk() (*interface{}, bool) {
-	if o == nil || o.Token == nil {
+	if o == nil || IsNil(o.Token) {
 		return nil, false
 	}
 	return &o.Token, true
@@ -67,7 +70,7 @@ func (o *POSTSatispayPayments201ResponseDataAttributes) GetTokenOk() (*interface
 
 // HasToken returns a boolean if a field has been set.
 func (o *POSTSatispayPayments201ResponseDataAttributes) HasToken() bool {
-	if o != nil && o.Token != nil {
+	if o != nil && IsNil(o.Token) {
 		return true
 	}
 
@@ -92,7 +95,7 @@ func (o *POSTSatispayPayments201ResponseDataAttributes) GetRedirectUrl() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTSatispayPayments201ResponseDataAttributes) GetRedirectUrlOk() (*interface{}, bool) {
-	if o == nil || o.RedirectUrl == nil {
+	if o == nil || IsNil(o.RedirectUrl) {
 		return nil, false
 	}
 	return &o.RedirectUrl, true
@@ -100,7 +103,7 @@ func (o *POSTSatispayPayments201ResponseDataAttributes) GetRedirectUrlOk() (*int
 
 // HasRedirectUrl returns a boolean if a field has been set.
 func (o *POSTSatispayPayments201ResponseDataAttributes) HasRedirectUrl() bool {
-	if o != nil && o.RedirectUrl != nil {
+	if o != nil && IsNil(o.RedirectUrl) {
 		return true
 	}
 
@@ -125,7 +128,7 @@ func (o *POSTSatispayPayments201ResponseDataAttributes) GetReference() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTSatispayPayments201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -133,7 +136,7 @@ func (o *POSTSatispayPayments201ResponseDataAttributes) GetReferenceOk() (*inter
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTSatispayPayments201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -158,7 +161,7 @@ func (o *POSTSatispayPayments201ResponseDataAttributes) GetReferenceOrigin() int
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTSatispayPayments201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -166,7 +169,7 @@ func (o *POSTSatispayPayments201ResponseDataAttributes) GetReferenceOriginOk() (
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTSatispayPayments201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -191,7 +194,7 @@ func (o *POSTSatispayPayments201ResponseDataAttributes) GetMetadata() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTSatispayPayments201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -199,7 +202,7 @@ func (o *POSTSatispayPayments201ResponseDataAttributes) GetMetadataOk() (*interf
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTSatispayPayments201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -212,6 +215,14 @@ func (o *POSTSatispayPayments201ResponseDataAttributes) SetMetadata(v interface{
 }
 
 func (o POSTSatispayPayments201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTSatispayPayments201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Token != nil {
 		toSerialize["token"] = o.Token
@@ -228,7 +239,7 @@ func (o POSTSatispayPayments201ResponseDataAttributes) MarshalJSON() ([]byte, er
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTSatispayPayments201ResponseDataAttributes struct {

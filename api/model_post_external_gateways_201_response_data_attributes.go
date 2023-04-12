@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTExternalGateways201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTExternalGateways201ResponseDataAttributes{}
+
 // POSTExternalGateways201ResponseDataAttributes struct for POSTExternalGateways201ResponseDataAttributes
 type POSTExternalGateways201ResponseDataAttributes struct {
 	// The payment gateway's internal name.
@@ -70,7 +73,7 @@ func (o *POSTExternalGateways201ResponseDataAttributes) GetName() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTExternalGateways201ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -94,7 +97,7 @@ func (o *POSTExternalGateways201ResponseDataAttributes) GetReference() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTExternalGateways201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -102,7 +105,7 @@ func (o *POSTExternalGateways201ResponseDataAttributes) GetReferenceOk() (*inter
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTExternalGateways201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -127,7 +130,7 @@ func (o *POSTExternalGateways201ResponseDataAttributes) GetReferenceOrigin() int
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTExternalGateways201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -135,7 +138,7 @@ func (o *POSTExternalGateways201ResponseDataAttributes) GetReferenceOriginOk() (
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTExternalGateways201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -160,7 +163,7 @@ func (o *POSTExternalGateways201ResponseDataAttributes) GetMetadata() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTExternalGateways201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -168,7 +171,7 @@ func (o *POSTExternalGateways201ResponseDataAttributes) GetMetadataOk() (*interf
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTExternalGateways201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -193,7 +196,7 @@ func (o *POSTExternalGateways201ResponseDataAttributes) GetAuthorizeUrl() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTExternalGateways201ResponseDataAttributes) GetAuthorizeUrlOk() (*interface{}, bool) {
-	if o == nil || o.AuthorizeUrl == nil {
+	if o == nil || IsNil(o.AuthorizeUrl) {
 		return nil, false
 	}
 	return &o.AuthorizeUrl, true
@@ -201,7 +204,7 @@ func (o *POSTExternalGateways201ResponseDataAttributes) GetAuthorizeUrlOk() (*in
 
 // HasAuthorizeUrl returns a boolean if a field has been set.
 func (o *POSTExternalGateways201ResponseDataAttributes) HasAuthorizeUrl() bool {
-	if o != nil && o.AuthorizeUrl != nil {
+	if o != nil && IsNil(o.AuthorizeUrl) {
 		return true
 	}
 
@@ -226,7 +229,7 @@ func (o *POSTExternalGateways201ResponseDataAttributes) GetCaptureUrl() interfac
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTExternalGateways201ResponseDataAttributes) GetCaptureUrlOk() (*interface{}, bool) {
-	if o == nil || o.CaptureUrl == nil {
+	if o == nil || IsNil(o.CaptureUrl) {
 		return nil, false
 	}
 	return &o.CaptureUrl, true
@@ -234,7 +237,7 @@ func (o *POSTExternalGateways201ResponseDataAttributes) GetCaptureUrlOk() (*inte
 
 // HasCaptureUrl returns a boolean if a field has been set.
 func (o *POSTExternalGateways201ResponseDataAttributes) HasCaptureUrl() bool {
-	if o != nil && o.CaptureUrl != nil {
+	if o != nil && IsNil(o.CaptureUrl) {
 		return true
 	}
 
@@ -259,7 +262,7 @@ func (o *POSTExternalGateways201ResponseDataAttributes) GetVoidUrl() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTExternalGateways201ResponseDataAttributes) GetVoidUrlOk() (*interface{}, bool) {
-	if o == nil || o.VoidUrl == nil {
+	if o == nil || IsNil(o.VoidUrl) {
 		return nil, false
 	}
 	return &o.VoidUrl, true
@@ -267,7 +270,7 @@ func (o *POSTExternalGateways201ResponseDataAttributes) GetVoidUrlOk() (*interfa
 
 // HasVoidUrl returns a boolean if a field has been set.
 func (o *POSTExternalGateways201ResponseDataAttributes) HasVoidUrl() bool {
-	if o != nil && o.VoidUrl != nil {
+	if o != nil && IsNil(o.VoidUrl) {
 		return true
 	}
 
@@ -292,7 +295,7 @@ func (o *POSTExternalGateways201ResponseDataAttributes) GetRefundUrl() interface
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTExternalGateways201ResponseDataAttributes) GetRefundUrlOk() (*interface{}, bool) {
-	if o == nil || o.RefundUrl == nil {
+	if o == nil || IsNil(o.RefundUrl) {
 		return nil, false
 	}
 	return &o.RefundUrl, true
@@ -300,7 +303,7 @@ func (o *POSTExternalGateways201ResponseDataAttributes) GetRefundUrlOk() (*inter
 
 // HasRefundUrl returns a boolean if a field has been set.
 func (o *POSTExternalGateways201ResponseDataAttributes) HasRefundUrl() bool {
-	if o != nil && o.RefundUrl != nil {
+	if o != nil && IsNil(o.RefundUrl) {
 		return true
 	}
 
@@ -325,7 +328,7 @@ func (o *POSTExternalGateways201ResponseDataAttributes) GetTokenUrl() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTExternalGateways201ResponseDataAttributes) GetTokenUrlOk() (*interface{}, bool) {
-	if o == nil || o.TokenUrl == nil {
+	if o == nil || IsNil(o.TokenUrl) {
 		return nil, false
 	}
 	return &o.TokenUrl, true
@@ -333,7 +336,7 @@ func (o *POSTExternalGateways201ResponseDataAttributes) GetTokenUrlOk() (*interf
 
 // HasTokenUrl returns a boolean if a field has been set.
 func (o *POSTExternalGateways201ResponseDataAttributes) HasTokenUrl() bool {
-	if o != nil && o.TokenUrl != nil {
+	if o != nil && IsNil(o.TokenUrl) {
 		return true
 	}
 
@@ -346,6 +349,14 @@ func (o *POSTExternalGateways201ResponseDataAttributes) SetTokenUrl(v interface{
 }
 
 func (o POSTExternalGateways201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTExternalGateways201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -374,7 +385,7 @@ func (o POSTExternalGateways201ResponseDataAttributes) MarshalJSON() ([]byte, er
 	if o.TokenUrl != nil {
 		toSerialize["token_url"] = o.TokenUrl
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTExternalGateways201ResponseDataAttributes struct {

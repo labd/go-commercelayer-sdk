@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETStockLocations200ResponseDataInnerAttributes**](GETStockLocations200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**GETStockLocationsStockLocationId200ResponseDataAttributes**](GETStockLocationsStockLocationId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**StockLocationDataRelationships**](StockLocationDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewStockLocationData
 
-`func NewStockLocationData(type_ interface{}, attributes GETStockLocations200ResponseDataInnerAttributes, ) *StockLocationData`
+`func NewStockLocationData(type_ interface{}, attributes GETStockLocationsStockLocationId200ResponseDataAttributes, ) *StockLocationData`
 
 NewStockLocationData instantiates a new StockLocationData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *StockLocationData) GetAttributes() GETStockLocations200ResponseDataInnerAttributes`
+`func (o *StockLocationData) GetAttributes() GETStockLocationsStockLocationId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *StockLocationData) GetAttributesOk() (*GETStockLocations200ResponseDataInnerAttributes, bool)`
+`func (o *StockLocationData) GetAttributesOk() (*GETStockLocationsStockLocationId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *StockLocationData) SetAttributes(v GETStockLocations200ResponseDataInnerAttributes)`
+`func (o *StockLocationData) SetAttributes(v GETStockLocationsStockLocationId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

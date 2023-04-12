@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the Transaction type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &Transaction{}
+
 // Transaction struct for Transaction
 type Transaction struct {
 	Data *TransactionData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewTransactionWithDefaults() *Transaction {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *Transaction) GetData() TransactionData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret TransactionData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *Transaction) GetData() TransactionData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *Transaction) GetDataOk() (*TransactionData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *Transaction) GetDataOk() (*TransactionData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *Transaction) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *Transaction) SetData(v TransactionData) {
 }
 
 func (o Transaction) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o Transaction) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableTransaction struct {

@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the MarketUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &MarketUpdate{}
+
 // MarketUpdate struct for MarketUpdate
 type MarketUpdate struct {
 	Data MarketUpdateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *MarketUpdate) SetData(v MarketUpdateData) {
 }
 
 func (o MarketUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o MarketUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableMarketUpdate struct {

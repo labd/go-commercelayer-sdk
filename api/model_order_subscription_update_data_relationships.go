@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the OrderSubscriptionUpdateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &OrderSubscriptionUpdateDataRelationships{}
+
 // OrderSubscriptionUpdateDataRelationships struct for OrderSubscriptionUpdateDataRelationships
 type OrderSubscriptionUpdateDataRelationships struct {
 	CustomerPaymentSource *OrderSubscriptionUpdateDataRelationshipsCustomerPaymentSource `json:"customer_payment_source,omitempty"`
@@ -39,7 +42,7 @@ func NewOrderSubscriptionUpdateDataRelationshipsWithDefaults() *OrderSubscriptio
 
 // GetCustomerPaymentSource returns the CustomerPaymentSource field value if set, zero value otherwise.
 func (o *OrderSubscriptionUpdateDataRelationships) GetCustomerPaymentSource() OrderSubscriptionUpdateDataRelationshipsCustomerPaymentSource {
-	if o == nil || o.CustomerPaymentSource == nil {
+	if o == nil || IsNil(o.CustomerPaymentSource) {
 		var ret OrderSubscriptionUpdateDataRelationshipsCustomerPaymentSource
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *OrderSubscriptionUpdateDataRelationships) GetCustomerPaymentSource() Or
 // GetCustomerPaymentSourceOk returns a tuple with the CustomerPaymentSource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OrderSubscriptionUpdateDataRelationships) GetCustomerPaymentSourceOk() (*OrderSubscriptionUpdateDataRelationshipsCustomerPaymentSource, bool) {
-	if o == nil || o.CustomerPaymentSource == nil {
+	if o == nil || IsNil(o.CustomerPaymentSource) {
 		return nil, false
 	}
 	return o.CustomerPaymentSource, true
@@ -57,7 +60,7 @@ func (o *OrderSubscriptionUpdateDataRelationships) GetCustomerPaymentSourceOk() 
 
 // HasCustomerPaymentSource returns a boolean if a field has been set.
 func (o *OrderSubscriptionUpdateDataRelationships) HasCustomerPaymentSource() bool {
-	if o != nil && o.CustomerPaymentSource != nil {
+	if o != nil && !IsNil(o.CustomerPaymentSource) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *OrderSubscriptionUpdateDataRelationships) SetCustomerPaymentSource(v Or
 }
 
 func (o OrderSubscriptionUpdateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.CustomerPaymentSource != nil {
-		toSerialize["customer_payment_source"] = o.CustomerPaymentSource
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o OrderSubscriptionUpdateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.CustomerPaymentSource) {
+		toSerialize["customer_payment_source"] = o.CustomerPaymentSource
+	}
+	return toSerialize, nil
 }
 
 type NullableOrderSubscriptionUpdateDataRelationships struct {

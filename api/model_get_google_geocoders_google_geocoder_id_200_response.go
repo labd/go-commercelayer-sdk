@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETGoogleGeocodersGoogleGeocoderId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETGoogleGeocodersGoogleGeocoderId200Response{}
+
 // GETGoogleGeocodersGoogleGeocoderId200Response struct for GETGoogleGeocodersGoogleGeocoderId200Response
 type GETGoogleGeocodersGoogleGeocoderId200Response struct {
-	Data *GETGoogleGeocoders200ResponseDataInner `json:"data,omitempty"`
+	Data *GETGoogleGeocodersGoogleGeocoderId200ResponseData `json:"data,omitempty"`
 }
 
 // NewGETGoogleGeocodersGoogleGeocoderId200Response instantiates a new GETGoogleGeocodersGoogleGeocoderId200Response object
@@ -38,9 +41,9 @@ func NewGETGoogleGeocodersGoogleGeocoderId200ResponseWithDefaults() *GETGoogleGe
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETGoogleGeocodersGoogleGeocoderId200Response) GetData() GETGoogleGeocoders200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret GETGoogleGeocoders200ResponseDataInner
+func (o *GETGoogleGeocodersGoogleGeocoderId200Response) GetData() GETGoogleGeocodersGoogleGeocoderId200ResponseData {
+	if o == nil || IsNil(o.Data) {
+		var ret GETGoogleGeocodersGoogleGeocoderId200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *GETGoogleGeocodersGoogleGeocoderId200Response) GetData() GETGoogleGeoco
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETGoogleGeocodersGoogleGeocoderId200Response) GetDataOk() (*GETGoogleGeocoders200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+func (o *GETGoogleGeocodersGoogleGeocoderId200Response) GetDataOk() (*GETGoogleGeocodersGoogleGeocoderId200ResponseData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *GETGoogleGeocodersGoogleGeocoderId200Response) GetDataOk() (*GETGoogleG
 
 // HasData returns a boolean if a field has been set.
 func (o *GETGoogleGeocodersGoogleGeocoderId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETGoogleGeocoders200ResponseDataInner and assigns it to the Data field.
-func (o *GETGoogleGeocodersGoogleGeocoderId200Response) SetData(v GETGoogleGeocoders200ResponseDataInner) {
+// SetData gets a reference to the given GETGoogleGeocodersGoogleGeocoderId200ResponseData and assigns it to the Data field.
+func (o *GETGoogleGeocodersGoogleGeocoderId200Response) SetData(v GETGoogleGeocodersGoogleGeocoderId200ResponseData) {
 	o.Data = &v
 }
 
 func (o GETGoogleGeocodersGoogleGeocoderId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GETGoogleGeocodersGoogleGeocoderId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGETGoogleGeocodersGoogleGeocoderId200Response struct {

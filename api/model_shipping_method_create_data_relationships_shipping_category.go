@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ShippingMethodCreateDataRelationshipsShippingCategory type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ShippingMethodCreateDataRelationshipsShippingCategory{}
+
 // ShippingMethodCreateDataRelationshipsShippingCategory struct for ShippingMethodCreateDataRelationshipsShippingCategory
 type ShippingMethodCreateDataRelationshipsShippingCategory struct {
 	Data ShipmentDataRelationshipsShippingCategoryData `json:"data"`
@@ -63,11 +66,17 @@ func (o *ShippingMethodCreateDataRelationshipsShippingCategory) SetData(v Shipme
 }
 
 func (o ShippingMethodCreateDataRelationshipsShippingCategory) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ShippingMethodCreateDataRelationshipsShippingCategory) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableShippingMethodCreateDataRelationshipsShippingCategory struct {

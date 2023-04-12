@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHPackagesPackageId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHPackagesPackageId200ResponseDataAttributes{}
+
 // PATCHPackagesPackageId200ResponseDataAttributes struct for PATCHPackagesPackageId200ResponseDataAttributes
 type PATCHPackagesPackageId200ResponseDataAttributes struct {
 	// Unique name for the package
@@ -67,7 +70,7 @@ func (o *PATCHPackagesPackageId200ResponseDataAttributes) GetName() interface{} 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPackagesPackageId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -75,7 +78,7 @@ func (o *PATCHPackagesPackageId200ResponseDataAttributes) GetNameOk() (*interfac
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHPackagesPackageId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
@@ -100,7 +103,7 @@ func (o *PATCHPackagesPackageId200ResponseDataAttributes) GetCode() interface{} 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPackagesPackageId200ResponseDataAttributes) GetCodeOk() (*interface{}, bool) {
-	if o == nil || o.Code == nil {
+	if o == nil || IsNil(o.Code) {
 		return nil, false
 	}
 	return &o.Code, true
@@ -108,7 +111,7 @@ func (o *PATCHPackagesPackageId200ResponseDataAttributes) GetCodeOk() (*interfac
 
 // HasCode returns a boolean if a field has been set.
 func (o *PATCHPackagesPackageId200ResponseDataAttributes) HasCode() bool {
-	if o != nil && o.Code != nil {
+	if o != nil && IsNil(o.Code) {
 		return true
 	}
 
@@ -133,7 +136,7 @@ func (o *PATCHPackagesPackageId200ResponseDataAttributes) GetLength() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPackagesPackageId200ResponseDataAttributes) GetLengthOk() (*interface{}, bool) {
-	if o == nil || o.Length == nil {
+	if o == nil || IsNil(o.Length) {
 		return nil, false
 	}
 	return &o.Length, true
@@ -141,7 +144,7 @@ func (o *PATCHPackagesPackageId200ResponseDataAttributes) GetLengthOk() (*interf
 
 // HasLength returns a boolean if a field has been set.
 func (o *PATCHPackagesPackageId200ResponseDataAttributes) HasLength() bool {
-	if o != nil && o.Length != nil {
+	if o != nil && IsNil(o.Length) {
 		return true
 	}
 
@@ -166,7 +169,7 @@ func (o *PATCHPackagesPackageId200ResponseDataAttributes) GetWidth() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPackagesPackageId200ResponseDataAttributes) GetWidthOk() (*interface{}, bool) {
-	if o == nil || o.Width == nil {
+	if o == nil || IsNil(o.Width) {
 		return nil, false
 	}
 	return &o.Width, true
@@ -174,7 +177,7 @@ func (o *PATCHPackagesPackageId200ResponseDataAttributes) GetWidthOk() (*interfa
 
 // HasWidth returns a boolean if a field has been set.
 func (o *PATCHPackagesPackageId200ResponseDataAttributes) HasWidth() bool {
-	if o != nil && o.Width != nil {
+	if o != nil && IsNil(o.Width) {
 		return true
 	}
 
@@ -199,7 +202,7 @@ func (o *PATCHPackagesPackageId200ResponseDataAttributes) GetHeight() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPackagesPackageId200ResponseDataAttributes) GetHeightOk() (*interface{}, bool) {
-	if o == nil || o.Height == nil {
+	if o == nil || IsNil(o.Height) {
 		return nil, false
 	}
 	return &o.Height, true
@@ -207,7 +210,7 @@ func (o *PATCHPackagesPackageId200ResponseDataAttributes) GetHeightOk() (*interf
 
 // HasHeight returns a boolean if a field has been set.
 func (o *PATCHPackagesPackageId200ResponseDataAttributes) HasHeight() bool {
-	if o != nil && o.Height != nil {
+	if o != nil && IsNil(o.Height) {
 		return true
 	}
 
@@ -232,7 +235,7 @@ func (o *PATCHPackagesPackageId200ResponseDataAttributes) GetUnitOfLength() inte
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPackagesPackageId200ResponseDataAttributes) GetUnitOfLengthOk() (*interface{}, bool) {
-	if o == nil || o.UnitOfLength == nil {
+	if o == nil || IsNil(o.UnitOfLength) {
 		return nil, false
 	}
 	return &o.UnitOfLength, true
@@ -240,7 +243,7 @@ func (o *PATCHPackagesPackageId200ResponseDataAttributes) GetUnitOfLengthOk() (*
 
 // HasUnitOfLength returns a boolean if a field has been set.
 func (o *PATCHPackagesPackageId200ResponseDataAttributes) HasUnitOfLength() bool {
-	if o != nil && o.UnitOfLength != nil {
+	if o != nil && IsNil(o.UnitOfLength) {
 		return true
 	}
 
@@ -265,7 +268,7 @@ func (o *PATCHPackagesPackageId200ResponseDataAttributes) GetReference() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPackagesPackageId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -273,7 +276,7 @@ func (o *PATCHPackagesPackageId200ResponseDataAttributes) GetReferenceOk() (*int
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHPackagesPackageId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -298,7 +301,7 @@ func (o *PATCHPackagesPackageId200ResponseDataAttributes) GetReferenceOrigin() i
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPackagesPackageId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -306,7 +309,7 @@ func (o *PATCHPackagesPackageId200ResponseDataAttributes) GetReferenceOriginOk()
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHPackagesPackageId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -331,7 +334,7 @@ func (o *PATCHPackagesPackageId200ResponseDataAttributes) GetMetadata() interfac
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPackagesPackageId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -339,7 +342,7 @@ func (o *PATCHPackagesPackageId200ResponseDataAttributes) GetMetadataOk() (*inte
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHPackagesPackageId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -352,6 +355,14 @@ func (o *PATCHPackagesPackageId200ResponseDataAttributes) SetMetadata(v interfac
 }
 
 func (o PATCHPackagesPackageId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHPackagesPackageId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -380,7 +391,7 @@ func (o PATCHPackagesPackageId200ResponseDataAttributes) MarshalJSON() ([]byte, 
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHPackagesPackageId200ResponseDataAttributes struct {

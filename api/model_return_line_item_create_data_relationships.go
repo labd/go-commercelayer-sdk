@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ReturnLineItemCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ReturnLineItemCreateDataRelationships{}
+
 // ReturnLineItemCreateDataRelationships struct for ReturnLineItemCreateDataRelationships
 type ReturnLineItemCreateDataRelationships struct {
 	Return   ReturnLineItemCreateDataRelationshipsReturn   `json:"return"`
@@ -89,14 +92,18 @@ func (o *ReturnLineItemCreateDataRelationships) SetLineItem(v LineItemOptionCrea
 }
 
 func (o ReturnLineItemCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["return"] = o.Return
-	}
-	if true {
-		toSerialize["line_item"] = o.LineItem
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ReturnLineItemCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["return"] = o.Return
+	toSerialize["line_item"] = o.LineItem
+	return toSerialize, nil
 }
 
 type NullableReturnLineItemCreateDataRelationships struct {

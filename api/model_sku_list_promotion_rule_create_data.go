@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the SkuListPromotionRuleCreateData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SkuListPromotionRuleCreateData{}
+
 // SkuListPromotionRuleCreateData struct for SkuListPromotionRuleCreateData
 type SkuListPromotionRuleCreateData struct {
 	// The resource's type
@@ -57,7 +60,7 @@ func (o *SkuListPromotionRuleCreateData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SkuListPromotionRuleCreateData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -94,7 +97,7 @@ func (o *SkuListPromotionRuleCreateData) SetAttributes(v POSTSkuListPromotionRul
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *SkuListPromotionRuleCreateData) GetRelationships() SkuListPromotionRuleCreateDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret SkuListPromotionRuleCreateDataRelationships
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *SkuListPromotionRuleCreateData) GetRelationships() SkuListPromotionRule
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SkuListPromotionRuleCreateData) GetRelationshipsOk() (*SkuListPromotionRuleCreateDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -112,7 +115,7 @@ func (o *SkuListPromotionRuleCreateData) GetRelationshipsOk() (*SkuListPromotion
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *SkuListPromotionRuleCreateData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -125,17 +128,23 @@ func (o *SkuListPromotionRuleCreateData) SetRelationships(v SkuListPromotionRule
 }
 
 func (o SkuListPromotionRuleCreateData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o SkuListPromotionRuleCreateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableSkuListPromotionRuleCreateData struct {

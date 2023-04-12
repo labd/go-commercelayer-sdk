@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETCustomerAddressesCustomerAddressId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETCustomerAddressesCustomerAddressId200Response{}
+
 // GETCustomerAddressesCustomerAddressId200Response struct for GETCustomerAddressesCustomerAddressId200Response
 type GETCustomerAddressesCustomerAddressId200Response struct {
-	Data *GETCustomerAddresses200ResponseDataInner `json:"data,omitempty"`
+	Data *GETCustomerAddressesCustomerAddressId200ResponseData `json:"data,omitempty"`
 }
 
 // NewGETCustomerAddressesCustomerAddressId200Response instantiates a new GETCustomerAddressesCustomerAddressId200Response object
@@ -38,9 +41,9 @@ func NewGETCustomerAddressesCustomerAddressId200ResponseWithDefaults() *GETCusto
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETCustomerAddressesCustomerAddressId200Response) GetData() GETCustomerAddresses200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret GETCustomerAddresses200ResponseDataInner
+func (o *GETCustomerAddressesCustomerAddressId200Response) GetData() GETCustomerAddressesCustomerAddressId200ResponseData {
+	if o == nil || IsNil(o.Data) {
+		var ret GETCustomerAddressesCustomerAddressId200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *GETCustomerAddressesCustomerAddressId200Response) GetData() GETCustomer
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCustomerAddressesCustomerAddressId200Response) GetDataOk() (*GETCustomerAddresses200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+func (o *GETCustomerAddressesCustomerAddressId200Response) GetDataOk() (*GETCustomerAddressesCustomerAddressId200ResponseData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *GETCustomerAddressesCustomerAddressId200Response) GetDataOk() (*GETCust
 
 // HasData returns a boolean if a field has been set.
 func (o *GETCustomerAddressesCustomerAddressId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETCustomerAddresses200ResponseDataInner and assigns it to the Data field.
-func (o *GETCustomerAddressesCustomerAddressId200Response) SetData(v GETCustomerAddresses200ResponseDataInner) {
+// SetData gets a reference to the given GETCustomerAddressesCustomerAddressId200ResponseData and assigns it to the Data field.
+func (o *GETCustomerAddressesCustomerAddressId200Response) SetData(v GETCustomerAddressesCustomerAddressId200ResponseData) {
 	o.Data = &v
 }
 
 func (o GETCustomerAddressesCustomerAddressId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GETCustomerAddressesCustomerAddressId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGETCustomerAddressesCustomerAddressId200Response struct {

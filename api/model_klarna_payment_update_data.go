@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the KlarnaPaymentUpdateData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &KlarnaPaymentUpdateData{}
+
 // KlarnaPaymentUpdateData struct for KlarnaPaymentUpdateData
 type KlarnaPaymentUpdateData struct {
 	// The resource's type
@@ -60,7 +63,7 @@ func (o *KlarnaPaymentUpdateData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *KlarnaPaymentUpdateData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -86,7 +89,7 @@ func (o *KlarnaPaymentUpdateData) GetId() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *KlarnaPaymentUpdateData) GetIdOk() (*interface{}, bool) {
-	if o == nil || o.Id == nil {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return &o.Id, true
@@ -123,7 +126,7 @@ func (o *KlarnaPaymentUpdateData) SetAttributes(v PATCHKlarnaPaymentsKlarnaPayme
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *KlarnaPaymentUpdateData) GetRelationships() AdyenPaymentUpdateDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret AdyenPaymentUpdateDataRelationships
 		return ret
 	}
@@ -133,7 +136,7 @@ func (o *KlarnaPaymentUpdateData) GetRelationships() AdyenPaymentUpdateDataRelat
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KlarnaPaymentUpdateData) GetRelationshipsOk() (*AdyenPaymentUpdateDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -141,7 +144,7 @@ func (o *KlarnaPaymentUpdateData) GetRelationshipsOk() (*AdyenPaymentUpdateDataR
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *KlarnaPaymentUpdateData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -154,6 +157,14 @@ func (o *KlarnaPaymentUpdateData) SetRelationships(v AdyenPaymentUpdateDataRelat
 }
 
 func (o KlarnaPaymentUpdateData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o KlarnaPaymentUpdateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
@@ -161,13 +172,11 @@ func (o KlarnaPaymentUpdateData) MarshalJSON() ([]byte, error) {
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableKlarnaPaymentUpdateData struct {

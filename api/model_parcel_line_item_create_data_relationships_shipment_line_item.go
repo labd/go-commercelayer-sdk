@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ParcelLineItemCreateDataRelationshipsShipmentLineItem type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ParcelLineItemCreateDataRelationshipsShipmentLineItem{}
+
 // ParcelLineItemCreateDataRelationshipsShipmentLineItem struct for ParcelLineItemCreateDataRelationshipsShipmentLineItem
 type ParcelLineItemCreateDataRelationshipsShipmentLineItem struct {
 	Data LineItemDataRelationshipsShipmentLineItemsData `json:"data"`
@@ -63,11 +66,17 @@ func (o *ParcelLineItemCreateDataRelationshipsShipmentLineItem) SetData(v LineIt
 }
 
 func (o ParcelLineItemCreateDataRelationshipsShipmentLineItem) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ParcelLineItemCreateDataRelationshipsShipmentLineItem) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableParcelLineItemCreateDataRelationshipsShipmentLineItem struct {

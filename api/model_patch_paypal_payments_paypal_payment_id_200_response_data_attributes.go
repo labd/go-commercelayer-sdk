@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes{}
+
 // PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes struct for PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes
 type PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes struct {
 	// The id of the payer that PayPal passes in the return_url.
@@ -57,7 +60,7 @@ func (o *PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) GetPaypalP
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) GetPaypalPayerIdOk() (*interface{}, bool) {
-	if o == nil || o.PaypalPayerId == nil {
+	if o == nil || IsNil(o.PaypalPayerId) {
 		return nil, false
 	}
 	return &o.PaypalPayerId, true
@@ -65,7 +68,7 @@ func (o *PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) GetPaypalP
 
 // HasPaypalPayerId returns a boolean if a field has been set.
 func (o *PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) HasPaypalPayerId() bool {
-	if o != nil && o.PaypalPayerId != nil {
+	if o != nil && IsNil(o.PaypalPayerId) {
 		return true
 	}
 
@@ -90,7 +93,7 @@ func (o *PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) GetReferen
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -98,7 +101,7 @@ func (o *PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) GetReferen
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -123,7 +126,7 @@ func (o *PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) GetReferen
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -131,7 +134,7 @@ func (o *PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) GetReferen
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -156,7 +159,7 @@ func (o *PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) GetMetadat
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -164,7 +167,7 @@ func (o *PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) GetMetadat
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -177,6 +180,14 @@ func (o *PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) SetMetadat
 }
 
 func (o PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.PaypalPayerId != nil {
 		toSerialize["paypal_payer_id"] = o.PaypalPayerId
@@ -190,7 +201,7 @@ func (o PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes) MarshalJSON
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes struct {

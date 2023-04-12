@@ -15,15 +15,18 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTSkus201ResponseData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTSkus201ResponseData{}
+
 // POSTSkus201ResponseData struct for POSTSkus201ResponseData
 type POSTSkus201ResponseData struct {
 	// The resource's id
 	Id interface{} `json:"id,omitempty"`
 	// The resource's type
-	Type          interface{}                               `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks    `json:"links,omitempty"`
-	Attributes    *POSTSkus201ResponseDataAttributes        `json:"attributes,omitempty"`
-	Relationships *GETSkus200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          interface{}                           `json:"type,omitempty"`
+	Links         *POSTAddresses201ResponseDataLinks    `json:"links,omitempty"`
+	Attributes    *POSTSkus201ResponseDataAttributes    `json:"attributes,omitempty"`
+	Relationships *POSTSkus201ResponseDataRelationships `json:"relationships,omitempty"`
 }
 
 // NewPOSTSkus201ResponseData instantiates a new POSTSkus201ResponseData object
@@ -56,7 +59,7 @@ func (o *POSTSkus201ResponseData) GetId() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTSkus201ResponseData) GetIdOk() (*interface{}, bool) {
-	if o == nil || o.Id == nil {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return &o.Id, true
@@ -64,7 +67,7 @@ func (o *POSTSkus201ResponseData) GetIdOk() (*interface{}, bool) {
 
 // HasId returns a boolean if a field has been set.
 func (o *POSTSkus201ResponseData) HasId() bool {
-	if o != nil && o.Id != nil {
+	if o != nil && IsNil(o.Id) {
 		return true
 	}
 
@@ -89,7 +92,7 @@ func (o *POSTSkus201ResponseData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTSkus201ResponseData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -97,7 +100,7 @@ func (o *POSTSkus201ResponseData) GetTypeOk() (*interface{}, bool) {
 
 // HasType returns a boolean if a field has been set.
 func (o *POSTSkus201ResponseData) HasType() bool {
-	if o != nil && o.Type != nil {
+	if o != nil && IsNil(o.Type) {
 		return true
 	}
 
@@ -110,9 +113,9 @@ func (o *POSTSkus201ResponseData) SetType(v interface{}) {
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *POSTSkus201ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks {
-	if o == nil || o.Links == nil {
-		var ret GETAddresses200ResponseDataInnerLinks
+func (o *POSTSkus201ResponseData) GetLinks() POSTAddresses201ResponseDataLinks {
+	if o == nil || IsNil(o.Links) {
+		var ret POSTAddresses201ResponseDataLinks
 		return ret
 	}
 	return *o.Links
@@ -120,8 +123,8 @@ func (o *POSTSkus201ResponseData) GetLinks() GETAddresses200ResponseDataInnerLin
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTSkus201ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool) {
-	if o == nil || o.Links == nil {
+func (o *POSTSkus201ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool) {
+	if o == nil || IsNil(o.Links) {
 		return nil, false
 	}
 	return o.Links, true
@@ -129,21 +132,21 @@ func (o *POSTSkus201ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInne
 
 // HasLinks returns a boolean if a field has been set.
 func (o *POSTSkus201ResponseData) HasLinks() bool {
-	if o != nil && o.Links != nil {
+	if o != nil && !IsNil(o.Links) {
 		return true
 	}
 
 	return false
 }
 
-// SetLinks gets a reference to the given GETAddresses200ResponseDataInnerLinks and assigns it to the Links field.
-func (o *POSTSkus201ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks) {
+// SetLinks gets a reference to the given POSTAddresses201ResponseDataLinks and assigns it to the Links field.
+func (o *POSTSkus201ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks) {
 	o.Links = &v
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *POSTSkus201ResponseData) GetAttributes() POSTSkus201ResponseDataAttributes {
-	if o == nil || o.Attributes == nil {
+	if o == nil || IsNil(o.Attributes) {
 		var ret POSTSkus201ResponseDataAttributes
 		return ret
 	}
@@ -153,7 +156,7 @@ func (o *POSTSkus201ResponseData) GetAttributes() POSTSkus201ResponseDataAttribu
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTSkus201ResponseData) GetAttributesOk() (*POSTSkus201ResponseDataAttributes, bool) {
-	if o == nil || o.Attributes == nil {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -161,7 +164,7 @@ func (o *POSTSkus201ResponseData) GetAttributesOk() (*POSTSkus201ResponseDataAtt
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *POSTSkus201ResponseData) HasAttributes() bool {
-	if o != nil && o.Attributes != nil {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
@@ -174,9 +177,9 @@ func (o *POSTSkus201ResponseData) SetAttributes(v POSTSkus201ResponseDataAttribu
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *POSTSkus201ResponseData) GetRelationships() GETSkus200ResponseDataInnerRelationships {
-	if o == nil || o.Relationships == nil {
-		var ret GETSkus200ResponseDataInnerRelationships
+func (o *POSTSkus201ResponseData) GetRelationships() POSTSkus201ResponseDataRelationships {
+	if o == nil || IsNil(o.Relationships) {
+		var ret POSTSkus201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -184,8 +187,8 @@ func (o *POSTSkus201ResponseData) GetRelationships() GETSkus200ResponseDataInner
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTSkus201ResponseData) GetRelationshipsOk() (*GETSkus200ResponseDataInnerRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+func (o *POSTSkus201ResponseData) GetRelationshipsOk() (*POSTSkus201ResponseDataRelationships, bool) {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -193,19 +196,27 @@ func (o *POSTSkus201ResponseData) GetRelationshipsOk() (*GETSkus200ResponseDataI
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *POSTSkus201ResponseData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
 	return false
 }
 
-// SetRelationships gets a reference to the given GETSkus200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *POSTSkus201ResponseData) SetRelationships(v GETSkus200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given POSTSkus201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *POSTSkus201ResponseData) SetRelationships(v POSTSkus201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 
 func (o POSTSkus201ResponseData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTSkus201ResponseData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
@@ -213,16 +224,16 @@ func (o POSTSkus201ResponseData) MarshalJSON() ([]byte, error) {
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if o.Links != nil {
+	if !IsNil(o.Links) {
 		toSerialize["links"] = o.Links
 	}
-	if o.Attributes != nil {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if o.Relationships != nil {
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTSkus201ResponseData struct {

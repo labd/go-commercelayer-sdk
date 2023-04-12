@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AxervePaymentCreateData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AxervePaymentCreateData{}
+
 // AxervePaymentCreateData struct for AxervePaymentCreateData
 type AxervePaymentCreateData struct {
 	// The resource's type
@@ -57,7 +60,7 @@ func (o *AxervePaymentCreateData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AxervePaymentCreateData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -94,7 +97,7 @@ func (o *AxervePaymentCreateData) SetAttributes(v POSTAxervePayments201ResponseD
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *AxervePaymentCreateData) GetRelationships() AdyenPaymentCreateDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret AdyenPaymentCreateDataRelationships
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *AxervePaymentCreateData) GetRelationships() AdyenPaymentCreateDataRelat
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AxervePaymentCreateData) GetRelationshipsOk() (*AdyenPaymentCreateDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -112,7 +115,7 @@ func (o *AxervePaymentCreateData) GetRelationshipsOk() (*AdyenPaymentCreateDataR
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *AxervePaymentCreateData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -125,17 +128,23 @@ func (o *AxervePaymentCreateData) SetRelationships(v AdyenPaymentCreateDataRelat
 }
 
 func (o AxervePaymentCreateData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o AxervePaymentCreateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableAxervePaymentCreateData struct {

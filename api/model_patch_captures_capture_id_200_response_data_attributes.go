@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHCapturesCaptureId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHCapturesCaptureId200ResponseDataAttributes{}
+
 // PATCHCapturesCaptureId200ResponseDataAttributes struct for PATCHCapturesCaptureId200ResponseDataAttributes
 type PATCHCapturesCaptureId200ResponseDataAttributes struct {
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
@@ -59,7 +62,7 @@ func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetReference() interfa
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -67,7 +70,7 @@ func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetReferenceOk() (*int
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHCapturesCaptureId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -92,7 +95,7 @@ func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetReferenceOrigin() i
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -100,7 +103,7 @@ func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetReferenceOriginOk()
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHCapturesCaptureId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -125,7 +128,7 @@ func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetMetadata() interfac
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -133,7 +136,7 @@ func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetMetadataOk() (*inte
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHCapturesCaptureId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -158,7 +161,7 @@ func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetRefund() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetRefundOk() (*interface{}, bool) {
-	if o == nil || o.Refund == nil {
+	if o == nil || IsNil(o.Refund) {
 		return nil, false
 	}
 	return &o.Refund, true
@@ -166,7 +169,7 @@ func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetRefundOk() (*interf
 
 // HasRefund returns a boolean if a field has been set.
 func (o *PATCHCapturesCaptureId200ResponseDataAttributes) HasRefund() bool {
-	if o != nil && o.Refund != nil {
+	if o != nil && IsNil(o.Refund) {
 		return true
 	}
 
@@ -191,7 +194,7 @@ func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetRefundAmountCents()
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetRefundAmountCentsOk() (*interface{}, bool) {
-	if o == nil || o.RefundAmountCents == nil {
+	if o == nil || IsNil(o.RefundAmountCents) {
 		return nil, false
 	}
 	return &o.RefundAmountCents, true
@@ -199,7 +202,7 @@ func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetRefundAmountCentsOk
 
 // HasRefundAmountCents returns a boolean if a field has been set.
 func (o *PATCHCapturesCaptureId200ResponseDataAttributes) HasRefundAmountCents() bool {
-	if o != nil && o.RefundAmountCents != nil {
+	if o != nil && IsNil(o.RefundAmountCents) {
 		return true
 	}
 
@@ -212,6 +215,14 @@ func (o *PATCHCapturesCaptureId200ResponseDataAttributes) SetRefundAmountCents(v
 }
 
 func (o PATCHCapturesCaptureId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHCapturesCaptureId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference
@@ -228,7 +239,7 @@ func (o PATCHCapturesCaptureId200ResponseDataAttributes) MarshalJSON() ([]byte, 
 	if o.RefundAmountCents != nil {
 		toSerialize["_refund_amount_cents"] = o.RefundAmountCents
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHCapturesCaptureId200ResponseDataAttributes struct {

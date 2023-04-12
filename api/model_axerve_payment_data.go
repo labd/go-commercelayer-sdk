@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the AxervePaymentData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AxervePaymentData{}
+
 // AxervePaymentData struct for AxervePaymentData
 type AxervePaymentData struct {
 	// The resource's type
-	Type          interface{}                                     `json:"type"`
-	Attributes    GETAxervePayments200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *AdyenPaymentDataRelationships                  `json:"relationships,omitempty"`
+	Type          interface{}                                               `json:"type"`
+	Attributes    GETAxervePaymentsAxervePaymentId200ResponseDataAttributes `json:"attributes"`
+	Relationships *AdyenPaymentDataRelationships                            `json:"relationships,omitempty"`
 }
 
 // NewAxervePaymentData instantiates a new AxervePaymentData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAxervePaymentData(type_ interface{}, attributes GETAxervePayments200ResponseDataInnerAttributes) *AxervePaymentData {
+func NewAxervePaymentData(type_ interface{}, attributes GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) *AxervePaymentData {
 	this := AxervePaymentData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -57,7 +60,7 @@ func (o *AxervePaymentData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AxervePaymentData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -69,9 +72,9 @@ func (o *AxervePaymentData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *AxervePaymentData) GetAttributes() GETAxervePayments200ResponseDataInnerAttributes {
+func (o *AxervePaymentData) GetAttributes() GETAxervePaymentsAxervePaymentId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETAxervePayments200ResponseDataInnerAttributes
+		var ret GETAxervePaymentsAxervePaymentId200ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +83,7 @@ func (o *AxervePaymentData) GetAttributes() GETAxervePayments200ResponseDataInne
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *AxervePaymentData) GetAttributesOk() (*GETAxervePayments200ResponseDataInnerAttributes, bool) {
+func (o *AxervePaymentData) GetAttributesOk() (*GETAxervePaymentsAxervePaymentId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,13 +91,13 @@ func (o *AxervePaymentData) GetAttributesOk() (*GETAxervePayments200ResponseData
 }
 
 // SetAttributes sets field value
-func (o *AxervePaymentData) SetAttributes(v GETAxervePayments200ResponseDataInnerAttributes) {
+func (o *AxervePaymentData) SetAttributes(v GETAxervePaymentsAxervePaymentId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *AxervePaymentData) GetRelationships() AdyenPaymentDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret AdyenPaymentDataRelationships
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *AxervePaymentData) GetRelationships() AdyenPaymentDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AxervePaymentData) GetRelationshipsOk() (*AdyenPaymentDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -112,7 +115,7 @@ func (o *AxervePaymentData) GetRelationshipsOk() (*AdyenPaymentDataRelationships
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *AxervePaymentData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -125,17 +128,23 @@ func (o *AxervePaymentData) SetRelationships(v AdyenPaymentDataRelationships) {
 }
 
 func (o AxervePaymentData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o AxervePaymentData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableAxervePaymentData struct {

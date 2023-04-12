@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes{}
+
 // PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes struct for PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes
 type PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes struct {
 	// The tax calculator's internal name.
@@ -57,7 +60,7 @@ func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -65,7 +68,7 @@ func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
@@ -90,7 +93,7 @@ func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -98,7 +101,7 @@ func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -123,7 +126,7 @@ func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -131,7 +134,7 @@ func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -156,7 +159,7 @@ func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -164,7 +167,7 @@ func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -177,6 +180,14 @@ func (o *PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes
 }
 
 func (o PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -190,7 +201,7 @@ func (o PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes)
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes struct {

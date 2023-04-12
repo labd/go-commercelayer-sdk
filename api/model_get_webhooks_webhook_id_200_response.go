@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETWebhooksWebhookId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETWebhooksWebhookId200Response{}
+
 // GETWebhooksWebhookId200Response struct for GETWebhooksWebhookId200Response
 type GETWebhooksWebhookId200Response struct {
 	Data *GETWebhooksWebhookId200ResponseData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewGETWebhooksWebhookId200ResponseWithDefaults() *GETWebhooksWebhookId200Re
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *GETWebhooksWebhookId200Response) GetData() GETWebhooksWebhookId200ResponseData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret GETWebhooksWebhookId200ResponseData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *GETWebhooksWebhookId200Response) GetData() GETWebhooksWebhookId200Respo
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GETWebhooksWebhookId200Response) GetDataOk() (*GETWebhooksWebhookId200ResponseData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *GETWebhooksWebhookId200Response) GetDataOk() (*GETWebhooksWebhookId200R
 
 // HasData returns a boolean if a field has been set.
 func (o *GETWebhooksWebhookId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *GETWebhooksWebhookId200Response) SetData(v GETWebhooksWebhookId200Respo
 }
 
 func (o GETWebhooksWebhookId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GETWebhooksWebhookId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGETWebhooksWebhookId200Response struct {

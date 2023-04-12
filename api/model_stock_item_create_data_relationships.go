@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the StockItemCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &StockItemCreateDataRelationships{}
+
 // StockItemCreateDataRelationships struct for StockItemCreateDataRelationships
 type StockItemCreateDataRelationships struct {
 	StockLocation DeliveryLeadTimeCreateDataRelationshipsStockLocation `json:"stock_location"`
@@ -65,7 +68,7 @@ func (o *StockItemCreateDataRelationships) SetStockLocation(v DeliveryLeadTimeCr
 
 // GetSku returns the Sku field value if set, zero value otherwise.
 func (o *StockItemCreateDataRelationships) GetSku() InStockSubscriptionCreateDataRelationshipsSku {
-	if o == nil || o.Sku == nil {
+	if o == nil || IsNil(o.Sku) {
 		var ret InStockSubscriptionCreateDataRelationshipsSku
 		return ret
 	}
@@ -75,7 +78,7 @@ func (o *StockItemCreateDataRelationships) GetSku() InStockSubscriptionCreateDat
 // GetSkuOk returns a tuple with the Sku field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StockItemCreateDataRelationships) GetSkuOk() (*InStockSubscriptionCreateDataRelationshipsSku, bool) {
-	if o == nil || o.Sku == nil {
+	if o == nil || IsNil(o.Sku) {
 		return nil, false
 	}
 	return o.Sku, true
@@ -83,7 +86,7 @@ func (o *StockItemCreateDataRelationships) GetSkuOk() (*InStockSubscriptionCreat
 
 // HasSku returns a boolean if a field has been set.
 func (o *StockItemCreateDataRelationships) HasSku() bool {
-	if o != nil && o.Sku != nil {
+	if o != nil && !IsNil(o.Sku) {
 		return true
 	}
 
@@ -96,14 +99,20 @@ func (o *StockItemCreateDataRelationships) SetSku(v InStockSubscriptionCreateDat
 }
 
 func (o StockItemCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["stock_location"] = o.StockLocation
-	}
-	if o.Sku != nil {
-		toSerialize["sku"] = o.Sku
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o StockItemCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["stock_location"] = o.StockLocation
+	if !IsNil(o.Sku) {
+		toSerialize["sku"] = o.Sku
+	}
+	return toSerialize, nil
 }
 
 type NullableStockItemCreateDataRelationships struct {

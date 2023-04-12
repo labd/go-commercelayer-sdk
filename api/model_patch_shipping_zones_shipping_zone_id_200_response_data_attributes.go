@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHShippingZonesShippingZoneId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHShippingZonesShippingZoneId200ResponseDataAttributes{}
+
 // PATCHShippingZonesShippingZoneId200ResponseDataAttributes struct for PATCHShippingZonesShippingZoneId200ResponseDataAttributes
 type PATCHShippingZonesShippingZoneId200ResponseDataAttributes struct {
 	// The shipping zone's internal name.
@@ -69,7 +72,7 @@ func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetName() in
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -77,7 +80,7 @@ func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetNameOk() 
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
@@ -102,7 +105,7 @@ func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetCountryCo
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetCountryCodeRegexOk() (*interface{}, bool) {
-	if o == nil || o.CountryCodeRegex == nil {
+	if o == nil || IsNil(o.CountryCodeRegex) {
 		return nil, false
 	}
 	return &o.CountryCodeRegex, true
@@ -110,7 +113,7 @@ func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetCountryCo
 
 // HasCountryCodeRegex returns a boolean if a field has been set.
 func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) HasCountryCodeRegex() bool {
-	if o != nil && o.CountryCodeRegex != nil {
+	if o != nil && IsNil(o.CountryCodeRegex) {
 		return true
 	}
 
@@ -135,7 +138,7 @@ func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetNotCountr
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetNotCountryCodeRegexOk() (*interface{}, bool) {
-	if o == nil || o.NotCountryCodeRegex == nil {
+	if o == nil || IsNil(o.NotCountryCodeRegex) {
 		return nil, false
 	}
 	return &o.NotCountryCodeRegex, true
@@ -143,7 +146,7 @@ func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetNotCountr
 
 // HasNotCountryCodeRegex returns a boolean if a field has been set.
 func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) HasNotCountryCodeRegex() bool {
-	if o != nil && o.NotCountryCodeRegex != nil {
+	if o != nil && IsNil(o.NotCountryCodeRegex) {
 		return true
 	}
 
@@ -168,7 +171,7 @@ func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetStateCode
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetStateCodeRegexOk() (*interface{}, bool) {
-	if o == nil || o.StateCodeRegex == nil {
+	if o == nil || IsNil(o.StateCodeRegex) {
 		return nil, false
 	}
 	return &o.StateCodeRegex, true
@@ -176,7 +179,7 @@ func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetStateCode
 
 // HasStateCodeRegex returns a boolean if a field has been set.
 func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) HasStateCodeRegex() bool {
-	if o != nil && o.StateCodeRegex != nil {
+	if o != nil && IsNil(o.StateCodeRegex) {
 		return true
 	}
 
@@ -201,7 +204,7 @@ func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetNotStateC
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetNotStateCodeRegexOk() (*interface{}, bool) {
-	if o == nil || o.NotStateCodeRegex == nil {
+	if o == nil || IsNil(o.NotStateCodeRegex) {
 		return nil, false
 	}
 	return &o.NotStateCodeRegex, true
@@ -209,7 +212,7 @@ func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetNotStateC
 
 // HasNotStateCodeRegex returns a boolean if a field has been set.
 func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) HasNotStateCodeRegex() bool {
-	if o != nil && o.NotStateCodeRegex != nil {
+	if o != nil && IsNil(o.NotStateCodeRegex) {
 		return true
 	}
 
@@ -234,7 +237,7 @@ func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetZipCodeRe
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetZipCodeRegexOk() (*interface{}, bool) {
-	if o == nil || o.ZipCodeRegex == nil {
+	if o == nil || IsNil(o.ZipCodeRegex) {
 		return nil, false
 	}
 	return &o.ZipCodeRegex, true
@@ -242,7 +245,7 @@ func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetZipCodeRe
 
 // HasZipCodeRegex returns a boolean if a field has been set.
 func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) HasZipCodeRegex() bool {
-	if o != nil && o.ZipCodeRegex != nil {
+	if o != nil && IsNil(o.ZipCodeRegex) {
 		return true
 	}
 
@@ -267,7 +270,7 @@ func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetNotZipCod
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetNotZipCodeRegexOk() (*interface{}, bool) {
-	if o == nil || o.NotZipCodeRegex == nil {
+	if o == nil || IsNil(o.NotZipCodeRegex) {
 		return nil, false
 	}
 	return &o.NotZipCodeRegex, true
@@ -275,7 +278,7 @@ func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetNotZipCod
 
 // HasNotZipCodeRegex returns a boolean if a field has been set.
 func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) HasNotZipCodeRegex() bool {
-	if o != nil && o.NotZipCodeRegex != nil {
+	if o != nil && IsNil(o.NotZipCodeRegex) {
 		return true
 	}
 
@@ -300,7 +303,7 @@ func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetReference
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -308,7 +311,7 @@ func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetReference
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -333,7 +336,7 @@ func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetReference
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -341,7 +344,7 @@ func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetReference
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -366,7 +369,7 @@ func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetMetadata(
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -374,7 +377,7 @@ func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) GetMetadataO
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -387,6 +390,14 @@ func (o *PATCHShippingZonesShippingZoneId200ResponseDataAttributes) SetMetadata(
 }
 
 func (o PATCHShippingZonesShippingZoneId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHShippingZonesShippingZoneId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -418,7 +429,7 @@ func (o PATCHShippingZonesShippingZoneId200ResponseDataAttributes) MarshalJSON()
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHShippingZonesShippingZoneId200ResponseDataAttributes struct {

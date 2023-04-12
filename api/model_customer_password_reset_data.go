@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the CustomerPasswordResetData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CustomerPasswordResetData{}
+
 // CustomerPasswordResetData struct for CustomerPasswordResetData
 type CustomerPasswordResetData struct {
 	// The resource's type
-	Type          interface{}                                             `json:"type"`
-	Attributes    GETCustomerPasswordResets200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *CustomerPasswordResetDataRelationships                 `json:"relationships,omitempty"`
+	Type          interface{}                                                               `json:"type"`
+	Attributes    GETCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes `json:"attributes"`
+	Relationships *CustomerPasswordResetDataRelationships                                   `json:"relationships,omitempty"`
 }
 
 // NewCustomerPasswordResetData instantiates a new CustomerPasswordResetData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerPasswordResetData(type_ interface{}, attributes GETCustomerPasswordResets200ResponseDataInnerAttributes) *CustomerPasswordResetData {
+func NewCustomerPasswordResetData(type_ interface{}, attributes GETCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) *CustomerPasswordResetData {
 	this := CustomerPasswordResetData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -57,7 +60,7 @@ func (o *CustomerPasswordResetData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CustomerPasswordResetData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -69,9 +72,9 @@ func (o *CustomerPasswordResetData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CustomerPasswordResetData) GetAttributes() GETCustomerPasswordResets200ResponseDataInnerAttributes {
+func (o *CustomerPasswordResetData) GetAttributes() GETCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETCustomerPasswordResets200ResponseDataInnerAttributes
+		var ret GETCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +83,7 @@ func (o *CustomerPasswordResetData) GetAttributes() GETCustomerPasswordResets200
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CustomerPasswordResetData) GetAttributesOk() (*GETCustomerPasswordResets200ResponseDataInnerAttributes, bool) {
+func (o *CustomerPasswordResetData) GetAttributesOk() (*GETCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,13 +91,13 @@ func (o *CustomerPasswordResetData) GetAttributesOk() (*GETCustomerPasswordReset
 }
 
 // SetAttributes sets field value
-func (o *CustomerPasswordResetData) SetAttributes(v GETCustomerPasswordResets200ResponseDataInnerAttributes) {
+func (o *CustomerPasswordResetData) SetAttributes(v GETCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *CustomerPasswordResetData) GetRelationships() CustomerPasswordResetDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret CustomerPasswordResetDataRelationships
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *CustomerPasswordResetData) GetRelationships() CustomerPasswordResetData
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerPasswordResetData) GetRelationshipsOk() (*CustomerPasswordResetDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -112,7 +115,7 @@ func (o *CustomerPasswordResetData) GetRelationshipsOk() (*CustomerPasswordReset
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *CustomerPasswordResetData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -125,17 +128,23 @@ func (o *CustomerPasswordResetData) SetRelationships(v CustomerPasswordResetData
 }
 
 func (o CustomerPasswordResetData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o CustomerPasswordResetData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableCustomerPasswordResetData struct {

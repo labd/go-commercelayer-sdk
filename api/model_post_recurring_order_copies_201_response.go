@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTRecurringOrderCopies201Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTRecurringOrderCopies201Response{}
+
 // POSTRecurringOrderCopies201Response struct for POSTRecurringOrderCopies201Response
 type POSTRecurringOrderCopies201Response struct {
 	Data *POSTRecurringOrderCopies201ResponseData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewPOSTRecurringOrderCopies201ResponseWithDefaults() *POSTRecurringOrderCop
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *POSTRecurringOrderCopies201Response) GetData() POSTRecurringOrderCopies201ResponseData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret POSTRecurringOrderCopies201ResponseData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *POSTRecurringOrderCopies201Response) GetData() POSTRecurringOrderCopies
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *POSTRecurringOrderCopies201Response) GetDataOk() (*POSTRecurringOrderCopies201ResponseData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *POSTRecurringOrderCopies201Response) GetDataOk() (*POSTRecurringOrderCo
 
 // HasData returns a boolean if a field has been set.
 func (o *POSTRecurringOrderCopies201Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *POSTRecurringOrderCopies201Response) SetData(v POSTRecurringOrderCopies
 }
 
 func (o POSTRecurringOrderCopies201Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o POSTRecurringOrderCopies201Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullablePOSTRecurringOrderCopies201Response struct {

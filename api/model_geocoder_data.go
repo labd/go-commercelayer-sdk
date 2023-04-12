@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the GeocoderData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GeocoderData{}
+
 // GeocoderData struct for GeocoderData
 type GeocoderData struct {
 	// The resource's type
-	Type          interface{}                                    `json:"type"`
-	Attributes    GETBingGeocoders200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *BingGeocoderDataRelationships                 `json:"relationships,omitempty"`
+	Type          interface{}                                             `json:"type"`
+	Attributes    GETBingGeocodersBingGeocoderId200ResponseDataAttributes `json:"attributes"`
+	Relationships *BingGeocoderDataRelationships                          `json:"relationships,omitempty"`
 }
 
 // NewGeocoderData instantiates a new GeocoderData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewGeocoderData(type_ interface{}, attributes GETBingGeocoders200ResponseDataInnerAttributes) *GeocoderData {
+func NewGeocoderData(type_ interface{}, attributes GETBingGeocodersBingGeocoderId200ResponseDataAttributes) *GeocoderData {
 	this := GeocoderData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -57,7 +60,7 @@ func (o *GeocoderData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *GeocoderData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -69,9 +72,9 @@ func (o *GeocoderData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *GeocoderData) GetAttributes() GETBingGeocoders200ResponseDataInnerAttributes {
+func (o *GeocoderData) GetAttributes() GETBingGeocodersBingGeocoderId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETBingGeocoders200ResponseDataInnerAttributes
+		var ret GETBingGeocodersBingGeocoderId200ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +83,7 @@ func (o *GeocoderData) GetAttributes() GETBingGeocoders200ResponseDataInnerAttri
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *GeocoderData) GetAttributesOk() (*GETBingGeocoders200ResponseDataInnerAttributes, bool) {
+func (o *GeocoderData) GetAttributesOk() (*GETBingGeocodersBingGeocoderId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,13 +91,13 @@ func (o *GeocoderData) GetAttributesOk() (*GETBingGeocoders200ResponseDataInnerA
 }
 
 // SetAttributes sets field value
-func (o *GeocoderData) SetAttributes(v GETBingGeocoders200ResponseDataInnerAttributes) {
+func (o *GeocoderData) SetAttributes(v GETBingGeocodersBingGeocoderId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *GeocoderData) GetRelationships() BingGeocoderDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret BingGeocoderDataRelationships
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *GeocoderData) GetRelationships() BingGeocoderDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *GeocoderData) GetRelationshipsOk() (*BingGeocoderDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -112,7 +115,7 @@ func (o *GeocoderData) GetRelationshipsOk() (*BingGeocoderDataRelationships, boo
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *GeocoderData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -125,17 +128,23 @@ func (o *GeocoderData) SetRelationships(v BingGeocoderDataRelationships) {
 }
 
 func (o GeocoderData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o GeocoderData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableGeocoderData struct {

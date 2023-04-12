@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETInStockSubscriptions200ResponseDataInnerAttributes**](GETInStockSubscriptions200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**GETInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes**](GETInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**InStockSubscriptionDataRelationships**](InStockSubscriptionDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewInStockSubscriptionData
 
-`func NewInStockSubscriptionData(type_ interface{}, attributes GETInStockSubscriptions200ResponseDataInnerAttributes, ) *InStockSubscriptionData`
+`func NewInStockSubscriptionData(type_ interface{}, attributes GETInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes, ) *InStockSubscriptionData`
 
 NewInStockSubscriptionData instantiates a new InStockSubscriptionData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *InStockSubscriptionData) GetAttributes() GETInStockSubscriptions200ResponseDataInnerAttributes`
+`func (o *InStockSubscriptionData) GetAttributes() GETInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *InStockSubscriptionData) GetAttributesOk() (*GETInStockSubscriptions200ResponseDataInnerAttributes, bool)`
+`func (o *InStockSubscriptionData) GetAttributesOk() (*GETInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *InStockSubscriptionData) SetAttributes(v GETInStockSubscriptions200ResponseDataInnerAttributes)`
+`func (o *InStockSubscriptionData) SetAttributes(v GETInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

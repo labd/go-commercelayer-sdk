@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *AdjustmentsApiService) DELETEAdjustmentsAdjustmentIdExecute(r Adjustmen
 	}
 
 	localVarPath := localBasePath + "/adjustments/{adjustmentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"adjustmentId"+"}", url.PathEscape(parameterToString(r.adjustmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"adjustmentId"+"}", url.PathEscape(parameterValueToString(r.adjustmentId, "adjustmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *AdjustmentsApiService) DELETEAdjustmentsAdjustmentIdExecute(r Adjustmen
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *AdjustmentsApiService) GETAdjustmentsExecute(r AdjustmentsApiGETAdjustm
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *AdjustmentsApiService) GETAdjustmentsAdjustmentIdExecute(r AdjustmentsA
 	}
 
 	localVarPath := localBasePath + "/adjustments/{adjustmentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"adjustmentId"+"}", url.PathEscape(parameterToString(r.adjustmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"adjustmentId"+"}", url.PathEscape(parameterValueToString(r.adjustmentId, "adjustmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *AdjustmentsApiService) GETAdjustmentsAdjustmentIdExecute(r AdjustmentsA
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -369,7 +369,7 @@ func (a *AdjustmentsApiService) PATCHAdjustmentsAdjustmentIdExecute(r Adjustment
 	}
 
 	localVarPath := localBasePath + "/adjustments/{adjustmentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"adjustmentId"+"}", url.PathEscape(parameterToString(r.adjustmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"adjustmentId"+"}", url.PathEscape(parameterValueToString(r.adjustmentId, "adjustmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -407,9 +407,9 @@ func (a *AdjustmentsApiService) PATCHAdjustmentsAdjustmentIdExecute(r Adjustment
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -518,9 +518,9 @@ func (a *AdjustmentsApiService) POSTAdjustmentsExecute(r AdjustmentsApiPOSTAdjus
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

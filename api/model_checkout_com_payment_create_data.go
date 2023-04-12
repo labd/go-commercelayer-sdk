@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the CheckoutComPaymentCreateData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CheckoutComPaymentCreateData{}
+
 // CheckoutComPaymentCreateData struct for CheckoutComPaymentCreateData
 type CheckoutComPaymentCreateData struct {
 	// The resource's type
@@ -57,7 +60,7 @@ func (o *CheckoutComPaymentCreateData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CheckoutComPaymentCreateData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -94,7 +97,7 @@ func (o *CheckoutComPaymentCreateData) SetAttributes(v POSTCheckoutComPayments20
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *CheckoutComPaymentCreateData) GetRelationships() AdyenPaymentCreateDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret AdyenPaymentCreateDataRelationships
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *CheckoutComPaymentCreateData) GetRelationships() AdyenPaymentCreateData
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CheckoutComPaymentCreateData) GetRelationshipsOk() (*AdyenPaymentCreateDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -112,7 +115,7 @@ func (o *CheckoutComPaymentCreateData) GetRelationshipsOk() (*AdyenPaymentCreate
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *CheckoutComPaymentCreateData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -125,17 +128,23 @@ func (o *CheckoutComPaymentCreateData) SetRelationships(v AdyenPaymentCreateData
 }
 
 func (o CheckoutComPaymentCreateData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o CheckoutComPaymentCreateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableCheckoutComPaymentCreateData struct {

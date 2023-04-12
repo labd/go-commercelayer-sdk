@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETShippingWeightTiers200ResponseDataInner**](GETShippingWeightTiers200ResponseDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETShippingWeightTiersShippingWeightTierId200ResponseData**](GETShippingWeightTiersShippingWeightTierId200ResponseData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETShippingWeightTiersShippingWeightTierId200Response) GetData() GETShippingWeightTiers200ResponseDataInner`
+`func (o *GETShippingWeightTiersShippingWeightTierId200Response) GetData() GETShippingWeightTiersShippingWeightTierId200ResponseData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETShippingWeightTiersShippingWeightTierId200Response) GetDataOk() (*GETShippingWeightTiers200ResponseDataInner, bool)`
+`func (o *GETShippingWeightTiersShippingWeightTierId200Response) GetDataOk() (*GETShippingWeightTiersShippingWeightTierId200ResponseData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETShippingWeightTiersShippingWeightTierId200Response) SetData(v GETShippingWeightTiers200ResponseDataInner)`
+`func (o *GETShippingWeightTiersShippingWeightTierId200Response) SetData(v GETShippingWeightTiersShippingWeightTierId200ResponseData)`
 
 SetData sets Data field to given value.
 

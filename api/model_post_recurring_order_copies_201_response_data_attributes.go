@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTRecurringOrderCopies201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTRecurringOrderCopies201ResponseDataAttributes{}
+
 // POSTRecurringOrderCopies201ResponseDataAttributes struct for POSTRecurringOrderCopies201ResponseDataAttributes
 type POSTRecurringOrderCopies201ResponseDataAttributes struct {
 	// Indicates if the target order must be placed upon copy.
@@ -59,7 +62,7 @@ func (o *POSTRecurringOrderCopies201ResponseDataAttributes) GetPlaceTargetOrder(
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTRecurringOrderCopies201ResponseDataAttributes) GetPlaceTargetOrderOk() (*interface{}, bool) {
-	if o == nil || o.PlaceTargetOrder == nil {
+	if o == nil || IsNil(o.PlaceTargetOrder) {
 		return nil, false
 	}
 	return &o.PlaceTargetOrder, true
@@ -67,7 +70,7 @@ func (o *POSTRecurringOrderCopies201ResponseDataAttributes) GetPlaceTargetOrderO
 
 // HasPlaceTargetOrder returns a boolean if a field has been set.
 func (o *POSTRecurringOrderCopies201ResponseDataAttributes) HasPlaceTargetOrder() bool {
-	if o != nil && o.PlaceTargetOrder != nil {
+	if o != nil && IsNil(o.PlaceTargetOrder) {
 		return true
 	}
 
@@ -92,7 +95,7 @@ func (o *POSTRecurringOrderCopies201ResponseDataAttributes) GetReuseWallet() int
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTRecurringOrderCopies201ResponseDataAttributes) GetReuseWalletOk() (*interface{}, bool) {
-	if o == nil || o.ReuseWallet == nil {
+	if o == nil || IsNil(o.ReuseWallet) {
 		return nil, false
 	}
 	return &o.ReuseWallet, true
@@ -100,7 +103,7 @@ func (o *POSTRecurringOrderCopies201ResponseDataAttributes) GetReuseWalletOk() (
 
 // HasReuseWallet returns a boolean if a field has been set.
 func (o *POSTRecurringOrderCopies201ResponseDataAttributes) HasReuseWallet() bool {
-	if o != nil && o.ReuseWallet != nil {
+	if o != nil && IsNil(o.ReuseWallet) {
 		return true
 	}
 
@@ -125,7 +128,7 @@ func (o *POSTRecurringOrderCopies201ResponseDataAttributes) GetReference() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTRecurringOrderCopies201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -133,7 +136,7 @@ func (o *POSTRecurringOrderCopies201ResponseDataAttributes) GetReferenceOk() (*i
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTRecurringOrderCopies201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -158,7 +161,7 @@ func (o *POSTRecurringOrderCopies201ResponseDataAttributes) GetReferenceOrigin()
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTRecurringOrderCopies201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -166,7 +169,7 @@ func (o *POSTRecurringOrderCopies201ResponseDataAttributes) GetReferenceOriginOk
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTRecurringOrderCopies201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -191,7 +194,7 @@ func (o *POSTRecurringOrderCopies201ResponseDataAttributes) GetMetadata() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTRecurringOrderCopies201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -199,7 +202,7 @@ func (o *POSTRecurringOrderCopies201ResponseDataAttributes) GetMetadataOk() (*in
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTRecurringOrderCopies201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -212,6 +215,14 @@ func (o *POSTRecurringOrderCopies201ResponseDataAttributes) SetMetadata(v interf
 }
 
 func (o POSTRecurringOrderCopies201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTRecurringOrderCopies201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.PlaceTargetOrder != nil {
 		toSerialize["place_target_order"] = o.PlaceTargetOrder
@@ -228,7 +239,7 @@ func (o POSTRecurringOrderCopies201ResponseDataAttributes) MarshalJSON() ([]byte
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTRecurringOrderCopies201ResponseDataAttributes struct {

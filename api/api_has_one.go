@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *HasOneApiService) GETAddressIdGeocoderExecute(r HasOneApiGETAddressIdGe
 	}
 
 	localVarPath := localBasePath + "/addresses/{addressId}/geocoder"
-	localVarPath = strings.Replace(localVarPath, "{"+"addressId"+"}", url.PathEscape(parameterToString(r.addressId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"addressId"+"}", url.PathEscape(parameterValueToString(r.addressId, "addressId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *HasOneApiService) GETAddressIdGeocoderExecute(r HasOneApiGETAddressIdGe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -156,7 +156,7 @@ func (a *HasOneApiService) GETAdyenPaymentIdOrderExecute(r HasOneApiGETAdyenPaym
 	}
 
 	localVarPath := localBasePath + "/adyen_payments/{adyenPaymentId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"adyenPaymentId"+"}", url.PathEscape(parameterToString(r.adyenPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"adyenPaymentId"+"}", url.PathEscape(parameterValueToString(r.adyenPaymentId, "adyenPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *HasOneApiService) GETAdyenPaymentIdOrderExecute(r HasOneApiGETAdyenPaym
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -248,7 +248,7 @@ func (a *HasOneApiService) GETAdyenPaymentIdPaymentGatewayExecute(r HasOneApiGET
 	}
 
 	localVarPath := localBasePath + "/adyen_payments/{adyenPaymentId}/payment_gateway"
-	localVarPath = strings.Replace(localVarPath, "{"+"adyenPaymentId"+"}", url.PathEscape(parameterToString(r.adyenPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"adyenPaymentId"+"}", url.PathEscape(parameterValueToString(r.adyenPaymentId, "adyenPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -281,9 +281,9 @@ func (a *HasOneApiService) GETAdyenPaymentIdPaymentGatewayExecute(r HasOneApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -340,7 +340,7 @@ func (a *HasOneApiService) GETAuthorizationIdOrderExecute(r HasOneApiGETAuthoriz
 	}
 
 	localVarPath := localBasePath + "/authorizations/{authorizationId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"authorizationId"+"}", url.PathEscape(parameterToString(r.authorizationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"authorizationId"+"}", url.PathEscape(parameterValueToString(r.authorizationId, "authorizationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -373,9 +373,9 @@ func (a *HasOneApiService) GETAuthorizationIdOrderExecute(r HasOneApiGETAuthoriz
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -432,7 +432,7 @@ func (a *HasOneApiService) GETAxervePaymentIdOrderExecute(r HasOneApiGETAxervePa
 	}
 
 	localVarPath := localBasePath + "/axerve_payments/{axervePaymentId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"axervePaymentId"+"}", url.PathEscape(parameterToString(r.axervePaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"axervePaymentId"+"}", url.PathEscape(parameterValueToString(r.axervePaymentId, "axervePaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -465,9 +465,9 @@ func (a *HasOneApiService) GETAxervePaymentIdOrderExecute(r HasOneApiGETAxervePa
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -524,7 +524,7 @@ func (a *HasOneApiService) GETAxervePaymentIdPaymentGatewayExecute(r HasOneApiGE
 	}
 
 	localVarPath := localBasePath + "/axerve_payments/{axervePaymentId}/payment_gateway"
-	localVarPath = strings.Replace(localVarPath, "{"+"axervePaymentId"+"}", url.PathEscape(parameterToString(r.axervePaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"axervePaymentId"+"}", url.PathEscape(parameterValueToString(r.axervePaymentId, "axervePaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -557,9 +557,9 @@ func (a *HasOneApiService) GETAxervePaymentIdPaymentGatewayExecute(r HasOneApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -616,7 +616,7 @@ func (a *HasOneApiService) GETBillingInfoValidationRuleIdMarketExecute(r HasOneA
 	}
 
 	localVarPath := localBasePath + "/billing_info_validation_rules/{billingInfoValidationRuleId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterToString(r.billingInfoValidationRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterValueToString(r.billingInfoValidationRuleId, "billingInfoValidationRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -649,9 +649,9 @@ func (a *HasOneApiService) GETBillingInfoValidationRuleIdMarketExecute(r HasOneA
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -708,7 +708,7 @@ func (a *HasOneApiService) GETBraintreePaymentIdOrderExecute(r HasOneApiGETBrain
 	}
 
 	localVarPath := localBasePath + "/braintree_payments/{braintreePaymentId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"braintreePaymentId"+"}", url.PathEscape(parameterToString(r.braintreePaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"braintreePaymentId"+"}", url.PathEscape(parameterValueToString(r.braintreePaymentId, "braintreePaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -741,9 +741,9 @@ func (a *HasOneApiService) GETBraintreePaymentIdOrderExecute(r HasOneApiGETBrain
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -800,7 +800,7 @@ func (a *HasOneApiService) GETBraintreePaymentIdPaymentGatewayExecute(r HasOneAp
 	}
 
 	localVarPath := localBasePath + "/braintree_payments/{braintreePaymentId}/payment_gateway"
-	localVarPath = strings.Replace(localVarPath, "{"+"braintreePaymentId"+"}", url.PathEscape(parameterToString(r.braintreePaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"braintreePaymentId"+"}", url.PathEscape(parameterValueToString(r.braintreePaymentId, "braintreePaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -833,9 +833,9 @@ func (a *HasOneApiService) GETBraintreePaymentIdPaymentGatewayExecute(r HasOneAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -892,7 +892,7 @@ func (a *HasOneApiService) GETBundleIdMarketExecute(r HasOneApiGETBundleIdMarket
 	}
 
 	localVarPath := localBasePath + "/bundles/{bundleId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterToString(r.bundleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterValueToString(r.bundleId, "bundleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -925,9 +925,9 @@ func (a *HasOneApiService) GETBundleIdMarketExecute(r HasOneApiGETBundleIdMarket
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -984,7 +984,7 @@ func (a *HasOneApiService) GETBundleIdSkuListExecute(r HasOneApiGETBundleIdSkuLi
 	}
 
 	localVarPath := localBasePath + "/bundles/{bundleId}/sku_list"
-	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterToString(r.bundleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterValueToString(r.bundleId, "bundleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1017,9 +1017,9 @@ func (a *HasOneApiService) GETBundleIdSkuListExecute(r HasOneApiGETBundleIdSkuLi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1076,7 +1076,7 @@ func (a *HasOneApiService) GETCaptureIdOrderExecute(r HasOneApiGETCaptureIdOrder
 	}
 
 	localVarPath := localBasePath + "/captures/{captureId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"captureId"+"}", url.PathEscape(parameterToString(r.captureId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"captureId"+"}", url.PathEscape(parameterValueToString(r.captureId, "captureId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1109,9 +1109,9 @@ func (a *HasOneApiService) GETCaptureIdOrderExecute(r HasOneApiGETCaptureIdOrder
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1168,7 +1168,7 @@ func (a *HasOneApiService) GETCaptureIdReferenceAuthorizationExecute(r HasOneApi
 	}
 
 	localVarPath := localBasePath + "/captures/{captureId}/reference_authorization"
-	localVarPath = strings.Replace(localVarPath, "{"+"captureId"+"}", url.PathEscape(parameterToString(r.captureId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"captureId"+"}", url.PathEscape(parameterValueToString(r.captureId, "captureId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1201,9 +1201,9 @@ func (a *HasOneApiService) GETCaptureIdReferenceAuthorizationExecute(r HasOneApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1260,7 +1260,7 @@ func (a *HasOneApiService) GETCarrierAccountIdMarketExecute(r HasOneApiGETCarrie
 	}
 
 	localVarPath := localBasePath + "/carrier_accounts/{carrierAccountId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"carrierAccountId"+"}", url.PathEscape(parameterToString(r.carrierAccountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"carrierAccountId"+"}", url.PathEscape(parameterValueToString(r.carrierAccountId, "carrierAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1293,9 +1293,9 @@ func (a *HasOneApiService) GETCarrierAccountIdMarketExecute(r HasOneApiGETCarrie
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1352,7 +1352,7 @@ func (a *HasOneApiService) GETCheckoutComPaymentIdOrderExecute(r HasOneApiGETChe
 	}
 
 	localVarPath := localBasePath + "/checkout_com_payments/{checkoutComPaymentId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComPaymentId"+"}", url.PathEscape(parameterToString(r.checkoutComPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComPaymentId"+"}", url.PathEscape(parameterValueToString(r.checkoutComPaymentId, "checkoutComPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1385,9 +1385,9 @@ func (a *HasOneApiService) GETCheckoutComPaymentIdOrderExecute(r HasOneApiGETChe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1444,7 +1444,7 @@ func (a *HasOneApiService) GETCheckoutComPaymentIdPaymentGatewayExecute(r HasOne
 	}
 
 	localVarPath := localBasePath + "/checkout_com_payments/{checkoutComPaymentId}/payment_gateway"
-	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComPaymentId"+"}", url.PathEscape(parameterToString(r.checkoutComPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComPaymentId"+"}", url.PathEscape(parameterValueToString(r.checkoutComPaymentId, "checkoutComPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1477,9 +1477,9 @@ func (a *HasOneApiService) GETCheckoutComPaymentIdPaymentGatewayExecute(r HasOne
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1536,7 +1536,7 @@ func (a *HasOneApiService) GETCouponIdPromotionRuleExecute(r HasOneApiGETCouponI
 	}
 
 	localVarPath := localBasePath + "/coupons/{couponId}/promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"couponId"+"}", url.PathEscape(parameterToString(r.couponId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"couponId"+"}", url.PathEscape(parameterValueToString(r.couponId, "couponId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1569,9 +1569,9 @@ func (a *HasOneApiService) GETCouponIdPromotionRuleExecute(r HasOneApiGETCouponI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1628,7 +1628,7 @@ func (a *HasOneApiService) GETCouponRecipientIdCustomerExecute(r HasOneApiGETCou
 	}
 
 	localVarPath := localBasePath + "/coupon_recipients/{couponRecipientId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"couponRecipientId"+"}", url.PathEscape(parameterToString(r.couponRecipientId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"couponRecipientId"+"}", url.PathEscape(parameterValueToString(r.couponRecipientId, "couponRecipientId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1661,9 +1661,9 @@ func (a *HasOneApiService) GETCouponRecipientIdCustomerExecute(r HasOneApiGETCou
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1720,7 +1720,7 @@ func (a *HasOneApiService) GETCustomerAddressIdAddressExecute(r HasOneApiGETCust
 	}
 
 	localVarPath := localBasePath + "/customer_addresses/{customerAddressId}/address"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterToString(r.customerAddressId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterValueToString(r.customerAddressId, "customerAddressId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1753,9 +1753,9 @@ func (a *HasOneApiService) GETCustomerAddressIdAddressExecute(r HasOneApiGETCust
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1812,7 +1812,7 @@ func (a *HasOneApiService) GETCustomerAddressIdCustomerExecute(r HasOneApiGETCus
 	}
 
 	localVarPath := localBasePath + "/customer_addresses/{customerAddressId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterToString(r.customerAddressId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterValueToString(r.customerAddressId, "customerAddressId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1845,9 +1845,9 @@ func (a *HasOneApiService) GETCustomerAddressIdCustomerExecute(r HasOneApiGETCus
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1904,7 +1904,7 @@ func (a *HasOneApiService) GETCustomerIdCustomerGroupExecute(r HasOneApiGETCusto
 	}
 
 	localVarPath := localBasePath + "/customers/{customerId}/customer_group"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterToString(r.customerId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1937,9 +1937,9 @@ func (a *HasOneApiService) GETCustomerIdCustomerGroupExecute(r HasOneApiGETCusto
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1996,7 +1996,7 @@ func (a *HasOneApiService) GETCustomerPasswordResetIdCustomerExecute(r HasOneApi
 	}
 
 	localVarPath := localBasePath + "/customer_password_resets/{customerPasswordResetId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerPasswordResetId"+"}", url.PathEscape(parameterToString(r.customerPasswordResetId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerPasswordResetId"+"}", url.PathEscape(parameterValueToString(r.customerPasswordResetId, "customerPasswordResetId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2029,9 +2029,9 @@ func (a *HasOneApiService) GETCustomerPasswordResetIdCustomerExecute(r HasOneApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2088,7 +2088,7 @@ func (a *HasOneApiService) GETCustomerPaymentSourceIdCustomerExecute(r HasOneApi
 	}
 
 	localVarPath := localBasePath + "/customer_payment_sources/{customerPaymentSourceId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerPaymentSourceId"+"}", url.PathEscape(parameterToString(r.customerPaymentSourceId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerPaymentSourceId"+"}", url.PathEscape(parameterValueToString(r.customerPaymentSourceId, "customerPaymentSourceId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2121,9 +2121,9 @@ func (a *HasOneApiService) GETCustomerPaymentSourceIdCustomerExecute(r HasOneApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2180,7 +2180,7 @@ func (a *HasOneApiService) GETCustomerSubscriptionIdCustomerExecute(r HasOneApiG
 	}
 
 	localVarPath := localBasePath + "/customer_subscriptions/{customerSubscriptionId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerSubscriptionId"+"}", url.PathEscape(parameterToString(r.customerSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.customerSubscriptionId, "customerSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2213,9 +2213,9 @@ func (a *HasOneApiService) GETCustomerSubscriptionIdCustomerExecute(r HasOneApiG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2272,7 +2272,7 @@ func (a *HasOneApiService) GETDeliveryLeadTimeIdShippingMethodExecute(r HasOneAp
 	}
 
 	localVarPath := localBasePath + "/delivery_lead_times/{deliveryLeadTimeId}/shipping_method"
-	localVarPath = strings.Replace(localVarPath, "{"+"deliveryLeadTimeId"+"}", url.PathEscape(parameterToString(r.deliveryLeadTimeId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"deliveryLeadTimeId"+"}", url.PathEscape(parameterValueToString(r.deliveryLeadTimeId, "deliveryLeadTimeId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2305,9 +2305,9 @@ func (a *HasOneApiService) GETDeliveryLeadTimeIdShippingMethodExecute(r HasOneAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2364,7 +2364,7 @@ func (a *HasOneApiService) GETDeliveryLeadTimeIdStockLocationExecute(r HasOneApi
 	}
 
 	localVarPath := localBasePath + "/delivery_lead_times/{deliveryLeadTimeId}/stock_location"
-	localVarPath = strings.Replace(localVarPath, "{"+"deliveryLeadTimeId"+"}", url.PathEscape(parameterToString(r.deliveryLeadTimeId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"deliveryLeadTimeId"+"}", url.PathEscape(parameterValueToString(r.deliveryLeadTimeId, "deliveryLeadTimeId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2397,9 +2397,9 @@ func (a *HasOneApiService) GETDeliveryLeadTimeIdStockLocationExecute(r HasOneApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2456,7 +2456,7 @@ func (a *HasOneApiService) GETEventCallbackIdWebhookExecute(r HasOneApiGETEventC
 	}
 
 	localVarPath := localBasePath + "/event_callbacks/{eventCallbackId}/webhook"
-	localVarPath = strings.Replace(localVarPath, "{"+"eventCallbackId"+"}", url.PathEscape(parameterToString(r.eventCallbackId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"eventCallbackId"+"}", url.PathEscape(parameterValueToString(r.eventCallbackId, "eventCallbackId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2489,9 +2489,9 @@ func (a *HasOneApiService) GETEventCallbackIdWebhookExecute(r HasOneApiGETEventC
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2548,7 +2548,7 @@ func (a *HasOneApiService) GETExternalPaymentIdOrderExecute(r HasOneApiGETExtern
 	}
 
 	localVarPath := localBasePath + "/external_payments/{externalPaymentId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPaymentId"+"}", url.PathEscape(parameterToString(r.externalPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPaymentId"+"}", url.PathEscape(parameterValueToString(r.externalPaymentId, "externalPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2581,9 +2581,9 @@ func (a *HasOneApiService) GETExternalPaymentIdOrderExecute(r HasOneApiGETExtern
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2640,7 +2640,7 @@ func (a *HasOneApiService) GETExternalPaymentIdPaymentGatewayExecute(r HasOneApi
 	}
 
 	localVarPath := localBasePath + "/external_payments/{externalPaymentId}/payment_gateway"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPaymentId"+"}", url.PathEscape(parameterToString(r.externalPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPaymentId"+"}", url.PathEscape(parameterValueToString(r.externalPaymentId, "externalPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2673,9 +2673,9 @@ func (a *HasOneApiService) GETExternalPaymentIdPaymentGatewayExecute(r HasOneApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2732,7 +2732,7 @@ func (a *HasOneApiService) GETExternalPaymentIdWalletExecute(r HasOneApiGETExter
 	}
 
 	localVarPath := localBasePath + "/external_payments/{externalPaymentId}/wallet"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPaymentId"+"}", url.PathEscape(parameterToString(r.externalPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPaymentId"+"}", url.PathEscape(parameterValueToString(r.externalPaymentId, "externalPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2765,9 +2765,9 @@ func (a *HasOneApiService) GETExternalPaymentIdWalletExecute(r HasOneApiGETExter
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2824,7 +2824,7 @@ func (a *HasOneApiService) GETExternalPromotionIdCouponCodesPromotionRuleExecute
 	}
 
 	localVarPath := localBasePath + "/external_promotions/{externalPromotionId}/coupon_codes_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterToString(r.externalPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterValueToString(r.externalPromotionId, "externalPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2857,9 +2857,9 @@ func (a *HasOneApiService) GETExternalPromotionIdCouponCodesPromotionRuleExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2916,7 +2916,7 @@ func (a *HasOneApiService) GETExternalPromotionIdMarketExecute(r HasOneApiGETExt
 	}
 
 	localVarPath := localBasePath + "/external_promotions/{externalPromotionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterToString(r.externalPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterValueToString(r.externalPromotionId, "externalPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2949,9 +2949,9 @@ func (a *HasOneApiService) GETExternalPromotionIdMarketExecute(r HasOneApiGETExt
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3008,7 +3008,7 @@ func (a *HasOneApiService) GETExternalPromotionIdOrderAmountPromotionRuleExecute
 	}
 
 	localVarPath := localBasePath + "/external_promotions/{externalPromotionId}/order_amount_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterToString(r.externalPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterValueToString(r.externalPromotionId, "externalPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3041,9 +3041,9 @@ func (a *HasOneApiService) GETExternalPromotionIdOrderAmountPromotionRuleExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3100,7 +3100,7 @@ func (a *HasOneApiService) GETExternalPromotionIdSkuListPromotionRuleExecute(r H
 	}
 
 	localVarPath := localBasePath + "/external_promotions/{externalPromotionId}/sku_list_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterToString(r.externalPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterValueToString(r.externalPromotionId, "externalPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3133,9 +3133,9 @@ func (a *HasOneApiService) GETExternalPromotionIdSkuListPromotionRuleExecute(r H
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3192,7 +3192,7 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdCouponCodesPromotionRuleExec
 	}
 
 	localVarPath := localBasePath + "/fixed_amount_promotions/{fixedAmountPromotionId}/coupon_codes_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterToString(r.fixedAmountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedAmountPromotionId, "fixedAmountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3225,9 +3225,9 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdCouponCodesPromotionRuleExec
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3284,7 +3284,7 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdMarketExecute(r HasOneApiGET
 	}
 
 	localVarPath := localBasePath + "/fixed_amount_promotions/{fixedAmountPromotionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterToString(r.fixedAmountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedAmountPromotionId, "fixedAmountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3317,9 +3317,9 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdMarketExecute(r HasOneApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3376,7 +3376,7 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdOrderAmountPromotionRuleExec
 	}
 
 	localVarPath := localBasePath + "/fixed_amount_promotions/{fixedAmountPromotionId}/order_amount_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterToString(r.fixedAmountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedAmountPromotionId, "fixedAmountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3409,9 +3409,9 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdOrderAmountPromotionRuleExec
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3468,7 +3468,7 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdSkuListPromotionRuleExecute(
 	}
 
 	localVarPath := localBasePath + "/fixed_amount_promotions/{fixedAmountPromotionId}/sku_list_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterToString(r.fixedAmountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedAmountPromotionId, "fixedAmountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3501,9 +3501,9 @@ func (a *HasOneApiService) GETFixedAmountPromotionIdSkuListPromotionRuleExecute(
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3560,7 +3560,7 @@ func (a *HasOneApiService) GETFixedPricePromotionIdCouponCodesPromotionRuleExecu
 	}
 
 	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}/coupon_codes_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterToString(r.fixedPricePromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3593,9 +3593,9 @@ func (a *HasOneApiService) GETFixedPricePromotionIdCouponCodesPromotionRuleExecu
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3652,7 +3652,7 @@ func (a *HasOneApiService) GETFixedPricePromotionIdMarketExecute(r HasOneApiGETF
 	}
 
 	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterToString(r.fixedPricePromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3685,9 +3685,9 @@ func (a *HasOneApiService) GETFixedPricePromotionIdMarketExecute(r HasOneApiGETF
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3744,7 +3744,7 @@ func (a *HasOneApiService) GETFixedPricePromotionIdOrderAmountPromotionRuleExecu
 	}
 
 	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}/order_amount_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterToString(r.fixedPricePromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3777,9 +3777,9 @@ func (a *HasOneApiService) GETFixedPricePromotionIdOrderAmountPromotionRuleExecu
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3836,7 +3836,7 @@ func (a *HasOneApiService) GETFixedPricePromotionIdSkuListExecute(r HasOneApiGET
 	}
 
 	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}/sku_list"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterToString(r.fixedPricePromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3869,9 +3869,9 @@ func (a *HasOneApiService) GETFixedPricePromotionIdSkuListExecute(r HasOneApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -3928,7 +3928,7 @@ func (a *HasOneApiService) GETFixedPricePromotionIdSkuListPromotionRuleExecute(r
 	}
 
 	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}/sku_list_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterToString(r.fixedPricePromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -3961,9 +3961,9 @@ func (a *HasOneApiService) GETFixedPricePromotionIdSkuListPromotionRuleExecute(r
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4020,7 +4020,7 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdCouponCodesPromotionRuleExecute
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}/coupon_codes_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterToString(r.freeGiftPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4053,9 +4053,9 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdCouponCodesPromotionRuleExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4112,7 +4112,7 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdMarketExecute(r HasOneApiGETFre
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterToString(r.freeGiftPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4145,9 +4145,9 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdMarketExecute(r HasOneApiGETFre
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4204,7 +4204,7 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdOrderAmountPromotionRuleExecute
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}/order_amount_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterToString(r.freeGiftPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4237,9 +4237,9 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdOrderAmountPromotionRuleExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4296,7 +4296,7 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdSkuListExecute(r HasOneApiGETFr
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}/sku_list"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterToString(r.freeGiftPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4329,9 +4329,9 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdSkuListExecute(r HasOneApiGETFr
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4388,7 +4388,7 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdSkuListPromotionRuleExecute(r H
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}/sku_list_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterToString(r.freeGiftPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4421,9 +4421,9 @@ func (a *HasOneApiService) GETFreeGiftPromotionIdSkuListPromotionRuleExecute(r H
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4480,7 +4480,7 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdCouponCodesPromotionRuleExe
 	}
 
 	localVarPath := localBasePath + "/free_shipping_promotions/{freeShippingPromotionId}/coupon_codes_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterToString(r.freeShippingPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeShippingPromotionId, "freeShippingPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4513,9 +4513,9 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdCouponCodesPromotionRuleExe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4572,7 +4572,7 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdMarketExecute(r HasOneApiGE
 	}
 
 	localVarPath := localBasePath + "/free_shipping_promotions/{freeShippingPromotionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterToString(r.freeShippingPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeShippingPromotionId, "freeShippingPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4605,9 +4605,9 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdMarketExecute(r HasOneApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4664,7 +4664,7 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdOrderAmountPromotionRuleExe
 	}
 
 	localVarPath := localBasePath + "/free_shipping_promotions/{freeShippingPromotionId}/order_amount_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterToString(r.freeShippingPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeShippingPromotionId, "freeShippingPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4697,9 +4697,9 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdOrderAmountPromotionRuleExe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4756,7 +4756,7 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdSkuListPromotionRuleExecute
 	}
 
 	localVarPath := localBasePath + "/free_shipping_promotions/{freeShippingPromotionId}/sku_list_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterToString(r.freeShippingPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeShippingPromotionId, "freeShippingPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4789,9 +4789,9 @@ func (a *HasOneApiService) GETFreeShippingPromotionIdSkuListPromotionRuleExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4848,7 +4848,7 @@ func (a *HasOneApiService) GETGiftCardIdGiftCardRecipientExecute(r HasOneApiGETG
 	}
 
 	localVarPath := localBasePath + "/gift_cards/{giftCardId}/gift_card_recipient"
-	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterToString(r.giftCardId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterValueToString(r.giftCardId, "giftCardId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4881,9 +4881,9 @@ func (a *HasOneApiService) GETGiftCardIdGiftCardRecipientExecute(r HasOneApiGETG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -4940,7 +4940,7 @@ func (a *HasOneApiService) GETGiftCardIdMarketExecute(r HasOneApiGETGiftCardIdMa
 	}
 
 	localVarPath := localBasePath + "/gift_cards/{giftCardId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterToString(r.giftCardId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterValueToString(r.giftCardId, "giftCardId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -4973,9 +4973,9 @@ func (a *HasOneApiService) GETGiftCardIdMarketExecute(r HasOneApiGETGiftCardIdMa
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5032,7 +5032,7 @@ func (a *HasOneApiService) GETGiftCardRecipientIdCustomerExecute(r HasOneApiGETG
 	}
 
 	localVarPath := localBasePath + "/gift_card_recipients/{giftCardRecipientId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"giftCardRecipientId"+"}", url.PathEscape(parameterToString(r.giftCardRecipientId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"giftCardRecipientId"+"}", url.PathEscape(parameterValueToString(r.giftCardRecipientId, "giftCardRecipientId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5065,9 +5065,9 @@ func (a *HasOneApiService) GETGiftCardRecipientIdCustomerExecute(r HasOneApiGETG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5124,7 +5124,7 @@ func (a *HasOneApiService) GETInStockSubscriptionIdCustomerExecute(r HasOneApiGE
 	}
 
 	localVarPath := localBasePath + "/in_stock_subscriptions/{inStockSubscriptionId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"inStockSubscriptionId"+"}", url.PathEscape(parameterToString(r.inStockSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inStockSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.inStockSubscriptionId, "inStockSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5157,9 +5157,9 @@ func (a *HasOneApiService) GETInStockSubscriptionIdCustomerExecute(r HasOneApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5216,7 +5216,7 @@ func (a *HasOneApiService) GETInStockSubscriptionIdMarketExecute(r HasOneApiGETI
 	}
 
 	localVarPath := localBasePath + "/in_stock_subscriptions/{inStockSubscriptionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"inStockSubscriptionId"+"}", url.PathEscape(parameterToString(r.inStockSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inStockSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.inStockSubscriptionId, "inStockSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5249,9 +5249,9 @@ func (a *HasOneApiService) GETInStockSubscriptionIdMarketExecute(r HasOneApiGETI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5308,7 +5308,7 @@ func (a *HasOneApiService) GETInStockSubscriptionIdSkuExecute(r HasOneApiGETInSt
 	}
 
 	localVarPath := localBasePath + "/in_stock_subscriptions/{inStockSubscriptionId}/sku"
-	localVarPath = strings.Replace(localVarPath, "{"+"inStockSubscriptionId"+"}", url.PathEscape(parameterToString(r.inStockSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inStockSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.inStockSubscriptionId, "inStockSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5341,9 +5341,9 @@ func (a *HasOneApiService) GETInStockSubscriptionIdSkuExecute(r HasOneApiGETInSt
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5400,7 +5400,7 @@ func (a *HasOneApiService) GETInventoryReturnLocationIdInventoryModelExecute(r H
 	}
 
 	localVarPath := localBasePath + "/inventory_return_locations/{inventoryReturnLocationId}/inventory_model"
-	localVarPath = strings.Replace(localVarPath, "{"+"inventoryReturnLocationId"+"}", url.PathEscape(parameterToString(r.inventoryReturnLocationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inventoryReturnLocationId"+"}", url.PathEscape(parameterValueToString(r.inventoryReturnLocationId, "inventoryReturnLocationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5433,9 +5433,9 @@ func (a *HasOneApiService) GETInventoryReturnLocationIdInventoryModelExecute(r H
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5492,7 +5492,7 @@ func (a *HasOneApiService) GETInventoryReturnLocationIdStockLocationExecute(r Ha
 	}
 
 	localVarPath := localBasePath + "/inventory_return_locations/{inventoryReturnLocationId}/stock_location"
-	localVarPath = strings.Replace(localVarPath, "{"+"inventoryReturnLocationId"+"}", url.PathEscape(parameterToString(r.inventoryReturnLocationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inventoryReturnLocationId"+"}", url.PathEscape(parameterValueToString(r.inventoryReturnLocationId, "inventoryReturnLocationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5525,9 +5525,9 @@ func (a *HasOneApiService) GETInventoryReturnLocationIdStockLocationExecute(r Ha
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5584,7 +5584,7 @@ func (a *HasOneApiService) GETInventoryStockLocationIdInventoryModelExecute(r Ha
 	}
 
 	localVarPath := localBasePath + "/inventory_stock_locations/{inventoryStockLocationId}/inventory_model"
-	localVarPath = strings.Replace(localVarPath, "{"+"inventoryStockLocationId"+"}", url.PathEscape(parameterToString(r.inventoryStockLocationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inventoryStockLocationId"+"}", url.PathEscape(parameterValueToString(r.inventoryStockLocationId, "inventoryStockLocationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5617,9 +5617,9 @@ func (a *HasOneApiService) GETInventoryStockLocationIdInventoryModelExecute(r Ha
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5676,7 +5676,7 @@ func (a *HasOneApiService) GETInventoryStockLocationIdStockLocationExecute(r Has
 	}
 
 	localVarPath := localBasePath + "/inventory_stock_locations/{inventoryStockLocationId}/stock_location"
-	localVarPath = strings.Replace(localVarPath, "{"+"inventoryStockLocationId"+"}", url.PathEscape(parameterToString(r.inventoryStockLocationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inventoryStockLocationId"+"}", url.PathEscape(parameterValueToString(r.inventoryStockLocationId, "inventoryStockLocationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5709,9 +5709,9 @@ func (a *HasOneApiService) GETInventoryStockLocationIdStockLocationExecute(r Has
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5768,7 +5768,7 @@ func (a *HasOneApiService) GETKlarnaPaymentIdOrderExecute(r HasOneApiGETKlarnaPa
 	}
 
 	localVarPath := localBasePath + "/klarna_payments/{klarnaPaymentId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"klarnaPaymentId"+"}", url.PathEscape(parameterToString(r.klarnaPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"klarnaPaymentId"+"}", url.PathEscape(parameterValueToString(r.klarnaPaymentId, "klarnaPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5801,9 +5801,9 @@ func (a *HasOneApiService) GETKlarnaPaymentIdOrderExecute(r HasOneApiGETKlarnaPa
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5860,7 +5860,7 @@ func (a *HasOneApiService) GETKlarnaPaymentIdPaymentGatewayExecute(r HasOneApiGE
 	}
 
 	localVarPath := localBasePath + "/klarna_payments/{klarnaPaymentId}/payment_gateway"
-	localVarPath = strings.Replace(localVarPath, "{"+"klarnaPaymentId"+"}", url.PathEscape(parameterToString(r.klarnaPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"klarnaPaymentId"+"}", url.PathEscape(parameterValueToString(r.klarnaPaymentId, "klarnaPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5893,9 +5893,9 @@ func (a *HasOneApiService) GETKlarnaPaymentIdPaymentGatewayExecute(r HasOneApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -5952,7 +5952,7 @@ func (a *HasOneApiService) GETLineItemIdOrderExecute(r HasOneApiGETLineItemIdOrd
 	}
 
 	localVarPath := localBasePath + "/line_items/{lineItemId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterToString(r.lineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterValueToString(r.lineItemId, "lineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -5985,9 +5985,9 @@ func (a *HasOneApiService) GETLineItemIdOrderExecute(r HasOneApiGETLineItemIdOrd
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6044,7 +6044,7 @@ func (a *HasOneApiService) GETLineItemOptionIdLineItemExecute(r HasOneApiGETLine
 	}
 
 	localVarPath := localBasePath + "/line_item_options/{lineItemOptionId}/line_item"
-	localVarPath = strings.Replace(localVarPath, "{"+"lineItemOptionId"+"}", url.PathEscape(parameterToString(r.lineItemOptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemOptionId"+"}", url.PathEscape(parameterValueToString(r.lineItemOptionId, "lineItemOptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6077,9 +6077,9 @@ func (a *HasOneApiService) GETLineItemOptionIdLineItemExecute(r HasOneApiGETLine
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6136,7 +6136,7 @@ func (a *HasOneApiService) GETLineItemOptionIdSkuOptionExecute(r HasOneApiGETLin
 	}
 
 	localVarPath := localBasePath + "/line_item_options/{lineItemOptionId}/sku_option"
-	localVarPath = strings.Replace(localVarPath, "{"+"lineItemOptionId"+"}", url.PathEscape(parameterToString(r.lineItemOptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemOptionId"+"}", url.PathEscape(parameterValueToString(r.lineItemOptionId, "lineItemOptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6169,9 +6169,9 @@ func (a *HasOneApiService) GETLineItemOptionIdSkuOptionExecute(r HasOneApiGETLin
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6228,7 +6228,7 @@ func (a *HasOneApiService) GETMarketIdCustomerGroupExecute(r HasOneApiGETMarketI
 	}
 
 	localVarPath := localBasePath + "/markets/{marketId}/customer_group"
-	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterToString(r.marketId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6261,9 +6261,9 @@ func (a *HasOneApiService) GETMarketIdCustomerGroupExecute(r HasOneApiGETMarketI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6320,7 +6320,7 @@ func (a *HasOneApiService) GETMarketIdInventoryModelExecute(r HasOneApiGETMarket
 	}
 
 	localVarPath := localBasePath + "/markets/{marketId}/inventory_model"
-	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterToString(r.marketId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6353,9 +6353,9 @@ func (a *HasOneApiService) GETMarketIdInventoryModelExecute(r HasOneApiGETMarket
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6412,7 +6412,7 @@ func (a *HasOneApiService) GETMarketIdMerchantExecute(r HasOneApiGETMarketIdMerc
 	}
 
 	localVarPath := localBasePath + "/markets/{marketId}/merchant"
-	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterToString(r.marketId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6445,9 +6445,9 @@ func (a *HasOneApiService) GETMarketIdMerchantExecute(r HasOneApiGETMarketIdMerc
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6504,7 +6504,7 @@ func (a *HasOneApiService) GETMarketIdPriceListExecute(r HasOneApiGETMarketIdPri
 	}
 
 	localVarPath := localBasePath + "/markets/{marketId}/price_list"
-	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterToString(r.marketId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6537,9 +6537,9 @@ func (a *HasOneApiService) GETMarketIdPriceListExecute(r HasOneApiGETMarketIdPri
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6596,7 +6596,7 @@ func (a *HasOneApiService) GETMarketIdSubscriptionModelExecute(r HasOneApiGETMar
 	}
 
 	localVarPath := localBasePath + "/markets/{marketId}/subscription_model"
-	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterToString(r.marketId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6629,9 +6629,9 @@ func (a *HasOneApiService) GETMarketIdSubscriptionModelExecute(r HasOneApiGETMar
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6688,7 +6688,7 @@ func (a *HasOneApiService) GETMarketIdTaxCalculatorExecute(r HasOneApiGETMarketI
 	}
 
 	localVarPath := localBasePath + "/markets/{marketId}/tax_calculator"
-	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterToString(r.marketId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6721,9 +6721,9 @@ func (a *HasOneApiService) GETMarketIdTaxCalculatorExecute(r HasOneApiGETMarketI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6780,7 +6780,7 @@ func (a *HasOneApiService) GETMerchantIdAddressExecute(r HasOneApiGETMerchantIdA
 	}
 
 	localVarPath := localBasePath + "/merchants/{merchantId}/address"
-	localVarPath = strings.Replace(localVarPath, "{"+"merchantId"+"}", url.PathEscape(parameterToString(r.merchantId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"merchantId"+"}", url.PathEscape(parameterValueToString(r.merchantId, "merchantId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6813,9 +6813,9 @@ func (a *HasOneApiService) GETMerchantIdAddressExecute(r HasOneApiGETMerchantIdA
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6872,7 +6872,7 @@ func (a *HasOneApiService) GETOrderCopyIdOrderSubscriptionExecute(r HasOneApiGET
 	}
 
 	localVarPath := localBasePath + "/order_copies/{orderCopyId}/order_subscription"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterToString(r.orderCopyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterValueToString(r.orderCopyId, "orderCopyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6905,9 +6905,9 @@ func (a *HasOneApiService) GETOrderCopyIdOrderSubscriptionExecute(r HasOneApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -6964,7 +6964,7 @@ func (a *HasOneApiService) GETOrderCopyIdSourceOrderExecute(r HasOneApiGETOrderC
 	}
 
 	localVarPath := localBasePath + "/order_copies/{orderCopyId}/source_order"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterToString(r.orderCopyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterValueToString(r.orderCopyId, "orderCopyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -6997,9 +6997,9 @@ func (a *HasOneApiService) GETOrderCopyIdSourceOrderExecute(r HasOneApiGETOrderC
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7056,7 +7056,7 @@ func (a *HasOneApiService) GETOrderCopyIdTargetOrderExecute(r HasOneApiGETOrderC
 	}
 
 	localVarPath := localBasePath + "/order_copies/{orderCopyId}/target_order"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterToString(r.orderCopyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterValueToString(r.orderCopyId, "orderCopyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7089,9 +7089,9 @@ func (a *HasOneApiService) GETOrderCopyIdTargetOrderExecute(r HasOneApiGETOrderC
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7148,7 +7148,7 @@ func (a *HasOneApiService) GETOrderFactoryIdSourceOrderExecute(r HasOneApiGETOrd
 	}
 
 	localVarPath := localBasePath + "/order_factories/{orderFactoryId}/source_order"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderFactoryId"+"}", url.PathEscape(parameterToString(r.orderFactoryId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderFactoryId"+"}", url.PathEscape(parameterValueToString(r.orderFactoryId, "orderFactoryId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7181,9 +7181,9 @@ func (a *HasOneApiService) GETOrderFactoryIdSourceOrderExecute(r HasOneApiGETOrd
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7240,7 +7240,7 @@ func (a *HasOneApiService) GETOrderFactoryIdTargetOrderExecute(r HasOneApiGETOrd
 	}
 
 	localVarPath := localBasePath + "/order_factories/{orderFactoryId}/target_order"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderFactoryId"+"}", url.PathEscape(parameterToString(r.orderFactoryId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderFactoryId"+"}", url.PathEscape(parameterValueToString(r.orderFactoryId, "orderFactoryId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7273,9 +7273,9 @@ func (a *HasOneApiService) GETOrderFactoryIdTargetOrderExecute(r HasOneApiGETOrd
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7332,7 +7332,7 @@ func (a *HasOneApiService) GETOrderIdBillingAddressExecute(r HasOneApiGETOrderId
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/billing_address"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7365,9 +7365,9 @@ func (a *HasOneApiService) GETOrderIdBillingAddressExecute(r HasOneApiGETOrderId
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7424,7 +7424,7 @@ func (a *HasOneApiService) GETOrderIdCustomerExecute(r HasOneApiGETOrderIdCustom
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7457,9 +7457,9 @@ func (a *HasOneApiService) GETOrderIdCustomerExecute(r HasOneApiGETOrderIdCustom
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7516,7 +7516,7 @@ func (a *HasOneApiService) GETOrderIdMarketExecute(r HasOneApiGETOrderIdMarketRe
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7549,9 +7549,9 @@ func (a *HasOneApiService) GETOrderIdMarketExecute(r HasOneApiGETOrderIdMarketRe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7608,7 +7608,7 @@ func (a *HasOneApiService) GETOrderIdPaymentMethodExecute(r HasOneApiGETOrderIdP
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/payment_method"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7641,9 +7641,9 @@ func (a *HasOneApiService) GETOrderIdPaymentMethodExecute(r HasOneApiGETOrderIdP
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7700,7 +7700,7 @@ func (a *HasOneApiService) GETOrderIdShippingAddressExecute(r HasOneApiGETOrderI
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/shipping_address"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7733,9 +7733,9 @@ func (a *HasOneApiService) GETOrderIdShippingAddressExecute(r HasOneApiGETOrderI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7792,7 +7792,7 @@ func (a *HasOneApiService) GETOrderSubscriptionIdCustomerExecute(r HasOneApiGETO
 	}
 
 	localVarPath := localBasePath + "/order_subscriptions/{orderSubscriptionId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterToString(r.orderSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionId, "orderSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7825,9 +7825,9 @@ func (a *HasOneApiService) GETOrderSubscriptionIdCustomerExecute(r HasOneApiGETO
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7884,7 +7884,7 @@ func (a *HasOneApiService) GETOrderSubscriptionIdCustomerPaymentSourceExecute(r 
 	}
 
 	localVarPath := localBasePath + "/order_subscriptions/{orderSubscriptionId}/customer_payment_source"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterToString(r.orderSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionId, "orderSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -7917,9 +7917,9 @@ func (a *HasOneApiService) GETOrderSubscriptionIdCustomerPaymentSourceExecute(r 
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -7976,7 +7976,7 @@ func (a *HasOneApiService) GETOrderSubscriptionIdMarketExecute(r HasOneApiGETOrd
 	}
 
 	localVarPath := localBasePath + "/order_subscriptions/{orderSubscriptionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterToString(r.orderSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionId, "orderSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8009,9 +8009,9 @@ func (a *HasOneApiService) GETOrderSubscriptionIdMarketExecute(r HasOneApiGETOrd
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8068,7 +8068,7 @@ func (a *HasOneApiService) GETOrderSubscriptionIdSourceOrderExecute(r HasOneApiG
 	}
 
 	localVarPath := localBasePath + "/order_subscriptions/{orderSubscriptionId}/source_order"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterToString(r.orderSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionId, "orderSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8101,9 +8101,9 @@ func (a *HasOneApiService) GETOrderSubscriptionIdSourceOrderExecute(r HasOneApiG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8160,7 +8160,7 @@ func (a *HasOneApiService) GETOrderSubscriptionIdSubscriptionModelExecute(r HasO
 	}
 
 	localVarPath := localBasePath + "/order_subscriptions/{orderSubscriptionId}/subscription_model"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterToString(r.orderSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionId, "orderSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8193,9 +8193,9 @@ func (a *HasOneApiService) GETOrderSubscriptionIdSubscriptionModelExecute(r HasO
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8252,7 +8252,7 @@ func (a *HasOneApiService) GETOrderSubscriptionItemIdOrderSubscriptionExecute(r 
 	}
 
 	localVarPath := localBasePath + "/order_subscription_items/{orderSubscriptionItemId}/order_subscription"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionItemId"+"}", url.PathEscape(parameterToString(r.orderSubscriptionItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionItemId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionItemId, "orderSubscriptionItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8285,9 +8285,9 @@ func (a *HasOneApiService) GETOrderSubscriptionItemIdOrderSubscriptionExecute(r 
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8344,7 +8344,7 @@ func (a *HasOneApiService) GETOrderValidationRuleIdMarketExecute(r HasOneApiGETO
 	}
 
 	localVarPath := localBasePath + "/order_validation_rules/{orderValidationRuleId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderValidationRuleId"+"}", url.PathEscape(parameterToString(r.orderValidationRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderValidationRuleId"+"}", url.PathEscape(parameterValueToString(r.orderValidationRuleId, "orderValidationRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8377,9 +8377,9 @@ func (a *HasOneApiService) GETOrderValidationRuleIdMarketExecute(r HasOneApiGETO
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8436,7 +8436,7 @@ func (a *HasOneApiService) GETPackageIdStockLocationExecute(r HasOneApiGETPackag
 	}
 
 	localVarPath := localBasePath + "/packages/{packageId}/stock_location"
-	localVarPath = strings.Replace(localVarPath, "{"+"packageId"+"}", url.PathEscape(parameterToString(r.packageId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"packageId"+"}", url.PathEscape(parameterValueToString(r.packageId, "packageId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8469,9 +8469,9 @@ func (a *HasOneApiService) GETPackageIdStockLocationExecute(r HasOneApiGETPackag
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8528,7 +8528,7 @@ func (a *HasOneApiService) GETParcelIdPackageExecute(r HasOneApiGETParcelIdPacka
 	}
 
 	localVarPath := localBasePath + "/parcels/{parcelId}/package"
-	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterToString(r.parcelId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterValueToString(r.parcelId, "parcelId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8561,9 +8561,9 @@ func (a *HasOneApiService) GETParcelIdPackageExecute(r HasOneApiGETParcelIdPacka
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8620,7 +8620,7 @@ func (a *HasOneApiService) GETParcelIdShipmentExecute(r HasOneApiGETParcelIdShip
 	}
 
 	localVarPath := localBasePath + "/parcels/{parcelId}/shipment"
-	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterToString(r.parcelId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterValueToString(r.parcelId, "parcelId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8653,9 +8653,9 @@ func (a *HasOneApiService) GETParcelIdShipmentExecute(r HasOneApiGETParcelIdShip
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8712,7 +8712,7 @@ func (a *HasOneApiService) GETParcelLineItemIdParcelExecute(r HasOneApiGETParcel
 	}
 
 	localVarPath := localBasePath + "/parcel_line_items/{parcelLineItemId}/parcel"
-	localVarPath = strings.Replace(localVarPath, "{"+"parcelLineItemId"+"}", url.PathEscape(parameterToString(r.parcelLineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"parcelLineItemId"+"}", url.PathEscape(parameterValueToString(r.parcelLineItemId, "parcelLineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8745,9 +8745,9 @@ func (a *HasOneApiService) GETParcelLineItemIdParcelExecute(r HasOneApiGETParcel
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8804,7 +8804,7 @@ func (a *HasOneApiService) GETParcelLineItemIdStockLineItemExecute(r HasOneApiGE
 	}
 
 	localVarPath := localBasePath + "/parcel_line_items/{parcelLineItemId}/stock_line_item"
-	localVarPath = strings.Replace(localVarPath, "{"+"parcelLineItemId"+"}", url.PathEscape(parameterToString(r.parcelLineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"parcelLineItemId"+"}", url.PathEscape(parameterValueToString(r.parcelLineItemId, "parcelLineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8837,9 +8837,9 @@ func (a *HasOneApiService) GETParcelLineItemIdStockLineItemExecute(r HasOneApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8896,7 +8896,7 @@ func (a *HasOneApiService) GETPaymentMethodIdMarketExecute(r HasOneApiGETPayment
 	}
 
 	localVarPath := localBasePath + "/payment_methods/{paymentMethodId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"paymentMethodId"+"}", url.PathEscape(parameterToString(r.paymentMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"paymentMethodId"+"}", url.PathEscape(parameterValueToString(r.paymentMethodId, "paymentMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -8929,9 +8929,9 @@ func (a *HasOneApiService) GETPaymentMethodIdMarketExecute(r HasOneApiGETPayment
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -8988,7 +8988,7 @@ func (a *HasOneApiService) GETPaymentMethodIdPaymentGatewayExecute(r HasOneApiGE
 	}
 
 	localVarPath := localBasePath + "/payment_methods/{paymentMethodId}/payment_gateway"
-	localVarPath = strings.Replace(localVarPath, "{"+"paymentMethodId"+"}", url.PathEscape(parameterToString(r.paymentMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"paymentMethodId"+"}", url.PathEscape(parameterValueToString(r.paymentMethodId, "paymentMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9021,9 +9021,9 @@ func (a *HasOneApiService) GETPaymentMethodIdPaymentGatewayExecute(r HasOneApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9080,7 +9080,7 @@ func (a *HasOneApiService) GETPaypalPaymentIdOrderExecute(r HasOneApiGETPaypalPa
 	}
 
 	localVarPath := localBasePath + "/paypal_payments/{paypalPaymentId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"paypalPaymentId"+"}", url.PathEscape(parameterToString(r.paypalPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"paypalPaymentId"+"}", url.PathEscape(parameterValueToString(r.paypalPaymentId, "paypalPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9113,9 +9113,9 @@ func (a *HasOneApiService) GETPaypalPaymentIdOrderExecute(r HasOneApiGETPaypalPa
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9172,7 +9172,7 @@ func (a *HasOneApiService) GETPaypalPaymentIdPaymentGatewayExecute(r HasOneApiGE
 	}
 
 	localVarPath := localBasePath + "/paypal_payments/{paypalPaymentId}/payment_gateway"
-	localVarPath = strings.Replace(localVarPath, "{"+"paypalPaymentId"+"}", url.PathEscape(parameterToString(r.paypalPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"paypalPaymentId"+"}", url.PathEscape(parameterValueToString(r.paypalPaymentId, "paypalPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9205,9 +9205,9 @@ func (a *HasOneApiService) GETPaypalPaymentIdPaymentGatewayExecute(r HasOneApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9264,7 +9264,7 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdCouponCodesPromotionR
 	}
 
 	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}/coupon_codes_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterToString(r.percentageDiscountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9297,9 +9297,9 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdCouponCodesPromotionR
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9356,7 +9356,7 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdMarketExecute(r HasOn
 	}
 
 	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterToString(r.percentageDiscountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9389,9 +9389,9 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdMarketExecute(r HasOn
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9448,7 +9448,7 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdOrderAmountPromotionR
 	}
 
 	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}/order_amount_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterToString(r.percentageDiscountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9481,9 +9481,9 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdOrderAmountPromotionR
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9540,7 +9540,7 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuListExecute(r HasO
 	}
 
 	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}/sku_list"
-	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterToString(r.percentageDiscountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9573,9 +9573,9 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuListExecute(r HasO
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9632,7 +9632,7 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuListPromotionRuleE
 	}
 
 	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}/sku_list_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterToString(r.percentageDiscountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9665,9 +9665,9 @@ func (a *HasOneApiService) GETPercentageDiscountPromotionIdSkuListPromotionRuleE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9724,7 +9724,7 @@ func (a *HasOneApiService) GETPriceFrequencyTierIdPriceExecute(r HasOneApiGETPri
 	}
 
 	localVarPath := localBasePath + "/price_frequency_tiers/{priceFrequencyTierId}/price"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceFrequencyTierId"+"}", url.PathEscape(parameterToString(r.priceFrequencyTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceFrequencyTierId"+"}", url.PathEscape(parameterValueToString(r.priceFrequencyTierId, "priceFrequencyTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9757,9 +9757,9 @@ func (a *HasOneApiService) GETPriceFrequencyTierIdPriceExecute(r HasOneApiGETPri
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9816,7 +9816,7 @@ func (a *HasOneApiService) GETPriceIdPriceListExecute(r HasOneApiGETPriceIdPrice
 	}
 
 	localVarPath := localBasePath + "/prices/{priceId}/price_list"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterToString(r.priceId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterValueToString(r.priceId, "priceId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9849,9 +9849,9 @@ func (a *HasOneApiService) GETPriceIdPriceListExecute(r HasOneApiGETPriceIdPrice
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -9908,7 +9908,7 @@ func (a *HasOneApiService) GETPriceIdSkuExecute(r HasOneApiGETPriceIdSkuRequest)
 	}
 
 	localVarPath := localBasePath + "/prices/{priceId}/sku"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterToString(r.priceId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterValueToString(r.priceId, "priceId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -9941,9 +9941,9 @@ func (a *HasOneApiService) GETPriceIdSkuExecute(r HasOneApiGETPriceIdSkuRequest)
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10000,7 +10000,7 @@ func (a *HasOneApiService) GETPriceTierIdPriceExecute(r HasOneApiGETPriceTierIdP
 	}
 
 	localVarPath := localBasePath + "/price_tiers/{priceTierId}/price"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceTierId"+"}", url.PathEscape(parameterToString(r.priceTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceTierId"+"}", url.PathEscape(parameterValueToString(r.priceTierId, "priceTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10033,9 +10033,9 @@ func (a *HasOneApiService) GETPriceTierIdPriceExecute(r HasOneApiGETPriceTierIdP
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10092,7 +10092,7 @@ func (a *HasOneApiService) GETPriceVolumeTierIdPriceExecute(r HasOneApiGETPriceV
 	}
 
 	localVarPath := localBasePath + "/price_volume_tiers/{priceVolumeTierId}/price"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceVolumeTierId"+"}", url.PathEscape(parameterToString(r.priceVolumeTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceVolumeTierId"+"}", url.PathEscape(parameterValueToString(r.priceVolumeTierId, "priceVolumeTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10125,9 +10125,9 @@ func (a *HasOneApiService) GETPriceVolumeTierIdPriceExecute(r HasOneApiGETPriceV
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10184,7 +10184,7 @@ func (a *HasOneApiService) GETPromotionIdCouponCodesPromotionRuleExecute(r HasOn
 	}
 
 	localVarPath := localBasePath + "/promotions/{promotionId}/coupon_codes_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterToString(r.promotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterValueToString(r.promotionId, "promotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10217,9 +10217,9 @@ func (a *HasOneApiService) GETPromotionIdCouponCodesPromotionRuleExecute(r HasOn
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10276,7 +10276,7 @@ func (a *HasOneApiService) GETPromotionIdMarketExecute(r HasOneApiGETPromotionId
 	}
 
 	localVarPath := localBasePath + "/promotions/{promotionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterToString(r.promotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterValueToString(r.promotionId, "promotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10309,9 +10309,9 @@ func (a *HasOneApiService) GETPromotionIdMarketExecute(r HasOneApiGETPromotionId
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10368,7 +10368,7 @@ func (a *HasOneApiService) GETPromotionIdOrderAmountPromotionRuleExecute(r HasOn
 	}
 
 	localVarPath := localBasePath + "/promotions/{promotionId}/order_amount_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterToString(r.promotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterValueToString(r.promotionId, "promotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10401,9 +10401,9 @@ func (a *HasOneApiService) GETPromotionIdOrderAmountPromotionRuleExecute(r HasOn
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10460,7 +10460,7 @@ func (a *HasOneApiService) GETPromotionIdSkuListPromotionRuleExecute(r HasOneApi
 	}
 
 	localVarPath := localBasePath + "/promotions/{promotionId}/sku_list_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterToString(r.promotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterValueToString(r.promotionId, "promotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10493,9 +10493,9 @@ func (a *HasOneApiService) GETPromotionIdSkuListPromotionRuleExecute(r HasOneApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10552,7 +10552,7 @@ func (a *HasOneApiService) GETRecurringOrderCopyIdOrderSubscriptionExecute(r Has
 	}
 
 	localVarPath := localBasePath + "/recurring_order_copies/{recurringOrderCopyId}/order_subscription"
-	localVarPath = strings.Replace(localVarPath, "{"+"recurringOrderCopyId"+"}", url.PathEscape(parameterToString(r.recurringOrderCopyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"recurringOrderCopyId"+"}", url.PathEscape(parameterValueToString(r.recurringOrderCopyId, "recurringOrderCopyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10585,9 +10585,9 @@ func (a *HasOneApiService) GETRecurringOrderCopyIdOrderSubscriptionExecute(r Has
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10644,7 +10644,7 @@ func (a *HasOneApiService) GETRecurringOrderCopyIdSourceOrderExecute(r HasOneApi
 	}
 
 	localVarPath := localBasePath + "/recurring_order_copies/{recurringOrderCopyId}/source_order"
-	localVarPath = strings.Replace(localVarPath, "{"+"recurringOrderCopyId"+"}", url.PathEscape(parameterToString(r.recurringOrderCopyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"recurringOrderCopyId"+"}", url.PathEscape(parameterValueToString(r.recurringOrderCopyId, "recurringOrderCopyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10677,9 +10677,9 @@ func (a *HasOneApiService) GETRecurringOrderCopyIdSourceOrderExecute(r HasOneApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10736,7 +10736,7 @@ func (a *HasOneApiService) GETRecurringOrderCopyIdTargetOrderExecute(r HasOneApi
 	}
 
 	localVarPath := localBasePath + "/recurring_order_copies/{recurringOrderCopyId}/target_order"
-	localVarPath = strings.Replace(localVarPath, "{"+"recurringOrderCopyId"+"}", url.PathEscape(parameterToString(r.recurringOrderCopyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"recurringOrderCopyId"+"}", url.PathEscape(parameterValueToString(r.recurringOrderCopyId, "recurringOrderCopyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10769,9 +10769,9 @@ func (a *HasOneApiService) GETRecurringOrderCopyIdTargetOrderExecute(r HasOneApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10828,7 +10828,7 @@ func (a *HasOneApiService) GETRefundIdOrderExecute(r HasOneApiGETRefundIdOrderRe
 	}
 
 	localVarPath := localBasePath + "/refunds/{refundId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"refundId"+"}", url.PathEscape(parameterToString(r.refundId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"refundId"+"}", url.PathEscape(parameterValueToString(r.refundId, "refundId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10861,9 +10861,9 @@ func (a *HasOneApiService) GETRefundIdOrderExecute(r HasOneApiGETRefundIdOrderRe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -10920,7 +10920,7 @@ func (a *HasOneApiService) GETRefundIdReferenceCaptureExecute(r HasOneApiGETRefu
 	}
 
 	localVarPath := localBasePath + "/refunds/{refundId}/reference_capture"
-	localVarPath = strings.Replace(localVarPath, "{"+"refundId"+"}", url.PathEscape(parameterToString(r.refundId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"refundId"+"}", url.PathEscape(parameterValueToString(r.refundId, "refundId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -10953,9 +10953,9 @@ func (a *HasOneApiService) GETRefundIdReferenceCaptureExecute(r HasOneApiGETRefu
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11012,7 +11012,7 @@ func (a *HasOneApiService) GETReturnIdCustomerExecute(r HasOneApiGETReturnIdCust
 	}
 
 	localVarPath := localBasePath + "/returns/{returnId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterToString(r.returnId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11045,9 +11045,9 @@ func (a *HasOneApiService) GETReturnIdCustomerExecute(r HasOneApiGETReturnIdCust
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11104,7 +11104,7 @@ func (a *HasOneApiService) GETReturnIdDestinationAddressExecute(r HasOneApiGETRe
 	}
 
 	localVarPath := localBasePath + "/returns/{returnId}/destination_address"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterToString(r.returnId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11137,9 +11137,9 @@ func (a *HasOneApiService) GETReturnIdDestinationAddressExecute(r HasOneApiGETRe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11196,7 +11196,7 @@ func (a *HasOneApiService) GETReturnIdOrderExecute(r HasOneApiGETReturnIdOrderRe
 	}
 
 	localVarPath := localBasePath + "/returns/{returnId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterToString(r.returnId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11229,9 +11229,9 @@ func (a *HasOneApiService) GETReturnIdOrderExecute(r HasOneApiGETReturnIdOrderRe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11288,7 +11288,7 @@ func (a *HasOneApiService) GETReturnIdOriginAddressExecute(r HasOneApiGETReturnI
 	}
 
 	localVarPath := localBasePath + "/returns/{returnId}/origin_address"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterToString(r.returnId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11321,9 +11321,9 @@ func (a *HasOneApiService) GETReturnIdOriginAddressExecute(r HasOneApiGETReturnI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11380,7 +11380,7 @@ func (a *HasOneApiService) GETReturnIdStockLocationExecute(r HasOneApiGETReturnI
 	}
 
 	localVarPath := localBasePath + "/returns/{returnId}/stock_location"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterToString(r.returnId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11413,9 +11413,9 @@ func (a *HasOneApiService) GETReturnIdStockLocationExecute(r HasOneApiGETReturnI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11472,7 +11472,7 @@ func (a *HasOneApiService) GETReturnLineItemIdLineItemExecute(r HasOneApiGETRetu
 	}
 
 	localVarPath := localBasePath + "/return_line_items/{returnLineItemId}/line_item"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnLineItemId"+"}", url.PathEscape(parameterToString(r.returnLineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnLineItemId"+"}", url.PathEscape(parameterValueToString(r.returnLineItemId, "returnLineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11505,9 +11505,9 @@ func (a *HasOneApiService) GETReturnLineItemIdLineItemExecute(r HasOneApiGETRetu
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11564,7 +11564,7 @@ func (a *HasOneApiService) GETReturnLineItemIdReturnExecute(r HasOneApiGETReturn
 	}
 
 	localVarPath := localBasePath + "/return_line_items/{returnLineItemId}/return"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnLineItemId"+"}", url.PathEscape(parameterToString(r.returnLineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnLineItemId"+"}", url.PathEscape(parameterValueToString(r.returnLineItemId, "returnLineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11597,9 +11597,9 @@ func (a *HasOneApiService) GETReturnLineItemIdReturnExecute(r HasOneApiGETReturn
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11656,7 +11656,7 @@ func (a *HasOneApiService) GETSatispayPaymentIdOrderExecute(r HasOneApiGETSatisp
 	}
 
 	localVarPath := localBasePath + "/satispay_payments/{satispayPaymentId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"satispayPaymentId"+"}", url.PathEscape(parameterToString(r.satispayPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"satispayPaymentId"+"}", url.PathEscape(parameterValueToString(r.satispayPaymentId, "satispayPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11689,9 +11689,9 @@ func (a *HasOneApiService) GETSatispayPaymentIdOrderExecute(r HasOneApiGETSatisp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11748,7 +11748,7 @@ func (a *HasOneApiService) GETSatispayPaymentIdPaymentGatewayExecute(r HasOneApi
 	}
 
 	localVarPath := localBasePath + "/satispay_payments/{satispayPaymentId}/payment_gateway"
-	localVarPath = strings.Replace(localVarPath, "{"+"satispayPaymentId"+"}", url.PathEscape(parameterToString(r.satispayPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"satispayPaymentId"+"}", url.PathEscape(parameterValueToString(r.satispayPaymentId, "satispayPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11781,9 +11781,9 @@ func (a *HasOneApiService) GETSatispayPaymentIdPaymentGatewayExecute(r HasOneApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11840,7 +11840,7 @@ func (a *HasOneApiService) GETShipmentIdDeliveryLeadTimeExecute(r HasOneApiGETSh
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/delivery_lead_time"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11873,9 +11873,9 @@ func (a *HasOneApiService) GETShipmentIdDeliveryLeadTimeExecute(r HasOneApiGETSh
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -11932,7 +11932,7 @@ func (a *HasOneApiService) GETShipmentIdOrderExecute(r HasOneApiGETShipmentIdOrd
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -11965,9 +11965,9 @@ func (a *HasOneApiService) GETShipmentIdOrderExecute(r HasOneApiGETShipmentIdOrd
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12024,7 +12024,7 @@ func (a *HasOneApiService) GETShipmentIdOriginAddressExecute(r HasOneApiGETShipm
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/origin_address"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12057,9 +12057,9 @@ func (a *HasOneApiService) GETShipmentIdOriginAddressExecute(r HasOneApiGETShipm
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12116,7 +12116,7 @@ func (a *HasOneApiService) GETShipmentIdShippingAddressExecute(r HasOneApiGETShi
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/shipping_address"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12149,9 +12149,9 @@ func (a *HasOneApiService) GETShipmentIdShippingAddressExecute(r HasOneApiGETShi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12208,7 +12208,7 @@ func (a *HasOneApiService) GETShipmentIdShippingCategoryExecute(r HasOneApiGETSh
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/shipping_category"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12241,9 +12241,9 @@ func (a *HasOneApiService) GETShipmentIdShippingCategoryExecute(r HasOneApiGETSh
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12300,7 +12300,7 @@ func (a *HasOneApiService) GETShipmentIdShippingMethodExecute(r HasOneApiGETShip
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/shipping_method"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12333,9 +12333,9 @@ func (a *HasOneApiService) GETShipmentIdShippingMethodExecute(r HasOneApiGETShip
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12392,7 +12392,7 @@ func (a *HasOneApiService) GETShipmentIdStockLocationExecute(r HasOneApiGETShipm
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/stock_location"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12425,9 +12425,9 @@ func (a *HasOneApiService) GETShipmentIdStockLocationExecute(r HasOneApiGETShipm
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12484,7 +12484,7 @@ func (a *HasOneApiService) GETShippingMethodIdDeliveryLeadTimeForShipmentExecute
 	}
 
 	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}/delivery_lead_time_for_shipment"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodId, "shippingMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12517,9 +12517,9 @@ func (a *HasOneApiService) GETShippingMethodIdDeliveryLeadTimeForShipmentExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12576,7 +12576,7 @@ func (a *HasOneApiService) GETShippingMethodIdMarketExecute(r HasOneApiGETShippi
 	}
 
 	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodId, "shippingMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12609,9 +12609,9 @@ func (a *HasOneApiService) GETShippingMethodIdMarketExecute(r HasOneApiGETShippi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12668,7 +12668,7 @@ func (a *HasOneApiService) GETShippingMethodIdShippingCategoryExecute(r HasOneAp
 	}
 
 	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}/shipping_category"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodId, "shippingMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12701,9 +12701,9 @@ func (a *HasOneApiService) GETShippingMethodIdShippingCategoryExecute(r HasOneAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12760,7 +12760,7 @@ func (a *HasOneApiService) GETShippingMethodIdShippingZoneExecute(r HasOneApiGET
 	}
 
 	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}/shipping_zone"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodId, "shippingMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12793,9 +12793,9 @@ func (a *HasOneApiService) GETShippingMethodIdShippingZoneExecute(r HasOneApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12852,7 +12852,7 @@ func (a *HasOneApiService) GETShippingMethodIdStockLocationExecute(r HasOneApiGE
 	}
 
 	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}/stock_location"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodId, "shippingMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12885,9 +12885,9 @@ func (a *HasOneApiService) GETShippingMethodIdStockLocationExecute(r HasOneApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -12944,7 +12944,7 @@ func (a *HasOneApiService) GETShippingMethodTierIdShippingMethodExecute(r HasOne
 	}
 
 	localVarPath := localBasePath + "/shipping_method_tiers/{shippingMethodTierId}/shipping_method"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodTierId"+"}", url.PathEscape(parameterToString(r.shippingMethodTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodTierId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodTierId, "shippingMethodTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -12977,9 +12977,9 @@ func (a *HasOneApiService) GETShippingMethodTierIdShippingMethodExecute(r HasOne
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13036,7 +13036,7 @@ func (a *HasOneApiService) GETShippingWeightTierIdShippingMethodExecute(r HasOne
 	}
 
 	localVarPath := localBasePath + "/shipping_weight_tiers/{shippingWeightTierId}/shipping_method"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingWeightTierId"+"}", url.PathEscape(parameterToString(r.shippingWeightTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingWeightTierId"+"}", url.PathEscape(parameterValueToString(r.shippingWeightTierId, "shippingWeightTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13069,9 +13069,9 @@ func (a *HasOneApiService) GETShippingWeightTierIdShippingMethodExecute(r HasOne
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13128,7 +13128,7 @@ func (a *HasOneApiService) GETSkuIdShippingCategoryExecute(r HasOneApiGETSkuIdSh
 	}
 
 	localVarPath := localBasePath + "/skus/{skuId}/shipping_category"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterToString(r.skuId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13161,9 +13161,9 @@ func (a *HasOneApiService) GETSkuIdShippingCategoryExecute(r HasOneApiGETSkuIdSh
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13220,7 +13220,7 @@ func (a *HasOneApiService) GETSkuListIdCustomerExecute(r HasOneApiGETSkuListIdCu
 	}
 
 	localVarPath := localBasePath + "/sku_lists/{skuListId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuListId"+"}", url.PathEscape(parameterToString(r.skuListId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListId"+"}", url.PathEscape(parameterValueToString(r.skuListId, "skuListId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13253,9 +13253,9 @@ func (a *HasOneApiService) GETSkuListIdCustomerExecute(r HasOneApiGETSkuListIdCu
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13312,7 +13312,7 @@ func (a *HasOneApiService) GETSkuListItemIdSkuExecute(r HasOneApiGETSkuListItemI
 	}
 
 	localVarPath := localBasePath + "/sku_list_items/{skuListItemId}/sku"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuListItemId"+"}", url.PathEscape(parameterToString(r.skuListItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListItemId"+"}", url.PathEscape(parameterValueToString(r.skuListItemId, "skuListItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13345,9 +13345,9 @@ func (a *HasOneApiService) GETSkuListItemIdSkuExecute(r HasOneApiGETSkuListItemI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13404,7 +13404,7 @@ func (a *HasOneApiService) GETSkuListItemIdSkuListExecute(r HasOneApiGETSkuListI
 	}
 
 	localVarPath := localBasePath + "/sku_list_items/{skuListItemId}/sku_list"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuListItemId"+"}", url.PathEscape(parameterToString(r.skuListItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListItemId"+"}", url.PathEscape(parameterValueToString(r.skuListItemId, "skuListItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13437,9 +13437,9 @@ func (a *HasOneApiService) GETSkuListItemIdSkuListExecute(r HasOneApiGETSkuListI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13496,7 +13496,7 @@ func (a *HasOneApiService) GETSkuListPromotionRuleIdSkuListExecute(r HasOneApiGE
 	}
 
 	localVarPath := localBasePath + "/sku_list_promotion_rules/{skuListPromotionRuleId}/sku_list"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuListPromotionRuleId"+"}", url.PathEscape(parameterToString(r.skuListPromotionRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListPromotionRuleId"+"}", url.PathEscape(parameterValueToString(r.skuListPromotionRuleId, "skuListPromotionRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13529,9 +13529,9 @@ func (a *HasOneApiService) GETSkuListPromotionRuleIdSkuListExecute(r HasOneApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13588,7 +13588,7 @@ func (a *HasOneApiService) GETSkuOptionIdMarketExecute(r HasOneApiGETSkuOptionId
 	}
 
 	localVarPath := localBasePath + "/sku_options/{skuOptionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuOptionId"+"}", url.PathEscape(parameterToString(r.skuOptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuOptionId"+"}", url.PathEscape(parameterValueToString(r.skuOptionId, "skuOptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13621,9 +13621,9 @@ func (a *HasOneApiService) GETSkuOptionIdMarketExecute(r HasOneApiGETSkuOptionId
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13680,7 +13680,7 @@ func (a *HasOneApiService) GETStockItemIdSkuExecute(r HasOneApiGETStockItemIdSku
 	}
 
 	localVarPath := localBasePath + "/stock_items/{stockItemId}/sku"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockItemId"+"}", url.PathEscape(parameterToString(r.stockItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockItemId"+"}", url.PathEscape(parameterValueToString(r.stockItemId, "stockItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13713,9 +13713,9 @@ func (a *HasOneApiService) GETStockItemIdSkuExecute(r HasOneApiGETStockItemIdSku
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13772,7 +13772,7 @@ func (a *HasOneApiService) GETStockItemIdStockLocationExecute(r HasOneApiGETStoc
 	}
 
 	localVarPath := localBasePath + "/stock_items/{stockItemId}/stock_location"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockItemId"+"}", url.PathEscape(parameterToString(r.stockItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockItemId"+"}", url.PathEscape(parameterValueToString(r.stockItemId, "stockItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13805,9 +13805,9 @@ func (a *HasOneApiService) GETStockItemIdStockLocationExecute(r HasOneApiGETStoc
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13864,7 +13864,7 @@ func (a *HasOneApiService) GETStockLineItemIdLineItemExecute(r HasOneApiGETStock
 	}
 
 	localVarPath := localBasePath + "/stock_line_items/{stockLineItemId}/line_item"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockLineItemId"+"}", url.PathEscape(parameterToString(r.stockLineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockLineItemId"+"}", url.PathEscape(parameterValueToString(r.stockLineItemId, "stockLineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13897,9 +13897,9 @@ func (a *HasOneApiService) GETStockLineItemIdLineItemExecute(r HasOneApiGETStock
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -13956,7 +13956,7 @@ func (a *HasOneApiService) GETStockLineItemIdShipmentExecute(r HasOneApiGETStock
 	}
 
 	localVarPath := localBasePath + "/stock_line_items/{stockLineItemId}/shipment"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockLineItemId"+"}", url.PathEscape(parameterToString(r.stockLineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockLineItemId"+"}", url.PathEscape(parameterValueToString(r.stockLineItemId, "stockLineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -13989,9 +13989,9 @@ func (a *HasOneApiService) GETStockLineItemIdShipmentExecute(r HasOneApiGETStock
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -14048,7 +14048,7 @@ func (a *HasOneApiService) GETStockLineItemIdStockItemExecute(r HasOneApiGETStoc
 	}
 
 	localVarPath := localBasePath + "/stock_line_items/{stockLineItemId}/stock_item"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockLineItemId"+"}", url.PathEscape(parameterToString(r.stockLineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockLineItemId"+"}", url.PathEscape(parameterValueToString(r.stockLineItemId, "stockLineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14081,9 +14081,9 @@ func (a *HasOneApiService) GETStockLineItemIdStockItemExecute(r HasOneApiGETStoc
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -14140,7 +14140,7 @@ func (a *HasOneApiService) GETStockLocationIdAddressExecute(r HasOneApiGETStockL
 	}
 
 	localVarPath := localBasePath + "/stock_locations/{stockLocationId}/address"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterToString(r.stockLocationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterValueToString(r.stockLocationId, "stockLocationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14173,9 +14173,9 @@ func (a *HasOneApiService) GETStockLocationIdAddressExecute(r HasOneApiGETStockL
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -14232,7 +14232,7 @@ func (a *HasOneApiService) GETStockTransferIdDestinationStockLocationExecute(r H
 	}
 
 	localVarPath := localBasePath + "/stock_transfers/{stockTransferId}/destination_stock_location"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterToString(r.stockTransferId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterValueToString(r.stockTransferId, "stockTransferId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14265,9 +14265,9 @@ func (a *HasOneApiService) GETStockTransferIdDestinationStockLocationExecute(r H
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -14324,7 +14324,7 @@ func (a *HasOneApiService) GETStockTransferIdLineItemExecute(r HasOneApiGETStock
 	}
 
 	localVarPath := localBasePath + "/stock_transfers/{stockTransferId}/line_item"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterToString(r.stockTransferId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterValueToString(r.stockTransferId, "stockTransferId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14357,9 +14357,9 @@ func (a *HasOneApiService) GETStockTransferIdLineItemExecute(r HasOneApiGETStock
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -14416,7 +14416,7 @@ func (a *HasOneApiService) GETStockTransferIdOriginStockLocationExecute(r HasOne
 	}
 
 	localVarPath := localBasePath + "/stock_transfers/{stockTransferId}/origin_stock_location"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterToString(r.stockTransferId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterValueToString(r.stockTransferId, "stockTransferId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14449,9 +14449,9 @@ func (a *HasOneApiService) GETStockTransferIdOriginStockLocationExecute(r HasOne
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -14508,7 +14508,7 @@ func (a *HasOneApiService) GETStockTransferIdShipmentExecute(r HasOneApiGETStock
 	}
 
 	localVarPath := localBasePath + "/stock_transfers/{stockTransferId}/shipment"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterToString(r.stockTransferId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterValueToString(r.stockTransferId, "stockTransferId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14541,9 +14541,9 @@ func (a *HasOneApiService) GETStockTransferIdShipmentExecute(r HasOneApiGETStock
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -14600,7 +14600,7 @@ func (a *HasOneApiService) GETStockTransferIdSkuExecute(r HasOneApiGETStockTrans
 	}
 
 	localVarPath := localBasePath + "/stock_transfers/{stockTransferId}/sku"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterToString(r.stockTransferId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterValueToString(r.stockTransferId, "stockTransferId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14633,9 +14633,9 @@ func (a *HasOneApiService) GETStockTransferIdSkuExecute(r HasOneApiGETStockTrans
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -14692,7 +14692,7 @@ func (a *HasOneApiService) GETStripePaymentIdOrderExecute(r HasOneApiGETStripePa
 	}
 
 	localVarPath := localBasePath + "/stripe_payments/{stripePaymentId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"stripePaymentId"+"}", url.PathEscape(parameterToString(r.stripePaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stripePaymentId"+"}", url.PathEscape(parameterValueToString(r.stripePaymentId, "stripePaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14725,9 +14725,9 @@ func (a *HasOneApiService) GETStripePaymentIdOrderExecute(r HasOneApiGETStripePa
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -14784,7 +14784,7 @@ func (a *HasOneApiService) GETStripePaymentIdPaymentGatewayExecute(r HasOneApiGE
 	}
 
 	localVarPath := localBasePath + "/stripe_payments/{stripePaymentId}/payment_gateway"
-	localVarPath = strings.Replace(localVarPath, "{"+"stripePaymentId"+"}", url.PathEscape(parameterToString(r.stripePaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stripePaymentId"+"}", url.PathEscape(parameterValueToString(r.stripePaymentId, "stripePaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14817,9 +14817,9 @@ func (a *HasOneApiService) GETStripePaymentIdPaymentGatewayExecute(r HasOneApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -14876,7 +14876,7 @@ func (a *HasOneApiService) GETTaxCategoryIdSkuExecute(r HasOneApiGETTaxCategoryI
 	}
 
 	localVarPath := localBasePath + "/tax_categories/{taxCategoryId}/sku"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxCategoryId"+"}", url.PathEscape(parameterToString(r.taxCategoryId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxCategoryId"+"}", url.PathEscape(parameterValueToString(r.taxCategoryId, "taxCategoryId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -14909,9 +14909,9 @@ func (a *HasOneApiService) GETTaxCategoryIdSkuExecute(r HasOneApiGETTaxCategoryI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -14968,7 +14968,7 @@ func (a *HasOneApiService) GETTaxRuleIdManualTaxCalculatorExecute(r HasOneApiGET
 	}
 
 	localVarPath := localBasePath + "/tax_rules/{taxRuleId}/manual_tax_calculator"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxRuleId"+"}", url.PathEscape(parameterToString(r.taxRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxRuleId"+"}", url.PathEscape(parameterValueToString(r.taxRuleId, "taxRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15001,9 +15001,9 @@ func (a *HasOneApiService) GETTaxRuleIdManualTaxCalculatorExecute(r HasOneApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -15060,7 +15060,7 @@ func (a *HasOneApiService) GETTransactionIdOrderExecute(r HasOneApiGETTransactio
 	}
 
 	localVarPath := localBasePath + "/transactions/{transactionId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"transactionId"+"}", url.PathEscape(parameterToString(r.transactionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"transactionId"+"}", url.PathEscape(parameterValueToString(r.transactionId, "transactionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15093,9 +15093,9 @@ func (a *HasOneApiService) GETTransactionIdOrderExecute(r HasOneApiGETTransactio
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -15152,7 +15152,7 @@ func (a *HasOneApiService) GETVoidIdOrderExecute(r HasOneApiGETVoidIdOrderReques
 	}
 
 	localVarPath := localBasePath + "/voids/{voidId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"voidId"+"}", url.PathEscape(parameterToString(r.voidId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"voidId"+"}", url.PathEscape(parameterValueToString(r.voidId, "voidId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15185,9 +15185,9 @@ func (a *HasOneApiService) GETVoidIdOrderExecute(r HasOneApiGETVoidIdOrderReques
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -15244,7 +15244,7 @@ func (a *HasOneApiService) GETVoidIdReferenceAuthorizationExecute(r HasOneApiGET
 	}
 
 	localVarPath := localBasePath + "/voids/{voidId}/reference_authorization"
-	localVarPath = strings.Replace(localVarPath, "{"+"voidId"+"}", url.PathEscape(parameterToString(r.voidId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"voidId"+"}", url.PathEscape(parameterValueToString(r.voidId, "voidId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15277,9 +15277,9 @@ func (a *HasOneApiService) GETVoidIdReferenceAuthorizationExecute(r HasOneApiGET
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -15336,7 +15336,7 @@ func (a *HasOneApiService) GETWireTransferIdOrderExecute(r HasOneApiGETWireTrans
 	}
 
 	localVarPath := localBasePath + "/wire_transfers/{wireTransferId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"wireTransferId"+"}", url.PathEscape(parameterToString(r.wireTransferId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wireTransferId"+"}", url.PathEscape(parameterValueToString(r.wireTransferId, "wireTransferId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -15369,9 +15369,9 @@ func (a *HasOneApiService) GETWireTransferIdOrderExecute(r HasOneApiGETWireTrans
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

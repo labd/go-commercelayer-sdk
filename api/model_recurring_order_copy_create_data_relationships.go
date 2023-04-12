@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the RecurringOrderCopyCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &RecurringOrderCopyCreateDataRelationships{}
+
 // RecurringOrderCopyCreateDataRelationships struct for RecurringOrderCopyCreateDataRelationships
 type RecurringOrderCopyCreateDataRelationships struct {
 	SourceOrder       AdyenPaymentCreateDataRelationshipsOrder                      `json:"source_order"`
@@ -89,14 +92,18 @@ func (o *RecurringOrderCopyCreateDataRelationships) SetOrderSubscription(v Order
 }
 
 func (o RecurringOrderCopyCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["source_order"] = o.SourceOrder
-	}
-	if true {
-		toSerialize["order_subscription"] = o.OrderSubscription
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o RecurringOrderCopyCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["source_order"] = o.SourceOrder
+	toSerialize["order_subscription"] = o.OrderSubscription
+	return toSerialize, nil
 }
 
 type NullableRecurringOrderCopyCreateDataRelationships struct {

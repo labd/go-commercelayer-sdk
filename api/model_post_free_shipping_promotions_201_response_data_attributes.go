@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTFreeShippingPromotions201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTFreeShippingPromotions201ResponseDataAttributes{}
+
 // POSTFreeShippingPromotions201ResponseDataAttributes struct for POSTFreeShippingPromotions201ResponseDataAttributes
 type POSTFreeShippingPromotions201ResponseDataAttributes struct {
 	// The promotion's internal name.
@@ -71,7 +74,7 @@ func (o *POSTFreeShippingPromotions201ResponseDataAttributes) GetName() interfac
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTFreeShippingPromotions201ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -95,7 +98,7 @@ func (o *POSTFreeShippingPromotions201ResponseDataAttributes) GetCurrencyCode() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTFreeShippingPromotions201ResponseDataAttributes) GetCurrencyCodeOk() (*interface{}, bool) {
-	if o == nil || o.CurrencyCode == nil {
+	if o == nil || IsNil(o.CurrencyCode) {
 		return nil, false
 	}
 	return &o.CurrencyCode, true
@@ -103,7 +106,7 @@ func (o *POSTFreeShippingPromotions201ResponseDataAttributes) GetCurrencyCodeOk(
 
 // HasCurrencyCode returns a boolean if a field has been set.
 func (o *POSTFreeShippingPromotions201ResponseDataAttributes) HasCurrencyCode() bool {
-	if o != nil && o.CurrencyCode != nil {
+	if o != nil && IsNil(o.CurrencyCode) {
 		return true
 	}
 
@@ -130,7 +133,7 @@ func (o *POSTFreeShippingPromotions201ResponseDataAttributes) GetStartsAt() inte
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTFreeShippingPromotions201ResponseDataAttributes) GetStartsAtOk() (*interface{}, bool) {
-	if o == nil || o.StartsAt == nil {
+	if o == nil || IsNil(o.StartsAt) {
 		return nil, false
 	}
 	return &o.StartsAt, true
@@ -156,7 +159,7 @@ func (o *POSTFreeShippingPromotions201ResponseDataAttributes) GetExpiresAt() int
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTFreeShippingPromotions201ResponseDataAttributes) GetExpiresAtOk() (*interface{}, bool) {
-	if o == nil || o.ExpiresAt == nil {
+	if o == nil || IsNil(o.ExpiresAt) {
 		return nil, false
 	}
 	return &o.ExpiresAt, true
@@ -182,7 +185,7 @@ func (o *POSTFreeShippingPromotions201ResponseDataAttributes) GetTotalUsageLimit
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTFreeShippingPromotions201ResponseDataAttributes) GetTotalUsageLimitOk() (*interface{}, bool) {
-	if o == nil || o.TotalUsageLimit == nil {
+	if o == nil || IsNil(o.TotalUsageLimit) {
 		return nil, false
 	}
 	return &o.TotalUsageLimit, true
@@ -206,7 +209,7 @@ func (o *POSTFreeShippingPromotions201ResponseDataAttributes) GetReference() int
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTFreeShippingPromotions201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -214,7 +217,7 @@ func (o *POSTFreeShippingPromotions201ResponseDataAttributes) GetReferenceOk() (
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTFreeShippingPromotions201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -239,7 +242,7 @@ func (o *POSTFreeShippingPromotions201ResponseDataAttributes) GetReferenceOrigin
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTFreeShippingPromotions201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -247,7 +250,7 @@ func (o *POSTFreeShippingPromotions201ResponseDataAttributes) GetReferenceOrigin
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTFreeShippingPromotions201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -272,7 +275,7 @@ func (o *POSTFreeShippingPromotions201ResponseDataAttributes) GetMetadata() inte
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTFreeShippingPromotions201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -280,7 +283,7 @@ func (o *POSTFreeShippingPromotions201ResponseDataAttributes) GetMetadataOk() (*
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTFreeShippingPromotions201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -293,6 +296,14 @@ func (o *POSTFreeShippingPromotions201ResponseDataAttributes) SetMetadata(v inte
 }
 
 func (o POSTFreeShippingPromotions201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTFreeShippingPromotions201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -318,7 +329,7 @@ func (o POSTFreeShippingPromotions201ResponseDataAttributes) MarshalJSON() ([]by
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTFreeShippingPromotions201ResponseDataAttributes struct {

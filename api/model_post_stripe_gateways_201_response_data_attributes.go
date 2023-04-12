@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTStripeGateways201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTStripeGateways201ResponseDataAttributes{}
+
 // POSTStripeGateways201ResponseDataAttributes struct for POSTStripeGateways201ResponseDataAttributes
 type POSTStripeGateways201ResponseDataAttributes struct {
 	// The payment gateway's internal name.
@@ -67,7 +70,7 @@ func (o *POSTStripeGateways201ResponseDataAttributes) GetName() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTStripeGateways201ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -91,7 +94,7 @@ func (o *POSTStripeGateways201ResponseDataAttributes) GetReference() interface{}
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTStripeGateways201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -99,7 +102,7 @@ func (o *POSTStripeGateways201ResponseDataAttributes) GetReferenceOk() (*interfa
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTStripeGateways201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -124,7 +127,7 @@ func (o *POSTStripeGateways201ResponseDataAttributes) GetReferenceOrigin() inter
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTStripeGateways201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -132,7 +135,7 @@ func (o *POSTStripeGateways201ResponseDataAttributes) GetReferenceOriginOk() (*i
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTStripeGateways201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -157,7 +160,7 @@ func (o *POSTStripeGateways201ResponseDataAttributes) GetMetadata() interface{} 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTStripeGateways201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -165,7 +168,7 @@ func (o *POSTStripeGateways201ResponseDataAttributes) GetMetadataOk() (*interfac
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTStripeGateways201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -192,7 +195,7 @@ func (o *POSTStripeGateways201ResponseDataAttributes) GetLogin() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTStripeGateways201ResponseDataAttributes) GetLoginOk() (*interface{}, bool) {
-	if o == nil || o.Login == nil {
+	if o == nil || IsNil(o.Login) {
 		return nil, false
 	}
 	return &o.Login, true
@@ -216,7 +219,7 @@ func (o *POSTStripeGateways201ResponseDataAttributes) GetPublishableKey() interf
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTStripeGateways201ResponseDataAttributes) GetPublishableKeyOk() (*interface{}, bool) {
-	if o == nil || o.PublishableKey == nil {
+	if o == nil || IsNil(o.PublishableKey) {
 		return nil, false
 	}
 	return &o.PublishableKey, true
@@ -224,7 +227,7 @@ func (o *POSTStripeGateways201ResponseDataAttributes) GetPublishableKeyOk() (*in
 
 // HasPublishableKey returns a boolean if a field has been set.
 func (o *POSTStripeGateways201ResponseDataAttributes) HasPublishableKey() bool {
-	if o != nil && o.PublishableKey != nil {
+	if o != nil && IsNil(o.PublishableKey) {
 		return true
 	}
 
@@ -249,7 +252,7 @@ func (o *POSTStripeGateways201ResponseDataAttributes) GetAutoPayments() interfac
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTStripeGateways201ResponseDataAttributes) GetAutoPaymentsOk() (*interface{}, bool) {
-	if o == nil || o.AutoPayments == nil {
+	if o == nil || IsNil(o.AutoPayments) {
 		return nil, false
 	}
 	return &o.AutoPayments, true
@@ -257,7 +260,7 @@ func (o *POSTStripeGateways201ResponseDataAttributes) GetAutoPaymentsOk() (*inte
 
 // HasAutoPayments returns a boolean if a field has been set.
 func (o *POSTStripeGateways201ResponseDataAttributes) HasAutoPayments() bool {
-	if o != nil && o.AutoPayments != nil {
+	if o != nil && IsNil(o.AutoPayments) {
 		return true
 	}
 
@@ -270,6 +273,14 @@ func (o *POSTStripeGateways201ResponseDataAttributes) SetAutoPayments(v interfac
 }
 
 func (o POSTStripeGateways201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTStripeGateways201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -292,7 +303,7 @@ func (o POSTStripeGateways201ResponseDataAttributes) MarshalJSON() ([]byte, erro
 	if o.AutoPayments != nil {
 		toSerialize["auto_payments"] = o.AutoPayments
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTStripeGateways201ResponseDataAttributes struct {

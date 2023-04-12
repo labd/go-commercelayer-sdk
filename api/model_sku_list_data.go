@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the SkuListData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SkuListData{}
+
 // SkuListData struct for SkuListData
 type SkuListData struct {
 	// The resource's type
-	Type          interface{}                               `json:"type"`
-	Attributes    GETSkuLists200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *SkuListDataRelationships                 `json:"relationships,omitempty"`
+	Type          interface{}                                   `json:"type"`
+	Attributes    GETSkuListsSkuListId200ResponseDataAttributes `json:"attributes"`
+	Relationships *SkuListDataRelationships                     `json:"relationships,omitempty"`
 }
 
 // NewSkuListData instantiates a new SkuListData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuListData(type_ interface{}, attributes GETSkuLists200ResponseDataInnerAttributes) *SkuListData {
+func NewSkuListData(type_ interface{}, attributes GETSkuListsSkuListId200ResponseDataAttributes) *SkuListData {
 	this := SkuListData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -57,7 +60,7 @@ func (o *SkuListData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *SkuListData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -69,9 +72,9 @@ func (o *SkuListData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *SkuListData) GetAttributes() GETSkuLists200ResponseDataInnerAttributes {
+func (o *SkuListData) GetAttributes() GETSkuListsSkuListId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETSkuLists200ResponseDataInnerAttributes
+		var ret GETSkuListsSkuListId200ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +83,7 @@ func (o *SkuListData) GetAttributes() GETSkuLists200ResponseDataInnerAttributes 
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *SkuListData) GetAttributesOk() (*GETSkuLists200ResponseDataInnerAttributes, bool) {
+func (o *SkuListData) GetAttributesOk() (*GETSkuListsSkuListId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,13 +91,13 @@ func (o *SkuListData) GetAttributesOk() (*GETSkuLists200ResponseDataInnerAttribu
 }
 
 // SetAttributes sets field value
-func (o *SkuListData) SetAttributes(v GETSkuLists200ResponseDataInnerAttributes) {
+func (o *SkuListData) SetAttributes(v GETSkuListsSkuListId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *SkuListData) GetRelationships() SkuListDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret SkuListDataRelationships
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *SkuListData) GetRelationships() SkuListDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SkuListData) GetRelationshipsOk() (*SkuListDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -112,7 +115,7 @@ func (o *SkuListData) GetRelationshipsOk() (*SkuListDataRelationships, bool) {
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *SkuListData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -125,17 +128,23 @@ func (o *SkuListData) SetRelationships(v SkuListDataRelationships) {
 }
 
 func (o SkuListData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o SkuListData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableSkuListData struct {

@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *InStockSubscriptionsApiService) DELETEInStockSubscriptionsInStockSubscr
 	}
 
 	localVarPath := localBasePath + "/in_stock_subscriptions/{inStockSubscriptionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"inStockSubscriptionId"+"}", url.PathEscape(parameterToString(r.inStockSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inStockSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.inStockSubscriptionId, "inStockSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *InStockSubscriptionsApiService) DELETEInStockSubscriptionsInStockSubscr
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsExecute(r InStoc
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsInStockSubscript
 	}
 
 	localVarPath := localBasePath + "/in_stock_subscriptions/{inStockSubscriptionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"inStockSubscriptionId"+"}", url.PathEscape(parameterToString(r.inStockSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inStockSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.inStockSubscriptionId, "inStockSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *InStockSubscriptionsApiService) GETInStockSubscriptionsInStockSubscript
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -369,7 +369,7 @@ func (a *InStockSubscriptionsApiService) PATCHInStockSubscriptionsInStockSubscri
 	}
 
 	localVarPath := localBasePath + "/in_stock_subscriptions/{inStockSubscriptionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"inStockSubscriptionId"+"}", url.PathEscape(parameterToString(r.inStockSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inStockSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.inStockSubscriptionId, "inStockSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -407,9 +407,9 @@ func (a *InStockSubscriptionsApiService) PATCHInStockSubscriptionsInStockSubscri
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -518,9 +518,9 @@ func (a *InStockSubscriptionsApiService) POSTInStockSubscriptionsExecute(r InSto
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

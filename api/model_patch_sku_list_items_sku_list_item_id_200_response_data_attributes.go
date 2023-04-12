@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHSkuListItemsSkuListItemId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHSkuListItemsSkuListItemId200ResponseDataAttributes{}
+
 // PATCHSkuListItemsSkuListItemId200ResponseDataAttributes struct for PATCHSkuListItemsSkuListItemId200ResponseDataAttributes
 type PATCHSkuListItemsSkuListItemId200ResponseDataAttributes struct {
 	// The SKU list item's position.
@@ -61,7 +64,7 @@ func (o *PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) GetPosition() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) GetPositionOk() (*interface{}, bool) {
-	if o == nil || o.Position == nil {
+	if o == nil || IsNil(o.Position) {
 		return nil, false
 	}
 	return &o.Position, true
@@ -69,7 +72,7 @@ func (o *PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) GetPositionOk(
 
 // HasPosition returns a boolean if a field has been set.
 func (o *PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) HasPosition() bool {
-	if o != nil && o.Position != nil {
+	if o != nil && IsNil(o.Position) {
 		return true
 	}
 
@@ -94,7 +97,7 @@ func (o *PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) GetSkuCode() i
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) GetSkuCodeOk() (*interface{}, bool) {
-	if o == nil || o.SkuCode == nil {
+	if o == nil || IsNil(o.SkuCode) {
 		return nil, false
 	}
 	return &o.SkuCode, true
@@ -102,7 +105,7 @@ func (o *PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) GetSkuCodeOk()
 
 // HasSkuCode returns a boolean if a field has been set.
 func (o *PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) HasSkuCode() bool {
-	if o != nil && o.SkuCode != nil {
+	if o != nil && IsNil(o.SkuCode) {
 		return true
 	}
 
@@ -127,7 +130,7 @@ func (o *PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) GetQuantity() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) GetQuantityOk() (*interface{}, bool) {
-	if o == nil || o.Quantity == nil {
+	if o == nil || IsNil(o.Quantity) {
 		return nil, false
 	}
 	return &o.Quantity, true
@@ -135,7 +138,7 @@ func (o *PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) GetQuantityOk(
 
 // HasQuantity returns a boolean if a field has been set.
 func (o *PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) HasQuantity() bool {
-	if o != nil && o.Quantity != nil {
+	if o != nil && IsNil(o.Quantity) {
 		return true
 	}
 
@@ -160,7 +163,7 @@ func (o *PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) GetReference()
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -168,7 +171,7 @@ func (o *PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) GetReferenceOk
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -193,7 +196,7 @@ func (o *PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) GetReferenceOr
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -201,7 +204,7 @@ func (o *PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) GetReferenceOr
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -226,7 +229,7 @@ func (o *PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) GetMetadata() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -234,7 +237,7 @@ func (o *PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) GetMetadataOk(
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -247,6 +250,14 @@ func (o *PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) SetMetadata(v 
 }
 
 func (o PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Position != nil {
 		toSerialize["position"] = o.Position
@@ -266,7 +277,7 @@ func (o PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) MarshalJSON() (
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHSkuListItemsSkuListItemId200ResponseDataAttributes struct {

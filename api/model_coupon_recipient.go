@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the CouponRecipient type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CouponRecipient{}
+
 // CouponRecipient struct for CouponRecipient
 type CouponRecipient struct {
 	Data *CouponRecipientData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewCouponRecipientWithDefaults() *CouponRecipient {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *CouponRecipient) GetData() CouponRecipientData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret CouponRecipientData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *CouponRecipient) GetData() CouponRecipientData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CouponRecipient) GetDataOk() (*CouponRecipientData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *CouponRecipient) GetDataOk() (*CouponRecipientData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *CouponRecipient) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *CouponRecipient) SetData(v CouponRecipientData) {
 }
 
 func (o CouponRecipient) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CouponRecipient) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableCouponRecipient struct {

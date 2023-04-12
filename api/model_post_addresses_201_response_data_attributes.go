@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTAddresses201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTAddresses201ResponseDataAttributes{}
+
 // POSTAddresses201ResponseDataAttributes struct for POSTAddresses201ResponseDataAttributes
 type POSTAddresses201ResponseDataAttributes struct {
 	// Indicates if it's a business or a personal address
@@ -92,7 +95,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetBusiness() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAddresses201ResponseDataAttributes) GetBusinessOk() (*interface{}, bool) {
-	if o == nil || o.Business == nil {
+	if o == nil || IsNil(o.Business) {
 		return nil, false
 	}
 	return &o.Business, true
@@ -100,7 +103,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetBusinessOk() (*interface{}, 
 
 // HasBusiness returns a boolean if a field has been set.
 func (o *POSTAddresses201ResponseDataAttributes) HasBusiness() bool {
-	if o != nil && o.Business != nil {
+	if o != nil && IsNil(o.Business) {
 		return true
 	}
 
@@ -125,7 +128,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetFirstName() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAddresses201ResponseDataAttributes) GetFirstNameOk() (*interface{}, bool) {
-	if o == nil || o.FirstName == nil {
+	if o == nil || IsNil(o.FirstName) {
 		return nil, false
 	}
 	return &o.FirstName, true
@@ -133,7 +136,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetFirstNameOk() (*interface{},
 
 // HasFirstName returns a boolean if a field has been set.
 func (o *POSTAddresses201ResponseDataAttributes) HasFirstName() bool {
-	if o != nil && o.FirstName != nil {
+	if o != nil && IsNil(o.FirstName) {
 		return true
 	}
 
@@ -158,7 +161,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetLastName() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAddresses201ResponseDataAttributes) GetLastNameOk() (*interface{}, bool) {
-	if o == nil || o.LastName == nil {
+	if o == nil || IsNil(o.LastName) {
 		return nil, false
 	}
 	return &o.LastName, true
@@ -166,7 +169,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetLastNameOk() (*interface{}, 
 
 // HasLastName returns a boolean if a field has been set.
 func (o *POSTAddresses201ResponseDataAttributes) HasLastName() bool {
-	if o != nil && o.LastName != nil {
+	if o != nil && IsNil(o.LastName) {
 		return true
 	}
 
@@ -191,7 +194,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetCompany() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAddresses201ResponseDataAttributes) GetCompanyOk() (*interface{}, bool) {
-	if o == nil || o.Company == nil {
+	if o == nil || IsNil(o.Company) {
 		return nil, false
 	}
 	return &o.Company, true
@@ -199,7 +202,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetCompanyOk() (*interface{}, b
 
 // HasCompany returns a boolean if a field has been set.
 func (o *POSTAddresses201ResponseDataAttributes) HasCompany() bool {
-	if o != nil && o.Company != nil {
+	if o != nil && IsNil(o.Company) {
 		return true
 	}
 
@@ -226,7 +229,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetLine1() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAddresses201ResponseDataAttributes) GetLine1Ok() (*interface{}, bool) {
-	if o == nil || o.Line1 == nil {
+	if o == nil || IsNil(o.Line1) {
 		return nil, false
 	}
 	return &o.Line1, true
@@ -250,7 +253,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetLine2() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAddresses201ResponseDataAttributes) GetLine2Ok() (*interface{}, bool) {
-	if o == nil || o.Line2 == nil {
+	if o == nil || IsNil(o.Line2) {
 		return nil, false
 	}
 	return &o.Line2, true
@@ -258,7 +261,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetLine2Ok() (*interface{}, boo
 
 // HasLine2 returns a boolean if a field has been set.
 func (o *POSTAddresses201ResponseDataAttributes) HasLine2() bool {
-	if o != nil && o.Line2 != nil {
+	if o != nil && IsNil(o.Line2) {
 		return true
 	}
 
@@ -285,7 +288,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetCity() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAddresses201ResponseDataAttributes) GetCityOk() (*interface{}, bool) {
-	if o == nil || o.City == nil {
+	if o == nil || IsNil(o.City) {
 		return nil, false
 	}
 	return &o.City, true
@@ -309,7 +312,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetZipCode() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAddresses201ResponseDataAttributes) GetZipCodeOk() (*interface{}, bool) {
-	if o == nil || o.ZipCode == nil {
+	if o == nil || IsNil(o.ZipCode) {
 		return nil, false
 	}
 	return &o.ZipCode, true
@@ -317,7 +320,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetZipCodeOk() (*interface{}, b
 
 // HasZipCode returns a boolean if a field has been set.
 func (o *POSTAddresses201ResponseDataAttributes) HasZipCode() bool {
-	if o != nil && o.ZipCode != nil {
+	if o != nil && IsNil(o.ZipCode) {
 		return true
 	}
 
@@ -344,7 +347,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetStateCode() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAddresses201ResponseDataAttributes) GetStateCodeOk() (*interface{}, bool) {
-	if o == nil || o.StateCode == nil {
+	if o == nil || IsNil(o.StateCode) {
 		return nil, false
 	}
 	return &o.StateCode, true
@@ -370,7 +373,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetCountryCode() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAddresses201ResponseDataAttributes) GetCountryCodeOk() (*interface{}, bool) {
-	if o == nil || o.CountryCode == nil {
+	if o == nil || IsNil(o.CountryCode) {
 		return nil, false
 	}
 	return &o.CountryCode, true
@@ -396,7 +399,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetPhone() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAddresses201ResponseDataAttributes) GetPhoneOk() (*interface{}, bool) {
-	if o == nil || o.Phone == nil {
+	if o == nil || IsNil(o.Phone) {
 		return nil, false
 	}
 	return &o.Phone, true
@@ -420,7 +423,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetEmail() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAddresses201ResponseDataAttributes) GetEmailOk() (*interface{}, bool) {
-	if o == nil || o.Email == nil {
+	if o == nil || IsNil(o.Email) {
 		return nil, false
 	}
 	return &o.Email, true
@@ -428,7 +431,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetEmailOk() (*interface{}, boo
 
 // HasEmail returns a boolean if a field has been set.
 func (o *POSTAddresses201ResponseDataAttributes) HasEmail() bool {
-	if o != nil && o.Email != nil {
+	if o != nil && IsNil(o.Email) {
 		return true
 	}
 
@@ -453,7 +456,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetNotes() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAddresses201ResponseDataAttributes) GetNotesOk() (*interface{}, bool) {
-	if o == nil || o.Notes == nil {
+	if o == nil || IsNil(o.Notes) {
 		return nil, false
 	}
 	return &o.Notes, true
@@ -461,7 +464,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetNotesOk() (*interface{}, boo
 
 // HasNotes returns a boolean if a field has been set.
 func (o *POSTAddresses201ResponseDataAttributes) HasNotes() bool {
-	if o != nil && o.Notes != nil {
+	if o != nil && IsNil(o.Notes) {
 		return true
 	}
 
@@ -486,7 +489,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetLat() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAddresses201ResponseDataAttributes) GetLatOk() (*interface{}, bool) {
-	if o == nil || o.Lat == nil {
+	if o == nil || IsNil(o.Lat) {
 		return nil, false
 	}
 	return &o.Lat, true
@@ -494,7 +497,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetLatOk() (*interface{}, bool)
 
 // HasLat returns a boolean if a field has been set.
 func (o *POSTAddresses201ResponseDataAttributes) HasLat() bool {
-	if o != nil && o.Lat != nil {
+	if o != nil && IsNil(o.Lat) {
 		return true
 	}
 
@@ -519,7 +522,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetLng() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAddresses201ResponseDataAttributes) GetLngOk() (*interface{}, bool) {
-	if o == nil || o.Lng == nil {
+	if o == nil || IsNil(o.Lng) {
 		return nil, false
 	}
 	return &o.Lng, true
@@ -527,7 +530,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetLngOk() (*interface{}, bool)
 
 // HasLng returns a boolean if a field has been set.
 func (o *POSTAddresses201ResponseDataAttributes) HasLng() bool {
-	if o != nil && o.Lng != nil {
+	if o != nil && IsNil(o.Lng) {
 		return true
 	}
 
@@ -552,7 +555,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetBillingInfo() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAddresses201ResponseDataAttributes) GetBillingInfoOk() (*interface{}, bool) {
-	if o == nil || o.BillingInfo == nil {
+	if o == nil || IsNil(o.BillingInfo) {
 		return nil, false
 	}
 	return &o.BillingInfo, true
@@ -560,7 +563,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetBillingInfoOk() (*interface{
 
 // HasBillingInfo returns a boolean if a field has been set.
 func (o *POSTAddresses201ResponseDataAttributes) HasBillingInfo() bool {
-	if o != nil && o.BillingInfo != nil {
+	if o != nil && IsNil(o.BillingInfo) {
 		return true
 	}
 
@@ -585,7 +588,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetReference() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAddresses201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -593,7 +596,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetReferenceOk() (*interface{},
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTAddresses201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -618,7 +621,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetReferenceOrigin() interface{
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAddresses201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -626,7 +629,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetReferenceOriginOk() (*interf
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTAddresses201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -651,7 +654,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetMetadata() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *POSTAddresses201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -659,7 +662,7 @@ func (o *POSTAddresses201ResponseDataAttributes) GetMetadataOk() (*interface{}, 
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTAddresses201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -672,6 +675,14 @@ func (o *POSTAddresses201ResponseDataAttributes) SetMetadata(v interface{}) {
 }
 
 func (o POSTAddresses201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTAddresses201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Business != nil {
 		toSerialize["business"] = o.Business
@@ -730,7 +741,7 @@ func (o POSTAddresses201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTAddresses201ResponseDataAttributes struct {

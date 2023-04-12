@@ -5,14 +5,14 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **Type** | **interface{}** | The resource&#39;s type | 
-**Attributes** | [**GETCouponRecipients200ResponseDataInnerAttributes**](GETCouponRecipients200ResponseDataInnerAttributes.md) |  | 
+**Attributes** | [**GETCouponRecipientsCouponRecipientId200ResponseDataAttributes**](GETCouponRecipientsCouponRecipientId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CouponRecipientDataRelationships**](CouponRecipientDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCouponRecipientData
 
-`func NewCouponRecipientData(type_ interface{}, attributes GETCouponRecipients200ResponseDataInnerAttributes, ) *CouponRecipientData`
+`func NewCouponRecipientData(type_ interface{}, attributes GETCouponRecipientsCouponRecipientId200ResponseDataAttributes, ) *CouponRecipientData`
 
 NewCouponRecipientData instantiates a new CouponRecipientData object
 This constructor will assign default values to properties that have it defined,
@@ -59,20 +59,20 @@ SetType sets Type field to given value.
 UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *CouponRecipientData) GetAttributes() GETCouponRecipients200ResponseDataInnerAttributes`
+`func (o *CouponRecipientData) GetAttributes() GETCouponRecipientsCouponRecipientId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CouponRecipientData) GetAttributesOk() (*GETCouponRecipients200ResponseDataInnerAttributes, bool)`
+`func (o *CouponRecipientData) GetAttributesOk() (*GETCouponRecipientsCouponRecipientId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CouponRecipientData) SetAttributes(v GETCouponRecipients200ResponseDataInnerAttributes)`
+`func (o *CouponRecipientData) SetAttributes(v GETCouponRecipientsCouponRecipientId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

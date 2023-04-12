@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes{}
+
 // PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes struct for PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes
 type PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes struct {
 	// The payment gateway's internal name.
@@ -71,7 +74,7 @@ func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetN
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -79,7 +82,7 @@ func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetN
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
@@ -104,7 +107,7 @@ func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetR
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -112,7 +115,7 @@ func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetR
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -137,7 +140,7 @@ func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetR
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -145,7 +148,7 @@ func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetR
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -170,7 +173,7 @@ func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetM
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -178,7 +181,7 @@ func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetM
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -203,7 +206,7 @@ func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetM
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetMerchantAccountIdOk() (*interface{}, bool) {
-	if o == nil || o.MerchantAccountId == nil {
+	if o == nil || IsNil(o.MerchantAccountId) {
 		return nil, false
 	}
 	return &o.MerchantAccountId, true
@@ -211,7 +214,7 @@ func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetM
 
 // HasMerchantAccountId returns a boolean if a field has been set.
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) HasMerchantAccountId() bool {
-	if o != nil && o.MerchantAccountId != nil {
+	if o != nil && IsNil(o.MerchantAccountId) {
 		return true
 	}
 
@@ -236,7 +239,7 @@ func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetM
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetMerchantIdOk() (*interface{}, bool) {
-	if o == nil || o.MerchantId == nil {
+	if o == nil || IsNil(o.MerchantId) {
 		return nil, false
 	}
 	return &o.MerchantId, true
@@ -244,7 +247,7 @@ func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetM
 
 // HasMerchantId returns a boolean if a field has been set.
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) HasMerchantId() bool {
-	if o != nil && o.MerchantId != nil {
+	if o != nil && IsNil(o.MerchantId) {
 		return true
 	}
 
@@ -269,7 +272,7 @@ func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetP
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetPublicKeyOk() (*interface{}, bool) {
-	if o == nil || o.PublicKey == nil {
+	if o == nil || IsNil(o.PublicKey) {
 		return nil, false
 	}
 	return &o.PublicKey, true
@@ -277,7 +280,7 @@ func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetP
 
 // HasPublicKey returns a boolean if a field has been set.
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) HasPublicKey() bool {
-	if o != nil && o.PublicKey != nil {
+	if o != nil && IsNil(o.PublicKey) {
 		return true
 	}
 
@@ -302,7 +305,7 @@ func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetP
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetPrivateKeyOk() (*interface{}, bool) {
-	if o == nil || o.PrivateKey == nil {
+	if o == nil || IsNil(o.PrivateKey) {
 		return nil, false
 	}
 	return &o.PrivateKey, true
@@ -310,7 +313,7 @@ func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetP
 
 // HasPrivateKey returns a boolean if a field has been set.
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) HasPrivateKey() bool {
-	if o != nil && o.PrivateKey != nil {
+	if o != nil && IsNil(o.PrivateKey) {
 		return true
 	}
 
@@ -335,7 +338,7 @@ func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetD
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetDescriptorNameOk() (*interface{}, bool) {
-	if o == nil || o.DescriptorName == nil {
+	if o == nil || IsNil(o.DescriptorName) {
 		return nil, false
 	}
 	return &o.DescriptorName, true
@@ -343,7 +346,7 @@ func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetD
 
 // HasDescriptorName returns a boolean if a field has been set.
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) HasDescriptorName() bool {
-	if o != nil && o.DescriptorName != nil {
+	if o != nil && IsNil(o.DescriptorName) {
 		return true
 	}
 
@@ -368,7 +371,7 @@ func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetD
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetDescriptorPhoneOk() (*interface{}, bool) {
-	if o == nil || o.DescriptorPhone == nil {
+	if o == nil || IsNil(o.DescriptorPhone) {
 		return nil, false
 	}
 	return &o.DescriptorPhone, true
@@ -376,7 +379,7 @@ func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetD
 
 // HasDescriptorPhone returns a boolean if a field has been set.
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) HasDescriptorPhone() bool {
-	if o != nil && o.DescriptorPhone != nil {
+	if o != nil && IsNil(o.DescriptorPhone) {
 		return true
 	}
 
@@ -401,7 +404,7 @@ func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetD
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetDescriptorUrlOk() (*interface{}, bool) {
-	if o == nil || o.DescriptorUrl == nil {
+	if o == nil || IsNil(o.DescriptorUrl) {
 		return nil, false
 	}
 	return &o.DescriptorUrl, true
@@ -409,7 +412,7 @@ func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetD
 
 // HasDescriptorUrl returns a boolean if a field has been set.
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) HasDescriptorUrl() bool {
-	if o != nil && o.DescriptorUrl != nil {
+	if o != nil && IsNil(o.DescriptorUrl) {
 		return true
 	}
 
@@ -422,6 +425,14 @@ func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) SetD
 }
 
 func (o PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -456,7 +467,7 @@ func (o PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) Marsh
 	if o.DescriptorUrl != nil {
 		toSerialize["descriptor_url"] = o.DescriptorUrl
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes struct {

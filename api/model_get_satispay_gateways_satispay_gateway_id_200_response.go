@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETSatispayGatewaysSatispayGatewayId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETSatispayGatewaysSatispayGatewayId200Response{}
+
 // GETSatispayGatewaysSatispayGatewayId200Response struct for GETSatispayGatewaysSatispayGatewayId200Response
 type GETSatispayGatewaysSatispayGatewayId200Response struct {
-	Data *GETSatispayGateways200ResponseDataInner `json:"data,omitempty"`
+	Data *GETSatispayGatewaysSatispayGatewayId200ResponseData `json:"data,omitempty"`
 }
 
 // NewGETSatispayGatewaysSatispayGatewayId200Response instantiates a new GETSatispayGatewaysSatispayGatewayId200Response object
@@ -38,9 +41,9 @@ func NewGETSatispayGatewaysSatispayGatewayId200ResponseWithDefaults() *GETSatisp
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETSatispayGatewaysSatispayGatewayId200Response) GetData() GETSatispayGateways200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret GETSatispayGateways200ResponseDataInner
+func (o *GETSatispayGatewaysSatispayGatewayId200Response) GetData() GETSatispayGatewaysSatispayGatewayId200ResponseData {
+	if o == nil || IsNil(o.Data) {
+		var ret GETSatispayGatewaysSatispayGatewayId200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *GETSatispayGatewaysSatispayGatewayId200Response) GetData() GETSatispayG
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETSatispayGatewaysSatispayGatewayId200Response) GetDataOk() (*GETSatispayGateways200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+func (o *GETSatispayGatewaysSatispayGatewayId200Response) GetDataOk() (*GETSatispayGatewaysSatispayGatewayId200ResponseData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *GETSatispayGatewaysSatispayGatewayId200Response) GetDataOk() (*GETSatis
 
 // HasData returns a boolean if a field has been set.
 func (o *GETSatispayGatewaysSatispayGatewayId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETSatispayGateways200ResponseDataInner and assigns it to the Data field.
-func (o *GETSatispayGatewaysSatispayGatewayId200Response) SetData(v GETSatispayGateways200ResponseDataInner) {
+// SetData gets a reference to the given GETSatispayGatewaysSatispayGatewayId200ResponseData and assigns it to the Data field.
+func (o *GETSatispayGatewaysSatispayGatewayId200Response) SetData(v GETSatispayGatewaysSatispayGatewayId200ResponseData) {
 	o.Data = &v
 }
 
 func (o GETSatispayGatewaysSatispayGatewayId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GETSatispayGatewaysSatispayGatewayId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGETSatispayGatewaysSatispayGatewayId200Response struct {

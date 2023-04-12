@@ -34,7 +34,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -42,7 +42,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShippingMethodsApi.DELETEShippingMethodsShippingMethodId(context.Background(), shippingMethodId).Execute()
+    r, err := apiClient.ShippingMethodsApi.DELETEShippingMethodsShippingMethodId(context.Background(), shippingMethodId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodsApi.DELETEShippingMethodsShippingMethodId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -102,7 +102,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -110,7 +110,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShippingMethodsApi.GETDeliveryLeadTimeIdShippingMethod(context.Background(), deliveryLeadTimeId).Execute()
+    r, err := apiClient.ShippingMethodsApi.GETDeliveryLeadTimeIdShippingMethod(context.Background(), deliveryLeadTimeId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodsApi.GETDeliveryLeadTimeIdShippingMethod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -170,7 +170,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -178,7 +178,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShippingMethodsApi.GETShipmentIdAvailableShippingMethods(context.Background(), shipmentId).Execute()
+    r, err := apiClient.ShippingMethodsApi.GETShipmentIdAvailableShippingMethods(context.Background(), shipmentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodsApi.GETShipmentIdAvailableShippingMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -238,7 +238,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -246,7 +246,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShippingMethodsApi.GETShipmentIdShippingMethod(context.Background(), shipmentId).Execute()
+    r, err := apiClient.ShippingMethodsApi.GETShipmentIdShippingMethod(context.Background(), shipmentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodsApi.GETShipmentIdShippingMethod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -306,7 +306,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -314,7 +314,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShippingMethodsApi.GETShippingMethodTierIdShippingMethod(context.Background(), shippingMethodTierId).Execute()
+    r, err := apiClient.ShippingMethodsApi.GETShippingMethodTierIdShippingMethod(context.Background(), shippingMethodTierId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodsApi.GETShippingMethodTierIdShippingMethod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -374,7 +374,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -435,7 +435,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -505,7 +505,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -513,7 +513,7 @@ func main() {
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ShippingMethodsApi.GETShippingWeightTierIdShippingMethod(context.Background(), shippingWeightTierId).Execute()
+    r, err := apiClient.ShippingMethodsApi.GETShippingWeightTierIdShippingMethod(context.Background(), shippingWeightTierId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ShippingMethodsApi.GETShippingWeightTierIdShippingMethod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -573,7 +573,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -645,7 +645,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {

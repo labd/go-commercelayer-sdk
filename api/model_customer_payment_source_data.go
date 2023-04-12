@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the CustomerPaymentSourceData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CustomerPaymentSourceData{}
+
 // CustomerPaymentSourceData struct for CustomerPaymentSourceData
 type CustomerPaymentSourceData struct {
 	// The resource's type
-	Type          interface{}                                             `json:"type"`
-	Attributes    GETCustomerPaymentSources200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *CustomerPaymentSourceDataRelationships                 `json:"relationships,omitempty"`
+	Type          interface{}                                                               `json:"type"`
+	Attributes    GETCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes `json:"attributes"`
+	Relationships *CustomerPaymentSourceDataRelationships                                   `json:"relationships,omitempty"`
 }
 
 // NewCustomerPaymentSourceData instantiates a new CustomerPaymentSourceData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerPaymentSourceData(type_ interface{}, attributes GETCustomerPaymentSources200ResponseDataInnerAttributes) *CustomerPaymentSourceData {
+func NewCustomerPaymentSourceData(type_ interface{}, attributes GETCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes) *CustomerPaymentSourceData {
 	this := CustomerPaymentSourceData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -57,7 +60,7 @@ func (o *CustomerPaymentSourceData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *CustomerPaymentSourceData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -69,9 +72,9 @@ func (o *CustomerPaymentSourceData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CustomerPaymentSourceData) GetAttributes() GETCustomerPaymentSources200ResponseDataInnerAttributes {
+func (o *CustomerPaymentSourceData) GetAttributes() GETCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETCustomerPaymentSources200ResponseDataInnerAttributes
+		var ret GETCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +83,7 @@ func (o *CustomerPaymentSourceData) GetAttributes() GETCustomerPaymentSources200
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CustomerPaymentSourceData) GetAttributesOk() (*GETCustomerPaymentSources200ResponseDataInnerAttributes, bool) {
+func (o *CustomerPaymentSourceData) GetAttributesOk() (*GETCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,13 +91,13 @@ func (o *CustomerPaymentSourceData) GetAttributesOk() (*GETCustomerPaymentSource
 }
 
 // SetAttributes sets field value
-func (o *CustomerPaymentSourceData) SetAttributes(v GETCustomerPaymentSources200ResponseDataInnerAttributes) {
+func (o *CustomerPaymentSourceData) SetAttributes(v GETCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *CustomerPaymentSourceData) GetRelationships() CustomerPaymentSourceDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret CustomerPaymentSourceDataRelationships
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *CustomerPaymentSourceData) GetRelationships() CustomerPaymentSourceData
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerPaymentSourceData) GetRelationshipsOk() (*CustomerPaymentSourceDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -112,7 +115,7 @@ func (o *CustomerPaymentSourceData) GetRelationshipsOk() (*CustomerPaymentSource
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *CustomerPaymentSourceData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -125,17 +128,23 @@ func (o *CustomerPaymentSourceData) SetRelationships(v CustomerPaymentSourceData
 }
 
 func (o CustomerPaymentSourceData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o CustomerPaymentSourceData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableCustomerPaymentSourceData struct {

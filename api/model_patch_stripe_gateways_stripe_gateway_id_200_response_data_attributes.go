@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes{}
+
 // PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes struct for PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes
 type PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes struct {
 	// The payment gateway's internal name.
@@ -59,7 +62,7 @@ func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetName() 
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
-	if o == nil || o.Name == nil {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
@@ -67,7 +70,7 @@ func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetNameOk(
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
@@ -92,7 +95,7 @@ func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetReferen
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
-	if o == nil || o.Reference == nil {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
 	return &o.Reference, true
@@ -100,7 +103,7 @@ func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetReferen
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
@@ -125,7 +128,7 @@ func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetReferen
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
 	return &o.ReferenceOrigin, true
@@ -133,7 +136,7 @@ func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetReferen
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
@@ -158,7 +161,7 @@ func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetMetadat
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
 	return &o.Metadata, true
@@ -166,7 +169,7 @@ func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetMetadat
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
@@ -191,7 +194,7 @@ func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetAutoPay
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetAutoPaymentsOk() (*interface{}, bool) {
-	if o == nil || o.AutoPayments == nil {
+	if o == nil || IsNil(o.AutoPayments) {
 		return nil, false
 	}
 	return &o.AutoPayments, true
@@ -199,7 +202,7 @@ func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetAutoPay
 
 // HasAutoPayments returns a boolean if a field has been set.
 func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) HasAutoPayments() bool {
-	if o != nil && o.AutoPayments != nil {
+	if o != nil && IsNil(o.AutoPayments) {
 		return true
 	}
 
@@ -212,6 +215,14 @@ func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) SetAutoPay
 }
 
 func (o PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -228,7 +239,7 @@ func (o PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) MarshalJSON
 	if o.AutoPayments != nil {
 		toSerialize["auto_payments"] = o.AutoPayments
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes struct {

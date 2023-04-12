@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the LineItemDataRelationshipsItem type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &LineItemDataRelationshipsItem{}
+
 // LineItemDataRelationshipsItem struct for LineItemDataRelationshipsItem
 type LineItemDataRelationshipsItem struct {
 	Data *LineItemDataRelationshipsItemData `json:"data,omitempty"`
@@ -39,7 +42,7 @@ func NewLineItemDataRelationshipsItemWithDefaults() *LineItemDataRelationshipsIt
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *LineItemDataRelationshipsItem) GetData() LineItemDataRelationshipsItemData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret LineItemDataRelationshipsItemData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *LineItemDataRelationshipsItem) GetData() LineItemDataRelationshipsItemD
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LineItemDataRelationshipsItem) GetDataOk() (*LineItemDataRelationshipsItemData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *LineItemDataRelationshipsItem) GetDataOk() (*LineItemDataRelationshipsI
 
 // HasData returns a boolean if a field has been set.
 func (o *LineItemDataRelationshipsItem) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *LineItemDataRelationshipsItem) SetData(v LineItemDataRelationshipsItemD
 }
 
 func (o LineItemDataRelationshipsItem) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o LineItemDataRelationshipsItem) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableLineItemDataRelationshipsItem struct {

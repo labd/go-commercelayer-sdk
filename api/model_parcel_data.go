@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the ParcelData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ParcelData{}
+
 // ParcelData struct for ParcelData
 type ParcelData struct {
 	// The resource's type
-	Type          interface{}                              `json:"type"`
-	Attributes    GETParcels200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *ParcelDataRelationships                 `json:"relationships,omitempty"`
+	Type          interface{}                                 `json:"type"`
+	Attributes    GETParcelsParcelId200ResponseDataAttributes `json:"attributes"`
+	Relationships *ParcelDataRelationships                    `json:"relationships,omitempty"`
 }
 
 // NewParcelData instantiates a new ParcelData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewParcelData(type_ interface{}, attributes GETParcels200ResponseDataInnerAttributes) *ParcelData {
+func NewParcelData(type_ interface{}, attributes GETParcelsParcelId200ResponseDataAttributes) *ParcelData {
 	this := ParcelData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -57,7 +60,7 @@ func (o *ParcelData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *ParcelData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -69,9 +72,9 @@ func (o *ParcelData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ParcelData) GetAttributes() GETParcels200ResponseDataInnerAttributes {
+func (o *ParcelData) GetAttributes() GETParcelsParcelId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETParcels200ResponseDataInnerAttributes
+		var ret GETParcelsParcelId200ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +83,7 @@ func (o *ParcelData) GetAttributes() GETParcels200ResponseDataInnerAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ParcelData) GetAttributesOk() (*GETParcels200ResponseDataInnerAttributes, bool) {
+func (o *ParcelData) GetAttributesOk() (*GETParcelsParcelId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,13 +91,13 @@ func (o *ParcelData) GetAttributesOk() (*GETParcels200ResponseDataInnerAttribute
 }
 
 // SetAttributes sets field value
-func (o *ParcelData) SetAttributes(v GETParcels200ResponseDataInnerAttributes) {
+func (o *ParcelData) SetAttributes(v GETParcelsParcelId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *ParcelData) GetRelationships() ParcelDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret ParcelDataRelationships
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *ParcelData) GetRelationships() ParcelDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParcelData) GetRelationshipsOk() (*ParcelDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -112,7 +115,7 @@ func (o *ParcelData) GetRelationshipsOk() (*ParcelDataRelationships, bool) {
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *ParcelData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -125,17 +128,23 @@ func (o *ParcelData) SetRelationships(v ParcelDataRelationships) {
 }
 
 func (o ParcelData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o ParcelData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableParcelData struct {

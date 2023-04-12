@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETInventoryModelsInventoryModelId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETInventoryModelsInventoryModelId200Response{}
+
 // GETInventoryModelsInventoryModelId200Response struct for GETInventoryModelsInventoryModelId200Response
 type GETInventoryModelsInventoryModelId200Response struct {
-	Data *GETInventoryModels200ResponseDataInner `json:"data,omitempty"`
+	Data *GETInventoryModelsInventoryModelId200ResponseData `json:"data,omitempty"`
 }
 
 // NewGETInventoryModelsInventoryModelId200Response instantiates a new GETInventoryModelsInventoryModelId200Response object
@@ -38,9 +41,9 @@ func NewGETInventoryModelsInventoryModelId200ResponseWithDefaults() *GETInventor
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETInventoryModelsInventoryModelId200Response) GetData() GETInventoryModels200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret GETInventoryModels200ResponseDataInner
+func (o *GETInventoryModelsInventoryModelId200Response) GetData() GETInventoryModelsInventoryModelId200ResponseData {
+	if o == nil || IsNil(o.Data) {
+		var ret GETInventoryModelsInventoryModelId200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *GETInventoryModelsInventoryModelId200Response) GetData() GETInventoryMo
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETInventoryModelsInventoryModelId200Response) GetDataOk() (*GETInventoryModels200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+func (o *GETInventoryModelsInventoryModelId200Response) GetDataOk() (*GETInventoryModelsInventoryModelId200ResponseData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *GETInventoryModelsInventoryModelId200Response) GetDataOk() (*GETInvento
 
 // HasData returns a boolean if a field has been set.
 func (o *GETInventoryModelsInventoryModelId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETInventoryModels200ResponseDataInner and assigns it to the Data field.
-func (o *GETInventoryModelsInventoryModelId200Response) SetData(v GETInventoryModels200ResponseDataInner) {
+// SetData gets a reference to the given GETInventoryModelsInventoryModelId200ResponseData and assigns it to the Data field.
+func (o *GETInventoryModelsInventoryModelId200Response) SetData(v GETInventoryModelsInventoryModelId200ResponseData) {
 	o.Data = &v
 }
 
 func (o GETInventoryModelsInventoryModelId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GETInventoryModelsInventoryModelId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGETInventoryModelsInventoryModelId200Response struct {

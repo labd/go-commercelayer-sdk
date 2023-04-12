@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the AuthorizationUpdateData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AuthorizationUpdateData{}
+
 // AuthorizationUpdateData struct for AuthorizationUpdateData
 type AuthorizationUpdateData struct {
 	// The resource's type
@@ -60,7 +63,7 @@ func (o *AuthorizationUpdateData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AuthorizationUpdateData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -86,7 +89,7 @@ func (o *AuthorizationUpdateData) GetId() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AuthorizationUpdateData) GetIdOk() (*interface{}, bool) {
-	if o == nil || o.Id == nil {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return &o.Id, true
@@ -134,7 +137,7 @@ func (o *AuthorizationUpdateData) GetRelationships() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *AuthorizationUpdateData) GetRelationshipsOk() (*interface{}, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return &o.Relationships, true
@@ -142,7 +145,7 @@ func (o *AuthorizationUpdateData) GetRelationshipsOk() (*interface{}, bool) {
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *AuthorizationUpdateData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && IsNil(o.Relationships) {
 		return true
 	}
 
@@ -155,6 +158,14 @@ func (o *AuthorizationUpdateData) SetRelationships(v interface{}) {
 }
 
 func (o AuthorizationUpdateData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o AuthorizationUpdateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
@@ -162,13 +173,11 @@ func (o AuthorizationUpdateData) MarshalJSON() ([]byte, error) {
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
+	toSerialize["attributes"] = o.Attributes
 	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableAuthorizationUpdateData struct {

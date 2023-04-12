@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -64,7 +64,7 @@ func (a *CustomerAddressesApiService) DELETECustomerAddressesCustomerAddressIdEx
 	}
 
 	localVarPath := localBasePath + "/customer_addresses/{customerAddressId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterToString(r.customerAddressId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterValueToString(r.customerAddressId, "customerAddressId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *CustomerAddressesApiService) DELETECustomerAddressesCustomerAddressIdEx
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *CustomerAddressesApiService) GETCustomerAddressesExecute(r CustomerAddr
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -259,7 +259,7 @@ func (a *CustomerAddressesApiService) GETCustomerAddressesCustomerAddressIdExecu
 	}
 
 	localVarPath := localBasePath + "/customer_addresses/{customerAddressId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterToString(r.customerAddressId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterValueToString(r.customerAddressId, "customerAddressId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *CustomerAddressesApiService) GETCustomerAddressesCustomerAddressIdExecu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -360,7 +360,7 @@ func (a *CustomerAddressesApiService) GETCustomerIdCustomerAddressesExecute(r Cu
 	}
 
 	localVarPath := localBasePath + "/customers/{customerId}/customer_addresses"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterToString(r.customerId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -393,9 +393,9 @@ func (a *CustomerAddressesApiService) GETCustomerIdCustomerAddressesExecute(r Cu
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -461,7 +461,7 @@ func (a *CustomerAddressesApiService) PATCHCustomerAddressesCustomerAddressIdExe
 	}
 
 	localVarPath := localBasePath + "/customer_addresses/{customerAddressId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterToString(r.customerAddressId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterValueToString(r.customerAddressId, "customerAddressId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -499,9 +499,9 @@ func (a *CustomerAddressesApiService) PATCHCustomerAddressesCustomerAddressIdExe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -610,9 +610,9 @@ func (a *CustomerAddressesApiService) POSTCustomerAddressesExecute(r CustomerAdd
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

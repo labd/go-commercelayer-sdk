@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the ExternalPaymentDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ExternalPaymentDataRelationships{}
+
 // ExternalPaymentDataRelationships struct for ExternalPaymentDataRelationships
 type ExternalPaymentDataRelationships struct {
 	Order          *AdyenPaymentDataRelationshipsOrder              `json:"order,omitempty"`
@@ -41,7 +44,7 @@ func NewExternalPaymentDataRelationshipsWithDefaults() *ExternalPaymentDataRelat
 
 // GetOrder returns the Order field value if set, zero value otherwise.
 func (o *ExternalPaymentDataRelationships) GetOrder() AdyenPaymentDataRelationshipsOrder {
-	if o == nil || o.Order == nil {
+	if o == nil || IsNil(o.Order) {
 		var ret AdyenPaymentDataRelationshipsOrder
 		return ret
 	}
@@ -51,7 +54,7 @@ func (o *ExternalPaymentDataRelationships) GetOrder() AdyenPaymentDataRelationsh
 // GetOrderOk returns a tuple with the Order field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalPaymentDataRelationships) GetOrderOk() (*AdyenPaymentDataRelationshipsOrder, bool) {
-	if o == nil || o.Order == nil {
+	if o == nil || IsNil(o.Order) {
 		return nil, false
 	}
 	return o.Order, true
@@ -59,7 +62,7 @@ func (o *ExternalPaymentDataRelationships) GetOrderOk() (*AdyenPaymentDataRelati
 
 // HasOrder returns a boolean if a field has been set.
 func (o *ExternalPaymentDataRelationships) HasOrder() bool {
-	if o != nil && o.Order != nil {
+	if o != nil && !IsNil(o.Order) {
 		return true
 	}
 
@@ -73,7 +76,7 @@ func (o *ExternalPaymentDataRelationships) SetOrder(v AdyenPaymentDataRelationsh
 
 // GetPaymentGateway returns the PaymentGateway field value if set, zero value otherwise.
 func (o *ExternalPaymentDataRelationships) GetPaymentGateway() AdyenPaymentDataRelationshipsPaymentGateway {
-	if o == nil || o.PaymentGateway == nil {
+	if o == nil || IsNil(o.PaymentGateway) {
 		var ret AdyenPaymentDataRelationshipsPaymentGateway
 		return ret
 	}
@@ -83,7 +86,7 @@ func (o *ExternalPaymentDataRelationships) GetPaymentGateway() AdyenPaymentDataR
 // GetPaymentGatewayOk returns a tuple with the PaymentGateway field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalPaymentDataRelationships) GetPaymentGatewayOk() (*AdyenPaymentDataRelationshipsPaymentGateway, bool) {
-	if o == nil || o.PaymentGateway == nil {
+	if o == nil || IsNil(o.PaymentGateway) {
 		return nil, false
 	}
 	return o.PaymentGateway, true
@@ -91,7 +94,7 @@ func (o *ExternalPaymentDataRelationships) GetPaymentGatewayOk() (*AdyenPaymentD
 
 // HasPaymentGateway returns a boolean if a field has been set.
 func (o *ExternalPaymentDataRelationships) HasPaymentGateway() bool {
-	if o != nil && o.PaymentGateway != nil {
+	if o != nil && !IsNil(o.PaymentGateway) {
 		return true
 	}
 
@@ -105,7 +108,7 @@ func (o *ExternalPaymentDataRelationships) SetPaymentGateway(v AdyenPaymentDataR
 
 // GetWallet returns the Wallet field value if set, zero value otherwise.
 func (o *ExternalPaymentDataRelationships) GetWallet() CustomerDataRelationshipsCustomerPaymentSources {
-	if o == nil || o.Wallet == nil {
+	if o == nil || IsNil(o.Wallet) {
 		var ret CustomerDataRelationshipsCustomerPaymentSources
 		return ret
 	}
@@ -115,7 +118,7 @@ func (o *ExternalPaymentDataRelationships) GetWallet() CustomerDataRelationships
 // GetWalletOk returns a tuple with the Wallet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalPaymentDataRelationships) GetWalletOk() (*CustomerDataRelationshipsCustomerPaymentSources, bool) {
-	if o == nil || o.Wallet == nil {
+	if o == nil || IsNil(o.Wallet) {
 		return nil, false
 	}
 	return o.Wallet, true
@@ -123,7 +126,7 @@ func (o *ExternalPaymentDataRelationships) GetWalletOk() (*CustomerDataRelations
 
 // HasWallet returns a boolean if a field has been set.
 func (o *ExternalPaymentDataRelationships) HasWallet() bool {
-	if o != nil && o.Wallet != nil {
+	if o != nil && !IsNil(o.Wallet) {
 		return true
 	}
 
@@ -136,17 +139,25 @@ func (o *ExternalPaymentDataRelationships) SetWallet(v CustomerDataRelationships
 }
 
 func (o ExternalPaymentDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Order != nil {
-		toSerialize["order"] = o.Order
-	}
-	if o.PaymentGateway != nil {
-		toSerialize["payment_gateway"] = o.PaymentGateway
-	}
-	if o.Wallet != nil {
-		toSerialize["wallet"] = o.Wallet
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ExternalPaymentDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Order) {
+		toSerialize["order"] = o.Order
+	}
+	if !IsNil(o.PaymentGateway) {
+		toSerialize["payment_gateway"] = o.PaymentGateway
+	}
+	if !IsNil(o.Wallet) {
+		toSerialize["wallet"] = o.Wallet
+	}
+	return toSerialize, nil
 }
 
 type NullableExternalPaymentDataRelationships struct {

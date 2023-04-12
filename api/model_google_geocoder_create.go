@@ -15,6 +15,9 @@ import (
 	"encoding/json"
 )
 
+// checks if the GoogleGeocoderCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GoogleGeocoderCreate{}
+
 // GoogleGeocoderCreate struct for GoogleGeocoderCreate
 type GoogleGeocoderCreate struct {
 	Data GoogleGeocoderCreateData `json:"data"`
@@ -63,11 +66,17 @@ func (o *GoogleGeocoderCreate) SetData(v GoogleGeocoderCreateData) {
 }
 
 func (o GoogleGeocoderCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GoogleGeocoderCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableGoogleGeocoderCreate struct {

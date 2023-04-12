@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the BundleData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BundleData{}
+
 // BundleData struct for BundleData
 type BundleData struct {
 	// The resource's type
-	Type          interface{}                              `json:"type"`
-	Attributes    GETBundles200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *BundleDataRelationships                 `json:"relationships,omitempty"`
+	Type          interface{}                                 `json:"type"`
+	Attributes    GETBundlesBundleId200ResponseDataAttributes `json:"attributes"`
+	Relationships *BundleDataRelationships                    `json:"relationships,omitempty"`
 }
 
 // NewBundleData instantiates a new BundleData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBundleData(type_ interface{}, attributes GETBundles200ResponseDataInnerAttributes) *BundleData {
+func NewBundleData(type_ interface{}, attributes GETBundlesBundleId200ResponseDataAttributes) *BundleData {
 	this := BundleData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -57,7 +60,7 @@ func (o *BundleData) GetType() interface{} {
 // and a boolean to check if the value has been set.
 // NOTE: If the value is an explicit nil, `nil, true` will be returned
 func (o *BundleData) GetTypeOk() (*interface{}, bool) {
-	if o == nil || o.Type == nil {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
@@ -69,9 +72,9 @@ func (o *BundleData) SetType(v interface{}) {
 }
 
 // GetAttributes returns the Attributes field value
-func (o *BundleData) GetAttributes() GETBundles200ResponseDataInnerAttributes {
+func (o *BundleData) GetAttributes() GETBundlesBundleId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETBundles200ResponseDataInnerAttributes
+		var ret GETBundlesBundleId200ResponseDataAttributes
 		return ret
 	}
 
@@ -80,7 +83,7 @@ func (o *BundleData) GetAttributes() GETBundles200ResponseDataInnerAttributes {
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *BundleData) GetAttributesOk() (*GETBundles200ResponseDataInnerAttributes, bool) {
+func (o *BundleData) GetAttributesOk() (*GETBundlesBundleId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -88,13 +91,13 @@ func (o *BundleData) GetAttributesOk() (*GETBundles200ResponseDataInnerAttribute
 }
 
 // SetAttributes sets field value
-func (o *BundleData) SetAttributes(v GETBundles200ResponseDataInnerAttributes) {
+func (o *BundleData) SetAttributes(v GETBundlesBundleId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *BundleData) GetRelationships() BundleDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret BundleDataRelationships
 		return ret
 	}
@@ -104,7 +107,7 @@ func (o *BundleData) GetRelationships() BundleDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BundleData) GetRelationshipsOk() (*BundleDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -112,7 +115,7 @@ func (o *BundleData) GetRelationshipsOk() (*BundleDataRelationships, bool) {
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *BundleData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -125,17 +128,23 @@ func (o *BundleData) SetRelationships(v BundleDataRelationships) {
 }
 
 func (o BundleData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o BundleData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableBundleData struct {
