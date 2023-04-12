@@ -1,6 +1,6 @@
 # \PercentageDiscountPromotionsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,15 +29,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    percentageDiscountPromotionId := "percentageDiscountPromotionId_example" // string | The resource's id
+    percentageDiscountPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PercentageDiscountPromotionsApi.DELETEPercentageDiscountPromotionsPercentageDiscountPromotionId(context.Background(), percentageDiscountPromotionId).Execute()
+    r, err := apiClient.PercentageDiscountPromotionsApi.DELETEPercentageDiscountPromotionsPercentageDiscountPromotionId(context.Background(), percentageDiscountPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PercentageDiscountPromotionsApi.DELETEPercentageDiscountPromotionsPercentageDiscountPromotionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -51,7 +51,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**percentageDiscountPromotionId** | **string** | The resource&#39;s id | 
+**percentageDiscountPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -158,11 +158,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    percentageDiscountPromotionId := "percentageDiscountPromotionId_example" // string | The resource's id
+    percentageDiscountPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -182,7 +182,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**percentageDiscountPromotionId** | **string** | The resource&#39;s id | 
+**percentageDiscountPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -228,12 +228,12 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    percentageDiscountPromotionUpdate := *openapiclient.NewPercentageDiscountPromotionUpdate(*openapiclient.NewPercentageDiscountPromotionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes())) // PercentageDiscountPromotionUpdate | 
-    percentageDiscountPromotionId := "percentageDiscountPromotionId_example" // string | The resource's id
+    percentageDiscountPromotionUpdate := *openapiclient.NewPercentageDiscountPromotionUpdate(*openapiclient.NewPercentageDiscountPromotionUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHPercentageDiscountPromotionsPercentageDiscountPromotionId200ResponseDataAttributes())) // PercentageDiscountPromotionUpdate | 
+    percentageDiscountPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -253,7 +253,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**percentageDiscountPromotionId** | **string** | The resource&#39;s id | 
+**percentageDiscountPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -300,11 +300,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    percentageDiscountPromotionCreate := *openapiclient.NewPercentageDiscountPromotionCreate(*openapiclient.NewPercentageDiscountPromotionCreateData("Type_example", *openapiclient.NewPOSTPercentageDiscountPromotions201ResponseDataAttributes("Personal promotion", "2018-01-01T12:00:00.000Z", "2018-01-02T12:00:00.000Z", int32(5), int32(10)))) // PercentageDiscountPromotionCreate | 
+    percentageDiscountPromotionCreate := *openapiclient.NewPercentageDiscountPromotionCreate(*openapiclient.NewPercentageDiscountPromotionCreateData(interface{}(123), *openapiclient.NewPOSTPercentageDiscountPromotions201ResponseDataAttributes(interface{}(Personal promotion), interface{}(2018-01-01T12:00:00.000Z), interface{}(2018-01-02T12:00:00.000Z), interface{}(5), interface{}(10)))) // PercentageDiscountPromotionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,13 +15,17 @@ import (
 	"encoding/json"
 )
 
+// checks if the MarketCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &MarketCreateDataRelationships{}
+
 // MarketCreateDataRelationships struct for MarketCreateDataRelationships
 type MarketCreateDataRelationships struct {
-	Merchant       MarketCreateDataRelationshipsMerchant                        `json:"merchant"`
-	PriceList      MarketCreateDataRelationshipsPriceList                       `json:"price_list"`
-	InventoryModel InventoryReturnLocationCreateDataRelationshipsInventoryModel `json:"inventory_model"`
-	TaxCalculator  *MarketCreateDataRelationshipsTaxCalculator                  `json:"tax_calculator,omitempty"`
-	CustomerGroup  *CustomerCreateDataRelationshipsCustomerGroup                `json:"customer_group,omitempty"`
+	Merchant          MarketCreateDataRelationshipsMerchant                        `json:"merchant"`
+	PriceList         MarketCreateDataRelationshipsPriceList                       `json:"price_list"`
+	InventoryModel    InventoryReturnLocationCreateDataRelationshipsInventoryModel `json:"inventory_model"`
+	SubscriptionModel *MarketCreateDataRelationshipsSubscriptionModel              `json:"subscription_model,omitempty"`
+	TaxCalculator     *MarketCreateDataRelationshipsTaxCalculator                  `json:"tax_calculator,omitempty"`
+	CustomerGroup     *CustomerCreateDataRelationshipsCustomerGroup                `json:"customer_group,omitempty"`
 }
 
 // NewMarketCreateDataRelationships instantiates a new MarketCreateDataRelationships object
@@ -116,9 +120,41 @@ func (o *MarketCreateDataRelationships) SetInventoryModel(v InventoryReturnLocat
 	o.InventoryModel = v
 }
 
+// GetSubscriptionModel returns the SubscriptionModel field value if set, zero value otherwise.
+func (o *MarketCreateDataRelationships) GetSubscriptionModel() MarketCreateDataRelationshipsSubscriptionModel {
+	if o == nil || IsNil(o.SubscriptionModel) {
+		var ret MarketCreateDataRelationshipsSubscriptionModel
+		return ret
+	}
+	return *o.SubscriptionModel
+}
+
+// GetSubscriptionModelOk returns a tuple with the SubscriptionModel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *MarketCreateDataRelationships) GetSubscriptionModelOk() (*MarketCreateDataRelationshipsSubscriptionModel, bool) {
+	if o == nil || IsNil(o.SubscriptionModel) {
+		return nil, false
+	}
+	return o.SubscriptionModel, true
+}
+
+// HasSubscriptionModel returns a boolean if a field has been set.
+func (o *MarketCreateDataRelationships) HasSubscriptionModel() bool {
+	if o != nil && !IsNil(o.SubscriptionModel) {
+		return true
+	}
+
+	return false
+}
+
+// SetSubscriptionModel gets a reference to the given MarketCreateDataRelationshipsSubscriptionModel and assigns it to the SubscriptionModel field.
+func (o *MarketCreateDataRelationships) SetSubscriptionModel(v MarketCreateDataRelationshipsSubscriptionModel) {
+	o.SubscriptionModel = &v
+}
+
 // GetTaxCalculator returns the TaxCalculator field value if set, zero value otherwise.
 func (o *MarketCreateDataRelationships) GetTaxCalculator() MarketCreateDataRelationshipsTaxCalculator {
-	if o == nil || o.TaxCalculator == nil {
+	if o == nil || IsNil(o.TaxCalculator) {
 		var ret MarketCreateDataRelationshipsTaxCalculator
 		return ret
 	}
@@ -128,7 +164,7 @@ func (o *MarketCreateDataRelationships) GetTaxCalculator() MarketCreateDataRelat
 // GetTaxCalculatorOk returns a tuple with the TaxCalculator field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MarketCreateDataRelationships) GetTaxCalculatorOk() (*MarketCreateDataRelationshipsTaxCalculator, bool) {
-	if o == nil || o.TaxCalculator == nil {
+	if o == nil || IsNil(o.TaxCalculator) {
 		return nil, false
 	}
 	return o.TaxCalculator, true
@@ -136,7 +172,7 @@ func (o *MarketCreateDataRelationships) GetTaxCalculatorOk() (*MarketCreateDataR
 
 // HasTaxCalculator returns a boolean if a field has been set.
 func (o *MarketCreateDataRelationships) HasTaxCalculator() bool {
-	if o != nil && o.TaxCalculator != nil {
+	if o != nil && !IsNil(o.TaxCalculator) {
 		return true
 	}
 
@@ -150,7 +186,7 @@ func (o *MarketCreateDataRelationships) SetTaxCalculator(v MarketCreateDataRelat
 
 // GetCustomerGroup returns the CustomerGroup field value if set, zero value otherwise.
 func (o *MarketCreateDataRelationships) GetCustomerGroup() CustomerCreateDataRelationshipsCustomerGroup {
-	if o == nil || o.CustomerGroup == nil {
+	if o == nil || IsNil(o.CustomerGroup) {
 		var ret CustomerCreateDataRelationshipsCustomerGroup
 		return ret
 	}
@@ -160,7 +196,7 @@ func (o *MarketCreateDataRelationships) GetCustomerGroup() CustomerCreateDataRel
 // GetCustomerGroupOk returns a tuple with the CustomerGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MarketCreateDataRelationships) GetCustomerGroupOk() (*CustomerCreateDataRelationshipsCustomerGroup, bool) {
-	if o == nil || o.CustomerGroup == nil {
+	if o == nil || IsNil(o.CustomerGroup) {
 		return nil, false
 	}
 	return o.CustomerGroup, true
@@ -168,7 +204,7 @@ func (o *MarketCreateDataRelationships) GetCustomerGroupOk() (*CustomerCreateDat
 
 // HasCustomerGroup returns a boolean if a field has been set.
 func (o *MarketCreateDataRelationships) HasCustomerGroup() bool {
-	if o != nil && o.CustomerGroup != nil {
+	if o != nil && !IsNil(o.CustomerGroup) {
 		return true
 	}
 
@@ -181,23 +217,28 @@ func (o *MarketCreateDataRelationships) SetCustomerGroup(v CustomerCreateDataRel
 }
 
 func (o MarketCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["merchant"] = o.Merchant
-	}
-	if true {
-		toSerialize["price_list"] = o.PriceList
-	}
-	if true {
-		toSerialize["inventory_model"] = o.InventoryModel
-	}
-	if o.TaxCalculator != nil {
-		toSerialize["tax_calculator"] = o.TaxCalculator
-	}
-	if o.CustomerGroup != nil {
-		toSerialize["customer_group"] = o.CustomerGroup
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o MarketCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["merchant"] = o.Merchant
+	toSerialize["price_list"] = o.PriceList
+	toSerialize["inventory_model"] = o.InventoryModel
+	if !IsNil(o.SubscriptionModel) {
+		toSerialize["subscription_model"] = o.SubscriptionModel
+	}
+	if !IsNil(o.TaxCalculator) {
+		toSerialize["tax_calculator"] = o.TaxCalculator
+	}
+	if !IsNil(o.CustomerGroup) {
+		toSerialize["customer_group"] = o.CustomerGroup
+	}
+	return toSerialize, nil
 }
 
 type NullableMarketCreateDataRelationships struct {

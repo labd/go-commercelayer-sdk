@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Id** | **string** | The resource&#39;s id | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Id** | **interface{}** | The resource&#39;s id | 
 **Attributes** | [**PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes**](PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentUpdateDataRelationships**](AdyenPaymentUpdateDataRelationships.md) |  | [optional] 
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewKlarnaPaymentUpdateData
 
-`func NewKlarnaPaymentUpdateData(type_ string, id string, attributes PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes, ) *KlarnaPaymentUpdateData`
+`func NewKlarnaPaymentUpdateData(type_ interface{}, id interface{}, attributes PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes, ) *KlarnaPaymentUpdateData`
 
 NewKlarnaPaymentUpdateData instantiates a new KlarnaPaymentUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -30,44 +30,64 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *KlarnaPaymentUpdateData) GetType() string`
+`func (o *KlarnaPaymentUpdateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *KlarnaPaymentUpdateData) GetTypeOk() (*string, bool)`
+`func (o *KlarnaPaymentUpdateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *KlarnaPaymentUpdateData) SetType(v string)`
+`func (o *KlarnaPaymentUpdateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *KlarnaPaymentUpdateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *KlarnaPaymentUpdateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetId
 
-`func (o *KlarnaPaymentUpdateData) GetId() string`
+`func (o *KlarnaPaymentUpdateData) GetId() interface{}`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *KlarnaPaymentUpdateData) GetIdOk() (*string, bool)`
+`func (o *KlarnaPaymentUpdateData) GetIdOk() (*interface{}, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *KlarnaPaymentUpdateData) SetId(v string)`
+`func (o *KlarnaPaymentUpdateData) SetId(v interface{})`
 
 SetId sets Id field to given value.
 
 
+### SetIdNil
+
+`func (o *KlarnaPaymentUpdateData) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *KlarnaPaymentUpdateData) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetAttributes
 
 `func (o *KlarnaPaymentUpdateData) GetAttributes() PATCHKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes`

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,22 +15,25 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes{}
+
 // PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes struct for PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes
 type PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes struct {
 	// The Adyen payment request data, collected by client.
-	PaymentRequestData map[string]interface{} `json:"payment_request_data,omitempty"`
+	PaymentRequestData interface{} `json:"payment_request_data,omitempty"`
 	// The Adyen additional details request data, collected by client.
-	PaymentRequestDetails map[string]interface{} `json:"payment_request_details,omitempty"`
+	PaymentRequestDetails interface{} `json:"payment_request_details,omitempty"`
 	// The Adyen payment response, used by client (includes 'resultCode' and 'action').
-	PaymentResponse map[string]interface{} `json:"payment_response,omitempty"`
+	PaymentResponse interface{} `json:"payment_response,omitempty"`
 	// Send this attribute if you want to send additional details the payment request.
-	Details *bool `json:"_details,omitempty"`
+	Details interface{} `json:"_details,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 }
 
 // NewPATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes instantiates a new PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes object
@@ -50,10 +53,10 @@ func NewPATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributesWithDefaults() 
 	return &this
 }
 
-// GetPaymentRequestData returns the PaymentRequestData field value if set, zero value otherwise.
-func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetPaymentRequestData() map[string]interface{} {
-	if o == nil || o.PaymentRequestData == nil {
-		var ret map[string]interface{}
+// GetPaymentRequestData returns the PaymentRequestData field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetPaymentRequestData() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.PaymentRequestData
@@ -61,31 +64,32 @@ func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetPaymentRe
 
 // GetPaymentRequestDataOk returns a tuple with the PaymentRequestData field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetPaymentRequestDataOk() (map[string]interface{}, bool) {
-	if o == nil || o.PaymentRequestData == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetPaymentRequestDataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PaymentRequestData) {
 		return nil, false
 	}
-	return o.PaymentRequestData, true
+	return &o.PaymentRequestData, true
 }
 
 // HasPaymentRequestData returns a boolean if a field has been set.
 func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) HasPaymentRequestData() bool {
-	if o != nil && o.PaymentRequestData != nil {
+	if o != nil && IsNil(o.PaymentRequestData) {
 		return true
 	}
 
 	return false
 }
 
-// SetPaymentRequestData gets a reference to the given map[string]interface{} and assigns it to the PaymentRequestData field.
-func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) SetPaymentRequestData(v map[string]interface{}) {
+// SetPaymentRequestData gets a reference to the given interface{} and assigns it to the PaymentRequestData field.
+func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) SetPaymentRequestData(v interface{}) {
 	o.PaymentRequestData = v
 }
 
-// GetPaymentRequestDetails returns the PaymentRequestDetails field value if set, zero value otherwise.
-func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetPaymentRequestDetails() map[string]interface{} {
-	if o == nil || o.PaymentRequestDetails == nil {
-		var ret map[string]interface{}
+// GetPaymentRequestDetails returns the PaymentRequestDetails field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetPaymentRequestDetails() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.PaymentRequestDetails
@@ -93,31 +97,32 @@ func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetPaymentRe
 
 // GetPaymentRequestDetailsOk returns a tuple with the PaymentRequestDetails field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetPaymentRequestDetailsOk() (map[string]interface{}, bool) {
-	if o == nil || o.PaymentRequestDetails == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetPaymentRequestDetailsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PaymentRequestDetails) {
 		return nil, false
 	}
-	return o.PaymentRequestDetails, true
+	return &o.PaymentRequestDetails, true
 }
 
 // HasPaymentRequestDetails returns a boolean if a field has been set.
 func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) HasPaymentRequestDetails() bool {
-	if o != nil && o.PaymentRequestDetails != nil {
+	if o != nil && IsNil(o.PaymentRequestDetails) {
 		return true
 	}
 
 	return false
 }
 
-// SetPaymentRequestDetails gets a reference to the given map[string]interface{} and assigns it to the PaymentRequestDetails field.
-func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) SetPaymentRequestDetails(v map[string]interface{}) {
+// SetPaymentRequestDetails gets a reference to the given interface{} and assigns it to the PaymentRequestDetails field.
+func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) SetPaymentRequestDetails(v interface{}) {
 	o.PaymentRequestDetails = v
 }
 
-// GetPaymentResponse returns the PaymentResponse field value if set, zero value otherwise.
-func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetPaymentResponse() map[string]interface{} {
-	if o == nil || o.PaymentResponse == nil {
-		var ret map[string]interface{}
+// GetPaymentResponse returns the PaymentResponse field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetPaymentResponse() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.PaymentResponse
@@ -125,127 +130,131 @@ func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetPaymentRe
 
 // GetPaymentResponseOk returns a tuple with the PaymentResponse field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetPaymentResponseOk() (map[string]interface{}, bool) {
-	if o == nil || o.PaymentResponse == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetPaymentResponseOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PaymentResponse) {
 		return nil, false
 	}
-	return o.PaymentResponse, true
+	return &o.PaymentResponse, true
 }
 
 // HasPaymentResponse returns a boolean if a field has been set.
 func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) HasPaymentResponse() bool {
-	if o != nil && o.PaymentResponse != nil {
+	if o != nil && IsNil(o.PaymentResponse) {
 		return true
 	}
 
 	return false
 }
 
-// SetPaymentResponse gets a reference to the given map[string]interface{} and assigns it to the PaymentResponse field.
-func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) SetPaymentResponse(v map[string]interface{}) {
+// SetPaymentResponse gets a reference to the given interface{} and assigns it to the PaymentResponse field.
+func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) SetPaymentResponse(v interface{}) {
 	o.PaymentResponse = v
 }
 
-// GetDetails returns the Details field value if set, zero value otherwise.
-func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetDetails() bool {
-	if o == nil || o.Details == nil {
-		var ret bool
+// GetDetails returns the Details field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetDetails() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Details
+	return o.Details
 }
 
 // GetDetailsOk returns a tuple with the Details field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetDetailsOk() (*bool, bool) {
-	if o == nil || o.Details == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetDetailsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Details) {
 		return nil, false
 	}
-	return o.Details, true
+	return &o.Details, true
 }
 
 // HasDetails returns a boolean if a field has been set.
 func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) HasDetails() bool {
-	if o != nil && o.Details != nil {
+	if o != nil && IsNil(o.Details) {
 		return true
 	}
 
 	return false
 }
 
-// SetDetails gets a reference to the given bool and assigns it to the Details field.
-func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) SetDetails(v bool) {
-	o.Details = &v
+// SetDetails gets a reference to the given interface{} and assigns it to the Details field.
+func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) SetDetails(v interface{}) {
+	o.Details = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -253,28 +262,37 @@ func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetMetadata(
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 func (o PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.PaymentRequestData != nil {
 		toSerialize["payment_request_data"] = o.PaymentRequestData
@@ -297,7 +315,7 @@ func (o PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes) MarshalJSON()
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes struct {

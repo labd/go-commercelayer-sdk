@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type ShipmentsApiService service
 type ShipmentsApiGETOrderIdShipmentsRequest struct {
 	ctx        context.Context
 	ApiService *ShipmentsApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r ShipmentsApiGETOrderIdShipmentsRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Retrieve the shipments associated to the order
 	@param orderId The resource's id
 	@return ShipmentsApiGETOrderIdShipmentsRequest
 */
-func (a *ShipmentsApiService) GETOrderIdShipments(ctx context.Context, orderId string) ShipmentsApiGETOrderIdShipmentsRequest {
+func (a *ShipmentsApiService) GETOrderIdShipments(ctx context.Context, orderId interface{}) ShipmentsApiGETOrderIdShipmentsRequest {
 	return ShipmentsApiGETOrderIdShipmentsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -64,7 +64,7 @@ func (a *ShipmentsApiService) GETOrderIdShipmentsExecute(r ShipmentsApiGETOrderI
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/shipments"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *ShipmentsApiService) GETOrderIdShipmentsExecute(r ShipmentsApiGETOrderI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *ShipmentsApiService) GETOrderIdShipmentsExecute(r ShipmentsApiGETOrderI
 type ShipmentsApiGETParcelIdShipmentRequest struct {
 	ctx        context.Context
 	ApiService *ShipmentsApiService
-	parcelId   string
+	parcelId   interface{}
 }
 
 func (r ShipmentsApiGETParcelIdShipmentRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the shipment associated to the parcel
 	@param parcelId The resource's id
 	@return ShipmentsApiGETParcelIdShipmentRequest
 */
-func (a *ShipmentsApiService) GETParcelIdShipment(ctx context.Context, parcelId string) ShipmentsApiGETParcelIdShipmentRequest {
+func (a *ShipmentsApiService) GETParcelIdShipment(ctx context.Context, parcelId interface{}) ShipmentsApiGETParcelIdShipmentRequest {
 	return ShipmentsApiGETParcelIdShipmentRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -156,7 +156,7 @@ func (a *ShipmentsApiService) GETParcelIdShipmentExecute(r ShipmentsApiGETParcel
 	}
 
 	localVarPath := localBasePath + "/parcels/{parcelId}/shipment"
-	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterToString(r.parcelId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterValueToString(r.parcelId, "parcelId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *ShipmentsApiService) GETParcelIdShipmentExecute(r ShipmentsApiGETParcel
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *ShipmentsApiService) GETShipmentsExecute(r ShipmentsApiGETShipmentsRequ
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -310,7 +310,7 @@ func (a *ShipmentsApiService) GETShipmentsExecute(r ShipmentsApiGETShipmentsRequ
 type ShipmentsApiGETShipmentsShipmentIdRequest struct {
 	ctx        context.Context
 	ApiService *ShipmentsApiService
-	shipmentId string
+	shipmentId interface{}
 }
 
 func (r ShipmentsApiGETShipmentsShipmentIdRequest) Execute() (*GETShipmentsShipmentId200Response, *http.Response, error) {
@@ -326,7 +326,7 @@ Retrieve a shipment
 	@param shipmentId The resource's id
 	@return ShipmentsApiGETShipmentsShipmentIdRequest
 */
-func (a *ShipmentsApiService) GETShipmentsShipmentId(ctx context.Context, shipmentId string) ShipmentsApiGETShipmentsShipmentIdRequest {
+func (a *ShipmentsApiService) GETShipmentsShipmentId(ctx context.Context, shipmentId interface{}) ShipmentsApiGETShipmentsShipmentIdRequest {
 	return ShipmentsApiGETShipmentsShipmentIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -351,7 +351,7 @@ func (a *ShipmentsApiService) GETShipmentsShipmentIdExecute(r ShipmentsApiGETShi
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *ShipmentsApiService) GETShipmentsShipmentIdExecute(r ShipmentsApiGETShi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -414,7 +414,7 @@ func (a *ShipmentsApiService) GETShipmentsShipmentIdExecute(r ShipmentsApiGETShi
 type ShipmentsApiGETStockLineItemIdShipmentRequest struct {
 	ctx             context.Context
 	ApiService      *ShipmentsApiService
-	stockLineItemId string
+	stockLineItemId interface{}
 }
 
 func (r ShipmentsApiGETStockLineItemIdShipmentRequest) Execute() (*http.Response, error) {
@@ -430,7 +430,7 @@ Retrieve the shipment associated to the stock line item
 	@param stockLineItemId The resource's id
 	@return ShipmentsApiGETStockLineItemIdShipmentRequest
 */
-func (a *ShipmentsApiService) GETStockLineItemIdShipment(ctx context.Context, stockLineItemId string) ShipmentsApiGETStockLineItemIdShipmentRequest {
+func (a *ShipmentsApiService) GETStockLineItemIdShipment(ctx context.Context, stockLineItemId interface{}) ShipmentsApiGETStockLineItemIdShipmentRequest {
 	return ShipmentsApiGETStockLineItemIdShipmentRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -452,7 +452,7 @@ func (a *ShipmentsApiService) GETStockLineItemIdShipmentExecute(r ShipmentsApiGE
 	}
 
 	localVarPath := localBasePath + "/stock_line_items/{stockLineItemId}/shipment"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockLineItemId"+"}", url.PathEscape(parameterToString(r.stockLineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockLineItemId"+"}", url.PathEscape(parameterValueToString(r.stockLineItemId, "stockLineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -485,9 +485,9 @@ func (a *ShipmentsApiService) GETStockLineItemIdShipmentExecute(r ShipmentsApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -506,7 +506,7 @@ func (a *ShipmentsApiService) GETStockLineItemIdShipmentExecute(r ShipmentsApiGE
 type ShipmentsApiGETStockTransferIdShipmentRequest struct {
 	ctx             context.Context
 	ApiService      *ShipmentsApiService
-	stockTransferId string
+	stockTransferId interface{}
 }
 
 func (r ShipmentsApiGETStockTransferIdShipmentRequest) Execute() (*http.Response, error) {
@@ -522,7 +522,7 @@ Retrieve the shipment associated to the stock transfer
 	@param stockTransferId The resource's id
 	@return ShipmentsApiGETStockTransferIdShipmentRequest
 */
-func (a *ShipmentsApiService) GETStockTransferIdShipment(ctx context.Context, stockTransferId string) ShipmentsApiGETStockTransferIdShipmentRequest {
+func (a *ShipmentsApiService) GETStockTransferIdShipment(ctx context.Context, stockTransferId interface{}) ShipmentsApiGETStockTransferIdShipmentRequest {
 	return ShipmentsApiGETStockTransferIdShipmentRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -544,7 +544,7 @@ func (a *ShipmentsApiService) GETStockTransferIdShipmentExecute(r ShipmentsApiGE
 	}
 
 	localVarPath := localBasePath + "/stock_transfers/{stockTransferId}/shipment"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterToString(r.stockTransferId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterValueToString(r.stockTransferId, "stockTransferId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -577,9 +577,9 @@ func (a *ShipmentsApiService) GETStockTransferIdShipmentExecute(r ShipmentsApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -599,7 +599,7 @@ type ShipmentsApiPATCHShipmentsShipmentIdRequest struct {
 	ctx            context.Context
 	ApiService     *ShipmentsApiService
 	shipmentUpdate *ShipmentUpdate
-	shipmentId     string
+	shipmentId     interface{}
 }
 
 func (r ShipmentsApiPATCHShipmentsShipmentIdRequest) ShipmentUpdate(shipmentUpdate ShipmentUpdate) ShipmentsApiPATCHShipmentsShipmentIdRequest {
@@ -620,7 +620,7 @@ Update a shipment
 	@param shipmentId The resource's id
 	@return ShipmentsApiPATCHShipmentsShipmentIdRequest
 */
-func (a *ShipmentsApiService) PATCHShipmentsShipmentId(ctx context.Context, shipmentId string) ShipmentsApiPATCHShipmentsShipmentIdRequest {
+func (a *ShipmentsApiService) PATCHShipmentsShipmentId(ctx context.Context, shipmentId interface{}) ShipmentsApiPATCHShipmentsShipmentIdRequest {
 	return ShipmentsApiPATCHShipmentsShipmentIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -645,7 +645,7 @@ func (a *ShipmentsApiService) PATCHShipmentsShipmentIdExecute(r ShipmentsApiPATC
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -683,9 +683,9 @@ func (a *ShipmentsApiService) PATCHShipmentsShipmentIdExecute(r ShipmentsApiPATC
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

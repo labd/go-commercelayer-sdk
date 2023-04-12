@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the ExternalGatewayDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ExternalGatewayDataRelationships{}
 
 // ExternalGatewayDataRelationships struct for ExternalGatewayDataRelationships
 type ExternalGatewayDataRelationships struct {
@@ -40,7 +43,7 @@ func NewExternalGatewayDataRelationshipsWithDefaults() *ExternalGatewayDataRelat
 
 // GetPaymentMethods returns the PaymentMethods field value if set, zero value otherwise.
 func (o *ExternalGatewayDataRelationships) GetPaymentMethods() AdyenGatewayDataRelationshipsPaymentMethods {
-	if o == nil || o.PaymentMethods == nil {
+	if o == nil || IsNil(o.PaymentMethods) {
 		var ret AdyenGatewayDataRelationshipsPaymentMethods
 		return ret
 	}
@@ -50,7 +53,7 @@ func (o *ExternalGatewayDataRelationships) GetPaymentMethods() AdyenGatewayDataR
 // GetPaymentMethodsOk returns a tuple with the PaymentMethods field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalGatewayDataRelationships) GetPaymentMethodsOk() (*AdyenGatewayDataRelationshipsPaymentMethods, bool) {
-	if o == nil || o.PaymentMethods == nil {
+	if o == nil || IsNil(o.PaymentMethods) {
 		return nil, false
 	}
 	return o.PaymentMethods, true
@@ -58,7 +61,7 @@ func (o *ExternalGatewayDataRelationships) GetPaymentMethodsOk() (*AdyenGatewayD
 
 // HasPaymentMethods returns a boolean if a field has been set.
 func (o *ExternalGatewayDataRelationships) HasPaymentMethods() bool {
-	if o != nil && o.PaymentMethods != nil {
+	if o != nil && !IsNil(o.PaymentMethods) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *ExternalGatewayDataRelationships) SetPaymentMethods(v AdyenGatewayDataR
 
 // GetExternalPayments returns the ExternalPayments field value if set, zero value otherwise.
 func (o *ExternalGatewayDataRelationships) GetExternalPayments() ExternalGatewayDataRelationshipsExternalPayments {
-	if o == nil || o.ExternalPayments == nil {
+	if o == nil || IsNil(o.ExternalPayments) {
 		var ret ExternalGatewayDataRelationshipsExternalPayments
 		return ret
 	}
@@ -82,7 +85,7 @@ func (o *ExternalGatewayDataRelationships) GetExternalPayments() ExternalGateway
 // GetExternalPaymentsOk returns a tuple with the ExternalPayments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ExternalGatewayDataRelationships) GetExternalPaymentsOk() (*ExternalGatewayDataRelationshipsExternalPayments, bool) {
-	if o == nil || o.ExternalPayments == nil {
+	if o == nil || IsNil(o.ExternalPayments) {
 		return nil, false
 	}
 	return o.ExternalPayments, true
@@ -90,7 +93,7 @@ func (o *ExternalGatewayDataRelationships) GetExternalPaymentsOk() (*ExternalGat
 
 // HasExternalPayments returns a boolean if a field has been set.
 func (o *ExternalGatewayDataRelationships) HasExternalPayments() bool {
-	if o != nil && o.ExternalPayments != nil {
+	if o != nil && !IsNil(o.ExternalPayments) {
 		return true
 	}
 
@@ -103,14 +106,22 @@ func (o *ExternalGatewayDataRelationships) SetExternalPayments(v ExternalGateway
 }
 
 func (o ExternalGatewayDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.PaymentMethods != nil {
-		toSerialize["payment_methods"] = o.PaymentMethods
-	}
-	if o.ExternalPayments != nil {
-		toSerialize["external_payments"] = o.ExternalPayments
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ExternalGatewayDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.PaymentMethods) {
+		toSerialize["payment_methods"] = o.PaymentMethods
+	}
+	if !IsNil(o.ExternalPayments) {
+		toSerialize["external_payments"] = o.ExternalPayments
+	}
+	return toSerialize, nil
 }
 
 type NullableExternalGatewayDataRelationships struct {

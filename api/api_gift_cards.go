@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type GiftCardsApiService service
 type GiftCardsApiDELETEGiftCardsGiftCardIdRequest struct {
 	ctx        context.Context
 	ApiService *GiftCardsApiService
-	giftCardId string
+	giftCardId interface{}
 }
 
 func (r GiftCardsApiDELETEGiftCardsGiftCardIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a gift card
 	@param giftCardId The resource's id
 	@return GiftCardsApiDELETEGiftCardsGiftCardIdRequest
 */
-func (a *GiftCardsApiService) DELETEGiftCardsGiftCardId(ctx context.Context, giftCardId string) GiftCardsApiDELETEGiftCardsGiftCardIdRequest {
+func (a *GiftCardsApiService) DELETEGiftCardsGiftCardId(ctx context.Context, giftCardId interface{}) GiftCardsApiDELETEGiftCardsGiftCardIdRequest {
 	return GiftCardsApiDELETEGiftCardsGiftCardIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -64,7 +64,7 @@ func (a *GiftCardsApiService) DELETEGiftCardsGiftCardIdExecute(r GiftCardsApiDEL
 	}
 
 	localVarPath := localBasePath + "/gift_cards/{giftCardId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterToString(r.giftCardId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterValueToString(r.giftCardId, "giftCardId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *GiftCardsApiService) DELETEGiftCardsGiftCardIdExecute(r GiftCardsApiDEL
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *GiftCardsApiService) GETGiftCardsExecute(r GiftCardsApiGETGiftCardsRequ
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -218,7 +218,7 @@ func (a *GiftCardsApiService) GETGiftCardsExecute(r GiftCardsApiGETGiftCardsRequ
 type GiftCardsApiGETGiftCardsGiftCardIdRequest struct {
 	ctx        context.Context
 	ApiService *GiftCardsApiService
-	giftCardId string
+	giftCardId interface{}
 }
 
 func (r GiftCardsApiGETGiftCardsGiftCardIdRequest) Execute() (*GETGiftCardsGiftCardId200Response, *http.Response, error) {
@@ -234,7 +234,7 @@ Retrieve a gift card
 	@param giftCardId The resource's id
 	@return GiftCardsApiGETGiftCardsGiftCardIdRequest
 */
-func (a *GiftCardsApiService) GETGiftCardsGiftCardId(ctx context.Context, giftCardId string) GiftCardsApiGETGiftCardsGiftCardIdRequest {
+func (a *GiftCardsApiService) GETGiftCardsGiftCardId(ctx context.Context, giftCardId interface{}) GiftCardsApiGETGiftCardsGiftCardIdRequest {
 	return GiftCardsApiGETGiftCardsGiftCardIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -259,7 +259,7 @@ func (a *GiftCardsApiService) GETGiftCardsGiftCardIdExecute(r GiftCardsApiGETGif
 	}
 
 	localVarPath := localBasePath + "/gift_cards/{giftCardId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterToString(r.giftCardId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterValueToString(r.giftCardId, "giftCardId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *GiftCardsApiService) GETGiftCardsGiftCardIdExecute(r GiftCardsApiGETGif
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -323,7 +323,7 @@ type GiftCardsApiPATCHGiftCardsGiftCardIdRequest struct {
 	ctx            context.Context
 	ApiService     *GiftCardsApiService
 	giftCardUpdate *GiftCardUpdate
-	giftCardId     string
+	giftCardId     interface{}
 }
 
 func (r GiftCardsApiPATCHGiftCardsGiftCardIdRequest) GiftCardUpdate(giftCardUpdate GiftCardUpdate) GiftCardsApiPATCHGiftCardsGiftCardIdRequest {
@@ -344,7 +344,7 @@ Update a gift card
 	@param giftCardId The resource's id
 	@return GiftCardsApiPATCHGiftCardsGiftCardIdRequest
 */
-func (a *GiftCardsApiService) PATCHGiftCardsGiftCardId(ctx context.Context, giftCardId string) GiftCardsApiPATCHGiftCardsGiftCardIdRequest {
+func (a *GiftCardsApiService) PATCHGiftCardsGiftCardId(ctx context.Context, giftCardId interface{}) GiftCardsApiPATCHGiftCardsGiftCardIdRequest {
 	return GiftCardsApiPATCHGiftCardsGiftCardIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -369,7 +369,7 @@ func (a *GiftCardsApiService) PATCHGiftCardsGiftCardIdExecute(r GiftCardsApiPATC
 	}
 
 	localVarPath := localBasePath + "/gift_cards/{giftCardId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterToString(r.giftCardId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterValueToString(r.giftCardId, "giftCardId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -407,9 +407,9 @@ func (a *GiftCardsApiService) PATCHGiftCardsGiftCardIdExecute(r GiftCardsApiPATC
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -518,9 +518,9 @@ func (a *GiftCardsApiService) POSTGiftCardsExecute(r GiftCardsApiPOSTGiftCardsRe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

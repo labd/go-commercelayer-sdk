@@ -1,6 +1,6 @@
 # \CustomerAddressesApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,15 +30,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    customerAddressId := "customerAddressId_example" // string | The resource's id
+    customerAddressId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomerAddressesApi.DELETECustomerAddressesCustomerAddressId(context.Background(), customerAddressId).Execute()
+    r, err := apiClient.CustomerAddressesApi.DELETECustomerAddressesCustomerAddressId(context.Background(), customerAddressId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerAddressesApi.DELETECustomerAddressesCustomerAddressId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -52,7 +52,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**customerAddressId** | **string** | The resource&#39;s id | 
+**customerAddressId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -98,7 +98,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -159,11 +159,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    customerAddressId := "customerAddressId_example" // string | The resource's id
+    customerAddressId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -183,7 +183,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**customerAddressId** | **string** | The resource&#39;s id | 
+**customerAddressId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -229,15 +229,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    customerId := "customerId_example" // string | The resource's id
+    customerId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomerAddressesApi.GETCustomerIdCustomerAddresses(context.Background(), customerId).Execute()
+    r, err := apiClient.CustomerAddressesApi.GETCustomerIdCustomerAddresses(context.Background(), customerId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerAddressesApi.GETCustomerIdCustomerAddresses``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -251,7 +251,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**customerId** | **string** | The resource&#39;s id | 
+**customerId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHCustomerAddressesCustomerAddressId
 
-> POSTCustomerAddresses201Response PATCHCustomerAddressesCustomerAddressId(ctx, customerAddressId).CustomerAddressUpdate(customerAddressUpdate).Execute()
+> PATCHCustomerAddressesCustomerAddressId200Response PATCHCustomerAddressesCustomerAddressId(ctx, customerAddressId).CustomerAddressUpdate(customerAddressUpdate).Execute()
 
 Update a customer address
 
@@ -297,12 +297,12 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    customerAddressUpdate := *openapiclient.NewCustomerAddressUpdate(*openapiclient.NewCustomerAddressUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CustomerAddressUpdate | 
-    customerAddressId := "customerAddressId_example" // string | The resource's id
+    customerAddressUpdate := *openapiclient.NewCustomerAddressUpdate(*openapiclient.NewCustomerAddressUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes())) // CustomerAddressUpdate | 
+    customerAddressId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -311,7 +311,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerAddressesApi.PATCHCustomerAddressesCustomerAddressId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHCustomerAddressesCustomerAddressId`: POSTCustomerAddresses201Response
+    // response from `PATCHCustomerAddressesCustomerAddressId`: PATCHCustomerAddressesCustomerAddressId200Response
     fmt.Fprintf(os.Stdout, "Response from `CustomerAddressesApi.PATCHCustomerAddressesCustomerAddressId`: %v\n", resp)
 }
 ```
@@ -322,7 +322,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**customerAddressId** | **string** | The resource&#39;s id | 
+**customerAddressId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTCustomerAddresses201Response**](POSTCustomerAddresses201Response.md)
+[**PATCHCustomerAddressesCustomerAddressId200Response**](PATCHCustomerAddressesCustomerAddressId200Response.md)
 
 ### Authorization
 
@@ -369,11 +369,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    customerAddressCreate := *openapiclient.NewCustomerAddressCreate(*openapiclient.NewCustomerAddressCreateData("Type_example", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CustomerAddressCreate | 
+    customerAddressCreate := *openapiclient.NewCustomerAddressCreate(*openapiclient.NewCustomerAddressCreateData(interface{}(123), *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CustomerAddressCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

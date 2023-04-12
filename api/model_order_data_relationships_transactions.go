@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -13,160 +13,79 @@ package api
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
-// OrderDataRelationshipsTransactions - struct for OrderDataRelationshipsTransactions
+// checks if the OrderDataRelationshipsTransactions type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &OrderDataRelationshipsTransactions{}
+
+// OrderDataRelationshipsTransactions struct for OrderDataRelationshipsTransactions
 type OrderDataRelationshipsTransactions struct {
-	Authorization *Authorization
-	Capture       *Capture
-	Refund        *Refund
-	Void          *Void
+	Data *OrderDataRelationshipsTransactionsData `json:"data,omitempty"`
 }
 
-// AuthorizationAsOrderDataRelationshipsTransactions is a convenience function that returns Authorization wrapped in OrderDataRelationshipsTransactions
-func AuthorizationAsOrderDataRelationshipsTransactions(v *Authorization) OrderDataRelationshipsTransactions {
-	return OrderDataRelationshipsTransactions{
-		Authorization: v,
-	}
+// NewOrderDataRelationshipsTransactions instantiates a new OrderDataRelationshipsTransactions object
+// This constructor will assign default values to properties that have it defined,
+// and makes sure properties required by API are set, but the set of arguments
+// will change when the set of required properties is changed
+func NewOrderDataRelationshipsTransactions() *OrderDataRelationshipsTransactions {
+	this := OrderDataRelationshipsTransactions{}
+	return &this
 }
 
-// CaptureAsOrderDataRelationshipsTransactions is a convenience function that returns Capture wrapped in OrderDataRelationshipsTransactions
-func CaptureAsOrderDataRelationshipsTransactions(v *Capture) OrderDataRelationshipsTransactions {
-	return OrderDataRelationshipsTransactions{
-		Capture: v,
-	}
+// NewOrderDataRelationshipsTransactionsWithDefaults instantiates a new OrderDataRelationshipsTransactions object
+// This constructor will only assign default values to properties that have it defined,
+// but it doesn't guarantee that properties required by API are set
+func NewOrderDataRelationshipsTransactionsWithDefaults() *OrderDataRelationshipsTransactions {
+	this := OrderDataRelationshipsTransactions{}
+	return &this
 }
 
-// RefundAsOrderDataRelationshipsTransactions is a convenience function that returns Refund wrapped in OrderDataRelationshipsTransactions
-func RefundAsOrderDataRelationshipsTransactions(v *Refund) OrderDataRelationshipsTransactions {
-	return OrderDataRelationshipsTransactions{
-		Refund: v,
+// GetData returns the Data field value if set, zero value otherwise.
+func (o *OrderDataRelationshipsTransactions) GetData() OrderDataRelationshipsTransactionsData {
+	if o == nil || IsNil(o.Data) {
+		var ret OrderDataRelationshipsTransactionsData
+		return ret
 	}
+	return *o.Data
 }
 
-// VoidAsOrderDataRelationshipsTransactions is a convenience function that returns Void wrapped in OrderDataRelationshipsTransactions
-func VoidAsOrderDataRelationshipsTransactions(v *Void) OrderDataRelationshipsTransactions {
-	return OrderDataRelationshipsTransactions{
-		Void: v,
+// GetDataOk returns a tuple with the Data field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderDataRelationshipsTransactions) GetDataOk() (*OrderDataRelationshipsTransactionsData, bool) {
+	if o == nil || IsNil(o.Data) {
+		return nil, false
 	}
+	return o.Data, true
 }
 
-// Unmarshal JSON data into one of the pointers in the struct
-func (dst *OrderDataRelationshipsTransactions) UnmarshalJSON(data []byte) error {
-	var err error
-	match := 0
-	// try to unmarshal data into Authorization
-	err = newStrictDecoder(data).Decode(&dst.Authorization)
-	if err == nil {
-		jsonAuthorization, _ := json.Marshal(dst.Authorization)
-		if string(jsonAuthorization) == "{}" { // empty struct
-			dst.Authorization = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.Authorization = nil
+// HasData returns a boolean if a field has been set.
+func (o *OrderDataRelationshipsTransactions) HasData() bool {
+	if o != nil && !IsNil(o.Data) {
+		return true
 	}
 
-	// try to unmarshal data into Capture
-	err = newStrictDecoder(data).Decode(&dst.Capture)
-	if err == nil {
-		jsonCapture, _ := json.Marshal(dst.Capture)
-		if string(jsonCapture) == "{}" { // empty struct
-			dst.Capture = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.Capture = nil
-	}
-
-	// try to unmarshal data into Refund
-	err = newStrictDecoder(data).Decode(&dst.Refund)
-	if err == nil {
-		jsonRefund, _ := json.Marshal(dst.Refund)
-		if string(jsonRefund) == "{}" { // empty struct
-			dst.Refund = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.Refund = nil
-	}
-
-	// try to unmarshal data into Void
-	err = newStrictDecoder(data).Decode(&dst.Void)
-	if err == nil {
-		jsonVoid, _ := json.Marshal(dst.Void)
-		if string(jsonVoid) == "{}" { // empty struct
-			dst.Void = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.Void = nil
-	}
-
-	if match > 1 { // more than 1 match
-		// reset to nil
-		dst.Authorization = nil
-		dst.Capture = nil
-		dst.Refund = nil
-		dst.Void = nil
-
-		return fmt.Errorf("Data matches more than one schema in oneOf(OrderDataRelationshipsTransactions)")
-	} else if match == 1 {
-		return nil // exactly one match
-	} else { // no match
-		return fmt.Errorf("Data failed to match schemas in oneOf(OrderDataRelationshipsTransactions)")
-	}
+	return false
 }
 
-// Marshal data from the first non-nil pointers in the struct to JSON
-func (src OrderDataRelationshipsTransactions) MarshalJSON() ([]byte, error) {
-	if src.Authorization != nil {
-		return json.Marshal(&src.Authorization)
-	}
-
-	if src.Capture != nil {
-		return json.Marshal(&src.Capture)
-	}
-
-	if src.Refund != nil {
-		return json.Marshal(&src.Refund)
-	}
-
-	if src.Void != nil {
-		return json.Marshal(&src.Void)
-	}
-
-	return nil, nil // no data in oneOf schemas
+// SetData gets a reference to the given OrderDataRelationshipsTransactionsData and assigns it to the Data field.
+func (o *OrderDataRelationshipsTransactions) SetData(v OrderDataRelationshipsTransactionsData) {
+	o.Data = &v
 }
 
-// Get the actual instance
-func (obj *OrderDataRelationshipsTransactions) GetActualInstance() interface{} {
-	if obj == nil {
-		return nil
+func (o OrderDataRelationshipsTransactions) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
-	if obj.Authorization != nil {
-		return obj.Authorization
-	}
+	return json.Marshal(toSerialize)
+}
 
-	if obj.Capture != nil {
-		return obj.Capture
+func (o OrderDataRelationshipsTransactions) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
 	}
-
-	if obj.Refund != nil {
-		return obj.Refund
-	}
-
-	if obj.Void != nil {
-		return obj.Void
-	}
-
-	// all schemas are nil
-	return nil
+	return toSerialize, nil
 }
 
 type NullableOrderDataRelationshipsTransactions struct {

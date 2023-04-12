@@ -1,6 +1,6 @@
 # \CheckoutComPaymentsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,15 +30,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    checkoutComPaymentId := "checkoutComPaymentId_example" // string | The resource's id
+    checkoutComPaymentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CheckoutComPaymentsApi.DELETECheckoutComPaymentsCheckoutComPaymentId(context.Background(), checkoutComPaymentId).Execute()
+    r, err := apiClient.CheckoutComPaymentsApi.DELETECheckoutComPaymentsCheckoutComPaymentId(context.Background(), checkoutComPaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckoutComPaymentsApi.DELETECheckoutComPaymentsCheckoutComPaymentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -52,7 +52,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**checkoutComPaymentId** | **string** | The resource&#39;s id | 
+**checkoutComPaymentId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -98,15 +98,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    checkoutComGatewayId := "checkoutComGatewayId_example" // string | The resource's id
+    checkoutComGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CheckoutComPaymentsApi.GETCheckoutComGatewayIdCheckoutComPayments(context.Background(), checkoutComGatewayId).Execute()
+    r, err := apiClient.CheckoutComPaymentsApi.GETCheckoutComGatewayIdCheckoutComPayments(context.Background(), checkoutComGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CheckoutComPaymentsApi.GETCheckoutComGatewayIdCheckoutComPayments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -120,7 +120,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**checkoutComGatewayId** | **string** | The resource&#39;s id | 
+**checkoutComGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -166,7 +166,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -227,11 +227,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    checkoutComPaymentId := "checkoutComPaymentId_example" // string | The resource's id
+    checkoutComPaymentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -251,7 +251,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**checkoutComPaymentId** | **string** | The resource&#39;s id | 
+**checkoutComPaymentId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -297,12 +297,12 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    checkoutComPaymentUpdate := *openapiclient.NewCheckoutComPaymentUpdate(*openapiclient.NewCheckoutComPaymentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes())) // CheckoutComPaymentUpdate | 
-    checkoutComPaymentId := "checkoutComPaymentId_example" // string | The resource's id
+    checkoutComPaymentUpdate := *openapiclient.NewCheckoutComPaymentUpdate(*openapiclient.NewCheckoutComPaymentUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes())) // CheckoutComPaymentUpdate | 
+    checkoutComPaymentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -322,7 +322,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**checkoutComPaymentId** | **string** | The resource&#39;s id | 
+**checkoutComPaymentId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -369,11 +369,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    checkoutComPaymentCreate := *openapiclient.NewCheckoutComPaymentCreate(*openapiclient.NewCheckoutComPaymentCreateData("Type_example", *openapiclient.NewPOSTCheckoutComPayments201ResponseDataAttributes("token", "tok_4gzeau5o2uqubbk6fufs3m7p54"))) // CheckoutComPaymentCreate | 
+    checkoutComPaymentCreate := *openapiclient.NewCheckoutComPaymentCreate(*openapiclient.NewCheckoutComPaymentCreateData(interface{}(123), *openapiclient.NewPOSTCheckoutComPayments201ResponseDataAttributes(interface{}(token), interface{}(tok_4gzeau5o2uqubbk6fufs3m7p54)))) // CheckoutComPaymentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETShippingMethodTiers200ResponseDataInnerAttributes**](GETShippingMethodTiers200ResponseDataInnerAttributes.md) |  | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Attributes** | [**GETShippingMethodTiersShippingMethodTierId200ResponseDataAttributes**](GETShippingMethodTiersShippingMethodTierId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ShippingMethodTierDataRelationships**](ShippingMethodTierDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewShippingMethodTierData
 
-`func NewShippingMethodTierData(type_ string, attributes GETShippingMethodTiers200ResponseDataInnerAttributes, ) *ShippingMethodTierData`
+`func NewShippingMethodTierData(type_ interface{}, attributes GETShippingMethodTiersShippingMethodTierId200ResponseDataAttributes, ) *ShippingMethodTierData`
 
 NewShippingMethodTierData instantiates a new ShippingMethodTierData object
 This constructor will assign default values to properties that have it defined,
@@ -29,40 +29,50 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *ShippingMethodTierData) GetType() string`
+`func (o *ShippingMethodTierData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *ShippingMethodTierData) GetTypeOk() (*string, bool)`
+`func (o *ShippingMethodTierData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *ShippingMethodTierData) SetType(v string)`
+`func (o *ShippingMethodTierData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *ShippingMethodTierData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *ShippingMethodTierData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *ShippingMethodTierData) GetAttributes() GETShippingMethodTiers200ResponseDataInnerAttributes`
+`func (o *ShippingMethodTierData) GetAttributes() GETShippingMethodTiersShippingMethodTierId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *ShippingMethodTierData) GetAttributesOk() (*GETShippingMethodTiers200ResponseDataInnerAttributes, bool)`
+`func (o *ShippingMethodTierData) GetAttributesOk() (*GETShippingMethodTiersShippingMethodTierId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *ShippingMethodTierData) SetAttributes(v GETShippingMethodTiers200ResponseDataInnerAttributes)`
+`func (o *ShippingMethodTierData) SetAttributes(v GETShippingMethodTiersShippingMethodTierId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

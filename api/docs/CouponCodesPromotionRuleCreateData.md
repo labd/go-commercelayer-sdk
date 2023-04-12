@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
+**Type** | **interface{}** | The resource&#39;s type | 
 **Attributes** | [**POSTAdyenPayments201ResponseDataAttributes**](POSTAdyenPayments201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CouponCodesPromotionRuleCreateDataRelationships**](CouponCodesPromotionRuleCreateDataRelationships.md) |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewCouponCodesPromotionRuleCreateData
 
-`func NewCouponCodesPromotionRuleCreateData(type_ string, attributes POSTAdyenPayments201ResponseDataAttributes, ) *CouponCodesPromotionRuleCreateData`
+`func NewCouponCodesPromotionRuleCreateData(type_ interface{}, attributes POSTAdyenPayments201ResponseDataAttributes, ) *CouponCodesPromotionRuleCreateData`
 
 NewCouponCodesPromotionRuleCreateData instantiates a new CouponCodesPromotionRuleCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -29,24 +29,34 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *CouponCodesPromotionRuleCreateData) GetType() string`
+`func (o *CouponCodesPromotionRuleCreateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *CouponCodesPromotionRuleCreateData) GetTypeOk() (*string, bool)`
+`func (o *CouponCodesPromotionRuleCreateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *CouponCodesPromotionRuleCreateData) SetType(v string)`
+`func (o *CouponCodesPromotionRuleCreateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *CouponCodesPromotionRuleCreateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *CouponCodesPromotionRuleCreateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
 `func (o *CouponCodesPromotionRuleCreateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes`

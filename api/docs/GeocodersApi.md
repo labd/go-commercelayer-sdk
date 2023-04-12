@@ -1,6 +1,6 @@
 # \GeocodersApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -27,15 +27,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    addressId := "addressId_example" // string | The resource's id
+    addressId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.GeocodersApi.GETAddressIdGeocoder(context.Background(), addressId).Execute()
+    r, err := apiClient.GeocodersApi.GETAddressIdGeocoder(context.Background(), addressId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `GeocodersApi.GETAddressIdGeocoder``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -49,7 +49,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**addressId** | **string** | The resource&#39;s id | 
+**addressId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -95,7 +95,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -156,11 +156,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    geocoderId := "geocoderId_example" // string | The resource's id
+    geocoderId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -180,7 +180,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**geocoderId** | **string** | The resource&#39;s id | 
+**geocoderId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 

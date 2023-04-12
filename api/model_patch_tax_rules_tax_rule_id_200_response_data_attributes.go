@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,38 +15,41 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHTaxRulesTaxRuleId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHTaxRulesTaxRuleId200ResponseDataAttributes{}
+
 // PATCHTaxRulesTaxRuleId200ResponseDataAttributes struct for PATCHTaxRulesTaxRuleId200ResponseDataAttributes
 type PATCHTaxRulesTaxRuleId200ResponseDataAttributes struct {
 	// The tax rule internal name.
-	Name *string `json:"name,omitempty"`
+	Name interface{} `json:"name,omitempty"`
 	// The tax rate for this rule.
-	TaxRate *float32 `json:"tax_rate,omitempty"`
+	TaxRate interface{} `json:"tax_rate,omitempty"`
 	// The regex that will be evaluated to match the shipping address country code.
-	CountryCodeRegex *string `json:"country_code_regex,omitempty"`
+	CountryCodeRegex interface{} `json:"country_code_regex,omitempty"`
 	// The regex that will be evaluated as negative match for the shipping address country code.
-	NotCountryCodeRegex *string `json:"not_country_code_regex,omitempty"`
+	NotCountryCodeRegex interface{} `json:"not_country_code_regex,omitempty"`
 	// The regex that will be evaluated to match the shipping address state code.
-	StateCodeRegex *string `json:"state_code_regex,omitempty"`
+	StateCodeRegex interface{} `json:"state_code_regex,omitempty"`
 	// The regex that will be evaluated as negative match for the shipping address state code.
-	NotStateCodeRegex *string `json:"not_state_code_regex,omitempty"`
+	NotStateCodeRegex interface{} `json:"not_state_code_regex,omitempty"`
 	// The regex that will be evaluated to match the shipping address zip code.
-	ZipCodeRegex *string `json:"zip_code_regex,omitempty"`
+	ZipCodeRegex interface{} `json:"zip_code_regex,omitempty"`
 	// The regex that will be evaluated as negative match for the shipping zip country code.
-	NotZipCodeRegex *string `json:"not_zip_code_regex,omitempty"`
+	NotZipCodeRegex interface{} `json:"not_zip_code_regex,omitempty"`
 	// Indicates if the freight is taxable.
-	FreightTaxable *bool `json:"freight_taxable,omitempty"`
+	FreightTaxable interface{} `json:"freight_taxable,omitempty"`
 	// Indicates if the payment method is taxable.
-	PaymentMethodTaxable *bool `json:"payment_method_taxable,omitempty"`
+	PaymentMethodTaxable interface{} `json:"payment_method_taxable,omitempty"`
 	// Indicates if gift cards are taxable.
-	GiftCardTaxable *bool `json:"gift_card_taxable,omitempty"`
+	GiftCardTaxable interface{} `json:"gift_card_taxable,omitempty"`
 	// Indicates if adjustemnts are taxable.
-	AdjustmentTaxable *bool `json:"adjustment_taxable,omitempty"`
+	AdjustmentTaxable interface{} `json:"adjustment_taxable,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 }
 
 // NewPATCHTaxRulesTaxRuleId200ResponseDataAttributes instantiates a new PATCHTaxRulesTaxRuleId200ResponseDataAttributes object
@@ -66,458 +69,472 @@ func NewPATCHTaxRulesTaxRuleId200ResponseDataAttributesWithDefaults() *PATCHTaxR
 	return &this
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetName() string {
-	if o == nil || o.Name == nil {
-		var ret string
+// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetName() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Name
+	return o.Name
 }
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return o.Name, true
+	return &o.Name, true
 }
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetName(v string) {
-	o.Name = &v
+// SetName gets a reference to the given interface{} and assigns it to the Name field.
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetName(v interface{}) {
+	o.Name = v
 }
 
-// GetTaxRate returns the TaxRate field value if set, zero value otherwise.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetTaxRate() float32 {
-	if o == nil || o.TaxRate == nil {
-		var ret float32
+// GetTaxRate returns the TaxRate field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetTaxRate() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.TaxRate
+	return o.TaxRate
 }
 
 // GetTaxRateOk returns a tuple with the TaxRate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetTaxRateOk() (*float32, bool) {
-	if o == nil || o.TaxRate == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetTaxRateOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.TaxRate) {
 		return nil, false
 	}
-	return o.TaxRate, true
+	return &o.TaxRate, true
 }
 
 // HasTaxRate returns a boolean if a field has been set.
 func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) HasTaxRate() bool {
-	if o != nil && o.TaxRate != nil {
+	if o != nil && IsNil(o.TaxRate) {
 		return true
 	}
 
 	return false
 }
 
-// SetTaxRate gets a reference to the given float32 and assigns it to the TaxRate field.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetTaxRate(v float32) {
-	o.TaxRate = &v
+// SetTaxRate gets a reference to the given interface{} and assigns it to the TaxRate field.
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetTaxRate(v interface{}) {
+	o.TaxRate = v
 }
 
-// GetCountryCodeRegex returns the CountryCodeRegex field value if set, zero value otherwise.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetCountryCodeRegex() string {
-	if o == nil || o.CountryCodeRegex == nil {
-		var ret string
+// GetCountryCodeRegex returns the CountryCodeRegex field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetCountryCodeRegex() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CountryCodeRegex
+	return o.CountryCodeRegex
 }
 
 // GetCountryCodeRegexOk returns a tuple with the CountryCodeRegex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetCountryCodeRegexOk() (*string, bool) {
-	if o == nil || o.CountryCodeRegex == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetCountryCodeRegexOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CountryCodeRegex) {
 		return nil, false
 	}
-	return o.CountryCodeRegex, true
+	return &o.CountryCodeRegex, true
 }
 
 // HasCountryCodeRegex returns a boolean if a field has been set.
 func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) HasCountryCodeRegex() bool {
-	if o != nil && o.CountryCodeRegex != nil {
+	if o != nil && IsNil(o.CountryCodeRegex) {
 		return true
 	}
 
 	return false
 }
 
-// SetCountryCodeRegex gets a reference to the given string and assigns it to the CountryCodeRegex field.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetCountryCodeRegex(v string) {
-	o.CountryCodeRegex = &v
+// SetCountryCodeRegex gets a reference to the given interface{} and assigns it to the CountryCodeRegex field.
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetCountryCodeRegex(v interface{}) {
+	o.CountryCodeRegex = v
 }
 
-// GetNotCountryCodeRegex returns the NotCountryCodeRegex field value if set, zero value otherwise.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetNotCountryCodeRegex() string {
-	if o == nil || o.NotCountryCodeRegex == nil {
-		var ret string
+// GetNotCountryCodeRegex returns the NotCountryCodeRegex field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetNotCountryCodeRegex() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.NotCountryCodeRegex
+	return o.NotCountryCodeRegex
 }
 
 // GetNotCountryCodeRegexOk returns a tuple with the NotCountryCodeRegex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetNotCountryCodeRegexOk() (*string, bool) {
-	if o == nil || o.NotCountryCodeRegex == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetNotCountryCodeRegexOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.NotCountryCodeRegex) {
 		return nil, false
 	}
-	return o.NotCountryCodeRegex, true
+	return &o.NotCountryCodeRegex, true
 }
 
 // HasNotCountryCodeRegex returns a boolean if a field has been set.
 func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) HasNotCountryCodeRegex() bool {
-	if o != nil && o.NotCountryCodeRegex != nil {
+	if o != nil && IsNil(o.NotCountryCodeRegex) {
 		return true
 	}
 
 	return false
 }
 
-// SetNotCountryCodeRegex gets a reference to the given string and assigns it to the NotCountryCodeRegex field.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetNotCountryCodeRegex(v string) {
-	o.NotCountryCodeRegex = &v
+// SetNotCountryCodeRegex gets a reference to the given interface{} and assigns it to the NotCountryCodeRegex field.
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetNotCountryCodeRegex(v interface{}) {
+	o.NotCountryCodeRegex = v
 }
 
-// GetStateCodeRegex returns the StateCodeRegex field value if set, zero value otherwise.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetStateCodeRegex() string {
-	if o == nil || o.StateCodeRegex == nil {
-		var ret string
+// GetStateCodeRegex returns the StateCodeRegex field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetStateCodeRegex() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.StateCodeRegex
+	return o.StateCodeRegex
 }
 
 // GetStateCodeRegexOk returns a tuple with the StateCodeRegex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetStateCodeRegexOk() (*string, bool) {
-	if o == nil || o.StateCodeRegex == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetStateCodeRegexOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.StateCodeRegex) {
 		return nil, false
 	}
-	return o.StateCodeRegex, true
+	return &o.StateCodeRegex, true
 }
 
 // HasStateCodeRegex returns a boolean if a field has been set.
 func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) HasStateCodeRegex() bool {
-	if o != nil && o.StateCodeRegex != nil {
+	if o != nil && IsNil(o.StateCodeRegex) {
 		return true
 	}
 
 	return false
 }
 
-// SetStateCodeRegex gets a reference to the given string and assigns it to the StateCodeRegex field.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetStateCodeRegex(v string) {
-	o.StateCodeRegex = &v
+// SetStateCodeRegex gets a reference to the given interface{} and assigns it to the StateCodeRegex field.
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetStateCodeRegex(v interface{}) {
+	o.StateCodeRegex = v
 }
 
-// GetNotStateCodeRegex returns the NotStateCodeRegex field value if set, zero value otherwise.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetNotStateCodeRegex() string {
-	if o == nil || o.NotStateCodeRegex == nil {
-		var ret string
+// GetNotStateCodeRegex returns the NotStateCodeRegex field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetNotStateCodeRegex() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.NotStateCodeRegex
+	return o.NotStateCodeRegex
 }
 
 // GetNotStateCodeRegexOk returns a tuple with the NotStateCodeRegex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetNotStateCodeRegexOk() (*string, bool) {
-	if o == nil || o.NotStateCodeRegex == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetNotStateCodeRegexOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.NotStateCodeRegex) {
 		return nil, false
 	}
-	return o.NotStateCodeRegex, true
+	return &o.NotStateCodeRegex, true
 }
 
 // HasNotStateCodeRegex returns a boolean if a field has been set.
 func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) HasNotStateCodeRegex() bool {
-	if o != nil && o.NotStateCodeRegex != nil {
+	if o != nil && IsNil(o.NotStateCodeRegex) {
 		return true
 	}
 
 	return false
 }
 
-// SetNotStateCodeRegex gets a reference to the given string and assigns it to the NotStateCodeRegex field.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetNotStateCodeRegex(v string) {
-	o.NotStateCodeRegex = &v
+// SetNotStateCodeRegex gets a reference to the given interface{} and assigns it to the NotStateCodeRegex field.
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetNotStateCodeRegex(v interface{}) {
+	o.NotStateCodeRegex = v
 }
 
-// GetZipCodeRegex returns the ZipCodeRegex field value if set, zero value otherwise.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetZipCodeRegex() string {
-	if o == nil || o.ZipCodeRegex == nil {
-		var ret string
+// GetZipCodeRegex returns the ZipCodeRegex field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetZipCodeRegex() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ZipCodeRegex
+	return o.ZipCodeRegex
 }
 
 // GetZipCodeRegexOk returns a tuple with the ZipCodeRegex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetZipCodeRegexOk() (*string, bool) {
-	if o == nil || o.ZipCodeRegex == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetZipCodeRegexOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ZipCodeRegex) {
 		return nil, false
 	}
-	return o.ZipCodeRegex, true
+	return &o.ZipCodeRegex, true
 }
 
 // HasZipCodeRegex returns a boolean if a field has been set.
 func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) HasZipCodeRegex() bool {
-	if o != nil && o.ZipCodeRegex != nil {
+	if o != nil && IsNil(o.ZipCodeRegex) {
 		return true
 	}
 
 	return false
 }
 
-// SetZipCodeRegex gets a reference to the given string and assigns it to the ZipCodeRegex field.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetZipCodeRegex(v string) {
-	o.ZipCodeRegex = &v
+// SetZipCodeRegex gets a reference to the given interface{} and assigns it to the ZipCodeRegex field.
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetZipCodeRegex(v interface{}) {
+	o.ZipCodeRegex = v
 }
 
-// GetNotZipCodeRegex returns the NotZipCodeRegex field value if set, zero value otherwise.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetNotZipCodeRegex() string {
-	if o == nil || o.NotZipCodeRegex == nil {
-		var ret string
+// GetNotZipCodeRegex returns the NotZipCodeRegex field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetNotZipCodeRegex() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.NotZipCodeRegex
+	return o.NotZipCodeRegex
 }
 
 // GetNotZipCodeRegexOk returns a tuple with the NotZipCodeRegex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetNotZipCodeRegexOk() (*string, bool) {
-	if o == nil || o.NotZipCodeRegex == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetNotZipCodeRegexOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.NotZipCodeRegex) {
 		return nil, false
 	}
-	return o.NotZipCodeRegex, true
+	return &o.NotZipCodeRegex, true
 }
 
 // HasNotZipCodeRegex returns a boolean if a field has been set.
 func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) HasNotZipCodeRegex() bool {
-	if o != nil && o.NotZipCodeRegex != nil {
+	if o != nil && IsNil(o.NotZipCodeRegex) {
 		return true
 	}
 
 	return false
 }
 
-// SetNotZipCodeRegex gets a reference to the given string and assigns it to the NotZipCodeRegex field.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetNotZipCodeRegex(v string) {
-	o.NotZipCodeRegex = &v
+// SetNotZipCodeRegex gets a reference to the given interface{} and assigns it to the NotZipCodeRegex field.
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetNotZipCodeRegex(v interface{}) {
+	o.NotZipCodeRegex = v
 }
 
-// GetFreightTaxable returns the FreightTaxable field value if set, zero value otherwise.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetFreightTaxable() bool {
-	if o == nil || o.FreightTaxable == nil {
-		var ret bool
+// GetFreightTaxable returns the FreightTaxable field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetFreightTaxable() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.FreightTaxable
+	return o.FreightTaxable
 }
 
 // GetFreightTaxableOk returns a tuple with the FreightTaxable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetFreightTaxableOk() (*bool, bool) {
-	if o == nil || o.FreightTaxable == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetFreightTaxableOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.FreightTaxable) {
 		return nil, false
 	}
-	return o.FreightTaxable, true
+	return &o.FreightTaxable, true
 }
 
 // HasFreightTaxable returns a boolean if a field has been set.
 func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) HasFreightTaxable() bool {
-	if o != nil && o.FreightTaxable != nil {
+	if o != nil && IsNil(o.FreightTaxable) {
 		return true
 	}
 
 	return false
 }
 
-// SetFreightTaxable gets a reference to the given bool and assigns it to the FreightTaxable field.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetFreightTaxable(v bool) {
-	o.FreightTaxable = &v
+// SetFreightTaxable gets a reference to the given interface{} and assigns it to the FreightTaxable field.
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetFreightTaxable(v interface{}) {
+	o.FreightTaxable = v
 }
 
-// GetPaymentMethodTaxable returns the PaymentMethodTaxable field value if set, zero value otherwise.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetPaymentMethodTaxable() bool {
-	if o == nil || o.PaymentMethodTaxable == nil {
-		var ret bool
+// GetPaymentMethodTaxable returns the PaymentMethodTaxable field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetPaymentMethodTaxable() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.PaymentMethodTaxable
+	return o.PaymentMethodTaxable
 }
 
 // GetPaymentMethodTaxableOk returns a tuple with the PaymentMethodTaxable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetPaymentMethodTaxableOk() (*bool, bool) {
-	if o == nil || o.PaymentMethodTaxable == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetPaymentMethodTaxableOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PaymentMethodTaxable) {
 		return nil, false
 	}
-	return o.PaymentMethodTaxable, true
+	return &o.PaymentMethodTaxable, true
 }
 
 // HasPaymentMethodTaxable returns a boolean if a field has been set.
 func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) HasPaymentMethodTaxable() bool {
-	if o != nil && o.PaymentMethodTaxable != nil {
+	if o != nil && IsNil(o.PaymentMethodTaxable) {
 		return true
 	}
 
 	return false
 }
 
-// SetPaymentMethodTaxable gets a reference to the given bool and assigns it to the PaymentMethodTaxable field.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetPaymentMethodTaxable(v bool) {
-	o.PaymentMethodTaxable = &v
+// SetPaymentMethodTaxable gets a reference to the given interface{} and assigns it to the PaymentMethodTaxable field.
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetPaymentMethodTaxable(v interface{}) {
+	o.PaymentMethodTaxable = v
 }
 
-// GetGiftCardTaxable returns the GiftCardTaxable field value if set, zero value otherwise.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetGiftCardTaxable() bool {
-	if o == nil || o.GiftCardTaxable == nil {
-		var ret bool
+// GetGiftCardTaxable returns the GiftCardTaxable field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetGiftCardTaxable() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.GiftCardTaxable
+	return o.GiftCardTaxable
 }
 
 // GetGiftCardTaxableOk returns a tuple with the GiftCardTaxable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetGiftCardTaxableOk() (*bool, bool) {
-	if o == nil || o.GiftCardTaxable == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetGiftCardTaxableOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.GiftCardTaxable) {
 		return nil, false
 	}
-	return o.GiftCardTaxable, true
+	return &o.GiftCardTaxable, true
 }
 
 // HasGiftCardTaxable returns a boolean if a field has been set.
 func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) HasGiftCardTaxable() bool {
-	if o != nil && o.GiftCardTaxable != nil {
+	if o != nil && IsNil(o.GiftCardTaxable) {
 		return true
 	}
 
 	return false
 }
 
-// SetGiftCardTaxable gets a reference to the given bool and assigns it to the GiftCardTaxable field.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetGiftCardTaxable(v bool) {
-	o.GiftCardTaxable = &v
+// SetGiftCardTaxable gets a reference to the given interface{} and assigns it to the GiftCardTaxable field.
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetGiftCardTaxable(v interface{}) {
+	o.GiftCardTaxable = v
 }
 
-// GetAdjustmentTaxable returns the AdjustmentTaxable field value if set, zero value otherwise.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetAdjustmentTaxable() bool {
-	if o == nil || o.AdjustmentTaxable == nil {
-		var ret bool
+// GetAdjustmentTaxable returns the AdjustmentTaxable field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetAdjustmentTaxable() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.AdjustmentTaxable
+	return o.AdjustmentTaxable
 }
 
 // GetAdjustmentTaxableOk returns a tuple with the AdjustmentTaxable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetAdjustmentTaxableOk() (*bool, bool) {
-	if o == nil || o.AdjustmentTaxable == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetAdjustmentTaxableOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.AdjustmentTaxable) {
 		return nil, false
 	}
-	return o.AdjustmentTaxable, true
+	return &o.AdjustmentTaxable, true
 }
 
 // HasAdjustmentTaxable returns a boolean if a field has been set.
 func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) HasAdjustmentTaxable() bool {
-	if o != nil && o.AdjustmentTaxable != nil {
+	if o != nil && IsNil(o.AdjustmentTaxable) {
 		return true
 	}
 
 	return false
 }
 
-// SetAdjustmentTaxable gets a reference to the given bool and assigns it to the AdjustmentTaxable field.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetAdjustmentTaxable(v bool) {
-	o.AdjustmentTaxable = &v
+// SetAdjustmentTaxable gets a reference to the given interface{} and assigns it to the AdjustmentTaxable field.
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetAdjustmentTaxable(v interface{}) {
+	o.AdjustmentTaxable = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -525,28 +542,37 @@ func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetMetadata() map[stri
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *PATCHTaxRulesTaxRuleId200ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 func (o PATCHTaxRulesTaxRuleId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHTaxRulesTaxRuleId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -593,7 +619,7 @@ func (o PATCHTaxRulesTaxRuleId200ResponseDataAttributes) MarshalJSON() ([]byte, 
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHTaxRulesTaxRuleId200ResponseDataAttributes struct {

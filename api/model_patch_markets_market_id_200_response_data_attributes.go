@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,28 +15,31 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHMarketsMarketId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHMarketsMarketId200ResponseDataAttributes{}
+
 // PATCHMarketsMarketId200ResponseDataAttributes struct for PATCHMarketsMarketId200ResponseDataAttributes
 type PATCHMarketsMarketId200ResponseDataAttributes struct {
 	// The market's internal name
-	Name *string `json:"name,omitempty"`
+	Name interface{} `json:"name,omitempty"`
 	// The Facebook Pixed ID
-	FacebookPixelId *string `json:"facebook_pixel_id,omitempty"`
+	FacebookPixelId interface{} `json:"facebook_pixel_id,omitempty"`
 	// The checkout URL for this market
-	CheckoutUrl *string `json:"checkout_url,omitempty"`
+	CheckoutUrl interface{} `json:"checkout_url,omitempty"`
 	// The URL used to overwrite prices by an external source.
-	ExternalPricesUrl *string `json:"external_prices_url,omitempty"`
+	ExternalPricesUrl interface{} `json:"external_prices_url,omitempty"`
 	// The URL used to validate orders by an external source.
-	ExternalOrderValidationUrl *string `json:"external_order_validation_url,omitempty"`
+	ExternalOrderValidationUrl interface{} `json:"external_order_validation_url,omitempty"`
 	// Send this attribute if you want to mark the market as disabled.
-	Disable *bool `json:"_disable,omitempty"`
+	Disable interface{} `json:"_disable,omitempty"`
 	// Send this attribute if you want to mark the market as enabled.
-	Enable *bool `json:"_enable,omitempty"`
+	Enable interface{} `json:"_enable,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 }
 
 // NewPATCHMarketsMarketId200ResponseDataAttributes instantiates a new PATCHMarketsMarketId200ResponseDataAttributes object
@@ -56,298 +59,307 @@ func NewPATCHMarketsMarketId200ResponseDataAttributesWithDefaults() *PATCHMarket
 	return &this
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetName() string {
-	if o == nil || o.Name == nil {
-		var ret string
+// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetName() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Name
+	return o.Name
 }
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return o.Name, true
+	return &o.Name, true
 }
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetName(v string) {
-	o.Name = &v
+// SetName gets a reference to the given interface{} and assigns it to the Name field.
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetName(v interface{}) {
+	o.Name = v
 }
 
-// GetFacebookPixelId returns the FacebookPixelId field value if set, zero value otherwise.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetFacebookPixelId() string {
-	if o == nil || o.FacebookPixelId == nil {
-		var ret string
+// GetFacebookPixelId returns the FacebookPixelId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetFacebookPixelId() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.FacebookPixelId
+	return o.FacebookPixelId
 }
 
 // GetFacebookPixelIdOk returns a tuple with the FacebookPixelId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetFacebookPixelIdOk() (*string, bool) {
-	if o == nil || o.FacebookPixelId == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetFacebookPixelIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.FacebookPixelId) {
 		return nil, false
 	}
-	return o.FacebookPixelId, true
+	return &o.FacebookPixelId, true
 }
 
 // HasFacebookPixelId returns a boolean if a field has been set.
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasFacebookPixelId() bool {
-	if o != nil && o.FacebookPixelId != nil {
+	if o != nil && IsNil(o.FacebookPixelId) {
 		return true
 	}
 
 	return false
 }
 
-// SetFacebookPixelId gets a reference to the given string and assigns it to the FacebookPixelId field.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetFacebookPixelId(v string) {
-	o.FacebookPixelId = &v
+// SetFacebookPixelId gets a reference to the given interface{} and assigns it to the FacebookPixelId field.
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetFacebookPixelId(v interface{}) {
+	o.FacebookPixelId = v
 }
 
-// GetCheckoutUrl returns the CheckoutUrl field value if set, zero value otherwise.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetCheckoutUrl() string {
-	if o == nil || o.CheckoutUrl == nil {
-		var ret string
+// GetCheckoutUrl returns the CheckoutUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetCheckoutUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CheckoutUrl
+	return o.CheckoutUrl
 }
 
 // GetCheckoutUrlOk returns a tuple with the CheckoutUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetCheckoutUrlOk() (*string, bool) {
-	if o == nil || o.CheckoutUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetCheckoutUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CheckoutUrl) {
 		return nil, false
 	}
-	return o.CheckoutUrl, true
+	return &o.CheckoutUrl, true
 }
 
 // HasCheckoutUrl returns a boolean if a field has been set.
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasCheckoutUrl() bool {
-	if o != nil && o.CheckoutUrl != nil {
+	if o != nil && IsNil(o.CheckoutUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetCheckoutUrl gets a reference to the given string and assigns it to the CheckoutUrl field.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetCheckoutUrl(v string) {
-	o.CheckoutUrl = &v
+// SetCheckoutUrl gets a reference to the given interface{} and assigns it to the CheckoutUrl field.
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetCheckoutUrl(v interface{}) {
+	o.CheckoutUrl = v
 }
 
-// GetExternalPricesUrl returns the ExternalPricesUrl field value if set, zero value otherwise.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetExternalPricesUrl() string {
-	if o == nil || o.ExternalPricesUrl == nil {
-		var ret string
+// GetExternalPricesUrl returns the ExternalPricesUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetExternalPricesUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ExternalPricesUrl
+	return o.ExternalPricesUrl
 }
 
 // GetExternalPricesUrlOk returns a tuple with the ExternalPricesUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetExternalPricesUrlOk() (*string, bool) {
-	if o == nil || o.ExternalPricesUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetExternalPricesUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ExternalPricesUrl) {
 		return nil, false
 	}
-	return o.ExternalPricesUrl, true
+	return &o.ExternalPricesUrl, true
 }
 
 // HasExternalPricesUrl returns a boolean if a field has been set.
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasExternalPricesUrl() bool {
-	if o != nil && o.ExternalPricesUrl != nil {
+	if o != nil && IsNil(o.ExternalPricesUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalPricesUrl gets a reference to the given string and assigns it to the ExternalPricesUrl field.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetExternalPricesUrl(v string) {
-	o.ExternalPricesUrl = &v
+// SetExternalPricesUrl gets a reference to the given interface{} and assigns it to the ExternalPricesUrl field.
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetExternalPricesUrl(v interface{}) {
+	o.ExternalPricesUrl = v
 }
 
-// GetExternalOrderValidationUrl returns the ExternalOrderValidationUrl field value if set, zero value otherwise.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetExternalOrderValidationUrl() string {
-	if o == nil || o.ExternalOrderValidationUrl == nil {
-		var ret string
+// GetExternalOrderValidationUrl returns the ExternalOrderValidationUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetExternalOrderValidationUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ExternalOrderValidationUrl
+	return o.ExternalOrderValidationUrl
 }
 
 // GetExternalOrderValidationUrlOk returns a tuple with the ExternalOrderValidationUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetExternalOrderValidationUrlOk() (*string, bool) {
-	if o == nil || o.ExternalOrderValidationUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetExternalOrderValidationUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ExternalOrderValidationUrl) {
 		return nil, false
 	}
-	return o.ExternalOrderValidationUrl, true
+	return &o.ExternalOrderValidationUrl, true
 }
 
 // HasExternalOrderValidationUrl returns a boolean if a field has been set.
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasExternalOrderValidationUrl() bool {
-	if o != nil && o.ExternalOrderValidationUrl != nil {
+	if o != nil && IsNil(o.ExternalOrderValidationUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetExternalOrderValidationUrl gets a reference to the given string and assigns it to the ExternalOrderValidationUrl field.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetExternalOrderValidationUrl(v string) {
-	o.ExternalOrderValidationUrl = &v
+// SetExternalOrderValidationUrl gets a reference to the given interface{} and assigns it to the ExternalOrderValidationUrl field.
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetExternalOrderValidationUrl(v interface{}) {
+	o.ExternalOrderValidationUrl = v
 }
 
-// GetDisable returns the Disable field value if set, zero value otherwise.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetDisable() bool {
-	if o == nil || o.Disable == nil {
-		var ret bool
+// GetDisable returns the Disable field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetDisable() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Disable
+	return o.Disable
 }
 
 // GetDisableOk returns a tuple with the Disable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetDisableOk() (*bool, bool) {
-	if o == nil || o.Disable == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetDisableOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Disable) {
 		return nil, false
 	}
-	return o.Disable, true
+	return &o.Disable, true
 }
 
 // HasDisable returns a boolean if a field has been set.
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasDisable() bool {
-	if o != nil && o.Disable != nil {
+	if o != nil && IsNil(o.Disable) {
 		return true
 	}
 
 	return false
 }
 
-// SetDisable gets a reference to the given bool and assigns it to the Disable field.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetDisable(v bool) {
-	o.Disable = &v
+// SetDisable gets a reference to the given interface{} and assigns it to the Disable field.
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetDisable(v interface{}) {
+	o.Disable = v
 }
 
-// GetEnable returns the Enable field value if set, zero value otherwise.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetEnable() bool {
-	if o == nil || o.Enable == nil {
-		var ret bool
+// GetEnable returns the Enable field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetEnable() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Enable
+	return o.Enable
 }
 
 // GetEnableOk returns a tuple with the Enable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetEnableOk() (*bool, bool) {
-	if o == nil || o.Enable == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetEnableOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Enable) {
 		return nil, false
 	}
-	return o.Enable, true
+	return &o.Enable, true
 }
 
 // HasEnable returns a boolean if a field has been set.
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasEnable() bool {
-	if o != nil && o.Enable != nil {
+	if o != nil && IsNil(o.Enable) {
 		return true
 	}
 
 	return false
 }
 
-// SetEnable gets a reference to the given bool and assigns it to the Enable field.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetEnable(v bool) {
-	o.Enable = &v
+// SetEnable gets a reference to the given interface{} and assigns it to the Enable field.
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetEnable(v interface{}) {
+	o.Enable = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -355,28 +367,37 @@ func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetMetadata() map[string
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHMarketsMarketId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *PATCHMarketsMarketId200ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 func (o PATCHMarketsMarketId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHMarketsMarketId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -408,7 +429,7 @@ func (o PATCHMarketsMarketId200ResponseDataAttributes) MarshalJSON() ([]byte, er
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHMarketsMarketId200ResponseDataAttributes struct {

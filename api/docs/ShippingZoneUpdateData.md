@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Id** | **string** | The resource&#39;s id | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Id** | **interface{}** | The resource&#39;s id | 
 **Attributes** | [**PATCHShippingZonesShippingZoneId200ResponseDataAttributes**](PATCHShippingZonesShippingZoneId200ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
+**Relationships** | Pointer to **interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewShippingZoneUpdateData
 
-`func NewShippingZoneUpdateData(type_ string, id string, attributes PATCHShippingZonesShippingZoneId200ResponseDataAttributes, ) *ShippingZoneUpdateData`
+`func NewShippingZoneUpdateData(type_ interface{}, id interface{}, attributes PATCHShippingZonesShippingZoneId200ResponseDataAttributes, ) *ShippingZoneUpdateData`
 
 NewShippingZoneUpdateData instantiates a new ShippingZoneUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -30,44 +30,64 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *ShippingZoneUpdateData) GetType() string`
+`func (o *ShippingZoneUpdateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *ShippingZoneUpdateData) GetTypeOk() (*string, bool)`
+`func (o *ShippingZoneUpdateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *ShippingZoneUpdateData) SetType(v string)`
+`func (o *ShippingZoneUpdateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *ShippingZoneUpdateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *ShippingZoneUpdateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetId
 
-`func (o *ShippingZoneUpdateData) GetId() string`
+`func (o *ShippingZoneUpdateData) GetId() interface{}`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ShippingZoneUpdateData) GetIdOk() (*string, bool)`
+`func (o *ShippingZoneUpdateData) GetIdOk() (*interface{}, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ShippingZoneUpdateData) SetId(v string)`
+`func (o *ShippingZoneUpdateData) SetId(v interface{})`
 
 SetId sets Id field to given value.
 
 
+### SetIdNil
+
+`func (o *ShippingZoneUpdateData) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *ShippingZoneUpdateData) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetAttributes
 
 `func (o *ShippingZoneUpdateData) GetAttributes() PATCHShippingZonesShippingZoneId200ResponseDataAttributes`
@@ -90,20 +110,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *ShippingZoneUpdateData) GetRelationships() map[string]interface{}`
+`func (o *ShippingZoneUpdateData) GetRelationships() interface{}`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *ShippingZoneUpdateData) GetRelationshipsOk() (*map[string]interface{}, bool)`
+`func (o *ShippingZoneUpdateData) GetRelationshipsOk() (*interface{}, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *ShippingZoneUpdateData) SetRelationships(v map[string]interface{})`
+`func (o *ShippingZoneUpdateData) SetRelationships(v interface{})`
 
 SetRelationships sets Relationships field to given value.
 
@@ -113,6 +133,16 @@ SetRelationships sets Relationships field to given value.
 
 HasRelationships returns a boolean if a field has been set.
 
+### SetRelationshipsNil
+
+`func (o *ShippingZoneUpdateData) SetRelationshipsNil(b bool)`
+
+ SetRelationshipsNil sets the value for Relationships to be an explicit nil
+
+### UnsetRelationships
+`func (o *ShippingZoneUpdateData) UnsetRelationships()`
+
+UnsetRelationships ensures that no value is present for Relationships, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

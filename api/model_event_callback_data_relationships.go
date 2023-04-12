@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the EventCallbackDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &EventCallbackDataRelationships{}
 
 // EventCallbackDataRelationships struct for EventCallbackDataRelationships
 type EventCallbackDataRelationships struct {
@@ -39,7 +42,7 @@ func NewEventCallbackDataRelationshipsWithDefaults() *EventCallbackDataRelations
 
 // GetWebhook returns the Webhook field value if set, zero value otherwise.
 func (o *EventCallbackDataRelationships) GetWebhook() EventCallbackDataRelationshipsWebhook {
-	if o == nil || o.Webhook == nil {
+	if o == nil || IsNil(o.Webhook) {
 		var ret EventCallbackDataRelationshipsWebhook
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *EventCallbackDataRelationships) GetWebhook() EventCallbackDataRelations
 // GetWebhookOk returns a tuple with the Webhook field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *EventCallbackDataRelationships) GetWebhookOk() (*EventCallbackDataRelationshipsWebhook, bool) {
-	if o == nil || o.Webhook == nil {
+	if o == nil || IsNil(o.Webhook) {
 		return nil, false
 	}
 	return o.Webhook, true
@@ -57,7 +60,7 @@ func (o *EventCallbackDataRelationships) GetWebhookOk() (*EventCallbackDataRelat
 
 // HasWebhook returns a boolean if a field has been set.
 func (o *EventCallbackDataRelationships) HasWebhook() bool {
-	if o != nil && o.Webhook != nil {
+	if o != nil && !IsNil(o.Webhook) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *EventCallbackDataRelationships) SetWebhook(v EventCallbackDataRelations
 }
 
 func (o EventCallbackDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Webhook != nil {
-		toSerialize["webhook"] = o.Webhook
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o EventCallbackDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Webhook) {
+		toSerialize["webhook"] = o.Webhook
+	}
+	return toSerialize, nil
 }
 
 type NullableEventCallbackDataRelationships struct {

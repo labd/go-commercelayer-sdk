@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the AttachmentDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AttachmentDataRelationships{}
 
 // AttachmentDataRelationships struct for AttachmentDataRelationships
 type AttachmentDataRelationships struct {
@@ -39,7 +42,7 @@ func NewAttachmentDataRelationshipsWithDefaults() *AttachmentDataRelationships {
 
 // GetAttachable returns the Attachable field value if set, zero value otherwise.
 func (o *AttachmentDataRelationships) GetAttachable() AttachmentDataRelationshipsAttachable {
-	if o == nil || o.Attachable == nil {
+	if o == nil || IsNil(o.Attachable) {
 		var ret AttachmentDataRelationshipsAttachable
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *AttachmentDataRelationships) GetAttachable() AttachmentDataRelationship
 // GetAttachableOk returns a tuple with the Attachable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AttachmentDataRelationships) GetAttachableOk() (*AttachmentDataRelationshipsAttachable, bool) {
-	if o == nil || o.Attachable == nil {
+	if o == nil || IsNil(o.Attachable) {
 		return nil, false
 	}
 	return o.Attachable, true
@@ -57,7 +60,7 @@ func (o *AttachmentDataRelationships) GetAttachableOk() (*AttachmentDataRelation
 
 // HasAttachable returns a boolean if a field has been set.
 func (o *AttachmentDataRelationships) HasAttachable() bool {
-	if o != nil && o.Attachable != nil {
+	if o != nil && !IsNil(o.Attachable) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *AttachmentDataRelationships) SetAttachable(v AttachmentDataRelationship
 }
 
 func (o AttachmentDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Attachable != nil {
-		toSerialize["attachable"] = o.Attachable
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AttachmentDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Attachable) {
+		toSerialize["attachable"] = o.Attachable
+	}
+	return toSerialize, nil
 }
 
 type NullableAttachmentDataRelationships struct {

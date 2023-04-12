@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type RefundsApiService service
 type RefundsApiGETCaptureIdRefundsRequest struct {
 	ctx        context.Context
 	ApiService *RefundsApiService
-	captureId  string
+	captureId  interface{}
 }
 
 func (r RefundsApiGETCaptureIdRefundsRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Retrieve the refunds associated to the capture
 	@param captureId The resource's id
 	@return RefundsApiGETCaptureIdRefundsRequest
 */
-func (a *RefundsApiService) GETCaptureIdRefunds(ctx context.Context, captureId string) RefundsApiGETCaptureIdRefundsRequest {
+func (a *RefundsApiService) GETCaptureIdRefunds(ctx context.Context, captureId interface{}) RefundsApiGETCaptureIdRefundsRequest {
 	return RefundsApiGETCaptureIdRefundsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -64,7 +64,7 @@ func (a *RefundsApiService) GETCaptureIdRefundsExecute(r RefundsApiGETCaptureIdR
 	}
 
 	localVarPath := localBasePath + "/captures/{captureId}/refunds"
-	localVarPath = strings.Replace(localVarPath, "{"+"captureId"+"}", url.PathEscape(parameterToString(r.captureId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"captureId"+"}", url.PathEscape(parameterValueToString(r.captureId, "captureId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *RefundsApiService) GETCaptureIdRefundsExecute(r RefundsApiGETCaptureIdR
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *RefundsApiService) GETCaptureIdRefundsExecute(r RefundsApiGETCaptureIdR
 type RefundsApiGETOrderIdRefundsRequest struct {
 	ctx        context.Context
 	ApiService *RefundsApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r RefundsApiGETOrderIdRefundsRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the refunds associated to the order
 	@param orderId The resource's id
 	@return RefundsApiGETOrderIdRefundsRequest
 */
-func (a *RefundsApiService) GETOrderIdRefunds(ctx context.Context, orderId string) RefundsApiGETOrderIdRefundsRequest {
+func (a *RefundsApiService) GETOrderIdRefunds(ctx context.Context, orderId interface{}) RefundsApiGETOrderIdRefundsRequest {
 	return RefundsApiGETOrderIdRefundsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -156,7 +156,7 @@ func (a *RefundsApiService) GETOrderIdRefundsExecute(r RefundsApiGETOrderIdRefun
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/refunds"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *RefundsApiService) GETOrderIdRefundsExecute(r RefundsApiGETOrderIdRefun
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *RefundsApiService) GETRefundsExecute(r RefundsApiGETRefundsRequest) (*G
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -310,7 +310,7 @@ func (a *RefundsApiService) GETRefundsExecute(r RefundsApiGETRefundsRequest) (*G
 type RefundsApiGETRefundsRefundIdRequest struct {
 	ctx        context.Context
 	ApiService *RefundsApiService
-	refundId   string
+	refundId   interface{}
 }
 
 func (r RefundsApiGETRefundsRefundIdRequest) Execute() (*GETRefundsRefundId200Response, *http.Response, error) {
@@ -326,7 +326,7 @@ Retrieve a refund
 	@param refundId The resource's id
 	@return RefundsApiGETRefundsRefundIdRequest
 */
-func (a *RefundsApiService) GETRefundsRefundId(ctx context.Context, refundId string) RefundsApiGETRefundsRefundIdRequest {
+func (a *RefundsApiService) GETRefundsRefundId(ctx context.Context, refundId interface{}) RefundsApiGETRefundsRefundIdRequest {
 	return RefundsApiGETRefundsRefundIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -351,7 +351,7 @@ func (a *RefundsApiService) GETRefundsRefundIdExecute(r RefundsApiGETRefundsRefu
 	}
 
 	localVarPath := localBasePath + "/refunds/{refundId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"refundId"+"}", url.PathEscape(parameterToString(r.refundId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"refundId"+"}", url.PathEscape(parameterValueToString(r.refundId, "refundId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *RefundsApiService) GETRefundsRefundIdExecute(r RefundsApiGETRefundsRefu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

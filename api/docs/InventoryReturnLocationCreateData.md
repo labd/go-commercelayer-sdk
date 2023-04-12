@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
+**Type** | **interface{}** | The resource&#39;s type | 
 **Attributes** | [**POSTInventoryReturnLocations201ResponseDataAttributes**](POSTInventoryReturnLocations201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**InventoryReturnLocationCreateDataRelationships**](InventoryReturnLocationCreateDataRelationships.md) |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewInventoryReturnLocationCreateData
 
-`func NewInventoryReturnLocationCreateData(type_ string, attributes POSTInventoryReturnLocations201ResponseDataAttributes, ) *InventoryReturnLocationCreateData`
+`func NewInventoryReturnLocationCreateData(type_ interface{}, attributes POSTInventoryReturnLocations201ResponseDataAttributes, ) *InventoryReturnLocationCreateData`
 
 NewInventoryReturnLocationCreateData instantiates a new InventoryReturnLocationCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -29,24 +29,34 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *InventoryReturnLocationCreateData) GetType() string`
+`func (o *InventoryReturnLocationCreateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *InventoryReturnLocationCreateData) GetTypeOk() (*string, bool)`
+`func (o *InventoryReturnLocationCreateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *InventoryReturnLocationCreateData) SetType(v string)`
+`func (o *InventoryReturnLocationCreateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *InventoryReturnLocationCreateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *InventoryReturnLocationCreateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
 `func (o *InventoryReturnLocationCreateData) GetAttributes() POSTInventoryReturnLocations201ResponseDataAttributes`

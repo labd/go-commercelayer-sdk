@@ -1,11 +1,12 @@
 # \PaymentMethodsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**DELETEPaymentMethodsPaymentMethodId**](PaymentMethodsApi.md#DELETEPaymentMethodsPaymentMethodId) | **Delete** /payment_methods/{paymentMethodId} | Delete a payment method
 [**GETAdyenGatewayIdPaymentMethods**](PaymentMethodsApi.md#GETAdyenGatewayIdPaymentMethods) | **Get** /adyen_gateways/{adyenGatewayId}/payment_methods | Retrieve the payment methods associated to the adyen gateway
+[**GETAxerveGatewayIdPaymentMethods**](PaymentMethodsApi.md#GETAxerveGatewayIdPaymentMethods) | **Get** /axerve_gateways/{axerveGatewayId}/payment_methods | Retrieve the payment methods associated to the axerve gateway
 [**GETBraintreeGatewayIdPaymentMethods**](PaymentMethodsApi.md#GETBraintreeGatewayIdPaymentMethods) | **Get** /braintree_gateways/{braintreeGatewayId}/payment_methods | Retrieve the payment methods associated to the braintree gateway
 [**GETCheckoutComGatewayIdPaymentMethods**](PaymentMethodsApi.md#GETCheckoutComGatewayIdPaymentMethods) | **Get** /checkout_com_gateways/{checkoutComGatewayId}/payment_methods | Retrieve the payment methods associated to the checkout.com gateway
 [**GETExternalGatewayIdPaymentMethods**](PaymentMethodsApi.md#GETExternalGatewayIdPaymentMethods) | **Get** /external_gateways/{externalGatewayId}/payment_methods | Retrieve the payment methods associated to the external gateway
@@ -17,6 +18,7 @@ Method | HTTP request | Description
 [**GETPaymentMethods**](PaymentMethodsApi.md#GETPaymentMethods) | **Get** /payment_methods | List all payment methods
 [**GETPaymentMethodsPaymentMethodId**](PaymentMethodsApi.md#GETPaymentMethodsPaymentMethodId) | **Get** /payment_methods/{paymentMethodId} | Retrieve a payment method
 [**GETPaypalGatewayIdPaymentMethods**](PaymentMethodsApi.md#GETPaypalGatewayIdPaymentMethods) | **Get** /paypal_gateways/{paypalGatewayId}/payment_methods | Retrieve the payment methods associated to the paypal gateway
+[**GETSatispayGatewayIdPaymentMethods**](PaymentMethodsApi.md#GETSatispayGatewayIdPaymentMethods) | **Get** /satispay_gateways/{satispayGatewayId}/payment_methods | Retrieve the payment methods associated to the satispay gateway
 [**GETStripeGatewayIdPaymentMethods**](PaymentMethodsApi.md#GETStripeGatewayIdPaymentMethods) | **Get** /stripe_gateways/{stripeGatewayId}/payment_methods | Retrieve the payment methods associated to the stripe gateway
 [**PATCHPaymentMethodsPaymentMethodId**](PaymentMethodsApi.md#PATCHPaymentMethodsPaymentMethodId) | **Patch** /payment_methods/{paymentMethodId} | Update a payment method
 [**POSTPaymentMethods**](PaymentMethodsApi.md#POSTPaymentMethods) | **Post** /payment_methods | Create a payment method
@@ -40,15 +42,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    paymentMethodId := "paymentMethodId_example" // string | The resource's id
+    paymentMethodId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentMethodsApi.DELETEPaymentMethodsPaymentMethodId(context.Background(), paymentMethodId).Execute()
+    r, err := apiClient.PaymentMethodsApi.DELETEPaymentMethodsPaymentMethodId(context.Background(), paymentMethodId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentMethodsApi.DELETEPaymentMethodsPaymentMethodId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -62,7 +64,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**paymentMethodId** | **string** | The resource&#39;s id | 
+**paymentMethodId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -108,15 +110,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    adyenGatewayId := "adyenGatewayId_example" // string | The resource's id
+    adyenGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentMethodsApi.GETAdyenGatewayIdPaymentMethods(context.Background(), adyenGatewayId).Execute()
+    r, err := apiClient.PaymentMethodsApi.GETAdyenGatewayIdPaymentMethods(context.Background(), adyenGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentMethodsApi.GETAdyenGatewayIdPaymentMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -130,11 +132,79 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**adyenGatewayId** | **string** | The resource&#39;s id | 
+**adyenGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETAdyenGatewayIdPaymentMethodsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETAxerveGatewayIdPaymentMethods
+
+> GETAxerveGatewayIdPaymentMethods(ctx, axerveGatewayId).Execute()
+
+Retrieve the payment methods associated to the axerve gateway
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    axerveGatewayId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.PaymentMethodsApi.GETAxerveGatewayIdPaymentMethods(context.Background(), axerveGatewayId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `PaymentMethodsApi.GETAxerveGatewayIdPaymentMethods``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**axerveGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETAxerveGatewayIdPaymentMethodsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -176,15 +246,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    braintreeGatewayId := "braintreeGatewayId_example" // string | The resource's id
+    braintreeGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentMethodsApi.GETBraintreeGatewayIdPaymentMethods(context.Background(), braintreeGatewayId).Execute()
+    r, err := apiClient.PaymentMethodsApi.GETBraintreeGatewayIdPaymentMethods(context.Background(), braintreeGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentMethodsApi.GETBraintreeGatewayIdPaymentMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -198,7 +268,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**braintreeGatewayId** | **string** | The resource&#39;s id | 
+**braintreeGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -244,15 +314,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    checkoutComGatewayId := "checkoutComGatewayId_example" // string | The resource's id
+    checkoutComGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentMethodsApi.GETCheckoutComGatewayIdPaymentMethods(context.Background(), checkoutComGatewayId).Execute()
+    r, err := apiClient.PaymentMethodsApi.GETCheckoutComGatewayIdPaymentMethods(context.Background(), checkoutComGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentMethodsApi.GETCheckoutComGatewayIdPaymentMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -266,7 +336,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**checkoutComGatewayId** | **string** | The resource&#39;s id | 
+**checkoutComGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -312,15 +382,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    externalGatewayId := "externalGatewayId_example" // string | The resource's id
+    externalGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentMethodsApi.GETExternalGatewayIdPaymentMethods(context.Background(), externalGatewayId).Execute()
+    r, err := apiClient.PaymentMethodsApi.GETExternalGatewayIdPaymentMethods(context.Background(), externalGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentMethodsApi.GETExternalGatewayIdPaymentMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -334,7 +404,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**externalGatewayId** | **string** | The resource&#39;s id | 
+**externalGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -380,15 +450,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    klarnaGatewayId := "klarnaGatewayId_example" // string | The resource's id
+    klarnaGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentMethodsApi.GETKlarnaGatewayIdPaymentMethods(context.Background(), klarnaGatewayId).Execute()
+    r, err := apiClient.PaymentMethodsApi.GETKlarnaGatewayIdPaymentMethods(context.Background(), klarnaGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentMethodsApi.GETKlarnaGatewayIdPaymentMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -402,7 +472,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**klarnaGatewayId** | **string** | The resource&#39;s id | 
+**klarnaGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -448,15 +518,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    manualGatewayId := "manualGatewayId_example" // string | The resource's id
+    manualGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentMethodsApi.GETManualGatewayIdPaymentMethods(context.Background(), manualGatewayId).Execute()
+    r, err := apiClient.PaymentMethodsApi.GETManualGatewayIdPaymentMethods(context.Background(), manualGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentMethodsApi.GETManualGatewayIdPaymentMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -470,7 +540,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**manualGatewayId** | **string** | The resource&#39;s id | 
+**manualGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -516,15 +586,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    orderId := "orderId_example" // string | The resource's id
+    orderId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentMethodsApi.GETOrderIdAvailablePaymentMethods(context.Background(), orderId).Execute()
+    r, err := apiClient.PaymentMethodsApi.GETOrderIdAvailablePaymentMethods(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentMethodsApi.GETOrderIdAvailablePaymentMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -538,7 +608,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**orderId** | **string** | The resource&#39;s id | 
+**orderId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -584,15 +654,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    orderId := "orderId_example" // string | The resource's id
+    orderId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentMethodsApi.GETOrderIdPaymentMethod(context.Background(), orderId).Execute()
+    r, err := apiClient.PaymentMethodsApi.GETOrderIdPaymentMethod(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentMethodsApi.GETOrderIdPaymentMethod``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -606,7 +676,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**orderId** | **string** | The resource&#39;s id | 
+**orderId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -652,15 +722,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    paymentGatewayId := "paymentGatewayId_example" // string | The resource's id
+    paymentGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentMethodsApi.GETPaymentGatewayIdPaymentMethods(context.Background(), paymentGatewayId).Execute()
+    r, err := apiClient.PaymentMethodsApi.GETPaymentGatewayIdPaymentMethods(context.Background(), paymentGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentMethodsApi.GETPaymentGatewayIdPaymentMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -674,7 +744,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**paymentGatewayId** | **string** | The resource&#39;s id | 
+**paymentGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -720,7 +790,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -781,11 +851,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    paymentMethodId := "paymentMethodId_example" // string | The resource's id
+    paymentMethodId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -805,7 +875,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**paymentMethodId** | **string** | The resource&#39;s id | 
+**paymentMethodId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -851,15 +921,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    paypalGatewayId := "paypalGatewayId_example" // string | The resource's id
+    paypalGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentMethodsApi.GETPaypalGatewayIdPaymentMethods(context.Background(), paypalGatewayId).Execute()
+    r, err := apiClient.PaymentMethodsApi.GETPaypalGatewayIdPaymentMethods(context.Background(), paypalGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentMethodsApi.GETPaypalGatewayIdPaymentMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -873,11 +943,79 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**paypalGatewayId** | **string** | The resource&#39;s id | 
+**paypalGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETPaypalGatewayIdPaymentMethodsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETSatispayGatewayIdPaymentMethods
+
+> GETSatispayGatewayIdPaymentMethods(ctx, satispayGatewayId).Execute()
+
+Retrieve the payment methods associated to the satispay gateway
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    satispayGatewayId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.PaymentMethodsApi.GETSatispayGatewayIdPaymentMethods(context.Background(), satispayGatewayId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `PaymentMethodsApi.GETSatispayGatewayIdPaymentMethods``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**satispayGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETSatispayGatewayIdPaymentMethodsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -919,15 +1057,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    stripeGatewayId := "stripeGatewayId_example" // string | The resource's id
+    stripeGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PaymentMethodsApi.GETStripeGatewayIdPaymentMethods(context.Background(), stripeGatewayId).Execute()
+    r, err := apiClient.PaymentMethodsApi.GETStripeGatewayIdPaymentMethods(context.Background(), stripeGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PaymentMethodsApi.GETStripeGatewayIdPaymentMethods``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -941,7 +1079,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**stripeGatewayId** | **string** | The resource&#39;s id | 
+**stripeGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -987,12 +1125,12 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    paymentMethodUpdate := *openapiclient.NewPaymentMethodUpdate(*openapiclient.NewPaymentMethodUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes())) // PaymentMethodUpdate | 
-    paymentMethodId := "paymentMethodId_example" // string | The resource's id
+    paymentMethodUpdate := *openapiclient.NewPaymentMethodUpdate(*openapiclient.NewPaymentMethodUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHPaymentMethodsPaymentMethodId200ResponseDataAttributes())) // PaymentMethodUpdate | 
+    paymentMethodId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -1012,7 +1150,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**paymentMethodId** | **string** | The resource&#39;s id | 
+**paymentMethodId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -1059,11 +1197,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    paymentMethodCreate := *openapiclient.NewPaymentMethodCreate(*openapiclient.NewPaymentMethodCreateData("Type_example", *openapiclient.NewPOSTPaymentMethods201ResponseDataAttributes("CreditCard", int32(0)))) // PaymentMethodCreate | 
+    paymentMethodCreate := *openapiclient.NewPaymentMethodCreate(*openapiclient.NewPaymentMethodCreateData(interface{}(123), *openapiclient.NewPOSTPaymentMethods201ResponseDataAttributes(interface{}(StripePayment), interface{}(0)))) // PaymentMethodCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

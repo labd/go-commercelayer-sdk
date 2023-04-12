@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETCaptures200ResponseDataInner**](GETCaptures200ResponseDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETCapturesCaptureId200ResponseData**](GETCapturesCaptureId200ResponseData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETCapturesCaptureId200Response) GetData() GETCaptures200ResponseDataInner`
+`func (o *GETCapturesCaptureId200Response) GetData() GETCapturesCaptureId200ResponseData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETCapturesCaptureId200Response) GetDataOk() (*GETCaptures200ResponseDataInner, bool)`
+`func (o *GETCapturesCaptureId200Response) GetDataOk() (*GETCapturesCaptureId200ResponseData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETCapturesCaptureId200Response) SetData(v GETCaptures200ResponseDataInner)`
+`func (o *GETCapturesCaptureId200Response) SetData(v GETCapturesCaptureId200ResponseData)`
 
 SetData sets Data field to given value.
 

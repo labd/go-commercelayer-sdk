@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the ParcelLineItemDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ParcelLineItemDataRelationships{}
 
 // ParcelLineItemDataRelationships struct for ParcelLineItemDataRelationships
 type ParcelLineItemDataRelationships struct {
@@ -42,7 +45,7 @@ func NewParcelLineItemDataRelationshipsWithDefaults() *ParcelLineItemDataRelatio
 
 // GetParcel returns the Parcel field value if set, zero value otherwise.
 func (o *ParcelLineItemDataRelationships) GetParcel() PackageDataRelationshipsParcels {
-	if o == nil || o.Parcel == nil {
+	if o == nil || IsNil(o.Parcel) {
 		var ret PackageDataRelationshipsParcels
 		return ret
 	}
@@ -52,7 +55,7 @@ func (o *ParcelLineItemDataRelationships) GetParcel() PackageDataRelationshipsPa
 // GetParcelOk returns a tuple with the Parcel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParcelLineItemDataRelationships) GetParcelOk() (*PackageDataRelationshipsParcels, bool) {
-	if o == nil || o.Parcel == nil {
+	if o == nil || IsNil(o.Parcel) {
 		return nil, false
 	}
 	return o.Parcel, true
@@ -60,7 +63,7 @@ func (o *ParcelLineItemDataRelationships) GetParcelOk() (*PackageDataRelationshi
 
 // HasParcel returns a boolean if a field has been set.
 func (o *ParcelLineItemDataRelationships) HasParcel() bool {
-	if o != nil && o.Parcel != nil {
+	if o != nil && !IsNil(o.Parcel) {
 		return true
 	}
 
@@ -74,7 +77,7 @@ func (o *ParcelLineItemDataRelationships) SetParcel(v PackageDataRelationshipsPa
 
 // GetStockLineItem returns the StockLineItem field value if set, zero value otherwise.
 func (o *ParcelLineItemDataRelationships) GetStockLineItem() LineItemDataRelationshipsStockLineItems {
-	if o == nil || o.StockLineItem == nil {
+	if o == nil || IsNil(o.StockLineItem) {
 		var ret LineItemDataRelationshipsStockLineItems
 		return ret
 	}
@@ -84,7 +87,7 @@ func (o *ParcelLineItemDataRelationships) GetStockLineItem() LineItemDataRelatio
 // GetStockLineItemOk returns a tuple with the StockLineItem field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParcelLineItemDataRelationships) GetStockLineItemOk() (*LineItemDataRelationshipsStockLineItems, bool) {
-	if o == nil || o.StockLineItem == nil {
+	if o == nil || IsNil(o.StockLineItem) {
 		return nil, false
 	}
 	return o.StockLineItem, true
@@ -92,7 +95,7 @@ func (o *ParcelLineItemDataRelationships) GetStockLineItemOk() (*LineItemDataRel
 
 // HasStockLineItem returns a boolean if a field has been set.
 func (o *ParcelLineItemDataRelationships) HasStockLineItem() bool {
-	if o != nil && o.StockLineItem != nil {
+	if o != nil && !IsNil(o.StockLineItem) {
 		return true
 	}
 
@@ -107,7 +110,7 @@ func (o *ParcelLineItemDataRelationships) SetStockLineItem(v LineItemDataRelatio
 // GetShipmentLineItem returns the ShipmentLineItem field value if set, zero value otherwise.
 // Deprecated
 func (o *ParcelLineItemDataRelationships) GetShipmentLineItem() LineItemDataRelationshipsShipmentLineItems {
-	if o == nil || o.ShipmentLineItem == nil {
+	if o == nil || IsNil(o.ShipmentLineItem) {
 		var ret LineItemDataRelationshipsShipmentLineItems
 		return ret
 	}
@@ -118,7 +121,7 @@ func (o *ParcelLineItemDataRelationships) GetShipmentLineItem() LineItemDataRela
 // and a boolean to check if the value has been set.
 // Deprecated
 func (o *ParcelLineItemDataRelationships) GetShipmentLineItemOk() (*LineItemDataRelationshipsShipmentLineItems, bool) {
-	if o == nil || o.ShipmentLineItem == nil {
+	if o == nil || IsNil(o.ShipmentLineItem) {
 		return nil, false
 	}
 	return o.ShipmentLineItem, true
@@ -126,7 +129,7 @@ func (o *ParcelLineItemDataRelationships) GetShipmentLineItemOk() (*LineItemData
 
 // HasShipmentLineItem returns a boolean if a field has been set.
 func (o *ParcelLineItemDataRelationships) HasShipmentLineItem() bool {
-	if o != nil && o.ShipmentLineItem != nil {
+	if o != nil && !IsNil(o.ShipmentLineItem) {
 		return true
 	}
 
@@ -140,17 +143,25 @@ func (o *ParcelLineItemDataRelationships) SetShipmentLineItem(v LineItemDataRela
 }
 
 func (o ParcelLineItemDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Parcel != nil {
-		toSerialize["parcel"] = o.Parcel
-	}
-	if o.StockLineItem != nil {
-		toSerialize["stock_line_item"] = o.StockLineItem
-	}
-	if o.ShipmentLineItem != nil {
-		toSerialize["shipment_line_item"] = o.ShipmentLineItem
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ParcelLineItemDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Parcel) {
+		toSerialize["parcel"] = o.Parcel
+	}
+	if !IsNil(o.StockLineItem) {
+		toSerialize["stock_line_item"] = o.StockLineItem
+	}
+	if !IsNil(o.ShipmentLineItem) {
+		toSerialize["shipment_line_item"] = o.ShipmentLineItem
+	}
+	return toSerialize, nil
 }
 
 type NullableParcelLineItemDataRelationships struct {

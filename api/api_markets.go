@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type MarketsApiService service
 type MarketsApiDELETEMarketsMarketIdRequest struct {
 	ctx        context.Context
 	ApiService *MarketsApiService
-	marketId   string
+	marketId   interface{}
 }
 
 func (r MarketsApiDELETEMarketsMarketIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a market
 	@param marketId The resource's id
 	@return MarketsApiDELETEMarketsMarketIdRequest
 */
-func (a *MarketsApiService) DELETEMarketsMarketId(ctx context.Context, marketId string) MarketsApiDELETEMarketsMarketIdRequest {
+func (a *MarketsApiService) DELETEMarketsMarketId(ctx context.Context, marketId interface{}) MarketsApiDELETEMarketsMarketIdRequest {
 	return MarketsApiDELETEMarketsMarketIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -64,7 +64,7 @@ func (a *MarketsApiService) DELETEMarketsMarketIdExecute(r MarketsApiDELETEMarke
 	}
 
 	localVarPath := localBasePath + "/markets/{marketId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterToString(r.marketId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *MarketsApiService) DELETEMarketsMarketIdExecute(r MarketsApiDELETEMarke
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *MarketsApiService) DELETEMarketsMarketIdExecute(r MarketsApiDELETEMarke
 type MarketsApiGETAvalaraAccountIdMarketsRequest struct {
 	ctx              context.Context
 	ApiService       *MarketsApiService
-	avalaraAccountId string
+	avalaraAccountId interface{}
 }
 
 func (r MarketsApiGETAvalaraAccountIdMarketsRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the markets associated to the avalara account
 	@param avalaraAccountId The resource's id
 	@return MarketsApiGETAvalaraAccountIdMarketsRequest
 */
-func (a *MarketsApiService) GETAvalaraAccountIdMarkets(ctx context.Context, avalaraAccountId string) MarketsApiGETAvalaraAccountIdMarketsRequest {
+func (a *MarketsApiService) GETAvalaraAccountIdMarkets(ctx context.Context, avalaraAccountId interface{}) MarketsApiGETAvalaraAccountIdMarketsRequest {
 	return MarketsApiGETAvalaraAccountIdMarketsRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -156,7 +156,7 @@ func (a *MarketsApiService) GETAvalaraAccountIdMarketsExecute(r MarketsApiGETAva
 	}
 
 	localVarPath := localBasePath + "/avalara_accounts/{avalaraAccountId}/markets"
-	localVarPath = strings.Replace(localVarPath, "{"+"avalaraAccountId"+"}", url.PathEscape(parameterToString(r.avalaraAccountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"avalaraAccountId"+"}", url.PathEscape(parameterValueToString(r.avalaraAccountId, "avalaraAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *MarketsApiService) GETAvalaraAccountIdMarketsExecute(r MarketsApiGETAva
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -210,7 +210,7 @@ func (a *MarketsApiService) GETAvalaraAccountIdMarketsExecute(r MarketsApiGETAva
 type MarketsApiGETBillingInfoValidationRuleIdMarketRequest struct {
 	ctx                         context.Context
 	ApiService                  *MarketsApiService
-	billingInfoValidationRuleId string
+	billingInfoValidationRuleId interface{}
 }
 
 func (r MarketsApiGETBillingInfoValidationRuleIdMarketRequest) Execute() (*http.Response, error) {
@@ -226,7 +226,7 @@ Retrieve the market associated to the billing info validation rule
 	@param billingInfoValidationRuleId The resource's id
 	@return MarketsApiGETBillingInfoValidationRuleIdMarketRequest
 */
-func (a *MarketsApiService) GETBillingInfoValidationRuleIdMarket(ctx context.Context, billingInfoValidationRuleId string) MarketsApiGETBillingInfoValidationRuleIdMarketRequest {
+func (a *MarketsApiService) GETBillingInfoValidationRuleIdMarket(ctx context.Context, billingInfoValidationRuleId interface{}) MarketsApiGETBillingInfoValidationRuleIdMarketRequest {
 	return MarketsApiGETBillingInfoValidationRuleIdMarketRequest{
 		ApiService:                  a,
 		ctx:                         ctx,
@@ -248,7 +248,7 @@ func (a *MarketsApiService) GETBillingInfoValidationRuleIdMarketExecute(r Market
 	}
 
 	localVarPath := localBasePath + "/billing_info_validation_rules/{billingInfoValidationRuleId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterToString(r.billingInfoValidationRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"billingInfoValidationRuleId"+"}", url.PathEscape(parameterValueToString(r.billingInfoValidationRuleId, "billingInfoValidationRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -281,9 +281,9 @@ func (a *MarketsApiService) GETBillingInfoValidationRuleIdMarketExecute(r Market
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -302,7 +302,7 @@ func (a *MarketsApiService) GETBillingInfoValidationRuleIdMarketExecute(r Market
 type MarketsApiGETBundleIdMarketRequest struct {
 	ctx        context.Context
 	ApiService *MarketsApiService
-	bundleId   string
+	bundleId   interface{}
 }
 
 func (r MarketsApiGETBundleIdMarketRequest) Execute() (*http.Response, error) {
@@ -318,7 +318,7 @@ Retrieve the market associated to the bundle
 	@param bundleId The resource's id
 	@return MarketsApiGETBundleIdMarketRequest
 */
-func (a *MarketsApiService) GETBundleIdMarket(ctx context.Context, bundleId string) MarketsApiGETBundleIdMarketRequest {
+func (a *MarketsApiService) GETBundleIdMarket(ctx context.Context, bundleId interface{}) MarketsApiGETBundleIdMarketRequest {
 	return MarketsApiGETBundleIdMarketRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -340,7 +340,7 @@ func (a *MarketsApiService) GETBundleIdMarketExecute(r MarketsApiGETBundleIdMark
 	}
 
 	localVarPath := localBasePath + "/bundles/{bundleId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterToString(r.bundleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"bundleId"+"}", url.PathEscape(parameterValueToString(r.bundleId, "bundleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -373,9 +373,9 @@ func (a *MarketsApiService) GETBundleIdMarketExecute(r MarketsApiGETBundleIdMark
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -394,7 +394,7 @@ func (a *MarketsApiService) GETBundleIdMarketExecute(r MarketsApiGETBundleIdMark
 type MarketsApiGETCarrierAccountIdMarketRequest struct {
 	ctx              context.Context
 	ApiService       *MarketsApiService
-	carrierAccountId string
+	carrierAccountId interface{}
 }
 
 func (r MarketsApiGETCarrierAccountIdMarketRequest) Execute() (*http.Response, error) {
@@ -410,7 +410,7 @@ Retrieve the market associated to the carrier account
 	@param carrierAccountId The resource's id
 	@return MarketsApiGETCarrierAccountIdMarketRequest
 */
-func (a *MarketsApiService) GETCarrierAccountIdMarket(ctx context.Context, carrierAccountId string) MarketsApiGETCarrierAccountIdMarketRequest {
+func (a *MarketsApiService) GETCarrierAccountIdMarket(ctx context.Context, carrierAccountId interface{}) MarketsApiGETCarrierAccountIdMarketRequest {
 	return MarketsApiGETCarrierAccountIdMarketRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -432,7 +432,7 @@ func (a *MarketsApiService) GETCarrierAccountIdMarketExecute(r MarketsApiGETCarr
 	}
 
 	localVarPath := localBasePath + "/carrier_accounts/{carrierAccountId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"carrierAccountId"+"}", url.PathEscape(parameterToString(r.carrierAccountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"carrierAccountId"+"}", url.PathEscape(parameterValueToString(r.carrierAccountId, "carrierAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -465,9 +465,9 @@ func (a *MarketsApiService) GETCarrierAccountIdMarketExecute(r MarketsApiGETCarr
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -486,7 +486,7 @@ func (a *MarketsApiService) GETCarrierAccountIdMarketExecute(r MarketsApiGETCarr
 type MarketsApiGETCustomerGroupIdMarketsRequest struct {
 	ctx             context.Context
 	ApiService      *MarketsApiService
-	customerGroupId string
+	customerGroupId interface{}
 }
 
 func (r MarketsApiGETCustomerGroupIdMarketsRequest) Execute() (*http.Response, error) {
@@ -502,7 +502,7 @@ Retrieve the markets associated to the customer group
 	@param customerGroupId The resource's id
 	@return MarketsApiGETCustomerGroupIdMarketsRequest
 */
-func (a *MarketsApiService) GETCustomerGroupIdMarkets(ctx context.Context, customerGroupId string) MarketsApiGETCustomerGroupIdMarketsRequest {
+func (a *MarketsApiService) GETCustomerGroupIdMarkets(ctx context.Context, customerGroupId interface{}) MarketsApiGETCustomerGroupIdMarketsRequest {
 	return MarketsApiGETCustomerGroupIdMarketsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -524,7 +524,7 @@ func (a *MarketsApiService) GETCustomerGroupIdMarketsExecute(r MarketsApiGETCust
 	}
 
 	localVarPath := localBasePath + "/customer_groups/{customerGroupId}/markets"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerGroupId"+"}", url.PathEscape(parameterToString(r.customerGroupId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerGroupId"+"}", url.PathEscape(parameterValueToString(r.customerGroupId, "customerGroupId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -557,9 +557,9 @@ func (a *MarketsApiService) GETCustomerGroupIdMarketsExecute(r MarketsApiGETCust
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -578,7 +578,7 @@ func (a *MarketsApiService) GETCustomerGroupIdMarketsExecute(r MarketsApiGETCust
 type MarketsApiGETExternalPromotionIdMarketRequest struct {
 	ctx                 context.Context
 	ApiService          *MarketsApiService
-	externalPromotionId string
+	externalPromotionId interface{}
 }
 
 func (r MarketsApiGETExternalPromotionIdMarketRequest) Execute() (*http.Response, error) {
@@ -594,7 +594,7 @@ Retrieve the market associated to the external promotion
 	@param externalPromotionId The resource's id
 	@return MarketsApiGETExternalPromotionIdMarketRequest
 */
-func (a *MarketsApiService) GETExternalPromotionIdMarket(ctx context.Context, externalPromotionId string) MarketsApiGETExternalPromotionIdMarketRequest {
+func (a *MarketsApiService) GETExternalPromotionIdMarket(ctx context.Context, externalPromotionId interface{}) MarketsApiGETExternalPromotionIdMarketRequest {
 	return MarketsApiGETExternalPromotionIdMarketRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -616,7 +616,7 @@ func (a *MarketsApiService) GETExternalPromotionIdMarketExecute(r MarketsApiGETE
 	}
 
 	localVarPath := localBasePath + "/external_promotions/{externalPromotionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterToString(r.externalPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterValueToString(r.externalPromotionId, "externalPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -649,9 +649,9 @@ func (a *MarketsApiService) GETExternalPromotionIdMarketExecute(r MarketsApiGETE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -670,7 +670,7 @@ func (a *MarketsApiService) GETExternalPromotionIdMarketExecute(r MarketsApiGETE
 type MarketsApiGETExternalTaxCalculatorIdMarketsRequest struct {
 	ctx                     context.Context
 	ApiService              *MarketsApiService
-	externalTaxCalculatorId string
+	externalTaxCalculatorId interface{}
 }
 
 func (r MarketsApiGETExternalTaxCalculatorIdMarketsRequest) Execute() (*http.Response, error) {
@@ -686,7 +686,7 @@ Retrieve the markets associated to the external tax calculator
 	@param externalTaxCalculatorId The resource's id
 	@return MarketsApiGETExternalTaxCalculatorIdMarketsRequest
 */
-func (a *MarketsApiService) GETExternalTaxCalculatorIdMarkets(ctx context.Context, externalTaxCalculatorId string) MarketsApiGETExternalTaxCalculatorIdMarketsRequest {
+func (a *MarketsApiService) GETExternalTaxCalculatorIdMarkets(ctx context.Context, externalTaxCalculatorId interface{}) MarketsApiGETExternalTaxCalculatorIdMarketsRequest {
 	return MarketsApiGETExternalTaxCalculatorIdMarketsRequest{
 		ApiService:              a,
 		ctx:                     ctx,
@@ -708,7 +708,7 @@ func (a *MarketsApiService) GETExternalTaxCalculatorIdMarketsExecute(r MarketsAp
 	}
 
 	localVarPath := localBasePath + "/external_tax_calculators/{externalTaxCalculatorId}/markets"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalTaxCalculatorId"+"}", url.PathEscape(parameterToString(r.externalTaxCalculatorId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalTaxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.externalTaxCalculatorId, "externalTaxCalculatorId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -741,9 +741,9 @@ func (a *MarketsApiService) GETExternalTaxCalculatorIdMarketsExecute(r MarketsAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -762,7 +762,7 @@ func (a *MarketsApiService) GETExternalTaxCalculatorIdMarketsExecute(r MarketsAp
 type MarketsApiGETFixedAmountPromotionIdMarketRequest struct {
 	ctx                    context.Context
 	ApiService             *MarketsApiService
-	fixedAmountPromotionId string
+	fixedAmountPromotionId interface{}
 }
 
 func (r MarketsApiGETFixedAmountPromotionIdMarketRequest) Execute() (*http.Response, error) {
@@ -778,7 +778,7 @@ Retrieve the market associated to the fixed amount promotion
 	@param fixedAmountPromotionId The resource's id
 	@return MarketsApiGETFixedAmountPromotionIdMarketRequest
 */
-func (a *MarketsApiService) GETFixedAmountPromotionIdMarket(ctx context.Context, fixedAmountPromotionId string) MarketsApiGETFixedAmountPromotionIdMarketRequest {
+func (a *MarketsApiService) GETFixedAmountPromotionIdMarket(ctx context.Context, fixedAmountPromotionId interface{}) MarketsApiGETFixedAmountPromotionIdMarketRequest {
 	return MarketsApiGETFixedAmountPromotionIdMarketRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -800,7 +800,7 @@ func (a *MarketsApiService) GETFixedAmountPromotionIdMarketExecute(r MarketsApiG
 	}
 
 	localVarPath := localBasePath + "/fixed_amount_promotions/{fixedAmountPromotionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterToString(r.fixedAmountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedAmountPromotionId, "fixedAmountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -833,9 +833,9 @@ func (a *MarketsApiService) GETFixedAmountPromotionIdMarketExecute(r MarketsApiG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -854,7 +854,7 @@ func (a *MarketsApiService) GETFixedAmountPromotionIdMarketExecute(r MarketsApiG
 type MarketsApiGETFixedPricePromotionIdMarketRequest struct {
 	ctx                   context.Context
 	ApiService            *MarketsApiService
-	fixedPricePromotionId string
+	fixedPricePromotionId interface{}
 }
 
 func (r MarketsApiGETFixedPricePromotionIdMarketRequest) Execute() (*http.Response, error) {
@@ -870,7 +870,7 @@ Retrieve the market associated to the fixed price promotion
 	@param fixedPricePromotionId The resource's id
 	@return MarketsApiGETFixedPricePromotionIdMarketRequest
 */
-func (a *MarketsApiService) GETFixedPricePromotionIdMarket(ctx context.Context, fixedPricePromotionId string) MarketsApiGETFixedPricePromotionIdMarketRequest {
+func (a *MarketsApiService) GETFixedPricePromotionIdMarket(ctx context.Context, fixedPricePromotionId interface{}) MarketsApiGETFixedPricePromotionIdMarketRequest {
 	return MarketsApiGETFixedPricePromotionIdMarketRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -892,7 +892,7 @@ func (a *MarketsApiService) GETFixedPricePromotionIdMarketExecute(r MarketsApiGE
 	}
 
 	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterToString(r.fixedPricePromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -925,9 +925,9 @@ func (a *MarketsApiService) GETFixedPricePromotionIdMarketExecute(r MarketsApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -946,7 +946,7 @@ func (a *MarketsApiService) GETFixedPricePromotionIdMarketExecute(r MarketsApiGE
 type MarketsApiGETFreeGiftPromotionIdMarketRequest struct {
 	ctx                 context.Context
 	ApiService          *MarketsApiService
-	freeGiftPromotionId string
+	freeGiftPromotionId interface{}
 }
 
 func (r MarketsApiGETFreeGiftPromotionIdMarketRequest) Execute() (*http.Response, error) {
@@ -962,7 +962,7 @@ Retrieve the market associated to the free gift promotion
 	@param freeGiftPromotionId The resource's id
 	@return MarketsApiGETFreeGiftPromotionIdMarketRequest
 */
-func (a *MarketsApiService) GETFreeGiftPromotionIdMarket(ctx context.Context, freeGiftPromotionId string) MarketsApiGETFreeGiftPromotionIdMarketRequest {
+func (a *MarketsApiService) GETFreeGiftPromotionIdMarket(ctx context.Context, freeGiftPromotionId interface{}) MarketsApiGETFreeGiftPromotionIdMarketRequest {
 	return MarketsApiGETFreeGiftPromotionIdMarketRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -984,7 +984,7 @@ func (a *MarketsApiService) GETFreeGiftPromotionIdMarketExecute(r MarketsApiGETF
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterToString(r.freeGiftPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1017,9 +1017,9 @@ func (a *MarketsApiService) GETFreeGiftPromotionIdMarketExecute(r MarketsApiGETF
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1038,7 +1038,7 @@ func (a *MarketsApiService) GETFreeGiftPromotionIdMarketExecute(r MarketsApiGETF
 type MarketsApiGETFreeShippingPromotionIdMarketRequest struct {
 	ctx                     context.Context
 	ApiService              *MarketsApiService
-	freeShippingPromotionId string
+	freeShippingPromotionId interface{}
 }
 
 func (r MarketsApiGETFreeShippingPromotionIdMarketRequest) Execute() (*http.Response, error) {
@@ -1054,7 +1054,7 @@ Retrieve the market associated to the free shipping promotion
 	@param freeShippingPromotionId The resource's id
 	@return MarketsApiGETFreeShippingPromotionIdMarketRequest
 */
-func (a *MarketsApiService) GETFreeShippingPromotionIdMarket(ctx context.Context, freeShippingPromotionId string) MarketsApiGETFreeShippingPromotionIdMarketRequest {
+func (a *MarketsApiService) GETFreeShippingPromotionIdMarket(ctx context.Context, freeShippingPromotionId interface{}) MarketsApiGETFreeShippingPromotionIdMarketRequest {
 	return MarketsApiGETFreeShippingPromotionIdMarketRequest{
 		ApiService:              a,
 		ctx:                     ctx,
@@ -1076,7 +1076,7 @@ func (a *MarketsApiService) GETFreeShippingPromotionIdMarketExecute(r MarketsApi
 	}
 
 	localVarPath := localBasePath + "/free_shipping_promotions/{freeShippingPromotionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterToString(r.freeShippingPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeShippingPromotionId, "freeShippingPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1109,9 +1109,9 @@ func (a *MarketsApiService) GETFreeShippingPromotionIdMarketExecute(r MarketsApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1130,7 +1130,7 @@ func (a *MarketsApiService) GETFreeShippingPromotionIdMarketExecute(r MarketsApi
 type MarketsApiGETGiftCardIdMarketRequest struct {
 	ctx        context.Context
 	ApiService *MarketsApiService
-	giftCardId string
+	giftCardId interface{}
 }
 
 func (r MarketsApiGETGiftCardIdMarketRequest) Execute() (*http.Response, error) {
@@ -1146,7 +1146,7 @@ Retrieve the market associated to the gift card
 	@param giftCardId The resource's id
 	@return MarketsApiGETGiftCardIdMarketRequest
 */
-func (a *MarketsApiService) GETGiftCardIdMarket(ctx context.Context, giftCardId string) MarketsApiGETGiftCardIdMarketRequest {
+func (a *MarketsApiService) GETGiftCardIdMarket(ctx context.Context, giftCardId interface{}) MarketsApiGETGiftCardIdMarketRequest {
 	return MarketsApiGETGiftCardIdMarketRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1168,7 +1168,7 @@ func (a *MarketsApiService) GETGiftCardIdMarketExecute(r MarketsApiGETGiftCardId
 	}
 
 	localVarPath := localBasePath + "/gift_cards/{giftCardId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterToString(r.giftCardId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"giftCardId"+"}", url.PathEscape(parameterValueToString(r.giftCardId, "giftCardId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1201,9 +1201,9 @@ func (a *MarketsApiService) GETGiftCardIdMarketExecute(r MarketsApiGETGiftCardId
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1222,7 +1222,7 @@ func (a *MarketsApiService) GETGiftCardIdMarketExecute(r MarketsApiGETGiftCardId
 type MarketsApiGETInStockSubscriptionIdMarketRequest struct {
 	ctx                   context.Context
 	ApiService            *MarketsApiService
-	inStockSubscriptionId string
+	inStockSubscriptionId interface{}
 }
 
 func (r MarketsApiGETInStockSubscriptionIdMarketRequest) Execute() (*http.Response, error) {
@@ -1238,7 +1238,7 @@ Retrieve the market associated to the in stock subscription
 	@param inStockSubscriptionId The resource's id
 	@return MarketsApiGETInStockSubscriptionIdMarketRequest
 */
-func (a *MarketsApiService) GETInStockSubscriptionIdMarket(ctx context.Context, inStockSubscriptionId string) MarketsApiGETInStockSubscriptionIdMarketRequest {
+func (a *MarketsApiService) GETInStockSubscriptionIdMarket(ctx context.Context, inStockSubscriptionId interface{}) MarketsApiGETInStockSubscriptionIdMarketRequest {
 	return MarketsApiGETInStockSubscriptionIdMarketRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -1260,7 +1260,7 @@ func (a *MarketsApiService) GETInStockSubscriptionIdMarketExecute(r MarketsApiGE
 	}
 
 	localVarPath := localBasePath + "/in_stock_subscriptions/{inStockSubscriptionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"inStockSubscriptionId"+"}", url.PathEscape(parameterToString(r.inStockSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inStockSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.inStockSubscriptionId, "inStockSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1293,9 +1293,9 @@ func (a *MarketsApiService) GETInStockSubscriptionIdMarketExecute(r MarketsApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1314,7 +1314,7 @@ func (a *MarketsApiService) GETInStockSubscriptionIdMarketExecute(r MarketsApiGE
 type MarketsApiGETManualTaxCalculatorIdMarketsRequest struct {
 	ctx                   context.Context
 	ApiService            *MarketsApiService
-	manualTaxCalculatorId string
+	manualTaxCalculatorId interface{}
 }
 
 func (r MarketsApiGETManualTaxCalculatorIdMarketsRequest) Execute() (*http.Response, error) {
@@ -1330,7 +1330,7 @@ Retrieve the markets associated to the manual tax calculator
 	@param manualTaxCalculatorId The resource's id
 	@return MarketsApiGETManualTaxCalculatorIdMarketsRequest
 */
-func (a *MarketsApiService) GETManualTaxCalculatorIdMarkets(ctx context.Context, manualTaxCalculatorId string) MarketsApiGETManualTaxCalculatorIdMarketsRequest {
+func (a *MarketsApiService) GETManualTaxCalculatorIdMarkets(ctx context.Context, manualTaxCalculatorId interface{}) MarketsApiGETManualTaxCalculatorIdMarketsRequest {
 	return MarketsApiGETManualTaxCalculatorIdMarketsRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -1352,7 +1352,7 @@ func (a *MarketsApiService) GETManualTaxCalculatorIdMarketsExecute(r MarketsApiG
 	}
 
 	localVarPath := localBasePath + "/manual_tax_calculators/{manualTaxCalculatorId}/markets"
-	localVarPath = strings.Replace(localVarPath, "{"+"manualTaxCalculatorId"+"}", url.PathEscape(parameterToString(r.manualTaxCalculatorId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"manualTaxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.manualTaxCalculatorId, "manualTaxCalculatorId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1385,9 +1385,9 @@ func (a *MarketsApiService) GETManualTaxCalculatorIdMarketsExecute(r MarketsApiG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1476,9 +1476,9 @@ func (a *MarketsApiService) GETMarketsExecute(r MarketsApiGETMarketsRequest) (*G
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -1506,7 +1506,7 @@ func (a *MarketsApiService) GETMarketsExecute(r MarketsApiGETMarketsRequest) (*G
 type MarketsApiGETMarketsMarketIdRequest struct {
 	ctx        context.Context
 	ApiService *MarketsApiService
-	marketId   string
+	marketId   interface{}
 }
 
 func (r MarketsApiGETMarketsMarketIdRequest) Execute() (*GETMarketsMarketId200Response, *http.Response, error) {
@@ -1522,7 +1522,7 @@ Retrieve a market
 	@param marketId The resource's id
 	@return MarketsApiGETMarketsMarketIdRequest
 */
-func (a *MarketsApiService) GETMarketsMarketId(ctx context.Context, marketId string) MarketsApiGETMarketsMarketIdRequest {
+func (a *MarketsApiService) GETMarketsMarketId(ctx context.Context, marketId interface{}) MarketsApiGETMarketsMarketIdRequest {
 	return MarketsApiGETMarketsMarketIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1547,7 +1547,7 @@ func (a *MarketsApiService) GETMarketsMarketIdExecute(r MarketsApiGETMarketsMark
 	}
 
 	localVarPath := localBasePath + "/markets/{marketId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterToString(r.marketId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1580,9 +1580,9 @@ func (a *MarketsApiService) GETMarketsMarketIdExecute(r MarketsApiGETMarketsMark
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -1610,7 +1610,7 @@ func (a *MarketsApiService) GETMarketsMarketIdExecute(r MarketsApiGETMarketsMark
 type MarketsApiGETOrderIdMarketRequest struct {
 	ctx        context.Context
 	ApiService *MarketsApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r MarketsApiGETOrderIdMarketRequest) Execute() (*http.Response, error) {
@@ -1626,7 +1626,7 @@ Retrieve the market associated to the order
 	@param orderId The resource's id
 	@return MarketsApiGETOrderIdMarketRequest
 */
-func (a *MarketsApiService) GETOrderIdMarket(ctx context.Context, orderId string) MarketsApiGETOrderIdMarketRequest {
+func (a *MarketsApiService) GETOrderIdMarket(ctx context.Context, orderId interface{}) MarketsApiGETOrderIdMarketRequest {
 	return MarketsApiGETOrderIdMarketRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1648,7 +1648,7 @@ func (a *MarketsApiService) GETOrderIdMarketExecute(r MarketsApiGETOrderIdMarket
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1681,9 +1681,9 @@ func (a *MarketsApiService) GETOrderIdMarketExecute(r MarketsApiGETOrderIdMarket
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1702,7 +1702,7 @@ func (a *MarketsApiService) GETOrderIdMarketExecute(r MarketsApiGETOrderIdMarket
 type MarketsApiGETOrderSubscriptionIdMarketRequest struct {
 	ctx                 context.Context
 	ApiService          *MarketsApiService
-	orderSubscriptionId string
+	orderSubscriptionId interface{}
 }
 
 func (r MarketsApiGETOrderSubscriptionIdMarketRequest) Execute() (*http.Response, error) {
@@ -1718,7 +1718,7 @@ Retrieve the market associated to the order subscription
 	@param orderSubscriptionId The resource's id
 	@return MarketsApiGETOrderSubscriptionIdMarketRequest
 */
-func (a *MarketsApiService) GETOrderSubscriptionIdMarket(ctx context.Context, orderSubscriptionId string) MarketsApiGETOrderSubscriptionIdMarketRequest {
+func (a *MarketsApiService) GETOrderSubscriptionIdMarket(ctx context.Context, orderSubscriptionId interface{}) MarketsApiGETOrderSubscriptionIdMarketRequest {
 	return MarketsApiGETOrderSubscriptionIdMarketRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -1740,7 +1740,7 @@ func (a *MarketsApiService) GETOrderSubscriptionIdMarketExecute(r MarketsApiGETO
 	}
 
 	localVarPath := localBasePath + "/order_subscriptions/{orderSubscriptionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterToString(r.orderSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionId, "orderSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1773,9 +1773,9 @@ func (a *MarketsApiService) GETOrderSubscriptionIdMarketExecute(r MarketsApiGETO
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1794,7 +1794,7 @@ func (a *MarketsApiService) GETOrderSubscriptionIdMarketExecute(r MarketsApiGETO
 type MarketsApiGETOrderValidationRuleIdMarketRequest struct {
 	ctx                   context.Context
 	ApiService            *MarketsApiService
-	orderValidationRuleId string
+	orderValidationRuleId interface{}
 }
 
 func (r MarketsApiGETOrderValidationRuleIdMarketRequest) Execute() (*http.Response, error) {
@@ -1810,7 +1810,7 @@ Retrieve the market associated to the order validation rule
 	@param orderValidationRuleId The resource's id
 	@return MarketsApiGETOrderValidationRuleIdMarketRequest
 */
-func (a *MarketsApiService) GETOrderValidationRuleIdMarket(ctx context.Context, orderValidationRuleId string) MarketsApiGETOrderValidationRuleIdMarketRequest {
+func (a *MarketsApiService) GETOrderValidationRuleIdMarket(ctx context.Context, orderValidationRuleId interface{}) MarketsApiGETOrderValidationRuleIdMarketRequest {
 	return MarketsApiGETOrderValidationRuleIdMarketRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -1832,7 +1832,7 @@ func (a *MarketsApiService) GETOrderValidationRuleIdMarketExecute(r MarketsApiGE
 	}
 
 	localVarPath := localBasePath + "/order_validation_rules/{orderValidationRuleId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderValidationRuleId"+"}", url.PathEscape(parameterToString(r.orderValidationRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderValidationRuleId"+"}", url.PathEscape(parameterValueToString(r.orderValidationRuleId, "orderValidationRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1865,9 +1865,9 @@ func (a *MarketsApiService) GETOrderValidationRuleIdMarketExecute(r MarketsApiGE
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1886,7 +1886,7 @@ func (a *MarketsApiService) GETOrderValidationRuleIdMarketExecute(r MarketsApiGE
 type MarketsApiGETPaymentMethodIdMarketRequest struct {
 	ctx             context.Context
 	ApiService      *MarketsApiService
-	paymentMethodId string
+	paymentMethodId interface{}
 }
 
 func (r MarketsApiGETPaymentMethodIdMarketRequest) Execute() (*http.Response, error) {
@@ -1902,7 +1902,7 @@ Retrieve the market associated to the payment method
 	@param paymentMethodId The resource's id
 	@return MarketsApiGETPaymentMethodIdMarketRequest
 */
-func (a *MarketsApiService) GETPaymentMethodIdMarket(ctx context.Context, paymentMethodId string) MarketsApiGETPaymentMethodIdMarketRequest {
+func (a *MarketsApiService) GETPaymentMethodIdMarket(ctx context.Context, paymentMethodId interface{}) MarketsApiGETPaymentMethodIdMarketRequest {
 	return MarketsApiGETPaymentMethodIdMarketRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -1924,7 +1924,7 @@ func (a *MarketsApiService) GETPaymentMethodIdMarketExecute(r MarketsApiGETPayme
 	}
 
 	localVarPath := localBasePath + "/payment_methods/{paymentMethodId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"paymentMethodId"+"}", url.PathEscape(parameterToString(r.paymentMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"paymentMethodId"+"}", url.PathEscape(parameterValueToString(r.paymentMethodId, "paymentMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1957,9 +1957,9 @@ func (a *MarketsApiService) GETPaymentMethodIdMarketExecute(r MarketsApiGETPayme
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1978,7 +1978,7 @@ func (a *MarketsApiService) GETPaymentMethodIdMarketExecute(r MarketsApiGETPayme
 type MarketsApiGETPercentageDiscountPromotionIdMarketRequest struct {
 	ctx                           context.Context
 	ApiService                    *MarketsApiService
-	percentageDiscountPromotionId string
+	percentageDiscountPromotionId interface{}
 }
 
 func (r MarketsApiGETPercentageDiscountPromotionIdMarketRequest) Execute() (*http.Response, error) {
@@ -1994,7 +1994,7 @@ Retrieve the market associated to the percentage discount promotion
 	@param percentageDiscountPromotionId The resource's id
 	@return MarketsApiGETPercentageDiscountPromotionIdMarketRequest
 */
-func (a *MarketsApiService) GETPercentageDiscountPromotionIdMarket(ctx context.Context, percentageDiscountPromotionId string) MarketsApiGETPercentageDiscountPromotionIdMarketRequest {
+func (a *MarketsApiService) GETPercentageDiscountPromotionIdMarket(ctx context.Context, percentageDiscountPromotionId interface{}) MarketsApiGETPercentageDiscountPromotionIdMarketRequest {
 	return MarketsApiGETPercentageDiscountPromotionIdMarketRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
@@ -2016,7 +2016,7 @@ func (a *MarketsApiService) GETPercentageDiscountPromotionIdMarketExecute(r Mark
 	}
 
 	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterToString(r.percentageDiscountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2049,9 +2049,9 @@ func (a *MarketsApiService) GETPercentageDiscountPromotionIdMarketExecute(r Mark
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2070,7 +2070,7 @@ func (a *MarketsApiService) GETPercentageDiscountPromotionIdMarketExecute(r Mark
 type MarketsApiGETPromotionIdMarketRequest struct {
 	ctx         context.Context
 	ApiService  *MarketsApiService
-	promotionId string
+	promotionId interface{}
 }
 
 func (r MarketsApiGETPromotionIdMarketRequest) Execute() (*http.Response, error) {
@@ -2086,7 +2086,7 @@ Retrieve the market associated to the promotion
 	@param promotionId The resource's id
 	@return MarketsApiGETPromotionIdMarketRequest
 */
-func (a *MarketsApiService) GETPromotionIdMarket(ctx context.Context, promotionId string) MarketsApiGETPromotionIdMarketRequest {
+func (a *MarketsApiService) GETPromotionIdMarket(ctx context.Context, promotionId interface{}) MarketsApiGETPromotionIdMarketRequest {
 	return MarketsApiGETPromotionIdMarketRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -2108,7 +2108,7 @@ func (a *MarketsApiService) GETPromotionIdMarketExecute(r MarketsApiGETPromotion
 	}
 
 	localVarPath := localBasePath + "/promotions/{promotionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterToString(r.promotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterValueToString(r.promotionId, "promotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2141,9 +2141,9 @@ func (a *MarketsApiService) GETPromotionIdMarketExecute(r MarketsApiGETPromotion
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2162,7 +2162,7 @@ func (a *MarketsApiService) GETPromotionIdMarketExecute(r MarketsApiGETPromotion
 type MarketsApiGETShippingMethodIdMarketRequest struct {
 	ctx              context.Context
 	ApiService       *MarketsApiService
-	shippingMethodId string
+	shippingMethodId interface{}
 }
 
 func (r MarketsApiGETShippingMethodIdMarketRequest) Execute() (*http.Response, error) {
@@ -2178,7 +2178,7 @@ Retrieve the market associated to the shipping method
 	@param shippingMethodId The resource's id
 	@return MarketsApiGETShippingMethodIdMarketRequest
 */
-func (a *MarketsApiService) GETShippingMethodIdMarket(ctx context.Context, shippingMethodId string) MarketsApiGETShippingMethodIdMarketRequest {
+func (a *MarketsApiService) GETShippingMethodIdMarket(ctx context.Context, shippingMethodId interface{}) MarketsApiGETShippingMethodIdMarketRequest {
 	return MarketsApiGETShippingMethodIdMarketRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -2200,7 +2200,7 @@ func (a *MarketsApiService) GETShippingMethodIdMarketExecute(r MarketsApiGETShip
 	}
 
 	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodId, "shippingMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2233,9 +2233,9 @@ func (a *MarketsApiService) GETShippingMethodIdMarketExecute(r MarketsApiGETShip
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2254,7 +2254,7 @@ func (a *MarketsApiService) GETShippingMethodIdMarketExecute(r MarketsApiGETShip
 type MarketsApiGETSkuOptionIdMarketRequest struct {
 	ctx         context.Context
 	ApiService  *MarketsApiService
-	skuOptionId string
+	skuOptionId interface{}
 }
 
 func (r MarketsApiGETSkuOptionIdMarketRequest) Execute() (*http.Response, error) {
@@ -2270,7 +2270,7 @@ Retrieve the market associated to the SKU option
 	@param skuOptionId The resource's id
 	@return MarketsApiGETSkuOptionIdMarketRequest
 */
-func (a *MarketsApiService) GETSkuOptionIdMarket(ctx context.Context, skuOptionId string) MarketsApiGETSkuOptionIdMarketRequest {
+func (a *MarketsApiService) GETSkuOptionIdMarket(ctx context.Context, skuOptionId interface{}) MarketsApiGETSkuOptionIdMarketRequest {
 	return MarketsApiGETSkuOptionIdMarketRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -2292,7 +2292,7 @@ func (a *MarketsApiService) GETSkuOptionIdMarketExecute(r MarketsApiGETSkuOption
 	}
 
 	localVarPath := localBasePath + "/sku_options/{skuOptionId}/market"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuOptionId"+"}", url.PathEscape(parameterToString(r.skuOptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuOptionId"+"}", url.PathEscape(parameterValueToString(r.skuOptionId, "skuOptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2325,9 +2325,101 @@ func (a *MarketsApiService) GETSkuOptionIdMarketExecute(r MarketsApiGETSkuOption
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type MarketsApiGETSubscriptionModelIdMarketsRequest struct {
+	ctx                 context.Context
+	ApiService          *MarketsApiService
+	subscriptionModelId interface{}
+}
+
+func (r MarketsApiGETSubscriptionModelIdMarketsRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSubscriptionModelIdMarketsExecute(r)
+}
+
+/*
+GETSubscriptionModelIdMarkets Retrieve the markets associated to the subscription model
+
+Retrieve the markets associated to the subscription model
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param subscriptionModelId The resource's id
+	@return MarketsApiGETSubscriptionModelIdMarketsRequest
+*/
+func (a *MarketsApiService) GETSubscriptionModelIdMarkets(ctx context.Context, subscriptionModelId interface{}) MarketsApiGETSubscriptionModelIdMarketsRequest {
+	return MarketsApiGETSubscriptionModelIdMarketsRequest{
+		ApiService:          a,
+		ctx:                 ctx,
+		subscriptionModelId: subscriptionModelId,
+	}
+}
+
+// Execute executes the request
+func (a *MarketsApiService) GETSubscriptionModelIdMarketsExecute(r MarketsApiGETSubscriptionModelIdMarketsRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "MarketsApiService.GETSubscriptionModelIdMarkets")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/subscription_models/{subscriptionModelId}/markets"
+	localVarPath = strings.Replace(localVarPath, "{"+"subscriptionModelId"+"}", url.PathEscape(parameterValueToString(r.subscriptionModelId, "subscriptionModelId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2346,7 +2438,7 @@ func (a *MarketsApiService) GETSkuOptionIdMarketExecute(r MarketsApiGETSkuOption
 type MarketsApiGETTaxCalculatorIdMarketsRequest struct {
 	ctx             context.Context
 	ApiService      *MarketsApiService
-	taxCalculatorId string
+	taxCalculatorId interface{}
 }
 
 func (r MarketsApiGETTaxCalculatorIdMarketsRequest) Execute() (*http.Response, error) {
@@ -2362,7 +2454,7 @@ Retrieve the markets associated to the tax calculator
 	@param taxCalculatorId The resource's id
 	@return MarketsApiGETTaxCalculatorIdMarketsRequest
 */
-func (a *MarketsApiService) GETTaxCalculatorIdMarkets(ctx context.Context, taxCalculatorId string) MarketsApiGETTaxCalculatorIdMarketsRequest {
+func (a *MarketsApiService) GETTaxCalculatorIdMarkets(ctx context.Context, taxCalculatorId interface{}) MarketsApiGETTaxCalculatorIdMarketsRequest {
 	return MarketsApiGETTaxCalculatorIdMarketsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -2384,7 +2476,7 @@ func (a *MarketsApiService) GETTaxCalculatorIdMarketsExecute(r MarketsApiGETTaxC
 	}
 
 	localVarPath := localBasePath + "/tax_calculators/{taxCalculatorId}/markets"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxCalculatorId"+"}", url.PathEscape(parameterToString(r.taxCalculatorId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.taxCalculatorId, "taxCalculatorId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2417,9 +2509,9 @@ func (a *MarketsApiService) GETTaxCalculatorIdMarketsExecute(r MarketsApiGETTaxC
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2438,7 +2530,7 @@ func (a *MarketsApiService) GETTaxCalculatorIdMarketsExecute(r MarketsApiGETTaxC
 type MarketsApiGETTaxjarAccountIdMarketsRequest struct {
 	ctx             context.Context
 	ApiService      *MarketsApiService
-	taxjarAccountId string
+	taxjarAccountId interface{}
 }
 
 func (r MarketsApiGETTaxjarAccountIdMarketsRequest) Execute() (*http.Response, error) {
@@ -2454,7 +2546,7 @@ Retrieve the markets associated to the taxjar account
 	@param taxjarAccountId The resource's id
 	@return MarketsApiGETTaxjarAccountIdMarketsRequest
 */
-func (a *MarketsApiService) GETTaxjarAccountIdMarkets(ctx context.Context, taxjarAccountId string) MarketsApiGETTaxjarAccountIdMarketsRequest {
+func (a *MarketsApiService) GETTaxjarAccountIdMarkets(ctx context.Context, taxjarAccountId interface{}) MarketsApiGETTaxjarAccountIdMarketsRequest {
 	return MarketsApiGETTaxjarAccountIdMarketsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -2476,7 +2568,7 @@ func (a *MarketsApiService) GETTaxjarAccountIdMarketsExecute(r MarketsApiGETTaxj
 	}
 
 	localVarPath := localBasePath + "/taxjar_accounts/{taxjarAccountId}/markets"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxjarAccountId"+"}", url.PathEscape(parameterToString(r.taxjarAccountId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxjarAccountId"+"}", url.PathEscape(parameterValueToString(r.taxjarAccountId, "taxjarAccountId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2509,9 +2601,9 @@ func (a *MarketsApiService) GETTaxjarAccountIdMarketsExecute(r MarketsApiGETTaxj
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2531,7 +2623,7 @@ type MarketsApiPATCHMarketsMarketIdRequest struct {
 	ctx          context.Context
 	ApiService   *MarketsApiService
 	marketUpdate *MarketUpdate
-	marketId     string
+	marketId     interface{}
 }
 
 func (r MarketsApiPATCHMarketsMarketIdRequest) MarketUpdate(marketUpdate MarketUpdate) MarketsApiPATCHMarketsMarketIdRequest {
@@ -2552,7 +2644,7 @@ Update a market
 	@param marketId The resource's id
 	@return MarketsApiPATCHMarketsMarketIdRequest
 */
-func (a *MarketsApiService) PATCHMarketsMarketId(ctx context.Context, marketId string) MarketsApiPATCHMarketsMarketIdRequest {
+func (a *MarketsApiService) PATCHMarketsMarketId(ctx context.Context, marketId interface{}) MarketsApiPATCHMarketsMarketIdRequest {
 	return MarketsApiPATCHMarketsMarketIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2577,7 +2669,7 @@ func (a *MarketsApiService) PATCHMarketsMarketIdExecute(r MarketsApiPATCHMarkets
 	}
 
 	localVarPath := localBasePath + "/markets/{marketId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterToString(r.marketId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"marketId"+"}", url.PathEscape(parameterValueToString(r.marketId, "marketId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2615,9 +2707,9 @@ func (a *MarketsApiService) PATCHMarketsMarketIdExecute(r MarketsApiPATCHMarkets
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -2726,9 +2818,9 @@ func (a *MarketsApiService) POSTMarketsExecute(r MarketsApiPOSTMarketsRequest) (
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the StockTransferCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &StockTransferCreateDataRelationships{}
 
 // StockTransferCreateDataRelationships struct for StockTransferCreateDataRelationships
 type StockTransferCreateDataRelationships struct {
@@ -118,7 +121,7 @@ func (o *StockTransferCreateDataRelationships) SetDestinationStockLocation(v Del
 
 // GetShipment returns the Shipment field value if set, zero value otherwise.
 func (o *StockTransferCreateDataRelationships) GetShipment() ParcelCreateDataRelationshipsShipment {
-	if o == nil || o.Shipment == nil {
+	if o == nil || IsNil(o.Shipment) {
 		var ret ParcelCreateDataRelationshipsShipment
 		return ret
 	}
@@ -128,7 +131,7 @@ func (o *StockTransferCreateDataRelationships) GetShipment() ParcelCreateDataRel
 // GetShipmentOk returns a tuple with the Shipment field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StockTransferCreateDataRelationships) GetShipmentOk() (*ParcelCreateDataRelationshipsShipment, bool) {
-	if o == nil || o.Shipment == nil {
+	if o == nil || IsNil(o.Shipment) {
 		return nil, false
 	}
 	return o.Shipment, true
@@ -136,7 +139,7 @@ func (o *StockTransferCreateDataRelationships) GetShipmentOk() (*ParcelCreateDat
 
 // HasShipment returns a boolean if a field has been set.
 func (o *StockTransferCreateDataRelationships) HasShipment() bool {
-	if o != nil && o.Shipment != nil {
+	if o != nil && !IsNil(o.Shipment) {
 		return true
 	}
 
@@ -150,7 +153,7 @@ func (o *StockTransferCreateDataRelationships) SetShipment(v ParcelCreateDataRel
 
 // GetLineItem returns the LineItem field value if set, zero value otherwise.
 func (o *StockTransferCreateDataRelationships) GetLineItem() LineItemOptionCreateDataRelationshipsLineItem {
-	if o == nil || o.LineItem == nil {
+	if o == nil || IsNil(o.LineItem) {
 		var ret LineItemOptionCreateDataRelationshipsLineItem
 		return ret
 	}
@@ -160,7 +163,7 @@ func (o *StockTransferCreateDataRelationships) GetLineItem() LineItemOptionCreat
 // GetLineItemOk returns a tuple with the LineItem field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StockTransferCreateDataRelationships) GetLineItemOk() (*LineItemOptionCreateDataRelationshipsLineItem, bool) {
-	if o == nil || o.LineItem == nil {
+	if o == nil || IsNil(o.LineItem) {
 		return nil, false
 	}
 	return o.LineItem, true
@@ -168,7 +171,7 @@ func (o *StockTransferCreateDataRelationships) GetLineItemOk() (*LineItemOptionC
 
 // HasLineItem returns a boolean if a field has been set.
 func (o *StockTransferCreateDataRelationships) HasLineItem() bool {
-	if o != nil && o.LineItem != nil {
+	if o != nil && !IsNil(o.LineItem) {
 		return true
 	}
 
@@ -181,23 +184,25 @@ func (o *StockTransferCreateDataRelationships) SetLineItem(v LineItemOptionCreat
 }
 
 func (o StockTransferCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["sku"] = o.Sku
-	}
-	if true {
-		toSerialize["origin_stock_location"] = o.OriginStockLocation
-	}
-	if true {
-		toSerialize["destination_stock_location"] = o.DestinationStockLocation
-	}
-	if o.Shipment != nil {
-		toSerialize["shipment"] = o.Shipment
-	}
-	if o.LineItem != nil {
-		toSerialize["line_item"] = o.LineItem
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o StockTransferCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["sku"] = o.Sku
+	toSerialize["origin_stock_location"] = o.OriginStockLocation
+	toSerialize["destination_stock_location"] = o.DestinationStockLocation
+	if !IsNil(o.Shipment) {
+		toSerialize["shipment"] = o.Shipment
+	}
+	if !IsNil(o.LineItem) {
+		toSerialize["line_item"] = o.LineItem
+	}
+	return toSerialize, nil
 }
 
 type NullableStockTransferCreateDataRelationships struct {

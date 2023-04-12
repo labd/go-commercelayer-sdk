@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETCheckoutComGatewaysCheckoutComGatewayId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETCheckoutComGatewaysCheckoutComGatewayId200Response{}
+
 // GETCheckoutComGatewaysCheckoutComGatewayId200Response struct for GETCheckoutComGatewaysCheckoutComGatewayId200Response
 type GETCheckoutComGatewaysCheckoutComGatewayId200Response struct {
-	Data *GETCheckoutComGateways200ResponseDataInner `json:"data,omitempty"`
+	Data *GETCheckoutComGatewaysCheckoutComGatewayId200ResponseData `json:"data,omitempty"`
 }
 
 // NewGETCheckoutComGatewaysCheckoutComGatewayId200Response instantiates a new GETCheckoutComGatewaysCheckoutComGatewayId200Response object
@@ -38,9 +41,9 @@ func NewGETCheckoutComGatewaysCheckoutComGatewayId200ResponseWithDefaults() *GET
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETCheckoutComGatewaysCheckoutComGatewayId200Response) GetData() GETCheckoutComGateways200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret GETCheckoutComGateways200ResponseDataInner
+func (o *GETCheckoutComGatewaysCheckoutComGatewayId200Response) GetData() GETCheckoutComGatewaysCheckoutComGatewayId200ResponseData {
+	if o == nil || IsNil(o.Data) {
+		var ret GETCheckoutComGatewaysCheckoutComGatewayId200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *GETCheckoutComGatewaysCheckoutComGatewayId200Response) GetData() GETChe
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETCheckoutComGatewaysCheckoutComGatewayId200Response) GetDataOk() (*GETCheckoutComGateways200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+func (o *GETCheckoutComGatewaysCheckoutComGatewayId200Response) GetDataOk() (*GETCheckoutComGatewaysCheckoutComGatewayId200ResponseData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *GETCheckoutComGatewaysCheckoutComGatewayId200Response) GetDataOk() (*GE
 
 // HasData returns a boolean if a field has been set.
 func (o *GETCheckoutComGatewaysCheckoutComGatewayId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETCheckoutComGateways200ResponseDataInner and assigns it to the Data field.
-func (o *GETCheckoutComGatewaysCheckoutComGatewayId200Response) SetData(v GETCheckoutComGateways200ResponseDataInner) {
+// SetData gets a reference to the given GETCheckoutComGatewaysCheckoutComGatewayId200ResponseData and assigns it to the Data field.
+func (o *GETCheckoutComGatewaysCheckoutComGatewayId200Response) SetData(v GETCheckoutComGatewaysCheckoutComGatewayId200ResponseData) {
 	o.Data = &v
 }
 
 func (o GETCheckoutComGatewaysCheckoutComGatewayId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GETCheckoutComGatewaysCheckoutComGatewayId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGETCheckoutComGatewaysCheckoutComGatewayId200Response struct {

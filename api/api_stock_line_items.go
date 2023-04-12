@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type StockLineItemsApiService service
 type StockLineItemsApiGETLineItemIdStockLineItemsRequest struct {
 	ctx        context.Context
 	ApiService *StockLineItemsApiService
-	lineItemId string
+	lineItemId interface{}
 }
 
 func (r StockLineItemsApiGETLineItemIdStockLineItemsRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Retrieve the stock line items associated to the line item
 	@param lineItemId The resource's id
 	@return StockLineItemsApiGETLineItemIdStockLineItemsRequest
 */
-func (a *StockLineItemsApiService) GETLineItemIdStockLineItems(ctx context.Context, lineItemId string) StockLineItemsApiGETLineItemIdStockLineItemsRequest {
+func (a *StockLineItemsApiService) GETLineItemIdStockLineItems(ctx context.Context, lineItemId interface{}) StockLineItemsApiGETLineItemIdStockLineItemsRequest {
 	return StockLineItemsApiGETLineItemIdStockLineItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -64,7 +64,7 @@ func (a *StockLineItemsApiService) GETLineItemIdStockLineItemsExecute(r StockLin
 	}
 
 	localVarPath := localBasePath + "/line_items/{lineItemId}/stock_line_items"
-	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterToString(r.lineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterValueToString(r.lineItemId, "lineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *StockLineItemsApiService) GETLineItemIdStockLineItemsExecute(r StockLin
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *StockLineItemsApiService) GETLineItemIdStockLineItemsExecute(r StockLin
 type StockLineItemsApiGETParcelLineItemIdStockLineItemRequest struct {
 	ctx              context.Context
 	ApiService       *StockLineItemsApiService
-	parcelLineItemId string
+	parcelLineItemId interface{}
 }
 
 func (r StockLineItemsApiGETParcelLineItemIdStockLineItemRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the stock line item associated to the parcel line item
 	@param parcelLineItemId The resource's id
 	@return StockLineItemsApiGETParcelLineItemIdStockLineItemRequest
 */
-func (a *StockLineItemsApiService) GETParcelLineItemIdStockLineItem(ctx context.Context, parcelLineItemId string) StockLineItemsApiGETParcelLineItemIdStockLineItemRequest {
+func (a *StockLineItemsApiService) GETParcelLineItemIdStockLineItem(ctx context.Context, parcelLineItemId interface{}) StockLineItemsApiGETParcelLineItemIdStockLineItemRequest {
 	return StockLineItemsApiGETParcelLineItemIdStockLineItemRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -156,7 +156,7 @@ func (a *StockLineItemsApiService) GETParcelLineItemIdStockLineItemExecute(r Sto
 	}
 
 	localVarPath := localBasePath + "/parcel_line_items/{parcelLineItemId}/stock_line_item"
-	localVarPath = strings.Replace(localVarPath, "{"+"parcelLineItemId"+"}", url.PathEscape(parameterToString(r.parcelLineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"parcelLineItemId"+"}", url.PathEscape(parameterValueToString(r.parcelLineItemId, "parcelLineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *StockLineItemsApiService) GETParcelLineItemIdStockLineItemExecute(r Sto
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -210,7 +210,7 @@ func (a *StockLineItemsApiService) GETParcelLineItemIdStockLineItemExecute(r Sto
 type StockLineItemsApiGETShipmentIdStockLineItemsRequest struct {
 	ctx        context.Context
 	ApiService *StockLineItemsApiService
-	shipmentId string
+	shipmentId interface{}
 }
 
 func (r StockLineItemsApiGETShipmentIdStockLineItemsRequest) Execute() (*http.Response, error) {
@@ -226,7 +226,7 @@ Retrieve the stock line items associated to the shipment
 	@param shipmentId The resource's id
 	@return StockLineItemsApiGETShipmentIdStockLineItemsRequest
 */
-func (a *StockLineItemsApiService) GETShipmentIdStockLineItems(ctx context.Context, shipmentId string) StockLineItemsApiGETShipmentIdStockLineItemsRequest {
+func (a *StockLineItemsApiService) GETShipmentIdStockLineItems(ctx context.Context, shipmentId interface{}) StockLineItemsApiGETShipmentIdStockLineItemsRequest {
 	return StockLineItemsApiGETShipmentIdStockLineItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -248,7 +248,7 @@ func (a *StockLineItemsApiService) GETShipmentIdStockLineItemsExecute(r StockLin
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/stock_line_items"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -281,9 +281,9 @@ func (a *StockLineItemsApiService) GETShipmentIdStockLineItemsExecute(r StockLin
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -372,9 +372,9 @@ func (a *StockLineItemsApiService) GETStockLineItemsExecute(r StockLineItemsApiG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -402,7 +402,7 @@ func (a *StockLineItemsApiService) GETStockLineItemsExecute(r StockLineItemsApiG
 type StockLineItemsApiGETStockLineItemsStockLineItemIdRequest struct {
 	ctx             context.Context
 	ApiService      *StockLineItemsApiService
-	stockLineItemId string
+	stockLineItemId interface{}
 }
 
 func (r StockLineItemsApiGETStockLineItemsStockLineItemIdRequest) Execute() (*GETStockLineItemsStockLineItemId200Response, *http.Response, error) {
@@ -418,7 +418,7 @@ Retrieve a stock line item
 	@param stockLineItemId The resource's id
 	@return StockLineItemsApiGETStockLineItemsStockLineItemIdRequest
 */
-func (a *StockLineItemsApiService) GETStockLineItemsStockLineItemId(ctx context.Context, stockLineItemId string) StockLineItemsApiGETStockLineItemsStockLineItemIdRequest {
+func (a *StockLineItemsApiService) GETStockLineItemsStockLineItemId(ctx context.Context, stockLineItemId interface{}) StockLineItemsApiGETStockLineItemsStockLineItemIdRequest {
 	return StockLineItemsApiGETStockLineItemsStockLineItemIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -443,7 +443,7 @@ func (a *StockLineItemsApiService) GETStockLineItemsStockLineItemIdExecute(r Sto
 	}
 
 	localVarPath := localBasePath + "/stock_line_items/{stockLineItemId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockLineItemId"+"}", url.PathEscape(parameterToString(r.stockLineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockLineItemId"+"}", url.PathEscape(parameterValueToString(r.stockLineItemId, "stockLineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -476,9 +476,9 @@ func (a *StockLineItemsApiService) GETStockLineItemsStockLineItemIdExecute(r Sto
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

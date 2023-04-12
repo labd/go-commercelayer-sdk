@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Id** | **string** | The resource&#39;s id | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Id** | **interface{}** | The resource&#39;s id | 
 **Attributes** | [**PATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes**](PATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
+**Relationships** | Pointer to **interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewReturnLineItemUpdateData
 
-`func NewReturnLineItemUpdateData(type_ string, id string, attributes PATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes, ) *ReturnLineItemUpdateData`
+`func NewReturnLineItemUpdateData(type_ interface{}, id interface{}, attributes PATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes, ) *ReturnLineItemUpdateData`
 
 NewReturnLineItemUpdateData instantiates a new ReturnLineItemUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -30,44 +30,64 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *ReturnLineItemUpdateData) GetType() string`
+`func (o *ReturnLineItemUpdateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *ReturnLineItemUpdateData) GetTypeOk() (*string, bool)`
+`func (o *ReturnLineItemUpdateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *ReturnLineItemUpdateData) SetType(v string)`
+`func (o *ReturnLineItemUpdateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *ReturnLineItemUpdateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *ReturnLineItemUpdateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetId
 
-`func (o *ReturnLineItemUpdateData) GetId() string`
+`func (o *ReturnLineItemUpdateData) GetId() interface{}`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ReturnLineItemUpdateData) GetIdOk() (*string, bool)`
+`func (o *ReturnLineItemUpdateData) GetIdOk() (*interface{}, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ReturnLineItemUpdateData) SetId(v string)`
+`func (o *ReturnLineItemUpdateData) SetId(v interface{})`
 
 SetId sets Id field to given value.
 
 
+### SetIdNil
+
+`func (o *ReturnLineItemUpdateData) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *ReturnLineItemUpdateData) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetAttributes
 
 `func (o *ReturnLineItemUpdateData) GetAttributes() PATCHReturnLineItemsReturnLineItemId200ResponseDataAttributes`
@@ -90,20 +110,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *ReturnLineItemUpdateData) GetRelationships() map[string]interface{}`
+`func (o *ReturnLineItemUpdateData) GetRelationships() interface{}`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *ReturnLineItemUpdateData) GetRelationshipsOk() (*map[string]interface{}, bool)`
+`func (o *ReturnLineItemUpdateData) GetRelationshipsOk() (*interface{}, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *ReturnLineItemUpdateData) SetRelationships(v map[string]interface{})`
+`func (o *ReturnLineItemUpdateData) SetRelationships(v interface{})`
 
 SetRelationships sets Relationships field to given value.
 
@@ -113,6 +133,16 @@ SetRelationships sets Relationships field to given value.
 
 HasRelationships returns a boolean if a field has been set.
 
+### SetRelationshipsNil
+
+`func (o *ReturnLineItemUpdateData) SetRelationshipsNil(b bool)`
+
+ SetRelationshipsNil sets the value for Relationships to be an explicit nil
+
+### UnsetRelationships
+`func (o *ReturnLineItemUpdateData) UnsetRelationships()`
+
+UnsetRelationships ensures that no value is present for Relationships, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

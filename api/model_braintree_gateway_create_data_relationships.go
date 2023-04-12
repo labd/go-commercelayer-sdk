@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the BraintreeGatewayCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BraintreeGatewayCreateDataRelationships{}
 
 // BraintreeGatewayCreateDataRelationships struct for BraintreeGatewayCreateDataRelationships
 type BraintreeGatewayCreateDataRelationships struct {
@@ -39,7 +42,7 @@ func NewBraintreeGatewayCreateDataRelationshipsWithDefaults() *BraintreeGatewayC
 
 // GetBraintreePayments returns the BraintreePayments field value if set, zero value otherwise.
 func (o *BraintreeGatewayCreateDataRelationships) GetBraintreePayments() BraintreeGatewayCreateDataRelationshipsBraintreePayments {
-	if o == nil || o.BraintreePayments == nil {
+	if o == nil || IsNil(o.BraintreePayments) {
 		var ret BraintreeGatewayCreateDataRelationshipsBraintreePayments
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *BraintreeGatewayCreateDataRelationships) GetBraintreePayments() Braintr
 // GetBraintreePaymentsOk returns a tuple with the BraintreePayments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BraintreeGatewayCreateDataRelationships) GetBraintreePaymentsOk() (*BraintreeGatewayCreateDataRelationshipsBraintreePayments, bool) {
-	if o == nil || o.BraintreePayments == nil {
+	if o == nil || IsNil(o.BraintreePayments) {
 		return nil, false
 	}
 	return o.BraintreePayments, true
@@ -57,7 +60,7 @@ func (o *BraintreeGatewayCreateDataRelationships) GetBraintreePaymentsOk() (*Bra
 
 // HasBraintreePayments returns a boolean if a field has been set.
 func (o *BraintreeGatewayCreateDataRelationships) HasBraintreePayments() bool {
-	if o != nil && o.BraintreePayments != nil {
+	if o != nil && !IsNil(o.BraintreePayments) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *BraintreeGatewayCreateDataRelationships) SetBraintreePayments(v Braintr
 }
 
 func (o BraintreeGatewayCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.BraintreePayments != nil {
-		toSerialize["braintree_payments"] = o.BraintreePayments
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o BraintreeGatewayCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.BraintreePayments) {
+		toSerialize["braintree_payments"] = o.BraintreePayments
+	}
+	return toSerialize, nil
 }
 
 type NullableBraintreeGatewayCreateDataRelationships struct {

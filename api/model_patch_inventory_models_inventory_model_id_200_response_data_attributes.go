@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,20 +15,23 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHInventoryModelsInventoryModelId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHInventoryModelsInventoryModelId200ResponseDataAttributes{}
+
 // PATCHInventoryModelsInventoryModelId200ResponseDataAttributes struct for PATCHInventoryModelsInventoryModelId200ResponseDataAttributes
 type PATCHInventoryModelsInventoryModelId200ResponseDataAttributes struct {
 	// The inventory model's internal name.
-	Name *string `json:"name,omitempty"`
+	Name interface{} `json:"name,omitempty"`
 	// The inventory model's shipping strategy: one between 'no_split' (default), 'split_shipments', 'ship_from_primary' and 'ship_from_first_available_or_primary'.
-	Strategy *string `json:"strategy,omitempty"`
+	Strategy interface{} `json:"strategy,omitempty"`
 	// The maximum number of stock locations used for inventory computation
-	StockLocationsCutoff *int32 `json:"stock_locations_cutoff,omitempty"`
+	StockLocationsCutoff interface{} `json:"stock_locations_cutoff,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 }
 
 // NewPATCHInventoryModelsInventoryModelId200ResponseDataAttributes instantiates a new PATCHInventoryModelsInventoryModelId200ResponseDataAttributes object
@@ -48,170 +51,175 @@ func NewPATCHInventoryModelsInventoryModelId200ResponseDataAttributesWithDefault
 	return &this
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetName() string {
-	if o == nil || o.Name == nil {
-		var ret string
+// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetName() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Name
+	return o.Name
 }
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return o.Name, true
+	return &o.Name, true
 }
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetName(v string) {
-	o.Name = &v
+// SetName gets a reference to the given interface{} and assigns it to the Name field.
+func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetName(v interface{}) {
+	o.Name = v
 }
 
-// GetStrategy returns the Strategy field value if set, zero value otherwise.
-func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetStrategy() string {
-	if o == nil || o.Strategy == nil {
-		var ret string
+// GetStrategy returns the Strategy field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetStrategy() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Strategy
+	return o.Strategy
 }
 
 // GetStrategyOk returns a tuple with the Strategy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetStrategyOk() (*string, bool) {
-	if o == nil || o.Strategy == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetStrategyOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Strategy) {
 		return nil, false
 	}
-	return o.Strategy, true
+	return &o.Strategy, true
 }
 
 // HasStrategy returns a boolean if a field has been set.
 func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) HasStrategy() bool {
-	if o != nil && o.Strategy != nil {
+	if o != nil && IsNil(o.Strategy) {
 		return true
 	}
 
 	return false
 }
 
-// SetStrategy gets a reference to the given string and assigns it to the Strategy field.
-func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetStrategy(v string) {
-	o.Strategy = &v
+// SetStrategy gets a reference to the given interface{} and assigns it to the Strategy field.
+func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetStrategy(v interface{}) {
+	o.Strategy = v
 }
 
-// GetStockLocationsCutoff returns the StockLocationsCutoff field value if set, zero value otherwise.
-func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetStockLocationsCutoff() int32 {
-	if o == nil || o.StockLocationsCutoff == nil {
-		var ret int32
+// GetStockLocationsCutoff returns the StockLocationsCutoff field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetStockLocationsCutoff() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.StockLocationsCutoff
+	return o.StockLocationsCutoff
 }
 
 // GetStockLocationsCutoffOk returns a tuple with the StockLocationsCutoff field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetStockLocationsCutoffOk() (*int32, bool) {
-	if o == nil || o.StockLocationsCutoff == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetStockLocationsCutoffOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.StockLocationsCutoff) {
 		return nil, false
 	}
-	return o.StockLocationsCutoff, true
+	return &o.StockLocationsCutoff, true
 }
 
 // HasStockLocationsCutoff returns a boolean if a field has been set.
 func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) HasStockLocationsCutoff() bool {
-	if o != nil && o.StockLocationsCutoff != nil {
+	if o != nil && IsNil(o.StockLocationsCutoff) {
 		return true
 	}
 
 	return false
 }
 
-// SetStockLocationsCutoff gets a reference to the given int32 and assigns it to the StockLocationsCutoff field.
-func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetStockLocationsCutoff(v int32) {
-	o.StockLocationsCutoff = &v
+// SetStockLocationsCutoff gets a reference to the given interface{} and assigns it to the StockLocationsCutoff field.
+func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetStockLocationsCutoff(v interface{}) {
+	o.StockLocationsCutoff = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -219,28 +227,37 @@ func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetMetad
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 func (o PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -260,7 +277,7 @@ func (o PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) MarshalJS
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHInventoryModelsInventoryModelId200ResponseDataAttributes struct {

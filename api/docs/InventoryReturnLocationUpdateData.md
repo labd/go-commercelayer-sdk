@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Id** | **string** | The resource&#39;s id | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Id** | **interface{}** | The resource&#39;s id | 
 **Attributes** | [**PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes**](PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**InventoryReturnLocationUpdateDataRelationships**](InventoryReturnLocationUpdateDataRelationships.md) |  | [optional] 
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewInventoryReturnLocationUpdateData
 
-`func NewInventoryReturnLocationUpdateData(type_ string, id string, attributes PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes, ) *InventoryReturnLocationUpdateData`
+`func NewInventoryReturnLocationUpdateData(type_ interface{}, id interface{}, attributes PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes, ) *InventoryReturnLocationUpdateData`
 
 NewInventoryReturnLocationUpdateData instantiates a new InventoryReturnLocationUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -30,44 +30,64 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *InventoryReturnLocationUpdateData) GetType() string`
+`func (o *InventoryReturnLocationUpdateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *InventoryReturnLocationUpdateData) GetTypeOk() (*string, bool)`
+`func (o *InventoryReturnLocationUpdateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *InventoryReturnLocationUpdateData) SetType(v string)`
+`func (o *InventoryReturnLocationUpdateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *InventoryReturnLocationUpdateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *InventoryReturnLocationUpdateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetId
 
-`func (o *InventoryReturnLocationUpdateData) GetId() string`
+`func (o *InventoryReturnLocationUpdateData) GetId() interface{}`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *InventoryReturnLocationUpdateData) GetIdOk() (*string, bool)`
+`func (o *InventoryReturnLocationUpdateData) GetIdOk() (*interface{}, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *InventoryReturnLocationUpdateData) SetId(v string)`
+`func (o *InventoryReturnLocationUpdateData) SetId(v interface{})`
 
 SetId sets Id field to given value.
 
 
+### SetIdNil
+
+`func (o *InventoryReturnLocationUpdateData) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *InventoryReturnLocationUpdateData) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetAttributes
 
 `func (o *InventoryReturnLocationUpdateData) GetAttributes() PATCHInventoryReturnLocationsInventoryReturnLocationId200ResponseDataAttributes`

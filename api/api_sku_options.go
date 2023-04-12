@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type SkuOptionsApiService service
 type SkuOptionsApiDELETESkuOptionsSkuOptionIdRequest struct {
 	ctx         context.Context
 	ApiService  *SkuOptionsApiService
-	skuOptionId string
+	skuOptionId interface{}
 }
 
 func (r SkuOptionsApiDELETESkuOptionsSkuOptionIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a SKU option
 	@param skuOptionId The resource's id
 	@return SkuOptionsApiDELETESkuOptionsSkuOptionIdRequest
 */
-func (a *SkuOptionsApiService) DELETESkuOptionsSkuOptionId(ctx context.Context, skuOptionId string) SkuOptionsApiDELETESkuOptionsSkuOptionIdRequest {
+func (a *SkuOptionsApiService) DELETESkuOptionsSkuOptionId(ctx context.Context, skuOptionId interface{}) SkuOptionsApiDELETESkuOptionsSkuOptionIdRequest {
 	return SkuOptionsApiDELETESkuOptionsSkuOptionIdRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -64,7 +64,7 @@ func (a *SkuOptionsApiService) DELETESkuOptionsSkuOptionIdExecute(r SkuOptionsAp
 	}
 
 	localVarPath := localBasePath + "/sku_options/{skuOptionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuOptionId"+"}", url.PathEscape(parameterToString(r.skuOptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuOptionId"+"}", url.PathEscape(parameterValueToString(r.skuOptionId, "skuOptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *SkuOptionsApiService) DELETESkuOptionsSkuOptionIdExecute(r SkuOptionsAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *SkuOptionsApiService) DELETESkuOptionsSkuOptionIdExecute(r SkuOptionsAp
 type SkuOptionsApiGETLineItemOptionIdSkuOptionRequest struct {
 	ctx              context.Context
 	ApiService       *SkuOptionsApiService
-	lineItemOptionId string
+	lineItemOptionId interface{}
 }
 
 func (r SkuOptionsApiGETLineItemOptionIdSkuOptionRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the sku option associated to the line item option
 	@param lineItemOptionId The resource's id
 	@return SkuOptionsApiGETLineItemOptionIdSkuOptionRequest
 */
-func (a *SkuOptionsApiService) GETLineItemOptionIdSkuOption(ctx context.Context, lineItemOptionId string) SkuOptionsApiGETLineItemOptionIdSkuOptionRequest {
+func (a *SkuOptionsApiService) GETLineItemOptionIdSkuOption(ctx context.Context, lineItemOptionId interface{}) SkuOptionsApiGETLineItemOptionIdSkuOptionRequest {
 	return SkuOptionsApiGETLineItemOptionIdSkuOptionRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -156,7 +156,7 @@ func (a *SkuOptionsApiService) GETLineItemOptionIdSkuOptionExecute(r SkuOptionsA
 	}
 
 	localVarPath := localBasePath + "/line_item_options/{lineItemOptionId}/sku_option"
-	localVarPath = strings.Replace(localVarPath, "{"+"lineItemOptionId"+"}", url.PathEscape(parameterToString(r.lineItemOptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemOptionId"+"}", url.PathEscape(parameterValueToString(r.lineItemOptionId, "lineItemOptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *SkuOptionsApiService) GETLineItemOptionIdSkuOptionExecute(r SkuOptionsA
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -210,7 +210,7 @@ func (a *SkuOptionsApiService) GETLineItemOptionIdSkuOptionExecute(r SkuOptionsA
 type SkuOptionsApiGETSkuIdSkuOptionsRequest struct {
 	ctx        context.Context
 	ApiService *SkuOptionsApiService
-	skuId      string
+	skuId      interface{}
 }
 
 func (r SkuOptionsApiGETSkuIdSkuOptionsRequest) Execute() (*http.Response, error) {
@@ -226,7 +226,7 @@ Retrieve the sku options associated to the SKU
 	@param skuId The resource's id
 	@return SkuOptionsApiGETSkuIdSkuOptionsRequest
 */
-func (a *SkuOptionsApiService) GETSkuIdSkuOptions(ctx context.Context, skuId string) SkuOptionsApiGETSkuIdSkuOptionsRequest {
+func (a *SkuOptionsApiService) GETSkuIdSkuOptions(ctx context.Context, skuId interface{}) SkuOptionsApiGETSkuIdSkuOptionsRequest {
 	return SkuOptionsApiGETSkuIdSkuOptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -248,7 +248,7 @@ func (a *SkuOptionsApiService) GETSkuIdSkuOptionsExecute(r SkuOptionsApiGETSkuId
 	}
 
 	localVarPath := localBasePath + "/skus/{skuId}/sku_options"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterToString(r.skuId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -281,9 +281,9 @@ func (a *SkuOptionsApiService) GETSkuIdSkuOptionsExecute(r SkuOptionsApiGETSkuId
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -372,9 +372,9 @@ func (a *SkuOptionsApiService) GETSkuOptionsExecute(r SkuOptionsApiGETSkuOptions
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -402,7 +402,7 @@ func (a *SkuOptionsApiService) GETSkuOptionsExecute(r SkuOptionsApiGETSkuOptions
 type SkuOptionsApiGETSkuOptionsSkuOptionIdRequest struct {
 	ctx         context.Context
 	ApiService  *SkuOptionsApiService
-	skuOptionId string
+	skuOptionId interface{}
 }
 
 func (r SkuOptionsApiGETSkuOptionsSkuOptionIdRequest) Execute() (*GETSkuOptionsSkuOptionId200Response, *http.Response, error) {
@@ -418,7 +418,7 @@ Retrieve a SKU option
 	@param skuOptionId The resource's id
 	@return SkuOptionsApiGETSkuOptionsSkuOptionIdRequest
 */
-func (a *SkuOptionsApiService) GETSkuOptionsSkuOptionId(ctx context.Context, skuOptionId string) SkuOptionsApiGETSkuOptionsSkuOptionIdRequest {
+func (a *SkuOptionsApiService) GETSkuOptionsSkuOptionId(ctx context.Context, skuOptionId interface{}) SkuOptionsApiGETSkuOptionsSkuOptionIdRequest {
 	return SkuOptionsApiGETSkuOptionsSkuOptionIdRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -443,7 +443,7 @@ func (a *SkuOptionsApiService) GETSkuOptionsSkuOptionIdExecute(r SkuOptionsApiGE
 	}
 
 	localVarPath := localBasePath + "/sku_options/{skuOptionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuOptionId"+"}", url.PathEscape(parameterToString(r.skuOptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuOptionId"+"}", url.PathEscape(parameterValueToString(r.skuOptionId, "skuOptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -476,9 +476,9 @@ func (a *SkuOptionsApiService) GETSkuOptionsSkuOptionIdExecute(r SkuOptionsApiGE
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -507,7 +507,7 @@ type SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest struct {
 	ctx             context.Context
 	ApiService      *SkuOptionsApiService
 	skuOptionUpdate *SkuOptionUpdate
-	skuOptionId     string
+	skuOptionId     interface{}
 }
 
 func (r SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest) SkuOptionUpdate(skuOptionUpdate SkuOptionUpdate) SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest {
@@ -528,7 +528,7 @@ Update a SKU option
 	@param skuOptionId The resource's id
 	@return SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest
 */
-func (a *SkuOptionsApiService) PATCHSkuOptionsSkuOptionId(ctx context.Context, skuOptionId string) SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest {
+func (a *SkuOptionsApiService) PATCHSkuOptionsSkuOptionId(ctx context.Context, skuOptionId interface{}) SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest {
 	return SkuOptionsApiPATCHSkuOptionsSkuOptionIdRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -553,7 +553,7 @@ func (a *SkuOptionsApiService) PATCHSkuOptionsSkuOptionIdExecute(r SkuOptionsApi
 	}
 
 	localVarPath := localBasePath + "/sku_options/{skuOptionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuOptionId"+"}", url.PathEscape(parameterToString(r.skuOptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuOptionId"+"}", url.PathEscape(parameterValueToString(r.skuOptionId, "skuOptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -591,9 +591,9 @@ func (a *SkuOptionsApiService) PATCHSkuOptionsSkuOptionIdExecute(r SkuOptionsApi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -702,9 +702,9 @@ func (a *SkuOptionsApiService) POSTSkuOptionsExecute(r SkuOptionsApiPOSTSkuOptio
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

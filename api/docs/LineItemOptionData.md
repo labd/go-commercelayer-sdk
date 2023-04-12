@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETLineItemOptions200ResponseDataInnerAttributes**](GETLineItemOptions200ResponseDataInnerAttributes.md) |  | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Attributes** | [**GETLineItemOptionsLineItemOptionId200ResponseDataAttributes**](GETLineItemOptionsLineItemOptionId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**LineItemOptionDataRelationships**](LineItemOptionDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewLineItemOptionData
 
-`func NewLineItemOptionData(type_ string, attributes GETLineItemOptions200ResponseDataInnerAttributes, ) *LineItemOptionData`
+`func NewLineItemOptionData(type_ interface{}, attributes GETLineItemOptionsLineItemOptionId200ResponseDataAttributes, ) *LineItemOptionData`
 
 NewLineItemOptionData instantiates a new LineItemOptionData object
 This constructor will assign default values to properties that have it defined,
@@ -29,40 +29,50 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *LineItemOptionData) GetType() string`
+`func (o *LineItemOptionData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *LineItemOptionData) GetTypeOk() (*string, bool)`
+`func (o *LineItemOptionData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *LineItemOptionData) SetType(v string)`
+`func (o *LineItemOptionData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *LineItemOptionData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *LineItemOptionData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *LineItemOptionData) GetAttributes() GETLineItemOptions200ResponseDataInnerAttributes`
+`func (o *LineItemOptionData) GetAttributes() GETLineItemOptionsLineItemOptionId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *LineItemOptionData) GetAttributesOk() (*GETLineItemOptions200ResponseDataInnerAttributes, bool)`
+`func (o *LineItemOptionData) GetAttributesOk() (*GETLineItemOptionsLineItemOptionId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *LineItemOptionData) SetAttributes(v GETLineItemOptions200ResponseDataInnerAttributes)`
+`func (o *LineItemOptionData) SetAttributes(v GETLineItemOptionsLineItemOptionId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

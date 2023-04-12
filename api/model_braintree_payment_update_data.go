@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,12 +15,15 @@ import (
 	"encoding/json"
 )
 
+// checks if the BraintreePaymentUpdateData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BraintreePaymentUpdateData{}
+
 // BraintreePaymentUpdateData struct for BraintreePaymentUpdateData
 type BraintreePaymentUpdateData struct {
 	// The resource's type
-	Type string `json:"type"`
+	Type interface{} `json:"type"`
 	// The resource's id
-	Id            string                                                            `json:"id"`
+	Id            interface{}                                                       `json:"id"`
 	Attributes    PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes `json:"attributes"`
 	Relationships *AdyenPaymentUpdateDataRelationships                              `json:"relationships,omitempty"`
 }
@@ -29,7 +32,7 @@ type BraintreePaymentUpdateData struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewBraintreePaymentUpdateData(type_ string, id string, attributes PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) *BraintreePaymentUpdateData {
+func NewBraintreePaymentUpdateData(type_ interface{}, id interface{}, attributes PATCHBraintreePaymentsBraintreePaymentId200ResponseDataAttributes) *BraintreePaymentUpdateData {
 	this := BraintreePaymentUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -46,9 +49,10 @@ func NewBraintreePaymentUpdateDataWithDefaults() *BraintreePaymentUpdateData {
 }
 
 // GetType returns the Type field value
-func (o *BraintreePaymentUpdateData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *BraintreePaymentUpdateData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -57,22 +61,24 @@ func (o *BraintreePaymentUpdateData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *BraintreePaymentUpdateData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *BraintreePaymentUpdateData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *BraintreePaymentUpdateData) SetType(v string) {
+func (o *BraintreePaymentUpdateData) SetType(v interface{}) {
 	o.Type = v
 }
 
 // GetId returns the Id field value
-func (o *BraintreePaymentUpdateData) GetId() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *BraintreePaymentUpdateData) GetId() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -81,15 +87,16 @@ func (o *BraintreePaymentUpdateData) GetId() string {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *BraintreePaymentUpdateData) GetIdOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *BraintreePaymentUpdateData) GetIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return &o.Id, true
 }
 
 // SetId sets field value
-func (o *BraintreePaymentUpdateData) SetId(v string) {
+func (o *BraintreePaymentUpdateData) SetId(v interface{}) {
 	o.Id = v
 }
 
@@ -119,7 +126,7 @@ func (o *BraintreePaymentUpdateData) SetAttributes(v PATCHBraintreePaymentsBrain
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *BraintreePaymentUpdateData) GetRelationships() AdyenPaymentUpdateDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret AdyenPaymentUpdateDataRelationships
 		return ret
 	}
@@ -129,7 +136,7 @@ func (o *BraintreePaymentUpdateData) GetRelationships() AdyenPaymentUpdateDataRe
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *BraintreePaymentUpdateData) GetRelationshipsOk() (*AdyenPaymentUpdateDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -137,7 +144,7 @@ func (o *BraintreePaymentUpdateData) GetRelationshipsOk() (*AdyenPaymentUpdateDa
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *BraintreePaymentUpdateData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -150,20 +157,26 @@ func (o *BraintreePaymentUpdateData) SetRelationships(v AdyenPaymentUpdateDataRe
 }
 
 func (o BraintreePaymentUpdateData) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
-		toSerialize["relationships"] = o.Relationships
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o BraintreePaymentUpdateData) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
+	}
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
+		toSerialize["relationships"] = o.Relationships
+	}
+	return toSerialize, nil
 }
 
 type NullableBraintreePaymentUpdateData struct {

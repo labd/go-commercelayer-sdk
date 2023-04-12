@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETLineItemsLineItemId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETLineItemsLineItemId200Response{}
+
 // GETLineItemsLineItemId200Response struct for GETLineItemsLineItemId200Response
 type GETLineItemsLineItemId200Response struct {
-	Data *GETLineItems200ResponseDataInner `json:"data,omitempty"`
+	Data *GETLineItemsLineItemId200ResponseData `json:"data,omitempty"`
 }
 
 // NewGETLineItemsLineItemId200Response instantiates a new GETLineItemsLineItemId200Response object
@@ -38,9 +41,9 @@ func NewGETLineItemsLineItemId200ResponseWithDefaults() *GETLineItemsLineItemId2
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETLineItemsLineItemId200Response) GetData() GETLineItems200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret GETLineItems200ResponseDataInner
+func (o *GETLineItemsLineItemId200Response) GetData() GETLineItemsLineItemId200ResponseData {
+	if o == nil || IsNil(o.Data) {
+		var ret GETLineItemsLineItemId200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *GETLineItemsLineItemId200Response) GetData() GETLineItems200ResponseDat
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETLineItemsLineItemId200Response) GetDataOk() (*GETLineItems200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+func (o *GETLineItemsLineItemId200Response) GetDataOk() (*GETLineItemsLineItemId200ResponseData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *GETLineItemsLineItemId200Response) GetDataOk() (*GETLineItems200Respons
 
 // HasData returns a boolean if a field has been set.
 func (o *GETLineItemsLineItemId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETLineItems200ResponseDataInner and assigns it to the Data field.
-func (o *GETLineItemsLineItemId200Response) SetData(v GETLineItems200ResponseDataInner) {
+// SetData gets a reference to the given GETLineItemsLineItemId200ResponseData and assigns it to the Data field.
+func (o *GETLineItemsLineItemId200Response) SetData(v GETLineItemsLineItemId200ResponseData) {
 	o.Data = &v
 }
 
 func (o GETLineItemsLineItemId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GETLineItemsLineItemId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGETLineItemsLineItemId200Response struct {

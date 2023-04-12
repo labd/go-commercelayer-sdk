@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the FixedPricePromotionData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &FixedPricePromotionData{}
+
 // FixedPricePromotionData struct for FixedPricePromotionData
 type FixedPricePromotionData struct {
 	// The resource's type
-	Type          string                                                `json:"type"`
-	Attributes    GETFixedPricePromotions200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *FixedPricePromotionDataRelationships                 `json:"relationships,omitempty"`
+	Type          interface{}                                                           `json:"type"`
+	Attributes    GETFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes `json:"attributes"`
+	Relationships *FixedPricePromotionDataRelationships                                 `json:"relationships,omitempty"`
 }
 
 // NewFixedPricePromotionData instantiates a new FixedPricePromotionData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFixedPricePromotionData(type_ string, attributes GETFixedPricePromotions200ResponseDataInnerAttributes) *FixedPricePromotionData {
+func NewFixedPricePromotionData(type_ interface{}, attributes GETFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes) *FixedPricePromotionData {
 	this := FixedPricePromotionData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -43,9 +46,10 @@ func NewFixedPricePromotionDataWithDefaults() *FixedPricePromotionData {
 }
 
 // GetType returns the Type field value
-func (o *FixedPricePromotionData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *FixedPricePromotionData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -54,22 +58,23 @@ func (o *FixedPricePromotionData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *FixedPricePromotionData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *FixedPricePromotionData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *FixedPricePromotionData) SetType(v string) {
+func (o *FixedPricePromotionData) SetType(v interface{}) {
 	o.Type = v
 }
 
 // GetAttributes returns the Attributes field value
-func (o *FixedPricePromotionData) GetAttributes() GETFixedPricePromotions200ResponseDataInnerAttributes {
+func (o *FixedPricePromotionData) GetAttributes() GETFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETFixedPricePromotions200ResponseDataInnerAttributes
+		var ret GETFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes
 		return ret
 	}
 
@@ -78,7 +83,7 @@ func (o *FixedPricePromotionData) GetAttributes() GETFixedPricePromotions200Resp
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *FixedPricePromotionData) GetAttributesOk() (*GETFixedPricePromotions200ResponseDataInnerAttributes, bool) {
+func (o *FixedPricePromotionData) GetAttributesOk() (*GETFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,13 +91,13 @@ func (o *FixedPricePromotionData) GetAttributesOk() (*GETFixedPricePromotions200
 }
 
 // SetAttributes sets field value
-func (o *FixedPricePromotionData) SetAttributes(v GETFixedPricePromotions200ResponseDataInnerAttributes) {
+func (o *FixedPricePromotionData) SetAttributes(v GETFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *FixedPricePromotionData) GetRelationships() FixedPricePromotionDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret FixedPricePromotionDataRelationships
 		return ret
 	}
@@ -102,7 +107,7 @@ func (o *FixedPricePromotionData) GetRelationships() FixedPricePromotionDataRela
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FixedPricePromotionData) GetRelationshipsOk() (*FixedPricePromotionDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -110,7 +115,7 @@ func (o *FixedPricePromotionData) GetRelationshipsOk() (*FixedPricePromotionData
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *FixedPricePromotionData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -123,17 +128,23 @@ func (o *FixedPricePromotionData) SetRelationships(v FixedPricePromotionDataRela
 }
 
 func (o FixedPricePromotionData) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
-		toSerialize["relationships"] = o.Relationships
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o FixedPricePromotionData) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
+		toSerialize["relationships"] = o.Relationships
+	}
+	return toSerialize, nil
 }
 
 type NullableFixedPricePromotionData struct {

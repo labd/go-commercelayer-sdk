@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type CustomersApiService service
 type CustomersApiDELETECustomersCustomerIdRequest struct {
 	ctx        context.Context
 	ApiService *CustomersApiService
-	customerId string
+	customerId interface{}
 }
 
 func (r CustomersApiDELETECustomersCustomerIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a customer
 	@param customerId The resource's id
 	@return CustomersApiDELETECustomersCustomerIdRequest
 */
-func (a *CustomersApiService) DELETECustomersCustomerId(ctx context.Context, customerId string) CustomersApiDELETECustomersCustomerIdRequest {
+func (a *CustomersApiService) DELETECustomersCustomerId(ctx context.Context, customerId interface{}) CustomersApiDELETECustomersCustomerIdRequest {
 	return CustomersApiDELETECustomersCustomerIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -64,7 +64,7 @@ func (a *CustomersApiService) DELETECustomersCustomerIdExecute(r CustomersApiDEL
 	}
 
 	localVarPath := localBasePath + "/customers/{customerId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterToString(r.customerId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *CustomersApiService) DELETECustomersCustomerIdExecute(r CustomersApiDEL
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *CustomersApiService) DELETECustomersCustomerIdExecute(r CustomersApiDEL
 type CustomersApiGETCouponRecipientIdCustomerRequest struct {
 	ctx               context.Context
 	ApiService        *CustomersApiService
-	couponRecipientId string
+	couponRecipientId interface{}
 }
 
 func (r CustomersApiGETCouponRecipientIdCustomerRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the customer associated to the coupon recipient
 	@param couponRecipientId The resource's id
 	@return CustomersApiGETCouponRecipientIdCustomerRequest
 */
-func (a *CustomersApiService) GETCouponRecipientIdCustomer(ctx context.Context, couponRecipientId string) CustomersApiGETCouponRecipientIdCustomerRequest {
+func (a *CustomersApiService) GETCouponRecipientIdCustomer(ctx context.Context, couponRecipientId interface{}) CustomersApiGETCouponRecipientIdCustomerRequest {
 	return CustomersApiGETCouponRecipientIdCustomerRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -156,7 +156,7 @@ func (a *CustomersApiService) GETCouponRecipientIdCustomerExecute(r CustomersApi
 	}
 
 	localVarPath := localBasePath + "/coupon_recipients/{couponRecipientId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"couponRecipientId"+"}", url.PathEscape(parameterToString(r.couponRecipientId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"couponRecipientId"+"}", url.PathEscape(parameterValueToString(r.couponRecipientId, "couponRecipientId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *CustomersApiService) GETCouponRecipientIdCustomerExecute(r CustomersApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -210,7 +210,7 @@ func (a *CustomersApiService) GETCouponRecipientIdCustomerExecute(r CustomersApi
 type CustomersApiGETCustomerAddressIdCustomerRequest struct {
 	ctx               context.Context
 	ApiService        *CustomersApiService
-	customerAddressId string
+	customerAddressId interface{}
 }
 
 func (r CustomersApiGETCustomerAddressIdCustomerRequest) Execute() (*http.Response, error) {
@@ -226,7 +226,7 @@ Retrieve the customer associated to the customer address
 	@param customerAddressId The resource's id
 	@return CustomersApiGETCustomerAddressIdCustomerRequest
 */
-func (a *CustomersApiService) GETCustomerAddressIdCustomer(ctx context.Context, customerAddressId string) CustomersApiGETCustomerAddressIdCustomerRequest {
+func (a *CustomersApiService) GETCustomerAddressIdCustomer(ctx context.Context, customerAddressId interface{}) CustomersApiGETCustomerAddressIdCustomerRequest {
 	return CustomersApiGETCustomerAddressIdCustomerRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -248,7 +248,7 @@ func (a *CustomersApiService) GETCustomerAddressIdCustomerExecute(r CustomersApi
 	}
 
 	localVarPath := localBasePath + "/customer_addresses/{customerAddressId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterToString(r.customerAddressId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerAddressId"+"}", url.PathEscape(parameterValueToString(r.customerAddressId, "customerAddressId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -281,9 +281,9 @@ func (a *CustomersApiService) GETCustomerAddressIdCustomerExecute(r CustomersApi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -302,7 +302,7 @@ func (a *CustomersApiService) GETCustomerAddressIdCustomerExecute(r CustomersApi
 type CustomersApiGETCustomerGroupIdCustomersRequest struct {
 	ctx             context.Context
 	ApiService      *CustomersApiService
-	customerGroupId string
+	customerGroupId interface{}
 }
 
 func (r CustomersApiGETCustomerGroupIdCustomersRequest) Execute() (*http.Response, error) {
@@ -318,7 +318,7 @@ Retrieve the customers associated to the customer group
 	@param customerGroupId The resource's id
 	@return CustomersApiGETCustomerGroupIdCustomersRequest
 */
-func (a *CustomersApiService) GETCustomerGroupIdCustomers(ctx context.Context, customerGroupId string) CustomersApiGETCustomerGroupIdCustomersRequest {
+func (a *CustomersApiService) GETCustomerGroupIdCustomers(ctx context.Context, customerGroupId interface{}) CustomersApiGETCustomerGroupIdCustomersRequest {
 	return CustomersApiGETCustomerGroupIdCustomersRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -340,7 +340,7 @@ func (a *CustomersApiService) GETCustomerGroupIdCustomersExecute(r CustomersApiG
 	}
 
 	localVarPath := localBasePath + "/customer_groups/{customerGroupId}/customers"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerGroupId"+"}", url.PathEscape(parameterToString(r.customerGroupId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerGroupId"+"}", url.PathEscape(parameterValueToString(r.customerGroupId, "customerGroupId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -373,9 +373,9 @@ func (a *CustomersApiService) GETCustomerGroupIdCustomersExecute(r CustomersApiG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -394,7 +394,7 @@ func (a *CustomersApiService) GETCustomerGroupIdCustomersExecute(r CustomersApiG
 type CustomersApiGETCustomerPasswordResetIdCustomerRequest struct {
 	ctx                     context.Context
 	ApiService              *CustomersApiService
-	customerPasswordResetId string
+	customerPasswordResetId interface{}
 }
 
 func (r CustomersApiGETCustomerPasswordResetIdCustomerRequest) Execute() (*http.Response, error) {
@@ -410,7 +410,7 @@ Retrieve the customer associated to the customer password reset
 	@param customerPasswordResetId The resource's id
 	@return CustomersApiGETCustomerPasswordResetIdCustomerRequest
 */
-func (a *CustomersApiService) GETCustomerPasswordResetIdCustomer(ctx context.Context, customerPasswordResetId string) CustomersApiGETCustomerPasswordResetIdCustomerRequest {
+func (a *CustomersApiService) GETCustomerPasswordResetIdCustomer(ctx context.Context, customerPasswordResetId interface{}) CustomersApiGETCustomerPasswordResetIdCustomerRequest {
 	return CustomersApiGETCustomerPasswordResetIdCustomerRequest{
 		ApiService:              a,
 		ctx:                     ctx,
@@ -432,7 +432,7 @@ func (a *CustomersApiService) GETCustomerPasswordResetIdCustomerExecute(r Custom
 	}
 
 	localVarPath := localBasePath + "/customer_password_resets/{customerPasswordResetId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerPasswordResetId"+"}", url.PathEscape(parameterToString(r.customerPasswordResetId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerPasswordResetId"+"}", url.PathEscape(parameterValueToString(r.customerPasswordResetId, "customerPasswordResetId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -465,9 +465,9 @@ func (a *CustomersApiService) GETCustomerPasswordResetIdCustomerExecute(r Custom
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -486,7 +486,7 @@ func (a *CustomersApiService) GETCustomerPasswordResetIdCustomerExecute(r Custom
 type CustomersApiGETCustomerPaymentSourceIdCustomerRequest struct {
 	ctx                     context.Context
 	ApiService              *CustomersApiService
-	customerPaymentSourceId string
+	customerPaymentSourceId interface{}
 }
 
 func (r CustomersApiGETCustomerPaymentSourceIdCustomerRequest) Execute() (*http.Response, error) {
@@ -502,7 +502,7 @@ Retrieve the customer associated to the customer payment source
 	@param customerPaymentSourceId The resource's id
 	@return CustomersApiGETCustomerPaymentSourceIdCustomerRequest
 */
-func (a *CustomersApiService) GETCustomerPaymentSourceIdCustomer(ctx context.Context, customerPaymentSourceId string) CustomersApiGETCustomerPaymentSourceIdCustomerRequest {
+func (a *CustomersApiService) GETCustomerPaymentSourceIdCustomer(ctx context.Context, customerPaymentSourceId interface{}) CustomersApiGETCustomerPaymentSourceIdCustomerRequest {
 	return CustomersApiGETCustomerPaymentSourceIdCustomerRequest{
 		ApiService:              a,
 		ctx:                     ctx,
@@ -524,7 +524,7 @@ func (a *CustomersApiService) GETCustomerPaymentSourceIdCustomerExecute(r Custom
 	}
 
 	localVarPath := localBasePath + "/customer_payment_sources/{customerPaymentSourceId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerPaymentSourceId"+"}", url.PathEscape(parameterToString(r.customerPaymentSourceId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerPaymentSourceId"+"}", url.PathEscape(parameterValueToString(r.customerPaymentSourceId, "customerPaymentSourceId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -557,9 +557,9 @@ func (a *CustomersApiService) GETCustomerPaymentSourceIdCustomerExecute(r Custom
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -578,7 +578,7 @@ func (a *CustomersApiService) GETCustomerPaymentSourceIdCustomerExecute(r Custom
 type CustomersApiGETCustomerSubscriptionIdCustomerRequest struct {
 	ctx                    context.Context
 	ApiService             *CustomersApiService
-	customerSubscriptionId string
+	customerSubscriptionId interface{}
 }
 
 func (r CustomersApiGETCustomerSubscriptionIdCustomerRequest) Execute() (*http.Response, error) {
@@ -594,7 +594,7 @@ Retrieve the customer associated to the customer subscription
 	@param customerSubscriptionId The resource's id
 	@return CustomersApiGETCustomerSubscriptionIdCustomerRequest
 */
-func (a *CustomersApiService) GETCustomerSubscriptionIdCustomer(ctx context.Context, customerSubscriptionId string) CustomersApiGETCustomerSubscriptionIdCustomerRequest {
+func (a *CustomersApiService) GETCustomerSubscriptionIdCustomer(ctx context.Context, customerSubscriptionId interface{}) CustomersApiGETCustomerSubscriptionIdCustomerRequest {
 	return CustomersApiGETCustomerSubscriptionIdCustomerRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -616,7 +616,7 @@ func (a *CustomersApiService) GETCustomerSubscriptionIdCustomerExecute(r Custome
 	}
 
 	localVarPath := localBasePath + "/customer_subscriptions/{customerSubscriptionId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerSubscriptionId"+"}", url.PathEscape(parameterToString(r.customerSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.customerSubscriptionId, "customerSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -649,9 +649,9 @@ func (a *CustomersApiService) GETCustomerSubscriptionIdCustomerExecute(r Custome
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -740,9 +740,9 @@ func (a *CustomersApiService) GETCustomersExecute(r CustomersApiGETCustomersRequ
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -770,7 +770,7 @@ func (a *CustomersApiService) GETCustomersExecute(r CustomersApiGETCustomersRequ
 type CustomersApiGETCustomersCustomerIdRequest struct {
 	ctx        context.Context
 	ApiService *CustomersApiService
-	customerId string
+	customerId interface{}
 }
 
 func (r CustomersApiGETCustomersCustomerIdRequest) Execute() (*GETCustomersCustomerId200Response, *http.Response, error) {
@@ -786,7 +786,7 @@ Retrieve a customer
 	@param customerId The resource's id
 	@return CustomersApiGETCustomersCustomerIdRequest
 */
-func (a *CustomersApiService) GETCustomersCustomerId(ctx context.Context, customerId string) CustomersApiGETCustomersCustomerIdRequest {
+func (a *CustomersApiService) GETCustomersCustomerId(ctx context.Context, customerId interface{}) CustomersApiGETCustomersCustomerIdRequest {
 	return CustomersApiGETCustomersCustomerIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -811,7 +811,7 @@ func (a *CustomersApiService) GETCustomersCustomerIdExecute(r CustomersApiGETCus
 	}
 
 	localVarPath := localBasePath + "/customers/{customerId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterToString(r.customerId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -844,9 +844,9 @@ func (a *CustomersApiService) GETCustomersCustomerIdExecute(r CustomersApiGETCus
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -874,7 +874,7 @@ func (a *CustomersApiService) GETCustomersCustomerIdExecute(r CustomersApiGETCus
 type CustomersApiGETGiftCardRecipientIdCustomerRequest struct {
 	ctx                 context.Context
 	ApiService          *CustomersApiService
-	giftCardRecipientId string
+	giftCardRecipientId interface{}
 }
 
 func (r CustomersApiGETGiftCardRecipientIdCustomerRequest) Execute() (*http.Response, error) {
@@ -890,7 +890,7 @@ Retrieve the customer associated to the gift card recipient
 	@param giftCardRecipientId The resource's id
 	@return CustomersApiGETGiftCardRecipientIdCustomerRequest
 */
-func (a *CustomersApiService) GETGiftCardRecipientIdCustomer(ctx context.Context, giftCardRecipientId string) CustomersApiGETGiftCardRecipientIdCustomerRequest {
+func (a *CustomersApiService) GETGiftCardRecipientIdCustomer(ctx context.Context, giftCardRecipientId interface{}) CustomersApiGETGiftCardRecipientIdCustomerRequest {
 	return CustomersApiGETGiftCardRecipientIdCustomerRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -912,7 +912,7 @@ func (a *CustomersApiService) GETGiftCardRecipientIdCustomerExecute(r CustomersA
 	}
 
 	localVarPath := localBasePath + "/gift_card_recipients/{giftCardRecipientId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"giftCardRecipientId"+"}", url.PathEscape(parameterToString(r.giftCardRecipientId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"giftCardRecipientId"+"}", url.PathEscape(parameterValueToString(r.giftCardRecipientId, "giftCardRecipientId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -945,9 +945,9 @@ func (a *CustomersApiService) GETGiftCardRecipientIdCustomerExecute(r CustomersA
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -966,7 +966,7 @@ func (a *CustomersApiService) GETGiftCardRecipientIdCustomerExecute(r CustomersA
 type CustomersApiGETInStockSubscriptionIdCustomerRequest struct {
 	ctx                   context.Context
 	ApiService            *CustomersApiService
-	inStockSubscriptionId string
+	inStockSubscriptionId interface{}
 }
 
 func (r CustomersApiGETInStockSubscriptionIdCustomerRequest) Execute() (*http.Response, error) {
@@ -982,7 +982,7 @@ Retrieve the customer associated to the in stock subscription
 	@param inStockSubscriptionId The resource's id
 	@return CustomersApiGETInStockSubscriptionIdCustomerRequest
 */
-func (a *CustomersApiService) GETInStockSubscriptionIdCustomer(ctx context.Context, inStockSubscriptionId string) CustomersApiGETInStockSubscriptionIdCustomerRequest {
+func (a *CustomersApiService) GETInStockSubscriptionIdCustomer(ctx context.Context, inStockSubscriptionId interface{}) CustomersApiGETInStockSubscriptionIdCustomerRequest {
 	return CustomersApiGETInStockSubscriptionIdCustomerRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -1004,7 +1004,7 @@ func (a *CustomersApiService) GETInStockSubscriptionIdCustomerExecute(r Customer
 	}
 
 	localVarPath := localBasePath + "/in_stock_subscriptions/{inStockSubscriptionId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"inStockSubscriptionId"+"}", url.PathEscape(parameterToString(r.inStockSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inStockSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.inStockSubscriptionId, "inStockSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1037,9 +1037,9 @@ func (a *CustomersApiService) GETInStockSubscriptionIdCustomerExecute(r Customer
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1058,7 +1058,7 @@ func (a *CustomersApiService) GETInStockSubscriptionIdCustomerExecute(r Customer
 type CustomersApiGETOrderIdCustomerRequest struct {
 	ctx        context.Context
 	ApiService *CustomersApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r CustomersApiGETOrderIdCustomerRequest) Execute() (*http.Response, error) {
@@ -1074,7 +1074,7 @@ Retrieve the customer associated to the order
 	@param orderId The resource's id
 	@return CustomersApiGETOrderIdCustomerRequest
 */
-func (a *CustomersApiService) GETOrderIdCustomer(ctx context.Context, orderId string) CustomersApiGETOrderIdCustomerRequest {
+func (a *CustomersApiService) GETOrderIdCustomer(ctx context.Context, orderId interface{}) CustomersApiGETOrderIdCustomerRequest {
 	return CustomersApiGETOrderIdCustomerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1096,7 +1096,7 @@ func (a *CustomersApiService) GETOrderIdCustomerExecute(r CustomersApiGETOrderId
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1129,9 +1129,9 @@ func (a *CustomersApiService) GETOrderIdCustomerExecute(r CustomersApiGETOrderId
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1150,7 +1150,7 @@ func (a *CustomersApiService) GETOrderIdCustomerExecute(r CustomersApiGETOrderId
 type CustomersApiGETOrderSubscriptionIdCustomerRequest struct {
 	ctx                 context.Context
 	ApiService          *CustomersApiService
-	orderSubscriptionId string
+	orderSubscriptionId interface{}
 }
 
 func (r CustomersApiGETOrderSubscriptionIdCustomerRequest) Execute() (*http.Response, error) {
@@ -1166,7 +1166,7 @@ Retrieve the customer associated to the order subscription
 	@param orderSubscriptionId The resource's id
 	@return CustomersApiGETOrderSubscriptionIdCustomerRequest
 */
-func (a *CustomersApiService) GETOrderSubscriptionIdCustomer(ctx context.Context, orderSubscriptionId string) CustomersApiGETOrderSubscriptionIdCustomerRequest {
+func (a *CustomersApiService) GETOrderSubscriptionIdCustomer(ctx context.Context, orderSubscriptionId interface{}) CustomersApiGETOrderSubscriptionIdCustomerRequest {
 	return CustomersApiGETOrderSubscriptionIdCustomerRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -1188,7 +1188,7 @@ func (a *CustomersApiService) GETOrderSubscriptionIdCustomerExecute(r CustomersA
 	}
 
 	localVarPath := localBasePath + "/order_subscriptions/{orderSubscriptionId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterToString(r.orderSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionId, "orderSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1221,9 +1221,9 @@ func (a *CustomersApiService) GETOrderSubscriptionIdCustomerExecute(r CustomersA
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1242,7 +1242,7 @@ func (a *CustomersApiService) GETOrderSubscriptionIdCustomerExecute(r CustomersA
 type CustomersApiGETReturnIdCustomerRequest struct {
 	ctx        context.Context
 	ApiService *CustomersApiService
-	returnId   string
+	returnId   interface{}
 }
 
 func (r CustomersApiGETReturnIdCustomerRequest) Execute() (*http.Response, error) {
@@ -1258,7 +1258,7 @@ Retrieve the customer associated to the return
 	@param returnId The resource's id
 	@return CustomersApiGETReturnIdCustomerRequest
 */
-func (a *CustomersApiService) GETReturnIdCustomer(ctx context.Context, returnId string) CustomersApiGETReturnIdCustomerRequest {
+func (a *CustomersApiService) GETReturnIdCustomer(ctx context.Context, returnId interface{}) CustomersApiGETReturnIdCustomerRequest {
 	return CustomersApiGETReturnIdCustomerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1280,7 +1280,7 @@ func (a *CustomersApiService) GETReturnIdCustomerExecute(r CustomersApiGETReturn
 	}
 
 	localVarPath := localBasePath + "/returns/{returnId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterToString(r.returnId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1313,9 +1313,9 @@ func (a *CustomersApiService) GETReturnIdCustomerExecute(r CustomersApiGETReturn
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1334,7 +1334,7 @@ func (a *CustomersApiService) GETReturnIdCustomerExecute(r CustomersApiGETReturn
 type CustomersApiGETSkuListIdCustomerRequest struct {
 	ctx        context.Context
 	ApiService *CustomersApiService
-	skuListId  string
+	skuListId  interface{}
 }
 
 func (r CustomersApiGETSkuListIdCustomerRequest) Execute() (*http.Response, error) {
@@ -1350,7 +1350,7 @@ Retrieve the customer associated to the SKU list
 	@param skuListId The resource's id
 	@return CustomersApiGETSkuListIdCustomerRequest
 */
-func (a *CustomersApiService) GETSkuListIdCustomer(ctx context.Context, skuListId string) CustomersApiGETSkuListIdCustomerRequest {
+func (a *CustomersApiService) GETSkuListIdCustomer(ctx context.Context, skuListId interface{}) CustomersApiGETSkuListIdCustomerRequest {
 	return CustomersApiGETSkuListIdCustomerRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1372,7 +1372,7 @@ func (a *CustomersApiService) GETSkuListIdCustomerExecute(r CustomersApiGETSkuLi
 	}
 
 	localVarPath := localBasePath + "/sku_lists/{skuListId}/customer"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuListId"+"}", url.PathEscape(parameterToString(r.skuListId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListId"+"}", url.PathEscape(parameterValueToString(r.skuListId, "skuListId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1405,9 +1405,9 @@ func (a *CustomersApiService) GETSkuListIdCustomerExecute(r CustomersApiGETSkuLi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1427,7 +1427,7 @@ type CustomersApiPATCHCustomersCustomerIdRequest struct {
 	ctx            context.Context
 	ApiService     *CustomersApiService
 	customerUpdate *CustomerUpdate
-	customerId     string
+	customerId     interface{}
 }
 
 func (r CustomersApiPATCHCustomersCustomerIdRequest) CustomerUpdate(customerUpdate CustomerUpdate) CustomersApiPATCHCustomersCustomerIdRequest {
@@ -1448,7 +1448,7 @@ Update a customer
 	@param customerId The resource's id
 	@return CustomersApiPATCHCustomersCustomerIdRequest
 */
-func (a *CustomersApiService) PATCHCustomersCustomerId(ctx context.Context, customerId string) CustomersApiPATCHCustomersCustomerIdRequest {
+func (a *CustomersApiService) PATCHCustomersCustomerId(ctx context.Context, customerId interface{}) CustomersApiPATCHCustomersCustomerIdRequest {
 	return CustomersApiPATCHCustomersCustomerIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1473,7 +1473,7 @@ func (a *CustomersApiService) PATCHCustomersCustomerIdExecute(r CustomersApiPATC
 	}
 
 	localVarPath := localBasePath + "/customers/{customerId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterToString(r.customerId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1511,9 +1511,9 @@ func (a *CustomersApiService) PATCHCustomersCustomerIdExecute(r CustomersApiPATC
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -1622,9 +1622,9 @@ func (a *CustomersApiService) POSTCustomersExecute(r CustomersApiPOSTCustomersRe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

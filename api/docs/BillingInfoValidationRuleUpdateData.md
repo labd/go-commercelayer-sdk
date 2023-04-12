@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Id** | **string** | The resource&#39;s id | 
-**Attributes** | [**POSTAdyenPayments201ResponseDataAttributes**](POSTAdyenPayments201ResponseDataAttributes.md) |  | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Id** | **interface{}** | The resource&#39;s id | 
+**Attributes** | [**PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes**](PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**BillingInfoValidationRuleUpdateDataRelationships**](BillingInfoValidationRuleUpdateDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewBillingInfoValidationRuleUpdateData
 
-`func NewBillingInfoValidationRuleUpdateData(type_ string, id string, attributes POSTAdyenPayments201ResponseDataAttributes, ) *BillingInfoValidationRuleUpdateData`
+`func NewBillingInfoValidationRuleUpdateData(type_ interface{}, id interface{}, attributes PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, ) *BillingInfoValidationRuleUpdateData`
 
 NewBillingInfoValidationRuleUpdateData instantiates a new BillingInfoValidationRuleUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -30,60 +30,80 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *BillingInfoValidationRuleUpdateData) GetType() string`
+`func (o *BillingInfoValidationRuleUpdateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *BillingInfoValidationRuleUpdateData) GetTypeOk() (*string, bool)`
+`func (o *BillingInfoValidationRuleUpdateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *BillingInfoValidationRuleUpdateData) SetType(v string)`
+`func (o *BillingInfoValidationRuleUpdateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *BillingInfoValidationRuleUpdateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *BillingInfoValidationRuleUpdateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetId
 
-`func (o *BillingInfoValidationRuleUpdateData) GetId() string`
+`func (o *BillingInfoValidationRuleUpdateData) GetId() interface{}`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *BillingInfoValidationRuleUpdateData) GetIdOk() (*string, bool)`
+`func (o *BillingInfoValidationRuleUpdateData) GetIdOk() (*interface{}, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *BillingInfoValidationRuleUpdateData) SetId(v string)`
+`func (o *BillingInfoValidationRuleUpdateData) SetId(v interface{})`
 
 SetId sets Id field to given value.
 
 
+### SetIdNil
+
+`func (o *BillingInfoValidationRuleUpdateData) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *BillingInfoValidationRuleUpdateData) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetAttributes
 
-`func (o *BillingInfoValidationRuleUpdateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes`
+`func (o *BillingInfoValidationRuleUpdateData) GetAttributes() PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *BillingInfoValidationRuleUpdateData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool)`
+`func (o *BillingInfoValidationRuleUpdateData) GetAttributesOk() (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *BillingInfoValidationRuleUpdateData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes)`
+`func (o *BillingInfoValidationRuleUpdateData) SetAttributes(v PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

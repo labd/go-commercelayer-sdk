@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,21 +15,24 @@ import (
 	"encoding/json"
 )
 
+// checks if the SkuListItemUpdateData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SkuListItemUpdateData{}
+
 // SkuListItemUpdateData struct for SkuListItemUpdateData
 type SkuListItemUpdateData struct {
 	// The resource's type
-	Type string `json:"type"`
+	Type interface{} `json:"type"`
 	// The resource's id
-	Id            string                                    `json:"id"`
-	Attributes    POSTSkuListItems201ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}                    `json:"relationships,omitempty"`
+	Id            interface{}                                             `json:"id"`
+	Attributes    PATCHSkuListItemsSkuListItemId200ResponseDataAttributes `json:"attributes"`
+	Relationships interface{}                                             `json:"relationships,omitempty"`
 }
 
 // NewSkuListItemUpdateData instantiates a new SkuListItemUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuListItemUpdateData(type_ string, id string, attributes POSTSkuListItems201ResponseDataAttributes) *SkuListItemUpdateData {
+func NewSkuListItemUpdateData(type_ interface{}, id interface{}, attributes PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) *SkuListItemUpdateData {
 	this := SkuListItemUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -46,9 +49,10 @@ func NewSkuListItemUpdateDataWithDefaults() *SkuListItemUpdateData {
 }
 
 // GetType returns the Type field value
-func (o *SkuListItemUpdateData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *SkuListItemUpdateData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -57,22 +61,24 @@ func (o *SkuListItemUpdateData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *SkuListItemUpdateData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SkuListItemUpdateData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *SkuListItemUpdateData) SetType(v string) {
+func (o *SkuListItemUpdateData) SetType(v interface{}) {
 	o.Type = v
 }
 
 // GetId returns the Id field value
-func (o *SkuListItemUpdateData) GetId() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *SkuListItemUpdateData) GetId() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -81,22 +87,23 @@ func (o *SkuListItemUpdateData) GetId() string {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *SkuListItemUpdateData) GetIdOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SkuListItemUpdateData) GetIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return &o.Id, true
 }
 
 // SetId sets field value
-func (o *SkuListItemUpdateData) SetId(v string) {
+func (o *SkuListItemUpdateData) SetId(v interface{}) {
 	o.Id = v
 }
 
 // GetAttributes returns the Attributes field value
-func (o *SkuListItemUpdateData) GetAttributes() POSTSkuListItems201ResponseDataAttributes {
+func (o *SkuListItemUpdateData) GetAttributes() PATCHSkuListItemsSkuListItemId200ResponseDataAttributes {
 	if o == nil {
-		var ret POSTSkuListItems201ResponseDataAttributes
+		var ret PATCHSkuListItemsSkuListItemId200ResponseDataAttributes
 		return ret
 	}
 
@@ -105,7 +112,7 @@ func (o *SkuListItemUpdateData) GetAttributes() POSTSkuListItems201ResponseDataA
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *SkuListItemUpdateData) GetAttributesOk() (*POSTSkuListItems201ResponseDataAttributes, bool) {
+func (o *SkuListItemUpdateData) GetAttributesOk() (*PATCHSkuListItemsSkuListItemId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,14 +120,14 @@ func (o *SkuListItemUpdateData) GetAttributesOk() (*POSTSkuListItems201ResponseD
 }
 
 // SetAttributes sets field value
-func (o *SkuListItemUpdateData) SetAttributes(v POSTSkuListItems201ResponseDataAttributes) {
+func (o *SkuListItemUpdateData) SetAttributes(v PATCHSkuListItemsSkuListItemId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
-// GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *SkuListItemUpdateData) GetRelationships() map[string]interface{} {
-	if o == nil || o.Relationships == nil {
-		var ret map[string]interface{}
+// GetRelationships returns the Relationships field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *SkuListItemUpdateData) GetRelationships() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Relationships
@@ -128,42 +135,49 @@ func (o *SkuListItemUpdateData) GetRelationships() map[string]interface{} {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *SkuListItemUpdateData) GetRelationshipsOk() (map[string]interface{}, bool) {
-	if o == nil || o.Relationships == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SkuListItemUpdateData) GetRelationshipsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
-	return o.Relationships, true
+	return &o.Relationships, true
 }
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *SkuListItemUpdateData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && IsNil(o.Relationships) {
 		return true
 	}
 
 	return false
 }
 
-// SetRelationships gets a reference to the given map[string]interface{} and assigns it to the Relationships field.
-func (o *SkuListItemUpdateData) SetRelationships(v map[string]interface{}) {
+// SetRelationships gets a reference to the given interface{} and assigns it to the Relationships field.
+func (o *SkuListItemUpdateData) SetRelationships(v interface{}) {
 	o.Relationships = v
 }
 
 func (o SkuListItemUpdateData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o SkuListItemUpdateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
+	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
+	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
+	toSerialize["attributes"] = o.Attributes
 	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableSkuListItemUpdateData struct {

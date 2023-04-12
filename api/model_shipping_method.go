@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the ShippingMethod type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ShippingMethod{}
 
 // ShippingMethod struct for ShippingMethod
 type ShippingMethod struct {
@@ -39,7 +42,7 @@ func NewShippingMethodWithDefaults() *ShippingMethod {
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *ShippingMethod) GetData() ShippingMethodData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret ShippingMethodData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *ShippingMethod) GetData() ShippingMethodData {
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ShippingMethod) GetDataOk() (*ShippingMethodData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *ShippingMethod) GetDataOk() (*ShippingMethodData, bool) {
 
 // HasData returns a boolean if a field has been set.
 func (o *ShippingMethod) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *ShippingMethod) SetData(v ShippingMethodData) {
 }
 
 func (o ShippingMethod) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ShippingMethod) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableShippingMethod struct {

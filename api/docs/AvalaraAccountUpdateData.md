@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Id** | **string** | The resource&#39;s id | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Id** | **interface{}** | The resource&#39;s id | 
 **Attributes** | [**PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes**](PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AvalaraAccountCreateDataRelationships**](AvalaraAccountCreateDataRelationships.md) |  | [optional] 
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewAvalaraAccountUpdateData
 
-`func NewAvalaraAccountUpdateData(type_ string, id string, attributes PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes, ) *AvalaraAccountUpdateData`
+`func NewAvalaraAccountUpdateData(type_ interface{}, id interface{}, attributes PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes, ) *AvalaraAccountUpdateData`
 
 NewAvalaraAccountUpdateData instantiates a new AvalaraAccountUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -30,44 +30,64 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *AvalaraAccountUpdateData) GetType() string`
+`func (o *AvalaraAccountUpdateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *AvalaraAccountUpdateData) GetTypeOk() (*string, bool)`
+`func (o *AvalaraAccountUpdateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *AvalaraAccountUpdateData) SetType(v string)`
+`func (o *AvalaraAccountUpdateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *AvalaraAccountUpdateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *AvalaraAccountUpdateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetId
 
-`func (o *AvalaraAccountUpdateData) GetId() string`
+`func (o *AvalaraAccountUpdateData) GetId() interface{}`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *AvalaraAccountUpdateData) GetIdOk() (*string, bool)`
+`func (o *AvalaraAccountUpdateData) GetIdOk() (*interface{}, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *AvalaraAccountUpdateData) SetId(v string)`
+`func (o *AvalaraAccountUpdateData) SetId(v interface{})`
 
 SetId sets Id field to given value.
 
 
+### SetIdNil
+
+`func (o *AvalaraAccountUpdateData) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *AvalaraAccountUpdateData) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetAttributes
 
 `func (o *AvalaraAccountUpdateData) GetAttributes() PATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes`

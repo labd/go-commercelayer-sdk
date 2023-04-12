@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,10 +15,13 @@ import (
 	"encoding/json"
 )
 
+// checks if the TaxRuleCreateData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &TaxRuleCreateData{}
+
 // TaxRuleCreateData struct for TaxRuleCreateData
 type TaxRuleCreateData struct {
 	// The resource's type
-	Type          string                                `json:"type"`
+	Type          interface{}                           `json:"type"`
 	Attributes    POSTTaxRules201ResponseDataAttributes `json:"attributes"`
 	Relationships *TaxRuleCreateDataRelationships       `json:"relationships,omitempty"`
 }
@@ -27,7 +30,7 @@ type TaxRuleCreateData struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTaxRuleCreateData(type_ string, attributes POSTTaxRules201ResponseDataAttributes) *TaxRuleCreateData {
+func NewTaxRuleCreateData(type_ interface{}, attributes POSTTaxRules201ResponseDataAttributes) *TaxRuleCreateData {
 	this := TaxRuleCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -43,9 +46,10 @@ func NewTaxRuleCreateDataWithDefaults() *TaxRuleCreateData {
 }
 
 // GetType returns the Type field value
-func (o *TaxRuleCreateData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *TaxRuleCreateData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -54,15 +58,16 @@ func (o *TaxRuleCreateData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *TaxRuleCreateData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TaxRuleCreateData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *TaxRuleCreateData) SetType(v string) {
+func (o *TaxRuleCreateData) SetType(v interface{}) {
 	o.Type = v
 }
 
@@ -92,7 +97,7 @@ func (o *TaxRuleCreateData) SetAttributes(v POSTTaxRules201ResponseDataAttribute
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *TaxRuleCreateData) GetRelationships() TaxRuleCreateDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret TaxRuleCreateDataRelationships
 		return ret
 	}
@@ -102,7 +107,7 @@ func (o *TaxRuleCreateData) GetRelationships() TaxRuleCreateDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaxRuleCreateData) GetRelationshipsOk() (*TaxRuleCreateDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -110,7 +115,7 @@ func (o *TaxRuleCreateData) GetRelationshipsOk() (*TaxRuleCreateDataRelationship
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *TaxRuleCreateData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -123,17 +128,23 @@ func (o *TaxRuleCreateData) SetRelationships(v TaxRuleCreateDataRelationships) {
 }
 
 func (o TaxRuleCreateData) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
-		toSerialize["relationships"] = o.Relationships
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o TaxRuleCreateData) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
+		toSerialize["relationships"] = o.Relationships
+	}
+	return toSerialize, nil
 }
 
 type NullableTaxRuleCreateData struct {

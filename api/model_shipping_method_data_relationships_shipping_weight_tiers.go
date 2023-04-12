@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the ShippingMethodDataRelationshipsShippingWeightTiers type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ShippingMethodDataRelationshipsShippingWeightTiers{}
 
 // ShippingMethodDataRelationshipsShippingWeightTiers struct for ShippingMethodDataRelationshipsShippingWeightTiers
 type ShippingMethodDataRelationshipsShippingWeightTiers struct {
@@ -39,7 +42,7 @@ func NewShippingMethodDataRelationshipsShippingWeightTiersWithDefaults() *Shippi
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *ShippingMethodDataRelationshipsShippingWeightTiers) GetData() ShippingMethodDataRelationshipsShippingWeightTiersData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret ShippingMethodDataRelationshipsShippingWeightTiersData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *ShippingMethodDataRelationshipsShippingWeightTiers) GetData() ShippingM
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ShippingMethodDataRelationshipsShippingWeightTiers) GetDataOk() (*ShippingMethodDataRelationshipsShippingWeightTiersData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *ShippingMethodDataRelationshipsShippingWeightTiers) GetDataOk() (*Shipp
 
 // HasData returns a boolean if a field has been set.
 func (o *ShippingMethodDataRelationshipsShippingWeightTiers) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *ShippingMethodDataRelationshipsShippingWeightTiers) SetData(v ShippingM
 }
 
 func (o ShippingMethodDataRelationshipsShippingWeightTiers) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ShippingMethodDataRelationshipsShippingWeightTiers) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableShippingMethodDataRelationshipsShippingWeightTiers struct {

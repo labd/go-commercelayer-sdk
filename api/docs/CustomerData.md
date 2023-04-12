@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETCustomers200ResponseDataInnerAttributes**](GETCustomers200ResponseDataInnerAttributes.md) |  | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Attributes** | [**GETCustomersCustomerId200ResponseDataAttributes**](GETCustomersCustomerId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CustomerDataRelationships**](CustomerDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCustomerData
 
-`func NewCustomerData(type_ string, attributes GETCustomers200ResponseDataInnerAttributes, ) *CustomerData`
+`func NewCustomerData(type_ interface{}, attributes GETCustomersCustomerId200ResponseDataAttributes, ) *CustomerData`
 
 NewCustomerData instantiates a new CustomerData object
 This constructor will assign default values to properties that have it defined,
@@ -29,40 +29,50 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *CustomerData) GetType() string`
+`func (o *CustomerData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *CustomerData) GetTypeOk() (*string, bool)`
+`func (o *CustomerData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *CustomerData) SetType(v string)`
+`func (o *CustomerData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *CustomerData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *CustomerData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *CustomerData) GetAttributes() GETCustomers200ResponseDataInnerAttributes`
+`func (o *CustomerData) GetAttributes() GETCustomersCustomerId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CustomerData) GetAttributesOk() (*GETCustomers200ResponseDataInnerAttributes, bool)`
+`func (o *CustomerData) GetAttributesOk() (*GETCustomersCustomerId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CustomerData) SetAttributes(v GETCustomers200ResponseDataInnerAttributes)`
+`func (o *CustomerData) SetAttributes(v GETCustomersCustomerId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

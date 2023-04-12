@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,12 +15,15 @@ import (
 	"encoding/json"
 )
 
+// checks if the BingGeocoderDataRelationshipsAddressesData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BingGeocoderDataRelationshipsAddressesData{}
+
 // BingGeocoderDataRelationshipsAddressesData struct for BingGeocoderDataRelationshipsAddressesData
 type BingGeocoderDataRelationshipsAddressesData struct {
 	// The resource's type
-	Type *string `json:"type,omitempty"`
+	Type interface{} `json:"type,omitempty"`
 	// The resource's id
-	Id *string `json:"id,omitempty"`
+	Id interface{} `json:"id,omitempty"`
 }
 
 // NewBingGeocoderDataRelationshipsAddressesData instantiates a new BingGeocoderDataRelationshipsAddressesData object
@@ -40,71 +43,81 @@ func NewBingGeocoderDataRelationshipsAddressesDataWithDefaults() *BingGeocoderDa
 	return &this
 }
 
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *BingGeocoderDataRelationshipsAddressesData) GetType() string {
-	if o == nil || o.Type == nil {
-		var ret string
+// GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *BingGeocoderDataRelationshipsAddressesData) GetType() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Type
+	return o.Type
 }
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BingGeocoderDataRelationshipsAddressesData) GetTypeOk() (*string, bool) {
-	if o == nil || o.Type == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *BingGeocoderDataRelationshipsAddressesData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
-	return o.Type, true
+	return &o.Type, true
 }
 
 // HasType returns a boolean if a field has been set.
 func (o *BingGeocoderDataRelationshipsAddressesData) HasType() bool {
-	if o != nil && o.Type != nil {
+	if o != nil && IsNil(o.Type) {
 		return true
 	}
 
 	return false
 }
 
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *BingGeocoderDataRelationshipsAddressesData) SetType(v string) {
-	o.Type = &v
+// SetType gets a reference to the given interface{} and assigns it to the Type field.
+func (o *BingGeocoderDataRelationshipsAddressesData) SetType(v interface{}) {
+	o.Type = v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *BingGeocoderDataRelationshipsAddressesData) GetId() string {
-	if o == nil || o.Id == nil {
-		var ret string
+// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *BingGeocoderDataRelationshipsAddressesData) GetId() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Id
+	return o.Id
 }
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *BingGeocoderDataRelationshipsAddressesData) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *BingGeocoderDataRelationshipsAddressesData) GetIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *BingGeocoderDataRelationshipsAddressesData) HasId() bool {
-	if o != nil && o.Id != nil {
+	if o != nil && IsNil(o.Id) {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *BingGeocoderDataRelationshipsAddressesData) SetId(v string) {
-	o.Id = &v
+// SetId gets a reference to the given interface{} and assigns it to the Id field.
+func (o *BingGeocoderDataRelationshipsAddressesData) SetId(v interface{}) {
+	o.Id = v
 }
 
 func (o BingGeocoderDataRelationshipsAddressesData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o BingGeocoderDataRelationshipsAddressesData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
@@ -112,7 +125,7 @@ func (o BingGeocoderDataRelationshipsAddressesData) MarshalJSON() ([]byte, error
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableBingGeocoderDataRelationshipsAddressesData struct {

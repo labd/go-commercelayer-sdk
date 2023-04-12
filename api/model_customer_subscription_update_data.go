@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,21 +15,24 @@ import (
 	"encoding/json"
 )
 
+// checks if the CustomerSubscriptionUpdateData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CustomerSubscriptionUpdateData{}
+
 // CustomerSubscriptionUpdateData struct for CustomerSubscriptionUpdateData
 type CustomerSubscriptionUpdateData struct {
 	// The resource's type
-	Type string `json:"type"`
+	Type interface{} `json:"type"`
 	// The resource's id
-	Id            string                                     `json:"id"`
-	Attributes    POSTAdyenPayments201ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}                     `json:"relationships,omitempty"`
+	Id            interface{}                                                                         `json:"id"`
+	Attributes    PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes `json:"attributes"`
+	Relationships interface{}                                                                         `json:"relationships,omitempty"`
 }
 
 // NewCustomerSubscriptionUpdateData instantiates a new CustomerSubscriptionUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewCustomerSubscriptionUpdateData(type_ string, id string, attributes POSTAdyenPayments201ResponseDataAttributes) *CustomerSubscriptionUpdateData {
+func NewCustomerSubscriptionUpdateData(type_ interface{}, id interface{}, attributes PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) *CustomerSubscriptionUpdateData {
 	this := CustomerSubscriptionUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -46,9 +49,10 @@ func NewCustomerSubscriptionUpdateDataWithDefaults() *CustomerSubscriptionUpdate
 }
 
 // GetType returns the Type field value
-func (o *CustomerSubscriptionUpdateData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *CustomerSubscriptionUpdateData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -57,22 +61,24 @@ func (o *CustomerSubscriptionUpdateData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *CustomerSubscriptionUpdateData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CustomerSubscriptionUpdateData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *CustomerSubscriptionUpdateData) SetType(v string) {
+func (o *CustomerSubscriptionUpdateData) SetType(v interface{}) {
 	o.Type = v
 }
 
 // GetId returns the Id field value
-func (o *CustomerSubscriptionUpdateData) GetId() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *CustomerSubscriptionUpdateData) GetId() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -81,22 +87,23 @@ func (o *CustomerSubscriptionUpdateData) GetId() string {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *CustomerSubscriptionUpdateData) GetIdOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CustomerSubscriptionUpdateData) GetIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return &o.Id, true
 }
 
 // SetId sets field value
-func (o *CustomerSubscriptionUpdateData) SetId(v string) {
+func (o *CustomerSubscriptionUpdateData) SetId(v interface{}) {
 	o.Id = v
 }
 
 // GetAttributes returns the Attributes field value
-func (o *CustomerSubscriptionUpdateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes {
+func (o *CustomerSubscriptionUpdateData) GetAttributes() PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes {
 	if o == nil {
-		var ret POSTAdyenPayments201ResponseDataAttributes
+		var ret PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes
 		return ret
 	}
 
@@ -105,7 +112,7 @@ func (o *CustomerSubscriptionUpdateData) GetAttributes() POSTAdyenPayments201Res
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *CustomerSubscriptionUpdateData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool) {
+func (o *CustomerSubscriptionUpdateData) GetAttributesOk() (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,14 +120,14 @@ func (o *CustomerSubscriptionUpdateData) GetAttributesOk() (*POSTAdyenPayments20
 }
 
 // SetAttributes sets field value
-func (o *CustomerSubscriptionUpdateData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes) {
+func (o *CustomerSubscriptionUpdateData) SetAttributes(v PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
-// GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *CustomerSubscriptionUpdateData) GetRelationships() map[string]interface{} {
-	if o == nil || o.Relationships == nil {
-		var ret map[string]interface{}
+// GetRelationships returns the Relationships field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CustomerSubscriptionUpdateData) GetRelationships() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Relationships
@@ -128,42 +135,49 @@ func (o *CustomerSubscriptionUpdateData) GetRelationships() map[string]interface
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerSubscriptionUpdateData) GetRelationshipsOk() (map[string]interface{}, bool) {
-	if o == nil || o.Relationships == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CustomerSubscriptionUpdateData) GetRelationshipsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
-	return o.Relationships, true
+	return &o.Relationships, true
 }
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *CustomerSubscriptionUpdateData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && IsNil(o.Relationships) {
 		return true
 	}
 
 	return false
 }
 
-// SetRelationships gets a reference to the given map[string]interface{} and assigns it to the Relationships field.
-func (o *CustomerSubscriptionUpdateData) SetRelationships(v map[string]interface{}) {
+// SetRelationships gets a reference to the given interface{} and assigns it to the Relationships field.
+func (o *CustomerSubscriptionUpdateData) SetRelationships(v interface{}) {
 	o.Relationships = v
 }
 
 func (o CustomerSubscriptionUpdateData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o CustomerSubscriptionUpdateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
+	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
+	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
+	toSerialize["attributes"] = o.Attributes
 	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableCustomerSubscriptionUpdateData struct {

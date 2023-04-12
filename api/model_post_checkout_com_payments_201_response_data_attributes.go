@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,31 +15,34 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTCheckoutComPayments201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTCheckoutComPayments201ResponseDataAttributes{}
+
 // POSTCheckoutComPayments201ResponseDataAttributes struct for POSTCheckoutComPayments201ResponseDataAttributes
 type POSTCheckoutComPayments201ResponseDataAttributes struct {
 	// The payment source type.
-	PaymentType string `json:"payment_type"`
+	PaymentType interface{} `json:"payment_type"`
 	// The Checkout.com card or digital wallet token.
-	Token string `json:"token"`
+	Token interface{} `json:"token"`
 	// A payment session ID used to obtain the details.
-	SessionId *string `json:"session_id,omitempty"`
+	SessionId interface{} `json:"session_id,omitempty"`
 	// The URL to redirect your customer upon 3DS succeeded authentication.
-	SuccessUrl *string `json:"success_url,omitempty"`
+	SuccessUrl interface{} `json:"success_url,omitempty"`
 	// The URL to redirect your customer upon 3DS failed authentication.
-	FailureUrl *string `json:"failure_url,omitempty"`
+	FailureUrl interface{} `json:"failure_url,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 }
 
 // NewPOSTCheckoutComPayments201ResponseDataAttributes instantiates a new POSTCheckoutComPayments201ResponseDataAttributes object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPOSTCheckoutComPayments201ResponseDataAttributes(paymentType string, token string) *POSTCheckoutComPayments201ResponseDataAttributes {
+func NewPOSTCheckoutComPayments201ResponseDataAttributes(paymentType interface{}, token interface{}) *POSTCheckoutComPayments201ResponseDataAttributes {
 	this := POSTCheckoutComPayments201ResponseDataAttributes{}
 	this.PaymentType = paymentType
 	this.Token = token
@@ -55,9 +58,10 @@ func NewPOSTCheckoutComPayments201ResponseDataAttributesWithDefaults() *POSTChec
 }
 
 // GetPaymentType returns the PaymentType field value
-func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetPaymentType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetPaymentType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -66,22 +70,24 @@ func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetPaymentType() stri
 
 // GetPaymentTypeOk returns a tuple with the PaymentType field value
 // and a boolean to check if the value has been set.
-func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetPaymentTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetPaymentTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PaymentType) {
 		return nil, false
 	}
 	return &o.PaymentType, true
 }
 
 // SetPaymentType sets field value
-func (o *POSTCheckoutComPayments201ResponseDataAttributes) SetPaymentType(v string) {
+func (o *POSTCheckoutComPayments201ResponseDataAttributes) SetPaymentType(v interface{}) {
 	o.PaymentType = v
 }
 
 // GetToken returns the Token field value
-func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetToken() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetToken() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -90,182 +96,188 @@ func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetToken() string {
 
 // GetTokenOk returns a tuple with the Token field value
 // and a boolean to check if the value has been set.
-func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetTokenOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetTokenOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Token) {
 		return nil, false
 	}
 	return &o.Token, true
 }
 
 // SetToken sets field value
-func (o *POSTCheckoutComPayments201ResponseDataAttributes) SetToken(v string) {
+func (o *POSTCheckoutComPayments201ResponseDataAttributes) SetToken(v interface{}) {
 	o.Token = v
 }
 
-// GetSessionId returns the SessionId field value if set, zero value otherwise.
-func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetSessionId() string {
-	if o == nil || o.SessionId == nil {
-		var ret string
+// GetSessionId returns the SessionId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetSessionId() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.SessionId
+	return o.SessionId
 }
 
 // GetSessionIdOk returns a tuple with the SessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetSessionIdOk() (*string, bool) {
-	if o == nil || o.SessionId == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetSessionIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.SessionId) {
 		return nil, false
 	}
-	return o.SessionId, true
+	return &o.SessionId, true
 }
 
 // HasSessionId returns a boolean if a field has been set.
 func (o *POSTCheckoutComPayments201ResponseDataAttributes) HasSessionId() bool {
-	if o != nil && o.SessionId != nil {
+	if o != nil && IsNil(o.SessionId) {
 		return true
 	}
 
 	return false
 }
 
-// SetSessionId gets a reference to the given string and assigns it to the SessionId field.
-func (o *POSTCheckoutComPayments201ResponseDataAttributes) SetSessionId(v string) {
-	o.SessionId = &v
+// SetSessionId gets a reference to the given interface{} and assigns it to the SessionId field.
+func (o *POSTCheckoutComPayments201ResponseDataAttributes) SetSessionId(v interface{}) {
+	o.SessionId = v
 }
 
-// GetSuccessUrl returns the SuccessUrl field value if set, zero value otherwise.
-func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetSuccessUrl() string {
-	if o == nil || o.SuccessUrl == nil {
-		var ret string
+// GetSuccessUrl returns the SuccessUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetSuccessUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.SuccessUrl
+	return o.SuccessUrl
 }
 
 // GetSuccessUrlOk returns a tuple with the SuccessUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetSuccessUrlOk() (*string, bool) {
-	if o == nil || o.SuccessUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetSuccessUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.SuccessUrl) {
 		return nil, false
 	}
-	return o.SuccessUrl, true
+	return &o.SuccessUrl, true
 }
 
 // HasSuccessUrl returns a boolean if a field has been set.
 func (o *POSTCheckoutComPayments201ResponseDataAttributes) HasSuccessUrl() bool {
-	if o != nil && o.SuccessUrl != nil {
+	if o != nil && IsNil(o.SuccessUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetSuccessUrl gets a reference to the given string and assigns it to the SuccessUrl field.
-func (o *POSTCheckoutComPayments201ResponseDataAttributes) SetSuccessUrl(v string) {
-	o.SuccessUrl = &v
+// SetSuccessUrl gets a reference to the given interface{} and assigns it to the SuccessUrl field.
+func (o *POSTCheckoutComPayments201ResponseDataAttributes) SetSuccessUrl(v interface{}) {
+	o.SuccessUrl = v
 }
 
-// GetFailureUrl returns the FailureUrl field value if set, zero value otherwise.
-func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetFailureUrl() string {
-	if o == nil || o.FailureUrl == nil {
-		var ret string
+// GetFailureUrl returns the FailureUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetFailureUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.FailureUrl
+	return o.FailureUrl
 }
 
 // GetFailureUrlOk returns a tuple with the FailureUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetFailureUrlOk() (*string, bool) {
-	if o == nil || o.FailureUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetFailureUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.FailureUrl) {
 		return nil, false
 	}
-	return o.FailureUrl, true
+	return &o.FailureUrl, true
 }
 
 // HasFailureUrl returns a boolean if a field has been set.
 func (o *POSTCheckoutComPayments201ResponseDataAttributes) HasFailureUrl() bool {
-	if o != nil && o.FailureUrl != nil {
+	if o != nil && IsNil(o.FailureUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetFailureUrl gets a reference to the given string and assigns it to the FailureUrl field.
-func (o *POSTCheckoutComPayments201ResponseDataAttributes) SetFailureUrl(v string) {
-	o.FailureUrl = &v
+// SetFailureUrl gets a reference to the given interface{} and assigns it to the FailureUrl field.
+func (o *POSTCheckoutComPayments201ResponseDataAttributes) SetFailureUrl(v interface{}) {
+	o.FailureUrl = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTCheckoutComPayments201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *POSTCheckoutComPayments201ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *POSTCheckoutComPayments201ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTCheckoutComPayments201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *POSTCheckoutComPayments201ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *POSTCheckoutComPayments201ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -273,33 +285,42 @@ func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetMetadata() map[str
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTCheckoutComPayments201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTCheckoutComPayments201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *POSTCheckoutComPayments201ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *POSTCheckoutComPayments201ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 func (o POSTCheckoutComPayments201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTCheckoutComPayments201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
+	if o.PaymentType != nil {
 		toSerialize["payment_type"] = o.PaymentType
 	}
-	if true {
+	if o.Token != nil {
 		toSerialize["token"] = o.Token
 	}
 	if o.SessionId != nil {
@@ -320,7 +341,7 @@ func (o POSTCheckoutComPayments201ResponseDataAttributes) MarshalJSON() ([]byte,
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTCheckoutComPayments201ResponseDataAttributes struct {

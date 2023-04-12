@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,29 +15,38 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTPaymentMethods201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTPaymentMethods201ResponseDataAttributes{}
+
 // POSTPaymentMethods201ResponseDataAttributes struct for POSTPaymentMethods201ResponseDataAttributes
 type POSTPaymentMethods201ResponseDataAttributes struct {
-	// The payment source type, can be one of: 'AdyenPayment', 'BraintreePayment', 'CheckoutComPayment', 'CreditCard', 'ExternalPayment', 'KlarnaPayment', 'PaypalPayment', 'StripePayment', or 'WireTransfer'.
-	PaymentSourceType string `json:"payment_source_type"`
+	// The payment source type, can be one of: 'AdyenPayment', 'AxervePayment', 'BraintreePayment', 'CheckoutComPayment', 'CreditCard', 'ExternalPayment', 'KlarnaPayment', 'PaypalPayment', 'SatispayPayment', 'StripePayment', or 'WireTransfer'.
+	PaymentSourceType interface{} `json:"payment_source_type"`
 	// The international 3-letter currency code as defined by the ISO 4217 standard.
-	CurrencyCode *string `json:"currency_code,omitempty"`
+	CurrencyCode interface{} `json:"currency_code,omitempty"`
 	// Send this attribute if you want to mark the payment as MOTO, must be supported by payment gateway.
-	Moto *bool `json:"moto,omitempty"`
+	Moto interface{} `json:"moto,omitempty"`
+	// Send this attribute if you want to require the payment capture before fulfillment.
+	RequireCapture interface{} `json:"require_capture,omitempty"`
+	// Send this attribute if you want to automatically capture the payment upon authorization.
+	AutoCapture interface{} `json:"auto_capture,omitempty"`
 	// The payment method's price, in cents
-	PriceAmountCents int32 `json:"price_amount_cents"`
+	PriceAmountCents interface{} `json:"price_amount_cents"`
+	// Send this attribute if you want to limit automatic capture to orders for which the total amount is equal or less than the specified value, in cents.
+	AutoCaptureMaxAmountCents interface{} `json:"auto_capture_max_amount_cents,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 }
 
 // NewPOSTPaymentMethods201ResponseDataAttributes instantiates a new POSTPaymentMethods201ResponseDataAttributes object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPOSTPaymentMethods201ResponseDataAttributes(paymentSourceType string, priceAmountCents int32) *POSTPaymentMethods201ResponseDataAttributes {
+func NewPOSTPaymentMethods201ResponseDataAttributes(paymentSourceType interface{}, priceAmountCents interface{}) *POSTPaymentMethods201ResponseDataAttributes {
 	this := POSTPaymentMethods201ResponseDataAttributes{}
 	this.PaymentSourceType = paymentSourceType
 	this.PriceAmountCents = priceAmountCents
@@ -53,9 +62,10 @@ func NewPOSTPaymentMethods201ResponseDataAttributesWithDefaults() *POSTPaymentMe
 }
 
 // GetPaymentSourceType returns the PaymentSourceType field value
-func (o *POSTPaymentMethods201ResponseDataAttributes) GetPaymentSourceType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTPaymentMethods201ResponseDataAttributes) GetPaymentSourceType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -64,86 +74,156 @@ func (o *POSTPaymentMethods201ResponseDataAttributes) GetPaymentSourceType() str
 
 // GetPaymentSourceTypeOk returns a tuple with the PaymentSourceType field value
 // and a boolean to check if the value has been set.
-func (o *POSTPaymentMethods201ResponseDataAttributes) GetPaymentSourceTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTPaymentMethods201ResponseDataAttributes) GetPaymentSourceTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PaymentSourceType) {
 		return nil, false
 	}
 	return &o.PaymentSourceType, true
 }
 
 // SetPaymentSourceType sets field value
-func (o *POSTPaymentMethods201ResponseDataAttributes) SetPaymentSourceType(v string) {
+func (o *POSTPaymentMethods201ResponseDataAttributes) SetPaymentSourceType(v interface{}) {
 	o.PaymentSourceType = v
 }
 
-// GetCurrencyCode returns the CurrencyCode field value if set, zero value otherwise.
-func (o *POSTPaymentMethods201ResponseDataAttributes) GetCurrencyCode() string {
-	if o == nil || o.CurrencyCode == nil {
-		var ret string
+// GetCurrencyCode returns the CurrencyCode field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTPaymentMethods201ResponseDataAttributes) GetCurrencyCode() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CurrencyCode
+	return o.CurrencyCode
 }
 
 // GetCurrencyCodeOk returns a tuple with the CurrencyCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTPaymentMethods201ResponseDataAttributes) GetCurrencyCodeOk() (*string, bool) {
-	if o == nil || o.CurrencyCode == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTPaymentMethods201ResponseDataAttributes) GetCurrencyCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CurrencyCode) {
 		return nil, false
 	}
-	return o.CurrencyCode, true
+	return &o.CurrencyCode, true
 }
 
 // HasCurrencyCode returns a boolean if a field has been set.
 func (o *POSTPaymentMethods201ResponseDataAttributes) HasCurrencyCode() bool {
-	if o != nil && o.CurrencyCode != nil {
+	if o != nil && IsNil(o.CurrencyCode) {
 		return true
 	}
 
 	return false
 }
 
-// SetCurrencyCode gets a reference to the given string and assigns it to the CurrencyCode field.
-func (o *POSTPaymentMethods201ResponseDataAttributes) SetCurrencyCode(v string) {
-	o.CurrencyCode = &v
+// SetCurrencyCode gets a reference to the given interface{} and assigns it to the CurrencyCode field.
+func (o *POSTPaymentMethods201ResponseDataAttributes) SetCurrencyCode(v interface{}) {
+	o.CurrencyCode = v
 }
 
-// GetMoto returns the Moto field value if set, zero value otherwise.
-func (o *POSTPaymentMethods201ResponseDataAttributes) GetMoto() bool {
-	if o == nil || o.Moto == nil {
-		var ret bool
+// GetMoto returns the Moto field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTPaymentMethods201ResponseDataAttributes) GetMoto() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Moto
+	return o.Moto
 }
 
 // GetMotoOk returns a tuple with the Moto field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTPaymentMethods201ResponseDataAttributes) GetMotoOk() (*bool, bool) {
-	if o == nil || o.Moto == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTPaymentMethods201ResponseDataAttributes) GetMotoOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Moto) {
 		return nil, false
 	}
-	return o.Moto, true
+	return &o.Moto, true
 }
 
 // HasMoto returns a boolean if a field has been set.
 func (o *POSTPaymentMethods201ResponseDataAttributes) HasMoto() bool {
-	if o != nil && o.Moto != nil {
+	if o != nil && IsNil(o.Moto) {
 		return true
 	}
 
 	return false
 }
 
-// SetMoto gets a reference to the given bool and assigns it to the Moto field.
-func (o *POSTPaymentMethods201ResponseDataAttributes) SetMoto(v bool) {
-	o.Moto = &v
+// SetMoto gets a reference to the given interface{} and assigns it to the Moto field.
+func (o *POSTPaymentMethods201ResponseDataAttributes) SetMoto(v interface{}) {
+	o.Moto = v
+}
+
+// GetRequireCapture returns the RequireCapture field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTPaymentMethods201ResponseDataAttributes) GetRequireCapture() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.RequireCapture
+}
+
+// GetRequireCaptureOk returns a tuple with the RequireCapture field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTPaymentMethods201ResponseDataAttributes) GetRequireCaptureOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.RequireCapture) {
+		return nil, false
+	}
+	return &o.RequireCapture, true
+}
+
+// HasRequireCapture returns a boolean if a field has been set.
+func (o *POSTPaymentMethods201ResponseDataAttributes) HasRequireCapture() bool {
+	if o != nil && IsNil(o.RequireCapture) {
+		return true
+	}
+
+	return false
+}
+
+// SetRequireCapture gets a reference to the given interface{} and assigns it to the RequireCapture field.
+func (o *POSTPaymentMethods201ResponseDataAttributes) SetRequireCapture(v interface{}) {
+	o.RequireCapture = v
+}
+
+// GetAutoCapture returns the AutoCapture field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTPaymentMethods201ResponseDataAttributes) GetAutoCapture() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.AutoCapture
+}
+
+// GetAutoCaptureOk returns a tuple with the AutoCapture field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTPaymentMethods201ResponseDataAttributes) GetAutoCaptureOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.AutoCapture) {
+		return nil, false
+	}
+	return &o.AutoCapture, true
+}
+
+// HasAutoCapture returns a boolean if a field has been set.
+func (o *POSTPaymentMethods201ResponseDataAttributes) HasAutoCapture() bool {
+	if o != nil && IsNil(o.AutoCapture) {
+		return true
+	}
+
+	return false
+}
+
+// SetAutoCapture gets a reference to the given interface{} and assigns it to the AutoCapture field.
+func (o *POSTPaymentMethods201ResponseDataAttributes) SetAutoCapture(v interface{}) {
+	o.AutoCapture = v
 }
 
 // GetPriceAmountCents returns the PriceAmountCents field value
-func (o *POSTPaymentMethods201ResponseDataAttributes) GetPriceAmountCents() int32 {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTPaymentMethods201ResponseDataAttributes) GetPriceAmountCents() interface{} {
 	if o == nil {
-		var ret int32
+		var ret interface{}
 		return ret
 	}
 
@@ -152,86 +232,122 @@ func (o *POSTPaymentMethods201ResponseDataAttributes) GetPriceAmountCents() int3
 
 // GetPriceAmountCentsOk returns a tuple with the PriceAmountCents field value
 // and a boolean to check if the value has been set.
-func (o *POSTPaymentMethods201ResponseDataAttributes) GetPriceAmountCentsOk() (*int32, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTPaymentMethods201ResponseDataAttributes) GetPriceAmountCentsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PriceAmountCents) {
 		return nil, false
 	}
 	return &o.PriceAmountCents, true
 }
 
 // SetPriceAmountCents sets field value
-func (o *POSTPaymentMethods201ResponseDataAttributes) SetPriceAmountCents(v int32) {
+func (o *POSTPaymentMethods201ResponseDataAttributes) SetPriceAmountCents(v interface{}) {
 	o.PriceAmountCents = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *POSTPaymentMethods201ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetAutoCaptureMaxAmountCents returns the AutoCaptureMaxAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTPaymentMethods201ResponseDataAttributes) GetAutoCaptureMaxAmountCents() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.AutoCaptureMaxAmountCents
+}
+
+// GetAutoCaptureMaxAmountCentsOk returns a tuple with the AutoCaptureMaxAmountCents field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTPaymentMethods201ResponseDataAttributes) GetAutoCaptureMaxAmountCentsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.AutoCaptureMaxAmountCents) {
+		return nil, false
+	}
+	return &o.AutoCaptureMaxAmountCents, true
+}
+
+// HasAutoCaptureMaxAmountCents returns a boolean if a field has been set.
+func (o *POSTPaymentMethods201ResponseDataAttributes) HasAutoCaptureMaxAmountCents() bool {
+	if o != nil && IsNil(o.AutoCaptureMaxAmountCents) {
+		return true
+	}
+
+	return false
+}
+
+// SetAutoCaptureMaxAmountCents gets a reference to the given interface{} and assigns it to the AutoCaptureMaxAmountCents field.
+func (o *POSTPaymentMethods201ResponseDataAttributes) SetAutoCaptureMaxAmountCents(v interface{}) {
+	o.AutoCaptureMaxAmountCents = v
+}
+
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTPaymentMethods201ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTPaymentMethods201ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTPaymentMethods201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTPaymentMethods201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *POSTPaymentMethods201ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *POSTPaymentMethods201ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *POSTPaymentMethods201ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTPaymentMethods201ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTPaymentMethods201ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTPaymentMethods201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTPaymentMethods201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *POSTPaymentMethods201ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *POSTPaymentMethods201ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *POSTPaymentMethods201ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTPaymentMethods201ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -239,30 +355,39 @@ func (o *POSTPaymentMethods201ResponseDataAttributes) GetMetadata() map[string]i
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTPaymentMethods201ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTPaymentMethods201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTPaymentMethods201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *POSTPaymentMethods201ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *POSTPaymentMethods201ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 func (o POSTPaymentMethods201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTPaymentMethods201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
+	if o.PaymentSourceType != nil {
 		toSerialize["payment_source_type"] = o.PaymentSourceType
 	}
 	if o.CurrencyCode != nil {
@@ -271,8 +396,17 @@ func (o POSTPaymentMethods201ResponseDataAttributes) MarshalJSON() ([]byte, erro
 	if o.Moto != nil {
 		toSerialize["moto"] = o.Moto
 	}
-	if true {
+	if o.RequireCapture != nil {
+		toSerialize["require_capture"] = o.RequireCapture
+	}
+	if o.AutoCapture != nil {
+		toSerialize["auto_capture"] = o.AutoCapture
+	}
+	if o.PriceAmountCents != nil {
 		toSerialize["price_amount_cents"] = o.PriceAmountCents
+	}
+	if o.AutoCaptureMaxAmountCents != nil {
+		toSerialize["auto_capture_max_amount_cents"] = o.AutoCaptureMaxAmountCents
 	}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference
@@ -283,7 +417,7 @@ func (o POSTPaymentMethods201ResponseDataAttributes) MarshalJSON() ([]byte, erro
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTPaymentMethods201ResponseDataAttributes struct {

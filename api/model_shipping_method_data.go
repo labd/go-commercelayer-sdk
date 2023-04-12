@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the ShippingMethodData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ShippingMethodData{}
+
 // ShippingMethodData struct for ShippingMethodData
 type ShippingMethodData struct {
 	// The resource's type
-	Type          string                                           `json:"type"`
-	Attributes    GETShippingMethods200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *ShippingMethodDataRelationships                 `json:"relationships,omitempty"`
+	Type          interface{}                                                 `json:"type"`
+	Attributes    GETShippingMethodsShippingMethodId200ResponseDataAttributes `json:"attributes"`
+	Relationships *ShippingMethodDataRelationships                            `json:"relationships,omitempty"`
 }
 
 // NewShippingMethodData instantiates a new ShippingMethodData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewShippingMethodData(type_ string, attributes GETShippingMethods200ResponseDataInnerAttributes) *ShippingMethodData {
+func NewShippingMethodData(type_ interface{}, attributes GETShippingMethodsShippingMethodId200ResponseDataAttributes) *ShippingMethodData {
 	this := ShippingMethodData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -43,9 +46,10 @@ func NewShippingMethodDataWithDefaults() *ShippingMethodData {
 }
 
 // GetType returns the Type field value
-func (o *ShippingMethodData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *ShippingMethodData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -54,22 +58,23 @@ func (o *ShippingMethodData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *ShippingMethodData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ShippingMethodData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *ShippingMethodData) SetType(v string) {
+func (o *ShippingMethodData) SetType(v interface{}) {
 	o.Type = v
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ShippingMethodData) GetAttributes() GETShippingMethods200ResponseDataInnerAttributes {
+func (o *ShippingMethodData) GetAttributes() GETShippingMethodsShippingMethodId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETShippingMethods200ResponseDataInnerAttributes
+		var ret GETShippingMethodsShippingMethodId200ResponseDataAttributes
 		return ret
 	}
 
@@ -78,7 +83,7 @@ func (o *ShippingMethodData) GetAttributes() GETShippingMethods200ResponseDataIn
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ShippingMethodData) GetAttributesOk() (*GETShippingMethods200ResponseDataInnerAttributes, bool) {
+func (o *ShippingMethodData) GetAttributesOk() (*GETShippingMethodsShippingMethodId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,13 +91,13 @@ func (o *ShippingMethodData) GetAttributesOk() (*GETShippingMethods200ResponseDa
 }
 
 // SetAttributes sets field value
-func (o *ShippingMethodData) SetAttributes(v GETShippingMethods200ResponseDataInnerAttributes) {
+func (o *ShippingMethodData) SetAttributes(v GETShippingMethodsShippingMethodId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *ShippingMethodData) GetRelationships() ShippingMethodDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret ShippingMethodDataRelationships
 		return ret
 	}
@@ -102,7 +107,7 @@ func (o *ShippingMethodData) GetRelationships() ShippingMethodDataRelationships 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ShippingMethodData) GetRelationshipsOk() (*ShippingMethodDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -110,7 +115,7 @@ func (o *ShippingMethodData) GetRelationshipsOk() (*ShippingMethodDataRelationsh
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *ShippingMethodData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -123,17 +128,23 @@ func (o *ShippingMethodData) SetRelationships(v ShippingMethodDataRelationships)
 }
 
 func (o ShippingMethodData) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
-		toSerialize["relationships"] = o.Relationships
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ShippingMethodData) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
+		toSerialize["relationships"] = o.Relationships
+	}
+	return toSerialize, nil
 }
 
 type NullableShippingMethodData struct {

@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETPriceTiers200ResponseDataInnerAttributes**](GETPriceTiers200ResponseDataInnerAttributes.md) |  | 
-**Relationships** | Pointer to [**PriceTierDataRelationships**](PriceTierDataRelationships.md) |  | [optional] 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Attributes** | [**GETPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes**](GETPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes.md) |  | 
+**Relationships** | Pointer to [**PriceFrequencyTierDataRelationships**](PriceFrequencyTierDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewPriceVolumeTierData
 
-`func NewPriceVolumeTierData(type_ string, attributes GETPriceTiers200ResponseDataInnerAttributes, ) *PriceVolumeTierData`
+`func NewPriceVolumeTierData(type_ interface{}, attributes GETPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes, ) *PriceVolumeTierData`
 
 NewPriceVolumeTierData instantiates a new PriceVolumeTierData object
 This constructor will assign default values to properties that have it defined,
@@ -29,60 +29,70 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *PriceVolumeTierData) GetType() string`
+`func (o *PriceVolumeTierData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *PriceVolumeTierData) GetTypeOk() (*string, bool)`
+`func (o *PriceVolumeTierData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *PriceVolumeTierData) SetType(v string)`
+`func (o *PriceVolumeTierData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *PriceVolumeTierData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *PriceVolumeTierData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *PriceVolumeTierData) GetAttributes() GETPriceTiers200ResponseDataInnerAttributes`
+`func (o *PriceVolumeTierData) GetAttributes() GETPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *PriceVolumeTierData) GetAttributesOk() (*GETPriceTiers200ResponseDataInnerAttributes, bool)`
+`func (o *PriceVolumeTierData) GetAttributesOk() (*GETPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *PriceVolumeTierData) SetAttributes(v GETPriceTiers200ResponseDataInnerAttributes)`
+`func (o *PriceVolumeTierData) SetAttributes(v GETPriceVolumeTiersPriceVolumeTierId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 
 
 ### GetRelationships
 
-`func (o *PriceVolumeTierData) GetRelationships() PriceTierDataRelationships`
+`func (o *PriceVolumeTierData) GetRelationships() PriceFrequencyTierDataRelationships`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PriceVolumeTierData) GetRelationshipsOk() (*PriceTierDataRelationships, bool)`
+`func (o *PriceVolumeTierData) GetRelationshipsOk() (*PriceFrequencyTierDataRelationships, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PriceVolumeTierData) SetRelationships(v PriceTierDataRelationships)`
+`func (o *PriceVolumeTierData) SetRelationships(v PriceFrequencyTierDataRelationships)`
 
 SetRelationships sets Relationships field to given value.
 

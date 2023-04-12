@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,26 +15,29 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes{}
+
 // PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes struct for PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes
 type PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes struct {
 	// The payment gateway's internal name.
-	Name *string `json:"name,omitempty"`
+	Name interface{} `json:"name,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 	// The endpoint used by the external gateway to authorize payments.
-	AuthorizeUrl *string `json:"authorize_url,omitempty"`
+	AuthorizeUrl interface{} `json:"authorize_url,omitempty"`
 	// The endpoint used by the external gateway to capture payments.
-	CaptureUrl *string `json:"capture_url,omitempty"`
+	CaptureUrl interface{} `json:"capture_url,omitempty"`
 	// The endpoint used by the external gateway to void payments.
-	VoidUrl *string `json:"void_url,omitempty"`
+	VoidUrl interface{} `json:"void_url,omitempty"`
 	// The endpoint used by the external gateway to refund payments.
-	RefundUrl *string `json:"refund_url,omitempty"`
+	RefundUrl interface{} `json:"refund_url,omitempty"`
 	// The endpoint used by the external gateway to create a customer payment token.
-	TokenUrl *string `json:"token_url,omitempty"`
+	TokenUrl interface{} `json:"token_url,omitempty"`
 }
 
 // NewPATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes instantiates a new PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes object
@@ -54,106 +57,109 @@ func NewPATCHExternalGatewaysExternalGatewayId200ResponseDataAttributesWithDefau
 	return &this
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetName() string {
-	if o == nil || o.Name == nil {
-		var ret string
+// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetName() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Name
+	return o.Name
 }
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return o.Name, true
+	return &o.Name, true
 }
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) SetName(v string) {
-	o.Name = &v
+// SetName gets a reference to the given interface{} and assigns it to the Name field.
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) SetName(v interface{}) {
+	o.Name = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -161,188 +167,202 @@ func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetMet
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
-// GetAuthorizeUrl returns the AuthorizeUrl field value if set, zero value otherwise.
-func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetAuthorizeUrl() string {
-	if o == nil || o.AuthorizeUrl == nil {
-		var ret string
+// GetAuthorizeUrl returns the AuthorizeUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetAuthorizeUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.AuthorizeUrl
+	return o.AuthorizeUrl
 }
 
 // GetAuthorizeUrlOk returns a tuple with the AuthorizeUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetAuthorizeUrlOk() (*string, bool) {
-	if o == nil || o.AuthorizeUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetAuthorizeUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.AuthorizeUrl) {
 		return nil, false
 	}
-	return o.AuthorizeUrl, true
+	return &o.AuthorizeUrl, true
 }
 
 // HasAuthorizeUrl returns a boolean if a field has been set.
 func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) HasAuthorizeUrl() bool {
-	if o != nil && o.AuthorizeUrl != nil {
+	if o != nil && IsNil(o.AuthorizeUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetAuthorizeUrl gets a reference to the given string and assigns it to the AuthorizeUrl field.
-func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) SetAuthorizeUrl(v string) {
-	o.AuthorizeUrl = &v
+// SetAuthorizeUrl gets a reference to the given interface{} and assigns it to the AuthorizeUrl field.
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) SetAuthorizeUrl(v interface{}) {
+	o.AuthorizeUrl = v
 }
 
-// GetCaptureUrl returns the CaptureUrl field value if set, zero value otherwise.
-func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetCaptureUrl() string {
-	if o == nil || o.CaptureUrl == nil {
-		var ret string
+// GetCaptureUrl returns the CaptureUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetCaptureUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CaptureUrl
+	return o.CaptureUrl
 }
 
 // GetCaptureUrlOk returns a tuple with the CaptureUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetCaptureUrlOk() (*string, bool) {
-	if o == nil || o.CaptureUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetCaptureUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CaptureUrl) {
 		return nil, false
 	}
-	return o.CaptureUrl, true
+	return &o.CaptureUrl, true
 }
 
 // HasCaptureUrl returns a boolean if a field has been set.
 func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) HasCaptureUrl() bool {
-	if o != nil && o.CaptureUrl != nil {
+	if o != nil && IsNil(o.CaptureUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetCaptureUrl gets a reference to the given string and assigns it to the CaptureUrl field.
-func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) SetCaptureUrl(v string) {
-	o.CaptureUrl = &v
+// SetCaptureUrl gets a reference to the given interface{} and assigns it to the CaptureUrl field.
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) SetCaptureUrl(v interface{}) {
+	o.CaptureUrl = v
 }
 
-// GetVoidUrl returns the VoidUrl field value if set, zero value otherwise.
-func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetVoidUrl() string {
-	if o == nil || o.VoidUrl == nil {
-		var ret string
+// GetVoidUrl returns the VoidUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetVoidUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.VoidUrl
+	return o.VoidUrl
 }
 
 // GetVoidUrlOk returns a tuple with the VoidUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetVoidUrlOk() (*string, bool) {
-	if o == nil || o.VoidUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetVoidUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.VoidUrl) {
 		return nil, false
 	}
-	return o.VoidUrl, true
+	return &o.VoidUrl, true
 }
 
 // HasVoidUrl returns a boolean if a field has been set.
 func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) HasVoidUrl() bool {
-	if o != nil && o.VoidUrl != nil {
+	if o != nil && IsNil(o.VoidUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetVoidUrl gets a reference to the given string and assigns it to the VoidUrl field.
-func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) SetVoidUrl(v string) {
-	o.VoidUrl = &v
+// SetVoidUrl gets a reference to the given interface{} and assigns it to the VoidUrl field.
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) SetVoidUrl(v interface{}) {
+	o.VoidUrl = v
 }
 
-// GetRefundUrl returns the RefundUrl field value if set, zero value otherwise.
-func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetRefundUrl() string {
-	if o == nil || o.RefundUrl == nil {
-		var ret string
+// GetRefundUrl returns the RefundUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetRefundUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.RefundUrl
+	return o.RefundUrl
 }
 
 // GetRefundUrlOk returns a tuple with the RefundUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetRefundUrlOk() (*string, bool) {
-	if o == nil || o.RefundUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetRefundUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.RefundUrl) {
 		return nil, false
 	}
-	return o.RefundUrl, true
+	return &o.RefundUrl, true
 }
 
 // HasRefundUrl returns a boolean if a field has been set.
 func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) HasRefundUrl() bool {
-	if o != nil && o.RefundUrl != nil {
+	if o != nil && IsNil(o.RefundUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetRefundUrl gets a reference to the given string and assigns it to the RefundUrl field.
-func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) SetRefundUrl(v string) {
-	o.RefundUrl = &v
+// SetRefundUrl gets a reference to the given interface{} and assigns it to the RefundUrl field.
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) SetRefundUrl(v interface{}) {
+	o.RefundUrl = v
 }
 
-// GetTokenUrl returns the TokenUrl field value if set, zero value otherwise.
-func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetTokenUrl() string {
-	if o == nil || o.TokenUrl == nil {
-		var ret string
+// GetTokenUrl returns the TokenUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetTokenUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.TokenUrl
+	return o.TokenUrl
 }
 
 // GetTokenUrlOk returns a tuple with the TokenUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetTokenUrlOk() (*string, bool) {
-	if o == nil || o.TokenUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) GetTokenUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.TokenUrl) {
 		return nil, false
 	}
-	return o.TokenUrl, true
+	return &o.TokenUrl, true
 }
 
 // HasTokenUrl returns a boolean if a field has been set.
 func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) HasTokenUrl() bool {
-	if o != nil && o.TokenUrl != nil {
+	if o != nil && IsNil(o.TokenUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetTokenUrl gets a reference to the given string and assigns it to the TokenUrl field.
-func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) SetTokenUrl(v string) {
-	o.TokenUrl = &v
+// SetTokenUrl gets a reference to the given interface{} and assigns it to the TokenUrl field.
+func (o *PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) SetTokenUrl(v interface{}) {
+	o.TokenUrl = v
 }
 
 func (o PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -371,7 +391,7 @@ func (o PATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes) Marshal
 	if o.TokenUrl != nil {
 		toSerialize["token_url"] = o.TokenUrl
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHExternalGatewaysExternalGatewayId200ResponseDataAttributes struct {

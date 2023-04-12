@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Id** | **string** | The resource&#39;s id | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Id** | **interface{}** | The resource&#39;s id | 
 **Attributes** | [**PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes**](PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ManualTaxCalculatorCreateDataRelationships**](ManualTaxCalculatorCreateDataRelationships.md) |  | [optional] 
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewManualTaxCalculatorUpdateData
 
-`func NewManualTaxCalculatorUpdateData(type_ string, id string, attributes PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes, ) *ManualTaxCalculatorUpdateData`
+`func NewManualTaxCalculatorUpdateData(type_ interface{}, id interface{}, attributes PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes, ) *ManualTaxCalculatorUpdateData`
 
 NewManualTaxCalculatorUpdateData instantiates a new ManualTaxCalculatorUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -30,44 +30,64 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *ManualTaxCalculatorUpdateData) GetType() string`
+`func (o *ManualTaxCalculatorUpdateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *ManualTaxCalculatorUpdateData) GetTypeOk() (*string, bool)`
+`func (o *ManualTaxCalculatorUpdateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *ManualTaxCalculatorUpdateData) SetType(v string)`
+`func (o *ManualTaxCalculatorUpdateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *ManualTaxCalculatorUpdateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *ManualTaxCalculatorUpdateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetId
 
-`func (o *ManualTaxCalculatorUpdateData) GetId() string`
+`func (o *ManualTaxCalculatorUpdateData) GetId() interface{}`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ManualTaxCalculatorUpdateData) GetIdOk() (*string, bool)`
+`func (o *ManualTaxCalculatorUpdateData) GetIdOk() (*interface{}, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ManualTaxCalculatorUpdateData) SetId(v string)`
+`func (o *ManualTaxCalculatorUpdateData) SetId(v interface{})`
 
 SetId sets Id field to given value.
 
 
+### SetIdNil
+
+`func (o *ManualTaxCalculatorUpdateData) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *ManualTaxCalculatorUpdateData) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetAttributes
 
 `func (o *ManualTaxCalculatorUpdateData) GetAttributes() PATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes`

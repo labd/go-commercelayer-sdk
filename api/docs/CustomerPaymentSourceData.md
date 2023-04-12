@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETCustomerPaymentSources200ResponseDataInnerAttributes**](GETCustomerPaymentSources200ResponseDataInnerAttributes.md) |  | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Attributes** | [**GETCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes**](GETCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CustomerPaymentSourceDataRelationships**](CustomerPaymentSourceDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCustomerPaymentSourceData
 
-`func NewCustomerPaymentSourceData(type_ string, attributes GETCustomerPaymentSources200ResponseDataInnerAttributes, ) *CustomerPaymentSourceData`
+`func NewCustomerPaymentSourceData(type_ interface{}, attributes GETCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes, ) *CustomerPaymentSourceData`
 
 NewCustomerPaymentSourceData instantiates a new CustomerPaymentSourceData object
 This constructor will assign default values to properties that have it defined,
@@ -29,40 +29,50 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *CustomerPaymentSourceData) GetType() string`
+`func (o *CustomerPaymentSourceData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *CustomerPaymentSourceData) GetTypeOk() (*string, bool)`
+`func (o *CustomerPaymentSourceData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *CustomerPaymentSourceData) SetType(v string)`
+`func (o *CustomerPaymentSourceData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *CustomerPaymentSourceData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *CustomerPaymentSourceData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *CustomerPaymentSourceData) GetAttributes() GETCustomerPaymentSources200ResponseDataInnerAttributes`
+`func (o *CustomerPaymentSourceData) GetAttributes() GETCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CustomerPaymentSourceData) GetAttributesOk() (*GETCustomerPaymentSources200ResponseDataInnerAttributes, bool)`
+`func (o *CustomerPaymentSourceData) GetAttributesOk() (*GETCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CustomerPaymentSourceData) SetAttributes(v GETCustomerPaymentSources200ResponseDataInnerAttributes)`
+`func (o *CustomerPaymentSourceData) SetAttributes(v GETCustomerPaymentSourcesCustomerPaymentSourceId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

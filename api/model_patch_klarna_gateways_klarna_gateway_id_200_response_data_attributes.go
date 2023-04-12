@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,22 +15,25 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes{}
+
 // PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes struct for PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes
 type PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes struct {
 	// The payment gateway's internal name.
-	Name *string `json:"name,omitempty"`
+	Name interface{} `json:"name,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 	// The gateway country code one of EU, US, or OC.
-	CountryCode *string `json:"country_code,omitempty"`
+	CountryCode interface{} `json:"country_code,omitempty"`
 	// The public key linked to your API credential.
-	ApiKey *string `json:"api_key,omitempty"`
+	ApiKey interface{} `json:"api_key,omitempty"`
 	// The gateway API key.
-	ApiSecret *string `json:"api_secret,omitempty"`
+	ApiSecret interface{} `json:"api_secret,omitempty"`
 }
 
 // NewPATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes instantiates a new PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes object
@@ -50,106 +53,109 @@ func NewPATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributesWithDefaults(
 	return &this
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetName() string {
-	if o == nil || o.Name == nil {
-		var ret string
+// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetName() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Name
+	return o.Name
 }
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return o.Name, true
+	return &o.Name, true
 }
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) SetName(v string) {
-	o.Name = &v
+// SetName gets a reference to the given interface{} and assigns it to the Name field.
+func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) SetName(v interface{}) {
+	o.Name = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -157,124 +163,136 @@ func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetMetadat
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
-// GetCountryCode returns the CountryCode field value if set, zero value otherwise.
-func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetCountryCode() string {
-	if o == nil || o.CountryCode == nil {
-		var ret string
+// GetCountryCode returns the CountryCode field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetCountryCode() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CountryCode
+	return o.CountryCode
 }
 
 // GetCountryCodeOk returns a tuple with the CountryCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetCountryCodeOk() (*string, bool) {
-	if o == nil || o.CountryCode == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetCountryCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CountryCode) {
 		return nil, false
 	}
-	return o.CountryCode, true
+	return &o.CountryCode, true
 }
 
 // HasCountryCode returns a boolean if a field has been set.
 func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) HasCountryCode() bool {
-	if o != nil && o.CountryCode != nil {
+	if o != nil && IsNil(o.CountryCode) {
 		return true
 	}
 
 	return false
 }
 
-// SetCountryCode gets a reference to the given string and assigns it to the CountryCode field.
-func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) SetCountryCode(v string) {
-	o.CountryCode = &v
+// SetCountryCode gets a reference to the given interface{} and assigns it to the CountryCode field.
+func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) SetCountryCode(v interface{}) {
+	o.CountryCode = v
 }
 
-// GetApiKey returns the ApiKey field value if set, zero value otherwise.
-func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetApiKey() string {
-	if o == nil || o.ApiKey == nil {
-		var ret string
+// GetApiKey returns the ApiKey field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetApiKey() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ApiKey
+	return o.ApiKey
 }
 
 // GetApiKeyOk returns a tuple with the ApiKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetApiKeyOk() (*string, bool) {
-	if o == nil || o.ApiKey == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetApiKeyOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ApiKey) {
 		return nil, false
 	}
-	return o.ApiKey, true
+	return &o.ApiKey, true
 }
 
 // HasApiKey returns a boolean if a field has been set.
 func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) HasApiKey() bool {
-	if o != nil && o.ApiKey != nil {
+	if o != nil && IsNil(o.ApiKey) {
 		return true
 	}
 
 	return false
 }
 
-// SetApiKey gets a reference to the given string and assigns it to the ApiKey field.
-func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) SetApiKey(v string) {
-	o.ApiKey = &v
+// SetApiKey gets a reference to the given interface{} and assigns it to the ApiKey field.
+func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) SetApiKey(v interface{}) {
+	o.ApiKey = v
 }
 
-// GetApiSecret returns the ApiSecret field value if set, zero value otherwise.
-func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetApiSecret() string {
-	if o == nil || o.ApiSecret == nil {
-		var ret string
+// GetApiSecret returns the ApiSecret field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetApiSecret() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ApiSecret
+	return o.ApiSecret
 }
 
 // GetApiSecretOk returns a tuple with the ApiSecret field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetApiSecretOk() (*string, bool) {
-	if o == nil || o.ApiSecret == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) GetApiSecretOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ApiSecret) {
 		return nil, false
 	}
-	return o.ApiSecret, true
+	return &o.ApiSecret, true
 }
 
 // HasApiSecret returns a boolean if a field has been set.
 func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) HasApiSecret() bool {
-	if o != nil && o.ApiSecret != nil {
+	if o != nil && IsNil(o.ApiSecret) {
 		return true
 	}
 
 	return false
 }
 
-// SetApiSecret gets a reference to the given string and assigns it to the ApiSecret field.
-func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) SetApiSecret(v string) {
-	o.ApiSecret = &v
+// SetApiSecret gets a reference to the given interface{} and assigns it to the ApiSecret field.
+func (o *PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) SetApiSecret(v interface{}) {
+	o.ApiSecret = v
 }
 
 func (o PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -297,7 +315,7 @@ func (o PATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes) MarshalJSON
 	if o.ApiSecret != nil {
 		toSerialize["api_secret"] = o.ApiSecret
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHKlarnaGatewaysKlarnaGatewayId200ResponseDataAttributes struct {

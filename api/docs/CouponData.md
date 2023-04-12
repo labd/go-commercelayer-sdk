@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETCoupons200ResponseDataInnerAttributes**](GETCoupons200ResponseDataInnerAttributes.md) |  | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Attributes** | [**GETCouponsCouponId200ResponseDataAttributes**](GETCouponsCouponId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CouponDataRelationships**](CouponDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewCouponData
 
-`func NewCouponData(type_ string, attributes GETCoupons200ResponseDataInnerAttributes, ) *CouponData`
+`func NewCouponData(type_ interface{}, attributes GETCouponsCouponId200ResponseDataAttributes, ) *CouponData`
 
 NewCouponData instantiates a new CouponData object
 This constructor will assign default values to properties that have it defined,
@@ -29,40 +29,50 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *CouponData) GetType() string`
+`func (o *CouponData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *CouponData) GetTypeOk() (*string, bool)`
+`func (o *CouponData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *CouponData) SetType(v string)`
+`func (o *CouponData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *CouponData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *CouponData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *CouponData) GetAttributes() GETCoupons200ResponseDataInnerAttributes`
+`func (o *CouponData) GetAttributes() GETCouponsCouponId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *CouponData) GetAttributesOk() (*GETCoupons200ResponseDataInnerAttributes, bool)`
+`func (o *CouponData) GetAttributesOk() (*GETCouponsCouponId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *CouponData) SetAttributes(v GETCoupons200ResponseDataInnerAttributes)`
+`func (o *CouponData) SetAttributes(v GETCouponsCouponId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

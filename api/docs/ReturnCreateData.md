@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
+**Type** | **interface{}** | The resource&#39;s type | 
 **Attributes** | [**POSTAdyenPayments201ResponseDataAttributes**](POSTAdyenPayments201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ReturnCreateDataRelationships**](ReturnCreateDataRelationships.md) |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewReturnCreateData
 
-`func NewReturnCreateData(type_ string, attributes POSTAdyenPayments201ResponseDataAttributes, ) *ReturnCreateData`
+`func NewReturnCreateData(type_ interface{}, attributes POSTAdyenPayments201ResponseDataAttributes, ) *ReturnCreateData`
 
 NewReturnCreateData instantiates a new ReturnCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -29,24 +29,34 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *ReturnCreateData) GetType() string`
+`func (o *ReturnCreateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *ReturnCreateData) GetTypeOk() (*string, bool)`
+`func (o *ReturnCreateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *ReturnCreateData) SetType(v string)`
+`func (o *ReturnCreateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *ReturnCreateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *ReturnCreateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
 `func (o *ReturnCreateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes`

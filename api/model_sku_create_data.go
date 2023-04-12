@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,10 +15,13 @@ import (
 	"encoding/json"
 )
 
+// checks if the SkuCreateData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SkuCreateData{}
+
 // SkuCreateData struct for SkuCreateData
 type SkuCreateData struct {
 	// The resource's type
-	Type          string                            `json:"type"`
+	Type          interface{}                       `json:"type"`
 	Attributes    POSTSkus201ResponseDataAttributes `json:"attributes"`
 	Relationships *SkuCreateDataRelationships       `json:"relationships,omitempty"`
 }
@@ -27,7 +30,7 @@ type SkuCreateData struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuCreateData(type_ string, attributes POSTSkus201ResponseDataAttributes) *SkuCreateData {
+func NewSkuCreateData(type_ interface{}, attributes POSTSkus201ResponseDataAttributes) *SkuCreateData {
 	this := SkuCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -43,9 +46,10 @@ func NewSkuCreateDataWithDefaults() *SkuCreateData {
 }
 
 // GetType returns the Type field value
-func (o *SkuCreateData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *SkuCreateData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -54,15 +58,16 @@ func (o *SkuCreateData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *SkuCreateData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SkuCreateData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *SkuCreateData) SetType(v string) {
+func (o *SkuCreateData) SetType(v interface{}) {
 	o.Type = v
 }
 
@@ -92,7 +97,7 @@ func (o *SkuCreateData) SetAttributes(v POSTSkus201ResponseDataAttributes) {
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *SkuCreateData) GetRelationships() SkuCreateDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret SkuCreateDataRelationships
 		return ret
 	}
@@ -102,7 +107,7 @@ func (o *SkuCreateData) GetRelationships() SkuCreateDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SkuCreateData) GetRelationshipsOk() (*SkuCreateDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -110,7 +115,7 @@ func (o *SkuCreateData) GetRelationshipsOk() (*SkuCreateDataRelationships, bool)
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *SkuCreateData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -123,17 +128,23 @@ func (o *SkuCreateData) SetRelationships(v SkuCreateDataRelationships) {
 }
 
 func (o SkuCreateData) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
-		toSerialize["relationships"] = o.Relationships
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o SkuCreateData) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
+		toSerialize["relationships"] = o.Relationships
+	}
+	return toSerialize, nil
 }
 
 type NullableSkuCreateData struct {

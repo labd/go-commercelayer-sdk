@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the KlarnaPaymentData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &KlarnaPaymentData{}
+
 // KlarnaPaymentData struct for KlarnaPaymentData
 type KlarnaPaymentData struct {
 	// The resource's type
-	Type          string                                          `json:"type"`
-	Attributes    GETKlarnaPayments200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *AdyenPaymentDataRelationships                  `json:"relationships,omitempty"`
+	Type          interface{}                                               `json:"type"`
+	Attributes    GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes `json:"attributes"`
+	Relationships *AdyenPaymentDataRelationships                            `json:"relationships,omitempty"`
 }
 
 // NewKlarnaPaymentData instantiates a new KlarnaPaymentData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewKlarnaPaymentData(type_ string, attributes GETKlarnaPayments200ResponseDataInnerAttributes) *KlarnaPaymentData {
+func NewKlarnaPaymentData(type_ interface{}, attributes GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) *KlarnaPaymentData {
 	this := KlarnaPaymentData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -43,9 +46,10 @@ func NewKlarnaPaymentDataWithDefaults() *KlarnaPaymentData {
 }
 
 // GetType returns the Type field value
-func (o *KlarnaPaymentData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *KlarnaPaymentData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -54,22 +58,23 @@ func (o *KlarnaPaymentData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *KlarnaPaymentData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *KlarnaPaymentData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *KlarnaPaymentData) SetType(v string) {
+func (o *KlarnaPaymentData) SetType(v interface{}) {
 	o.Type = v
 }
 
 // GetAttributes returns the Attributes field value
-func (o *KlarnaPaymentData) GetAttributes() GETKlarnaPayments200ResponseDataInnerAttributes {
+func (o *KlarnaPaymentData) GetAttributes() GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETKlarnaPayments200ResponseDataInnerAttributes
+		var ret GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes
 		return ret
 	}
 
@@ -78,7 +83,7 @@ func (o *KlarnaPaymentData) GetAttributes() GETKlarnaPayments200ResponseDataInne
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *KlarnaPaymentData) GetAttributesOk() (*GETKlarnaPayments200ResponseDataInnerAttributes, bool) {
+func (o *KlarnaPaymentData) GetAttributesOk() (*GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,13 +91,13 @@ func (o *KlarnaPaymentData) GetAttributesOk() (*GETKlarnaPayments200ResponseData
 }
 
 // SetAttributes sets field value
-func (o *KlarnaPaymentData) SetAttributes(v GETKlarnaPayments200ResponseDataInnerAttributes) {
+func (o *KlarnaPaymentData) SetAttributes(v GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *KlarnaPaymentData) GetRelationships() AdyenPaymentDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret AdyenPaymentDataRelationships
 		return ret
 	}
@@ -102,7 +107,7 @@ func (o *KlarnaPaymentData) GetRelationships() AdyenPaymentDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *KlarnaPaymentData) GetRelationshipsOk() (*AdyenPaymentDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -110,7 +115,7 @@ func (o *KlarnaPaymentData) GetRelationshipsOk() (*AdyenPaymentDataRelationships
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *KlarnaPaymentData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -123,17 +128,23 @@ func (o *KlarnaPaymentData) SetRelationships(v AdyenPaymentDataRelationships) {
 }
 
 func (o KlarnaPaymentData) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
-		toSerialize["relationships"] = o.Relationships
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o KlarnaPaymentData) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
+		toSerialize["relationships"] = o.Relationships
+	}
+	return toSerialize, nil
 }
 
 type NullableKlarnaPaymentData struct {

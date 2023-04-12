@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the StockLocationDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &StockLocationDataRelationships{}
 
 // StockLocationDataRelationships struct for StockLocationDataRelationships
 type StockLocationDataRelationships struct {
@@ -44,7 +47,7 @@ func NewStockLocationDataRelationshipsWithDefaults() *StockLocationDataRelations
 
 // GetAddress returns the Address field value if set, zero value otherwise.
 func (o *StockLocationDataRelationships) GetAddress() BingGeocoderDataRelationshipsAddresses {
-	if o == nil || o.Address == nil {
+	if o == nil || IsNil(o.Address) {
 		var ret BingGeocoderDataRelationshipsAddresses
 		return ret
 	}
@@ -54,7 +57,7 @@ func (o *StockLocationDataRelationships) GetAddress() BingGeocoderDataRelationsh
 // GetAddressOk returns a tuple with the Address field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StockLocationDataRelationships) GetAddressOk() (*BingGeocoderDataRelationshipsAddresses, bool) {
-	if o == nil || o.Address == nil {
+	if o == nil || IsNil(o.Address) {
 		return nil, false
 	}
 	return o.Address, true
@@ -62,7 +65,7 @@ func (o *StockLocationDataRelationships) GetAddressOk() (*BingGeocoderDataRelati
 
 // HasAddress returns a boolean if a field has been set.
 func (o *StockLocationDataRelationships) HasAddress() bool {
-	if o != nil && o.Address != nil {
+	if o != nil && !IsNil(o.Address) {
 		return true
 	}
 
@@ -76,7 +79,7 @@ func (o *StockLocationDataRelationships) SetAddress(v BingGeocoderDataRelationsh
 
 // GetInventoryStockLocations returns the InventoryStockLocations field value if set, zero value otherwise.
 func (o *StockLocationDataRelationships) GetInventoryStockLocations() InventoryModelDataRelationshipsInventoryStockLocations {
-	if o == nil || o.InventoryStockLocations == nil {
+	if o == nil || IsNil(o.InventoryStockLocations) {
 		var ret InventoryModelDataRelationshipsInventoryStockLocations
 		return ret
 	}
@@ -86,7 +89,7 @@ func (o *StockLocationDataRelationships) GetInventoryStockLocations() InventoryM
 // GetInventoryStockLocationsOk returns a tuple with the InventoryStockLocations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StockLocationDataRelationships) GetInventoryStockLocationsOk() (*InventoryModelDataRelationshipsInventoryStockLocations, bool) {
-	if o == nil || o.InventoryStockLocations == nil {
+	if o == nil || IsNil(o.InventoryStockLocations) {
 		return nil, false
 	}
 	return o.InventoryStockLocations, true
@@ -94,7 +97,7 @@ func (o *StockLocationDataRelationships) GetInventoryStockLocationsOk() (*Invent
 
 // HasInventoryStockLocations returns a boolean if a field has been set.
 func (o *StockLocationDataRelationships) HasInventoryStockLocations() bool {
-	if o != nil && o.InventoryStockLocations != nil {
+	if o != nil && !IsNil(o.InventoryStockLocations) {
 		return true
 	}
 
@@ -108,7 +111,7 @@ func (o *StockLocationDataRelationships) SetInventoryStockLocations(v InventoryM
 
 // GetInventoryReturnLocations returns the InventoryReturnLocations field value if set, zero value otherwise.
 func (o *StockLocationDataRelationships) GetInventoryReturnLocations() InventoryModelDataRelationshipsInventoryReturnLocations {
-	if o == nil || o.InventoryReturnLocations == nil {
+	if o == nil || IsNil(o.InventoryReturnLocations) {
 		var ret InventoryModelDataRelationshipsInventoryReturnLocations
 		return ret
 	}
@@ -118,7 +121,7 @@ func (o *StockLocationDataRelationships) GetInventoryReturnLocations() Inventory
 // GetInventoryReturnLocationsOk returns a tuple with the InventoryReturnLocations field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StockLocationDataRelationships) GetInventoryReturnLocationsOk() (*InventoryModelDataRelationshipsInventoryReturnLocations, bool) {
-	if o == nil || o.InventoryReturnLocations == nil {
+	if o == nil || IsNil(o.InventoryReturnLocations) {
 		return nil, false
 	}
 	return o.InventoryReturnLocations, true
@@ -126,7 +129,7 @@ func (o *StockLocationDataRelationships) GetInventoryReturnLocationsOk() (*Inven
 
 // HasInventoryReturnLocations returns a boolean if a field has been set.
 func (o *StockLocationDataRelationships) HasInventoryReturnLocations() bool {
-	if o != nil && o.InventoryReturnLocations != nil {
+	if o != nil && !IsNil(o.InventoryReturnLocations) {
 		return true
 	}
 
@@ -140,7 +143,7 @@ func (o *StockLocationDataRelationships) SetInventoryReturnLocations(v Inventory
 
 // GetStockItems returns the StockItems field value if set, zero value otherwise.
 func (o *StockLocationDataRelationships) GetStockItems() SkuDataRelationshipsStockItems {
-	if o == nil || o.StockItems == nil {
+	if o == nil || IsNil(o.StockItems) {
 		var ret SkuDataRelationshipsStockItems
 		return ret
 	}
@@ -150,7 +153,7 @@ func (o *StockLocationDataRelationships) GetStockItems() SkuDataRelationshipsSto
 // GetStockItemsOk returns a tuple with the StockItems field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StockLocationDataRelationships) GetStockItemsOk() (*SkuDataRelationshipsStockItems, bool) {
-	if o == nil || o.StockItems == nil {
+	if o == nil || IsNil(o.StockItems) {
 		return nil, false
 	}
 	return o.StockItems, true
@@ -158,7 +161,7 @@ func (o *StockLocationDataRelationships) GetStockItemsOk() (*SkuDataRelationship
 
 // HasStockItems returns a boolean if a field has been set.
 func (o *StockLocationDataRelationships) HasStockItems() bool {
-	if o != nil && o.StockItems != nil {
+	if o != nil && !IsNil(o.StockItems) {
 		return true
 	}
 
@@ -172,7 +175,7 @@ func (o *StockLocationDataRelationships) SetStockItems(v SkuDataRelationshipsSto
 
 // GetStockTransfers returns the StockTransfers field value if set, zero value otherwise.
 func (o *StockLocationDataRelationships) GetStockTransfers() LineItemDataRelationshipsStockTransfers {
-	if o == nil || o.StockTransfers == nil {
+	if o == nil || IsNil(o.StockTransfers) {
 		var ret LineItemDataRelationshipsStockTransfers
 		return ret
 	}
@@ -182,7 +185,7 @@ func (o *StockLocationDataRelationships) GetStockTransfers() LineItemDataRelatio
 // GetStockTransfersOk returns a tuple with the StockTransfers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StockLocationDataRelationships) GetStockTransfersOk() (*LineItemDataRelationshipsStockTransfers, bool) {
-	if o == nil || o.StockTransfers == nil {
+	if o == nil || IsNil(o.StockTransfers) {
 		return nil, false
 	}
 	return o.StockTransfers, true
@@ -190,7 +193,7 @@ func (o *StockLocationDataRelationships) GetStockTransfersOk() (*LineItemDataRel
 
 // HasStockTransfers returns a boolean if a field has been set.
 func (o *StockLocationDataRelationships) HasStockTransfers() bool {
-	if o != nil && o.StockTransfers != nil {
+	if o != nil && !IsNil(o.StockTransfers) {
 		return true
 	}
 
@@ -204,7 +207,7 @@ func (o *StockLocationDataRelationships) SetStockTransfers(v LineItemDataRelatio
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *StockLocationDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
-	if o == nil || o.Attachments == nil {
+	if o == nil || IsNil(o.Attachments) {
 		var ret AvalaraAccountDataRelationshipsAttachments
 		return ret
 	}
@@ -214,7 +217,7 @@ func (o *StockLocationDataRelationships) GetAttachments() AvalaraAccountDataRela
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StockLocationDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
-	if o == nil || o.Attachments == nil {
+	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
 	return o.Attachments, true
@@ -222,7 +225,7 @@ func (o *StockLocationDataRelationships) GetAttachmentsOk() (*AvalaraAccountData
 
 // HasAttachments returns a boolean if a field has been set.
 func (o *StockLocationDataRelationships) HasAttachments() bool {
-	if o != nil && o.Attachments != nil {
+	if o != nil && !IsNil(o.Attachments) {
 		return true
 	}
 
@@ -235,26 +238,34 @@ func (o *StockLocationDataRelationships) SetAttachments(v AvalaraAccountDataRela
 }
 
 func (o StockLocationDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Address != nil {
-		toSerialize["address"] = o.Address
-	}
-	if o.InventoryStockLocations != nil {
-		toSerialize["inventory_stock_locations"] = o.InventoryStockLocations
-	}
-	if o.InventoryReturnLocations != nil {
-		toSerialize["inventory_return_locations"] = o.InventoryReturnLocations
-	}
-	if o.StockItems != nil {
-		toSerialize["stock_items"] = o.StockItems
-	}
-	if o.StockTransfers != nil {
-		toSerialize["stock_transfers"] = o.StockTransfers
-	}
-	if o.Attachments != nil {
-		toSerialize["attachments"] = o.Attachments
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o StockLocationDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Address) {
+		toSerialize["address"] = o.Address
+	}
+	if !IsNil(o.InventoryStockLocations) {
+		toSerialize["inventory_stock_locations"] = o.InventoryStockLocations
+	}
+	if !IsNil(o.InventoryReturnLocations) {
+		toSerialize["inventory_return_locations"] = o.InventoryReturnLocations
+	}
+	if !IsNil(o.StockItems) {
+		toSerialize["stock_items"] = o.StockItems
+	}
+	if !IsNil(o.StockTransfers) {
+		toSerialize["stock_transfers"] = o.StockTransfers
+	}
+	if !IsNil(o.Attachments) {
+		toSerialize["attachments"] = o.Attachments
+	}
+	return toSerialize, nil
 }
 
 type NullableStockLocationDataRelationships struct {

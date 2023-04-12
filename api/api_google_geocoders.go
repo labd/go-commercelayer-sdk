@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type GoogleGeocodersApiService service
 type GoogleGeocodersApiDELETEGoogleGeocodersGoogleGeocoderIdRequest struct {
 	ctx              context.Context
 	ApiService       *GoogleGeocodersApiService
-	googleGeocoderId string
+	googleGeocoderId interface{}
 }
 
 func (r GoogleGeocodersApiDELETEGoogleGeocodersGoogleGeocoderIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a google geocoder
 	@param googleGeocoderId The resource's id
 	@return GoogleGeocodersApiDELETEGoogleGeocodersGoogleGeocoderIdRequest
 */
-func (a *GoogleGeocodersApiService) DELETEGoogleGeocodersGoogleGeocoderId(ctx context.Context, googleGeocoderId string) GoogleGeocodersApiDELETEGoogleGeocodersGoogleGeocoderIdRequest {
+func (a *GoogleGeocodersApiService) DELETEGoogleGeocodersGoogleGeocoderId(ctx context.Context, googleGeocoderId interface{}) GoogleGeocodersApiDELETEGoogleGeocodersGoogleGeocoderIdRequest {
 	return GoogleGeocodersApiDELETEGoogleGeocodersGoogleGeocoderIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -64,7 +64,7 @@ func (a *GoogleGeocodersApiService) DELETEGoogleGeocodersGoogleGeocoderIdExecute
 	}
 
 	localVarPath := localBasePath + "/google_geocoders/{googleGeocoderId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"googleGeocoderId"+"}", url.PathEscape(parameterToString(r.googleGeocoderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"googleGeocoderId"+"}", url.PathEscape(parameterValueToString(r.googleGeocoderId, "googleGeocoderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *GoogleGeocodersApiService) DELETEGoogleGeocodersGoogleGeocoderIdExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *GoogleGeocodersApiService) GETGoogleGeocodersExecute(r GoogleGeocodersA
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -218,7 +218,7 @@ func (a *GoogleGeocodersApiService) GETGoogleGeocodersExecute(r GoogleGeocodersA
 type GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest struct {
 	ctx              context.Context
 	ApiService       *GoogleGeocodersApiService
-	googleGeocoderId string
+	googleGeocoderId interface{}
 }
 
 func (r GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest) Execute() (*GETGoogleGeocodersGoogleGeocoderId200Response, *http.Response, error) {
@@ -234,7 +234,7 @@ Retrieve a google geocoder
 	@param googleGeocoderId The resource's id
 	@return GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest
 */
-func (a *GoogleGeocodersApiService) GETGoogleGeocodersGoogleGeocoderId(ctx context.Context, googleGeocoderId string) GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest {
+func (a *GoogleGeocodersApiService) GETGoogleGeocodersGoogleGeocoderId(ctx context.Context, googleGeocoderId interface{}) GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest {
 	return GoogleGeocodersApiGETGoogleGeocodersGoogleGeocoderIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -259,7 +259,7 @@ func (a *GoogleGeocodersApiService) GETGoogleGeocodersGoogleGeocoderIdExecute(r 
 	}
 
 	localVarPath := localBasePath + "/google_geocoders/{googleGeocoderId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"googleGeocoderId"+"}", url.PathEscape(parameterToString(r.googleGeocoderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"googleGeocoderId"+"}", url.PathEscape(parameterValueToString(r.googleGeocoderId, "googleGeocoderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *GoogleGeocodersApiService) GETGoogleGeocodersGoogleGeocoderIdExecute(r 
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -323,7 +323,7 @@ type GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest struct {
 	ctx                  context.Context
 	ApiService           *GoogleGeocodersApiService
 	googleGeocoderUpdate *GoogleGeocoderUpdate
-	googleGeocoderId     string
+	googleGeocoderId     interface{}
 }
 
 func (r GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest) GoogleGeocoderUpdate(googleGeocoderUpdate GoogleGeocoderUpdate) GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest {
@@ -344,7 +344,7 @@ Update a google geocoder
 	@param googleGeocoderId The resource's id
 	@return GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest
 */
-func (a *GoogleGeocodersApiService) PATCHGoogleGeocodersGoogleGeocoderId(ctx context.Context, googleGeocoderId string) GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest {
+func (a *GoogleGeocodersApiService) PATCHGoogleGeocodersGoogleGeocoderId(ctx context.Context, googleGeocoderId interface{}) GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest {
 	return GoogleGeocodersApiPATCHGoogleGeocodersGoogleGeocoderIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -369,7 +369,7 @@ func (a *GoogleGeocodersApiService) PATCHGoogleGeocodersGoogleGeocoderIdExecute(
 	}
 
 	localVarPath := localBasePath + "/google_geocoders/{googleGeocoderId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"googleGeocoderId"+"}", url.PathEscape(parameterToString(r.googleGeocoderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"googleGeocoderId"+"}", url.PathEscape(parameterValueToString(r.googleGeocoderId, "googleGeocoderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -407,9 +407,9 @@ func (a *GoogleGeocodersApiService) PATCHGoogleGeocodersGoogleGeocoderIdExecute(
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -518,9 +518,9 @@ func (a *GoogleGeocodersApiService) POSTGoogleGeocodersExecute(r GoogleGeocoders
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

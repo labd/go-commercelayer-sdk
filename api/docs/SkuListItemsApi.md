@@ -1,6 +1,6 @@
 # \SkuListItemsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,15 +30,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    skuListItemId := "skuListItemId_example" // string | The resource's id
+    skuListItemId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListItemsApi.DELETESkuListItemsSkuListItemId(context.Background(), skuListItemId).Execute()
+    r, err := apiClient.SkuListItemsApi.DELETESkuListItemsSkuListItemId(context.Background(), skuListItemId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListItemsApi.DELETESkuListItemsSkuListItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -52,7 +52,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**skuListItemId** | **string** | The resource&#39;s id | 
+**skuListItemId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -98,15 +98,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    skuListId := "skuListId_example" // string | The resource's id
+    skuListId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.SkuListItemsApi.GETSkuListIdSkuListItems(context.Background(), skuListId).Execute()
+    r, err := apiClient.SkuListItemsApi.GETSkuListIdSkuListItems(context.Background(), skuListId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListItemsApi.GETSkuListIdSkuListItems``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -120,7 +120,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**skuListId** | **string** | The resource&#39;s id | 
+**skuListId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -166,7 +166,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -227,11 +227,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    skuListItemId := "skuListItemId_example" // string | The resource's id
+    skuListItemId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -251,7 +251,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**skuListItemId** | **string** | The resource&#39;s id | 
+**skuListItemId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -282,7 +282,7 @@ Name | Type | Description  | Notes
 
 ## PATCHSkuListItemsSkuListItemId
 
-> POSTSkuListItems201Response PATCHSkuListItemsSkuListItemId(ctx, skuListItemId).SkuListItemUpdate(skuListItemUpdate).Execute()
+> PATCHSkuListItemsSkuListItemId200Response PATCHSkuListItemsSkuListItemId(ctx, skuListItemId).SkuListItemUpdate(skuListItemUpdate).Execute()
 
 Update a SKU list item
 
@@ -297,12 +297,12 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    skuListItemUpdate := *openapiclient.NewSkuListItemUpdate(*openapiclient.NewSkuListItemUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTSkuListItems201ResponseDataAttributes())) // SkuListItemUpdate | 
-    skuListItemId := "skuListItemId_example" // string | The resource's id
+    skuListItemUpdate := *openapiclient.NewSkuListItemUpdate(*openapiclient.NewSkuListItemUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHSkuListItemsSkuListItemId200ResponseDataAttributes())) // SkuListItemUpdate | 
+    skuListItemId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -311,7 +311,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `SkuListItemsApi.PATCHSkuListItemsSkuListItemId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHSkuListItemsSkuListItemId`: POSTSkuListItems201Response
+    // response from `PATCHSkuListItemsSkuListItemId`: PATCHSkuListItemsSkuListItemId200Response
     fmt.Fprintf(os.Stdout, "Response from `SkuListItemsApi.PATCHSkuListItemsSkuListItemId`: %v\n", resp)
 }
 ```
@@ -322,7 +322,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**skuListItemId** | **string** | The resource&#39;s id | 
+**skuListItemId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -336,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTSkuListItems201Response**](POSTSkuListItems201Response.md)
+[**PATCHSkuListItemsSkuListItemId200Response**](PATCHSkuListItemsSkuListItemId200Response.md)
 
 ### Authorization
 
@@ -369,11 +369,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    skuListItemCreate := *openapiclient.NewSkuListItemCreate(*openapiclient.NewSkuListItemCreateData("Type_example", *openapiclient.NewPOSTSkuListItems201ResponseDataAttributes())) // SkuListItemCreate | 
+    skuListItemCreate := *openapiclient.NewSkuListItemCreate(*openapiclient.NewSkuListItemCreateData(interface{}(123), *openapiclient.NewPOSTSkuListItems201ResponseDataAttributes())) // SkuListItemCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

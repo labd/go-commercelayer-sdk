@@ -1,6 +1,6 @@
 # \InventoryStockLocationsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -31,15 +31,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    inventoryStockLocationId := "inventoryStockLocationId_example" // string | The resource's id
+    inventoryStockLocationId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InventoryStockLocationsApi.DELETEInventoryStockLocationsInventoryStockLocationId(context.Background(), inventoryStockLocationId).Execute()
+    r, err := apiClient.InventoryStockLocationsApi.DELETEInventoryStockLocationsInventoryStockLocationId(context.Background(), inventoryStockLocationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryStockLocationsApi.DELETEInventoryStockLocationsInventoryStockLocationId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -53,7 +53,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**inventoryStockLocationId** | **string** | The resource&#39;s id | 
+**inventoryStockLocationId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -99,15 +99,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    inventoryModelId := "inventoryModelId_example" // string | The resource's id
+    inventoryModelId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InventoryStockLocationsApi.GETInventoryModelIdInventoryStockLocations(context.Background(), inventoryModelId).Execute()
+    r, err := apiClient.InventoryStockLocationsApi.GETInventoryModelIdInventoryStockLocations(context.Background(), inventoryModelId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryStockLocationsApi.GETInventoryModelIdInventoryStockLocations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -121,7 +121,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**inventoryModelId** | **string** | The resource&#39;s id | 
+**inventoryModelId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -167,7 +167,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -228,11 +228,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    inventoryStockLocationId := "inventoryStockLocationId_example" // string | The resource's id
+    inventoryStockLocationId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -252,7 +252,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**inventoryStockLocationId** | **string** | The resource&#39;s id | 
+**inventoryStockLocationId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -298,15 +298,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    stockLocationId := "stockLocationId_example" // string | The resource's id
+    stockLocationId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.InventoryStockLocationsApi.GETStockLocationIdInventoryStockLocations(context.Background(), stockLocationId).Execute()
+    r, err := apiClient.InventoryStockLocationsApi.GETStockLocationIdInventoryStockLocations(context.Background(), stockLocationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `InventoryStockLocationsApi.GETStockLocationIdInventoryStockLocations``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -320,7 +320,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**stockLocationId** | **string** | The resource&#39;s id | 
+**stockLocationId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -366,12 +366,12 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    inventoryStockLocationUpdate := *openapiclient.NewInventoryStockLocationUpdate(*openapiclient.NewInventoryStockLocationUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes())) // InventoryStockLocationUpdate | 
-    inventoryStockLocationId := "inventoryStockLocationId_example" // string | The resource's id
+    inventoryStockLocationUpdate := *openapiclient.NewInventoryStockLocationUpdate(*openapiclient.NewInventoryStockLocationUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHInventoryStockLocationsInventoryStockLocationId200ResponseDataAttributes())) // InventoryStockLocationUpdate | 
+    inventoryStockLocationId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -391,7 +391,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**inventoryStockLocationId** | **string** | The resource&#39;s id | 
+**inventoryStockLocationId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -438,11 +438,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    inventoryStockLocationCreate := *openapiclient.NewInventoryStockLocationCreate(*openapiclient.NewInventoryStockLocationCreateData("Type_example", *openapiclient.NewPOSTInventoryStockLocations201ResponseDataAttributes(int32(1)))) // InventoryStockLocationCreate | 
+    inventoryStockLocationCreate := *openapiclient.NewInventoryStockLocationCreate(*openapiclient.NewInventoryStockLocationCreateData(interface{}(123), *openapiclient.NewPOSTInventoryStockLocations201ResponseDataAttributes(interface{}(1)))) // InventoryStockLocationCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

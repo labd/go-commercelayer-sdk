@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,24 +15,27 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHWebhooksWebhookId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHWebhooksWebhookId200ResponseDataAttributes{}
+
 // PATCHWebhooksWebhookId200ResponseDataAttributes struct for PATCHWebhooksWebhookId200ResponseDataAttributes
 type PATCHWebhooksWebhookId200ResponseDataAttributes struct {
 	// Unique name for the webhook.
-	Name *string `json:"name,omitempty"`
+	Name interface{} `json:"name,omitempty"`
 	// The identifier of the resource/event that will trigger the webhook.
-	Topic *string `json:"topic,omitempty"`
+	Topic interface{} `json:"topic,omitempty"`
 	// URI where the webhook subscription should send the POST request when the event occurs.
-	CallbackUrl *string `json:"callback_url,omitempty"`
+	CallbackUrl interface{} `json:"callback_url,omitempty"`
 	// List of related resources that should be included in the webhook body.
-	IncludeResources []string `json:"include_resources,omitempty"`
+	IncludeResources interface{} `json:"include_resources,omitempty"`
 	// Send this attribute if you want to reset the circuit breaker associated to this webhook to 'closed' state and zero failures count.
-	ResetCircuit *bool `json:"_reset_circuit,omitempty"`
+	ResetCircuit interface{} `json:"_reset_circuit,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 }
 
 // NewPATCHWebhooksWebhookId200ResponseDataAttributes instantiates a new PATCHWebhooksWebhookId200ResponseDataAttributes object
@@ -52,106 +55,109 @@ func NewPATCHWebhooksWebhookId200ResponseDataAttributesWithDefaults() *PATCHWebh
 	return &this
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetName() string {
-	if o == nil || o.Name == nil {
-		var ret string
+// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetName() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Name
+	return o.Name
 }
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return o.Name, true
+	return &o.Name, true
 }
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) SetName(v string) {
-	o.Name = &v
+// SetName gets a reference to the given interface{} and assigns it to the Name field.
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) SetName(v interface{}) {
+	o.Name = v
 }
 
-// GetTopic returns the Topic field value if set, zero value otherwise.
-func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetTopic() string {
-	if o == nil || o.Topic == nil {
-		var ret string
+// GetTopic returns the Topic field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetTopic() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Topic
+	return o.Topic
 }
 
 // GetTopicOk returns a tuple with the Topic field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetTopicOk() (*string, bool) {
-	if o == nil || o.Topic == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetTopicOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Topic) {
 		return nil, false
 	}
-	return o.Topic, true
+	return &o.Topic, true
 }
 
 // HasTopic returns a boolean if a field has been set.
 func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) HasTopic() bool {
-	if o != nil && o.Topic != nil {
+	if o != nil && IsNil(o.Topic) {
 		return true
 	}
 
 	return false
 }
 
-// SetTopic gets a reference to the given string and assigns it to the Topic field.
-func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) SetTopic(v string) {
-	o.Topic = &v
+// SetTopic gets a reference to the given interface{} and assigns it to the Topic field.
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) SetTopic(v interface{}) {
+	o.Topic = v
 }
 
-// GetCallbackUrl returns the CallbackUrl field value if set, zero value otherwise.
-func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetCallbackUrl() string {
-	if o == nil || o.CallbackUrl == nil {
-		var ret string
+// GetCallbackUrl returns the CallbackUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetCallbackUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CallbackUrl
+	return o.CallbackUrl
 }
 
 // GetCallbackUrlOk returns a tuple with the CallbackUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetCallbackUrlOk() (*string, bool) {
-	if o == nil || o.CallbackUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetCallbackUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CallbackUrl) {
 		return nil, false
 	}
-	return o.CallbackUrl, true
+	return &o.CallbackUrl, true
 }
 
 // HasCallbackUrl returns a boolean if a field has been set.
 func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) HasCallbackUrl() bool {
-	if o != nil && o.CallbackUrl != nil {
+	if o != nil && IsNil(o.CallbackUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetCallbackUrl gets a reference to the given string and assigns it to the CallbackUrl field.
-func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) SetCallbackUrl(v string) {
-	o.CallbackUrl = &v
+// SetCallbackUrl gets a reference to the given interface{} and assigns it to the CallbackUrl field.
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) SetCallbackUrl(v interface{}) {
+	o.CallbackUrl = v
 }
 
-// GetIncludeResources returns the IncludeResources field value if set, zero value otherwise.
-func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetIncludeResources() []string {
-	if o == nil || o.IncludeResources == nil {
-		var ret []string
+// GetIncludeResources returns the IncludeResources field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetIncludeResources() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.IncludeResources
@@ -159,127 +165,131 @@ func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetIncludeResources() 
 
 // GetIncludeResourcesOk returns a tuple with the IncludeResources field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetIncludeResourcesOk() ([]string, bool) {
-	if o == nil || o.IncludeResources == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetIncludeResourcesOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.IncludeResources) {
 		return nil, false
 	}
-	return o.IncludeResources, true
+	return &o.IncludeResources, true
 }
 
 // HasIncludeResources returns a boolean if a field has been set.
 func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) HasIncludeResources() bool {
-	if o != nil && o.IncludeResources != nil {
+	if o != nil && IsNil(o.IncludeResources) {
 		return true
 	}
 
 	return false
 }
 
-// SetIncludeResources gets a reference to the given []string and assigns it to the IncludeResources field.
-func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) SetIncludeResources(v []string) {
+// SetIncludeResources gets a reference to the given interface{} and assigns it to the IncludeResources field.
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) SetIncludeResources(v interface{}) {
 	o.IncludeResources = v
 }
 
-// GetResetCircuit returns the ResetCircuit field value if set, zero value otherwise.
-func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetResetCircuit() bool {
-	if o == nil || o.ResetCircuit == nil {
-		var ret bool
+// GetResetCircuit returns the ResetCircuit field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetResetCircuit() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ResetCircuit
+	return o.ResetCircuit
 }
 
 // GetResetCircuitOk returns a tuple with the ResetCircuit field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetResetCircuitOk() (*bool, bool) {
-	if o == nil || o.ResetCircuit == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetResetCircuitOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ResetCircuit) {
 		return nil, false
 	}
-	return o.ResetCircuit, true
+	return &o.ResetCircuit, true
 }
 
 // HasResetCircuit returns a boolean if a field has been set.
 func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) HasResetCircuit() bool {
-	if o != nil && o.ResetCircuit != nil {
+	if o != nil && IsNil(o.ResetCircuit) {
 		return true
 	}
 
 	return false
 }
 
-// SetResetCircuit gets a reference to the given bool and assigns it to the ResetCircuit field.
-func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) SetResetCircuit(v bool) {
-	o.ResetCircuit = &v
+// SetResetCircuit gets a reference to the given interface{} and assigns it to the ResetCircuit field.
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) SetResetCircuit(v interface{}) {
+	o.ResetCircuit = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -287,28 +297,37 @@ func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetMetadata() map[stri
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *PATCHWebhooksWebhookId200ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 func (o PATCHWebhooksWebhookId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHWebhooksWebhookId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -334,7 +353,7 @@ func (o PATCHWebhooksWebhookId200ResponseDataAttributes) MarshalJSON() ([]byte, 
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHWebhooksWebhookId200ResponseDataAttributes struct {

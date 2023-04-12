@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
+**Type** | **interface{}** | The resource&#39;s type | 
 **Attributes** | [**POSTParcels201ResponseDataAttributes**](POSTParcels201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ParcelCreateDataRelationships**](ParcelCreateDataRelationships.md) |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewParcelCreateData
 
-`func NewParcelCreateData(type_ string, attributes POSTParcels201ResponseDataAttributes, ) *ParcelCreateData`
+`func NewParcelCreateData(type_ interface{}, attributes POSTParcels201ResponseDataAttributes, ) *ParcelCreateData`
 
 NewParcelCreateData instantiates a new ParcelCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -29,24 +29,34 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *ParcelCreateData) GetType() string`
+`func (o *ParcelCreateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *ParcelCreateData) GetTypeOk() (*string, bool)`
+`func (o *ParcelCreateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *ParcelCreateData) SetType(v string)`
+`func (o *ParcelCreateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *ParcelCreateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *ParcelCreateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
 `func (o *ParcelCreateData) GetAttributes() POSTParcels201ResponseDataAttributes`

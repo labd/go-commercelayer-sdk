@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
+**Type** | **interface{}** | The resource&#39;s type | 
 **Attributes** | [**POSTAdyenPayments201ResponseDataAttributes**](POSTAdyenPayments201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**BillingInfoValidationRuleCreateDataRelationships**](BillingInfoValidationRuleCreateDataRelationships.md) |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewBillingInfoValidationRuleCreateData
 
-`func NewBillingInfoValidationRuleCreateData(type_ string, attributes POSTAdyenPayments201ResponseDataAttributes, ) *BillingInfoValidationRuleCreateData`
+`func NewBillingInfoValidationRuleCreateData(type_ interface{}, attributes POSTAdyenPayments201ResponseDataAttributes, ) *BillingInfoValidationRuleCreateData`
 
 NewBillingInfoValidationRuleCreateData instantiates a new BillingInfoValidationRuleCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -29,24 +29,34 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *BillingInfoValidationRuleCreateData) GetType() string`
+`func (o *BillingInfoValidationRuleCreateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *BillingInfoValidationRuleCreateData) GetTypeOk() (*string, bool)`
+`func (o *BillingInfoValidationRuleCreateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *BillingInfoValidationRuleCreateData) SetType(v string)`
+`func (o *BillingInfoValidationRuleCreateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *BillingInfoValidationRuleCreateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *BillingInfoValidationRuleCreateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
 `func (o *BillingInfoValidationRuleCreateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes`

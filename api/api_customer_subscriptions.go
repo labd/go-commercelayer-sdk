@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type CustomerSubscriptionsApiService service
 type CustomerSubscriptionsApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest struct {
 	ctx                    context.Context
 	ApiService             *CustomerSubscriptionsApiService
-	customerSubscriptionId string
+	customerSubscriptionId interface{}
 }
 
 func (r CustomerSubscriptionsApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a customer subscription
 	@param customerSubscriptionId The resource's id
 	@return CustomerSubscriptionsApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest
 */
-func (a *CustomerSubscriptionsApiService) DELETECustomerSubscriptionsCustomerSubscriptionId(ctx context.Context, customerSubscriptionId string) CustomerSubscriptionsApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest {
+func (a *CustomerSubscriptionsApiService) DELETECustomerSubscriptionsCustomerSubscriptionId(ctx context.Context, customerSubscriptionId interface{}) CustomerSubscriptionsApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest {
 	return CustomerSubscriptionsApiDELETECustomerSubscriptionsCustomerSubscriptionIdRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -64,7 +64,7 @@ func (a *CustomerSubscriptionsApiService) DELETECustomerSubscriptionsCustomerSub
 	}
 
 	localVarPath := localBasePath + "/customer_subscriptions/{customerSubscriptionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerSubscriptionId"+"}", url.PathEscape(parameterToString(r.customerSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.customerSubscriptionId, "customerSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *CustomerSubscriptionsApiService) DELETECustomerSubscriptionsCustomerSub
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *CustomerSubscriptionsApiService) DELETECustomerSubscriptionsCustomerSub
 type CustomerSubscriptionsApiGETCustomerIdCustomerSubscriptionsRequest struct {
 	ctx        context.Context
 	ApiService *CustomerSubscriptionsApiService
-	customerId string
+	customerId interface{}
 }
 
 func (r CustomerSubscriptionsApiGETCustomerIdCustomerSubscriptionsRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the customer subscriptions associated to the customer
 	@param customerId The resource's id
 	@return CustomerSubscriptionsApiGETCustomerIdCustomerSubscriptionsRequest
 */
-func (a *CustomerSubscriptionsApiService) GETCustomerIdCustomerSubscriptions(ctx context.Context, customerId string) CustomerSubscriptionsApiGETCustomerIdCustomerSubscriptionsRequest {
+func (a *CustomerSubscriptionsApiService) GETCustomerIdCustomerSubscriptions(ctx context.Context, customerId interface{}) CustomerSubscriptionsApiGETCustomerIdCustomerSubscriptionsRequest {
 	return CustomerSubscriptionsApiGETCustomerIdCustomerSubscriptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -156,7 +156,7 @@ func (a *CustomerSubscriptionsApiService) GETCustomerIdCustomerSubscriptionsExec
 	}
 
 	localVarPath := localBasePath + "/customers/{customerId}/customer_subscriptions"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterToString(r.customerId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *CustomerSubscriptionsApiService) GETCustomerIdCustomerSubscriptionsExec
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptionsExecute(r Cust
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -310,7 +310,7 @@ func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptionsExecute(r Cust
 type CustomerSubscriptionsApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest struct {
 	ctx                    context.Context
 	ApiService             *CustomerSubscriptionsApiService
-	customerSubscriptionId string
+	customerSubscriptionId interface{}
 }
 
 func (r CustomerSubscriptionsApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest) Execute() (*GETCustomerSubscriptionsCustomerSubscriptionId200Response, *http.Response, error) {
@@ -326,7 +326,7 @@ Retrieve a customer subscription
 	@param customerSubscriptionId The resource's id
 	@return CustomerSubscriptionsApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest
 */
-func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptionsCustomerSubscriptionId(ctx context.Context, customerSubscriptionId string) CustomerSubscriptionsApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest {
+func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptionsCustomerSubscriptionId(ctx context.Context, customerSubscriptionId interface{}) CustomerSubscriptionsApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest {
 	return CustomerSubscriptionsApiGETCustomerSubscriptionsCustomerSubscriptionIdRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -351,7 +351,7 @@ func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptionsCustomerSubscr
 	}
 
 	localVarPath := localBasePath + "/customer_subscriptions/{customerSubscriptionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerSubscriptionId"+"}", url.PathEscape(parameterToString(r.customerSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.customerSubscriptionId, "customerSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *CustomerSubscriptionsApiService) GETCustomerSubscriptionsCustomerSubscr
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -415,7 +415,7 @@ type CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionIdReq
 	ctx                        context.Context
 	ApiService                 *CustomerSubscriptionsApiService
 	customerSubscriptionUpdate *CustomerSubscriptionUpdate
-	customerSubscriptionId     string
+	customerSubscriptionId     interface{}
 }
 
 func (r CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest) CustomerSubscriptionUpdate(customerSubscriptionUpdate CustomerSubscriptionUpdate) CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest {
@@ -436,7 +436,7 @@ Update a customer subscription
 	@param customerSubscriptionId The resource's id
 	@return CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest
 */
-func (a *CustomerSubscriptionsApiService) PATCHCustomerSubscriptionsCustomerSubscriptionId(ctx context.Context, customerSubscriptionId string) CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest {
+func (a *CustomerSubscriptionsApiService) PATCHCustomerSubscriptionsCustomerSubscriptionId(ctx context.Context, customerSubscriptionId interface{}) CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest {
 	return CustomerSubscriptionsApiPATCHCustomerSubscriptionsCustomerSubscriptionIdRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -461,7 +461,7 @@ func (a *CustomerSubscriptionsApiService) PATCHCustomerSubscriptionsCustomerSubs
 	}
 
 	localVarPath := localBasePath + "/customer_subscriptions/{customerSubscriptionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerSubscriptionId"+"}", url.PathEscape(parameterToString(r.customerSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.customerSubscriptionId, "customerSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -499,9 +499,9 @@ func (a *CustomerSubscriptionsApiService) PATCHCustomerSubscriptionsCustomerSubs
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -610,9 +610,9 @@ func (a *CustomerSubscriptionsApiService) POSTCustomerSubscriptionsExecute(r Cus
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

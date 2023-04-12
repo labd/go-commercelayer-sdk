@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the TaxRuleCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &TaxRuleCreateDataRelationships{}
 
 // TaxRuleCreateDataRelationships struct for TaxRuleCreateDataRelationships
 type TaxRuleCreateDataRelationships struct {
@@ -63,11 +66,17 @@ func (o *TaxRuleCreateDataRelationships) SetManualTaxCalculator(v TaxRuleCreateD
 }
 
 func (o TaxRuleCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["manual_tax_calculator"] = o.ManualTaxCalculator
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o TaxRuleCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["manual_tax_calculator"] = o.ManualTaxCalculator
+	return toSerialize, nil
 }
 
 type NullableTaxRuleCreateDataRelationships struct {

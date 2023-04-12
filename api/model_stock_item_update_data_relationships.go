@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the StockItemUpdateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &StockItemUpdateDataRelationships{}
 
 // StockItemUpdateDataRelationships struct for StockItemUpdateDataRelationships
 type StockItemUpdateDataRelationships struct {
@@ -40,7 +43,7 @@ func NewStockItemUpdateDataRelationshipsWithDefaults() *StockItemUpdateDataRelat
 
 // GetStockLocation returns the StockLocation field value if set, zero value otherwise.
 func (o *StockItemUpdateDataRelationships) GetStockLocation() DeliveryLeadTimeCreateDataRelationshipsStockLocation {
-	if o == nil || o.StockLocation == nil {
+	if o == nil || IsNil(o.StockLocation) {
 		var ret DeliveryLeadTimeCreateDataRelationshipsStockLocation
 		return ret
 	}
@@ -50,7 +53,7 @@ func (o *StockItemUpdateDataRelationships) GetStockLocation() DeliveryLeadTimeCr
 // GetStockLocationOk returns a tuple with the StockLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StockItemUpdateDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeCreateDataRelationshipsStockLocation, bool) {
-	if o == nil || o.StockLocation == nil {
+	if o == nil || IsNil(o.StockLocation) {
 		return nil, false
 	}
 	return o.StockLocation, true
@@ -58,7 +61,7 @@ func (o *StockItemUpdateDataRelationships) GetStockLocationOk() (*DeliveryLeadTi
 
 // HasStockLocation returns a boolean if a field has been set.
 func (o *StockItemUpdateDataRelationships) HasStockLocation() bool {
-	if o != nil && o.StockLocation != nil {
+	if o != nil && !IsNil(o.StockLocation) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *StockItemUpdateDataRelationships) SetStockLocation(v DeliveryLeadTimeCr
 
 // GetSku returns the Sku field value if set, zero value otherwise.
 func (o *StockItemUpdateDataRelationships) GetSku() InStockSubscriptionCreateDataRelationshipsSku {
-	if o == nil || o.Sku == nil {
+	if o == nil || IsNil(o.Sku) {
 		var ret InStockSubscriptionCreateDataRelationshipsSku
 		return ret
 	}
@@ -82,7 +85,7 @@ func (o *StockItemUpdateDataRelationships) GetSku() InStockSubscriptionCreateDat
 // GetSkuOk returns a tuple with the Sku field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *StockItemUpdateDataRelationships) GetSkuOk() (*InStockSubscriptionCreateDataRelationshipsSku, bool) {
-	if o == nil || o.Sku == nil {
+	if o == nil || IsNil(o.Sku) {
 		return nil, false
 	}
 	return o.Sku, true
@@ -90,7 +93,7 @@ func (o *StockItemUpdateDataRelationships) GetSkuOk() (*InStockSubscriptionCreat
 
 // HasSku returns a boolean if a field has been set.
 func (o *StockItemUpdateDataRelationships) HasSku() bool {
-	if o != nil && o.Sku != nil {
+	if o != nil && !IsNil(o.Sku) {
 		return true
 	}
 
@@ -103,14 +106,22 @@ func (o *StockItemUpdateDataRelationships) SetSku(v InStockSubscriptionCreateDat
 }
 
 func (o StockItemUpdateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.StockLocation != nil {
-		toSerialize["stock_location"] = o.StockLocation
-	}
-	if o.Sku != nil {
-		toSerialize["sku"] = o.Sku
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o StockItemUpdateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.StockLocation) {
+		toSerialize["stock_location"] = o.StockLocation
+	}
+	if !IsNil(o.Sku) {
+		toSerialize["sku"] = o.Sku
+	}
+	return toSerialize, nil
 }
 
 type NullableStockItemUpdateDataRelationships struct {

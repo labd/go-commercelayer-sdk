@@ -1,6 +1,6 @@
 # \BraintreeGatewaysApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,15 +29,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    braintreeGatewayId := "braintreeGatewayId_example" // string | The resource's id
+    braintreeGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.BraintreeGatewaysApi.DELETEBraintreeGatewaysBraintreeGatewayId(context.Background(), braintreeGatewayId).Execute()
+    r, err := apiClient.BraintreeGatewaysApi.DELETEBraintreeGatewaysBraintreeGatewayId(context.Background(), braintreeGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `BraintreeGatewaysApi.DELETEBraintreeGatewaysBraintreeGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -51,7 +51,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**braintreeGatewayId** | **string** | The resource&#39;s id | 
+**braintreeGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -158,11 +158,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    braintreeGatewayId := "braintreeGatewayId_example" // string | The resource's id
+    braintreeGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -182,7 +182,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**braintreeGatewayId** | **string** | The resource&#39;s id | 
+**braintreeGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -228,12 +228,12 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    braintreeGatewayUpdate := *openapiclient.NewBraintreeGatewayUpdate(*openapiclient.NewBraintreeGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes())) // BraintreeGatewayUpdate | 
-    braintreeGatewayId := "braintreeGatewayId_example" // string | The resource's id
+    braintreeGatewayUpdate := *openapiclient.NewBraintreeGatewayUpdate(*openapiclient.NewBraintreeGatewayUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes())) // BraintreeGatewayUpdate | 
+    braintreeGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -253,7 +253,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**braintreeGatewayId** | **string** | The resource&#39;s id | 
+**braintreeGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -300,11 +300,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    braintreeGatewayCreate := *openapiclient.NewBraintreeGatewayCreate(*openapiclient.NewBraintreeGatewayCreateData("Type_example", *openapiclient.NewPOSTBraintreeGateways201ResponseDataAttributes("US payment gateway", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz", "xxxx-yyyy-zzzz"))) // BraintreeGatewayCreate | 
+    braintreeGatewayCreate := *openapiclient.NewBraintreeGatewayCreate(*openapiclient.NewBraintreeGatewayCreateData(interface{}(123), *openapiclient.NewPOSTBraintreeGateways201ResponseDataAttributes(interface{}(US payment gateway), interface{}(xxxx-yyyy-zzzz), interface{}(xxxx-yyyy-zzzz), interface{}(xxxx-yyyy-zzzz), interface{}(xxxx-yyyy-zzzz)))) // BraintreeGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

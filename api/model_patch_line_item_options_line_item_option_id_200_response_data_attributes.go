@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,20 +15,23 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes{}
+
 // PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes struct for PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes
 type PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes struct {
 	// The name of the line item option. When blank, it gets populated with the name of the associated SKU option.
-	Name *string `json:"name,omitempty"`
+	Name interface{} `json:"name,omitempty"`
 	// The line item option's quantity
-	Quantity *int32 `json:"quantity,omitempty"`
+	Quantity interface{} `json:"quantity,omitempty"`
 	// Set of key-value pairs that represent the selected options.
-	Options map[string]interface{} `json:"options,omitempty"`
+	Options interface{} `json:"options,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 }
 
 // NewPATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes instantiates a new PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes object
@@ -48,74 +51,76 @@ func NewPATCHLineItemOptionsLineItemOptionId200ResponseDataAttributesWithDefault
 	return &this
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetName() string {
-	if o == nil || o.Name == nil {
-		var ret string
+// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetName() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Name
+	return o.Name
 }
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return o.Name, true
+	return &o.Name, true
 }
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) SetName(v string) {
-	o.Name = &v
+// SetName gets a reference to the given interface{} and assigns it to the Name field.
+func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) SetName(v interface{}) {
+	o.Name = v
 }
 
-// GetQuantity returns the Quantity field value if set, zero value otherwise.
-func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetQuantity() int32 {
-	if o == nil || o.Quantity == nil {
-		var ret int32
+// GetQuantity returns the Quantity field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetQuantity() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Quantity
+	return o.Quantity
 }
 
 // GetQuantityOk returns a tuple with the Quantity field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetQuantityOk() (*int32, bool) {
-	if o == nil || o.Quantity == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetQuantityOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Quantity) {
 		return nil, false
 	}
-	return o.Quantity, true
+	return &o.Quantity, true
 }
 
 // HasQuantity returns a boolean if a field has been set.
 func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) HasQuantity() bool {
-	if o != nil && o.Quantity != nil {
+	if o != nil && IsNil(o.Quantity) {
 		return true
 	}
 
 	return false
 }
 
-// SetQuantity gets a reference to the given int32 and assigns it to the Quantity field.
-func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) SetQuantity(v int32) {
-	o.Quantity = &v
+// SetQuantity gets a reference to the given interface{} and assigns it to the Quantity field.
+func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) SetQuantity(v interface{}) {
+	o.Quantity = v
 }
 
-// GetOptions returns the Options field value if set, zero value otherwise.
-func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetOptions() map[string]interface{} {
-	if o == nil || o.Options == nil {
-		var ret map[string]interface{}
+// GetOptions returns the Options field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetOptions() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Options
@@ -123,95 +128,98 @@ func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetOptio
 
 // GetOptionsOk returns a tuple with the Options field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetOptionsOk() (map[string]interface{}, bool) {
-	if o == nil || o.Options == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetOptionsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Options) {
 		return nil, false
 	}
-	return o.Options, true
+	return &o.Options, true
 }
 
 // HasOptions returns a boolean if a field has been set.
 func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) HasOptions() bool {
-	if o != nil && o.Options != nil {
+	if o != nil && IsNil(o.Options) {
 		return true
 	}
 
 	return false
 }
 
-// SetOptions gets a reference to the given map[string]interface{} and assigns it to the Options field.
-func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) SetOptions(v map[string]interface{}) {
+// SetOptions gets a reference to the given interface{} and assigns it to the Options field.
+func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) SetOptions(v interface{}) {
 	o.Options = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -219,28 +227,37 @@ func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetMetad
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 func (o PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -260,7 +277,7 @@ func (o PATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes) MarshalJS
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHLineItemOptionsLineItemOptionId200ResponseDataAttributes struct {

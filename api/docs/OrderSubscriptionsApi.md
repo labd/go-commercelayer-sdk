@@ -1,6 +1,6 @@
 # \OrderSubscriptionsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,8 +8,11 @@ Method | HTTP request | Description
 [**GETCustomerIdOrderSubscriptions**](OrderSubscriptionsApi.md#GETCustomerIdOrderSubscriptions) | **Get** /customers/{customerId}/order_subscriptions | Retrieve the order subscriptions associated to the customer
 [**GETOrderCopyIdOrderSubscription**](OrderSubscriptionsApi.md#GETOrderCopyIdOrderSubscription) | **Get** /order_copies/{orderCopyId}/order_subscription | Retrieve the order subscription associated to the order copy
 [**GETOrderIdOrderSubscriptions**](OrderSubscriptionsApi.md#GETOrderIdOrderSubscriptions) | **Get** /orders/{orderId}/order_subscriptions | Retrieve the order subscriptions associated to the order
+[**GETOrderSubscriptionItemIdOrderSubscription**](OrderSubscriptionsApi.md#GETOrderSubscriptionItemIdOrderSubscription) | **Get** /order_subscription_items/{orderSubscriptionItemId}/order_subscription | Retrieve the order subscription associated to the order subscription item
 [**GETOrderSubscriptions**](OrderSubscriptionsApi.md#GETOrderSubscriptions) | **Get** /order_subscriptions | List all order subscriptions
 [**GETOrderSubscriptionsOrderSubscriptionId**](OrderSubscriptionsApi.md#GETOrderSubscriptionsOrderSubscriptionId) | **Get** /order_subscriptions/{orderSubscriptionId} | Retrieve an order subscription
+[**GETRecurringOrderCopyIdOrderSubscription**](OrderSubscriptionsApi.md#GETRecurringOrderCopyIdOrderSubscription) | **Get** /recurring_order_copies/{recurringOrderCopyId}/order_subscription | Retrieve the order subscription associated to the recurring order copy
+[**GETSubscriptionModelIdOrderSubscriptions**](OrderSubscriptionsApi.md#GETSubscriptionModelIdOrderSubscriptions) | **Get** /subscription_models/{subscriptionModelId}/order_subscriptions | Retrieve the order subscriptions associated to the subscription model
 [**PATCHOrderSubscriptionsOrderSubscriptionId**](OrderSubscriptionsApi.md#PATCHOrderSubscriptionsOrderSubscriptionId) | **Patch** /order_subscriptions/{orderSubscriptionId} | Update an order subscription
 [**POSTOrderSubscriptions**](OrderSubscriptionsApi.md#POSTOrderSubscriptions) | **Post** /order_subscriptions | Create an order subscription
 
@@ -32,15 +35,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    orderSubscriptionId := "orderSubscriptionId_example" // string | The resource's id
+    orderSubscriptionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrderSubscriptionsApi.DELETEOrderSubscriptionsOrderSubscriptionId(context.Background(), orderSubscriptionId).Execute()
+    r, err := apiClient.OrderSubscriptionsApi.DELETEOrderSubscriptionsOrderSubscriptionId(context.Background(), orderSubscriptionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderSubscriptionsApi.DELETEOrderSubscriptionsOrderSubscriptionId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -54,7 +57,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**orderSubscriptionId** | **string** | The resource&#39;s id | 
+**orderSubscriptionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -100,15 +103,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    customerId := "customerId_example" // string | The resource's id
+    customerId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrderSubscriptionsApi.GETCustomerIdOrderSubscriptions(context.Background(), customerId).Execute()
+    r, err := apiClient.OrderSubscriptionsApi.GETCustomerIdOrderSubscriptions(context.Background(), customerId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderSubscriptionsApi.GETCustomerIdOrderSubscriptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -122,7 +125,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**customerId** | **string** | The resource&#39;s id | 
+**customerId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -168,15 +171,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    orderCopyId := "orderCopyId_example" // string | The resource's id
+    orderCopyId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrderSubscriptionsApi.GETOrderCopyIdOrderSubscription(context.Background(), orderCopyId).Execute()
+    r, err := apiClient.OrderSubscriptionsApi.GETOrderCopyIdOrderSubscription(context.Background(), orderCopyId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderSubscriptionsApi.GETOrderCopyIdOrderSubscription``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -190,7 +193,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**orderCopyId** | **string** | The resource&#39;s id | 
+**orderCopyId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -236,15 +239,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    orderId := "orderId_example" // string | The resource's id
+    orderId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrderSubscriptionsApi.GETOrderIdOrderSubscriptions(context.Background(), orderId).Execute()
+    r, err := apiClient.OrderSubscriptionsApi.GETOrderIdOrderSubscriptions(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderSubscriptionsApi.GETOrderIdOrderSubscriptions``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -258,11 +261,79 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**orderId** | **string** | The resource&#39;s id | 
+**orderId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETOrderIdOrderSubscriptionsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETOrderSubscriptionItemIdOrderSubscription
+
+> GETOrderSubscriptionItemIdOrderSubscription(ctx, orderSubscriptionItemId).Execute()
+
+Retrieve the order subscription associated to the order subscription item
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    orderSubscriptionItemId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.OrderSubscriptionsApi.GETOrderSubscriptionItemIdOrderSubscription(context.Background(), orderSubscriptionItemId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `OrderSubscriptionsApi.GETOrderSubscriptionItemIdOrderSubscription``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**orderSubscriptionItemId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETOrderSubscriptionItemIdOrderSubscriptionRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -304,7 +375,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -365,11 +436,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    orderSubscriptionId := "orderSubscriptionId_example" // string | The resource's id
+    orderSubscriptionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -389,7 +460,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**orderSubscriptionId** | **string** | The resource&#39;s id | 
+**orderSubscriptionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -418,6 +489,142 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETRecurringOrderCopyIdOrderSubscription
+
+> GETRecurringOrderCopyIdOrderSubscription(ctx, recurringOrderCopyId).Execute()
+
+Retrieve the order subscription associated to the recurring order copy
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    recurringOrderCopyId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.OrderSubscriptionsApi.GETRecurringOrderCopyIdOrderSubscription(context.Background(), recurringOrderCopyId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `OrderSubscriptionsApi.GETRecurringOrderCopyIdOrderSubscription``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**recurringOrderCopyId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETRecurringOrderCopyIdOrderSubscriptionRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETSubscriptionModelIdOrderSubscriptions
+
+> GETSubscriptionModelIdOrderSubscriptions(ctx, subscriptionModelId).Execute()
+
+Retrieve the order subscriptions associated to the subscription model
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    subscriptionModelId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.OrderSubscriptionsApi.GETSubscriptionModelIdOrderSubscriptions(context.Background(), subscriptionModelId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `OrderSubscriptionsApi.GETSubscriptionModelIdOrderSubscriptions``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**subscriptionModelId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETSubscriptionModelIdOrderSubscriptionsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## PATCHOrderSubscriptionsOrderSubscriptionId
 
 > PATCHOrderSubscriptionsOrderSubscriptionId200Response PATCHOrderSubscriptionsOrderSubscriptionId(ctx, orderSubscriptionId).OrderSubscriptionUpdate(orderSubscriptionUpdate).Execute()
@@ -435,12 +642,12 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    orderSubscriptionUpdate := *openapiclient.NewOrderSubscriptionUpdate(*openapiclient.NewOrderSubscriptionUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes())) // OrderSubscriptionUpdate | 
-    orderSubscriptionId := "orderSubscriptionId_example" // string | The resource's id
+    orderSubscriptionUpdate := *openapiclient.NewOrderSubscriptionUpdate(*openapiclient.NewOrderSubscriptionUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes())) // OrderSubscriptionUpdate | 
+    orderSubscriptionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -460,7 +667,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**orderSubscriptionId** | **string** | The resource&#39;s id | 
+**orderSubscriptionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -507,11 +714,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    orderSubscriptionCreate := *openapiclient.NewOrderSubscriptionCreate(*openapiclient.NewOrderSubscriptionCreateData("Type_example", *openapiclient.NewPOSTOrderSubscriptions201ResponseDataAttributes("monthly"))) // OrderSubscriptionCreate | 
+    orderSubscriptionCreate := *openapiclient.NewOrderSubscriptionCreate(*openapiclient.NewOrderSubscriptionCreateData(interface{}(123), *openapiclient.NewPOSTOrderSubscriptions201ResponseDataAttributes(interface{}(monthly)))) // OrderSubscriptionCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

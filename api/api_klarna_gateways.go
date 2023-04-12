@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type KlarnaGatewaysApiService service
 type KlarnaGatewaysApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest struct {
 	ctx             context.Context
 	ApiService      *KlarnaGatewaysApiService
-	klarnaGatewayId string
+	klarnaGatewayId interface{}
 }
 
 func (r KlarnaGatewaysApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a klarna gateway
 	@param klarnaGatewayId The resource's id
 	@return KlarnaGatewaysApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest
 */
-func (a *KlarnaGatewaysApiService) DELETEKlarnaGatewaysKlarnaGatewayId(ctx context.Context, klarnaGatewayId string) KlarnaGatewaysApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest {
+func (a *KlarnaGatewaysApiService) DELETEKlarnaGatewaysKlarnaGatewayId(ctx context.Context, klarnaGatewayId interface{}) KlarnaGatewaysApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest {
 	return KlarnaGatewaysApiDELETEKlarnaGatewaysKlarnaGatewayIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -64,7 +64,7 @@ func (a *KlarnaGatewaysApiService) DELETEKlarnaGatewaysKlarnaGatewayIdExecute(r 
 	}
 
 	localVarPath := localBasePath + "/klarna_gateways/{klarnaGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"klarnaGatewayId"+"}", url.PathEscape(parameterToString(r.klarnaGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"klarnaGatewayId"+"}", url.PathEscape(parameterValueToString(r.klarnaGatewayId, "klarnaGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *KlarnaGatewaysApiService) DELETEKlarnaGatewaysKlarnaGatewayIdExecute(r 
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysExecute(r KlarnaGatewaysApiG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -218,7 +218,7 @@ func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysExecute(r KlarnaGatewaysApiG
 type KlarnaGatewaysApiGETKlarnaGatewaysKlarnaGatewayIdRequest struct {
 	ctx             context.Context
 	ApiService      *KlarnaGatewaysApiService
-	klarnaGatewayId string
+	klarnaGatewayId interface{}
 }
 
 func (r KlarnaGatewaysApiGETKlarnaGatewaysKlarnaGatewayIdRequest) Execute() (*GETKlarnaGatewaysKlarnaGatewayId200Response, *http.Response, error) {
@@ -234,7 +234,7 @@ Retrieve a klarna gateway
 	@param klarnaGatewayId The resource's id
 	@return KlarnaGatewaysApiGETKlarnaGatewaysKlarnaGatewayIdRequest
 */
-func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysKlarnaGatewayId(ctx context.Context, klarnaGatewayId string) KlarnaGatewaysApiGETKlarnaGatewaysKlarnaGatewayIdRequest {
+func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysKlarnaGatewayId(ctx context.Context, klarnaGatewayId interface{}) KlarnaGatewaysApiGETKlarnaGatewaysKlarnaGatewayIdRequest {
 	return KlarnaGatewaysApiGETKlarnaGatewaysKlarnaGatewayIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -259,7 +259,7 @@ func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysKlarnaGatewayIdExecute(r Kla
 	}
 
 	localVarPath := localBasePath + "/klarna_gateways/{klarnaGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"klarnaGatewayId"+"}", url.PathEscape(parameterToString(r.klarnaGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"klarnaGatewayId"+"}", url.PathEscape(parameterValueToString(r.klarnaGatewayId, "klarnaGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *KlarnaGatewaysApiService) GETKlarnaGatewaysKlarnaGatewayIdExecute(r Kla
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -323,7 +323,7 @@ type KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest struct {
 	ctx                 context.Context
 	ApiService          *KlarnaGatewaysApiService
 	klarnaGatewayUpdate *KlarnaGatewayUpdate
-	klarnaGatewayId     string
+	klarnaGatewayId     interface{}
 }
 
 func (r KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest) KlarnaGatewayUpdate(klarnaGatewayUpdate KlarnaGatewayUpdate) KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest {
@@ -344,7 +344,7 @@ Update a klarna gateway
 	@param klarnaGatewayId The resource's id
 	@return KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest
 */
-func (a *KlarnaGatewaysApiService) PATCHKlarnaGatewaysKlarnaGatewayId(ctx context.Context, klarnaGatewayId string) KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest {
+func (a *KlarnaGatewaysApiService) PATCHKlarnaGatewaysKlarnaGatewayId(ctx context.Context, klarnaGatewayId interface{}) KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest {
 	return KlarnaGatewaysApiPATCHKlarnaGatewaysKlarnaGatewayIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -369,7 +369,7 @@ func (a *KlarnaGatewaysApiService) PATCHKlarnaGatewaysKlarnaGatewayIdExecute(r K
 	}
 
 	localVarPath := localBasePath + "/klarna_gateways/{klarnaGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"klarnaGatewayId"+"}", url.PathEscape(parameterToString(r.klarnaGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"klarnaGatewayId"+"}", url.PathEscape(parameterValueToString(r.klarnaGatewayId, "klarnaGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -407,9 +407,9 @@ func (a *KlarnaGatewaysApiService) PATCHKlarnaGatewaysKlarnaGatewayIdExecute(r K
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -518,9 +518,9 @@ func (a *KlarnaGatewaysApiService) POSTKlarnaGatewaysExecute(r KlarnaGatewaysApi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

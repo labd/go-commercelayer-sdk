@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,12 +15,15 @@ import (
 	"encoding/json"
 )
 
+// checks if the CustomerDataRelationshipsCustomerAddressesData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CustomerDataRelationshipsCustomerAddressesData{}
+
 // CustomerDataRelationshipsCustomerAddressesData struct for CustomerDataRelationshipsCustomerAddressesData
 type CustomerDataRelationshipsCustomerAddressesData struct {
 	// The resource's type
-	Type *string `json:"type,omitempty"`
+	Type interface{} `json:"type,omitempty"`
 	// The resource's id
-	Id *string `json:"id,omitempty"`
+	Id interface{} `json:"id,omitempty"`
 }
 
 // NewCustomerDataRelationshipsCustomerAddressesData instantiates a new CustomerDataRelationshipsCustomerAddressesData object
@@ -40,71 +43,81 @@ func NewCustomerDataRelationshipsCustomerAddressesDataWithDefaults() *CustomerDa
 	return &this
 }
 
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *CustomerDataRelationshipsCustomerAddressesData) GetType() string {
-	if o == nil || o.Type == nil {
-		var ret string
+// GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CustomerDataRelationshipsCustomerAddressesData) GetType() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Type
+	return o.Type
 }
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerDataRelationshipsCustomerAddressesData) GetTypeOk() (*string, bool) {
-	if o == nil || o.Type == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CustomerDataRelationshipsCustomerAddressesData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
-	return o.Type, true
+	return &o.Type, true
 }
 
 // HasType returns a boolean if a field has been set.
 func (o *CustomerDataRelationshipsCustomerAddressesData) HasType() bool {
-	if o != nil && o.Type != nil {
+	if o != nil && IsNil(o.Type) {
 		return true
 	}
 
 	return false
 }
 
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *CustomerDataRelationshipsCustomerAddressesData) SetType(v string) {
-	o.Type = &v
+// SetType gets a reference to the given interface{} and assigns it to the Type field.
+func (o *CustomerDataRelationshipsCustomerAddressesData) SetType(v interface{}) {
+	o.Type = v
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *CustomerDataRelationshipsCustomerAddressesData) GetId() string {
-	if o == nil || o.Id == nil {
-		var ret string
+// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *CustomerDataRelationshipsCustomerAddressesData) GetId() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Id
+	return o.Id
 }
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *CustomerDataRelationshipsCustomerAddressesData) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *CustomerDataRelationshipsCustomerAddressesData) GetIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *CustomerDataRelationshipsCustomerAddressesData) HasId() bool {
-	if o != nil && o.Id != nil {
+	if o != nil && IsNil(o.Id) {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *CustomerDataRelationshipsCustomerAddressesData) SetId(v string) {
-	o.Id = &v
+// SetId gets a reference to the given interface{} and assigns it to the Id field.
+func (o *CustomerDataRelationshipsCustomerAddressesData) SetId(v interface{}) {
+	o.Id = v
 }
 
 func (o CustomerDataRelationshipsCustomerAddressesData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o CustomerDataRelationshipsCustomerAddressesData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
@@ -112,7 +125,7 @@ func (o CustomerDataRelationshipsCustomerAddressesData) MarshalJSON() ([]byte, e
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableCustomerDataRelationshipsCustomerAddressesData struct {

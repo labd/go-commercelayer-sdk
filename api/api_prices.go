@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type PricesApiService service
 type PricesApiDELETEPricesPriceIdRequest struct {
 	ctx        context.Context
 	ApiService *PricesApiService
-	priceId    string
+	priceId    interface{}
 }
 
 func (r PricesApiDELETEPricesPriceIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a price
 	@param priceId The resource's id
 	@return PricesApiDELETEPricesPriceIdRequest
 */
-func (a *PricesApiService) DELETEPricesPriceId(ctx context.Context, priceId string) PricesApiDELETEPricesPriceIdRequest {
+func (a *PricesApiService) DELETEPricesPriceId(ctx context.Context, priceId interface{}) PricesApiDELETEPricesPriceIdRequest {
 	return PricesApiDELETEPricesPriceIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -64,7 +64,7 @@ func (a *PricesApiService) DELETEPricesPriceIdExecute(r PricesApiDELETEPricesPri
 	}
 
 	localVarPath := localBasePath + "/prices/{priceId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterToString(r.priceId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterValueToString(r.priceId, "priceId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,101 @@ func (a *PricesApiService) DELETEPricesPriceIdExecute(r PricesApiDELETEPricesPri
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type PricesApiGETPriceFrequencyTierIdPriceRequest struct {
+	ctx                  context.Context
+	ApiService           *PricesApiService
+	priceFrequencyTierId interface{}
+}
+
+func (r PricesApiGETPriceFrequencyTierIdPriceRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETPriceFrequencyTierIdPriceExecute(r)
+}
+
+/*
+GETPriceFrequencyTierIdPrice Retrieve the price associated to the price frequency tier
+
+Retrieve the price associated to the price frequency tier
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param priceFrequencyTierId The resource's id
+	@return PricesApiGETPriceFrequencyTierIdPriceRequest
+*/
+func (a *PricesApiService) GETPriceFrequencyTierIdPrice(ctx context.Context, priceFrequencyTierId interface{}) PricesApiGETPriceFrequencyTierIdPriceRequest {
+	return PricesApiGETPriceFrequencyTierIdPriceRequest{
+		ApiService:           a,
+		ctx:                  ctx,
+		priceFrequencyTierId: priceFrequencyTierId,
+	}
+}
+
+// Execute executes the request
+func (a *PricesApiService) GETPriceFrequencyTierIdPriceExecute(r PricesApiGETPriceFrequencyTierIdPriceRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PricesApiService.GETPriceFrequencyTierIdPrice")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/price_frequency_tiers/{priceFrequencyTierId}/price"
+	localVarPath = strings.Replace(localVarPath, "{"+"priceFrequencyTierId"+"}", url.PathEscape(parameterValueToString(r.priceFrequencyTierId, "priceFrequencyTierId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +210,7 @@ func (a *PricesApiService) DELETEPricesPriceIdExecute(r PricesApiDELETEPricesPri
 type PricesApiGETPriceListIdPricesRequest struct {
 	ctx         context.Context
 	ApiService  *PricesApiService
-	priceListId string
+	priceListId interface{}
 }
 
 func (r PricesApiGETPriceListIdPricesRequest) Execute() (*http.Response, error) {
@@ -134,7 +226,7 @@ Retrieve the prices associated to the price list
 	@param priceListId The resource's id
 	@return PricesApiGETPriceListIdPricesRequest
 */
-func (a *PricesApiService) GETPriceListIdPrices(ctx context.Context, priceListId string) PricesApiGETPriceListIdPricesRequest {
+func (a *PricesApiService) GETPriceListIdPrices(ctx context.Context, priceListId interface{}) PricesApiGETPriceListIdPricesRequest {
 	return PricesApiGETPriceListIdPricesRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -156,7 +248,7 @@ func (a *PricesApiService) GETPriceListIdPricesExecute(r PricesApiGETPriceListId
 	}
 
 	localVarPath := localBasePath + "/price_lists/{priceListId}/prices"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceListId"+"}", url.PathEscape(parameterToString(r.priceListId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceListId"+"}", url.PathEscape(parameterValueToString(r.priceListId, "priceListId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +281,9 @@ func (a *PricesApiService) GETPriceListIdPricesExecute(r PricesApiGETPriceListId
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -210,7 +302,7 @@ func (a *PricesApiService) GETPriceListIdPricesExecute(r PricesApiGETPriceListId
 type PricesApiGETPriceTierIdPriceRequest struct {
 	ctx         context.Context
 	ApiService  *PricesApiService
-	priceTierId string
+	priceTierId interface{}
 }
 
 func (r PricesApiGETPriceTierIdPriceRequest) Execute() (*http.Response, error) {
@@ -226,7 +318,7 @@ Retrieve the price associated to the price tier
 	@param priceTierId The resource's id
 	@return PricesApiGETPriceTierIdPriceRequest
 */
-func (a *PricesApiService) GETPriceTierIdPrice(ctx context.Context, priceTierId string) PricesApiGETPriceTierIdPriceRequest {
+func (a *PricesApiService) GETPriceTierIdPrice(ctx context.Context, priceTierId interface{}) PricesApiGETPriceTierIdPriceRequest {
 	return PricesApiGETPriceTierIdPriceRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -248,7 +340,7 @@ func (a *PricesApiService) GETPriceTierIdPriceExecute(r PricesApiGETPriceTierIdP
 	}
 
 	localVarPath := localBasePath + "/price_tiers/{priceTierId}/price"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceTierId"+"}", url.PathEscape(parameterToString(r.priceTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceTierId"+"}", url.PathEscape(parameterValueToString(r.priceTierId, "priceTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -281,9 +373,9 @@ func (a *PricesApiService) GETPriceTierIdPriceExecute(r PricesApiGETPriceTierIdP
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -302,7 +394,7 @@ func (a *PricesApiService) GETPriceTierIdPriceExecute(r PricesApiGETPriceTierIdP
 type PricesApiGETPriceVolumeTierIdPriceRequest struct {
 	ctx               context.Context
 	ApiService        *PricesApiService
-	priceVolumeTierId string
+	priceVolumeTierId interface{}
 }
 
 func (r PricesApiGETPriceVolumeTierIdPriceRequest) Execute() (*http.Response, error) {
@@ -318,7 +410,7 @@ Retrieve the price associated to the price volume tier
 	@param priceVolumeTierId The resource's id
 	@return PricesApiGETPriceVolumeTierIdPriceRequest
 */
-func (a *PricesApiService) GETPriceVolumeTierIdPrice(ctx context.Context, priceVolumeTierId string) PricesApiGETPriceVolumeTierIdPriceRequest {
+func (a *PricesApiService) GETPriceVolumeTierIdPrice(ctx context.Context, priceVolumeTierId interface{}) PricesApiGETPriceVolumeTierIdPriceRequest {
 	return PricesApiGETPriceVolumeTierIdPriceRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -340,7 +432,7 @@ func (a *PricesApiService) GETPriceVolumeTierIdPriceExecute(r PricesApiGETPriceV
 	}
 
 	localVarPath := localBasePath + "/price_volume_tiers/{priceVolumeTierId}/price"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceVolumeTierId"+"}", url.PathEscape(parameterToString(r.priceVolumeTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceVolumeTierId"+"}", url.PathEscape(parameterValueToString(r.priceVolumeTierId, "priceVolumeTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -373,9 +465,9 @@ func (a *PricesApiService) GETPriceVolumeTierIdPriceExecute(r PricesApiGETPriceV
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -464,9 +556,9 @@ func (a *PricesApiService) GETPricesExecute(r PricesApiGETPricesRequest) (*GETPr
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -494,7 +586,7 @@ func (a *PricesApiService) GETPricesExecute(r PricesApiGETPricesRequest) (*GETPr
 type PricesApiGETPricesPriceIdRequest struct {
 	ctx        context.Context
 	ApiService *PricesApiService
-	priceId    string
+	priceId    interface{}
 }
 
 func (r PricesApiGETPricesPriceIdRequest) Execute() (*GETPricesPriceId200Response, *http.Response, error) {
@@ -510,7 +602,7 @@ Retrieve a price
 	@param priceId The resource's id
 	@return PricesApiGETPricesPriceIdRequest
 */
-func (a *PricesApiService) GETPricesPriceId(ctx context.Context, priceId string) PricesApiGETPricesPriceIdRequest {
+func (a *PricesApiService) GETPricesPriceId(ctx context.Context, priceId interface{}) PricesApiGETPricesPriceIdRequest {
 	return PricesApiGETPricesPriceIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -535,7 +627,7 @@ func (a *PricesApiService) GETPricesPriceIdExecute(r PricesApiGETPricesPriceIdRe
 	}
 
 	localVarPath := localBasePath + "/prices/{priceId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterToString(r.priceId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterValueToString(r.priceId, "priceId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -568,9 +660,9 @@ func (a *PricesApiService) GETPricesPriceIdExecute(r PricesApiGETPricesPriceIdRe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -598,7 +690,7 @@ func (a *PricesApiService) GETPricesPriceIdExecute(r PricesApiGETPricesPriceIdRe
 type PricesApiGETSkuIdPricesRequest struct {
 	ctx        context.Context
 	ApiService *PricesApiService
-	skuId      string
+	skuId      interface{}
 }
 
 func (r PricesApiGETSkuIdPricesRequest) Execute() (*http.Response, error) {
@@ -614,7 +706,7 @@ Retrieve the prices associated to the SKU
 	@param skuId The resource's id
 	@return PricesApiGETSkuIdPricesRequest
 */
-func (a *PricesApiService) GETSkuIdPrices(ctx context.Context, skuId string) PricesApiGETSkuIdPricesRequest {
+func (a *PricesApiService) GETSkuIdPrices(ctx context.Context, skuId interface{}) PricesApiGETSkuIdPricesRequest {
 	return PricesApiGETSkuIdPricesRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -636,7 +728,7 @@ func (a *PricesApiService) GETSkuIdPricesExecute(r PricesApiGETSkuIdPricesReques
 	}
 
 	localVarPath := localBasePath + "/skus/{skuId}/prices"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterToString(r.skuId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -669,9 +761,9 @@ func (a *PricesApiService) GETSkuIdPricesExecute(r PricesApiGETSkuIdPricesReques
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -691,7 +783,7 @@ type PricesApiPATCHPricesPriceIdRequest struct {
 	ctx         context.Context
 	ApiService  *PricesApiService
 	priceUpdate *PriceUpdate
-	priceId     string
+	priceId     interface{}
 }
 
 func (r PricesApiPATCHPricesPriceIdRequest) PriceUpdate(priceUpdate PriceUpdate) PricesApiPATCHPricesPriceIdRequest {
@@ -712,7 +804,7 @@ Update a price
 	@param priceId The resource's id
 	@return PricesApiPATCHPricesPriceIdRequest
 */
-func (a *PricesApiService) PATCHPricesPriceId(ctx context.Context, priceId string) PricesApiPATCHPricesPriceIdRequest {
+func (a *PricesApiService) PATCHPricesPriceId(ctx context.Context, priceId interface{}) PricesApiPATCHPricesPriceIdRequest {
 	return PricesApiPATCHPricesPriceIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -737,7 +829,7 @@ func (a *PricesApiService) PATCHPricesPriceIdExecute(r PricesApiPATCHPricesPrice
 	}
 
 	localVarPath := localBasePath + "/prices/{priceId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterToString(r.priceId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"priceId"+"}", url.PathEscape(parameterValueToString(r.priceId, "priceId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -775,9 +867,9 @@ func (a *PricesApiService) PATCHPricesPriceIdExecute(r PricesApiPATCHPricesPrice
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -886,9 +978,9 @@ func (a *PricesApiService) POSTPricesExecute(r PricesApiPOSTPricesRequest) (*POS
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

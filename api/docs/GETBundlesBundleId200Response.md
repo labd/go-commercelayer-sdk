@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETBundles200ResponseDataInner**](GETBundles200ResponseDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETBundlesBundleId200ResponseData**](GETBundlesBundleId200ResponseData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETBundlesBundleId200Response) GetData() GETBundles200ResponseDataInner`
+`func (o *GETBundlesBundleId200Response) GetData() GETBundlesBundleId200ResponseData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETBundlesBundleId200Response) GetDataOk() (*GETBundles200ResponseDataInner, bool)`
+`func (o *GETBundlesBundleId200Response) GetDataOk() (*GETBundlesBundleId200ResponseData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETBundlesBundleId200Response) SetData(v GETBundles200ResponseDataInner)`
+`func (o *GETBundlesBundleId200Response) SetData(v GETBundlesBundleId200ResponseData)`
 
 SetData sets Data field to given value.
 

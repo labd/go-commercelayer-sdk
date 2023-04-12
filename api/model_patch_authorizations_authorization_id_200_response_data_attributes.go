@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,20 +15,23 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHAuthorizationsAuthorizationId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHAuthorizationsAuthorizationId200ResponseDataAttributes{}
+
 // PATCHAuthorizationsAuthorizationId200ResponseDataAttributes struct for PATCHAuthorizationsAuthorizationId200ResponseDataAttributes
 type PATCHAuthorizationsAuthorizationId200ResponseDataAttributes struct {
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 	// Send this attribute if you want to create a capture for this authorization.
-	Capture *bool `json:"_capture,omitempty"`
+	Capture interface{} `json:"_capture,omitempty"`
 	// The associated capture amount, in cents.
-	CaptureAmountCents *int32 `json:"_capture_amount_cents,omitempty"`
+	CaptureAmountCents interface{} `json:"_capture_amount_cents,omitempty"`
 	// Send this attribute if you want to create a void for this authorization.
-	Void *bool `json:"_void,omitempty"`
+	Void interface{} `json:"_void,omitempty"`
 }
 
 // NewPATCHAuthorizationsAuthorizationId200ResponseDataAttributes instantiates a new PATCHAuthorizationsAuthorizationId200ResponseDataAttributes object
@@ -48,74 +51,76 @@ func NewPATCHAuthorizationsAuthorizationId200ResponseDataAttributesWithDefaults(
 	return &this
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -123,124 +128,136 @@ func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetMetadat
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
-// GetCapture returns the Capture field value if set, zero value otherwise.
-func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetCapture() bool {
-	if o == nil || o.Capture == nil {
-		var ret bool
+// GetCapture returns the Capture field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetCapture() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Capture
+	return o.Capture
 }
 
 // GetCaptureOk returns a tuple with the Capture field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetCaptureOk() (*bool, bool) {
-	if o == nil || o.Capture == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetCaptureOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Capture) {
 		return nil, false
 	}
-	return o.Capture, true
+	return &o.Capture, true
 }
 
 // HasCapture returns a boolean if a field has been set.
 func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) HasCapture() bool {
-	if o != nil && o.Capture != nil {
+	if o != nil && IsNil(o.Capture) {
 		return true
 	}
 
 	return false
 }
 
-// SetCapture gets a reference to the given bool and assigns it to the Capture field.
-func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) SetCapture(v bool) {
-	o.Capture = &v
+// SetCapture gets a reference to the given interface{} and assigns it to the Capture field.
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) SetCapture(v interface{}) {
+	o.Capture = v
 }
 
-// GetCaptureAmountCents returns the CaptureAmountCents field value if set, zero value otherwise.
-func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetCaptureAmountCents() int32 {
-	if o == nil || o.CaptureAmountCents == nil {
-		var ret int32
+// GetCaptureAmountCents returns the CaptureAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetCaptureAmountCents() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CaptureAmountCents
+	return o.CaptureAmountCents
 }
 
 // GetCaptureAmountCentsOk returns a tuple with the CaptureAmountCents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetCaptureAmountCentsOk() (*int32, bool) {
-	if o == nil || o.CaptureAmountCents == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetCaptureAmountCentsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CaptureAmountCents) {
 		return nil, false
 	}
-	return o.CaptureAmountCents, true
+	return &o.CaptureAmountCents, true
 }
 
 // HasCaptureAmountCents returns a boolean if a field has been set.
 func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) HasCaptureAmountCents() bool {
-	if o != nil && o.CaptureAmountCents != nil {
+	if o != nil && IsNil(o.CaptureAmountCents) {
 		return true
 	}
 
 	return false
 }
 
-// SetCaptureAmountCents gets a reference to the given int32 and assigns it to the CaptureAmountCents field.
-func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) SetCaptureAmountCents(v int32) {
-	o.CaptureAmountCents = &v
+// SetCaptureAmountCents gets a reference to the given interface{} and assigns it to the CaptureAmountCents field.
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) SetCaptureAmountCents(v interface{}) {
+	o.CaptureAmountCents = v
 }
 
-// GetVoid returns the Void field value if set, zero value otherwise.
-func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetVoid() bool {
-	if o == nil || o.Void == nil {
-		var ret bool
+// GetVoid returns the Void field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetVoid() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Void
+	return o.Void
 }
 
 // GetVoidOk returns a tuple with the Void field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetVoidOk() (*bool, bool) {
-	if o == nil || o.Void == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) GetVoidOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Void) {
 		return nil, false
 	}
-	return o.Void, true
+	return &o.Void, true
 }
 
 // HasVoid returns a boolean if a field has been set.
 func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) HasVoid() bool {
-	if o != nil && o.Void != nil {
+	if o != nil && IsNil(o.Void) {
 		return true
 	}
 
 	return false
 }
 
-// SetVoid gets a reference to the given bool and assigns it to the Void field.
-func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) SetVoid(v bool) {
-	o.Void = &v
+// SetVoid gets a reference to the given interface{} and assigns it to the Void field.
+func (o *PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) SetVoid(v interface{}) {
+	o.Void = v
 }
 
 func (o PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference
@@ -260,7 +277,7 @@ func (o PATCHAuthorizationsAuthorizationId200ResponseDataAttributes) MarshalJSON
 	if o.Void != nil {
 		toSerialize["_void"] = o.Void
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHAuthorizationsAuthorizationId200ResponseDataAttributes struct {

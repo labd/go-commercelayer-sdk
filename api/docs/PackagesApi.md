@@ -1,6 +1,6 @@
 # \PackagesApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,15 +30,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    packageId := "packageId_example" // string | The resource's id
+    packageId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PackagesApi.DELETEPackagesPackageId(context.Background(), packageId).Execute()
+    r, err := apiClient.PackagesApi.DELETEPackagesPackageId(context.Background(), packageId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PackagesApi.DELETEPackagesPackageId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -52,7 +52,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**packageId** | **string** | The resource&#39;s id | 
+**packageId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -98,7 +98,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -159,11 +159,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    packageId := "packageId_example" // string | The resource's id
+    packageId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -183,7 +183,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**packageId** | **string** | The resource&#39;s id | 
+**packageId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -229,15 +229,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    parcelId := "parcelId_example" // string | The resource's id
+    parcelId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.PackagesApi.GETParcelIdPackage(context.Background(), parcelId).Execute()
+    r, err := apiClient.PackagesApi.GETParcelIdPackage(context.Background(), parcelId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `PackagesApi.GETParcelIdPackage``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -251,7 +251,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**parcelId** | **string** | The resource&#39;s id | 
+**parcelId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -297,12 +297,12 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    packageUpdate := *openapiclient.NewPackageUpdate(*openapiclient.NewPackageUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHPackagesPackageId200ResponseDataAttributes())) // PackageUpdate | 
-    packageId := "packageId_example" // string | The resource's id
+    packageUpdate := *openapiclient.NewPackageUpdate(*openapiclient.NewPackageUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHPackagesPackageId200ResponseDataAttributes())) // PackageUpdate | 
+    packageId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -322,7 +322,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**packageId** | **string** | The resource&#39;s id | 
+**packageId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -369,11 +369,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    packageCreate := *openapiclient.NewPackageCreate(*openapiclient.NewPackageCreateData("Type_example", *openapiclient.NewPOSTPackages201ResponseDataAttributes("Large (60x40x30)", float32(40.0), float32(40.0), float32(25.0), "gr"))) // PackageCreate | 
+    packageCreate := *openapiclient.NewPackageCreate(*openapiclient.NewPackageCreateData(interface{}(123), *openapiclient.NewPOSTPackages201ResponseDataAttributes(interface{}(Large (60x40x30)), interface{}(40.0), interface{}(40.0), interface{}(25.0), interface{}(gr)))) // PackageCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

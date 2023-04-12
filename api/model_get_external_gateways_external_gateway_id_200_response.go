@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETExternalGatewaysExternalGatewayId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETExternalGatewaysExternalGatewayId200Response{}
+
 // GETExternalGatewaysExternalGatewayId200Response struct for GETExternalGatewaysExternalGatewayId200Response
 type GETExternalGatewaysExternalGatewayId200Response struct {
-	Data *GETExternalGateways200ResponseDataInner `json:"data,omitempty"`
+	Data *GETExternalGatewaysExternalGatewayId200ResponseData `json:"data,omitempty"`
 }
 
 // NewGETExternalGatewaysExternalGatewayId200Response instantiates a new GETExternalGatewaysExternalGatewayId200Response object
@@ -38,9 +41,9 @@ func NewGETExternalGatewaysExternalGatewayId200ResponseWithDefaults() *GETExtern
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETExternalGatewaysExternalGatewayId200Response) GetData() GETExternalGateways200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret GETExternalGateways200ResponseDataInner
+func (o *GETExternalGatewaysExternalGatewayId200Response) GetData() GETExternalGatewaysExternalGatewayId200ResponseData {
+	if o == nil || IsNil(o.Data) {
+		var ret GETExternalGatewaysExternalGatewayId200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *GETExternalGatewaysExternalGatewayId200Response) GetData() GETExternalG
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETExternalGatewaysExternalGatewayId200Response) GetDataOk() (*GETExternalGateways200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+func (o *GETExternalGatewaysExternalGatewayId200Response) GetDataOk() (*GETExternalGatewaysExternalGatewayId200ResponseData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *GETExternalGatewaysExternalGatewayId200Response) GetDataOk() (*GETExter
 
 // HasData returns a boolean if a field has been set.
 func (o *GETExternalGatewaysExternalGatewayId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETExternalGateways200ResponseDataInner and assigns it to the Data field.
-func (o *GETExternalGatewaysExternalGatewayId200Response) SetData(v GETExternalGateways200ResponseDataInner) {
+// SetData gets a reference to the given GETExternalGatewaysExternalGatewayId200ResponseData and assigns it to the Data field.
+func (o *GETExternalGatewaysExternalGatewayId200Response) SetData(v GETExternalGatewaysExternalGatewayId200ResponseData) {
 	o.Data = &v
 }
 
 func (o GETExternalGatewaysExternalGatewayId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GETExternalGatewaysExternalGatewayId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGETExternalGatewaysExternalGatewayId200Response struct {

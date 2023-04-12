@@ -1,6 +1,6 @@
 # \OrderCopiesApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -8,7 +8,7 @@ Method | HTTP request | Description
 [**GETOrderCopies**](OrderCopiesApi.md#GETOrderCopies) | **Get** /order_copies | List all order copies
 [**GETOrderCopiesOrderCopyId**](OrderCopiesApi.md#GETOrderCopiesOrderCopyId) | **Get** /order_copies/{orderCopyId} | Retrieve an order copy
 [**GETOrderIdOrderCopies**](OrderCopiesApi.md#GETOrderIdOrderCopies) | **Get** /orders/{orderId}/order_copies | Retrieve the order copies associated to the order
-[**GETOrderSubscriptionIdOrderCopies**](OrderCopiesApi.md#GETOrderSubscriptionIdOrderCopies) | **Get** /order_subscriptions/{orderSubscriptionId}/order_copies | Retrieve the order copies associated to the order subscription
+[**PATCHOrderCopiesOrderCopyId**](OrderCopiesApi.md#PATCHOrderCopiesOrderCopyId) | **Patch** /order_copies/{orderCopyId} | Update an order copy
 [**POSTOrderCopies**](OrderCopiesApi.md#POSTOrderCopies) | **Post** /order_copies | Create an order copy
 
 
@@ -30,15 +30,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    orderCopyId := "orderCopyId_example" // string | The resource's id
+    orderCopyId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrderCopiesApi.DELETEOrderCopiesOrderCopyId(context.Background(), orderCopyId).Execute()
+    r, err := apiClient.OrderCopiesApi.DELETEOrderCopiesOrderCopyId(context.Background(), orderCopyId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderCopiesApi.DELETEOrderCopiesOrderCopyId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -52,7 +52,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**orderCopyId** | **string** | The resource&#39;s id | 
+**orderCopyId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -98,7 +98,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -159,11 +159,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    orderCopyId := "orderCopyId_example" // string | The resource's id
+    orderCopyId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -183,7 +183,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**orderCopyId** | **string** | The resource&#39;s id | 
+**orderCopyId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -229,15 +229,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    orderId := "orderId_example" // string | The resource's id
+    orderId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrderCopiesApi.GETOrderIdOrderCopies(context.Background(), orderId).Execute()
+    r, err := apiClient.OrderCopiesApi.GETOrderIdOrderCopies(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `OrderCopiesApi.GETOrderIdOrderCopies``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -251,7 +251,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**orderId** | **string** | The resource&#39;s id | 
+**orderId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -280,11 +280,11 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
-## GETOrderSubscriptionIdOrderCopies
+## PATCHOrderCopiesOrderCopyId
 
-> GETOrderSubscriptionIdOrderCopies(ctx, orderSubscriptionId).Execute()
+> PATCHOrderCopiesOrderCopyId200Response PATCHOrderCopiesOrderCopyId(ctx, orderCopyId).OrderCopyUpdate(orderCopyUpdate).Execute()
 
-Retrieve the order copies associated to the order subscription
+Update an order copy
 
 
 
@@ -297,19 +297,22 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    orderSubscriptionId := "orderSubscriptionId_example" // string | The resource's id
+    orderCopyUpdate := *openapiclient.NewOrderCopyUpdate(*openapiclient.NewOrderCopyUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes())) // OrderCopyUpdate | 
+    orderCopyId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.OrderCopiesApi.GETOrderSubscriptionIdOrderCopies(context.Background(), orderSubscriptionId).Execute()
+    resp, r, err := apiClient.OrderCopiesApi.PATCHOrderCopiesOrderCopyId(context.Background(), orderCopyId).OrderCopyUpdate(orderCopyUpdate).Execute()
     if err != nil {
-        fmt.Fprintf(os.Stderr, "Error when calling `OrderCopiesApi.GETOrderSubscriptionIdOrderCopies``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Error when calling `OrderCopiesApi.PATCHOrderCopiesOrderCopyId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
+    // response from `PATCHOrderCopiesOrderCopyId`: PATCHOrderCopiesOrderCopyId200Response
+    fmt.Fprintf(os.Stdout, "Response from `OrderCopiesApi.PATCHOrderCopiesOrderCopyId`: %v\n", resp)
 }
 ```
 
@@ -319,20 +322,21 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**orderSubscriptionId** | **string** | The resource&#39;s id | 
+**orderCopyId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
-Other parameters are passed through a pointer to a apiGETOrderSubscriptionIdOrderCopiesRequest struct via the builder pattern
+Other parameters are passed through a pointer to a apiPATCHOrderCopiesOrderCopyIdRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
+ **orderCopyUpdate** | [**OrderCopyUpdate**](OrderCopyUpdate.md) |  | 
 
 
 ### Return type
 
- (empty response body)
+[**PATCHOrderCopiesOrderCopyId200Response**](PATCHOrderCopiesOrderCopyId200Response.md)
 
 ### Authorization
 
@@ -340,8 +344,8 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
-- **Content-Type**: Not defined
-- **Accept**: Not defined
+- **Content-Type**: application/vnd.api+json
+- **Accept**: application/vnd.api+json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
 [[Back to Model list]](../README.md#documentation-for-models)
@@ -365,11 +369,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    orderCopyCreate := *openapiclient.NewOrderCopyCreate(*openapiclient.NewOrderCopyCreateData("Type_example", *openapiclient.NewPOSTOrderCopies201ResponseDataAttributes())) // OrderCopyCreate | 
+    orderCopyCreate := *openapiclient.NewOrderCopyCreate(*openapiclient.NewOrderCopyCreateData(interface{}(123), *openapiclient.NewPOSTOrderCopies201ResponseDataAttributes())) // OrderCopyCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

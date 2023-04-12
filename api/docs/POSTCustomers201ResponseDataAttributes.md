@@ -4,17 +4,17 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Email** | **string** | The customer&#39;s email address | 
-**Password** | Pointer to **string** | The customer&#39;s password. Initiate a customer password reset flow if you need to change it. | [optional] 
-**Reference** | Pointer to **string** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **string** | Any identifier of the third party system that defines the reference code | [optional] 
-**Metadata** | Pointer to **map[string]interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
+**Email** | **interface{}** | The customer&#39;s email address | 
+**Password** | Pointer to **interface{}** | The customer&#39;s password. Initiate a customer password reset flow if you need to change it. | [optional] 
+**Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
 
 ### NewPOSTCustomers201ResponseDataAttributes
 
-`func NewPOSTCustomers201ResponseDataAttributes(email string, ) *POSTCustomers201ResponseDataAttributes`
+`func NewPOSTCustomers201ResponseDataAttributes(email interface{}, ) *POSTCustomers201ResponseDataAttributes`
 
 NewPOSTCustomers201ResponseDataAttributes instantiates a new POSTCustomers201ResponseDataAttributes object
 This constructor will assign default values to properties that have it defined,
@@ -31,40 +31,50 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetEmail
 
-`func (o *POSTCustomers201ResponseDataAttributes) GetEmail() string`
+`func (o *POSTCustomers201ResponseDataAttributes) GetEmail() interface{}`
 
 GetEmail returns the Email field if non-nil, zero value otherwise.
 
 ### GetEmailOk
 
-`func (o *POSTCustomers201ResponseDataAttributes) GetEmailOk() (*string, bool)`
+`func (o *POSTCustomers201ResponseDataAttributes) GetEmailOk() (*interface{}, bool)`
 
 GetEmailOk returns a tuple with the Email field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetEmail
 
-`func (o *POSTCustomers201ResponseDataAttributes) SetEmail(v string)`
+`func (o *POSTCustomers201ResponseDataAttributes) SetEmail(v interface{})`
 
 SetEmail sets Email field to given value.
 
 
+### SetEmailNil
+
+`func (o *POSTCustomers201ResponseDataAttributes) SetEmailNil(b bool)`
+
+ SetEmailNil sets the value for Email to be an explicit nil
+
+### UnsetEmail
+`func (o *POSTCustomers201ResponseDataAttributes) UnsetEmail()`
+
+UnsetEmail ensures that no value is present for Email, not even an explicit nil
 ### GetPassword
 
-`func (o *POSTCustomers201ResponseDataAttributes) GetPassword() string`
+`func (o *POSTCustomers201ResponseDataAttributes) GetPassword() interface{}`
 
 GetPassword returns the Password field if non-nil, zero value otherwise.
 
 ### GetPasswordOk
 
-`func (o *POSTCustomers201ResponseDataAttributes) GetPasswordOk() (*string, bool)`
+`func (o *POSTCustomers201ResponseDataAttributes) GetPasswordOk() (*interface{}, bool)`
 
 GetPasswordOk returns a tuple with the Password field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPassword
 
-`func (o *POSTCustomers201ResponseDataAttributes) SetPassword(v string)`
+`func (o *POSTCustomers201ResponseDataAttributes) SetPassword(v interface{})`
 
 SetPassword sets Password field to given value.
 
@@ -74,22 +84,32 @@ SetPassword sets Password field to given value.
 
 HasPassword returns a boolean if a field has been set.
 
+### SetPasswordNil
+
+`func (o *POSTCustomers201ResponseDataAttributes) SetPasswordNil(b bool)`
+
+ SetPasswordNil sets the value for Password to be an explicit nil
+
+### UnsetPassword
+`func (o *POSTCustomers201ResponseDataAttributes) UnsetPassword()`
+
+UnsetPassword ensures that no value is present for Password, not even an explicit nil
 ### GetReference
 
-`func (o *POSTCustomers201ResponseDataAttributes) GetReference() string`
+`func (o *POSTCustomers201ResponseDataAttributes) GetReference() interface{}`
 
 GetReference returns the Reference field if non-nil, zero value otherwise.
 
 ### GetReferenceOk
 
-`func (o *POSTCustomers201ResponseDataAttributes) GetReferenceOk() (*string, bool)`
+`func (o *POSTCustomers201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool)`
 
 GetReferenceOk returns a tuple with the Reference field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReference
 
-`func (o *POSTCustomers201ResponseDataAttributes) SetReference(v string)`
+`func (o *POSTCustomers201ResponseDataAttributes) SetReference(v interface{})`
 
 SetReference sets Reference field to given value.
 
@@ -99,22 +119,32 @@ SetReference sets Reference field to given value.
 
 HasReference returns a boolean if a field has been set.
 
+### SetReferenceNil
+
+`func (o *POSTCustomers201ResponseDataAttributes) SetReferenceNil(b bool)`
+
+ SetReferenceNil sets the value for Reference to be an explicit nil
+
+### UnsetReference
+`func (o *POSTCustomers201ResponseDataAttributes) UnsetReference()`
+
+UnsetReference ensures that no value is present for Reference, not even an explicit nil
 ### GetReferenceOrigin
 
-`func (o *POSTCustomers201ResponseDataAttributes) GetReferenceOrigin() string`
+`func (o *POSTCustomers201ResponseDataAttributes) GetReferenceOrigin() interface{}`
 
 GetReferenceOrigin returns the ReferenceOrigin field if non-nil, zero value otherwise.
 
 ### GetReferenceOriginOk
 
-`func (o *POSTCustomers201ResponseDataAttributes) GetReferenceOriginOk() (*string, bool)`
+`func (o *POSTCustomers201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool)`
 
 GetReferenceOriginOk returns a tuple with the ReferenceOrigin field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReferenceOrigin
 
-`func (o *POSTCustomers201ResponseDataAttributes) SetReferenceOrigin(v string)`
+`func (o *POSTCustomers201ResponseDataAttributes) SetReferenceOrigin(v interface{})`
 
 SetReferenceOrigin sets ReferenceOrigin field to given value.
 
@@ -124,22 +154,32 @@ SetReferenceOrigin sets ReferenceOrigin field to given value.
 
 HasReferenceOrigin returns a boolean if a field has been set.
 
+### SetReferenceOriginNil
+
+`func (o *POSTCustomers201ResponseDataAttributes) SetReferenceOriginNil(b bool)`
+
+ SetReferenceOriginNil sets the value for ReferenceOrigin to be an explicit nil
+
+### UnsetReferenceOrigin
+`func (o *POSTCustomers201ResponseDataAttributes) UnsetReferenceOrigin()`
+
+UnsetReferenceOrigin ensures that no value is present for ReferenceOrigin, not even an explicit nil
 ### GetMetadata
 
-`func (o *POSTCustomers201ResponseDataAttributes) GetMetadata() map[string]interface{}`
+`func (o *POSTCustomers201ResponseDataAttributes) GetMetadata() interface{}`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *POSTCustomers201ResponseDataAttributes) GetMetadataOk() (*map[string]interface{}, bool)`
+`func (o *POSTCustomers201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *POSTCustomers201ResponseDataAttributes) SetMetadata(v map[string]interface{})`
+`func (o *POSTCustomers201ResponseDataAttributes) SetMetadata(v interface{})`
 
 SetMetadata sets Metadata field to given value.
 
@@ -149,6 +189,16 @@ SetMetadata sets Metadata field to given value.
 
 HasMetadata returns a boolean if a field has been set.
 
+### SetMetadataNil
+
+`func (o *POSTCustomers201ResponseDataAttributes) SetMetadataNil(b bool)`
+
+ SetMetadataNil sets the value for Metadata to be an explicit nil
+
+### UnsetMetadata
+`func (o *POSTCustomers201ResponseDataAttributes) UnsetMetadata()`
+
+UnsetMetadata ensures that no value is present for Metadata, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

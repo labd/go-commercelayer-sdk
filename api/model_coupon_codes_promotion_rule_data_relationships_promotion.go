@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -13,220 +13,79 @@ package api
 
 import (
 	"encoding/json"
-	"fmt"
 )
 
-// CouponCodesPromotionRuleDataRelationshipsPromotion - struct for CouponCodesPromotionRuleDataRelationshipsPromotion
+// checks if the CouponCodesPromotionRuleDataRelationshipsPromotion type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CouponCodesPromotionRuleDataRelationshipsPromotion{}
+
+// CouponCodesPromotionRuleDataRelationshipsPromotion struct for CouponCodesPromotionRuleDataRelationshipsPromotion
 type CouponCodesPromotionRuleDataRelationshipsPromotion struct {
-	ExternalPromotion           *ExternalPromotion
-	FixedAmountPromotion        *FixedAmountPromotion
-	FixedPricePromotion         *FixedPricePromotion
-	FreeGiftPromotion           *FreeGiftPromotion
-	FreeShippingPromotion       *FreeShippingPromotion
-	PercentageDiscountPromotion *PercentageDiscountPromotion
+	Data *CouponCodesPromotionRuleDataRelationshipsPromotionData `json:"data,omitempty"`
 }
 
-// ExternalPromotionAsCouponCodesPromotionRuleDataRelationshipsPromotion is a convenience function that returns ExternalPromotion wrapped in CouponCodesPromotionRuleDataRelationshipsPromotion
-func ExternalPromotionAsCouponCodesPromotionRuleDataRelationshipsPromotion(v *ExternalPromotion) CouponCodesPromotionRuleDataRelationshipsPromotion {
-	return CouponCodesPromotionRuleDataRelationshipsPromotion{
-		ExternalPromotion: v,
-	}
+// NewCouponCodesPromotionRuleDataRelationshipsPromotion instantiates a new CouponCodesPromotionRuleDataRelationshipsPromotion object
+// This constructor will assign default values to properties that have it defined,
+// and makes sure properties required by API are set, but the set of arguments
+// will change when the set of required properties is changed
+func NewCouponCodesPromotionRuleDataRelationshipsPromotion() *CouponCodesPromotionRuleDataRelationshipsPromotion {
+	this := CouponCodesPromotionRuleDataRelationshipsPromotion{}
+	return &this
 }
 
-// FixedAmountPromotionAsCouponCodesPromotionRuleDataRelationshipsPromotion is a convenience function that returns FixedAmountPromotion wrapped in CouponCodesPromotionRuleDataRelationshipsPromotion
-func FixedAmountPromotionAsCouponCodesPromotionRuleDataRelationshipsPromotion(v *FixedAmountPromotion) CouponCodesPromotionRuleDataRelationshipsPromotion {
-	return CouponCodesPromotionRuleDataRelationshipsPromotion{
-		FixedAmountPromotion: v,
-	}
+// NewCouponCodesPromotionRuleDataRelationshipsPromotionWithDefaults instantiates a new CouponCodesPromotionRuleDataRelationshipsPromotion object
+// This constructor will only assign default values to properties that have it defined,
+// but it doesn't guarantee that properties required by API are set
+func NewCouponCodesPromotionRuleDataRelationshipsPromotionWithDefaults() *CouponCodesPromotionRuleDataRelationshipsPromotion {
+	this := CouponCodesPromotionRuleDataRelationshipsPromotion{}
+	return &this
 }
 
-// FixedPricePromotionAsCouponCodesPromotionRuleDataRelationshipsPromotion is a convenience function that returns FixedPricePromotion wrapped in CouponCodesPromotionRuleDataRelationshipsPromotion
-func FixedPricePromotionAsCouponCodesPromotionRuleDataRelationshipsPromotion(v *FixedPricePromotion) CouponCodesPromotionRuleDataRelationshipsPromotion {
-	return CouponCodesPromotionRuleDataRelationshipsPromotion{
-		FixedPricePromotion: v,
+// GetData returns the Data field value if set, zero value otherwise.
+func (o *CouponCodesPromotionRuleDataRelationshipsPromotion) GetData() CouponCodesPromotionRuleDataRelationshipsPromotionData {
+	if o == nil || IsNil(o.Data) {
+		var ret CouponCodesPromotionRuleDataRelationshipsPromotionData
+		return ret
 	}
+	return *o.Data
 }
 
-// FreeGiftPromotionAsCouponCodesPromotionRuleDataRelationshipsPromotion is a convenience function that returns FreeGiftPromotion wrapped in CouponCodesPromotionRuleDataRelationshipsPromotion
-func FreeGiftPromotionAsCouponCodesPromotionRuleDataRelationshipsPromotion(v *FreeGiftPromotion) CouponCodesPromotionRuleDataRelationshipsPromotion {
-	return CouponCodesPromotionRuleDataRelationshipsPromotion{
-		FreeGiftPromotion: v,
+// GetDataOk returns a tuple with the Data field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *CouponCodesPromotionRuleDataRelationshipsPromotion) GetDataOk() (*CouponCodesPromotionRuleDataRelationshipsPromotionData, bool) {
+	if o == nil || IsNil(o.Data) {
+		return nil, false
 	}
+	return o.Data, true
 }
 
-// FreeShippingPromotionAsCouponCodesPromotionRuleDataRelationshipsPromotion is a convenience function that returns FreeShippingPromotion wrapped in CouponCodesPromotionRuleDataRelationshipsPromotion
-func FreeShippingPromotionAsCouponCodesPromotionRuleDataRelationshipsPromotion(v *FreeShippingPromotion) CouponCodesPromotionRuleDataRelationshipsPromotion {
-	return CouponCodesPromotionRuleDataRelationshipsPromotion{
-		FreeShippingPromotion: v,
+// HasData returns a boolean if a field has been set.
+func (o *CouponCodesPromotionRuleDataRelationshipsPromotion) HasData() bool {
+	if o != nil && !IsNil(o.Data) {
+		return true
 	}
+
+	return false
 }
 
-// PercentageDiscountPromotionAsCouponCodesPromotionRuleDataRelationshipsPromotion is a convenience function that returns PercentageDiscountPromotion wrapped in CouponCodesPromotionRuleDataRelationshipsPromotion
-func PercentageDiscountPromotionAsCouponCodesPromotionRuleDataRelationshipsPromotion(v *PercentageDiscountPromotion) CouponCodesPromotionRuleDataRelationshipsPromotion {
-	return CouponCodesPromotionRuleDataRelationshipsPromotion{
-		PercentageDiscountPromotion: v,
-	}
+// SetData gets a reference to the given CouponCodesPromotionRuleDataRelationshipsPromotionData and assigns it to the Data field.
+func (o *CouponCodesPromotionRuleDataRelationshipsPromotion) SetData(v CouponCodesPromotionRuleDataRelationshipsPromotionData) {
+	o.Data = &v
 }
 
-// Unmarshal JSON data into one of the pointers in the struct
-func (dst *CouponCodesPromotionRuleDataRelationshipsPromotion) UnmarshalJSON(data []byte) error {
-	var err error
-	match := 0
-	// try to unmarshal data into ExternalPromotion
-	err = newStrictDecoder(data).Decode(&dst.ExternalPromotion)
-	if err == nil {
-		jsonExternalPromotion, _ := json.Marshal(dst.ExternalPromotion)
-		if string(jsonExternalPromotion) == "{}" { // empty struct
-			dst.ExternalPromotion = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.ExternalPromotion = nil
+func (o CouponCodesPromotionRuleDataRelationshipsPromotion) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
-
-	// try to unmarshal data into FixedAmountPromotion
-	err = newStrictDecoder(data).Decode(&dst.FixedAmountPromotion)
-	if err == nil {
-		jsonFixedAmountPromotion, _ := json.Marshal(dst.FixedAmountPromotion)
-		if string(jsonFixedAmountPromotion) == "{}" { // empty struct
-			dst.FixedAmountPromotion = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.FixedAmountPromotion = nil
-	}
-
-	// try to unmarshal data into FixedPricePromotion
-	err = newStrictDecoder(data).Decode(&dst.FixedPricePromotion)
-	if err == nil {
-		jsonFixedPricePromotion, _ := json.Marshal(dst.FixedPricePromotion)
-		if string(jsonFixedPricePromotion) == "{}" { // empty struct
-			dst.FixedPricePromotion = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.FixedPricePromotion = nil
-	}
-
-	// try to unmarshal data into FreeGiftPromotion
-	err = newStrictDecoder(data).Decode(&dst.FreeGiftPromotion)
-	if err == nil {
-		jsonFreeGiftPromotion, _ := json.Marshal(dst.FreeGiftPromotion)
-		if string(jsonFreeGiftPromotion) == "{}" { // empty struct
-			dst.FreeGiftPromotion = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.FreeGiftPromotion = nil
-	}
-
-	// try to unmarshal data into FreeShippingPromotion
-	err = newStrictDecoder(data).Decode(&dst.FreeShippingPromotion)
-	if err == nil {
-		jsonFreeShippingPromotion, _ := json.Marshal(dst.FreeShippingPromotion)
-		if string(jsonFreeShippingPromotion) == "{}" { // empty struct
-			dst.FreeShippingPromotion = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.FreeShippingPromotion = nil
-	}
-
-	// try to unmarshal data into PercentageDiscountPromotion
-	err = newStrictDecoder(data).Decode(&dst.PercentageDiscountPromotion)
-	if err == nil {
-		jsonPercentageDiscountPromotion, _ := json.Marshal(dst.PercentageDiscountPromotion)
-		if string(jsonPercentageDiscountPromotion) == "{}" { // empty struct
-			dst.PercentageDiscountPromotion = nil
-		} else {
-			match++
-		}
-	} else {
-		dst.PercentageDiscountPromotion = nil
-	}
-
-	if match > 1 { // more than 1 match
-		// reset to nil
-		dst.ExternalPromotion = nil
-		dst.FixedAmountPromotion = nil
-		dst.FixedPricePromotion = nil
-		dst.FreeGiftPromotion = nil
-		dst.FreeShippingPromotion = nil
-		dst.PercentageDiscountPromotion = nil
-
-		return fmt.Errorf("Data matches more than one schema in oneOf(CouponCodesPromotionRuleDataRelationshipsPromotion)")
-	} else if match == 1 {
-		return nil // exactly one match
-	} else { // no match
-		return fmt.Errorf("Data failed to match schemas in oneOf(CouponCodesPromotionRuleDataRelationshipsPromotion)")
-	}
+	return json.Marshal(toSerialize)
 }
 
-// Marshal data from the first non-nil pointers in the struct to JSON
-func (src CouponCodesPromotionRuleDataRelationshipsPromotion) MarshalJSON() ([]byte, error) {
-	if src.ExternalPromotion != nil {
-		return json.Marshal(&src.ExternalPromotion)
+func (o CouponCodesPromotionRuleDataRelationshipsPromotion) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
 	}
-
-	if src.FixedAmountPromotion != nil {
-		return json.Marshal(&src.FixedAmountPromotion)
-	}
-
-	if src.FixedPricePromotion != nil {
-		return json.Marshal(&src.FixedPricePromotion)
-	}
-
-	if src.FreeGiftPromotion != nil {
-		return json.Marshal(&src.FreeGiftPromotion)
-	}
-
-	if src.FreeShippingPromotion != nil {
-		return json.Marshal(&src.FreeShippingPromotion)
-	}
-
-	if src.PercentageDiscountPromotion != nil {
-		return json.Marshal(&src.PercentageDiscountPromotion)
-	}
-
-	return nil, nil // no data in oneOf schemas
-}
-
-// Get the actual instance
-func (obj *CouponCodesPromotionRuleDataRelationshipsPromotion) GetActualInstance() interface{} {
-	if obj == nil {
-		return nil
-	}
-	if obj.ExternalPromotion != nil {
-		return obj.ExternalPromotion
-	}
-
-	if obj.FixedAmountPromotion != nil {
-		return obj.FixedAmountPromotion
-	}
-
-	if obj.FixedPricePromotion != nil {
-		return obj.FixedPricePromotion
-	}
-
-	if obj.FreeGiftPromotion != nil {
-		return obj.FreeGiftPromotion
-	}
-
-	if obj.FreeShippingPromotion != nil {
-		return obj.FreeShippingPromotion
-	}
-
-	if obj.PercentageDiscountPromotion != nil {
-		return obj.PercentageDiscountPromotion
-	}
-
-	// all schemas are nil
-	return nil
+	return toSerialize, nil
 }
 
 type NullableCouponCodesPromotionRuleDataRelationshipsPromotion struct {

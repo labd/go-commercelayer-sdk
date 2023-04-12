@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the SkuUpdateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SkuUpdateDataRelationships{}
 
 // SkuUpdateDataRelationships struct for SkuUpdateDataRelationships
 type SkuUpdateDataRelationships struct {
@@ -39,7 +42,7 @@ func NewSkuUpdateDataRelationshipsWithDefaults() *SkuUpdateDataRelationships {
 
 // GetShippingCategory returns the ShippingCategory field value if set, zero value otherwise.
 func (o *SkuUpdateDataRelationships) GetShippingCategory() ShippingMethodCreateDataRelationshipsShippingCategory {
-	if o == nil || o.ShippingCategory == nil {
+	if o == nil || IsNil(o.ShippingCategory) {
 		var ret ShippingMethodCreateDataRelationshipsShippingCategory
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *SkuUpdateDataRelationships) GetShippingCategory() ShippingMethodCreateD
 // GetShippingCategoryOk returns a tuple with the ShippingCategory field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SkuUpdateDataRelationships) GetShippingCategoryOk() (*ShippingMethodCreateDataRelationshipsShippingCategory, bool) {
-	if o == nil || o.ShippingCategory == nil {
+	if o == nil || IsNil(o.ShippingCategory) {
 		return nil, false
 	}
 	return o.ShippingCategory, true
@@ -57,7 +60,7 @@ func (o *SkuUpdateDataRelationships) GetShippingCategoryOk() (*ShippingMethodCre
 
 // HasShippingCategory returns a boolean if a field has been set.
 func (o *SkuUpdateDataRelationships) HasShippingCategory() bool {
-	if o != nil && o.ShippingCategory != nil {
+	if o != nil && !IsNil(o.ShippingCategory) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *SkuUpdateDataRelationships) SetShippingCategory(v ShippingMethodCreateD
 }
 
 func (o SkuUpdateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.ShippingCategory != nil {
-		toSerialize["shipping_category"] = o.ShippingCategory
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o SkuUpdateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.ShippingCategory) {
+		toSerialize["shipping_category"] = o.ShippingCategory
+	}
+	return toSerialize, nil
 }
 
 type NullableSkuUpdateDataRelationships struct {

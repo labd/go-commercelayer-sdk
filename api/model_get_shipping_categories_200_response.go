@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETShippingCategories200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETShippingCategories200Response{}
+
 // GETShippingCategories200Response struct for GETShippingCategories200Response
 type GETShippingCategories200Response struct {
-	Data []GETShippingCategories200ResponseDataInner `json:"data,omitempty"`
+	Data interface{} `json:"data,omitempty"`
 }
 
 // NewGETShippingCategories200Response instantiates a new GETShippingCategories200Response object
@@ -37,10 +40,10 @@ func NewGETShippingCategories200ResponseWithDefaults() *GETShippingCategories200
 	return &this
 }
 
-// GetData returns the Data field value if set, zero value otherwise.
-func (o *GETShippingCategories200Response) GetData() []GETShippingCategories200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret []GETShippingCategories200ResponseDataInner
+// GetData returns the Data field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETShippingCategories200Response) GetData() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Data
@@ -48,33 +51,42 @@ func (o *GETShippingCategories200Response) GetData() []GETShippingCategories200R
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETShippingCategories200Response) GetDataOk() ([]GETShippingCategories200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETShippingCategories200Response) GetDataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
-	return o.Data, true
+	return &o.Data, true
 }
 
 // HasData returns a boolean if a field has been set.
 func (o *GETShippingCategories200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given []GETShippingCategories200ResponseDataInner and assigns it to the Data field.
-func (o *GETShippingCategories200Response) SetData(v []GETShippingCategories200ResponseDataInner) {
+// SetData gets a reference to the given interface{} and assigns it to the Data field.
+func (o *GETShippingCategories200Response) SetData(v interface{}) {
 	o.Data = v
 }
 
 func (o GETShippingCategories200Response) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o GETShippingCategories200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableGETShippingCategories200Response struct {

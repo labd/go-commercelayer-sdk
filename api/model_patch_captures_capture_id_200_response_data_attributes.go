@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,18 +15,21 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHCapturesCaptureId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHCapturesCaptureId200ResponseDataAttributes{}
+
 // PATCHCapturesCaptureId200ResponseDataAttributes struct for PATCHCapturesCaptureId200ResponseDataAttributes
 type PATCHCapturesCaptureId200ResponseDataAttributes struct {
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 	// Send this attribute if you want to create a refund for this capture.
-	Refund *bool `json:"_refund,omitempty"`
+	Refund interface{} `json:"_refund,omitempty"`
 	// The associated refund amount, in cents.
-	RefundAmountCents *int32 `json:"_refund_amount_cents,omitempty"`
+	RefundAmountCents interface{} `json:"_refund_amount_cents,omitempty"`
 }
 
 // NewPATCHCapturesCaptureId200ResponseDataAttributes instantiates a new PATCHCapturesCaptureId200ResponseDataAttributes object
@@ -46,74 +49,76 @@ func NewPATCHCapturesCaptureId200ResponseDataAttributesWithDefaults() *PATCHCapt
 	return &this
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHCapturesCaptureId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *PATCHCapturesCaptureId200ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHCapturesCaptureId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *PATCHCapturesCaptureId200ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -121,92 +126,103 @@ func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetMetadata() map[stri
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHCapturesCaptureId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *PATCHCapturesCaptureId200ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
-// GetRefund returns the Refund field value if set, zero value otherwise.
-func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetRefund() bool {
-	if o == nil || o.Refund == nil {
-		var ret bool
+// GetRefund returns the Refund field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetRefund() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Refund
+	return o.Refund
 }
 
 // GetRefundOk returns a tuple with the Refund field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetRefundOk() (*bool, bool) {
-	if o == nil || o.Refund == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetRefundOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Refund) {
 		return nil, false
 	}
-	return o.Refund, true
+	return &o.Refund, true
 }
 
 // HasRefund returns a boolean if a field has been set.
 func (o *PATCHCapturesCaptureId200ResponseDataAttributes) HasRefund() bool {
-	if o != nil && o.Refund != nil {
+	if o != nil && IsNil(o.Refund) {
 		return true
 	}
 
 	return false
 }
 
-// SetRefund gets a reference to the given bool and assigns it to the Refund field.
-func (o *PATCHCapturesCaptureId200ResponseDataAttributes) SetRefund(v bool) {
-	o.Refund = &v
+// SetRefund gets a reference to the given interface{} and assigns it to the Refund field.
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) SetRefund(v interface{}) {
+	o.Refund = v
 }
 
-// GetRefundAmountCents returns the RefundAmountCents field value if set, zero value otherwise.
-func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetRefundAmountCents() int32 {
-	if o == nil || o.RefundAmountCents == nil {
-		var ret int32
+// GetRefundAmountCents returns the RefundAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetRefundAmountCents() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.RefundAmountCents
+	return o.RefundAmountCents
 }
 
 // GetRefundAmountCentsOk returns a tuple with the RefundAmountCents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetRefundAmountCentsOk() (*int32, bool) {
-	if o == nil || o.RefundAmountCents == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) GetRefundAmountCentsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.RefundAmountCents) {
 		return nil, false
 	}
-	return o.RefundAmountCents, true
+	return &o.RefundAmountCents, true
 }
 
 // HasRefundAmountCents returns a boolean if a field has been set.
 func (o *PATCHCapturesCaptureId200ResponseDataAttributes) HasRefundAmountCents() bool {
-	if o != nil && o.RefundAmountCents != nil {
+	if o != nil && IsNil(o.RefundAmountCents) {
 		return true
 	}
 
 	return false
 }
 
-// SetRefundAmountCents gets a reference to the given int32 and assigns it to the RefundAmountCents field.
-func (o *PATCHCapturesCaptureId200ResponseDataAttributes) SetRefundAmountCents(v int32) {
-	o.RefundAmountCents = &v
+// SetRefundAmountCents gets a reference to the given interface{} and assigns it to the RefundAmountCents field.
+func (o *PATCHCapturesCaptureId200ResponseDataAttributes) SetRefundAmountCents(v interface{}) {
+	o.RefundAmountCents = v
 }
 
 func (o PATCHCapturesCaptureId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHCapturesCaptureId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference
@@ -223,7 +239,7 @@ func (o PATCHCapturesCaptureId200ResponseDataAttributes) MarshalJSON() ([]byte, 
 	if o.RefundAmountCents != nil {
 		toSerialize["_refund_amount_cents"] = o.RefundAmountCents
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHCapturesCaptureId200ResponseDataAttributes struct {

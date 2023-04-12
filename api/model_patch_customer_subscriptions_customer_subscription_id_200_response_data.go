@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,15 +15,18 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData{}
+
 // PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData struct for PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData
 type PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData struct {
 	// The resource's id
-	Id *string `json:"id,omitempty"`
+	Id interface{} `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                                     `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks                      `json:"links,omitempty"`
-	Attributes    *POSTAdyenPayments201ResponseDataAttributes                 `json:"attributes,omitempty"`
-	Relationships *GETCustomerPasswordResets200ResponseDataInnerRelationships `json:"relationships,omitempty"`
+	Type          interface{}                                                                          `json:"type,omitempty"`
+	Links         *POSTAddresses201ResponseDataLinks                                                   `json:"links,omitempty"`
+	Attributes    *PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes `json:"attributes,omitempty"`
+	Relationships *POSTCustomerPasswordResets201ResponseDataRelationships                              `json:"relationships,omitempty"`
 }
 
 // NewPATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData instantiates a new PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData object
@@ -43,74 +46,76 @@ func NewPATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseDataWithDefau
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetId() string {
-	if o == nil || o.Id == nil {
-		var ret string
+// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetId() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Id
+	return o.Id
 }
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) HasId() bool {
-	if o != nil && o.Id != nil {
+	if o != nil && IsNil(o.Id) {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) SetId(v string) {
-	o.Id = &v
+// SetId gets a reference to the given interface{} and assigns it to the Id field.
+func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) SetId(v interface{}) {
+	o.Id = v
 }
 
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetType() string {
-	if o == nil || o.Type == nil {
-		var ret string
+// GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetType() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Type
+	return o.Type
 }
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetTypeOk() (*string, bool) {
-	if o == nil || o.Type == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
-	return o.Type, true
+	return &o.Type, true
 }
 
 // HasType returns a boolean if a field has been set.
 func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) HasType() bool {
-	if o != nil && o.Type != nil {
+	if o != nil && IsNil(o.Type) {
 		return true
 	}
 
 	return false
 }
 
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) SetType(v string) {
-	o.Type = &v
+// SetType gets a reference to the given interface{} and assigns it to the Type field.
+func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) SetType(v interface{}) {
+	o.Type = v
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks {
-	if o == nil || o.Links == nil {
-		var ret GETAddresses200ResponseDataInnerLinks
+func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetLinks() POSTAddresses201ResponseDataLinks {
+	if o == nil || IsNil(o.Links) {
+		var ret POSTAddresses201ResponseDataLinks
 		return ret
 	}
 	return *o.Links
@@ -118,8 +123,8 @@ func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetLin
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool) {
-	if o == nil || o.Links == nil {
+func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool) {
+	if o == nil || IsNil(o.Links) {
 		return nil, false
 	}
 	return o.Links, true
@@ -127,22 +132,22 @@ func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetLin
 
 // HasLinks returns a boolean if a field has been set.
 func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) HasLinks() bool {
-	if o != nil && o.Links != nil {
+	if o != nil && !IsNil(o.Links) {
 		return true
 	}
 
 	return false
 }
 
-// SetLinks gets a reference to the given GETAddresses200ResponseDataInnerLinks and assigns it to the Links field.
-func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks) {
+// SetLinks gets a reference to the given POSTAddresses201ResponseDataLinks and assigns it to the Links field.
+func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks) {
 	o.Links = &v
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
-func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes {
-	if o == nil || o.Attributes == nil {
-		var ret POSTAdyenPayments201ResponseDataAttributes
+func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetAttributes() PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes {
+	if o == nil || IsNil(o.Attributes) {
+		var ret PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes
 		return ret
 	}
 	return *o.Attributes
@@ -150,8 +155,8 @@ func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetAtt
 
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool) {
-	if o == nil || o.Attributes == nil {
+func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetAttributesOk() (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, bool) {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -159,22 +164,22 @@ func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetAtt
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) HasAttributes() bool {
-	if o != nil && o.Attributes != nil {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
 	return false
 }
 
-// SetAttributes gets a reference to the given POSTAdyenPayments201ResponseDataAttributes and assigns it to the Attributes field.
-func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes) {
+// SetAttributes gets a reference to the given PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes and assigns it to the Attributes field.
+func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) SetAttributes(v PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) {
 	o.Attributes = &v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetRelationships() GETCustomerPasswordResets200ResponseDataInnerRelationships {
-	if o == nil || o.Relationships == nil {
-		var ret GETCustomerPasswordResets200ResponseDataInnerRelationships
+func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetRelationships() POSTCustomerPasswordResets201ResponseDataRelationships {
+	if o == nil || IsNil(o.Relationships) {
+		var ret POSTCustomerPasswordResets201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -182,8 +187,8 @@ func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetRel
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetRelationshipsOk() (*GETCustomerPasswordResets200ResponseDataInnerRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetRelationshipsOk() (*POSTCustomerPasswordResets201ResponseDataRelationships, bool) {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -191,19 +196,27 @@ func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) GetRel
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
 	return false
 }
 
-// SetRelationships gets a reference to the given GETCustomerPasswordResets200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) SetRelationships(v GETCustomerPasswordResets200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given POSTCustomerPasswordResets201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) SetRelationships(v POSTCustomerPasswordResets201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 
 func (o PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
@@ -211,16 +224,16 @@ func (o PATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData) Marshal
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if o.Links != nil {
+	if !IsNil(o.Links) {
 		toSerialize["links"] = o.Links
 	}
-	if o.Attributes != nil {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if o.Relationships != nil {
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHCustomerSubscriptionsCustomerSubscriptionId200ResponseData struct {

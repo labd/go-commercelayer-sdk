@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETStockItems200ResponseDataInnerAttributes**](GETStockItems200ResponseDataInnerAttributes.md) |  | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Attributes** | [**GETStockItemsStockItemId200ResponseDataAttributes**](GETStockItemsStockItemId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**StockItemDataRelationships**](StockItemDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewStockItemData
 
-`func NewStockItemData(type_ string, attributes GETStockItems200ResponseDataInnerAttributes, ) *StockItemData`
+`func NewStockItemData(type_ interface{}, attributes GETStockItemsStockItemId200ResponseDataAttributes, ) *StockItemData`
 
 NewStockItemData instantiates a new StockItemData object
 This constructor will assign default values to properties that have it defined,
@@ -29,40 +29,50 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *StockItemData) GetType() string`
+`func (o *StockItemData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *StockItemData) GetTypeOk() (*string, bool)`
+`func (o *StockItemData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *StockItemData) SetType(v string)`
+`func (o *StockItemData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *StockItemData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *StockItemData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *StockItemData) GetAttributes() GETStockItems200ResponseDataInnerAttributes`
+`func (o *StockItemData) GetAttributes() GETStockItemsStockItemId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *StockItemData) GetAttributesOk() (*GETStockItems200ResponseDataInnerAttributes, bool)`
+`func (o *StockItemData) GetAttributesOk() (*GETStockItemsStockItemId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *StockItemData) SetAttributes(v GETStockItems200ResponseDataInnerAttributes)`
+`func (o *StockItemData) SetAttributes(v GETStockItemsStockItemId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

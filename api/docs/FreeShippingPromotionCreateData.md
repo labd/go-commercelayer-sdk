@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
+**Type** | **interface{}** | The resource&#39;s type | 
 **Attributes** | [**POSTFreeShippingPromotions201ResponseDataAttributes**](POSTFreeShippingPromotions201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ExternalPromotionCreateDataRelationships**](ExternalPromotionCreateDataRelationships.md) |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewFreeShippingPromotionCreateData
 
-`func NewFreeShippingPromotionCreateData(type_ string, attributes POSTFreeShippingPromotions201ResponseDataAttributes, ) *FreeShippingPromotionCreateData`
+`func NewFreeShippingPromotionCreateData(type_ interface{}, attributes POSTFreeShippingPromotions201ResponseDataAttributes, ) *FreeShippingPromotionCreateData`
 
 NewFreeShippingPromotionCreateData instantiates a new FreeShippingPromotionCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -29,24 +29,34 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *FreeShippingPromotionCreateData) GetType() string`
+`func (o *FreeShippingPromotionCreateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *FreeShippingPromotionCreateData) GetTypeOk() (*string, bool)`
+`func (o *FreeShippingPromotionCreateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *FreeShippingPromotionCreateData) SetType(v string)`
+`func (o *FreeShippingPromotionCreateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *FreeShippingPromotionCreateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *FreeShippingPromotionCreateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
 `func (o *FreeShippingPromotionCreateData) GetAttributes() POSTFreeShippingPromotions201ResponseDataAttributes`

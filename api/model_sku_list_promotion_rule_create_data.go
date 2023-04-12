@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,10 +15,13 @@ import (
 	"encoding/json"
 )
 
+// checks if the SkuListPromotionRuleCreateData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SkuListPromotionRuleCreateData{}
+
 // SkuListPromotionRuleCreateData struct for SkuListPromotionRuleCreateData
 type SkuListPromotionRuleCreateData struct {
 	// The resource's type
-	Type          string                                             `json:"type"`
+	Type          interface{}                                        `json:"type"`
 	Attributes    POSTSkuListPromotionRules201ResponseDataAttributes `json:"attributes"`
 	Relationships *SkuListPromotionRuleCreateDataRelationships       `json:"relationships,omitempty"`
 }
@@ -27,7 +30,7 @@ type SkuListPromotionRuleCreateData struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewSkuListPromotionRuleCreateData(type_ string, attributes POSTSkuListPromotionRules201ResponseDataAttributes) *SkuListPromotionRuleCreateData {
+func NewSkuListPromotionRuleCreateData(type_ interface{}, attributes POSTSkuListPromotionRules201ResponseDataAttributes) *SkuListPromotionRuleCreateData {
 	this := SkuListPromotionRuleCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -43,9 +46,10 @@ func NewSkuListPromotionRuleCreateDataWithDefaults() *SkuListPromotionRuleCreate
 }
 
 // GetType returns the Type field value
-func (o *SkuListPromotionRuleCreateData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *SkuListPromotionRuleCreateData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -54,15 +58,16 @@ func (o *SkuListPromotionRuleCreateData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *SkuListPromotionRuleCreateData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *SkuListPromotionRuleCreateData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *SkuListPromotionRuleCreateData) SetType(v string) {
+func (o *SkuListPromotionRuleCreateData) SetType(v interface{}) {
 	o.Type = v
 }
 
@@ -92,7 +97,7 @@ func (o *SkuListPromotionRuleCreateData) SetAttributes(v POSTSkuListPromotionRul
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *SkuListPromotionRuleCreateData) GetRelationships() SkuListPromotionRuleCreateDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret SkuListPromotionRuleCreateDataRelationships
 		return ret
 	}
@@ -102,7 +107,7 @@ func (o *SkuListPromotionRuleCreateData) GetRelationships() SkuListPromotionRule
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SkuListPromotionRuleCreateData) GetRelationshipsOk() (*SkuListPromotionRuleCreateDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -110,7 +115,7 @@ func (o *SkuListPromotionRuleCreateData) GetRelationshipsOk() (*SkuListPromotion
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *SkuListPromotionRuleCreateData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -123,17 +128,23 @@ func (o *SkuListPromotionRuleCreateData) SetRelationships(v SkuListPromotionRule
 }
 
 func (o SkuListPromotionRuleCreateData) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
-		toSerialize["relationships"] = o.Relationships
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o SkuListPromotionRuleCreateData) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
+		toSerialize["relationships"] = o.Relationships
+	}
+	return toSerialize, nil
 }
 
 type NullableSkuListPromotionRuleCreateData struct {

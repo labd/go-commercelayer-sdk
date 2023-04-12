@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the OrderSubscriptionCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &OrderSubscriptionCreateDataRelationships{}
 
 // OrderSubscriptionCreateDataRelationships struct for OrderSubscriptionCreateDataRelationships
 type OrderSubscriptionCreateDataRelationships struct {
@@ -41,7 +44,7 @@ func NewOrderSubscriptionCreateDataRelationshipsWithDefaults() *OrderSubscriptio
 
 // GetMarket returns the Market field value if set, zero value otherwise.
 func (o *OrderSubscriptionCreateDataRelationships) GetMarket() BillingInfoValidationRuleCreateDataRelationshipsMarket {
-	if o == nil || o.Market == nil {
+	if o == nil || IsNil(o.Market) {
 		var ret BillingInfoValidationRuleCreateDataRelationshipsMarket
 		return ret
 	}
@@ -51,7 +54,7 @@ func (o *OrderSubscriptionCreateDataRelationships) GetMarket() BillingInfoValida
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OrderSubscriptionCreateDataRelationships) GetMarketOk() (*BillingInfoValidationRuleCreateDataRelationshipsMarket, bool) {
-	if o == nil || o.Market == nil {
+	if o == nil || IsNil(o.Market) {
 		return nil, false
 	}
 	return o.Market, true
@@ -59,7 +62,7 @@ func (o *OrderSubscriptionCreateDataRelationships) GetMarketOk() (*BillingInfoVa
 
 // HasMarket returns a boolean if a field has been set.
 func (o *OrderSubscriptionCreateDataRelationships) HasMarket() bool {
-	if o != nil && o.Market != nil {
+	if o != nil && !IsNil(o.Market) {
 		return true
 	}
 
@@ -96,14 +99,20 @@ func (o *OrderSubscriptionCreateDataRelationships) SetSourceOrder(v AdyenPayment
 }
 
 func (o OrderSubscriptionCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Market != nil {
-		toSerialize["market"] = o.Market
-	}
-	if true {
-		toSerialize["source_order"] = o.SourceOrder
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o OrderSubscriptionCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Market) {
+		toSerialize["market"] = o.Market
+	}
+	toSerialize["source_order"] = o.SourceOrder
+	return toSerialize, nil
 }
 
 type NullableOrderSubscriptionCreateDataRelationships struct {

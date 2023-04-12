@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,10 +15,13 @@ import (
 	"encoding/json"
 )
 
+// checks if the AddressCreateData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddressCreateData{}
+
 // AddressCreateData struct for AddressCreateData
 type AddressCreateData struct {
 	// The resource's type
-	Type          string                                 `json:"type"`
+	Type          interface{}                            `json:"type"`
 	Attributes    POSTAddresses201ResponseDataAttributes `json:"attributes"`
 	Relationships *AddressCreateDataRelationships        `json:"relationships,omitempty"`
 }
@@ -27,7 +30,7 @@ type AddressCreateData struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewAddressCreateData(type_ string, attributes POSTAddresses201ResponseDataAttributes) *AddressCreateData {
+func NewAddressCreateData(type_ interface{}, attributes POSTAddresses201ResponseDataAttributes) *AddressCreateData {
 	this := AddressCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -43,9 +46,10 @@ func NewAddressCreateDataWithDefaults() *AddressCreateData {
 }
 
 // GetType returns the Type field value
-func (o *AddressCreateData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *AddressCreateData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -54,15 +58,16 @@ func (o *AddressCreateData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *AddressCreateData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *AddressCreateData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *AddressCreateData) SetType(v string) {
+func (o *AddressCreateData) SetType(v interface{}) {
 	o.Type = v
 }
 
@@ -92,7 +97,7 @@ func (o *AddressCreateData) SetAttributes(v POSTAddresses201ResponseDataAttribut
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *AddressCreateData) GetRelationships() AddressCreateDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret AddressCreateDataRelationships
 		return ret
 	}
@@ -102,7 +107,7 @@ func (o *AddressCreateData) GetRelationships() AddressCreateDataRelationships {
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddressCreateData) GetRelationshipsOk() (*AddressCreateDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -110,7 +115,7 @@ func (o *AddressCreateData) GetRelationshipsOk() (*AddressCreateDataRelationship
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *AddressCreateData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -123,17 +128,23 @@ func (o *AddressCreateData) SetRelationships(v AddressCreateDataRelationships) {
 }
 
 func (o AddressCreateData) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
-		toSerialize["relationships"] = o.Relationships
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddressCreateData) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
+		toSerialize["relationships"] = o.Relationships
+	}
+	return toSerialize, nil
 }
 
 type NullableAddressCreateData struct {

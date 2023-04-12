@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the LineItemOptionUpdateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &LineItemOptionUpdateDataRelationships{}
 
 // LineItemOptionUpdateDataRelationships struct for LineItemOptionUpdateDataRelationships
 type LineItemOptionUpdateDataRelationships struct {
@@ -39,7 +42,7 @@ func NewLineItemOptionUpdateDataRelationshipsWithDefaults() *LineItemOptionUpdat
 
 // GetSkuOption returns the SkuOption field value if set, zero value otherwise.
 func (o *LineItemOptionUpdateDataRelationships) GetSkuOption() LineItemOptionCreateDataRelationshipsSkuOption {
-	if o == nil || o.SkuOption == nil {
+	if o == nil || IsNil(o.SkuOption) {
 		var ret LineItemOptionCreateDataRelationshipsSkuOption
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *LineItemOptionUpdateDataRelationships) GetSkuOption() LineItemOptionCre
 // GetSkuOptionOk returns a tuple with the SkuOption field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *LineItemOptionUpdateDataRelationships) GetSkuOptionOk() (*LineItemOptionCreateDataRelationshipsSkuOption, bool) {
-	if o == nil || o.SkuOption == nil {
+	if o == nil || IsNil(o.SkuOption) {
 		return nil, false
 	}
 	return o.SkuOption, true
@@ -57,7 +60,7 @@ func (o *LineItemOptionUpdateDataRelationships) GetSkuOptionOk() (*LineItemOptio
 
 // HasSkuOption returns a boolean if a field has been set.
 func (o *LineItemOptionUpdateDataRelationships) HasSkuOption() bool {
-	if o != nil && o.SkuOption != nil {
+	if o != nil && !IsNil(o.SkuOption) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *LineItemOptionUpdateDataRelationships) SetSkuOption(v LineItemOptionCre
 }
 
 func (o LineItemOptionUpdateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.SkuOption != nil {
-		toSerialize["sku_option"] = o.SkuOption
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o LineItemOptionUpdateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.SkuOption) {
+		toSerialize["sku_option"] = o.SkuOption
+	}
+	return toSerialize, nil
 }
 
 type NullableLineItemOptionUpdateDataRelationships struct {

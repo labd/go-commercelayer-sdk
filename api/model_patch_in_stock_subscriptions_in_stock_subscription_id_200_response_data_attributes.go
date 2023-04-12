@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,22 +15,25 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes{}
+
 // PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes struct for PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes
 type PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes struct {
 	// The code of the associated SKU, replace the relationship
-	SkuCode *string `json:"sku_code,omitempty"`
-	// The threshold at which to trigger the back in stock notification, default to 1.
-	StockThreshold *int32 `json:"stock_threshold,omitempty"`
+	SkuCode interface{} `json:"sku_code,omitempty"`
+	// The threshold at which to trigger the back in stock notification.
+	StockThreshold interface{} `json:"stock_threshold,omitempty"`
 	// Send this attribute if you want to activate an inactive subscription.
-	Activate *bool `json:"_activate,omitempty"`
+	Activate interface{} `json:"_activate,omitempty"`
 	// Send this attribute if you want to dactivate an active subscription.
-	Deactivate *bool `json:"_deactivate,omitempty"`
+	Deactivate interface{} `json:"_deactivate,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 }
 
 // NewPATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes instantiates a new PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes object
@@ -50,202 +53,208 @@ func NewPATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributesW
 	return &this
 }
 
-// GetSkuCode returns the SkuCode field value if set, zero value otherwise.
-func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetSkuCode() string {
-	if o == nil || o.SkuCode == nil {
-		var ret string
+// GetSkuCode returns the SkuCode field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetSkuCode() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.SkuCode
+	return o.SkuCode
 }
 
 // GetSkuCodeOk returns a tuple with the SkuCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetSkuCodeOk() (*string, bool) {
-	if o == nil || o.SkuCode == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetSkuCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.SkuCode) {
 		return nil, false
 	}
-	return o.SkuCode, true
+	return &o.SkuCode, true
 }
 
 // HasSkuCode returns a boolean if a field has been set.
 func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) HasSkuCode() bool {
-	if o != nil && o.SkuCode != nil {
+	if o != nil && IsNil(o.SkuCode) {
 		return true
 	}
 
 	return false
 }
 
-// SetSkuCode gets a reference to the given string and assigns it to the SkuCode field.
-func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) SetSkuCode(v string) {
-	o.SkuCode = &v
+// SetSkuCode gets a reference to the given interface{} and assigns it to the SkuCode field.
+func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) SetSkuCode(v interface{}) {
+	o.SkuCode = v
 }
 
-// GetStockThreshold returns the StockThreshold field value if set, zero value otherwise.
-func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetStockThreshold() int32 {
-	if o == nil || o.StockThreshold == nil {
-		var ret int32
+// GetStockThreshold returns the StockThreshold field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetStockThreshold() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.StockThreshold
+	return o.StockThreshold
 }
 
 // GetStockThresholdOk returns a tuple with the StockThreshold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetStockThresholdOk() (*int32, bool) {
-	if o == nil || o.StockThreshold == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetStockThresholdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.StockThreshold) {
 		return nil, false
 	}
-	return o.StockThreshold, true
+	return &o.StockThreshold, true
 }
 
 // HasStockThreshold returns a boolean if a field has been set.
 func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) HasStockThreshold() bool {
-	if o != nil && o.StockThreshold != nil {
+	if o != nil && IsNil(o.StockThreshold) {
 		return true
 	}
 
 	return false
 }
 
-// SetStockThreshold gets a reference to the given int32 and assigns it to the StockThreshold field.
-func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) SetStockThreshold(v int32) {
-	o.StockThreshold = &v
+// SetStockThreshold gets a reference to the given interface{} and assigns it to the StockThreshold field.
+func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) SetStockThreshold(v interface{}) {
+	o.StockThreshold = v
 }
 
-// GetActivate returns the Activate field value if set, zero value otherwise.
-func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetActivate() bool {
-	if o == nil || o.Activate == nil {
-		var ret bool
+// GetActivate returns the Activate field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetActivate() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Activate
+	return o.Activate
 }
 
 // GetActivateOk returns a tuple with the Activate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetActivateOk() (*bool, bool) {
-	if o == nil || o.Activate == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetActivateOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Activate) {
 		return nil, false
 	}
-	return o.Activate, true
+	return &o.Activate, true
 }
 
 // HasActivate returns a boolean if a field has been set.
 func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) HasActivate() bool {
-	if o != nil && o.Activate != nil {
+	if o != nil && IsNil(o.Activate) {
 		return true
 	}
 
 	return false
 }
 
-// SetActivate gets a reference to the given bool and assigns it to the Activate field.
-func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) SetActivate(v bool) {
-	o.Activate = &v
+// SetActivate gets a reference to the given interface{} and assigns it to the Activate field.
+func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) SetActivate(v interface{}) {
+	o.Activate = v
 }
 
-// GetDeactivate returns the Deactivate field value if set, zero value otherwise.
-func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetDeactivate() bool {
-	if o == nil || o.Deactivate == nil {
-		var ret bool
+// GetDeactivate returns the Deactivate field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetDeactivate() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Deactivate
+	return o.Deactivate
 }
 
 // GetDeactivateOk returns a tuple with the Deactivate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetDeactivateOk() (*bool, bool) {
-	if o == nil || o.Deactivate == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetDeactivateOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Deactivate) {
 		return nil, false
 	}
-	return o.Deactivate, true
+	return &o.Deactivate, true
 }
 
 // HasDeactivate returns a boolean if a field has been set.
 func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) HasDeactivate() bool {
-	if o != nil && o.Deactivate != nil {
+	if o != nil && IsNil(o.Deactivate) {
 		return true
 	}
 
 	return false
 }
 
-// SetDeactivate gets a reference to the given bool and assigns it to the Deactivate field.
-func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) SetDeactivate(v bool) {
-	o.Deactivate = &v
+// SetDeactivate gets a reference to the given interface{} and assigns it to the Deactivate field.
+func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) SetDeactivate(v interface{}) {
+	o.Deactivate = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -253,28 +262,37 @@ func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 func (o PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.SkuCode != nil {
 		toSerialize["sku_code"] = o.SkuCode
@@ -297,7 +315,7 @@ func (o PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes)
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes struct {

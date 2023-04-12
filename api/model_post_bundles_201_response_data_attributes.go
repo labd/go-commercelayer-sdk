@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,39 +15,42 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTBundles201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTBundles201ResponseDataAttributes{}
+
 // POSTBundles201ResponseDataAttributes struct for POSTBundles201ResponseDataAttributes
 type POSTBundles201ResponseDataAttributes struct {
 	// The bundle code, that uniquely identifies the bundle within the market.
-	Code string `json:"code"`
+	Code interface{} `json:"code"`
 	// The internal name of the bundle.
-	Name string `json:"name"`
+	Name interface{} `json:"name"`
 	// The international 3-letter currency code as defined by the ISO 4217 standard.
-	CurrencyCode *string `json:"currency_code,omitempty"`
+	CurrencyCode interface{} `json:"currency_code,omitempty"`
 	// An internal description of the bundle.
-	Description *string `json:"description,omitempty"`
+	Description interface{} `json:"description,omitempty"`
 	// The URL of an image that represents the bundle.
-	ImageUrl *string `json:"image_url,omitempty"`
+	ImageUrl interface{} `json:"image_url,omitempty"`
 	// The bundle price amount for the associated market, in cents.
-	PriceAmountCents int32 `json:"price_amount_cents"`
+	PriceAmountCents interface{} `json:"price_amount_cents"`
 	// The compared price amount, in cents. Useful to display a percentage discount.
-	CompareAtAmountCents int32 `json:"compare_at_amount_cents"`
+	CompareAtAmountCents interface{} `json:"compare_at_amount_cents"`
 	// Send this attribute if you want to compute the price_amount_cents as the sum of the prices of the bundle SKUs for the market.
-	ComputePriceAmount *bool `json:"_compute_price_amount,omitempty"`
+	ComputePriceAmount interface{} `json:"_compute_price_amount,omitempty"`
 	// Send this attribute if you want to compute the compare_at_amount_cents as the sum of the prices of the bundle SKUs for the market.
-	ComputeCompareAtAmount *bool `json:"_compute_compare_at_amount,omitempty"`
+	ComputeCompareAtAmount interface{} `json:"_compute_compare_at_amount,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 }
 
 // NewPOSTBundles201ResponseDataAttributes instantiates a new POSTBundles201ResponseDataAttributes object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPOSTBundles201ResponseDataAttributes(code string, name string, priceAmountCents int32, compareAtAmountCents int32) *POSTBundles201ResponseDataAttributes {
+func NewPOSTBundles201ResponseDataAttributes(code interface{}, name interface{}, priceAmountCents interface{}, compareAtAmountCents interface{}) *POSTBundles201ResponseDataAttributes {
 	this := POSTBundles201ResponseDataAttributes{}
 	this.Code = code
 	this.Name = name
@@ -65,9 +68,10 @@ func NewPOSTBundles201ResponseDataAttributesWithDefaults() *POSTBundles201Respon
 }
 
 // GetCode returns the Code field value
-func (o *POSTBundles201ResponseDataAttributes) GetCode() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTBundles201ResponseDataAttributes) GetCode() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -76,22 +80,24 @@ func (o *POSTBundles201ResponseDataAttributes) GetCode() string {
 
 // GetCodeOk returns a tuple with the Code field value
 // and a boolean to check if the value has been set.
-func (o *POSTBundles201ResponseDataAttributes) GetCodeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTBundles201ResponseDataAttributes) GetCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Code) {
 		return nil, false
 	}
 	return &o.Code, true
 }
 
 // SetCode sets field value
-func (o *POSTBundles201ResponseDataAttributes) SetCode(v string) {
+func (o *POSTBundles201ResponseDataAttributes) SetCode(v interface{}) {
 	o.Code = v
 }
 
 // GetName returns the Name field value
-func (o *POSTBundles201ResponseDataAttributes) GetName() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTBundles201ResponseDataAttributes) GetName() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -100,118 +106,123 @@ func (o *POSTBundles201ResponseDataAttributes) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
-func (o *POSTBundles201ResponseDataAttributes) GetNameOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTBundles201ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
 }
 
 // SetName sets field value
-func (o *POSTBundles201ResponseDataAttributes) SetName(v string) {
+func (o *POSTBundles201ResponseDataAttributes) SetName(v interface{}) {
 	o.Name = v
 }
 
-// GetCurrencyCode returns the CurrencyCode field value if set, zero value otherwise.
-func (o *POSTBundles201ResponseDataAttributes) GetCurrencyCode() string {
-	if o == nil || o.CurrencyCode == nil {
-		var ret string
+// GetCurrencyCode returns the CurrencyCode field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTBundles201ResponseDataAttributes) GetCurrencyCode() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CurrencyCode
+	return o.CurrencyCode
 }
 
 // GetCurrencyCodeOk returns a tuple with the CurrencyCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTBundles201ResponseDataAttributes) GetCurrencyCodeOk() (*string, bool) {
-	if o == nil || o.CurrencyCode == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTBundles201ResponseDataAttributes) GetCurrencyCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CurrencyCode) {
 		return nil, false
 	}
-	return o.CurrencyCode, true
+	return &o.CurrencyCode, true
 }
 
 // HasCurrencyCode returns a boolean if a field has been set.
 func (o *POSTBundles201ResponseDataAttributes) HasCurrencyCode() bool {
-	if o != nil && o.CurrencyCode != nil {
+	if o != nil && IsNil(o.CurrencyCode) {
 		return true
 	}
 
 	return false
 }
 
-// SetCurrencyCode gets a reference to the given string and assigns it to the CurrencyCode field.
-func (o *POSTBundles201ResponseDataAttributes) SetCurrencyCode(v string) {
-	o.CurrencyCode = &v
+// SetCurrencyCode gets a reference to the given interface{} and assigns it to the CurrencyCode field.
+func (o *POSTBundles201ResponseDataAttributes) SetCurrencyCode(v interface{}) {
+	o.CurrencyCode = v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
-func (o *POSTBundles201ResponseDataAttributes) GetDescription() string {
-	if o == nil || o.Description == nil {
-		var ret string
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTBundles201ResponseDataAttributes) GetDescription() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Description
+	return o.Description
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTBundles201ResponseDataAttributes) GetDescriptionOk() (*string, bool) {
-	if o == nil || o.Description == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTBundles201ResponseDataAttributes) GetDescriptionOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
-	return o.Description, true
+	return &o.Description, true
 }
 
 // HasDescription returns a boolean if a field has been set.
 func (o *POSTBundles201ResponseDataAttributes) HasDescription() bool {
-	if o != nil && o.Description != nil {
+	if o != nil && IsNil(o.Description) {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *POSTBundles201ResponseDataAttributes) SetDescription(v string) {
-	o.Description = &v
+// SetDescription gets a reference to the given interface{} and assigns it to the Description field.
+func (o *POSTBundles201ResponseDataAttributes) SetDescription(v interface{}) {
+	o.Description = v
 }
 
-// GetImageUrl returns the ImageUrl field value if set, zero value otherwise.
-func (o *POSTBundles201ResponseDataAttributes) GetImageUrl() string {
-	if o == nil || o.ImageUrl == nil {
-		var ret string
+// GetImageUrl returns the ImageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTBundles201ResponseDataAttributes) GetImageUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ImageUrl
+	return o.ImageUrl
 }
 
 // GetImageUrlOk returns a tuple with the ImageUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTBundles201ResponseDataAttributes) GetImageUrlOk() (*string, bool) {
-	if o == nil || o.ImageUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTBundles201ResponseDataAttributes) GetImageUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ImageUrl) {
 		return nil, false
 	}
-	return o.ImageUrl, true
+	return &o.ImageUrl, true
 }
 
 // HasImageUrl returns a boolean if a field has been set.
 func (o *POSTBundles201ResponseDataAttributes) HasImageUrl() bool {
-	if o != nil && o.ImageUrl != nil {
+	if o != nil && IsNil(o.ImageUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetImageUrl gets a reference to the given string and assigns it to the ImageUrl field.
-func (o *POSTBundles201ResponseDataAttributes) SetImageUrl(v string) {
-	o.ImageUrl = &v
+// SetImageUrl gets a reference to the given interface{} and assigns it to the ImageUrl field.
+func (o *POSTBundles201ResponseDataAttributes) SetImageUrl(v interface{}) {
+	o.ImageUrl = v
 }
 
 // GetPriceAmountCents returns the PriceAmountCents field value
-func (o *POSTBundles201ResponseDataAttributes) GetPriceAmountCents() int32 {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTBundles201ResponseDataAttributes) GetPriceAmountCents() interface{} {
 	if o == nil {
-		var ret int32
+		var ret interface{}
 		return ret
 	}
 
@@ -220,22 +231,24 @@ func (o *POSTBundles201ResponseDataAttributes) GetPriceAmountCents() int32 {
 
 // GetPriceAmountCentsOk returns a tuple with the PriceAmountCents field value
 // and a boolean to check if the value has been set.
-func (o *POSTBundles201ResponseDataAttributes) GetPriceAmountCentsOk() (*int32, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTBundles201ResponseDataAttributes) GetPriceAmountCentsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PriceAmountCents) {
 		return nil, false
 	}
 	return &o.PriceAmountCents, true
 }
 
 // SetPriceAmountCents sets field value
-func (o *POSTBundles201ResponseDataAttributes) SetPriceAmountCents(v int32) {
+func (o *POSTBundles201ResponseDataAttributes) SetPriceAmountCents(v interface{}) {
 	o.PriceAmountCents = v
 }
 
 // GetCompareAtAmountCents returns the CompareAtAmountCents field value
-func (o *POSTBundles201ResponseDataAttributes) GetCompareAtAmountCents() int32 {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTBundles201ResponseDataAttributes) GetCompareAtAmountCents() interface{} {
 	if o == nil {
-		var ret int32
+		var ret interface{}
 		return ret
 	}
 
@@ -244,150 +257,155 @@ func (o *POSTBundles201ResponseDataAttributes) GetCompareAtAmountCents() int32 {
 
 // GetCompareAtAmountCentsOk returns a tuple with the CompareAtAmountCents field value
 // and a boolean to check if the value has been set.
-func (o *POSTBundles201ResponseDataAttributes) GetCompareAtAmountCentsOk() (*int32, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTBundles201ResponseDataAttributes) GetCompareAtAmountCentsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CompareAtAmountCents) {
 		return nil, false
 	}
 	return &o.CompareAtAmountCents, true
 }
 
 // SetCompareAtAmountCents sets field value
-func (o *POSTBundles201ResponseDataAttributes) SetCompareAtAmountCents(v int32) {
+func (o *POSTBundles201ResponseDataAttributes) SetCompareAtAmountCents(v interface{}) {
 	o.CompareAtAmountCents = v
 }
 
-// GetComputePriceAmount returns the ComputePriceAmount field value if set, zero value otherwise.
-func (o *POSTBundles201ResponseDataAttributes) GetComputePriceAmount() bool {
-	if o == nil || o.ComputePriceAmount == nil {
-		var ret bool
+// GetComputePriceAmount returns the ComputePriceAmount field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTBundles201ResponseDataAttributes) GetComputePriceAmount() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ComputePriceAmount
+	return o.ComputePriceAmount
 }
 
 // GetComputePriceAmountOk returns a tuple with the ComputePriceAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTBundles201ResponseDataAttributes) GetComputePriceAmountOk() (*bool, bool) {
-	if o == nil || o.ComputePriceAmount == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTBundles201ResponseDataAttributes) GetComputePriceAmountOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ComputePriceAmount) {
 		return nil, false
 	}
-	return o.ComputePriceAmount, true
+	return &o.ComputePriceAmount, true
 }
 
 // HasComputePriceAmount returns a boolean if a field has been set.
 func (o *POSTBundles201ResponseDataAttributes) HasComputePriceAmount() bool {
-	if o != nil && o.ComputePriceAmount != nil {
+	if o != nil && IsNil(o.ComputePriceAmount) {
 		return true
 	}
 
 	return false
 }
 
-// SetComputePriceAmount gets a reference to the given bool and assigns it to the ComputePriceAmount field.
-func (o *POSTBundles201ResponseDataAttributes) SetComputePriceAmount(v bool) {
-	o.ComputePriceAmount = &v
+// SetComputePriceAmount gets a reference to the given interface{} and assigns it to the ComputePriceAmount field.
+func (o *POSTBundles201ResponseDataAttributes) SetComputePriceAmount(v interface{}) {
+	o.ComputePriceAmount = v
 }
 
-// GetComputeCompareAtAmount returns the ComputeCompareAtAmount field value if set, zero value otherwise.
-func (o *POSTBundles201ResponseDataAttributes) GetComputeCompareAtAmount() bool {
-	if o == nil || o.ComputeCompareAtAmount == nil {
-		var ret bool
+// GetComputeCompareAtAmount returns the ComputeCompareAtAmount field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTBundles201ResponseDataAttributes) GetComputeCompareAtAmount() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ComputeCompareAtAmount
+	return o.ComputeCompareAtAmount
 }
 
 // GetComputeCompareAtAmountOk returns a tuple with the ComputeCompareAtAmount field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTBundles201ResponseDataAttributes) GetComputeCompareAtAmountOk() (*bool, bool) {
-	if o == nil || o.ComputeCompareAtAmount == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTBundles201ResponseDataAttributes) GetComputeCompareAtAmountOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ComputeCompareAtAmount) {
 		return nil, false
 	}
-	return o.ComputeCompareAtAmount, true
+	return &o.ComputeCompareAtAmount, true
 }
 
 // HasComputeCompareAtAmount returns a boolean if a field has been set.
 func (o *POSTBundles201ResponseDataAttributes) HasComputeCompareAtAmount() bool {
-	if o != nil && o.ComputeCompareAtAmount != nil {
+	if o != nil && IsNil(o.ComputeCompareAtAmount) {
 		return true
 	}
 
 	return false
 }
 
-// SetComputeCompareAtAmount gets a reference to the given bool and assigns it to the ComputeCompareAtAmount field.
-func (o *POSTBundles201ResponseDataAttributes) SetComputeCompareAtAmount(v bool) {
-	o.ComputeCompareAtAmount = &v
+// SetComputeCompareAtAmount gets a reference to the given interface{} and assigns it to the ComputeCompareAtAmount field.
+func (o *POSTBundles201ResponseDataAttributes) SetComputeCompareAtAmount(v interface{}) {
+	o.ComputeCompareAtAmount = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *POSTBundles201ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTBundles201ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTBundles201ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTBundles201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTBundles201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *POSTBundles201ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *POSTBundles201ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *POSTBundles201ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTBundles201ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTBundles201ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTBundles201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTBundles201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *POSTBundles201ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *POSTBundles201ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *POSTBundles201ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTBundles201ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -395,33 +413,42 @@ func (o *POSTBundles201ResponseDataAttributes) GetMetadata() map[string]interfac
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTBundles201ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTBundles201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTBundles201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *POSTBundles201ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *POSTBundles201ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 func (o POSTBundles201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTBundles201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
+	if o.Code != nil {
 		toSerialize["code"] = o.Code
 	}
-	if true {
+	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
 	if o.CurrencyCode != nil {
@@ -433,10 +460,10 @@ func (o POSTBundles201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	if o.ImageUrl != nil {
 		toSerialize["image_url"] = o.ImageUrl
 	}
-	if true {
+	if o.PriceAmountCents != nil {
 		toSerialize["price_amount_cents"] = o.PriceAmountCents
 	}
-	if true {
+	if o.CompareAtAmountCents != nil {
 		toSerialize["compare_at_amount_cents"] = o.CompareAtAmountCents
 	}
 	if o.ComputePriceAmount != nil {
@@ -454,7 +481,7 @@ func (o POSTBundles201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTBundles201ResponseDataAttributes struct {

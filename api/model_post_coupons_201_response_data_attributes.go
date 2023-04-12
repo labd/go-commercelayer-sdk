@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,29 +15,32 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTCoupons201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTCoupons201ResponseDataAttributes{}
+
 // POSTCoupons201ResponseDataAttributes struct for POSTCoupons201ResponseDataAttributes
 type POSTCoupons201ResponseDataAttributes struct {
 	// The coupon code, that uniquely identifies the coupon within the promotion rule.
-	Code string `json:"code"`
+	Code interface{} `json:"code"`
 	// Indicates if the coupon can be used just once per customer.
-	CustomerSingleUse *bool `json:"customer_single_use,omitempty"`
+	CustomerSingleUse interface{} `json:"customer_single_use,omitempty"`
 	// The total number of times this coupon can be used.
-	UsageLimit int32 `json:"usage_limit"`
+	UsageLimit interface{} `json:"usage_limit"`
 	// The email address of the associated recipient. When creating or updating a coupon, this is a shortcut to find or create the associated recipient by email.
-	RecipientEmail *string `json:"recipient_email,omitempty"`
+	RecipientEmail interface{} `json:"recipient_email,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 }
 
 // NewPOSTCoupons201ResponseDataAttributes instantiates a new POSTCoupons201ResponseDataAttributes object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPOSTCoupons201ResponseDataAttributes(code string, usageLimit int32) *POSTCoupons201ResponseDataAttributes {
+func NewPOSTCoupons201ResponseDataAttributes(code interface{}, usageLimit interface{}) *POSTCoupons201ResponseDataAttributes {
 	this := POSTCoupons201ResponseDataAttributes{}
 	this.Code = code
 	this.UsageLimit = usageLimit
@@ -53,9 +56,10 @@ func NewPOSTCoupons201ResponseDataAttributesWithDefaults() *POSTCoupons201Respon
 }
 
 // GetCode returns the Code field value
-func (o *POSTCoupons201ResponseDataAttributes) GetCode() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTCoupons201ResponseDataAttributes) GetCode() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -64,54 +68,57 @@ func (o *POSTCoupons201ResponseDataAttributes) GetCode() string {
 
 // GetCodeOk returns a tuple with the Code field value
 // and a boolean to check if the value has been set.
-func (o *POSTCoupons201ResponseDataAttributes) GetCodeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTCoupons201ResponseDataAttributes) GetCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Code) {
 		return nil, false
 	}
 	return &o.Code, true
 }
 
 // SetCode sets field value
-func (o *POSTCoupons201ResponseDataAttributes) SetCode(v string) {
+func (o *POSTCoupons201ResponseDataAttributes) SetCode(v interface{}) {
 	o.Code = v
 }
 
-// GetCustomerSingleUse returns the CustomerSingleUse field value if set, zero value otherwise.
-func (o *POSTCoupons201ResponseDataAttributes) GetCustomerSingleUse() bool {
-	if o == nil || o.CustomerSingleUse == nil {
-		var ret bool
+// GetCustomerSingleUse returns the CustomerSingleUse field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTCoupons201ResponseDataAttributes) GetCustomerSingleUse() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CustomerSingleUse
+	return o.CustomerSingleUse
 }
 
 // GetCustomerSingleUseOk returns a tuple with the CustomerSingleUse field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTCoupons201ResponseDataAttributes) GetCustomerSingleUseOk() (*bool, bool) {
-	if o == nil || o.CustomerSingleUse == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTCoupons201ResponseDataAttributes) GetCustomerSingleUseOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CustomerSingleUse) {
 		return nil, false
 	}
-	return o.CustomerSingleUse, true
+	return &o.CustomerSingleUse, true
 }
 
 // HasCustomerSingleUse returns a boolean if a field has been set.
 func (o *POSTCoupons201ResponseDataAttributes) HasCustomerSingleUse() bool {
-	if o != nil && o.CustomerSingleUse != nil {
+	if o != nil && IsNil(o.CustomerSingleUse) {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomerSingleUse gets a reference to the given bool and assigns it to the CustomerSingleUse field.
-func (o *POSTCoupons201ResponseDataAttributes) SetCustomerSingleUse(v bool) {
-	o.CustomerSingleUse = &v
+// SetCustomerSingleUse gets a reference to the given interface{} and assigns it to the CustomerSingleUse field.
+func (o *POSTCoupons201ResponseDataAttributes) SetCustomerSingleUse(v interface{}) {
+	o.CustomerSingleUse = v
 }
 
 // GetUsageLimit returns the UsageLimit field value
-func (o *POSTCoupons201ResponseDataAttributes) GetUsageLimit() int32 {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTCoupons201ResponseDataAttributes) GetUsageLimit() interface{} {
 	if o == nil {
-		var ret int32
+		var ret interface{}
 		return ret
 	}
 
@@ -120,118 +127,122 @@ func (o *POSTCoupons201ResponseDataAttributes) GetUsageLimit() int32 {
 
 // GetUsageLimitOk returns a tuple with the UsageLimit field value
 // and a boolean to check if the value has been set.
-func (o *POSTCoupons201ResponseDataAttributes) GetUsageLimitOk() (*int32, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTCoupons201ResponseDataAttributes) GetUsageLimitOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.UsageLimit) {
 		return nil, false
 	}
 	return &o.UsageLimit, true
 }
 
 // SetUsageLimit sets field value
-func (o *POSTCoupons201ResponseDataAttributes) SetUsageLimit(v int32) {
+func (o *POSTCoupons201ResponseDataAttributes) SetUsageLimit(v interface{}) {
 	o.UsageLimit = v
 }
 
-// GetRecipientEmail returns the RecipientEmail field value if set, zero value otherwise.
-func (o *POSTCoupons201ResponseDataAttributes) GetRecipientEmail() string {
-	if o == nil || o.RecipientEmail == nil {
-		var ret string
+// GetRecipientEmail returns the RecipientEmail field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTCoupons201ResponseDataAttributes) GetRecipientEmail() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.RecipientEmail
+	return o.RecipientEmail
 }
 
 // GetRecipientEmailOk returns a tuple with the RecipientEmail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTCoupons201ResponseDataAttributes) GetRecipientEmailOk() (*string, bool) {
-	if o == nil || o.RecipientEmail == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTCoupons201ResponseDataAttributes) GetRecipientEmailOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.RecipientEmail) {
 		return nil, false
 	}
-	return o.RecipientEmail, true
+	return &o.RecipientEmail, true
 }
 
 // HasRecipientEmail returns a boolean if a field has been set.
 func (o *POSTCoupons201ResponseDataAttributes) HasRecipientEmail() bool {
-	if o != nil && o.RecipientEmail != nil {
+	if o != nil && IsNil(o.RecipientEmail) {
 		return true
 	}
 
 	return false
 }
 
-// SetRecipientEmail gets a reference to the given string and assigns it to the RecipientEmail field.
-func (o *POSTCoupons201ResponseDataAttributes) SetRecipientEmail(v string) {
-	o.RecipientEmail = &v
+// SetRecipientEmail gets a reference to the given interface{} and assigns it to the RecipientEmail field.
+func (o *POSTCoupons201ResponseDataAttributes) SetRecipientEmail(v interface{}) {
+	o.RecipientEmail = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *POSTCoupons201ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTCoupons201ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTCoupons201ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTCoupons201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTCoupons201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *POSTCoupons201ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *POSTCoupons201ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *POSTCoupons201ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTCoupons201ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTCoupons201ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTCoupons201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTCoupons201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *POSTCoupons201ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *POSTCoupons201ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *POSTCoupons201ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTCoupons201ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -239,36 +250,45 @@ func (o *POSTCoupons201ResponseDataAttributes) GetMetadata() map[string]interfac
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTCoupons201ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTCoupons201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTCoupons201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *POSTCoupons201ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *POSTCoupons201ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 func (o POSTCoupons201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTCoupons201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
+	if o.Code != nil {
 		toSerialize["code"] = o.Code
 	}
 	if o.CustomerSingleUse != nil {
 		toSerialize["customer_single_use"] = o.CustomerSingleUse
 	}
-	if true {
+	if o.UsageLimit != nil {
 		toSerialize["usage_limit"] = o.UsageLimit
 	}
 	if o.RecipientEmail != nil {
@@ -283,7 +303,7 @@ func (o POSTCoupons201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTCoupons201ResponseDataAttributes struct {

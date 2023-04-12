@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
+**Type** | **interface{}** | The resource&#39;s type | 
 **Attributes** | [**POSTPercentageDiscountPromotions201ResponseDataAttributes**](POSTPercentageDiscountPromotions201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**FixedPricePromotionUpdateDataRelationships**](FixedPricePromotionUpdateDataRelationships.md) |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewPercentageDiscountPromotionCreateData
 
-`func NewPercentageDiscountPromotionCreateData(type_ string, attributes POSTPercentageDiscountPromotions201ResponseDataAttributes, ) *PercentageDiscountPromotionCreateData`
+`func NewPercentageDiscountPromotionCreateData(type_ interface{}, attributes POSTPercentageDiscountPromotions201ResponseDataAttributes, ) *PercentageDiscountPromotionCreateData`
 
 NewPercentageDiscountPromotionCreateData instantiates a new PercentageDiscountPromotionCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -29,24 +29,34 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *PercentageDiscountPromotionCreateData) GetType() string`
+`func (o *PercentageDiscountPromotionCreateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *PercentageDiscountPromotionCreateData) GetTypeOk() (*string, bool)`
+`func (o *PercentageDiscountPromotionCreateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *PercentageDiscountPromotionCreateData) SetType(v string)`
+`func (o *PercentageDiscountPromotionCreateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *PercentageDiscountPromotionCreateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *PercentageDiscountPromotionCreateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
 `func (o *PercentageDiscountPromotionCreateData) GetAttributes() POSTPercentageDiscountPromotions201ResponseDataAttributes`

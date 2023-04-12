@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Id** | **string** | The resource&#39;s id | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Id** | **interface{}** | The resource&#39;s id | 
 **Attributes** | [**PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes**](PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**DeliveryLeadTimeUpdateDataRelationships**](DeliveryLeadTimeUpdateDataRelationships.md) |  | [optional] 
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewDeliveryLeadTimeUpdateData
 
-`func NewDeliveryLeadTimeUpdateData(type_ string, id string, attributes PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes, ) *DeliveryLeadTimeUpdateData`
+`func NewDeliveryLeadTimeUpdateData(type_ interface{}, id interface{}, attributes PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes, ) *DeliveryLeadTimeUpdateData`
 
 NewDeliveryLeadTimeUpdateData instantiates a new DeliveryLeadTimeUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -30,44 +30,64 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *DeliveryLeadTimeUpdateData) GetType() string`
+`func (o *DeliveryLeadTimeUpdateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *DeliveryLeadTimeUpdateData) GetTypeOk() (*string, bool)`
+`func (o *DeliveryLeadTimeUpdateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *DeliveryLeadTimeUpdateData) SetType(v string)`
+`func (o *DeliveryLeadTimeUpdateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *DeliveryLeadTimeUpdateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *DeliveryLeadTimeUpdateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetId
 
-`func (o *DeliveryLeadTimeUpdateData) GetId() string`
+`func (o *DeliveryLeadTimeUpdateData) GetId() interface{}`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *DeliveryLeadTimeUpdateData) GetIdOk() (*string, bool)`
+`func (o *DeliveryLeadTimeUpdateData) GetIdOk() (*interface{}, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *DeliveryLeadTimeUpdateData) SetId(v string)`
+`func (o *DeliveryLeadTimeUpdateData) SetId(v interface{})`
 
 SetId sets Id field to given value.
 
 
+### SetIdNil
+
+`func (o *DeliveryLeadTimeUpdateData) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *DeliveryLeadTimeUpdateData) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetAttributes
 
 `func (o *DeliveryLeadTimeUpdateData) GetAttributes() PATCHDeliveryLeadTimesDeliveryLeadTimeId200ResponseDataAttributes`

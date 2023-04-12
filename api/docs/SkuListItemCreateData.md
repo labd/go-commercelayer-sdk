@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
+**Type** | **interface{}** | The resource&#39;s type | 
 **Attributes** | [**POSTSkuListItems201ResponseDataAttributes**](POSTSkuListItems201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**SkuListItemCreateDataRelationships**](SkuListItemCreateDataRelationships.md) |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewSkuListItemCreateData
 
-`func NewSkuListItemCreateData(type_ string, attributes POSTSkuListItems201ResponseDataAttributes, ) *SkuListItemCreateData`
+`func NewSkuListItemCreateData(type_ interface{}, attributes POSTSkuListItems201ResponseDataAttributes, ) *SkuListItemCreateData`
 
 NewSkuListItemCreateData instantiates a new SkuListItemCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -29,24 +29,34 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *SkuListItemCreateData) GetType() string`
+`func (o *SkuListItemCreateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *SkuListItemCreateData) GetTypeOk() (*string, bool)`
+`func (o *SkuListItemCreateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *SkuListItemCreateData) SetType(v string)`
+`func (o *SkuListItemCreateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *SkuListItemCreateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *SkuListItemCreateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
 `func (o *SkuListItemCreateData) GetAttributes() POSTSkuListItems201ResponseDataAttributes`

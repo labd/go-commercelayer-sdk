@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type PaymentGatewaysApiService service
 type PaymentGatewaysApiGETAdyenPaymentIdPaymentGatewayRequest struct {
 	ctx            context.Context
 	ApiService     *PaymentGatewaysApiService
-	adyenPaymentId string
+	adyenPaymentId interface{}
 }
 
 func (r PaymentGatewaysApiGETAdyenPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Retrieve the payment gateway associated to the adyen payment
 	@param adyenPaymentId The resource's id
 	@return PaymentGatewaysApiGETAdyenPaymentIdPaymentGatewayRequest
 */
-func (a *PaymentGatewaysApiService) GETAdyenPaymentIdPaymentGateway(ctx context.Context, adyenPaymentId string) PaymentGatewaysApiGETAdyenPaymentIdPaymentGatewayRequest {
+func (a *PaymentGatewaysApiService) GETAdyenPaymentIdPaymentGateway(ctx context.Context, adyenPaymentId interface{}) PaymentGatewaysApiGETAdyenPaymentIdPaymentGatewayRequest {
 	return PaymentGatewaysApiGETAdyenPaymentIdPaymentGatewayRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -64,7 +64,7 @@ func (a *PaymentGatewaysApiService) GETAdyenPaymentIdPaymentGatewayExecute(r Pay
 	}
 
 	localVarPath := localBasePath + "/adyen_payments/{adyenPaymentId}/payment_gateway"
-	localVarPath = strings.Replace(localVarPath, "{"+"adyenPaymentId"+"}", url.PathEscape(parameterToString(r.adyenPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"adyenPaymentId"+"}", url.PathEscape(parameterValueToString(r.adyenPaymentId, "adyenPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,101 @@ func (a *PaymentGatewaysApiService) GETAdyenPaymentIdPaymentGatewayExecute(r Pay
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type PaymentGatewaysApiGETAxervePaymentIdPaymentGatewayRequest struct {
+	ctx             context.Context
+	ApiService      *PaymentGatewaysApiService
+	axervePaymentId interface{}
+}
+
+func (r PaymentGatewaysApiGETAxervePaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETAxervePaymentIdPaymentGatewayExecute(r)
+}
+
+/*
+GETAxervePaymentIdPaymentGateway Retrieve the payment gateway associated to the axerve payment
+
+Retrieve the payment gateway associated to the axerve payment
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param axervePaymentId The resource's id
+	@return PaymentGatewaysApiGETAxervePaymentIdPaymentGatewayRequest
+*/
+func (a *PaymentGatewaysApiService) GETAxervePaymentIdPaymentGateway(ctx context.Context, axervePaymentId interface{}) PaymentGatewaysApiGETAxervePaymentIdPaymentGatewayRequest {
+	return PaymentGatewaysApiGETAxervePaymentIdPaymentGatewayRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		axervePaymentId: axervePaymentId,
+	}
+}
+
+// Execute executes the request
+func (a *PaymentGatewaysApiService) GETAxervePaymentIdPaymentGatewayExecute(r PaymentGatewaysApiGETAxervePaymentIdPaymentGatewayRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentGatewaysApiService.GETAxervePaymentIdPaymentGateway")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/axerve_payments/{axervePaymentId}/payment_gateway"
+	localVarPath = strings.Replace(localVarPath, "{"+"axervePaymentId"+"}", url.PathEscape(parameterValueToString(r.axervePaymentId, "axervePaymentId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +210,7 @@ func (a *PaymentGatewaysApiService) GETAdyenPaymentIdPaymentGatewayExecute(r Pay
 type PaymentGatewaysApiGETBraintreePaymentIdPaymentGatewayRequest struct {
 	ctx                context.Context
 	ApiService         *PaymentGatewaysApiService
-	braintreePaymentId string
+	braintreePaymentId interface{}
 }
 
 func (r PaymentGatewaysApiGETBraintreePaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
@@ -134,7 +226,7 @@ Retrieve the payment gateway associated to the braintree payment
 	@param braintreePaymentId The resource's id
 	@return PaymentGatewaysApiGETBraintreePaymentIdPaymentGatewayRequest
 */
-func (a *PaymentGatewaysApiService) GETBraintreePaymentIdPaymentGateway(ctx context.Context, braintreePaymentId string) PaymentGatewaysApiGETBraintreePaymentIdPaymentGatewayRequest {
+func (a *PaymentGatewaysApiService) GETBraintreePaymentIdPaymentGateway(ctx context.Context, braintreePaymentId interface{}) PaymentGatewaysApiGETBraintreePaymentIdPaymentGatewayRequest {
 	return PaymentGatewaysApiGETBraintreePaymentIdPaymentGatewayRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -156,7 +248,7 @@ func (a *PaymentGatewaysApiService) GETBraintreePaymentIdPaymentGatewayExecute(r
 	}
 
 	localVarPath := localBasePath + "/braintree_payments/{braintreePaymentId}/payment_gateway"
-	localVarPath = strings.Replace(localVarPath, "{"+"braintreePaymentId"+"}", url.PathEscape(parameterToString(r.braintreePaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"braintreePaymentId"+"}", url.PathEscape(parameterValueToString(r.braintreePaymentId, "braintreePaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +281,9 @@ func (a *PaymentGatewaysApiService) GETBraintreePaymentIdPaymentGatewayExecute(r
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -210,7 +302,7 @@ func (a *PaymentGatewaysApiService) GETBraintreePaymentIdPaymentGatewayExecute(r
 type PaymentGatewaysApiGETCheckoutComPaymentIdPaymentGatewayRequest struct {
 	ctx                  context.Context
 	ApiService           *PaymentGatewaysApiService
-	checkoutComPaymentId string
+	checkoutComPaymentId interface{}
 }
 
 func (r PaymentGatewaysApiGETCheckoutComPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
@@ -226,7 +318,7 @@ Retrieve the payment gateway associated to the checkout.com payment
 	@param checkoutComPaymentId The resource's id
 	@return PaymentGatewaysApiGETCheckoutComPaymentIdPaymentGatewayRequest
 */
-func (a *PaymentGatewaysApiService) GETCheckoutComPaymentIdPaymentGateway(ctx context.Context, checkoutComPaymentId string) PaymentGatewaysApiGETCheckoutComPaymentIdPaymentGatewayRequest {
+func (a *PaymentGatewaysApiService) GETCheckoutComPaymentIdPaymentGateway(ctx context.Context, checkoutComPaymentId interface{}) PaymentGatewaysApiGETCheckoutComPaymentIdPaymentGatewayRequest {
 	return PaymentGatewaysApiGETCheckoutComPaymentIdPaymentGatewayRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -248,7 +340,7 @@ func (a *PaymentGatewaysApiService) GETCheckoutComPaymentIdPaymentGatewayExecute
 	}
 
 	localVarPath := localBasePath + "/checkout_com_payments/{checkoutComPaymentId}/payment_gateway"
-	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComPaymentId"+"}", url.PathEscape(parameterToString(r.checkoutComPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComPaymentId"+"}", url.PathEscape(parameterValueToString(r.checkoutComPaymentId, "checkoutComPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -281,9 +373,9 @@ func (a *PaymentGatewaysApiService) GETCheckoutComPaymentIdPaymentGatewayExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -302,7 +394,7 @@ func (a *PaymentGatewaysApiService) GETCheckoutComPaymentIdPaymentGatewayExecute
 type PaymentGatewaysApiGETExternalPaymentIdPaymentGatewayRequest struct {
 	ctx               context.Context
 	ApiService        *PaymentGatewaysApiService
-	externalPaymentId string
+	externalPaymentId interface{}
 }
 
 func (r PaymentGatewaysApiGETExternalPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
@@ -318,7 +410,7 @@ Retrieve the payment gateway associated to the external payment
 	@param externalPaymentId The resource's id
 	@return PaymentGatewaysApiGETExternalPaymentIdPaymentGatewayRequest
 */
-func (a *PaymentGatewaysApiService) GETExternalPaymentIdPaymentGateway(ctx context.Context, externalPaymentId string) PaymentGatewaysApiGETExternalPaymentIdPaymentGatewayRequest {
+func (a *PaymentGatewaysApiService) GETExternalPaymentIdPaymentGateway(ctx context.Context, externalPaymentId interface{}) PaymentGatewaysApiGETExternalPaymentIdPaymentGatewayRequest {
 	return PaymentGatewaysApiGETExternalPaymentIdPaymentGatewayRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -340,7 +432,7 @@ func (a *PaymentGatewaysApiService) GETExternalPaymentIdPaymentGatewayExecute(r 
 	}
 
 	localVarPath := localBasePath + "/external_payments/{externalPaymentId}/payment_gateway"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPaymentId"+"}", url.PathEscape(parameterToString(r.externalPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPaymentId"+"}", url.PathEscape(parameterValueToString(r.externalPaymentId, "externalPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -373,9 +465,9 @@ func (a *PaymentGatewaysApiService) GETExternalPaymentIdPaymentGatewayExecute(r 
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -394,7 +486,7 @@ func (a *PaymentGatewaysApiService) GETExternalPaymentIdPaymentGatewayExecute(r 
 type PaymentGatewaysApiGETKlarnaPaymentIdPaymentGatewayRequest struct {
 	ctx             context.Context
 	ApiService      *PaymentGatewaysApiService
-	klarnaPaymentId string
+	klarnaPaymentId interface{}
 }
 
 func (r PaymentGatewaysApiGETKlarnaPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
@@ -410,7 +502,7 @@ Retrieve the payment gateway associated to the klarna payment
 	@param klarnaPaymentId The resource's id
 	@return PaymentGatewaysApiGETKlarnaPaymentIdPaymentGatewayRequest
 */
-func (a *PaymentGatewaysApiService) GETKlarnaPaymentIdPaymentGateway(ctx context.Context, klarnaPaymentId string) PaymentGatewaysApiGETKlarnaPaymentIdPaymentGatewayRequest {
+func (a *PaymentGatewaysApiService) GETKlarnaPaymentIdPaymentGateway(ctx context.Context, klarnaPaymentId interface{}) PaymentGatewaysApiGETKlarnaPaymentIdPaymentGatewayRequest {
 	return PaymentGatewaysApiGETKlarnaPaymentIdPaymentGatewayRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -432,7 +524,7 @@ func (a *PaymentGatewaysApiService) GETKlarnaPaymentIdPaymentGatewayExecute(r Pa
 	}
 
 	localVarPath := localBasePath + "/klarna_payments/{klarnaPaymentId}/payment_gateway"
-	localVarPath = strings.Replace(localVarPath, "{"+"klarnaPaymentId"+"}", url.PathEscape(parameterToString(r.klarnaPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"klarnaPaymentId"+"}", url.PathEscape(parameterValueToString(r.klarnaPaymentId, "klarnaPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -465,9 +557,9 @@ func (a *PaymentGatewaysApiService) GETKlarnaPaymentIdPaymentGatewayExecute(r Pa
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -556,9 +648,9 @@ func (a *PaymentGatewaysApiService) GETPaymentGatewaysExecute(r PaymentGatewaysA
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -586,7 +678,7 @@ func (a *PaymentGatewaysApiService) GETPaymentGatewaysExecute(r PaymentGatewaysA
 type PaymentGatewaysApiGETPaymentGatewaysPaymentGatewayIdRequest struct {
 	ctx              context.Context
 	ApiService       *PaymentGatewaysApiService
-	paymentGatewayId string
+	paymentGatewayId interface{}
 }
 
 func (r PaymentGatewaysApiGETPaymentGatewaysPaymentGatewayIdRequest) Execute() (*GETPaymentGatewaysPaymentGatewayId200Response, *http.Response, error) {
@@ -602,7 +694,7 @@ Retrieve a payment gateway
 	@param paymentGatewayId The resource's id
 	@return PaymentGatewaysApiGETPaymentGatewaysPaymentGatewayIdRequest
 */
-func (a *PaymentGatewaysApiService) GETPaymentGatewaysPaymentGatewayId(ctx context.Context, paymentGatewayId string) PaymentGatewaysApiGETPaymentGatewaysPaymentGatewayIdRequest {
+func (a *PaymentGatewaysApiService) GETPaymentGatewaysPaymentGatewayId(ctx context.Context, paymentGatewayId interface{}) PaymentGatewaysApiGETPaymentGatewaysPaymentGatewayIdRequest {
 	return PaymentGatewaysApiGETPaymentGatewaysPaymentGatewayIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -627,7 +719,7 @@ func (a *PaymentGatewaysApiService) GETPaymentGatewaysPaymentGatewayIdExecute(r 
 	}
 
 	localVarPath := localBasePath + "/payment_gateways/{paymentGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"paymentGatewayId"+"}", url.PathEscape(parameterToString(r.paymentGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"paymentGatewayId"+"}", url.PathEscape(parameterValueToString(r.paymentGatewayId, "paymentGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -660,9 +752,9 @@ func (a *PaymentGatewaysApiService) GETPaymentGatewaysPaymentGatewayIdExecute(r 
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -690,7 +782,7 @@ func (a *PaymentGatewaysApiService) GETPaymentGatewaysPaymentGatewayIdExecute(r 
 type PaymentGatewaysApiGETPaymentMethodIdPaymentGatewayRequest struct {
 	ctx             context.Context
 	ApiService      *PaymentGatewaysApiService
-	paymentMethodId string
+	paymentMethodId interface{}
 }
 
 func (r PaymentGatewaysApiGETPaymentMethodIdPaymentGatewayRequest) Execute() (*http.Response, error) {
@@ -706,7 +798,7 @@ Retrieve the payment gateway associated to the payment method
 	@param paymentMethodId The resource's id
 	@return PaymentGatewaysApiGETPaymentMethodIdPaymentGatewayRequest
 */
-func (a *PaymentGatewaysApiService) GETPaymentMethodIdPaymentGateway(ctx context.Context, paymentMethodId string) PaymentGatewaysApiGETPaymentMethodIdPaymentGatewayRequest {
+func (a *PaymentGatewaysApiService) GETPaymentMethodIdPaymentGateway(ctx context.Context, paymentMethodId interface{}) PaymentGatewaysApiGETPaymentMethodIdPaymentGatewayRequest {
 	return PaymentGatewaysApiGETPaymentMethodIdPaymentGatewayRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -728,7 +820,7 @@ func (a *PaymentGatewaysApiService) GETPaymentMethodIdPaymentGatewayExecute(r Pa
 	}
 
 	localVarPath := localBasePath + "/payment_methods/{paymentMethodId}/payment_gateway"
-	localVarPath = strings.Replace(localVarPath, "{"+"paymentMethodId"+"}", url.PathEscape(parameterToString(r.paymentMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"paymentMethodId"+"}", url.PathEscape(parameterValueToString(r.paymentMethodId, "paymentMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -761,9 +853,9 @@ func (a *PaymentGatewaysApiService) GETPaymentMethodIdPaymentGatewayExecute(r Pa
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -782,7 +874,7 @@ func (a *PaymentGatewaysApiService) GETPaymentMethodIdPaymentGatewayExecute(r Pa
 type PaymentGatewaysApiGETPaypalPaymentIdPaymentGatewayRequest struct {
 	ctx             context.Context
 	ApiService      *PaymentGatewaysApiService
-	paypalPaymentId string
+	paypalPaymentId interface{}
 }
 
 func (r PaymentGatewaysApiGETPaypalPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
@@ -798,7 +890,7 @@ Retrieve the payment gateway associated to the paypal payment
 	@param paypalPaymentId The resource's id
 	@return PaymentGatewaysApiGETPaypalPaymentIdPaymentGatewayRequest
 */
-func (a *PaymentGatewaysApiService) GETPaypalPaymentIdPaymentGateway(ctx context.Context, paypalPaymentId string) PaymentGatewaysApiGETPaypalPaymentIdPaymentGatewayRequest {
+func (a *PaymentGatewaysApiService) GETPaypalPaymentIdPaymentGateway(ctx context.Context, paypalPaymentId interface{}) PaymentGatewaysApiGETPaypalPaymentIdPaymentGatewayRequest {
 	return PaymentGatewaysApiGETPaypalPaymentIdPaymentGatewayRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -820,7 +912,7 @@ func (a *PaymentGatewaysApiService) GETPaypalPaymentIdPaymentGatewayExecute(r Pa
 	}
 
 	localVarPath := localBasePath + "/paypal_payments/{paypalPaymentId}/payment_gateway"
-	localVarPath = strings.Replace(localVarPath, "{"+"paypalPaymentId"+"}", url.PathEscape(parameterToString(r.paypalPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"paypalPaymentId"+"}", url.PathEscape(parameterValueToString(r.paypalPaymentId, "paypalPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -853,9 +945,101 @@ func (a *PaymentGatewaysApiService) GETPaypalPaymentIdPaymentGatewayExecute(r Pa
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type PaymentGatewaysApiGETSatispayPaymentIdPaymentGatewayRequest struct {
+	ctx               context.Context
+	ApiService        *PaymentGatewaysApiService
+	satispayPaymentId interface{}
+}
+
+func (r PaymentGatewaysApiGETSatispayPaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSatispayPaymentIdPaymentGatewayExecute(r)
+}
+
+/*
+GETSatispayPaymentIdPaymentGateway Retrieve the payment gateway associated to the satispay payment
+
+Retrieve the payment gateway associated to the satispay payment
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param satispayPaymentId The resource's id
+	@return PaymentGatewaysApiGETSatispayPaymentIdPaymentGatewayRequest
+*/
+func (a *PaymentGatewaysApiService) GETSatispayPaymentIdPaymentGateway(ctx context.Context, satispayPaymentId interface{}) PaymentGatewaysApiGETSatispayPaymentIdPaymentGatewayRequest {
+	return PaymentGatewaysApiGETSatispayPaymentIdPaymentGatewayRequest{
+		ApiService:        a,
+		ctx:               ctx,
+		satispayPaymentId: satispayPaymentId,
+	}
+}
+
+// Execute executes the request
+func (a *PaymentGatewaysApiService) GETSatispayPaymentIdPaymentGatewayExecute(r PaymentGatewaysApiGETSatispayPaymentIdPaymentGatewayRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "PaymentGatewaysApiService.GETSatispayPaymentIdPaymentGateway")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/satispay_payments/{satispayPaymentId}/payment_gateway"
+	localVarPath = strings.Replace(localVarPath, "{"+"satispayPaymentId"+"}", url.PathEscape(parameterValueToString(r.satispayPaymentId, "satispayPaymentId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -874,7 +1058,7 @@ func (a *PaymentGatewaysApiService) GETPaypalPaymentIdPaymentGatewayExecute(r Pa
 type PaymentGatewaysApiGETStripePaymentIdPaymentGatewayRequest struct {
 	ctx             context.Context
 	ApiService      *PaymentGatewaysApiService
-	stripePaymentId string
+	stripePaymentId interface{}
 }
 
 func (r PaymentGatewaysApiGETStripePaymentIdPaymentGatewayRequest) Execute() (*http.Response, error) {
@@ -890,7 +1074,7 @@ Retrieve the payment gateway associated to the stripe payment
 	@param stripePaymentId The resource's id
 	@return PaymentGatewaysApiGETStripePaymentIdPaymentGatewayRequest
 */
-func (a *PaymentGatewaysApiService) GETStripePaymentIdPaymentGateway(ctx context.Context, stripePaymentId string) PaymentGatewaysApiGETStripePaymentIdPaymentGatewayRequest {
+func (a *PaymentGatewaysApiService) GETStripePaymentIdPaymentGateway(ctx context.Context, stripePaymentId interface{}) PaymentGatewaysApiGETStripePaymentIdPaymentGatewayRequest {
 	return PaymentGatewaysApiGETStripePaymentIdPaymentGatewayRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -912,7 +1096,7 @@ func (a *PaymentGatewaysApiService) GETStripePaymentIdPaymentGatewayExecute(r Pa
 	}
 
 	localVarPath := localBasePath + "/stripe_payments/{stripePaymentId}/payment_gateway"
-	localVarPath = strings.Replace(localVarPath, "{"+"stripePaymentId"+"}", url.PathEscape(parameterToString(r.stripePaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stripePaymentId"+"}", url.PathEscape(parameterValueToString(r.stripePaymentId, "stripePaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -945,9 +1129,9 @@ func (a *PaymentGatewaysApiService) GETStripePaymentIdPaymentGatewayExecute(r Pa
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}

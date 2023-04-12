@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
+**Type** | **interface{}** | The resource&#39;s type | 
 **Attributes** | [**POSTBraintreePayments201ResponseDataAttributes**](POSTBraintreePayments201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentCreateDataRelationships**](AdyenPaymentCreateDataRelationships.md) |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewBraintreePaymentCreateData
 
-`func NewBraintreePaymentCreateData(type_ string, attributes POSTBraintreePayments201ResponseDataAttributes, ) *BraintreePaymentCreateData`
+`func NewBraintreePaymentCreateData(type_ interface{}, attributes POSTBraintreePayments201ResponseDataAttributes, ) *BraintreePaymentCreateData`
 
 NewBraintreePaymentCreateData instantiates a new BraintreePaymentCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -29,24 +29,34 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *BraintreePaymentCreateData) GetType() string`
+`func (o *BraintreePaymentCreateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *BraintreePaymentCreateData) GetTypeOk() (*string, bool)`
+`func (o *BraintreePaymentCreateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *BraintreePaymentCreateData) SetType(v string)`
+`func (o *BraintreePaymentCreateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *BraintreePaymentCreateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *BraintreePaymentCreateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
 `func (o *BraintreePaymentCreateData) GetAttributes() POSTBraintreePayments201ResponseDataAttributes`

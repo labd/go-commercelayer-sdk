@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,28 +15,31 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes{}
+
 // PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes struct for PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes
 type PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes struct {
 	// The payment source type.
-	PaymentType *string `json:"payment_type,omitempty"`
+	PaymentType interface{} `json:"payment_type,omitempty"`
 	// The Checkout.com card or digital wallet token.
-	Token *string `json:"token,omitempty"`
+	Token interface{} `json:"token,omitempty"`
 	// A payment session ID used to obtain the details.
-	SessionId *string `json:"session_id,omitempty"`
+	SessionId interface{} `json:"session_id,omitempty"`
 	// The URL to redirect your customer upon 3DS succeeded authentication.
-	SuccessUrl *string `json:"success_url,omitempty"`
+	SuccessUrl interface{} `json:"success_url,omitempty"`
 	// The URL to redirect your customer upon 3DS failed authentication.
-	FailureUrl *string `json:"failure_url,omitempty"`
+	FailureUrl interface{} `json:"failure_url,omitempty"`
 	// Send this attribute if you want to send additional details the payment request (i.e. upon 3DS check).
-	Details *bool `json:"_details,omitempty"`
+	Details interface{} `json:"_details,omitempty"`
 	// Send this attribute if you want to refresh all the pending transactions, can be used as webhooks fallback logic.
-	Refresh *bool `json:"_refresh,omitempty"`
+	Refresh interface{} `json:"_refresh,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 }
 
 // NewPATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes instantiates a new PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes object
@@ -56,298 +59,307 @@ func NewPATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributesWit
 	return &this
 }
 
-// GetPaymentType returns the PaymentType field value if set, zero value otherwise.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetPaymentType() string {
-	if o == nil || o.PaymentType == nil {
-		var ret string
+// GetPaymentType returns the PaymentType field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetPaymentType() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.PaymentType
+	return o.PaymentType
 }
 
 // GetPaymentTypeOk returns a tuple with the PaymentType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetPaymentTypeOk() (*string, bool) {
-	if o == nil || o.PaymentType == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetPaymentTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PaymentType) {
 		return nil, false
 	}
-	return o.PaymentType, true
+	return &o.PaymentType, true
 }
 
 // HasPaymentType returns a boolean if a field has been set.
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) HasPaymentType() bool {
-	if o != nil && o.PaymentType != nil {
+	if o != nil && IsNil(o.PaymentType) {
 		return true
 	}
 
 	return false
 }
 
-// SetPaymentType gets a reference to the given string and assigns it to the PaymentType field.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) SetPaymentType(v string) {
-	o.PaymentType = &v
+// SetPaymentType gets a reference to the given interface{} and assigns it to the PaymentType field.
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) SetPaymentType(v interface{}) {
+	o.PaymentType = v
 }
 
-// GetToken returns the Token field value if set, zero value otherwise.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetToken() string {
-	if o == nil || o.Token == nil {
-		var ret string
+// GetToken returns the Token field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetToken() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Token
+	return o.Token
 }
 
 // GetTokenOk returns a tuple with the Token field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetTokenOk() (*string, bool) {
-	if o == nil || o.Token == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetTokenOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Token) {
 		return nil, false
 	}
-	return o.Token, true
+	return &o.Token, true
 }
 
 // HasToken returns a boolean if a field has been set.
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) HasToken() bool {
-	if o != nil && o.Token != nil {
+	if o != nil && IsNil(o.Token) {
 		return true
 	}
 
 	return false
 }
 
-// SetToken gets a reference to the given string and assigns it to the Token field.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) SetToken(v string) {
-	o.Token = &v
+// SetToken gets a reference to the given interface{} and assigns it to the Token field.
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) SetToken(v interface{}) {
+	o.Token = v
 }
 
-// GetSessionId returns the SessionId field value if set, zero value otherwise.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetSessionId() string {
-	if o == nil || o.SessionId == nil {
-		var ret string
+// GetSessionId returns the SessionId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetSessionId() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.SessionId
+	return o.SessionId
 }
 
 // GetSessionIdOk returns a tuple with the SessionId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetSessionIdOk() (*string, bool) {
-	if o == nil || o.SessionId == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetSessionIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.SessionId) {
 		return nil, false
 	}
-	return o.SessionId, true
+	return &o.SessionId, true
 }
 
 // HasSessionId returns a boolean if a field has been set.
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) HasSessionId() bool {
-	if o != nil && o.SessionId != nil {
+	if o != nil && IsNil(o.SessionId) {
 		return true
 	}
 
 	return false
 }
 
-// SetSessionId gets a reference to the given string and assigns it to the SessionId field.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) SetSessionId(v string) {
-	o.SessionId = &v
+// SetSessionId gets a reference to the given interface{} and assigns it to the SessionId field.
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) SetSessionId(v interface{}) {
+	o.SessionId = v
 }
 
-// GetSuccessUrl returns the SuccessUrl field value if set, zero value otherwise.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetSuccessUrl() string {
-	if o == nil || o.SuccessUrl == nil {
-		var ret string
+// GetSuccessUrl returns the SuccessUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetSuccessUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.SuccessUrl
+	return o.SuccessUrl
 }
 
 // GetSuccessUrlOk returns a tuple with the SuccessUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetSuccessUrlOk() (*string, bool) {
-	if o == nil || o.SuccessUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetSuccessUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.SuccessUrl) {
 		return nil, false
 	}
-	return o.SuccessUrl, true
+	return &o.SuccessUrl, true
 }
 
 // HasSuccessUrl returns a boolean if a field has been set.
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) HasSuccessUrl() bool {
-	if o != nil && o.SuccessUrl != nil {
+	if o != nil && IsNil(o.SuccessUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetSuccessUrl gets a reference to the given string and assigns it to the SuccessUrl field.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) SetSuccessUrl(v string) {
-	o.SuccessUrl = &v
+// SetSuccessUrl gets a reference to the given interface{} and assigns it to the SuccessUrl field.
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) SetSuccessUrl(v interface{}) {
+	o.SuccessUrl = v
 }
 
-// GetFailureUrl returns the FailureUrl field value if set, zero value otherwise.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetFailureUrl() string {
-	if o == nil || o.FailureUrl == nil {
-		var ret string
+// GetFailureUrl returns the FailureUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetFailureUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.FailureUrl
+	return o.FailureUrl
 }
 
 // GetFailureUrlOk returns a tuple with the FailureUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetFailureUrlOk() (*string, bool) {
-	if o == nil || o.FailureUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetFailureUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.FailureUrl) {
 		return nil, false
 	}
-	return o.FailureUrl, true
+	return &o.FailureUrl, true
 }
 
 // HasFailureUrl returns a boolean if a field has been set.
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) HasFailureUrl() bool {
-	if o != nil && o.FailureUrl != nil {
+	if o != nil && IsNil(o.FailureUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetFailureUrl gets a reference to the given string and assigns it to the FailureUrl field.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) SetFailureUrl(v string) {
-	o.FailureUrl = &v
+// SetFailureUrl gets a reference to the given interface{} and assigns it to the FailureUrl field.
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) SetFailureUrl(v interface{}) {
+	o.FailureUrl = v
 }
 
-// GetDetails returns the Details field value if set, zero value otherwise.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetDetails() bool {
-	if o == nil || o.Details == nil {
-		var ret bool
+// GetDetails returns the Details field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetDetails() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Details
+	return o.Details
 }
 
 // GetDetailsOk returns a tuple with the Details field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetDetailsOk() (*bool, bool) {
-	if o == nil || o.Details == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetDetailsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Details) {
 		return nil, false
 	}
-	return o.Details, true
+	return &o.Details, true
 }
 
 // HasDetails returns a boolean if a field has been set.
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) HasDetails() bool {
-	if o != nil && o.Details != nil {
+	if o != nil && IsNil(o.Details) {
 		return true
 	}
 
 	return false
 }
 
-// SetDetails gets a reference to the given bool and assigns it to the Details field.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) SetDetails(v bool) {
-	o.Details = &v
+// SetDetails gets a reference to the given interface{} and assigns it to the Details field.
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) SetDetails(v interface{}) {
+	o.Details = v
 }
 
-// GetRefresh returns the Refresh field value if set, zero value otherwise.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetRefresh() bool {
-	if o == nil || o.Refresh == nil {
-		var ret bool
+// GetRefresh returns the Refresh field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetRefresh() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Refresh
+	return o.Refresh
 }
 
 // GetRefreshOk returns a tuple with the Refresh field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetRefreshOk() (*bool, bool) {
-	if o == nil || o.Refresh == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetRefreshOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Refresh) {
 		return nil, false
 	}
-	return o.Refresh, true
+	return &o.Refresh, true
 }
 
 // HasRefresh returns a boolean if a field has been set.
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) HasRefresh() bool {
-	if o != nil && o.Refresh != nil {
+	if o != nil && IsNil(o.Refresh) {
 		return true
 	}
 
 	return false
 }
 
-// SetRefresh gets a reference to the given bool and assigns it to the Refresh field.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) SetRefresh(v bool) {
-	o.Refresh = &v
+// SetRefresh gets a reference to the given interface{} and assigns it to the Refresh field.
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) SetRefresh(v interface{}) {
+	o.Refresh = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -355,28 +367,37 @@ func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) 
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 func (o PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.PaymentType != nil {
 		toSerialize["payment_type"] = o.PaymentType
@@ -408,7 +429,7 @@ func (o PATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes) M
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHCheckoutComPaymentsCheckoutComPaymentId200ResponseDataAttributes struct {

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,18 +15,21 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes{}
+
 // PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes struct for PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes
 type PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes struct {
 	// The payment gateway's internal name.
-	Name *string `json:"name,omitempty"`
+	Name interface{} `json:"name,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 	// Indicates if the gateway will accept payment methods enabled in the Stripe dashboard.
-	AutoPayments *bool `json:"auto_payments,omitempty"`
+	AutoPayments interface{} `json:"auto_payments,omitempty"`
 }
 
 // NewPATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes instantiates a new PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes object
@@ -46,106 +49,109 @@ func NewPATCHStripeGatewaysStripeGatewayId200ResponseDataAttributesWithDefaults(
 	return &this
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetName() string {
-	if o == nil || o.Name == nil {
-		var ret string
+// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetName() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Name
+	return o.Name
 }
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return o.Name, true
+	return &o.Name, true
 }
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) SetName(v string) {
-	o.Name = &v
+// SetName gets a reference to the given interface{} and assigns it to the Name field.
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) SetName(v interface{}) {
+	o.Name = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -153,60 +159,70 @@ func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetMetadat
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
-// GetAutoPayments returns the AutoPayments field value if set, zero value otherwise.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetAutoPayments() bool {
-	if o == nil || o.AutoPayments == nil {
-		var ret bool
+// GetAutoPayments returns the AutoPayments field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetAutoPayments() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.AutoPayments
+	return o.AutoPayments
 }
 
 // GetAutoPaymentsOk returns a tuple with the AutoPayments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetAutoPaymentsOk() (*bool, bool) {
-	if o == nil || o.AutoPayments == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) GetAutoPaymentsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.AutoPayments) {
 		return nil, false
 	}
-	return o.AutoPayments, true
+	return &o.AutoPayments, true
 }
 
 // HasAutoPayments returns a boolean if a field has been set.
 func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) HasAutoPayments() bool {
-	if o != nil && o.AutoPayments != nil {
+	if o != nil && IsNil(o.AutoPayments) {
 		return true
 	}
 
 	return false
 }
 
-// SetAutoPayments gets a reference to the given bool and assigns it to the AutoPayments field.
-func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) SetAutoPayments(v bool) {
-	o.AutoPayments = &v
+// SetAutoPayments gets a reference to the given interface{} and assigns it to the AutoPayments field.
+func (o *PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) SetAutoPayments(v interface{}) {
+	o.AutoPayments = v
 }
 
 func (o PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -223,7 +239,7 @@ func (o PATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes) MarshalJSON
 	if o.AutoPayments != nil {
 		toSerialize["auto_payments"] = o.AutoPayments
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes struct {

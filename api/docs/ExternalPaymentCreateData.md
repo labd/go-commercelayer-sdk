@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
+**Type** | **interface{}** | The resource&#39;s type | 
 **Attributes** | [**POSTExternalPayments201ResponseDataAttributes**](POSTExternalPayments201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentCreateDataRelationships**](AdyenPaymentCreateDataRelationships.md) |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewExternalPaymentCreateData
 
-`func NewExternalPaymentCreateData(type_ string, attributes POSTExternalPayments201ResponseDataAttributes, ) *ExternalPaymentCreateData`
+`func NewExternalPaymentCreateData(type_ interface{}, attributes POSTExternalPayments201ResponseDataAttributes, ) *ExternalPaymentCreateData`
 
 NewExternalPaymentCreateData instantiates a new ExternalPaymentCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -29,24 +29,34 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *ExternalPaymentCreateData) GetType() string`
+`func (o *ExternalPaymentCreateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *ExternalPaymentCreateData) GetTypeOk() (*string, bool)`
+`func (o *ExternalPaymentCreateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *ExternalPaymentCreateData) SetType(v string)`
+`func (o *ExternalPaymentCreateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *ExternalPaymentCreateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *ExternalPaymentCreateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
 `func (o *ExternalPaymentCreateData) GetAttributes() POSTExternalPayments201ResponseDataAttributes`

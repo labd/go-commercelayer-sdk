@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETWireTransfers200ResponseDataInner**](GETWireTransfers200ResponseDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETWireTransfersWireTransferId200ResponseData**](GETWireTransfersWireTransferId200ResponseData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETWireTransfersWireTransferId200Response) GetData() GETWireTransfers200ResponseDataInner`
+`func (o *GETWireTransfersWireTransferId200Response) GetData() GETWireTransfersWireTransferId200ResponseData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETWireTransfersWireTransferId200Response) GetDataOk() (*GETWireTransfers200ResponseDataInner, bool)`
+`func (o *GETWireTransfersWireTransferId200Response) GetDataOk() (*GETWireTransfersWireTransferId200ResponseData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETWireTransfersWireTransferId200Response) SetData(v GETWireTransfers200ResponseDataInner)`
+`func (o *GETWireTransfersWireTransferId200Response) SetData(v GETWireTransfersWireTransferId200ResponseData)`
 
 SetData sets Data field to given value.
 

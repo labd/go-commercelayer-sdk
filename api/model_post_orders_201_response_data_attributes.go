@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,40 +15,43 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTOrders201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTOrders201ResponseDataAttributes{}
+
 // POSTOrders201ResponseDataAttributes struct for POSTOrders201ResponseDataAttributes
 type POSTOrders201ResponseDataAttributes struct {
 	// Save this attribute as 'false' if you want prevent the order to be refreshed automatically at each change (much faster).
-	Autorefresh *bool `json:"autorefresh,omitempty"`
+	Autorefresh interface{} `json:"autorefresh,omitempty"`
 	// Indicates if the order has been placed as guest.
-	Guest *bool `json:"guest,omitempty"`
+	Guest interface{} `json:"guest,omitempty"`
 	// The email address of the associated customer. When creating or updating an order, this is a shortcut to find or create the associated customer by email.
-	CustomerEmail *string `json:"customer_email,omitempty"`
+	CustomerEmail interface{} `json:"customer_email,omitempty"`
 	// The password of the associated customer. When creating or updating an order, this is a shortcut to sign up the associated customer.
-	CustomerPassword *string `json:"customer_password,omitempty"`
+	CustomerPassword interface{} `json:"customer_password,omitempty"`
 	// The preferred language code (ISO 639-1) to be used when communicating with the customer. This can be useful when sending the order to 3rd party marketing tools and CRMs. If the language is supported, the hosted checkout will be localized accordingly.
-	LanguageCode *string `json:"language_code,omitempty"`
+	LanguageCode interface{} `json:"language_code,omitempty"`
 	// The country code that you want the shipping address to be locked to. This can be useful to make sure the shipping address belongs to a given shipping country, e.g. the one selected in a country selector page.
-	ShippingCountryCodeLock *string `json:"shipping_country_code_lock,omitempty"`
+	ShippingCountryCodeLock interface{} `json:"shipping_country_code_lock,omitempty"`
 	// The coupon code to be used for the order. If valid, it triggers a promotion adding a discount line item to the order.
-	CouponCode *string `json:"coupon_code,omitempty"`
+	CouponCode interface{} `json:"coupon_code,omitempty"`
 	// The gift card code (at least the first 8 characters) to be used for the order. If valid, it uses the gift card balance to pay for the order.
-	GiftCardCode *string `json:"gift_card_code,omitempty"`
+	GiftCardCode interface{} `json:"gift_card_code,omitempty"`
 	// The gift card or coupon code (at least the first 8 characters) to be used for the order. If a gift card mathes, it uses the gift card balance to pay for the order. Otherwise it tries to find a valid coupon code and applies the associated discount.
-	GiftCardOrCouponCode *string `json:"gift_card_or_coupon_code,omitempty"`
+	GiftCardOrCouponCode interface{} `json:"gift_card_or_coupon_code,omitempty"`
 	// The cart url on your site. If present, it will be used on our hosted checkout application.
-	CartUrl *string `json:"cart_url,omitempty"`
+	CartUrl interface{} `json:"cart_url,omitempty"`
 	// The return url on your site. If present, it will be used on our hosted checkout application.
-	ReturnUrl *string `json:"return_url,omitempty"`
+	ReturnUrl interface{} `json:"return_url,omitempty"`
 	// The terms and conditions url on your site. If present, it will be used on our hosted checkout application.
-	TermsUrl *string `json:"terms_url,omitempty"`
+	TermsUrl interface{} `json:"terms_url,omitempty"`
 	// The privacy policy url on your site. If present, it will be used on our hosted checkout application.
-	PrivacyUrl *string `json:"privacy_url,omitempty"`
+	PrivacyUrl interface{} `json:"privacy_url,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 }
 
 // NewPOSTOrders201ResponseDataAttributes instantiates a new POSTOrders201ResponseDataAttributes object
@@ -68,490 +71,505 @@ func NewPOSTOrders201ResponseDataAttributesWithDefaults() *POSTOrders201Response
 	return &this
 }
 
-// GetAutorefresh returns the Autorefresh field value if set, zero value otherwise.
-func (o *POSTOrders201ResponseDataAttributes) GetAutorefresh() bool {
-	if o == nil || o.Autorefresh == nil {
-		var ret bool
+// GetAutorefresh returns the Autorefresh field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTOrders201ResponseDataAttributes) GetAutorefresh() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Autorefresh
+	return o.Autorefresh
 }
 
 // GetAutorefreshOk returns a tuple with the Autorefresh field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTOrders201ResponseDataAttributes) GetAutorefreshOk() (*bool, bool) {
-	if o == nil || o.Autorefresh == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTOrders201ResponseDataAttributes) GetAutorefreshOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Autorefresh) {
 		return nil, false
 	}
-	return o.Autorefresh, true
+	return &o.Autorefresh, true
 }
 
 // HasAutorefresh returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasAutorefresh() bool {
-	if o != nil && o.Autorefresh != nil {
+	if o != nil && IsNil(o.Autorefresh) {
 		return true
 	}
 
 	return false
 }
 
-// SetAutorefresh gets a reference to the given bool and assigns it to the Autorefresh field.
-func (o *POSTOrders201ResponseDataAttributes) SetAutorefresh(v bool) {
-	o.Autorefresh = &v
+// SetAutorefresh gets a reference to the given interface{} and assigns it to the Autorefresh field.
+func (o *POSTOrders201ResponseDataAttributes) SetAutorefresh(v interface{}) {
+	o.Autorefresh = v
 }
 
-// GetGuest returns the Guest field value if set, zero value otherwise.
-func (o *POSTOrders201ResponseDataAttributes) GetGuest() bool {
-	if o == nil || o.Guest == nil {
-		var ret bool
+// GetGuest returns the Guest field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTOrders201ResponseDataAttributes) GetGuest() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Guest
+	return o.Guest
 }
 
 // GetGuestOk returns a tuple with the Guest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTOrders201ResponseDataAttributes) GetGuestOk() (*bool, bool) {
-	if o == nil || o.Guest == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTOrders201ResponseDataAttributes) GetGuestOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Guest) {
 		return nil, false
 	}
-	return o.Guest, true
+	return &o.Guest, true
 }
 
 // HasGuest returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasGuest() bool {
-	if o != nil && o.Guest != nil {
+	if o != nil && IsNil(o.Guest) {
 		return true
 	}
 
 	return false
 }
 
-// SetGuest gets a reference to the given bool and assigns it to the Guest field.
-func (o *POSTOrders201ResponseDataAttributes) SetGuest(v bool) {
-	o.Guest = &v
+// SetGuest gets a reference to the given interface{} and assigns it to the Guest field.
+func (o *POSTOrders201ResponseDataAttributes) SetGuest(v interface{}) {
+	o.Guest = v
 }
 
-// GetCustomerEmail returns the CustomerEmail field value if set, zero value otherwise.
-func (o *POSTOrders201ResponseDataAttributes) GetCustomerEmail() string {
-	if o == nil || o.CustomerEmail == nil {
-		var ret string
+// GetCustomerEmail returns the CustomerEmail field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTOrders201ResponseDataAttributes) GetCustomerEmail() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CustomerEmail
+	return o.CustomerEmail
 }
 
 // GetCustomerEmailOk returns a tuple with the CustomerEmail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTOrders201ResponseDataAttributes) GetCustomerEmailOk() (*string, bool) {
-	if o == nil || o.CustomerEmail == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTOrders201ResponseDataAttributes) GetCustomerEmailOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CustomerEmail) {
 		return nil, false
 	}
-	return o.CustomerEmail, true
+	return &o.CustomerEmail, true
 }
 
 // HasCustomerEmail returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasCustomerEmail() bool {
-	if o != nil && o.CustomerEmail != nil {
+	if o != nil && IsNil(o.CustomerEmail) {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomerEmail gets a reference to the given string and assigns it to the CustomerEmail field.
-func (o *POSTOrders201ResponseDataAttributes) SetCustomerEmail(v string) {
-	o.CustomerEmail = &v
+// SetCustomerEmail gets a reference to the given interface{} and assigns it to the CustomerEmail field.
+func (o *POSTOrders201ResponseDataAttributes) SetCustomerEmail(v interface{}) {
+	o.CustomerEmail = v
 }
 
-// GetCustomerPassword returns the CustomerPassword field value if set, zero value otherwise.
-func (o *POSTOrders201ResponseDataAttributes) GetCustomerPassword() string {
-	if o == nil || o.CustomerPassword == nil {
-		var ret string
+// GetCustomerPassword returns the CustomerPassword field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTOrders201ResponseDataAttributes) GetCustomerPassword() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CustomerPassword
+	return o.CustomerPassword
 }
 
 // GetCustomerPasswordOk returns a tuple with the CustomerPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTOrders201ResponseDataAttributes) GetCustomerPasswordOk() (*string, bool) {
-	if o == nil || o.CustomerPassword == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTOrders201ResponseDataAttributes) GetCustomerPasswordOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CustomerPassword) {
 		return nil, false
 	}
-	return o.CustomerPassword, true
+	return &o.CustomerPassword, true
 }
 
 // HasCustomerPassword returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasCustomerPassword() bool {
-	if o != nil && o.CustomerPassword != nil {
+	if o != nil && IsNil(o.CustomerPassword) {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomerPassword gets a reference to the given string and assigns it to the CustomerPassword field.
-func (o *POSTOrders201ResponseDataAttributes) SetCustomerPassword(v string) {
-	o.CustomerPassword = &v
+// SetCustomerPassword gets a reference to the given interface{} and assigns it to the CustomerPassword field.
+func (o *POSTOrders201ResponseDataAttributes) SetCustomerPassword(v interface{}) {
+	o.CustomerPassword = v
 }
 
-// GetLanguageCode returns the LanguageCode field value if set, zero value otherwise.
-func (o *POSTOrders201ResponseDataAttributes) GetLanguageCode() string {
-	if o == nil || o.LanguageCode == nil {
-		var ret string
+// GetLanguageCode returns the LanguageCode field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTOrders201ResponseDataAttributes) GetLanguageCode() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.LanguageCode
+	return o.LanguageCode
 }
 
 // GetLanguageCodeOk returns a tuple with the LanguageCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTOrders201ResponseDataAttributes) GetLanguageCodeOk() (*string, bool) {
-	if o == nil || o.LanguageCode == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTOrders201ResponseDataAttributes) GetLanguageCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.LanguageCode) {
 		return nil, false
 	}
-	return o.LanguageCode, true
+	return &o.LanguageCode, true
 }
 
 // HasLanguageCode returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasLanguageCode() bool {
-	if o != nil && o.LanguageCode != nil {
+	if o != nil && IsNil(o.LanguageCode) {
 		return true
 	}
 
 	return false
 }
 
-// SetLanguageCode gets a reference to the given string and assigns it to the LanguageCode field.
-func (o *POSTOrders201ResponseDataAttributes) SetLanguageCode(v string) {
-	o.LanguageCode = &v
+// SetLanguageCode gets a reference to the given interface{} and assigns it to the LanguageCode field.
+func (o *POSTOrders201ResponseDataAttributes) SetLanguageCode(v interface{}) {
+	o.LanguageCode = v
 }
 
-// GetShippingCountryCodeLock returns the ShippingCountryCodeLock field value if set, zero value otherwise.
-func (o *POSTOrders201ResponseDataAttributes) GetShippingCountryCodeLock() string {
-	if o == nil || o.ShippingCountryCodeLock == nil {
-		var ret string
+// GetShippingCountryCodeLock returns the ShippingCountryCodeLock field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTOrders201ResponseDataAttributes) GetShippingCountryCodeLock() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ShippingCountryCodeLock
+	return o.ShippingCountryCodeLock
 }
 
 // GetShippingCountryCodeLockOk returns a tuple with the ShippingCountryCodeLock field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTOrders201ResponseDataAttributes) GetShippingCountryCodeLockOk() (*string, bool) {
-	if o == nil || o.ShippingCountryCodeLock == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTOrders201ResponseDataAttributes) GetShippingCountryCodeLockOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ShippingCountryCodeLock) {
 		return nil, false
 	}
-	return o.ShippingCountryCodeLock, true
+	return &o.ShippingCountryCodeLock, true
 }
 
 // HasShippingCountryCodeLock returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasShippingCountryCodeLock() bool {
-	if o != nil && o.ShippingCountryCodeLock != nil {
+	if o != nil && IsNil(o.ShippingCountryCodeLock) {
 		return true
 	}
 
 	return false
 }
 
-// SetShippingCountryCodeLock gets a reference to the given string and assigns it to the ShippingCountryCodeLock field.
-func (o *POSTOrders201ResponseDataAttributes) SetShippingCountryCodeLock(v string) {
-	o.ShippingCountryCodeLock = &v
+// SetShippingCountryCodeLock gets a reference to the given interface{} and assigns it to the ShippingCountryCodeLock field.
+func (o *POSTOrders201ResponseDataAttributes) SetShippingCountryCodeLock(v interface{}) {
+	o.ShippingCountryCodeLock = v
 }
 
-// GetCouponCode returns the CouponCode field value if set, zero value otherwise.
-func (o *POSTOrders201ResponseDataAttributes) GetCouponCode() string {
-	if o == nil || o.CouponCode == nil {
-		var ret string
+// GetCouponCode returns the CouponCode field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTOrders201ResponseDataAttributes) GetCouponCode() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CouponCode
+	return o.CouponCode
 }
 
 // GetCouponCodeOk returns a tuple with the CouponCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTOrders201ResponseDataAttributes) GetCouponCodeOk() (*string, bool) {
-	if o == nil || o.CouponCode == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTOrders201ResponseDataAttributes) GetCouponCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CouponCode) {
 		return nil, false
 	}
-	return o.CouponCode, true
+	return &o.CouponCode, true
 }
 
 // HasCouponCode returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasCouponCode() bool {
-	if o != nil && o.CouponCode != nil {
+	if o != nil && IsNil(o.CouponCode) {
 		return true
 	}
 
 	return false
 }
 
-// SetCouponCode gets a reference to the given string and assigns it to the CouponCode field.
-func (o *POSTOrders201ResponseDataAttributes) SetCouponCode(v string) {
-	o.CouponCode = &v
+// SetCouponCode gets a reference to the given interface{} and assigns it to the CouponCode field.
+func (o *POSTOrders201ResponseDataAttributes) SetCouponCode(v interface{}) {
+	o.CouponCode = v
 }
 
-// GetGiftCardCode returns the GiftCardCode field value if set, zero value otherwise.
-func (o *POSTOrders201ResponseDataAttributes) GetGiftCardCode() string {
-	if o == nil || o.GiftCardCode == nil {
-		var ret string
+// GetGiftCardCode returns the GiftCardCode field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTOrders201ResponseDataAttributes) GetGiftCardCode() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.GiftCardCode
+	return o.GiftCardCode
 }
 
 // GetGiftCardCodeOk returns a tuple with the GiftCardCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTOrders201ResponseDataAttributes) GetGiftCardCodeOk() (*string, bool) {
-	if o == nil || o.GiftCardCode == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTOrders201ResponseDataAttributes) GetGiftCardCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.GiftCardCode) {
 		return nil, false
 	}
-	return o.GiftCardCode, true
+	return &o.GiftCardCode, true
 }
 
 // HasGiftCardCode returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasGiftCardCode() bool {
-	if o != nil && o.GiftCardCode != nil {
+	if o != nil && IsNil(o.GiftCardCode) {
 		return true
 	}
 
 	return false
 }
 
-// SetGiftCardCode gets a reference to the given string and assigns it to the GiftCardCode field.
-func (o *POSTOrders201ResponseDataAttributes) SetGiftCardCode(v string) {
-	o.GiftCardCode = &v
+// SetGiftCardCode gets a reference to the given interface{} and assigns it to the GiftCardCode field.
+func (o *POSTOrders201ResponseDataAttributes) SetGiftCardCode(v interface{}) {
+	o.GiftCardCode = v
 }
 
-// GetGiftCardOrCouponCode returns the GiftCardOrCouponCode field value if set, zero value otherwise.
-func (o *POSTOrders201ResponseDataAttributes) GetGiftCardOrCouponCode() string {
-	if o == nil || o.GiftCardOrCouponCode == nil {
-		var ret string
+// GetGiftCardOrCouponCode returns the GiftCardOrCouponCode field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTOrders201ResponseDataAttributes) GetGiftCardOrCouponCode() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.GiftCardOrCouponCode
+	return o.GiftCardOrCouponCode
 }
 
 // GetGiftCardOrCouponCodeOk returns a tuple with the GiftCardOrCouponCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTOrders201ResponseDataAttributes) GetGiftCardOrCouponCodeOk() (*string, bool) {
-	if o == nil || o.GiftCardOrCouponCode == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTOrders201ResponseDataAttributes) GetGiftCardOrCouponCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.GiftCardOrCouponCode) {
 		return nil, false
 	}
-	return o.GiftCardOrCouponCode, true
+	return &o.GiftCardOrCouponCode, true
 }
 
 // HasGiftCardOrCouponCode returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasGiftCardOrCouponCode() bool {
-	if o != nil && o.GiftCardOrCouponCode != nil {
+	if o != nil && IsNil(o.GiftCardOrCouponCode) {
 		return true
 	}
 
 	return false
 }
 
-// SetGiftCardOrCouponCode gets a reference to the given string and assigns it to the GiftCardOrCouponCode field.
-func (o *POSTOrders201ResponseDataAttributes) SetGiftCardOrCouponCode(v string) {
-	o.GiftCardOrCouponCode = &v
+// SetGiftCardOrCouponCode gets a reference to the given interface{} and assigns it to the GiftCardOrCouponCode field.
+func (o *POSTOrders201ResponseDataAttributes) SetGiftCardOrCouponCode(v interface{}) {
+	o.GiftCardOrCouponCode = v
 }
 
-// GetCartUrl returns the CartUrl field value if set, zero value otherwise.
-func (o *POSTOrders201ResponseDataAttributes) GetCartUrl() string {
-	if o == nil || o.CartUrl == nil {
-		var ret string
+// GetCartUrl returns the CartUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTOrders201ResponseDataAttributes) GetCartUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CartUrl
+	return o.CartUrl
 }
 
 // GetCartUrlOk returns a tuple with the CartUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTOrders201ResponseDataAttributes) GetCartUrlOk() (*string, bool) {
-	if o == nil || o.CartUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTOrders201ResponseDataAttributes) GetCartUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CartUrl) {
 		return nil, false
 	}
-	return o.CartUrl, true
+	return &o.CartUrl, true
 }
 
 // HasCartUrl returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasCartUrl() bool {
-	if o != nil && o.CartUrl != nil {
+	if o != nil && IsNil(o.CartUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetCartUrl gets a reference to the given string and assigns it to the CartUrl field.
-func (o *POSTOrders201ResponseDataAttributes) SetCartUrl(v string) {
-	o.CartUrl = &v
+// SetCartUrl gets a reference to the given interface{} and assigns it to the CartUrl field.
+func (o *POSTOrders201ResponseDataAttributes) SetCartUrl(v interface{}) {
+	o.CartUrl = v
 }
 
-// GetReturnUrl returns the ReturnUrl field value if set, zero value otherwise.
-func (o *POSTOrders201ResponseDataAttributes) GetReturnUrl() string {
-	if o == nil || o.ReturnUrl == nil {
-		var ret string
+// GetReturnUrl returns the ReturnUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTOrders201ResponseDataAttributes) GetReturnUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReturnUrl
+	return o.ReturnUrl
 }
 
 // GetReturnUrlOk returns a tuple with the ReturnUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTOrders201ResponseDataAttributes) GetReturnUrlOk() (*string, bool) {
-	if o == nil || o.ReturnUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTOrders201ResponseDataAttributes) GetReturnUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReturnUrl) {
 		return nil, false
 	}
-	return o.ReturnUrl, true
+	return &o.ReturnUrl, true
 }
 
 // HasReturnUrl returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasReturnUrl() bool {
-	if o != nil && o.ReturnUrl != nil {
+	if o != nil && IsNil(o.ReturnUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetReturnUrl gets a reference to the given string and assigns it to the ReturnUrl field.
-func (o *POSTOrders201ResponseDataAttributes) SetReturnUrl(v string) {
-	o.ReturnUrl = &v
+// SetReturnUrl gets a reference to the given interface{} and assigns it to the ReturnUrl field.
+func (o *POSTOrders201ResponseDataAttributes) SetReturnUrl(v interface{}) {
+	o.ReturnUrl = v
 }
 
-// GetTermsUrl returns the TermsUrl field value if set, zero value otherwise.
-func (o *POSTOrders201ResponseDataAttributes) GetTermsUrl() string {
-	if o == nil || o.TermsUrl == nil {
-		var ret string
+// GetTermsUrl returns the TermsUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTOrders201ResponseDataAttributes) GetTermsUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.TermsUrl
+	return o.TermsUrl
 }
 
 // GetTermsUrlOk returns a tuple with the TermsUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTOrders201ResponseDataAttributes) GetTermsUrlOk() (*string, bool) {
-	if o == nil || o.TermsUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTOrders201ResponseDataAttributes) GetTermsUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.TermsUrl) {
 		return nil, false
 	}
-	return o.TermsUrl, true
+	return &o.TermsUrl, true
 }
 
 // HasTermsUrl returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasTermsUrl() bool {
-	if o != nil && o.TermsUrl != nil {
+	if o != nil && IsNil(o.TermsUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetTermsUrl gets a reference to the given string and assigns it to the TermsUrl field.
-func (o *POSTOrders201ResponseDataAttributes) SetTermsUrl(v string) {
-	o.TermsUrl = &v
+// SetTermsUrl gets a reference to the given interface{} and assigns it to the TermsUrl field.
+func (o *POSTOrders201ResponseDataAttributes) SetTermsUrl(v interface{}) {
+	o.TermsUrl = v
 }
 
-// GetPrivacyUrl returns the PrivacyUrl field value if set, zero value otherwise.
-func (o *POSTOrders201ResponseDataAttributes) GetPrivacyUrl() string {
-	if o == nil || o.PrivacyUrl == nil {
-		var ret string
+// GetPrivacyUrl returns the PrivacyUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTOrders201ResponseDataAttributes) GetPrivacyUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.PrivacyUrl
+	return o.PrivacyUrl
 }
 
 // GetPrivacyUrlOk returns a tuple with the PrivacyUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTOrders201ResponseDataAttributes) GetPrivacyUrlOk() (*string, bool) {
-	if o == nil || o.PrivacyUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTOrders201ResponseDataAttributes) GetPrivacyUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PrivacyUrl) {
 		return nil, false
 	}
-	return o.PrivacyUrl, true
+	return &o.PrivacyUrl, true
 }
 
 // HasPrivacyUrl returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasPrivacyUrl() bool {
-	if o != nil && o.PrivacyUrl != nil {
+	if o != nil && IsNil(o.PrivacyUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetPrivacyUrl gets a reference to the given string and assigns it to the PrivacyUrl field.
-func (o *POSTOrders201ResponseDataAttributes) SetPrivacyUrl(v string) {
-	o.PrivacyUrl = &v
+// SetPrivacyUrl gets a reference to the given interface{} and assigns it to the PrivacyUrl field.
+func (o *POSTOrders201ResponseDataAttributes) SetPrivacyUrl(v interface{}) {
+	o.PrivacyUrl = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *POSTOrders201ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTOrders201ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTOrders201ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTOrders201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *POSTOrders201ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *POSTOrders201ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *POSTOrders201ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTOrders201ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTOrders201ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTOrders201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *POSTOrders201ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *POSTOrders201ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *POSTOrders201ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTOrders201ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -559,28 +577,37 @@ func (o *POSTOrders201ResponseDataAttributes) GetMetadata() map[string]interface
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTOrders201ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTOrders201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTOrders201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *POSTOrders201ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *POSTOrders201ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 func (o POSTOrders201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTOrders201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Autorefresh != nil {
 		toSerialize["autorefresh"] = o.Autorefresh
@@ -630,7 +657,7 @@ func (o POSTOrders201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTOrders201ResponseDataAttributes struct {

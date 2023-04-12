@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type ShippingMethodTiersApiService service
 type ShippingMethodTiersApiGETShippingMethodIdShippingMethodTiersRequest struct {
 	ctx              context.Context
 	ApiService       *ShippingMethodTiersApiService
-	shippingMethodId string
+	shippingMethodId interface{}
 }
 
 func (r ShippingMethodTiersApiGETShippingMethodIdShippingMethodTiersRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Retrieve the shipping method tiers associated to the shipping method
 	@param shippingMethodId The resource's id
 	@return ShippingMethodTiersApiGETShippingMethodIdShippingMethodTiersRequest
 */
-func (a *ShippingMethodTiersApiService) GETShippingMethodIdShippingMethodTiers(ctx context.Context, shippingMethodId string) ShippingMethodTiersApiGETShippingMethodIdShippingMethodTiersRequest {
+func (a *ShippingMethodTiersApiService) GETShippingMethodIdShippingMethodTiers(ctx context.Context, shippingMethodId interface{}) ShippingMethodTiersApiGETShippingMethodIdShippingMethodTiersRequest {
 	return ShippingMethodTiersApiGETShippingMethodIdShippingMethodTiersRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -64,7 +64,7 @@ func (a *ShippingMethodTiersApiService) GETShippingMethodIdShippingMethodTiersEx
 	}
 
 	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}/shipping_method_tiers"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodId, "shippingMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *ShippingMethodTiersApiService) GETShippingMethodIdShippingMethodTiersEx
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *ShippingMethodTiersApiService) GETShippingMethodTiersExecute(r Shipping
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -218,7 +218,7 @@ func (a *ShippingMethodTiersApiService) GETShippingMethodTiersExecute(r Shipping
 type ShippingMethodTiersApiGETShippingMethodTiersShippingMethodTierIdRequest struct {
 	ctx                  context.Context
 	ApiService           *ShippingMethodTiersApiService
-	shippingMethodTierId string
+	shippingMethodTierId interface{}
 }
 
 func (r ShippingMethodTiersApiGETShippingMethodTiersShippingMethodTierIdRequest) Execute() (*GETShippingMethodTiersShippingMethodTierId200Response, *http.Response, error) {
@@ -234,7 +234,7 @@ Retrieve a shipping method tier
 	@param shippingMethodTierId The resource's id
 	@return ShippingMethodTiersApiGETShippingMethodTiersShippingMethodTierIdRequest
 */
-func (a *ShippingMethodTiersApiService) GETShippingMethodTiersShippingMethodTierId(ctx context.Context, shippingMethodTierId string) ShippingMethodTiersApiGETShippingMethodTiersShippingMethodTierIdRequest {
+func (a *ShippingMethodTiersApiService) GETShippingMethodTiersShippingMethodTierId(ctx context.Context, shippingMethodTierId interface{}) ShippingMethodTiersApiGETShippingMethodTiersShippingMethodTierIdRequest {
 	return ShippingMethodTiersApiGETShippingMethodTiersShippingMethodTierIdRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -259,7 +259,7 @@ func (a *ShippingMethodTiersApiService) GETShippingMethodTiersShippingMethodTier
 	}
 
 	localVarPath := localBasePath + "/shipping_method_tiers/{shippingMethodTierId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodTierId"+"}", url.PathEscape(parameterToString(r.shippingMethodTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodTierId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodTierId, "shippingMethodTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *ShippingMethodTiersApiService) GETShippingMethodTiersShippingMethodTier
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

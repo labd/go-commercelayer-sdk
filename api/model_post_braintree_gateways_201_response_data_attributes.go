@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,37 +15,40 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTBraintreeGateways201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTBraintreeGateways201ResponseDataAttributes{}
+
 // POSTBraintreeGateways201ResponseDataAttributes struct for POSTBraintreeGateways201ResponseDataAttributes
 type POSTBraintreeGateways201ResponseDataAttributes struct {
 	// The payment gateway's internal name.
-	Name string `json:"name"`
+	Name interface{} `json:"name"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 	// The gateway merchant account ID.
-	MerchantAccountId string `json:"merchant_account_id"`
+	MerchantAccountId interface{} `json:"merchant_account_id"`
 	// The gateway merchant ID.
-	MerchantId string `json:"merchant_id"`
+	MerchantId interface{} `json:"merchant_id"`
 	// The gateway API public key.
-	PublicKey string `json:"public_key"`
+	PublicKey interface{} `json:"public_key"`
 	// The gateway API private key.
-	PrivateKey string `json:"private_key"`
+	PrivateKey interface{} `json:"private_key"`
 	// The dynamic descriptor name. Must be composed by business name (3, 7 or 12 chars), an asterisk (*) and the product name (18, 14 or 9 chars), for a total length of 22 chars.
-	DescriptorName *string `json:"descriptor_name,omitempty"`
+	DescriptorName interface{} `json:"descriptor_name,omitempty"`
 	// The dynamic descriptor phone number. Must be 10-14 characters and can only contain numbers, dashes, parentheses and periods.
-	DescriptorPhone *string `json:"descriptor_phone,omitempty"`
+	DescriptorPhone interface{} `json:"descriptor_phone,omitempty"`
 	// The dynamic descriptor URL.
-	DescriptorUrl *string `json:"descriptor_url,omitempty"`
+	DescriptorUrl interface{} `json:"descriptor_url,omitempty"`
 }
 
 // NewPOSTBraintreeGateways201ResponseDataAttributes instantiates a new POSTBraintreeGateways201ResponseDataAttributes object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPOSTBraintreeGateways201ResponseDataAttributes(name string, merchantAccountId string, merchantId string, publicKey string, privateKey string) *POSTBraintreeGateways201ResponseDataAttributes {
+func NewPOSTBraintreeGateways201ResponseDataAttributes(name interface{}, merchantAccountId interface{}, merchantId interface{}, publicKey interface{}, privateKey interface{}) *POSTBraintreeGateways201ResponseDataAttributes {
 	this := POSTBraintreeGateways201ResponseDataAttributes{}
 	this.Name = name
 	this.MerchantAccountId = merchantAccountId
@@ -64,9 +67,10 @@ func NewPOSTBraintreeGateways201ResponseDataAttributesWithDefaults() *POSTBraint
 }
 
 // GetName returns the Name field value
-func (o *POSTBraintreeGateways201ResponseDataAttributes) GetName() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTBraintreeGateways201ResponseDataAttributes) GetName() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -75,86 +79,89 @@ func (o *POSTBraintreeGateways201ResponseDataAttributes) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
-func (o *POSTBraintreeGateways201ResponseDataAttributes) GetNameOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTBraintreeGateways201ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
 }
 
 // SetName sets field value
-func (o *POSTBraintreeGateways201ResponseDataAttributes) SetName(v string) {
+func (o *POSTBraintreeGateways201ResponseDataAttributes) SetName(v interface{}) {
 	o.Name = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *POSTBraintreeGateways201ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTBraintreeGateways201ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTBraintreeGateways201ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTBraintreeGateways201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTBraintreeGateways201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *POSTBraintreeGateways201ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *POSTBraintreeGateways201ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *POSTBraintreeGateways201ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTBraintreeGateways201ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTBraintreeGateways201ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTBraintreeGateways201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTBraintreeGateways201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *POSTBraintreeGateways201ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *POSTBraintreeGateways201ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *POSTBraintreeGateways201ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTBraintreeGateways201ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -162,31 +169,33 @@ func (o *POSTBraintreeGateways201ResponseDataAttributes) GetMetadata() map[strin
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTBraintreeGateways201ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTBraintreeGateways201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTBraintreeGateways201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *POSTBraintreeGateways201ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *POSTBraintreeGateways201ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 // GetMerchantAccountId returns the MerchantAccountId field value
-func (o *POSTBraintreeGateways201ResponseDataAttributes) GetMerchantAccountId() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTBraintreeGateways201ResponseDataAttributes) GetMerchantAccountId() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -195,22 +204,24 @@ func (o *POSTBraintreeGateways201ResponseDataAttributes) GetMerchantAccountId() 
 
 // GetMerchantAccountIdOk returns a tuple with the MerchantAccountId field value
 // and a boolean to check if the value has been set.
-func (o *POSTBraintreeGateways201ResponseDataAttributes) GetMerchantAccountIdOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTBraintreeGateways201ResponseDataAttributes) GetMerchantAccountIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.MerchantAccountId) {
 		return nil, false
 	}
 	return &o.MerchantAccountId, true
 }
 
 // SetMerchantAccountId sets field value
-func (o *POSTBraintreeGateways201ResponseDataAttributes) SetMerchantAccountId(v string) {
+func (o *POSTBraintreeGateways201ResponseDataAttributes) SetMerchantAccountId(v interface{}) {
 	o.MerchantAccountId = v
 }
 
 // GetMerchantId returns the MerchantId field value
-func (o *POSTBraintreeGateways201ResponseDataAttributes) GetMerchantId() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTBraintreeGateways201ResponseDataAttributes) GetMerchantId() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -219,22 +230,24 @@ func (o *POSTBraintreeGateways201ResponseDataAttributes) GetMerchantId() string 
 
 // GetMerchantIdOk returns a tuple with the MerchantId field value
 // and a boolean to check if the value has been set.
-func (o *POSTBraintreeGateways201ResponseDataAttributes) GetMerchantIdOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTBraintreeGateways201ResponseDataAttributes) GetMerchantIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.MerchantId) {
 		return nil, false
 	}
 	return &o.MerchantId, true
 }
 
 // SetMerchantId sets field value
-func (o *POSTBraintreeGateways201ResponseDataAttributes) SetMerchantId(v string) {
+func (o *POSTBraintreeGateways201ResponseDataAttributes) SetMerchantId(v interface{}) {
 	o.MerchantId = v
 }
 
 // GetPublicKey returns the PublicKey field value
-func (o *POSTBraintreeGateways201ResponseDataAttributes) GetPublicKey() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTBraintreeGateways201ResponseDataAttributes) GetPublicKey() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -243,22 +256,24 @@ func (o *POSTBraintreeGateways201ResponseDataAttributes) GetPublicKey() string {
 
 // GetPublicKeyOk returns a tuple with the PublicKey field value
 // and a boolean to check if the value has been set.
-func (o *POSTBraintreeGateways201ResponseDataAttributes) GetPublicKeyOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTBraintreeGateways201ResponseDataAttributes) GetPublicKeyOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PublicKey) {
 		return nil, false
 	}
 	return &o.PublicKey, true
 }
 
 // SetPublicKey sets field value
-func (o *POSTBraintreeGateways201ResponseDataAttributes) SetPublicKey(v string) {
+func (o *POSTBraintreeGateways201ResponseDataAttributes) SetPublicKey(v interface{}) {
 	o.PublicKey = v
 }
 
 // GetPrivateKey returns the PrivateKey field value
-func (o *POSTBraintreeGateways201ResponseDataAttributes) GetPrivateKey() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTBraintreeGateways201ResponseDataAttributes) GetPrivateKey() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -267,117 +282,129 @@ func (o *POSTBraintreeGateways201ResponseDataAttributes) GetPrivateKey() string 
 
 // GetPrivateKeyOk returns a tuple with the PrivateKey field value
 // and a boolean to check if the value has been set.
-func (o *POSTBraintreeGateways201ResponseDataAttributes) GetPrivateKeyOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTBraintreeGateways201ResponseDataAttributes) GetPrivateKeyOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PrivateKey) {
 		return nil, false
 	}
 	return &o.PrivateKey, true
 }
 
 // SetPrivateKey sets field value
-func (o *POSTBraintreeGateways201ResponseDataAttributes) SetPrivateKey(v string) {
+func (o *POSTBraintreeGateways201ResponseDataAttributes) SetPrivateKey(v interface{}) {
 	o.PrivateKey = v
 }
 
-// GetDescriptorName returns the DescriptorName field value if set, zero value otherwise.
-func (o *POSTBraintreeGateways201ResponseDataAttributes) GetDescriptorName() string {
-	if o == nil || o.DescriptorName == nil {
-		var ret string
+// GetDescriptorName returns the DescriptorName field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTBraintreeGateways201ResponseDataAttributes) GetDescriptorName() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.DescriptorName
+	return o.DescriptorName
 }
 
 // GetDescriptorNameOk returns a tuple with the DescriptorName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTBraintreeGateways201ResponseDataAttributes) GetDescriptorNameOk() (*string, bool) {
-	if o == nil || o.DescriptorName == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTBraintreeGateways201ResponseDataAttributes) GetDescriptorNameOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.DescriptorName) {
 		return nil, false
 	}
-	return o.DescriptorName, true
+	return &o.DescriptorName, true
 }
 
 // HasDescriptorName returns a boolean if a field has been set.
 func (o *POSTBraintreeGateways201ResponseDataAttributes) HasDescriptorName() bool {
-	if o != nil && o.DescriptorName != nil {
+	if o != nil && IsNil(o.DescriptorName) {
 		return true
 	}
 
 	return false
 }
 
-// SetDescriptorName gets a reference to the given string and assigns it to the DescriptorName field.
-func (o *POSTBraintreeGateways201ResponseDataAttributes) SetDescriptorName(v string) {
-	o.DescriptorName = &v
+// SetDescriptorName gets a reference to the given interface{} and assigns it to the DescriptorName field.
+func (o *POSTBraintreeGateways201ResponseDataAttributes) SetDescriptorName(v interface{}) {
+	o.DescriptorName = v
 }
 
-// GetDescriptorPhone returns the DescriptorPhone field value if set, zero value otherwise.
-func (o *POSTBraintreeGateways201ResponseDataAttributes) GetDescriptorPhone() string {
-	if o == nil || o.DescriptorPhone == nil {
-		var ret string
+// GetDescriptorPhone returns the DescriptorPhone field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTBraintreeGateways201ResponseDataAttributes) GetDescriptorPhone() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.DescriptorPhone
+	return o.DescriptorPhone
 }
 
 // GetDescriptorPhoneOk returns a tuple with the DescriptorPhone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTBraintreeGateways201ResponseDataAttributes) GetDescriptorPhoneOk() (*string, bool) {
-	if o == nil || o.DescriptorPhone == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTBraintreeGateways201ResponseDataAttributes) GetDescriptorPhoneOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.DescriptorPhone) {
 		return nil, false
 	}
-	return o.DescriptorPhone, true
+	return &o.DescriptorPhone, true
 }
 
 // HasDescriptorPhone returns a boolean if a field has been set.
 func (o *POSTBraintreeGateways201ResponseDataAttributes) HasDescriptorPhone() bool {
-	if o != nil && o.DescriptorPhone != nil {
+	if o != nil && IsNil(o.DescriptorPhone) {
 		return true
 	}
 
 	return false
 }
 
-// SetDescriptorPhone gets a reference to the given string and assigns it to the DescriptorPhone field.
-func (o *POSTBraintreeGateways201ResponseDataAttributes) SetDescriptorPhone(v string) {
-	o.DescriptorPhone = &v
+// SetDescriptorPhone gets a reference to the given interface{} and assigns it to the DescriptorPhone field.
+func (o *POSTBraintreeGateways201ResponseDataAttributes) SetDescriptorPhone(v interface{}) {
+	o.DescriptorPhone = v
 }
 
-// GetDescriptorUrl returns the DescriptorUrl field value if set, zero value otherwise.
-func (o *POSTBraintreeGateways201ResponseDataAttributes) GetDescriptorUrl() string {
-	if o == nil || o.DescriptorUrl == nil {
-		var ret string
+// GetDescriptorUrl returns the DescriptorUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTBraintreeGateways201ResponseDataAttributes) GetDescriptorUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.DescriptorUrl
+	return o.DescriptorUrl
 }
 
 // GetDescriptorUrlOk returns a tuple with the DescriptorUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTBraintreeGateways201ResponseDataAttributes) GetDescriptorUrlOk() (*string, bool) {
-	if o == nil || o.DescriptorUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTBraintreeGateways201ResponseDataAttributes) GetDescriptorUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.DescriptorUrl) {
 		return nil, false
 	}
-	return o.DescriptorUrl, true
+	return &o.DescriptorUrl, true
 }
 
 // HasDescriptorUrl returns a boolean if a field has been set.
 func (o *POSTBraintreeGateways201ResponseDataAttributes) HasDescriptorUrl() bool {
-	if o != nil && o.DescriptorUrl != nil {
+	if o != nil && IsNil(o.DescriptorUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetDescriptorUrl gets a reference to the given string and assigns it to the DescriptorUrl field.
-func (o *POSTBraintreeGateways201ResponseDataAttributes) SetDescriptorUrl(v string) {
-	o.DescriptorUrl = &v
+// SetDescriptorUrl gets a reference to the given interface{} and assigns it to the DescriptorUrl field.
+func (o *POSTBraintreeGateways201ResponseDataAttributes) SetDescriptorUrl(v interface{}) {
+	o.DescriptorUrl = v
 }
 
 func (o POSTBraintreeGateways201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTBraintreeGateways201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
+	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
 	if o.Reference != nil {
@@ -389,16 +416,16 @@ func (o POSTBraintreeGateways201ResponseDataAttributes) MarshalJSON() ([]byte, e
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	if true {
+	if o.MerchantAccountId != nil {
 		toSerialize["merchant_account_id"] = o.MerchantAccountId
 	}
-	if true {
+	if o.MerchantId != nil {
 		toSerialize["merchant_id"] = o.MerchantId
 	}
-	if true {
+	if o.PublicKey != nil {
 		toSerialize["public_key"] = o.PublicKey
 	}
-	if true {
+	if o.PrivateKey != nil {
 		toSerialize["private_key"] = o.PrivateKey
 	}
 	if o.DescriptorName != nil {
@@ -410,7 +437,7 @@ func (o POSTBraintreeGateways201ResponseDataAttributes) MarshalJSON() ([]byte, e
 	if o.DescriptorUrl != nil {
 		toSerialize["descriptor_url"] = o.DescriptorUrl
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTBraintreeGateways201ResponseDataAttributes struct {

@@ -1,6 +1,6 @@
 # \ManualGatewaysApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,15 +29,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    manualGatewayId := "manualGatewayId_example" // string | The resource's id
+    manualGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ManualGatewaysApi.DELETEManualGatewaysManualGatewayId(context.Background(), manualGatewayId).Execute()
+    r, err := apiClient.ManualGatewaysApi.DELETEManualGatewaysManualGatewayId(context.Background(), manualGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ManualGatewaysApi.DELETEManualGatewaysManualGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -51,7 +51,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**manualGatewayId** | **string** | The resource&#39;s id | 
+**manualGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -158,11 +158,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    manualGatewayId := "manualGatewayId_example" // string | The resource's id
+    manualGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -182,7 +182,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**manualGatewayId** | **string** | The resource&#39;s id | 
+**manualGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -228,12 +228,12 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    manualGatewayUpdate := *openapiclient.NewManualGatewayUpdate(*openapiclient.NewManualGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHManualGatewaysManualGatewayId200ResponseDataAttributes())) // ManualGatewayUpdate | 
-    manualGatewayId := "manualGatewayId_example" // string | The resource's id
+    manualGatewayUpdate := *openapiclient.NewManualGatewayUpdate(*openapiclient.NewManualGatewayUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHManualGatewaysManualGatewayId200ResponseDataAttributes())) // ManualGatewayUpdate | 
+    manualGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -253,7 +253,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**manualGatewayId** | **string** | The resource&#39;s id | 
+**manualGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -300,11 +300,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    manualGatewayCreate := *openapiclient.NewManualGatewayCreate(*openapiclient.NewManualGatewayCreateData("Type_example", *openapiclient.NewPOSTManualGateways201ResponseDataAttributes("US payment gateway"))) // ManualGatewayCreate | 
+    manualGatewayCreate := *openapiclient.NewManualGatewayCreate(*openapiclient.NewManualGatewayCreateData(interface{}(123), *openapiclient.NewPOSTManualGateways201ResponseDataAttributes(interface{}(US payment gateway)))) // ManualGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

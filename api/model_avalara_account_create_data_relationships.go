@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the AvalaraAccountCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AvalaraAccountCreateDataRelationships{}
 
 // AvalaraAccountCreateDataRelationships struct for AvalaraAccountCreateDataRelationships
 type AvalaraAccountCreateDataRelationships struct {
@@ -39,7 +42,7 @@ func NewAvalaraAccountCreateDataRelationshipsWithDefaults() *AvalaraAccountCreat
 
 // GetTaxCategories returns the TaxCategories field value if set, zero value otherwise.
 func (o *AvalaraAccountCreateDataRelationships) GetTaxCategories() AvalaraAccountCreateDataRelationshipsTaxCategories {
-	if o == nil || o.TaxCategories == nil {
+	if o == nil || IsNil(o.TaxCategories) {
 		var ret AvalaraAccountCreateDataRelationshipsTaxCategories
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *AvalaraAccountCreateDataRelationships) GetTaxCategories() AvalaraAccoun
 // GetTaxCategoriesOk returns a tuple with the TaxCategories field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AvalaraAccountCreateDataRelationships) GetTaxCategoriesOk() (*AvalaraAccountCreateDataRelationshipsTaxCategories, bool) {
-	if o == nil || o.TaxCategories == nil {
+	if o == nil || IsNil(o.TaxCategories) {
 		return nil, false
 	}
 	return o.TaxCategories, true
@@ -57,7 +60,7 @@ func (o *AvalaraAccountCreateDataRelationships) GetTaxCategoriesOk() (*AvalaraAc
 
 // HasTaxCategories returns a boolean if a field has been set.
 func (o *AvalaraAccountCreateDataRelationships) HasTaxCategories() bool {
-	if o != nil && o.TaxCategories != nil {
+	if o != nil && !IsNil(o.TaxCategories) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *AvalaraAccountCreateDataRelationships) SetTaxCategories(v AvalaraAccoun
 }
 
 func (o AvalaraAccountCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.TaxCategories != nil {
-		toSerialize["tax_categories"] = o.TaxCategories
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AvalaraAccountCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.TaxCategories) {
+		toSerialize["tax_categories"] = o.TaxCategories
+	}
+	return toSerialize, nil
 }
 
 type NullableAvalaraAccountCreateDataRelationships struct {

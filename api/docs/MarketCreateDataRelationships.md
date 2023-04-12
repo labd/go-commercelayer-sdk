@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Merchant** | [**MarketCreateDataRelationshipsMerchant**](MarketCreateDataRelationshipsMerchant.md) |  | 
 **PriceList** | [**MarketCreateDataRelationshipsPriceList**](MarketCreateDataRelationshipsPriceList.md) |  | 
 **InventoryModel** | [**InventoryReturnLocationCreateDataRelationshipsInventoryModel**](InventoryReturnLocationCreateDataRelationshipsInventoryModel.md) |  | 
+**SubscriptionModel** | Pointer to [**MarketCreateDataRelationshipsSubscriptionModel**](MarketCreateDataRelationshipsSubscriptionModel.md) |  | [optional] 
 **TaxCalculator** | Pointer to [**MarketCreateDataRelationshipsTaxCalculator**](MarketCreateDataRelationshipsTaxCalculator.md) |  | [optional] 
 **CustomerGroup** | Pointer to [**CustomerCreateDataRelationshipsCustomerGroup**](CustomerCreateDataRelationshipsCustomerGroup.md) |  | [optional] 
 
@@ -88,6 +89,31 @@ and a boolean to check if the value has been set.
 
 SetInventoryModel sets InventoryModel field to given value.
 
+
+### GetSubscriptionModel
+
+`func (o *MarketCreateDataRelationships) GetSubscriptionModel() MarketCreateDataRelationshipsSubscriptionModel`
+
+GetSubscriptionModel returns the SubscriptionModel field if non-nil, zero value otherwise.
+
+### GetSubscriptionModelOk
+
+`func (o *MarketCreateDataRelationships) GetSubscriptionModelOk() (*MarketCreateDataRelationshipsSubscriptionModel, bool)`
+
+GetSubscriptionModelOk returns a tuple with the SubscriptionModel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubscriptionModel
+
+`func (o *MarketCreateDataRelationships) SetSubscriptionModel(v MarketCreateDataRelationshipsSubscriptionModel)`
+
+SetSubscriptionModel sets SubscriptionModel field to given value.
+
+### HasSubscriptionModel
+
+`func (o *MarketCreateDataRelationships) HasSubscriptionModel() bool`
+
+HasSubscriptionModel returns a boolean if a field has been set.
 
 ### GetTaxCalculator
 

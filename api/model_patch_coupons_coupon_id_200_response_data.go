@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,15 +15,18 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHCouponsCouponId200ResponseData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHCouponsCouponId200ResponseData{}
+
 // PATCHCouponsCouponId200ResponseData struct for PATCHCouponsCouponId200ResponseData
 type PATCHCouponsCouponId200ResponseData struct {
 	// The resource's id
-	Id *string `json:"id,omitempty"`
+	Id interface{} `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                        `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks         `json:"links,omitempty"`
+	Type          interface{}                                    `json:"type,omitempty"`
+	Links         *POSTAddresses201ResponseDataLinks             `json:"links,omitempty"`
 	Attributes    *PATCHCouponsCouponId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships *GETCoupons200ResponseDataInnerRelationships   `json:"relationships,omitempty"`
+	Relationships *POSTCoupons201ResponseDataRelationships       `json:"relationships,omitempty"`
 }
 
 // NewPATCHCouponsCouponId200ResponseData instantiates a new PATCHCouponsCouponId200ResponseData object
@@ -43,74 +46,76 @@ func NewPATCHCouponsCouponId200ResponseDataWithDefaults() *PATCHCouponsCouponId2
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *PATCHCouponsCouponId200ResponseData) GetId() string {
-	if o == nil || o.Id == nil {
-		var ret string
+// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCouponsCouponId200ResponseData) GetId() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Id
+	return o.Id
 }
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCouponsCouponId200ResponseData) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCouponsCouponId200ResponseData) GetIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *PATCHCouponsCouponId200ResponseData) HasId() bool {
-	if o != nil && o.Id != nil {
+	if o != nil && IsNil(o.Id) {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *PATCHCouponsCouponId200ResponseData) SetId(v string) {
-	o.Id = &v
+// SetId gets a reference to the given interface{} and assigns it to the Id field.
+func (o *PATCHCouponsCouponId200ResponseData) SetId(v interface{}) {
+	o.Id = v
 }
 
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *PATCHCouponsCouponId200ResponseData) GetType() string {
-	if o == nil || o.Type == nil {
-		var ret string
+// GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCouponsCouponId200ResponseData) GetType() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Type
+	return o.Type
 }
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCouponsCouponId200ResponseData) GetTypeOk() (*string, bool) {
-	if o == nil || o.Type == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCouponsCouponId200ResponseData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
-	return o.Type, true
+	return &o.Type, true
 }
 
 // HasType returns a boolean if a field has been set.
 func (o *PATCHCouponsCouponId200ResponseData) HasType() bool {
-	if o != nil && o.Type != nil {
+	if o != nil && IsNil(o.Type) {
 		return true
 	}
 
 	return false
 }
 
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *PATCHCouponsCouponId200ResponseData) SetType(v string) {
-	o.Type = &v
+// SetType gets a reference to the given interface{} and assigns it to the Type field.
+func (o *PATCHCouponsCouponId200ResponseData) SetType(v interface{}) {
+	o.Type = v
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *PATCHCouponsCouponId200ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks {
-	if o == nil || o.Links == nil {
-		var ret GETAddresses200ResponseDataInnerLinks
+func (o *PATCHCouponsCouponId200ResponseData) GetLinks() POSTAddresses201ResponseDataLinks {
+	if o == nil || IsNil(o.Links) {
+		var ret POSTAddresses201ResponseDataLinks
 		return ret
 	}
 	return *o.Links
@@ -118,8 +123,8 @@ func (o *PATCHCouponsCouponId200ResponseData) GetLinks() GETAddresses200Response
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCouponsCouponId200ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool) {
-	if o == nil || o.Links == nil {
+func (o *PATCHCouponsCouponId200ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool) {
+	if o == nil || IsNil(o.Links) {
 		return nil, false
 	}
 	return o.Links, true
@@ -127,21 +132,21 @@ func (o *PATCHCouponsCouponId200ResponseData) GetLinksOk() (*GETAddresses200Resp
 
 // HasLinks returns a boolean if a field has been set.
 func (o *PATCHCouponsCouponId200ResponseData) HasLinks() bool {
-	if o != nil && o.Links != nil {
+	if o != nil && !IsNil(o.Links) {
 		return true
 	}
 
 	return false
 }
 
-// SetLinks gets a reference to the given GETAddresses200ResponseDataInnerLinks and assigns it to the Links field.
-func (o *PATCHCouponsCouponId200ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks) {
+// SetLinks gets a reference to the given POSTAddresses201ResponseDataLinks and assigns it to the Links field.
+func (o *PATCHCouponsCouponId200ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks) {
 	o.Links = &v
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *PATCHCouponsCouponId200ResponseData) GetAttributes() PATCHCouponsCouponId200ResponseDataAttributes {
-	if o == nil || o.Attributes == nil {
+	if o == nil || IsNil(o.Attributes) {
 		var ret PATCHCouponsCouponId200ResponseDataAttributes
 		return ret
 	}
@@ -151,7 +156,7 @@ func (o *PATCHCouponsCouponId200ResponseData) GetAttributes() PATCHCouponsCoupon
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHCouponsCouponId200ResponseData) GetAttributesOk() (*PATCHCouponsCouponId200ResponseDataAttributes, bool) {
-	if o == nil || o.Attributes == nil {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -159,7 +164,7 @@ func (o *PATCHCouponsCouponId200ResponseData) GetAttributesOk() (*PATCHCouponsCo
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *PATCHCouponsCouponId200ResponseData) HasAttributes() bool {
-	if o != nil && o.Attributes != nil {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
@@ -172,9 +177,9 @@ func (o *PATCHCouponsCouponId200ResponseData) SetAttributes(v PATCHCouponsCoupon
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHCouponsCouponId200ResponseData) GetRelationships() GETCoupons200ResponseDataInnerRelationships {
-	if o == nil || o.Relationships == nil {
-		var ret GETCoupons200ResponseDataInnerRelationships
+func (o *PATCHCouponsCouponId200ResponseData) GetRelationships() POSTCoupons201ResponseDataRelationships {
+	if o == nil || IsNil(o.Relationships) {
+		var ret POSTCoupons201ResponseDataRelationships
 		return ret
 	}
 	return *o.Relationships
@@ -182,8 +187,8 @@ func (o *PATCHCouponsCouponId200ResponseData) GetRelationships() GETCoupons200Re
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCouponsCouponId200ResponseData) GetRelationshipsOk() (*GETCoupons200ResponseDataInnerRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+func (o *PATCHCouponsCouponId200ResponseData) GetRelationshipsOk() (*POSTCoupons201ResponseDataRelationships, bool) {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -191,19 +196,27 @@ func (o *PATCHCouponsCouponId200ResponseData) GetRelationshipsOk() (*GETCoupons2
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *PATCHCouponsCouponId200ResponseData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
 	return false
 }
 
-// SetRelationships gets a reference to the given GETCoupons200ResponseDataInnerRelationships and assigns it to the Relationships field.
-func (o *PATCHCouponsCouponId200ResponseData) SetRelationships(v GETCoupons200ResponseDataInnerRelationships) {
+// SetRelationships gets a reference to the given POSTCoupons201ResponseDataRelationships and assigns it to the Relationships field.
+func (o *PATCHCouponsCouponId200ResponseData) SetRelationships(v POSTCoupons201ResponseDataRelationships) {
 	o.Relationships = &v
 }
 
 func (o PATCHCouponsCouponId200ResponseData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHCouponsCouponId200ResponseData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
@@ -211,16 +224,16 @@ func (o PATCHCouponsCouponId200ResponseData) MarshalJSON() ([]byte, error) {
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if o.Links != nil {
+	if !IsNil(o.Links) {
 		toSerialize["links"] = o.Links
 	}
-	if o.Attributes != nil {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
-	if o.Relationships != nil {
+	if !IsNil(o.Relationships) {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHCouponsCouponId200ResponseData struct {

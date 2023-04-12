@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Id** | **string** | The resource&#39;s id | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Id** | **interface{}** | The resource&#39;s id | 
 **Attributes** | [**PATCHStockLocationsStockLocationId200ResponseDataAttributes**](PATCHStockLocationsStockLocationId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**MerchantUpdateDataRelationships**](MerchantUpdateDataRelationships.md) |  | [optional] 
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewStockLocationUpdateData
 
-`func NewStockLocationUpdateData(type_ string, id string, attributes PATCHStockLocationsStockLocationId200ResponseDataAttributes, ) *StockLocationUpdateData`
+`func NewStockLocationUpdateData(type_ interface{}, id interface{}, attributes PATCHStockLocationsStockLocationId200ResponseDataAttributes, ) *StockLocationUpdateData`
 
 NewStockLocationUpdateData instantiates a new StockLocationUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -30,44 +30,64 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *StockLocationUpdateData) GetType() string`
+`func (o *StockLocationUpdateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *StockLocationUpdateData) GetTypeOk() (*string, bool)`
+`func (o *StockLocationUpdateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *StockLocationUpdateData) SetType(v string)`
+`func (o *StockLocationUpdateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *StockLocationUpdateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *StockLocationUpdateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetId
 
-`func (o *StockLocationUpdateData) GetId() string`
+`func (o *StockLocationUpdateData) GetId() interface{}`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *StockLocationUpdateData) GetIdOk() (*string, bool)`
+`func (o *StockLocationUpdateData) GetIdOk() (*interface{}, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *StockLocationUpdateData) SetId(v string)`
+`func (o *StockLocationUpdateData) SetId(v interface{})`
 
 SetId sets Id field to given value.
 
 
+### SetIdNil
+
+`func (o *StockLocationUpdateData) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *StockLocationUpdateData) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetAttributes
 
 `func (o *StockLocationUpdateData) GetAttributes() PATCHStockLocationsStockLocationId200ResponseDataAttributes`

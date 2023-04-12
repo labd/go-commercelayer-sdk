@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,31 +15,34 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTImports201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTImports201ResponseDataAttributes{}
+
 // POSTImports201ResponseDataAttributes struct for POSTImports201ResponseDataAttributes
 type POSTImports201ResponseDataAttributes struct {
 	// The type of resource being imported.
-	ResourceType string `json:"resource_type"`
+	ResourceType interface{} `json:"resource_type"`
 	// The format of the import inputs one of 'json' (default) or 'csv'.
-	Format *string `json:"format,omitempty"`
+	Format interface{} `json:"format,omitempty"`
 	// The ID of the parent resource to be associated with imported data.
-	ParentResourceId *string `json:"parent_resource_id,omitempty"`
+	ParentResourceId interface{} `json:"parent_resource_id,omitempty"`
 	// Array of objects representing the resources that are being imported.
-	Inputs []map[string]interface{} `json:"inputs"`
+	Inputs interface{} `json:"inputs"`
 	// Indicates if the import should cleanup records that are not included in the inputs array.
-	CleanupRecords *bool `json:"cleanup_records,omitempty"`
+	CleanupRecords interface{} `json:"cleanup_records,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 }
 
 // NewPOSTImports201ResponseDataAttributes instantiates a new POSTImports201ResponseDataAttributes object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPOSTImports201ResponseDataAttributes(resourceType string, inputs []map[string]interface{}) *POSTImports201ResponseDataAttributes {
+func NewPOSTImports201ResponseDataAttributes(resourceType interface{}, inputs interface{}) *POSTImports201ResponseDataAttributes {
 	this := POSTImports201ResponseDataAttributes{}
 	this.ResourceType = resourceType
 	this.Inputs = inputs
@@ -55,9 +58,10 @@ func NewPOSTImports201ResponseDataAttributesWithDefaults() *POSTImports201Respon
 }
 
 // GetResourceType returns the ResourceType field value
-func (o *POSTImports201ResponseDataAttributes) GetResourceType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTImports201ResponseDataAttributes) GetResourceType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -66,86 +70,90 @@ func (o *POSTImports201ResponseDataAttributes) GetResourceType() string {
 
 // GetResourceTypeOk returns a tuple with the ResourceType field value
 // and a boolean to check if the value has been set.
-func (o *POSTImports201ResponseDataAttributes) GetResourceTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTImports201ResponseDataAttributes) GetResourceTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ResourceType) {
 		return nil, false
 	}
 	return &o.ResourceType, true
 }
 
 // SetResourceType sets field value
-func (o *POSTImports201ResponseDataAttributes) SetResourceType(v string) {
+func (o *POSTImports201ResponseDataAttributes) SetResourceType(v interface{}) {
 	o.ResourceType = v
 }
 
-// GetFormat returns the Format field value if set, zero value otherwise.
-func (o *POSTImports201ResponseDataAttributes) GetFormat() string {
-	if o == nil || o.Format == nil {
-		var ret string
+// GetFormat returns the Format field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTImports201ResponseDataAttributes) GetFormat() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Format
+	return o.Format
 }
 
 // GetFormatOk returns a tuple with the Format field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTImports201ResponseDataAttributes) GetFormatOk() (*string, bool) {
-	if o == nil || o.Format == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTImports201ResponseDataAttributes) GetFormatOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Format) {
 		return nil, false
 	}
-	return o.Format, true
+	return &o.Format, true
 }
 
 // HasFormat returns a boolean if a field has been set.
 func (o *POSTImports201ResponseDataAttributes) HasFormat() bool {
-	if o != nil && o.Format != nil {
+	if o != nil && IsNil(o.Format) {
 		return true
 	}
 
 	return false
 }
 
-// SetFormat gets a reference to the given string and assigns it to the Format field.
-func (o *POSTImports201ResponseDataAttributes) SetFormat(v string) {
-	o.Format = &v
+// SetFormat gets a reference to the given interface{} and assigns it to the Format field.
+func (o *POSTImports201ResponseDataAttributes) SetFormat(v interface{}) {
+	o.Format = v
 }
 
-// GetParentResourceId returns the ParentResourceId field value if set, zero value otherwise.
-func (o *POSTImports201ResponseDataAttributes) GetParentResourceId() string {
-	if o == nil || o.ParentResourceId == nil {
-		var ret string
+// GetParentResourceId returns the ParentResourceId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTImports201ResponseDataAttributes) GetParentResourceId() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ParentResourceId
+	return o.ParentResourceId
 }
 
 // GetParentResourceIdOk returns a tuple with the ParentResourceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTImports201ResponseDataAttributes) GetParentResourceIdOk() (*string, bool) {
-	if o == nil || o.ParentResourceId == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTImports201ResponseDataAttributes) GetParentResourceIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ParentResourceId) {
 		return nil, false
 	}
-	return o.ParentResourceId, true
+	return &o.ParentResourceId, true
 }
 
 // HasParentResourceId returns a boolean if a field has been set.
 func (o *POSTImports201ResponseDataAttributes) HasParentResourceId() bool {
-	if o != nil && o.ParentResourceId != nil {
+	if o != nil && IsNil(o.ParentResourceId) {
 		return true
 	}
 
 	return false
 }
 
-// SetParentResourceId gets a reference to the given string and assigns it to the ParentResourceId field.
-func (o *POSTImports201ResponseDataAttributes) SetParentResourceId(v string) {
-	o.ParentResourceId = &v
+// SetParentResourceId gets a reference to the given interface{} and assigns it to the ParentResourceId field.
+func (o *POSTImports201ResponseDataAttributes) SetParentResourceId(v interface{}) {
+	o.ParentResourceId = v
 }
 
 // GetInputs returns the Inputs field value
-func (o *POSTImports201ResponseDataAttributes) GetInputs() []map[string]interface{} {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTImports201ResponseDataAttributes) GetInputs() interface{} {
 	if o == nil {
-		var ret []map[string]interface{}
+		var ret interface{}
 		return ret
 	}
 
@@ -154,118 +162,122 @@ func (o *POSTImports201ResponseDataAttributes) GetInputs() []map[string]interfac
 
 // GetInputsOk returns a tuple with the Inputs field value
 // and a boolean to check if the value has been set.
-func (o *POSTImports201ResponseDataAttributes) GetInputsOk() ([]map[string]interface{}, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTImports201ResponseDataAttributes) GetInputsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Inputs) {
 		return nil, false
 	}
-	return o.Inputs, true
+	return &o.Inputs, true
 }
 
 // SetInputs sets field value
-func (o *POSTImports201ResponseDataAttributes) SetInputs(v []map[string]interface{}) {
+func (o *POSTImports201ResponseDataAttributes) SetInputs(v interface{}) {
 	o.Inputs = v
 }
 
-// GetCleanupRecords returns the CleanupRecords field value if set, zero value otherwise.
-func (o *POSTImports201ResponseDataAttributes) GetCleanupRecords() bool {
-	if o == nil || o.CleanupRecords == nil {
-		var ret bool
+// GetCleanupRecords returns the CleanupRecords field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTImports201ResponseDataAttributes) GetCleanupRecords() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CleanupRecords
+	return o.CleanupRecords
 }
 
 // GetCleanupRecordsOk returns a tuple with the CleanupRecords field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTImports201ResponseDataAttributes) GetCleanupRecordsOk() (*bool, bool) {
-	if o == nil || o.CleanupRecords == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTImports201ResponseDataAttributes) GetCleanupRecordsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CleanupRecords) {
 		return nil, false
 	}
-	return o.CleanupRecords, true
+	return &o.CleanupRecords, true
 }
 
 // HasCleanupRecords returns a boolean if a field has been set.
 func (o *POSTImports201ResponseDataAttributes) HasCleanupRecords() bool {
-	if o != nil && o.CleanupRecords != nil {
+	if o != nil && IsNil(o.CleanupRecords) {
 		return true
 	}
 
 	return false
 }
 
-// SetCleanupRecords gets a reference to the given bool and assigns it to the CleanupRecords field.
-func (o *POSTImports201ResponseDataAttributes) SetCleanupRecords(v bool) {
-	o.CleanupRecords = &v
+// SetCleanupRecords gets a reference to the given interface{} and assigns it to the CleanupRecords field.
+func (o *POSTImports201ResponseDataAttributes) SetCleanupRecords(v interface{}) {
+	o.CleanupRecords = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *POSTImports201ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTImports201ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTImports201ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTImports201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTImports201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *POSTImports201ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *POSTImports201ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *POSTImports201ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTImports201ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTImports201ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTImports201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTImports201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *POSTImports201ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *POSTImports201ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *POSTImports201ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTImports201ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -273,30 +285,39 @@ func (o *POSTImports201ResponseDataAttributes) GetMetadata() map[string]interfac
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTImports201ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTImports201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTImports201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *POSTImports201ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *POSTImports201ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 func (o POSTImports201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTImports201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
+	if o.ResourceType != nil {
 		toSerialize["resource_type"] = o.ResourceType
 	}
 	if o.Format != nil {
@@ -305,7 +326,7 @@ func (o POSTImports201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	if o.ParentResourceId != nil {
 		toSerialize["parent_resource_id"] = o.ParentResourceId
 	}
-	if true {
+	if o.Inputs != nil {
 		toSerialize["inputs"] = o.Inputs
 	}
 	if o.CleanupRecords != nil {
@@ -320,7 +341,7 @@ func (o POSTImports201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTImports201ResponseDataAttributes struct {

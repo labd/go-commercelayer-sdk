@@ -1,6 +1,6 @@
 # \StripeGatewaysApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,15 +29,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    stripeGatewayId := "stripeGatewayId_example" // string | The resource's id
+    stripeGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.StripeGatewaysApi.DELETEStripeGatewaysStripeGatewayId(context.Background(), stripeGatewayId).Execute()
+    r, err := apiClient.StripeGatewaysApi.DELETEStripeGatewaysStripeGatewayId(context.Background(), stripeGatewayId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `StripeGatewaysApi.DELETEStripeGatewaysStripeGatewayId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -51,7 +51,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**stripeGatewayId** | **string** | The resource&#39;s id | 
+**stripeGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -158,11 +158,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    stripeGatewayId := "stripeGatewayId_example" // string | The resource's id
+    stripeGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -182,7 +182,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**stripeGatewayId** | **string** | The resource&#39;s id | 
+**stripeGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -228,12 +228,12 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    stripeGatewayUpdate := *openapiclient.NewStripeGatewayUpdate(*openapiclient.NewStripeGatewayUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes())) // StripeGatewayUpdate | 
-    stripeGatewayId := "stripeGatewayId_example" // string | The resource's id
+    stripeGatewayUpdate := *openapiclient.NewStripeGatewayUpdate(*openapiclient.NewStripeGatewayUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHStripeGatewaysStripeGatewayId200ResponseDataAttributes())) // StripeGatewayUpdate | 
+    stripeGatewayId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -253,7 +253,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**stripeGatewayId** | **string** | The resource&#39;s id | 
+**stripeGatewayId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -300,11 +300,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    stripeGatewayCreate := *openapiclient.NewStripeGatewayCreate(*openapiclient.NewStripeGatewayCreateData("Type_example", *openapiclient.NewPOSTStripeGateways201ResponseDataAttributes("US payment gateway", "sk_live_xxxx-yyyy-zzzz"))) // StripeGatewayCreate | 
+    stripeGatewayCreate := *openapiclient.NewStripeGatewayCreate(*openapiclient.NewStripeGatewayCreateData(interface{}(123), *openapiclient.NewPOSTStripeGateways201ResponseDataAttributes(interface{}(US payment gateway), interface{}(sk_live_xxxx-yyyy-zzzz)))) // StripeGatewayCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

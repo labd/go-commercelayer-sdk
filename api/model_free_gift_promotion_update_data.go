@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,12 +15,15 @@ import (
 	"encoding/json"
 )
 
+// checks if the FreeGiftPromotionUpdateData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &FreeGiftPromotionUpdateData{}
+
 // FreeGiftPromotionUpdateData struct for FreeGiftPromotionUpdateData
 type FreeGiftPromotionUpdateData struct {
 	// The resource's type
-	Type string `json:"type"`
+	Type interface{} `json:"type"`
 	// The resource's id
-	Id            string                                                              `json:"id"`
+	Id            interface{}                                                         `json:"id"`
 	Attributes    PATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseDataAttributes `json:"attributes"`
 	Relationships *FixedPricePromotionUpdateDataRelationships                         `json:"relationships,omitempty"`
 }
@@ -29,7 +32,7 @@ type FreeGiftPromotionUpdateData struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewFreeGiftPromotionUpdateData(type_ string, id string, attributes PATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseDataAttributes) *FreeGiftPromotionUpdateData {
+func NewFreeGiftPromotionUpdateData(type_ interface{}, id interface{}, attributes PATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseDataAttributes) *FreeGiftPromotionUpdateData {
 	this := FreeGiftPromotionUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -46,9 +49,10 @@ func NewFreeGiftPromotionUpdateDataWithDefaults() *FreeGiftPromotionUpdateData {
 }
 
 // GetType returns the Type field value
-func (o *FreeGiftPromotionUpdateData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *FreeGiftPromotionUpdateData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -57,22 +61,24 @@ func (o *FreeGiftPromotionUpdateData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *FreeGiftPromotionUpdateData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *FreeGiftPromotionUpdateData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *FreeGiftPromotionUpdateData) SetType(v string) {
+func (o *FreeGiftPromotionUpdateData) SetType(v interface{}) {
 	o.Type = v
 }
 
 // GetId returns the Id field value
-func (o *FreeGiftPromotionUpdateData) GetId() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *FreeGiftPromotionUpdateData) GetId() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -81,15 +87,16 @@ func (o *FreeGiftPromotionUpdateData) GetId() string {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *FreeGiftPromotionUpdateData) GetIdOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *FreeGiftPromotionUpdateData) GetIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return &o.Id, true
 }
 
 // SetId sets field value
-func (o *FreeGiftPromotionUpdateData) SetId(v string) {
+func (o *FreeGiftPromotionUpdateData) SetId(v interface{}) {
 	o.Id = v
 }
 
@@ -119,7 +126,7 @@ func (o *FreeGiftPromotionUpdateData) SetAttributes(v PATCHFreeGiftPromotionsFre
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *FreeGiftPromotionUpdateData) GetRelationships() FixedPricePromotionUpdateDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret FixedPricePromotionUpdateDataRelationships
 		return ret
 	}
@@ -129,7 +136,7 @@ func (o *FreeGiftPromotionUpdateData) GetRelationships() FixedPricePromotionUpda
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *FreeGiftPromotionUpdateData) GetRelationshipsOk() (*FixedPricePromotionUpdateDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -137,7 +144,7 @@ func (o *FreeGiftPromotionUpdateData) GetRelationshipsOk() (*FixedPricePromotion
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *FreeGiftPromotionUpdateData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -150,20 +157,26 @@ func (o *FreeGiftPromotionUpdateData) SetRelationships(v FixedPricePromotionUpda
 }
 
 func (o FreeGiftPromotionUpdateData) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
-		toSerialize["relationships"] = o.Relationships
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o FreeGiftPromotionUpdateData) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
+	}
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
+		toSerialize["relationships"] = o.Relationships
+	}
+	return toSerialize, nil
 }
 
 type NullableFreeGiftPromotionUpdateData struct {

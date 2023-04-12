@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the CustomerCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CustomerCreateDataRelationships{}
 
 // CustomerCreateDataRelationships struct for CustomerCreateDataRelationships
 type CustomerCreateDataRelationships struct {
@@ -39,7 +42,7 @@ func NewCustomerCreateDataRelationshipsWithDefaults() *CustomerCreateDataRelatio
 
 // GetCustomerGroup returns the CustomerGroup field value if set, zero value otherwise.
 func (o *CustomerCreateDataRelationships) GetCustomerGroup() CustomerCreateDataRelationshipsCustomerGroup {
-	if o == nil || o.CustomerGroup == nil {
+	if o == nil || IsNil(o.CustomerGroup) {
 		var ret CustomerCreateDataRelationshipsCustomerGroup
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *CustomerCreateDataRelationships) GetCustomerGroup() CustomerCreateDataR
 // GetCustomerGroupOk returns a tuple with the CustomerGroup field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerCreateDataRelationships) GetCustomerGroupOk() (*CustomerCreateDataRelationshipsCustomerGroup, bool) {
-	if o == nil || o.CustomerGroup == nil {
+	if o == nil || IsNil(o.CustomerGroup) {
 		return nil, false
 	}
 	return o.CustomerGroup, true
@@ -57,7 +60,7 @@ func (o *CustomerCreateDataRelationships) GetCustomerGroupOk() (*CustomerCreateD
 
 // HasCustomerGroup returns a boolean if a field has been set.
 func (o *CustomerCreateDataRelationships) HasCustomerGroup() bool {
-	if o != nil && o.CustomerGroup != nil {
+	if o != nil && !IsNil(o.CustomerGroup) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *CustomerCreateDataRelationships) SetCustomerGroup(v CustomerCreateDataR
 }
 
 func (o CustomerCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.CustomerGroup != nil {
-		toSerialize["customer_group"] = o.CustomerGroup
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CustomerCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.CustomerGroup) {
+		toSerialize["customer_group"] = o.CustomerGroup
+	}
+	return toSerialize, nil
 }
 
 type NullableCustomerCreateDataRelationships struct {

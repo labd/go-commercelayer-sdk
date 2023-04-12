@@ -1,6 +1,6 @@
 # \ManualTaxCalculatorsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -30,15 +30,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    manualTaxCalculatorId := "manualTaxCalculatorId_example" // string | The resource's id
+    manualTaxCalculatorId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ManualTaxCalculatorsApi.DELETEManualTaxCalculatorsManualTaxCalculatorId(context.Background(), manualTaxCalculatorId).Execute()
+    r, err := apiClient.ManualTaxCalculatorsApi.DELETEManualTaxCalculatorsManualTaxCalculatorId(context.Background(), manualTaxCalculatorId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ManualTaxCalculatorsApi.DELETEManualTaxCalculatorsManualTaxCalculatorId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -52,7 +52,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**manualTaxCalculatorId** | **string** | The resource&#39;s id | 
+**manualTaxCalculatorId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -98,7 +98,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -159,11 +159,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    manualTaxCalculatorId := "manualTaxCalculatorId_example" // string | The resource's id
+    manualTaxCalculatorId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -183,7 +183,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**manualTaxCalculatorId** | **string** | The resource&#39;s id | 
+**manualTaxCalculatorId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -229,15 +229,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    taxRuleId := "taxRuleId_example" // string | The resource's id
+    taxRuleId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ManualTaxCalculatorsApi.GETTaxRuleIdManualTaxCalculator(context.Background(), taxRuleId).Execute()
+    r, err := apiClient.ManualTaxCalculatorsApi.GETTaxRuleIdManualTaxCalculator(context.Background(), taxRuleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ManualTaxCalculatorsApi.GETTaxRuleIdManualTaxCalculator``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -251,7 +251,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**taxRuleId** | **string** | The resource&#39;s id | 
+**taxRuleId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -297,12 +297,12 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    manualTaxCalculatorUpdate := *openapiclient.NewManualTaxCalculatorUpdate(*openapiclient.NewManualTaxCalculatorUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes())) // ManualTaxCalculatorUpdate | 
-    manualTaxCalculatorId := "manualTaxCalculatorId_example" // string | The resource's id
+    manualTaxCalculatorUpdate := *openapiclient.NewManualTaxCalculatorUpdate(*openapiclient.NewManualTaxCalculatorUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHManualTaxCalculatorsManualTaxCalculatorId200ResponseDataAttributes())) // ManualTaxCalculatorUpdate | 
+    manualTaxCalculatorId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -322,7 +322,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**manualTaxCalculatorId** | **string** | The resource&#39;s id | 
+**manualTaxCalculatorId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -369,11 +369,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    manualTaxCalculatorCreate := *openapiclient.NewManualTaxCalculatorCreate(*openapiclient.NewManualTaxCalculatorCreateData("Type_example", *openapiclient.NewPOSTManualTaxCalculators201ResponseDataAttributes("Personal tax calculator"))) // ManualTaxCalculatorCreate | 
+    manualTaxCalculatorCreate := *openapiclient.NewManualTaxCalculatorCreate(*openapiclient.NewManualTaxCalculatorCreateData(interface{}(123), *openapiclient.NewPOSTManualTaxCalculators201ResponseDataAttributes(interface{}(Personal tax calculator)))) // ManualTaxCalculatorCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

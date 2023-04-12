@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,34 +15,37 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHSkusSkuId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHSkusSkuId200ResponseDataAttributes{}
+
 // PATCHSkusSkuId200ResponseDataAttributes struct for PATCHSkusSkuId200ResponseDataAttributes
 type PATCHSkusSkuId200ResponseDataAttributes struct {
 	// The SKU code, that uniquely identifies the SKU within the organization.
-	Code *string `json:"code,omitempty"`
+	Code interface{} `json:"code,omitempty"`
 	// The internal name of the SKU.
-	Name *string `json:"name,omitempty"`
+	Name interface{} `json:"name,omitempty"`
 	// An internal description of the SKU.
-	Description *string `json:"description,omitempty"`
+	Description interface{} `json:"description,omitempty"`
 	// The URL of an image that represents the SKU.
-	ImageUrl *string `json:"image_url,omitempty"`
+	ImageUrl interface{} `json:"image_url,omitempty"`
 	// The number of pieces that compose the SKU. This is useful to describe sets and bundles.
-	PiecesPerPack *int32 `json:"pieces_per_pack,omitempty"`
+	PiecesPerPack interface{} `json:"pieces_per_pack,omitempty"`
 	// The weight of the SKU. If present, it will be used to calculate the shipping rates.
-	Weight *float32 `json:"weight,omitempty"`
+	Weight interface{} `json:"weight,omitempty"`
 	// Can be one of 'gr', 'lb', or 'oz'
-	UnitOfWeight *string `json:"unit_of_weight,omitempty"`
+	UnitOfWeight interface{} `json:"unit_of_weight,omitempty"`
 	// The Harmonized System Code used by customs to identify the products shipped across international borders.
-	HsTariffNumber *string `json:"hs_tariff_number,omitempty"`
+	HsTariffNumber interface{} `json:"hs_tariff_number,omitempty"`
 	// Indicates if the SKU doesn't generate shipments.
-	DoNotShip *bool `json:"do_not_ship,omitempty"`
+	DoNotShip interface{} `json:"do_not_ship,omitempty"`
 	// Indicates if the SKU doesn't track the stock inventory.
-	DoNotTrack *bool `json:"do_not_track,omitempty"`
+	DoNotTrack interface{} `json:"do_not_track,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 }
 
 // NewPATCHSkusSkuId200ResponseDataAttributes instantiates a new PATCHSkusSkuId200ResponseDataAttributes object
@@ -62,394 +65,406 @@ func NewPATCHSkusSkuId200ResponseDataAttributesWithDefaults() *PATCHSkusSkuId200
 	return &this
 }
 
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) GetCode() string {
-	if o == nil || o.Code == nil {
-		var ret string
+// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHSkusSkuId200ResponseDataAttributes) GetCode() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Code
+	return o.Code
 }
 
 // GetCodeOk returns a tuple with the Code field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) GetCodeOk() (*string, bool) {
-	if o == nil || o.Code == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHSkusSkuId200ResponseDataAttributes) GetCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Code) {
 		return nil, false
 	}
-	return o.Code, true
+	return &o.Code, true
 }
 
 // HasCode returns a boolean if a field has been set.
 func (o *PATCHSkusSkuId200ResponseDataAttributes) HasCode() bool {
-	if o != nil && o.Code != nil {
+	if o != nil && IsNil(o.Code) {
 		return true
 	}
 
 	return false
 }
 
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) SetCode(v string) {
-	o.Code = &v
+// SetCode gets a reference to the given interface{} and assigns it to the Code field.
+func (o *PATCHSkusSkuId200ResponseDataAttributes) SetCode(v interface{}) {
+	o.Code = v
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) GetName() string {
-	if o == nil || o.Name == nil {
-		var ret string
+// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHSkusSkuId200ResponseDataAttributes) GetName() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Name
+	return o.Name
 }
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHSkusSkuId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return o.Name, true
+	return &o.Name, true
 }
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHSkusSkuId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) SetName(v string) {
-	o.Name = &v
+// SetName gets a reference to the given interface{} and assigns it to the Name field.
+func (o *PATCHSkusSkuId200ResponseDataAttributes) SetName(v interface{}) {
+	o.Name = v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) GetDescription() string {
-	if o == nil || o.Description == nil {
-		var ret string
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHSkusSkuId200ResponseDataAttributes) GetDescription() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Description
+	return o.Description
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) GetDescriptionOk() (*string, bool) {
-	if o == nil || o.Description == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHSkusSkuId200ResponseDataAttributes) GetDescriptionOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
-	return o.Description, true
+	return &o.Description, true
 }
 
 // HasDescription returns a boolean if a field has been set.
 func (o *PATCHSkusSkuId200ResponseDataAttributes) HasDescription() bool {
-	if o != nil && o.Description != nil {
+	if o != nil && IsNil(o.Description) {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) SetDescription(v string) {
-	o.Description = &v
+// SetDescription gets a reference to the given interface{} and assigns it to the Description field.
+func (o *PATCHSkusSkuId200ResponseDataAttributes) SetDescription(v interface{}) {
+	o.Description = v
 }
 
-// GetImageUrl returns the ImageUrl field value if set, zero value otherwise.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) GetImageUrl() string {
-	if o == nil || o.ImageUrl == nil {
-		var ret string
+// GetImageUrl returns the ImageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHSkusSkuId200ResponseDataAttributes) GetImageUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ImageUrl
+	return o.ImageUrl
 }
 
 // GetImageUrlOk returns a tuple with the ImageUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) GetImageUrlOk() (*string, bool) {
-	if o == nil || o.ImageUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHSkusSkuId200ResponseDataAttributes) GetImageUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ImageUrl) {
 		return nil, false
 	}
-	return o.ImageUrl, true
+	return &o.ImageUrl, true
 }
 
 // HasImageUrl returns a boolean if a field has been set.
 func (o *PATCHSkusSkuId200ResponseDataAttributes) HasImageUrl() bool {
-	if o != nil && o.ImageUrl != nil {
+	if o != nil && IsNil(o.ImageUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetImageUrl gets a reference to the given string and assigns it to the ImageUrl field.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) SetImageUrl(v string) {
-	o.ImageUrl = &v
+// SetImageUrl gets a reference to the given interface{} and assigns it to the ImageUrl field.
+func (o *PATCHSkusSkuId200ResponseDataAttributes) SetImageUrl(v interface{}) {
+	o.ImageUrl = v
 }
 
-// GetPiecesPerPack returns the PiecesPerPack field value if set, zero value otherwise.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) GetPiecesPerPack() int32 {
-	if o == nil || o.PiecesPerPack == nil {
-		var ret int32
+// GetPiecesPerPack returns the PiecesPerPack field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHSkusSkuId200ResponseDataAttributes) GetPiecesPerPack() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.PiecesPerPack
+	return o.PiecesPerPack
 }
 
 // GetPiecesPerPackOk returns a tuple with the PiecesPerPack field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) GetPiecesPerPackOk() (*int32, bool) {
-	if o == nil || o.PiecesPerPack == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHSkusSkuId200ResponseDataAttributes) GetPiecesPerPackOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PiecesPerPack) {
 		return nil, false
 	}
-	return o.PiecesPerPack, true
+	return &o.PiecesPerPack, true
 }
 
 // HasPiecesPerPack returns a boolean if a field has been set.
 func (o *PATCHSkusSkuId200ResponseDataAttributes) HasPiecesPerPack() bool {
-	if o != nil && o.PiecesPerPack != nil {
+	if o != nil && IsNil(o.PiecesPerPack) {
 		return true
 	}
 
 	return false
 }
 
-// SetPiecesPerPack gets a reference to the given int32 and assigns it to the PiecesPerPack field.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) SetPiecesPerPack(v int32) {
-	o.PiecesPerPack = &v
+// SetPiecesPerPack gets a reference to the given interface{} and assigns it to the PiecesPerPack field.
+func (o *PATCHSkusSkuId200ResponseDataAttributes) SetPiecesPerPack(v interface{}) {
+	o.PiecesPerPack = v
 }
 
-// GetWeight returns the Weight field value if set, zero value otherwise.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) GetWeight() float32 {
-	if o == nil || o.Weight == nil {
-		var ret float32
+// GetWeight returns the Weight field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHSkusSkuId200ResponseDataAttributes) GetWeight() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Weight
+	return o.Weight
 }
 
 // GetWeightOk returns a tuple with the Weight field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) GetWeightOk() (*float32, bool) {
-	if o == nil || o.Weight == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHSkusSkuId200ResponseDataAttributes) GetWeightOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Weight) {
 		return nil, false
 	}
-	return o.Weight, true
+	return &o.Weight, true
 }
 
 // HasWeight returns a boolean if a field has been set.
 func (o *PATCHSkusSkuId200ResponseDataAttributes) HasWeight() bool {
-	if o != nil && o.Weight != nil {
+	if o != nil && IsNil(o.Weight) {
 		return true
 	}
 
 	return false
 }
 
-// SetWeight gets a reference to the given float32 and assigns it to the Weight field.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) SetWeight(v float32) {
-	o.Weight = &v
+// SetWeight gets a reference to the given interface{} and assigns it to the Weight field.
+func (o *PATCHSkusSkuId200ResponseDataAttributes) SetWeight(v interface{}) {
+	o.Weight = v
 }
 
-// GetUnitOfWeight returns the UnitOfWeight field value if set, zero value otherwise.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) GetUnitOfWeight() string {
-	if o == nil || o.UnitOfWeight == nil {
-		var ret string
+// GetUnitOfWeight returns the UnitOfWeight field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHSkusSkuId200ResponseDataAttributes) GetUnitOfWeight() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.UnitOfWeight
+	return o.UnitOfWeight
 }
 
 // GetUnitOfWeightOk returns a tuple with the UnitOfWeight field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) GetUnitOfWeightOk() (*string, bool) {
-	if o == nil || o.UnitOfWeight == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHSkusSkuId200ResponseDataAttributes) GetUnitOfWeightOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.UnitOfWeight) {
 		return nil, false
 	}
-	return o.UnitOfWeight, true
+	return &o.UnitOfWeight, true
 }
 
 // HasUnitOfWeight returns a boolean if a field has been set.
 func (o *PATCHSkusSkuId200ResponseDataAttributes) HasUnitOfWeight() bool {
-	if o != nil && o.UnitOfWeight != nil {
+	if o != nil && IsNil(o.UnitOfWeight) {
 		return true
 	}
 
 	return false
 }
 
-// SetUnitOfWeight gets a reference to the given string and assigns it to the UnitOfWeight field.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) SetUnitOfWeight(v string) {
-	o.UnitOfWeight = &v
+// SetUnitOfWeight gets a reference to the given interface{} and assigns it to the UnitOfWeight field.
+func (o *PATCHSkusSkuId200ResponseDataAttributes) SetUnitOfWeight(v interface{}) {
+	o.UnitOfWeight = v
 }
 
-// GetHsTariffNumber returns the HsTariffNumber field value if set, zero value otherwise.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) GetHsTariffNumber() string {
-	if o == nil || o.HsTariffNumber == nil {
-		var ret string
+// GetHsTariffNumber returns the HsTariffNumber field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHSkusSkuId200ResponseDataAttributes) GetHsTariffNumber() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.HsTariffNumber
+	return o.HsTariffNumber
 }
 
 // GetHsTariffNumberOk returns a tuple with the HsTariffNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) GetHsTariffNumberOk() (*string, bool) {
-	if o == nil || o.HsTariffNumber == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHSkusSkuId200ResponseDataAttributes) GetHsTariffNumberOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.HsTariffNumber) {
 		return nil, false
 	}
-	return o.HsTariffNumber, true
+	return &o.HsTariffNumber, true
 }
 
 // HasHsTariffNumber returns a boolean if a field has been set.
 func (o *PATCHSkusSkuId200ResponseDataAttributes) HasHsTariffNumber() bool {
-	if o != nil && o.HsTariffNumber != nil {
+	if o != nil && IsNil(o.HsTariffNumber) {
 		return true
 	}
 
 	return false
 }
 
-// SetHsTariffNumber gets a reference to the given string and assigns it to the HsTariffNumber field.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) SetHsTariffNumber(v string) {
-	o.HsTariffNumber = &v
+// SetHsTariffNumber gets a reference to the given interface{} and assigns it to the HsTariffNumber field.
+func (o *PATCHSkusSkuId200ResponseDataAttributes) SetHsTariffNumber(v interface{}) {
+	o.HsTariffNumber = v
 }
 
-// GetDoNotShip returns the DoNotShip field value if set, zero value otherwise.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) GetDoNotShip() bool {
-	if o == nil || o.DoNotShip == nil {
-		var ret bool
+// GetDoNotShip returns the DoNotShip field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHSkusSkuId200ResponseDataAttributes) GetDoNotShip() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.DoNotShip
+	return o.DoNotShip
 }
 
 // GetDoNotShipOk returns a tuple with the DoNotShip field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) GetDoNotShipOk() (*bool, bool) {
-	if o == nil || o.DoNotShip == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHSkusSkuId200ResponseDataAttributes) GetDoNotShipOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.DoNotShip) {
 		return nil, false
 	}
-	return o.DoNotShip, true
+	return &o.DoNotShip, true
 }
 
 // HasDoNotShip returns a boolean if a field has been set.
 func (o *PATCHSkusSkuId200ResponseDataAttributes) HasDoNotShip() bool {
-	if o != nil && o.DoNotShip != nil {
+	if o != nil && IsNil(o.DoNotShip) {
 		return true
 	}
 
 	return false
 }
 
-// SetDoNotShip gets a reference to the given bool and assigns it to the DoNotShip field.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) SetDoNotShip(v bool) {
-	o.DoNotShip = &v
+// SetDoNotShip gets a reference to the given interface{} and assigns it to the DoNotShip field.
+func (o *PATCHSkusSkuId200ResponseDataAttributes) SetDoNotShip(v interface{}) {
+	o.DoNotShip = v
 }
 
-// GetDoNotTrack returns the DoNotTrack field value if set, zero value otherwise.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) GetDoNotTrack() bool {
-	if o == nil || o.DoNotTrack == nil {
-		var ret bool
+// GetDoNotTrack returns the DoNotTrack field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHSkusSkuId200ResponseDataAttributes) GetDoNotTrack() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.DoNotTrack
+	return o.DoNotTrack
 }
 
 // GetDoNotTrackOk returns a tuple with the DoNotTrack field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) GetDoNotTrackOk() (*bool, bool) {
-	if o == nil || o.DoNotTrack == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHSkusSkuId200ResponseDataAttributes) GetDoNotTrackOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.DoNotTrack) {
 		return nil, false
 	}
-	return o.DoNotTrack, true
+	return &o.DoNotTrack, true
 }
 
 // HasDoNotTrack returns a boolean if a field has been set.
 func (o *PATCHSkusSkuId200ResponseDataAttributes) HasDoNotTrack() bool {
-	if o != nil && o.DoNotTrack != nil {
+	if o != nil && IsNil(o.DoNotTrack) {
 		return true
 	}
 
 	return false
 }
 
-// SetDoNotTrack gets a reference to the given bool and assigns it to the DoNotTrack field.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) SetDoNotTrack(v bool) {
-	o.DoNotTrack = &v
+// SetDoNotTrack gets a reference to the given interface{} and assigns it to the DoNotTrack field.
+func (o *PATCHSkusSkuId200ResponseDataAttributes) SetDoNotTrack(v interface{}) {
+	o.DoNotTrack = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHSkusSkuId200ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHSkusSkuId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHSkusSkuId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *PATCHSkusSkuId200ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHSkusSkuId200ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHSkusSkuId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHSkusSkuId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *PATCHSkusSkuId200ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHSkusSkuId200ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -457,28 +472,37 @@ func (o *PATCHSkusSkuId200ResponseDataAttributes) GetMetadata() map[string]inter
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHSkusSkuId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHSkusSkuId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *PATCHSkusSkuId200ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *PATCHSkusSkuId200ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 func (o PATCHSkusSkuId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHSkusSkuId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Code != nil {
 		toSerialize["code"] = o.Code
@@ -519,7 +543,7 @@ func (o PATCHSkusSkuId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHSkusSkuId200ResponseDataAttributes struct {

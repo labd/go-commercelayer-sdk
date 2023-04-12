@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the AdyenPaymentUpdateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AdyenPaymentUpdateDataRelationships{}
 
 // AdyenPaymentUpdateDataRelationships struct for AdyenPaymentUpdateDataRelationships
 type AdyenPaymentUpdateDataRelationships struct {
@@ -39,7 +42,7 @@ func NewAdyenPaymentUpdateDataRelationshipsWithDefaults() *AdyenPaymentUpdateDat
 
 // GetOrder returns the Order field value if set, zero value otherwise.
 func (o *AdyenPaymentUpdateDataRelationships) GetOrder() AdyenPaymentCreateDataRelationshipsOrder {
-	if o == nil || o.Order == nil {
+	if o == nil || IsNil(o.Order) {
 		var ret AdyenPaymentCreateDataRelationshipsOrder
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *AdyenPaymentUpdateDataRelationships) GetOrder() AdyenPaymentCreateDataR
 // GetOrderOk returns a tuple with the Order field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AdyenPaymentUpdateDataRelationships) GetOrderOk() (*AdyenPaymentCreateDataRelationshipsOrder, bool) {
-	if o == nil || o.Order == nil {
+	if o == nil || IsNil(o.Order) {
 		return nil, false
 	}
 	return o.Order, true
@@ -57,7 +60,7 @@ func (o *AdyenPaymentUpdateDataRelationships) GetOrderOk() (*AdyenPaymentCreateD
 
 // HasOrder returns a boolean if a field has been set.
 func (o *AdyenPaymentUpdateDataRelationships) HasOrder() bool {
-	if o != nil && o.Order != nil {
+	if o != nil && !IsNil(o.Order) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *AdyenPaymentUpdateDataRelationships) SetOrder(v AdyenPaymentCreateDataR
 }
 
 func (o AdyenPaymentUpdateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Order != nil {
-		toSerialize["order"] = o.Order
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AdyenPaymentUpdateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Order) {
+		toSerialize["order"] = o.Order
+	}
+	return toSerialize, nil
 }
 
 type NullableAdyenPaymentUpdateDataRelationships struct {

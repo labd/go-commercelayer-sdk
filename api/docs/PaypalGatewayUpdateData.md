@@ -4,16 +4,16 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Id** | **string** | The resource&#39;s id | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Id** | **interface{}** | The resource&#39;s id | 
 **Attributes** | [**PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes**](PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
+**Relationships** | Pointer to **interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewPaypalGatewayUpdateData
 
-`func NewPaypalGatewayUpdateData(type_ string, id string, attributes PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes, ) *PaypalGatewayUpdateData`
+`func NewPaypalGatewayUpdateData(type_ interface{}, id interface{}, attributes PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes, ) *PaypalGatewayUpdateData`
 
 NewPaypalGatewayUpdateData instantiates a new PaypalGatewayUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -30,44 +30,64 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *PaypalGatewayUpdateData) GetType() string`
+`func (o *PaypalGatewayUpdateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *PaypalGatewayUpdateData) GetTypeOk() (*string, bool)`
+`func (o *PaypalGatewayUpdateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *PaypalGatewayUpdateData) SetType(v string)`
+`func (o *PaypalGatewayUpdateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *PaypalGatewayUpdateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *PaypalGatewayUpdateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetId
 
-`func (o *PaypalGatewayUpdateData) GetId() string`
+`func (o *PaypalGatewayUpdateData) GetId() interface{}`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *PaypalGatewayUpdateData) GetIdOk() (*string, bool)`
+`func (o *PaypalGatewayUpdateData) GetIdOk() (*interface{}, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *PaypalGatewayUpdateData) SetId(v string)`
+`func (o *PaypalGatewayUpdateData) SetId(v interface{})`
 
 SetId sets Id field to given value.
 
 
+### SetIdNil
+
+`func (o *PaypalGatewayUpdateData) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *PaypalGatewayUpdateData) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetAttributes
 
 `func (o *PaypalGatewayUpdateData) GetAttributes() PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes`
@@ -90,20 +110,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *PaypalGatewayUpdateData) GetRelationships() map[string]interface{}`
+`func (o *PaypalGatewayUpdateData) GetRelationships() interface{}`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *PaypalGatewayUpdateData) GetRelationshipsOk() (*map[string]interface{}, bool)`
+`func (o *PaypalGatewayUpdateData) GetRelationshipsOk() (*interface{}, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *PaypalGatewayUpdateData) SetRelationships(v map[string]interface{})`
+`func (o *PaypalGatewayUpdateData) SetRelationships(v interface{})`
 
 SetRelationships sets Relationships field to given value.
 
@@ -113,6 +133,16 @@ SetRelationships sets Relationships field to given value.
 
 HasRelationships returns a boolean if a field has been set.
 
+### SetRelationshipsNil
+
+`func (o *PaypalGatewayUpdateData) SetRelationshipsNil(b bool)`
+
+ SetRelationshipsNil sets the value for Relationships to be an explicit nil
+
+### UnsetRelationships
+`func (o *PaypalGatewayUpdateData) UnsetRelationships()`
+
+UnsetRelationships ensures that no value is present for Relationships, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type ShippingWeightTiersApiService service
 type ShippingWeightTiersApiDELETEShippingWeightTiersShippingWeightTierIdRequest struct {
 	ctx                  context.Context
 	ApiService           *ShippingWeightTiersApiService
-	shippingWeightTierId string
+	shippingWeightTierId interface{}
 }
 
 func (r ShippingWeightTiersApiDELETEShippingWeightTiersShippingWeightTierIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a shipping weight tier
 	@param shippingWeightTierId The resource's id
 	@return ShippingWeightTiersApiDELETEShippingWeightTiersShippingWeightTierIdRequest
 */
-func (a *ShippingWeightTiersApiService) DELETEShippingWeightTiersShippingWeightTierId(ctx context.Context, shippingWeightTierId string) ShippingWeightTiersApiDELETEShippingWeightTiersShippingWeightTierIdRequest {
+func (a *ShippingWeightTiersApiService) DELETEShippingWeightTiersShippingWeightTierId(ctx context.Context, shippingWeightTierId interface{}) ShippingWeightTiersApiDELETEShippingWeightTiersShippingWeightTierIdRequest {
 	return ShippingWeightTiersApiDELETEShippingWeightTiersShippingWeightTierIdRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -64,7 +64,7 @@ func (a *ShippingWeightTiersApiService) DELETEShippingWeightTiersShippingWeightT
 	}
 
 	localVarPath := localBasePath + "/shipping_weight_tiers/{shippingWeightTierId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingWeightTierId"+"}", url.PathEscape(parameterToString(r.shippingWeightTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingWeightTierId"+"}", url.PathEscape(parameterValueToString(r.shippingWeightTierId, "shippingWeightTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *ShippingWeightTiersApiService) DELETEShippingWeightTiersShippingWeightT
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *ShippingWeightTiersApiService) DELETEShippingWeightTiersShippingWeightT
 type ShippingWeightTiersApiGETShippingMethodIdShippingWeightTiersRequest struct {
 	ctx              context.Context
 	ApiService       *ShippingWeightTiersApiService
-	shippingMethodId string
+	shippingMethodId interface{}
 }
 
 func (r ShippingWeightTiersApiGETShippingMethodIdShippingWeightTiersRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the shipping weight tiers associated to the shipping method
 	@param shippingMethodId The resource's id
 	@return ShippingWeightTiersApiGETShippingMethodIdShippingWeightTiersRequest
 */
-func (a *ShippingWeightTiersApiService) GETShippingMethodIdShippingWeightTiers(ctx context.Context, shippingMethodId string) ShippingWeightTiersApiGETShippingMethodIdShippingWeightTiersRequest {
+func (a *ShippingWeightTiersApiService) GETShippingMethodIdShippingWeightTiers(ctx context.Context, shippingMethodId interface{}) ShippingWeightTiersApiGETShippingMethodIdShippingWeightTiersRequest {
 	return ShippingWeightTiersApiGETShippingMethodIdShippingWeightTiersRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -156,7 +156,7 @@ func (a *ShippingWeightTiersApiService) GETShippingMethodIdShippingWeightTiersEx
 	}
 
 	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}/shipping_weight_tiers"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodId, "shippingMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *ShippingWeightTiersApiService) GETShippingMethodIdShippingWeightTiersEx
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *ShippingWeightTiersApiService) GETShippingWeightTiersExecute(r Shipping
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -310,7 +310,7 @@ func (a *ShippingWeightTiersApiService) GETShippingWeightTiersExecute(r Shipping
 type ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest struct {
 	ctx                  context.Context
 	ApiService           *ShippingWeightTiersApiService
-	shippingWeightTierId string
+	shippingWeightTierId interface{}
 }
 
 func (r ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest) Execute() (*GETShippingWeightTiersShippingWeightTierId200Response, *http.Response, error) {
@@ -326,7 +326,7 @@ Retrieve a shipping weight tier
 	@param shippingWeightTierId The resource's id
 	@return ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest
 */
-func (a *ShippingWeightTiersApiService) GETShippingWeightTiersShippingWeightTierId(ctx context.Context, shippingWeightTierId string) ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest {
+func (a *ShippingWeightTiersApiService) GETShippingWeightTiersShippingWeightTierId(ctx context.Context, shippingWeightTierId interface{}) ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest {
 	return ShippingWeightTiersApiGETShippingWeightTiersShippingWeightTierIdRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -351,7 +351,7 @@ func (a *ShippingWeightTiersApiService) GETShippingWeightTiersShippingWeightTier
 	}
 
 	localVarPath := localBasePath + "/shipping_weight_tiers/{shippingWeightTierId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingWeightTierId"+"}", url.PathEscape(parameterToString(r.shippingWeightTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingWeightTierId"+"}", url.PathEscape(parameterValueToString(r.shippingWeightTierId, "shippingWeightTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *ShippingWeightTiersApiService) GETShippingWeightTiersShippingWeightTier
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -415,7 +415,7 @@ type ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest s
 	ctx                      context.Context
 	ApiService               *ShippingWeightTiersApiService
 	shippingWeightTierUpdate *ShippingWeightTierUpdate
-	shippingWeightTierId     string
+	shippingWeightTierId     interface{}
 }
 
 func (r ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest) ShippingWeightTierUpdate(shippingWeightTierUpdate ShippingWeightTierUpdate) ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest {
@@ -436,7 +436,7 @@ Update a shipping weight tier
 	@param shippingWeightTierId The resource's id
 	@return ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest
 */
-func (a *ShippingWeightTiersApiService) PATCHShippingWeightTiersShippingWeightTierId(ctx context.Context, shippingWeightTierId string) ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest {
+func (a *ShippingWeightTiersApiService) PATCHShippingWeightTiersShippingWeightTierId(ctx context.Context, shippingWeightTierId interface{}) ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest {
 	return ShippingWeightTiersApiPATCHShippingWeightTiersShippingWeightTierIdRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -461,7 +461,7 @@ func (a *ShippingWeightTiersApiService) PATCHShippingWeightTiersShippingWeightTi
 	}
 
 	localVarPath := localBasePath + "/shipping_weight_tiers/{shippingWeightTierId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingWeightTierId"+"}", url.PathEscape(parameterToString(r.shippingWeightTierId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingWeightTierId"+"}", url.PathEscape(parameterValueToString(r.shippingWeightTierId, "shippingWeightTierId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -499,9 +499,9 @@ func (a *ShippingWeightTiersApiService) PATCHShippingWeightTiersShippingWeightTi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -610,9 +610,9 @@ func (a *ShippingWeightTiersApiService) POSTShippingWeightTiersExecute(r Shippin
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

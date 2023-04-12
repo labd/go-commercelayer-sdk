@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type ManualTaxCalculatorsApiService service
 type ManualTaxCalculatorsApiDELETEManualTaxCalculatorsManualTaxCalculatorIdRequest struct {
 	ctx                   context.Context
 	ApiService            *ManualTaxCalculatorsApiService
-	manualTaxCalculatorId string
+	manualTaxCalculatorId interface{}
 }
 
 func (r ManualTaxCalculatorsApiDELETEManualTaxCalculatorsManualTaxCalculatorIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a manual tax calculator
 	@param manualTaxCalculatorId The resource's id
 	@return ManualTaxCalculatorsApiDELETEManualTaxCalculatorsManualTaxCalculatorIdRequest
 */
-func (a *ManualTaxCalculatorsApiService) DELETEManualTaxCalculatorsManualTaxCalculatorId(ctx context.Context, manualTaxCalculatorId string) ManualTaxCalculatorsApiDELETEManualTaxCalculatorsManualTaxCalculatorIdRequest {
+func (a *ManualTaxCalculatorsApiService) DELETEManualTaxCalculatorsManualTaxCalculatorId(ctx context.Context, manualTaxCalculatorId interface{}) ManualTaxCalculatorsApiDELETEManualTaxCalculatorsManualTaxCalculatorIdRequest {
 	return ManualTaxCalculatorsApiDELETEManualTaxCalculatorsManualTaxCalculatorIdRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -64,7 +64,7 @@ func (a *ManualTaxCalculatorsApiService) DELETEManualTaxCalculatorsManualTaxCalc
 	}
 
 	localVarPath := localBasePath + "/manual_tax_calculators/{manualTaxCalculatorId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"manualTaxCalculatorId"+"}", url.PathEscape(parameterToString(r.manualTaxCalculatorId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"manualTaxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.manualTaxCalculatorId, "manualTaxCalculatorId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *ManualTaxCalculatorsApiService) DELETEManualTaxCalculatorsManualTaxCalc
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculatorsExecute(r Manual
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -218,7 +218,7 @@ func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculatorsExecute(r Manual
 type ManualTaxCalculatorsApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest struct {
 	ctx                   context.Context
 	ApiService            *ManualTaxCalculatorsApiService
-	manualTaxCalculatorId string
+	manualTaxCalculatorId interface{}
 }
 
 func (r ManualTaxCalculatorsApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest) Execute() (*GETManualTaxCalculatorsManualTaxCalculatorId200Response, *http.Response, error) {
@@ -234,7 +234,7 @@ Retrieve a manual tax calculator
 	@param manualTaxCalculatorId The resource's id
 	@return ManualTaxCalculatorsApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest
 */
-func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculatorsManualTaxCalculatorId(ctx context.Context, manualTaxCalculatorId string) ManualTaxCalculatorsApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest {
+func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculatorsManualTaxCalculatorId(ctx context.Context, manualTaxCalculatorId interface{}) ManualTaxCalculatorsApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest {
 	return ManualTaxCalculatorsApiGETManualTaxCalculatorsManualTaxCalculatorIdRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -259,7 +259,7 @@ func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculatorsManualTaxCalcula
 	}
 
 	localVarPath := localBasePath + "/manual_tax_calculators/{manualTaxCalculatorId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"manualTaxCalculatorId"+"}", url.PathEscape(parameterToString(r.manualTaxCalculatorId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"manualTaxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.manualTaxCalculatorId, "manualTaxCalculatorId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculatorsManualTaxCalcula
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -322,7 +322,7 @@ func (a *ManualTaxCalculatorsApiService) GETManualTaxCalculatorsManualTaxCalcula
 type ManualTaxCalculatorsApiGETTaxRuleIdManualTaxCalculatorRequest struct {
 	ctx        context.Context
 	ApiService *ManualTaxCalculatorsApiService
-	taxRuleId  string
+	taxRuleId  interface{}
 }
 
 func (r ManualTaxCalculatorsApiGETTaxRuleIdManualTaxCalculatorRequest) Execute() (*http.Response, error) {
@@ -338,7 +338,7 @@ Retrieve the manual tax calculator associated to the tax rule
 	@param taxRuleId The resource's id
 	@return ManualTaxCalculatorsApiGETTaxRuleIdManualTaxCalculatorRequest
 */
-func (a *ManualTaxCalculatorsApiService) GETTaxRuleIdManualTaxCalculator(ctx context.Context, taxRuleId string) ManualTaxCalculatorsApiGETTaxRuleIdManualTaxCalculatorRequest {
+func (a *ManualTaxCalculatorsApiService) GETTaxRuleIdManualTaxCalculator(ctx context.Context, taxRuleId interface{}) ManualTaxCalculatorsApiGETTaxRuleIdManualTaxCalculatorRequest {
 	return ManualTaxCalculatorsApiGETTaxRuleIdManualTaxCalculatorRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -360,7 +360,7 @@ func (a *ManualTaxCalculatorsApiService) GETTaxRuleIdManualTaxCalculatorExecute(
 	}
 
 	localVarPath := localBasePath + "/tax_rules/{taxRuleId}/manual_tax_calculator"
-	localVarPath = strings.Replace(localVarPath, "{"+"taxRuleId"+"}", url.PathEscape(parameterToString(r.taxRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"taxRuleId"+"}", url.PathEscape(parameterValueToString(r.taxRuleId, "taxRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -393,9 +393,9 @@ func (a *ManualTaxCalculatorsApiService) GETTaxRuleIdManualTaxCalculatorExecute(
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -415,7 +415,7 @@ type ManualTaxCalculatorsApiPATCHManualTaxCalculatorsManualTaxCalculatorIdReques
 	ctx                       context.Context
 	ApiService                *ManualTaxCalculatorsApiService
 	manualTaxCalculatorUpdate *ManualTaxCalculatorUpdate
-	manualTaxCalculatorId     string
+	manualTaxCalculatorId     interface{}
 }
 
 func (r ManualTaxCalculatorsApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest) ManualTaxCalculatorUpdate(manualTaxCalculatorUpdate ManualTaxCalculatorUpdate) ManualTaxCalculatorsApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest {
@@ -436,7 +436,7 @@ Update a manual tax calculator
 	@param manualTaxCalculatorId The resource's id
 	@return ManualTaxCalculatorsApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest
 */
-func (a *ManualTaxCalculatorsApiService) PATCHManualTaxCalculatorsManualTaxCalculatorId(ctx context.Context, manualTaxCalculatorId string) ManualTaxCalculatorsApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest {
+func (a *ManualTaxCalculatorsApiService) PATCHManualTaxCalculatorsManualTaxCalculatorId(ctx context.Context, manualTaxCalculatorId interface{}) ManualTaxCalculatorsApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest {
 	return ManualTaxCalculatorsApiPATCHManualTaxCalculatorsManualTaxCalculatorIdRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -461,7 +461,7 @@ func (a *ManualTaxCalculatorsApiService) PATCHManualTaxCalculatorsManualTaxCalcu
 	}
 
 	localVarPath := localBasePath + "/manual_tax_calculators/{manualTaxCalculatorId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"manualTaxCalculatorId"+"}", url.PathEscape(parameterToString(r.manualTaxCalculatorId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"manualTaxCalculatorId"+"}", url.PathEscape(parameterValueToString(r.manualTaxCalculatorId, "manualTaxCalculatorId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -499,9 +499,9 @@ func (a *ManualTaxCalculatorsApiService) PATCHManualTaxCalculatorsManualTaxCalcu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -610,9 +610,9 @@ func (a *ManualTaxCalculatorsApiService) POSTManualTaxCalculatorsExecute(r Manua
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

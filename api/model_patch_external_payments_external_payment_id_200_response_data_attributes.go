@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,16 +15,19 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes{}
+
 // PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes struct for PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes
 type PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes struct {
 	// External payment options.
-	Options map[string]interface{} `json:"options,omitempty"`
+	Options interface{} `json:"options,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 }
 
 // NewPATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes instantiates a new PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes object
@@ -44,10 +47,10 @@ func NewPATCHExternalPaymentsExternalPaymentId200ResponseDataAttributesWithDefau
 	return &this
 }
 
-// GetOptions returns the Options field value if set, zero value otherwise.
-func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetOptions() map[string]interface{} {
-	if o == nil || o.Options == nil {
-		var ret map[string]interface{}
+// GetOptions returns the Options field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetOptions() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Options
@@ -55,95 +58,98 @@ func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetOpt
 
 // GetOptionsOk returns a tuple with the Options field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetOptionsOk() (map[string]interface{}, bool) {
-	if o == nil || o.Options == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetOptionsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Options) {
 		return nil, false
 	}
-	return o.Options, true
+	return &o.Options, true
 }
 
 // HasOptions returns a boolean if a field has been set.
 func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) HasOptions() bool {
-	if o != nil && o.Options != nil {
+	if o != nil && IsNil(o.Options) {
 		return true
 	}
 
 	return false
 }
 
-// SetOptions gets a reference to the given map[string]interface{} and assigns it to the Options field.
-func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) SetOptions(v map[string]interface{}) {
+// SetOptions gets a reference to the given interface{} and assigns it to the Options field.
+func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) SetOptions(v interface{}) {
 	o.Options = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -151,28 +157,37 @@ func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetMet
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 func (o PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Options != nil {
 		toSerialize["options"] = o.Options
@@ -186,7 +201,7 @@ func (o PATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes) Marshal
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHExternalPaymentsExternalPaymentId200ResponseDataAttributes struct {

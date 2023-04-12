@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type AdyenGatewaysApiService service
 type AdyenGatewaysApiDELETEAdyenGatewaysAdyenGatewayIdRequest struct {
 	ctx            context.Context
 	ApiService     *AdyenGatewaysApiService
-	adyenGatewayId string
+	adyenGatewayId interface{}
 }
 
 func (r AdyenGatewaysApiDELETEAdyenGatewaysAdyenGatewayIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete an adyen gateway
 	@param adyenGatewayId The resource's id
 	@return AdyenGatewaysApiDELETEAdyenGatewaysAdyenGatewayIdRequest
 */
-func (a *AdyenGatewaysApiService) DELETEAdyenGatewaysAdyenGatewayId(ctx context.Context, adyenGatewayId string) AdyenGatewaysApiDELETEAdyenGatewaysAdyenGatewayIdRequest {
+func (a *AdyenGatewaysApiService) DELETEAdyenGatewaysAdyenGatewayId(ctx context.Context, adyenGatewayId interface{}) AdyenGatewaysApiDELETEAdyenGatewaysAdyenGatewayIdRequest {
 	return AdyenGatewaysApiDELETEAdyenGatewaysAdyenGatewayIdRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -64,7 +64,7 @@ func (a *AdyenGatewaysApiService) DELETEAdyenGatewaysAdyenGatewayIdExecute(r Ady
 	}
 
 	localVarPath := localBasePath + "/adyen_gateways/{adyenGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"adyenGatewayId"+"}", url.PathEscape(parameterToString(r.adyenGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"adyenGatewayId"+"}", url.PathEscape(parameterValueToString(r.adyenGatewayId, "adyenGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *AdyenGatewaysApiService) DELETEAdyenGatewaysAdyenGatewayIdExecute(r Ady
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *AdyenGatewaysApiService) GETAdyenGatewaysExecute(r AdyenGatewaysApiGETA
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -218,7 +218,7 @@ func (a *AdyenGatewaysApiService) GETAdyenGatewaysExecute(r AdyenGatewaysApiGETA
 type AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest struct {
 	ctx            context.Context
 	ApiService     *AdyenGatewaysApiService
-	adyenGatewayId string
+	adyenGatewayId interface{}
 }
 
 func (r AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest) Execute() (*GETAdyenGatewaysAdyenGatewayId200Response, *http.Response, error) {
@@ -234,7 +234,7 @@ Retrieve an adyen gateway
 	@param adyenGatewayId The resource's id
 	@return AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest
 */
-func (a *AdyenGatewaysApiService) GETAdyenGatewaysAdyenGatewayId(ctx context.Context, adyenGatewayId string) AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest {
+func (a *AdyenGatewaysApiService) GETAdyenGatewaysAdyenGatewayId(ctx context.Context, adyenGatewayId interface{}) AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest {
 	return AdyenGatewaysApiGETAdyenGatewaysAdyenGatewayIdRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -259,7 +259,7 @@ func (a *AdyenGatewaysApiService) GETAdyenGatewaysAdyenGatewayIdExecute(r AdyenG
 	}
 
 	localVarPath := localBasePath + "/adyen_gateways/{adyenGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"adyenGatewayId"+"}", url.PathEscape(parameterToString(r.adyenGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"adyenGatewayId"+"}", url.PathEscape(parameterValueToString(r.adyenGatewayId, "adyenGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *AdyenGatewaysApiService) GETAdyenGatewaysAdyenGatewayIdExecute(r AdyenG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -323,7 +323,7 @@ type AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest struct {
 	ctx                context.Context
 	ApiService         *AdyenGatewaysApiService
 	adyenGatewayUpdate *AdyenGatewayUpdate
-	adyenGatewayId     string
+	adyenGatewayId     interface{}
 }
 
 func (r AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest) AdyenGatewayUpdate(adyenGatewayUpdate AdyenGatewayUpdate) AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest {
@@ -344,7 +344,7 @@ Update an adyen gateway
 	@param adyenGatewayId The resource's id
 	@return AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest
 */
-func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayId(ctx context.Context, adyenGatewayId string) AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest {
+func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayId(ctx context.Context, adyenGatewayId interface{}) AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest {
 	return AdyenGatewaysApiPATCHAdyenGatewaysAdyenGatewayIdRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -369,7 +369,7 @@ func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayIdExecute(r Adye
 	}
 
 	localVarPath := localBasePath + "/adyen_gateways/{adyenGatewayId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"adyenGatewayId"+"}", url.PathEscape(parameterToString(r.adyenGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"adyenGatewayId"+"}", url.PathEscape(parameterValueToString(r.adyenGatewayId, "adyenGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -407,9 +407,9 @@ func (a *AdyenGatewaysApiService) PATCHAdyenGatewaysAdyenGatewayIdExecute(r Adye
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -518,9 +518,9 @@ func (a *AdyenGatewaysApiService) POSTAdyenGatewaysExecute(r AdyenGatewaysApiPOS
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the ParcelLineItemData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ParcelLineItemData{}
+
 // ParcelLineItemData struct for ParcelLineItemData
 type ParcelLineItemData struct {
 	// The resource's type
-	Type          string                                           `json:"type"`
-	Attributes    GETParcelLineItems200ResponseDataInnerAttributes `json:"attributes"`
-	Relationships *ParcelLineItemDataRelationships                 `json:"relationships,omitempty"`
+	Type          interface{}                                                 `json:"type"`
+	Attributes    GETParcelLineItemsParcelLineItemId200ResponseDataAttributes `json:"attributes"`
+	Relationships *ParcelLineItemDataRelationships                            `json:"relationships,omitempty"`
 }
 
 // NewParcelLineItemData instantiates a new ParcelLineItemData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewParcelLineItemData(type_ string, attributes GETParcelLineItems200ResponseDataInnerAttributes) *ParcelLineItemData {
+func NewParcelLineItemData(type_ interface{}, attributes GETParcelLineItemsParcelLineItemId200ResponseDataAttributes) *ParcelLineItemData {
 	this := ParcelLineItemData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -43,9 +46,10 @@ func NewParcelLineItemDataWithDefaults() *ParcelLineItemData {
 }
 
 // GetType returns the Type field value
-func (o *ParcelLineItemData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *ParcelLineItemData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -54,22 +58,23 @@ func (o *ParcelLineItemData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *ParcelLineItemData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ParcelLineItemData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *ParcelLineItemData) SetType(v string) {
+func (o *ParcelLineItemData) SetType(v interface{}) {
 	o.Type = v
 }
 
 // GetAttributes returns the Attributes field value
-func (o *ParcelLineItemData) GetAttributes() GETParcelLineItems200ResponseDataInnerAttributes {
+func (o *ParcelLineItemData) GetAttributes() GETParcelLineItemsParcelLineItemId200ResponseDataAttributes {
 	if o == nil {
-		var ret GETParcelLineItems200ResponseDataInnerAttributes
+		var ret GETParcelLineItemsParcelLineItemId200ResponseDataAttributes
 		return ret
 	}
 
@@ -78,7 +83,7 @@ func (o *ParcelLineItemData) GetAttributes() GETParcelLineItems200ResponseDataIn
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *ParcelLineItemData) GetAttributesOk() (*GETParcelLineItems200ResponseDataInnerAttributes, bool) {
+func (o *ParcelLineItemData) GetAttributesOk() (*GETParcelLineItemsParcelLineItemId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -86,13 +91,13 @@ func (o *ParcelLineItemData) GetAttributesOk() (*GETParcelLineItems200ResponseDa
 }
 
 // SetAttributes sets field value
-func (o *ParcelLineItemData) SetAttributes(v GETParcelLineItems200ResponseDataInnerAttributes) {
+func (o *ParcelLineItemData) SetAttributes(v GETParcelLineItemsParcelLineItemId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *ParcelLineItemData) GetRelationships() ParcelLineItemDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret ParcelLineItemDataRelationships
 		return ret
 	}
@@ -102,7 +107,7 @@ func (o *ParcelLineItemData) GetRelationships() ParcelLineItemDataRelationships 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ParcelLineItemData) GetRelationshipsOk() (*ParcelLineItemDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -110,7 +115,7 @@ func (o *ParcelLineItemData) GetRelationshipsOk() (*ParcelLineItemDataRelationsh
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *ParcelLineItemData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -123,17 +128,23 @@ func (o *ParcelLineItemData) SetRelationships(v ParcelLineItemDataRelationships)
 }
 
 func (o ParcelLineItemData) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
-		toSerialize["relationships"] = o.Relationships
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ParcelLineItemData) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
+		toSerialize["relationships"] = o.Relationships
+	}
+	return toSerialize, nil
 }
 
 type NullableParcelLineItemData struct {

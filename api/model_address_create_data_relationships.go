@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the AddressCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &AddressCreateDataRelationships{}
 
 // AddressCreateDataRelationships struct for AddressCreateDataRelationships
 type AddressCreateDataRelationships struct {
@@ -39,7 +42,7 @@ func NewAddressCreateDataRelationshipsWithDefaults() *AddressCreateDataRelations
 
 // GetGeocoder returns the Geocoder field value if set, zero value otherwise.
 func (o *AddressCreateDataRelationships) GetGeocoder() AddressCreateDataRelationshipsGeocoder {
-	if o == nil || o.Geocoder == nil {
+	if o == nil || IsNil(o.Geocoder) {
 		var ret AddressCreateDataRelationshipsGeocoder
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *AddressCreateDataRelationships) GetGeocoder() AddressCreateDataRelation
 // GetGeocoderOk returns a tuple with the Geocoder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *AddressCreateDataRelationships) GetGeocoderOk() (*AddressCreateDataRelationshipsGeocoder, bool) {
-	if o == nil || o.Geocoder == nil {
+	if o == nil || IsNil(o.Geocoder) {
 		return nil, false
 	}
 	return o.Geocoder, true
@@ -57,7 +60,7 @@ func (o *AddressCreateDataRelationships) GetGeocoderOk() (*AddressCreateDataRela
 
 // HasGeocoder returns a boolean if a field has been set.
 func (o *AddressCreateDataRelationships) HasGeocoder() bool {
-	if o != nil && o.Geocoder != nil {
+	if o != nil && !IsNil(o.Geocoder) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *AddressCreateDataRelationships) SetGeocoder(v AddressCreateDataRelation
 }
 
 func (o AddressCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Geocoder != nil {
-		toSerialize["geocoder"] = o.Geocoder
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o AddressCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Geocoder) {
+		toSerialize["geocoder"] = o.Geocoder
+	}
+	return toSerialize, nil
 }
 
 type NullableAddressCreateDataRelationships struct {

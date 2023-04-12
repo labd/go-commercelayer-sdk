@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the DeliveryLeadTimeUpdateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &DeliveryLeadTimeUpdateDataRelationships{}
 
 // DeliveryLeadTimeUpdateDataRelationships struct for DeliveryLeadTimeUpdateDataRelationships
 type DeliveryLeadTimeUpdateDataRelationships struct {
@@ -40,7 +43,7 @@ func NewDeliveryLeadTimeUpdateDataRelationshipsWithDefaults() *DeliveryLeadTimeU
 
 // GetStockLocation returns the StockLocation field value if set, zero value otherwise.
 func (o *DeliveryLeadTimeUpdateDataRelationships) GetStockLocation() DeliveryLeadTimeCreateDataRelationshipsStockLocation {
-	if o == nil || o.StockLocation == nil {
+	if o == nil || IsNil(o.StockLocation) {
 		var ret DeliveryLeadTimeCreateDataRelationshipsStockLocation
 		return ret
 	}
@@ -50,7 +53,7 @@ func (o *DeliveryLeadTimeUpdateDataRelationships) GetStockLocation() DeliveryLea
 // GetStockLocationOk returns a tuple with the StockLocation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeliveryLeadTimeUpdateDataRelationships) GetStockLocationOk() (*DeliveryLeadTimeCreateDataRelationshipsStockLocation, bool) {
-	if o == nil || o.StockLocation == nil {
+	if o == nil || IsNil(o.StockLocation) {
 		return nil, false
 	}
 	return o.StockLocation, true
@@ -58,7 +61,7 @@ func (o *DeliveryLeadTimeUpdateDataRelationships) GetStockLocationOk() (*Deliver
 
 // HasStockLocation returns a boolean if a field has been set.
 func (o *DeliveryLeadTimeUpdateDataRelationships) HasStockLocation() bool {
-	if o != nil && o.StockLocation != nil {
+	if o != nil && !IsNil(o.StockLocation) {
 		return true
 	}
 
@@ -72,7 +75,7 @@ func (o *DeliveryLeadTimeUpdateDataRelationships) SetStockLocation(v DeliveryLea
 
 // GetShippingMethod returns the ShippingMethod field value if set, zero value otherwise.
 func (o *DeliveryLeadTimeUpdateDataRelationships) GetShippingMethod() DeliveryLeadTimeCreateDataRelationshipsShippingMethod {
-	if o == nil || o.ShippingMethod == nil {
+	if o == nil || IsNil(o.ShippingMethod) {
 		var ret DeliveryLeadTimeCreateDataRelationshipsShippingMethod
 		return ret
 	}
@@ -82,7 +85,7 @@ func (o *DeliveryLeadTimeUpdateDataRelationships) GetShippingMethod() DeliveryLe
 // GetShippingMethodOk returns a tuple with the ShippingMethod field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *DeliveryLeadTimeUpdateDataRelationships) GetShippingMethodOk() (*DeliveryLeadTimeCreateDataRelationshipsShippingMethod, bool) {
-	if o == nil || o.ShippingMethod == nil {
+	if o == nil || IsNil(o.ShippingMethod) {
 		return nil, false
 	}
 	return o.ShippingMethod, true
@@ -90,7 +93,7 @@ func (o *DeliveryLeadTimeUpdateDataRelationships) GetShippingMethodOk() (*Delive
 
 // HasShippingMethod returns a boolean if a field has been set.
 func (o *DeliveryLeadTimeUpdateDataRelationships) HasShippingMethod() bool {
-	if o != nil && o.ShippingMethod != nil {
+	if o != nil && !IsNil(o.ShippingMethod) {
 		return true
 	}
 
@@ -103,14 +106,22 @@ func (o *DeliveryLeadTimeUpdateDataRelationships) SetShippingMethod(v DeliveryLe
 }
 
 func (o DeliveryLeadTimeUpdateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.StockLocation != nil {
-		toSerialize["stock_location"] = o.StockLocation
-	}
-	if o.ShippingMethod != nil {
-		toSerialize["shipping_method"] = o.ShippingMethod
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o DeliveryLeadTimeUpdateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.StockLocation) {
+		toSerialize["stock_location"] = o.StockLocation
+	}
+	if !IsNil(o.ShippingMethod) {
+		toSerialize["shipping_method"] = o.ShippingMethod
+	}
+	return toSerialize, nil
 }
 
 type NullableDeliveryLeadTimeUpdateDataRelationships struct {

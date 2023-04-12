@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETFixedPricePromotions200ResponseDataInnerAttributes**](GETFixedPricePromotions200ResponseDataInnerAttributes.md) |  | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Attributes** | [**GETFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes**](GETFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**FixedPricePromotionDataRelationships**](FixedPricePromotionDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewFixedPricePromotionData
 
-`func NewFixedPricePromotionData(type_ string, attributes GETFixedPricePromotions200ResponseDataInnerAttributes, ) *FixedPricePromotionData`
+`func NewFixedPricePromotionData(type_ interface{}, attributes GETFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes, ) *FixedPricePromotionData`
 
 NewFixedPricePromotionData instantiates a new FixedPricePromotionData object
 This constructor will assign default values to properties that have it defined,
@@ -29,40 +29,50 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *FixedPricePromotionData) GetType() string`
+`func (o *FixedPricePromotionData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *FixedPricePromotionData) GetTypeOk() (*string, bool)`
+`func (o *FixedPricePromotionData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *FixedPricePromotionData) SetType(v string)`
+`func (o *FixedPricePromotionData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *FixedPricePromotionData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *FixedPricePromotionData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *FixedPricePromotionData) GetAttributes() GETFixedPricePromotions200ResponseDataInnerAttributes`
+`func (o *FixedPricePromotionData) GetAttributes() GETFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *FixedPricePromotionData) GetAttributesOk() (*GETFixedPricePromotions200ResponseDataInnerAttributes, bool)`
+`func (o *FixedPricePromotionData) GetAttributesOk() (*GETFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *FixedPricePromotionData) SetAttributes(v GETFixedPricePromotions200ResponseDataInnerAttributes)`
+`func (o *FixedPricePromotionData) SetAttributes(v GETFixedPricePromotionsFixedPricePromotionId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

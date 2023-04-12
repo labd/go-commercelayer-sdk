@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,60 +15,63 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHParcelsParcelId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHParcelsParcelId200ResponseDataAttributes{}
+
 // PATCHParcelsParcelId200ResponseDataAttributes struct for PATCHParcelsParcelId200ResponseDataAttributes
 type PATCHParcelsParcelId200ResponseDataAttributes struct {
 	// The parcel weight, used to automatically calculate the tax rates from the available carrier accounts.
-	Weight *float32 `json:"weight,omitempty"`
+	Weight interface{} `json:"weight,omitempty"`
 	// Can be one of 'gr', 'lb', or 'oz'
-	UnitOfWeight *string `json:"unit_of_weight,omitempty"`
+	UnitOfWeight interface{} `json:"unit_of_weight,omitempty"`
 	// When shipping outside the US, you need to provide either an Exemption and Exclusion Legend (EEL) code or a Proof of Filing Citation (PFC). Which you need is based on the value of the goods being shipped. Value can be one of \"EEL\" o \"PFC\".
-	EelPfc *string `json:"eel_pfc,omitempty"`
+	EelPfc interface{} `json:"eel_pfc,omitempty"`
 	// The type of item you are sending. Can be one of 'merchandise', 'gift', 'documents', 'returned_goods', 'sample', or 'other'.
-	ContentsType *string `json:"contents_type,omitempty"`
+	ContentsType interface{} `json:"contents_type,omitempty"`
 	// If you specify 'other' in the 'contents_type' attribute, you must supply a brief description in this attribute.
-	ContentsExplanation *string `json:"contents_explanation,omitempty"`
+	ContentsExplanation interface{} `json:"contents_explanation,omitempty"`
 	// Indicates if the provided information is accurate
-	CustomsCertify *bool `json:"customs_certify,omitempty"`
+	CustomsCertify interface{} `json:"customs_certify,omitempty"`
 	// This is the name of the person who is certifying that the information provided on the customs form is accurate. Use a name of the person in your organization who is responsible for this.
-	CustomsSigner *string `json:"customs_signer,omitempty"`
+	CustomsSigner interface{} `json:"customs_signer,omitempty"`
 	// In case the shipment cannot be delivered, this option tells the carrier what you want to happen to the parcel. You can pass either 'return', or 'abandon'. The value defaults to 'return'. If you pass 'abandon', you will not receive the parcel back if it cannot be delivered.
-	NonDeliveryOption *string `json:"non_delivery_option,omitempty"`
+	NonDeliveryOption interface{} `json:"non_delivery_option,omitempty"`
 	// Describes if your parcel requires any special treatment or quarantine when entering the country. Can be one of 'none', 'other', 'quarantine', or 'sanitary_phytosanitary_inspection'.
-	RestrictionType *string `json:"restriction_type,omitempty"`
+	RestrictionType interface{} `json:"restriction_type,omitempty"`
 	// If you specify 'other' in the restriction type, you must supply a brief description of what is required.
-	RestrictionComments *string `json:"restriction_comments,omitempty"`
+	RestrictionComments interface{} `json:"restriction_comments,omitempty"`
 	// Indicates if the parcel requires customs info to get the shipping rates.
-	CustomsInfoRequired *bool `json:"customs_info_required,omitempty"`
+	CustomsInfoRequired interface{} `json:"customs_info_required,omitempty"`
 	// The shipping label url, ready to be downloaded and printed.
-	ShippingLabelUrl *string `json:"shipping_label_url,omitempty"`
+	ShippingLabelUrl interface{} `json:"shipping_label_url,omitempty"`
 	// The shipping label file type. One of 'application/pdf', 'application/zpl', 'application/epl2', or 'image/png'.
-	ShippingLabelFileType *string `json:"shipping_label_file_type,omitempty"`
+	ShippingLabelFileType interface{} `json:"shipping_label_file_type,omitempty"`
 	// The shipping label size.
-	ShippingLabelSize *string `json:"shipping_label_size,omitempty"`
+	ShippingLabelSize interface{} `json:"shipping_label_size,omitempty"`
 	// The shipping label resolution.
-	ShippingLabelResolution *string `json:"shipping_label_resolution,omitempty"`
+	ShippingLabelResolution interface{} `json:"shipping_label_resolution,omitempty"`
 	// The tracking number associated to this parcel.
-	TrackingNumber *string `json:"tracking_number,omitempty"`
+	TrackingNumber interface{} `json:"tracking_number,omitempty"`
 	// The tracking status for this parcel, automatically updated in real time by the shipping carrier.
-	TrackingStatus *string `json:"tracking_status,omitempty"`
+	TrackingStatus interface{} `json:"tracking_status,omitempty"`
 	// Additional information about the tracking status, automatically updated in real time by the shipping carrier.
-	TrackingStatusDetail *string `json:"tracking_status_detail,omitempty"`
+	TrackingStatusDetail interface{} `json:"tracking_status_detail,omitempty"`
 	// Time at which the parcel's tracking status was last updated.
-	TrackingStatusUpdatedAt *string `json:"tracking_status_updated_at,omitempty"`
+	TrackingStatusUpdatedAt interface{} `json:"tracking_status_updated_at,omitempty"`
 	// The parcel's full tracking history, automatically updated in real time by the shipping carrier.
-	TrackingDetails *string `json:"tracking_details,omitempty"`
+	TrackingDetails interface{} `json:"tracking_details,omitempty"`
 	// The weight of the parcel as measured by the carrier in ounces (if available)
-	CarrierWeightOz *string `json:"carrier_weight_oz,omitempty"`
+	CarrierWeightOz interface{} `json:"carrier_weight_oz,omitempty"`
 	// The name of the person who signed for the parcel (if available)
-	SignedBy *string `json:"signed_by,omitempty"`
+	SignedBy interface{} `json:"signed_by,omitempty"`
 	// The type of Incoterm (if available).
-	Incoterm *string `json:"incoterm,omitempty"`
+	Incoterm interface{} `json:"incoterm,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 }
 
 // NewPATCHParcelsParcelId200ResponseDataAttributes instantiates a new PATCHParcelsParcelId200ResponseDataAttributes object
@@ -88,810 +91,835 @@ func NewPATCHParcelsParcelId200ResponseDataAttributesWithDefaults() *PATCHParcel
 	return &this
 }
 
-// GetWeight returns the Weight field value if set, zero value otherwise.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetWeight() float32 {
-	if o == nil || o.Weight == nil {
-		var ret float32
+// GetWeight returns the Weight field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetWeight() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Weight
+	return o.Weight
 }
 
 // GetWeightOk returns a tuple with the Weight field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetWeightOk() (*float32, bool) {
-	if o == nil || o.Weight == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetWeightOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Weight) {
 		return nil, false
 	}
-	return o.Weight, true
+	return &o.Weight, true
 }
 
 // HasWeight returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasWeight() bool {
-	if o != nil && o.Weight != nil {
+	if o != nil && IsNil(o.Weight) {
 		return true
 	}
 
 	return false
 }
 
-// SetWeight gets a reference to the given float32 and assigns it to the Weight field.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetWeight(v float32) {
-	o.Weight = &v
+// SetWeight gets a reference to the given interface{} and assigns it to the Weight field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetWeight(v interface{}) {
+	o.Weight = v
 }
 
-// GetUnitOfWeight returns the UnitOfWeight field value if set, zero value otherwise.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetUnitOfWeight() string {
-	if o == nil || o.UnitOfWeight == nil {
-		var ret string
+// GetUnitOfWeight returns the UnitOfWeight field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetUnitOfWeight() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.UnitOfWeight
+	return o.UnitOfWeight
 }
 
 // GetUnitOfWeightOk returns a tuple with the UnitOfWeight field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetUnitOfWeightOk() (*string, bool) {
-	if o == nil || o.UnitOfWeight == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetUnitOfWeightOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.UnitOfWeight) {
 		return nil, false
 	}
-	return o.UnitOfWeight, true
+	return &o.UnitOfWeight, true
 }
 
 // HasUnitOfWeight returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasUnitOfWeight() bool {
-	if o != nil && o.UnitOfWeight != nil {
+	if o != nil && IsNil(o.UnitOfWeight) {
 		return true
 	}
 
 	return false
 }
 
-// SetUnitOfWeight gets a reference to the given string and assigns it to the UnitOfWeight field.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetUnitOfWeight(v string) {
-	o.UnitOfWeight = &v
+// SetUnitOfWeight gets a reference to the given interface{} and assigns it to the UnitOfWeight field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetUnitOfWeight(v interface{}) {
+	o.UnitOfWeight = v
 }
 
-// GetEelPfc returns the EelPfc field value if set, zero value otherwise.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetEelPfc() string {
-	if o == nil || o.EelPfc == nil {
-		var ret string
+// GetEelPfc returns the EelPfc field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetEelPfc() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.EelPfc
+	return o.EelPfc
 }
 
 // GetEelPfcOk returns a tuple with the EelPfc field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetEelPfcOk() (*string, bool) {
-	if o == nil || o.EelPfc == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetEelPfcOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.EelPfc) {
 		return nil, false
 	}
-	return o.EelPfc, true
+	return &o.EelPfc, true
 }
 
 // HasEelPfc returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasEelPfc() bool {
-	if o != nil && o.EelPfc != nil {
+	if o != nil && IsNil(o.EelPfc) {
 		return true
 	}
 
 	return false
 }
 
-// SetEelPfc gets a reference to the given string and assigns it to the EelPfc field.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetEelPfc(v string) {
-	o.EelPfc = &v
+// SetEelPfc gets a reference to the given interface{} and assigns it to the EelPfc field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetEelPfc(v interface{}) {
+	o.EelPfc = v
 }
 
-// GetContentsType returns the ContentsType field value if set, zero value otherwise.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetContentsType() string {
-	if o == nil || o.ContentsType == nil {
-		var ret string
+// GetContentsType returns the ContentsType field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetContentsType() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ContentsType
+	return o.ContentsType
 }
 
 // GetContentsTypeOk returns a tuple with the ContentsType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetContentsTypeOk() (*string, bool) {
-	if o == nil || o.ContentsType == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetContentsTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ContentsType) {
 		return nil, false
 	}
-	return o.ContentsType, true
+	return &o.ContentsType, true
 }
 
 // HasContentsType returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasContentsType() bool {
-	if o != nil && o.ContentsType != nil {
+	if o != nil && IsNil(o.ContentsType) {
 		return true
 	}
 
 	return false
 }
 
-// SetContentsType gets a reference to the given string and assigns it to the ContentsType field.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetContentsType(v string) {
-	o.ContentsType = &v
+// SetContentsType gets a reference to the given interface{} and assigns it to the ContentsType field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetContentsType(v interface{}) {
+	o.ContentsType = v
 }
 
-// GetContentsExplanation returns the ContentsExplanation field value if set, zero value otherwise.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetContentsExplanation() string {
-	if o == nil || o.ContentsExplanation == nil {
-		var ret string
+// GetContentsExplanation returns the ContentsExplanation field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetContentsExplanation() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ContentsExplanation
+	return o.ContentsExplanation
 }
 
 // GetContentsExplanationOk returns a tuple with the ContentsExplanation field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetContentsExplanationOk() (*string, bool) {
-	if o == nil || o.ContentsExplanation == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetContentsExplanationOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ContentsExplanation) {
 		return nil, false
 	}
-	return o.ContentsExplanation, true
+	return &o.ContentsExplanation, true
 }
 
 // HasContentsExplanation returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasContentsExplanation() bool {
-	if o != nil && o.ContentsExplanation != nil {
+	if o != nil && IsNil(o.ContentsExplanation) {
 		return true
 	}
 
 	return false
 }
 
-// SetContentsExplanation gets a reference to the given string and assigns it to the ContentsExplanation field.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetContentsExplanation(v string) {
-	o.ContentsExplanation = &v
+// SetContentsExplanation gets a reference to the given interface{} and assigns it to the ContentsExplanation field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetContentsExplanation(v interface{}) {
+	o.ContentsExplanation = v
 }
 
-// GetCustomsCertify returns the CustomsCertify field value if set, zero value otherwise.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCustomsCertify() bool {
-	if o == nil || o.CustomsCertify == nil {
-		var ret bool
+// GetCustomsCertify returns the CustomsCertify field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCustomsCertify() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CustomsCertify
+	return o.CustomsCertify
 }
 
 // GetCustomsCertifyOk returns a tuple with the CustomsCertify field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCustomsCertifyOk() (*bool, bool) {
-	if o == nil || o.CustomsCertify == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCustomsCertifyOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CustomsCertify) {
 		return nil, false
 	}
-	return o.CustomsCertify, true
+	return &o.CustomsCertify, true
 }
 
 // HasCustomsCertify returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasCustomsCertify() bool {
-	if o != nil && o.CustomsCertify != nil {
+	if o != nil && IsNil(o.CustomsCertify) {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomsCertify gets a reference to the given bool and assigns it to the CustomsCertify field.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetCustomsCertify(v bool) {
-	o.CustomsCertify = &v
+// SetCustomsCertify gets a reference to the given interface{} and assigns it to the CustomsCertify field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetCustomsCertify(v interface{}) {
+	o.CustomsCertify = v
 }
 
-// GetCustomsSigner returns the CustomsSigner field value if set, zero value otherwise.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCustomsSigner() string {
-	if o == nil || o.CustomsSigner == nil {
-		var ret string
+// GetCustomsSigner returns the CustomsSigner field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCustomsSigner() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CustomsSigner
+	return o.CustomsSigner
 }
 
 // GetCustomsSignerOk returns a tuple with the CustomsSigner field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCustomsSignerOk() (*string, bool) {
-	if o == nil || o.CustomsSigner == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCustomsSignerOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CustomsSigner) {
 		return nil, false
 	}
-	return o.CustomsSigner, true
+	return &o.CustomsSigner, true
 }
 
 // HasCustomsSigner returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasCustomsSigner() bool {
-	if o != nil && o.CustomsSigner != nil {
+	if o != nil && IsNil(o.CustomsSigner) {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomsSigner gets a reference to the given string and assigns it to the CustomsSigner field.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetCustomsSigner(v string) {
-	o.CustomsSigner = &v
+// SetCustomsSigner gets a reference to the given interface{} and assigns it to the CustomsSigner field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetCustomsSigner(v interface{}) {
+	o.CustomsSigner = v
 }
 
-// GetNonDeliveryOption returns the NonDeliveryOption field value if set, zero value otherwise.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetNonDeliveryOption() string {
-	if o == nil || o.NonDeliveryOption == nil {
-		var ret string
+// GetNonDeliveryOption returns the NonDeliveryOption field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetNonDeliveryOption() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.NonDeliveryOption
+	return o.NonDeliveryOption
 }
 
 // GetNonDeliveryOptionOk returns a tuple with the NonDeliveryOption field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetNonDeliveryOptionOk() (*string, bool) {
-	if o == nil || o.NonDeliveryOption == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetNonDeliveryOptionOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.NonDeliveryOption) {
 		return nil, false
 	}
-	return o.NonDeliveryOption, true
+	return &o.NonDeliveryOption, true
 }
 
 // HasNonDeliveryOption returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasNonDeliveryOption() bool {
-	if o != nil && o.NonDeliveryOption != nil {
+	if o != nil && IsNil(o.NonDeliveryOption) {
 		return true
 	}
 
 	return false
 }
 
-// SetNonDeliveryOption gets a reference to the given string and assigns it to the NonDeliveryOption field.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetNonDeliveryOption(v string) {
-	o.NonDeliveryOption = &v
+// SetNonDeliveryOption gets a reference to the given interface{} and assigns it to the NonDeliveryOption field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetNonDeliveryOption(v interface{}) {
+	o.NonDeliveryOption = v
 }
 
-// GetRestrictionType returns the RestrictionType field value if set, zero value otherwise.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetRestrictionType() string {
-	if o == nil || o.RestrictionType == nil {
-		var ret string
+// GetRestrictionType returns the RestrictionType field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetRestrictionType() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.RestrictionType
+	return o.RestrictionType
 }
 
 // GetRestrictionTypeOk returns a tuple with the RestrictionType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetRestrictionTypeOk() (*string, bool) {
-	if o == nil || o.RestrictionType == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetRestrictionTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.RestrictionType) {
 		return nil, false
 	}
-	return o.RestrictionType, true
+	return &o.RestrictionType, true
 }
 
 // HasRestrictionType returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasRestrictionType() bool {
-	if o != nil && o.RestrictionType != nil {
+	if o != nil && IsNil(o.RestrictionType) {
 		return true
 	}
 
 	return false
 }
 
-// SetRestrictionType gets a reference to the given string and assigns it to the RestrictionType field.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetRestrictionType(v string) {
-	o.RestrictionType = &v
+// SetRestrictionType gets a reference to the given interface{} and assigns it to the RestrictionType field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetRestrictionType(v interface{}) {
+	o.RestrictionType = v
 }
 
-// GetRestrictionComments returns the RestrictionComments field value if set, zero value otherwise.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetRestrictionComments() string {
-	if o == nil || o.RestrictionComments == nil {
-		var ret string
+// GetRestrictionComments returns the RestrictionComments field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetRestrictionComments() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.RestrictionComments
+	return o.RestrictionComments
 }
 
 // GetRestrictionCommentsOk returns a tuple with the RestrictionComments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetRestrictionCommentsOk() (*string, bool) {
-	if o == nil || o.RestrictionComments == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetRestrictionCommentsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.RestrictionComments) {
 		return nil, false
 	}
-	return o.RestrictionComments, true
+	return &o.RestrictionComments, true
 }
 
 // HasRestrictionComments returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasRestrictionComments() bool {
-	if o != nil && o.RestrictionComments != nil {
+	if o != nil && IsNil(o.RestrictionComments) {
 		return true
 	}
 
 	return false
 }
 
-// SetRestrictionComments gets a reference to the given string and assigns it to the RestrictionComments field.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetRestrictionComments(v string) {
-	o.RestrictionComments = &v
+// SetRestrictionComments gets a reference to the given interface{} and assigns it to the RestrictionComments field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetRestrictionComments(v interface{}) {
+	o.RestrictionComments = v
 }
 
-// GetCustomsInfoRequired returns the CustomsInfoRequired field value if set, zero value otherwise.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCustomsInfoRequired() bool {
-	if o == nil || o.CustomsInfoRequired == nil {
-		var ret bool
+// GetCustomsInfoRequired returns the CustomsInfoRequired field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCustomsInfoRequired() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CustomsInfoRequired
+	return o.CustomsInfoRequired
 }
 
 // GetCustomsInfoRequiredOk returns a tuple with the CustomsInfoRequired field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCustomsInfoRequiredOk() (*bool, bool) {
-	if o == nil || o.CustomsInfoRequired == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCustomsInfoRequiredOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CustomsInfoRequired) {
 		return nil, false
 	}
-	return o.CustomsInfoRequired, true
+	return &o.CustomsInfoRequired, true
 }
 
 // HasCustomsInfoRequired returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasCustomsInfoRequired() bool {
-	if o != nil && o.CustomsInfoRequired != nil {
+	if o != nil && IsNil(o.CustomsInfoRequired) {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomsInfoRequired gets a reference to the given bool and assigns it to the CustomsInfoRequired field.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetCustomsInfoRequired(v bool) {
-	o.CustomsInfoRequired = &v
+// SetCustomsInfoRequired gets a reference to the given interface{} and assigns it to the CustomsInfoRequired field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetCustomsInfoRequired(v interface{}) {
+	o.CustomsInfoRequired = v
 }
 
-// GetShippingLabelUrl returns the ShippingLabelUrl field value if set, zero value otherwise.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelUrl() string {
-	if o == nil || o.ShippingLabelUrl == nil {
-		var ret string
+// GetShippingLabelUrl returns the ShippingLabelUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ShippingLabelUrl
+	return o.ShippingLabelUrl
 }
 
 // GetShippingLabelUrlOk returns a tuple with the ShippingLabelUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelUrlOk() (*string, bool) {
-	if o == nil || o.ShippingLabelUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ShippingLabelUrl) {
 		return nil, false
 	}
-	return o.ShippingLabelUrl, true
+	return &o.ShippingLabelUrl, true
 }
 
 // HasShippingLabelUrl returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasShippingLabelUrl() bool {
-	if o != nil && o.ShippingLabelUrl != nil {
+	if o != nil && IsNil(o.ShippingLabelUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetShippingLabelUrl gets a reference to the given string and assigns it to the ShippingLabelUrl field.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetShippingLabelUrl(v string) {
-	o.ShippingLabelUrl = &v
+// SetShippingLabelUrl gets a reference to the given interface{} and assigns it to the ShippingLabelUrl field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetShippingLabelUrl(v interface{}) {
+	o.ShippingLabelUrl = v
 }
 
-// GetShippingLabelFileType returns the ShippingLabelFileType field value if set, zero value otherwise.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelFileType() string {
-	if o == nil || o.ShippingLabelFileType == nil {
-		var ret string
+// GetShippingLabelFileType returns the ShippingLabelFileType field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelFileType() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ShippingLabelFileType
+	return o.ShippingLabelFileType
 }
 
 // GetShippingLabelFileTypeOk returns a tuple with the ShippingLabelFileType field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelFileTypeOk() (*string, bool) {
-	if o == nil || o.ShippingLabelFileType == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelFileTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ShippingLabelFileType) {
 		return nil, false
 	}
-	return o.ShippingLabelFileType, true
+	return &o.ShippingLabelFileType, true
 }
 
 // HasShippingLabelFileType returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasShippingLabelFileType() bool {
-	if o != nil && o.ShippingLabelFileType != nil {
+	if o != nil && IsNil(o.ShippingLabelFileType) {
 		return true
 	}
 
 	return false
 }
 
-// SetShippingLabelFileType gets a reference to the given string and assigns it to the ShippingLabelFileType field.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetShippingLabelFileType(v string) {
-	o.ShippingLabelFileType = &v
+// SetShippingLabelFileType gets a reference to the given interface{} and assigns it to the ShippingLabelFileType field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetShippingLabelFileType(v interface{}) {
+	o.ShippingLabelFileType = v
 }
 
-// GetShippingLabelSize returns the ShippingLabelSize field value if set, zero value otherwise.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelSize() string {
-	if o == nil || o.ShippingLabelSize == nil {
-		var ret string
+// GetShippingLabelSize returns the ShippingLabelSize field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelSize() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ShippingLabelSize
+	return o.ShippingLabelSize
 }
 
 // GetShippingLabelSizeOk returns a tuple with the ShippingLabelSize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelSizeOk() (*string, bool) {
-	if o == nil || o.ShippingLabelSize == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelSizeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ShippingLabelSize) {
 		return nil, false
 	}
-	return o.ShippingLabelSize, true
+	return &o.ShippingLabelSize, true
 }
 
 // HasShippingLabelSize returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasShippingLabelSize() bool {
-	if o != nil && o.ShippingLabelSize != nil {
+	if o != nil && IsNil(o.ShippingLabelSize) {
 		return true
 	}
 
 	return false
 }
 
-// SetShippingLabelSize gets a reference to the given string and assigns it to the ShippingLabelSize field.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetShippingLabelSize(v string) {
-	o.ShippingLabelSize = &v
+// SetShippingLabelSize gets a reference to the given interface{} and assigns it to the ShippingLabelSize field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetShippingLabelSize(v interface{}) {
+	o.ShippingLabelSize = v
 }
 
-// GetShippingLabelResolution returns the ShippingLabelResolution field value if set, zero value otherwise.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelResolution() string {
-	if o == nil || o.ShippingLabelResolution == nil {
-		var ret string
+// GetShippingLabelResolution returns the ShippingLabelResolution field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelResolution() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ShippingLabelResolution
+	return o.ShippingLabelResolution
 }
 
 // GetShippingLabelResolutionOk returns a tuple with the ShippingLabelResolution field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelResolutionOk() (*string, bool) {
-	if o == nil || o.ShippingLabelResolution == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetShippingLabelResolutionOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ShippingLabelResolution) {
 		return nil, false
 	}
-	return o.ShippingLabelResolution, true
+	return &o.ShippingLabelResolution, true
 }
 
 // HasShippingLabelResolution returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasShippingLabelResolution() bool {
-	if o != nil && o.ShippingLabelResolution != nil {
+	if o != nil && IsNil(o.ShippingLabelResolution) {
 		return true
 	}
 
 	return false
 }
 
-// SetShippingLabelResolution gets a reference to the given string and assigns it to the ShippingLabelResolution field.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetShippingLabelResolution(v string) {
-	o.ShippingLabelResolution = &v
+// SetShippingLabelResolution gets a reference to the given interface{} and assigns it to the ShippingLabelResolution field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetShippingLabelResolution(v interface{}) {
+	o.ShippingLabelResolution = v
 }
 
-// GetTrackingNumber returns the TrackingNumber field value if set, zero value otherwise.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingNumber() string {
-	if o == nil || o.TrackingNumber == nil {
-		var ret string
+// GetTrackingNumber returns the TrackingNumber field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingNumber() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.TrackingNumber
+	return o.TrackingNumber
 }
 
 // GetTrackingNumberOk returns a tuple with the TrackingNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingNumberOk() (*string, bool) {
-	if o == nil || o.TrackingNumber == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingNumberOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.TrackingNumber) {
 		return nil, false
 	}
-	return o.TrackingNumber, true
+	return &o.TrackingNumber, true
 }
 
 // HasTrackingNumber returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasTrackingNumber() bool {
-	if o != nil && o.TrackingNumber != nil {
+	if o != nil && IsNil(o.TrackingNumber) {
 		return true
 	}
 
 	return false
 }
 
-// SetTrackingNumber gets a reference to the given string and assigns it to the TrackingNumber field.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetTrackingNumber(v string) {
-	o.TrackingNumber = &v
+// SetTrackingNumber gets a reference to the given interface{} and assigns it to the TrackingNumber field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetTrackingNumber(v interface{}) {
+	o.TrackingNumber = v
 }
 
-// GetTrackingStatus returns the TrackingStatus field value if set, zero value otherwise.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingStatus() string {
-	if o == nil || o.TrackingStatus == nil {
-		var ret string
+// GetTrackingStatus returns the TrackingStatus field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingStatus() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.TrackingStatus
+	return o.TrackingStatus
 }
 
 // GetTrackingStatusOk returns a tuple with the TrackingStatus field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingStatusOk() (*string, bool) {
-	if o == nil || o.TrackingStatus == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingStatusOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.TrackingStatus) {
 		return nil, false
 	}
-	return o.TrackingStatus, true
+	return &o.TrackingStatus, true
 }
 
 // HasTrackingStatus returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasTrackingStatus() bool {
-	if o != nil && o.TrackingStatus != nil {
+	if o != nil && IsNil(o.TrackingStatus) {
 		return true
 	}
 
 	return false
 }
 
-// SetTrackingStatus gets a reference to the given string and assigns it to the TrackingStatus field.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetTrackingStatus(v string) {
-	o.TrackingStatus = &v
+// SetTrackingStatus gets a reference to the given interface{} and assigns it to the TrackingStatus field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetTrackingStatus(v interface{}) {
+	o.TrackingStatus = v
 }
 
-// GetTrackingStatusDetail returns the TrackingStatusDetail field value if set, zero value otherwise.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingStatusDetail() string {
-	if o == nil || o.TrackingStatusDetail == nil {
-		var ret string
+// GetTrackingStatusDetail returns the TrackingStatusDetail field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingStatusDetail() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.TrackingStatusDetail
+	return o.TrackingStatusDetail
 }
 
 // GetTrackingStatusDetailOk returns a tuple with the TrackingStatusDetail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingStatusDetailOk() (*string, bool) {
-	if o == nil || o.TrackingStatusDetail == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingStatusDetailOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.TrackingStatusDetail) {
 		return nil, false
 	}
-	return o.TrackingStatusDetail, true
+	return &o.TrackingStatusDetail, true
 }
 
 // HasTrackingStatusDetail returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasTrackingStatusDetail() bool {
-	if o != nil && o.TrackingStatusDetail != nil {
+	if o != nil && IsNil(o.TrackingStatusDetail) {
 		return true
 	}
 
 	return false
 }
 
-// SetTrackingStatusDetail gets a reference to the given string and assigns it to the TrackingStatusDetail field.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetTrackingStatusDetail(v string) {
-	o.TrackingStatusDetail = &v
+// SetTrackingStatusDetail gets a reference to the given interface{} and assigns it to the TrackingStatusDetail field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetTrackingStatusDetail(v interface{}) {
+	o.TrackingStatusDetail = v
 }
 
-// GetTrackingStatusUpdatedAt returns the TrackingStatusUpdatedAt field value if set, zero value otherwise.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingStatusUpdatedAt() string {
-	if o == nil || o.TrackingStatusUpdatedAt == nil {
-		var ret string
+// GetTrackingStatusUpdatedAt returns the TrackingStatusUpdatedAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingStatusUpdatedAt() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.TrackingStatusUpdatedAt
+	return o.TrackingStatusUpdatedAt
 }
 
 // GetTrackingStatusUpdatedAtOk returns a tuple with the TrackingStatusUpdatedAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingStatusUpdatedAtOk() (*string, bool) {
-	if o == nil || o.TrackingStatusUpdatedAt == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingStatusUpdatedAtOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.TrackingStatusUpdatedAt) {
 		return nil, false
 	}
-	return o.TrackingStatusUpdatedAt, true
+	return &o.TrackingStatusUpdatedAt, true
 }
 
 // HasTrackingStatusUpdatedAt returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasTrackingStatusUpdatedAt() bool {
-	if o != nil && o.TrackingStatusUpdatedAt != nil {
+	if o != nil && IsNil(o.TrackingStatusUpdatedAt) {
 		return true
 	}
 
 	return false
 }
 
-// SetTrackingStatusUpdatedAt gets a reference to the given string and assigns it to the TrackingStatusUpdatedAt field.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetTrackingStatusUpdatedAt(v string) {
-	o.TrackingStatusUpdatedAt = &v
+// SetTrackingStatusUpdatedAt gets a reference to the given interface{} and assigns it to the TrackingStatusUpdatedAt field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetTrackingStatusUpdatedAt(v interface{}) {
+	o.TrackingStatusUpdatedAt = v
 }
 
-// GetTrackingDetails returns the TrackingDetails field value if set, zero value otherwise.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingDetails() string {
-	if o == nil || o.TrackingDetails == nil {
-		var ret string
+// GetTrackingDetails returns the TrackingDetails field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingDetails() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.TrackingDetails
+	return o.TrackingDetails
 }
 
 // GetTrackingDetailsOk returns a tuple with the TrackingDetails field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingDetailsOk() (*string, bool) {
-	if o == nil || o.TrackingDetails == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetTrackingDetailsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.TrackingDetails) {
 		return nil, false
 	}
-	return o.TrackingDetails, true
+	return &o.TrackingDetails, true
 }
 
 // HasTrackingDetails returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasTrackingDetails() bool {
-	if o != nil && o.TrackingDetails != nil {
+	if o != nil && IsNil(o.TrackingDetails) {
 		return true
 	}
 
 	return false
 }
 
-// SetTrackingDetails gets a reference to the given string and assigns it to the TrackingDetails field.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetTrackingDetails(v string) {
-	o.TrackingDetails = &v
+// SetTrackingDetails gets a reference to the given interface{} and assigns it to the TrackingDetails field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetTrackingDetails(v interface{}) {
+	o.TrackingDetails = v
 }
 
-// GetCarrierWeightOz returns the CarrierWeightOz field value if set, zero value otherwise.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCarrierWeightOz() string {
-	if o == nil || o.CarrierWeightOz == nil {
-		var ret string
+// GetCarrierWeightOz returns the CarrierWeightOz field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCarrierWeightOz() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CarrierWeightOz
+	return o.CarrierWeightOz
 }
 
 // GetCarrierWeightOzOk returns a tuple with the CarrierWeightOz field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCarrierWeightOzOk() (*string, bool) {
-	if o == nil || o.CarrierWeightOz == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetCarrierWeightOzOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CarrierWeightOz) {
 		return nil, false
 	}
-	return o.CarrierWeightOz, true
+	return &o.CarrierWeightOz, true
 }
 
 // HasCarrierWeightOz returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasCarrierWeightOz() bool {
-	if o != nil && o.CarrierWeightOz != nil {
+	if o != nil && IsNil(o.CarrierWeightOz) {
 		return true
 	}
 
 	return false
 }
 
-// SetCarrierWeightOz gets a reference to the given string and assigns it to the CarrierWeightOz field.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetCarrierWeightOz(v string) {
-	o.CarrierWeightOz = &v
+// SetCarrierWeightOz gets a reference to the given interface{} and assigns it to the CarrierWeightOz field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetCarrierWeightOz(v interface{}) {
+	o.CarrierWeightOz = v
 }
 
-// GetSignedBy returns the SignedBy field value if set, zero value otherwise.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetSignedBy() string {
-	if o == nil || o.SignedBy == nil {
-		var ret string
+// GetSignedBy returns the SignedBy field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetSignedBy() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.SignedBy
+	return o.SignedBy
 }
 
 // GetSignedByOk returns a tuple with the SignedBy field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetSignedByOk() (*string, bool) {
-	if o == nil || o.SignedBy == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetSignedByOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.SignedBy) {
 		return nil, false
 	}
-	return o.SignedBy, true
+	return &o.SignedBy, true
 }
 
 // HasSignedBy returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasSignedBy() bool {
-	if o != nil && o.SignedBy != nil {
+	if o != nil && IsNil(o.SignedBy) {
 		return true
 	}
 
 	return false
 }
 
-// SetSignedBy gets a reference to the given string and assigns it to the SignedBy field.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetSignedBy(v string) {
-	o.SignedBy = &v
+// SetSignedBy gets a reference to the given interface{} and assigns it to the SignedBy field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetSignedBy(v interface{}) {
+	o.SignedBy = v
 }
 
-// GetIncoterm returns the Incoterm field value if set, zero value otherwise.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetIncoterm() string {
-	if o == nil || o.Incoterm == nil {
-		var ret string
+// GetIncoterm returns the Incoterm field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetIncoterm() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Incoterm
+	return o.Incoterm
 }
 
 // GetIncotermOk returns a tuple with the Incoterm field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetIncotermOk() (*string, bool) {
-	if o == nil || o.Incoterm == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetIncotermOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Incoterm) {
 		return nil, false
 	}
-	return o.Incoterm, true
+	return &o.Incoterm, true
 }
 
 // HasIncoterm returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasIncoterm() bool {
-	if o != nil && o.Incoterm != nil {
+	if o != nil && IsNil(o.Incoterm) {
 		return true
 	}
 
 	return false
 }
 
-// SetIncoterm gets a reference to the given string and assigns it to the Incoterm field.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetIncoterm(v string) {
-	o.Incoterm = &v
+// SetIncoterm gets a reference to the given interface{} and assigns it to the Incoterm field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetIncoterm(v interface{}) {
+	o.Incoterm = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -899,28 +927,37 @@ func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetMetadata() map[string
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHParcelsParcelId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *PATCHParcelsParcelId200ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 func (o PATCHParcelsParcelId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHParcelsParcelId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Weight != nil {
 		toSerialize["weight"] = o.Weight
@@ -1000,7 +1037,7 @@ func (o PATCHParcelsParcelId200ResponseDataAttributes) MarshalJSON() ([]byte, er
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHParcelsParcelId200ResponseDataAttributes struct {

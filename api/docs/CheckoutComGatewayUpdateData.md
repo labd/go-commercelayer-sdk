@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Id** | **string** | The resource&#39;s id | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Id** | **interface{}** | The resource&#39;s id | 
 **Attributes** | [**PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes**](PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**CheckoutComGatewayCreateDataRelationships**](CheckoutComGatewayCreateDataRelationships.md) |  | [optional] 
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewCheckoutComGatewayUpdateData
 
-`func NewCheckoutComGatewayUpdateData(type_ string, id string, attributes PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes, ) *CheckoutComGatewayUpdateData`
+`func NewCheckoutComGatewayUpdateData(type_ interface{}, id interface{}, attributes PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes, ) *CheckoutComGatewayUpdateData`
 
 NewCheckoutComGatewayUpdateData instantiates a new CheckoutComGatewayUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -30,44 +30,64 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *CheckoutComGatewayUpdateData) GetType() string`
+`func (o *CheckoutComGatewayUpdateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *CheckoutComGatewayUpdateData) GetTypeOk() (*string, bool)`
+`func (o *CheckoutComGatewayUpdateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *CheckoutComGatewayUpdateData) SetType(v string)`
+`func (o *CheckoutComGatewayUpdateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *CheckoutComGatewayUpdateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *CheckoutComGatewayUpdateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetId
 
-`func (o *CheckoutComGatewayUpdateData) GetId() string`
+`func (o *CheckoutComGatewayUpdateData) GetId() interface{}`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *CheckoutComGatewayUpdateData) GetIdOk() (*string, bool)`
+`func (o *CheckoutComGatewayUpdateData) GetIdOk() (*interface{}, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *CheckoutComGatewayUpdateData) SetId(v string)`
+`func (o *CheckoutComGatewayUpdateData) SetId(v interface{})`
 
 SetId sets Id field to given value.
 
 
+### SetIdNil
+
+`func (o *CheckoutComGatewayUpdateData) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *CheckoutComGatewayUpdateData) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetAttributes
 
 `func (o *CheckoutComGatewayUpdateData) GetAttributes() PATCHCheckoutComGatewaysCheckoutComGatewayId200ResponseDataAttributes`

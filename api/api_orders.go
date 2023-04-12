@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type OrdersApiService service
 type OrdersApiDELETEOrdersOrderIdRequest struct {
 	ctx        context.Context
 	ApiService *OrdersApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r OrdersApiDELETEOrdersOrderIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete an order
 	@param orderId The resource's id
 	@return OrdersApiDELETEOrdersOrderIdRequest
 */
-func (a *OrdersApiService) DELETEOrdersOrderId(ctx context.Context, orderId string) OrdersApiDELETEOrdersOrderIdRequest {
+func (a *OrdersApiService) DELETEOrdersOrderId(ctx context.Context, orderId interface{}) OrdersApiDELETEOrdersOrderIdRequest {
 	return OrdersApiDELETEOrdersOrderIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -64,7 +64,7 @@ func (a *OrdersApiService) DELETEOrdersOrderIdExecute(r OrdersApiDELETEOrdersOrd
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *OrdersApiService) DELETEOrdersOrderIdExecute(r OrdersApiDELETEOrdersOrd
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *OrdersApiService) DELETEOrdersOrderIdExecute(r OrdersApiDELETEOrdersOrd
 type OrdersApiGETAdyenPaymentIdOrderRequest struct {
 	ctx            context.Context
 	ApiService     *OrdersApiService
-	adyenPaymentId string
+	adyenPaymentId interface{}
 }
 
 func (r OrdersApiGETAdyenPaymentIdOrderRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the order associated to the adyen payment
 	@param adyenPaymentId The resource's id
 	@return OrdersApiGETAdyenPaymentIdOrderRequest
 */
-func (a *OrdersApiService) GETAdyenPaymentIdOrder(ctx context.Context, adyenPaymentId string) OrdersApiGETAdyenPaymentIdOrderRequest {
+func (a *OrdersApiService) GETAdyenPaymentIdOrder(ctx context.Context, adyenPaymentId interface{}) OrdersApiGETAdyenPaymentIdOrderRequest {
 	return OrdersApiGETAdyenPaymentIdOrderRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -156,7 +156,7 @@ func (a *OrdersApiService) GETAdyenPaymentIdOrderExecute(r OrdersApiGETAdyenPaym
 	}
 
 	localVarPath := localBasePath + "/adyen_payments/{adyenPaymentId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"adyenPaymentId"+"}", url.PathEscape(parameterToString(r.adyenPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"adyenPaymentId"+"}", url.PathEscape(parameterValueToString(r.adyenPaymentId, "adyenPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *OrdersApiService) GETAdyenPaymentIdOrderExecute(r OrdersApiGETAdyenPaym
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -210,7 +210,7 @@ func (a *OrdersApiService) GETAdyenPaymentIdOrderExecute(r OrdersApiGETAdyenPaym
 type OrdersApiGETAuthorizationIdOrderRequest struct {
 	ctx             context.Context
 	ApiService      *OrdersApiService
-	authorizationId string
+	authorizationId interface{}
 }
 
 func (r OrdersApiGETAuthorizationIdOrderRequest) Execute() (*http.Response, error) {
@@ -226,7 +226,7 @@ Retrieve the order associated to the authorization
 	@param authorizationId The resource's id
 	@return OrdersApiGETAuthorizationIdOrderRequest
 */
-func (a *OrdersApiService) GETAuthorizationIdOrder(ctx context.Context, authorizationId string) OrdersApiGETAuthorizationIdOrderRequest {
+func (a *OrdersApiService) GETAuthorizationIdOrder(ctx context.Context, authorizationId interface{}) OrdersApiGETAuthorizationIdOrderRequest {
 	return OrdersApiGETAuthorizationIdOrderRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -248,7 +248,7 @@ func (a *OrdersApiService) GETAuthorizationIdOrderExecute(r OrdersApiGETAuthoriz
 	}
 
 	localVarPath := localBasePath + "/authorizations/{authorizationId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"authorizationId"+"}", url.PathEscape(parameterToString(r.authorizationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"authorizationId"+"}", url.PathEscape(parameterValueToString(r.authorizationId, "authorizationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -281,9 +281,101 @@ func (a *OrdersApiService) GETAuthorizationIdOrderExecute(r OrdersApiGETAuthoriz
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type OrdersApiGETAxervePaymentIdOrderRequest struct {
+	ctx             context.Context
+	ApiService      *OrdersApiService
+	axervePaymentId interface{}
+}
+
+func (r OrdersApiGETAxervePaymentIdOrderRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETAxervePaymentIdOrderExecute(r)
+}
+
+/*
+GETAxervePaymentIdOrder Retrieve the order associated to the axerve payment
+
+Retrieve the order associated to the axerve payment
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param axervePaymentId The resource's id
+	@return OrdersApiGETAxervePaymentIdOrderRequest
+*/
+func (a *OrdersApiService) GETAxervePaymentIdOrder(ctx context.Context, axervePaymentId interface{}) OrdersApiGETAxervePaymentIdOrderRequest {
+	return OrdersApiGETAxervePaymentIdOrderRequest{
+		ApiService:      a,
+		ctx:             ctx,
+		axervePaymentId: axervePaymentId,
+	}
+}
+
+// Execute executes the request
+func (a *OrdersApiService) GETAxervePaymentIdOrderExecute(r OrdersApiGETAxervePaymentIdOrderRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETAxervePaymentIdOrder")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/axerve_payments/{axervePaymentId}/order"
+	localVarPath = strings.Replace(localVarPath, "{"+"axervePaymentId"+"}", url.PathEscape(parameterValueToString(r.axervePaymentId, "axervePaymentId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -302,7 +394,7 @@ func (a *OrdersApiService) GETAuthorizationIdOrderExecute(r OrdersApiGETAuthoriz
 type OrdersApiGETBraintreePaymentIdOrderRequest struct {
 	ctx                context.Context
 	ApiService         *OrdersApiService
-	braintreePaymentId string
+	braintreePaymentId interface{}
 }
 
 func (r OrdersApiGETBraintreePaymentIdOrderRequest) Execute() (*http.Response, error) {
@@ -318,7 +410,7 @@ Retrieve the order associated to the braintree payment
 	@param braintreePaymentId The resource's id
 	@return OrdersApiGETBraintreePaymentIdOrderRequest
 */
-func (a *OrdersApiService) GETBraintreePaymentIdOrder(ctx context.Context, braintreePaymentId string) OrdersApiGETBraintreePaymentIdOrderRequest {
+func (a *OrdersApiService) GETBraintreePaymentIdOrder(ctx context.Context, braintreePaymentId interface{}) OrdersApiGETBraintreePaymentIdOrderRequest {
 	return OrdersApiGETBraintreePaymentIdOrderRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -340,7 +432,7 @@ func (a *OrdersApiService) GETBraintreePaymentIdOrderExecute(r OrdersApiGETBrain
 	}
 
 	localVarPath := localBasePath + "/braintree_payments/{braintreePaymentId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"braintreePaymentId"+"}", url.PathEscape(parameterToString(r.braintreePaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"braintreePaymentId"+"}", url.PathEscape(parameterValueToString(r.braintreePaymentId, "braintreePaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -373,9 +465,9 @@ func (a *OrdersApiService) GETBraintreePaymentIdOrderExecute(r OrdersApiGETBrain
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -394,7 +486,7 @@ func (a *OrdersApiService) GETBraintreePaymentIdOrderExecute(r OrdersApiGETBrain
 type OrdersApiGETCaptureIdOrderRequest struct {
 	ctx        context.Context
 	ApiService *OrdersApiService
-	captureId  string
+	captureId  interface{}
 }
 
 func (r OrdersApiGETCaptureIdOrderRequest) Execute() (*http.Response, error) {
@@ -410,7 +502,7 @@ Retrieve the order associated to the capture
 	@param captureId The resource's id
 	@return OrdersApiGETCaptureIdOrderRequest
 */
-func (a *OrdersApiService) GETCaptureIdOrder(ctx context.Context, captureId string) OrdersApiGETCaptureIdOrderRequest {
+func (a *OrdersApiService) GETCaptureIdOrder(ctx context.Context, captureId interface{}) OrdersApiGETCaptureIdOrderRequest {
 	return OrdersApiGETCaptureIdOrderRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -432,7 +524,7 @@ func (a *OrdersApiService) GETCaptureIdOrderExecute(r OrdersApiGETCaptureIdOrder
 	}
 
 	localVarPath := localBasePath + "/captures/{captureId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"captureId"+"}", url.PathEscape(parameterToString(r.captureId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"captureId"+"}", url.PathEscape(parameterValueToString(r.captureId, "captureId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -465,9 +557,9 @@ func (a *OrdersApiService) GETCaptureIdOrderExecute(r OrdersApiGETCaptureIdOrder
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -486,7 +578,7 @@ func (a *OrdersApiService) GETCaptureIdOrderExecute(r OrdersApiGETCaptureIdOrder
 type OrdersApiGETCheckoutComPaymentIdOrderRequest struct {
 	ctx                  context.Context
 	ApiService           *OrdersApiService
-	checkoutComPaymentId string
+	checkoutComPaymentId interface{}
 }
 
 func (r OrdersApiGETCheckoutComPaymentIdOrderRequest) Execute() (*http.Response, error) {
@@ -502,7 +594,7 @@ Retrieve the order associated to the checkout.com payment
 	@param checkoutComPaymentId The resource's id
 	@return OrdersApiGETCheckoutComPaymentIdOrderRequest
 */
-func (a *OrdersApiService) GETCheckoutComPaymentIdOrder(ctx context.Context, checkoutComPaymentId string) OrdersApiGETCheckoutComPaymentIdOrderRequest {
+func (a *OrdersApiService) GETCheckoutComPaymentIdOrder(ctx context.Context, checkoutComPaymentId interface{}) OrdersApiGETCheckoutComPaymentIdOrderRequest {
 	return OrdersApiGETCheckoutComPaymentIdOrderRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -524,7 +616,7 @@ func (a *OrdersApiService) GETCheckoutComPaymentIdOrderExecute(r OrdersApiGETChe
 	}
 
 	localVarPath := localBasePath + "/checkout_com_payments/{checkoutComPaymentId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComPaymentId"+"}", url.PathEscape(parameterToString(r.checkoutComPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComPaymentId"+"}", url.PathEscape(parameterValueToString(r.checkoutComPaymentId, "checkoutComPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -557,9 +649,9 @@ func (a *OrdersApiService) GETCheckoutComPaymentIdOrderExecute(r OrdersApiGETChe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -578,7 +670,7 @@ func (a *OrdersApiService) GETCheckoutComPaymentIdOrderExecute(r OrdersApiGETChe
 type OrdersApiGETCustomerIdOrdersRequest struct {
 	ctx        context.Context
 	ApiService *OrdersApiService
-	customerId string
+	customerId interface{}
 }
 
 func (r OrdersApiGETCustomerIdOrdersRequest) Execute() (*http.Response, error) {
@@ -594,7 +686,7 @@ Retrieve the orders associated to the customer
 	@param customerId The resource's id
 	@return OrdersApiGETCustomerIdOrdersRequest
 */
-func (a *OrdersApiService) GETCustomerIdOrders(ctx context.Context, customerId string) OrdersApiGETCustomerIdOrdersRequest {
+func (a *OrdersApiService) GETCustomerIdOrders(ctx context.Context, customerId interface{}) OrdersApiGETCustomerIdOrdersRequest {
 	return OrdersApiGETCustomerIdOrdersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -616,7 +708,7 @@ func (a *OrdersApiService) GETCustomerIdOrdersExecute(r OrdersApiGETCustomerIdOr
 	}
 
 	localVarPath := localBasePath + "/customers/{customerId}/orders"
-	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterToString(r.customerId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"customerId"+"}", url.PathEscape(parameterValueToString(r.customerId, "customerId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -649,9 +741,9 @@ func (a *OrdersApiService) GETCustomerIdOrdersExecute(r OrdersApiGETCustomerIdOr
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -670,7 +762,7 @@ func (a *OrdersApiService) GETCustomerIdOrdersExecute(r OrdersApiGETCustomerIdOr
 type OrdersApiGETExternalPaymentIdOrderRequest struct {
 	ctx               context.Context
 	ApiService        *OrdersApiService
-	externalPaymentId string
+	externalPaymentId interface{}
 }
 
 func (r OrdersApiGETExternalPaymentIdOrderRequest) Execute() (*http.Response, error) {
@@ -686,7 +778,7 @@ Retrieve the order associated to the external payment
 	@param externalPaymentId The resource's id
 	@return OrdersApiGETExternalPaymentIdOrderRequest
 */
-func (a *OrdersApiService) GETExternalPaymentIdOrder(ctx context.Context, externalPaymentId string) OrdersApiGETExternalPaymentIdOrderRequest {
+func (a *OrdersApiService) GETExternalPaymentIdOrder(ctx context.Context, externalPaymentId interface{}) OrdersApiGETExternalPaymentIdOrderRequest {
 	return OrdersApiGETExternalPaymentIdOrderRequest{
 		ApiService:        a,
 		ctx:               ctx,
@@ -708,7 +800,7 @@ func (a *OrdersApiService) GETExternalPaymentIdOrderExecute(r OrdersApiGETExtern
 	}
 
 	localVarPath := localBasePath + "/external_payments/{externalPaymentId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPaymentId"+"}", url.PathEscape(parameterToString(r.externalPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPaymentId"+"}", url.PathEscape(parameterValueToString(r.externalPaymentId, "externalPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -741,9 +833,9 @@ func (a *OrdersApiService) GETExternalPaymentIdOrderExecute(r OrdersApiGETExtern
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -762,7 +854,7 @@ func (a *OrdersApiService) GETExternalPaymentIdOrderExecute(r OrdersApiGETExtern
 type OrdersApiGETKlarnaPaymentIdOrderRequest struct {
 	ctx             context.Context
 	ApiService      *OrdersApiService
-	klarnaPaymentId string
+	klarnaPaymentId interface{}
 }
 
 func (r OrdersApiGETKlarnaPaymentIdOrderRequest) Execute() (*http.Response, error) {
@@ -778,7 +870,7 @@ Retrieve the order associated to the klarna payment
 	@param klarnaPaymentId The resource's id
 	@return OrdersApiGETKlarnaPaymentIdOrderRequest
 */
-func (a *OrdersApiService) GETKlarnaPaymentIdOrder(ctx context.Context, klarnaPaymentId string) OrdersApiGETKlarnaPaymentIdOrderRequest {
+func (a *OrdersApiService) GETKlarnaPaymentIdOrder(ctx context.Context, klarnaPaymentId interface{}) OrdersApiGETKlarnaPaymentIdOrderRequest {
 	return OrdersApiGETKlarnaPaymentIdOrderRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -800,7 +892,7 @@ func (a *OrdersApiService) GETKlarnaPaymentIdOrderExecute(r OrdersApiGETKlarnaPa
 	}
 
 	localVarPath := localBasePath + "/klarna_payments/{klarnaPaymentId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"klarnaPaymentId"+"}", url.PathEscape(parameterToString(r.klarnaPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"klarnaPaymentId"+"}", url.PathEscape(parameterValueToString(r.klarnaPaymentId, "klarnaPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -833,9 +925,9 @@ func (a *OrdersApiService) GETKlarnaPaymentIdOrderExecute(r OrdersApiGETKlarnaPa
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -854,7 +946,7 @@ func (a *OrdersApiService) GETKlarnaPaymentIdOrderExecute(r OrdersApiGETKlarnaPa
 type OrdersApiGETLineItemIdOrderRequest struct {
 	ctx        context.Context
 	ApiService *OrdersApiService
-	lineItemId string
+	lineItemId interface{}
 }
 
 func (r OrdersApiGETLineItemIdOrderRequest) Execute() (*http.Response, error) {
@@ -870,7 +962,7 @@ Retrieve the order associated to the line item
 	@param lineItemId The resource's id
 	@return OrdersApiGETLineItemIdOrderRequest
 */
-func (a *OrdersApiService) GETLineItemIdOrder(ctx context.Context, lineItemId string) OrdersApiGETLineItemIdOrderRequest {
+func (a *OrdersApiService) GETLineItemIdOrder(ctx context.Context, lineItemId interface{}) OrdersApiGETLineItemIdOrderRequest {
 	return OrdersApiGETLineItemIdOrderRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -892,7 +984,7 @@ func (a *OrdersApiService) GETLineItemIdOrderExecute(r OrdersApiGETLineItemIdOrd
 	}
 
 	localVarPath := localBasePath + "/line_items/{lineItemId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterToString(r.lineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterValueToString(r.lineItemId, "lineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -925,9 +1017,9 @@ func (a *OrdersApiService) GETLineItemIdOrderExecute(r OrdersApiGETLineItemIdOrd
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -946,7 +1038,7 @@ func (a *OrdersApiService) GETLineItemIdOrderExecute(r OrdersApiGETLineItemIdOrd
 type OrdersApiGETOrderCopyIdSourceOrderRequest struct {
 	ctx         context.Context
 	ApiService  *OrdersApiService
-	orderCopyId string
+	orderCopyId interface{}
 }
 
 func (r OrdersApiGETOrderCopyIdSourceOrderRequest) Execute() (*http.Response, error) {
@@ -962,7 +1054,7 @@ Retrieve the source order associated to the order copy
 	@param orderCopyId The resource's id
 	@return OrdersApiGETOrderCopyIdSourceOrderRequest
 */
-func (a *OrdersApiService) GETOrderCopyIdSourceOrder(ctx context.Context, orderCopyId string) OrdersApiGETOrderCopyIdSourceOrderRequest {
+func (a *OrdersApiService) GETOrderCopyIdSourceOrder(ctx context.Context, orderCopyId interface{}) OrdersApiGETOrderCopyIdSourceOrderRequest {
 	return OrdersApiGETOrderCopyIdSourceOrderRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -984,7 +1076,7 @@ func (a *OrdersApiService) GETOrderCopyIdSourceOrderExecute(r OrdersApiGETOrderC
 	}
 
 	localVarPath := localBasePath + "/order_copies/{orderCopyId}/source_order"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterToString(r.orderCopyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterValueToString(r.orderCopyId, "orderCopyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1017,9 +1109,9 @@ func (a *OrdersApiService) GETOrderCopyIdSourceOrderExecute(r OrdersApiGETOrderC
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1038,7 +1130,7 @@ func (a *OrdersApiService) GETOrderCopyIdSourceOrderExecute(r OrdersApiGETOrderC
 type OrdersApiGETOrderCopyIdTargetOrderRequest struct {
 	ctx         context.Context
 	ApiService  *OrdersApiService
-	orderCopyId string
+	orderCopyId interface{}
 }
 
 func (r OrdersApiGETOrderCopyIdTargetOrderRequest) Execute() (*http.Response, error) {
@@ -1054,7 +1146,7 @@ Retrieve the target order associated to the order copy
 	@param orderCopyId The resource's id
 	@return OrdersApiGETOrderCopyIdTargetOrderRequest
 */
-func (a *OrdersApiService) GETOrderCopyIdTargetOrder(ctx context.Context, orderCopyId string) OrdersApiGETOrderCopyIdTargetOrderRequest {
+func (a *OrdersApiService) GETOrderCopyIdTargetOrder(ctx context.Context, orderCopyId interface{}) OrdersApiGETOrderCopyIdTargetOrderRequest {
 	return OrdersApiGETOrderCopyIdTargetOrderRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -1076,7 +1168,7 @@ func (a *OrdersApiService) GETOrderCopyIdTargetOrderExecute(r OrdersApiGETOrderC
 	}
 
 	localVarPath := localBasePath + "/order_copies/{orderCopyId}/target_order"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterToString(r.orderCopyId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderCopyId"+"}", url.PathEscape(parameterValueToString(r.orderCopyId, "orderCopyId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1109,9 +1201,193 @@ func (a *OrdersApiService) GETOrderCopyIdTargetOrderExecute(r OrdersApiGETOrderC
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type OrdersApiGETOrderFactoryIdSourceOrderRequest struct {
+	ctx            context.Context
+	ApiService     *OrdersApiService
+	orderFactoryId interface{}
+}
+
+func (r OrdersApiGETOrderFactoryIdSourceOrderRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderFactoryIdSourceOrderExecute(r)
+}
+
+/*
+GETOrderFactoryIdSourceOrder Retrieve the source order associated to the order factory
+
+Retrieve the source order associated to the order factory
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderFactoryId The resource's id
+	@return OrdersApiGETOrderFactoryIdSourceOrderRequest
+*/
+func (a *OrdersApiService) GETOrderFactoryIdSourceOrder(ctx context.Context, orderFactoryId interface{}) OrdersApiGETOrderFactoryIdSourceOrderRequest {
+	return OrdersApiGETOrderFactoryIdSourceOrderRequest{
+		ApiService:     a,
+		ctx:            ctx,
+		orderFactoryId: orderFactoryId,
+	}
+}
+
+// Execute executes the request
+func (a *OrdersApiService) GETOrderFactoryIdSourceOrderExecute(r OrdersApiGETOrderFactoryIdSourceOrderRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETOrderFactoryIdSourceOrder")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/order_factories/{orderFactoryId}/source_order"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderFactoryId"+"}", url.PathEscape(parameterValueToString(r.orderFactoryId, "orderFactoryId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type OrdersApiGETOrderFactoryIdTargetOrderRequest struct {
+	ctx            context.Context
+	ApiService     *OrdersApiService
+	orderFactoryId interface{}
+}
+
+func (r OrdersApiGETOrderFactoryIdTargetOrderRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETOrderFactoryIdTargetOrderExecute(r)
+}
+
+/*
+GETOrderFactoryIdTargetOrder Retrieve the target order associated to the order factory
+
+Retrieve the target order associated to the order factory
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param orderFactoryId The resource's id
+	@return OrdersApiGETOrderFactoryIdTargetOrderRequest
+*/
+func (a *OrdersApiService) GETOrderFactoryIdTargetOrder(ctx context.Context, orderFactoryId interface{}) OrdersApiGETOrderFactoryIdTargetOrderRequest {
+	return OrdersApiGETOrderFactoryIdTargetOrderRequest{
+		ApiService:     a,
+		ctx:            ctx,
+		orderFactoryId: orderFactoryId,
+	}
+}
+
+// Execute executes the request
+func (a *OrdersApiService) GETOrderFactoryIdTargetOrderExecute(r OrdersApiGETOrderFactoryIdTargetOrderRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETOrderFactoryIdTargetOrder")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/order_factories/{orderFactoryId}/target_order"
+	localVarPath = strings.Replace(localVarPath, "{"+"orderFactoryId"+"}", url.PathEscape(parameterValueToString(r.orderFactoryId, "orderFactoryId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1130,7 +1406,7 @@ func (a *OrdersApiService) GETOrderCopyIdTargetOrderExecute(r OrdersApiGETOrderC
 type OrdersApiGETOrderSubscriptionIdOrdersRequest struct {
 	ctx                 context.Context
 	ApiService          *OrdersApiService
-	orderSubscriptionId string
+	orderSubscriptionId interface{}
 }
 
 func (r OrdersApiGETOrderSubscriptionIdOrdersRequest) Execute() (*http.Response, error) {
@@ -1146,7 +1422,7 @@ Retrieve the orders associated to the order subscription
 	@param orderSubscriptionId The resource's id
 	@return OrdersApiGETOrderSubscriptionIdOrdersRequest
 */
-func (a *OrdersApiService) GETOrderSubscriptionIdOrders(ctx context.Context, orderSubscriptionId string) OrdersApiGETOrderSubscriptionIdOrdersRequest {
+func (a *OrdersApiService) GETOrderSubscriptionIdOrders(ctx context.Context, orderSubscriptionId interface{}) OrdersApiGETOrderSubscriptionIdOrdersRequest {
 	return OrdersApiGETOrderSubscriptionIdOrdersRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -1168,7 +1444,7 @@ func (a *OrdersApiService) GETOrderSubscriptionIdOrdersExecute(r OrdersApiGETOrd
 	}
 
 	localVarPath := localBasePath + "/order_subscriptions/{orderSubscriptionId}/orders"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterToString(r.orderSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionId, "orderSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1201,9 +1477,9 @@ func (a *OrdersApiService) GETOrderSubscriptionIdOrdersExecute(r OrdersApiGETOrd
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1222,7 +1498,7 @@ func (a *OrdersApiService) GETOrderSubscriptionIdOrdersExecute(r OrdersApiGETOrd
 type OrdersApiGETOrderSubscriptionIdSourceOrderRequest struct {
 	ctx                 context.Context
 	ApiService          *OrdersApiService
-	orderSubscriptionId string
+	orderSubscriptionId interface{}
 }
 
 func (r OrdersApiGETOrderSubscriptionIdSourceOrderRequest) Execute() (*http.Response, error) {
@@ -1238,7 +1514,7 @@ Retrieve the source order associated to the order subscription
 	@param orderSubscriptionId The resource's id
 	@return OrdersApiGETOrderSubscriptionIdSourceOrderRequest
 */
-func (a *OrdersApiService) GETOrderSubscriptionIdSourceOrder(ctx context.Context, orderSubscriptionId string) OrdersApiGETOrderSubscriptionIdSourceOrderRequest {
+func (a *OrdersApiService) GETOrderSubscriptionIdSourceOrder(ctx context.Context, orderSubscriptionId interface{}) OrdersApiGETOrderSubscriptionIdSourceOrderRequest {
 	return OrdersApiGETOrderSubscriptionIdSourceOrderRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -1260,7 +1536,7 @@ func (a *OrdersApiService) GETOrderSubscriptionIdSourceOrderExecute(r OrdersApiG
 	}
 
 	localVarPath := localBasePath + "/order_subscriptions/{orderSubscriptionId}/source_order"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterToString(r.orderSubscriptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderSubscriptionId"+"}", url.PathEscape(parameterValueToString(r.orderSubscriptionId, "orderSubscriptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1293,9 +1569,9 @@ func (a *OrdersApiService) GETOrderSubscriptionIdSourceOrderExecute(r OrdersApiG
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1384,9 +1660,9 @@ func (a *OrdersApiService) GETOrdersExecute(r OrdersApiGETOrdersRequest) (*GETOr
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -1414,7 +1690,7 @@ func (a *OrdersApiService) GETOrdersExecute(r OrdersApiGETOrdersRequest) (*GETOr
 type OrdersApiGETOrdersOrderIdRequest struct {
 	ctx        context.Context
 	ApiService *OrdersApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r OrdersApiGETOrdersOrderIdRequest) Execute() (*GETOrdersOrderId200Response, *http.Response, error) {
@@ -1430,7 +1706,7 @@ Retrieve an order
 	@param orderId The resource's id
 	@return OrdersApiGETOrdersOrderIdRequest
 */
-func (a *OrdersApiService) GETOrdersOrderId(ctx context.Context, orderId string) OrdersApiGETOrdersOrderIdRequest {
+func (a *OrdersApiService) GETOrdersOrderId(ctx context.Context, orderId interface{}) OrdersApiGETOrdersOrderIdRequest {
 	return OrdersApiGETOrdersOrderIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1455,7 +1731,7 @@ func (a *OrdersApiService) GETOrdersOrderIdExecute(r OrdersApiGETOrdersOrderIdRe
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1488,9 +1764,9 @@ func (a *OrdersApiService) GETOrdersOrderIdExecute(r OrdersApiGETOrdersOrderIdRe
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -1518,7 +1794,7 @@ func (a *OrdersApiService) GETOrdersOrderIdExecute(r OrdersApiGETOrdersOrderIdRe
 type OrdersApiGETPaypalPaymentIdOrderRequest struct {
 	ctx             context.Context
 	ApiService      *OrdersApiService
-	paypalPaymentId string
+	paypalPaymentId interface{}
 }
 
 func (r OrdersApiGETPaypalPaymentIdOrderRequest) Execute() (*http.Response, error) {
@@ -1534,7 +1810,7 @@ Retrieve the order associated to the paypal payment
 	@param paypalPaymentId The resource's id
 	@return OrdersApiGETPaypalPaymentIdOrderRequest
 */
-func (a *OrdersApiService) GETPaypalPaymentIdOrder(ctx context.Context, paypalPaymentId string) OrdersApiGETPaypalPaymentIdOrderRequest {
+func (a *OrdersApiService) GETPaypalPaymentIdOrder(ctx context.Context, paypalPaymentId interface{}) OrdersApiGETPaypalPaymentIdOrderRequest {
 	return OrdersApiGETPaypalPaymentIdOrderRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -1556,7 +1832,7 @@ func (a *OrdersApiService) GETPaypalPaymentIdOrderExecute(r OrdersApiGETPaypalPa
 	}
 
 	localVarPath := localBasePath + "/paypal_payments/{paypalPaymentId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"paypalPaymentId"+"}", url.PathEscape(parameterToString(r.paypalPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"paypalPaymentId"+"}", url.PathEscape(parameterValueToString(r.paypalPaymentId, "paypalPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1589,9 +1865,193 @@ func (a *OrdersApiService) GETPaypalPaymentIdOrderExecute(r OrdersApiGETPaypalPa
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type OrdersApiGETRecurringOrderCopyIdSourceOrderRequest struct {
+	ctx                  context.Context
+	ApiService           *OrdersApiService
+	recurringOrderCopyId interface{}
+}
+
+func (r OrdersApiGETRecurringOrderCopyIdSourceOrderRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETRecurringOrderCopyIdSourceOrderExecute(r)
+}
+
+/*
+GETRecurringOrderCopyIdSourceOrder Retrieve the source order associated to the recurring order copy
+
+Retrieve the source order associated to the recurring order copy
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param recurringOrderCopyId The resource's id
+	@return OrdersApiGETRecurringOrderCopyIdSourceOrderRequest
+*/
+func (a *OrdersApiService) GETRecurringOrderCopyIdSourceOrder(ctx context.Context, recurringOrderCopyId interface{}) OrdersApiGETRecurringOrderCopyIdSourceOrderRequest {
+	return OrdersApiGETRecurringOrderCopyIdSourceOrderRequest{
+		ApiService:           a,
+		ctx:                  ctx,
+		recurringOrderCopyId: recurringOrderCopyId,
+	}
+}
+
+// Execute executes the request
+func (a *OrdersApiService) GETRecurringOrderCopyIdSourceOrderExecute(r OrdersApiGETRecurringOrderCopyIdSourceOrderRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETRecurringOrderCopyIdSourceOrder")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/recurring_order_copies/{recurringOrderCopyId}/source_order"
+	localVarPath = strings.Replace(localVarPath, "{"+"recurringOrderCopyId"+"}", url.PathEscape(parameterValueToString(r.recurringOrderCopyId, "recurringOrderCopyId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type OrdersApiGETRecurringOrderCopyIdTargetOrderRequest struct {
+	ctx                  context.Context
+	ApiService           *OrdersApiService
+	recurringOrderCopyId interface{}
+}
+
+func (r OrdersApiGETRecurringOrderCopyIdTargetOrderRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETRecurringOrderCopyIdTargetOrderExecute(r)
+}
+
+/*
+GETRecurringOrderCopyIdTargetOrder Retrieve the target order associated to the recurring order copy
+
+Retrieve the target order associated to the recurring order copy
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param recurringOrderCopyId The resource's id
+	@return OrdersApiGETRecurringOrderCopyIdTargetOrderRequest
+*/
+func (a *OrdersApiService) GETRecurringOrderCopyIdTargetOrder(ctx context.Context, recurringOrderCopyId interface{}) OrdersApiGETRecurringOrderCopyIdTargetOrderRequest {
+	return OrdersApiGETRecurringOrderCopyIdTargetOrderRequest{
+		ApiService:           a,
+		ctx:                  ctx,
+		recurringOrderCopyId: recurringOrderCopyId,
+	}
+}
+
+// Execute executes the request
+func (a *OrdersApiService) GETRecurringOrderCopyIdTargetOrderExecute(r OrdersApiGETRecurringOrderCopyIdTargetOrderRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETRecurringOrderCopyIdTargetOrder")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/recurring_order_copies/{recurringOrderCopyId}/target_order"
+	localVarPath = strings.Replace(localVarPath, "{"+"recurringOrderCopyId"+"}", url.PathEscape(parameterValueToString(r.recurringOrderCopyId, "recurringOrderCopyId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1610,7 +2070,7 @@ func (a *OrdersApiService) GETPaypalPaymentIdOrderExecute(r OrdersApiGETPaypalPa
 type OrdersApiGETRefundIdOrderRequest struct {
 	ctx        context.Context
 	ApiService *OrdersApiService
-	refundId   string
+	refundId   interface{}
 }
 
 func (r OrdersApiGETRefundIdOrderRequest) Execute() (*http.Response, error) {
@@ -1626,7 +2086,7 @@ Retrieve the order associated to the refund
 	@param refundId The resource's id
 	@return OrdersApiGETRefundIdOrderRequest
 */
-func (a *OrdersApiService) GETRefundIdOrder(ctx context.Context, refundId string) OrdersApiGETRefundIdOrderRequest {
+func (a *OrdersApiService) GETRefundIdOrder(ctx context.Context, refundId interface{}) OrdersApiGETRefundIdOrderRequest {
 	return OrdersApiGETRefundIdOrderRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1648,7 +2108,7 @@ func (a *OrdersApiService) GETRefundIdOrderExecute(r OrdersApiGETRefundIdOrderRe
 	}
 
 	localVarPath := localBasePath + "/refunds/{refundId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"refundId"+"}", url.PathEscape(parameterToString(r.refundId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"refundId"+"}", url.PathEscape(parameterValueToString(r.refundId, "refundId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1681,9 +2141,9 @@ func (a *OrdersApiService) GETRefundIdOrderExecute(r OrdersApiGETRefundIdOrderRe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1702,7 +2162,7 @@ func (a *OrdersApiService) GETRefundIdOrderExecute(r OrdersApiGETRefundIdOrderRe
 type OrdersApiGETReturnIdOrderRequest struct {
 	ctx        context.Context
 	ApiService *OrdersApiService
-	returnId   string
+	returnId   interface{}
 }
 
 func (r OrdersApiGETReturnIdOrderRequest) Execute() (*http.Response, error) {
@@ -1718,7 +2178,7 @@ Retrieve the order associated to the return
 	@param returnId The resource's id
 	@return OrdersApiGETReturnIdOrderRequest
 */
-func (a *OrdersApiService) GETReturnIdOrder(ctx context.Context, returnId string) OrdersApiGETReturnIdOrderRequest {
+func (a *OrdersApiService) GETReturnIdOrder(ctx context.Context, returnId interface{}) OrdersApiGETReturnIdOrderRequest {
 	return OrdersApiGETReturnIdOrderRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1740,7 +2200,7 @@ func (a *OrdersApiService) GETReturnIdOrderExecute(r OrdersApiGETReturnIdOrderRe
 	}
 
 	localVarPath := localBasePath + "/returns/{returnId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterToString(r.returnId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"returnId"+"}", url.PathEscape(parameterValueToString(r.returnId, "returnId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1773,9 +2233,101 @@ func (a *OrdersApiService) GETReturnIdOrderExecute(r OrdersApiGETReturnIdOrderRe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
+	if err != nil {
+		return localVarHTTPResponse, err
+	}
+
+	if localVarHTTPResponse.StatusCode >= 300 {
+		newErr := &GenericOpenAPIError{
+			body:  localVarBody,
+			error: localVarHTTPResponse.Status,
+		}
+		return localVarHTTPResponse, newErr
+	}
+
+	return localVarHTTPResponse, nil
+}
+
+type OrdersApiGETSatispayPaymentIdOrderRequest struct {
+	ctx               context.Context
+	ApiService        *OrdersApiService
+	satispayPaymentId interface{}
+}
+
+func (r OrdersApiGETSatispayPaymentIdOrderRequest) Execute() (*http.Response, error) {
+	return r.ApiService.GETSatispayPaymentIdOrderExecute(r)
+}
+
+/*
+GETSatispayPaymentIdOrder Retrieve the order associated to the satispay payment
+
+Retrieve the order associated to the satispay payment
+
+	@param ctx context.Context - for authentication, logging, cancellation, deadlines, tracing, etc. Passed from http.Request or context.Background().
+	@param satispayPaymentId The resource's id
+	@return OrdersApiGETSatispayPaymentIdOrderRequest
+*/
+func (a *OrdersApiService) GETSatispayPaymentIdOrder(ctx context.Context, satispayPaymentId interface{}) OrdersApiGETSatispayPaymentIdOrderRequest {
+	return OrdersApiGETSatispayPaymentIdOrderRequest{
+		ApiService:        a,
+		ctx:               ctx,
+		satispayPaymentId: satispayPaymentId,
+	}
+}
+
+// Execute executes the request
+func (a *OrdersApiService) GETSatispayPaymentIdOrderExecute(r OrdersApiGETSatispayPaymentIdOrderRequest) (*http.Response, error) {
+	var (
+		localVarHTTPMethod = http.MethodGet
+		localVarPostBody   interface{}
+		formFiles          []formFile
+	)
+
+	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrdersApiService.GETSatispayPaymentIdOrder")
+	if err != nil {
+		return nil, &GenericOpenAPIError{error: err.Error()}
+	}
+
+	localVarPath := localBasePath + "/satispay_payments/{satispayPaymentId}/order"
+	localVarPath = strings.Replace(localVarPath, "{"+"satispayPaymentId"+"}", url.PathEscape(parameterValueToString(r.satispayPaymentId, "satispayPaymentId")), -1)
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+	// to determine the Content-Type header
+	localVarHTTPContentTypes := []string{}
+
+	// set Content-Type header
+	localVarHTTPContentType := selectHeaderContentType(localVarHTTPContentTypes)
+	if localVarHTTPContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHTTPContentType
+	}
+
+	// to determine the Accept header
+	localVarHTTPHeaderAccepts := []string{}
+
+	// set Accept header
+	localVarHTTPHeaderAccept := selectHeaderAccept(localVarHTTPHeaderAccepts)
+	if localVarHTTPHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHTTPHeaderAccept
+	}
+	req, err := a.client.prepareRequest(r.ctx, localVarPath, localVarHTTPMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, formFiles)
+	if err != nil {
+		return nil, err
+	}
+
+	localVarHTTPResponse, err := a.client.callAPI(req)
+	if err != nil || localVarHTTPResponse == nil {
+		return localVarHTTPResponse, err
+	}
+
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
+	localVarHTTPResponse.Body.Close()
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1794,7 +2346,7 @@ func (a *OrdersApiService) GETReturnIdOrderExecute(r OrdersApiGETReturnIdOrderRe
 type OrdersApiGETShipmentIdOrderRequest struct {
 	ctx        context.Context
 	ApiService *OrdersApiService
-	shipmentId string
+	shipmentId interface{}
 }
 
 func (r OrdersApiGETShipmentIdOrderRequest) Execute() (*http.Response, error) {
@@ -1810,7 +2362,7 @@ Retrieve the order associated to the shipment
 	@param shipmentId The resource's id
 	@return OrdersApiGETShipmentIdOrderRequest
 */
-func (a *OrdersApiService) GETShipmentIdOrder(ctx context.Context, shipmentId string) OrdersApiGETShipmentIdOrderRequest {
+func (a *OrdersApiService) GETShipmentIdOrder(ctx context.Context, shipmentId interface{}) OrdersApiGETShipmentIdOrderRequest {
 	return OrdersApiGETShipmentIdOrderRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -1832,7 +2384,7 @@ func (a *OrdersApiService) GETShipmentIdOrderExecute(r OrdersApiGETShipmentIdOrd
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1865,9 +2417,9 @@ func (a *OrdersApiService) GETShipmentIdOrderExecute(r OrdersApiGETShipmentIdOrd
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1886,7 +2438,7 @@ func (a *OrdersApiService) GETShipmentIdOrderExecute(r OrdersApiGETShipmentIdOrd
 type OrdersApiGETStripePaymentIdOrderRequest struct {
 	ctx             context.Context
 	ApiService      *OrdersApiService
-	stripePaymentId string
+	stripePaymentId interface{}
 }
 
 func (r OrdersApiGETStripePaymentIdOrderRequest) Execute() (*http.Response, error) {
@@ -1902,7 +2454,7 @@ Retrieve the order associated to the stripe payment
 	@param stripePaymentId The resource's id
 	@return OrdersApiGETStripePaymentIdOrderRequest
 */
-func (a *OrdersApiService) GETStripePaymentIdOrder(ctx context.Context, stripePaymentId string) OrdersApiGETStripePaymentIdOrderRequest {
+func (a *OrdersApiService) GETStripePaymentIdOrder(ctx context.Context, stripePaymentId interface{}) OrdersApiGETStripePaymentIdOrderRequest {
 	return OrdersApiGETStripePaymentIdOrderRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -1924,7 +2476,7 @@ func (a *OrdersApiService) GETStripePaymentIdOrderExecute(r OrdersApiGETStripePa
 	}
 
 	localVarPath := localBasePath + "/stripe_payments/{stripePaymentId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"stripePaymentId"+"}", url.PathEscape(parameterToString(r.stripePaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stripePaymentId"+"}", url.PathEscape(parameterValueToString(r.stripePaymentId, "stripePaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1957,9 +2509,9 @@ func (a *OrdersApiService) GETStripePaymentIdOrderExecute(r OrdersApiGETStripePa
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -1978,7 +2530,7 @@ func (a *OrdersApiService) GETStripePaymentIdOrderExecute(r OrdersApiGETStripePa
 type OrdersApiGETTransactionIdOrderRequest struct {
 	ctx           context.Context
 	ApiService    *OrdersApiService
-	transactionId string
+	transactionId interface{}
 }
 
 func (r OrdersApiGETTransactionIdOrderRequest) Execute() (*http.Response, error) {
@@ -1994,7 +2546,7 @@ Retrieve the order associated to the transaction
 	@param transactionId The resource's id
 	@return OrdersApiGETTransactionIdOrderRequest
 */
-func (a *OrdersApiService) GETTransactionIdOrder(ctx context.Context, transactionId string) OrdersApiGETTransactionIdOrderRequest {
+func (a *OrdersApiService) GETTransactionIdOrder(ctx context.Context, transactionId interface{}) OrdersApiGETTransactionIdOrderRequest {
 	return OrdersApiGETTransactionIdOrderRequest{
 		ApiService:    a,
 		ctx:           ctx,
@@ -2016,7 +2568,7 @@ func (a *OrdersApiService) GETTransactionIdOrderExecute(r OrdersApiGETTransactio
 	}
 
 	localVarPath := localBasePath + "/transactions/{transactionId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"transactionId"+"}", url.PathEscape(parameterToString(r.transactionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"transactionId"+"}", url.PathEscape(parameterValueToString(r.transactionId, "transactionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2049,9 +2601,9 @@ func (a *OrdersApiService) GETTransactionIdOrderExecute(r OrdersApiGETTransactio
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2070,7 +2622,7 @@ func (a *OrdersApiService) GETTransactionIdOrderExecute(r OrdersApiGETTransactio
 type OrdersApiGETVoidIdOrderRequest struct {
 	ctx        context.Context
 	ApiService *OrdersApiService
-	voidId     string
+	voidId     interface{}
 }
 
 func (r OrdersApiGETVoidIdOrderRequest) Execute() (*http.Response, error) {
@@ -2086,7 +2638,7 @@ Retrieve the order associated to the void
 	@param voidId The resource's id
 	@return OrdersApiGETVoidIdOrderRequest
 */
-func (a *OrdersApiService) GETVoidIdOrder(ctx context.Context, voidId string) OrdersApiGETVoidIdOrderRequest {
+func (a *OrdersApiService) GETVoidIdOrder(ctx context.Context, voidId interface{}) OrdersApiGETVoidIdOrderRequest {
 	return OrdersApiGETVoidIdOrderRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2108,7 +2660,7 @@ func (a *OrdersApiService) GETVoidIdOrderExecute(r OrdersApiGETVoidIdOrderReques
 	}
 
 	localVarPath := localBasePath + "/voids/{voidId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"voidId"+"}", url.PathEscape(parameterToString(r.voidId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"voidId"+"}", url.PathEscape(parameterValueToString(r.voidId, "voidId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2141,9 +2693,9 @@ func (a *OrdersApiService) GETVoidIdOrderExecute(r OrdersApiGETVoidIdOrderReques
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2162,7 +2714,7 @@ func (a *OrdersApiService) GETVoidIdOrderExecute(r OrdersApiGETVoidIdOrderReques
 type OrdersApiGETWireTransferIdOrderRequest struct {
 	ctx            context.Context
 	ApiService     *OrdersApiService
-	wireTransferId string
+	wireTransferId interface{}
 }
 
 func (r OrdersApiGETWireTransferIdOrderRequest) Execute() (*http.Response, error) {
@@ -2178,7 +2730,7 @@ Retrieve the order associated to the wire transfer
 	@param wireTransferId The resource's id
 	@return OrdersApiGETWireTransferIdOrderRequest
 */
-func (a *OrdersApiService) GETWireTransferIdOrder(ctx context.Context, wireTransferId string) OrdersApiGETWireTransferIdOrderRequest {
+func (a *OrdersApiService) GETWireTransferIdOrder(ctx context.Context, wireTransferId interface{}) OrdersApiGETWireTransferIdOrderRequest {
 	return OrdersApiGETWireTransferIdOrderRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -2200,7 +2752,7 @@ func (a *OrdersApiService) GETWireTransferIdOrderExecute(r OrdersApiGETWireTrans
 	}
 
 	localVarPath := localBasePath + "/wire_transfers/{wireTransferId}/order"
-	localVarPath = strings.Replace(localVarPath, "{"+"wireTransferId"+"}", url.PathEscape(parameterToString(r.wireTransferId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"wireTransferId"+"}", url.PathEscape(parameterValueToString(r.wireTransferId, "wireTransferId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2233,9 +2785,9 @@ func (a *OrdersApiService) GETWireTransferIdOrderExecute(r OrdersApiGETWireTrans
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -2255,7 +2807,7 @@ type OrdersApiPATCHOrdersOrderIdRequest struct {
 	ctx         context.Context
 	ApiService  *OrdersApiService
 	orderUpdate *OrderUpdate
-	orderId     string
+	orderId     interface{}
 }
 
 func (r OrdersApiPATCHOrdersOrderIdRequest) OrderUpdate(orderUpdate OrderUpdate) OrdersApiPATCHOrdersOrderIdRequest {
@@ -2276,7 +2828,7 @@ Update an order
 	@param orderId The resource's id
 	@return OrdersApiPATCHOrdersOrderIdRequest
 */
-func (a *OrdersApiService) PATCHOrdersOrderId(ctx context.Context, orderId string) OrdersApiPATCHOrdersOrderIdRequest {
+func (a *OrdersApiService) PATCHOrdersOrderId(ctx context.Context, orderId interface{}) OrdersApiPATCHOrdersOrderIdRequest {
 	return OrdersApiPATCHOrdersOrderIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -2301,7 +2853,7 @@ func (a *OrdersApiService) PATCHOrdersOrderIdExecute(r OrdersApiPATCHOrdersOrder
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -2339,9 +2891,9 @@ func (a *OrdersApiService) PATCHOrdersOrderIdExecute(r OrdersApiPATCHOrdersOrder
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -2450,9 +3002,9 @@ func (a *OrdersApiService) POSTOrdersExecute(r OrdersApiPOSTOrdersRequest) (*POS
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

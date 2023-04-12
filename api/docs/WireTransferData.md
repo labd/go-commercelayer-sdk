@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETBillingInfoValidationRules200ResponseDataInnerAttributes**](GETBillingInfoValidationRules200ResponseDataInnerAttributes.md) |  | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Attributes** | [**GETWireTransfersWireTransferId200ResponseDataAttributes**](GETWireTransfersWireTransferId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**TransactionDataRelationships**](TransactionDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewWireTransferData
 
-`func NewWireTransferData(type_ string, attributes GETBillingInfoValidationRules200ResponseDataInnerAttributes, ) *WireTransferData`
+`func NewWireTransferData(type_ interface{}, attributes GETWireTransfersWireTransferId200ResponseDataAttributes, ) *WireTransferData`
 
 NewWireTransferData instantiates a new WireTransferData object
 This constructor will assign default values to properties that have it defined,
@@ -29,40 +29,50 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *WireTransferData) GetType() string`
+`func (o *WireTransferData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *WireTransferData) GetTypeOk() (*string, bool)`
+`func (o *WireTransferData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *WireTransferData) SetType(v string)`
+`func (o *WireTransferData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *WireTransferData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *WireTransferData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *WireTransferData) GetAttributes() GETBillingInfoValidationRules200ResponseDataInnerAttributes`
+`func (o *WireTransferData) GetAttributes() GETWireTransfersWireTransferId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *WireTransferData) GetAttributesOk() (*GETBillingInfoValidationRules200ResponseDataInnerAttributes, bool)`
+`func (o *WireTransferData) GetAttributesOk() (*GETWireTransfersWireTransferId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *WireTransferData) SetAttributes(v GETBillingInfoValidationRules200ResponseDataInnerAttributes)`
+`func (o *WireTransferData) SetAttributes(v GETWireTransfersWireTransferId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

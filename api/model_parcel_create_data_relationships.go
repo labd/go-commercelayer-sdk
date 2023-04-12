@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the ParcelCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ParcelCreateDataRelationships{}
 
 // ParcelCreateDataRelationships struct for ParcelCreateDataRelationships
 type ParcelCreateDataRelationships struct {
@@ -89,14 +92,18 @@ func (o *ParcelCreateDataRelationships) SetPackage(v ParcelCreateDataRelationshi
 }
 
 func (o ParcelCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["shipment"] = o.Shipment
-	}
-	if true {
-		toSerialize["package"] = o.Package
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ParcelCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["shipment"] = o.Shipment
+	toSerialize["package"] = o.Package
+	return toSerialize, nil
 }
 
 type NullableParcelCreateDataRelationships struct {

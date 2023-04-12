@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type OrderAmountPromotionRulesApiService service
 type OrderAmountPromotionRulesApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest struct {
 	ctx                        context.Context
 	ApiService                 *OrderAmountPromotionRulesApiService
-	orderAmountPromotionRuleId string
+	orderAmountPromotionRuleId interface{}
 }
 
 func (r OrderAmountPromotionRulesApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete an order amount promotion rule
 	@param orderAmountPromotionRuleId The resource's id
 	@return OrderAmountPromotionRulesApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest
 */
-func (a *OrderAmountPromotionRulesApiService) DELETEOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx context.Context, orderAmountPromotionRuleId string) OrderAmountPromotionRulesApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest {
+func (a *OrderAmountPromotionRulesApiService) DELETEOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx context.Context, orderAmountPromotionRuleId interface{}) OrderAmountPromotionRulesApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest {
 	return OrderAmountPromotionRulesApiDELETEOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
@@ -64,7 +64,7 @@ func (a *OrderAmountPromotionRulesApiService) DELETEOrderAmountPromotionRulesOrd
 	}
 
 	localVarPath := localBasePath + "/order_amount_promotion_rules/{orderAmountPromotionRuleId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderAmountPromotionRuleId"+"}", url.PathEscape(parameterToString(r.orderAmountPromotionRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderAmountPromotionRuleId"+"}", url.PathEscape(parameterValueToString(r.orderAmountPromotionRuleId, "orderAmountPromotionRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *OrderAmountPromotionRulesApiService) DELETEOrderAmountPromotionRulesOrd
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *OrderAmountPromotionRulesApiService) DELETEOrderAmountPromotionRulesOrd
 type OrderAmountPromotionRulesApiGETExternalPromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx                 context.Context
 	ApiService          *OrderAmountPromotionRulesApiService
-	externalPromotionId string
+	externalPromotionId interface{}
 }
 
 func (r OrderAmountPromotionRulesApiGETExternalPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the order amount promotion rule associated to the external promotion
 	@param externalPromotionId The resource's id
 	@return OrderAmountPromotionRulesApiGETExternalPromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *OrderAmountPromotionRulesApiService) GETExternalPromotionIdOrderAmountPromotionRule(ctx context.Context, externalPromotionId string) OrderAmountPromotionRulesApiGETExternalPromotionIdOrderAmountPromotionRuleRequest {
+func (a *OrderAmountPromotionRulesApiService) GETExternalPromotionIdOrderAmountPromotionRule(ctx context.Context, externalPromotionId interface{}) OrderAmountPromotionRulesApiGETExternalPromotionIdOrderAmountPromotionRuleRequest {
 	return OrderAmountPromotionRulesApiGETExternalPromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -156,7 +156,7 @@ func (a *OrderAmountPromotionRulesApiService) GETExternalPromotionIdOrderAmountP
 	}
 
 	localVarPath := localBasePath + "/external_promotions/{externalPromotionId}/order_amount_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterToString(r.externalPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterValueToString(r.externalPromotionId, "externalPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *OrderAmountPromotionRulesApiService) GETExternalPromotionIdOrderAmountP
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -210,7 +210,7 @@ func (a *OrderAmountPromotionRulesApiService) GETExternalPromotionIdOrderAmountP
 type OrderAmountPromotionRulesApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx                    context.Context
 	ApiService             *OrderAmountPromotionRulesApiService
-	fixedAmountPromotionId string
+	fixedAmountPromotionId interface{}
 }
 
 func (r OrderAmountPromotionRulesApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -226,7 +226,7 @@ Retrieve the order amount promotion rule associated to the fixed amount promotio
 	@param fixedAmountPromotionId The resource's id
 	@return OrderAmountPromotionRulesApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *OrderAmountPromotionRulesApiService) GETFixedAmountPromotionIdOrderAmountPromotionRule(ctx context.Context, fixedAmountPromotionId string) OrderAmountPromotionRulesApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest {
+func (a *OrderAmountPromotionRulesApiService) GETFixedAmountPromotionIdOrderAmountPromotionRule(ctx context.Context, fixedAmountPromotionId interface{}) OrderAmountPromotionRulesApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest {
 	return OrderAmountPromotionRulesApiGETFixedAmountPromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -248,7 +248,7 @@ func (a *OrderAmountPromotionRulesApiService) GETFixedAmountPromotionIdOrderAmou
 	}
 
 	localVarPath := localBasePath + "/fixed_amount_promotions/{fixedAmountPromotionId}/order_amount_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterToString(r.fixedAmountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedAmountPromotionId, "fixedAmountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -281,9 +281,9 @@ func (a *OrderAmountPromotionRulesApiService) GETFixedAmountPromotionIdOrderAmou
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -302,7 +302,7 @@ func (a *OrderAmountPromotionRulesApiService) GETFixedAmountPromotionIdOrderAmou
 type OrderAmountPromotionRulesApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx                   context.Context
 	ApiService            *OrderAmountPromotionRulesApiService
-	fixedPricePromotionId string
+	fixedPricePromotionId interface{}
 }
 
 func (r OrderAmountPromotionRulesApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -318,7 +318,7 @@ Retrieve the order amount promotion rule associated to the fixed price promotion
 	@param fixedPricePromotionId The resource's id
 	@return OrderAmountPromotionRulesApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *OrderAmountPromotionRulesApiService) GETFixedPricePromotionIdOrderAmountPromotionRule(ctx context.Context, fixedPricePromotionId string) OrderAmountPromotionRulesApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest {
+func (a *OrderAmountPromotionRulesApiService) GETFixedPricePromotionIdOrderAmountPromotionRule(ctx context.Context, fixedPricePromotionId interface{}) OrderAmountPromotionRulesApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest {
 	return OrderAmountPromotionRulesApiGETFixedPricePromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -340,7 +340,7 @@ func (a *OrderAmountPromotionRulesApiService) GETFixedPricePromotionIdOrderAmoun
 	}
 
 	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}/order_amount_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterToString(r.fixedPricePromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -373,9 +373,9 @@ func (a *OrderAmountPromotionRulesApiService) GETFixedPricePromotionIdOrderAmoun
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -394,7 +394,7 @@ func (a *OrderAmountPromotionRulesApiService) GETFixedPricePromotionIdOrderAmoun
 type OrderAmountPromotionRulesApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx                 context.Context
 	ApiService          *OrderAmountPromotionRulesApiService
-	freeGiftPromotionId string
+	freeGiftPromotionId interface{}
 }
 
 func (r OrderAmountPromotionRulesApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -410,7 +410,7 @@ Retrieve the order amount promotion rule associated to the free gift promotion
 	@param freeGiftPromotionId The resource's id
 	@return OrderAmountPromotionRulesApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *OrderAmountPromotionRulesApiService) GETFreeGiftPromotionIdOrderAmountPromotionRule(ctx context.Context, freeGiftPromotionId string) OrderAmountPromotionRulesApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest {
+func (a *OrderAmountPromotionRulesApiService) GETFreeGiftPromotionIdOrderAmountPromotionRule(ctx context.Context, freeGiftPromotionId interface{}) OrderAmountPromotionRulesApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest {
 	return OrderAmountPromotionRulesApiGETFreeGiftPromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -432,7 +432,7 @@ func (a *OrderAmountPromotionRulesApiService) GETFreeGiftPromotionIdOrderAmountP
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}/order_amount_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterToString(r.freeGiftPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -465,9 +465,9 @@ func (a *OrderAmountPromotionRulesApiService) GETFreeGiftPromotionIdOrderAmountP
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -486,7 +486,7 @@ func (a *OrderAmountPromotionRulesApiService) GETFreeGiftPromotionIdOrderAmountP
 type OrderAmountPromotionRulesApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx                     context.Context
 	ApiService              *OrderAmountPromotionRulesApiService
-	freeShippingPromotionId string
+	freeShippingPromotionId interface{}
 }
 
 func (r OrderAmountPromotionRulesApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -502,7 +502,7 @@ Retrieve the order amount promotion rule associated to the free shipping promoti
 	@param freeShippingPromotionId The resource's id
 	@return OrderAmountPromotionRulesApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *OrderAmountPromotionRulesApiService) GETFreeShippingPromotionIdOrderAmountPromotionRule(ctx context.Context, freeShippingPromotionId string) OrderAmountPromotionRulesApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest {
+func (a *OrderAmountPromotionRulesApiService) GETFreeShippingPromotionIdOrderAmountPromotionRule(ctx context.Context, freeShippingPromotionId interface{}) OrderAmountPromotionRulesApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest {
 	return OrderAmountPromotionRulesApiGETFreeShippingPromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
@@ -524,7 +524,7 @@ func (a *OrderAmountPromotionRulesApiService) GETFreeShippingPromotionIdOrderAmo
 	}
 
 	localVarPath := localBasePath + "/free_shipping_promotions/{freeShippingPromotionId}/order_amount_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterToString(r.freeShippingPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeShippingPromotionId, "freeShippingPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -557,9 +557,9 @@ func (a *OrderAmountPromotionRulesApiService) GETFreeShippingPromotionIdOrderAmo
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -648,9 +648,9 @@ func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRulesExecut
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -678,7 +678,7 @@ func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRulesExecut
 type OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest struct {
 	ctx                        context.Context
 	ApiService                 *OrderAmountPromotionRulesApiService
-	orderAmountPromotionRuleId string
+	orderAmountPromotionRuleId interface{}
 }
 
 func (r OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) Execute() (*GETOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response, *http.Response, error) {
@@ -694,7 +694,7 @@ Retrieve an order amount promotion rule
 	@param orderAmountPromotionRuleId The resource's id
 	@return OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest
 */
-func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx context.Context, orderAmountPromotionRuleId string) OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest {
+func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx context.Context, orderAmountPromotionRuleId interface{}) OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest {
 	return OrderAmountPromotionRulesApiGETOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
@@ -719,7 +719,7 @@ func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRulesOrderA
 	}
 
 	localVarPath := localBasePath + "/order_amount_promotion_rules/{orderAmountPromotionRuleId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderAmountPromotionRuleId"+"}", url.PathEscape(parameterToString(r.orderAmountPromotionRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderAmountPromotionRuleId"+"}", url.PathEscape(parameterValueToString(r.orderAmountPromotionRuleId, "orderAmountPromotionRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -752,9 +752,9 @@ func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRulesOrderA
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -782,7 +782,7 @@ func (a *OrderAmountPromotionRulesApiService) GETOrderAmountPromotionRulesOrderA
 type OrderAmountPromotionRulesApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx                           context.Context
 	ApiService                    *OrderAmountPromotionRulesApiService
-	percentageDiscountPromotionId string
+	percentageDiscountPromotionId interface{}
 }
 
 func (r OrderAmountPromotionRulesApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -798,7 +798,7 @@ Retrieve the order amount promotion rule associated to the percentage discount p
 	@param percentageDiscountPromotionId The resource's id
 	@return OrderAmountPromotionRulesApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *OrderAmountPromotionRulesApiService) GETPercentageDiscountPromotionIdOrderAmountPromotionRule(ctx context.Context, percentageDiscountPromotionId string) OrderAmountPromotionRulesApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest {
+func (a *OrderAmountPromotionRulesApiService) GETPercentageDiscountPromotionIdOrderAmountPromotionRule(ctx context.Context, percentageDiscountPromotionId interface{}) OrderAmountPromotionRulesApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest {
 	return OrderAmountPromotionRulesApiGETPercentageDiscountPromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
@@ -820,7 +820,7 @@ func (a *OrderAmountPromotionRulesApiService) GETPercentageDiscountPromotionIdOr
 	}
 
 	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}/order_amount_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterToString(r.percentageDiscountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -853,9 +853,9 @@ func (a *OrderAmountPromotionRulesApiService) GETPercentageDiscountPromotionIdOr
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -874,7 +874,7 @@ func (a *OrderAmountPromotionRulesApiService) GETPercentageDiscountPromotionIdOr
 type OrderAmountPromotionRulesApiGETPromotionIdOrderAmountPromotionRuleRequest struct {
 	ctx         context.Context
 	ApiService  *OrderAmountPromotionRulesApiService
-	promotionId string
+	promotionId interface{}
 }
 
 func (r OrderAmountPromotionRulesApiGETPromotionIdOrderAmountPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -890,7 +890,7 @@ Retrieve the order amount promotion rule associated to the promotion
 	@param promotionId The resource's id
 	@return OrderAmountPromotionRulesApiGETPromotionIdOrderAmountPromotionRuleRequest
 */
-func (a *OrderAmountPromotionRulesApiService) GETPromotionIdOrderAmountPromotionRule(ctx context.Context, promotionId string) OrderAmountPromotionRulesApiGETPromotionIdOrderAmountPromotionRuleRequest {
+func (a *OrderAmountPromotionRulesApiService) GETPromotionIdOrderAmountPromotionRule(ctx context.Context, promotionId interface{}) OrderAmountPromotionRulesApiGETPromotionIdOrderAmountPromotionRuleRequest {
 	return OrderAmountPromotionRulesApiGETPromotionIdOrderAmountPromotionRuleRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -912,7 +912,7 @@ func (a *OrderAmountPromotionRulesApiService) GETPromotionIdOrderAmountPromotion
 	}
 
 	localVarPath := localBasePath + "/promotions/{promotionId}/order_amount_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterToString(r.promotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterValueToString(r.promotionId, "promotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -945,9 +945,9 @@ func (a *OrderAmountPromotionRulesApiService) GETPromotionIdOrderAmountPromotion
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -967,7 +967,7 @@ type OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromot
 	ctx                            context.Context
 	ApiService                     *OrderAmountPromotionRulesApiService
 	orderAmountPromotionRuleUpdate *OrderAmountPromotionRuleUpdate
-	orderAmountPromotionRuleId     string
+	orderAmountPromotionRuleId     interface{}
 }
 
 func (r OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) OrderAmountPromotionRuleUpdate(orderAmountPromotionRuleUpdate OrderAmountPromotionRuleUpdate) OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest {
@@ -975,7 +975,7 @@ func (r OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPro
 	return r
 }
 
-func (r OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) Execute() (*POSTOrderAmountPromotionRules201Response, *http.Response, error) {
+func (r OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) Execute() (*PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response, *http.Response, error) {
 	return r.ApiService.PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r)
 }
 
@@ -988,7 +988,7 @@ Update an order amount promotion rule
 	@param orderAmountPromotionRuleId The resource's id
 	@return OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest
 */
-func (a *OrderAmountPromotionRulesApiService) PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx context.Context, orderAmountPromotionRuleId string) OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest {
+func (a *OrderAmountPromotionRulesApiService) PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId(ctx context.Context, orderAmountPromotionRuleId interface{}) OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest {
 	return OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest{
 		ApiService:                 a,
 		ctx:                        ctx,
@@ -998,13 +998,13 @@ func (a *OrderAmountPromotionRulesApiService) PATCHOrderAmountPromotionRulesOrde
 
 // Execute executes the request
 //
-//	@return POSTOrderAmountPromotionRules201Response
-func (a *OrderAmountPromotionRulesApiService) PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) (*POSTOrderAmountPromotionRules201Response, *http.Response, error) {
+//	@return PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response
+func (a *OrderAmountPromotionRulesApiService) PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdExecute(r OrderAmountPromotionRulesApiPATCHOrderAmountPromotionRulesOrderAmountPromotionRuleIdRequest) (*PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTOrderAmountPromotionRules201Response
+		localVarReturnValue *PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "OrderAmountPromotionRulesApiService.PATCHOrderAmountPromotionRulesOrderAmountPromotionRuleId")
@@ -1013,7 +1013,7 @@ func (a *OrderAmountPromotionRulesApiService) PATCHOrderAmountPromotionRulesOrde
 	}
 
 	localVarPath := localBasePath + "/order_amount_promotion_rules/{orderAmountPromotionRuleId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderAmountPromotionRuleId"+"}", url.PathEscape(parameterToString(r.orderAmountPromotionRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderAmountPromotionRuleId"+"}", url.PathEscape(parameterValueToString(r.orderAmountPromotionRuleId, "orderAmountPromotionRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1051,9 +1051,9 @@ func (a *OrderAmountPromotionRulesApiService) PATCHOrderAmountPromotionRulesOrde
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -1162,9 +1162,9 @@ func (a *OrderAmountPromotionRulesApiService) POSTOrderAmountPromotionRulesExecu
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

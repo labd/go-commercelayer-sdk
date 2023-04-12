@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,15 +15,18 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHAdjustmentsAdjustmentId200ResponseData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHAdjustmentsAdjustmentId200ResponseData{}
+
 // PATCHAdjustmentsAdjustmentId200ResponseData struct for PATCHAdjustmentsAdjustmentId200ResponseData
 type PATCHAdjustmentsAdjustmentId200ResponseData struct {
 	// The resource's id
-	Id *string `json:"id,omitempty"`
+	Id interface{} `json:"id,omitempty"`
 	// The resource's type
-	Type          *string                                                `json:"type,omitempty"`
-	Links         *GETAddresses200ResponseDataInnerLinks                 `json:"links,omitempty"`
+	Type          interface{}                                            `json:"type,omitempty"`
+	Links         *POSTAddresses201ResponseDataLinks                     `json:"links,omitempty"`
 	Attributes    *PATCHAdjustmentsAdjustmentId200ResponseDataAttributes `json:"attributes,omitempty"`
-	Relationships map[string]interface{}                                 `json:"relationships,omitempty"`
+	Relationships interface{}                                            `json:"relationships,omitempty"`
 }
 
 // NewPATCHAdjustmentsAdjustmentId200ResponseData instantiates a new PATCHAdjustmentsAdjustmentId200ResponseData object
@@ -43,74 +46,76 @@ func NewPATCHAdjustmentsAdjustmentId200ResponseDataWithDefaults() *PATCHAdjustme
 	return &this
 }
 
-// GetId returns the Id field value if set, zero value otherwise.
-func (o *PATCHAdjustmentsAdjustmentId200ResponseData) GetId() string {
-	if o == nil || o.Id == nil {
-		var ret string
+// GetId returns the Id field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHAdjustmentsAdjustmentId200ResponseData) GetId() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Id
+	return o.Id
 }
 
 // GetIdOk returns a tuple with the Id field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHAdjustmentsAdjustmentId200ResponseData) GetIdOk() (*string, bool) {
-	if o == nil || o.Id == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHAdjustmentsAdjustmentId200ResponseData) GetIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
-	return o.Id, true
+	return &o.Id, true
 }
 
 // HasId returns a boolean if a field has been set.
 func (o *PATCHAdjustmentsAdjustmentId200ResponseData) HasId() bool {
-	if o != nil && o.Id != nil {
+	if o != nil && IsNil(o.Id) {
 		return true
 	}
 
 	return false
 }
 
-// SetId gets a reference to the given string and assigns it to the Id field.
-func (o *PATCHAdjustmentsAdjustmentId200ResponseData) SetId(v string) {
-	o.Id = &v
+// SetId gets a reference to the given interface{} and assigns it to the Id field.
+func (o *PATCHAdjustmentsAdjustmentId200ResponseData) SetId(v interface{}) {
+	o.Id = v
 }
 
-// GetType returns the Type field value if set, zero value otherwise.
-func (o *PATCHAdjustmentsAdjustmentId200ResponseData) GetType() string {
-	if o == nil || o.Type == nil {
-		var ret string
+// GetType returns the Type field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHAdjustmentsAdjustmentId200ResponseData) GetType() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Type
+	return o.Type
 }
 
 // GetTypeOk returns a tuple with the Type field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHAdjustmentsAdjustmentId200ResponseData) GetTypeOk() (*string, bool) {
-	if o == nil || o.Type == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHAdjustmentsAdjustmentId200ResponseData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
-	return o.Type, true
+	return &o.Type, true
 }
 
 // HasType returns a boolean if a field has been set.
 func (o *PATCHAdjustmentsAdjustmentId200ResponseData) HasType() bool {
-	if o != nil && o.Type != nil {
+	if o != nil && IsNil(o.Type) {
 		return true
 	}
 
 	return false
 }
 
-// SetType gets a reference to the given string and assigns it to the Type field.
-func (o *PATCHAdjustmentsAdjustmentId200ResponseData) SetType(v string) {
-	o.Type = &v
+// SetType gets a reference to the given interface{} and assigns it to the Type field.
+func (o *PATCHAdjustmentsAdjustmentId200ResponseData) SetType(v interface{}) {
+	o.Type = v
 }
 
 // GetLinks returns the Links field value if set, zero value otherwise.
-func (o *PATCHAdjustmentsAdjustmentId200ResponseData) GetLinks() GETAddresses200ResponseDataInnerLinks {
-	if o == nil || o.Links == nil {
-		var ret GETAddresses200ResponseDataInnerLinks
+func (o *PATCHAdjustmentsAdjustmentId200ResponseData) GetLinks() POSTAddresses201ResponseDataLinks {
+	if o == nil || IsNil(o.Links) {
+		var ret POSTAddresses201ResponseDataLinks
 		return ret
 	}
 	return *o.Links
@@ -118,8 +123,8 @@ func (o *PATCHAdjustmentsAdjustmentId200ResponseData) GetLinks() GETAddresses200
 
 // GetLinksOk returns a tuple with the Links field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHAdjustmentsAdjustmentId200ResponseData) GetLinksOk() (*GETAddresses200ResponseDataInnerLinks, bool) {
-	if o == nil || o.Links == nil {
+func (o *PATCHAdjustmentsAdjustmentId200ResponseData) GetLinksOk() (*POSTAddresses201ResponseDataLinks, bool) {
+	if o == nil || IsNil(o.Links) {
 		return nil, false
 	}
 	return o.Links, true
@@ -127,21 +132,21 @@ func (o *PATCHAdjustmentsAdjustmentId200ResponseData) GetLinksOk() (*GETAddresse
 
 // HasLinks returns a boolean if a field has been set.
 func (o *PATCHAdjustmentsAdjustmentId200ResponseData) HasLinks() bool {
-	if o != nil && o.Links != nil {
+	if o != nil && !IsNil(o.Links) {
 		return true
 	}
 
 	return false
 }
 
-// SetLinks gets a reference to the given GETAddresses200ResponseDataInnerLinks and assigns it to the Links field.
-func (o *PATCHAdjustmentsAdjustmentId200ResponseData) SetLinks(v GETAddresses200ResponseDataInnerLinks) {
+// SetLinks gets a reference to the given POSTAddresses201ResponseDataLinks and assigns it to the Links field.
+func (o *PATCHAdjustmentsAdjustmentId200ResponseData) SetLinks(v POSTAddresses201ResponseDataLinks) {
 	o.Links = &v
 }
 
 // GetAttributes returns the Attributes field value if set, zero value otherwise.
 func (o *PATCHAdjustmentsAdjustmentId200ResponseData) GetAttributes() PATCHAdjustmentsAdjustmentId200ResponseDataAttributes {
-	if o == nil || o.Attributes == nil {
+	if o == nil || IsNil(o.Attributes) {
 		var ret PATCHAdjustmentsAdjustmentId200ResponseDataAttributes
 		return ret
 	}
@@ -151,7 +156,7 @@ func (o *PATCHAdjustmentsAdjustmentId200ResponseData) GetAttributes() PATCHAdjus
 // GetAttributesOk returns a tuple with the Attributes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PATCHAdjustmentsAdjustmentId200ResponseData) GetAttributesOk() (*PATCHAdjustmentsAdjustmentId200ResponseDataAttributes, bool) {
-	if o == nil || o.Attributes == nil {
+	if o == nil || IsNil(o.Attributes) {
 		return nil, false
 	}
 	return o.Attributes, true
@@ -159,7 +164,7 @@ func (o *PATCHAdjustmentsAdjustmentId200ResponseData) GetAttributesOk() (*PATCHA
 
 // HasAttributes returns a boolean if a field has been set.
 func (o *PATCHAdjustmentsAdjustmentId200ResponseData) HasAttributes() bool {
-	if o != nil && o.Attributes != nil {
+	if o != nil && !IsNil(o.Attributes) {
 		return true
 	}
 
@@ -171,10 +176,10 @@ func (o *PATCHAdjustmentsAdjustmentId200ResponseData) SetAttributes(v PATCHAdjus
 	o.Attributes = &v
 }
 
-// GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PATCHAdjustmentsAdjustmentId200ResponseData) GetRelationships() map[string]interface{} {
-	if o == nil || o.Relationships == nil {
-		var ret map[string]interface{}
+// GetRelationships returns the Relationships field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHAdjustmentsAdjustmentId200ResponseData) GetRelationships() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Relationships
@@ -182,28 +187,37 @@ func (o *PATCHAdjustmentsAdjustmentId200ResponseData) GetRelationships() map[str
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHAdjustmentsAdjustmentId200ResponseData) GetRelationshipsOk() (map[string]interface{}, bool) {
-	if o == nil || o.Relationships == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHAdjustmentsAdjustmentId200ResponseData) GetRelationshipsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
-	return o.Relationships, true
+	return &o.Relationships, true
 }
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *PATCHAdjustmentsAdjustmentId200ResponseData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && IsNil(o.Relationships) {
 		return true
 	}
 
 	return false
 }
 
-// SetRelationships gets a reference to the given map[string]interface{} and assigns it to the Relationships field.
-func (o *PATCHAdjustmentsAdjustmentId200ResponseData) SetRelationships(v map[string]interface{}) {
+// SetRelationships gets a reference to the given interface{} and assigns it to the Relationships field.
+func (o *PATCHAdjustmentsAdjustmentId200ResponseData) SetRelationships(v interface{}) {
 	o.Relationships = v
 }
 
 func (o PATCHAdjustmentsAdjustmentId200ResponseData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHAdjustmentsAdjustmentId200ResponseData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Id != nil {
 		toSerialize["id"] = o.Id
@@ -211,16 +225,16 @@ func (o PATCHAdjustmentsAdjustmentId200ResponseData) MarshalJSON() ([]byte, erro
 	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if o.Links != nil {
+	if !IsNil(o.Links) {
 		toSerialize["links"] = o.Links
 	}
-	if o.Attributes != nil {
+	if !IsNil(o.Attributes) {
 		toSerialize["attributes"] = o.Attributes
 	}
 	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHAdjustmentsAdjustmentId200ResponseData struct {

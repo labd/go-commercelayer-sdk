@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the CustomerAddressDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CustomerAddressDataRelationships{}
 
 // CustomerAddressDataRelationships struct for CustomerAddressDataRelationships
 type CustomerAddressDataRelationships struct {
@@ -41,7 +44,7 @@ func NewCustomerAddressDataRelationshipsWithDefaults() *CustomerAddressDataRelat
 
 // GetCustomer returns the Customer field value if set, zero value otherwise.
 func (o *CustomerAddressDataRelationships) GetCustomer() CouponRecipientDataRelationshipsCustomer {
-	if o == nil || o.Customer == nil {
+	if o == nil || IsNil(o.Customer) {
 		var ret CouponRecipientDataRelationshipsCustomer
 		return ret
 	}
@@ -51,7 +54,7 @@ func (o *CustomerAddressDataRelationships) GetCustomer() CouponRecipientDataRela
 // GetCustomerOk returns a tuple with the Customer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerAddressDataRelationships) GetCustomerOk() (*CouponRecipientDataRelationshipsCustomer, bool) {
-	if o == nil || o.Customer == nil {
+	if o == nil || IsNil(o.Customer) {
 		return nil, false
 	}
 	return o.Customer, true
@@ -59,7 +62,7 @@ func (o *CustomerAddressDataRelationships) GetCustomerOk() (*CouponRecipientData
 
 // HasCustomer returns a boolean if a field has been set.
 func (o *CustomerAddressDataRelationships) HasCustomer() bool {
-	if o != nil && o.Customer != nil {
+	if o != nil && !IsNil(o.Customer) {
 		return true
 	}
 
@@ -73,7 +76,7 @@ func (o *CustomerAddressDataRelationships) SetCustomer(v CouponRecipientDataRela
 
 // GetAddress returns the Address field value if set, zero value otherwise.
 func (o *CustomerAddressDataRelationships) GetAddress() BingGeocoderDataRelationshipsAddresses {
-	if o == nil || o.Address == nil {
+	if o == nil || IsNil(o.Address) {
 		var ret BingGeocoderDataRelationshipsAddresses
 		return ret
 	}
@@ -83,7 +86,7 @@ func (o *CustomerAddressDataRelationships) GetAddress() BingGeocoderDataRelation
 // GetAddressOk returns a tuple with the Address field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerAddressDataRelationships) GetAddressOk() (*BingGeocoderDataRelationshipsAddresses, bool) {
-	if o == nil || o.Address == nil {
+	if o == nil || IsNil(o.Address) {
 		return nil, false
 	}
 	return o.Address, true
@@ -91,7 +94,7 @@ func (o *CustomerAddressDataRelationships) GetAddressOk() (*BingGeocoderDataRela
 
 // HasAddress returns a boolean if a field has been set.
 func (o *CustomerAddressDataRelationships) HasAddress() bool {
-	if o != nil && o.Address != nil {
+	if o != nil && !IsNil(o.Address) {
 		return true
 	}
 
@@ -105,7 +108,7 @@ func (o *CustomerAddressDataRelationships) SetAddress(v BingGeocoderDataRelation
 
 // GetEvents returns the Events field value if set, zero value otherwise.
 func (o *CustomerAddressDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
-	if o == nil || o.Events == nil {
+	if o == nil || IsNil(o.Events) {
 		var ret AuthorizationDataRelationshipsEvents
 		return ret
 	}
@@ -115,7 +118,7 @@ func (o *CustomerAddressDataRelationships) GetEvents() AuthorizationDataRelation
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerAddressDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
-	if o == nil || o.Events == nil {
+	if o == nil || IsNil(o.Events) {
 		return nil, false
 	}
 	return o.Events, true
@@ -123,7 +126,7 @@ func (o *CustomerAddressDataRelationships) GetEventsOk() (*AuthorizationDataRela
 
 // HasEvents returns a boolean if a field has been set.
 func (o *CustomerAddressDataRelationships) HasEvents() bool {
-	if o != nil && o.Events != nil {
+	if o != nil && !IsNil(o.Events) {
 		return true
 	}
 
@@ -136,17 +139,25 @@ func (o *CustomerAddressDataRelationships) SetEvents(v AuthorizationDataRelation
 }
 
 func (o CustomerAddressDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Customer != nil {
-		toSerialize["customer"] = o.Customer
-	}
-	if o.Address != nil {
-		toSerialize["address"] = o.Address
-	}
-	if o.Events != nil {
-		toSerialize["events"] = o.Events
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CustomerAddressDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Customer) {
+		toSerialize["customer"] = o.Customer
+	}
+	if !IsNil(o.Address) {
+		toSerialize["address"] = o.Address
+	}
+	if !IsNil(o.Events) {
+		toSerialize["events"] = o.Events
+	}
+	return toSerialize, nil
 }
 
 type NullableCustomerAddressDataRelationships struct {

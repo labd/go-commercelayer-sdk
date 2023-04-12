@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETKlarnaPayments200ResponseDataInnerAttributes**](GETKlarnaPayments200ResponseDataInnerAttributes.md) |  | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Attributes** | [**GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes**](GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentDataRelationships**](AdyenPaymentDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewKlarnaPaymentData
 
-`func NewKlarnaPaymentData(type_ string, attributes GETKlarnaPayments200ResponseDataInnerAttributes, ) *KlarnaPaymentData`
+`func NewKlarnaPaymentData(type_ interface{}, attributes GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes, ) *KlarnaPaymentData`
 
 NewKlarnaPaymentData instantiates a new KlarnaPaymentData object
 This constructor will assign default values to properties that have it defined,
@@ -29,40 +29,50 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *KlarnaPaymentData) GetType() string`
+`func (o *KlarnaPaymentData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *KlarnaPaymentData) GetTypeOk() (*string, bool)`
+`func (o *KlarnaPaymentData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *KlarnaPaymentData) SetType(v string)`
+`func (o *KlarnaPaymentData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *KlarnaPaymentData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *KlarnaPaymentData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *KlarnaPaymentData) GetAttributes() GETKlarnaPayments200ResponseDataInnerAttributes`
+`func (o *KlarnaPaymentData) GetAttributes() GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *KlarnaPaymentData) GetAttributesOk() (*GETKlarnaPayments200ResponseDataInnerAttributes, bool)`
+`func (o *KlarnaPaymentData) GetAttributesOk() (*GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *KlarnaPaymentData) SetAttributes(v GETKlarnaPayments200ResponseDataInnerAttributes)`
+`func (o *KlarnaPaymentData) SetAttributes(v GETKlarnaPaymentsKlarnaPaymentId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

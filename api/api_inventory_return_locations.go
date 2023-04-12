@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type InventoryReturnLocationsApiService service
 type InventoryReturnLocationsApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest struct {
 	ctx                       context.Context
 	ApiService                *InventoryReturnLocationsApiService
-	inventoryReturnLocationId string
+	inventoryReturnLocationId interface{}
 }
 
 func (r InventoryReturnLocationsApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete an inventory return location
 	@param inventoryReturnLocationId The resource's id
 	@return InventoryReturnLocationsApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest
 */
-func (a *InventoryReturnLocationsApiService) DELETEInventoryReturnLocationsInventoryReturnLocationId(ctx context.Context, inventoryReturnLocationId string) InventoryReturnLocationsApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest {
+func (a *InventoryReturnLocationsApiService) DELETEInventoryReturnLocationsInventoryReturnLocationId(ctx context.Context, inventoryReturnLocationId interface{}) InventoryReturnLocationsApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest {
 	return InventoryReturnLocationsApiDELETEInventoryReturnLocationsInventoryReturnLocationIdRequest{
 		ApiService:                a,
 		ctx:                       ctx,
@@ -64,7 +64,7 @@ func (a *InventoryReturnLocationsApiService) DELETEInventoryReturnLocationsInven
 	}
 
 	localVarPath := localBasePath + "/inventory_return_locations/{inventoryReturnLocationId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"inventoryReturnLocationId"+"}", url.PathEscape(parameterToString(r.inventoryReturnLocationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inventoryReturnLocationId"+"}", url.PathEscape(parameterValueToString(r.inventoryReturnLocationId, "inventoryReturnLocationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *InventoryReturnLocationsApiService) DELETEInventoryReturnLocationsInven
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *InventoryReturnLocationsApiService) DELETEInventoryReturnLocationsInven
 type InventoryReturnLocationsApiGETInventoryModelIdInventoryReturnLocationsRequest struct {
 	ctx              context.Context
 	ApiService       *InventoryReturnLocationsApiService
-	inventoryModelId string
+	inventoryModelId interface{}
 }
 
 func (r InventoryReturnLocationsApiGETInventoryModelIdInventoryReturnLocationsRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the inventory return locations associated to the inventory model
 	@param inventoryModelId The resource's id
 	@return InventoryReturnLocationsApiGETInventoryModelIdInventoryReturnLocationsRequest
 */
-func (a *InventoryReturnLocationsApiService) GETInventoryModelIdInventoryReturnLocations(ctx context.Context, inventoryModelId string) InventoryReturnLocationsApiGETInventoryModelIdInventoryReturnLocationsRequest {
+func (a *InventoryReturnLocationsApiService) GETInventoryModelIdInventoryReturnLocations(ctx context.Context, inventoryModelId interface{}) InventoryReturnLocationsApiGETInventoryModelIdInventoryReturnLocationsRequest {
 	return InventoryReturnLocationsApiGETInventoryModelIdInventoryReturnLocationsRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -156,7 +156,7 @@ func (a *InventoryReturnLocationsApiService) GETInventoryModelIdInventoryReturnL
 	}
 
 	localVarPath := localBasePath + "/inventory_models/{inventoryModelId}/inventory_return_locations"
-	localVarPath = strings.Replace(localVarPath, "{"+"inventoryModelId"+"}", url.PathEscape(parameterToString(r.inventoryModelId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inventoryModelId"+"}", url.PathEscape(parameterValueToString(r.inventoryModelId, "inventoryModelId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *InventoryReturnLocationsApiService) GETInventoryModelIdInventoryReturnL
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *InventoryReturnLocationsApiService) GETInventoryReturnLocationsExecute(
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -310,7 +310,7 @@ func (a *InventoryReturnLocationsApiService) GETInventoryReturnLocationsExecute(
 type InventoryReturnLocationsApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest struct {
 	ctx                       context.Context
 	ApiService                *InventoryReturnLocationsApiService
-	inventoryReturnLocationId string
+	inventoryReturnLocationId interface{}
 }
 
 func (r InventoryReturnLocationsApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest) Execute() (*GETInventoryReturnLocationsInventoryReturnLocationId200Response, *http.Response, error) {
@@ -326,7 +326,7 @@ Retrieve an inventory return location
 	@param inventoryReturnLocationId The resource's id
 	@return InventoryReturnLocationsApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest
 */
-func (a *InventoryReturnLocationsApiService) GETInventoryReturnLocationsInventoryReturnLocationId(ctx context.Context, inventoryReturnLocationId string) InventoryReturnLocationsApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest {
+func (a *InventoryReturnLocationsApiService) GETInventoryReturnLocationsInventoryReturnLocationId(ctx context.Context, inventoryReturnLocationId interface{}) InventoryReturnLocationsApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest {
 	return InventoryReturnLocationsApiGETInventoryReturnLocationsInventoryReturnLocationIdRequest{
 		ApiService:                a,
 		ctx:                       ctx,
@@ -351,7 +351,7 @@ func (a *InventoryReturnLocationsApiService) GETInventoryReturnLocationsInventor
 	}
 
 	localVarPath := localBasePath + "/inventory_return_locations/{inventoryReturnLocationId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"inventoryReturnLocationId"+"}", url.PathEscape(parameterToString(r.inventoryReturnLocationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inventoryReturnLocationId"+"}", url.PathEscape(parameterValueToString(r.inventoryReturnLocationId, "inventoryReturnLocationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *InventoryReturnLocationsApiService) GETInventoryReturnLocationsInventor
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -414,7 +414,7 @@ func (a *InventoryReturnLocationsApiService) GETInventoryReturnLocationsInventor
 type InventoryReturnLocationsApiGETStockLocationIdInventoryReturnLocationsRequest struct {
 	ctx             context.Context
 	ApiService      *InventoryReturnLocationsApiService
-	stockLocationId string
+	stockLocationId interface{}
 }
 
 func (r InventoryReturnLocationsApiGETStockLocationIdInventoryReturnLocationsRequest) Execute() (*http.Response, error) {
@@ -430,7 +430,7 @@ Retrieve the inventory return locations associated to the stock location
 	@param stockLocationId The resource's id
 	@return InventoryReturnLocationsApiGETStockLocationIdInventoryReturnLocationsRequest
 */
-func (a *InventoryReturnLocationsApiService) GETStockLocationIdInventoryReturnLocations(ctx context.Context, stockLocationId string) InventoryReturnLocationsApiGETStockLocationIdInventoryReturnLocationsRequest {
+func (a *InventoryReturnLocationsApiService) GETStockLocationIdInventoryReturnLocations(ctx context.Context, stockLocationId interface{}) InventoryReturnLocationsApiGETStockLocationIdInventoryReturnLocationsRequest {
 	return InventoryReturnLocationsApiGETStockLocationIdInventoryReturnLocationsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -452,7 +452,7 @@ func (a *InventoryReturnLocationsApiService) GETStockLocationIdInventoryReturnLo
 	}
 
 	localVarPath := localBasePath + "/stock_locations/{stockLocationId}/inventory_return_locations"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterToString(r.stockLocationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterValueToString(r.stockLocationId, "stockLocationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -485,9 +485,9 @@ func (a *InventoryReturnLocationsApiService) GETStockLocationIdInventoryReturnLo
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -507,7 +507,7 @@ type InventoryReturnLocationsApiPATCHInventoryReturnLocationsInventoryReturnLoca
 	ctx                           context.Context
 	ApiService                    *InventoryReturnLocationsApiService
 	inventoryReturnLocationUpdate *InventoryReturnLocationUpdate
-	inventoryReturnLocationId     string
+	inventoryReturnLocationId     interface{}
 }
 
 func (r InventoryReturnLocationsApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest) InventoryReturnLocationUpdate(inventoryReturnLocationUpdate InventoryReturnLocationUpdate) InventoryReturnLocationsApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest {
@@ -528,7 +528,7 @@ Update an inventory return location
 	@param inventoryReturnLocationId The resource's id
 	@return InventoryReturnLocationsApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest
 */
-func (a *InventoryReturnLocationsApiService) PATCHInventoryReturnLocationsInventoryReturnLocationId(ctx context.Context, inventoryReturnLocationId string) InventoryReturnLocationsApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest {
+func (a *InventoryReturnLocationsApiService) PATCHInventoryReturnLocationsInventoryReturnLocationId(ctx context.Context, inventoryReturnLocationId interface{}) InventoryReturnLocationsApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest {
 	return InventoryReturnLocationsApiPATCHInventoryReturnLocationsInventoryReturnLocationIdRequest{
 		ApiService:                a,
 		ctx:                       ctx,
@@ -553,7 +553,7 @@ func (a *InventoryReturnLocationsApiService) PATCHInventoryReturnLocationsInvent
 	}
 
 	localVarPath := localBasePath + "/inventory_return_locations/{inventoryReturnLocationId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"inventoryReturnLocationId"+"}", url.PathEscape(parameterToString(r.inventoryReturnLocationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"inventoryReturnLocationId"+"}", url.PathEscape(parameterValueToString(r.inventoryReturnLocationId, "inventoryReturnLocationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -591,9 +591,9 @@ func (a *InventoryReturnLocationsApiService) PATCHInventoryReturnLocationsInvent
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -702,9 +702,9 @@ func (a *InventoryReturnLocationsApiService) POSTInventoryReturnLocationsExecute
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

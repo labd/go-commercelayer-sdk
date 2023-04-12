@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,31 +15,34 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTSkuLists201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTSkuLists201ResponseDataAttributes{}
+
 // POSTSkuLists201ResponseDataAttributes struct for POSTSkuLists201ResponseDataAttributes
 type POSTSkuLists201ResponseDataAttributes struct {
 	// The SKU list's internal name.
-	Name string `json:"name"`
+	Name interface{} `json:"name"`
 	// An internal description of the SKU list.
-	Description *string `json:"description,omitempty"`
+	Description interface{} `json:"description,omitempty"`
 	// The URL of an image that represents the SKU list.
-	ImageUrl *string `json:"image_url,omitempty"`
+	ImageUrl interface{} `json:"image_url,omitempty"`
 	// Indicates if the SKU list is populated manually.
-	Manual *bool `json:"manual,omitempty"`
+	Manual interface{} `json:"manual,omitempty"`
 	// The regex that will be evaluated to match the SKU codes.
-	SkuCodeRegex *string `json:"sku_code_regex,omitempty"`
+	SkuCodeRegex interface{} `json:"sku_code_regex,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 }
 
 // NewPOSTSkuLists201ResponseDataAttributes instantiates a new POSTSkuLists201ResponseDataAttributes object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPOSTSkuLists201ResponseDataAttributes(name string) *POSTSkuLists201ResponseDataAttributes {
+func NewPOSTSkuLists201ResponseDataAttributes(name interface{}) *POSTSkuLists201ResponseDataAttributes {
 	this := POSTSkuLists201ResponseDataAttributes{}
 	this.Name = name
 	return &this
@@ -54,9 +57,10 @@ func NewPOSTSkuLists201ResponseDataAttributesWithDefaults() *POSTSkuLists201Resp
 }
 
 // GetName returns the Name field value
-func (o *POSTSkuLists201ResponseDataAttributes) GetName() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTSkuLists201ResponseDataAttributes) GetName() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -65,214 +69,221 @@ func (o *POSTSkuLists201ResponseDataAttributes) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
-func (o *POSTSkuLists201ResponseDataAttributes) GetNameOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTSkuLists201ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
 }
 
 // SetName sets field value
-func (o *POSTSkuLists201ResponseDataAttributes) SetName(v string) {
+func (o *POSTSkuLists201ResponseDataAttributes) SetName(v interface{}) {
 	o.Name = v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
-func (o *POSTSkuLists201ResponseDataAttributes) GetDescription() string {
-	if o == nil || o.Description == nil {
-		var ret string
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTSkuLists201ResponseDataAttributes) GetDescription() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Description
+	return o.Description
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTSkuLists201ResponseDataAttributes) GetDescriptionOk() (*string, bool) {
-	if o == nil || o.Description == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTSkuLists201ResponseDataAttributes) GetDescriptionOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
-	return o.Description, true
+	return &o.Description, true
 }
 
 // HasDescription returns a boolean if a field has been set.
 func (o *POSTSkuLists201ResponseDataAttributes) HasDescription() bool {
-	if o != nil && o.Description != nil {
+	if o != nil && IsNil(o.Description) {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *POSTSkuLists201ResponseDataAttributes) SetDescription(v string) {
-	o.Description = &v
+// SetDescription gets a reference to the given interface{} and assigns it to the Description field.
+func (o *POSTSkuLists201ResponseDataAttributes) SetDescription(v interface{}) {
+	o.Description = v
 }
 
-// GetImageUrl returns the ImageUrl field value if set, zero value otherwise.
-func (o *POSTSkuLists201ResponseDataAttributes) GetImageUrl() string {
-	if o == nil || o.ImageUrl == nil {
-		var ret string
+// GetImageUrl returns the ImageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTSkuLists201ResponseDataAttributes) GetImageUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ImageUrl
+	return o.ImageUrl
 }
 
 // GetImageUrlOk returns a tuple with the ImageUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTSkuLists201ResponseDataAttributes) GetImageUrlOk() (*string, bool) {
-	if o == nil || o.ImageUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTSkuLists201ResponseDataAttributes) GetImageUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ImageUrl) {
 		return nil, false
 	}
-	return o.ImageUrl, true
+	return &o.ImageUrl, true
 }
 
 // HasImageUrl returns a boolean if a field has been set.
 func (o *POSTSkuLists201ResponseDataAttributes) HasImageUrl() bool {
-	if o != nil && o.ImageUrl != nil {
+	if o != nil && IsNil(o.ImageUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetImageUrl gets a reference to the given string and assigns it to the ImageUrl field.
-func (o *POSTSkuLists201ResponseDataAttributes) SetImageUrl(v string) {
-	o.ImageUrl = &v
+// SetImageUrl gets a reference to the given interface{} and assigns it to the ImageUrl field.
+func (o *POSTSkuLists201ResponseDataAttributes) SetImageUrl(v interface{}) {
+	o.ImageUrl = v
 }
 
-// GetManual returns the Manual field value if set, zero value otherwise.
-func (o *POSTSkuLists201ResponseDataAttributes) GetManual() bool {
-	if o == nil || o.Manual == nil {
-		var ret bool
+// GetManual returns the Manual field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTSkuLists201ResponseDataAttributes) GetManual() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Manual
+	return o.Manual
 }
 
 // GetManualOk returns a tuple with the Manual field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTSkuLists201ResponseDataAttributes) GetManualOk() (*bool, bool) {
-	if o == nil || o.Manual == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTSkuLists201ResponseDataAttributes) GetManualOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Manual) {
 		return nil, false
 	}
-	return o.Manual, true
+	return &o.Manual, true
 }
 
 // HasManual returns a boolean if a field has been set.
 func (o *POSTSkuLists201ResponseDataAttributes) HasManual() bool {
-	if o != nil && o.Manual != nil {
+	if o != nil && IsNil(o.Manual) {
 		return true
 	}
 
 	return false
 }
 
-// SetManual gets a reference to the given bool and assigns it to the Manual field.
-func (o *POSTSkuLists201ResponseDataAttributes) SetManual(v bool) {
-	o.Manual = &v
+// SetManual gets a reference to the given interface{} and assigns it to the Manual field.
+func (o *POSTSkuLists201ResponseDataAttributes) SetManual(v interface{}) {
+	o.Manual = v
 }
 
-// GetSkuCodeRegex returns the SkuCodeRegex field value if set, zero value otherwise.
-func (o *POSTSkuLists201ResponseDataAttributes) GetSkuCodeRegex() string {
-	if o == nil || o.SkuCodeRegex == nil {
-		var ret string
+// GetSkuCodeRegex returns the SkuCodeRegex field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTSkuLists201ResponseDataAttributes) GetSkuCodeRegex() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.SkuCodeRegex
+	return o.SkuCodeRegex
 }
 
 // GetSkuCodeRegexOk returns a tuple with the SkuCodeRegex field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTSkuLists201ResponseDataAttributes) GetSkuCodeRegexOk() (*string, bool) {
-	if o == nil || o.SkuCodeRegex == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTSkuLists201ResponseDataAttributes) GetSkuCodeRegexOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.SkuCodeRegex) {
 		return nil, false
 	}
-	return o.SkuCodeRegex, true
+	return &o.SkuCodeRegex, true
 }
 
 // HasSkuCodeRegex returns a boolean if a field has been set.
 func (o *POSTSkuLists201ResponseDataAttributes) HasSkuCodeRegex() bool {
-	if o != nil && o.SkuCodeRegex != nil {
+	if o != nil && IsNil(o.SkuCodeRegex) {
 		return true
 	}
 
 	return false
 }
 
-// SetSkuCodeRegex gets a reference to the given string and assigns it to the SkuCodeRegex field.
-func (o *POSTSkuLists201ResponseDataAttributes) SetSkuCodeRegex(v string) {
-	o.SkuCodeRegex = &v
+// SetSkuCodeRegex gets a reference to the given interface{} and assigns it to the SkuCodeRegex field.
+func (o *POSTSkuLists201ResponseDataAttributes) SetSkuCodeRegex(v interface{}) {
+	o.SkuCodeRegex = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *POSTSkuLists201ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTSkuLists201ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTSkuLists201ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTSkuLists201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTSkuLists201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *POSTSkuLists201ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *POSTSkuLists201ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *POSTSkuLists201ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTSkuLists201ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTSkuLists201ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTSkuLists201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTSkuLists201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *POSTSkuLists201ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *POSTSkuLists201ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *POSTSkuLists201ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTSkuLists201ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -280,30 +291,39 @@ func (o *POSTSkuLists201ResponseDataAttributes) GetMetadata() map[string]interfa
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTSkuLists201ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTSkuLists201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTSkuLists201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *POSTSkuLists201ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *POSTSkuLists201ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 func (o POSTSkuLists201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTSkuLists201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
+	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
 	if o.Description != nil {
@@ -327,7 +347,7 @@ func (o POSTSkuLists201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTSkuLists201ResponseDataAttributes struct {

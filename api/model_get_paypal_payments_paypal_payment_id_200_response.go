@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETPaypalPaymentsPaypalPaymentId200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETPaypalPaymentsPaypalPaymentId200Response{}
+
 // GETPaypalPaymentsPaypalPaymentId200Response struct for GETPaypalPaymentsPaypalPaymentId200Response
 type GETPaypalPaymentsPaypalPaymentId200Response struct {
-	Data *GETPaypalPayments200ResponseDataInner `json:"data,omitempty"`
+	Data *GETPaypalPaymentsPaypalPaymentId200ResponseData `json:"data,omitempty"`
 }
 
 // NewGETPaypalPaymentsPaypalPaymentId200Response instantiates a new GETPaypalPaymentsPaypalPaymentId200Response object
@@ -38,9 +41,9 @@ func NewGETPaypalPaymentsPaypalPaymentId200ResponseWithDefaults() *GETPaypalPaym
 }
 
 // GetData returns the Data field value if set, zero value otherwise.
-func (o *GETPaypalPaymentsPaypalPaymentId200Response) GetData() GETPaypalPayments200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret GETPaypalPayments200ResponseDataInner
+func (o *GETPaypalPaymentsPaypalPaymentId200Response) GetData() GETPaypalPaymentsPaypalPaymentId200ResponseData {
+	if o == nil || IsNil(o.Data) {
+		var ret GETPaypalPaymentsPaypalPaymentId200ResponseData
 		return ret
 	}
 	return *o.Data
@@ -48,8 +51,8 @@ func (o *GETPaypalPaymentsPaypalPaymentId200Response) GetData() GETPaypalPayment
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETPaypalPaymentsPaypalPaymentId200Response) GetDataOk() (*GETPaypalPayments200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+func (o *GETPaypalPaymentsPaypalPaymentId200Response) GetDataOk() (*GETPaypalPaymentsPaypalPaymentId200ResponseData, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,24 +60,32 @@ func (o *GETPaypalPaymentsPaypalPaymentId200Response) GetDataOk() (*GETPaypalPay
 
 // HasData returns a boolean if a field has been set.
 func (o *GETPaypalPaymentsPaypalPaymentId200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given GETPaypalPayments200ResponseDataInner and assigns it to the Data field.
-func (o *GETPaypalPaymentsPaypalPaymentId200Response) SetData(v GETPaypalPayments200ResponseDataInner) {
+// SetData gets a reference to the given GETPaypalPaymentsPaypalPaymentId200ResponseData and assigns it to the Data field.
+func (o *GETPaypalPaymentsPaypalPaymentId200Response) SetData(v GETPaypalPaymentsPaypalPaymentId200ResponseData) {
 	o.Data = &v
 }
 
 func (o GETPaypalPaymentsPaypalPaymentId200Response) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o GETPaypalPaymentsPaypalPaymentId200Response) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableGETPaypalPaymentsPaypalPaymentId200Response struct {

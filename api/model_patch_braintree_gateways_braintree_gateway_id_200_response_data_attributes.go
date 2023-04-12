@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,30 +15,33 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes{}
+
 // PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes struct for PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes
 type PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes struct {
 	// The payment gateway's internal name.
-	Name *string `json:"name,omitempty"`
+	Name interface{} `json:"name,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 	// The gateway merchant account ID.
-	MerchantAccountId *string `json:"merchant_account_id,omitempty"`
+	MerchantAccountId interface{} `json:"merchant_account_id,omitempty"`
 	// The gateway merchant ID.
-	MerchantId *string `json:"merchant_id,omitempty"`
+	MerchantId interface{} `json:"merchant_id,omitempty"`
 	// The gateway API public key.
-	PublicKey *string `json:"public_key,omitempty"`
+	PublicKey interface{} `json:"public_key,omitempty"`
 	// The gateway API private key.
-	PrivateKey *string `json:"private_key,omitempty"`
+	PrivateKey interface{} `json:"private_key,omitempty"`
 	// The dynamic descriptor name. Must be composed by business name (3, 7 or 12 chars), an asterisk (*) and the product name (18, 14 or 9 chars), for a total length of 22 chars.
-	DescriptorName *string `json:"descriptor_name,omitempty"`
+	DescriptorName interface{} `json:"descriptor_name,omitempty"`
 	// The dynamic descriptor phone number. Must be 10-14 characters and can only contain numbers, dashes, parentheses and periods.
-	DescriptorPhone *string `json:"descriptor_phone,omitempty"`
+	DescriptorPhone interface{} `json:"descriptor_phone,omitempty"`
 	// The dynamic descriptor URL.
-	DescriptorUrl *string `json:"descriptor_url,omitempty"`
+	DescriptorUrl interface{} `json:"descriptor_url,omitempty"`
 }
 
 // NewPATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes instantiates a new PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes object
@@ -58,106 +61,109 @@ func NewPATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributesWithDef
 	return &this
 }
 
-// GetName returns the Name field value if set, zero value otherwise.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetName() string {
-	if o == nil || o.Name == nil {
-		var ret string
+// GetName returns the Name field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetName() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Name
+	return o.Name
 }
 
 // GetNameOk returns a tuple with the Name field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetNameOk() (*string, bool) {
-	if o == nil || o.Name == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
-	return o.Name, true
+	return &o.Name, true
 }
 
 // HasName returns a boolean if a field has been set.
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) HasName() bool {
-	if o != nil && o.Name != nil {
+	if o != nil && IsNil(o.Name) {
 		return true
 	}
 
 	return false
 }
 
-// SetName gets a reference to the given string and assigns it to the Name field.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) SetName(v string) {
-	o.Name = &v
+// SetName gets a reference to the given interface{} and assigns it to the Name field.
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) SetName(v interface{}) {
+	o.Name = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -165,252 +171,268 @@ func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetM
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
-// GetMerchantAccountId returns the MerchantAccountId field value if set, zero value otherwise.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetMerchantAccountId() string {
-	if o == nil || o.MerchantAccountId == nil {
-		var ret string
+// GetMerchantAccountId returns the MerchantAccountId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetMerchantAccountId() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.MerchantAccountId
+	return o.MerchantAccountId
 }
 
 // GetMerchantAccountIdOk returns a tuple with the MerchantAccountId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetMerchantAccountIdOk() (*string, bool) {
-	if o == nil || o.MerchantAccountId == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetMerchantAccountIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.MerchantAccountId) {
 		return nil, false
 	}
-	return o.MerchantAccountId, true
+	return &o.MerchantAccountId, true
 }
 
 // HasMerchantAccountId returns a boolean if a field has been set.
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) HasMerchantAccountId() bool {
-	if o != nil && o.MerchantAccountId != nil {
+	if o != nil && IsNil(o.MerchantAccountId) {
 		return true
 	}
 
 	return false
 }
 
-// SetMerchantAccountId gets a reference to the given string and assigns it to the MerchantAccountId field.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) SetMerchantAccountId(v string) {
-	o.MerchantAccountId = &v
+// SetMerchantAccountId gets a reference to the given interface{} and assigns it to the MerchantAccountId field.
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) SetMerchantAccountId(v interface{}) {
+	o.MerchantAccountId = v
 }
 
-// GetMerchantId returns the MerchantId field value if set, zero value otherwise.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetMerchantId() string {
-	if o == nil || o.MerchantId == nil {
-		var ret string
+// GetMerchantId returns the MerchantId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetMerchantId() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.MerchantId
+	return o.MerchantId
 }
 
 // GetMerchantIdOk returns a tuple with the MerchantId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetMerchantIdOk() (*string, bool) {
-	if o == nil || o.MerchantId == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetMerchantIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.MerchantId) {
 		return nil, false
 	}
-	return o.MerchantId, true
+	return &o.MerchantId, true
 }
 
 // HasMerchantId returns a boolean if a field has been set.
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) HasMerchantId() bool {
-	if o != nil && o.MerchantId != nil {
+	if o != nil && IsNil(o.MerchantId) {
 		return true
 	}
 
 	return false
 }
 
-// SetMerchantId gets a reference to the given string and assigns it to the MerchantId field.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) SetMerchantId(v string) {
-	o.MerchantId = &v
+// SetMerchantId gets a reference to the given interface{} and assigns it to the MerchantId field.
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) SetMerchantId(v interface{}) {
+	o.MerchantId = v
 }
 
-// GetPublicKey returns the PublicKey field value if set, zero value otherwise.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetPublicKey() string {
-	if o == nil || o.PublicKey == nil {
-		var ret string
+// GetPublicKey returns the PublicKey field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetPublicKey() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.PublicKey
+	return o.PublicKey
 }
 
 // GetPublicKeyOk returns a tuple with the PublicKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetPublicKeyOk() (*string, bool) {
-	if o == nil || o.PublicKey == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetPublicKeyOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PublicKey) {
 		return nil, false
 	}
-	return o.PublicKey, true
+	return &o.PublicKey, true
 }
 
 // HasPublicKey returns a boolean if a field has been set.
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) HasPublicKey() bool {
-	if o != nil && o.PublicKey != nil {
+	if o != nil && IsNil(o.PublicKey) {
 		return true
 	}
 
 	return false
 }
 
-// SetPublicKey gets a reference to the given string and assigns it to the PublicKey field.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) SetPublicKey(v string) {
-	o.PublicKey = &v
+// SetPublicKey gets a reference to the given interface{} and assigns it to the PublicKey field.
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) SetPublicKey(v interface{}) {
+	o.PublicKey = v
 }
 
-// GetPrivateKey returns the PrivateKey field value if set, zero value otherwise.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetPrivateKey() string {
-	if o == nil || o.PrivateKey == nil {
-		var ret string
+// GetPrivateKey returns the PrivateKey field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetPrivateKey() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.PrivateKey
+	return o.PrivateKey
 }
 
 // GetPrivateKeyOk returns a tuple with the PrivateKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetPrivateKeyOk() (*string, bool) {
-	if o == nil || o.PrivateKey == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetPrivateKeyOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PrivateKey) {
 		return nil, false
 	}
-	return o.PrivateKey, true
+	return &o.PrivateKey, true
 }
 
 // HasPrivateKey returns a boolean if a field has been set.
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) HasPrivateKey() bool {
-	if o != nil && o.PrivateKey != nil {
+	if o != nil && IsNil(o.PrivateKey) {
 		return true
 	}
 
 	return false
 }
 
-// SetPrivateKey gets a reference to the given string and assigns it to the PrivateKey field.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) SetPrivateKey(v string) {
-	o.PrivateKey = &v
+// SetPrivateKey gets a reference to the given interface{} and assigns it to the PrivateKey field.
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) SetPrivateKey(v interface{}) {
+	o.PrivateKey = v
 }
 
-// GetDescriptorName returns the DescriptorName field value if set, zero value otherwise.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetDescriptorName() string {
-	if o == nil || o.DescriptorName == nil {
-		var ret string
+// GetDescriptorName returns the DescriptorName field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetDescriptorName() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.DescriptorName
+	return o.DescriptorName
 }
 
 // GetDescriptorNameOk returns a tuple with the DescriptorName field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetDescriptorNameOk() (*string, bool) {
-	if o == nil || o.DescriptorName == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetDescriptorNameOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.DescriptorName) {
 		return nil, false
 	}
-	return o.DescriptorName, true
+	return &o.DescriptorName, true
 }
 
 // HasDescriptorName returns a boolean if a field has been set.
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) HasDescriptorName() bool {
-	if o != nil && o.DescriptorName != nil {
+	if o != nil && IsNil(o.DescriptorName) {
 		return true
 	}
 
 	return false
 }
 
-// SetDescriptorName gets a reference to the given string and assigns it to the DescriptorName field.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) SetDescriptorName(v string) {
-	o.DescriptorName = &v
+// SetDescriptorName gets a reference to the given interface{} and assigns it to the DescriptorName field.
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) SetDescriptorName(v interface{}) {
+	o.DescriptorName = v
 }
 
-// GetDescriptorPhone returns the DescriptorPhone field value if set, zero value otherwise.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetDescriptorPhone() string {
-	if o == nil || o.DescriptorPhone == nil {
-		var ret string
+// GetDescriptorPhone returns the DescriptorPhone field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetDescriptorPhone() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.DescriptorPhone
+	return o.DescriptorPhone
 }
 
 // GetDescriptorPhoneOk returns a tuple with the DescriptorPhone field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetDescriptorPhoneOk() (*string, bool) {
-	if o == nil || o.DescriptorPhone == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetDescriptorPhoneOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.DescriptorPhone) {
 		return nil, false
 	}
-	return o.DescriptorPhone, true
+	return &o.DescriptorPhone, true
 }
 
 // HasDescriptorPhone returns a boolean if a field has been set.
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) HasDescriptorPhone() bool {
-	if o != nil && o.DescriptorPhone != nil {
+	if o != nil && IsNil(o.DescriptorPhone) {
 		return true
 	}
 
 	return false
 }
 
-// SetDescriptorPhone gets a reference to the given string and assigns it to the DescriptorPhone field.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) SetDescriptorPhone(v string) {
-	o.DescriptorPhone = &v
+// SetDescriptorPhone gets a reference to the given interface{} and assigns it to the DescriptorPhone field.
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) SetDescriptorPhone(v interface{}) {
+	o.DescriptorPhone = v
 }
 
-// GetDescriptorUrl returns the DescriptorUrl field value if set, zero value otherwise.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetDescriptorUrl() string {
-	if o == nil || o.DescriptorUrl == nil {
-		var ret string
+// GetDescriptorUrl returns the DescriptorUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetDescriptorUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.DescriptorUrl
+	return o.DescriptorUrl
 }
 
 // GetDescriptorUrlOk returns a tuple with the DescriptorUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetDescriptorUrlOk() (*string, bool) {
-	if o == nil || o.DescriptorUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) GetDescriptorUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.DescriptorUrl) {
 		return nil, false
 	}
-	return o.DescriptorUrl, true
+	return &o.DescriptorUrl, true
 }
 
 // HasDescriptorUrl returns a boolean if a field has been set.
 func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) HasDescriptorUrl() bool {
-	if o != nil && o.DescriptorUrl != nil {
+	if o != nil && IsNil(o.DescriptorUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetDescriptorUrl gets a reference to the given string and assigns it to the DescriptorUrl field.
-func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) SetDescriptorUrl(v string) {
-	o.DescriptorUrl = &v
+// SetDescriptorUrl gets a reference to the given interface{} and assigns it to the DescriptorUrl field.
+func (o *PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) SetDescriptorUrl(v interface{}) {
+	o.DescriptorUrl = v
 }
 
 func (o PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Name != nil {
 		toSerialize["name"] = o.Name
@@ -445,7 +467,7 @@ func (o PATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes) Marsh
 	if o.DescriptorUrl != nil {
 		toSerialize["descriptor_url"] = o.DescriptorUrl
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHBraintreeGatewaysBraintreeGatewayId200ResponseDataAttributes struct {

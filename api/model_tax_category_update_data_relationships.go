@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the TaxCategoryUpdateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &TaxCategoryUpdateDataRelationships{}
 
 // TaxCategoryUpdateDataRelationships struct for TaxCategoryUpdateDataRelationships
 type TaxCategoryUpdateDataRelationships struct {
@@ -39,7 +42,7 @@ func NewTaxCategoryUpdateDataRelationshipsWithDefaults() *TaxCategoryUpdateDataR
 
 // GetSku returns the Sku field value if set, zero value otherwise.
 func (o *TaxCategoryUpdateDataRelationships) GetSku() InStockSubscriptionCreateDataRelationshipsSku {
-	if o == nil || o.Sku == nil {
+	if o == nil || IsNil(o.Sku) {
 		var ret InStockSubscriptionCreateDataRelationshipsSku
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *TaxCategoryUpdateDataRelationships) GetSku() InStockSubscriptionCreateD
 // GetSkuOk returns a tuple with the Sku field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaxCategoryUpdateDataRelationships) GetSkuOk() (*InStockSubscriptionCreateDataRelationshipsSku, bool) {
-	if o == nil || o.Sku == nil {
+	if o == nil || IsNil(o.Sku) {
 		return nil, false
 	}
 	return o.Sku, true
@@ -57,7 +60,7 @@ func (o *TaxCategoryUpdateDataRelationships) GetSkuOk() (*InStockSubscriptionCre
 
 // HasSku returns a boolean if a field has been set.
 func (o *TaxCategoryUpdateDataRelationships) HasSku() bool {
-	if o != nil && o.Sku != nil {
+	if o != nil && !IsNil(o.Sku) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *TaxCategoryUpdateDataRelationships) SetSku(v InStockSubscriptionCreateD
 }
 
 func (o TaxCategoryUpdateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Sku != nil {
-		toSerialize["sku"] = o.Sku
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o TaxCategoryUpdateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Sku) {
+		toSerialize["sku"] = o.Sku
+	}
+	return toSerialize, nil
 }
 
 type NullableTaxCategoryUpdateDataRelationships struct {

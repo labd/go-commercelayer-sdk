@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,21 +15,24 @@ import (
 	"encoding/json"
 )
 
+// checks if the WireTransferUpdateData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &WireTransferUpdateData{}
+
 // WireTransferUpdateData struct for WireTransferUpdateData
 type WireTransferUpdateData struct {
 	// The resource's type
-	Type string `json:"type"`
+	Type interface{} `json:"type"`
 	// The resource's id
-	Id            string                                     `json:"id"`
-	Attributes    POSTAdyenPayments201ResponseDataAttributes `json:"attributes"`
-	Relationships *AdyenPaymentUpdateDataRelationships       `json:"relationships,omitempty"`
+	Id            interface{}                                                                         `json:"id"`
+	Attributes    PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes `json:"attributes"`
+	Relationships *AdyenPaymentUpdateDataRelationships                                                `json:"relationships,omitempty"`
 }
 
 // NewWireTransferUpdateData instantiates a new WireTransferUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewWireTransferUpdateData(type_ string, id string, attributes POSTAdyenPayments201ResponseDataAttributes) *WireTransferUpdateData {
+func NewWireTransferUpdateData(type_ interface{}, id interface{}, attributes PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) *WireTransferUpdateData {
 	this := WireTransferUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -46,9 +49,10 @@ func NewWireTransferUpdateDataWithDefaults() *WireTransferUpdateData {
 }
 
 // GetType returns the Type field value
-func (o *WireTransferUpdateData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *WireTransferUpdateData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -57,22 +61,24 @@ func (o *WireTransferUpdateData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *WireTransferUpdateData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *WireTransferUpdateData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *WireTransferUpdateData) SetType(v string) {
+func (o *WireTransferUpdateData) SetType(v interface{}) {
 	o.Type = v
 }
 
 // GetId returns the Id field value
-func (o *WireTransferUpdateData) GetId() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *WireTransferUpdateData) GetId() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -81,22 +87,23 @@ func (o *WireTransferUpdateData) GetId() string {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *WireTransferUpdateData) GetIdOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *WireTransferUpdateData) GetIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return &o.Id, true
 }
 
 // SetId sets field value
-func (o *WireTransferUpdateData) SetId(v string) {
+func (o *WireTransferUpdateData) SetId(v interface{}) {
 	o.Id = v
 }
 
 // GetAttributes returns the Attributes field value
-func (o *WireTransferUpdateData) GetAttributes() POSTAdyenPayments201ResponseDataAttributes {
+func (o *WireTransferUpdateData) GetAttributes() PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes {
 	if o == nil {
-		var ret POSTAdyenPayments201ResponseDataAttributes
+		var ret PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes
 		return ret
 	}
 
@@ -105,7 +112,7 @@ func (o *WireTransferUpdateData) GetAttributes() POSTAdyenPayments201ResponseDat
 
 // GetAttributesOk returns a tuple with the Attributes field value
 // and a boolean to check if the value has been set.
-func (o *WireTransferUpdateData) GetAttributesOk() (*POSTAdyenPayments201ResponseDataAttributes, bool) {
+func (o *WireTransferUpdateData) GetAttributesOk() (*PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes, bool) {
 	if o == nil {
 		return nil, false
 	}
@@ -113,13 +120,13 @@ func (o *WireTransferUpdateData) GetAttributesOk() (*POSTAdyenPayments201Respons
 }
 
 // SetAttributes sets field value
-func (o *WireTransferUpdateData) SetAttributes(v POSTAdyenPayments201ResponseDataAttributes) {
+func (o *WireTransferUpdateData) SetAttributes(v PATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes) {
 	o.Attributes = v
 }
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *WireTransferUpdateData) GetRelationships() AdyenPaymentUpdateDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret AdyenPaymentUpdateDataRelationships
 		return ret
 	}
@@ -129,7 +136,7 @@ func (o *WireTransferUpdateData) GetRelationships() AdyenPaymentUpdateDataRelati
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *WireTransferUpdateData) GetRelationshipsOk() (*AdyenPaymentUpdateDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -137,7 +144,7 @@ func (o *WireTransferUpdateData) GetRelationshipsOk() (*AdyenPaymentUpdateDataRe
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *WireTransferUpdateData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -150,20 +157,26 @@ func (o *WireTransferUpdateData) SetRelationships(v AdyenPaymentUpdateDataRelati
 }
 
 func (o WireTransferUpdateData) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
-		toSerialize["relationships"] = o.Relationships
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o WireTransferUpdateData) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
+	}
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
+		toSerialize["relationships"] = o.Relationships
+	}
+	return toSerialize, nil
 }
 
 type NullableWireTransferUpdateData struct {

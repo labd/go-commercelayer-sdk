@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -96,9 +96,9 @@ func (a *AuthorizationsApiService) GETAuthorizationsExecute(r AuthorizationsApiG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -126,7 +126,7 @@ func (a *AuthorizationsApiService) GETAuthorizationsExecute(r AuthorizationsApiG
 type AuthorizationsApiGETAuthorizationsAuthorizationIdRequest struct {
 	ctx             context.Context
 	ApiService      *AuthorizationsApiService
-	authorizationId string
+	authorizationId interface{}
 }
 
 func (r AuthorizationsApiGETAuthorizationsAuthorizationIdRequest) Execute() (*GETAuthorizationsAuthorizationId200Response, *http.Response, error) {
@@ -142,7 +142,7 @@ Retrieve an authorization
 	@param authorizationId The resource's id
 	@return AuthorizationsApiGETAuthorizationsAuthorizationIdRequest
 */
-func (a *AuthorizationsApiService) GETAuthorizationsAuthorizationId(ctx context.Context, authorizationId string) AuthorizationsApiGETAuthorizationsAuthorizationIdRequest {
+func (a *AuthorizationsApiService) GETAuthorizationsAuthorizationId(ctx context.Context, authorizationId interface{}) AuthorizationsApiGETAuthorizationsAuthorizationIdRequest {
 	return AuthorizationsApiGETAuthorizationsAuthorizationIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -167,7 +167,7 @@ func (a *AuthorizationsApiService) GETAuthorizationsAuthorizationIdExecute(r Aut
 	}
 
 	localVarPath := localBasePath + "/authorizations/{authorizationId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"authorizationId"+"}", url.PathEscape(parameterToString(r.authorizationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"authorizationId"+"}", url.PathEscape(parameterValueToString(r.authorizationId, "authorizationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -200,9 +200,9 @@ func (a *AuthorizationsApiService) GETAuthorizationsAuthorizationIdExecute(r Aut
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -230,7 +230,7 @@ func (a *AuthorizationsApiService) GETAuthorizationsAuthorizationIdExecute(r Aut
 type AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest struct {
 	ctx        context.Context
 	ApiService *AuthorizationsApiService
-	captureId  string
+	captureId  interface{}
 }
 
 func (r AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest) Execute() (*http.Response, error) {
@@ -246,7 +246,7 @@ Retrieve the reference authorization associated to the capture
 	@param captureId The resource's id
 	@return AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest
 */
-func (a *AuthorizationsApiService) GETCaptureIdReferenceAuthorization(ctx context.Context, captureId string) AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest {
+func (a *AuthorizationsApiService) GETCaptureIdReferenceAuthorization(ctx context.Context, captureId interface{}) AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest {
 	return AuthorizationsApiGETCaptureIdReferenceAuthorizationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -268,7 +268,7 @@ func (a *AuthorizationsApiService) GETCaptureIdReferenceAuthorizationExecute(r A
 	}
 
 	localVarPath := localBasePath + "/captures/{captureId}/reference_authorization"
-	localVarPath = strings.Replace(localVarPath, "{"+"captureId"+"}", url.PathEscape(parameterToString(r.captureId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"captureId"+"}", url.PathEscape(parameterValueToString(r.captureId, "captureId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -301,9 +301,9 @@ func (a *AuthorizationsApiService) GETCaptureIdReferenceAuthorizationExecute(r A
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -322,7 +322,7 @@ func (a *AuthorizationsApiService) GETCaptureIdReferenceAuthorizationExecute(r A
 type AuthorizationsApiGETOrderIdAuthorizationsRequest struct {
 	ctx        context.Context
 	ApiService *AuthorizationsApiService
-	orderId    string
+	orderId    interface{}
 }
 
 func (r AuthorizationsApiGETOrderIdAuthorizationsRequest) Execute() (*http.Response, error) {
@@ -338,7 +338,7 @@ Retrieve the authorizations associated to the order
 	@param orderId The resource's id
 	@return AuthorizationsApiGETOrderIdAuthorizationsRequest
 */
-func (a *AuthorizationsApiService) GETOrderIdAuthorizations(ctx context.Context, orderId string) AuthorizationsApiGETOrderIdAuthorizationsRequest {
+func (a *AuthorizationsApiService) GETOrderIdAuthorizations(ctx context.Context, orderId interface{}) AuthorizationsApiGETOrderIdAuthorizationsRequest {
 	return AuthorizationsApiGETOrderIdAuthorizationsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -360,7 +360,7 @@ func (a *AuthorizationsApiService) GETOrderIdAuthorizationsExecute(r Authorizati
 	}
 
 	localVarPath := localBasePath + "/orders/{orderId}/authorizations"
-	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterToString(r.orderId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"orderId"+"}", url.PathEscape(parameterValueToString(r.orderId, "orderId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -393,9 +393,9 @@ func (a *AuthorizationsApiService) GETOrderIdAuthorizationsExecute(r Authorizati
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -414,7 +414,7 @@ func (a *AuthorizationsApiService) GETOrderIdAuthorizationsExecute(r Authorizati
 type AuthorizationsApiGETVoidIdReferenceAuthorizationRequest struct {
 	ctx        context.Context
 	ApiService *AuthorizationsApiService
-	voidId     string
+	voidId     interface{}
 }
 
 func (r AuthorizationsApiGETVoidIdReferenceAuthorizationRequest) Execute() (*http.Response, error) {
@@ -430,7 +430,7 @@ Retrieve the reference authorization associated to the void
 	@param voidId The resource's id
 	@return AuthorizationsApiGETVoidIdReferenceAuthorizationRequest
 */
-func (a *AuthorizationsApiService) GETVoidIdReferenceAuthorization(ctx context.Context, voidId string) AuthorizationsApiGETVoidIdReferenceAuthorizationRequest {
+func (a *AuthorizationsApiService) GETVoidIdReferenceAuthorization(ctx context.Context, voidId interface{}) AuthorizationsApiGETVoidIdReferenceAuthorizationRequest {
 	return AuthorizationsApiGETVoidIdReferenceAuthorizationRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -452,7 +452,7 @@ func (a *AuthorizationsApiService) GETVoidIdReferenceAuthorizationExecute(r Auth
 	}
 
 	localVarPath := localBasePath + "/voids/{voidId}/reference_authorization"
-	localVarPath = strings.Replace(localVarPath, "{"+"voidId"+"}", url.PathEscape(parameterToString(r.voidId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"voidId"+"}", url.PathEscape(parameterValueToString(r.voidId, "voidId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -485,9 +485,9 @@ func (a *AuthorizationsApiService) GETVoidIdReferenceAuthorizationExecute(r Auth
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -507,7 +507,7 @@ type AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest struct {
 	ctx                 context.Context
 	ApiService          *AuthorizationsApiService
 	authorizationUpdate *AuthorizationUpdate
-	authorizationId     string
+	authorizationId     interface{}
 }
 
 func (r AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest) AuthorizationUpdate(authorizationUpdate AuthorizationUpdate) AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest {
@@ -528,7 +528,7 @@ Update an authorization
 	@param authorizationId The resource's id
 	@return AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest
 */
-func (a *AuthorizationsApiService) PATCHAuthorizationsAuthorizationId(ctx context.Context, authorizationId string) AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest {
+func (a *AuthorizationsApiService) PATCHAuthorizationsAuthorizationId(ctx context.Context, authorizationId interface{}) AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest {
 	return AuthorizationsApiPATCHAuthorizationsAuthorizationIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -553,7 +553,7 @@ func (a *AuthorizationsApiService) PATCHAuthorizationsAuthorizationIdExecute(r A
 	}
 
 	localVarPath := localBasePath + "/authorizations/{authorizationId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"authorizationId"+"}", url.PathEscape(parameterToString(r.authorizationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"authorizationId"+"}", url.PathEscape(parameterValueToString(r.authorizationId, "authorizationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -591,9 +591,9 @@ func (a *AuthorizationsApiService) PATCHAuthorizationsAuthorizationIdExecute(r A
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

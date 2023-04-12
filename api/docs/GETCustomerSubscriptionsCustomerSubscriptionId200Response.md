@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Data** | Pointer to [**GETCustomerSubscriptions200ResponseDataInner**](GETCustomerSubscriptions200ResponseDataInner.md) |  | [optional] 
+**Data** | Pointer to [**GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData**](GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData.md) |  | [optional] 
 
 ## Methods
 
@@ -27,20 +27,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetData
 
-`func (o *GETCustomerSubscriptionsCustomerSubscriptionId200Response) GetData() GETCustomerSubscriptions200ResponseDataInner`
+`func (o *GETCustomerSubscriptionsCustomerSubscriptionId200Response) GetData() GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData`
 
 GetData returns the Data field if non-nil, zero value otherwise.
 
 ### GetDataOk
 
-`func (o *GETCustomerSubscriptionsCustomerSubscriptionId200Response) GetDataOk() (*GETCustomerSubscriptions200ResponseDataInner, bool)`
+`func (o *GETCustomerSubscriptionsCustomerSubscriptionId200Response) GetDataOk() (*GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData, bool)`
 
 GetDataOk returns a tuple with the Data field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetData
 
-`func (o *GETCustomerSubscriptionsCustomerSubscriptionId200Response) SetData(v GETCustomerSubscriptions200ResponseDataInner)`
+`func (o *GETCustomerSubscriptionsCustomerSubscriptionId200Response) SetData(v GETCustomerSubscriptionsCustomerSubscriptionId200ResponseData)`
 
 SetData sets Data field to given value.
 

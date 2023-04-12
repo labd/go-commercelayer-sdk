@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,13 +15,17 @@ import (
 	"encoding/json"
 )
 
+// checks if the PriceDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PriceDataRelationships{}
+
 // PriceDataRelationships struct for PriceDataRelationships
 type PriceDataRelationships struct {
-	PriceList        *MarketDataRelationshipsPriceList           `json:"price_list,omitempty"`
-	Sku              *BundleDataRelationshipsSkus                `json:"sku,omitempty"`
-	PriceTiers       *PriceDataRelationshipsPriceTiers           `json:"price_tiers,omitempty"`
-	PriceVolumeTiers *PriceDataRelationshipsPriceVolumeTiers     `json:"price_volume_tiers,omitempty"`
-	Attachments      *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
+	PriceList           *MarketDataRelationshipsPriceList           `json:"price_list,omitempty"`
+	Sku                 *BundleDataRelationshipsSkus                `json:"sku,omitempty"`
+	PriceTiers          *PriceDataRelationshipsPriceTiers           `json:"price_tiers,omitempty"`
+	PriceVolumeTiers    *PriceDataRelationshipsPriceVolumeTiers     `json:"price_volume_tiers,omitempty"`
+	PriceFrequencyTiers *PriceDataRelationshipsPriceFrequencyTiers  `json:"price_frequency_tiers,omitempty"`
+	Attachments         *AvalaraAccountDataRelationshipsAttachments `json:"attachments,omitempty"`
 }
 
 // NewPriceDataRelationships instantiates a new PriceDataRelationships object
@@ -43,7 +47,7 @@ func NewPriceDataRelationshipsWithDefaults() *PriceDataRelationships {
 
 // GetPriceList returns the PriceList field value if set, zero value otherwise.
 func (o *PriceDataRelationships) GetPriceList() MarketDataRelationshipsPriceList {
-	if o == nil || o.PriceList == nil {
+	if o == nil || IsNil(o.PriceList) {
 		var ret MarketDataRelationshipsPriceList
 		return ret
 	}
@@ -53,7 +57,7 @@ func (o *PriceDataRelationships) GetPriceList() MarketDataRelationshipsPriceList
 // GetPriceListOk returns a tuple with the PriceList field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PriceDataRelationships) GetPriceListOk() (*MarketDataRelationshipsPriceList, bool) {
-	if o == nil || o.PriceList == nil {
+	if o == nil || IsNil(o.PriceList) {
 		return nil, false
 	}
 	return o.PriceList, true
@@ -61,7 +65,7 @@ func (o *PriceDataRelationships) GetPriceListOk() (*MarketDataRelationshipsPrice
 
 // HasPriceList returns a boolean if a field has been set.
 func (o *PriceDataRelationships) HasPriceList() bool {
-	if o != nil && o.PriceList != nil {
+	if o != nil && !IsNil(o.PriceList) {
 		return true
 	}
 
@@ -75,7 +79,7 @@ func (o *PriceDataRelationships) SetPriceList(v MarketDataRelationshipsPriceList
 
 // GetSku returns the Sku field value if set, zero value otherwise.
 func (o *PriceDataRelationships) GetSku() BundleDataRelationshipsSkus {
-	if o == nil || o.Sku == nil {
+	if o == nil || IsNil(o.Sku) {
 		var ret BundleDataRelationshipsSkus
 		return ret
 	}
@@ -85,7 +89,7 @@ func (o *PriceDataRelationships) GetSku() BundleDataRelationshipsSkus {
 // GetSkuOk returns a tuple with the Sku field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PriceDataRelationships) GetSkuOk() (*BundleDataRelationshipsSkus, bool) {
-	if o == nil || o.Sku == nil {
+	if o == nil || IsNil(o.Sku) {
 		return nil, false
 	}
 	return o.Sku, true
@@ -93,7 +97,7 @@ func (o *PriceDataRelationships) GetSkuOk() (*BundleDataRelationshipsSkus, bool)
 
 // HasSku returns a boolean if a field has been set.
 func (o *PriceDataRelationships) HasSku() bool {
-	if o != nil && o.Sku != nil {
+	if o != nil && !IsNil(o.Sku) {
 		return true
 	}
 
@@ -107,7 +111,7 @@ func (o *PriceDataRelationships) SetSku(v BundleDataRelationshipsSkus) {
 
 // GetPriceTiers returns the PriceTiers field value if set, zero value otherwise.
 func (o *PriceDataRelationships) GetPriceTiers() PriceDataRelationshipsPriceTiers {
-	if o == nil || o.PriceTiers == nil {
+	if o == nil || IsNil(o.PriceTiers) {
 		var ret PriceDataRelationshipsPriceTiers
 		return ret
 	}
@@ -117,7 +121,7 @@ func (o *PriceDataRelationships) GetPriceTiers() PriceDataRelationshipsPriceTier
 // GetPriceTiersOk returns a tuple with the PriceTiers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PriceDataRelationships) GetPriceTiersOk() (*PriceDataRelationshipsPriceTiers, bool) {
-	if o == nil || o.PriceTiers == nil {
+	if o == nil || IsNil(o.PriceTiers) {
 		return nil, false
 	}
 	return o.PriceTiers, true
@@ -125,7 +129,7 @@ func (o *PriceDataRelationships) GetPriceTiersOk() (*PriceDataRelationshipsPrice
 
 // HasPriceTiers returns a boolean if a field has been set.
 func (o *PriceDataRelationships) HasPriceTiers() bool {
-	if o != nil && o.PriceTiers != nil {
+	if o != nil && !IsNil(o.PriceTiers) {
 		return true
 	}
 
@@ -139,7 +143,7 @@ func (o *PriceDataRelationships) SetPriceTiers(v PriceDataRelationshipsPriceTier
 
 // GetPriceVolumeTiers returns the PriceVolumeTiers field value if set, zero value otherwise.
 func (o *PriceDataRelationships) GetPriceVolumeTiers() PriceDataRelationshipsPriceVolumeTiers {
-	if o == nil || o.PriceVolumeTiers == nil {
+	if o == nil || IsNil(o.PriceVolumeTiers) {
 		var ret PriceDataRelationshipsPriceVolumeTiers
 		return ret
 	}
@@ -149,7 +153,7 @@ func (o *PriceDataRelationships) GetPriceVolumeTiers() PriceDataRelationshipsPri
 // GetPriceVolumeTiersOk returns a tuple with the PriceVolumeTiers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PriceDataRelationships) GetPriceVolumeTiersOk() (*PriceDataRelationshipsPriceVolumeTiers, bool) {
-	if o == nil || o.PriceVolumeTiers == nil {
+	if o == nil || IsNil(o.PriceVolumeTiers) {
 		return nil, false
 	}
 	return o.PriceVolumeTiers, true
@@ -157,7 +161,7 @@ func (o *PriceDataRelationships) GetPriceVolumeTiersOk() (*PriceDataRelationship
 
 // HasPriceVolumeTiers returns a boolean if a field has been set.
 func (o *PriceDataRelationships) HasPriceVolumeTiers() bool {
-	if o != nil && o.PriceVolumeTiers != nil {
+	if o != nil && !IsNil(o.PriceVolumeTiers) {
 		return true
 	}
 
@@ -169,9 +173,41 @@ func (o *PriceDataRelationships) SetPriceVolumeTiers(v PriceDataRelationshipsPri
 	o.PriceVolumeTiers = &v
 }
 
+// GetPriceFrequencyTiers returns the PriceFrequencyTiers field value if set, zero value otherwise.
+func (o *PriceDataRelationships) GetPriceFrequencyTiers() PriceDataRelationshipsPriceFrequencyTiers {
+	if o == nil || IsNil(o.PriceFrequencyTiers) {
+		var ret PriceDataRelationshipsPriceFrequencyTiers
+		return ret
+	}
+	return *o.PriceFrequencyTiers
+}
+
+// GetPriceFrequencyTiersOk returns a tuple with the PriceFrequencyTiers field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *PriceDataRelationships) GetPriceFrequencyTiersOk() (*PriceDataRelationshipsPriceFrequencyTiers, bool) {
+	if o == nil || IsNil(o.PriceFrequencyTiers) {
+		return nil, false
+	}
+	return o.PriceFrequencyTiers, true
+}
+
+// HasPriceFrequencyTiers returns a boolean if a field has been set.
+func (o *PriceDataRelationships) HasPriceFrequencyTiers() bool {
+	if o != nil && !IsNil(o.PriceFrequencyTiers) {
+		return true
+	}
+
+	return false
+}
+
+// SetPriceFrequencyTiers gets a reference to the given PriceDataRelationshipsPriceFrequencyTiers and assigns it to the PriceFrequencyTiers field.
+func (o *PriceDataRelationships) SetPriceFrequencyTiers(v PriceDataRelationshipsPriceFrequencyTiers) {
+	o.PriceFrequencyTiers = &v
+}
+
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *PriceDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
-	if o == nil || o.Attachments == nil {
+	if o == nil || IsNil(o.Attachments) {
 		var ret AvalaraAccountDataRelationshipsAttachments
 		return ret
 	}
@@ -181,7 +217,7 @@ func (o *PriceDataRelationships) GetAttachments() AvalaraAccountDataRelationship
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PriceDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
-	if o == nil || o.Attachments == nil {
+	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
 	return o.Attachments, true
@@ -189,7 +225,7 @@ func (o *PriceDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelation
 
 // HasAttachments returns a boolean if a field has been set.
 func (o *PriceDataRelationships) HasAttachments() bool {
-	if o != nil && o.Attachments != nil {
+	if o != nil && !IsNil(o.Attachments) {
 		return true
 	}
 
@@ -202,23 +238,34 @@ func (o *PriceDataRelationships) SetAttachments(v AvalaraAccountDataRelationship
 }
 
 func (o PriceDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.PriceList != nil {
-		toSerialize["price_list"] = o.PriceList
-	}
-	if o.Sku != nil {
-		toSerialize["sku"] = o.Sku
-	}
-	if o.PriceTiers != nil {
-		toSerialize["price_tiers"] = o.PriceTiers
-	}
-	if o.PriceVolumeTiers != nil {
-		toSerialize["price_volume_tiers"] = o.PriceVolumeTiers
-	}
-	if o.Attachments != nil {
-		toSerialize["attachments"] = o.Attachments
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PriceDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.PriceList) {
+		toSerialize["price_list"] = o.PriceList
+	}
+	if !IsNil(o.Sku) {
+		toSerialize["sku"] = o.Sku
+	}
+	if !IsNil(o.PriceTiers) {
+		toSerialize["price_tiers"] = o.PriceTiers
+	}
+	if !IsNil(o.PriceVolumeTiers) {
+		toSerialize["price_volume_tiers"] = o.PriceVolumeTiers
+	}
+	if !IsNil(o.PriceFrequencyTiers) {
+		toSerialize["price_frequency_tiers"] = o.PriceFrequencyTiers
+	}
+	if !IsNil(o.Attachments) {
+		toSerialize["attachments"] = o.Attachments
+	}
+	return toSerialize, nil
 }
 
 type NullablePriceDataRelationships struct {

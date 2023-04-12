@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,18 +15,21 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes{}
+
 // PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes struct for PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes
 type PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes struct {
 	// The tax category identifier code, specific for a particular tax calculator.
-	Code *string `json:"code,omitempty"`
+	Code interface{} `json:"code,omitempty"`
 	// The code of the associated SKU.
-	SkuCode *string `json:"sku_code,omitempty"`
+	SkuCode interface{} `json:"sku_code,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 }
 
 // NewPATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes instantiates a new PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes object
@@ -46,138 +49,142 @@ func NewPATCHTaxCategoriesTaxCategoryId200ResponseDataAttributesWithDefaults() *
 	return &this
 }
 
-// GetCode returns the Code field value if set, zero value otherwise.
-func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetCode() string {
-	if o == nil || o.Code == nil {
-		var ret string
+// GetCode returns the Code field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetCode() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Code
+	return o.Code
 }
 
 // GetCodeOk returns a tuple with the Code field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetCodeOk() (*string, bool) {
-	if o == nil || o.Code == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Code) {
 		return nil, false
 	}
-	return o.Code, true
+	return &o.Code, true
 }
 
 // HasCode returns a boolean if a field has been set.
 func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) HasCode() bool {
-	if o != nil && o.Code != nil {
+	if o != nil && IsNil(o.Code) {
 		return true
 	}
 
 	return false
 }
 
-// SetCode gets a reference to the given string and assigns it to the Code field.
-func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) SetCode(v string) {
-	o.Code = &v
+// SetCode gets a reference to the given interface{} and assigns it to the Code field.
+func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) SetCode(v interface{}) {
+	o.Code = v
 }
 
-// GetSkuCode returns the SkuCode field value if set, zero value otherwise.
-func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetSkuCode() string {
-	if o == nil || o.SkuCode == nil {
-		var ret string
+// GetSkuCode returns the SkuCode field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetSkuCode() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.SkuCode
+	return o.SkuCode
 }
 
 // GetSkuCodeOk returns a tuple with the SkuCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetSkuCodeOk() (*string, bool) {
-	if o == nil || o.SkuCode == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetSkuCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.SkuCode) {
 		return nil, false
 	}
-	return o.SkuCode, true
+	return &o.SkuCode, true
 }
 
 // HasSkuCode returns a boolean if a field has been set.
 func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) HasSkuCode() bool {
-	if o != nil && o.SkuCode != nil {
+	if o != nil && IsNil(o.SkuCode) {
 		return true
 	}
 
 	return false
 }
 
-// SetSkuCode gets a reference to the given string and assigns it to the SkuCode field.
-func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) SetSkuCode(v string) {
-	o.SkuCode = &v
+// SetSkuCode gets a reference to the given interface{} and assigns it to the SkuCode field.
+func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) SetSkuCode(v interface{}) {
+	o.SkuCode = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -185,28 +192,37 @@ func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetMetadata()
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 func (o PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Code != nil {
 		toSerialize["code"] = o.Code
@@ -223,7 +239,7 @@ func (o PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) MarshalJSON() 
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes struct {

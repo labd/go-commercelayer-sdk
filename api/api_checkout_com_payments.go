@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type CheckoutComPaymentsApiService service
 type CheckoutComPaymentsApiDELETECheckoutComPaymentsCheckoutComPaymentIdRequest struct {
 	ctx                  context.Context
 	ApiService           *CheckoutComPaymentsApiService
-	checkoutComPaymentId string
+	checkoutComPaymentId interface{}
 }
 
 func (r CheckoutComPaymentsApiDELETECheckoutComPaymentsCheckoutComPaymentIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a checkout.com payment
 	@param checkoutComPaymentId The resource's id
 	@return CheckoutComPaymentsApiDELETECheckoutComPaymentsCheckoutComPaymentIdRequest
 */
-func (a *CheckoutComPaymentsApiService) DELETECheckoutComPaymentsCheckoutComPaymentId(ctx context.Context, checkoutComPaymentId string) CheckoutComPaymentsApiDELETECheckoutComPaymentsCheckoutComPaymentIdRequest {
+func (a *CheckoutComPaymentsApiService) DELETECheckoutComPaymentsCheckoutComPaymentId(ctx context.Context, checkoutComPaymentId interface{}) CheckoutComPaymentsApiDELETECheckoutComPaymentsCheckoutComPaymentIdRequest {
 	return CheckoutComPaymentsApiDELETECheckoutComPaymentsCheckoutComPaymentIdRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -64,7 +64,7 @@ func (a *CheckoutComPaymentsApiService) DELETECheckoutComPaymentsCheckoutComPaym
 	}
 
 	localVarPath := localBasePath + "/checkout_com_payments/{checkoutComPaymentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComPaymentId"+"}", url.PathEscape(parameterToString(r.checkoutComPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComPaymentId"+"}", url.PathEscape(parameterValueToString(r.checkoutComPaymentId, "checkoutComPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *CheckoutComPaymentsApiService) DELETECheckoutComPaymentsCheckoutComPaym
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *CheckoutComPaymentsApiService) DELETECheckoutComPaymentsCheckoutComPaym
 type CheckoutComPaymentsApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest struct {
 	ctx                  context.Context
 	ApiService           *CheckoutComPaymentsApiService
-	checkoutComGatewayId string
+	checkoutComGatewayId interface{}
 }
 
 func (r CheckoutComPaymentsApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the checkout com payments associated to the checkout.com gateway
 	@param checkoutComGatewayId The resource's id
 	@return CheckoutComPaymentsApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest
 */
-func (a *CheckoutComPaymentsApiService) GETCheckoutComGatewayIdCheckoutComPayments(ctx context.Context, checkoutComGatewayId string) CheckoutComPaymentsApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest {
+func (a *CheckoutComPaymentsApiService) GETCheckoutComGatewayIdCheckoutComPayments(ctx context.Context, checkoutComGatewayId interface{}) CheckoutComPaymentsApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest {
 	return CheckoutComPaymentsApiGETCheckoutComGatewayIdCheckoutComPaymentsRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -156,7 +156,7 @@ func (a *CheckoutComPaymentsApiService) GETCheckoutComGatewayIdCheckoutComPaymen
 	}
 
 	localVarPath := localBasePath + "/checkout_com_gateways/{checkoutComGatewayId}/checkout_com_payments"
-	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComGatewayId"+"}", url.PathEscape(parameterToString(r.checkoutComGatewayId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComGatewayId"+"}", url.PathEscape(parameterValueToString(r.checkoutComGatewayId, "checkoutComGatewayId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *CheckoutComPaymentsApiService) GETCheckoutComGatewayIdCheckoutComPaymen
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *CheckoutComPaymentsApiService) GETCheckoutComPaymentsExecute(r Checkout
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -310,7 +310,7 @@ func (a *CheckoutComPaymentsApiService) GETCheckoutComPaymentsExecute(r Checkout
 type CheckoutComPaymentsApiGETCheckoutComPaymentsCheckoutComPaymentIdRequest struct {
 	ctx                  context.Context
 	ApiService           *CheckoutComPaymentsApiService
-	checkoutComPaymentId string
+	checkoutComPaymentId interface{}
 }
 
 func (r CheckoutComPaymentsApiGETCheckoutComPaymentsCheckoutComPaymentIdRequest) Execute() (*GETCheckoutComPaymentsCheckoutComPaymentId200Response, *http.Response, error) {
@@ -326,7 +326,7 @@ Retrieve a checkout.com payment
 	@param checkoutComPaymentId The resource's id
 	@return CheckoutComPaymentsApiGETCheckoutComPaymentsCheckoutComPaymentIdRequest
 */
-func (a *CheckoutComPaymentsApiService) GETCheckoutComPaymentsCheckoutComPaymentId(ctx context.Context, checkoutComPaymentId string) CheckoutComPaymentsApiGETCheckoutComPaymentsCheckoutComPaymentIdRequest {
+func (a *CheckoutComPaymentsApiService) GETCheckoutComPaymentsCheckoutComPaymentId(ctx context.Context, checkoutComPaymentId interface{}) CheckoutComPaymentsApiGETCheckoutComPaymentsCheckoutComPaymentIdRequest {
 	return CheckoutComPaymentsApiGETCheckoutComPaymentsCheckoutComPaymentIdRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -351,7 +351,7 @@ func (a *CheckoutComPaymentsApiService) GETCheckoutComPaymentsCheckoutComPayment
 	}
 
 	localVarPath := localBasePath + "/checkout_com_payments/{checkoutComPaymentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComPaymentId"+"}", url.PathEscape(parameterToString(r.checkoutComPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComPaymentId"+"}", url.PathEscape(parameterValueToString(r.checkoutComPaymentId, "checkoutComPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *CheckoutComPaymentsApiService) GETCheckoutComPaymentsCheckoutComPayment
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -415,7 +415,7 @@ type CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest s
 	ctx                      context.Context
 	ApiService               *CheckoutComPaymentsApiService
 	checkoutComPaymentUpdate *CheckoutComPaymentUpdate
-	checkoutComPaymentId     string
+	checkoutComPaymentId     interface{}
 }
 
 func (r CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest) CheckoutComPaymentUpdate(checkoutComPaymentUpdate CheckoutComPaymentUpdate) CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest {
@@ -436,7 +436,7 @@ Update a checkout.com payment
 	@param checkoutComPaymentId The resource's id
 	@return CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest
 */
-func (a *CheckoutComPaymentsApiService) PATCHCheckoutComPaymentsCheckoutComPaymentId(ctx context.Context, checkoutComPaymentId string) CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest {
+func (a *CheckoutComPaymentsApiService) PATCHCheckoutComPaymentsCheckoutComPaymentId(ctx context.Context, checkoutComPaymentId interface{}) CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest {
 	return CheckoutComPaymentsApiPATCHCheckoutComPaymentsCheckoutComPaymentIdRequest{
 		ApiService:           a,
 		ctx:                  ctx,
@@ -461,7 +461,7 @@ func (a *CheckoutComPaymentsApiService) PATCHCheckoutComPaymentsCheckoutComPayme
 	}
 
 	localVarPath := localBasePath + "/checkout_com_payments/{checkoutComPaymentId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComPaymentId"+"}", url.PathEscape(parameterToString(r.checkoutComPaymentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"checkoutComPaymentId"+"}", url.PathEscape(parameterValueToString(r.checkoutComPaymentId, "checkoutComPaymentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -499,9 +499,9 @@ func (a *CheckoutComPaymentsApiService) PATCHCheckoutComPaymentsCheckoutComPayme
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -610,9 +610,9 @@ func (a *CheckoutComPaymentsApiService) POSTCheckoutComPaymentsExecute(r Checkou
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

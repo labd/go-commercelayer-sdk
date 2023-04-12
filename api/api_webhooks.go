@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type WebhooksApiService service
 type WebhooksApiDELETEWebhooksWebhookIdRequest struct {
 	ctx        context.Context
 	ApiService *WebhooksApiService
-	webhookId  string
+	webhookId  interface{}
 }
 
 func (r WebhooksApiDELETEWebhooksWebhookIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a webhook
 	@param webhookId The resource's id
 	@return WebhooksApiDELETEWebhooksWebhookIdRequest
 */
-func (a *WebhooksApiService) DELETEWebhooksWebhookId(ctx context.Context, webhookId string) WebhooksApiDELETEWebhooksWebhookIdRequest {
+func (a *WebhooksApiService) DELETEWebhooksWebhookId(ctx context.Context, webhookId interface{}) WebhooksApiDELETEWebhooksWebhookIdRequest {
 	return WebhooksApiDELETEWebhooksWebhookIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -64,7 +64,7 @@ func (a *WebhooksApiService) DELETEWebhooksWebhookIdExecute(r WebhooksApiDELETEW
 	}
 
 	localVarPath := localBasePath + "/webhooks/{webhookId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"webhookId"+"}", url.PathEscape(parameterToString(r.webhookId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"webhookId"+"}", url.PathEscape(parameterValueToString(r.webhookId, "webhookId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *WebhooksApiService) DELETEWebhooksWebhookIdExecute(r WebhooksApiDELETEW
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *WebhooksApiService) DELETEWebhooksWebhookIdExecute(r WebhooksApiDELETEW
 type WebhooksApiGETEventCallbackIdWebhookRequest struct {
 	ctx             context.Context
 	ApiService      *WebhooksApiService
-	eventCallbackId string
+	eventCallbackId interface{}
 }
 
 func (r WebhooksApiGETEventCallbackIdWebhookRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the webhook associated to the event callback
 	@param eventCallbackId The resource's id
 	@return WebhooksApiGETEventCallbackIdWebhookRequest
 */
-func (a *WebhooksApiService) GETEventCallbackIdWebhook(ctx context.Context, eventCallbackId string) WebhooksApiGETEventCallbackIdWebhookRequest {
+func (a *WebhooksApiService) GETEventCallbackIdWebhook(ctx context.Context, eventCallbackId interface{}) WebhooksApiGETEventCallbackIdWebhookRequest {
 	return WebhooksApiGETEventCallbackIdWebhookRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -156,7 +156,7 @@ func (a *WebhooksApiService) GETEventCallbackIdWebhookExecute(r WebhooksApiGETEv
 	}
 
 	localVarPath := localBasePath + "/event_callbacks/{eventCallbackId}/webhook"
-	localVarPath = strings.Replace(localVarPath, "{"+"eventCallbackId"+"}", url.PathEscape(parameterToString(r.eventCallbackId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"eventCallbackId"+"}", url.PathEscape(parameterValueToString(r.eventCallbackId, "eventCallbackId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *WebhooksApiService) GETEventCallbackIdWebhookExecute(r WebhooksApiGETEv
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -210,7 +210,7 @@ func (a *WebhooksApiService) GETEventCallbackIdWebhookExecute(r WebhooksApiGETEv
 type WebhooksApiGETEventIdWebhooksRequest struct {
 	ctx        context.Context
 	ApiService *WebhooksApiService
-	eventId    string
+	eventId    interface{}
 }
 
 func (r WebhooksApiGETEventIdWebhooksRequest) Execute() (*http.Response, error) {
@@ -226,7 +226,7 @@ Retrieve the webhooks associated to the event
 	@param eventId The resource's id
 	@return WebhooksApiGETEventIdWebhooksRequest
 */
-func (a *WebhooksApiService) GETEventIdWebhooks(ctx context.Context, eventId string) WebhooksApiGETEventIdWebhooksRequest {
+func (a *WebhooksApiService) GETEventIdWebhooks(ctx context.Context, eventId interface{}) WebhooksApiGETEventIdWebhooksRequest {
 	return WebhooksApiGETEventIdWebhooksRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -248,7 +248,7 @@ func (a *WebhooksApiService) GETEventIdWebhooksExecute(r WebhooksApiGETEventIdWe
 	}
 
 	localVarPath := localBasePath + "/events/{eventId}/webhooks"
-	localVarPath = strings.Replace(localVarPath, "{"+"eventId"+"}", url.PathEscape(parameterToString(r.eventId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"eventId"+"}", url.PathEscape(parameterValueToString(r.eventId, "eventId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -281,9 +281,9 @@ func (a *WebhooksApiService) GETEventIdWebhooksExecute(r WebhooksApiGETEventIdWe
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -372,9 +372,9 @@ func (a *WebhooksApiService) GETWebhooksExecute(r WebhooksApiGETWebhooksRequest)
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -402,7 +402,7 @@ func (a *WebhooksApiService) GETWebhooksExecute(r WebhooksApiGETWebhooksRequest)
 type WebhooksApiGETWebhooksWebhookIdRequest struct {
 	ctx        context.Context
 	ApiService *WebhooksApiService
-	webhookId  string
+	webhookId  interface{}
 }
 
 func (r WebhooksApiGETWebhooksWebhookIdRequest) Execute() (*GETWebhooksWebhookId200Response, *http.Response, error) {
@@ -418,7 +418,7 @@ Retrieve a webhook
 	@param webhookId The resource's id
 	@return WebhooksApiGETWebhooksWebhookIdRequest
 */
-func (a *WebhooksApiService) GETWebhooksWebhookId(ctx context.Context, webhookId string) WebhooksApiGETWebhooksWebhookIdRequest {
+func (a *WebhooksApiService) GETWebhooksWebhookId(ctx context.Context, webhookId interface{}) WebhooksApiGETWebhooksWebhookIdRequest {
 	return WebhooksApiGETWebhooksWebhookIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -443,7 +443,7 @@ func (a *WebhooksApiService) GETWebhooksWebhookIdExecute(r WebhooksApiGETWebhook
 	}
 
 	localVarPath := localBasePath + "/webhooks/{webhookId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"webhookId"+"}", url.PathEscape(parameterToString(r.webhookId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"webhookId"+"}", url.PathEscape(parameterValueToString(r.webhookId, "webhookId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -476,9 +476,9 @@ func (a *WebhooksApiService) GETWebhooksWebhookIdExecute(r WebhooksApiGETWebhook
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -507,7 +507,7 @@ type WebhooksApiPATCHWebhooksWebhookIdRequest struct {
 	ctx           context.Context
 	ApiService    *WebhooksApiService
 	webhookUpdate *WebhookUpdate
-	webhookId     string
+	webhookId     interface{}
 }
 
 func (r WebhooksApiPATCHWebhooksWebhookIdRequest) WebhookUpdate(webhookUpdate WebhookUpdate) WebhooksApiPATCHWebhooksWebhookIdRequest {
@@ -528,7 +528,7 @@ Update a webhook
 	@param webhookId The resource's id
 	@return WebhooksApiPATCHWebhooksWebhookIdRequest
 */
-func (a *WebhooksApiService) PATCHWebhooksWebhookId(ctx context.Context, webhookId string) WebhooksApiPATCHWebhooksWebhookIdRequest {
+func (a *WebhooksApiService) PATCHWebhooksWebhookId(ctx context.Context, webhookId interface{}) WebhooksApiPATCHWebhooksWebhookIdRequest {
 	return WebhooksApiPATCHWebhooksWebhookIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -553,7 +553,7 @@ func (a *WebhooksApiService) PATCHWebhooksWebhookIdExecute(r WebhooksApiPATCHWeb
 	}
 
 	localVarPath := localBasePath + "/webhooks/{webhookId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"webhookId"+"}", url.PathEscape(parameterToString(r.webhookId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"webhookId"+"}", url.PathEscape(parameterValueToString(r.webhookId, "webhookId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -591,9 +591,9 @@ func (a *WebhooksApiService) PATCHWebhooksWebhookIdExecute(r WebhooksApiPATCHWeb
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -702,9 +702,9 @@ func (a *WebhooksApiService) POSTWebhooksExecute(r WebhooksApiPOSTWebhooksReques
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

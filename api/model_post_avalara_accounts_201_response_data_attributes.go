@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,33 +15,36 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTAvalaraAccounts201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTAvalaraAccounts201ResponseDataAttributes{}
+
 // POSTAvalaraAccounts201ResponseDataAttributes struct for POSTAvalaraAccounts201ResponseDataAttributes
 type POSTAvalaraAccounts201ResponseDataAttributes struct {
 	// The tax calculator's internal name.
-	Name string `json:"name"`
+	Name interface{} `json:"name"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 	// The Avalara account username.
-	Username string `json:"username"`
+	Username interface{} `json:"username"`
 	// The Avalara account password.
-	Password string `json:"password"`
+	Password interface{} `json:"password"`
 	// The Avalara company code.
-	CompanyCode string `json:"company_code"`
+	CompanyCode interface{} `json:"company_code"`
 	// Indicates if the transaction will be recorded and visible on the Avalara website.
-	CommitInvoice *string `json:"commit_invoice,omitempty"`
+	CommitInvoice interface{} `json:"commit_invoice,omitempty"`
 	// Indicates if the seller is responsible for paying/remitting the customs duty & import tax to the customs authorities.
-	Ddp *string `json:"ddp,omitempty"`
+	Ddp interface{} `json:"ddp,omitempty"`
 }
 
 // NewPOSTAvalaraAccounts201ResponseDataAttributes instantiates a new POSTAvalaraAccounts201ResponseDataAttributes object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPOSTAvalaraAccounts201ResponseDataAttributes(name string, username string, password string, companyCode string) *POSTAvalaraAccounts201ResponseDataAttributes {
+func NewPOSTAvalaraAccounts201ResponseDataAttributes(name interface{}, username interface{}, password interface{}, companyCode interface{}) *POSTAvalaraAccounts201ResponseDataAttributes {
 	this := POSTAvalaraAccounts201ResponseDataAttributes{}
 	this.Name = name
 	this.Username = username
@@ -59,9 +62,10 @@ func NewPOSTAvalaraAccounts201ResponseDataAttributesWithDefaults() *POSTAvalaraA
 }
 
 // GetName returns the Name field value
-func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetName() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetName() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -70,86 +74,89 @@ func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
-func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetNameOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
 }
 
 // SetName sets field value
-func (o *POSTAvalaraAccounts201ResponseDataAttributes) SetName(v string) {
+func (o *POSTAvalaraAccounts201ResponseDataAttributes) SetName(v interface{}) {
 	o.Name = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTAvalaraAccounts201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *POSTAvalaraAccounts201ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *POSTAvalaraAccounts201ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTAvalaraAccounts201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *POSTAvalaraAccounts201ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *POSTAvalaraAccounts201ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -157,31 +164,33 @@ func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetMetadata() map[string]
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTAvalaraAccounts201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *POSTAvalaraAccounts201ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *POSTAvalaraAccounts201ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 // GetUsername returns the Username field value
-func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetUsername() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetUsername() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -190,22 +199,24 @@ func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetUsername() string {
 
 // GetUsernameOk returns a tuple with the Username field value
 // and a boolean to check if the value has been set.
-func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetUsernameOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetUsernameOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Username) {
 		return nil, false
 	}
 	return &o.Username, true
 }
 
 // SetUsername sets field value
-func (o *POSTAvalaraAccounts201ResponseDataAttributes) SetUsername(v string) {
+func (o *POSTAvalaraAccounts201ResponseDataAttributes) SetUsername(v interface{}) {
 	o.Username = v
 }
 
 // GetPassword returns the Password field value
-func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetPassword() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetPassword() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -214,22 +225,24 @@ func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetPassword() string {
 
 // GetPasswordOk returns a tuple with the Password field value
 // and a boolean to check if the value has been set.
-func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetPasswordOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetPasswordOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Password) {
 		return nil, false
 	}
 	return &o.Password, true
 }
 
 // SetPassword sets field value
-func (o *POSTAvalaraAccounts201ResponseDataAttributes) SetPassword(v string) {
+func (o *POSTAvalaraAccounts201ResponseDataAttributes) SetPassword(v interface{}) {
 	o.Password = v
 }
 
 // GetCompanyCode returns the CompanyCode field value
-func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetCompanyCode() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetCompanyCode() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -238,85 +251,96 @@ func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetCompanyCode() string {
 
 // GetCompanyCodeOk returns a tuple with the CompanyCode field value
 // and a boolean to check if the value has been set.
-func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetCompanyCodeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetCompanyCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CompanyCode) {
 		return nil, false
 	}
 	return &o.CompanyCode, true
 }
 
 // SetCompanyCode sets field value
-func (o *POSTAvalaraAccounts201ResponseDataAttributes) SetCompanyCode(v string) {
+func (o *POSTAvalaraAccounts201ResponseDataAttributes) SetCompanyCode(v interface{}) {
 	o.CompanyCode = v
 }
 
-// GetCommitInvoice returns the CommitInvoice field value if set, zero value otherwise.
-func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetCommitInvoice() string {
-	if o == nil || o.CommitInvoice == nil {
-		var ret string
+// GetCommitInvoice returns the CommitInvoice field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetCommitInvoice() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CommitInvoice
+	return o.CommitInvoice
 }
 
 // GetCommitInvoiceOk returns a tuple with the CommitInvoice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetCommitInvoiceOk() (*string, bool) {
-	if o == nil || o.CommitInvoice == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetCommitInvoiceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CommitInvoice) {
 		return nil, false
 	}
-	return o.CommitInvoice, true
+	return &o.CommitInvoice, true
 }
 
 // HasCommitInvoice returns a boolean if a field has been set.
 func (o *POSTAvalaraAccounts201ResponseDataAttributes) HasCommitInvoice() bool {
-	if o != nil && o.CommitInvoice != nil {
+	if o != nil && IsNil(o.CommitInvoice) {
 		return true
 	}
 
 	return false
 }
 
-// SetCommitInvoice gets a reference to the given string and assigns it to the CommitInvoice field.
-func (o *POSTAvalaraAccounts201ResponseDataAttributes) SetCommitInvoice(v string) {
-	o.CommitInvoice = &v
+// SetCommitInvoice gets a reference to the given interface{} and assigns it to the CommitInvoice field.
+func (o *POSTAvalaraAccounts201ResponseDataAttributes) SetCommitInvoice(v interface{}) {
+	o.CommitInvoice = v
 }
 
-// GetDdp returns the Ddp field value if set, zero value otherwise.
-func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetDdp() string {
-	if o == nil || o.Ddp == nil {
-		var ret string
+// GetDdp returns the Ddp field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetDdp() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Ddp
+	return o.Ddp
 }
 
 // GetDdpOk returns a tuple with the Ddp field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetDdpOk() (*string, bool) {
-	if o == nil || o.Ddp == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTAvalaraAccounts201ResponseDataAttributes) GetDdpOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Ddp) {
 		return nil, false
 	}
-	return o.Ddp, true
+	return &o.Ddp, true
 }
 
 // HasDdp returns a boolean if a field has been set.
 func (o *POSTAvalaraAccounts201ResponseDataAttributes) HasDdp() bool {
-	if o != nil && o.Ddp != nil {
+	if o != nil && IsNil(o.Ddp) {
 		return true
 	}
 
 	return false
 }
 
-// SetDdp gets a reference to the given string and assigns it to the Ddp field.
-func (o *POSTAvalaraAccounts201ResponseDataAttributes) SetDdp(v string) {
-	o.Ddp = &v
+// SetDdp gets a reference to the given interface{} and assigns it to the Ddp field.
+func (o *POSTAvalaraAccounts201ResponseDataAttributes) SetDdp(v interface{}) {
+	o.Ddp = v
 }
 
 func (o POSTAvalaraAccounts201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTAvalaraAccounts201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
+	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
 	if o.Reference != nil {
@@ -328,13 +352,13 @@ func (o POSTAvalaraAccounts201ResponseDataAttributes) MarshalJSON() ([]byte, err
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	if true {
+	if o.Username != nil {
 		toSerialize["username"] = o.Username
 	}
-	if true {
+	if o.Password != nil {
 		toSerialize["password"] = o.Password
 	}
-	if true {
+	if o.CompanyCode != nil {
 		toSerialize["company_code"] = o.CompanyCode
 	}
 	if o.CommitInvoice != nil {
@@ -343,7 +367,7 @@ func (o POSTAvalaraAccounts201ResponseDataAttributes) MarshalJSON() ([]byte, err
 	if o.Ddp != nil {
 		toSerialize["ddp"] = o.Ddp
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTAvalaraAccounts201ResponseDataAttributes struct {

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
+**Type** | **interface{}** | The resource&#39;s type | 
 **Attributes** | [**POSTPaymentMethods201ResponseDataAttributes**](POSTPaymentMethods201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**PaymentMethodCreateDataRelationships**](PaymentMethodCreateDataRelationships.md) |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewPaymentMethodCreateData
 
-`func NewPaymentMethodCreateData(type_ string, attributes POSTPaymentMethods201ResponseDataAttributes, ) *PaymentMethodCreateData`
+`func NewPaymentMethodCreateData(type_ interface{}, attributes POSTPaymentMethods201ResponseDataAttributes, ) *PaymentMethodCreateData`
 
 NewPaymentMethodCreateData instantiates a new PaymentMethodCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -29,24 +29,34 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *PaymentMethodCreateData) GetType() string`
+`func (o *PaymentMethodCreateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *PaymentMethodCreateData) GetTypeOk() (*string, bool)`
+`func (o *PaymentMethodCreateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *PaymentMethodCreateData) SetType(v string)`
+`func (o *PaymentMethodCreateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *PaymentMethodCreateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *PaymentMethodCreateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
 `func (o *PaymentMethodCreateData) GetAttributes() POSTPaymentMethods201ResponseDataAttributes`

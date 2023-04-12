@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
+**Type** | **interface{}** | The resource&#39;s type | 
 **Attributes** | [**POSTTaxCategories201ResponseDataAttributes**](POSTTaxCategories201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**TaxCategoryCreateDataRelationships**](TaxCategoryCreateDataRelationships.md) |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewTaxCategoryCreateData
 
-`func NewTaxCategoryCreateData(type_ string, attributes POSTTaxCategories201ResponseDataAttributes, ) *TaxCategoryCreateData`
+`func NewTaxCategoryCreateData(type_ interface{}, attributes POSTTaxCategories201ResponseDataAttributes, ) *TaxCategoryCreateData`
 
 NewTaxCategoryCreateData instantiates a new TaxCategoryCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -29,24 +29,34 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *TaxCategoryCreateData) GetType() string`
+`func (o *TaxCategoryCreateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *TaxCategoryCreateData) GetTypeOk() (*string, bool)`
+`func (o *TaxCategoryCreateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *TaxCategoryCreateData) SetType(v string)`
+`func (o *TaxCategoryCreateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *TaxCategoryCreateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *TaxCategoryCreateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
 `func (o *TaxCategoryCreateData) GetAttributes() POSTTaxCategories201ResponseDataAttributes`

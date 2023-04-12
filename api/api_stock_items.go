@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type StockItemsApiService service
 type StockItemsApiDELETEStockItemsStockItemIdRequest struct {
 	ctx         context.Context
 	ApiService  *StockItemsApiService
-	stockItemId string
+	stockItemId interface{}
 }
 
 func (r StockItemsApiDELETEStockItemsStockItemIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a stock item
 	@param stockItemId The resource's id
 	@return StockItemsApiDELETEStockItemsStockItemIdRequest
 */
-func (a *StockItemsApiService) DELETEStockItemsStockItemId(ctx context.Context, stockItemId string) StockItemsApiDELETEStockItemsStockItemIdRequest {
+func (a *StockItemsApiService) DELETEStockItemsStockItemId(ctx context.Context, stockItemId interface{}) StockItemsApiDELETEStockItemsStockItemIdRequest {
 	return StockItemsApiDELETEStockItemsStockItemIdRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -64,7 +64,7 @@ func (a *StockItemsApiService) DELETEStockItemsStockItemIdExecute(r StockItemsAp
 	}
 
 	localVarPath := localBasePath + "/stock_items/{stockItemId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockItemId"+"}", url.PathEscape(parameterToString(r.stockItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockItemId"+"}", url.PathEscape(parameterValueToString(r.stockItemId, "stockItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *StockItemsApiService) DELETEStockItemsStockItemIdExecute(r StockItemsAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *StockItemsApiService) DELETEStockItemsStockItemIdExecute(r StockItemsAp
 type StockItemsApiGETSkuIdStockItemsRequest struct {
 	ctx        context.Context
 	ApiService *StockItemsApiService
-	skuId      string
+	skuId      interface{}
 }
 
 func (r StockItemsApiGETSkuIdStockItemsRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the stock items associated to the SKU
 	@param skuId The resource's id
 	@return StockItemsApiGETSkuIdStockItemsRequest
 */
-func (a *StockItemsApiService) GETSkuIdStockItems(ctx context.Context, skuId string) StockItemsApiGETSkuIdStockItemsRequest {
+func (a *StockItemsApiService) GETSkuIdStockItems(ctx context.Context, skuId interface{}) StockItemsApiGETSkuIdStockItemsRequest {
 	return StockItemsApiGETSkuIdStockItemsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -156,7 +156,7 @@ func (a *StockItemsApiService) GETSkuIdStockItemsExecute(r StockItemsApiGETSkuId
 	}
 
 	localVarPath := localBasePath + "/skus/{skuId}/stock_items"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterToString(r.skuId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *StockItemsApiService) GETSkuIdStockItemsExecute(r StockItemsApiGETSkuId
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *StockItemsApiService) GETStockItemsExecute(r StockItemsApiGETStockItems
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -310,7 +310,7 @@ func (a *StockItemsApiService) GETStockItemsExecute(r StockItemsApiGETStockItems
 type StockItemsApiGETStockItemsStockItemIdRequest struct {
 	ctx         context.Context
 	ApiService  *StockItemsApiService
-	stockItemId string
+	stockItemId interface{}
 }
 
 func (r StockItemsApiGETStockItemsStockItemIdRequest) Execute() (*GETStockItemsStockItemId200Response, *http.Response, error) {
@@ -326,7 +326,7 @@ Retrieve a stock item
 	@param stockItemId The resource's id
 	@return StockItemsApiGETStockItemsStockItemIdRequest
 */
-func (a *StockItemsApiService) GETStockItemsStockItemId(ctx context.Context, stockItemId string) StockItemsApiGETStockItemsStockItemIdRequest {
+func (a *StockItemsApiService) GETStockItemsStockItemId(ctx context.Context, stockItemId interface{}) StockItemsApiGETStockItemsStockItemIdRequest {
 	return StockItemsApiGETStockItemsStockItemIdRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -351,7 +351,7 @@ func (a *StockItemsApiService) GETStockItemsStockItemIdExecute(r StockItemsApiGE
 	}
 
 	localVarPath := localBasePath + "/stock_items/{stockItemId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockItemId"+"}", url.PathEscape(parameterToString(r.stockItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockItemId"+"}", url.PathEscape(parameterValueToString(r.stockItemId, "stockItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *StockItemsApiService) GETStockItemsStockItemIdExecute(r StockItemsApiGE
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -414,7 +414,7 @@ func (a *StockItemsApiService) GETStockItemsStockItemIdExecute(r StockItemsApiGE
 type StockItemsApiGETStockLineItemIdStockItemRequest struct {
 	ctx             context.Context
 	ApiService      *StockItemsApiService
-	stockLineItemId string
+	stockLineItemId interface{}
 }
 
 func (r StockItemsApiGETStockLineItemIdStockItemRequest) Execute() (*http.Response, error) {
@@ -430,7 +430,7 @@ Retrieve the stock item associated to the stock line item
 	@param stockLineItemId The resource's id
 	@return StockItemsApiGETStockLineItemIdStockItemRequest
 */
-func (a *StockItemsApiService) GETStockLineItemIdStockItem(ctx context.Context, stockLineItemId string) StockItemsApiGETStockLineItemIdStockItemRequest {
+func (a *StockItemsApiService) GETStockLineItemIdStockItem(ctx context.Context, stockLineItemId interface{}) StockItemsApiGETStockLineItemIdStockItemRequest {
 	return StockItemsApiGETStockLineItemIdStockItemRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -452,7 +452,7 @@ func (a *StockItemsApiService) GETStockLineItemIdStockItemExecute(r StockItemsAp
 	}
 
 	localVarPath := localBasePath + "/stock_line_items/{stockLineItemId}/stock_item"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockLineItemId"+"}", url.PathEscape(parameterToString(r.stockLineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockLineItemId"+"}", url.PathEscape(parameterValueToString(r.stockLineItemId, "stockLineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -485,9 +485,9 @@ func (a *StockItemsApiService) GETStockLineItemIdStockItemExecute(r StockItemsAp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -506,7 +506,7 @@ func (a *StockItemsApiService) GETStockLineItemIdStockItemExecute(r StockItemsAp
 type StockItemsApiGETStockLocationIdStockItemsRequest struct {
 	ctx             context.Context
 	ApiService      *StockItemsApiService
-	stockLocationId string
+	stockLocationId interface{}
 }
 
 func (r StockItemsApiGETStockLocationIdStockItemsRequest) Execute() (*http.Response, error) {
@@ -522,7 +522,7 @@ Retrieve the stock items associated to the stock location
 	@param stockLocationId The resource's id
 	@return StockItemsApiGETStockLocationIdStockItemsRequest
 */
-func (a *StockItemsApiService) GETStockLocationIdStockItems(ctx context.Context, stockLocationId string) StockItemsApiGETStockLocationIdStockItemsRequest {
+func (a *StockItemsApiService) GETStockLocationIdStockItems(ctx context.Context, stockLocationId interface{}) StockItemsApiGETStockLocationIdStockItemsRequest {
 	return StockItemsApiGETStockLocationIdStockItemsRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -544,7 +544,7 @@ func (a *StockItemsApiService) GETStockLocationIdStockItemsExecute(r StockItemsA
 	}
 
 	localVarPath := localBasePath + "/stock_locations/{stockLocationId}/stock_items"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterToString(r.stockLocationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterValueToString(r.stockLocationId, "stockLocationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -577,9 +577,9 @@ func (a *StockItemsApiService) GETStockLocationIdStockItemsExecute(r StockItemsA
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -599,7 +599,7 @@ type StockItemsApiPATCHStockItemsStockItemIdRequest struct {
 	ctx             context.Context
 	ApiService      *StockItemsApiService
 	stockItemUpdate *StockItemUpdate
-	stockItemId     string
+	stockItemId     interface{}
 }
 
 func (r StockItemsApiPATCHStockItemsStockItemIdRequest) StockItemUpdate(stockItemUpdate StockItemUpdate) StockItemsApiPATCHStockItemsStockItemIdRequest {
@@ -620,7 +620,7 @@ Update a stock item
 	@param stockItemId The resource's id
 	@return StockItemsApiPATCHStockItemsStockItemIdRequest
 */
-func (a *StockItemsApiService) PATCHStockItemsStockItemId(ctx context.Context, stockItemId string) StockItemsApiPATCHStockItemsStockItemIdRequest {
+func (a *StockItemsApiService) PATCHStockItemsStockItemId(ctx context.Context, stockItemId interface{}) StockItemsApiPATCHStockItemsStockItemIdRequest {
 	return StockItemsApiPATCHStockItemsStockItemIdRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -645,7 +645,7 @@ func (a *StockItemsApiService) PATCHStockItemsStockItemIdExecute(r StockItemsApi
 	}
 
 	localVarPath := localBasePath + "/stock_items/{stockItemId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockItemId"+"}", url.PathEscape(parameterToString(r.stockItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockItemId"+"}", url.PathEscape(parameterValueToString(r.stockItemId, "stockItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -683,9 +683,9 @@ func (a *StockItemsApiService) PATCHStockItemsStockItemIdExecute(r StockItemsApi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -794,9 +794,9 @@ func (a *StockItemsApiService) POSTStockItemsExecute(r StockItemsApiPOSTStockIte
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

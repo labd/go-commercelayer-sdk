@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
+**Type** | **interface{}** | The resource&#39;s type | 
 **Attributes** | [**POSTTaxRules201ResponseDataAttributes**](POSTTaxRules201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**TaxRuleCreateDataRelationships**](TaxRuleCreateDataRelationships.md) |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewTaxRuleCreateData
 
-`func NewTaxRuleCreateData(type_ string, attributes POSTTaxRules201ResponseDataAttributes, ) *TaxRuleCreateData`
+`func NewTaxRuleCreateData(type_ interface{}, attributes POSTTaxRules201ResponseDataAttributes, ) *TaxRuleCreateData`
 
 NewTaxRuleCreateData instantiates a new TaxRuleCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -29,24 +29,34 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *TaxRuleCreateData) GetType() string`
+`func (o *TaxRuleCreateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *TaxRuleCreateData) GetTypeOk() (*string, bool)`
+`func (o *TaxRuleCreateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *TaxRuleCreateData) SetType(v string)`
+`func (o *TaxRuleCreateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *TaxRuleCreateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *TaxRuleCreateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
 `func (o *TaxRuleCreateData) GetAttributes() POSTTaxRules201ResponseDataAttributes`

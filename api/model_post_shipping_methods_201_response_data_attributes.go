@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,37 +15,40 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTShippingMethods201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTShippingMethods201ResponseDataAttributes{}
+
 // POSTShippingMethods201ResponseDataAttributes struct for POSTShippingMethods201ResponseDataAttributes
 type POSTShippingMethods201ResponseDataAttributes struct {
 	// The shipping method's name
-	Name string `json:"name"`
+	Name interface{} `json:"name"`
 	// The shipping method's scheme, one of 'flat' or 'weight_tiered'.
-	Scheme *string `json:"scheme,omitempty"`
+	Scheme interface{} `json:"scheme,omitempty"`
 	// The international 3-letter currency code as defined by the ISO 4217 standard.
-	CurrencyCode *string `json:"currency_code,omitempty"`
+	CurrencyCode interface{} `json:"currency_code,omitempty"`
 	// The price of this shipping method, in cents.
-	PriceAmountCents int32 `json:"price_amount_cents"`
+	PriceAmountCents interface{} `json:"price_amount_cents"`
 	// Apply free shipping if the order amount is over this value, in cents.
-	FreeOverAmountCents *int32 `json:"free_over_amount_cents,omitempty"`
+	FreeOverAmountCents interface{} `json:"free_over_amount_cents,omitempty"`
 	// The minimum weight for which this shipping method is available.
-	MinWeight *float32 `json:"min_weight,omitempty"`
+	MinWeight interface{} `json:"min_weight,omitempty"`
 	// The maximum weight for which this shipping method is available.
-	MaxWeight *float32 `json:"max_weight,omitempty"`
+	MaxWeight interface{} `json:"max_weight,omitempty"`
 	// Can be one of 'gr', 'lb', or 'oz'
-	UnitOfWeight *string `json:"unit_of_weight,omitempty"`
+	UnitOfWeight interface{} `json:"unit_of_weight,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 }
 
 // NewPOSTShippingMethods201ResponseDataAttributes instantiates a new POSTShippingMethods201ResponseDataAttributes object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPOSTShippingMethods201ResponseDataAttributes(name string, priceAmountCents int32) *POSTShippingMethods201ResponseDataAttributes {
+func NewPOSTShippingMethods201ResponseDataAttributes(name interface{}, priceAmountCents interface{}) *POSTShippingMethods201ResponseDataAttributes {
 	this := POSTShippingMethods201ResponseDataAttributes{}
 	this.Name = name
 	this.PriceAmountCents = priceAmountCents
@@ -61,9 +64,10 @@ func NewPOSTShippingMethods201ResponseDataAttributesWithDefaults() *POSTShipping
 }
 
 // GetName returns the Name field value
-func (o *POSTShippingMethods201ResponseDataAttributes) GetName() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTShippingMethods201ResponseDataAttributes) GetName() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -72,86 +76,90 @@ func (o *POSTShippingMethods201ResponseDataAttributes) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
-func (o *POSTShippingMethods201ResponseDataAttributes) GetNameOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTShippingMethods201ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
 }
 
 // SetName sets field value
-func (o *POSTShippingMethods201ResponseDataAttributes) SetName(v string) {
+func (o *POSTShippingMethods201ResponseDataAttributes) SetName(v interface{}) {
 	o.Name = v
 }
 
-// GetScheme returns the Scheme field value if set, zero value otherwise.
-func (o *POSTShippingMethods201ResponseDataAttributes) GetScheme() string {
-	if o == nil || o.Scheme == nil {
-		var ret string
+// GetScheme returns the Scheme field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTShippingMethods201ResponseDataAttributes) GetScheme() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Scheme
+	return o.Scheme
 }
 
 // GetSchemeOk returns a tuple with the Scheme field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTShippingMethods201ResponseDataAttributes) GetSchemeOk() (*string, bool) {
-	if o == nil || o.Scheme == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTShippingMethods201ResponseDataAttributes) GetSchemeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Scheme) {
 		return nil, false
 	}
-	return o.Scheme, true
+	return &o.Scheme, true
 }
 
 // HasScheme returns a boolean if a field has been set.
 func (o *POSTShippingMethods201ResponseDataAttributes) HasScheme() bool {
-	if o != nil && o.Scheme != nil {
+	if o != nil && IsNil(o.Scheme) {
 		return true
 	}
 
 	return false
 }
 
-// SetScheme gets a reference to the given string and assigns it to the Scheme field.
-func (o *POSTShippingMethods201ResponseDataAttributes) SetScheme(v string) {
-	o.Scheme = &v
+// SetScheme gets a reference to the given interface{} and assigns it to the Scheme field.
+func (o *POSTShippingMethods201ResponseDataAttributes) SetScheme(v interface{}) {
+	o.Scheme = v
 }
 
-// GetCurrencyCode returns the CurrencyCode field value if set, zero value otherwise.
-func (o *POSTShippingMethods201ResponseDataAttributes) GetCurrencyCode() string {
-	if o == nil || o.CurrencyCode == nil {
-		var ret string
+// GetCurrencyCode returns the CurrencyCode field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTShippingMethods201ResponseDataAttributes) GetCurrencyCode() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CurrencyCode
+	return o.CurrencyCode
 }
 
 // GetCurrencyCodeOk returns a tuple with the CurrencyCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTShippingMethods201ResponseDataAttributes) GetCurrencyCodeOk() (*string, bool) {
-	if o == nil || o.CurrencyCode == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTShippingMethods201ResponseDataAttributes) GetCurrencyCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CurrencyCode) {
 		return nil, false
 	}
-	return o.CurrencyCode, true
+	return &o.CurrencyCode, true
 }
 
 // HasCurrencyCode returns a boolean if a field has been set.
 func (o *POSTShippingMethods201ResponseDataAttributes) HasCurrencyCode() bool {
-	if o != nil && o.CurrencyCode != nil {
+	if o != nil && IsNil(o.CurrencyCode) {
 		return true
 	}
 
 	return false
 }
 
-// SetCurrencyCode gets a reference to the given string and assigns it to the CurrencyCode field.
-func (o *POSTShippingMethods201ResponseDataAttributes) SetCurrencyCode(v string) {
-	o.CurrencyCode = &v
+// SetCurrencyCode gets a reference to the given interface{} and assigns it to the CurrencyCode field.
+func (o *POSTShippingMethods201ResponseDataAttributes) SetCurrencyCode(v interface{}) {
+	o.CurrencyCode = v
 }
 
 // GetPriceAmountCents returns the PriceAmountCents field value
-func (o *POSTShippingMethods201ResponseDataAttributes) GetPriceAmountCents() int32 {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTShippingMethods201ResponseDataAttributes) GetPriceAmountCents() interface{} {
 	if o == nil {
-		var ret int32
+		var ret interface{}
 		return ret
 	}
 
@@ -160,214 +168,221 @@ func (o *POSTShippingMethods201ResponseDataAttributes) GetPriceAmountCents() int
 
 // GetPriceAmountCentsOk returns a tuple with the PriceAmountCents field value
 // and a boolean to check if the value has been set.
-func (o *POSTShippingMethods201ResponseDataAttributes) GetPriceAmountCentsOk() (*int32, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTShippingMethods201ResponseDataAttributes) GetPriceAmountCentsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PriceAmountCents) {
 		return nil, false
 	}
 	return &o.PriceAmountCents, true
 }
 
 // SetPriceAmountCents sets field value
-func (o *POSTShippingMethods201ResponseDataAttributes) SetPriceAmountCents(v int32) {
+func (o *POSTShippingMethods201ResponseDataAttributes) SetPriceAmountCents(v interface{}) {
 	o.PriceAmountCents = v
 }
 
-// GetFreeOverAmountCents returns the FreeOverAmountCents field value if set, zero value otherwise.
-func (o *POSTShippingMethods201ResponseDataAttributes) GetFreeOverAmountCents() int32 {
-	if o == nil || o.FreeOverAmountCents == nil {
-		var ret int32
+// GetFreeOverAmountCents returns the FreeOverAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTShippingMethods201ResponseDataAttributes) GetFreeOverAmountCents() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.FreeOverAmountCents
+	return o.FreeOverAmountCents
 }
 
 // GetFreeOverAmountCentsOk returns a tuple with the FreeOverAmountCents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTShippingMethods201ResponseDataAttributes) GetFreeOverAmountCentsOk() (*int32, bool) {
-	if o == nil || o.FreeOverAmountCents == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTShippingMethods201ResponseDataAttributes) GetFreeOverAmountCentsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.FreeOverAmountCents) {
 		return nil, false
 	}
-	return o.FreeOverAmountCents, true
+	return &o.FreeOverAmountCents, true
 }
 
 // HasFreeOverAmountCents returns a boolean if a field has been set.
 func (o *POSTShippingMethods201ResponseDataAttributes) HasFreeOverAmountCents() bool {
-	if o != nil && o.FreeOverAmountCents != nil {
+	if o != nil && IsNil(o.FreeOverAmountCents) {
 		return true
 	}
 
 	return false
 }
 
-// SetFreeOverAmountCents gets a reference to the given int32 and assigns it to the FreeOverAmountCents field.
-func (o *POSTShippingMethods201ResponseDataAttributes) SetFreeOverAmountCents(v int32) {
-	o.FreeOverAmountCents = &v
+// SetFreeOverAmountCents gets a reference to the given interface{} and assigns it to the FreeOverAmountCents field.
+func (o *POSTShippingMethods201ResponseDataAttributes) SetFreeOverAmountCents(v interface{}) {
+	o.FreeOverAmountCents = v
 }
 
-// GetMinWeight returns the MinWeight field value if set, zero value otherwise.
-func (o *POSTShippingMethods201ResponseDataAttributes) GetMinWeight() float32 {
-	if o == nil || o.MinWeight == nil {
-		var ret float32
+// GetMinWeight returns the MinWeight field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTShippingMethods201ResponseDataAttributes) GetMinWeight() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.MinWeight
+	return o.MinWeight
 }
 
 // GetMinWeightOk returns a tuple with the MinWeight field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTShippingMethods201ResponseDataAttributes) GetMinWeightOk() (*float32, bool) {
-	if o == nil || o.MinWeight == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTShippingMethods201ResponseDataAttributes) GetMinWeightOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.MinWeight) {
 		return nil, false
 	}
-	return o.MinWeight, true
+	return &o.MinWeight, true
 }
 
 // HasMinWeight returns a boolean if a field has been set.
 func (o *POSTShippingMethods201ResponseDataAttributes) HasMinWeight() bool {
-	if o != nil && o.MinWeight != nil {
+	if o != nil && IsNil(o.MinWeight) {
 		return true
 	}
 
 	return false
 }
 
-// SetMinWeight gets a reference to the given float32 and assigns it to the MinWeight field.
-func (o *POSTShippingMethods201ResponseDataAttributes) SetMinWeight(v float32) {
-	o.MinWeight = &v
+// SetMinWeight gets a reference to the given interface{} and assigns it to the MinWeight field.
+func (o *POSTShippingMethods201ResponseDataAttributes) SetMinWeight(v interface{}) {
+	o.MinWeight = v
 }
 
-// GetMaxWeight returns the MaxWeight field value if set, zero value otherwise.
-func (o *POSTShippingMethods201ResponseDataAttributes) GetMaxWeight() float32 {
-	if o == nil || o.MaxWeight == nil {
-		var ret float32
+// GetMaxWeight returns the MaxWeight field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTShippingMethods201ResponseDataAttributes) GetMaxWeight() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.MaxWeight
+	return o.MaxWeight
 }
 
 // GetMaxWeightOk returns a tuple with the MaxWeight field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTShippingMethods201ResponseDataAttributes) GetMaxWeightOk() (*float32, bool) {
-	if o == nil || o.MaxWeight == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTShippingMethods201ResponseDataAttributes) GetMaxWeightOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.MaxWeight) {
 		return nil, false
 	}
-	return o.MaxWeight, true
+	return &o.MaxWeight, true
 }
 
 // HasMaxWeight returns a boolean if a field has been set.
 func (o *POSTShippingMethods201ResponseDataAttributes) HasMaxWeight() bool {
-	if o != nil && o.MaxWeight != nil {
+	if o != nil && IsNil(o.MaxWeight) {
 		return true
 	}
 
 	return false
 }
 
-// SetMaxWeight gets a reference to the given float32 and assigns it to the MaxWeight field.
-func (o *POSTShippingMethods201ResponseDataAttributes) SetMaxWeight(v float32) {
-	o.MaxWeight = &v
+// SetMaxWeight gets a reference to the given interface{} and assigns it to the MaxWeight field.
+func (o *POSTShippingMethods201ResponseDataAttributes) SetMaxWeight(v interface{}) {
+	o.MaxWeight = v
 }
 
-// GetUnitOfWeight returns the UnitOfWeight field value if set, zero value otherwise.
-func (o *POSTShippingMethods201ResponseDataAttributes) GetUnitOfWeight() string {
-	if o == nil || o.UnitOfWeight == nil {
-		var ret string
+// GetUnitOfWeight returns the UnitOfWeight field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTShippingMethods201ResponseDataAttributes) GetUnitOfWeight() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.UnitOfWeight
+	return o.UnitOfWeight
 }
 
 // GetUnitOfWeightOk returns a tuple with the UnitOfWeight field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTShippingMethods201ResponseDataAttributes) GetUnitOfWeightOk() (*string, bool) {
-	if o == nil || o.UnitOfWeight == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTShippingMethods201ResponseDataAttributes) GetUnitOfWeightOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.UnitOfWeight) {
 		return nil, false
 	}
-	return o.UnitOfWeight, true
+	return &o.UnitOfWeight, true
 }
 
 // HasUnitOfWeight returns a boolean if a field has been set.
 func (o *POSTShippingMethods201ResponseDataAttributes) HasUnitOfWeight() bool {
-	if o != nil && o.UnitOfWeight != nil {
+	if o != nil && IsNil(o.UnitOfWeight) {
 		return true
 	}
 
 	return false
 }
 
-// SetUnitOfWeight gets a reference to the given string and assigns it to the UnitOfWeight field.
-func (o *POSTShippingMethods201ResponseDataAttributes) SetUnitOfWeight(v string) {
-	o.UnitOfWeight = &v
+// SetUnitOfWeight gets a reference to the given interface{} and assigns it to the UnitOfWeight field.
+func (o *POSTShippingMethods201ResponseDataAttributes) SetUnitOfWeight(v interface{}) {
+	o.UnitOfWeight = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *POSTShippingMethods201ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTShippingMethods201ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTShippingMethods201ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTShippingMethods201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTShippingMethods201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *POSTShippingMethods201ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *POSTShippingMethods201ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *POSTShippingMethods201ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTShippingMethods201ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTShippingMethods201ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTShippingMethods201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTShippingMethods201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *POSTShippingMethods201ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *POSTShippingMethods201ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *POSTShippingMethods201ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTShippingMethods201ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -375,30 +390,39 @@ func (o *POSTShippingMethods201ResponseDataAttributes) GetMetadata() map[string]
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTShippingMethods201ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTShippingMethods201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTShippingMethods201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *POSTShippingMethods201ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *POSTShippingMethods201ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 func (o POSTShippingMethods201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTShippingMethods201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
+	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
 	if o.Scheme != nil {
@@ -407,7 +431,7 @@ func (o POSTShippingMethods201ResponseDataAttributes) MarshalJSON() ([]byte, err
 	if o.CurrencyCode != nil {
 		toSerialize["currency_code"] = o.CurrencyCode
 	}
-	if true {
+	if o.PriceAmountCents != nil {
 		toSerialize["price_amount_cents"] = o.PriceAmountCents
 	}
 	if o.FreeOverAmountCents != nil {
@@ -431,7 +455,7 @@ func (o POSTShippingMethods201ResponseDataAttributes) MarshalJSON() ([]byte, err
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTShippingMethods201ResponseDataAttributes struct {

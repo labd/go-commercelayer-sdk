@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
+**Type** | **interface{}** | The resource&#39;s type | 
 **Attributes** | [**POSTSkuListPromotionRules201ResponseDataAttributes**](POSTSkuListPromotionRules201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**SkuListPromotionRuleCreateDataRelationships**](SkuListPromotionRuleCreateDataRelationships.md) |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewSkuListPromotionRuleCreateData
 
-`func NewSkuListPromotionRuleCreateData(type_ string, attributes POSTSkuListPromotionRules201ResponseDataAttributes, ) *SkuListPromotionRuleCreateData`
+`func NewSkuListPromotionRuleCreateData(type_ interface{}, attributes POSTSkuListPromotionRules201ResponseDataAttributes, ) *SkuListPromotionRuleCreateData`
 
 NewSkuListPromotionRuleCreateData instantiates a new SkuListPromotionRuleCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -29,24 +29,34 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *SkuListPromotionRuleCreateData) GetType() string`
+`func (o *SkuListPromotionRuleCreateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *SkuListPromotionRuleCreateData) GetTypeOk() (*string, bool)`
+`func (o *SkuListPromotionRuleCreateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *SkuListPromotionRuleCreateData) SetType(v string)`
+`func (o *SkuListPromotionRuleCreateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *SkuListPromotionRuleCreateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *SkuListPromotionRuleCreateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
 `func (o *SkuListPromotionRuleCreateData) GetAttributes() POSTSkuListPromotionRules201ResponseDataAttributes`

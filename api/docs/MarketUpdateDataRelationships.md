@@ -7,6 +7,7 @@ Name | Type | Description | Notes
 **Merchant** | Pointer to [**MarketCreateDataRelationshipsMerchant**](MarketCreateDataRelationshipsMerchant.md) |  | [optional] 
 **PriceList** | Pointer to [**MarketCreateDataRelationshipsPriceList**](MarketCreateDataRelationshipsPriceList.md) |  | [optional] 
 **InventoryModel** | Pointer to [**InventoryReturnLocationCreateDataRelationshipsInventoryModel**](InventoryReturnLocationCreateDataRelationshipsInventoryModel.md) |  | [optional] 
+**SubscriptionModel** | Pointer to [**MarketCreateDataRelationshipsSubscriptionModel**](MarketCreateDataRelationshipsSubscriptionModel.md) |  | [optional] 
 **TaxCalculator** | Pointer to [**MarketCreateDataRelationshipsTaxCalculator**](MarketCreateDataRelationshipsTaxCalculator.md) |  | [optional] 
 **CustomerGroup** | Pointer to [**CustomerCreateDataRelationshipsCustomerGroup**](CustomerCreateDataRelationshipsCustomerGroup.md) |  | [optional] 
 
@@ -103,6 +104,31 @@ SetInventoryModel sets InventoryModel field to given value.
 `func (o *MarketUpdateDataRelationships) HasInventoryModel() bool`
 
 HasInventoryModel returns a boolean if a field has been set.
+
+### GetSubscriptionModel
+
+`func (o *MarketUpdateDataRelationships) GetSubscriptionModel() MarketCreateDataRelationshipsSubscriptionModel`
+
+GetSubscriptionModel returns the SubscriptionModel field if non-nil, zero value otherwise.
+
+### GetSubscriptionModelOk
+
+`func (o *MarketUpdateDataRelationships) GetSubscriptionModelOk() (*MarketCreateDataRelationshipsSubscriptionModel, bool)`
+
+GetSubscriptionModelOk returns a tuple with the SubscriptionModel field if it's non-nil, zero value otherwise
+and a boolean to check if the value has been set.
+
+### SetSubscriptionModel
+
+`func (o *MarketUpdateDataRelationships) SetSubscriptionModel(v MarketCreateDataRelationshipsSubscriptionModel)`
+
+SetSubscriptionModel sets SubscriptionModel field to given value.
+
+### HasSubscriptionModel
+
+`func (o *MarketUpdateDataRelationships) HasSubscriptionModel() bool`
+
+HasSubscriptionModel returns a boolean if a field has been set.
 
 ### GetTaxCalculator
 

@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Id** | **string** | The resource&#39;s id | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Id** | **interface{}** | The resource&#39;s id | 
 **Attributes** | [**PATCHShippingMethodsShippingMethodId200ResponseDataAttributes**](PATCHShippingMethodsShippingMethodId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**ShippingMethodCreateDataRelationships**](ShippingMethodCreateDataRelationships.md) |  | [optional] 
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewShippingMethodUpdateData
 
-`func NewShippingMethodUpdateData(type_ string, id string, attributes PATCHShippingMethodsShippingMethodId200ResponseDataAttributes, ) *ShippingMethodUpdateData`
+`func NewShippingMethodUpdateData(type_ interface{}, id interface{}, attributes PATCHShippingMethodsShippingMethodId200ResponseDataAttributes, ) *ShippingMethodUpdateData`
 
 NewShippingMethodUpdateData instantiates a new ShippingMethodUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -30,44 +30,64 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *ShippingMethodUpdateData) GetType() string`
+`func (o *ShippingMethodUpdateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *ShippingMethodUpdateData) GetTypeOk() (*string, bool)`
+`func (o *ShippingMethodUpdateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *ShippingMethodUpdateData) SetType(v string)`
+`func (o *ShippingMethodUpdateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *ShippingMethodUpdateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *ShippingMethodUpdateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetId
 
-`func (o *ShippingMethodUpdateData) GetId() string`
+`func (o *ShippingMethodUpdateData) GetId() interface{}`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *ShippingMethodUpdateData) GetIdOk() (*string, bool)`
+`func (o *ShippingMethodUpdateData) GetIdOk() (*interface{}, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *ShippingMethodUpdateData) SetId(v string)`
+`func (o *ShippingMethodUpdateData) SetId(v interface{})`
 
 SetId sets Id field to given value.
 
 
+### SetIdNil
+
+`func (o *ShippingMethodUpdateData) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *ShippingMethodUpdateData) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetAttributes
 
 `func (o *ShippingMethodUpdateData) GetAttributes() PATCHShippingMethodsShippingMethodId200ResponseDataAttributes`

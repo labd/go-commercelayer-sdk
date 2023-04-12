@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,19 +15,22 @@ import (
 	"encoding/json"
 )
 
+// checks if the InventoryModelCreateData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &InventoryModelCreateData{}
+
 // InventoryModelCreateData struct for InventoryModelCreateData
 type InventoryModelCreateData struct {
 	// The resource's type
-	Type          string                                       `json:"type"`
+	Type          interface{}                                  `json:"type"`
 	Attributes    POSTInventoryModels201ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}                       `json:"relationships,omitempty"`
+	Relationships interface{}                                  `json:"relationships,omitempty"`
 }
 
 // NewInventoryModelCreateData instantiates a new InventoryModelCreateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInventoryModelCreateData(type_ string, attributes POSTInventoryModels201ResponseDataAttributes) *InventoryModelCreateData {
+func NewInventoryModelCreateData(type_ interface{}, attributes POSTInventoryModels201ResponseDataAttributes) *InventoryModelCreateData {
 	this := InventoryModelCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -43,9 +46,10 @@ func NewInventoryModelCreateDataWithDefaults() *InventoryModelCreateData {
 }
 
 // GetType returns the Type field value
-func (o *InventoryModelCreateData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *InventoryModelCreateData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -54,15 +58,16 @@ func (o *InventoryModelCreateData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *InventoryModelCreateData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *InventoryModelCreateData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *InventoryModelCreateData) SetType(v string) {
+func (o *InventoryModelCreateData) SetType(v interface{}) {
 	o.Type = v
 }
 
@@ -90,10 +95,10 @@ func (o *InventoryModelCreateData) SetAttributes(v POSTInventoryModels201Respons
 	o.Attributes = v
 }
 
-// GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *InventoryModelCreateData) GetRelationships() map[string]interface{} {
-	if o == nil || o.Relationships == nil {
-		var ret map[string]interface{}
+// GetRelationships returns the Relationships field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *InventoryModelCreateData) GetRelationships() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Relationships
@@ -101,39 +106,46 @@ func (o *InventoryModelCreateData) GetRelationships() map[string]interface{} {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *InventoryModelCreateData) GetRelationshipsOk() (map[string]interface{}, bool) {
-	if o == nil || o.Relationships == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *InventoryModelCreateData) GetRelationshipsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
-	return o.Relationships, true
+	return &o.Relationships, true
 }
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *InventoryModelCreateData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && IsNil(o.Relationships) {
 		return true
 	}
 
 	return false
 }
 
-// SetRelationships gets a reference to the given map[string]interface{} and assigns it to the Relationships field.
-func (o *InventoryModelCreateData) SetRelationships(v map[string]interface{}) {
+// SetRelationships gets a reference to the given interface{} and assigns it to the Relationships field.
+func (o *InventoryModelCreateData) SetRelationships(v interface{}) {
 	o.Relationships = v
 }
 
 func (o InventoryModelCreateData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o InventoryModelCreateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
+	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
+	toSerialize["attributes"] = o.Attributes
 	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableInventoryModelCreateData struct {

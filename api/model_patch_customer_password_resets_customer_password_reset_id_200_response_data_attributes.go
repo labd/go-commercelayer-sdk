@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,18 +15,21 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes{}
+
 // PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes struct for PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes
 type PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes struct {
 	// The customer new password. This will be accepted only if a valid '_reset_password_token' is sent with the request.
-	CustomerPassword *string `json:"customer_password,omitempty"`
+	CustomerPassword interface{} `json:"customer_password,omitempty"`
 	// Send the 'reset_password_token' that you got on create when updating the customer password.
-	ResetPasswordToken *string `json:"_reset_password_token,omitempty"`
+	ResetPasswordToken interface{} `json:"_reset_password_token,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 }
 
 // NewPATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes instantiates a new PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes object
@@ -46,138 +49,142 @@ func NewPATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttribu
 	return &this
 }
 
-// GetCustomerPassword returns the CustomerPassword field value if set, zero value otherwise.
-func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) GetCustomerPassword() string {
-	if o == nil || o.CustomerPassword == nil {
-		var ret string
+// GetCustomerPassword returns the CustomerPassword field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) GetCustomerPassword() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CustomerPassword
+	return o.CustomerPassword
 }
 
 // GetCustomerPasswordOk returns a tuple with the CustomerPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) GetCustomerPasswordOk() (*string, bool) {
-	if o == nil || o.CustomerPassword == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) GetCustomerPasswordOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CustomerPassword) {
 		return nil, false
 	}
-	return o.CustomerPassword, true
+	return &o.CustomerPassword, true
 }
 
 // HasCustomerPassword returns a boolean if a field has been set.
 func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) HasCustomerPassword() bool {
-	if o != nil && o.CustomerPassword != nil {
+	if o != nil && IsNil(o.CustomerPassword) {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomerPassword gets a reference to the given string and assigns it to the CustomerPassword field.
-func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) SetCustomerPassword(v string) {
-	o.CustomerPassword = &v
+// SetCustomerPassword gets a reference to the given interface{} and assigns it to the CustomerPassword field.
+func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) SetCustomerPassword(v interface{}) {
+	o.CustomerPassword = v
 }
 
-// GetResetPasswordToken returns the ResetPasswordToken field value if set, zero value otherwise.
-func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) GetResetPasswordToken() string {
-	if o == nil || o.ResetPasswordToken == nil {
-		var ret string
+// GetResetPasswordToken returns the ResetPasswordToken field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) GetResetPasswordToken() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ResetPasswordToken
+	return o.ResetPasswordToken
 }
 
 // GetResetPasswordTokenOk returns a tuple with the ResetPasswordToken field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) GetResetPasswordTokenOk() (*string, bool) {
-	if o == nil || o.ResetPasswordToken == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) GetResetPasswordTokenOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ResetPasswordToken) {
 		return nil, false
 	}
-	return o.ResetPasswordToken, true
+	return &o.ResetPasswordToken, true
 }
 
 // HasResetPasswordToken returns a boolean if a field has been set.
 func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) HasResetPasswordToken() bool {
-	if o != nil && o.ResetPasswordToken != nil {
+	if o != nil && IsNil(o.ResetPasswordToken) {
 		return true
 	}
 
 	return false
 }
 
-// SetResetPasswordToken gets a reference to the given string and assigns it to the ResetPasswordToken field.
-func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) SetResetPasswordToken(v string) {
-	o.ResetPasswordToken = &v
+// SetResetPasswordToken gets a reference to the given interface{} and assigns it to the ResetPasswordToken field.
+func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) SetResetPasswordToken(v interface{}) {
+	o.ResetPasswordToken = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -185,28 +192,37 @@ func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttrib
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 func (o PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.CustomerPassword != nil {
 		toSerialize["customer_password"] = o.CustomerPassword
@@ -223,7 +239,7 @@ func (o PATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttribu
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHCustomerPasswordResetsCustomerPasswordResetId200ResponseDataAttributes struct {

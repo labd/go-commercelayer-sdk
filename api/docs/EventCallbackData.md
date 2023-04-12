@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETEventCallbacks200ResponseDataInnerAttributes**](GETEventCallbacks200ResponseDataInnerAttributes.md) |  | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Attributes** | [**GETEventCallbacksEventCallbackId200ResponseDataAttributes**](GETEventCallbacksEventCallbackId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**EventCallbackDataRelationships**](EventCallbackDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewEventCallbackData
 
-`func NewEventCallbackData(type_ string, attributes GETEventCallbacks200ResponseDataInnerAttributes, ) *EventCallbackData`
+`func NewEventCallbackData(type_ interface{}, attributes GETEventCallbacksEventCallbackId200ResponseDataAttributes, ) *EventCallbackData`
 
 NewEventCallbackData instantiates a new EventCallbackData object
 This constructor will assign default values to properties that have it defined,
@@ -29,40 +29,50 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *EventCallbackData) GetType() string`
+`func (o *EventCallbackData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *EventCallbackData) GetTypeOk() (*string, bool)`
+`func (o *EventCallbackData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *EventCallbackData) SetType(v string)`
+`func (o *EventCallbackData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *EventCallbackData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *EventCallbackData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *EventCallbackData) GetAttributes() GETEventCallbacks200ResponseDataInnerAttributes`
+`func (o *EventCallbackData) GetAttributes() GETEventCallbacksEventCallbackId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *EventCallbackData) GetAttributesOk() (*GETEventCallbacks200ResponseDataInnerAttributes, bool)`
+`func (o *EventCallbackData) GetAttributesOk() (*GETEventCallbacksEventCallbackId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *EventCallbackData) SetAttributes(v GETEventCallbacks200ResponseDataInnerAttributes)`
+`func (o *EventCallbackData) SetAttributes(v GETEventCallbacksEventCallbackId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

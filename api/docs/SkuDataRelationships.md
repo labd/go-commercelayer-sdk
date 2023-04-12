@@ -5,7 +5,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **ShippingCategory** | Pointer to [**ShipmentDataRelationshipsShippingCategory**](ShipmentDataRelationshipsShippingCategory.md) |  | [optional] 
-**Prices** | Pointer to [**PriceListDataRelationshipsPrices**](PriceListDataRelationshipsPrices.md) |  | [optional] 
+**Prices** | Pointer to [**PriceFrequencyTierDataRelationshipsPrice**](PriceFrequencyTierDataRelationshipsPrice.md) |  | [optional] 
 **StockItems** | Pointer to [**SkuDataRelationshipsStockItems**](SkuDataRelationshipsStockItems.md) |  | [optional] 
 **DeliveryLeadTimes** | Pointer to [**ShipmentDataRelationshipsDeliveryLeadTime**](ShipmentDataRelationshipsDeliveryLeadTime.md) |  | [optional] 
 **SkuOptions** | Pointer to [**LineItemOptionDataRelationshipsSkuOption**](LineItemOptionDataRelationshipsSkuOption.md) |  | [optional] 
@@ -57,20 +57,20 @@ HasShippingCategory returns a boolean if a field has been set.
 
 ### GetPrices
 
-`func (o *SkuDataRelationships) GetPrices() PriceListDataRelationshipsPrices`
+`func (o *SkuDataRelationships) GetPrices() PriceFrequencyTierDataRelationshipsPrice`
 
 GetPrices returns the Prices field if non-nil, zero value otherwise.
 
 ### GetPricesOk
 
-`func (o *SkuDataRelationships) GetPricesOk() (*PriceListDataRelationshipsPrices, bool)`
+`func (o *SkuDataRelationships) GetPricesOk() (*PriceFrequencyTierDataRelationshipsPrice, bool)`
 
 GetPricesOk returns a tuple with the Prices field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrices
 
-`func (o *SkuDataRelationships) SetPrices(v PriceListDataRelationshipsPrices)`
+`func (o *SkuDataRelationships) SetPrices(v PriceFrequencyTierDataRelationshipsPrice)`
 
 SetPrices sets Prices field to given value.
 

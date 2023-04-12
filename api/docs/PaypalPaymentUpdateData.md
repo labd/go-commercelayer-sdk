@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Id** | **string** | The resource&#39;s id | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Id** | **interface{}** | The resource&#39;s id | 
 **Attributes** | [**PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes**](PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentUpdateDataRelationships**](AdyenPaymentUpdateDataRelationships.md) |  | [optional] 
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewPaypalPaymentUpdateData
 
-`func NewPaypalPaymentUpdateData(type_ string, id string, attributes PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes, ) *PaypalPaymentUpdateData`
+`func NewPaypalPaymentUpdateData(type_ interface{}, id interface{}, attributes PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes, ) *PaypalPaymentUpdateData`
 
 NewPaypalPaymentUpdateData instantiates a new PaypalPaymentUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -30,44 +30,64 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *PaypalPaymentUpdateData) GetType() string`
+`func (o *PaypalPaymentUpdateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *PaypalPaymentUpdateData) GetTypeOk() (*string, bool)`
+`func (o *PaypalPaymentUpdateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *PaypalPaymentUpdateData) SetType(v string)`
+`func (o *PaypalPaymentUpdateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *PaypalPaymentUpdateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *PaypalPaymentUpdateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetId
 
-`func (o *PaypalPaymentUpdateData) GetId() string`
+`func (o *PaypalPaymentUpdateData) GetId() interface{}`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *PaypalPaymentUpdateData) GetIdOk() (*string, bool)`
+`func (o *PaypalPaymentUpdateData) GetIdOk() (*interface{}, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *PaypalPaymentUpdateData) SetId(v string)`
+`func (o *PaypalPaymentUpdateData) SetId(v interface{})`
 
 SetId sets Id field to given value.
 
 
+### SetIdNil
+
+`func (o *PaypalPaymentUpdateData) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *PaypalPaymentUpdateData) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetAttributes
 
 `func (o *PaypalPaymentUpdateData) GetAttributes() PATCHPaypalPaymentsPaypalPaymentId200ResponseDataAttributes`

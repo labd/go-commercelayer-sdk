@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Attributes** | [**GETRefunds200ResponseDataInnerAttributes**](GETRefunds200ResponseDataInnerAttributes.md) |  | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Attributes** | [**GETRefundsRefundId200ResponseDataAttributes**](GETRefundsRefundId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**VoidDataRelationships**](VoidDataRelationships.md) |  | [optional] 
 
 ## Methods
 
 ### NewVoidData
 
-`func NewVoidData(type_ string, attributes GETRefunds200ResponseDataInnerAttributes, ) *VoidData`
+`func NewVoidData(type_ interface{}, attributes GETRefundsRefundId200ResponseDataAttributes, ) *VoidData`
 
 NewVoidData instantiates a new VoidData object
 This constructor will assign default values to properties that have it defined,
@@ -29,40 +29,50 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *VoidData) GetType() string`
+`func (o *VoidData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *VoidData) GetTypeOk() (*string, bool)`
+`func (o *VoidData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *VoidData) SetType(v string)`
+`func (o *VoidData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *VoidData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *VoidData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
-`func (o *VoidData) GetAttributes() GETRefunds200ResponseDataInnerAttributes`
+`func (o *VoidData) GetAttributes() GETRefundsRefundId200ResponseDataAttributes`
 
 GetAttributes returns the Attributes field if non-nil, zero value otherwise.
 
 ### GetAttributesOk
 
-`func (o *VoidData) GetAttributesOk() (*GETRefunds200ResponseDataInnerAttributes, bool)`
+`func (o *VoidData) GetAttributesOk() (*GETRefundsRefundId200ResponseDataAttributes, bool)`
 
 GetAttributesOk returns a tuple with the Attributes field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetAttributes
 
-`func (o *VoidData) SetAttributes(v GETRefunds200ResponseDataInnerAttributes)`
+`func (o *VoidData) SetAttributes(v GETRefundsRefundId200ResponseDataAttributes)`
 
 SetAttributes sets Attributes field to given value.
 

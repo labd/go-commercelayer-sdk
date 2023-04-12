@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Id** | **string** | The resource&#39;s id | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Id** | **interface{}** | The resource&#39;s id | 
 **Attributes** | [**PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes**](PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AdyenPaymentUpdateDataRelationships**](AdyenPaymentUpdateDataRelationships.md) |  | [optional] 
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewAdyenPaymentUpdateData
 
-`func NewAdyenPaymentUpdateData(type_ string, id string, attributes PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes, ) *AdyenPaymentUpdateData`
+`func NewAdyenPaymentUpdateData(type_ interface{}, id interface{}, attributes PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes, ) *AdyenPaymentUpdateData`
 
 NewAdyenPaymentUpdateData instantiates a new AdyenPaymentUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -30,44 +30,64 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *AdyenPaymentUpdateData) GetType() string`
+`func (o *AdyenPaymentUpdateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *AdyenPaymentUpdateData) GetTypeOk() (*string, bool)`
+`func (o *AdyenPaymentUpdateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *AdyenPaymentUpdateData) SetType(v string)`
+`func (o *AdyenPaymentUpdateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *AdyenPaymentUpdateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *AdyenPaymentUpdateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetId
 
-`func (o *AdyenPaymentUpdateData) GetId() string`
+`func (o *AdyenPaymentUpdateData) GetId() interface{}`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *AdyenPaymentUpdateData) GetIdOk() (*string, bool)`
+`func (o *AdyenPaymentUpdateData) GetIdOk() (*interface{}, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *AdyenPaymentUpdateData) SetId(v string)`
+`func (o *AdyenPaymentUpdateData) SetId(v interface{})`
 
 SetId sets Id field to given value.
 
 
+### SetIdNil
+
+`func (o *AdyenPaymentUpdateData) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *AdyenPaymentUpdateData) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetAttributes
 
 `func (o *AdyenPaymentUpdateData) GetAttributes() PATCHAdyenPaymentsAdyenPaymentId200ResponseDataAttributes`

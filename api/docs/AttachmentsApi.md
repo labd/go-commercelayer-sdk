@@ -1,6 +1,6 @@
 # \AttachmentsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -36,6 +36,7 @@ Method | HTTP request | Description
 [**GETParcelIdAttachments**](AttachmentsApi.md#GETParcelIdAttachments) | **Get** /parcels/{parcelId}/attachments | Retrieve the attachments associated to the parcel
 [**GETPaymentMethodIdAttachments**](AttachmentsApi.md#GETPaymentMethodIdAttachments) | **Get** /payment_methods/{paymentMethodId}/attachments | Retrieve the attachments associated to the payment method
 [**GETPercentageDiscountPromotionIdAttachments**](AttachmentsApi.md#GETPercentageDiscountPromotionIdAttachments) | **Get** /percentage_discount_promotions/{percentageDiscountPromotionId}/attachments | Retrieve the attachments associated to the percentage discount promotion
+[**GETPriceFrequencyTierIdAttachments**](AttachmentsApi.md#GETPriceFrequencyTierIdAttachments) | **Get** /price_frequency_tiers/{priceFrequencyTierId}/attachments | Retrieve the attachments associated to the price frequency tier
 [**GETPriceIdAttachments**](AttachmentsApi.md#GETPriceIdAttachments) | **Get** /prices/{priceId}/attachments | Retrieve the attachments associated to the price
 [**GETPriceListIdAttachments**](AttachmentsApi.md#GETPriceListIdAttachments) | **Get** /price_lists/{priceListId}/attachments | Retrieve the attachments associated to the price list
 [**GETPriceTierIdAttachments**](AttachmentsApi.md#GETPriceTierIdAttachments) | **Get** /price_tiers/{priceTierId}/attachments | Retrieve the attachments associated to the price tier
@@ -53,6 +54,7 @@ Method | HTTP request | Description
 [**GETSkuOptionIdAttachments**](AttachmentsApi.md#GETSkuOptionIdAttachments) | **Get** /sku_options/{skuOptionId}/attachments | Retrieve the attachments associated to the SKU option
 [**GETStockItemIdAttachments**](AttachmentsApi.md#GETStockItemIdAttachments) | **Get** /stock_items/{stockItemId}/attachments | Retrieve the attachments associated to the stock item
 [**GETStockLocationIdAttachments**](AttachmentsApi.md#GETStockLocationIdAttachments) | **Get** /stock_locations/{stockLocationId}/attachments | Retrieve the attachments associated to the stock location
+[**GETSubscriptionModelIdAttachments**](AttachmentsApi.md#GETSubscriptionModelIdAttachments) | **Get** /subscription_models/{subscriptionModelId}/attachments | Retrieve the attachments associated to the subscription model
 [**GETTaxCalculatorIdAttachments**](AttachmentsApi.md#GETTaxCalculatorIdAttachments) | **Get** /tax_calculators/{taxCalculatorId}/attachments | Retrieve the attachments associated to the tax calculator
 [**GETTaxCategoryIdAttachments**](AttachmentsApi.md#GETTaxCategoryIdAttachments) | **Get** /tax_categories/{taxCategoryId}/attachments | Retrieve the attachments associated to the tax category
 [**GETTaxjarAccountIdAttachments**](AttachmentsApi.md#GETTaxjarAccountIdAttachments) | **Get** /taxjar_accounts/{taxjarAccountId}/attachments | Retrieve the attachments associated to the taxjar account
@@ -78,15 +80,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    attachmentId := "attachmentId_example" // string | The resource's id
+    attachmentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.DELETEAttachmentsAttachmentId(context.Background(), attachmentId).Execute()
+    r, err := apiClient.AttachmentsApi.DELETEAttachmentsAttachmentId(context.Background(), attachmentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.DELETEAttachmentsAttachmentId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -100,7 +102,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**attachmentId** | **string** | The resource&#39;s id | 
+**attachmentId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -146,7 +148,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -207,11 +209,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    attachmentId := "attachmentId_example" // string | The resource's id
+    attachmentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -231,7 +233,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**attachmentId** | **string** | The resource&#39;s id | 
+**attachmentId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -277,15 +279,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    avalaraAccountId := "avalaraAccountId_example" // string | The resource's id
+    avalaraAccountId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETAvalaraAccountIdAttachments(context.Background(), avalaraAccountId).Execute()
+    r, err := apiClient.AttachmentsApi.GETAvalaraAccountIdAttachments(context.Background(), avalaraAccountId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETAvalaraAccountIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -299,7 +301,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**avalaraAccountId** | **string** | The resource&#39;s id | 
+**avalaraAccountId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -345,15 +347,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    billingInfoValidationRuleId := "billingInfoValidationRuleId_example" // string | The resource's id
+    billingInfoValidationRuleId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETBillingInfoValidationRuleIdAttachments(context.Background(), billingInfoValidationRuleId).Execute()
+    r, err := apiClient.AttachmentsApi.GETBillingInfoValidationRuleIdAttachments(context.Background(), billingInfoValidationRuleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETBillingInfoValidationRuleIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -367,7 +369,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**billingInfoValidationRuleId** | **string** | The resource&#39;s id | 
+**billingInfoValidationRuleId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -413,15 +415,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    bingGeocoderId := "bingGeocoderId_example" // string | The resource's id
+    bingGeocoderId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETBingGeocoderIdAttachments(context.Background(), bingGeocoderId).Execute()
+    r, err := apiClient.AttachmentsApi.GETBingGeocoderIdAttachments(context.Background(), bingGeocoderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETBingGeocoderIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -435,7 +437,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bingGeocoderId** | **string** | The resource&#39;s id | 
+**bingGeocoderId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -481,15 +483,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    bundleId := "bundleId_example" // string | The resource's id
+    bundleId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETBundleIdAttachments(context.Background(), bundleId).Execute()
+    r, err := apiClient.AttachmentsApi.GETBundleIdAttachments(context.Background(), bundleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETBundleIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -503,7 +505,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**bundleId** | **string** | The resource&#39;s id | 
+**bundleId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -549,15 +551,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    carrierAccountId := "carrierAccountId_example" // string | The resource's id
+    carrierAccountId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETCarrierAccountIdAttachments(context.Background(), carrierAccountId).Execute()
+    r, err := apiClient.AttachmentsApi.GETCarrierAccountIdAttachments(context.Background(), carrierAccountId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETCarrierAccountIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -571,7 +573,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**carrierAccountId** | **string** | The resource&#39;s id | 
+**carrierAccountId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -617,15 +619,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    couponRecipientId := "couponRecipientId_example" // string | The resource's id
+    couponRecipientId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETCouponRecipientIdAttachments(context.Background(), couponRecipientId).Execute()
+    r, err := apiClient.AttachmentsApi.GETCouponRecipientIdAttachments(context.Background(), couponRecipientId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETCouponRecipientIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -639,7 +641,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**couponRecipientId** | **string** | The resource&#39;s id | 
+**couponRecipientId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -685,15 +687,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    customerGroupId := "customerGroupId_example" // string | The resource's id
+    customerGroupId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETCustomerGroupIdAttachments(context.Background(), customerGroupId).Execute()
+    r, err := apiClient.AttachmentsApi.GETCustomerGroupIdAttachments(context.Background(), customerGroupId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETCustomerGroupIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -707,7 +709,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**customerGroupId** | **string** | The resource&#39;s id | 
+**customerGroupId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -753,15 +755,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    customerId := "customerId_example" // string | The resource's id
+    customerId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETCustomerIdAttachments(context.Background(), customerId).Execute()
+    r, err := apiClient.AttachmentsApi.GETCustomerIdAttachments(context.Background(), customerId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETCustomerIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -775,7 +777,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**customerId** | **string** | The resource&#39;s id | 
+**customerId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -821,15 +823,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    deliveryLeadTimeId := "deliveryLeadTimeId_example" // string | The resource's id
+    deliveryLeadTimeId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETDeliveryLeadTimeIdAttachments(context.Background(), deliveryLeadTimeId).Execute()
+    r, err := apiClient.AttachmentsApi.GETDeliveryLeadTimeIdAttachments(context.Background(), deliveryLeadTimeId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETDeliveryLeadTimeIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -843,7 +845,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**deliveryLeadTimeId** | **string** | The resource&#39;s id | 
+**deliveryLeadTimeId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -889,15 +891,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    externalPromotionId := "externalPromotionId_example" // string | The resource's id
+    externalPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETExternalPromotionIdAttachments(context.Background(), externalPromotionId).Execute()
+    r, err := apiClient.AttachmentsApi.GETExternalPromotionIdAttachments(context.Background(), externalPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETExternalPromotionIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -911,7 +913,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**externalPromotionId** | **string** | The resource&#39;s id | 
+**externalPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -957,15 +959,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    externalTaxCalculatorId := "externalTaxCalculatorId_example" // string | The resource's id
+    externalTaxCalculatorId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETExternalTaxCalculatorIdAttachments(context.Background(), externalTaxCalculatorId).Execute()
+    r, err := apiClient.AttachmentsApi.GETExternalTaxCalculatorIdAttachments(context.Background(), externalTaxCalculatorId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETExternalTaxCalculatorIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -979,7 +981,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**externalTaxCalculatorId** | **string** | The resource&#39;s id | 
+**externalTaxCalculatorId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -1025,15 +1027,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    fixedAmountPromotionId := "fixedAmountPromotionId_example" // string | The resource's id
+    fixedAmountPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETFixedAmountPromotionIdAttachments(context.Background(), fixedAmountPromotionId).Execute()
+    r, err := apiClient.AttachmentsApi.GETFixedAmountPromotionIdAttachments(context.Background(), fixedAmountPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETFixedAmountPromotionIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1047,7 +1049,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**fixedAmountPromotionId** | **string** | The resource&#39;s id | 
+**fixedAmountPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -1093,15 +1095,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    fixedPricePromotionId := "fixedPricePromotionId_example" // string | The resource's id
+    fixedPricePromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETFixedPricePromotionIdAttachments(context.Background(), fixedPricePromotionId).Execute()
+    r, err := apiClient.AttachmentsApi.GETFixedPricePromotionIdAttachments(context.Background(), fixedPricePromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETFixedPricePromotionIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1115,7 +1117,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**fixedPricePromotionId** | **string** | The resource&#39;s id | 
+**fixedPricePromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -1161,15 +1163,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    freeGiftPromotionId := "freeGiftPromotionId_example" // string | The resource's id
+    freeGiftPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETFreeGiftPromotionIdAttachments(context.Background(), freeGiftPromotionId).Execute()
+    r, err := apiClient.AttachmentsApi.GETFreeGiftPromotionIdAttachments(context.Background(), freeGiftPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETFreeGiftPromotionIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1183,7 +1185,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**freeGiftPromotionId** | **string** | The resource&#39;s id | 
+**freeGiftPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -1229,15 +1231,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    freeShippingPromotionId := "freeShippingPromotionId_example" // string | The resource's id
+    freeShippingPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETFreeShippingPromotionIdAttachments(context.Background(), freeShippingPromotionId).Execute()
+    r, err := apiClient.AttachmentsApi.GETFreeShippingPromotionIdAttachments(context.Background(), freeShippingPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETFreeShippingPromotionIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1251,7 +1253,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**freeShippingPromotionId** | **string** | The resource&#39;s id | 
+**freeShippingPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -1297,15 +1299,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    geocoderId := "geocoderId_example" // string | The resource's id
+    geocoderId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETGeocoderIdAttachments(context.Background(), geocoderId).Execute()
+    r, err := apiClient.AttachmentsApi.GETGeocoderIdAttachments(context.Background(), geocoderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETGeocoderIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1319,7 +1321,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**geocoderId** | **string** | The resource&#39;s id | 
+**geocoderId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -1365,15 +1367,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    giftCardId := "giftCardId_example" // string | The resource's id
+    giftCardId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETGiftCardIdAttachments(context.Background(), giftCardId).Execute()
+    r, err := apiClient.AttachmentsApi.GETGiftCardIdAttachments(context.Background(), giftCardId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETGiftCardIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1387,7 +1389,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**giftCardId** | **string** | The resource&#39;s id | 
+**giftCardId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -1433,15 +1435,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    giftCardRecipientId := "giftCardRecipientId_example" // string | The resource's id
+    giftCardRecipientId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETGiftCardRecipientIdAttachments(context.Background(), giftCardRecipientId).Execute()
+    r, err := apiClient.AttachmentsApi.GETGiftCardRecipientIdAttachments(context.Background(), giftCardRecipientId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETGiftCardRecipientIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1455,7 +1457,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**giftCardRecipientId** | **string** | The resource&#39;s id | 
+**giftCardRecipientId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -1501,15 +1503,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    googleGeocoderId := "googleGeocoderId_example" // string | The resource's id
+    googleGeocoderId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETGoogleGeocoderIdAttachments(context.Background(), googleGeocoderId).Execute()
+    r, err := apiClient.AttachmentsApi.GETGoogleGeocoderIdAttachments(context.Background(), googleGeocoderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETGoogleGeocoderIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1523,7 +1525,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**googleGeocoderId** | **string** | The resource&#39;s id | 
+**googleGeocoderId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -1569,15 +1571,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    inventoryModelId := "inventoryModelId_example" // string | The resource's id
+    inventoryModelId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETInventoryModelIdAttachments(context.Background(), inventoryModelId).Execute()
+    r, err := apiClient.AttachmentsApi.GETInventoryModelIdAttachments(context.Background(), inventoryModelId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETInventoryModelIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1591,7 +1593,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**inventoryModelId** | **string** | The resource&#39;s id | 
+**inventoryModelId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -1637,15 +1639,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    manualTaxCalculatorId := "manualTaxCalculatorId_example" // string | The resource's id
+    manualTaxCalculatorId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETManualTaxCalculatorIdAttachments(context.Background(), manualTaxCalculatorId).Execute()
+    r, err := apiClient.AttachmentsApi.GETManualTaxCalculatorIdAttachments(context.Background(), manualTaxCalculatorId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETManualTaxCalculatorIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1659,7 +1661,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**manualTaxCalculatorId** | **string** | The resource&#39;s id | 
+**manualTaxCalculatorId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -1705,15 +1707,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    marketId := "marketId_example" // string | The resource's id
+    marketId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETMarketIdAttachments(context.Background(), marketId).Execute()
+    r, err := apiClient.AttachmentsApi.GETMarketIdAttachments(context.Background(), marketId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETMarketIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1727,7 +1729,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**marketId** | **string** | The resource&#39;s id | 
+**marketId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -1773,15 +1775,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    merchantId := "merchantId_example" // string | The resource's id
+    merchantId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETMerchantIdAttachments(context.Background(), merchantId).Execute()
+    r, err := apiClient.AttachmentsApi.GETMerchantIdAttachments(context.Background(), merchantId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETMerchantIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1795,7 +1797,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**merchantId** | **string** | The resource&#39;s id | 
+**merchantId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -1841,15 +1843,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    orderId := "orderId_example" // string | The resource's id
+    orderId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETOrderIdAttachments(context.Background(), orderId).Execute()
+    r, err := apiClient.AttachmentsApi.GETOrderIdAttachments(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETOrderIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1863,7 +1865,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**orderId** | **string** | The resource&#39;s id | 
+**orderId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -1909,15 +1911,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    orderValidationRuleId := "orderValidationRuleId_example" // string | The resource's id
+    orderValidationRuleId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETOrderValidationRuleIdAttachments(context.Background(), orderValidationRuleId).Execute()
+    r, err := apiClient.AttachmentsApi.GETOrderValidationRuleIdAttachments(context.Background(), orderValidationRuleId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETOrderValidationRuleIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1931,7 +1933,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**orderValidationRuleId** | **string** | The resource&#39;s id | 
+**orderValidationRuleId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -1977,15 +1979,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    packageId := "packageId_example" // string | The resource's id
+    packageId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETPackageIdAttachments(context.Background(), packageId).Execute()
+    r, err := apiClient.AttachmentsApi.GETPackageIdAttachments(context.Background(), packageId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETPackageIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -1999,7 +2001,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**packageId** | **string** | The resource&#39;s id | 
+**packageId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -2045,15 +2047,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    parcelId := "parcelId_example" // string | The resource's id
+    parcelId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETParcelIdAttachments(context.Background(), parcelId).Execute()
+    r, err := apiClient.AttachmentsApi.GETParcelIdAttachments(context.Background(), parcelId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETParcelIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2067,7 +2069,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**parcelId** | **string** | The resource&#39;s id | 
+**parcelId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -2113,15 +2115,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    paymentMethodId := "paymentMethodId_example" // string | The resource's id
+    paymentMethodId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETPaymentMethodIdAttachments(context.Background(), paymentMethodId).Execute()
+    r, err := apiClient.AttachmentsApi.GETPaymentMethodIdAttachments(context.Background(), paymentMethodId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETPaymentMethodIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2135,7 +2137,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**paymentMethodId** | **string** | The resource&#39;s id | 
+**paymentMethodId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -2181,15 +2183,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    percentageDiscountPromotionId := "percentageDiscountPromotionId_example" // string | The resource's id
+    percentageDiscountPromotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETPercentageDiscountPromotionIdAttachments(context.Background(), percentageDiscountPromotionId).Execute()
+    r, err := apiClient.AttachmentsApi.GETPercentageDiscountPromotionIdAttachments(context.Background(), percentageDiscountPromotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETPercentageDiscountPromotionIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2203,11 +2205,79 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**percentageDiscountPromotionId** | **string** | The resource&#39;s id | 
+**percentageDiscountPromotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETPercentageDiscountPromotionIdAttachmentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETPriceFrequencyTierIdAttachments
+
+> GETPriceFrequencyTierIdAttachments(ctx, priceFrequencyTierId).Execute()
+
+Retrieve the attachments associated to the price frequency tier
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    priceFrequencyTierId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.AttachmentsApi.GETPriceFrequencyTierIdAttachments(context.Background(), priceFrequencyTierId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETPriceFrequencyTierIdAttachments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**priceFrequencyTierId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETPriceFrequencyTierIdAttachmentsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -2249,15 +2319,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    priceId := "priceId_example" // string | The resource's id
+    priceId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETPriceIdAttachments(context.Background(), priceId).Execute()
+    r, err := apiClient.AttachmentsApi.GETPriceIdAttachments(context.Background(), priceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETPriceIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2271,7 +2341,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**priceId** | **string** | The resource&#39;s id | 
+**priceId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -2317,15 +2387,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    priceListId := "priceListId_example" // string | The resource's id
+    priceListId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETPriceListIdAttachments(context.Background(), priceListId).Execute()
+    r, err := apiClient.AttachmentsApi.GETPriceListIdAttachments(context.Background(), priceListId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETPriceListIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2339,7 +2409,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**priceListId** | **string** | The resource&#39;s id | 
+**priceListId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -2385,15 +2455,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    priceTierId := "priceTierId_example" // string | The resource's id
+    priceTierId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETPriceTierIdAttachments(context.Background(), priceTierId).Execute()
+    r, err := apiClient.AttachmentsApi.GETPriceTierIdAttachments(context.Background(), priceTierId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETPriceTierIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2407,7 +2477,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**priceTierId** | **string** | The resource&#39;s id | 
+**priceTierId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -2453,15 +2523,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    priceVolumeTierId := "priceVolumeTierId_example" // string | The resource's id
+    priceVolumeTierId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETPriceVolumeTierIdAttachments(context.Background(), priceVolumeTierId).Execute()
+    r, err := apiClient.AttachmentsApi.GETPriceVolumeTierIdAttachments(context.Background(), priceVolumeTierId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETPriceVolumeTierIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2475,7 +2545,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**priceVolumeTierId** | **string** | The resource&#39;s id | 
+**priceVolumeTierId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -2521,15 +2591,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    promotionId := "promotionId_example" // string | The resource's id
+    promotionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETPromotionIdAttachments(context.Background(), promotionId).Execute()
+    r, err := apiClient.AttachmentsApi.GETPromotionIdAttachments(context.Background(), promotionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETPromotionIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2543,7 +2613,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**promotionId** | **string** | The resource&#39;s id | 
+**promotionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -2589,15 +2659,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    returnId := "returnId_example" // string | The resource's id
+    returnId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETReturnIdAttachments(context.Background(), returnId).Execute()
+    r, err := apiClient.AttachmentsApi.GETReturnIdAttachments(context.Background(), returnId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETReturnIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2611,7 +2681,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**returnId** | **string** | The resource&#39;s id | 
+**returnId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -2657,15 +2727,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    shipmentId := "shipmentId_example" // string | The resource's id
+    shipmentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETShipmentIdAttachments(context.Background(), shipmentId).Execute()
+    r, err := apiClient.AttachmentsApi.GETShipmentIdAttachments(context.Background(), shipmentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETShipmentIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2679,7 +2749,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**shipmentId** | **string** | The resource&#39;s id | 
+**shipmentId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -2725,15 +2795,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    shippingCategoryId := "shippingCategoryId_example" // string | The resource's id
+    shippingCategoryId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETShippingCategoryIdAttachments(context.Background(), shippingCategoryId).Execute()
+    r, err := apiClient.AttachmentsApi.GETShippingCategoryIdAttachments(context.Background(), shippingCategoryId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETShippingCategoryIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2747,7 +2817,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**shippingCategoryId** | **string** | The resource&#39;s id | 
+**shippingCategoryId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -2793,15 +2863,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    shippingMethodId := "shippingMethodId_example" // string | The resource's id
+    shippingMethodId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETShippingMethodIdAttachments(context.Background(), shippingMethodId).Execute()
+    r, err := apiClient.AttachmentsApi.GETShippingMethodIdAttachments(context.Background(), shippingMethodId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETShippingMethodIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2815,7 +2885,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**shippingMethodId** | **string** | The resource&#39;s id | 
+**shippingMethodId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -2861,15 +2931,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    shippingMethodTierId := "shippingMethodTierId_example" // string | The resource's id
+    shippingMethodTierId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETShippingMethodTierIdAttachments(context.Background(), shippingMethodTierId).Execute()
+    r, err := apiClient.AttachmentsApi.GETShippingMethodTierIdAttachments(context.Background(), shippingMethodTierId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETShippingMethodTierIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2883,7 +2953,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**shippingMethodTierId** | **string** | The resource&#39;s id | 
+**shippingMethodTierId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -2929,15 +2999,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    shippingWeightTierId := "shippingWeightTierId_example" // string | The resource's id
+    shippingWeightTierId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETShippingWeightTierIdAttachments(context.Background(), shippingWeightTierId).Execute()
+    r, err := apiClient.AttachmentsApi.GETShippingWeightTierIdAttachments(context.Background(), shippingWeightTierId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETShippingWeightTierIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -2951,7 +3021,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**shippingWeightTierId** | **string** | The resource&#39;s id | 
+**shippingWeightTierId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -2997,15 +3067,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    shippingZoneId := "shippingZoneId_example" // string | The resource's id
+    shippingZoneId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETShippingZoneIdAttachments(context.Background(), shippingZoneId).Execute()
+    r, err := apiClient.AttachmentsApi.GETShippingZoneIdAttachments(context.Background(), shippingZoneId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETShippingZoneIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3019,7 +3089,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**shippingZoneId** | **string** | The resource&#39;s id | 
+**shippingZoneId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -3065,15 +3135,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    skuId := "skuId_example" // string | The resource's id
+    skuId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETSkuIdAttachments(context.Background(), skuId).Execute()
+    r, err := apiClient.AttachmentsApi.GETSkuIdAttachments(context.Background(), skuId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETSkuIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3087,7 +3157,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**skuId** | **string** | The resource&#39;s id | 
+**skuId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -3133,15 +3203,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    skuListId := "skuListId_example" // string | The resource's id
+    skuListId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETSkuListIdAttachments(context.Background(), skuListId).Execute()
+    r, err := apiClient.AttachmentsApi.GETSkuListIdAttachments(context.Background(), skuListId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETSkuListIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3155,7 +3225,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**skuListId** | **string** | The resource&#39;s id | 
+**skuListId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -3201,15 +3271,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    skuOptionId := "skuOptionId_example" // string | The resource's id
+    skuOptionId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETSkuOptionIdAttachments(context.Background(), skuOptionId).Execute()
+    r, err := apiClient.AttachmentsApi.GETSkuOptionIdAttachments(context.Background(), skuOptionId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETSkuOptionIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3223,7 +3293,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**skuOptionId** | **string** | The resource&#39;s id | 
+**skuOptionId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -3269,15 +3339,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    stockItemId := "stockItemId_example" // string | The resource's id
+    stockItemId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETStockItemIdAttachments(context.Background(), stockItemId).Execute()
+    r, err := apiClient.AttachmentsApi.GETStockItemIdAttachments(context.Background(), stockItemId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETStockItemIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3291,7 +3361,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**stockItemId** | **string** | The resource&#39;s id | 
+**stockItemId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -3337,15 +3407,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    stockLocationId := "stockLocationId_example" // string | The resource's id
+    stockLocationId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETStockLocationIdAttachments(context.Background(), stockLocationId).Execute()
+    r, err := apiClient.AttachmentsApi.GETStockLocationIdAttachments(context.Background(), stockLocationId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETStockLocationIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3359,11 +3429,79 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**stockLocationId** | **string** | The resource&#39;s id | 
+**stockLocationId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
 Other parameters are passed through a pointer to a apiGETStockLocationIdAttachmentsRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
+## GETSubscriptionModelIdAttachments
+
+> GETSubscriptionModelIdAttachments(ctx, subscriptionModelId).Execute()
+
+Retrieve the attachments associated to the subscription model
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    subscriptionModelId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.AttachmentsApi.GETSubscriptionModelIdAttachments(context.Background(), subscriptionModelId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETSubscriptionModelIdAttachments``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**subscriptionModelId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETSubscriptionModelIdAttachmentsRequest struct via the builder pattern
 
 
 Name | Type | Description  | Notes
@@ -3405,15 +3543,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    taxCalculatorId := "taxCalculatorId_example" // string | The resource's id
+    taxCalculatorId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETTaxCalculatorIdAttachments(context.Background(), taxCalculatorId).Execute()
+    r, err := apiClient.AttachmentsApi.GETTaxCalculatorIdAttachments(context.Background(), taxCalculatorId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETTaxCalculatorIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3427,7 +3565,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**taxCalculatorId** | **string** | The resource&#39;s id | 
+**taxCalculatorId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -3473,15 +3611,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    taxCategoryId := "taxCategoryId_example" // string | The resource's id
+    taxCategoryId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETTaxCategoryIdAttachments(context.Background(), taxCategoryId).Execute()
+    r, err := apiClient.AttachmentsApi.GETTaxCategoryIdAttachments(context.Background(), taxCategoryId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETTaxCategoryIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3495,7 +3633,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**taxCategoryId** | **string** | The resource&#39;s id | 
+**taxCategoryId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -3541,15 +3679,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    taxjarAccountId := "taxjarAccountId_example" // string | The resource's id
+    taxjarAccountId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AttachmentsApi.GETTaxjarAccountIdAttachments(context.Background(), taxjarAccountId).Execute()
+    r, err := apiClient.AttachmentsApi.GETTaxjarAccountIdAttachments(context.Background(), taxjarAccountId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AttachmentsApi.GETTaxjarAccountIdAttachments``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -3563,7 +3701,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**taxjarAccountId** | **string** | The resource&#39;s id | 
+**taxjarAccountId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -3609,12 +3747,12 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    attachmentUpdate := *openapiclient.NewAttachmentUpdate(*openapiclient.NewAttachmentUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHAttachmentsAttachmentId200ResponseDataAttributes())) // AttachmentUpdate | 
-    attachmentId := "attachmentId_example" // string | The resource's id
+    attachmentUpdate := *openapiclient.NewAttachmentUpdate(*openapiclient.NewAttachmentUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHAttachmentsAttachmentId200ResponseDataAttributes())) // AttachmentUpdate | 
+    attachmentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -3634,7 +3772,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**attachmentId** | **string** | The resource&#39;s id | 
+**attachmentId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -3681,11 +3819,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    attachmentCreate := *openapiclient.NewAttachmentCreate(*openapiclient.NewAttachmentCreateData("Type_example", *openapiclient.NewPOSTAttachments201ResponseDataAttributes("DDT transport document"))) // AttachmentCreate | 
+    attachmentCreate := *openapiclient.NewAttachmentCreate(*openapiclient.NewAttachmentCreateData(interface{}(123), *openapiclient.NewPOSTAttachments201ResponseDataAttributes(interface{}(DDT transport document)))) // AttachmentCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

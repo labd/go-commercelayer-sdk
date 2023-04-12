@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type PercentageDiscountPromotionsApiService service
 type PercentageDiscountPromotionsApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest struct {
 	ctx                           context.Context
 	ApiService                    *PercentageDiscountPromotionsApiService
-	percentageDiscountPromotionId string
+	percentageDiscountPromotionId interface{}
 }
 
 func (r PercentageDiscountPromotionsApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a percentage discount promotion
 	@param percentageDiscountPromotionId The resource's id
 	@return PercentageDiscountPromotionsApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest
 */
-func (a *PercentageDiscountPromotionsApiService) DELETEPercentageDiscountPromotionsPercentageDiscountPromotionId(ctx context.Context, percentageDiscountPromotionId string) PercentageDiscountPromotionsApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest {
+func (a *PercentageDiscountPromotionsApiService) DELETEPercentageDiscountPromotionsPercentageDiscountPromotionId(ctx context.Context, percentageDiscountPromotionId interface{}) PercentageDiscountPromotionsApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest {
 	return PercentageDiscountPromotionsApiDELETEPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
@@ -64,7 +64,7 @@ func (a *PercentageDiscountPromotionsApiService) DELETEPercentageDiscountPromoti
 	}
 
 	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterToString(r.percentageDiscountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *PercentageDiscountPromotionsApiService) DELETEPercentageDiscountPromoti
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotions
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -218,7 +218,7 @@ func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotions
 type PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest struct {
 	ctx                           context.Context
 	ApiService                    *PercentageDiscountPromotionsApiService
-	percentageDiscountPromotionId string
+	percentageDiscountPromotionId interface{}
 }
 
 func (r PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) Execute() (*GETPercentageDiscountPromotionsPercentageDiscountPromotionId200Response, *http.Response, error) {
@@ -234,7 +234,7 @@ Retrieve a percentage discount promotion
 	@param percentageDiscountPromotionId The resource's id
 	@return PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest
 */
-func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotionsPercentageDiscountPromotionId(ctx context.Context, percentageDiscountPromotionId string) PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest {
+func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotionsPercentageDiscountPromotionId(ctx context.Context, percentageDiscountPromotionId interface{}) PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest {
 	return PercentageDiscountPromotionsApiGETPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
@@ -259,7 +259,7 @@ func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotions
 	}
 
 	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterToString(r.percentageDiscountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *PercentageDiscountPromotionsApiService) GETPercentageDiscountPromotions
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -323,7 +323,7 @@ type PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageD
 	ctx                               context.Context
 	ApiService                        *PercentageDiscountPromotionsApiService
 	percentageDiscountPromotionUpdate *PercentageDiscountPromotionUpdate
-	percentageDiscountPromotionId     string
+	percentageDiscountPromotionId     interface{}
 }
 
 func (r PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest) PercentageDiscountPromotionUpdate(percentageDiscountPromotionUpdate PercentageDiscountPromotionUpdate) PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest {
@@ -344,7 +344,7 @@ Update a percentage discount promotion
 	@param percentageDiscountPromotionId The resource's id
 	@return PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest
 */
-func (a *PercentageDiscountPromotionsApiService) PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId(ctx context.Context, percentageDiscountPromotionId string) PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest {
+func (a *PercentageDiscountPromotionsApiService) PATCHPercentageDiscountPromotionsPercentageDiscountPromotionId(ctx context.Context, percentageDiscountPromotionId interface{}) PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest {
 	return PercentageDiscountPromotionsApiPATCHPercentageDiscountPromotionsPercentageDiscountPromotionIdRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
@@ -369,7 +369,7 @@ func (a *PercentageDiscountPromotionsApiService) PATCHPercentageDiscountPromotio
 	}
 
 	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterToString(r.percentageDiscountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -407,9 +407,9 @@ func (a *PercentageDiscountPromotionsApiService) PATCHPercentageDiscountPromotio
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -518,9 +518,9 @@ func (a *PercentageDiscountPromotionsApiService) POSTPercentageDiscountPromotion
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

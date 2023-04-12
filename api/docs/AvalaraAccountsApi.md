@@ -1,6 +1,6 @@
 # \AvalaraAccountsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -29,15 +29,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    avalaraAccountId := "avalaraAccountId_example" // string | The resource's id
+    avalaraAccountId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.AvalaraAccountsApi.DELETEAvalaraAccountsAvalaraAccountId(context.Background(), avalaraAccountId).Execute()
+    r, err := apiClient.AvalaraAccountsApi.DELETEAvalaraAccountsAvalaraAccountId(context.Background(), avalaraAccountId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `AvalaraAccountsApi.DELETEAvalaraAccountsAvalaraAccountId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -51,7 +51,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**avalaraAccountId** | **string** | The resource&#39;s id | 
+**avalaraAccountId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -97,7 +97,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -158,11 +158,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    avalaraAccountId := "avalaraAccountId_example" // string | The resource's id
+    avalaraAccountId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -182,7 +182,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**avalaraAccountId** | **string** | The resource&#39;s id | 
+**avalaraAccountId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -228,12 +228,12 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    avalaraAccountUpdate := *openapiclient.NewAvalaraAccountUpdate(*openapiclient.NewAvalaraAccountUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes())) // AvalaraAccountUpdate | 
-    avalaraAccountId := "avalaraAccountId_example" // string | The resource's id
+    avalaraAccountUpdate := *openapiclient.NewAvalaraAccountUpdate(*openapiclient.NewAvalaraAccountUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHAvalaraAccountsAvalaraAccountId200ResponseDataAttributes())) // AvalaraAccountUpdate | 
+    avalaraAccountId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -253,7 +253,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**avalaraAccountId** | **string** | The resource&#39;s id | 
+**avalaraAccountId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -300,11 +300,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    avalaraAccountCreate := *openapiclient.NewAvalaraAccountCreate(*openapiclient.NewAvalaraAccountCreateData("Type_example", *openapiclient.NewPOSTAvalaraAccounts201ResponseDataAttributes("Personal tax calculator", "user@mydomain.com", "secret", "MYCOMPANY"))) // AvalaraAccountCreate | 
+    avalaraAccountCreate := *openapiclient.NewAvalaraAccountCreate(*openapiclient.NewAvalaraAccountCreateData(interface{}(123), *openapiclient.NewPOSTAvalaraAccounts201ResponseDataAttributes(interface{}(Personal tax calculator), interface{}(user@mydomain.com), interface{}(secret), interface{}(MYCOMPANY)))) // AvalaraAccountCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

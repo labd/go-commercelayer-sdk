@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,9 +15,12 @@ import (
 	"encoding/json"
 )
 
+// checks if the GETFreeGiftPromotions200Response type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &GETFreeGiftPromotions200Response{}
+
 // GETFreeGiftPromotions200Response struct for GETFreeGiftPromotions200Response
 type GETFreeGiftPromotions200Response struct {
-	Data []GETFreeGiftPromotions200ResponseDataInner `json:"data,omitempty"`
+	Data interface{} `json:"data,omitempty"`
 }
 
 // NewGETFreeGiftPromotions200Response instantiates a new GETFreeGiftPromotions200Response object
@@ -37,10 +40,10 @@ func NewGETFreeGiftPromotions200ResponseWithDefaults() *GETFreeGiftPromotions200
 	return &this
 }
 
-// GetData returns the Data field value if set, zero value otherwise.
-func (o *GETFreeGiftPromotions200Response) GetData() []GETFreeGiftPromotions200ResponseDataInner {
-	if o == nil || o.Data == nil {
-		var ret []GETFreeGiftPromotions200ResponseDataInner
+// GetData returns the Data field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *GETFreeGiftPromotions200Response) GetData() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Data
@@ -48,33 +51,42 @@ func (o *GETFreeGiftPromotions200Response) GetData() []GETFreeGiftPromotions200R
 
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *GETFreeGiftPromotions200Response) GetDataOk() ([]GETFreeGiftPromotions200ResponseDataInner, bool) {
-	if o == nil || o.Data == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *GETFreeGiftPromotions200Response) GetDataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
-	return o.Data, true
+	return &o.Data, true
 }
 
 // HasData returns a boolean if a field has been set.
 func (o *GETFreeGiftPromotions200Response) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && IsNil(o.Data) {
 		return true
 	}
 
 	return false
 }
 
-// SetData gets a reference to the given []GETFreeGiftPromotions200ResponseDataInner and assigns it to the Data field.
-func (o *GETFreeGiftPromotions200Response) SetData(v []GETFreeGiftPromotions200ResponseDataInner) {
+// SetData gets a reference to the given interface{} and assigns it to the Data field.
+func (o *GETFreeGiftPromotions200Response) SetData(v interface{}) {
 	o.Data = v
 }
 
 func (o GETFreeGiftPromotions200Response) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o GETFreeGiftPromotions200Response) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Data != nil {
 		toSerialize["data"] = o.Data
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullableGETFreeGiftPromotions200Response struct {

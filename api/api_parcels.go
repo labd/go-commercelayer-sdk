@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type ParcelsApiService service
 type ParcelsApiDELETEParcelsParcelIdRequest struct {
 	ctx        context.Context
 	ApiService *ParcelsApiService
-	parcelId   string
+	parcelId   interface{}
 }
 
 func (r ParcelsApiDELETEParcelsParcelIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a parcel
 	@param parcelId The resource's id
 	@return ParcelsApiDELETEParcelsParcelIdRequest
 */
-func (a *ParcelsApiService) DELETEParcelsParcelId(ctx context.Context, parcelId string) ParcelsApiDELETEParcelsParcelIdRequest {
+func (a *ParcelsApiService) DELETEParcelsParcelId(ctx context.Context, parcelId interface{}) ParcelsApiDELETEParcelsParcelIdRequest {
 	return ParcelsApiDELETEParcelsParcelIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -64,7 +64,7 @@ func (a *ParcelsApiService) DELETEParcelsParcelIdExecute(r ParcelsApiDELETEParce
 	}
 
 	localVarPath := localBasePath + "/parcels/{parcelId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterToString(r.parcelId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterValueToString(r.parcelId, "parcelId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *ParcelsApiService) DELETEParcelsParcelIdExecute(r ParcelsApiDELETEParce
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *ParcelsApiService) DELETEParcelsParcelIdExecute(r ParcelsApiDELETEParce
 type ParcelsApiGETPackageIdParcelsRequest struct {
 	ctx        context.Context
 	ApiService *ParcelsApiService
-	packageId  string
+	packageId  interface{}
 }
 
 func (r ParcelsApiGETPackageIdParcelsRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the parcels associated to the package
 	@param packageId The resource's id
 	@return ParcelsApiGETPackageIdParcelsRequest
 */
-func (a *ParcelsApiService) GETPackageIdParcels(ctx context.Context, packageId string) ParcelsApiGETPackageIdParcelsRequest {
+func (a *ParcelsApiService) GETPackageIdParcels(ctx context.Context, packageId interface{}) ParcelsApiGETPackageIdParcelsRequest {
 	return ParcelsApiGETPackageIdParcelsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -156,7 +156,7 @@ func (a *ParcelsApiService) GETPackageIdParcelsExecute(r ParcelsApiGETPackageIdP
 	}
 
 	localVarPath := localBasePath + "/packages/{packageId}/parcels"
-	localVarPath = strings.Replace(localVarPath, "{"+"packageId"+"}", url.PathEscape(parameterToString(r.packageId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"packageId"+"}", url.PathEscape(parameterValueToString(r.packageId, "packageId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *ParcelsApiService) GETPackageIdParcelsExecute(r ParcelsApiGETPackageIdP
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -210,7 +210,7 @@ func (a *ParcelsApiService) GETPackageIdParcelsExecute(r ParcelsApiGETPackageIdP
 type ParcelsApiGETParcelLineItemIdParcelRequest struct {
 	ctx              context.Context
 	ApiService       *ParcelsApiService
-	parcelLineItemId string
+	parcelLineItemId interface{}
 }
 
 func (r ParcelsApiGETParcelLineItemIdParcelRequest) Execute() (*http.Response, error) {
@@ -226,7 +226,7 @@ Retrieve the parcel associated to the parcel line item
 	@param parcelLineItemId The resource's id
 	@return ParcelsApiGETParcelLineItemIdParcelRequest
 */
-func (a *ParcelsApiService) GETParcelLineItemIdParcel(ctx context.Context, parcelLineItemId string) ParcelsApiGETParcelLineItemIdParcelRequest {
+func (a *ParcelsApiService) GETParcelLineItemIdParcel(ctx context.Context, parcelLineItemId interface{}) ParcelsApiGETParcelLineItemIdParcelRequest {
 	return ParcelsApiGETParcelLineItemIdParcelRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -248,7 +248,7 @@ func (a *ParcelsApiService) GETParcelLineItemIdParcelExecute(r ParcelsApiGETParc
 	}
 
 	localVarPath := localBasePath + "/parcel_line_items/{parcelLineItemId}/parcel"
-	localVarPath = strings.Replace(localVarPath, "{"+"parcelLineItemId"+"}", url.PathEscape(parameterToString(r.parcelLineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"parcelLineItemId"+"}", url.PathEscape(parameterValueToString(r.parcelLineItemId, "parcelLineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -281,9 +281,9 @@ func (a *ParcelsApiService) GETParcelLineItemIdParcelExecute(r ParcelsApiGETParc
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -372,9 +372,9 @@ func (a *ParcelsApiService) GETParcelsExecute(r ParcelsApiGETParcelsRequest) (*G
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -402,7 +402,7 @@ func (a *ParcelsApiService) GETParcelsExecute(r ParcelsApiGETParcelsRequest) (*G
 type ParcelsApiGETParcelsParcelIdRequest struct {
 	ctx        context.Context
 	ApiService *ParcelsApiService
-	parcelId   string
+	parcelId   interface{}
 }
 
 func (r ParcelsApiGETParcelsParcelIdRequest) Execute() (*GETParcelsParcelId200Response, *http.Response, error) {
@@ -418,7 +418,7 @@ Retrieve a parcel
 	@param parcelId The resource's id
 	@return ParcelsApiGETParcelsParcelIdRequest
 */
-func (a *ParcelsApiService) GETParcelsParcelId(ctx context.Context, parcelId string) ParcelsApiGETParcelsParcelIdRequest {
+func (a *ParcelsApiService) GETParcelsParcelId(ctx context.Context, parcelId interface{}) ParcelsApiGETParcelsParcelIdRequest {
 	return ParcelsApiGETParcelsParcelIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -443,7 +443,7 @@ func (a *ParcelsApiService) GETParcelsParcelIdExecute(r ParcelsApiGETParcelsParc
 	}
 
 	localVarPath := localBasePath + "/parcels/{parcelId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterToString(r.parcelId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterValueToString(r.parcelId, "parcelId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -476,9 +476,9 @@ func (a *ParcelsApiService) GETParcelsParcelIdExecute(r ParcelsApiGETParcelsParc
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -506,7 +506,7 @@ func (a *ParcelsApiService) GETParcelsParcelIdExecute(r ParcelsApiGETParcelsParc
 type ParcelsApiGETShipmentIdParcelsRequest struct {
 	ctx        context.Context
 	ApiService *ParcelsApiService
-	shipmentId string
+	shipmentId interface{}
 }
 
 func (r ParcelsApiGETShipmentIdParcelsRequest) Execute() (*http.Response, error) {
@@ -522,7 +522,7 @@ Retrieve the parcels associated to the shipment
 	@param shipmentId The resource's id
 	@return ParcelsApiGETShipmentIdParcelsRequest
 */
-func (a *ParcelsApiService) GETShipmentIdParcels(ctx context.Context, shipmentId string) ParcelsApiGETShipmentIdParcelsRequest {
+func (a *ParcelsApiService) GETShipmentIdParcels(ctx context.Context, shipmentId interface{}) ParcelsApiGETShipmentIdParcelsRequest {
 	return ParcelsApiGETShipmentIdParcelsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -544,7 +544,7 @@ func (a *ParcelsApiService) GETShipmentIdParcelsExecute(r ParcelsApiGETShipmentI
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/parcels"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -577,9 +577,9 @@ func (a *ParcelsApiService) GETShipmentIdParcelsExecute(r ParcelsApiGETShipmentI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -599,7 +599,7 @@ type ParcelsApiPATCHParcelsParcelIdRequest struct {
 	ctx          context.Context
 	ApiService   *ParcelsApiService
 	parcelUpdate *ParcelUpdate
-	parcelId     string
+	parcelId     interface{}
 }
 
 func (r ParcelsApiPATCHParcelsParcelIdRequest) ParcelUpdate(parcelUpdate ParcelUpdate) ParcelsApiPATCHParcelsParcelIdRequest {
@@ -620,7 +620,7 @@ Update a parcel
 	@param parcelId The resource's id
 	@return ParcelsApiPATCHParcelsParcelIdRequest
 */
-func (a *ParcelsApiService) PATCHParcelsParcelId(ctx context.Context, parcelId string) ParcelsApiPATCHParcelsParcelIdRequest {
+func (a *ParcelsApiService) PATCHParcelsParcelId(ctx context.Context, parcelId interface{}) ParcelsApiPATCHParcelsParcelIdRequest {
 	return ParcelsApiPATCHParcelsParcelIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -645,7 +645,7 @@ func (a *ParcelsApiService) PATCHParcelsParcelIdExecute(r ParcelsApiPATCHParcels
 	}
 
 	localVarPath := localBasePath + "/parcels/{parcelId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterToString(r.parcelId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterValueToString(r.parcelId, "parcelId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -683,9 +683,9 @@ func (a *ParcelsApiService) PATCHParcelsParcelIdExecute(r ParcelsApiPATCHParcels
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -794,9 +794,9 @@ func (a *ParcelsApiService) POSTParcelsExecute(r ParcelsApiPOSTParcelsRequest) (
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

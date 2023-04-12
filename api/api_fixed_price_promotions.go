@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type FixedPricePromotionsApiService service
 type FixedPricePromotionsApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest struct {
 	ctx                   context.Context
 	ApiService            *FixedPricePromotionsApiService
-	fixedPricePromotionId string
+	fixedPricePromotionId interface{}
 }
 
 func (r FixedPricePromotionsApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a fixed price promotion
 	@param fixedPricePromotionId The resource's id
 	@return FixedPricePromotionsApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest
 */
-func (a *FixedPricePromotionsApiService) DELETEFixedPricePromotionsFixedPricePromotionId(ctx context.Context, fixedPricePromotionId string) FixedPricePromotionsApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest {
+func (a *FixedPricePromotionsApiService) DELETEFixedPricePromotionsFixedPricePromotionId(ctx context.Context, fixedPricePromotionId interface{}) FixedPricePromotionsApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest {
 	return FixedPricePromotionsApiDELETEFixedPricePromotionsFixedPricePromotionIdRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -64,7 +64,7 @@ func (a *FixedPricePromotionsApiService) DELETEFixedPricePromotionsFixedPricePro
 	}
 
 	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterToString(r.fixedPricePromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *FixedPricePromotionsApiService) DELETEFixedPricePromotionsFixedPricePro
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsExecute(r FixedP
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -218,7 +218,7 @@ func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsExecute(r FixedP
 type FixedPricePromotionsApiGETFixedPricePromotionsFixedPricePromotionIdRequest struct {
 	ctx                   context.Context
 	ApiService            *FixedPricePromotionsApiService
-	fixedPricePromotionId string
+	fixedPricePromotionId interface{}
 }
 
 func (r FixedPricePromotionsApiGETFixedPricePromotionsFixedPricePromotionIdRequest) Execute() (*GETFixedPricePromotionsFixedPricePromotionId200Response, *http.Response, error) {
@@ -234,7 +234,7 @@ Retrieve a fixed price promotion
 	@param fixedPricePromotionId The resource's id
 	@return FixedPricePromotionsApiGETFixedPricePromotionsFixedPricePromotionIdRequest
 */
-func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsFixedPricePromotionId(ctx context.Context, fixedPricePromotionId string) FixedPricePromotionsApiGETFixedPricePromotionsFixedPricePromotionIdRequest {
+func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsFixedPricePromotionId(ctx context.Context, fixedPricePromotionId interface{}) FixedPricePromotionsApiGETFixedPricePromotionsFixedPricePromotionIdRequest {
 	return FixedPricePromotionsApiGETFixedPricePromotionsFixedPricePromotionIdRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -259,7 +259,7 @@ func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsFixedPricePromot
 	}
 
 	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterToString(r.fixedPricePromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *FixedPricePromotionsApiService) GETFixedPricePromotionsFixedPricePromot
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -323,7 +323,7 @@ type FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdReques
 	ctx                       context.Context
 	ApiService                *FixedPricePromotionsApiService
 	fixedPricePromotionUpdate *FixedPricePromotionUpdate
-	fixedPricePromotionId     string
+	fixedPricePromotionId     interface{}
 }
 
 func (r FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest) FixedPricePromotionUpdate(fixedPricePromotionUpdate FixedPricePromotionUpdate) FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest {
@@ -344,7 +344,7 @@ Update a fixed price promotion
 	@param fixedPricePromotionId The resource's id
 	@return FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest
 */
-func (a *FixedPricePromotionsApiService) PATCHFixedPricePromotionsFixedPricePromotionId(ctx context.Context, fixedPricePromotionId string) FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest {
+func (a *FixedPricePromotionsApiService) PATCHFixedPricePromotionsFixedPricePromotionId(ctx context.Context, fixedPricePromotionId interface{}) FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest {
 	return FixedPricePromotionsApiPATCHFixedPricePromotionsFixedPricePromotionIdRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -369,7 +369,7 @@ func (a *FixedPricePromotionsApiService) PATCHFixedPricePromotionsFixedPriceProm
 	}
 
 	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterToString(r.fixedPricePromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -407,9 +407,9 @@ func (a *FixedPricePromotionsApiService) PATCHFixedPricePromotionsFixedPriceProm
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -518,9 +518,9 @@ func (a *FixedPricePromotionsApiService) POSTFixedPricePromotionsExecute(r Fixed
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

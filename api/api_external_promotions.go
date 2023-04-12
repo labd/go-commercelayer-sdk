@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type ExternalPromotionsApiService service
 type ExternalPromotionsApiDELETEExternalPromotionsExternalPromotionIdRequest struct {
 	ctx                 context.Context
 	ApiService          *ExternalPromotionsApiService
-	externalPromotionId string
+	externalPromotionId interface{}
 }
 
 func (r ExternalPromotionsApiDELETEExternalPromotionsExternalPromotionIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete an external promotion
 	@param externalPromotionId The resource's id
 	@return ExternalPromotionsApiDELETEExternalPromotionsExternalPromotionIdRequest
 */
-func (a *ExternalPromotionsApiService) DELETEExternalPromotionsExternalPromotionId(ctx context.Context, externalPromotionId string) ExternalPromotionsApiDELETEExternalPromotionsExternalPromotionIdRequest {
+func (a *ExternalPromotionsApiService) DELETEExternalPromotionsExternalPromotionId(ctx context.Context, externalPromotionId interface{}) ExternalPromotionsApiDELETEExternalPromotionsExternalPromotionIdRequest {
 	return ExternalPromotionsApiDELETEExternalPromotionsExternalPromotionIdRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -64,7 +64,7 @@ func (a *ExternalPromotionsApiService) DELETEExternalPromotionsExternalPromotion
 	}
 
 	localVarPath := localBasePath + "/external_promotions/{externalPromotionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterToString(r.externalPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterValueToString(r.externalPromotionId, "externalPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *ExternalPromotionsApiService) DELETEExternalPromotionsExternalPromotion
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *ExternalPromotionsApiService) GETExternalPromotionsExecute(r ExternalPr
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -218,7 +218,7 @@ func (a *ExternalPromotionsApiService) GETExternalPromotionsExecute(r ExternalPr
 type ExternalPromotionsApiGETExternalPromotionsExternalPromotionIdRequest struct {
 	ctx                 context.Context
 	ApiService          *ExternalPromotionsApiService
-	externalPromotionId string
+	externalPromotionId interface{}
 }
 
 func (r ExternalPromotionsApiGETExternalPromotionsExternalPromotionIdRequest) Execute() (*GETExternalPromotionsExternalPromotionId200Response, *http.Response, error) {
@@ -234,7 +234,7 @@ Retrieve an external promotion
 	@param externalPromotionId The resource's id
 	@return ExternalPromotionsApiGETExternalPromotionsExternalPromotionIdRequest
 */
-func (a *ExternalPromotionsApiService) GETExternalPromotionsExternalPromotionId(ctx context.Context, externalPromotionId string) ExternalPromotionsApiGETExternalPromotionsExternalPromotionIdRequest {
+func (a *ExternalPromotionsApiService) GETExternalPromotionsExternalPromotionId(ctx context.Context, externalPromotionId interface{}) ExternalPromotionsApiGETExternalPromotionsExternalPromotionIdRequest {
 	return ExternalPromotionsApiGETExternalPromotionsExternalPromotionIdRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -259,7 +259,7 @@ func (a *ExternalPromotionsApiService) GETExternalPromotionsExternalPromotionIdE
 	}
 
 	localVarPath := localBasePath + "/external_promotions/{externalPromotionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterToString(r.externalPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterValueToString(r.externalPromotionId, "externalPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *ExternalPromotionsApiService) GETExternalPromotionsExternalPromotionIdE
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -323,7 +323,7 @@ type ExternalPromotionsApiPATCHExternalPromotionsExternalPromotionIdRequest stru
 	ctx                     context.Context
 	ApiService              *ExternalPromotionsApiService
 	externalPromotionUpdate *ExternalPromotionUpdate
-	externalPromotionId     string
+	externalPromotionId     interface{}
 }
 
 func (r ExternalPromotionsApiPATCHExternalPromotionsExternalPromotionIdRequest) ExternalPromotionUpdate(externalPromotionUpdate ExternalPromotionUpdate) ExternalPromotionsApiPATCHExternalPromotionsExternalPromotionIdRequest {
@@ -344,7 +344,7 @@ Update an external promotion
 	@param externalPromotionId The resource's id
 	@return ExternalPromotionsApiPATCHExternalPromotionsExternalPromotionIdRequest
 */
-func (a *ExternalPromotionsApiService) PATCHExternalPromotionsExternalPromotionId(ctx context.Context, externalPromotionId string) ExternalPromotionsApiPATCHExternalPromotionsExternalPromotionIdRequest {
+func (a *ExternalPromotionsApiService) PATCHExternalPromotionsExternalPromotionId(ctx context.Context, externalPromotionId interface{}) ExternalPromotionsApiPATCHExternalPromotionsExternalPromotionIdRequest {
 	return ExternalPromotionsApiPATCHExternalPromotionsExternalPromotionIdRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -369,7 +369,7 @@ func (a *ExternalPromotionsApiService) PATCHExternalPromotionsExternalPromotionI
 	}
 
 	localVarPath := localBasePath + "/external_promotions/{externalPromotionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterToString(r.externalPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterValueToString(r.externalPromotionId, "externalPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -407,9 +407,9 @@ func (a *ExternalPromotionsApiService) PATCHExternalPromotionsExternalPromotionI
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -518,9 +518,9 @@ func (a *ExternalPromotionsApiService) POSTExternalPromotionsExecute(r ExternalP
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

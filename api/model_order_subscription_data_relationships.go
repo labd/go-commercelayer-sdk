@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,14 +15,23 @@ import (
 	"encoding/json"
 )
 
+// checks if the OrderSubscriptionDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &OrderSubscriptionDataRelationships{}
+
 // OrderSubscriptionDataRelationships struct for OrderSubscriptionDataRelationships
 type OrderSubscriptionDataRelationships struct {
-	Market      *AvalaraAccountDataRelationshipsMarkets        `json:"market,omitempty"`
-	SourceOrder *AdyenPaymentDataRelationshipsOrder            `json:"source_order,omitempty"`
-	Customer    *CouponRecipientDataRelationshipsCustomer      `json:"customer,omitempty"`
-	OrderCopies *OrderSubscriptionDataRelationshipsOrderCopies `json:"order_copies,omitempty"`
-	Orders      *AdyenPaymentDataRelationshipsOrder            `json:"orders,omitempty"`
-	Events      *AuthorizationDataRelationshipsEvents          `json:"events,omitempty"`
+	Market                 *AvalaraAccountDataRelationshipsMarkets                   `json:"market,omitempty"`
+	SubscriptionModel      *MarketDataRelationshipsSubscriptionModel                 `json:"subscription_model,omitempty"`
+	SourceOrder            *AdyenPaymentDataRelationshipsOrder                       `json:"source_order,omitempty"`
+	Customer               *CouponRecipientDataRelationshipsCustomer                 `json:"customer,omitempty"`
+	CustomerPaymentSource  *CustomerDataRelationshipsCustomerPaymentSources          `json:"customer_payment_source,omitempty"`
+	OrderSubscriptionItems *OrderSubscriptionDataRelationshipsOrderSubscriptionItems `json:"order_subscription_items,omitempty"`
+	OrderFactories         *OrderSubscriptionDataRelationshipsOrderFactories         `json:"order_factories,omitempty"`
+	// Deprecated
+	OrderCopies          *OrderSubscriptionDataRelationshipsOrderCopies          `json:"order_copies,omitempty"`
+	RecurringOrderCopies *OrderSubscriptionDataRelationshipsRecurringOrderCopies `json:"recurring_order_copies,omitempty"`
+	Orders               *AdyenPaymentDataRelationshipsOrder                     `json:"orders,omitempty"`
+	Events               *AuthorizationDataRelationshipsEvents                   `json:"events,omitempty"`
 }
 
 // NewOrderSubscriptionDataRelationships instantiates a new OrderSubscriptionDataRelationships object
@@ -44,7 +53,7 @@ func NewOrderSubscriptionDataRelationshipsWithDefaults() *OrderSubscriptionDataR
 
 // GetMarket returns the Market field value if set, zero value otherwise.
 func (o *OrderSubscriptionDataRelationships) GetMarket() AvalaraAccountDataRelationshipsMarkets {
-	if o == nil || o.Market == nil {
+	if o == nil || IsNil(o.Market) {
 		var ret AvalaraAccountDataRelationshipsMarkets
 		return ret
 	}
@@ -54,7 +63,7 @@ func (o *OrderSubscriptionDataRelationships) GetMarket() AvalaraAccountDataRelat
 // GetMarketOk returns a tuple with the Market field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OrderSubscriptionDataRelationships) GetMarketOk() (*AvalaraAccountDataRelationshipsMarkets, bool) {
-	if o == nil || o.Market == nil {
+	if o == nil || IsNil(o.Market) {
 		return nil, false
 	}
 	return o.Market, true
@@ -62,7 +71,7 @@ func (o *OrderSubscriptionDataRelationships) GetMarketOk() (*AvalaraAccountDataR
 
 // HasMarket returns a boolean if a field has been set.
 func (o *OrderSubscriptionDataRelationships) HasMarket() bool {
-	if o != nil && o.Market != nil {
+	if o != nil && !IsNil(o.Market) {
 		return true
 	}
 
@@ -74,9 +83,41 @@ func (o *OrderSubscriptionDataRelationships) SetMarket(v AvalaraAccountDataRelat
 	o.Market = &v
 }
 
+// GetSubscriptionModel returns the SubscriptionModel field value if set, zero value otherwise.
+func (o *OrderSubscriptionDataRelationships) GetSubscriptionModel() MarketDataRelationshipsSubscriptionModel {
+	if o == nil || IsNil(o.SubscriptionModel) {
+		var ret MarketDataRelationshipsSubscriptionModel
+		return ret
+	}
+	return *o.SubscriptionModel
+}
+
+// GetSubscriptionModelOk returns a tuple with the SubscriptionModel field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderSubscriptionDataRelationships) GetSubscriptionModelOk() (*MarketDataRelationshipsSubscriptionModel, bool) {
+	if o == nil || IsNil(o.SubscriptionModel) {
+		return nil, false
+	}
+	return o.SubscriptionModel, true
+}
+
+// HasSubscriptionModel returns a boolean if a field has been set.
+func (o *OrderSubscriptionDataRelationships) HasSubscriptionModel() bool {
+	if o != nil && !IsNil(o.SubscriptionModel) {
+		return true
+	}
+
+	return false
+}
+
+// SetSubscriptionModel gets a reference to the given MarketDataRelationshipsSubscriptionModel and assigns it to the SubscriptionModel field.
+func (o *OrderSubscriptionDataRelationships) SetSubscriptionModel(v MarketDataRelationshipsSubscriptionModel) {
+	o.SubscriptionModel = &v
+}
+
 // GetSourceOrder returns the SourceOrder field value if set, zero value otherwise.
 func (o *OrderSubscriptionDataRelationships) GetSourceOrder() AdyenPaymentDataRelationshipsOrder {
-	if o == nil || o.SourceOrder == nil {
+	if o == nil || IsNil(o.SourceOrder) {
 		var ret AdyenPaymentDataRelationshipsOrder
 		return ret
 	}
@@ -86,7 +127,7 @@ func (o *OrderSubscriptionDataRelationships) GetSourceOrder() AdyenPaymentDataRe
 // GetSourceOrderOk returns a tuple with the SourceOrder field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OrderSubscriptionDataRelationships) GetSourceOrderOk() (*AdyenPaymentDataRelationshipsOrder, bool) {
-	if o == nil || o.SourceOrder == nil {
+	if o == nil || IsNil(o.SourceOrder) {
 		return nil, false
 	}
 	return o.SourceOrder, true
@@ -94,7 +135,7 @@ func (o *OrderSubscriptionDataRelationships) GetSourceOrderOk() (*AdyenPaymentDa
 
 // HasSourceOrder returns a boolean if a field has been set.
 func (o *OrderSubscriptionDataRelationships) HasSourceOrder() bool {
-	if o != nil && o.SourceOrder != nil {
+	if o != nil && !IsNil(o.SourceOrder) {
 		return true
 	}
 
@@ -108,7 +149,7 @@ func (o *OrderSubscriptionDataRelationships) SetSourceOrder(v AdyenPaymentDataRe
 
 // GetCustomer returns the Customer field value if set, zero value otherwise.
 func (o *OrderSubscriptionDataRelationships) GetCustomer() CouponRecipientDataRelationshipsCustomer {
-	if o == nil || o.Customer == nil {
+	if o == nil || IsNil(o.Customer) {
 		var ret CouponRecipientDataRelationshipsCustomer
 		return ret
 	}
@@ -118,7 +159,7 @@ func (o *OrderSubscriptionDataRelationships) GetCustomer() CouponRecipientDataRe
 // GetCustomerOk returns a tuple with the Customer field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OrderSubscriptionDataRelationships) GetCustomerOk() (*CouponRecipientDataRelationshipsCustomer, bool) {
-	if o == nil || o.Customer == nil {
+	if o == nil || IsNil(o.Customer) {
 		return nil, false
 	}
 	return o.Customer, true
@@ -126,7 +167,7 @@ func (o *OrderSubscriptionDataRelationships) GetCustomerOk() (*CouponRecipientDa
 
 // HasCustomer returns a boolean if a field has been set.
 func (o *OrderSubscriptionDataRelationships) HasCustomer() bool {
-	if o != nil && o.Customer != nil {
+	if o != nil && !IsNil(o.Customer) {
 		return true
 	}
 
@@ -138,9 +179,106 @@ func (o *OrderSubscriptionDataRelationships) SetCustomer(v CouponRecipientDataRe
 	o.Customer = &v
 }
 
+// GetCustomerPaymentSource returns the CustomerPaymentSource field value if set, zero value otherwise.
+func (o *OrderSubscriptionDataRelationships) GetCustomerPaymentSource() CustomerDataRelationshipsCustomerPaymentSources {
+	if o == nil || IsNil(o.CustomerPaymentSource) {
+		var ret CustomerDataRelationshipsCustomerPaymentSources
+		return ret
+	}
+	return *o.CustomerPaymentSource
+}
+
+// GetCustomerPaymentSourceOk returns a tuple with the CustomerPaymentSource field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderSubscriptionDataRelationships) GetCustomerPaymentSourceOk() (*CustomerDataRelationshipsCustomerPaymentSources, bool) {
+	if o == nil || IsNil(o.CustomerPaymentSource) {
+		return nil, false
+	}
+	return o.CustomerPaymentSource, true
+}
+
+// HasCustomerPaymentSource returns a boolean if a field has been set.
+func (o *OrderSubscriptionDataRelationships) HasCustomerPaymentSource() bool {
+	if o != nil && !IsNil(o.CustomerPaymentSource) {
+		return true
+	}
+
+	return false
+}
+
+// SetCustomerPaymentSource gets a reference to the given CustomerDataRelationshipsCustomerPaymentSources and assigns it to the CustomerPaymentSource field.
+func (o *OrderSubscriptionDataRelationships) SetCustomerPaymentSource(v CustomerDataRelationshipsCustomerPaymentSources) {
+	o.CustomerPaymentSource = &v
+}
+
+// GetOrderSubscriptionItems returns the OrderSubscriptionItems field value if set, zero value otherwise.
+func (o *OrderSubscriptionDataRelationships) GetOrderSubscriptionItems() OrderSubscriptionDataRelationshipsOrderSubscriptionItems {
+	if o == nil || IsNil(o.OrderSubscriptionItems) {
+		var ret OrderSubscriptionDataRelationshipsOrderSubscriptionItems
+		return ret
+	}
+	return *o.OrderSubscriptionItems
+}
+
+// GetOrderSubscriptionItemsOk returns a tuple with the OrderSubscriptionItems field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderSubscriptionDataRelationships) GetOrderSubscriptionItemsOk() (*OrderSubscriptionDataRelationshipsOrderSubscriptionItems, bool) {
+	if o == nil || IsNil(o.OrderSubscriptionItems) {
+		return nil, false
+	}
+	return o.OrderSubscriptionItems, true
+}
+
+// HasOrderSubscriptionItems returns a boolean if a field has been set.
+func (o *OrderSubscriptionDataRelationships) HasOrderSubscriptionItems() bool {
+	if o != nil && !IsNil(o.OrderSubscriptionItems) {
+		return true
+	}
+
+	return false
+}
+
+// SetOrderSubscriptionItems gets a reference to the given OrderSubscriptionDataRelationshipsOrderSubscriptionItems and assigns it to the OrderSubscriptionItems field.
+func (o *OrderSubscriptionDataRelationships) SetOrderSubscriptionItems(v OrderSubscriptionDataRelationshipsOrderSubscriptionItems) {
+	o.OrderSubscriptionItems = &v
+}
+
+// GetOrderFactories returns the OrderFactories field value if set, zero value otherwise.
+func (o *OrderSubscriptionDataRelationships) GetOrderFactories() OrderSubscriptionDataRelationshipsOrderFactories {
+	if o == nil || IsNil(o.OrderFactories) {
+		var ret OrderSubscriptionDataRelationshipsOrderFactories
+		return ret
+	}
+	return *o.OrderFactories
+}
+
+// GetOrderFactoriesOk returns a tuple with the OrderFactories field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderSubscriptionDataRelationships) GetOrderFactoriesOk() (*OrderSubscriptionDataRelationshipsOrderFactories, bool) {
+	if o == nil || IsNil(o.OrderFactories) {
+		return nil, false
+	}
+	return o.OrderFactories, true
+}
+
+// HasOrderFactories returns a boolean if a field has been set.
+func (o *OrderSubscriptionDataRelationships) HasOrderFactories() bool {
+	if o != nil && !IsNil(o.OrderFactories) {
+		return true
+	}
+
+	return false
+}
+
+// SetOrderFactories gets a reference to the given OrderSubscriptionDataRelationshipsOrderFactories and assigns it to the OrderFactories field.
+func (o *OrderSubscriptionDataRelationships) SetOrderFactories(v OrderSubscriptionDataRelationshipsOrderFactories) {
+	o.OrderFactories = &v
+}
+
 // GetOrderCopies returns the OrderCopies field value if set, zero value otherwise.
+// Deprecated
 func (o *OrderSubscriptionDataRelationships) GetOrderCopies() OrderSubscriptionDataRelationshipsOrderCopies {
-	if o == nil || o.OrderCopies == nil {
+	if o == nil || IsNil(o.OrderCopies) {
 		var ret OrderSubscriptionDataRelationshipsOrderCopies
 		return ret
 	}
@@ -149,8 +287,9 @@ func (o *OrderSubscriptionDataRelationships) GetOrderCopies() OrderSubscriptionD
 
 // GetOrderCopiesOk returns a tuple with the OrderCopies field value if set, nil otherwise
 // and a boolean to check if the value has been set.
+// Deprecated
 func (o *OrderSubscriptionDataRelationships) GetOrderCopiesOk() (*OrderSubscriptionDataRelationshipsOrderCopies, bool) {
-	if o == nil || o.OrderCopies == nil {
+	if o == nil || IsNil(o.OrderCopies) {
 		return nil, false
 	}
 	return o.OrderCopies, true
@@ -158,7 +297,7 @@ func (o *OrderSubscriptionDataRelationships) GetOrderCopiesOk() (*OrderSubscript
 
 // HasOrderCopies returns a boolean if a field has been set.
 func (o *OrderSubscriptionDataRelationships) HasOrderCopies() bool {
-	if o != nil && o.OrderCopies != nil {
+	if o != nil && !IsNil(o.OrderCopies) {
 		return true
 	}
 
@@ -166,13 +305,46 @@ func (o *OrderSubscriptionDataRelationships) HasOrderCopies() bool {
 }
 
 // SetOrderCopies gets a reference to the given OrderSubscriptionDataRelationshipsOrderCopies and assigns it to the OrderCopies field.
+// Deprecated
 func (o *OrderSubscriptionDataRelationships) SetOrderCopies(v OrderSubscriptionDataRelationshipsOrderCopies) {
 	o.OrderCopies = &v
 }
 
+// GetRecurringOrderCopies returns the RecurringOrderCopies field value if set, zero value otherwise.
+func (o *OrderSubscriptionDataRelationships) GetRecurringOrderCopies() OrderSubscriptionDataRelationshipsRecurringOrderCopies {
+	if o == nil || IsNil(o.RecurringOrderCopies) {
+		var ret OrderSubscriptionDataRelationshipsRecurringOrderCopies
+		return ret
+	}
+	return *o.RecurringOrderCopies
+}
+
+// GetRecurringOrderCopiesOk returns a tuple with the RecurringOrderCopies field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+func (o *OrderSubscriptionDataRelationships) GetRecurringOrderCopiesOk() (*OrderSubscriptionDataRelationshipsRecurringOrderCopies, bool) {
+	if o == nil || IsNil(o.RecurringOrderCopies) {
+		return nil, false
+	}
+	return o.RecurringOrderCopies, true
+}
+
+// HasRecurringOrderCopies returns a boolean if a field has been set.
+func (o *OrderSubscriptionDataRelationships) HasRecurringOrderCopies() bool {
+	if o != nil && !IsNil(o.RecurringOrderCopies) {
+		return true
+	}
+
+	return false
+}
+
+// SetRecurringOrderCopies gets a reference to the given OrderSubscriptionDataRelationshipsRecurringOrderCopies and assigns it to the RecurringOrderCopies field.
+func (o *OrderSubscriptionDataRelationships) SetRecurringOrderCopies(v OrderSubscriptionDataRelationshipsRecurringOrderCopies) {
+	o.RecurringOrderCopies = &v
+}
+
 // GetOrders returns the Orders field value if set, zero value otherwise.
 func (o *OrderSubscriptionDataRelationships) GetOrders() AdyenPaymentDataRelationshipsOrder {
-	if o == nil || o.Orders == nil {
+	if o == nil || IsNil(o.Orders) {
 		var ret AdyenPaymentDataRelationshipsOrder
 		return ret
 	}
@@ -182,7 +354,7 @@ func (o *OrderSubscriptionDataRelationships) GetOrders() AdyenPaymentDataRelatio
 // GetOrdersOk returns a tuple with the Orders field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OrderSubscriptionDataRelationships) GetOrdersOk() (*AdyenPaymentDataRelationshipsOrder, bool) {
-	if o == nil || o.Orders == nil {
+	if o == nil || IsNil(o.Orders) {
 		return nil, false
 	}
 	return o.Orders, true
@@ -190,7 +362,7 @@ func (o *OrderSubscriptionDataRelationships) GetOrdersOk() (*AdyenPaymentDataRel
 
 // HasOrders returns a boolean if a field has been set.
 func (o *OrderSubscriptionDataRelationships) HasOrders() bool {
-	if o != nil && o.Orders != nil {
+	if o != nil && !IsNil(o.Orders) {
 		return true
 	}
 
@@ -204,7 +376,7 @@ func (o *OrderSubscriptionDataRelationships) SetOrders(v AdyenPaymentDataRelatio
 
 // GetEvents returns the Events field value if set, zero value otherwise.
 func (o *OrderSubscriptionDataRelationships) GetEvents() AuthorizationDataRelationshipsEvents {
-	if o == nil || o.Events == nil {
+	if o == nil || IsNil(o.Events) {
 		var ret AuthorizationDataRelationshipsEvents
 		return ret
 	}
@@ -214,7 +386,7 @@ func (o *OrderSubscriptionDataRelationships) GetEvents() AuthorizationDataRelati
 // GetEventsOk returns a tuple with the Events field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *OrderSubscriptionDataRelationships) GetEventsOk() (*AuthorizationDataRelationshipsEvents, bool) {
-	if o == nil || o.Events == nil {
+	if o == nil || IsNil(o.Events) {
 		return nil, false
 	}
 	return o.Events, true
@@ -222,7 +394,7 @@ func (o *OrderSubscriptionDataRelationships) GetEventsOk() (*AuthorizationDataRe
 
 // HasEvents returns a boolean if a field has been set.
 func (o *OrderSubscriptionDataRelationships) HasEvents() bool {
-	if o != nil && o.Events != nil {
+	if o != nil && !IsNil(o.Events) {
 		return true
 	}
 
@@ -235,26 +407,49 @@ func (o *OrderSubscriptionDataRelationships) SetEvents(v AuthorizationDataRelati
 }
 
 func (o OrderSubscriptionDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Market != nil {
-		toSerialize["market"] = o.Market
-	}
-	if o.SourceOrder != nil {
-		toSerialize["source_order"] = o.SourceOrder
-	}
-	if o.Customer != nil {
-		toSerialize["customer"] = o.Customer
-	}
-	if o.OrderCopies != nil {
-		toSerialize["order_copies"] = o.OrderCopies
-	}
-	if o.Orders != nil {
-		toSerialize["orders"] = o.Orders
-	}
-	if o.Events != nil {
-		toSerialize["events"] = o.Events
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o OrderSubscriptionDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Market) {
+		toSerialize["market"] = o.Market
+	}
+	if !IsNil(o.SubscriptionModel) {
+		toSerialize["subscription_model"] = o.SubscriptionModel
+	}
+	if !IsNil(o.SourceOrder) {
+		toSerialize["source_order"] = o.SourceOrder
+	}
+	if !IsNil(o.Customer) {
+		toSerialize["customer"] = o.Customer
+	}
+	if !IsNil(o.CustomerPaymentSource) {
+		toSerialize["customer_payment_source"] = o.CustomerPaymentSource
+	}
+	if !IsNil(o.OrderSubscriptionItems) {
+		toSerialize["order_subscription_items"] = o.OrderSubscriptionItems
+	}
+	if !IsNil(o.OrderFactories) {
+		toSerialize["order_factories"] = o.OrderFactories
+	}
+	if !IsNil(o.OrderCopies) {
+		toSerialize["order_copies"] = o.OrderCopies
+	}
+	if !IsNil(o.RecurringOrderCopies) {
+		toSerialize["recurring_order_copies"] = o.RecurringOrderCopies
+	}
+	if !IsNil(o.Orders) {
+		toSerialize["orders"] = o.Orders
+	}
+	if !IsNil(o.Events) {
+		toSerialize["events"] = o.Events
+	}
+	return toSerialize, nil
 }
 
 type NullableOrderSubscriptionDataRelationships struct {

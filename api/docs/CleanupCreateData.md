@@ -4,15 +4,15 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
+**Type** | **interface{}** | The resource&#39;s type | 
 **Attributes** | [**POSTCleanups201ResponseDataAttributes**](POSTCleanups201ResponseDataAttributes.md) |  | 
-**Relationships** | Pointer to **map[string]interface{}** |  | [optional] 
+**Relationships** | Pointer to **interface{}** |  | [optional] 
 
 ## Methods
 
 ### NewCleanupCreateData
 
-`func NewCleanupCreateData(type_ string, attributes POSTCleanups201ResponseDataAttributes, ) *CleanupCreateData`
+`func NewCleanupCreateData(type_ interface{}, attributes POSTCleanups201ResponseDataAttributes, ) *CleanupCreateData`
 
 NewCleanupCreateData instantiates a new CleanupCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -29,24 +29,34 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *CleanupCreateData) GetType() string`
+`func (o *CleanupCreateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *CleanupCreateData) GetTypeOk() (*string, bool)`
+`func (o *CleanupCreateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *CleanupCreateData) SetType(v string)`
+`func (o *CleanupCreateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *CleanupCreateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *CleanupCreateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
 `func (o *CleanupCreateData) GetAttributes() POSTCleanups201ResponseDataAttributes`
@@ -69,20 +79,20 @@ SetAttributes sets Attributes field to given value.
 
 ### GetRelationships
 
-`func (o *CleanupCreateData) GetRelationships() map[string]interface{}`
+`func (o *CleanupCreateData) GetRelationships() interface{}`
 
 GetRelationships returns the Relationships field if non-nil, zero value otherwise.
 
 ### GetRelationshipsOk
 
-`func (o *CleanupCreateData) GetRelationshipsOk() (*map[string]interface{}, bool)`
+`func (o *CleanupCreateData) GetRelationshipsOk() (*interface{}, bool)`
 
 GetRelationshipsOk returns a tuple with the Relationships field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetRelationships
 
-`func (o *CleanupCreateData) SetRelationships(v map[string]interface{})`
+`func (o *CleanupCreateData) SetRelationships(v interface{})`
 
 SetRelationships sets Relationships field to given value.
 
@@ -92,6 +102,16 @@ SetRelationships sets Relationships field to given value.
 
 HasRelationships returns a boolean if a field has been set.
 
+### SetRelationshipsNil
+
+`func (o *CleanupCreateData) SetRelationshipsNil(b bool)`
+
+ SetRelationshipsNil sets the value for Relationships to be an explicit nil
+
+### UnsetRelationships
+`func (o *CleanupCreateData) UnsetRelationships()`
+
+UnsetRelationships ensures that no value is present for Relationships, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

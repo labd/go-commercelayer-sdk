@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
+**Type** | **interface{}** | The resource&#39;s type | 
 **Attributes** | [**POSTPackages201ResponseDataAttributes**](POSTPackages201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**PackageCreateDataRelationships**](PackageCreateDataRelationships.md) |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewPackageCreateData
 
-`func NewPackageCreateData(type_ string, attributes POSTPackages201ResponseDataAttributes, ) *PackageCreateData`
+`func NewPackageCreateData(type_ interface{}, attributes POSTPackages201ResponseDataAttributes, ) *PackageCreateData`
 
 NewPackageCreateData instantiates a new PackageCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -29,24 +29,34 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *PackageCreateData) GetType() string`
+`func (o *PackageCreateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *PackageCreateData) GetTypeOk() (*string, bool)`
+`func (o *PackageCreateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *PackageCreateData) SetType(v string)`
+`func (o *PackageCreateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *PackageCreateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *PackageCreateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
 `func (o *PackageCreateData) GetAttributes() POSTPackages201ResponseDataAttributes`

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,12 +15,15 @@ import (
 	"encoding/json"
 )
 
+// checks if the TaxCategoryUpdateData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &TaxCategoryUpdateData{}
+
 // TaxCategoryUpdateData struct for TaxCategoryUpdateData
 type TaxCategoryUpdateData struct {
 	// The resource's type
-	Type string `json:"type"`
+	Type interface{} `json:"type"`
 	// The resource's id
-	Id            string                                                   `json:"id"`
+	Id            interface{}                                              `json:"id"`
 	Attributes    PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes `json:"attributes"`
 	Relationships *TaxCategoryUpdateDataRelationships                      `json:"relationships,omitempty"`
 }
@@ -29,7 +32,7 @@ type TaxCategoryUpdateData struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewTaxCategoryUpdateData(type_ string, id string, attributes PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) *TaxCategoryUpdateData {
+func NewTaxCategoryUpdateData(type_ interface{}, id interface{}, attributes PATCHTaxCategoriesTaxCategoryId200ResponseDataAttributes) *TaxCategoryUpdateData {
 	this := TaxCategoryUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -46,9 +49,10 @@ func NewTaxCategoryUpdateDataWithDefaults() *TaxCategoryUpdateData {
 }
 
 // GetType returns the Type field value
-func (o *TaxCategoryUpdateData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *TaxCategoryUpdateData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -57,22 +61,24 @@ func (o *TaxCategoryUpdateData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *TaxCategoryUpdateData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TaxCategoryUpdateData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *TaxCategoryUpdateData) SetType(v string) {
+func (o *TaxCategoryUpdateData) SetType(v interface{}) {
 	o.Type = v
 }
 
 // GetId returns the Id field value
-func (o *TaxCategoryUpdateData) GetId() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *TaxCategoryUpdateData) GetId() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -81,15 +87,16 @@ func (o *TaxCategoryUpdateData) GetId() string {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *TaxCategoryUpdateData) GetIdOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *TaxCategoryUpdateData) GetIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return &o.Id, true
 }
 
 // SetId sets field value
-func (o *TaxCategoryUpdateData) SetId(v string) {
+func (o *TaxCategoryUpdateData) SetId(v interface{}) {
 	o.Id = v
 }
 
@@ -119,7 +126,7 @@ func (o *TaxCategoryUpdateData) SetAttributes(v PATCHTaxCategoriesTaxCategoryId2
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *TaxCategoryUpdateData) GetRelationships() TaxCategoryUpdateDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret TaxCategoryUpdateDataRelationships
 		return ret
 	}
@@ -129,7 +136,7 @@ func (o *TaxCategoryUpdateData) GetRelationships() TaxCategoryUpdateDataRelation
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *TaxCategoryUpdateData) GetRelationshipsOk() (*TaxCategoryUpdateDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -137,7 +144,7 @@ func (o *TaxCategoryUpdateData) GetRelationshipsOk() (*TaxCategoryUpdateDataRela
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *TaxCategoryUpdateData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -150,20 +157,26 @@ func (o *TaxCategoryUpdateData) SetRelationships(v TaxCategoryUpdateDataRelation
 }
 
 func (o TaxCategoryUpdateData) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
-		toSerialize["relationships"] = o.Relationships
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o TaxCategoryUpdateData) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
+	}
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
+		toSerialize["relationships"] = o.Relationships
+	}
+	return toSerialize, nil
 }
 
 type NullableTaxCategoryUpdateData struct {

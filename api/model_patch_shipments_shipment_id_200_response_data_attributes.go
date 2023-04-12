@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,30 +15,33 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHShipmentsShipmentId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHShipmentsShipmentId200ResponseDataAttributes{}
+
 // PATCHShipmentsShipmentId200ResponseDataAttributes struct for PATCHShipmentsShipmentId200ResponseDataAttributes
 type PATCHShipmentsShipmentId200ResponseDataAttributes struct {
 	// Send this attribute if you want to put this shipment on hold.
-	OnHold *bool `json:"_on_hold,omitempty"`
+	OnHold interface{} `json:"_on_hold,omitempty"`
 	// Send this attribute if you want to start picking this shipment.
-	Picking *bool `json:"_picking,omitempty"`
+	Picking interface{} `json:"_picking,omitempty"`
 	// Send this attribute if you want to start packing this shipment.
-	Packing *bool `json:"_packing,omitempty"`
+	Packing interface{} `json:"_packing,omitempty"`
 	// Send this attribute if you want to mark this shipment as ready to ship.
-	ReadyToShip *bool `json:"_ready_to_ship,omitempty"`
+	ReadyToShip interface{} `json:"_ready_to_ship,omitempty"`
 	// Send this attribute if you want to mark this shipment as shipped.
-	Ship *bool `json:"_ship,omitempty"`
+	Ship interface{} `json:"_ship,omitempty"`
 	// Send this attribute if you want get the shipping rates from the associated carrier accounts.
-	GetRates *bool `json:"_get_rates,omitempty"`
+	GetRates interface{} `json:"_get_rates,omitempty"`
 	// The selected purchase rate from the available shipping rates.
-	SelectedRateId *string `json:"selected_rate_id,omitempty"`
+	SelectedRateId interface{} `json:"selected_rate_id,omitempty"`
 	// Send this attribute if you want to purchase this shipment with the selected rate.
-	Purchase *bool `json:"_purchase,omitempty"`
+	Purchase interface{} `json:"_purchase,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 }
 
 // NewPATCHShipmentsShipmentId200ResponseDataAttributes instantiates a new PATCHShipmentsShipmentId200ResponseDataAttributes object
@@ -58,330 +61,340 @@ func NewPATCHShipmentsShipmentId200ResponseDataAttributesWithDefaults() *PATCHSh
 	return &this
 }
 
-// GetOnHold returns the OnHold field value if set, zero value otherwise.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetOnHold() bool {
-	if o == nil || o.OnHold == nil {
-		var ret bool
+// GetOnHold returns the OnHold field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetOnHold() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.OnHold
+	return o.OnHold
 }
 
 // GetOnHoldOk returns a tuple with the OnHold field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetOnHoldOk() (*bool, bool) {
-	if o == nil || o.OnHold == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetOnHoldOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.OnHold) {
 		return nil, false
 	}
-	return o.OnHold, true
+	return &o.OnHold, true
 }
 
 // HasOnHold returns a boolean if a field has been set.
 func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) HasOnHold() bool {
-	if o != nil && o.OnHold != nil {
+	if o != nil && IsNil(o.OnHold) {
 		return true
 	}
 
 	return false
 }
 
-// SetOnHold gets a reference to the given bool and assigns it to the OnHold field.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetOnHold(v bool) {
-	o.OnHold = &v
+// SetOnHold gets a reference to the given interface{} and assigns it to the OnHold field.
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetOnHold(v interface{}) {
+	o.OnHold = v
 }
 
-// GetPicking returns the Picking field value if set, zero value otherwise.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetPicking() bool {
-	if o == nil || o.Picking == nil {
-		var ret bool
+// GetPicking returns the Picking field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetPicking() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Picking
+	return o.Picking
 }
 
 // GetPickingOk returns a tuple with the Picking field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetPickingOk() (*bool, bool) {
-	if o == nil || o.Picking == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetPickingOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Picking) {
 		return nil, false
 	}
-	return o.Picking, true
+	return &o.Picking, true
 }
 
 // HasPicking returns a boolean if a field has been set.
 func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) HasPicking() bool {
-	if o != nil && o.Picking != nil {
+	if o != nil && IsNil(o.Picking) {
 		return true
 	}
 
 	return false
 }
 
-// SetPicking gets a reference to the given bool and assigns it to the Picking field.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetPicking(v bool) {
-	o.Picking = &v
+// SetPicking gets a reference to the given interface{} and assigns it to the Picking field.
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetPicking(v interface{}) {
+	o.Picking = v
 }
 
-// GetPacking returns the Packing field value if set, zero value otherwise.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetPacking() bool {
-	if o == nil || o.Packing == nil {
-		var ret bool
+// GetPacking returns the Packing field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetPacking() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Packing
+	return o.Packing
 }
 
 // GetPackingOk returns a tuple with the Packing field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetPackingOk() (*bool, bool) {
-	if o == nil || o.Packing == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetPackingOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Packing) {
 		return nil, false
 	}
-	return o.Packing, true
+	return &o.Packing, true
 }
 
 // HasPacking returns a boolean if a field has been set.
 func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) HasPacking() bool {
-	if o != nil && o.Packing != nil {
+	if o != nil && IsNil(o.Packing) {
 		return true
 	}
 
 	return false
 }
 
-// SetPacking gets a reference to the given bool and assigns it to the Packing field.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetPacking(v bool) {
-	o.Packing = &v
+// SetPacking gets a reference to the given interface{} and assigns it to the Packing field.
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetPacking(v interface{}) {
+	o.Packing = v
 }
 
-// GetReadyToShip returns the ReadyToShip field value if set, zero value otherwise.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetReadyToShip() bool {
-	if o == nil || o.ReadyToShip == nil {
-		var ret bool
+// GetReadyToShip returns the ReadyToShip field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetReadyToShip() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReadyToShip
+	return o.ReadyToShip
 }
 
 // GetReadyToShipOk returns a tuple with the ReadyToShip field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetReadyToShipOk() (*bool, bool) {
-	if o == nil || o.ReadyToShip == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetReadyToShipOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReadyToShip) {
 		return nil, false
 	}
-	return o.ReadyToShip, true
+	return &o.ReadyToShip, true
 }
 
 // HasReadyToShip returns a boolean if a field has been set.
 func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) HasReadyToShip() bool {
-	if o != nil && o.ReadyToShip != nil {
+	if o != nil && IsNil(o.ReadyToShip) {
 		return true
 	}
 
 	return false
 }
 
-// SetReadyToShip gets a reference to the given bool and assigns it to the ReadyToShip field.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetReadyToShip(v bool) {
-	o.ReadyToShip = &v
+// SetReadyToShip gets a reference to the given interface{} and assigns it to the ReadyToShip field.
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetReadyToShip(v interface{}) {
+	o.ReadyToShip = v
 }
 
-// GetShip returns the Ship field value if set, zero value otherwise.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetShip() bool {
-	if o == nil || o.Ship == nil {
-		var ret bool
+// GetShip returns the Ship field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetShip() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Ship
+	return o.Ship
 }
 
 // GetShipOk returns a tuple with the Ship field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetShipOk() (*bool, bool) {
-	if o == nil || o.Ship == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetShipOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Ship) {
 		return nil, false
 	}
-	return o.Ship, true
+	return &o.Ship, true
 }
 
 // HasShip returns a boolean if a field has been set.
 func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) HasShip() bool {
-	if o != nil && o.Ship != nil {
+	if o != nil && IsNil(o.Ship) {
 		return true
 	}
 
 	return false
 }
 
-// SetShip gets a reference to the given bool and assigns it to the Ship field.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetShip(v bool) {
-	o.Ship = &v
+// SetShip gets a reference to the given interface{} and assigns it to the Ship field.
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetShip(v interface{}) {
+	o.Ship = v
 }
 
-// GetGetRates returns the GetRates field value if set, zero value otherwise.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetGetRates() bool {
-	if o == nil || o.GetRates == nil {
-		var ret bool
+// GetGetRates returns the GetRates field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetGetRates() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.GetRates
+	return o.GetRates
 }
 
 // GetGetRatesOk returns a tuple with the GetRates field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetGetRatesOk() (*bool, bool) {
-	if o == nil || o.GetRates == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetGetRatesOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.GetRates) {
 		return nil, false
 	}
-	return o.GetRates, true
+	return &o.GetRates, true
 }
 
 // HasGetRates returns a boolean if a field has been set.
 func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) HasGetRates() bool {
-	if o != nil && o.GetRates != nil {
+	if o != nil && IsNil(o.GetRates) {
 		return true
 	}
 
 	return false
 }
 
-// SetGetRates gets a reference to the given bool and assigns it to the GetRates field.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetGetRates(v bool) {
-	o.GetRates = &v
+// SetGetRates gets a reference to the given interface{} and assigns it to the GetRates field.
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetGetRates(v interface{}) {
+	o.GetRates = v
 }
 
-// GetSelectedRateId returns the SelectedRateId field value if set, zero value otherwise.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetSelectedRateId() string {
-	if o == nil || o.SelectedRateId == nil {
-		var ret string
+// GetSelectedRateId returns the SelectedRateId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetSelectedRateId() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.SelectedRateId
+	return o.SelectedRateId
 }
 
 // GetSelectedRateIdOk returns a tuple with the SelectedRateId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetSelectedRateIdOk() (*string, bool) {
-	if o == nil || o.SelectedRateId == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetSelectedRateIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.SelectedRateId) {
 		return nil, false
 	}
-	return o.SelectedRateId, true
+	return &o.SelectedRateId, true
 }
 
 // HasSelectedRateId returns a boolean if a field has been set.
 func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) HasSelectedRateId() bool {
-	if o != nil && o.SelectedRateId != nil {
+	if o != nil && IsNil(o.SelectedRateId) {
 		return true
 	}
 
 	return false
 }
 
-// SetSelectedRateId gets a reference to the given string and assigns it to the SelectedRateId field.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetSelectedRateId(v string) {
-	o.SelectedRateId = &v
+// SetSelectedRateId gets a reference to the given interface{} and assigns it to the SelectedRateId field.
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetSelectedRateId(v interface{}) {
+	o.SelectedRateId = v
 }
 
-// GetPurchase returns the Purchase field value if set, zero value otherwise.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetPurchase() bool {
-	if o == nil || o.Purchase == nil {
-		var ret bool
+// GetPurchase returns the Purchase field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetPurchase() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Purchase
+	return o.Purchase
 }
 
 // GetPurchaseOk returns a tuple with the Purchase field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetPurchaseOk() (*bool, bool) {
-	if o == nil || o.Purchase == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetPurchaseOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Purchase) {
 		return nil, false
 	}
-	return o.Purchase, true
+	return &o.Purchase, true
 }
 
 // HasPurchase returns a boolean if a field has been set.
 func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) HasPurchase() bool {
-	if o != nil && o.Purchase != nil {
+	if o != nil && IsNil(o.Purchase) {
 		return true
 	}
 
 	return false
 }
 
-// SetPurchase gets a reference to the given bool and assigns it to the Purchase field.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetPurchase(v bool) {
-	o.Purchase = &v
+// SetPurchase gets a reference to the given interface{} and assigns it to the Purchase field.
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetPurchase(v interface{}) {
+	o.Purchase = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -389,28 +402,37 @@ func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetMetadata() map[st
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *PATCHShipmentsShipmentId200ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 func (o PATCHShipmentsShipmentId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHShipmentsShipmentId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.OnHold != nil {
 		toSerialize["_on_hold"] = o.OnHold
@@ -445,7 +467,7 @@ func (o PATCHShipmentsShipmentId200ResponseDataAttributes) MarshalJSON() ([]byte
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHShipmentsShipmentId200ResponseDataAttributes struct {

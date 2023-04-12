@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the CustomerGroupDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &CustomerGroupDataRelationships{}
 
 // CustomerGroupDataRelationships struct for CustomerGroupDataRelationships
 type CustomerGroupDataRelationships struct {
@@ -41,7 +44,7 @@ func NewCustomerGroupDataRelationshipsWithDefaults() *CustomerGroupDataRelations
 
 // GetCustomers returns the Customers field value if set, zero value otherwise.
 func (o *CustomerGroupDataRelationships) GetCustomers() CouponRecipientDataRelationshipsCustomer {
-	if o == nil || o.Customers == nil {
+	if o == nil || IsNil(o.Customers) {
 		var ret CouponRecipientDataRelationshipsCustomer
 		return ret
 	}
@@ -51,7 +54,7 @@ func (o *CustomerGroupDataRelationships) GetCustomers() CouponRecipientDataRelat
 // GetCustomersOk returns a tuple with the Customers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerGroupDataRelationships) GetCustomersOk() (*CouponRecipientDataRelationshipsCustomer, bool) {
-	if o == nil || o.Customers == nil {
+	if o == nil || IsNil(o.Customers) {
 		return nil, false
 	}
 	return o.Customers, true
@@ -59,7 +62,7 @@ func (o *CustomerGroupDataRelationships) GetCustomersOk() (*CouponRecipientDataR
 
 // HasCustomers returns a boolean if a field has been set.
 func (o *CustomerGroupDataRelationships) HasCustomers() bool {
-	if o != nil && o.Customers != nil {
+	if o != nil && !IsNil(o.Customers) {
 		return true
 	}
 
@@ -73,7 +76,7 @@ func (o *CustomerGroupDataRelationships) SetCustomers(v CouponRecipientDataRelat
 
 // GetMarkets returns the Markets field value if set, zero value otherwise.
 func (o *CustomerGroupDataRelationships) GetMarkets() AvalaraAccountDataRelationshipsMarkets {
-	if o == nil || o.Markets == nil {
+	if o == nil || IsNil(o.Markets) {
 		var ret AvalaraAccountDataRelationshipsMarkets
 		return ret
 	}
@@ -83,7 +86,7 @@ func (o *CustomerGroupDataRelationships) GetMarkets() AvalaraAccountDataRelation
 // GetMarketsOk returns a tuple with the Markets field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerGroupDataRelationships) GetMarketsOk() (*AvalaraAccountDataRelationshipsMarkets, bool) {
-	if o == nil || o.Markets == nil {
+	if o == nil || IsNil(o.Markets) {
 		return nil, false
 	}
 	return o.Markets, true
@@ -91,7 +94,7 @@ func (o *CustomerGroupDataRelationships) GetMarketsOk() (*AvalaraAccountDataRela
 
 // HasMarkets returns a boolean if a field has been set.
 func (o *CustomerGroupDataRelationships) HasMarkets() bool {
-	if o != nil && o.Markets != nil {
+	if o != nil && !IsNil(o.Markets) {
 		return true
 	}
 
@@ -105,7 +108,7 @@ func (o *CustomerGroupDataRelationships) SetMarkets(v AvalaraAccountDataRelation
 
 // GetAttachments returns the Attachments field value if set, zero value otherwise.
 func (o *CustomerGroupDataRelationships) GetAttachments() AvalaraAccountDataRelationshipsAttachments {
-	if o == nil || o.Attachments == nil {
+	if o == nil || IsNil(o.Attachments) {
 		var ret AvalaraAccountDataRelationshipsAttachments
 		return ret
 	}
@@ -115,7 +118,7 @@ func (o *CustomerGroupDataRelationships) GetAttachments() AvalaraAccountDataRela
 // GetAttachmentsOk returns a tuple with the Attachments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *CustomerGroupDataRelationships) GetAttachmentsOk() (*AvalaraAccountDataRelationshipsAttachments, bool) {
-	if o == nil || o.Attachments == nil {
+	if o == nil || IsNil(o.Attachments) {
 		return nil, false
 	}
 	return o.Attachments, true
@@ -123,7 +126,7 @@ func (o *CustomerGroupDataRelationships) GetAttachmentsOk() (*AvalaraAccountData
 
 // HasAttachments returns a boolean if a field has been set.
 func (o *CustomerGroupDataRelationships) HasAttachments() bool {
-	if o != nil && o.Attachments != nil {
+	if o != nil && !IsNil(o.Attachments) {
 		return true
 	}
 
@@ -136,17 +139,25 @@ func (o *CustomerGroupDataRelationships) SetAttachments(v AvalaraAccountDataRela
 }
 
 func (o CustomerGroupDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Customers != nil {
-		toSerialize["customers"] = o.Customers
-	}
-	if o.Markets != nil {
-		toSerialize["markets"] = o.Markets
-	}
-	if o.Attachments != nil {
-		toSerialize["attachments"] = o.Attachments
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o CustomerGroupDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Customers) {
+		toSerialize["customers"] = o.Customers
+	}
+	if !IsNil(o.Markets) {
+		toSerialize["markets"] = o.Markets
+	}
+	if !IsNil(o.Attachments) {
+		toSerialize["attachments"] = o.Attachments
+	}
+	return toSerialize, nil
 }
 
 type NullableCustomerGroupDataRelationships struct {

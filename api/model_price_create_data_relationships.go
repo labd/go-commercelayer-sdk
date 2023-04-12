@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the PriceCreateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PriceCreateDataRelationships{}
 
 // PriceCreateDataRelationships struct for PriceCreateDataRelationships
 type PriceCreateDataRelationships struct {
@@ -91,7 +94,7 @@ func (o *PriceCreateDataRelationships) SetSku(v InStockSubscriptionCreateDataRel
 
 // GetPriceTiers returns the PriceTiers field value if set, zero value otherwise.
 func (o *PriceCreateDataRelationships) GetPriceTiers() PriceCreateDataRelationshipsPriceTiers {
-	if o == nil || o.PriceTiers == nil {
+	if o == nil || IsNil(o.PriceTiers) {
 		var ret PriceCreateDataRelationshipsPriceTiers
 		return ret
 	}
@@ -101,7 +104,7 @@ func (o *PriceCreateDataRelationships) GetPriceTiers() PriceCreateDataRelationsh
 // GetPriceTiersOk returns a tuple with the PriceTiers field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *PriceCreateDataRelationships) GetPriceTiersOk() (*PriceCreateDataRelationshipsPriceTiers, bool) {
-	if o == nil || o.PriceTiers == nil {
+	if o == nil || IsNil(o.PriceTiers) {
 		return nil, false
 	}
 	return o.PriceTiers, true
@@ -109,7 +112,7 @@ func (o *PriceCreateDataRelationships) GetPriceTiersOk() (*PriceCreateDataRelati
 
 // HasPriceTiers returns a boolean if a field has been set.
 func (o *PriceCreateDataRelationships) HasPriceTiers() bool {
-	if o != nil && o.PriceTiers != nil {
+	if o != nil && !IsNil(o.PriceTiers) {
 		return true
 	}
 
@@ -122,17 +125,21 @@ func (o *PriceCreateDataRelationships) SetPriceTiers(v PriceCreateDataRelationsh
 }
 
 func (o PriceCreateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["price_list"] = o.PriceList
-	}
-	if true {
-		toSerialize["sku"] = o.Sku
-	}
-	if o.PriceTiers != nil {
-		toSerialize["price_tiers"] = o.PriceTiers
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o PriceCreateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["price_list"] = o.PriceList
+	toSerialize["sku"] = o.Sku
+	if !IsNil(o.PriceTiers) {
+		toSerialize["price_tiers"] = o.PriceTiers
+	}
+	return toSerialize, nil
 }
 
 type NullablePriceCreateDataRelationships struct {

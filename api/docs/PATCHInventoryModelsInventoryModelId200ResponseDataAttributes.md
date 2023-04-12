@@ -4,12 +4,12 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Name** | Pointer to **string** | The inventory model&#39;s internal name. | [optional] 
-**Strategy** | Pointer to **string** | The inventory model&#39;s shipping strategy: one between &#39;no_split&#39; (default), &#39;split_shipments&#39;, &#39;ship_from_primary&#39; and &#39;ship_from_first_available_or_primary&#39;. | [optional] 
-**StockLocationsCutoff** | Pointer to **int32** | The maximum number of stock locations used for inventory computation | [optional] 
-**Reference** | Pointer to **string** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
-**ReferenceOrigin** | Pointer to **string** | Any identifier of the third party system that defines the reference code | [optional] 
-**Metadata** | Pointer to **map[string]interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
+**Name** | Pointer to **interface{}** | The inventory model&#39;s internal name. | [optional] 
+**Strategy** | Pointer to **interface{}** | The inventory model&#39;s shipping strategy: one between &#39;no_split&#39; (default), &#39;split_shipments&#39;, &#39;ship_from_primary&#39; and &#39;ship_from_first_available_or_primary&#39;. | [optional] 
+**StockLocationsCutoff** | Pointer to **interface{}** | The maximum number of stock locations used for inventory computation | [optional] 
+**Reference** | Pointer to **interface{}** | A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever. | [optional] 
+**ReferenceOrigin** | Pointer to **interface{}** | Any identifier of the third party system that defines the reference code | [optional] 
+**Metadata** | Pointer to **interface{}** | Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format. | [optional] 
 
 ## Methods
 
@@ -32,20 +32,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetName
 
-`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetName() string`
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetName() interface{}`
 
 GetName returns the Name field if non-nil, zero value otherwise.
 
 ### GetNameOk
 
-`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetNameOk() (*string, bool)`
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetNameOk() (*interface{}, bool)`
 
 GetNameOk returns a tuple with the Name field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetName
 
-`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetName(v string)`
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetName(v interface{})`
 
 SetName sets Name field to given value.
 
@@ -55,22 +55,32 @@ SetName sets Name field to given value.
 
 HasName returns a boolean if a field has been set.
 
+### SetNameNil
+
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetNameNil(b bool)`
+
+ SetNameNil sets the value for Name to be an explicit nil
+
+### UnsetName
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) UnsetName()`
+
+UnsetName ensures that no value is present for Name, not even an explicit nil
 ### GetStrategy
 
-`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetStrategy() string`
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetStrategy() interface{}`
 
 GetStrategy returns the Strategy field if non-nil, zero value otherwise.
 
 ### GetStrategyOk
 
-`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetStrategyOk() (*string, bool)`
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetStrategyOk() (*interface{}, bool)`
 
 GetStrategyOk returns a tuple with the Strategy field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStrategy
 
-`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetStrategy(v string)`
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetStrategy(v interface{})`
 
 SetStrategy sets Strategy field to given value.
 
@@ -80,22 +90,32 @@ SetStrategy sets Strategy field to given value.
 
 HasStrategy returns a boolean if a field has been set.
 
+### SetStrategyNil
+
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetStrategyNil(b bool)`
+
+ SetStrategyNil sets the value for Strategy to be an explicit nil
+
+### UnsetStrategy
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) UnsetStrategy()`
+
+UnsetStrategy ensures that no value is present for Strategy, not even an explicit nil
 ### GetStockLocationsCutoff
 
-`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetStockLocationsCutoff() int32`
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetStockLocationsCutoff() interface{}`
 
 GetStockLocationsCutoff returns the StockLocationsCutoff field if non-nil, zero value otherwise.
 
 ### GetStockLocationsCutoffOk
 
-`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetStockLocationsCutoffOk() (*int32, bool)`
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetStockLocationsCutoffOk() (*interface{}, bool)`
 
 GetStockLocationsCutoffOk returns a tuple with the StockLocationsCutoff field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetStockLocationsCutoff
 
-`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetStockLocationsCutoff(v int32)`
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetStockLocationsCutoff(v interface{})`
 
 SetStockLocationsCutoff sets StockLocationsCutoff field to given value.
 
@@ -105,22 +125,32 @@ SetStockLocationsCutoff sets StockLocationsCutoff field to given value.
 
 HasStockLocationsCutoff returns a boolean if a field has been set.
 
+### SetStockLocationsCutoffNil
+
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetStockLocationsCutoffNil(b bool)`
+
+ SetStockLocationsCutoffNil sets the value for StockLocationsCutoff to be an explicit nil
+
+### UnsetStockLocationsCutoff
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) UnsetStockLocationsCutoff()`
+
+UnsetStockLocationsCutoff ensures that no value is present for StockLocationsCutoff, not even an explicit nil
 ### GetReference
 
-`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetReference() string`
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetReference() interface{}`
 
 GetReference returns the Reference field if non-nil, zero value otherwise.
 
 ### GetReferenceOk
 
-`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetReferenceOk() (*string, bool)`
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool)`
 
 GetReferenceOk returns a tuple with the Reference field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReference
 
-`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetReference(v string)`
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetReference(v interface{})`
 
 SetReference sets Reference field to given value.
 
@@ -130,22 +160,32 @@ SetReference sets Reference field to given value.
 
 HasReference returns a boolean if a field has been set.
 
+### SetReferenceNil
+
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetReferenceNil(b bool)`
+
+ SetReferenceNil sets the value for Reference to be an explicit nil
+
+### UnsetReference
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) UnsetReference()`
+
+UnsetReference ensures that no value is present for Reference, not even an explicit nil
 ### GetReferenceOrigin
 
-`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetReferenceOrigin() string`
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetReferenceOrigin() interface{}`
 
 GetReferenceOrigin returns the ReferenceOrigin field if non-nil, zero value otherwise.
 
 ### GetReferenceOriginOk
 
-`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetReferenceOriginOk() (*string, bool)`
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool)`
 
 GetReferenceOriginOk returns a tuple with the ReferenceOrigin field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetReferenceOrigin
 
-`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetReferenceOrigin(v string)`
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetReferenceOrigin(v interface{})`
 
 SetReferenceOrigin sets ReferenceOrigin field to given value.
 
@@ -155,22 +195,32 @@ SetReferenceOrigin sets ReferenceOrigin field to given value.
 
 HasReferenceOrigin returns a boolean if a field has been set.
 
+### SetReferenceOriginNil
+
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetReferenceOriginNil(b bool)`
+
+ SetReferenceOriginNil sets the value for ReferenceOrigin to be an explicit nil
+
+### UnsetReferenceOrigin
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) UnsetReferenceOrigin()`
+
+UnsetReferenceOrigin ensures that no value is present for ReferenceOrigin, not even an explicit nil
 ### GetMetadata
 
-`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetMetadata() map[string]interface{}`
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetMetadata() interface{}`
 
 GetMetadata returns the Metadata field if non-nil, zero value otherwise.
 
 ### GetMetadataOk
 
-`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetMetadataOk() (*map[string]interface{}, bool)`
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool)`
 
 GetMetadataOk returns a tuple with the Metadata field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetMetadata
 
-`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetMetadata(v map[string]interface{})`
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetMetadata(v interface{})`
 
 SetMetadata sets Metadata field to given value.
 
@@ -180,6 +230,16 @@ SetMetadata sets Metadata field to given value.
 
 HasMetadata returns a boolean if a field has been set.
 
+### SetMetadataNil
+
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) SetMetadataNil(b bool)`
+
+ SetMetadataNil sets the value for Metadata to be an explicit nil
+
+### UnsetMetadata
+`func (o *PATCHInventoryModelsInventoryModelId200ResponseDataAttributes) UnsetMetadata()`
+
+UnsetMetadata ensures that no value is present for Metadata, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

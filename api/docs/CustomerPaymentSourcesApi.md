@@ -1,6 +1,6 @@
 # \CustomerPaymentSourcesApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**GETCustomerPaymentSourcesCustomerPaymentSourceId**](CustomerPaymentSourcesApi.md#GETCustomerPaymentSourcesCustomerPaymentSourceId) | **Get** /customer_payment_sources/{customerPaymentSourceId} | Retrieve a customer payment source
 [**GETExternalPaymentIdWallet**](CustomerPaymentSourcesApi.md#GETExternalPaymentIdWallet) | **Get** /external_payments/{externalPaymentId}/wallet | Retrieve the wallet associated to the external payment
 [**GETOrderIdAvailableCustomerPaymentSources**](CustomerPaymentSourcesApi.md#GETOrderIdAvailableCustomerPaymentSources) | **Get** /orders/{orderId}/available_customer_payment_sources | Retrieve the available customer payment sources associated to the order
+[**GETOrderSubscriptionIdCustomerPaymentSource**](CustomerPaymentSourcesApi.md#GETOrderSubscriptionIdCustomerPaymentSource) | **Get** /order_subscriptions/{orderSubscriptionId}/customer_payment_source | Retrieve the customer payment source associated to the order subscription
 [**PATCHCustomerPaymentSourcesCustomerPaymentSourceId**](CustomerPaymentSourcesApi.md#PATCHCustomerPaymentSourcesCustomerPaymentSourceId) | **Patch** /customer_payment_sources/{customerPaymentSourceId} | Update a customer payment source
 [**POSTCustomerPaymentSources**](CustomerPaymentSourcesApi.md#POSTCustomerPaymentSources) | **Post** /customer_payment_sources | Create a customer payment source
 
@@ -32,15 +33,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    customerPaymentSourceId := "customerPaymentSourceId_example" // string | The resource's id
+    customerPaymentSourceId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomerPaymentSourcesApi.DELETECustomerPaymentSourcesCustomerPaymentSourceId(context.Background(), customerPaymentSourceId).Execute()
+    r, err := apiClient.CustomerPaymentSourcesApi.DELETECustomerPaymentSourcesCustomerPaymentSourceId(context.Background(), customerPaymentSourceId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPaymentSourcesApi.DELETECustomerPaymentSourcesCustomerPaymentSourceId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -54,7 +55,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**customerPaymentSourceId** | **string** | The resource&#39;s id | 
+**customerPaymentSourceId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -100,15 +101,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    customerId := "customerId_example" // string | The resource's id
+    customerId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomerPaymentSourcesApi.GETCustomerIdCustomerPaymentSources(context.Background(), customerId).Execute()
+    r, err := apiClient.CustomerPaymentSourcesApi.GETCustomerIdCustomerPaymentSources(context.Background(), customerId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPaymentSourcesApi.GETCustomerIdCustomerPaymentSources``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -122,7 +123,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**customerId** | **string** | The resource&#39;s id | 
+**customerId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -168,7 +169,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -229,11 +230,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    customerPaymentSourceId := "customerPaymentSourceId_example" // string | The resource's id
+    customerPaymentSourceId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -253,7 +254,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**customerPaymentSourceId** | **string** | The resource&#39;s id | 
+**customerPaymentSourceId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -299,15 +300,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    externalPaymentId := "externalPaymentId_example" // string | The resource's id
+    externalPaymentId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomerPaymentSourcesApi.GETExternalPaymentIdWallet(context.Background(), externalPaymentId).Execute()
+    r, err := apiClient.CustomerPaymentSourcesApi.GETExternalPaymentIdWallet(context.Background(), externalPaymentId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPaymentSourcesApi.GETExternalPaymentIdWallet``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -321,7 +322,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**externalPaymentId** | **string** | The resource&#39;s id | 
+**externalPaymentId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -367,15 +368,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    orderId := "orderId_example" // string | The resource's id
+    orderId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.CustomerPaymentSourcesApi.GETOrderIdAvailableCustomerPaymentSources(context.Background(), orderId).Execute()
+    r, err := apiClient.CustomerPaymentSourcesApi.GETOrderIdAvailableCustomerPaymentSources(context.Background(), orderId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPaymentSourcesApi.GETOrderIdAvailableCustomerPaymentSources``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -389,7 +390,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**orderId** | **string** | The resource&#39;s id | 
+**orderId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -418,9 +419,77 @@ Name | Type | Description  | Notes
 [[Back to README]](../README.md)
 
 
+## GETOrderSubscriptionIdCustomerPaymentSource
+
+> GETOrderSubscriptionIdCustomerPaymentSource(ctx, orderSubscriptionId).Execute()
+
+Retrieve the customer payment source associated to the order subscription
+
+
+
+### Example
+
+```go
+package main
+
+import (
+    "context"
+    "fmt"
+    "os"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
+)
+
+func main() {
+    orderSubscriptionId := TODO // interface{} | The resource's id
+
+    configuration := openapiclient.NewConfiguration()
+    apiClient := openapiclient.NewAPIClient(configuration)
+    r, err := apiClient.CustomerPaymentSourcesApi.GETOrderSubscriptionIdCustomerPaymentSource(context.Background(), orderSubscriptionId).Execute()
+    if err != nil {
+        fmt.Fprintf(os.Stderr, "Error when calling `CustomerPaymentSourcesApi.GETOrderSubscriptionIdCustomerPaymentSource``: %v\n", err)
+        fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
+    }
+}
+```
+
+### Path Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+**ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
+**orderSubscriptionId** | [**interface{}**](.md) | The resource&#39;s id | 
+
+### Other Parameters
+
+Other parameters are passed through a pointer to a apiGETOrderSubscriptionIdCustomerPaymentSourceRequest struct via the builder pattern
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+
+
+### Return type
+
+ (empty response body)
+
+### Authorization
+
+[bearerAuth](../README.md#bearerAuth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: Not defined
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints)
+[[Back to Model list]](../README.md#documentation-for-models)
+[[Back to README]](../README.md)
+
+
 ## PATCHCustomerPaymentSourcesCustomerPaymentSourceId
 
-> POSTCustomerPaymentSources201Response PATCHCustomerPaymentSourcesCustomerPaymentSourceId(ctx, customerPaymentSourceId).CustomerPaymentSourceUpdate(customerPaymentSourceUpdate).Execute()
+> PATCHCustomerPaymentSourcesCustomerPaymentSourceId200Response PATCHCustomerPaymentSourcesCustomerPaymentSourceId(ctx, customerPaymentSourceId).CustomerPaymentSourceUpdate(customerPaymentSourceUpdate).Execute()
 
 Update a customer payment source
 
@@ -435,12 +504,12 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    customerPaymentSourceUpdate := *openapiclient.NewCustomerPaymentSourceUpdate(*openapiclient.NewCustomerPaymentSourceUpdateData("Type_example", "XGZwpOSrWL", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CustomerPaymentSourceUpdate | 
-    customerPaymentSourceId := "customerPaymentSourceId_example" // string | The resource's id
+    customerPaymentSourceUpdate := *openapiclient.NewCustomerPaymentSourceUpdate(*openapiclient.NewCustomerPaymentSourceUpdateData(interface{}(123), interface{}(XGZwpOSrWL), *openapiclient.NewPATCHBillingInfoValidationRulesBillingInfoValidationRuleId200ResponseDataAttributes())) // CustomerPaymentSourceUpdate | 
+    customerPaymentSourceId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -449,7 +518,7 @@ func main() {
         fmt.Fprintf(os.Stderr, "Error when calling `CustomerPaymentSourcesApi.PATCHCustomerPaymentSourcesCustomerPaymentSourceId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
     }
-    // response from `PATCHCustomerPaymentSourcesCustomerPaymentSourceId`: POSTCustomerPaymentSources201Response
+    // response from `PATCHCustomerPaymentSourcesCustomerPaymentSourceId`: PATCHCustomerPaymentSourcesCustomerPaymentSourceId200Response
     fmt.Fprintf(os.Stdout, "Response from `CustomerPaymentSourcesApi.PATCHCustomerPaymentSourcesCustomerPaymentSourceId`: %v\n", resp)
 }
 ```
@@ -460,7 +529,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**customerPaymentSourceId** | **string** | The resource&#39;s id | 
+**customerPaymentSourceId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -474,7 +543,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**POSTCustomerPaymentSources201Response**](POSTCustomerPaymentSources201Response.md)
+[**PATCHCustomerPaymentSourcesCustomerPaymentSourceId200Response**](PATCHCustomerPaymentSourcesCustomerPaymentSourceId200Response.md)
 
 ### Authorization
 
@@ -507,11 +576,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    customerPaymentSourceCreate := *openapiclient.NewCustomerPaymentSourceCreate(*openapiclient.NewCustomerPaymentSourceCreateData("Type_example", *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CustomerPaymentSourceCreate | 
+    customerPaymentSourceCreate := *openapiclient.NewCustomerPaymentSourceCreate(*openapiclient.NewCustomerPaymentSourceCreateData(interface{}(123), *openapiclient.NewPOSTAdyenPayments201ResponseDataAttributes())) // CustomerPaymentSourceCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

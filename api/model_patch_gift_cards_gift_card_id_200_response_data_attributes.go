@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,38 +15,41 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHGiftCardsGiftCardId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHGiftCardsGiftCardId200ResponseDataAttributes{}
+
 // PATCHGiftCardsGiftCardId200ResponseDataAttributes struct for PATCHGiftCardsGiftCardId200ResponseDataAttributes
 type PATCHGiftCardsGiftCardId200ResponseDataAttributes struct {
 	// The international 3-letter currency code as defined by the ISO 4217 standard.
-	CurrencyCode *string `json:"currency_code,omitempty"`
+	CurrencyCode interface{} `json:"currency_code,omitempty"`
 	// The gift card balance, in cents.
-	BalanceCents *int32 `json:"balance_cents,omitempty"`
+	BalanceCents interface{} `json:"balance_cents,omitempty"`
 	// The gift card balance max, in cents.
-	BalanceMaxCents *string `json:"balance_max_cents,omitempty"`
+	BalanceMaxCents interface{} `json:"balance_max_cents,omitempty"`
 	// Indicates if the gift card can be used only one.
-	SingleUse *bool `json:"single_use,omitempty"`
+	SingleUse interface{} `json:"single_use,omitempty"`
 	// Indicates if the gift card can be recharged.
-	Rechargeable *bool `json:"rechargeable,omitempty"`
+	Rechargeable interface{} `json:"rechargeable,omitempty"`
 	// The URL of an image that represents the gift card.
-	ImageUrl *string `json:"image_url,omitempty"`
+	ImageUrl interface{} `json:"image_url,omitempty"`
 	// Time at which the gift card will expire.
-	ExpiresAt *string `json:"expires_at,omitempty"`
+	ExpiresAt interface{} `json:"expires_at,omitempty"`
 	// The email address of the associated recipient. When creating or updating a gift card, this is a shortcut to find or create the associated recipient by email.
-	RecipientEmail *string `json:"recipient_email,omitempty"`
+	RecipientEmail interface{} `json:"recipient_email,omitempty"`
 	// Send this attribute if you want to confirm a draft gift card. The gift card becomes 'inactive', waiting to be activated.
-	Purchase *bool `json:"_purchase,omitempty"`
+	Purchase interface{} `json:"_purchase,omitempty"`
 	// Send this attribute if you want to activate a gift card.
-	Activate *bool `json:"_activate,omitempty"`
+	Activate interface{} `json:"_activate,omitempty"`
 	// Send this attribute if you want to deactivate a gift card.
-	Deactivate *bool `json:"_deactivate,omitempty"`
+	Deactivate interface{} `json:"_deactivate,omitempty"`
 	// The balance change, in cents. Send a negative value to reduces the card balance by the specified amount. Send a positive value to recharge the gift card (if rechargeable).
-	BalanceChangeCents *int32 `json:"_balance_change_cents,omitempty"`
+	BalanceChangeCents interface{} `json:"_balance_change_cents,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 }
 
 // NewPATCHGiftCardsGiftCardId200ResponseDataAttributes instantiates a new PATCHGiftCardsGiftCardId200ResponseDataAttributes object
@@ -66,458 +69,472 @@ func NewPATCHGiftCardsGiftCardId200ResponseDataAttributesWithDefaults() *PATCHGi
 	return &this
 }
 
-// GetCurrencyCode returns the CurrencyCode field value if set, zero value otherwise.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetCurrencyCode() string {
-	if o == nil || o.CurrencyCode == nil {
-		var ret string
+// GetCurrencyCode returns the CurrencyCode field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetCurrencyCode() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CurrencyCode
+	return o.CurrencyCode
 }
 
 // GetCurrencyCodeOk returns a tuple with the CurrencyCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetCurrencyCodeOk() (*string, bool) {
-	if o == nil || o.CurrencyCode == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetCurrencyCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CurrencyCode) {
 		return nil, false
 	}
-	return o.CurrencyCode, true
+	return &o.CurrencyCode, true
 }
 
 // HasCurrencyCode returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasCurrencyCode() bool {
-	if o != nil && o.CurrencyCode != nil {
+	if o != nil && IsNil(o.CurrencyCode) {
 		return true
 	}
 
 	return false
 }
 
-// SetCurrencyCode gets a reference to the given string and assigns it to the CurrencyCode field.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetCurrencyCode(v string) {
-	o.CurrencyCode = &v
+// SetCurrencyCode gets a reference to the given interface{} and assigns it to the CurrencyCode field.
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetCurrencyCode(v interface{}) {
+	o.CurrencyCode = v
 }
 
-// GetBalanceCents returns the BalanceCents field value if set, zero value otherwise.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetBalanceCents() int32 {
-	if o == nil || o.BalanceCents == nil {
-		var ret int32
+// GetBalanceCents returns the BalanceCents field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetBalanceCents() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.BalanceCents
+	return o.BalanceCents
 }
 
 // GetBalanceCentsOk returns a tuple with the BalanceCents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetBalanceCentsOk() (*int32, bool) {
-	if o == nil || o.BalanceCents == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetBalanceCentsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.BalanceCents) {
 		return nil, false
 	}
-	return o.BalanceCents, true
+	return &o.BalanceCents, true
 }
 
 // HasBalanceCents returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasBalanceCents() bool {
-	if o != nil && o.BalanceCents != nil {
+	if o != nil && IsNil(o.BalanceCents) {
 		return true
 	}
 
 	return false
 }
 
-// SetBalanceCents gets a reference to the given int32 and assigns it to the BalanceCents field.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetBalanceCents(v int32) {
-	o.BalanceCents = &v
+// SetBalanceCents gets a reference to the given interface{} and assigns it to the BalanceCents field.
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetBalanceCents(v interface{}) {
+	o.BalanceCents = v
 }
 
-// GetBalanceMaxCents returns the BalanceMaxCents field value if set, zero value otherwise.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetBalanceMaxCents() string {
-	if o == nil || o.BalanceMaxCents == nil {
-		var ret string
+// GetBalanceMaxCents returns the BalanceMaxCents field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetBalanceMaxCents() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.BalanceMaxCents
+	return o.BalanceMaxCents
 }
 
 // GetBalanceMaxCentsOk returns a tuple with the BalanceMaxCents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetBalanceMaxCentsOk() (*string, bool) {
-	if o == nil || o.BalanceMaxCents == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetBalanceMaxCentsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.BalanceMaxCents) {
 		return nil, false
 	}
-	return o.BalanceMaxCents, true
+	return &o.BalanceMaxCents, true
 }
 
 // HasBalanceMaxCents returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasBalanceMaxCents() bool {
-	if o != nil && o.BalanceMaxCents != nil {
+	if o != nil && IsNil(o.BalanceMaxCents) {
 		return true
 	}
 
 	return false
 }
 
-// SetBalanceMaxCents gets a reference to the given string and assigns it to the BalanceMaxCents field.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetBalanceMaxCents(v string) {
-	o.BalanceMaxCents = &v
+// SetBalanceMaxCents gets a reference to the given interface{} and assigns it to the BalanceMaxCents field.
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetBalanceMaxCents(v interface{}) {
+	o.BalanceMaxCents = v
 }
 
-// GetSingleUse returns the SingleUse field value if set, zero value otherwise.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetSingleUse() bool {
-	if o == nil || o.SingleUse == nil {
-		var ret bool
+// GetSingleUse returns the SingleUse field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetSingleUse() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.SingleUse
+	return o.SingleUse
 }
 
 // GetSingleUseOk returns a tuple with the SingleUse field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetSingleUseOk() (*bool, bool) {
-	if o == nil || o.SingleUse == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetSingleUseOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.SingleUse) {
 		return nil, false
 	}
-	return o.SingleUse, true
+	return &o.SingleUse, true
 }
 
 // HasSingleUse returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasSingleUse() bool {
-	if o != nil && o.SingleUse != nil {
+	if o != nil && IsNil(o.SingleUse) {
 		return true
 	}
 
 	return false
 }
 
-// SetSingleUse gets a reference to the given bool and assigns it to the SingleUse field.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetSingleUse(v bool) {
-	o.SingleUse = &v
+// SetSingleUse gets a reference to the given interface{} and assigns it to the SingleUse field.
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetSingleUse(v interface{}) {
+	o.SingleUse = v
 }
 
-// GetRechargeable returns the Rechargeable field value if set, zero value otherwise.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetRechargeable() bool {
-	if o == nil || o.Rechargeable == nil {
-		var ret bool
+// GetRechargeable returns the Rechargeable field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetRechargeable() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Rechargeable
+	return o.Rechargeable
 }
 
 // GetRechargeableOk returns a tuple with the Rechargeable field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetRechargeableOk() (*bool, bool) {
-	if o == nil || o.Rechargeable == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetRechargeableOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Rechargeable) {
 		return nil, false
 	}
-	return o.Rechargeable, true
+	return &o.Rechargeable, true
 }
 
 // HasRechargeable returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasRechargeable() bool {
-	if o != nil && o.Rechargeable != nil {
+	if o != nil && IsNil(o.Rechargeable) {
 		return true
 	}
 
 	return false
 }
 
-// SetRechargeable gets a reference to the given bool and assigns it to the Rechargeable field.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetRechargeable(v bool) {
-	o.Rechargeable = &v
+// SetRechargeable gets a reference to the given interface{} and assigns it to the Rechargeable field.
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetRechargeable(v interface{}) {
+	o.Rechargeable = v
 }
 
-// GetImageUrl returns the ImageUrl field value if set, zero value otherwise.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetImageUrl() string {
-	if o == nil || o.ImageUrl == nil {
-		var ret string
+// GetImageUrl returns the ImageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetImageUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ImageUrl
+	return o.ImageUrl
 }
 
 // GetImageUrlOk returns a tuple with the ImageUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetImageUrlOk() (*string, bool) {
-	if o == nil || o.ImageUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetImageUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ImageUrl) {
 		return nil, false
 	}
-	return o.ImageUrl, true
+	return &o.ImageUrl, true
 }
 
 // HasImageUrl returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasImageUrl() bool {
-	if o != nil && o.ImageUrl != nil {
+	if o != nil && IsNil(o.ImageUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetImageUrl gets a reference to the given string and assigns it to the ImageUrl field.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetImageUrl(v string) {
-	o.ImageUrl = &v
+// SetImageUrl gets a reference to the given interface{} and assigns it to the ImageUrl field.
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetImageUrl(v interface{}) {
+	o.ImageUrl = v
 }
 
-// GetExpiresAt returns the ExpiresAt field value if set, zero value otherwise.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetExpiresAt() string {
-	if o == nil || o.ExpiresAt == nil {
-		var ret string
+// GetExpiresAt returns the ExpiresAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetExpiresAt() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ExpiresAt
+	return o.ExpiresAt
 }
 
 // GetExpiresAtOk returns a tuple with the ExpiresAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetExpiresAtOk() (*string, bool) {
-	if o == nil || o.ExpiresAt == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetExpiresAtOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ExpiresAt) {
 		return nil, false
 	}
-	return o.ExpiresAt, true
+	return &o.ExpiresAt, true
 }
 
 // HasExpiresAt returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasExpiresAt() bool {
-	if o != nil && o.ExpiresAt != nil {
+	if o != nil && IsNil(o.ExpiresAt) {
 		return true
 	}
 
 	return false
 }
 
-// SetExpiresAt gets a reference to the given string and assigns it to the ExpiresAt field.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetExpiresAt(v string) {
-	o.ExpiresAt = &v
+// SetExpiresAt gets a reference to the given interface{} and assigns it to the ExpiresAt field.
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetExpiresAt(v interface{}) {
+	o.ExpiresAt = v
 }
 
-// GetRecipientEmail returns the RecipientEmail field value if set, zero value otherwise.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetRecipientEmail() string {
-	if o == nil || o.RecipientEmail == nil {
-		var ret string
+// GetRecipientEmail returns the RecipientEmail field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetRecipientEmail() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.RecipientEmail
+	return o.RecipientEmail
 }
 
 // GetRecipientEmailOk returns a tuple with the RecipientEmail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetRecipientEmailOk() (*string, bool) {
-	if o == nil || o.RecipientEmail == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetRecipientEmailOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.RecipientEmail) {
 		return nil, false
 	}
-	return o.RecipientEmail, true
+	return &o.RecipientEmail, true
 }
 
 // HasRecipientEmail returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasRecipientEmail() bool {
-	if o != nil && o.RecipientEmail != nil {
+	if o != nil && IsNil(o.RecipientEmail) {
 		return true
 	}
 
 	return false
 }
 
-// SetRecipientEmail gets a reference to the given string and assigns it to the RecipientEmail field.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetRecipientEmail(v string) {
-	o.RecipientEmail = &v
+// SetRecipientEmail gets a reference to the given interface{} and assigns it to the RecipientEmail field.
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetRecipientEmail(v interface{}) {
+	o.RecipientEmail = v
 }
 
-// GetPurchase returns the Purchase field value if set, zero value otherwise.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetPurchase() bool {
-	if o == nil || o.Purchase == nil {
-		var ret bool
+// GetPurchase returns the Purchase field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetPurchase() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Purchase
+	return o.Purchase
 }
 
 // GetPurchaseOk returns a tuple with the Purchase field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetPurchaseOk() (*bool, bool) {
-	if o == nil || o.Purchase == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetPurchaseOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Purchase) {
 		return nil, false
 	}
-	return o.Purchase, true
+	return &o.Purchase, true
 }
 
 // HasPurchase returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasPurchase() bool {
-	if o != nil && o.Purchase != nil {
+	if o != nil && IsNil(o.Purchase) {
 		return true
 	}
 
 	return false
 }
 
-// SetPurchase gets a reference to the given bool and assigns it to the Purchase field.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetPurchase(v bool) {
-	o.Purchase = &v
+// SetPurchase gets a reference to the given interface{} and assigns it to the Purchase field.
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetPurchase(v interface{}) {
+	o.Purchase = v
 }
 
-// GetActivate returns the Activate field value if set, zero value otherwise.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetActivate() bool {
-	if o == nil || o.Activate == nil {
-		var ret bool
+// GetActivate returns the Activate field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetActivate() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Activate
+	return o.Activate
 }
 
 // GetActivateOk returns a tuple with the Activate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetActivateOk() (*bool, bool) {
-	if o == nil || o.Activate == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetActivateOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Activate) {
 		return nil, false
 	}
-	return o.Activate, true
+	return &o.Activate, true
 }
 
 // HasActivate returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasActivate() bool {
-	if o != nil && o.Activate != nil {
+	if o != nil && IsNil(o.Activate) {
 		return true
 	}
 
 	return false
 }
 
-// SetActivate gets a reference to the given bool and assigns it to the Activate field.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetActivate(v bool) {
-	o.Activate = &v
+// SetActivate gets a reference to the given interface{} and assigns it to the Activate field.
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetActivate(v interface{}) {
+	o.Activate = v
 }
 
-// GetDeactivate returns the Deactivate field value if set, zero value otherwise.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetDeactivate() bool {
-	if o == nil || o.Deactivate == nil {
-		var ret bool
+// GetDeactivate returns the Deactivate field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetDeactivate() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Deactivate
+	return o.Deactivate
 }
 
 // GetDeactivateOk returns a tuple with the Deactivate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetDeactivateOk() (*bool, bool) {
-	if o == nil || o.Deactivate == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetDeactivateOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Deactivate) {
 		return nil, false
 	}
-	return o.Deactivate, true
+	return &o.Deactivate, true
 }
 
 // HasDeactivate returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasDeactivate() bool {
-	if o != nil && o.Deactivate != nil {
+	if o != nil && IsNil(o.Deactivate) {
 		return true
 	}
 
 	return false
 }
 
-// SetDeactivate gets a reference to the given bool and assigns it to the Deactivate field.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetDeactivate(v bool) {
-	o.Deactivate = &v
+// SetDeactivate gets a reference to the given interface{} and assigns it to the Deactivate field.
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetDeactivate(v interface{}) {
+	o.Deactivate = v
 }
 
-// GetBalanceChangeCents returns the BalanceChangeCents field value if set, zero value otherwise.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetBalanceChangeCents() int32 {
-	if o == nil || o.BalanceChangeCents == nil {
-		var ret int32
+// GetBalanceChangeCents returns the BalanceChangeCents field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetBalanceChangeCents() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.BalanceChangeCents
+	return o.BalanceChangeCents
 }
 
 // GetBalanceChangeCentsOk returns a tuple with the BalanceChangeCents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetBalanceChangeCentsOk() (*int32, bool) {
-	if o == nil || o.BalanceChangeCents == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetBalanceChangeCentsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.BalanceChangeCents) {
 		return nil, false
 	}
-	return o.BalanceChangeCents, true
+	return &o.BalanceChangeCents, true
 }
 
 // HasBalanceChangeCents returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasBalanceChangeCents() bool {
-	if o != nil && o.BalanceChangeCents != nil {
+	if o != nil && IsNil(o.BalanceChangeCents) {
 		return true
 	}
 
 	return false
 }
 
-// SetBalanceChangeCents gets a reference to the given int32 and assigns it to the BalanceChangeCents field.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetBalanceChangeCents(v int32) {
-	o.BalanceChangeCents = &v
+// SetBalanceChangeCents gets a reference to the given interface{} and assigns it to the BalanceChangeCents field.
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetBalanceChangeCents(v interface{}) {
+	o.BalanceChangeCents = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -525,28 +542,37 @@ func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetMetadata() map[st
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *PATCHGiftCardsGiftCardId200ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 func (o PATCHGiftCardsGiftCardId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHGiftCardsGiftCardId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.CurrencyCode != nil {
 		toSerialize["currency_code"] = o.CurrencyCode
@@ -593,7 +619,7 @@ func (o PATCHGiftCardsGiftCardId200ResponseDataAttributes) MarshalJSON() ([]byte
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHGiftCardsGiftCardId200ResponseDataAttributes struct {

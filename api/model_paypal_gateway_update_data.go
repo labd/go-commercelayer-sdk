@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,21 +15,24 @@ import (
 	"encoding/json"
 )
 
+// checks if the PaypalGatewayUpdateData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PaypalGatewayUpdateData{}
+
 // PaypalGatewayUpdateData struct for PaypalGatewayUpdateData
 type PaypalGatewayUpdateData struct {
 	// The resource's type
-	Type string `json:"type"`
+	Type interface{} `json:"type"`
 	// The resource's id
-	Id            string                                                      `json:"id"`
+	Id            interface{}                                                 `json:"id"`
 	Attributes    PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes `json:"attributes"`
-	Relationships map[string]interface{}                                      `json:"relationships,omitempty"`
+	Relationships interface{}                                                 `json:"relationships,omitempty"`
 }
 
 // NewPaypalGatewayUpdateData instantiates a new PaypalGatewayUpdateData object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPaypalGatewayUpdateData(type_ string, id string, attributes PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) *PaypalGatewayUpdateData {
+func NewPaypalGatewayUpdateData(type_ interface{}, id interface{}, attributes PATCHPaypalGatewaysPaypalGatewayId200ResponseDataAttributes) *PaypalGatewayUpdateData {
 	this := PaypalGatewayUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -46,9 +49,10 @@ func NewPaypalGatewayUpdateDataWithDefaults() *PaypalGatewayUpdateData {
 }
 
 // GetType returns the Type field value
-func (o *PaypalGatewayUpdateData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *PaypalGatewayUpdateData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -57,22 +61,24 @@ func (o *PaypalGatewayUpdateData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *PaypalGatewayUpdateData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PaypalGatewayUpdateData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *PaypalGatewayUpdateData) SetType(v string) {
+func (o *PaypalGatewayUpdateData) SetType(v interface{}) {
 	o.Type = v
 }
 
 // GetId returns the Id field value
-func (o *PaypalGatewayUpdateData) GetId() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *PaypalGatewayUpdateData) GetId() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -81,15 +87,16 @@ func (o *PaypalGatewayUpdateData) GetId() string {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *PaypalGatewayUpdateData) GetIdOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PaypalGatewayUpdateData) GetIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return &o.Id, true
 }
 
 // SetId sets field value
-func (o *PaypalGatewayUpdateData) SetId(v string) {
+func (o *PaypalGatewayUpdateData) SetId(v interface{}) {
 	o.Id = v
 }
 
@@ -117,10 +124,10 @@ func (o *PaypalGatewayUpdateData) SetAttributes(v PATCHPaypalGatewaysPaypalGatew
 	o.Attributes = v
 }
 
-// GetRelationships returns the Relationships field value if set, zero value otherwise.
-func (o *PaypalGatewayUpdateData) GetRelationships() map[string]interface{} {
-	if o == nil || o.Relationships == nil {
-		var ret map[string]interface{}
+// GetRelationships returns the Relationships field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PaypalGatewayUpdateData) GetRelationships() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Relationships
@@ -128,42 +135,49 @@ func (o *PaypalGatewayUpdateData) GetRelationships() map[string]interface{} {
 
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PaypalGatewayUpdateData) GetRelationshipsOk() (map[string]interface{}, bool) {
-	if o == nil || o.Relationships == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PaypalGatewayUpdateData) GetRelationshipsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
-	return o.Relationships, true
+	return &o.Relationships, true
 }
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *PaypalGatewayUpdateData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && IsNil(o.Relationships) {
 		return true
 	}
 
 	return false
 }
 
-// SetRelationships gets a reference to the given map[string]interface{} and assigns it to the Relationships field.
-func (o *PaypalGatewayUpdateData) SetRelationships(v map[string]interface{}) {
+// SetRelationships gets a reference to the given interface{} and assigns it to the Relationships field.
+func (o *PaypalGatewayUpdateData) SetRelationships(v interface{}) {
 	o.Relationships = v
 }
 
 func (o PaypalGatewayUpdateData) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PaypalGatewayUpdateData) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
+	if o.Type != nil {
 		toSerialize["type"] = o.Type
 	}
-	if true {
+	if o.Id != nil {
 		toSerialize["id"] = o.Id
 	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
+	toSerialize["attributes"] = o.Attributes
 	if o.Relationships != nil {
 		toSerialize["relationships"] = o.Relationships
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePaypalGatewayUpdateData struct {

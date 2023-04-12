@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Id** | **string** | The resource&#39;s id | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Id** | **interface{}** | The resource&#39;s id | 
 **Attributes** | [**PATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseDataAttributes**](PATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**FixedPricePromotionUpdateDataRelationships**](FixedPricePromotionUpdateDataRelationships.md) |  | [optional] 
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewFreeGiftPromotionUpdateData
 
-`func NewFreeGiftPromotionUpdateData(type_ string, id string, attributes PATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseDataAttributes, ) *FreeGiftPromotionUpdateData`
+`func NewFreeGiftPromotionUpdateData(type_ interface{}, id interface{}, attributes PATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseDataAttributes, ) *FreeGiftPromotionUpdateData`
 
 NewFreeGiftPromotionUpdateData instantiates a new FreeGiftPromotionUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -30,44 +30,64 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *FreeGiftPromotionUpdateData) GetType() string`
+`func (o *FreeGiftPromotionUpdateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *FreeGiftPromotionUpdateData) GetTypeOk() (*string, bool)`
+`func (o *FreeGiftPromotionUpdateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *FreeGiftPromotionUpdateData) SetType(v string)`
+`func (o *FreeGiftPromotionUpdateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *FreeGiftPromotionUpdateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *FreeGiftPromotionUpdateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetId
 
-`func (o *FreeGiftPromotionUpdateData) GetId() string`
+`func (o *FreeGiftPromotionUpdateData) GetId() interface{}`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *FreeGiftPromotionUpdateData) GetIdOk() (*string, bool)`
+`func (o *FreeGiftPromotionUpdateData) GetIdOk() (*interface{}, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *FreeGiftPromotionUpdateData) SetId(v string)`
+`func (o *FreeGiftPromotionUpdateData) SetId(v interface{})`
 
 SetId sets Id field to given value.
 
 
+### SetIdNil
+
+`func (o *FreeGiftPromotionUpdateData) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *FreeGiftPromotionUpdateData) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetAttributes
 
 `func (o *FreeGiftPromotionUpdateData) GetAttributes() PATCHFreeGiftPromotionsFreeGiftPromotionId200ResponseDataAttributes`

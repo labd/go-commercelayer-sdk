@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type SkuListPromotionRulesApiService service
 type SkuListPromotionRulesApiDELETESkuListPromotionRulesSkuListPromotionRuleIdRequest struct {
 	ctx                    context.Context
 	ApiService             *SkuListPromotionRulesApiService
-	skuListPromotionRuleId string
+	skuListPromotionRuleId interface{}
 }
 
 func (r SkuListPromotionRulesApiDELETESkuListPromotionRulesSkuListPromotionRuleIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a SKU list promotion rule
 	@param skuListPromotionRuleId The resource's id
 	@return SkuListPromotionRulesApiDELETESkuListPromotionRulesSkuListPromotionRuleIdRequest
 */
-func (a *SkuListPromotionRulesApiService) DELETESkuListPromotionRulesSkuListPromotionRuleId(ctx context.Context, skuListPromotionRuleId string) SkuListPromotionRulesApiDELETESkuListPromotionRulesSkuListPromotionRuleIdRequest {
+func (a *SkuListPromotionRulesApiService) DELETESkuListPromotionRulesSkuListPromotionRuleId(ctx context.Context, skuListPromotionRuleId interface{}) SkuListPromotionRulesApiDELETESkuListPromotionRulesSkuListPromotionRuleIdRequest {
 	return SkuListPromotionRulesApiDELETESkuListPromotionRulesSkuListPromotionRuleIdRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -64,7 +64,7 @@ func (a *SkuListPromotionRulesApiService) DELETESkuListPromotionRulesSkuListProm
 	}
 
 	localVarPath := localBasePath + "/sku_list_promotion_rules/{skuListPromotionRuleId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuListPromotionRuleId"+"}", url.PathEscape(parameterToString(r.skuListPromotionRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListPromotionRuleId"+"}", url.PathEscape(parameterValueToString(r.skuListPromotionRuleId, "skuListPromotionRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *SkuListPromotionRulesApiService) DELETESkuListPromotionRulesSkuListProm
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *SkuListPromotionRulesApiService) DELETESkuListPromotionRulesSkuListProm
 type SkuListPromotionRulesApiGETExternalPromotionIdSkuListPromotionRuleRequest struct {
 	ctx                 context.Context
 	ApiService          *SkuListPromotionRulesApiService
-	externalPromotionId string
+	externalPromotionId interface{}
 }
 
 func (r SkuListPromotionRulesApiGETExternalPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the sku list promotion rule associated to the external promotion
 	@param externalPromotionId The resource's id
 	@return SkuListPromotionRulesApiGETExternalPromotionIdSkuListPromotionRuleRequest
 */
-func (a *SkuListPromotionRulesApiService) GETExternalPromotionIdSkuListPromotionRule(ctx context.Context, externalPromotionId string) SkuListPromotionRulesApiGETExternalPromotionIdSkuListPromotionRuleRequest {
+func (a *SkuListPromotionRulesApiService) GETExternalPromotionIdSkuListPromotionRule(ctx context.Context, externalPromotionId interface{}) SkuListPromotionRulesApiGETExternalPromotionIdSkuListPromotionRuleRequest {
 	return SkuListPromotionRulesApiGETExternalPromotionIdSkuListPromotionRuleRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -156,7 +156,7 @@ func (a *SkuListPromotionRulesApiService) GETExternalPromotionIdSkuListPromotion
 	}
 
 	localVarPath := localBasePath + "/external_promotions/{externalPromotionId}/sku_list_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterToString(r.externalPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"externalPromotionId"+"}", url.PathEscape(parameterValueToString(r.externalPromotionId, "externalPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *SkuListPromotionRulesApiService) GETExternalPromotionIdSkuListPromotion
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -210,7 +210,7 @@ func (a *SkuListPromotionRulesApiService) GETExternalPromotionIdSkuListPromotion
 type SkuListPromotionRulesApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest struct {
 	ctx                    context.Context
 	ApiService             *SkuListPromotionRulesApiService
-	fixedAmountPromotionId string
+	fixedAmountPromotionId interface{}
 }
 
 func (r SkuListPromotionRulesApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -226,7 +226,7 @@ Retrieve the sku list promotion rule associated to the fixed amount promotion
 	@param fixedAmountPromotionId The resource's id
 	@return SkuListPromotionRulesApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest
 */
-func (a *SkuListPromotionRulesApiService) GETFixedAmountPromotionIdSkuListPromotionRule(ctx context.Context, fixedAmountPromotionId string) SkuListPromotionRulesApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest {
+func (a *SkuListPromotionRulesApiService) GETFixedAmountPromotionIdSkuListPromotionRule(ctx context.Context, fixedAmountPromotionId interface{}) SkuListPromotionRulesApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest {
 	return SkuListPromotionRulesApiGETFixedAmountPromotionIdSkuListPromotionRuleRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -248,7 +248,7 @@ func (a *SkuListPromotionRulesApiService) GETFixedAmountPromotionIdSkuListPromot
 	}
 
 	localVarPath := localBasePath + "/fixed_amount_promotions/{fixedAmountPromotionId}/sku_list_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterToString(r.fixedAmountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedAmountPromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedAmountPromotionId, "fixedAmountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -281,9 +281,9 @@ func (a *SkuListPromotionRulesApiService) GETFixedAmountPromotionIdSkuListPromot
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -302,7 +302,7 @@ func (a *SkuListPromotionRulesApiService) GETFixedAmountPromotionIdSkuListPromot
 type SkuListPromotionRulesApiGETFixedPricePromotionIdSkuListPromotionRuleRequest struct {
 	ctx                   context.Context
 	ApiService            *SkuListPromotionRulesApiService
-	fixedPricePromotionId string
+	fixedPricePromotionId interface{}
 }
 
 func (r SkuListPromotionRulesApiGETFixedPricePromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -318,7 +318,7 @@ Retrieve the sku list promotion rule associated to the fixed price promotion
 	@param fixedPricePromotionId The resource's id
 	@return SkuListPromotionRulesApiGETFixedPricePromotionIdSkuListPromotionRuleRequest
 */
-func (a *SkuListPromotionRulesApiService) GETFixedPricePromotionIdSkuListPromotionRule(ctx context.Context, fixedPricePromotionId string) SkuListPromotionRulesApiGETFixedPricePromotionIdSkuListPromotionRuleRequest {
+func (a *SkuListPromotionRulesApiService) GETFixedPricePromotionIdSkuListPromotionRule(ctx context.Context, fixedPricePromotionId interface{}) SkuListPromotionRulesApiGETFixedPricePromotionIdSkuListPromotionRuleRequest {
 	return SkuListPromotionRulesApiGETFixedPricePromotionIdSkuListPromotionRuleRequest{
 		ApiService:            a,
 		ctx:                   ctx,
@@ -340,7 +340,7 @@ func (a *SkuListPromotionRulesApiService) GETFixedPricePromotionIdSkuListPromoti
 	}
 
 	localVarPath := localBasePath + "/fixed_price_promotions/{fixedPricePromotionId}/sku_list_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterToString(r.fixedPricePromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"fixedPricePromotionId"+"}", url.PathEscape(parameterValueToString(r.fixedPricePromotionId, "fixedPricePromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -373,9 +373,9 @@ func (a *SkuListPromotionRulesApiService) GETFixedPricePromotionIdSkuListPromoti
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -394,7 +394,7 @@ func (a *SkuListPromotionRulesApiService) GETFixedPricePromotionIdSkuListPromoti
 type SkuListPromotionRulesApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest struct {
 	ctx                 context.Context
 	ApiService          *SkuListPromotionRulesApiService
-	freeGiftPromotionId string
+	freeGiftPromotionId interface{}
 }
 
 func (r SkuListPromotionRulesApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -410,7 +410,7 @@ Retrieve the sku list promotion rule associated to the free gift promotion
 	@param freeGiftPromotionId The resource's id
 	@return SkuListPromotionRulesApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest
 */
-func (a *SkuListPromotionRulesApiService) GETFreeGiftPromotionIdSkuListPromotionRule(ctx context.Context, freeGiftPromotionId string) SkuListPromotionRulesApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest {
+func (a *SkuListPromotionRulesApiService) GETFreeGiftPromotionIdSkuListPromotionRule(ctx context.Context, freeGiftPromotionId interface{}) SkuListPromotionRulesApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest {
 	return SkuListPromotionRulesApiGETFreeGiftPromotionIdSkuListPromotionRuleRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -432,7 +432,7 @@ func (a *SkuListPromotionRulesApiService) GETFreeGiftPromotionIdSkuListPromotion
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}/sku_list_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterToString(r.freeGiftPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -465,9 +465,9 @@ func (a *SkuListPromotionRulesApiService) GETFreeGiftPromotionIdSkuListPromotion
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -486,7 +486,7 @@ func (a *SkuListPromotionRulesApiService) GETFreeGiftPromotionIdSkuListPromotion
 type SkuListPromotionRulesApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest struct {
 	ctx                     context.Context
 	ApiService              *SkuListPromotionRulesApiService
-	freeShippingPromotionId string
+	freeShippingPromotionId interface{}
 }
 
 func (r SkuListPromotionRulesApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -502,7 +502,7 @@ Retrieve the sku list promotion rule associated to the free shipping promotion
 	@param freeShippingPromotionId The resource's id
 	@return SkuListPromotionRulesApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest
 */
-func (a *SkuListPromotionRulesApiService) GETFreeShippingPromotionIdSkuListPromotionRule(ctx context.Context, freeShippingPromotionId string) SkuListPromotionRulesApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest {
+func (a *SkuListPromotionRulesApiService) GETFreeShippingPromotionIdSkuListPromotionRule(ctx context.Context, freeShippingPromotionId interface{}) SkuListPromotionRulesApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest {
 	return SkuListPromotionRulesApiGETFreeShippingPromotionIdSkuListPromotionRuleRequest{
 		ApiService:              a,
 		ctx:                     ctx,
@@ -524,7 +524,7 @@ func (a *SkuListPromotionRulesApiService) GETFreeShippingPromotionIdSkuListPromo
 	}
 
 	localVarPath := localBasePath + "/free_shipping_promotions/{freeShippingPromotionId}/sku_list_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterToString(r.freeShippingPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeShippingPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeShippingPromotionId, "freeShippingPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -557,9 +557,9 @@ func (a *SkuListPromotionRulesApiService) GETFreeShippingPromotionIdSkuListPromo
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -578,7 +578,7 @@ func (a *SkuListPromotionRulesApiService) GETFreeShippingPromotionIdSkuListPromo
 type SkuListPromotionRulesApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest struct {
 	ctx                           context.Context
 	ApiService                    *SkuListPromotionRulesApiService
-	percentageDiscountPromotionId string
+	percentageDiscountPromotionId interface{}
 }
 
 func (r SkuListPromotionRulesApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -594,7 +594,7 @@ Retrieve the sku list promotion rule associated to the percentage discount promo
 	@param percentageDiscountPromotionId The resource's id
 	@return SkuListPromotionRulesApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest
 */
-func (a *SkuListPromotionRulesApiService) GETPercentageDiscountPromotionIdSkuListPromotionRule(ctx context.Context, percentageDiscountPromotionId string) SkuListPromotionRulesApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest {
+func (a *SkuListPromotionRulesApiService) GETPercentageDiscountPromotionIdSkuListPromotionRule(ctx context.Context, percentageDiscountPromotionId interface{}) SkuListPromotionRulesApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest {
 	return SkuListPromotionRulesApiGETPercentageDiscountPromotionIdSkuListPromotionRuleRequest{
 		ApiService:                    a,
 		ctx:                           ctx,
@@ -616,7 +616,7 @@ func (a *SkuListPromotionRulesApiService) GETPercentageDiscountPromotionIdSkuLis
 	}
 
 	localVarPath := localBasePath + "/percentage_discount_promotions/{percentageDiscountPromotionId}/sku_list_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterToString(r.percentageDiscountPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"percentageDiscountPromotionId"+"}", url.PathEscape(parameterValueToString(r.percentageDiscountPromotionId, "percentageDiscountPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -649,9 +649,9 @@ func (a *SkuListPromotionRulesApiService) GETPercentageDiscountPromotionIdSkuLis
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -670,7 +670,7 @@ func (a *SkuListPromotionRulesApiService) GETPercentageDiscountPromotionIdSkuLis
 type SkuListPromotionRulesApiGETPromotionIdSkuListPromotionRuleRequest struct {
 	ctx         context.Context
 	ApiService  *SkuListPromotionRulesApiService
-	promotionId string
+	promotionId interface{}
 }
 
 func (r SkuListPromotionRulesApiGETPromotionIdSkuListPromotionRuleRequest) Execute() (*http.Response, error) {
@@ -686,7 +686,7 @@ Retrieve the sku list promotion rule associated to the promotion
 	@param promotionId The resource's id
 	@return SkuListPromotionRulesApiGETPromotionIdSkuListPromotionRuleRequest
 */
-func (a *SkuListPromotionRulesApiService) GETPromotionIdSkuListPromotionRule(ctx context.Context, promotionId string) SkuListPromotionRulesApiGETPromotionIdSkuListPromotionRuleRequest {
+func (a *SkuListPromotionRulesApiService) GETPromotionIdSkuListPromotionRule(ctx context.Context, promotionId interface{}) SkuListPromotionRulesApiGETPromotionIdSkuListPromotionRuleRequest {
 	return SkuListPromotionRulesApiGETPromotionIdSkuListPromotionRuleRequest{
 		ApiService:  a,
 		ctx:         ctx,
@@ -708,7 +708,7 @@ func (a *SkuListPromotionRulesApiService) GETPromotionIdSkuListPromotionRuleExec
 	}
 
 	localVarPath := localBasePath + "/promotions/{promotionId}/sku_list_promotion_rule"
-	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterToString(r.promotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"promotionId"+"}", url.PathEscape(parameterValueToString(r.promotionId, "promotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -741,9 +741,9 @@ func (a *SkuListPromotionRulesApiService) GETPromotionIdSkuListPromotionRuleExec
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -832,9 +832,9 @@ func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRulesExecute(r SkuL
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -862,7 +862,7 @@ func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRulesExecute(r SkuL
 type SkuListPromotionRulesApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest struct {
 	ctx                    context.Context
 	ApiService             *SkuListPromotionRulesApiService
-	skuListPromotionRuleId string
+	skuListPromotionRuleId interface{}
 }
 
 func (r SkuListPromotionRulesApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest) Execute() (*GETSkuListPromotionRulesSkuListPromotionRuleId200Response, *http.Response, error) {
@@ -878,7 +878,7 @@ Retrieve a SKU list promotion rule
 	@param skuListPromotionRuleId The resource's id
 	@return SkuListPromotionRulesApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest
 */
-func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRulesSkuListPromotionRuleId(ctx context.Context, skuListPromotionRuleId string) SkuListPromotionRulesApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest {
+func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRulesSkuListPromotionRuleId(ctx context.Context, skuListPromotionRuleId interface{}) SkuListPromotionRulesApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest {
 	return SkuListPromotionRulesApiGETSkuListPromotionRulesSkuListPromotionRuleIdRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -903,7 +903,7 @@ func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRulesSkuListPromoti
 	}
 
 	localVarPath := localBasePath + "/sku_list_promotion_rules/{skuListPromotionRuleId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuListPromotionRuleId"+"}", url.PathEscape(parameterToString(r.skuListPromotionRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListPromotionRuleId"+"}", url.PathEscape(parameterValueToString(r.skuListPromotionRuleId, "skuListPromotionRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -936,9 +936,9 @@ func (a *SkuListPromotionRulesApiService) GETSkuListPromotionRulesSkuListPromoti
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -967,7 +967,7 @@ type SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdReq
 	ctx                        context.Context
 	ApiService                 *SkuListPromotionRulesApiService
 	skuListPromotionRuleUpdate *SkuListPromotionRuleUpdate
-	skuListPromotionRuleId     string
+	skuListPromotionRuleId     interface{}
 }
 
 func (r SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest) SkuListPromotionRuleUpdate(skuListPromotionRuleUpdate SkuListPromotionRuleUpdate) SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest {
@@ -975,7 +975,7 @@ func (r SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleId
 	return r
 }
 
-func (r SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest) Execute() (*POSTSkuListPromotionRules201Response, *http.Response, error) {
+func (r SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest) Execute() (*PATCHSkuListPromotionRulesSkuListPromotionRuleId200Response, *http.Response, error) {
 	return r.ApiService.PATCHSkuListPromotionRulesSkuListPromotionRuleIdExecute(r)
 }
 
@@ -988,7 +988,7 @@ Update a SKU list promotion rule
 	@param skuListPromotionRuleId The resource's id
 	@return SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest
 */
-func (a *SkuListPromotionRulesApiService) PATCHSkuListPromotionRulesSkuListPromotionRuleId(ctx context.Context, skuListPromotionRuleId string) SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest {
+func (a *SkuListPromotionRulesApiService) PATCHSkuListPromotionRulesSkuListPromotionRuleId(ctx context.Context, skuListPromotionRuleId interface{}) SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest {
 	return SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest{
 		ApiService:             a,
 		ctx:                    ctx,
@@ -998,13 +998,13 @@ func (a *SkuListPromotionRulesApiService) PATCHSkuListPromotionRulesSkuListPromo
 
 // Execute executes the request
 //
-//	@return POSTSkuListPromotionRules201Response
-func (a *SkuListPromotionRulesApiService) PATCHSkuListPromotionRulesSkuListPromotionRuleIdExecute(r SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest) (*POSTSkuListPromotionRules201Response, *http.Response, error) {
+//	@return PATCHSkuListPromotionRulesSkuListPromotionRuleId200Response
+func (a *SkuListPromotionRulesApiService) PATCHSkuListPromotionRulesSkuListPromotionRuleIdExecute(r SkuListPromotionRulesApiPATCHSkuListPromotionRulesSkuListPromotionRuleIdRequest) (*PATCHSkuListPromotionRulesSkuListPromotionRuleId200Response, *http.Response, error) {
 	var (
 		localVarHTTPMethod  = http.MethodPatch
 		localVarPostBody    interface{}
 		formFiles           []formFile
-		localVarReturnValue *POSTSkuListPromotionRules201Response
+		localVarReturnValue *PATCHSkuListPromotionRulesSkuListPromotionRuleId200Response
 	)
 
 	localBasePath, err := a.client.cfg.ServerURLWithContext(r.ctx, "SkuListPromotionRulesApiService.PATCHSkuListPromotionRulesSkuListPromotionRuleId")
@@ -1013,7 +1013,7 @@ func (a *SkuListPromotionRulesApiService) PATCHSkuListPromotionRulesSkuListPromo
 	}
 
 	localVarPath := localBasePath + "/sku_list_promotion_rules/{skuListPromotionRuleId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuListPromotionRuleId"+"}", url.PathEscape(parameterToString(r.skuListPromotionRuleId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuListPromotionRuleId"+"}", url.PathEscape(parameterValueToString(r.skuListPromotionRuleId, "skuListPromotionRuleId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -1051,9 +1051,9 @@ func (a *SkuListPromotionRulesApiService) PATCHSkuListPromotionRulesSkuListPromo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -1162,9 +1162,9 @@ func (a *SkuListPromotionRulesApiService) POSTSkuListPromotionRulesExecute(r Sku
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

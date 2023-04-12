@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,88 +15,93 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHOrdersOrderId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHOrdersOrderId200ResponseDataAttributes{}
+
 // PATCHOrdersOrderId200ResponseDataAttributes struct for PATCHOrdersOrderId200ResponseDataAttributes
 type PATCHOrdersOrderId200ResponseDataAttributes struct {
 	// Save this attribute as 'false' if you want prevent the order to be refreshed automatically at each change (much faster).
-	Autorefresh *bool `json:"autorefresh,omitempty"`
+	Autorefresh interface{} `json:"autorefresh,omitempty"`
 	// Indicates if the order has been placed as guest.
-	Guest *bool `json:"guest,omitempty"`
+	Guest interface{} `json:"guest,omitempty"`
 	// The email address of the associated customer. When creating or updating an order, this is a shortcut to find or create the associated customer by email.
-	CustomerEmail *string `json:"customer_email,omitempty"`
+	CustomerEmail interface{} `json:"customer_email,omitempty"`
 	// The password of the associated customer. When creating or updating an order, this is a shortcut to sign up the associated customer.
-	CustomerPassword *string `json:"customer_password,omitempty"`
+	CustomerPassword interface{} `json:"customer_password,omitempty"`
 	// The preferred language code (ISO 639-1) to be used when communicating with the customer. This can be useful when sending the order to 3rd party marketing tools and CRMs. If the language is supported, the hosted checkout will be localized accordingly.
-	LanguageCode *string `json:"language_code,omitempty"`
+	LanguageCode interface{} `json:"language_code,omitempty"`
 	// The country code that you want the shipping address to be locked to. This can be useful to make sure the shipping address belongs to a given shipping country, e.g. the one selected in a country selector page.
-	ShippingCountryCodeLock *string `json:"shipping_country_code_lock,omitempty"`
+	ShippingCountryCodeLock interface{} `json:"shipping_country_code_lock,omitempty"`
 	// The coupon code to be used for the order. If valid, it triggers a promotion adding a discount line item to the order.
-	CouponCode *string `json:"coupon_code,omitempty"`
+	CouponCode interface{} `json:"coupon_code,omitempty"`
 	// The gift card code (at least the first 8 characters) to be used for the order. If valid, it uses the gift card balance to pay for the order.
-	GiftCardCode *string `json:"gift_card_code,omitempty"`
+	GiftCardCode interface{} `json:"gift_card_code,omitempty"`
 	// The gift card or coupon code (at least the first 8 characters) to be used for the order. If a gift card mathes, it uses the gift card balance to pay for the order. Otherwise it tries to find a valid coupon code and applies the associated discount.
-	GiftCardOrCouponCode *string `json:"gift_card_or_coupon_code,omitempty"`
+	GiftCardOrCouponCode interface{} `json:"gift_card_or_coupon_code,omitempty"`
 	// The cart url on your site. If present, it will be used on our hosted checkout application.
-	CartUrl *string `json:"cart_url,omitempty"`
+	CartUrl interface{} `json:"cart_url,omitempty"`
 	// The return url on your site. If present, it will be used on our hosted checkout application.
-	ReturnUrl *string `json:"return_url,omitempty"`
+	ReturnUrl interface{} `json:"return_url,omitempty"`
 	// The terms and conditions url on your site. If present, it will be used on our hosted checkout application.
-	TermsUrl *string `json:"terms_url,omitempty"`
+	TermsUrl interface{} `json:"terms_url,omitempty"`
 	// The privacy policy url on your site. If present, it will be used on our hosted checkout application.
-	PrivacyUrl *string `json:"privacy_url,omitempty"`
+	PrivacyUrl interface{} `json:"privacy_url,omitempty"`
 	// Send this attribute if you want to archive the order.
-	Archive *bool `json:"_archive,omitempty"`
+	Archive interface{} `json:"_archive,omitempty"`
 	// Send this attribute if you want to unarchive the order.
-	Unarchive *bool `json:"_unarchive,omitempty"`
+	Unarchive interface{} `json:"_unarchive,omitempty"`
 	// Send this attribute if you want to place the order.
-	Place *bool `json:"_place,omitempty"`
+	Place interface{} `json:"_place,omitempty"`
 	// Send this attribute if you want to cancel a placed order. The order's authorization will be automatically voided.
-	Cancel *bool `json:"_cancel,omitempty"`
+	Cancel interface{} `json:"_cancel,omitempty"`
 	// Send this attribute if you want to approve a placed order.
-	Approve *bool `json:"_approve,omitempty"`
+	Approve interface{} `json:"_approve,omitempty"`
 	// Send this attribute if you want to approve and capture a placed order.
-	ApproveAndCapture *bool `json:"_approve_and_capture,omitempty"`
+	ApproveAndCapture interface{} `json:"_approve_and_capture,omitempty"`
 	// Send this attribute if you want to authorize the order's payment source.
-	Authorize *bool `json:"_authorize,omitempty"`
+	Authorize interface{} `json:"_authorize,omitempty"`
 	// The authorization amount, in cents.
-	AuthorizationAmountCents *int32 `json:"_authorization_amount_cents,omitempty"`
+	AuthorizationAmountCents interface{} `json:"_authorization_amount_cents,omitempty"`
 	// Send this attribute if you want to capture an authorized order.
-	Capture *bool `json:"_capture,omitempty"`
+	Capture interface{} `json:"_capture,omitempty"`
 	// Send this attribute if you want to refund a captured order.
-	Refund *bool `json:"_refund,omitempty"`
+	Refund interface{} `json:"_refund,omitempty"`
 	// Send this attribute if you want to force tax calculation for this order (a tax calculator must be associated to the order's market).
-	UpdateTaxes *bool `json:"_update_taxes,omitempty"`
+	UpdateTaxes interface{} `json:"_update_taxes,omitempty"`
 	// Send this attribute if you want to nullify the payment source for this order.
-	NullifyPaymentSource *bool `json:"_nullify_payment_source,omitempty"`
+	NullifyPaymentSource interface{} `json:"_nullify_payment_source,omitempty"`
 	// The id of the address that you want to clone to create the order's billing address.
-	BillingAddressCloneId *string `json:"_billing_address_clone_id,omitempty"`
+	BillingAddressCloneId interface{} `json:"_billing_address_clone_id,omitempty"`
 	// The id of the address that you want to clone to create the order's shipping address.
-	ShippingAddressCloneId *string `json:"_shipping_address_clone_id,omitempty"`
+	ShippingAddressCloneId interface{} `json:"_shipping_address_clone_id,omitempty"`
 	// The id of the customer payment source (i.e. credit card) that you want to use as the order's payment source.
-	CustomerPaymentSourceId *string `json:"_customer_payment_source_id,omitempty"`
+	CustomerPaymentSourceId interface{} `json:"_customer_payment_source_id,omitempty"`
 	// Send this attribute if you want the shipping address to be cloned from the order's billing address.
-	ShippingAddressSameAsBilling *bool `json:"_shipping_address_same_as_billing,omitempty"`
+	ShippingAddressSameAsBilling interface{} `json:"_shipping_address_same_as_billing,omitempty"`
 	// Send this attribute if you want the billing address to be cloned from the order's shipping address.
-	BillingAddressSameAsShipping *bool `json:"_billing_address_same_as_shipping,omitempty"`
+	BillingAddressSameAsShipping interface{} `json:"_billing_address_same_as_shipping,omitempty"`
 	// Send this attribute if you want commit the sales tax invoice to the associated tax calculator (currently supported by Avalara).
-	CommitInvoice *bool `json:"_commit_invoice,omitempty"`
+	CommitInvoice interface{} `json:"_commit_invoice,omitempty"`
 	// Send this attribute if you want refund the sales tax invoice to the associated tax calculator (currently supported by Avalara).
-	RefundInvoice *bool `json:"_refund_invoice,omitempty"`
+	RefundInvoice interface{} `json:"_refund_invoice,omitempty"`
 	// Send this attribute if you want the order's payment source to be saved in the customer's wallet as a customer payment source.
-	SavePaymentSourceToCustomerWallet *bool `json:"_save_payment_source_to_customer_wallet,omitempty"`
+	SavePaymentSourceToCustomerWallet interface{} `json:"_save_payment_source_to_customer_wallet,omitempty"`
 	// Send this attribute if you want the order's shipping address to be saved in the customer's address book as a customer address.
-	SaveShippingAddressToCustomerAddressBook *bool `json:"_save_shipping_address_to_customer_address_book,omitempty"`
+	SaveShippingAddressToCustomerAddressBook interface{} `json:"_save_shipping_address_to_customer_address_book,omitempty"`
 	// Send this attribute if you want the order's billing address to be saved in the customer's address book as a customer address.
-	SaveBillingAddressToCustomerAddressBook *bool `json:"_save_billing_address_to_customer_address_book,omitempty"`
+	SaveBillingAddressToCustomerAddressBook interface{} `json:"_save_billing_address_to_customer_address_book,omitempty"`
 	// Send this attribute if you want to manually refresh the order.
-	Refresh *bool `json:"_refresh,omitempty"`
+	Refresh interface{} `json:"_refresh,omitempty"`
 	// Send this attribute if you want to trigger the external validation for the order.
-	Validate *bool `json:"_validate,omitempty"`
+	Validate interface{} `json:"_validate,omitempty"`
+	// Send this attribute if you want to create order subscriptions from the recurring line items upon/after placing the order. Subscriptions are generated according to associated subscription model strategy.
+	CreateSubscriptions interface{} `json:"_create_subscriptions,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 }
 
 // NewPATCHOrdersOrderId200ResponseDataAttributes instantiates a new PATCHOrdersOrderId200ResponseDataAttributes object
@@ -116,1258 +121,1330 @@ func NewPATCHOrdersOrderId200ResponseDataAttributesWithDefaults() *PATCHOrdersOr
 	return &this
 }
 
-// GetAutorefresh returns the Autorefresh field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetAutorefresh() bool {
-	if o == nil || o.Autorefresh == nil {
-		var ret bool
+// GetAutorefresh returns the Autorefresh field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetAutorefresh() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Autorefresh
+	return o.Autorefresh
 }
 
 // GetAutorefreshOk returns a tuple with the Autorefresh field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetAutorefreshOk() (*bool, bool) {
-	if o == nil || o.Autorefresh == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetAutorefreshOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Autorefresh) {
 		return nil, false
 	}
-	return o.Autorefresh, true
+	return &o.Autorefresh, true
 }
 
 // HasAutorefresh returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasAutorefresh() bool {
-	if o != nil && o.Autorefresh != nil {
+	if o != nil && IsNil(o.Autorefresh) {
 		return true
 	}
 
 	return false
 }
 
-// SetAutorefresh gets a reference to the given bool and assigns it to the Autorefresh field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetAutorefresh(v bool) {
-	o.Autorefresh = &v
+// SetAutorefresh gets a reference to the given interface{} and assigns it to the Autorefresh field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetAutorefresh(v interface{}) {
+	o.Autorefresh = v
 }
 
-// GetGuest returns the Guest field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetGuest() bool {
-	if o == nil || o.Guest == nil {
-		var ret bool
+// GetGuest returns the Guest field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetGuest() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Guest
+	return o.Guest
 }
 
 // GetGuestOk returns a tuple with the Guest field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetGuestOk() (*bool, bool) {
-	if o == nil || o.Guest == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetGuestOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Guest) {
 		return nil, false
 	}
-	return o.Guest, true
+	return &o.Guest, true
 }
 
 // HasGuest returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasGuest() bool {
-	if o != nil && o.Guest != nil {
+	if o != nil && IsNil(o.Guest) {
 		return true
 	}
 
 	return false
 }
 
-// SetGuest gets a reference to the given bool and assigns it to the Guest field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetGuest(v bool) {
-	o.Guest = &v
+// SetGuest gets a reference to the given interface{} and assigns it to the Guest field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetGuest(v interface{}) {
+	o.Guest = v
 }
 
-// GetCustomerEmail returns the CustomerEmail field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCustomerEmail() string {
-	if o == nil || o.CustomerEmail == nil {
-		var ret string
+// GetCustomerEmail returns the CustomerEmail field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCustomerEmail() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CustomerEmail
+	return o.CustomerEmail
 }
 
 // GetCustomerEmailOk returns a tuple with the CustomerEmail field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCustomerEmailOk() (*string, bool) {
-	if o == nil || o.CustomerEmail == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCustomerEmailOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CustomerEmail) {
 		return nil, false
 	}
-	return o.CustomerEmail, true
+	return &o.CustomerEmail, true
 }
 
 // HasCustomerEmail returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasCustomerEmail() bool {
-	if o != nil && o.CustomerEmail != nil {
+	if o != nil && IsNil(o.CustomerEmail) {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomerEmail gets a reference to the given string and assigns it to the CustomerEmail field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetCustomerEmail(v string) {
-	o.CustomerEmail = &v
+// SetCustomerEmail gets a reference to the given interface{} and assigns it to the CustomerEmail field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetCustomerEmail(v interface{}) {
+	o.CustomerEmail = v
 }
 
-// GetCustomerPassword returns the CustomerPassword field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCustomerPassword() string {
-	if o == nil || o.CustomerPassword == nil {
-		var ret string
+// GetCustomerPassword returns the CustomerPassword field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCustomerPassword() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CustomerPassword
+	return o.CustomerPassword
 }
 
 // GetCustomerPasswordOk returns a tuple with the CustomerPassword field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCustomerPasswordOk() (*string, bool) {
-	if o == nil || o.CustomerPassword == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCustomerPasswordOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CustomerPassword) {
 		return nil, false
 	}
-	return o.CustomerPassword, true
+	return &o.CustomerPassword, true
 }
 
 // HasCustomerPassword returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasCustomerPassword() bool {
-	if o != nil && o.CustomerPassword != nil {
+	if o != nil && IsNil(o.CustomerPassword) {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomerPassword gets a reference to the given string and assigns it to the CustomerPassword field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetCustomerPassword(v string) {
-	o.CustomerPassword = &v
+// SetCustomerPassword gets a reference to the given interface{} and assigns it to the CustomerPassword field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetCustomerPassword(v interface{}) {
+	o.CustomerPassword = v
 }
 
-// GetLanguageCode returns the LanguageCode field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetLanguageCode() string {
-	if o == nil || o.LanguageCode == nil {
-		var ret string
+// GetLanguageCode returns the LanguageCode field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetLanguageCode() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.LanguageCode
+	return o.LanguageCode
 }
 
 // GetLanguageCodeOk returns a tuple with the LanguageCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetLanguageCodeOk() (*string, bool) {
-	if o == nil || o.LanguageCode == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetLanguageCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.LanguageCode) {
 		return nil, false
 	}
-	return o.LanguageCode, true
+	return &o.LanguageCode, true
 }
 
 // HasLanguageCode returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasLanguageCode() bool {
-	if o != nil && o.LanguageCode != nil {
+	if o != nil && IsNil(o.LanguageCode) {
 		return true
 	}
 
 	return false
 }
 
-// SetLanguageCode gets a reference to the given string and assigns it to the LanguageCode field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetLanguageCode(v string) {
-	o.LanguageCode = &v
+// SetLanguageCode gets a reference to the given interface{} and assigns it to the LanguageCode field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetLanguageCode(v interface{}) {
+	o.LanguageCode = v
 }
 
-// GetShippingCountryCodeLock returns the ShippingCountryCodeLock field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetShippingCountryCodeLock() string {
-	if o == nil || o.ShippingCountryCodeLock == nil {
-		var ret string
+// GetShippingCountryCodeLock returns the ShippingCountryCodeLock field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetShippingCountryCodeLock() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ShippingCountryCodeLock
+	return o.ShippingCountryCodeLock
 }
 
 // GetShippingCountryCodeLockOk returns a tuple with the ShippingCountryCodeLock field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetShippingCountryCodeLockOk() (*string, bool) {
-	if o == nil || o.ShippingCountryCodeLock == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetShippingCountryCodeLockOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ShippingCountryCodeLock) {
 		return nil, false
 	}
-	return o.ShippingCountryCodeLock, true
+	return &o.ShippingCountryCodeLock, true
 }
 
 // HasShippingCountryCodeLock returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasShippingCountryCodeLock() bool {
-	if o != nil && o.ShippingCountryCodeLock != nil {
+	if o != nil && IsNil(o.ShippingCountryCodeLock) {
 		return true
 	}
 
 	return false
 }
 
-// SetShippingCountryCodeLock gets a reference to the given string and assigns it to the ShippingCountryCodeLock field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetShippingCountryCodeLock(v string) {
-	o.ShippingCountryCodeLock = &v
+// SetShippingCountryCodeLock gets a reference to the given interface{} and assigns it to the ShippingCountryCodeLock field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetShippingCountryCodeLock(v interface{}) {
+	o.ShippingCountryCodeLock = v
 }
 
-// GetCouponCode returns the CouponCode field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCouponCode() string {
-	if o == nil || o.CouponCode == nil {
-		var ret string
+// GetCouponCode returns the CouponCode field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCouponCode() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CouponCode
+	return o.CouponCode
 }
 
 // GetCouponCodeOk returns a tuple with the CouponCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCouponCodeOk() (*string, bool) {
-	if o == nil || o.CouponCode == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCouponCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CouponCode) {
 		return nil, false
 	}
-	return o.CouponCode, true
+	return &o.CouponCode, true
 }
 
 // HasCouponCode returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasCouponCode() bool {
-	if o != nil && o.CouponCode != nil {
+	if o != nil && IsNil(o.CouponCode) {
 		return true
 	}
 
 	return false
 }
 
-// SetCouponCode gets a reference to the given string and assigns it to the CouponCode field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetCouponCode(v string) {
-	o.CouponCode = &v
+// SetCouponCode gets a reference to the given interface{} and assigns it to the CouponCode field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetCouponCode(v interface{}) {
+	o.CouponCode = v
 }
 
-// GetGiftCardCode returns the GiftCardCode field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetGiftCardCode() string {
-	if o == nil || o.GiftCardCode == nil {
-		var ret string
+// GetGiftCardCode returns the GiftCardCode field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetGiftCardCode() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.GiftCardCode
+	return o.GiftCardCode
 }
 
 // GetGiftCardCodeOk returns a tuple with the GiftCardCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetGiftCardCodeOk() (*string, bool) {
-	if o == nil || o.GiftCardCode == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetGiftCardCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.GiftCardCode) {
 		return nil, false
 	}
-	return o.GiftCardCode, true
+	return &o.GiftCardCode, true
 }
 
 // HasGiftCardCode returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasGiftCardCode() bool {
-	if o != nil && o.GiftCardCode != nil {
+	if o != nil && IsNil(o.GiftCardCode) {
 		return true
 	}
 
 	return false
 }
 
-// SetGiftCardCode gets a reference to the given string and assigns it to the GiftCardCode field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetGiftCardCode(v string) {
-	o.GiftCardCode = &v
+// SetGiftCardCode gets a reference to the given interface{} and assigns it to the GiftCardCode field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetGiftCardCode(v interface{}) {
+	o.GiftCardCode = v
 }
 
-// GetGiftCardOrCouponCode returns the GiftCardOrCouponCode field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetGiftCardOrCouponCode() string {
-	if o == nil || o.GiftCardOrCouponCode == nil {
-		var ret string
+// GetGiftCardOrCouponCode returns the GiftCardOrCouponCode field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetGiftCardOrCouponCode() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.GiftCardOrCouponCode
+	return o.GiftCardOrCouponCode
 }
 
 // GetGiftCardOrCouponCodeOk returns a tuple with the GiftCardOrCouponCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetGiftCardOrCouponCodeOk() (*string, bool) {
-	if o == nil || o.GiftCardOrCouponCode == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetGiftCardOrCouponCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.GiftCardOrCouponCode) {
 		return nil, false
 	}
-	return o.GiftCardOrCouponCode, true
+	return &o.GiftCardOrCouponCode, true
 }
 
 // HasGiftCardOrCouponCode returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasGiftCardOrCouponCode() bool {
-	if o != nil && o.GiftCardOrCouponCode != nil {
+	if o != nil && IsNil(o.GiftCardOrCouponCode) {
 		return true
 	}
 
 	return false
 }
 
-// SetGiftCardOrCouponCode gets a reference to the given string and assigns it to the GiftCardOrCouponCode field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetGiftCardOrCouponCode(v string) {
-	o.GiftCardOrCouponCode = &v
+// SetGiftCardOrCouponCode gets a reference to the given interface{} and assigns it to the GiftCardOrCouponCode field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetGiftCardOrCouponCode(v interface{}) {
+	o.GiftCardOrCouponCode = v
 }
 
-// GetCartUrl returns the CartUrl field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCartUrl() string {
-	if o == nil || o.CartUrl == nil {
-		var ret string
+// GetCartUrl returns the CartUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCartUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CartUrl
+	return o.CartUrl
 }
 
 // GetCartUrlOk returns a tuple with the CartUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCartUrlOk() (*string, bool) {
-	if o == nil || o.CartUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCartUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CartUrl) {
 		return nil, false
 	}
-	return o.CartUrl, true
+	return &o.CartUrl, true
 }
 
 // HasCartUrl returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasCartUrl() bool {
-	if o != nil && o.CartUrl != nil {
+	if o != nil && IsNil(o.CartUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetCartUrl gets a reference to the given string and assigns it to the CartUrl field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetCartUrl(v string) {
-	o.CartUrl = &v
+// SetCartUrl gets a reference to the given interface{} and assigns it to the CartUrl field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetCartUrl(v interface{}) {
+	o.CartUrl = v
 }
 
-// GetReturnUrl returns the ReturnUrl field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetReturnUrl() string {
-	if o == nil || o.ReturnUrl == nil {
-		var ret string
+// GetReturnUrl returns the ReturnUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetReturnUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReturnUrl
+	return o.ReturnUrl
 }
 
 // GetReturnUrlOk returns a tuple with the ReturnUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetReturnUrlOk() (*string, bool) {
-	if o == nil || o.ReturnUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetReturnUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReturnUrl) {
 		return nil, false
 	}
-	return o.ReturnUrl, true
+	return &o.ReturnUrl, true
 }
 
 // HasReturnUrl returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasReturnUrl() bool {
-	if o != nil && o.ReturnUrl != nil {
+	if o != nil && IsNil(o.ReturnUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetReturnUrl gets a reference to the given string and assigns it to the ReturnUrl field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetReturnUrl(v string) {
-	o.ReturnUrl = &v
+// SetReturnUrl gets a reference to the given interface{} and assigns it to the ReturnUrl field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetReturnUrl(v interface{}) {
+	o.ReturnUrl = v
 }
 
-// GetTermsUrl returns the TermsUrl field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetTermsUrl() string {
-	if o == nil || o.TermsUrl == nil {
-		var ret string
+// GetTermsUrl returns the TermsUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetTermsUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.TermsUrl
+	return o.TermsUrl
 }
 
 // GetTermsUrlOk returns a tuple with the TermsUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetTermsUrlOk() (*string, bool) {
-	if o == nil || o.TermsUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetTermsUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.TermsUrl) {
 		return nil, false
 	}
-	return o.TermsUrl, true
+	return &o.TermsUrl, true
 }
 
 // HasTermsUrl returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasTermsUrl() bool {
-	if o != nil && o.TermsUrl != nil {
+	if o != nil && IsNil(o.TermsUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetTermsUrl gets a reference to the given string and assigns it to the TermsUrl field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetTermsUrl(v string) {
-	o.TermsUrl = &v
+// SetTermsUrl gets a reference to the given interface{} and assigns it to the TermsUrl field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetTermsUrl(v interface{}) {
+	o.TermsUrl = v
 }
 
-// GetPrivacyUrl returns the PrivacyUrl field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetPrivacyUrl() string {
-	if o == nil || o.PrivacyUrl == nil {
-		var ret string
+// GetPrivacyUrl returns the PrivacyUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetPrivacyUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.PrivacyUrl
+	return o.PrivacyUrl
 }
 
 // GetPrivacyUrlOk returns a tuple with the PrivacyUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetPrivacyUrlOk() (*string, bool) {
-	if o == nil || o.PrivacyUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetPrivacyUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PrivacyUrl) {
 		return nil, false
 	}
-	return o.PrivacyUrl, true
+	return &o.PrivacyUrl, true
 }
 
 // HasPrivacyUrl returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasPrivacyUrl() bool {
-	if o != nil && o.PrivacyUrl != nil {
+	if o != nil && IsNil(o.PrivacyUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetPrivacyUrl gets a reference to the given string and assigns it to the PrivacyUrl field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetPrivacyUrl(v string) {
-	o.PrivacyUrl = &v
+// SetPrivacyUrl gets a reference to the given interface{} and assigns it to the PrivacyUrl field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetPrivacyUrl(v interface{}) {
+	o.PrivacyUrl = v
 }
 
-// GetArchive returns the Archive field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetArchive() bool {
-	if o == nil || o.Archive == nil {
-		var ret bool
+// GetArchive returns the Archive field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetArchive() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Archive
+	return o.Archive
 }
 
 // GetArchiveOk returns a tuple with the Archive field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetArchiveOk() (*bool, bool) {
-	if o == nil || o.Archive == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetArchiveOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Archive) {
 		return nil, false
 	}
-	return o.Archive, true
+	return &o.Archive, true
 }
 
 // HasArchive returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasArchive() bool {
-	if o != nil && o.Archive != nil {
+	if o != nil && IsNil(o.Archive) {
 		return true
 	}
 
 	return false
 }
 
-// SetArchive gets a reference to the given bool and assigns it to the Archive field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetArchive(v bool) {
-	o.Archive = &v
+// SetArchive gets a reference to the given interface{} and assigns it to the Archive field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetArchive(v interface{}) {
+	o.Archive = v
 }
 
-// GetUnarchive returns the Unarchive field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetUnarchive() bool {
-	if o == nil || o.Unarchive == nil {
-		var ret bool
+// GetUnarchive returns the Unarchive field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetUnarchive() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Unarchive
+	return o.Unarchive
 }
 
 // GetUnarchiveOk returns a tuple with the Unarchive field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetUnarchiveOk() (*bool, bool) {
-	if o == nil || o.Unarchive == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetUnarchiveOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Unarchive) {
 		return nil, false
 	}
-	return o.Unarchive, true
+	return &o.Unarchive, true
 }
 
 // HasUnarchive returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasUnarchive() bool {
-	if o != nil && o.Unarchive != nil {
+	if o != nil && IsNil(o.Unarchive) {
 		return true
 	}
 
 	return false
 }
 
-// SetUnarchive gets a reference to the given bool and assigns it to the Unarchive field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetUnarchive(v bool) {
-	o.Unarchive = &v
+// SetUnarchive gets a reference to the given interface{} and assigns it to the Unarchive field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetUnarchive(v interface{}) {
+	o.Unarchive = v
 }
 
-// GetPlace returns the Place field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetPlace() bool {
-	if o == nil || o.Place == nil {
-		var ret bool
+// GetPlace returns the Place field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetPlace() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Place
+	return o.Place
 }
 
 // GetPlaceOk returns a tuple with the Place field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetPlaceOk() (*bool, bool) {
-	if o == nil || o.Place == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetPlaceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Place) {
 		return nil, false
 	}
-	return o.Place, true
+	return &o.Place, true
 }
 
 // HasPlace returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasPlace() bool {
-	if o != nil && o.Place != nil {
+	if o != nil && IsNil(o.Place) {
 		return true
 	}
 
 	return false
 }
 
-// SetPlace gets a reference to the given bool and assigns it to the Place field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetPlace(v bool) {
-	o.Place = &v
+// SetPlace gets a reference to the given interface{} and assigns it to the Place field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetPlace(v interface{}) {
+	o.Place = v
 }
 
-// GetCancel returns the Cancel field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCancel() bool {
-	if o == nil || o.Cancel == nil {
-		var ret bool
+// GetCancel returns the Cancel field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCancel() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Cancel
+	return o.Cancel
 }
 
 // GetCancelOk returns a tuple with the Cancel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCancelOk() (*bool, bool) {
-	if o == nil || o.Cancel == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCancelOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Cancel) {
 		return nil, false
 	}
-	return o.Cancel, true
+	return &o.Cancel, true
 }
 
 // HasCancel returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasCancel() bool {
-	if o != nil && o.Cancel != nil {
+	if o != nil && IsNil(o.Cancel) {
 		return true
 	}
 
 	return false
 }
 
-// SetCancel gets a reference to the given bool and assigns it to the Cancel field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetCancel(v bool) {
-	o.Cancel = &v
+// SetCancel gets a reference to the given interface{} and assigns it to the Cancel field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetCancel(v interface{}) {
+	o.Cancel = v
 }
 
-// GetApprove returns the Approve field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetApprove() bool {
-	if o == nil || o.Approve == nil {
-		var ret bool
+// GetApprove returns the Approve field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetApprove() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Approve
+	return o.Approve
 }
 
 // GetApproveOk returns a tuple with the Approve field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetApproveOk() (*bool, bool) {
-	if o == nil || o.Approve == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetApproveOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Approve) {
 		return nil, false
 	}
-	return o.Approve, true
+	return &o.Approve, true
 }
 
 // HasApprove returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasApprove() bool {
-	if o != nil && o.Approve != nil {
+	if o != nil && IsNil(o.Approve) {
 		return true
 	}
 
 	return false
 }
 
-// SetApprove gets a reference to the given bool and assigns it to the Approve field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetApprove(v bool) {
-	o.Approve = &v
+// SetApprove gets a reference to the given interface{} and assigns it to the Approve field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetApprove(v interface{}) {
+	o.Approve = v
 }
 
-// GetApproveAndCapture returns the ApproveAndCapture field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetApproveAndCapture() bool {
-	if o == nil || o.ApproveAndCapture == nil {
-		var ret bool
+// GetApproveAndCapture returns the ApproveAndCapture field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetApproveAndCapture() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ApproveAndCapture
+	return o.ApproveAndCapture
 }
 
 // GetApproveAndCaptureOk returns a tuple with the ApproveAndCapture field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetApproveAndCaptureOk() (*bool, bool) {
-	if o == nil || o.ApproveAndCapture == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetApproveAndCaptureOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ApproveAndCapture) {
 		return nil, false
 	}
-	return o.ApproveAndCapture, true
+	return &o.ApproveAndCapture, true
 }
 
 // HasApproveAndCapture returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasApproveAndCapture() bool {
-	if o != nil && o.ApproveAndCapture != nil {
+	if o != nil && IsNil(o.ApproveAndCapture) {
 		return true
 	}
 
 	return false
 }
 
-// SetApproveAndCapture gets a reference to the given bool and assigns it to the ApproveAndCapture field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetApproveAndCapture(v bool) {
-	o.ApproveAndCapture = &v
+// SetApproveAndCapture gets a reference to the given interface{} and assigns it to the ApproveAndCapture field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetApproveAndCapture(v interface{}) {
+	o.ApproveAndCapture = v
 }
 
-// GetAuthorize returns the Authorize field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetAuthorize() bool {
-	if o == nil || o.Authorize == nil {
-		var ret bool
+// GetAuthorize returns the Authorize field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetAuthorize() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Authorize
+	return o.Authorize
 }
 
 // GetAuthorizeOk returns a tuple with the Authorize field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetAuthorizeOk() (*bool, bool) {
-	if o == nil || o.Authorize == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetAuthorizeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Authorize) {
 		return nil, false
 	}
-	return o.Authorize, true
+	return &o.Authorize, true
 }
 
 // HasAuthorize returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasAuthorize() bool {
-	if o != nil && o.Authorize != nil {
+	if o != nil && IsNil(o.Authorize) {
 		return true
 	}
 
 	return false
 }
 
-// SetAuthorize gets a reference to the given bool and assigns it to the Authorize field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetAuthorize(v bool) {
-	o.Authorize = &v
+// SetAuthorize gets a reference to the given interface{} and assigns it to the Authorize field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetAuthorize(v interface{}) {
+	o.Authorize = v
 }
 
-// GetAuthorizationAmountCents returns the AuthorizationAmountCents field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetAuthorizationAmountCents() int32 {
-	if o == nil || o.AuthorizationAmountCents == nil {
-		var ret int32
+// GetAuthorizationAmountCents returns the AuthorizationAmountCents field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetAuthorizationAmountCents() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.AuthorizationAmountCents
+	return o.AuthorizationAmountCents
 }
 
 // GetAuthorizationAmountCentsOk returns a tuple with the AuthorizationAmountCents field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetAuthorizationAmountCentsOk() (*int32, bool) {
-	if o == nil || o.AuthorizationAmountCents == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetAuthorizationAmountCentsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.AuthorizationAmountCents) {
 		return nil, false
 	}
-	return o.AuthorizationAmountCents, true
+	return &o.AuthorizationAmountCents, true
 }
 
 // HasAuthorizationAmountCents returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasAuthorizationAmountCents() bool {
-	if o != nil && o.AuthorizationAmountCents != nil {
+	if o != nil && IsNil(o.AuthorizationAmountCents) {
 		return true
 	}
 
 	return false
 }
 
-// SetAuthorizationAmountCents gets a reference to the given int32 and assigns it to the AuthorizationAmountCents field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetAuthorizationAmountCents(v int32) {
-	o.AuthorizationAmountCents = &v
+// SetAuthorizationAmountCents gets a reference to the given interface{} and assigns it to the AuthorizationAmountCents field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetAuthorizationAmountCents(v interface{}) {
+	o.AuthorizationAmountCents = v
 }
 
-// GetCapture returns the Capture field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCapture() bool {
-	if o == nil || o.Capture == nil {
-		var ret bool
+// GetCapture returns the Capture field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCapture() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Capture
+	return o.Capture
 }
 
 // GetCaptureOk returns a tuple with the Capture field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCaptureOk() (*bool, bool) {
-	if o == nil || o.Capture == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCaptureOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Capture) {
 		return nil, false
 	}
-	return o.Capture, true
+	return &o.Capture, true
 }
 
 // HasCapture returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasCapture() bool {
-	if o != nil && o.Capture != nil {
+	if o != nil && IsNil(o.Capture) {
 		return true
 	}
 
 	return false
 }
 
-// SetCapture gets a reference to the given bool and assigns it to the Capture field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetCapture(v bool) {
-	o.Capture = &v
+// SetCapture gets a reference to the given interface{} and assigns it to the Capture field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetCapture(v interface{}) {
+	o.Capture = v
 }
 
-// GetRefund returns the Refund field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetRefund() bool {
-	if o == nil || o.Refund == nil {
-		var ret bool
+// GetRefund returns the Refund field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetRefund() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Refund
+	return o.Refund
 }
 
 // GetRefundOk returns a tuple with the Refund field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetRefundOk() (*bool, bool) {
-	if o == nil || o.Refund == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetRefundOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Refund) {
 		return nil, false
 	}
-	return o.Refund, true
+	return &o.Refund, true
 }
 
 // HasRefund returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasRefund() bool {
-	if o != nil && o.Refund != nil {
+	if o != nil && IsNil(o.Refund) {
 		return true
 	}
 
 	return false
 }
 
-// SetRefund gets a reference to the given bool and assigns it to the Refund field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetRefund(v bool) {
-	o.Refund = &v
+// SetRefund gets a reference to the given interface{} and assigns it to the Refund field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetRefund(v interface{}) {
+	o.Refund = v
 }
 
-// GetUpdateTaxes returns the UpdateTaxes field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetUpdateTaxes() bool {
-	if o == nil || o.UpdateTaxes == nil {
-		var ret bool
+// GetUpdateTaxes returns the UpdateTaxes field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetUpdateTaxes() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.UpdateTaxes
+	return o.UpdateTaxes
 }
 
 // GetUpdateTaxesOk returns a tuple with the UpdateTaxes field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetUpdateTaxesOk() (*bool, bool) {
-	if o == nil || o.UpdateTaxes == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetUpdateTaxesOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.UpdateTaxes) {
 		return nil, false
 	}
-	return o.UpdateTaxes, true
+	return &o.UpdateTaxes, true
 }
 
 // HasUpdateTaxes returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasUpdateTaxes() bool {
-	if o != nil && o.UpdateTaxes != nil {
+	if o != nil && IsNil(o.UpdateTaxes) {
 		return true
 	}
 
 	return false
 }
 
-// SetUpdateTaxes gets a reference to the given bool and assigns it to the UpdateTaxes field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetUpdateTaxes(v bool) {
-	o.UpdateTaxes = &v
+// SetUpdateTaxes gets a reference to the given interface{} and assigns it to the UpdateTaxes field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetUpdateTaxes(v interface{}) {
+	o.UpdateTaxes = v
 }
 
-// GetNullifyPaymentSource returns the NullifyPaymentSource field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetNullifyPaymentSource() bool {
-	if o == nil || o.NullifyPaymentSource == nil {
-		var ret bool
+// GetNullifyPaymentSource returns the NullifyPaymentSource field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetNullifyPaymentSource() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.NullifyPaymentSource
+	return o.NullifyPaymentSource
 }
 
 // GetNullifyPaymentSourceOk returns a tuple with the NullifyPaymentSource field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetNullifyPaymentSourceOk() (*bool, bool) {
-	if o == nil || o.NullifyPaymentSource == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetNullifyPaymentSourceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.NullifyPaymentSource) {
 		return nil, false
 	}
-	return o.NullifyPaymentSource, true
+	return &o.NullifyPaymentSource, true
 }
 
 // HasNullifyPaymentSource returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasNullifyPaymentSource() bool {
-	if o != nil && o.NullifyPaymentSource != nil {
+	if o != nil && IsNil(o.NullifyPaymentSource) {
 		return true
 	}
 
 	return false
 }
 
-// SetNullifyPaymentSource gets a reference to the given bool and assigns it to the NullifyPaymentSource field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetNullifyPaymentSource(v bool) {
-	o.NullifyPaymentSource = &v
+// SetNullifyPaymentSource gets a reference to the given interface{} and assigns it to the NullifyPaymentSource field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetNullifyPaymentSource(v interface{}) {
+	o.NullifyPaymentSource = v
 }
 
-// GetBillingAddressCloneId returns the BillingAddressCloneId field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetBillingAddressCloneId() string {
-	if o == nil || o.BillingAddressCloneId == nil {
-		var ret string
+// GetBillingAddressCloneId returns the BillingAddressCloneId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetBillingAddressCloneId() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.BillingAddressCloneId
+	return o.BillingAddressCloneId
 }
 
 // GetBillingAddressCloneIdOk returns a tuple with the BillingAddressCloneId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetBillingAddressCloneIdOk() (*string, bool) {
-	if o == nil || o.BillingAddressCloneId == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetBillingAddressCloneIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.BillingAddressCloneId) {
 		return nil, false
 	}
-	return o.BillingAddressCloneId, true
+	return &o.BillingAddressCloneId, true
 }
 
 // HasBillingAddressCloneId returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasBillingAddressCloneId() bool {
-	if o != nil && o.BillingAddressCloneId != nil {
+	if o != nil && IsNil(o.BillingAddressCloneId) {
 		return true
 	}
 
 	return false
 }
 
-// SetBillingAddressCloneId gets a reference to the given string and assigns it to the BillingAddressCloneId field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetBillingAddressCloneId(v string) {
-	o.BillingAddressCloneId = &v
+// SetBillingAddressCloneId gets a reference to the given interface{} and assigns it to the BillingAddressCloneId field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetBillingAddressCloneId(v interface{}) {
+	o.BillingAddressCloneId = v
 }
 
-// GetShippingAddressCloneId returns the ShippingAddressCloneId field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetShippingAddressCloneId() string {
-	if o == nil || o.ShippingAddressCloneId == nil {
-		var ret string
+// GetShippingAddressCloneId returns the ShippingAddressCloneId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetShippingAddressCloneId() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ShippingAddressCloneId
+	return o.ShippingAddressCloneId
 }
 
 // GetShippingAddressCloneIdOk returns a tuple with the ShippingAddressCloneId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetShippingAddressCloneIdOk() (*string, bool) {
-	if o == nil || o.ShippingAddressCloneId == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetShippingAddressCloneIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ShippingAddressCloneId) {
 		return nil, false
 	}
-	return o.ShippingAddressCloneId, true
+	return &o.ShippingAddressCloneId, true
 }
 
 // HasShippingAddressCloneId returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasShippingAddressCloneId() bool {
-	if o != nil && o.ShippingAddressCloneId != nil {
+	if o != nil && IsNil(o.ShippingAddressCloneId) {
 		return true
 	}
 
 	return false
 }
 
-// SetShippingAddressCloneId gets a reference to the given string and assigns it to the ShippingAddressCloneId field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetShippingAddressCloneId(v string) {
-	o.ShippingAddressCloneId = &v
+// SetShippingAddressCloneId gets a reference to the given interface{} and assigns it to the ShippingAddressCloneId field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetShippingAddressCloneId(v interface{}) {
+	o.ShippingAddressCloneId = v
 }
 
-// GetCustomerPaymentSourceId returns the CustomerPaymentSourceId field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCustomerPaymentSourceId() string {
-	if o == nil || o.CustomerPaymentSourceId == nil {
-		var ret string
+// GetCustomerPaymentSourceId returns the CustomerPaymentSourceId field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCustomerPaymentSourceId() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CustomerPaymentSourceId
+	return o.CustomerPaymentSourceId
 }
 
 // GetCustomerPaymentSourceIdOk returns a tuple with the CustomerPaymentSourceId field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCustomerPaymentSourceIdOk() (*string, bool) {
-	if o == nil || o.CustomerPaymentSourceId == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCustomerPaymentSourceIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CustomerPaymentSourceId) {
 		return nil, false
 	}
-	return o.CustomerPaymentSourceId, true
+	return &o.CustomerPaymentSourceId, true
 }
 
 // HasCustomerPaymentSourceId returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasCustomerPaymentSourceId() bool {
-	if o != nil && o.CustomerPaymentSourceId != nil {
+	if o != nil && IsNil(o.CustomerPaymentSourceId) {
 		return true
 	}
 
 	return false
 }
 
-// SetCustomerPaymentSourceId gets a reference to the given string and assigns it to the CustomerPaymentSourceId field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetCustomerPaymentSourceId(v string) {
-	o.CustomerPaymentSourceId = &v
+// SetCustomerPaymentSourceId gets a reference to the given interface{} and assigns it to the CustomerPaymentSourceId field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetCustomerPaymentSourceId(v interface{}) {
+	o.CustomerPaymentSourceId = v
 }
 
-// GetShippingAddressSameAsBilling returns the ShippingAddressSameAsBilling field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetShippingAddressSameAsBilling() bool {
-	if o == nil || o.ShippingAddressSameAsBilling == nil {
-		var ret bool
+// GetShippingAddressSameAsBilling returns the ShippingAddressSameAsBilling field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetShippingAddressSameAsBilling() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ShippingAddressSameAsBilling
+	return o.ShippingAddressSameAsBilling
 }
 
 // GetShippingAddressSameAsBillingOk returns a tuple with the ShippingAddressSameAsBilling field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetShippingAddressSameAsBillingOk() (*bool, bool) {
-	if o == nil || o.ShippingAddressSameAsBilling == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetShippingAddressSameAsBillingOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ShippingAddressSameAsBilling) {
 		return nil, false
 	}
-	return o.ShippingAddressSameAsBilling, true
+	return &o.ShippingAddressSameAsBilling, true
 }
 
 // HasShippingAddressSameAsBilling returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasShippingAddressSameAsBilling() bool {
-	if o != nil && o.ShippingAddressSameAsBilling != nil {
+	if o != nil && IsNil(o.ShippingAddressSameAsBilling) {
 		return true
 	}
 
 	return false
 }
 
-// SetShippingAddressSameAsBilling gets a reference to the given bool and assigns it to the ShippingAddressSameAsBilling field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetShippingAddressSameAsBilling(v bool) {
-	o.ShippingAddressSameAsBilling = &v
+// SetShippingAddressSameAsBilling gets a reference to the given interface{} and assigns it to the ShippingAddressSameAsBilling field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetShippingAddressSameAsBilling(v interface{}) {
+	o.ShippingAddressSameAsBilling = v
 }
 
-// GetBillingAddressSameAsShipping returns the BillingAddressSameAsShipping field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetBillingAddressSameAsShipping() bool {
-	if o == nil || o.BillingAddressSameAsShipping == nil {
-		var ret bool
+// GetBillingAddressSameAsShipping returns the BillingAddressSameAsShipping field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetBillingAddressSameAsShipping() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.BillingAddressSameAsShipping
+	return o.BillingAddressSameAsShipping
 }
 
 // GetBillingAddressSameAsShippingOk returns a tuple with the BillingAddressSameAsShipping field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetBillingAddressSameAsShippingOk() (*bool, bool) {
-	if o == nil || o.BillingAddressSameAsShipping == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetBillingAddressSameAsShippingOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.BillingAddressSameAsShipping) {
 		return nil, false
 	}
-	return o.BillingAddressSameAsShipping, true
+	return &o.BillingAddressSameAsShipping, true
 }
 
 // HasBillingAddressSameAsShipping returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasBillingAddressSameAsShipping() bool {
-	if o != nil && o.BillingAddressSameAsShipping != nil {
+	if o != nil && IsNil(o.BillingAddressSameAsShipping) {
 		return true
 	}
 
 	return false
 }
 
-// SetBillingAddressSameAsShipping gets a reference to the given bool and assigns it to the BillingAddressSameAsShipping field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetBillingAddressSameAsShipping(v bool) {
-	o.BillingAddressSameAsShipping = &v
+// SetBillingAddressSameAsShipping gets a reference to the given interface{} and assigns it to the BillingAddressSameAsShipping field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetBillingAddressSameAsShipping(v interface{}) {
+	o.BillingAddressSameAsShipping = v
 }
 
-// GetCommitInvoice returns the CommitInvoice field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCommitInvoice() bool {
-	if o == nil || o.CommitInvoice == nil {
-		var ret bool
+// GetCommitInvoice returns the CommitInvoice field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCommitInvoice() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CommitInvoice
+	return o.CommitInvoice
 }
 
 // GetCommitInvoiceOk returns a tuple with the CommitInvoice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCommitInvoiceOk() (*bool, bool) {
-	if o == nil || o.CommitInvoice == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCommitInvoiceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CommitInvoice) {
 		return nil, false
 	}
-	return o.CommitInvoice, true
+	return &o.CommitInvoice, true
 }
 
 // HasCommitInvoice returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasCommitInvoice() bool {
-	if o != nil && o.CommitInvoice != nil {
+	if o != nil && IsNil(o.CommitInvoice) {
 		return true
 	}
 
 	return false
 }
 
-// SetCommitInvoice gets a reference to the given bool and assigns it to the CommitInvoice field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetCommitInvoice(v bool) {
-	o.CommitInvoice = &v
+// SetCommitInvoice gets a reference to the given interface{} and assigns it to the CommitInvoice field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetCommitInvoice(v interface{}) {
+	o.CommitInvoice = v
 }
 
-// GetRefundInvoice returns the RefundInvoice field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetRefundInvoice() bool {
-	if o == nil || o.RefundInvoice == nil {
-		var ret bool
+// GetRefundInvoice returns the RefundInvoice field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetRefundInvoice() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.RefundInvoice
+	return o.RefundInvoice
 }
 
 // GetRefundInvoiceOk returns a tuple with the RefundInvoice field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetRefundInvoiceOk() (*bool, bool) {
-	if o == nil || o.RefundInvoice == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetRefundInvoiceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.RefundInvoice) {
 		return nil, false
 	}
-	return o.RefundInvoice, true
+	return &o.RefundInvoice, true
 }
 
 // HasRefundInvoice returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasRefundInvoice() bool {
-	if o != nil && o.RefundInvoice != nil {
+	if o != nil && IsNil(o.RefundInvoice) {
 		return true
 	}
 
 	return false
 }
 
-// SetRefundInvoice gets a reference to the given bool and assigns it to the RefundInvoice field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetRefundInvoice(v bool) {
-	o.RefundInvoice = &v
+// SetRefundInvoice gets a reference to the given interface{} and assigns it to the RefundInvoice field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetRefundInvoice(v interface{}) {
+	o.RefundInvoice = v
 }
 
-// GetSavePaymentSourceToCustomerWallet returns the SavePaymentSourceToCustomerWallet field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetSavePaymentSourceToCustomerWallet() bool {
-	if o == nil || o.SavePaymentSourceToCustomerWallet == nil {
-		var ret bool
+// GetSavePaymentSourceToCustomerWallet returns the SavePaymentSourceToCustomerWallet field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetSavePaymentSourceToCustomerWallet() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.SavePaymentSourceToCustomerWallet
+	return o.SavePaymentSourceToCustomerWallet
 }
 
 // GetSavePaymentSourceToCustomerWalletOk returns a tuple with the SavePaymentSourceToCustomerWallet field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetSavePaymentSourceToCustomerWalletOk() (*bool, bool) {
-	if o == nil || o.SavePaymentSourceToCustomerWallet == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetSavePaymentSourceToCustomerWalletOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.SavePaymentSourceToCustomerWallet) {
 		return nil, false
 	}
-	return o.SavePaymentSourceToCustomerWallet, true
+	return &o.SavePaymentSourceToCustomerWallet, true
 }
 
 // HasSavePaymentSourceToCustomerWallet returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasSavePaymentSourceToCustomerWallet() bool {
-	if o != nil && o.SavePaymentSourceToCustomerWallet != nil {
+	if o != nil && IsNil(o.SavePaymentSourceToCustomerWallet) {
 		return true
 	}
 
 	return false
 }
 
-// SetSavePaymentSourceToCustomerWallet gets a reference to the given bool and assigns it to the SavePaymentSourceToCustomerWallet field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetSavePaymentSourceToCustomerWallet(v bool) {
-	o.SavePaymentSourceToCustomerWallet = &v
+// SetSavePaymentSourceToCustomerWallet gets a reference to the given interface{} and assigns it to the SavePaymentSourceToCustomerWallet field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetSavePaymentSourceToCustomerWallet(v interface{}) {
+	o.SavePaymentSourceToCustomerWallet = v
 }
 
-// GetSaveShippingAddressToCustomerAddressBook returns the SaveShippingAddressToCustomerAddressBook field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetSaveShippingAddressToCustomerAddressBook() bool {
-	if o == nil || o.SaveShippingAddressToCustomerAddressBook == nil {
-		var ret bool
+// GetSaveShippingAddressToCustomerAddressBook returns the SaveShippingAddressToCustomerAddressBook field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetSaveShippingAddressToCustomerAddressBook() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.SaveShippingAddressToCustomerAddressBook
+	return o.SaveShippingAddressToCustomerAddressBook
 }
 
 // GetSaveShippingAddressToCustomerAddressBookOk returns a tuple with the SaveShippingAddressToCustomerAddressBook field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetSaveShippingAddressToCustomerAddressBookOk() (*bool, bool) {
-	if o == nil || o.SaveShippingAddressToCustomerAddressBook == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetSaveShippingAddressToCustomerAddressBookOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.SaveShippingAddressToCustomerAddressBook) {
 		return nil, false
 	}
-	return o.SaveShippingAddressToCustomerAddressBook, true
+	return &o.SaveShippingAddressToCustomerAddressBook, true
 }
 
 // HasSaveShippingAddressToCustomerAddressBook returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasSaveShippingAddressToCustomerAddressBook() bool {
-	if o != nil && o.SaveShippingAddressToCustomerAddressBook != nil {
+	if o != nil && IsNil(o.SaveShippingAddressToCustomerAddressBook) {
 		return true
 	}
 
 	return false
 }
 
-// SetSaveShippingAddressToCustomerAddressBook gets a reference to the given bool and assigns it to the SaveShippingAddressToCustomerAddressBook field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetSaveShippingAddressToCustomerAddressBook(v bool) {
-	o.SaveShippingAddressToCustomerAddressBook = &v
+// SetSaveShippingAddressToCustomerAddressBook gets a reference to the given interface{} and assigns it to the SaveShippingAddressToCustomerAddressBook field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetSaveShippingAddressToCustomerAddressBook(v interface{}) {
+	o.SaveShippingAddressToCustomerAddressBook = v
 }
 
-// GetSaveBillingAddressToCustomerAddressBook returns the SaveBillingAddressToCustomerAddressBook field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetSaveBillingAddressToCustomerAddressBook() bool {
-	if o == nil || o.SaveBillingAddressToCustomerAddressBook == nil {
-		var ret bool
+// GetSaveBillingAddressToCustomerAddressBook returns the SaveBillingAddressToCustomerAddressBook field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetSaveBillingAddressToCustomerAddressBook() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.SaveBillingAddressToCustomerAddressBook
+	return o.SaveBillingAddressToCustomerAddressBook
 }
 
 // GetSaveBillingAddressToCustomerAddressBookOk returns a tuple with the SaveBillingAddressToCustomerAddressBook field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetSaveBillingAddressToCustomerAddressBookOk() (*bool, bool) {
-	if o == nil || o.SaveBillingAddressToCustomerAddressBook == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetSaveBillingAddressToCustomerAddressBookOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.SaveBillingAddressToCustomerAddressBook) {
 		return nil, false
 	}
-	return o.SaveBillingAddressToCustomerAddressBook, true
+	return &o.SaveBillingAddressToCustomerAddressBook, true
 }
 
 // HasSaveBillingAddressToCustomerAddressBook returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasSaveBillingAddressToCustomerAddressBook() bool {
-	if o != nil && o.SaveBillingAddressToCustomerAddressBook != nil {
+	if o != nil && IsNil(o.SaveBillingAddressToCustomerAddressBook) {
 		return true
 	}
 
 	return false
 }
 
-// SetSaveBillingAddressToCustomerAddressBook gets a reference to the given bool and assigns it to the SaveBillingAddressToCustomerAddressBook field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetSaveBillingAddressToCustomerAddressBook(v bool) {
-	o.SaveBillingAddressToCustomerAddressBook = &v
+// SetSaveBillingAddressToCustomerAddressBook gets a reference to the given interface{} and assigns it to the SaveBillingAddressToCustomerAddressBook field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetSaveBillingAddressToCustomerAddressBook(v interface{}) {
+	o.SaveBillingAddressToCustomerAddressBook = v
 }
 
-// GetRefresh returns the Refresh field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetRefresh() bool {
-	if o == nil || o.Refresh == nil {
-		var ret bool
+// GetRefresh returns the Refresh field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetRefresh() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Refresh
+	return o.Refresh
 }
 
 // GetRefreshOk returns a tuple with the Refresh field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetRefreshOk() (*bool, bool) {
-	if o == nil || o.Refresh == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetRefreshOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Refresh) {
 		return nil, false
 	}
-	return o.Refresh, true
+	return &o.Refresh, true
 }
 
 // HasRefresh returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasRefresh() bool {
-	if o != nil && o.Refresh != nil {
+	if o != nil && IsNil(o.Refresh) {
 		return true
 	}
 
 	return false
 }
 
-// SetRefresh gets a reference to the given bool and assigns it to the Refresh field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetRefresh(v bool) {
-	o.Refresh = &v
+// SetRefresh gets a reference to the given interface{} and assigns it to the Refresh field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetRefresh(v interface{}) {
+	o.Refresh = v
 }
 
-// GetValidate returns the Validate field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetValidate() bool {
-	if o == nil || o.Validate == nil {
-		var ret bool
+// GetValidate returns the Validate field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetValidate() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Validate
+	return o.Validate
 }
 
 // GetValidateOk returns a tuple with the Validate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetValidateOk() (*bool, bool) {
-	if o == nil || o.Validate == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetValidateOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Validate) {
 		return nil, false
 	}
-	return o.Validate, true
+	return &o.Validate, true
 }
 
 // HasValidate returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasValidate() bool {
-	if o != nil && o.Validate != nil {
+	if o != nil && IsNil(o.Validate) {
 		return true
 	}
 
 	return false
 }
 
-// SetValidate gets a reference to the given bool and assigns it to the Validate field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetValidate(v bool) {
-	o.Validate = &v
+// SetValidate gets a reference to the given interface{} and assigns it to the Validate field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetValidate(v interface{}) {
+	o.Validate = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetCreateSubscriptions returns the CreateSubscriptions field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCreateSubscriptions() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.CreateSubscriptions
+}
+
+// GetCreateSubscriptionsOk returns a tuple with the CreateSubscriptions field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetCreateSubscriptionsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CreateSubscriptions) {
+		return nil, false
+	}
+	return &o.CreateSubscriptions, true
+}
+
+// HasCreateSubscriptions returns a boolean if a field has been set.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasCreateSubscriptions() bool {
+	if o != nil && IsNil(o.CreateSubscriptions) {
+		return true
+	}
+
+	return false
+}
+
+// SetCreateSubscriptions gets a reference to the given interface{} and assigns it to the CreateSubscriptions field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetCreateSubscriptions(v interface{}) {
+	o.CreateSubscriptions = v
+}
+
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -1375,28 +1452,37 @@ func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetMetadata() map[string]i
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHOrdersOrderId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *PATCHOrdersOrderId200ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 func (o PATCHOrdersOrderId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHOrdersOrderId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
 	if o.Autorefresh != nil {
 		toSerialize["autorefresh"] = o.Autorefresh
@@ -1509,6 +1595,9 @@ func (o PATCHOrdersOrderId200ResponseDataAttributes) MarshalJSON() ([]byte, erro
 	if o.Validate != nil {
 		toSerialize["_validate"] = o.Validate
 	}
+	if o.CreateSubscriptions != nil {
+		toSerialize["_create_subscriptions"] = o.CreateSubscriptions
+	}
 	if o.Reference != nil {
 		toSerialize["reference"] = o.Reference
 	}
@@ -1518,7 +1607,7 @@ func (o PATCHOrdersOrderId200ResponseDataAttributes) MarshalJSON() ([]byte, erro
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHOrdersOrderId200ResponseDataAttributes struct {

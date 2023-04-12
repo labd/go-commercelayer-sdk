@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Prices** | Pointer to [**PriceListDataRelationshipsPrices**](PriceListDataRelationshipsPrices.md) |  | [optional] 
+**Prices** | Pointer to [**PriceFrequencyTierDataRelationshipsPrice**](PriceFrequencyTierDataRelationshipsPrice.md) |  | [optional] 
 **Attachments** | Pointer to [**AvalaraAccountDataRelationshipsAttachments**](AvalaraAccountDataRelationshipsAttachments.md) |  | [optional] 
 
 ## Methods
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetPrices
 
-`func (o *PriceListDataRelationships) GetPrices() PriceListDataRelationshipsPrices`
+`func (o *PriceListDataRelationships) GetPrices() PriceFrequencyTierDataRelationshipsPrice`
 
 GetPrices returns the Prices field if non-nil, zero value otherwise.
 
 ### GetPricesOk
 
-`func (o *PriceListDataRelationships) GetPricesOk() (*PriceListDataRelationshipsPrices, bool)`
+`func (o *PriceListDataRelationships) GetPricesOk() (*PriceFrequencyTierDataRelationshipsPrice, bool)`
 
 GetPricesOk returns a tuple with the Prices field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetPrices
 
-`func (o *PriceListDataRelationships) SetPrices(v PriceListDataRelationshipsPrices)`
+`func (o *PriceListDataRelationships) SetPrices(v PriceFrequencyTierDataRelationshipsPrice)`
 
 SetPrices sets Prices field to given value.
 

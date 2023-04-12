@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the InventoryReturnLocationCreate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &InventoryReturnLocationCreate{}
 
 // InventoryReturnLocationCreate struct for InventoryReturnLocationCreate
 type InventoryReturnLocationCreate struct {
@@ -63,11 +66,17 @@ func (o *InventoryReturnLocationCreate) SetData(v InventoryReturnLocationCreateD
 }
 
 func (o InventoryReturnLocationCreate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o InventoryReturnLocationCreate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableInventoryReturnLocationCreate struct {

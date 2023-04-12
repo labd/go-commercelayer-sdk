@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type CleanupsApiService service
 type CleanupsApiDELETECleanupsCleanupIdRequest struct {
 	ctx        context.Context
 	ApiService *CleanupsApiService
-	cleanupId  string
+	cleanupId  interface{}
 }
 
 func (r CleanupsApiDELETECleanupsCleanupIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a cleanup
 	@param cleanupId The resource's id
 	@return CleanupsApiDELETECleanupsCleanupIdRequest
 */
-func (a *CleanupsApiService) DELETECleanupsCleanupId(ctx context.Context, cleanupId string) CleanupsApiDELETECleanupsCleanupIdRequest {
+func (a *CleanupsApiService) DELETECleanupsCleanupId(ctx context.Context, cleanupId interface{}) CleanupsApiDELETECleanupsCleanupIdRequest {
 	return CleanupsApiDELETECleanupsCleanupIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -64,7 +64,7 @@ func (a *CleanupsApiService) DELETECleanupsCleanupIdExecute(r CleanupsApiDELETEC
 	}
 
 	localVarPath := localBasePath + "/cleanups/{cleanupId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"cleanupId"+"}", url.PathEscape(parameterToString(r.cleanupId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"cleanupId"+"}", url.PathEscape(parameterValueToString(r.cleanupId, "cleanupId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *CleanupsApiService) DELETECleanupsCleanupIdExecute(r CleanupsApiDELETEC
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *CleanupsApiService) GETCleanupsExecute(r CleanupsApiGETCleanupsRequest)
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -218,7 +218,7 @@ func (a *CleanupsApiService) GETCleanupsExecute(r CleanupsApiGETCleanupsRequest)
 type CleanupsApiGETCleanupsCleanupIdRequest struct {
 	ctx        context.Context
 	ApiService *CleanupsApiService
-	cleanupId  string
+	cleanupId  interface{}
 }
 
 func (r CleanupsApiGETCleanupsCleanupIdRequest) Execute() (*GETCleanupsCleanupId200Response, *http.Response, error) {
@@ -234,7 +234,7 @@ Retrieve a cleanup
 	@param cleanupId The resource's id
 	@return CleanupsApiGETCleanupsCleanupIdRequest
 */
-func (a *CleanupsApiService) GETCleanupsCleanupId(ctx context.Context, cleanupId string) CleanupsApiGETCleanupsCleanupIdRequest {
+func (a *CleanupsApiService) GETCleanupsCleanupId(ctx context.Context, cleanupId interface{}) CleanupsApiGETCleanupsCleanupIdRequest {
 	return CleanupsApiGETCleanupsCleanupIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -259,7 +259,7 @@ func (a *CleanupsApiService) GETCleanupsCleanupIdExecute(r CleanupsApiGETCleanup
 	}
 
 	localVarPath := localBasePath + "/cleanups/{cleanupId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"cleanupId"+"}", url.PathEscape(parameterToString(r.cleanupId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"cleanupId"+"}", url.PathEscape(parameterValueToString(r.cleanupId, "cleanupId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *CleanupsApiService) GETCleanupsCleanupIdExecute(r CleanupsApiGETCleanup
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -403,9 +403,9 @@ func (a *CleanupsApiService) POSTCleanupsExecute(r CleanupsApiPOSTCleanupsReques
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

@@ -4,7 +4,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
+**Type** | **interface{}** | The resource&#39;s type | 
 **Attributes** | [**POSTStockTransfers201ResponseDataAttributes**](POSTStockTransfers201ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**StockTransferCreateDataRelationships**](StockTransferCreateDataRelationships.md) |  | [optional] 
 
@@ -12,7 +12,7 @@ Name | Type | Description | Notes
 
 ### NewStockTransferCreateData
 
-`func NewStockTransferCreateData(type_ string, attributes POSTStockTransfers201ResponseDataAttributes, ) *StockTransferCreateData`
+`func NewStockTransferCreateData(type_ interface{}, attributes POSTStockTransfers201ResponseDataAttributes, ) *StockTransferCreateData`
 
 NewStockTransferCreateData instantiates a new StockTransferCreateData object
 This constructor will assign default values to properties that have it defined,
@@ -29,24 +29,34 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *StockTransferCreateData) GetType() string`
+`func (o *StockTransferCreateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *StockTransferCreateData) GetTypeOk() (*string, bool)`
+`func (o *StockTransferCreateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *StockTransferCreateData) SetType(v string)`
+`func (o *StockTransferCreateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *StockTransferCreateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *StockTransferCreateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetAttributes
 
 `func (o *StockTransferCreateData) GetAttributes() POSTStockTransfers201ResponseDataAttributes`

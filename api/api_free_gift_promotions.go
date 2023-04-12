@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type FreeGiftPromotionsApiService service
 type FreeGiftPromotionsApiDELETEFreeGiftPromotionsFreeGiftPromotionIdRequest struct {
 	ctx                 context.Context
 	ApiService          *FreeGiftPromotionsApiService
-	freeGiftPromotionId string
+	freeGiftPromotionId interface{}
 }
 
 func (r FreeGiftPromotionsApiDELETEFreeGiftPromotionsFreeGiftPromotionIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a free gift promotion
 	@param freeGiftPromotionId The resource's id
 	@return FreeGiftPromotionsApiDELETEFreeGiftPromotionsFreeGiftPromotionIdRequest
 */
-func (a *FreeGiftPromotionsApiService) DELETEFreeGiftPromotionsFreeGiftPromotionId(ctx context.Context, freeGiftPromotionId string) FreeGiftPromotionsApiDELETEFreeGiftPromotionsFreeGiftPromotionIdRequest {
+func (a *FreeGiftPromotionsApiService) DELETEFreeGiftPromotionsFreeGiftPromotionId(ctx context.Context, freeGiftPromotionId interface{}) FreeGiftPromotionsApiDELETEFreeGiftPromotionsFreeGiftPromotionIdRequest {
 	return FreeGiftPromotionsApiDELETEFreeGiftPromotionsFreeGiftPromotionIdRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -64,7 +64,7 @@ func (a *FreeGiftPromotionsApiService) DELETEFreeGiftPromotionsFreeGiftPromotion
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterToString(r.freeGiftPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *FreeGiftPromotionsApiService) DELETEFreeGiftPromotionsFreeGiftPromotion
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotionsExecute(r FreeGiftPr
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -218,7 +218,7 @@ func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotionsExecute(r FreeGiftPr
 type FreeGiftPromotionsApiGETFreeGiftPromotionsFreeGiftPromotionIdRequest struct {
 	ctx                 context.Context
 	ApiService          *FreeGiftPromotionsApiService
-	freeGiftPromotionId string
+	freeGiftPromotionId interface{}
 }
 
 func (r FreeGiftPromotionsApiGETFreeGiftPromotionsFreeGiftPromotionIdRequest) Execute() (*GETFreeGiftPromotionsFreeGiftPromotionId200Response, *http.Response, error) {
@@ -234,7 +234,7 @@ Retrieve a free gift promotion
 	@param freeGiftPromotionId The resource's id
 	@return FreeGiftPromotionsApiGETFreeGiftPromotionsFreeGiftPromotionIdRequest
 */
-func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotionsFreeGiftPromotionId(ctx context.Context, freeGiftPromotionId string) FreeGiftPromotionsApiGETFreeGiftPromotionsFreeGiftPromotionIdRequest {
+func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotionsFreeGiftPromotionId(ctx context.Context, freeGiftPromotionId interface{}) FreeGiftPromotionsApiGETFreeGiftPromotionsFreeGiftPromotionIdRequest {
 	return FreeGiftPromotionsApiGETFreeGiftPromotionsFreeGiftPromotionIdRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -259,7 +259,7 @@ func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotionsFreeGiftPromotionIdE
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterToString(r.freeGiftPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *FreeGiftPromotionsApiService) GETFreeGiftPromotionsFreeGiftPromotionIdE
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -323,7 +323,7 @@ type FreeGiftPromotionsApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest stru
 	ctx                     context.Context
 	ApiService              *FreeGiftPromotionsApiService
 	freeGiftPromotionUpdate *FreeGiftPromotionUpdate
-	freeGiftPromotionId     string
+	freeGiftPromotionId     interface{}
 }
 
 func (r FreeGiftPromotionsApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest) FreeGiftPromotionUpdate(freeGiftPromotionUpdate FreeGiftPromotionUpdate) FreeGiftPromotionsApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest {
@@ -344,7 +344,7 @@ Update a free gift promotion
 	@param freeGiftPromotionId The resource's id
 	@return FreeGiftPromotionsApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest
 */
-func (a *FreeGiftPromotionsApiService) PATCHFreeGiftPromotionsFreeGiftPromotionId(ctx context.Context, freeGiftPromotionId string) FreeGiftPromotionsApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest {
+func (a *FreeGiftPromotionsApiService) PATCHFreeGiftPromotionsFreeGiftPromotionId(ctx context.Context, freeGiftPromotionId interface{}) FreeGiftPromotionsApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest {
 	return FreeGiftPromotionsApiPATCHFreeGiftPromotionsFreeGiftPromotionIdRequest{
 		ApiService:          a,
 		ctx:                 ctx,
@@ -369,7 +369,7 @@ func (a *FreeGiftPromotionsApiService) PATCHFreeGiftPromotionsFreeGiftPromotionI
 	}
 
 	localVarPath := localBasePath + "/free_gift_promotions/{freeGiftPromotionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterToString(r.freeGiftPromotionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"freeGiftPromotionId"+"}", url.PathEscape(parameterValueToString(r.freeGiftPromotionId, "freeGiftPromotionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -407,9 +407,9 @@ func (a *FreeGiftPromotionsApiService) PATCHFreeGiftPromotionsFreeGiftPromotionI
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -518,9 +518,9 @@ func (a *FreeGiftPromotionsApiService) POSTFreeGiftPromotionsExecute(r FreeGiftP
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

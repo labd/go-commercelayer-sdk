@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the SkuDataRelationshipsStockItems type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &SkuDataRelationshipsStockItems{}
 
 // SkuDataRelationshipsStockItems struct for SkuDataRelationshipsStockItems
 type SkuDataRelationshipsStockItems struct {
@@ -39,7 +42,7 @@ func NewSkuDataRelationshipsStockItemsWithDefaults() *SkuDataRelationshipsStockI
 
 // GetData returns the Data field value if set, zero value otherwise.
 func (o *SkuDataRelationshipsStockItems) GetData() SkuDataRelationshipsStockItemsData {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		var ret SkuDataRelationshipsStockItemsData
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *SkuDataRelationshipsStockItems) GetData() SkuDataRelationshipsStockItem
 // GetDataOk returns a tuple with the Data field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *SkuDataRelationshipsStockItems) GetDataOk() (*SkuDataRelationshipsStockItemsData, bool) {
-	if o == nil || o.Data == nil {
+	if o == nil || IsNil(o.Data) {
 		return nil, false
 	}
 	return o.Data, true
@@ -57,7 +60,7 @@ func (o *SkuDataRelationshipsStockItems) GetDataOk() (*SkuDataRelationshipsStock
 
 // HasData returns a boolean if a field has been set.
 func (o *SkuDataRelationshipsStockItems) HasData() bool {
-	if o != nil && o.Data != nil {
+	if o != nil && !IsNil(o.Data) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *SkuDataRelationshipsStockItems) SetData(v SkuDataRelationshipsStockItem
 }
 
 func (o SkuDataRelationshipsStockItems) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Data != nil {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o SkuDataRelationshipsStockItems) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Data) {
+		toSerialize["data"] = o.Data
+	}
+	return toSerialize, nil
 }
 
 type NullableSkuDataRelationshipsStockItems struct {

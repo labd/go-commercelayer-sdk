@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,22 +15,29 @@ import (
 	"encoding/json"
 )
 
+// checks if the PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes{}
+
 // PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes struct for PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes
 type PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes struct {
+	// The frequency of the subscription. Use one of the supported within 'hourly', 'daily', 'weekly', 'monthly', 'two-month', 'three-month', 'four-month', 'six-month', 'yearly', or provide your custom crontab expression (min unit is hour). Must be supported by existing associated subscription_model.
+	Frequency interface{} `json:"frequency,omitempty"`
 	// The expiration date/time of this subscription (must be after starts_at).
-	ExpiresAt *string `json:"expires_at,omitempty"`
+	ExpiresAt interface{} `json:"expires_at,omitempty"`
+	// The date/time of the subscription next run. Can be updated but only in the future, to copy with frequency changes.
+	NextRunAt interface{} `json:"next_run_at,omitempty"`
 	// Send this attribute if you want to mark this subscription as active.
-	Activate *bool `json:"_activate,omitempty"`
+	Activate interface{} `json:"_activate,omitempty"`
 	// Send this attribute if you want to mark this subscription as inactive.
-	Deactivate *bool `json:"_deactivate,omitempty"`
+	Deactivate interface{} `json:"_deactivate,omitempty"`
 	// Send this attribute if you want to mark this subscription as cancelled.
-	Cancel *bool `json:"_cancel,omitempty"`
+	Cancel interface{} `json:"_cancel,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 }
 
 // NewPATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes instantiates a new PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes object
@@ -50,202 +57,274 @@ func NewPATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributesWithD
 	return &this
 }
 
-// GetExpiresAt returns the ExpiresAt field value if set, zero value otherwise.
-func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetExpiresAt() string {
-	if o == nil || o.ExpiresAt == nil {
-		var ret string
+// GetFrequency returns the Frequency field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetFrequency() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ExpiresAt
+	return o.Frequency
+}
+
+// GetFrequencyOk returns a tuple with the Frequency field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetFrequencyOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Frequency) {
+		return nil, false
+	}
+	return &o.Frequency, true
+}
+
+// HasFrequency returns a boolean if a field has been set.
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) HasFrequency() bool {
+	if o != nil && IsNil(o.Frequency) {
+		return true
+	}
+
+	return false
+}
+
+// SetFrequency gets a reference to the given interface{} and assigns it to the Frequency field.
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetFrequency(v interface{}) {
+	o.Frequency = v
+}
+
+// GetExpiresAt returns the ExpiresAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetExpiresAt() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.ExpiresAt
 }
 
 // GetExpiresAtOk returns a tuple with the ExpiresAt field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetExpiresAtOk() (*string, bool) {
-	if o == nil || o.ExpiresAt == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetExpiresAtOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ExpiresAt) {
 		return nil, false
 	}
-	return o.ExpiresAt, true
+	return &o.ExpiresAt, true
 }
 
 // HasExpiresAt returns a boolean if a field has been set.
 func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) HasExpiresAt() bool {
-	if o != nil && o.ExpiresAt != nil {
+	if o != nil && IsNil(o.ExpiresAt) {
 		return true
 	}
 
 	return false
 }
 
-// SetExpiresAt gets a reference to the given string and assigns it to the ExpiresAt field.
-func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetExpiresAt(v string) {
-	o.ExpiresAt = &v
+// SetExpiresAt gets a reference to the given interface{} and assigns it to the ExpiresAt field.
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetExpiresAt(v interface{}) {
+	o.ExpiresAt = v
 }
 
-// GetActivate returns the Activate field value if set, zero value otherwise.
-func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetActivate() bool {
-	if o == nil || o.Activate == nil {
-		var ret bool
+// GetNextRunAt returns the NextRunAt field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetNextRunAt() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Activate
+	return o.NextRunAt
+}
+
+// GetNextRunAtOk returns a tuple with the NextRunAt field value if set, nil otherwise
+// and a boolean to check if the value has been set.
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetNextRunAtOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.NextRunAt) {
+		return nil, false
+	}
+	return &o.NextRunAt, true
+}
+
+// HasNextRunAt returns a boolean if a field has been set.
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) HasNextRunAt() bool {
+	if o != nil && IsNil(o.NextRunAt) {
+		return true
+	}
+
+	return false
+}
+
+// SetNextRunAt gets a reference to the given interface{} and assigns it to the NextRunAt field.
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetNextRunAt(v interface{}) {
+	o.NextRunAt = v
+}
+
+// GetActivate returns the Activate field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetActivate() interface{} {
+	if o == nil {
+		var ret interface{}
+		return ret
+	}
+	return o.Activate
 }
 
 // GetActivateOk returns a tuple with the Activate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetActivateOk() (*bool, bool) {
-	if o == nil || o.Activate == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetActivateOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Activate) {
 		return nil, false
 	}
-	return o.Activate, true
+	return &o.Activate, true
 }
 
 // HasActivate returns a boolean if a field has been set.
 func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) HasActivate() bool {
-	if o != nil && o.Activate != nil {
+	if o != nil && IsNil(o.Activate) {
 		return true
 	}
 
 	return false
 }
 
-// SetActivate gets a reference to the given bool and assigns it to the Activate field.
-func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetActivate(v bool) {
-	o.Activate = &v
+// SetActivate gets a reference to the given interface{} and assigns it to the Activate field.
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetActivate(v interface{}) {
+	o.Activate = v
 }
 
-// GetDeactivate returns the Deactivate field value if set, zero value otherwise.
-func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetDeactivate() bool {
-	if o == nil || o.Deactivate == nil {
-		var ret bool
+// GetDeactivate returns the Deactivate field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetDeactivate() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Deactivate
+	return o.Deactivate
 }
 
 // GetDeactivateOk returns a tuple with the Deactivate field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetDeactivateOk() (*bool, bool) {
-	if o == nil || o.Deactivate == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetDeactivateOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Deactivate) {
 		return nil, false
 	}
-	return o.Deactivate, true
+	return &o.Deactivate, true
 }
 
 // HasDeactivate returns a boolean if a field has been set.
 func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) HasDeactivate() bool {
-	if o != nil && o.Deactivate != nil {
+	if o != nil && IsNil(o.Deactivate) {
 		return true
 	}
 
 	return false
 }
 
-// SetDeactivate gets a reference to the given bool and assigns it to the Deactivate field.
-func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetDeactivate(v bool) {
-	o.Deactivate = &v
+// SetDeactivate gets a reference to the given interface{} and assigns it to the Deactivate field.
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetDeactivate(v interface{}) {
+	o.Deactivate = v
 }
 
-// GetCancel returns the Cancel field value if set, zero value otherwise.
-func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetCancel() bool {
-	if o == nil || o.Cancel == nil {
-		var ret bool
+// GetCancel returns the Cancel field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetCancel() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Cancel
+	return o.Cancel
 }
 
 // GetCancelOk returns a tuple with the Cancel field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetCancelOk() (*bool, bool) {
-	if o == nil || o.Cancel == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetCancelOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Cancel) {
 		return nil, false
 	}
-	return o.Cancel, true
+	return &o.Cancel, true
 }
 
 // HasCancel returns a boolean if a field has been set.
 func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) HasCancel() bool {
-	if o != nil && o.Cancel != nil {
+	if o != nil && IsNil(o.Cancel) {
 		return true
 	}
 
 	return false
 }
 
-// SetCancel gets a reference to the given bool and assigns it to the Cancel field.
-func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetCancel(v bool) {
-	o.Cancel = &v
+// SetCancel gets a reference to the given interface{} and assigns it to the Cancel field.
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetCancel(v interface{}) {
+	o.Cancel = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -253,31 +332,46 @@ func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) Ge
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 func (o PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
+	if o.Frequency != nil {
+		toSerialize["frequency"] = o.Frequency
+	}
 	if o.ExpiresAt != nil {
 		toSerialize["expires_at"] = o.ExpiresAt
+	}
+	if o.NextRunAt != nil {
+		toSerialize["next_run_at"] = o.NextRunAt
 	}
 	if o.Activate != nil {
 		toSerialize["_activate"] = o.Activate
@@ -297,7 +391,7 @@ func (o PATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes) Mar
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePATCHOrderSubscriptionsOrderSubscriptionId200ResponseDataAttributes struct {

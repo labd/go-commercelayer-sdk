@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type ShippingCategoriesApiService service
 type ShippingCategoriesApiDELETEShippingCategoriesShippingCategoryIdRequest struct {
 	ctx                context.Context
 	ApiService         *ShippingCategoriesApiService
-	shippingCategoryId string
+	shippingCategoryId interface{}
 }
 
 func (r ShippingCategoriesApiDELETEShippingCategoriesShippingCategoryIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a shipping category
 	@param shippingCategoryId The resource's id
 	@return ShippingCategoriesApiDELETEShippingCategoriesShippingCategoryIdRequest
 */
-func (a *ShippingCategoriesApiService) DELETEShippingCategoriesShippingCategoryId(ctx context.Context, shippingCategoryId string) ShippingCategoriesApiDELETEShippingCategoriesShippingCategoryIdRequest {
+func (a *ShippingCategoriesApiService) DELETEShippingCategoriesShippingCategoryId(ctx context.Context, shippingCategoryId interface{}) ShippingCategoriesApiDELETEShippingCategoriesShippingCategoryIdRequest {
 	return ShippingCategoriesApiDELETEShippingCategoriesShippingCategoryIdRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -64,7 +64,7 @@ func (a *ShippingCategoriesApiService) DELETEShippingCategoriesShippingCategoryI
 	}
 
 	localVarPath := localBasePath + "/shipping_categories/{shippingCategoryId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingCategoryId"+"}", url.PathEscape(parameterToString(r.shippingCategoryId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingCategoryId"+"}", url.PathEscape(parameterValueToString(r.shippingCategoryId, "shippingCategoryId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *ShippingCategoriesApiService) DELETEShippingCategoriesShippingCategoryI
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *ShippingCategoriesApiService) DELETEShippingCategoriesShippingCategoryI
 type ShippingCategoriesApiGETShipmentIdShippingCategoryRequest struct {
 	ctx        context.Context
 	ApiService *ShippingCategoriesApiService
-	shipmentId string
+	shipmentId interface{}
 }
 
 func (r ShippingCategoriesApiGETShipmentIdShippingCategoryRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the shipping category associated to the shipment
 	@param shipmentId The resource's id
 	@return ShippingCategoriesApiGETShipmentIdShippingCategoryRequest
 */
-func (a *ShippingCategoriesApiService) GETShipmentIdShippingCategory(ctx context.Context, shipmentId string) ShippingCategoriesApiGETShipmentIdShippingCategoryRequest {
+func (a *ShippingCategoriesApiService) GETShipmentIdShippingCategory(ctx context.Context, shipmentId interface{}) ShippingCategoriesApiGETShipmentIdShippingCategoryRequest {
 	return ShippingCategoriesApiGETShipmentIdShippingCategoryRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -156,7 +156,7 @@ func (a *ShippingCategoriesApiService) GETShipmentIdShippingCategoryExecute(r Sh
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/shipping_category"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *ShippingCategoriesApiService) GETShipmentIdShippingCategoryExecute(r Sh
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *ShippingCategoriesApiService) GETShippingCategoriesExecute(r ShippingCa
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -310,7 +310,7 @@ func (a *ShippingCategoriesApiService) GETShippingCategoriesExecute(r ShippingCa
 type ShippingCategoriesApiGETShippingCategoriesShippingCategoryIdRequest struct {
 	ctx                context.Context
 	ApiService         *ShippingCategoriesApiService
-	shippingCategoryId string
+	shippingCategoryId interface{}
 }
 
 func (r ShippingCategoriesApiGETShippingCategoriesShippingCategoryIdRequest) Execute() (*GETShippingCategoriesShippingCategoryId200Response, *http.Response, error) {
@@ -326,7 +326,7 @@ Retrieve a shipping category
 	@param shippingCategoryId The resource's id
 	@return ShippingCategoriesApiGETShippingCategoriesShippingCategoryIdRequest
 */
-func (a *ShippingCategoriesApiService) GETShippingCategoriesShippingCategoryId(ctx context.Context, shippingCategoryId string) ShippingCategoriesApiGETShippingCategoriesShippingCategoryIdRequest {
+func (a *ShippingCategoriesApiService) GETShippingCategoriesShippingCategoryId(ctx context.Context, shippingCategoryId interface{}) ShippingCategoriesApiGETShippingCategoriesShippingCategoryIdRequest {
 	return ShippingCategoriesApiGETShippingCategoriesShippingCategoryIdRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -351,7 +351,7 @@ func (a *ShippingCategoriesApiService) GETShippingCategoriesShippingCategoryIdEx
 	}
 
 	localVarPath := localBasePath + "/shipping_categories/{shippingCategoryId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingCategoryId"+"}", url.PathEscape(parameterToString(r.shippingCategoryId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingCategoryId"+"}", url.PathEscape(parameterValueToString(r.shippingCategoryId, "shippingCategoryId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *ShippingCategoriesApiService) GETShippingCategoriesShippingCategoryIdEx
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -414,7 +414,7 @@ func (a *ShippingCategoriesApiService) GETShippingCategoriesShippingCategoryIdEx
 type ShippingCategoriesApiGETShippingMethodIdShippingCategoryRequest struct {
 	ctx              context.Context
 	ApiService       *ShippingCategoriesApiService
-	shippingMethodId string
+	shippingMethodId interface{}
 }
 
 func (r ShippingCategoriesApiGETShippingMethodIdShippingCategoryRequest) Execute() (*http.Response, error) {
@@ -430,7 +430,7 @@ Retrieve the shipping category associated to the shipping method
 	@param shippingMethodId The resource's id
 	@return ShippingCategoriesApiGETShippingMethodIdShippingCategoryRequest
 */
-func (a *ShippingCategoriesApiService) GETShippingMethodIdShippingCategory(ctx context.Context, shippingMethodId string) ShippingCategoriesApiGETShippingMethodIdShippingCategoryRequest {
+func (a *ShippingCategoriesApiService) GETShippingMethodIdShippingCategory(ctx context.Context, shippingMethodId interface{}) ShippingCategoriesApiGETShippingMethodIdShippingCategoryRequest {
 	return ShippingCategoriesApiGETShippingMethodIdShippingCategoryRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -452,7 +452,7 @@ func (a *ShippingCategoriesApiService) GETShippingMethodIdShippingCategoryExecut
 	}
 
 	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}/shipping_category"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodId, "shippingMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -485,9 +485,9 @@ func (a *ShippingCategoriesApiService) GETShippingMethodIdShippingCategoryExecut
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -506,7 +506,7 @@ func (a *ShippingCategoriesApiService) GETShippingMethodIdShippingCategoryExecut
 type ShippingCategoriesApiGETSkuIdShippingCategoryRequest struct {
 	ctx        context.Context
 	ApiService *ShippingCategoriesApiService
-	skuId      string
+	skuId      interface{}
 }
 
 func (r ShippingCategoriesApiGETSkuIdShippingCategoryRequest) Execute() (*http.Response, error) {
@@ -522,7 +522,7 @@ Retrieve the shipping category associated to the SKU
 	@param skuId The resource's id
 	@return ShippingCategoriesApiGETSkuIdShippingCategoryRequest
 */
-func (a *ShippingCategoriesApiService) GETSkuIdShippingCategory(ctx context.Context, skuId string) ShippingCategoriesApiGETSkuIdShippingCategoryRequest {
+func (a *ShippingCategoriesApiService) GETSkuIdShippingCategory(ctx context.Context, skuId interface{}) ShippingCategoriesApiGETSkuIdShippingCategoryRequest {
 	return ShippingCategoriesApiGETSkuIdShippingCategoryRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -544,7 +544,7 @@ func (a *ShippingCategoriesApiService) GETSkuIdShippingCategoryExecute(r Shippin
 	}
 
 	localVarPath := localBasePath + "/skus/{skuId}/shipping_category"
-	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterToString(r.skuId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"skuId"+"}", url.PathEscape(parameterValueToString(r.skuId, "skuId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -577,9 +577,9 @@ func (a *ShippingCategoriesApiService) GETSkuIdShippingCategoryExecute(r Shippin
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -599,7 +599,7 @@ type ShippingCategoriesApiPATCHShippingCategoriesShippingCategoryIdRequest struc
 	ctx                    context.Context
 	ApiService             *ShippingCategoriesApiService
 	shippingCategoryUpdate *ShippingCategoryUpdate
-	shippingCategoryId     string
+	shippingCategoryId     interface{}
 }
 
 func (r ShippingCategoriesApiPATCHShippingCategoriesShippingCategoryIdRequest) ShippingCategoryUpdate(shippingCategoryUpdate ShippingCategoryUpdate) ShippingCategoriesApiPATCHShippingCategoriesShippingCategoryIdRequest {
@@ -620,7 +620,7 @@ Update a shipping category
 	@param shippingCategoryId The resource's id
 	@return ShippingCategoriesApiPATCHShippingCategoriesShippingCategoryIdRequest
 */
-func (a *ShippingCategoriesApiService) PATCHShippingCategoriesShippingCategoryId(ctx context.Context, shippingCategoryId string) ShippingCategoriesApiPATCHShippingCategoriesShippingCategoryIdRequest {
+func (a *ShippingCategoriesApiService) PATCHShippingCategoriesShippingCategoryId(ctx context.Context, shippingCategoryId interface{}) ShippingCategoriesApiPATCHShippingCategoriesShippingCategoryIdRequest {
 	return ShippingCategoriesApiPATCHShippingCategoriesShippingCategoryIdRequest{
 		ApiService:         a,
 		ctx:                ctx,
@@ -645,7 +645,7 @@ func (a *ShippingCategoriesApiService) PATCHShippingCategoriesShippingCategoryId
 	}
 
 	localVarPath := localBasePath + "/shipping_categories/{shippingCategoryId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingCategoryId"+"}", url.PathEscape(parameterToString(r.shippingCategoryId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingCategoryId"+"}", url.PathEscape(parameterValueToString(r.shippingCategoryId, "shippingCategoryId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -683,9 +683,9 @@ func (a *ShippingCategoriesApiService) PATCHShippingCategoriesShippingCategoryId
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -794,9 +794,9 @@ func (a *ShippingCategoriesApiService) POSTShippingCategoriesExecute(r ShippingC
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

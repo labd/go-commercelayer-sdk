@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type PackagesApiService service
 type PackagesApiDELETEPackagesPackageIdRequest struct {
 	ctx        context.Context
 	ApiService *PackagesApiService
-	packageId  string
+	packageId  interface{}
 }
 
 func (r PackagesApiDELETEPackagesPackageIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a package
 	@param packageId The resource's id
 	@return PackagesApiDELETEPackagesPackageIdRequest
 */
-func (a *PackagesApiService) DELETEPackagesPackageId(ctx context.Context, packageId string) PackagesApiDELETEPackagesPackageIdRequest {
+func (a *PackagesApiService) DELETEPackagesPackageId(ctx context.Context, packageId interface{}) PackagesApiDELETEPackagesPackageIdRequest {
 	return PackagesApiDELETEPackagesPackageIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -64,7 +64,7 @@ func (a *PackagesApiService) DELETEPackagesPackageIdExecute(r PackagesApiDELETEP
 	}
 
 	localVarPath := localBasePath + "/packages/{packageId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"packageId"+"}", url.PathEscape(parameterToString(r.packageId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"packageId"+"}", url.PathEscape(parameterValueToString(r.packageId, "packageId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *PackagesApiService) DELETEPackagesPackageIdExecute(r PackagesApiDELETEP
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *PackagesApiService) GETPackagesExecute(r PackagesApiGETPackagesRequest)
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -218,7 +218,7 @@ func (a *PackagesApiService) GETPackagesExecute(r PackagesApiGETPackagesRequest)
 type PackagesApiGETPackagesPackageIdRequest struct {
 	ctx        context.Context
 	ApiService *PackagesApiService
-	packageId  string
+	packageId  interface{}
 }
 
 func (r PackagesApiGETPackagesPackageIdRequest) Execute() (*GETPackagesPackageId200Response, *http.Response, error) {
@@ -234,7 +234,7 @@ Retrieve a package
 	@param packageId The resource's id
 	@return PackagesApiGETPackagesPackageIdRequest
 */
-func (a *PackagesApiService) GETPackagesPackageId(ctx context.Context, packageId string) PackagesApiGETPackagesPackageIdRequest {
+func (a *PackagesApiService) GETPackagesPackageId(ctx context.Context, packageId interface{}) PackagesApiGETPackagesPackageIdRequest {
 	return PackagesApiGETPackagesPackageIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -259,7 +259,7 @@ func (a *PackagesApiService) GETPackagesPackageIdExecute(r PackagesApiGETPackage
 	}
 
 	localVarPath := localBasePath + "/packages/{packageId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"packageId"+"}", url.PathEscape(parameterToString(r.packageId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"packageId"+"}", url.PathEscape(parameterValueToString(r.packageId, "packageId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *PackagesApiService) GETPackagesPackageIdExecute(r PackagesApiGETPackage
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -322,7 +322,7 @@ func (a *PackagesApiService) GETPackagesPackageIdExecute(r PackagesApiGETPackage
 type PackagesApiGETParcelIdPackageRequest struct {
 	ctx        context.Context
 	ApiService *PackagesApiService
-	parcelId   string
+	parcelId   interface{}
 }
 
 func (r PackagesApiGETParcelIdPackageRequest) Execute() (*http.Response, error) {
@@ -338,7 +338,7 @@ Retrieve the package associated to the parcel
 	@param parcelId The resource's id
 	@return PackagesApiGETParcelIdPackageRequest
 */
-func (a *PackagesApiService) GETParcelIdPackage(ctx context.Context, parcelId string) PackagesApiGETParcelIdPackageRequest {
+func (a *PackagesApiService) GETParcelIdPackage(ctx context.Context, parcelId interface{}) PackagesApiGETParcelIdPackageRequest {
 	return PackagesApiGETParcelIdPackageRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -360,7 +360,7 @@ func (a *PackagesApiService) GETParcelIdPackageExecute(r PackagesApiGETParcelIdP
 	}
 
 	localVarPath := localBasePath + "/parcels/{parcelId}/package"
-	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterToString(r.parcelId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"parcelId"+"}", url.PathEscape(parameterValueToString(r.parcelId, "parcelId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -393,9 +393,9 @@ func (a *PackagesApiService) GETParcelIdPackageExecute(r PackagesApiGETParcelIdP
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -415,7 +415,7 @@ type PackagesApiPATCHPackagesPackageIdRequest struct {
 	ctx           context.Context
 	ApiService    *PackagesApiService
 	packageUpdate *PackageUpdate
-	packageId     string
+	packageId     interface{}
 }
 
 func (r PackagesApiPATCHPackagesPackageIdRequest) PackageUpdate(packageUpdate PackageUpdate) PackagesApiPATCHPackagesPackageIdRequest {
@@ -436,7 +436,7 @@ Update a package
 	@param packageId The resource's id
 	@return PackagesApiPATCHPackagesPackageIdRequest
 */
-func (a *PackagesApiService) PATCHPackagesPackageId(ctx context.Context, packageId string) PackagesApiPATCHPackagesPackageIdRequest {
+func (a *PackagesApiService) PATCHPackagesPackageId(ctx context.Context, packageId interface{}) PackagesApiPATCHPackagesPackageIdRequest {
 	return PackagesApiPATCHPackagesPackageIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -461,7 +461,7 @@ func (a *PackagesApiService) PATCHPackagesPackageIdExecute(r PackagesApiPATCHPac
 	}
 
 	localVarPath := localBasePath + "/packages/{packageId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"packageId"+"}", url.PathEscape(parameterToString(r.packageId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"packageId"+"}", url.PathEscape(parameterValueToString(r.packageId, "packageId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -499,9 +499,9 @@ func (a *PackagesApiService) PATCHPackagesPackageIdExecute(r PackagesApiPATCHPac
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -610,9 +610,9 @@ func (a *PackagesApiService) POSTPackagesExecute(r PackagesApiPOSTPackagesReques
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

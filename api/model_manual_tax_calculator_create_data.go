@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,10 +15,13 @@ import (
 	"encoding/json"
 )
 
+// checks if the ManualTaxCalculatorCreateData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &ManualTaxCalculatorCreateData{}
+
 // ManualTaxCalculatorCreateData struct for ManualTaxCalculatorCreateData
 type ManualTaxCalculatorCreateData struct {
 	// The resource's type
-	Type          string                                            `json:"type"`
+	Type          interface{}                                       `json:"type"`
 	Attributes    POSTManualTaxCalculators201ResponseDataAttributes `json:"attributes"`
 	Relationships *ManualTaxCalculatorCreateDataRelationships       `json:"relationships,omitempty"`
 }
@@ -27,7 +30,7 @@ type ManualTaxCalculatorCreateData struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewManualTaxCalculatorCreateData(type_ string, attributes POSTManualTaxCalculators201ResponseDataAttributes) *ManualTaxCalculatorCreateData {
+func NewManualTaxCalculatorCreateData(type_ interface{}, attributes POSTManualTaxCalculators201ResponseDataAttributes) *ManualTaxCalculatorCreateData {
 	this := ManualTaxCalculatorCreateData{}
 	this.Type = type_
 	this.Attributes = attributes
@@ -43,9 +46,10 @@ func NewManualTaxCalculatorCreateDataWithDefaults() *ManualTaxCalculatorCreateDa
 }
 
 // GetType returns the Type field value
-func (o *ManualTaxCalculatorCreateData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *ManualTaxCalculatorCreateData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -54,15 +58,16 @@ func (o *ManualTaxCalculatorCreateData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *ManualTaxCalculatorCreateData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *ManualTaxCalculatorCreateData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *ManualTaxCalculatorCreateData) SetType(v string) {
+func (o *ManualTaxCalculatorCreateData) SetType(v interface{}) {
 	o.Type = v
 }
 
@@ -92,7 +97,7 @@ func (o *ManualTaxCalculatorCreateData) SetAttributes(v POSTManualTaxCalculators
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *ManualTaxCalculatorCreateData) GetRelationships() ManualTaxCalculatorCreateDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret ManualTaxCalculatorCreateDataRelationships
 		return ret
 	}
@@ -102,7 +107,7 @@ func (o *ManualTaxCalculatorCreateData) GetRelationships() ManualTaxCalculatorCr
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *ManualTaxCalculatorCreateData) GetRelationshipsOk() (*ManualTaxCalculatorCreateDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -110,7 +115,7 @@ func (o *ManualTaxCalculatorCreateData) GetRelationshipsOk() (*ManualTaxCalculat
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *ManualTaxCalculatorCreateData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -123,17 +128,23 @@ func (o *ManualTaxCalculatorCreateData) SetRelationships(v ManualTaxCalculatorCr
 }
 
 func (o ManualTaxCalculatorCreateData) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
-		toSerialize["relationships"] = o.Relationships
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o ManualTaxCalculatorCreateData) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
+		toSerialize["relationships"] = o.Relationships
+	}
+	return toSerialize, nil
 }
 
 type NullableManualTaxCalculatorCreateData struct {

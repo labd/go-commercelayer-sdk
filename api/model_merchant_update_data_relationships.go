@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the MerchantUpdateDataRelationships type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &MerchantUpdateDataRelationships{}
 
 // MerchantUpdateDataRelationships struct for MerchantUpdateDataRelationships
 type MerchantUpdateDataRelationships struct {
@@ -39,7 +42,7 @@ func NewMerchantUpdateDataRelationshipsWithDefaults() *MerchantUpdateDataRelatio
 
 // GetAddress returns the Address field value if set, zero value otherwise.
 func (o *MerchantUpdateDataRelationships) GetAddress() CustomerAddressCreateDataRelationshipsAddress {
-	if o == nil || o.Address == nil {
+	if o == nil || IsNil(o.Address) {
 		var ret CustomerAddressCreateDataRelationshipsAddress
 		return ret
 	}
@@ -49,7 +52,7 @@ func (o *MerchantUpdateDataRelationships) GetAddress() CustomerAddressCreateData
 // GetAddressOk returns a tuple with the Address field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *MerchantUpdateDataRelationships) GetAddressOk() (*CustomerAddressCreateDataRelationshipsAddress, bool) {
-	if o == nil || o.Address == nil {
+	if o == nil || IsNil(o.Address) {
 		return nil, false
 	}
 	return o.Address, true
@@ -57,7 +60,7 @@ func (o *MerchantUpdateDataRelationships) GetAddressOk() (*CustomerAddressCreate
 
 // HasAddress returns a boolean if a field has been set.
 func (o *MerchantUpdateDataRelationships) HasAddress() bool {
-	if o != nil && o.Address != nil {
+	if o != nil && !IsNil(o.Address) {
 		return true
 	}
 
@@ -70,11 +73,19 @@ func (o *MerchantUpdateDataRelationships) SetAddress(v CustomerAddressCreateData
 }
 
 func (o MerchantUpdateDataRelationships) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if o.Address != nil {
-		toSerialize["address"] = o.Address
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o MerchantUpdateDataRelationships) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if !IsNil(o.Address) {
+		toSerialize["address"] = o.Address
+	}
+	return toSerialize, nil
 }
 
 type NullableMerchantUpdateDataRelationships struct {

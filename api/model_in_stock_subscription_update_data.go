@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,12 +15,15 @@ import (
 	"encoding/json"
 )
 
+// checks if the InStockSubscriptionUpdateData type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &InStockSubscriptionUpdateData{}
+
 // InStockSubscriptionUpdateData struct for InStockSubscriptionUpdateData
 type InStockSubscriptionUpdateData struct {
 	// The resource's type
-	Type string `json:"type"`
+	Type interface{} `json:"type"`
 	// The resource's id
-	Id            string                                                                  `json:"id"`
+	Id            interface{}                                                             `json:"id"`
 	Attributes    PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes `json:"attributes"`
 	Relationships *InStockSubscriptionUpdateDataRelationships                             `json:"relationships,omitempty"`
 }
@@ -29,7 +32,7 @@ type InStockSubscriptionUpdateData struct {
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewInStockSubscriptionUpdateData(type_ string, id string, attributes PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) *InStockSubscriptionUpdateData {
+func NewInStockSubscriptionUpdateData(type_ interface{}, id interface{}, attributes PATCHInStockSubscriptionsInStockSubscriptionId200ResponseDataAttributes) *InStockSubscriptionUpdateData {
 	this := InStockSubscriptionUpdateData{}
 	this.Type = type_
 	this.Id = id
@@ -46,9 +49,10 @@ func NewInStockSubscriptionUpdateDataWithDefaults() *InStockSubscriptionUpdateDa
 }
 
 // GetType returns the Type field value
-func (o *InStockSubscriptionUpdateData) GetType() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *InStockSubscriptionUpdateData) GetType() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -57,22 +61,24 @@ func (o *InStockSubscriptionUpdateData) GetType() string {
 
 // GetTypeOk returns a tuple with the Type field value
 // and a boolean to check if the value has been set.
-func (o *InStockSubscriptionUpdateData) GetTypeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *InStockSubscriptionUpdateData) GetTypeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Type) {
 		return nil, false
 	}
 	return &o.Type, true
 }
 
 // SetType sets field value
-func (o *InStockSubscriptionUpdateData) SetType(v string) {
+func (o *InStockSubscriptionUpdateData) SetType(v interface{}) {
 	o.Type = v
 }
 
 // GetId returns the Id field value
-func (o *InStockSubscriptionUpdateData) GetId() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *InStockSubscriptionUpdateData) GetId() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -81,15 +87,16 @@ func (o *InStockSubscriptionUpdateData) GetId() string {
 
 // GetIdOk returns a tuple with the Id field value
 // and a boolean to check if the value has been set.
-func (o *InStockSubscriptionUpdateData) GetIdOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *InStockSubscriptionUpdateData) GetIdOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Id) {
 		return nil, false
 	}
 	return &o.Id, true
 }
 
 // SetId sets field value
-func (o *InStockSubscriptionUpdateData) SetId(v string) {
+func (o *InStockSubscriptionUpdateData) SetId(v interface{}) {
 	o.Id = v
 }
 
@@ -119,7 +126,7 @@ func (o *InStockSubscriptionUpdateData) SetAttributes(v PATCHInStockSubscription
 
 // GetRelationships returns the Relationships field value if set, zero value otherwise.
 func (o *InStockSubscriptionUpdateData) GetRelationships() InStockSubscriptionUpdateDataRelationships {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		var ret InStockSubscriptionUpdateDataRelationships
 		return ret
 	}
@@ -129,7 +136,7 @@ func (o *InStockSubscriptionUpdateData) GetRelationships() InStockSubscriptionUp
 // GetRelationshipsOk returns a tuple with the Relationships field value if set, nil otherwise
 // and a boolean to check if the value has been set.
 func (o *InStockSubscriptionUpdateData) GetRelationshipsOk() (*InStockSubscriptionUpdateDataRelationships, bool) {
-	if o == nil || o.Relationships == nil {
+	if o == nil || IsNil(o.Relationships) {
 		return nil, false
 	}
 	return o.Relationships, true
@@ -137,7 +144,7 @@ func (o *InStockSubscriptionUpdateData) GetRelationshipsOk() (*InStockSubscripti
 
 // HasRelationships returns a boolean if a field has been set.
 func (o *InStockSubscriptionUpdateData) HasRelationships() bool {
-	if o != nil && o.Relationships != nil {
+	if o != nil && !IsNil(o.Relationships) {
 		return true
 	}
 
@@ -150,20 +157,26 @@ func (o *InStockSubscriptionUpdateData) SetRelationships(v InStockSubscriptionUp
 }
 
 func (o InStockSubscriptionUpdateData) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["type"] = o.Type
-	}
-	if true {
-		toSerialize["id"] = o.Id
-	}
-	if true {
-		toSerialize["attributes"] = o.Attributes
-	}
-	if o.Relationships != nil {
-		toSerialize["relationships"] = o.Relationships
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o InStockSubscriptionUpdateData) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	if o.Type != nil {
+		toSerialize["type"] = o.Type
+	}
+	if o.Id != nil {
+		toSerialize["id"] = o.Id
+	}
+	toSerialize["attributes"] = o.Attributes
+	if !IsNil(o.Relationships) {
+		toSerialize["relationships"] = o.Relationships
+	}
+	return toSerialize, nil
 }
 
 type NullableInStockSubscriptionUpdateData struct {

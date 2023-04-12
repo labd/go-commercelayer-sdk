@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type StockTransfersApiService service
 type StockTransfersApiDELETEStockTransfersStockTransferIdRequest struct {
 	ctx             context.Context
 	ApiService      *StockTransfersApiService
-	stockTransferId string
+	stockTransferId interface{}
 }
 
 func (r StockTransfersApiDELETEStockTransfersStockTransferIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a stock transfer
 	@param stockTransferId The resource's id
 	@return StockTransfersApiDELETEStockTransfersStockTransferIdRequest
 */
-func (a *StockTransfersApiService) DELETEStockTransfersStockTransferId(ctx context.Context, stockTransferId string) StockTransfersApiDELETEStockTransfersStockTransferIdRequest {
+func (a *StockTransfersApiService) DELETEStockTransfersStockTransferId(ctx context.Context, stockTransferId interface{}) StockTransfersApiDELETEStockTransfersStockTransferIdRequest {
 	return StockTransfersApiDELETEStockTransfersStockTransferIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -64,7 +64,7 @@ func (a *StockTransfersApiService) DELETEStockTransfersStockTransferIdExecute(r 
 	}
 
 	localVarPath := localBasePath + "/stock_transfers/{stockTransferId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterToString(r.stockTransferId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterValueToString(r.stockTransferId, "stockTransferId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *StockTransfersApiService) DELETEStockTransfersStockTransferIdExecute(r 
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *StockTransfersApiService) DELETEStockTransfersStockTransferIdExecute(r 
 type StockTransfersApiGETLineItemIdStockTransfersRequest struct {
 	ctx        context.Context
 	ApiService *StockTransfersApiService
-	lineItemId string
+	lineItemId interface{}
 }
 
 func (r StockTransfersApiGETLineItemIdStockTransfersRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the stock transfers associated to the line item
 	@param lineItemId The resource's id
 	@return StockTransfersApiGETLineItemIdStockTransfersRequest
 */
-func (a *StockTransfersApiService) GETLineItemIdStockTransfers(ctx context.Context, lineItemId string) StockTransfersApiGETLineItemIdStockTransfersRequest {
+func (a *StockTransfersApiService) GETLineItemIdStockTransfers(ctx context.Context, lineItemId interface{}) StockTransfersApiGETLineItemIdStockTransfersRequest {
 	return StockTransfersApiGETLineItemIdStockTransfersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -156,7 +156,7 @@ func (a *StockTransfersApiService) GETLineItemIdStockTransfersExecute(r StockTra
 	}
 
 	localVarPath := localBasePath + "/line_items/{lineItemId}/stock_transfers"
-	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterToString(r.lineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterValueToString(r.lineItemId, "lineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *StockTransfersApiService) GETLineItemIdStockTransfersExecute(r StockTra
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -210,7 +210,7 @@ func (a *StockTransfersApiService) GETLineItemIdStockTransfersExecute(r StockTra
 type StockTransfersApiGETShipmentIdStockTransfersRequest struct {
 	ctx        context.Context
 	ApiService *StockTransfersApiService
-	shipmentId string
+	shipmentId interface{}
 }
 
 func (r StockTransfersApiGETShipmentIdStockTransfersRequest) Execute() (*http.Response, error) {
@@ -226,7 +226,7 @@ Retrieve the stock transfers associated to the shipment
 	@param shipmentId The resource's id
 	@return StockTransfersApiGETShipmentIdStockTransfersRequest
 */
-func (a *StockTransfersApiService) GETShipmentIdStockTransfers(ctx context.Context, shipmentId string) StockTransfersApiGETShipmentIdStockTransfersRequest {
+func (a *StockTransfersApiService) GETShipmentIdStockTransfers(ctx context.Context, shipmentId interface{}) StockTransfersApiGETShipmentIdStockTransfersRequest {
 	return StockTransfersApiGETShipmentIdStockTransfersRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -248,7 +248,7 @@ func (a *StockTransfersApiService) GETShipmentIdStockTransfersExecute(r StockTra
 	}
 
 	localVarPath := localBasePath + "/shipments/{shipmentId}/stock_transfers"
-	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterToString(r.shipmentId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shipmentId"+"}", url.PathEscape(parameterValueToString(r.shipmentId, "shipmentId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -281,9 +281,9 @@ func (a *StockTransfersApiService) GETShipmentIdStockTransfersExecute(r StockTra
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -302,7 +302,7 @@ func (a *StockTransfersApiService) GETShipmentIdStockTransfersExecute(r StockTra
 type StockTransfersApiGETStockLocationIdStockTransfersRequest struct {
 	ctx             context.Context
 	ApiService      *StockTransfersApiService
-	stockLocationId string
+	stockLocationId interface{}
 }
 
 func (r StockTransfersApiGETStockLocationIdStockTransfersRequest) Execute() (*http.Response, error) {
@@ -318,7 +318,7 @@ Retrieve the stock transfers associated to the stock location
 	@param stockLocationId The resource's id
 	@return StockTransfersApiGETStockLocationIdStockTransfersRequest
 */
-func (a *StockTransfersApiService) GETStockLocationIdStockTransfers(ctx context.Context, stockLocationId string) StockTransfersApiGETStockLocationIdStockTransfersRequest {
+func (a *StockTransfersApiService) GETStockLocationIdStockTransfers(ctx context.Context, stockLocationId interface{}) StockTransfersApiGETStockLocationIdStockTransfersRequest {
 	return StockTransfersApiGETStockLocationIdStockTransfersRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -340,7 +340,7 @@ func (a *StockTransfersApiService) GETStockLocationIdStockTransfersExecute(r Sto
 	}
 
 	localVarPath := localBasePath + "/stock_locations/{stockLocationId}/stock_transfers"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterToString(r.stockLocationId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockLocationId"+"}", url.PathEscape(parameterValueToString(r.stockLocationId, "stockLocationId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -373,9 +373,9 @@ func (a *StockTransfersApiService) GETStockLocationIdStockTransfersExecute(r Sto
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -464,9 +464,9 @@ func (a *StockTransfersApiService) GETStockTransfersExecute(r StockTransfersApiG
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -494,7 +494,7 @@ func (a *StockTransfersApiService) GETStockTransfersExecute(r StockTransfersApiG
 type StockTransfersApiGETStockTransfersStockTransferIdRequest struct {
 	ctx             context.Context
 	ApiService      *StockTransfersApiService
-	stockTransferId string
+	stockTransferId interface{}
 }
 
 func (r StockTransfersApiGETStockTransfersStockTransferIdRequest) Execute() (*GETStockTransfersStockTransferId200Response, *http.Response, error) {
@@ -510,7 +510,7 @@ Retrieve a stock transfer
 	@param stockTransferId The resource's id
 	@return StockTransfersApiGETStockTransfersStockTransferIdRequest
 */
-func (a *StockTransfersApiService) GETStockTransfersStockTransferId(ctx context.Context, stockTransferId string) StockTransfersApiGETStockTransfersStockTransferIdRequest {
+func (a *StockTransfersApiService) GETStockTransfersStockTransferId(ctx context.Context, stockTransferId interface{}) StockTransfersApiGETStockTransfersStockTransferIdRequest {
 	return StockTransfersApiGETStockTransfersStockTransferIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -535,7 +535,7 @@ func (a *StockTransfersApiService) GETStockTransfersStockTransferIdExecute(r Sto
 	}
 
 	localVarPath := localBasePath + "/stock_transfers/{stockTransferId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterToString(r.stockTransferId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterValueToString(r.stockTransferId, "stockTransferId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -568,9 +568,9 @@ func (a *StockTransfersApiService) GETStockTransfersStockTransferIdExecute(r Sto
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -599,7 +599,7 @@ type StockTransfersApiPATCHStockTransfersStockTransferIdRequest struct {
 	ctx                 context.Context
 	ApiService          *StockTransfersApiService
 	stockTransferUpdate *StockTransferUpdate
-	stockTransferId     string
+	stockTransferId     interface{}
 }
 
 func (r StockTransfersApiPATCHStockTransfersStockTransferIdRequest) StockTransferUpdate(stockTransferUpdate StockTransferUpdate) StockTransfersApiPATCHStockTransfersStockTransferIdRequest {
@@ -620,7 +620,7 @@ Update a stock transfer
 	@param stockTransferId The resource's id
 	@return StockTransfersApiPATCHStockTransfersStockTransferIdRequest
 */
-func (a *StockTransfersApiService) PATCHStockTransfersStockTransferId(ctx context.Context, stockTransferId string) StockTransfersApiPATCHStockTransfersStockTransferIdRequest {
+func (a *StockTransfersApiService) PATCHStockTransfersStockTransferId(ctx context.Context, stockTransferId interface{}) StockTransfersApiPATCHStockTransfersStockTransferIdRequest {
 	return StockTransfersApiPATCHStockTransfersStockTransferIdRequest{
 		ApiService:      a,
 		ctx:             ctx,
@@ -645,7 +645,7 @@ func (a *StockTransfersApiService) PATCHStockTransfersStockTransferIdExecute(r S
 	}
 
 	localVarPath := localBasePath + "/stock_transfers/{stockTransferId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterToString(r.stockTransferId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"stockTransferId"+"}", url.PathEscape(parameterValueToString(r.stockTransferId, "stockTransferId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -683,9 +683,9 @@ func (a *StockTransfersApiService) PATCHStockTransfersStockTransferIdExecute(r S
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -794,9 +794,9 @@ func (a *StockTransfersApiService) POSTStockTransfersExecute(r StockTransfersApi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

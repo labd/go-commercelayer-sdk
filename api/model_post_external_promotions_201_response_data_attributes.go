@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,33 +15,36 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTExternalPromotions201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTExternalPromotions201ResponseDataAttributes{}
+
 // POSTExternalPromotions201ResponseDataAttributes struct for POSTExternalPromotions201ResponseDataAttributes
 type POSTExternalPromotions201ResponseDataAttributes struct {
 	// The promotion's internal name.
-	Name string `json:"name"`
+	Name interface{} `json:"name"`
 	// The international 3-letter currency code as defined by the ISO 4217 standard.
-	CurrencyCode *string `json:"currency_code,omitempty"`
+	CurrencyCode interface{} `json:"currency_code,omitempty"`
 	// The activation date/time of this promotion.
-	StartsAt string `json:"starts_at"`
+	StartsAt interface{} `json:"starts_at"`
 	// The expiration date/time of this promotion (must be after starts_at).
-	ExpiresAt string `json:"expires_at"`
+	ExpiresAt interface{} `json:"expires_at"`
 	// The total number of times this promotion can be applied.
-	TotalUsageLimit int32 `json:"total_usage_limit"`
+	TotalUsageLimit interface{} `json:"total_usage_limit"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 	// The URL to the service that will compute the discount.
-	PromotionUrl string `json:"promotion_url"`
+	PromotionUrl interface{} `json:"promotion_url"`
 }
 
 // NewPOSTExternalPromotions201ResponseDataAttributes instantiates a new POSTExternalPromotions201ResponseDataAttributes object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPOSTExternalPromotions201ResponseDataAttributes(name string, startsAt string, expiresAt string, totalUsageLimit int32, promotionUrl string) *POSTExternalPromotions201ResponseDataAttributes {
+func NewPOSTExternalPromotions201ResponseDataAttributes(name interface{}, startsAt interface{}, expiresAt interface{}, totalUsageLimit interface{}, promotionUrl interface{}) *POSTExternalPromotions201ResponseDataAttributes {
 	this := POSTExternalPromotions201ResponseDataAttributes{}
 	this.Name = name
 	this.StartsAt = startsAt
@@ -60,9 +63,10 @@ func NewPOSTExternalPromotions201ResponseDataAttributesWithDefaults() *POSTExter
 }
 
 // GetName returns the Name field value
-func (o *POSTExternalPromotions201ResponseDataAttributes) GetName() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTExternalPromotions201ResponseDataAttributes) GetName() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -71,54 +75,57 @@ func (o *POSTExternalPromotions201ResponseDataAttributes) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
-func (o *POSTExternalPromotions201ResponseDataAttributes) GetNameOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTExternalPromotions201ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
 }
 
 // SetName sets field value
-func (o *POSTExternalPromotions201ResponseDataAttributes) SetName(v string) {
+func (o *POSTExternalPromotions201ResponseDataAttributes) SetName(v interface{}) {
 	o.Name = v
 }
 
-// GetCurrencyCode returns the CurrencyCode field value if set, zero value otherwise.
-func (o *POSTExternalPromotions201ResponseDataAttributes) GetCurrencyCode() string {
-	if o == nil || o.CurrencyCode == nil {
-		var ret string
+// GetCurrencyCode returns the CurrencyCode field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTExternalPromotions201ResponseDataAttributes) GetCurrencyCode() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.CurrencyCode
+	return o.CurrencyCode
 }
 
 // GetCurrencyCodeOk returns a tuple with the CurrencyCode field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTExternalPromotions201ResponseDataAttributes) GetCurrencyCodeOk() (*string, bool) {
-	if o == nil || o.CurrencyCode == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTExternalPromotions201ResponseDataAttributes) GetCurrencyCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.CurrencyCode) {
 		return nil, false
 	}
-	return o.CurrencyCode, true
+	return &o.CurrencyCode, true
 }
 
 // HasCurrencyCode returns a boolean if a field has been set.
 func (o *POSTExternalPromotions201ResponseDataAttributes) HasCurrencyCode() bool {
-	if o != nil && o.CurrencyCode != nil {
+	if o != nil && IsNil(o.CurrencyCode) {
 		return true
 	}
 
 	return false
 }
 
-// SetCurrencyCode gets a reference to the given string and assigns it to the CurrencyCode field.
-func (o *POSTExternalPromotions201ResponseDataAttributes) SetCurrencyCode(v string) {
-	o.CurrencyCode = &v
+// SetCurrencyCode gets a reference to the given interface{} and assigns it to the CurrencyCode field.
+func (o *POSTExternalPromotions201ResponseDataAttributes) SetCurrencyCode(v interface{}) {
+	o.CurrencyCode = v
 }
 
 // GetStartsAt returns the StartsAt field value
-func (o *POSTExternalPromotions201ResponseDataAttributes) GetStartsAt() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTExternalPromotions201ResponseDataAttributes) GetStartsAt() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -127,22 +134,24 @@ func (o *POSTExternalPromotions201ResponseDataAttributes) GetStartsAt() string {
 
 // GetStartsAtOk returns a tuple with the StartsAt field value
 // and a boolean to check if the value has been set.
-func (o *POSTExternalPromotions201ResponseDataAttributes) GetStartsAtOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTExternalPromotions201ResponseDataAttributes) GetStartsAtOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.StartsAt) {
 		return nil, false
 	}
 	return &o.StartsAt, true
 }
 
 // SetStartsAt sets field value
-func (o *POSTExternalPromotions201ResponseDataAttributes) SetStartsAt(v string) {
+func (o *POSTExternalPromotions201ResponseDataAttributes) SetStartsAt(v interface{}) {
 	o.StartsAt = v
 }
 
 // GetExpiresAt returns the ExpiresAt field value
-func (o *POSTExternalPromotions201ResponseDataAttributes) GetExpiresAt() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTExternalPromotions201ResponseDataAttributes) GetExpiresAt() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -151,22 +160,24 @@ func (o *POSTExternalPromotions201ResponseDataAttributes) GetExpiresAt() string 
 
 // GetExpiresAtOk returns a tuple with the ExpiresAt field value
 // and a boolean to check if the value has been set.
-func (o *POSTExternalPromotions201ResponseDataAttributes) GetExpiresAtOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTExternalPromotions201ResponseDataAttributes) GetExpiresAtOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ExpiresAt) {
 		return nil, false
 	}
 	return &o.ExpiresAt, true
 }
 
 // SetExpiresAt sets field value
-func (o *POSTExternalPromotions201ResponseDataAttributes) SetExpiresAt(v string) {
+func (o *POSTExternalPromotions201ResponseDataAttributes) SetExpiresAt(v interface{}) {
 	o.ExpiresAt = v
 }
 
 // GetTotalUsageLimit returns the TotalUsageLimit field value
-func (o *POSTExternalPromotions201ResponseDataAttributes) GetTotalUsageLimit() int32 {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTExternalPromotions201ResponseDataAttributes) GetTotalUsageLimit() interface{} {
 	if o == nil {
-		var ret int32
+		var ret interface{}
 		return ret
 	}
 
@@ -175,86 +186,89 @@ func (o *POSTExternalPromotions201ResponseDataAttributes) GetTotalUsageLimit() i
 
 // GetTotalUsageLimitOk returns a tuple with the TotalUsageLimit field value
 // and a boolean to check if the value has been set.
-func (o *POSTExternalPromotions201ResponseDataAttributes) GetTotalUsageLimitOk() (*int32, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTExternalPromotions201ResponseDataAttributes) GetTotalUsageLimitOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.TotalUsageLimit) {
 		return nil, false
 	}
 	return &o.TotalUsageLimit, true
 }
 
 // SetTotalUsageLimit sets field value
-func (o *POSTExternalPromotions201ResponseDataAttributes) SetTotalUsageLimit(v int32) {
+func (o *POSTExternalPromotions201ResponseDataAttributes) SetTotalUsageLimit(v interface{}) {
 	o.TotalUsageLimit = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *POSTExternalPromotions201ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTExternalPromotions201ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTExternalPromotions201ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTExternalPromotions201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTExternalPromotions201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *POSTExternalPromotions201ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *POSTExternalPromotions201ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *POSTExternalPromotions201ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTExternalPromotions201ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTExternalPromotions201ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTExternalPromotions201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTExternalPromotions201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *POSTExternalPromotions201ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *POSTExternalPromotions201ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *POSTExternalPromotions201ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTExternalPromotions201ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -262,31 +276,33 @@ func (o *POSTExternalPromotions201ResponseDataAttributes) GetMetadata() map[stri
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTExternalPromotions201ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTExternalPromotions201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTExternalPromotions201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *POSTExternalPromotions201ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *POSTExternalPromotions201ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 // GetPromotionUrl returns the PromotionUrl field value
-func (o *POSTExternalPromotions201ResponseDataAttributes) GetPromotionUrl() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTExternalPromotions201ResponseDataAttributes) GetPromotionUrl() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -295,33 +311,42 @@ func (o *POSTExternalPromotions201ResponseDataAttributes) GetPromotionUrl() stri
 
 // GetPromotionUrlOk returns a tuple with the PromotionUrl field value
 // and a boolean to check if the value has been set.
-func (o *POSTExternalPromotions201ResponseDataAttributes) GetPromotionUrlOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTExternalPromotions201ResponseDataAttributes) GetPromotionUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PromotionUrl) {
 		return nil, false
 	}
 	return &o.PromotionUrl, true
 }
 
 // SetPromotionUrl sets field value
-func (o *POSTExternalPromotions201ResponseDataAttributes) SetPromotionUrl(v string) {
+func (o *POSTExternalPromotions201ResponseDataAttributes) SetPromotionUrl(v interface{}) {
 	o.PromotionUrl = v
 }
 
 func (o POSTExternalPromotions201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTExternalPromotions201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
+	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
 	if o.CurrencyCode != nil {
 		toSerialize["currency_code"] = o.CurrencyCode
 	}
-	if true {
+	if o.StartsAt != nil {
 		toSerialize["starts_at"] = o.StartsAt
 	}
-	if true {
+	if o.ExpiresAt != nil {
 		toSerialize["expires_at"] = o.ExpiresAt
 	}
-	if true {
+	if o.TotalUsageLimit != nil {
 		toSerialize["total_usage_limit"] = o.TotalUsageLimit
 	}
 	if o.Reference != nil {
@@ -333,10 +358,10 @@ func (o POSTExternalPromotions201ResponseDataAttributes) MarshalJSON() ([]byte, 
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	if true {
+	if o.PromotionUrl != nil {
 		toSerialize["promotion_url"] = o.PromotionUrl
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTExternalPromotions201ResponseDataAttributes struct {

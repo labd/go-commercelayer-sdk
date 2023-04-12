@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,6 +14,9 @@ package api
 import (
 	"encoding/json"
 )
+
+// checks if the BraintreeGatewayUpdate type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &BraintreeGatewayUpdate{}
 
 // BraintreeGatewayUpdate struct for BraintreeGatewayUpdate
 type BraintreeGatewayUpdate struct {
@@ -63,11 +66,17 @@ func (o *BraintreeGatewayUpdate) SetData(v BraintreeGatewayUpdateData) {
 }
 
 func (o BraintreeGatewayUpdate) MarshalJSON() ([]byte, error) {
-	toSerialize := map[string]interface{}{}
-	if true {
-		toSerialize["data"] = o.Data
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
 	}
 	return json.Marshal(toSerialize)
+}
+
+func (o BraintreeGatewayUpdate) ToMap() (map[string]interface{}, error) {
+	toSerialize := map[string]interface{}{}
+	toSerialize["data"] = o.Data
+	return toSerialize, nil
 }
 
 type NullableBraintreeGatewayUpdate struct {

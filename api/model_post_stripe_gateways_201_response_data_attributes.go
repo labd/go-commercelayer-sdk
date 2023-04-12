@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,29 +15,32 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTStripeGateways201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTStripeGateways201ResponseDataAttributes{}
+
 // POSTStripeGateways201ResponseDataAttributes struct for POSTStripeGateways201ResponseDataAttributes
 type POSTStripeGateways201ResponseDataAttributes struct {
 	// The payment gateway's internal name.
-	Name string `json:"name"`
+	Name interface{} `json:"name"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 	// The gateway login.
-	Login string `json:"login"`
+	Login interface{} `json:"login"`
 	// The gateway publishable API key.
-	PublishableKey *string `json:"publishable_key,omitempty"`
+	PublishableKey interface{} `json:"publishable_key,omitempty"`
 	// Indicates if the gateway will accept payment methods enabled in the Stripe dashboard.
-	AutoPayments *bool `json:"auto_payments,omitempty"`
+	AutoPayments interface{} `json:"auto_payments,omitempty"`
 }
 
 // NewPOSTStripeGateways201ResponseDataAttributes instantiates a new POSTStripeGateways201ResponseDataAttributes object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPOSTStripeGateways201ResponseDataAttributes(name string, login string) *POSTStripeGateways201ResponseDataAttributes {
+func NewPOSTStripeGateways201ResponseDataAttributes(name interface{}, login interface{}) *POSTStripeGateways201ResponseDataAttributes {
 	this := POSTStripeGateways201ResponseDataAttributes{}
 	this.Name = name
 	this.Login = login
@@ -53,9 +56,10 @@ func NewPOSTStripeGateways201ResponseDataAttributesWithDefaults() *POSTStripeGat
 }
 
 // GetName returns the Name field value
-func (o *POSTStripeGateways201ResponseDataAttributes) GetName() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTStripeGateways201ResponseDataAttributes) GetName() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -64,86 +68,89 @@ func (o *POSTStripeGateways201ResponseDataAttributes) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
-func (o *POSTStripeGateways201ResponseDataAttributes) GetNameOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTStripeGateways201ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
 }
 
 // SetName sets field value
-func (o *POSTStripeGateways201ResponseDataAttributes) SetName(v string) {
+func (o *POSTStripeGateways201ResponseDataAttributes) SetName(v interface{}) {
 	o.Name = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *POSTStripeGateways201ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTStripeGateways201ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTStripeGateways201ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTStripeGateways201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTStripeGateways201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *POSTStripeGateways201ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *POSTStripeGateways201ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *POSTStripeGateways201ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTStripeGateways201ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTStripeGateways201ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTStripeGateways201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTStripeGateways201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *POSTStripeGateways201ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *POSTStripeGateways201ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *POSTStripeGateways201ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTStripeGateways201ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -151,31 +158,33 @@ func (o *POSTStripeGateways201ResponseDataAttributes) GetMetadata() map[string]i
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTStripeGateways201ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTStripeGateways201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTStripeGateways201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *POSTStripeGateways201ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *POSTStripeGateways201ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 // GetLogin returns the Login field value
-func (o *POSTStripeGateways201ResponseDataAttributes) GetLogin() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTStripeGateways201ResponseDataAttributes) GetLogin() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -184,85 +193,96 @@ func (o *POSTStripeGateways201ResponseDataAttributes) GetLogin() string {
 
 // GetLoginOk returns a tuple with the Login field value
 // and a boolean to check if the value has been set.
-func (o *POSTStripeGateways201ResponseDataAttributes) GetLoginOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTStripeGateways201ResponseDataAttributes) GetLoginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Login) {
 		return nil, false
 	}
 	return &o.Login, true
 }
 
 // SetLogin sets field value
-func (o *POSTStripeGateways201ResponseDataAttributes) SetLogin(v string) {
+func (o *POSTStripeGateways201ResponseDataAttributes) SetLogin(v interface{}) {
 	o.Login = v
 }
 
-// GetPublishableKey returns the PublishableKey field value if set, zero value otherwise.
-func (o *POSTStripeGateways201ResponseDataAttributes) GetPublishableKey() string {
-	if o == nil || o.PublishableKey == nil {
-		var ret string
+// GetPublishableKey returns the PublishableKey field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTStripeGateways201ResponseDataAttributes) GetPublishableKey() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.PublishableKey
+	return o.PublishableKey
 }
 
 // GetPublishableKeyOk returns a tuple with the PublishableKey field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTStripeGateways201ResponseDataAttributes) GetPublishableKeyOk() (*string, bool) {
-	if o == nil || o.PublishableKey == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTStripeGateways201ResponseDataAttributes) GetPublishableKeyOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PublishableKey) {
 		return nil, false
 	}
-	return o.PublishableKey, true
+	return &o.PublishableKey, true
 }
 
 // HasPublishableKey returns a boolean if a field has been set.
 func (o *POSTStripeGateways201ResponseDataAttributes) HasPublishableKey() bool {
-	if o != nil && o.PublishableKey != nil {
+	if o != nil && IsNil(o.PublishableKey) {
 		return true
 	}
 
 	return false
 }
 
-// SetPublishableKey gets a reference to the given string and assigns it to the PublishableKey field.
-func (o *POSTStripeGateways201ResponseDataAttributes) SetPublishableKey(v string) {
-	o.PublishableKey = &v
+// SetPublishableKey gets a reference to the given interface{} and assigns it to the PublishableKey field.
+func (o *POSTStripeGateways201ResponseDataAttributes) SetPublishableKey(v interface{}) {
+	o.PublishableKey = v
 }
 
-// GetAutoPayments returns the AutoPayments field value if set, zero value otherwise.
-func (o *POSTStripeGateways201ResponseDataAttributes) GetAutoPayments() bool {
-	if o == nil || o.AutoPayments == nil {
-		var ret bool
+// GetAutoPayments returns the AutoPayments field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTStripeGateways201ResponseDataAttributes) GetAutoPayments() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.AutoPayments
+	return o.AutoPayments
 }
 
 // GetAutoPaymentsOk returns a tuple with the AutoPayments field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTStripeGateways201ResponseDataAttributes) GetAutoPaymentsOk() (*bool, bool) {
-	if o == nil || o.AutoPayments == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTStripeGateways201ResponseDataAttributes) GetAutoPaymentsOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.AutoPayments) {
 		return nil, false
 	}
-	return o.AutoPayments, true
+	return &o.AutoPayments, true
 }
 
 // HasAutoPayments returns a boolean if a field has been set.
 func (o *POSTStripeGateways201ResponseDataAttributes) HasAutoPayments() bool {
-	if o != nil && o.AutoPayments != nil {
+	if o != nil && IsNil(o.AutoPayments) {
 		return true
 	}
 
 	return false
 }
 
-// SetAutoPayments gets a reference to the given bool and assigns it to the AutoPayments field.
-func (o *POSTStripeGateways201ResponseDataAttributes) SetAutoPayments(v bool) {
-	o.AutoPayments = &v
+// SetAutoPayments gets a reference to the given interface{} and assigns it to the AutoPayments field.
+func (o *POSTStripeGateways201ResponseDataAttributes) SetAutoPayments(v interface{}) {
+	o.AutoPayments = v
 }
 
 func (o POSTStripeGateways201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTStripeGateways201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
+	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
 	if o.Reference != nil {
@@ -274,7 +294,7 @@ func (o POSTStripeGateways201ResponseDataAttributes) MarshalJSON() ([]byte, erro
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	if true {
+	if o.Login != nil {
 		toSerialize["login"] = o.Login
 	}
 	if o.PublishableKey != nil {
@@ -283,7 +303,7 @@ func (o POSTStripeGateways201ResponseDataAttributes) MarshalJSON() ([]byte, erro
 	if o.AutoPayments != nil {
 		toSerialize["auto_payments"] = o.AutoPayments
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTStripeGateways201ResponseDataAttributes struct {

@@ -1,6 +1,6 @@
 # \ExportsApi
 
-All URIs are relative to *https://}.commercelayer.io/api*
+All URIs are relative to *https://.commercelayer.io/api*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
@@ -28,15 +28,15 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    exportId := "exportId_example" // string | The resource's id
+    exportId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
-    resp, r, err := apiClient.ExportsApi.DELETEExportsExportId(context.Background(), exportId).Execute()
+    r, err := apiClient.ExportsApi.DELETEExportsExportId(context.Background(), exportId).Execute()
     if err != nil {
         fmt.Fprintf(os.Stderr, "Error when calling `ExportsApi.DELETEExportsExportId``: %v\n", err)
         fmt.Fprintf(os.Stderr, "Full HTTP response: %v\n", r)
@@ -50,7 +50,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**exportId** | **string** | The resource&#39;s id | 
+**exportId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -96,7 +96,7 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
@@ -157,11 +157,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    exportId := "exportId_example" // string | The resource's id
+    exportId := TODO // interface{} | The resource's id
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)
@@ -181,7 +181,7 @@ func main() {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
 **ctx** | **context.Context** | context for authentication, logging, cancellation, deadlines, tracing, etc.
-**exportId** | **string** | The resource&#39;s id | 
+**exportId** | [**interface{}**](.md) | The resource&#39;s id | 
 
 ### Other Parameters
 
@@ -227,11 +227,11 @@ import (
     "context"
     "fmt"
     "os"
-    openapiclient "./openapi"
+    openapiclient "github.com/incentro-dc/go-commercelayer-sdk/api"
 )
 
 func main() {
-    exportCreate := *openapiclient.NewExportCreate(*openapiclient.NewExportCreateData("Type_example", *openapiclient.NewPOSTExports201ResponseDataAttributes("skus"))) // ExportCreate | 
+    exportCreate := *openapiclient.NewExportCreate(*openapiclient.NewExportCreateData(interface{}(123), *openapiclient.NewPOSTExports201ResponseDataAttributes(interface{}(skus)))) // ExportCreate | 
 
     configuration := openapiclient.NewConfiguration()
     apiClient := openapiclient.NewAPIClient(configuration)

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -15,41 +15,44 @@ import (
 	"encoding/json"
 )
 
+// checks if the POSTSkus201ResponseDataAttributes type satisfies the MappedNullable interface at compile time
+var _ MappedNullable = &POSTSkus201ResponseDataAttributes{}
+
 // POSTSkus201ResponseDataAttributes struct for POSTSkus201ResponseDataAttributes
 type POSTSkus201ResponseDataAttributes struct {
 	// The SKU code, that uniquely identifies the SKU within the organization.
-	Code string `json:"code"`
+	Code interface{} `json:"code"`
 	// The internal name of the SKU.
-	Name string `json:"name"`
+	Name interface{} `json:"name"`
 	// An internal description of the SKU.
-	Description *string `json:"description,omitempty"`
+	Description interface{} `json:"description,omitempty"`
 	// The URL of an image that represents the SKU.
-	ImageUrl *string `json:"image_url,omitempty"`
+	ImageUrl interface{} `json:"image_url,omitempty"`
 	// The number of pieces that compose the SKU. This is useful to describe sets and bundles.
-	PiecesPerPack *int32 `json:"pieces_per_pack,omitempty"`
+	PiecesPerPack interface{} `json:"pieces_per_pack,omitempty"`
 	// The weight of the SKU. If present, it will be used to calculate the shipping rates.
-	Weight *float32 `json:"weight,omitempty"`
+	Weight interface{} `json:"weight,omitempty"`
 	// Can be one of 'gr', 'lb', or 'oz'
-	UnitOfWeight *string `json:"unit_of_weight,omitempty"`
+	UnitOfWeight interface{} `json:"unit_of_weight,omitempty"`
 	// The Harmonized System Code used by customs to identify the products shipped across international borders.
-	HsTariffNumber *string `json:"hs_tariff_number,omitempty"`
+	HsTariffNumber interface{} `json:"hs_tariff_number,omitempty"`
 	// Indicates if the SKU doesn't generate shipments.
-	DoNotShip *bool `json:"do_not_ship,omitempty"`
+	DoNotShip interface{} `json:"do_not_ship,omitempty"`
 	// Indicates if the SKU doesn't track the stock inventory.
-	DoNotTrack *bool `json:"do_not_track,omitempty"`
+	DoNotTrack interface{} `json:"do_not_track,omitempty"`
 	// A string that you can use to add any external identifier to the resource. This can be useful for integrating the resource to an external system, like an ERP, a marketing tool, a CRM, or whatever.
-	Reference *string `json:"reference,omitempty"`
+	Reference interface{} `json:"reference,omitempty"`
 	// Any identifier of the third party system that defines the reference code
-	ReferenceOrigin *string `json:"reference_origin,omitempty"`
+	ReferenceOrigin interface{} `json:"reference_origin,omitempty"`
 	// Set of key-value pairs that you can attach to the resource. This can be useful for storing additional information about the resource in a structured format.
-	Metadata map[string]interface{} `json:"metadata,omitempty"`
+	Metadata interface{} `json:"metadata,omitempty"`
 }
 
 // NewPOSTSkus201ResponseDataAttributes instantiates a new POSTSkus201ResponseDataAttributes object
 // This constructor will assign default values to properties that have it defined,
 // and makes sure properties required by API are set, but the set of arguments
 // will change when the set of required properties is changed
-func NewPOSTSkus201ResponseDataAttributes(code string, name string) *POSTSkus201ResponseDataAttributes {
+func NewPOSTSkus201ResponseDataAttributes(code interface{}, name interface{}) *POSTSkus201ResponseDataAttributes {
 	this := POSTSkus201ResponseDataAttributes{}
 	this.Code = code
 	this.Name = name
@@ -65,9 +68,10 @@ func NewPOSTSkus201ResponseDataAttributesWithDefaults() *POSTSkus201ResponseData
 }
 
 // GetCode returns the Code field value
-func (o *POSTSkus201ResponseDataAttributes) GetCode() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTSkus201ResponseDataAttributes) GetCode() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -76,22 +80,24 @@ func (o *POSTSkus201ResponseDataAttributes) GetCode() string {
 
 // GetCodeOk returns a tuple with the Code field value
 // and a boolean to check if the value has been set.
-func (o *POSTSkus201ResponseDataAttributes) GetCodeOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTSkus201ResponseDataAttributes) GetCodeOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Code) {
 		return nil, false
 	}
 	return &o.Code, true
 }
 
 // SetCode sets field value
-func (o *POSTSkus201ResponseDataAttributes) SetCode(v string) {
+func (o *POSTSkus201ResponseDataAttributes) SetCode(v interface{}) {
 	o.Code = v
 }
 
 // GetName returns the Name field value
-func (o *POSTSkus201ResponseDataAttributes) GetName() string {
+// If the value is explicit nil, the zero value for interface{} will be returned
+func (o *POSTSkus201ResponseDataAttributes) GetName() interface{} {
 	if o == nil {
-		var ret string
+		var ret interface{}
 		return ret
 	}
 
@@ -100,342 +106,353 @@ func (o *POSTSkus201ResponseDataAttributes) GetName() string {
 
 // GetNameOk returns a tuple with the Name field value
 // and a boolean to check if the value has been set.
-func (o *POSTSkus201ResponseDataAttributes) GetNameOk() (*string, bool) {
-	if o == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTSkus201ResponseDataAttributes) GetNameOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Name) {
 		return nil, false
 	}
 	return &o.Name, true
 }
 
 // SetName sets field value
-func (o *POSTSkus201ResponseDataAttributes) SetName(v string) {
+func (o *POSTSkus201ResponseDataAttributes) SetName(v interface{}) {
 	o.Name = v
 }
 
-// GetDescription returns the Description field value if set, zero value otherwise.
-func (o *POSTSkus201ResponseDataAttributes) GetDescription() string {
-	if o == nil || o.Description == nil {
-		var ret string
+// GetDescription returns the Description field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTSkus201ResponseDataAttributes) GetDescription() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Description
+	return o.Description
 }
 
 // GetDescriptionOk returns a tuple with the Description field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTSkus201ResponseDataAttributes) GetDescriptionOk() (*string, bool) {
-	if o == nil || o.Description == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTSkus201ResponseDataAttributes) GetDescriptionOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Description) {
 		return nil, false
 	}
-	return o.Description, true
+	return &o.Description, true
 }
 
 // HasDescription returns a boolean if a field has been set.
 func (o *POSTSkus201ResponseDataAttributes) HasDescription() bool {
-	if o != nil && o.Description != nil {
+	if o != nil && IsNil(o.Description) {
 		return true
 	}
 
 	return false
 }
 
-// SetDescription gets a reference to the given string and assigns it to the Description field.
-func (o *POSTSkus201ResponseDataAttributes) SetDescription(v string) {
-	o.Description = &v
+// SetDescription gets a reference to the given interface{} and assigns it to the Description field.
+func (o *POSTSkus201ResponseDataAttributes) SetDescription(v interface{}) {
+	o.Description = v
 }
 
-// GetImageUrl returns the ImageUrl field value if set, zero value otherwise.
-func (o *POSTSkus201ResponseDataAttributes) GetImageUrl() string {
-	if o == nil || o.ImageUrl == nil {
-		var ret string
+// GetImageUrl returns the ImageUrl field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTSkus201ResponseDataAttributes) GetImageUrl() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ImageUrl
+	return o.ImageUrl
 }
 
 // GetImageUrlOk returns a tuple with the ImageUrl field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTSkus201ResponseDataAttributes) GetImageUrlOk() (*string, bool) {
-	if o == nil || o.ImageUrl == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTSkus201ResponseDataAttributes) GetImageUrlOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ImageUrl) {
 		return nil, false
 	}
-	return o.ImageUrl, true
+	return &o.ImageUrl, true
 }
 
 // HasImageUrl returns a boolean if a field has been set.
 func (o *POSTSkus201ResponseDataAttributes) HasImageUrl() bool {
-	if o != nil && o.ImageUrl != nil {
+	if o != nil && IsNil(o.ImageUrl) {
 		return true
 	}
 
 	return false
 }
 
-// SetImageUrl gets a reference to the given string and assigns it to the ImageUrl field.
-func (o *POSTSkus201ResponseDataAttributes) SetImageUrl(v string) {
-	o.ImageUrl = &v
+// SetImageUrl gets a reference to the given interface{} and assigns it to the ImageUrl field.
+func (o *POSTSkus201ResponseDataAttributes) SetImageUrl(v interface{}) {
+	o.ImageUrl = v
 }
 
-// GetPiecesPerPack returns the PiecesPerPack field value if set, zero value otherwise.
-func (o *POSTSkus201ResponseDataAttributes) GetPiecesPerPack() int32 {
-	if o == nil || o.PiecesPerPack == nil {
-		var ret int32
+// GetPiecesPerPack returns the PiecesPerPack field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTSkus201ResponseDataAttributes) GetPiecesPerPack() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.PiecesPerPack
+	return o.PiecesPerPack
 }
 
 // GetPiecesPerPackOk returns a tuple with the PiecesPerPack field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTSkus201ResponseDataAttributes) GetPiecesPerPackOk() (*int32, bool) {
-	if o == nil || o.PiecesPerPack == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTSkus201ResponseDataAttributes) GetPiecesPerPackOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.PiecesPerPack) {
 		return nil, false
 	}
-	return o.PiecesPerPack, true
+	return &o.PiecesPerPack, true
 }
 
 // HasPiecesPerPack returns a boolean if a field has been set.
 func (o *POSTSkus201ResponseDataAttributes) HasPiecesPerPack() bool {
-	if o != nil && o.PiecesPerPack != nil {
+	if o != nil && IsNil(o.PiecesPerPack) {
 		return true
 	}
 
 	return false
 }
 
-// SetPiecesPerPack gets a reference to the given int32 and assigns it to the PiecesPerPack field.
-func (o *POSTSkus201ResponseDataAttributes) SetPiecesPerPack(v int32) {
-	o.PiecesPerPack = &v
+// SetPiecesPerPack gets a reference to the given interface{} and assigns it to the PiecesPerPack field.
+func (o *POSTSkus201ResponseDataAttributes) SetPiecesPerPack(v interface{}) {
+	o.PiecesPerPack = v
 }
 
-// GetWeight returns the Weight field value if set, zero value otherwise.
-func (o *POSTSkus201ResponseDataAttributes) GetWeight() float32 {
-	if o == nil || o.Weight == nil {
-		var ret float32
+// GetWeight returns the Weight field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTSkus201ResponseDataAttributes) GetWeight() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Weight
+	return o.Weight
 }
 
 // GetWeightOk returns a tuple with the Weight field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTSkus201ResponseDataAttributes) GetWeightOk() (*float32, bool) {
-	if o == nil || o.Weight == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTSkus201ResponseDataAttributes) GetWeightOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Weight) {
 		return nil, false
 	}
-	return o.Weight, true
+	return &o.Weight, true
 }
 
 // HasWeight returns a boolean if a field has been set.
 func (o *POSTSkus201ResponseDataAttributes) HasWeight() bool {
-	if o != nil && o.Weight != nil {
+	if o != nil && IsNil(o.Weight) {
 		return true
 	}
 
 	return false
 }
 
-// SetWeight gets a reference to the given float32 and assigns it to the Weight field.
-func (o *POSTSkus201ResponseDataAttributes) SetWeight(v float32) {
-	o.Weight = &v
+// SetWeight gets a reference to the given interface{} and assigns it to the Weight field.
+func (o *POSTSkus201ResponseDataAttributes) SetWeight(v interface{}) {
+	o.Weight = v
 }
 
-// GetUnitOfWeight returns the UnitOfWeight field value if set, zero value otherwise.
-func (o *POSTSkus201ResponseDataAttributes) GetUnitOfWeight() string {
-	if o == nil || o.UnitOfWeight == nil {
-		var ret string
+// GetUnitOfWeight returns the UnitOfWeight field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTSkus201ResponseDataAttributes) GetUnitOfWeight() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.UnitOfWeight
+	return o.UnitOfWeight
 }
 
 // GetUnitOfWeightOk returns a tuple with the UnitOfWeight field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTSkus201ResponseDataAttributes) GetUnitOfWeightOk() (*string, bool) {
-	if o == nil || o.UnitOfWeight == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTSkus201ResponseDataAttributes) GetUnitOfWeightOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.UnitOfWeight) {
 		return nil, false
 	}
-	return o.UnitOfWeight, true
+	return &o.UnitOfWeight, true
 }
 
 // HasUnitOfWeight returns a boolean if a field has been set.
 func (o *POSTSkus201ResponseDataAttributes) HasUnitOfWeight() bool {
-	if o != nil && o.UnitOfWeight != nil {
+	if o != nil && IsNil(o.UnitOfWeight) {
 		return true
 	}
 
 	return false
 }
 
-// SetUnitOfWeight gets a reference to the given string and assigns it to the UnitOfWeight field.
-func (o *POSTSkus201ResponseDataAttributes) SetUnitOfWeight(v string) {
-	o.UnitOfWeight = &v
+// SetUnitOfWeight gets a reference to the given interface{} and assigns it to the UnitOfWeight field.
+func (o *POSTSkus201ResponseDataAttributes) SetUnitOfWeight(v interface{}) {
+	o.UnitOfWeight = v
 }
 
-// GetHsTariffNumber returns the HsTariffNumber field value if set, zero value otherwise.
-func (o *POSTSkus201ResponseDataAttributes) GetHsTariffNumber() string {
-	if o == nil || o.HsTariffNumber == nil {
-		var ret string
+// GetHsTariffNumber returns the HsTariffNumber field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTSkus201ResponseDataAttributes) GetHsTariffNumber() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.HsTariffNumber
+	return o.HsTariffNumber
 }
 
 // GetHsTariffNumberOk returns a tuple with the HsTariffNumber field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTSkus201ResponseDataAttributes) GetHsTariffNumberOk() (*string, bool) {
-	if o == nil || o.HsTariffNumber == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTSkus201ResponseDataAttributes) GetHsTariffNumberOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.HsTariffNumber) {
 		return nil, false
 	}
-	return o.HsTariffNumber, true
+	return &o.HsTariffNumber, true
 }
 
 // HasHsTariffNumber returns a boolean if a field has been set.
 func (o *POSTSkus201ResponseDataAttributes) HasHsTariffNumber() bool {
-	if o != nil && o.HsTariffNumber != nil {
+	if o != nil && IsNil(o.HsTariffNumber) {
 		return true
 	}
 
 	return false
 }
 
-// SetHsTariffNumber gets a reference to the given string and assigns it to the HsTariffNumber field.
-func (o *POSTSkus201ResponseDataAttributes) SetHsTariffNumber(v string) {
-	o.HsTariffNumber = &v
+// SetHsTariffNumber gets a reference to the given interface{} and assigns it to the HsTariffNumber field.
+func (o *POSTSkus201ResponseDataAttributes) SetHsTariffNumber(v interface{}) {
+	o.HsTariffNumber = v
 }
 
-// GetDoNotShip returns the DoNotShip field value if set, zero value otherwise.
-func (o *POSTSkus201ResponseDataAttributes) GetDoNotShip() bool {
-	if o == nil || o.DoNotShip == nil {
-		var ret bool
+// GetDoNotShip returns the DoNotShip field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTSkus201ResponseDataAttributes) GetDoNotShip() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.DoNotShip
+	return o.DoNotShip
 }
 
 // GetDoNotShipOk returns a tuple with the DoNotShip field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTSkus201ResponseDataAttributes) GetDoNotShipOk() (*bool, bool) {
-	if o == nil || o.DoNotShip == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTSkus201ResponseDataAttributes) GetDoNotShipOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.DoNotShip) {
 		return nil, false
 	}
-	return o.DoNotShip, true
+	return &o.DoNotShip, true
 }
 
 // HasDoNotShip returns a boolean if a field has been set.
 func (o *POSTSkus201ResponseDataAttributes) HasDoNotShip() bool {
-	if o != nil && o.DoNotShip != nil {
+	if o != nil && IsNil(o.DoNotShip) {
 		return true
 	}
 
 	return false
 }
 
-// SetDoNotShip gets a reference to the given bool and assigns it to the DoNotShip field.
-func (o *POSTSkus201ResponseDataAttributes) SetDoNotShip(v bool) {
-	o.DoNotShip = &v
+// SetDoNotShip gets a reference to the given interface{} and assigns it to the DoNotShip field.
+func (o *POSTSkus201ResponseDataAttributes) SetDoNotShip(v interface{}) {
+	o.DoNotShip = v
 }
 
-// GetDoNotTrack returns the DoNotTrack field value if set, zero value otherwise.
-func (o *POSTSkus201ResponseDataAttributes) GetDoNotTrack() bool {
-	if o == nil || o.DoNotTrack == nil {
-		var ret bool
+// GetDoNotTrack returns the DoNotTrack field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTSkus201ResponseDataAttributes) GetDoNotTrack() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.DoNotTrack
+	return o.DoNotTrack
 }
 
 // GetDoNotTrackOk returns a tuple with the DoNotTrack field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTSkus201ResponseDataAttributes) GetDoNotTrackOk() (*bool, bool) {
-	if o == nil || o.DoNotTrack == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTSkus201ResponseDataAttributes) GetDoNotTrackOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.DoNotTrack) {
 		return nil, false
 	}
-	return o.DoNotTrack, true
+	return &o.DoNotTrack, true
 }
 
 // HasDoNotTrack returns a boolean if a field has been set.
 func (o *POSTSkus201ResponseDataAttributes) HasDoNotTrack() bool {
-	if o != nil && o.DoNotTrack != nil {
+	if o != nil && IsNil(o.DoNotTrack) {
 		return true
 	}
 
 	return false
 }
 
-// SetDoNotTrack gets a reference to the given bool and assigns it to the DoNotTrack field.
-func (o *POSTSkus201ResponseDataAttributes) SetDoNotTrack(v bool) {
-	o.DoNotTrack = &v
+// SetDoNotTrack gets a reference to the given interface{} and assigns it to the DoNotTrack field.
+func (o *POSTSkus201ResponseDataAttributes) SetDoNotTrack(v interface{}) {
+	o.DoNotTrack = v
 }
 
-// GetReference returns the Reference field value if set, zero value otherwise.
-func (o *POSTSkus201ResponseDataAttributes) GetReference() string {
-	if o == nil || o.Reference == nil {
-		var ret string
+// GetReference returns the Reference field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTSkus201ResponseDataAttributes) GetReference() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.Reference
+	return o.Reference
 }
 
 // GetReferenceOk returns a tuple with the Reference field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTSkus201ResponseDataAttributes) GetReferenceOk() (*string, bool) {
-	if o == nil || o.Reference == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTSkus201ResponseDataAttributes) GetReferenceOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Reference) {
 		return nil, false
 	}
-	return o.Reference, true
+	return &o.Reference, true
 }
 
 // HasReference returns a boolean if a field has been set.
 func (o *POSTSkus201ResponseDataAttributes) HasReference() bool {
-	if o != nil && o.Reference != nil {
+	if o != nil && IsNil(o.Reference) {
 		return true
 	}
 
 	return false
 }
 
-// SetReference gets a reference to the given string and assigns it to the Reference field.
-func (o *POSTSkus201ResponseDataAttributes) SetReference(v string) {
-	o.Reference = &v
+// SetReference gets a reference to the given interface{} and assigns it to the Reference field.
+func (o *POSTSkus201ResponseDataAttributes) SetReference(v interface{}) {
+	o.Reference = v
 }
 
-// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise.
-func (o *POSTSkus201ResponseDataAttributes) GetReferenceOrigin() string {
-	if o == nil || o.ReferenceOrigin == nil {
-		var ret string
+// GetReferenceOrigin returns the ReferenceOrigin field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTSkus201ResponseDataAttributes) GetReferenceOrigin() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
-	return *o.ReferenceOrigin
+	return o.ReferenceOrigin
 }
 
 // GetReferenceOriginOk returns a tuple with the ReferenceOrigin field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTSkus201ResponseDataAttributes) GetReferenceOriginOk() (*string, bool) {
-	if o == nil || o.ReferenceOrigin == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTSkus201ResponseDataAttributes) GetReferenceOriginOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.ReferenceOrigin) {
 		return nil, false
 	}
-	return o.ReferenceOrigin, true
+	return &o.ReferenceOrigin, true
 }
 
 // HasReferenceOrigin returns a boolean if a field has been set.
 func (o *POSTSkus201ResponseDataAttributes) HasReferenceOrigin() bool {
-	if o != nil && o.ReferenceOrigin != nil {
+	if o != nil && IsNil(o.ReferenceOrigin) {
 		return true
 	}
 
 	return false
 }
 
-// SetReferenceOrigin gets a reference to the given string and assigns it to the ReferenceOrigin field.
-func (o *POSTSkus201ResponseDataAttributes) SetReferenceOrigin(v string) {
-	o.ReferenceOrigin = &v
+// SetReferenceOrigin gets a reference to the given interface{} and assigns it to the ReferenceOrigin field.
+func (o *POSTSkus201ResponseDataAttributes) SetReferenceOrigin(v interface{}) {
+	o.ReferenceOrigin = v
 }
 
-// GetMetadata returns the Metadata field value if set, zero value otherwise.
-func (o *POSTSkus201ResponseDataAttributes) GetMetadata() map[string]interface{} {
-	if o == nil || o.Metadata == nil {
-		var ret map[string]interface{}
+// GetMetadata returns the Metadata field value if set, zero value otherwise (both if not set or set to explicit null).
+func (o *POSTSkus201ResponseDataAttributes) GetMetadata() interface{} {
+	if o == nil {
+		var ret interface{}
 		return ret
 	}
 	return o.Metadata
@@ -443,33 +460,42 @@ func (o *POSTSkus201ResponseDataAttributes) GetMetadata() map[string]interface{}
 
 // GetMetadataOk returns a tuple with the Metadata field value if set, nil otherwise
 // and a boolean to check if the value has been set.
-func (o *POSTSkus201ResponseDataAttributes) GetMetadataOk() (map[string]interface{}, bool) {
-	if o == nil || o.Metadata == nil {
+// NOTE: If the value is an explicit nil, `nil, true` will be returned
+func (o *POSTSkus201ResponseDataAttributes) GetMetadataOk() (*interface{}, bool) {
+	if o == nil || IsNil(o.Metadata) {
 		return nil, false
 	}
-	return o.Metadata, true
+	return &o.Metadata, true
 }
 
 // HasMetadata returns a boolean if a field has been set.
 func (o *POSTSkus201ResponseDataAttributes) HasMetadata() bool {
-	if o != nil && o.Metadata != nil {
+	if o != nil && IsNil(o.Metadata) {
 		return true
 	}
 
 	return false
 }
 
-// SetMetadata gets a reference to the given map[string]interface{} and assigns it to the Metadata field.
-func (o *POSTSkus201ResponseDataAttributes) SetMetadata(v map[string]interface{}) {
+// SetMetadata gets a reference to the given interface{} and assigns it to the Metadata field.
+func (o *POSTSkus201ResponseDataAttributes) SetMetadata(v interface{}) {
 	o.Metadata = v
 }
 
 func (o POSTSkus201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
+	toSerialize, err := o.ToMap()
+	if err != nil {
+		return []byte{}, err
+	}
+	return json.Marshal(toSerialize)
+}
+
+func (o POSTSkus201ResponseDataAttributes) ToMap() (map[string]interface{}, error) {
 	toSerialize := map[string]interface{}{}
-	if true {
+	if o.Code != nil {
 		toSerialize["code"] = o.Code
 	}
-	if true {
+	if o.Name != nil {
 		toSerialize["name"] = o.Name
 	}
 	if o.Description != nil {
@@ -505,7 +531,7 @@ func (o POSTSkus201ResponseDataAttributes) MarshalJSON() ([]byte, error) {
 	if o.Metadata != nil {
 		toSerialize["metadata"] = o.Metadata
 	}
-	return json.Marshal(toSerialize)
+	return toSerialize, nil
 }
 
 type NullablePOSTSkus201ResponseDataAttributes struct {

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type ExportsApiService service
 type ExportsApiDELETEExportsExportIdRequest struct {
 	ctx        context.Context
 	ApiService *ExportsApiService
-	exportId   string
+	exportId   interface{}
 }
 
 func (r ExportsApiDELETEExportsExportIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete an export
 	@param exportId The resource's id
 	@return ExportsApiDELETEExportsExportIdRequest
 */
-func (a *ExportsApiService) DELETEExportsExportId(ctx context.Context, exportId string) ExportsApiDELETEExportsExportIdRequest {
+func (a *ExportsApiService) DELETEExportsExportId(ctx context.Context, exportId interface{}) ExportsApiDELETEExportsExportIdRequest {
 	return ExportsApiDELETEExportsExportIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -64,7 +64,7 @@ func (a *ExportsApiService) DELETEExportsExportIdExecute(r ExportsApiDELETEExpor
 	}
 
 	localVarPath := localBasePath + "/exports/{exportId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"exportId"+"}", url.PathEscape(parameterToString(r.exportId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"exportId"+"}", url.PathEscape(parameterValueToString(r.exportId, "exportId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *ExportsApiService) DELETEExportsExportIdExecute(r ExportsApiDELETEExpor
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -188,9 +188,9 @@ func (a *ExportsApiService) GETExportsExecute(r ExportsApiGETExportsRequest) (*G
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -218,7 +218,7 @@ func (a *ExportsApiService) GETExportsExecute(r ExportsApiGETExportsRequest) (*G
 type ExportsApiGETExportsExportIdRequest struct {
 	ctx        context.Context
 	ApiService *ExportsApiService
-	exportId   string
+	exportId   interface{}
 }
 
 func (r ExportsApiGETExportsExportIdRequest) Execute() (*GETExportsExportId200Response, *http.Response, error) {
@@ -234,7 +234,7 @@ Retrieve an export
 	@param exportId The resource's id
 	@return ExportsApiGETExportsExportIdRequest
 */
-func (a *ExportsApiService) GETExportsExportId(ctx context.Context, exportId string) ExportsApiGETExportsExportIdRequest {
+func (a *ExportsApiService) GETExportsExportId(ctx context.Context, exportId interface{}) ExportsApiGETExportsExportIdRequest {
 	return ExportsApiGETExportsExportIdRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -259,7 +259,7 @@ func (a *ExportsApiService) GETExportsExportIdExecute(r ExportsApiGETExportsExpo
 	}
 
 	localVarPath := localBasePath + "/exports/{exportId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"exportId"+"}", url.PathEscape(parameterToString(r.exportId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"exportId"+"}", url.PathEscape(parameterValueToString(r.exportId, "exportId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -292,9 +292,9 @@ func (a *ExportsApiService) GETExportsExportIdExecute(r ExportsApiGETExportsExpo
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -403,9 +403,9 @@ func (a *ExportsApiService) POSTExportsExecute(r ExportsApiPOSTExportsRequest) (
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

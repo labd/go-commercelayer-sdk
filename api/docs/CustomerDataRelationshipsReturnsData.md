@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | Pointer to **string** | The resource&#39;s type | [optional] 
-**Id** | Pointer to **string** | The resource&#39;s id | [optional] 
+**Type** | Pointer to **interface{}** | The resource&#39;s type | [optional] 
+**Id** | Pointer to **interface{}** | The resource&#39;s id | [optional] 
 
 ## Methods
 
@@ -28,20 +28,20 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *CustomerDataRelationshipsReturnsData) GetType() string`
+`func (o *CustomerDataRelationshipsReturnsData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *CustomerDataRelationshipsReturnsData) GetTypeOk() (*string, bool)`
+`func (o *CustomerDataRelationshipsReturnsData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *CustomerDataRelationshipsReturnsData) SetType(v string)`
+`func (o *CustomerDataRelationshipsReturnsData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
@@ -51,22 +51,32 @@ SetType sets Type field to given value.
 
 HasType returns a boolean if a field has been set.
 
+### SetTypeNil
+
+`func (o *CustomerDataRelationshipsReturnsData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *CustomerDataRelationshipsReturnsData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetId
 
-`func (o *CustomerDataRelationshipsReturnsData) GetId() string`
+`func (o *CustomerDataRelationshipsReturnsData) GetId() interface{}`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *CustomerDataRelationshipsReturnsData) GetIdOk() (*string, bool)`
+`func (o *CustomerDataRelationshipsReturnsData) GetIdOk() (*interface{}, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *CustomerDataRelationshipsReturnsData) SetId(v string)`
+`func (o *CustomerDataRelationshipsReturnsData) SetId(v interface{})`
 
 SetId sets Id field to given value.
 
@@ -76,6 +86,16 @@ SetId sets Id field to given value.
 
 HasId returns a boolean if a field has been set.
 
+### SetIdNil
+
+`func (o *CustomerDataRelationshipsReturnsData) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *CustomerDataRelationshipsReturnsData) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type LineItemOptionsApiService service
 type LineItemOptionsApiDELETELineItemOptionsLineItemOptionIdRequest struct {
 	ctx              context.Context
 	ApiService       *LineItemOptionsApiService
-	lineItemOptionId string
+	lineItemOptionId interface{}
 }
 
 func (r LineItemOptionsApiDELETELineItemOptionsLineItemOptionIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a line item option
 	@param lineItemOptionId The resource's id
 	@return LineItemOptionsApiDELETELineItemOptionsLineItemOptionIdRequest
 */
-func (a *LineItemOptionsApiService) DELETELineItemOptionsLineItemOptionId(ctx context.Context, lineItemOptionId string) LineItemOptionsApiDELETELineItemOptionsLineItemOptionIdRequest {
+func (a *LineItemOptionsApiService) DELETELineItemOptionsLineItemOptionId(ctx context.Context, lineItemOptionId interface{}) LineItemOptionsApiDELETELineItemOptionsLineItemOptionIdRequest {
 	return LineItemOptionsApiDELETELineItemOptionsLineItemOptionIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -64,7 +64,7 @@ func (a *LineItemOptionsApiService) DELETELineItemOptionsLineItemOptionIdExecute
 	}
 
 	localVarPath := localBasePath + "/line_item_options/{lineItemOptionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"lineItemOptionId"+"}", url.PathEscape(parameterToString(r.lineItemOptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemOptionId"+"}", url.PathEscape(parameterValueToString(r.lineItemOptionId, "lineItemOptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *LineItemOptionsApiService) DELETELineItemOptionsLineItemOptionIdExecute
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *LineItemOptionsApiService) DELETELineItemOptionsLineItemOptionIdExecute
 type LineItemOptionsApiGETLineItemIdLineItemOptionsRequest struct {
 	ctx        context.Context
 	ApiService *LineItemOptionsApiService
-	lineItemId string
+	lineItemId interface{}
 }
 
 func (r LineItemOptionsApiGETLineItemIdLineItemOptionsRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the line item options associated to the line item
 	@param lineItemId The resource's id
 	@return LineItemOptionsApiGETLineItemIdLineItemOptionsRequest
 */
-func (a *LineItemOptionsApiService) GETLineItemIdLineItemOptions(ctx context.Context, lineItemId string) LineItemOptionsApiGETLineItemIdLineItemOptionsRequest {
+func (a *LineItemOptionsApiService) GETLineItemIdLineItemOptions(ctx context.Context, lineItemId interface{}) LineItemOptionsApiGETLineItemIdLineItemOptionsRequest {
 	return LineItemOptionsApiGETLineItemIdLineItemOptionsRequest{
 		ApiService: a,
 		ctx:        ctx,
@@ -156,7 +156,7 @@ func (a *LineItemOptionsApiService) GETLineItemIdLineItemOptionsExecute(r LineIt
 	}
 
 	localVarPath := localBasePath + "/line_items/{lineItemId}/line_item_options"
-	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterToString(r.lineItemId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemId"+"}", url.PathEscape(parameterValueToString(r.lineItemId, "lineItemId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *LineItemOptionsApiService) GETLineItemIdLineItemOptionsExecute(r LineIt
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *LineItemOptionsApiService) GETLineItemOptionsExecute(r LineItemOptionsA
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -310,7 +310,7 @@ func (a *LineItemOptionsApiService) GETLineItemOptionsExecute(r LineItemOptionsA
 type LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest struct {
 	ctx              context.Context
 	ApiService       *LineItemOptionsApiService
-	lineItemOptionId string
+	lineItemOptionId interface{}
 }
 
 func (r LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest) Execute() (*GETLineItemOptionsLineItemOptionId200Response, *http.Response, error) {
@@ -326,7 +326,7 @@ Retrieve a line item option
 	@param lineItemOptionId The resource's id
 	@return LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest
 */
-func (a *LineItemOptionsApiService) GETLineItemOptionsLineItemOptionId(ctx context.Context, lineItemOptionId string) LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest {
+func (a *LineItemOptionsApiService) GETLineItemOptionsLineItemOptionId(ctx context.Context, lineItemOptionId interface{}) LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest {
 	return LineItemOptionsApiGETLineItemOptionsLineItemOptionIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -351,7 +351,7 @@ func (a *LineItemOptionsApiService) GETLineItemOptionsLineItemOptionIdExecute(r 
 	}
 
 	localVarPath := localBasePath + "/line_item_options/{lineItemOptionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"lineItemOptionId"+"}", url.PathEscape(parameterToString(r.lineItemOptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemOptionId"+"}", url.PathEscape(parameterValueToString(r.lineItemOptionId, "lineItemOptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *LineItemOptionsApiService) GETLineItemOptionsLineItemOptionIdExecute(r 
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -415,7 +415,7 @@ type LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest struct {
 	ctx                  context.Context
 	ApiService           *LineItemOptionsApiService
 	lineItemOptionUpdate *LineItemOptionUpdate
-	lineItemOptionId     string
+	lineItemOptionId     interface{}
 }
 
 func (r LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest) LineItemOptionUpdate(lineItemOptionUpdate LineItemOptionUpdate) LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest {
@@ -436,7 +436,7 @@ Update a line item option
 	@param lineItemOptionId The resource's id
 	@return LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest
 */
-func (a *LineItemOptionsApiService) PATCHLineItemOptionsLineItemOptionId(ctx context.Context, lineItemOptionId string) LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest {
+func (a *LineItemOptionsApiService) PATCHLineItemOptionsLineItemOptionId(ctx context.Context, lineItemOptionId interface{}) LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest {
 	return LineItemOptionsApiPATCHLineItemOptionsLineItemOptionIdRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -461,7 +461,7 @@ func (a *LineItemOptionsApiService) PATCHLineItemOptionsLineItemOptionIdExecute(
 	}
 
 	localVarPath := localBasePath + "/line_item_options/{lineItemOptionId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"lineItemOptionId"+"}", url.PathEscape(parameterToString(r.lineItemOptionId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"lineItemOptionId"+"}", url.PathEscape(parameterValueToString(r.lineItemOptionId, "lineItemOptionId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -499,9 +499,9 @@ func (a *LineItemOptionsApiService) PATCHLineItemOptionsLineItemOptionIdExecute(
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -610,9 +610,9 @@ func (a *LineItemOptionsApiService) POSTLineItemOptionsExecute(r LineItemOptions
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}

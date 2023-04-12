@@ -4,8 +4,8 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**Type** | **string** | The resource&#39;s type | 
-**Id** | **string** | The resource&#39;s id | 
+**Type** | **interface{}** | The resource&#39;s type | 
+**Id** | **interface{}** | The resource&#39;s id | 
 **Attributes** | [**PATCHTaxjarAccountsTaxjarAccountId200ResponseDataAttributes**](PATCHTaxjarAccountsTaxjarAccountId200ResponseDataAttributes.md) |  | 
 **Relationships** | Pointer to [**AvalaraAccountCreateDataRelationships**](AvalaraAccountCreateDataRelationships.md) |  | [optional] 
 
@@ -13,7 +13,7 @@ Name | Type | Description | Notes
 
 ### NewTaxjarAccountUpdateData
 
-`func NewTaxjarAccountUpdateData(type_ string, id string, attributes PATCHTaxjarAccountsTaxjarAccountId200ResponseDataAttributes, ) *TaxjarAccountUpdateData`
+`func NewTaxjarAccountUpdateData(type_ interface{}, id interface{}, attributes PATCHTaxjarAccountsTaxjarAccountId200ResponseDataAttributes, ) *TaxjarAccountUpdateData`
 
 NewTaxjarAccountUpdateData instantiates a new TaxjarAccountUpdateData object
 This constructor will assign default values to properties that have it defined,
@@ -30,44 +30,64 @@ but it doesn't guarantee that properties required by API are set
 
 ### GetType
 
-`func (o *TaxjarAccountUpdateData) GetType() string`
+`func (o *TaxjarAccountUpdateData) GetType() interface{}`
 
 GetType returns the Type field if non-nil, zero value otherwise.
 
 ### GetTypeOk
 
-`func (o *TaxjarAccountUpdateData) GetTypeOk() (*string, bool)`
+`func (o *TaxjarAccountUpdateData) GetTypeOk() (*interface{}, bool)`
 
 GetTypeOk returns a tuple with the Type field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetType
 
-`func (o *TaxjarAccountUpdateData) SetType(v string)`
+`func (o *TaxjarAccountUpdateData) SetType(v interface{})`
 
 SetType sets Type field to given value.
 
 
+### SetTypeNil
+
+`func (o *TaxjarAccountUpdateData) SetTypeNil(b bool)`
+
+ SetTypeNil sets the value for Type to be an explicit nil
+
+### UnsetType
+`func (o *TaxjarAccountUpdateData) UnsetType()`
+
+UnsetType ensures that no value is present for Type, not even an explicit nil
 ### GetId
 
-`func (o *TaxjarAccountUpdateData) GetId() string`
+`func (o *TaxjarAccountUpdateData) GetId() interface{}`
 
 GetId returns the Id field if non-nil, zero value otherwise.
 
 ### GetIdOk
 
-`func (o *TaxjarAccountUpdateData) GetIdOk() (*string, bool)`
+`func (o *TaxjarAccountUpdateData) GetIdOk() (*interface{}, bool)`
 
 GetIdOk returns a tuple with the Id field if it's non-nil, zero value otherwise
 and a boolean to check if the value has been set.
 
 ### SetId
 
-`func (o *TaxjarAccountUpdateData) SetId(v string)`
+`func (o *TaxjarAccountUpdateData) SetId(v interface{})`
 
 SetId sets Id field to given value.
 
 
+### SetIdNil
+
+`func (o *TaxjarAccountUpdateData) SetIdNil(b bool)`
+
+ SetIdNil sets the value for Id to be an explicit nil
+
+### UnsetId
+`func (o *TaxjarAccountUpdateData) UnsetId()`
+
+UnsetId ensures that no value is present for Id, not even an explicit nil
 ### GetAttributes
 
 `func (o *TaxjarAccountUpdateData) GetAttributes() PATCHTaxjarAccountsTaxjarAccountId200ResponseDataAttributes`

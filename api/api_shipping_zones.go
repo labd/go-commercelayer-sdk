@@ -3,7 +3,7 @@ Commerce Layer API
 
 Headless Commerce for Global Brands.
 
-API version: 3.4.0
+API version: 4.1.3
 Contact: support@commercelayer.io
 */
 
@@ -14,7 +14,7 @@ package api
 import (
 	"bytes"
 	"context"
-	"io/ioutil"
+	"io"
 	"net/http"
 	"net/url"
 	"strings"
@@ -26,7 +26,7 @@ type ShippingZonesApiService service
 type ShippingZonesApiDELETEShippingZonesShippingZoneIdRequest struct {
 	ctx            context.Context
 	ApiService     *ShippingZonesApiService
-	shippingZoneId string
+	shippingZoneId interface{}
 }
 
 func (r ShippingZonesApiDELETEShippingZonesShippingZoneIdRequest) Execute() (*http.Response, error) {
@@ -42,7 +42,7 @@ Delete a shipping zone
 	@param shippingZoneId The resource's id
 	@return ShippingZonesApiDELETEShippingZonesShippingZoneIdRequest
 */
-func (a *ShippingZonesApiService) DELETEShippingZonesShippingZoneId(ctx context.Context, shippingZoneId string) ShippingZonesApiDELETEShippingZonesShippingZoneIdRequest {
+func (a *ShippingZonesApiService) DELETEShippingZonesShippingZoneId(ctx context.Context, shippingZoneId interface{}) ShippingZonesApiDELETEShippingZonesShippingZoneIdRequest {
 	return ShippingZonesApiDELETEShippingZonesShippingZoneIdRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -64,7 +64,7 @@ func (a *ShippingZonesApiService) DELETEShippingZonesShippingZoneIdExecute(r Shi
 	}
 
 	localVarPath := localBasePath + "/shipping_zones/{shippingZoneId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingZoneId"+"}", url.PathEscape(parameterToString(r.shippingZoneId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingZoneId"+"}", url.PathEscape(parameterValueToString(r.shippingZoneId, "shippingZoneId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -97,9 +97,9 @@ func (a *ShippingZonesApiService) DELETEShippingZonesShippingZoneIdExecute(r Shi
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -118,7 +118,7 @@ func (a *ShippingZonesApiService) DELETEShippingZonesShippingZoneIdExecute(r Shi
 type ShippingZonesApiGETShippingMethodIdShippingZoneRequest struct {
 	ctx              context.Context
 	ApiService       *ShippingZonesApiService
-	shippingMethodId string
+	shippingMethodId interface{}
 }
 
 func (r ShippingZonesApiGETShippingMethodIdShippingZoneRequest) Execute() (*http.Response, error) {
@@ -134,7 +134,7 @@ Retrieve the shipping zone associated to the shipping method
 	@param shippingMethodId The resource's id
 	@return ShippingZonesApiGETShippingMethodIdShippingZoneRequest
 */
-func (a *ShippingZonesApiService) GETShippingMethodIdShippingZone(ctx context.Context, shippingMethodId string) ShippingZonesApiGETShippingMethodIdShippingZoneRequest {
+func (a *ShippingZonesApiService) GETShippingMethodIdShippingZone(ctx context.Context, shippingMethodId interface{}) ShippingZonesApiGETShippingMethodIdShippingZoneRequest {
 	return ShippingZonesApiGETShippingMethodIdShippingZoneRequest{
 		ApiService:       a,
 		ctx:              ctx,
@@ -156,7 +156,7 @@ func (a *ShippingZonesApiService) GETShippingMethodIdShippingZoneExecute(r Shipp
 	}
 
 	localVarPath := localBasePath + "/shipping_methods/{shippingMethodId}/shipping_zone"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterToString(r.shippingMethodId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingMethodId"+"}", url.PathEscape(parameterValueToString(r.shippingMethodId, "shippingMethodId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -189,9 +189,9 @@ func (a *ShippingZonesApiService) GETShippingMethodIdShippingZoneExecute(r Shipp
 		return localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarHTTPResponse, err
 	}
@@ -280,9 +280,9 @@ func (a *ShippingZonesApiService) GETShippingZonesExecute(r ShippingZonesApiGETS
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -310,7 +310,7 @@ func (a *ShippingZonesApiService) GETShippingZonesExecute(r ShippingZonesApiGETS
 type ShippingZonesApiGETShippingZonesShippingZoneIdRequest struct {
 	ctx            context.Context
 	ApiService     *ShippingZonesApiService
-	shippingZoneId string
+	shippingZoneId interface{}
 }
 
 func (r ShippingZonesApiGETShippingZonesShippingZoneIdRequest) Execute() (*GETShippingZonesShippingZoneId200Response, *http.Response, error) {
@@ -326,7 +326,7 @@ Retrieve a shipping zone
 	@param shippingZoneId The resource's id
 	@return ShippingZonesApiGETShippingZonesShippingZoneIdRequest
 */
-func (a *ShippingZonesApiService) GETShippingZonesShippingZoneId(ctx context.Context, shippingZoneId string) ShippingZonesApiGETShippingZonesShippingZoneIdRequest {
+func (a *ShippingZonesApiService) GETShippingZonesShippingZoneId(ctx context.Context, shippingZoneId interface{}) ShippingZonesApiGETShippingZonesShippingZoneIdRequest {
 	return ShippingZonesApiGETShippingZonesShippingZoneIdRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -351,7 +351,7 @@ func (a *ShippingZonesApiService) GETShippingZonesShippingZoneIdExecute(r Shippi
 	}
 
 	localVarPath := localBasePath + "/shipping_zones/{shippingZoneId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingZoneId"+"}", url.PathEscape(parameterToString(r.shippingZoneId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingZoneId"+"}", url.PathEscape(parameterValueToString(r.shippingZoneId, "shippingZoneId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -384,9 +384,9 @@ func (a *ShippingZonesApiService) GETShippingZonesShippingZoneIdExecute(r Shippi
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -415,7 +415,7 @@ type ShippingZonesApiPATCHShippingZonesShippingZoneIdRequest struct {
 	ctx                context.Context
 	ApiService         *ShippingZonesApiService
 	shippingZoneUpdate *ShippingZoneUpdate
-	shippingZoneId     string
+	shippingZoneId     interface{}
 }
 
 func (r ShippingZonesApiPATCHShippingZonesShippingZoneIdRequest) ShippingZoneUpdate(shippingZoneUpdate ShippingZoneUpdate) ShippingZonesApiPATCHShippingZonesShippingZoneIdRequest {
@@ -436,7 +436,7 @@ Update a shipping zone
 	@param shippingZoneId The resource's id
 	@return ShippingZonesApiPATCHShippingZonesShippingZoneIdRequest
 */
-func (a *ShippingZonesApiService) PATCHShippingZonesShippingZoneId(ctx context.Context, shippingZoneId string) ShippingZonesApiPATCHShippingZonesShippingZoneIdRequest {
+func (a *ShippingZonesApiService) PATCHShippingZonesShippingZoneId(ctx context.Context, shippingZoneId interface{}) ShippingZonesApiPATCHShippingZonesShippingZoneIdRequest {
 	return ShippingZonesApiPATCHShippingZonesShippingZoneIdRequest{
 		ApiService:     a,
 		ctx:            ctx,
@@ -461,7 +461,7 @@ func (a *ShippingZonesApiService) PATCHShippingZonesShippingZoneIdExecute(r Ship
 	}
 
 	localVarPath := localBasePath + "/shipping_zones/{shippingZoneId}"
-	localVarPath = strings.Replace(localVarPath, "{"+"shippingZoneId"+"}", url.PathEscape(parameterToString(r.shippingZoneId, "")), -1)
+	localVarPath = strings.Replace(localVarPath, "{"+"shippingZoneId"+"}", url.PathEscape(parameterValueToString(r.shippingZoneId, "shippingZoneId")), -1)
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -499,9 +499,9 @@ func (a *ShippingZonesApiService) PATCHShippingZonesShippingZoneIdExecute(r Ship
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
@@ -610,9 +610,9 @@ func (a *ShippingZonesApiService) POSTShippingZonesExecute(r ShippingZonesApiPOS
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
 
-	localVarBody, err := ioutil.ReadAll(localVarHTTPResponse.Body)
+	localVarBody, err := io.ReadAll(localVarHTTPResponse.Body)
 	localVarHTTPResponse.Body.Close()
-	localVarHTTPResponse.Body = ioutil.NopCloser(bytes.NewBuffer(localVarBody))
+	localVarHTTPResponse.Body = io.NopCloser(bytes.NewBuffer(localVarBody))
 	if err != nil {
 		return localVarReturnValue, localVarHTTPResponse, err
 	}
